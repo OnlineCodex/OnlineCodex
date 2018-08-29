@@ -1,0 +1,57 @@
+package oc.wh40k.units.ch;
+
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+
+public class CHChaosHellTalon extends Eintrag {
+
+	OptionsUpgradeGruppe o1, claws;
+	OptionsUpgradeGruppe o2;
+	OptionsUpgradeGruppe o3;
+    OptionsUpgradeGruppe mark;
+    
+	public CHChaosHellTalon() {
+		name = "Chaos Hell Talon";
+		grundkosten = getPts("Chaos Hell Talon");
+
+		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		
+		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
+		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
+		seperator();
+
+		ogE.addElement(new OptionsGruppeEintrag("Helstorm cannon", getPts("Helstorm cannon")));
+		ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", getPts("Havoc launcher")));
+		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
+        seperator();
+        
+		ogE.addElement(new OptionsGruppeEintrag("Pyrax incendiary bombs", getPts("Pyrax incendiary bombs")));
+		ogE.addElement(new OptionsGruppeEintrag("Warp-pulse bombs", getPts("Warp-pulse bombs")));
+		ogE.addElement(new OptionsGruppeEintrag("Baletalon shatter charges", getPts("Baletalon shatter charges")));
+		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
+        seperator();
+        
+		ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+		add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+		
+		complete();
+	}
+
+	@Override
+	public void refreshen() {
+		o1.alwaysSelected();
+		o2.alwaysSelected();
+		o3.alwaysSelected();
+		
+		power = 12;
+	}
+
+}
