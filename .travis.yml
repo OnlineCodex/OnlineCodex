@@ -5,7 +5,7 @@ install: true
 
 script:
 - |
-  mvn sonar:sonar \
+  mvn clean package sonar:sonar \
     -Dsonar.projectKey=oc \
     -Dsonar.organization=oc \
     -Dsonar.host.url=https://sonarcloud.io \
