@@ -29,6 +29,7 @@
   </issueManagement>
 
   <build>
+    <finalName>OnlineCodex</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
