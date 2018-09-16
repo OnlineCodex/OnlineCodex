@@ -1,3 +1,18 @@
 language: java
 jdk: openjdk8
+sudo: false
+install: true
+
+script:
+- |
+  mvn clean package sonar:sonar \
+    -Dsonar.projectKey=oc \
+    -Dsonar.organization=oc \
+    -Dsonar.host.url=https://sonarcloud.io \
+    -Dsonar.login=$SONAR_TOKEN
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
 
