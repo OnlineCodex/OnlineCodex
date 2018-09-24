@@ -21,12 +21,12 @@ public class APOImperatorKampftitan extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("Multilaserkanone", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma-Annihilator", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Inferno-Geschütz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Inferno-GeschÃ¼tz", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Vulkan-Megabolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Gatlingblaster", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Meltergeschütz", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Tremorgeschütz", "Ragnarok-Tremorgeschütz", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Vulkangeschütz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("MeltergeschÃ¼tz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("TremorgeschÃ¼tz", "Ragnarok-TremorgeschÃ¼tz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("VulkangeschÃ¼tz", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", "Apokalypse-Raketenwerfer", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Warpfeldrakete", 0));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 6));
@@ -34,9 +34,9 @@ public class APOImperatorKampftitan extends Eintrag {
                 seperator();
 
                 ogE.addElement(new OptionsGruppeEintrag("Plasma-Annihilator", "schwerer Plasma-Annihilator", 0));
-                ogE.addElement(new OptionsGruppeEintrag("Höllensturm-Geschütz", 0));
-                ogE.addElement(new OptionsGruppeEintrag("Vergelter-Geschütz", 0));
-                ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", "Verhängnis-Raketenwerfer", 0));
+                ogE.addElement(new OptionsGruppeEintrag("HÃ¶llensturm-GeschÃ¼tz", 0));
+                ogE.addElement(new OptionsGruppeEintrag("Vergelter-GeschÃ¼tz", 0));
+                ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", "VerhÃ¤ngnis-Raketenwerfer", 0));
 		add(o2 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
 
 		complete();

@@ -17,7 +17,7 @@ public class ABArmouredFistStormTrooperSquad extends Eintrag {
 	public ABArmouredFistStormTrooperSquad() {
 		name = "Storm Trooper Squad\n";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Storm Troopers", 5, 10, 16);
 		squad.setGrundkosten(5);

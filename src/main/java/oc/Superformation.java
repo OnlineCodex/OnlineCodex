@@ -183,10 +183,10 @@ public class Superformation implements BuildaSTK{
 		
 	}
 	
-	JLabel infoCommand = new JLabel("Command: "+minCommand+" - "+maxCommand+" Ausgewählt: "+0);
-	JLabel infoCore = new JLabel("Core: "+minCore+" - "+maxCore+" Ausgewählt: "+0);
-	JLabel infoAuxiliary = new JLabel("Auxiliary: "+minAuxiliary+" - "+maxAuxiliary+" Ausgewählt: "+0);
-	JLabel infoSupport = new JLabel("Support: "+minSupport+" - "+maxSupport+" Ausgewählt: "+0);
+	JLabel infoCommand = new JLabel("Command: "+minCommand+" - "+maxCommand+" AusgewÃ¤hlt: "+0);
+	JLabel infoCore = new JLabel("Core: "+minCore+" - "+maxCore+" AusgewÃ¤hlt: "+0);
+	JLabel infoAuxiliary = new JLabel("Auxiliary: "+minAuxiliary+" - "+maxAuxiliary+" AusgewÃ¤hlt: "+0);
+	JLabel infoSupport = new JLabel("Support: "+minSupport+" - "+maxSupport+" AusgewÃ¤hlt: "+0);
 	
 	public void refreshCounts(){
 		int cntCore = 0; 
@@ -210,27 +210,27 @@ public class Superformation implements BuildaSTK{
 		}
 		
 		if(maxCommand==Integer.MAX_VALUE){
-			infoCommand.setText(("Command: "+minCommand*(multiplyerCommandByCore?cntCore:1)+"+ Ausgewählt: "+cntCommand));
+			infoCommand.setText(("Command: "+minCommand*(multiplyerCommandByCore?cntCore:1)+"+ AusgewÃ¤hlt: "+cntCommand));
 		}else{
-			infoCommand.setText(("Command: "+minCommand*(multiplyerCommandByCore?cntCore:1)+" - "+maxCommand*(multiplyerCommandByCore?cntCore:1)+" Ausgewählt: "+cntCommand));
+			infoCommand.setText(("Command: "+minCommand*(multiplyerCommandByCore?cntCore:1)+" - "+maxCommand*(multiplyerCommandByCore?cntCore:1)+" AusgewÃ¤hlt: "+cntCommand));
 		}
 		
 		if(maxCore==Integer.MAX_VALUE){
-			infoCore.setText(("Core: "+minCore*(multiplyerCoreByCommand?cntCommand:1)+"+ Ausgewählt: "+cntCore));
+			infoCore.setText(("Core: "+minCore*(multiplyerCoreByCommand?cntCommand:1)+"+ AusgewÃ¤hlt: "+cntCore));
 		}else{
-			infoCore.setText(("Core: "+minCore*(multiplyerCoreByCommand?cntCommand:1)+" - "+maxCore*(multiplyerCoreByCommand?cntCommand:1)+" Ausgewählt: "+cntCore));
+			infoCore.setText(("Core: "+minCore*(multiplyerCoreByCommand?cntCommand:1)+" - "+maxCore*(multiplyerCoreByCommand?cntCommand:1)+" AusgewÃ¤hlt: "+cntCore));
 		}
 		
 		if(maxAuxiliary==Integer.MAX_VALUE){
-			infoAuxiliary.setText(("Auxiliary: "+minAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+"+ Ausgewählt: "+cntAuxiliary));
+			infoAuxiliary.setText(("Auxiliary: "+minAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+"+ AusgewÃ¤hlt: "+cntAuxiliary));
 		}else{
-			infoAuxiliary.setText(("Auxiliary: "+minAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+" - "+maxAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+" Ausgewählt: "+cntAuxiliary));
+			infoAuxiliary.setText(("Auxiliary: "+minAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+" - "+maxAuxiliary*(multiplyerAuxiliaryByCore?cntCore:1)+" AusgewÃ¤hlt: "+cntAuxiliary));
 		}
 		
 		if(maxSupport==Integer.MAX_VALUE){
-			infoSupport.setText(("Support: "+minSupport*(multiplyerSupportByCore?cntCore:1)+"+ Ausgewählt: "+cntSupport));
+			infoSupport.setText(("Support: "+minSupport*(multiplyerSupportByCore?cntCore:1)+"+ AusgewÃ¤hlt: "+cntSupport));
 		}else{
-			infoSupport.setText(("Support: "+minSupport*(multiplyerSupportByCore?cntCore:1)+" - "+maxSupport*(multiplyerSupportByCore?cntCore:1)+" Ausgewählt: "+cntSupport));
+			infoSupport.setText(("Support: "+minSupport*(multiplyerSupportByCore?cntCore:1)+" - "+maxSupport*(multiplyerSupportByCore?cntCore:1)+" AusgewÃ¤hlt: "+cntSupport));
 		}
 		
 		if(cntCommand<minCommand*(multiplyerCommandByCore?cntCore:1) || cntCommand>maxCommand*(multiplyerCommandByCore?cntCore:1)){
@@ -306,8 +306,8 @@ public class Superformation implements BuildaSTK{
 				JScrollPane sp = new JScrollPane(buildaPanel);
 				sp.addMouseMotionListener(OnlineCodex.getInstance().getDragAndDropMouseMotionListener());
 				sp.addMouseListener(OnlineCodex.getInstance().getDragAndDropMouseListener());
-				sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHöhe-53));
-				sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHöhe-53));
+				sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHÃ¶he-53));
+				sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHÃ¶he-53));
 				
 				tab.addTab(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)),null,sp);
 				tab.setTabComponentAt(i+1, new ButtonTabComponent(tab,superformation));
@@ -361,20 +361,20 @@ public class Superformation implements BuildaSTK{
 					name = volkFile;
 					
 					if(event.getSource()==comboAuxiliary && comboAuxiliary.getSelectedItem().equals("")){
-						return;//Es soll kein Leerer Tab eingefügt werden
+						return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 					}else if(event.getSource()==comboCommand && comboCommand.getSelectedItem().equals("")){
-						return;//Es soll kein Leerer Tab eingefügt werden
+						return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 					}else if(event.getSource()==comboCore && comboCore.getSelectedItem().equals("")){
-						return;//Es soll kein Leerer Tab eingefügt werden
+						return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 					}else if(event.getSource()==comboSupport && comboSupport.getSelectedItem().equals("")){
-						return;//Es soll kein Leerer Tab eingefügt werden
+						return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 					}else {
 						System.out.println(Class.forName(name));
 						myBuilder = (BuildaVater) (Class.forName(name).newInstance());
 					}
 				} else if(type == 1){
 					if(((JComboBox)event.getSource()).getSelectedItem().equals("")){
-						return;//Es soll kein Leerer Tab eingefügt werden
+						return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 					}else {
 		        		String txt = ((String)((JComboBox)event.getSource()).getSelectedItem());
 		        		if(txt.contains(": ")){
@@ -399,8 +399,8 @@ public class Superformation implements BuildaSTK{
 				JScrollPane sp = new JScrollPane(buildaPanel);
 				sp.addMouseMotionListener(OnlineCodex.getInstance().getDragAndDropMouseMotionListener());
 				sp.addMouseListener(OnlineCodex.getInstance().getDragAndDropMouseListener());
-				sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHöhe-53));
-				sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHöhe-53));
+				sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHÃ¶he-53));
+				sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-OnlineCodex.getInstance().menuHÃ¶he-53));
 				
 	        	myBuilder.informationList=(Hashtable<String, Integer>)buildaVater.informationList.clone();
 				

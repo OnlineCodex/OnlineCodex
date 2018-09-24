@@ -66,7 +66,7 @@ public class IASergeant extends RuestkammerVater {
 			}else if(isScout){
 				ogE.addElement(new OptionsGruppeEintrag("Schrotflinte", 0));
 				ogE.addElement(new OptionsGruppeEintrag("Kampfmesser", 0));
-				ogE.addElement(new OptionsGruppeEintrag("Scharfschützengew.", "Scharfschützengewehr", 1));
+				ogE.addElement(new OptionsGruppeEintrag("ScharfschÃ¼tzengew.", "ScharfschÃ¼tzengewehr", 1));
 				ogE.addElement(new OptionsGruppeEintrag("[WZK] Nihilus", "Nihilus (WZ Kauyon - Sons of Corax)", 15));
 			}else if(isLegion){
 				ogE.addElement(new OptionsGruppeEintrag("Kettenschwert", 0));
@@ -161,8 +161,8 @@ public class IASergeant extends RuestkammerVater {
 	    boolean entrySwitched=false;
 	    	
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

@@ -16,7 +16,7 @@ public class IMVertusPraetors extends Eintrag {
 	public IMVertusPraetors() {
 		name = "Vertus Praetors\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Vertus Praetors", 3, 10, getPts("Vertus Praetors"));

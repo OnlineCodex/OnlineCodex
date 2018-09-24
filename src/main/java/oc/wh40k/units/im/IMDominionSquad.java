@@ -20,7 +20,7 @@ public class IMDominionSquad extends Eintrag {
 	public IMDominionSquad() {
 		name = "Dominion Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Dominion Squad", 5, 10, getPts("Dominion Squad"));
 		add(squad);

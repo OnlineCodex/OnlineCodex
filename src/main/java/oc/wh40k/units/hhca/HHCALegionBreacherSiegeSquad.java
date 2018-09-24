@@ -18,7 +18,7 @@ public class HHCALegionBreacherSiegeSquad extends Eintrag {
 	public HHCALegionBreacherSiegeSquad() {
 		name = "Legion Breacher Siege Squad\n";
 		grundkosten = 125;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 10, 20, 10);
 		add(squad);

@@ -17,22 +17,22 @@ public class CSDaemonenprinz extends Eintrag {
 	RuestkammerStarter waffenUndArtefakte;
 
 	public CSDaemonenprinz() {
-		name = "Dämonenprinz";
+		name = "DÃ¤monenprinz";
 		grundkosten = 145;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DaemonPrince.gif"));
 		
 		seperator();
 
-		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flügel", 40));
-		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Servorüstung", 20));
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "FlÃ¼gel", 40));
+		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ServorÃ¼stung", 20));
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Khorne", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Tzeentch", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Nurgle", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Slaanesh", 10));
 		add(mal = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		seperator();
@@ -45,7 +45,7 @@ public class CSDaemonenprinz extends Eintrag {
 		seperator();
 		
 		chaosBelohnungen = new RuestkammerStarter(ID, randAbstand, cnt, "CSChaosbelohnungen", "");
-		chaosBelohnungen.initKammer(mal.isSelected("Dämon des Khorne"), mal.isSelected("Dämon des Tzeentch"), mal.isSelected("Dämon des Nurgle"), mal.isSelected("Dämon des Slaanesh"), false,true);
+		chaosBelohnungen.initKammer(mal.isSelected("DÃ¤mon des Khorne"), mal.isSelected("DÃ¤mon des Tzeentch"), mal.isSelected("DÃ¤mon des Nurgle"), mal.isSelected("DÃ¤mon des Slaanesh"), false,true);
 		chaosBelohnungen.setButtonText(BuildaHQ.translate("Gaben des Chaos"));
 		add(chaosBelohnungen);
 		
@@ -65,20 +65,20 @@ public class CSDaemonenprinz extends Eintrag {
 	public void refreshen() {
         if(mal.getAnzahl() < 1) {
             mal.setLegal(false);
-            setFehlermeldung("Wähle einen Gott");
+            setFehlermeldung("WÃ¤hle einen Gott");
         } else {
             mal.setLegal(true);
             setFehlermeldung("");
         }
         
-        if (mal.isSelected("Dämon des Khorne")) {
+        if (mal.isSelected("DÃ¤mon des Khorne")) {
 			psi.setAktiv(false);
 		} else {
 			psi.setAktiv(true);
 		}
         
-        waffenUndArtefakte.getKammer().switchEntry("Axt der blinden Wut", mal.isSelected("Dämon des Khorne"));
-        //waffenUndArtefakte.getKammer().switchEntry("Schriftrollen des Magnus", mal.isSelected("Dämon des Tzeentch"));
+        waffenUndArtefakte.getKammer().switchEntry("Axt der blinden Wut", mal.isSelected("DÃ¤mon des Khorne"));
+        //waffenUndArtefakte.getKammer().switchEntry("Schriftrollen des Magnus", mal.isSelected("DÃ¤mon des Tzeentch"));
         
         if(((CSWaffenUndArtefakte)waffenUndArtefakte.getKammer()).uniqueError){
 			setFehlermeldung("Artefakt doppelt!");

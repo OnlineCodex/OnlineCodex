@@ -17,8 +17,8 @@ public class DKMinotaurKammer extends RuestkammerVater {
 
 		add(ico = new oc.Picture("oc/wh40k/images/MinotaurArtilleryTank.gif"));
 		
-		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 10));
-		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzlicher Sturmbolter", 10));
+		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 10));
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzlicher Sturmbolter", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Enclosed Crew Compartment", 15));

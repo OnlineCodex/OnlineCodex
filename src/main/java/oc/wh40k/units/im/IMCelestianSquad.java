@@ -19,7 +19,7 @@ public class IMCelestianSquad extends Eintrag {
 	public IMCelestianSquad() {
 		name = "Celestian Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Celestian Squad", 5, 10, getPts("Celestian Squad"));
 		add(squad);

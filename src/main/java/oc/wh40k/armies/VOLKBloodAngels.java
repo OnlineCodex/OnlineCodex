@@ -10,21 +10,21 @@ public class VOLKBloodAngels extends BuildaVater {
 	public VOLKBloodAngels() {
 		reflectionKennung = "BA";
 
-		HQeintr‰ge = new String[]{"", "Captain", "Terminator Captain", "Librarian", "Captain Tycho", "Tycho the Lost", "Librarian Dreadnought", "Mephiston", "The Sanguinor", "Astorath", "Sanguinary Priest", "Brother Corbulo", "Techmarine", "Servitoren", "Chaplain",
+		HQeintr√§ge = new String[]{"", "Captain", "Terminator Captain", "Librarian", "Captain Tycho", "Tycho the Lost", "Librarian Dreadnought", "Mephiston", "The Sanguinor", "Astorath", "Sanguinary Priest", "Brother Corbulo", "Techmarine", "Servitoren", "Chaplain",
 							   "", "[SoB Deathstorm] Captain Karlaen", "", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax", "",
 							   "", "[IA2 2nd Ed] Damocles Command Vehicle",
 							   "", "[IA9] Malakim Phoros",
 							   "", "[Forgeworld] Damocles Rhino"};
-		Eliteeintr‰ge = new String[]{"", "Command Squad", "Death Company Squad", "Lemartes", "Sanguinary Guard", "Dreadnought", "Death Company Dreadnought", "Furioso Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Vanguard Veteran Squad", "Sternguard Veteran Squad",
+		Eliteeintr√§ge = new String[]{"", "Command Squad", "Death Company Squad", "Lemartes", "Sanguinary Guard", "Dreadnought", "Death Company Dreadnought", "Furioso Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Vanguard Veteran Squad", "Sternguard Veteran Squad",
 									 "", "[SoB Deathstorm] Squad Alphaeus",				
 									 "", "[IA2 2nd Ed] Land Raider Prometheus",
 									 "", "[IA Apo 2013] Blood Angels Contemptor Dreadnought"};
-		Standardeintr‰ge = new String[]{"", "Tactical Squad", "Scout Squad",
+		Standardeintr√§ge = new String[]{"", "Tactical Squad", "Scout Squad",
 										"", "[SoB Deathstorm] Raphens Death Company", "[SoB Deathstorm] Cassor the Damned"};
-		Sturmeintr‰ge = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Squadron", "Assault Squad", "Bike Squad", "Attack Bike Squad", "Scout Bike Squad",
+		Sturmeintr√§ge = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Squadron", "Assault Squad", "Bike Squad", "Attack Bike Squad", "Scout Bike Squad",
 				"", "[IA2 2nd Ed] Caestus Assault Ram", "[IA2 2nd Ed] Land Speeder Tempest Squadron","[IA2 2nd Ed] Javelin Attack Speeder",
 				"", "[IA Experimental] Xiphon Pattern Interceptor"};
-		Unterst¸tzungeintr‰ge = new String[]{"", "Stormraven Gunship", "Devastator Squad", "Baal Predator", "Predator", "Vindicator", "Whirlwind", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer",
+		Unterst√ºtzungeintr√§ge = new String[]{"", "Stormraven Gunship", "Devastator Squad", "Baal Predator", "Predator", "Vindicator", "Whirlwind", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer",
 				  "", "[IA Experimental] Quad Mortar Support Battery",
 				  "", "[FW online] Deimos Pattern Vindicator Tank Destroyer",
 				"", "[IA2 2nd Ed] Land Raider Helios","[IA2 2nd Ed] Land Raider Proteus", "[IA2 2nd Ed] Land Raider Achilles", 
@@ -65,15 +65,15 @@ public class VOLKBloodAngels extends BuildaVater {
 
 */
 		
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -499,20 +499,20 @@ public class VOLKBloodAngels extends BuildaVater {
 			setInformationVectorValue("Termi Chaplain", 1);	
 			setInformationVectorValue("Archangels", 1);
 		}else if(getKontingentTyp().contains("Flesh Tearers Strike Force (Shield of Baal - Exterminatus)")){
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(Befestigungen);
 			myChooserGruppen.get(6).changeComboBoxAuswahlen(LordofWar);
 			setInformationVectorValue("Flesh Tearers", 1);
 		}else{
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(Befestigungen);
 			myChooserGruppen.get(6).changeComboBoxAuswahlen(LordofWar);
 		}	
@@ -522,6 +522,6 @@ public class VOLKBloodAngels extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

@@ -23,7 +23,7 @@ public class FOVergelterWaffenbatterie extends Eintrag {
 
 		add(oe1 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Vollstrecker-Stuka","Vollstrecker-Sturmkanone",1,0));
 		add(oe3 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "[BK] Icarus-Laska", "[BK] Icarus-Laserkanone",1,0));
-		add(oe2 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Kampfgeschütz",1,10));
+		add(oe2 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "KampfgeschÃ¼tz",1,10));
 		
 		add(ico = new oc.Picture("oc/wh40k/images/TARemoteSensorTowerTeam.jpg"));
 		

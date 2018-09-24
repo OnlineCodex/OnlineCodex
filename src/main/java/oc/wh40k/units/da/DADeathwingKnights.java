@@ -21,7 +21,7 @@ public class DADeathwingKnights extends Eintrag{
 	public DADeathwingKnights() {
 		name = "Deathwing-Ritter";
 		grundkosten = 10;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		neuzeile=true;
 		
 
@@ -32,7 +32,7 @@ public class DADeathwingKnights extends Eintrag{
 		
 		seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Düsteres Relikt der alten Legion", "Düsteres Relikt", 15));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "DÃ¼steres Relikt der alten Legion", "DÃ¼steres Relikt", 15));
 		
 		seperator();
 		

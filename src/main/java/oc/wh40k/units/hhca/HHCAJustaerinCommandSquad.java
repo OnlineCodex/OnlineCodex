@@ -21,7 +21,7 @@ public class HHCAJustaerinCommandSquad extends Eintrag {
 	public HHCAJustaerinCommandSquad() {
 		name = "Justaerin Terminator Squad\n";
 		grundkosten = 90;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		this.setEintragsCNT(0);
 		
 		addToInformationVector("HHCALegionCommandSquad", 1);

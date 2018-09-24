@@ -28,7 +28,7 @@ public class DWVeterans extends Eintrag {//Sternguard
 	public DWVeterans() {
 		name = "Veterans\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		rk=new Vector<RuestkammerStarter>();
 		

@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORBattlewagon extends Eintrag {
 
-	OptionsEinzelUpgrade Panzakanon‰;
+	OptionsEinzelUpgrade Panzakanon√§;
 	OptionsUpgradeGruppe FK2;
 	OptionsZaehlerGruppe KampfpanzaFK;
 
@@ -21,7 +21,7 @@ public class ORBattlewagon extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/Kampfpanza.gif"));
 
 
-		add(Panzakanon‰ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Killkannon", getPts("Killkannon")));
+		add(Panzakanon√§ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Killkannon", getPts("Killkannon")));
 		
 		seperator();
 		

@@ -34,7 +34,7 @@ public class DAPredator extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
         add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 
 		complete();
 	}

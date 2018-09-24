@@ -17,7 +17,7 @@ public class ABArmouredFistHeavyWeaponSquad extends Eintrag {
 	public ABArmouredFistHeavyWeaponSquad() {
 		name = "Armoured Fist Heavy Weapon Squad";
 		grundkosten = 60;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 	
 		add(ico = new oc.Picture("oc/wh40k/images/IGHeavyWeaponsSquad.jpg"));
 		

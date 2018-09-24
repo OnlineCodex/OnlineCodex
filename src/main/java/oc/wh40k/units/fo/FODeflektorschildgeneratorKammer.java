@@ -22,7 +22,7 @@ public class FODeflektorschildgeneratorKammer extends RuestkammerVater {
 		
 		seperator();
 		
-		add(oez = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Zus. proj. Deflektorschilde","Zus‰tzliche projizierte Deflektorschilde",2,25));
+		add(oez = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Zus. proj. Deflektorschilde","Zus√§tzliche projizierte Deflektorschilde",2,25));
 		
 		seperator();
 		

@@ -33,7 +33,7 @@ public class CSEliteKrieger extends Eintrag {
 	public CSEliteKrieger() {
 		//name = "Elite-Krieger\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Elite-Krieger", 5, 20, 13);
 		add(squad);

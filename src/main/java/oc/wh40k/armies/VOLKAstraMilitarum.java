@@ -19,23 +19,23 @@ public class VOLKAstraMilitarum extends BuildaVater {
 	public VOLKAstraMilitarum() {
 		reflectionKennung = "AM";
 
-		HQeintr‰ge = new String[] {
+		HQeintr√§ge = new String[] {
 				"", "Commissar Yarrick", "Company Command Squad", "Tank Commander Squadron", "Lord Commissar", "Commissar", "Ministorum Priest", "Primaris Psyker", 
 				"Enginseer", "", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax",
 				"", "[IA 8] Captain Thanstadt", "[IA 8] Sword Force Command Squad",
 				"", "[Forgeworld] General Myndoras Odon"};
-		Eliteeintr‰ge = new String[] {
+		Eliteeintr√§ge = new String[] {
 				"", "Ogryns", "Bullgryns", "Ratlings", "Wyrdvane Psykers", "Militarum Tempestus Platoon",
 				"", "[IA1 2nd Ed] Salamander Command Vehicle","[IA1 2nd Ed] Hades Breaching Drill","[IA1 2nd Ed] Atlas Recovery Tank"};
-		Standardeintr‰ge = new String[] {
+		Standardeintr√§ge = new String[] {
 				"", "Infantry Platoon", "Veterans"};
-		Sturmeintr‰ge = new String[] {
+		Sturmeintr√§ge = new String[] {
 				"", "Scout Sentinel Squadron", "Armoured Sentinel Squadron", "Rough Riders", "Hellhound Squadron", 
 				"Valkyrie Squadron", "Vendetta Squadron", 
 				"", "[IA1 2nd Ed] Centaur Squadron", "[IA1 2nd Ed] Salamander Recon Squadron","[IA1 2nd Ed] Drop Sentinel Squadron",
 				"[IA1 2nd Ed] Tauros Squadron",
 				"", "[IA Aeronautica] Aquila Lander","[IA Aeronautica] Vulture","[IA Aeronautica] Arvus Lighter"};
-		Unterst¸tzungeintr‰ge = new String[] {
+		Unterst√ºtzungeintr√§ge = new String[] {
 				"", "Leman Russ Squadron", "Hydra Battery", "Basilisk Battery", "Wyvern Battery", "Manticore", "Deathstrike", 
 				"", "[IA1 2nd Ed] Destroyer Tank Hunter Squadron", "[IA1 2nd Ed] Thunderer Siege Tank Squadron", "[IA1 2nd Ed] Manticore Battery",
 				"[IA1 2nd Ed] Hydra Platform Battery", "[IA1 2nd Ed] Manticore Platform Battery", "[IA1 2nd Ed] Earthshaker Platform Battery",
@@ -61,10 +61,10 @@ public class VOLKAstraMilitarum extends BuildaVater {
 		};
 //		Formationen = new String[] {
 //				"","Imperiale Ritter",
-//				"", "[APO2] Catachanisches Guerilliakomando","[APO2] 'Faust des Imperators' - Panzerkompanie","[APO2] 'Krallen des Imperators' - Aufkl‰rungskompanie",
+//				"", "[APO2] Catachanisches Guerilliakomando","[APO2] 'Faust des Imperators' - Panzerkompanie","[APO2] 'Krallen des Imperators' - Aufkl√§rungskompanie",
 //				"[APO2] 'Zorn des Imperators' - Artilleriekompanie", "[APO2] 'Imperialer Schild' - Infanteriekompanie", 
-//				"[APO2] 'Imperiales Schwert' - Unterst¸tzungskompanie", "[APO2] Oberster Komandostab des Grosskastellans",
-//				"[APO2] Kampfchor sanktionierter Psioniker", "[APO2] 'St‰hlerne Wut' - Baneblade-Kompanie",
+//				"[APO2] 'Imperiales Schwert' - Unterst√ºtzungskompanie", "[APO2] Oberster Komandostab des Grosskastellans",
+//				"[APO2] Kampfchor sanktionierter Psioniker", "[APO2] 'St√§hlerne Wut' - Baneblade-Kompanie",
 //				/*"", "[APO2 Armageddon NEW] Heroes of Armageddon", "[APO2 Armageddon NEW] Armageddon Stompa Hunters",
 //    			"[APO2 Armageddon NEW] 'Imperial Vengeance' Mechanised Company", "[APO2 Armageddon NEW] Firestorm Nexus",
 //    			"[APO2 Armageddon NEW] Imperial Stronghold",*/
@@ -104,15 +104,15 @@ public class VOLKAstraMilitarum extends BuildaVater {
 		 */
 
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
 		if (oc.OnlineCodex.getInstance().isApo()) {
@@ -633,7 +633,7 @@ public class VOLKAstraMilitarum extends BuildaVater {
 				addUnitNotLocked(3,"Scout Sentinel Squadron");
 			}
 			//			1 company command squad
-			//			3 emperor's shield infantry platoons // aufschl¸sseln 3 infantry platoons 3-9 sentinels
+			//			3 emperor's shield infantry platoons // aufschl√ºsseln 3 infantry platoons 3-9 sentinels
 			kontingentBox.setEnabled(false);
 			formationBox.setEnabled(false);
 		}else if(getKontingentTyp().equals("'Emperor's Shield' Infantry Platoon (Warzone Mont'ka)")){
@@ -698,7 +698,7 @@ public class VOLKAstraMilitarum extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 	public void hideVolkCheckboxes(){

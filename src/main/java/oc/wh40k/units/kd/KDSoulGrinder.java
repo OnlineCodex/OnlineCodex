@@ -19,7 +19,7 @@ public class KDSoulGrinder extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 0));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Khorne", 0));
 		add(mal = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		seperator();

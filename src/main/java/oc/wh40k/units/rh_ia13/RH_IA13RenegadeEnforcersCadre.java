@@ -19,7 +19,7 @@ public class RH_IA13RenegadeEnforcersCadre extends Eintrag {
 	public RH_IA13RenegadeEnforcersCadre() {
 		name = "Renegade Enforcers Cadre";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 		addToInformationVector("RHEnforcerCadre", +1);
 

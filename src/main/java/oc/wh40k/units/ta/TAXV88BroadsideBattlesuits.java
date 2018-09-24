@@ -15,7 +15,7 @@ public class TAXV88BroadsideBattlesuits extends Eintrag {
 
 	public TAXV88BroadsideBattlesuits() {
 		name = "XV88 Broadside Battlesuits";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KolossKampfanzugteam.gif"));

@@ -9,11 +9,11 @@ public class CDHoellenschinderdesSlaanesh extends Eintrag {
 
 	public CDHoellenschinderdesSlaanesh() {
 
-		name = "Höllenschinder des Slaanesh";
+		name = "HÃ¶llenschinder des Slaanesh";
 
 		grundkosten = 60;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDHöllenschinderdesSlaanesh.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/CDHÃ¶llenschinderdesSlaanesh.gif"));
 
 		seperator();
 

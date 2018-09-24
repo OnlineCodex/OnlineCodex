@@ -48,22 +48,22 @@ public class ASTransporterKammer extends RuestkammerVater {
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozer-Schaufel", 5),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stimmverst‰rker", 10)
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stimmverst√§rker", 10)
 		};
 
 		OptionsVater[] immolator = new OptionsVater[]{
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozer-Schaufel", 5),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5),
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stimmverst‰rker", 10)
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stimmverst√§rker", 10)
 		};
 		
 		OptionsVater[] repressor = new OptionsVater[]{
 				new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchscheinwerfer", 1),
 				new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10),
-				new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10)
+				new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10)
 			};
 
 		OptionsVater[] empty = new OptionsVater[]{

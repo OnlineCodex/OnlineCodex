@@ -35,13 +35,13 @@ public class CDSeuchendrohnen extends Eintrag {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Totenköpfe", "Totenköpfe", 5));
+		ogE.addElement(new OptionsGruppeEintrag("TotenkÃ¶pfe", "TotenkÃ¶pfe", 5));
 		add(Totenkoepfe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Giftstachel", "Giftstachel", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Faulrüssel", "Faulrüssel", 5));
+		ogE.addElement(new OptionsGruppeEintrag("FaulrÃ¼ssel", "FaulrÃ¼ssel", 5));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		seperator();
@@ -50,7 +50,7 @@ public class CDSeuchendrohnen extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		seperator();
@@ -78,8 +78,8 @@ public class CDSeuchendrohnen extends Eintrag {
 		}
 		
 		int count = CDSeuchendrohnen.getModelle();
-		Totenkoepfe.setPreis("Totenköpfe", 5 * count);
+		Totenkoepfe.setPreis("TotenkÃ¶pfe", 5 * count);
 		o3.setPreis("Giftstachel", 5 * count);
-		o3.setPreis("Faulrüssel", 5 * count);
+		o3.setPreis("FaulrÃ¼ssel", 5 * count);
 	}
 }

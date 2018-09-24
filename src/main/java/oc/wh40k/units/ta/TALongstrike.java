@@ -11,7 +11,7 @@ public class TALongstrike extends Eintrag {
 
 	public TALongstrike() {
 		name = "TX7 Hammerhead Gunships";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));

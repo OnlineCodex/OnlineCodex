@@ -34,11 +34,11 @@ public class CDZerfleischerdesKhorne extends Eintrag {
 		
 		seperator();
 
-		add(Hoellenkrieger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Höllenkrieger", 5));
+		add(Hoellenkrieger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "HÃ¶llenkrieger", 5));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
         BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("[Forgeworld] An'ggrath the Unbound");

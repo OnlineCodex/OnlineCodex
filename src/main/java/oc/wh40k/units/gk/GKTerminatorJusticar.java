@@ -22,10 +22,10 @@ public class GKTerminatorJusticar extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		//ogE.addElement(new OptionsGruppeEintrag("Meisterhaftes Psischwert", "Meisterhaftes Nemesis-Psischwert", 5));
 		//ogE.addElement(new OptionsGruppeEintrag("Meisterhafte Psihellebarde", "Meisterhafte Nemesis-Psihellebarde", 10));
-		//ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Däm.hammer", "Meisterhafter Nemesis-Dämonenhammer", 15));
+		//ogE.addElement(new OptionsGruppeEintrag("Meisterhafter DÃ¤m.hammer", "Meisterhafter Nemesis-DÃ¤monenhammer", 15));
 		//ogE.addElement(new OptionsGruppeEintrag("Meisterhafte Falchions", "Paar Meisterhafte Nemesis-Falchions", 15));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

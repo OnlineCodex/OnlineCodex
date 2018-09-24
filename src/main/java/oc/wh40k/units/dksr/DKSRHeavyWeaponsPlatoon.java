@@ -12,7 +12,7 @@ public class DKSRHeavyWeaponsPlatoon extends Eintrag {
 	public DKSRHeavyWeaponsPlatoon() {
 		name = "Heavy Weapon Platoon";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGInfantryPlatoon.jpg"));

@@ -16,7 +16,7 @@ public class AMFaustdesImperatorsPanzerkompanie extends Eintrag {
 	public AMFaustdesImperatorsPanzerkompanie() {
 		name = "'Faust des Imperators' - Panzerkompanie";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 
@@ -24,7 +24,7 @@ public class AMFaustdesImperatorsPanzerkompanie extends Eintrag {
 
 		tff = new RuestkammerStarter(ID, randAbstand, cnt, "AMLemanRuss", "", 1);
 		tff.initKammer();
-		tff.setButtonText("Leman Russ Formationsführer");
+		tff.setButtonText("Leman Russ FormationsfÃ¼hrer");
 		add(tff);
 
 		seperator();

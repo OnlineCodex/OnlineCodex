@@ -15,7 +15,7 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 	OptionsUpgradeGruppe o3, o4;
     OptionsEinzelUpgrade handwaffe, kombibolter;
     boolean runeBool=false;
-    boolean rüstungBool=false;
+    boolean rÃ¼stungBool=false;
     boolean helmBool=false;
     boolean goreBool=false;
     boolean schwertBool=false;
@@ -77,14 +77,14 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Goredrinker"), 30));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Schwert des ewigen Blutvergiesens"), 35));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Kor'lath, die Axt der Zerstörung"), 60));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Kor'lath, die Axt der ZerstÃ¶rung"), 60));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bronze Rune"), 15));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Schädelhelm des Khorne"), 15));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Blutgeschmiedete Rüstung"), 50));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("SchÃ¤delhelm des Khorne"), 15));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Blutgeschmiedete RÃ¼stung"), 50));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		setUeberschrift("Termiwaffen und Artefakte");
@@ -108,7 +108,7 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 		o1.setLegal(auswahlen>=2);
 		o2.setLegal(auswahlen>=2);
 		
-	    //Einzigartige Gegenstände
+	    //Einzigartige GegenstÃ¤nde
 		if(o1.isSelected("Bronze Rune")){
 			if(runeBool==false){
 				runeBool=true;
@@ -121,24 +121,24 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 			}
 		}
 		
-		if(o1.isSelected("Blutgeschmiedete Rüstung")){
-			if(rüstungBool==false){
-				rüstungBool=true;
-				BuildaHQ.addToInformationVectorGlobal("KDRüstung", 1);
+		if(o1.isSelected("Blutgeschmiedete RÃ¼stung")){
+			if(rÃ¼stungBool==false){
+				rÃ¼stungBool=true;
+				BuildaHQ.addToInformationVectorGlobal("KDRÃ¼stung", 1);
 			}
-		} else if(!o1.isSelected("Blutgeschmiedete Rüstung")) {
-			if(rüstungBool==true){
-				rüstungBool=false;
-				BuildaHQ.addToInformationVectorGlobal("KDRüstung", -1);
+		} else if(!o1.isSelected("Blutgeschmiedete RÃ¼stung")) {
+			if(rÃ¼stungBool==true){
+				rÃ¼stungBool=false;
+				BuildaHQ.addToInformationVectorGlobal("KDRÃ¼stung", -1);
 			}
 		}
 		
-		if(o1.isSelected("Schädelhelm des Khorne")){
+		if(o1.isSelected("SchÃ¤delhelm des Khorne")){
 			if(helmBool==false){
 				helmBool=true;
 				BuildaHQ.addToInformationVectorGlobal("KDHelm", 1);
 			}
-		} else if(!o1.isSelected("Schädelhelm des Khorne")) {
+		} else if(!o1.isSelected("SchÃ¤delhelm des Khorne")) {
 			if(helmBool==true){
 				helmBool=false;
 				BuildaHQ.addToInformationVectorGlobal("KDHelm", -1);
@@ -169,12 +169,12 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 			}
 		}
 		
-		if(o4.isSelected("Bloodgeschmiedete Rüstung")){
+		if(o4.isSelected("Bloodgeschmiedete RÃ¼stung")){
 			if(axtBool==false){
 				axtBool=true;
 				BuildaHQ.addToInformationVectorGlobal("KDAxt", 1);
 			}
-		} else if(!o4.isSelected("Bloodgeschmiedete Rüstung")) {
+		} else if(!o4.isSelected("Bloodgeschmiedete RÃ¼stung")) {
 			if(axtBool==true){
 				axtBool=false;
 				BuildaHQ.addToInformationVectorGlobal("KDAxt", -1);
@@ -186,7 +186,7 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 		
 		if(BuildaHQ.getCountFromInformationVectorGlobal("KDRune")>1 ||
 				BuildaHQ.getCountFromInformationVectorGlobal("KDHelm")>1 ||
-				BuildaHQ.getCountFromInformationVectorGlobal("KDRüstung")>1 ||
+				BuildaHQ.getCountFromInformationVectorGlobal("KDRÃ¼stung")>1 ||
 				BuildaHQ.getCountFromInformationVectorGlobal("KDGore")>1 ||
 				BuildaHQ.getCountFromInformationVectorGlobal("KDSchwert")>1 ||
 				BuildaHQ.getCountFromInformationVectorGlobal("KDAxt")>1) {
@@ -206,8 +206,8 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 		boolean entrySwitched=false;
 		
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}
@@ -226,9 +226,9 @@ public class KDTerminatorwaffen extends RuestkammerVater {
 			BuildaHQ.addToInformationVectorGlobal("KDHelm", -1);
 		}
 					
-		if(rüstungBool==true){
-			rüstungBool=false;
-			BuildaHQ.addToInformationVectorGlobal("KDRüstung", -1);
+		if(rÃ¼stungBool==true){
+			rÃ¼stungBool=false;
+			BuildaHQ.addToInformationVectorGlobal("KDRÃ¼stung", -1);
 		}
 					
 		if(goreBool==true){

@@ -28,7 +28,7 @@ public class CHScarabOccultTerminators extends Eintrag {
 	public CHScarabOccultTerminators() {
 		//name = "Thousand Sons\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Scarab Occult Terminators", 5, 10, getPts("Scarab Occult Terminators"));
 		add(squad);

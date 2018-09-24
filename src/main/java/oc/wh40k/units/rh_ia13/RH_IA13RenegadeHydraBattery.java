@@ -15,7 +15,7 @@ public class RH_IA13RenegadeHydraBattery extends Eintrag {
 	public RH_IA13RenegadeHydraBattery() {
 		name = "Renegade Hydra Battery";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 

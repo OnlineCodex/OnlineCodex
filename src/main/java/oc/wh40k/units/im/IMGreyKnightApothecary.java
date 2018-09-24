@@ -9,7 +9,7 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMGreyKnightApothecary extends Eintrag {
-	//TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
+	//TODO AusrÃ¼stung in eine Kammer verlegen. Artefakte richtig handhaben
 	OptionsUpgradeGruppe o1, o1x;
 	OptionsUpgradeGruppe o2, reliquien;
 	boolean grandmasterBool;

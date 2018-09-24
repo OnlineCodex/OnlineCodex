@@ -18,7 +18,7 @@ public class IADominionSquad extends Eintrag {
 	public IADominionSquad() {
 		name = "Dominion Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Dominator-Schwestern", 5, 10, 13);
 		add(squad);

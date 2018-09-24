@@ -14,7 +14,7 @@ public class DKMarauderSquadron extends Eintrag {
 	public DKMarauderSquadron() {
 		name = "Marauder Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 		this.gesamtpunkteImmerAnzeigen=false;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));

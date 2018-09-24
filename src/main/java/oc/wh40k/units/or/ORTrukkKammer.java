@@ -23,13 +23,13 @@ public class ORTrukkKammer extends RuestkammerVater {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Rote Farb‰", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Vast‰rkt‰ Ramm‰", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Rote Farb√§", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Vast√§rkt√§ Ramm√§", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stikkbombschleuda", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzlich Panzerung", 10));
-        ogE.addElement(new OptionsGruppeEintrag("Groth‰lfaz", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Abrizzbirn‰", 10));
-        ogE.addElement(new OptionsGruppeEintrag("Entaplank‰", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzlich Panzerung", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Groth√§lfaz", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Abrizzbirn√§", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Entaplank√§", 15));
         add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,9));
 
 		sizeSetzen();

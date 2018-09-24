@@ -15,9 +15,9 @@ public class KDChaosLandRaider extends Eintrag {
 		
 		seperator();
 		
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "KDFahrzeugruestkammer", "Ausrüstung");
+		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "KDFahrzeugruestkammer", "AusrÃ¼stung");
 		ausruestung.initKammer(true);
-		ausruestung.setButtonText("Ausrüstung");
+		ausruestung.setButtonText("AusrÃ¼stung");
 		add(ausruestung);
 		
 		complete();

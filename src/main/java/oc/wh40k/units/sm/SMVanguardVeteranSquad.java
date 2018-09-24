@@ -31,7 +31,7 @@ public class SMVanguardVeteranSquad extends Eintrag {//Vanguard
 	public SMVanguardVeteranSquad() {
 		name = "Vanguard Veteran Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("Vanguard Veteran Squad", 1);
 

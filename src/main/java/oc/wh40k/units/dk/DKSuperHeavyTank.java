@@ -22,7 +22,7 @@ public class DKSuperHeavyTank extends RuestkammerVater {
 	public void initButtons(boolean... defaults) {
 		//name = "Super Heavy Tank Squadron";
 		grundkosten = 0;
-		//this.überschriftSetzen = true;
+		//this.Ã¼berschriftSetzen = true;
 		
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 

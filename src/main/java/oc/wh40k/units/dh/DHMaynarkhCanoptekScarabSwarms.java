@@ -12,7 +12,7 @@ public class DHMaynarkhCanoptekScarabSwarms extends Eintrag {
 	public DHMaynarkhCanoptekScarabSwarms() {
 		grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Kanoptech-Skarab‰en", 3, 10, 15);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "Kanoptech-Skarab√§en", 3, 10, 15);
 		add(squad);
 		
 		seperator();

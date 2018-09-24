@@ -18,7 +18,7 @@ public class IAWyrdvanePsykers extends Eintrag {
 	public IAWyrdvanePsykers() {
 		name = "Psioniker-Kampftrupp\n";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Sanktionierte Psioniker", 5, 10, 12);
 		squad.setGrundkosten(0);
@@ -28,11 +28,11 @@ public class IAWyrdvanePsykers extends Eintrag {
 
         seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chimäre");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "ChimÃ¤re");
 		rkTransport.initKammer(true);
 		add(rkTransport);
 		
-		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chimäre");
+		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] ChimÃ¤re");
 		rkTransport2.initKammer(true);
 		add(rkTransport2);
 

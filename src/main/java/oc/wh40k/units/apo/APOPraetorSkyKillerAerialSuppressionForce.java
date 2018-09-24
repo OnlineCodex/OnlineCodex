@@ -14,7 +14,7 @@ public class APOPraetorSkyKillerAerialSuppressionForce extends Eintrag {
       public APOPraetorSkyKillerAerialSuppressionForce() {
            name = "Praetor 'Sky Killer' Aerial Suppression Force";
            grundkosten = 75;
-           überschriftSetzen = true;
+           Ã¼berschriftSetzen = true;
 
            add(ico = new oc.Picture("oc/wh40k/images/Shadowsword.gif"));
 

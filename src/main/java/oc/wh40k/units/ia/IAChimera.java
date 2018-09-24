@@ -41,7 +41,7 @@ public class IAChimera extends Eintrag {
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psiaktive Munition", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wahrsilberpanzerung", 10));
 

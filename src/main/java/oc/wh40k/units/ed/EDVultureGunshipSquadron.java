@@ -12,7 +12,7 @@ public class EDVultureGunshipSquadron extends Eintrag {
 	public EDVultureGunshipSquadron() {
 		name = "Vendetta Gunship Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABVendettaGunshipSquadron.jpg"));
 

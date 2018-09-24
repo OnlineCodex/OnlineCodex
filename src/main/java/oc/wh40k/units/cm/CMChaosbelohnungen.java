@@ -34,7 +34,7 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Warpblut"), 5));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Geschenk der Mutation"), 10));
-		if(!isDemon){ //D‰monen m¸ssen sich keinen 5+ Retter kaufen
+		if(!isDemon){ //D√§monen m√ºssen sich keinen 5+ Retter kaufen
 			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Aura dunkler Pracht"), 15));
 		}
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Kampf-Homunkulus"), 15));
@@ -49,8 +49,8 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 		if(!isTermi)
 		{
 			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Moloch des Khorne"), 35));
-			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Flugd‰mon des Tzeentch"), 30));
-			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("S‰nfte des Nurgle"), 40));
+			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Flugd√§mon des Tzeentch"), 30));
+			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("S√§nfte des Nurgle"), 40));
 			ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Slaaneshpferd"), 20));
 			add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 			//setUeberschrift("Reittiere");
@@ -62,8 +62,8 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 	@Override
 	public void refreshen() {
 		o2.setAktiv(BuildaHQ.translate("Moloch des Khorne"), malDesKhorne && !bikeGesetzt);
-		o2.setAktiv(BuildaHQ.translate("Flugd‰mon des Tzeentch"), malDesTzeentch && !bikeGesetzt);
-		o2.setAktiv(BuildaHQ.translate("S‰nfte des Nurgle"), malDesNurgle && !bikeGesetzt);
+		o2.setAktiv(BuildaHQ.translate("Flugd√§mon des Tzeentch"), malDesTzeentch && !bikeGesetzt);
+		o2.setAktiv(BuildaHQ.translate("S√§nfte des Nurgle"), malDesNurgle && !bikeGesetzt);
 		o2.setAktiv(BuildaHQ.translate("Slaaneshpferd"), malDesSlaanesh && !bikeGesetzt);
 		
 		if(!malDesKhorne){
@@ -71,11 +71,11 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 		}
 		
 		if(!malDesTzeentch){
-			o2.setSelected("Flugd‰mon des Tzeentch", false);
+			o2.setSelected("Flugd√§mon des Tzeentch", false);
 		}
 		
 		if(!malDesNurgle){
-			o2.setSelected("S‰nfte des Nurgle", false);
+			o2.setSelected("S√§nfte des Nurgle", false);
 		}
 		
 		if(!malDesSlaanesh){
@@ -99,14 +99,14 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 			}
 		} 
 		
-		if(name.equals( BuildaHQ.translate("Flugd‰mon des Tzeentch"))){ 
+		if(name.equals( BuildaHQ.translate("Flugd√§mon des Tzeentch"))){ 
 			if(malDesTzeentch!=aktiv){
 				this.malDesTzeentch = aktiv;
 				entrySwitched=true;
 			}
 		}
 		
-		if(name.equals( BuildaHQ.translate("S‰nfte des Nurgle"))){ 
+		if(name.equals( BuildaHQ.translate("S√§nfte des Nurgle"))){ 
 			if(malDesNurgle!=aktiv){
 				this.malDesNurgle = aktiv;
 				entrySwitched=true;
@@ -120,8 +120,8 @@ public class CMChaosbelohnungen extends RuestkammerVater {
 			}
 		}
 		if(entrySwitched){
-			//Aktualisisert alle Eintr‰ge, auch die, welche diese R¸stkammer enth‰lt.
-			//Sonst werden dort zwar beim abw‰hlen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle Eintr√§ge, auch die, welche diese R√ºstkammer enth√§lt.
+			//Sonst werden dort zwar beim abw√§hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

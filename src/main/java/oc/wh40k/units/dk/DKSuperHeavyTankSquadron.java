@@ -14,7 +14,7 @@ public class DKSuperHeavyTankSquadron extends Eintrag {
 	public DKSuperHeavyTankSquadron() {
 		name = "Super Heavy Tank Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 		this.gesamtpunkteImmerAnzeigen=false;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));

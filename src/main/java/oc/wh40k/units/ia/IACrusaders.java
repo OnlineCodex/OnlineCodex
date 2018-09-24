@@ -13,7 +13,7 @@ public class IACrusaders extends Eintrag {
 	public IACrusaders() {
 		name = "Crusaders\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Crusaders", 2, 10, 15);
 		add(squad);

@@ -17,7 +17,7 @@ public class IMProsecutors extends Eintrag {
 	public IMProsecutors() {
 		name = "Prosecutors\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Prosecutors", 5, 10, getPts("Prosecutors"));
 		add(squad);

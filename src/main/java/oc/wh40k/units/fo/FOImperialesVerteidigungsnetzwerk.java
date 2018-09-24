@@ -24,7 +24,7 @@ public class FOImperialesVerteidigungsnetzwerk extends Eintrag {
 	public FOImperialesVerteidigungsnetzwerk() {
 		name = "Imperiales Verteidigungsnetzwerk";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

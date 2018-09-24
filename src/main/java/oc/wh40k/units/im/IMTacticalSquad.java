@@ -21,7 +21,7 @@ public class IMTacticalSquad extends Eintrag {
 	public IMTacticalSquad() {
 		name = "Tactical Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Tactical Squad"));
 		add(squad);

@@ -17,7 +17,7 @@ public class FOAquillaArtilleriebunker extends Eintrag {
 	public FOAquillaArtilleriebunker() {
 		name = "Aquilla-Artilleriebunker";
 		grundkosten = 425;//Eigentlich 535, mit dem neuen Plasma-Obliberator ist das Teil aber billiger, die Zusatzkosten sind jetz bei den anderen beiden Waffen dabei.
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

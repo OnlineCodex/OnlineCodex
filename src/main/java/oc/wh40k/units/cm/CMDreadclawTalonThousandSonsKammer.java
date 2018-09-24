@@ -19,7 +19,7 @@ public class CMDreadclawTalonThousandSonsKammer extends RuestkammerVater {
 	OptionsUpgradeGruppe vdlk;
 	OptionsZaehlerGruppe o7;
     RuestkammerStarter champion;
-	OptionsZaehlerGruppe ketten‰xte;
+	OptionsZaehlerGruppe ketten√§xte;
 
 	public CMDreadclawTalonThousandSonsKammer() {}
 	

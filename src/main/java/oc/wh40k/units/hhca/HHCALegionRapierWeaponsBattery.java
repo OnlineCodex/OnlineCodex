@@ -12,7 +12,7 @@ public class HHCALegionRapierWeaponsBattery extends Eintrag {
 	public HHCALegionRapierWeaponsBattery() {
 		name = "Legion Rapier Weapons Battery";
 		grundkosten = 0;
-                überschriftSetzen = true;
+                Ã¼berschriftSetzen = true;
 
 		seperator();
 		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "HHCARapierKammer", "Rapier carrier");

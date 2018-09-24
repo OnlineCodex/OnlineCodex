@@ -24,7 +24,7 @@ public class DWTerminators extends Eintrag {//Sternguard
 	public DWTerminators() {
 		name = "Terminators\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		rk=new Vector<RuestkammerStarter>();
 		

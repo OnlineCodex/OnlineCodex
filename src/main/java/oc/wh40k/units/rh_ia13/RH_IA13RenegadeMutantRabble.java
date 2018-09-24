@@ -18,7 +18,7 @@ public class RH_IA13RenegadeMutantRabble extends Eintrag {
 	public RH_IA13RenegadeMutantRabble() {
 		name = "Renegade Mutant Rabble\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Mutants", 10, 50, 3);
 		squad.setGrundkosten(0);

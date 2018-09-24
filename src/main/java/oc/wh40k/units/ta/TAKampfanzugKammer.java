@@ -42,8 +42,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 	boolean Onager = false;
 	boolean Reinflut = false;
 	boolean Repulsor = false;
-	boolean Selbstzerstörungssystem = false;
-	boolean Waffenstörfeldemitter = false;
+	boolean SelbstzerstÃ¶rungssystem = false;
+	boolean WaffenstÃ¶rfeldemitter = false;
 
 	boolean seismic= false;
 	boolean mirror= false;
@@ -126,7 +126,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
 		seperator();
 
-		// Unterstützungssysteme		
+		// UnterstÃ¼tzungssysteme		
 		if(ghostkeel){
 			ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Ghostkeel Riptide and Stormsurge)")));
 			ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
@@ -163,7 +163,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
 		seperator();
 
-//		//Sonderausrüstung
+//		//SonderausrÃ¼stung
 //		if(!krisisshasui && !breitseite && !geist && !ghostkeel){
 //			ogE.addElement(new OptionsGruppeEintrag("The Mirrorcodex", 50));
 //			ogE.addElement(new OptionsGruppeEintrag("Seismic Filibrator Node", 45));
@@ -179,9 +179,9 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 //			ogE.addElement(new OptionsGruppeEintrag("Multispektrum-Sensorpaket", 20));//Multi-spectrum sensor suite
 //			ogE.addElement(new OptionsGruppeEintrag("Onager-Handschuh", 5));//Onager Gauntlet
 //			ogE.addElement(new OptionsGruppeEintrag("Reinflut-Neurochip", "Reinflut-Engrammneurochip", 15));//Puretide Engram Neurochip
-//			ogE.addElement(new OptionsGruppeEintrag("Repulsor-Stoßfeldemitter", 10));//Repulsor Impact Field
-//			ogE.addElement(new OptionsGruppeEintrag("Selbstzerstörungssystem", 10));//Failsafe Detonator 
-//			ogE.addElement(new OptionsGruppeEintrag("Waffenstörfeldemitter", 2)); //Neuroweb system jammer
+//			ogE.addElement(new OptionsGruppeEintrag("Repulsor-StoÃŸfeldemitter", 10));//Repulsor Impact Field
+//			ogE.addElement(new OptionsGruppeEintrag("SelbstzerstÃ¶rungssystem", 10));//Failsafe Detonator 
+//			ogE.addElement(new OptionsGruppeEintrag("WaffenstÃ¶rfeldemitter", 2)); //Neuroweb system jammer
 //			add(o3 = new OptionsUpgradeGruppe(ID, randAbstand + 280, cnt, "", ogE, 1));
 //		}
 
@@ -277,8 +277,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 					(BuildaHQ.getCountFromInformationVectorGlobal("TAOnager")>1 && Onager) ||
 					(BuildaHQ.getCountFromInformationVectorGlobal("TAReinflut")>1 && Reinflut) ||
 					(BuildaHQ.getCountFromInformationVectorGlobal("TARepulsor")>1 && Repulsor) ||
-					(BuildaHQ.getCountFromInformationVectorGlobal("TASelbstzerstörungssystem")>1 && Selbstzerstörungssystem) ||
-					(BuildaHQ.getCountFromInformationVectorGlobal("TAWaffenstörfeldemitter")>1 && Waffenstörfeldemitter) ||
+					(BuildaHQ.getCountFromInformationVectorGlobal("TASelbstzerstÃ¶rungssystem")>1 && SelbstzerstÃ¶rungssystem) ||
+					(BuildaHQ.getCountFromInformationVectorGlobal("TAWaffenstÃ¶rfeldemitter")>1 && WaffenstÃ¶rfeldemitter) ||
 					(BuildaHQ.getCountFromInformationVectorGlobal("FESeismic")>1 && seismic) ||
 					(BuildaHQ.getCountFromInformationVectorGlobal("FEEarth")>1 && earth) ||
 					(BuildaHQ.getCountFromInformationVectorGlobal("FETalisman")>1 && talisman) ||
@@ -335,14 +335,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 				BuildaHQ.addToInformationVectorGlobal("TARepulsor", -1);
 			}
 
-			if(Selbstzerstörungssystem==true){
-				Selbstzerstörungssystem=false;
-				BuildaHQ.addToInformationVectorGlobal("TASelbstzerstörungssystem", -1);
+			if(SelbstzerstÃ¶rungssystem==true){
+				SelbstzerstÃ¶rungssystem=false;
+				BuildaHQ.addToInformationVectorGlobal("TASelbstzerstÃ¶rungssystem", -1);
 			}
 
-			if(Waffenstörfeldemitter==true){
-				Waffenstörfeldemitter=false;
-				BuildaHQ.addToInformationVectorGlobal("TAWaffenstörfeldemitter", -1);
+			if(WaffenstÃ¶rfeldemitter==true){
+				WaffenstÃ¶rfeldemitter=false;
+				BuildaHQ.addToInformationVectorGlobal("TAWaffenstÃ¶rfeldemitter", -1);
 			}
 
 			if(mirror==true){

@@ -31,7 +31,7 @@ public class AMMilitarumTempestusPlatoon extends Eintrag {
 	public AMMilitarumTempestusPlatoon() {
 		name = "Militarum Tempestus Platoon";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		checkDraftOption();
 

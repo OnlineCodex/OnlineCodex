@@ -25,7 +25,7 @@ public class ECCorsairVoidstormBand extends Eintrag {
     public ECCorsairVoidstormBand() {
         name = "Corsair Voidstorm Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Corsair Felarchs", 5, 10, 15);
         squad.setGrundkosten(-10);

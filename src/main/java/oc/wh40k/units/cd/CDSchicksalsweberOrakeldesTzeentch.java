@@ -13,9 +13,9 @@ public class CDSchicksalsweberOrakeldesTzeentch extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDSchicksalsweberOrakeldesTzeentch.gif"));
 
-		addToInformationVector("CDDämonenprinz", 1);
-		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Dämonenprinz des Tzeentch");
-		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Dämonenprinz des Tzeentch");
+		addToInformationVector("CDDÃ¤monenprinz", 1);
+		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
+		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
 		
 		complete();
 
@@ -28,10 +28,10 @@ public class CDSchicksalsweberOrakeldesTzeentch extends Eintrag {
 	
 	@Override
 	public void deleteYourself() {
-		addToInformationVector("CDDämonenprinz", -1);
-		if(getCountFromInformationVector("CDDämonenprinz")<1){
-			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Dämonenprinz des Tzeentch");
-			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Dämonenprinz des Tzeentch");
+		addToInformationVector("CDDÃ¤monenprinz", -1);
+		if(getCountFromInformationVector("CDDÃ¤monenprinz")<1){
+			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
+			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
 		}
 		super.deleteYourself();
 	}

@@ -31,7 +31,7 @@ public class CDBrimstoneHorrors extends Eintrag {
 
 	}
 
-	public void deleteYourself() {  // WICHTIG: wird nicht beim Volkwechseln ausgeführt. Dafür wird BuildaHQ.leereChooserGruppenArray(); aufgerufen, was das ersetzt
+	public void deleteYourself() {  // WICHTIG: wird nicht beim Volkwechseln ausgefÃ¼hrt. DafÃ¼r wird BuildaHQ.leereChooserGruppenArray(); aufgerufen, was das ersetzt
 
 		super.deleteYourself();
 

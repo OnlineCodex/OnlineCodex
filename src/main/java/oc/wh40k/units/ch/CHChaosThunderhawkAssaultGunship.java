@@ -17,7 +17,7 @@ public class CHChaosThunderhawkAssaultGunship extends Eintrag {
 		name = "Chaos Thunderhawk Assault Gunship";
 		grundkosten = getPts("Chaos Thunderhawk Assault Gunship");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Thunderhawk heavy cannon", getPts("Thunderhawk heavy cannon")));
 		ogE.addElement(new OptionsGruppeEintrag("Turbo-laser destruktor", getPts("Turbo-laser destruktor")));

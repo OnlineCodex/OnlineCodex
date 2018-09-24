@@ -14,7 +14,7 @@ public class ECCorsairWaspSquadron extends Eintrag {
     public ECCorsairWaspSquadron() {
         name = "Corsair Wasp Squadron";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/ECWaspAssaultWalkerSquadron.jpg"));
 

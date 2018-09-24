@@ -22,8 +22,8 @@ public class DKValdorKammer extends RuestkammerVater {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 10));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzlicher Sturmbolter", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzlicher Sturmbolter", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 10));
 
         seperator();
 

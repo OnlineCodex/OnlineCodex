@@ -51,7 +51,7 @@ public class INRelikte extends RuestkammerVater {
 		o1.setAktiv("Shroud of the Anti-Martyr (GS)", EcclesiarchyRelics);
 		o1.setAktiv("Desvalles's Holy Circle (GS)", EcclesiarchyRelics);
 		
-	    //Einzigartige Gegenst‰nde
+	    //Einzigartige Gegenst√§nde
 		if(o1.isSelected("The Grimoire of True Names")){
 			if(grimoireBool==false){
 				grimoireBool=true;

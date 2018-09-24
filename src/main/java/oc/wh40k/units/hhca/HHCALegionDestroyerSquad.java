@@ -24,7 +24,7 @@ public class HHCALegionDestroyerSquad extends Eintrag {
 	public HHCALegionDestroyerSquad() {
 		name = "Legion Destroyer Squad\n";
 		grundkosten = 50;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Destroyer Marines", 5, 10, 20);
 		add(squad);

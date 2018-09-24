@@ -9,11 +9,11 @@ public class VOLKMilitarumTempestus extends BuildaVater {
   public VOLKMilitarumTempestus() {
     reflectionKennung = "MT";
 
-    HQeintr‰ge = new String[] {"", "Lord Commissar", "Commissar", "Militarum Tempestus CommandSquad", "", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
-    Eliteeintr‰ge = new String[] {"", ""};
-    Standardeintr‰ge = new String[] {"", "Militarum Tempestus Scions"};
-    Sturmeintr‰ge = new String[] {"", "Valkyrie Squadron","Taurox Prime"};
-    Unterst¸tzungeintr‰ge = new String[] {""};
+    HQeintr√§ge = new String[] {"", "Lord Commissar", "Commissar", "Militarum Tempestus CommandSquad", "", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
+    Eliteeintr√§ge = new String[] {"", ""};
+    Standardeintr√§ge = new String[] {"", "Militarum Tempestus Scions"};
+    Sturmeintr√§ge = new String[] {"", "Valkyrie Squadron","Taurox Prime"};
+    Unterst√ºtzungeintr√§ge = new String[] {""};
     LordofWar = new String[] {""};
 
     /*LoW
@@ -54,13 +54,13 @@ public class VOLKMilitarumTempestus extends BuildaVater {
     */
     
     
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 2, Eliteeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 2, Eliteeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst¸tzungeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst√ºtzungeintr√§ge));
     adden(new ChooserGruppe(this,"FO", outOfPanel, 0, 6, Befestigungen));
     adden(new ChooserGruppe(this,"APO", outOfPanel, 0, 7, LordofWar));
 
@@ -124,6 +124,6 @@ public class VOLKMilitarumTempestus extends BuildaVater {
 
   @Override
   protected void finalize() {
-    System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+    System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
   }
 }

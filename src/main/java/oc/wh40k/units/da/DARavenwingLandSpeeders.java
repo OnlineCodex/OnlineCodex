@@ -13,9 +13,9 @@ public class DARavenwingLandSpeeders extends Eintrag {
 	OptionsZaehlerGruppe o2;
 
 	public DARavenwingLandSpeeders() {
-		name = "Ravenwing-Unterstützungsschwadron\n";
+		name = "Ravenwing-UnterstÃ¼tzungsschwadron\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder", 1, 5, 50);
 		add(squad);

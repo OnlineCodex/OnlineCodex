@@ -14,7 +14,7 @@ public class ECCorsairNightSpinner extends Eintrag {
 
 	public ECCorsairNightSpinner() {
 		name = "Corsair Night Spinner\n";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ECCorsairWarpHunter.jpg"));

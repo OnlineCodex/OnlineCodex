@@ -22,7 +22,7 @@ public class HHCALegionVeteranTacticalSquad extends Eintrag {
 	public HHCALegionVeteranTacticalSquad() {
 		name = "Legion Veteran Squad\n";
 		grundkosten = 50;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Veterans", 5, 10, 15);
 		add(squad);
@@ -98,7 +98,7 @@ public class HHCALegionVeteranTacticalSquad extends Eintrag {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
         
-		o2.setMaxAnzahl(squad.getModelle() - 1); // die 1 ist für den sarge
+		o2.setMaxAnzahl(squad.getModelle() - 1); // die 1 ist fÃ¼r den sarge
 		o4.setMaxAnzahl(squad.getModelle() - 1);
 		o1.setMaxAnzahl(squad.getModelle() / 5);
 		

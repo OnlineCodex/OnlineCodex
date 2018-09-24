@@ -20,7 +20,7 @@ public class IMWolfGuard extends Eintrag {
 	public IMWolfGuard() {
 		name = "Wolf Guard\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Wolf Guard", 5, 10, getPts("Wolf Guard")));
 

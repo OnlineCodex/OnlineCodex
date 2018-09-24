@@ -14,7 +14,7 @@ public class DKABHydraFlakTankBattery extends Eintrag {
 	public DKABHydraFlakTankBattery() {
 		name = "Hydra Flak Tank Battery";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABHydraFlakTankBattery.jpg"));
 

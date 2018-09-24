@@ -26,7 +26,7 @@ public class CMRubricMarines extends Eintrag {
 	public CMRubricMarines() {
 		//name = "Thousand Sons\n";
 		grundkosten = 58;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Rubric Marines", 4, 19, 23);
 		add(squad);

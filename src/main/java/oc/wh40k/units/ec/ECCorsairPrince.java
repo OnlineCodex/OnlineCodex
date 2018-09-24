@@ -21,11 +21,11 @@ public class ECCorsairPrince extends Eintrag {
 	OptionsEinzelUpgrade dancer;
 
 	boolean seelenstein=false;
-	boolean phönixjuwel=false;
+	boolean phÃ¶nixjuwel=false;
 	boolean jagdgewehr=false;
 	boolean schwinge=false;
-	boolean feuersäbel=false;
-	boolean bruchstück=false;
+	boolean feuersÃ¤bel=false;
+	boolean bruchstÃ¼ck=false;
 	boolean bogen=false;
 	boolean kussBool=false;
 	boolean armorBool=false;
@@ -99,18 +99,18 @@ public class ECCorsairPrince extends Eintrag {
 		seperator();
 		ogE = new Vector<OptionsGruppeEintrag>();
 		ogE.addElement(new OptionsGruppeEintrag("Kuss des Parasiten", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Rüstung des Elends", 15));
+		ogE.addElement(new OptionsGruppeEintrag("RÃ¼stung des Elends", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Animus Vitae", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Engel der Qualen", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Helm der Verachtung", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Dschinnklinge", 30));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Seelenstein von Anath'lan"), 15));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das Phönix-Juwel"), 25));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das PhÃ¶nix-Juwel"), 25));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Kurnous Bogen"), 10));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Jagdgewehr des Uldanoreth"), 25));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Faolchús Schwinge"), 30));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Feuersäbel"), 30));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bruchstück von Anaris"), 40));	
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("FaolchÃºs Schwinge"), 30));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("FeuersÃ¤bel"), 30));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("BruchstÃ¼ck von Anaris"), 40));	
 		add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		complete();
@@ -131,7 +131,7 @@ public class ECCorsairPrince extends Eintrag {
 		
 		setInformationVectorValue("ECPrinceTrait", o5.getSelectedIndex());
 
-		//Einzigartige Gegenstände
+		//Einzigartige GegenstÃ¤nde
 		if(o6.isSelected("Kuss des Parasiten")){
 			if(kussBool==false){
 				kussBool=true;
@@ -144,12 +144,12 @@ public class ECCorsairPrince extends Eintrag {
 			}
 		}
 
-		if(o6.isSelected("Rüstung des Elends")){
+		if(o6.isSelected("RÃ¼stung des Elends")){
 			if(armorBool==false){
 				armorBool=true;
 				BuildaHQ.addToInformationVectorGlobal("DEArmour", 1);
 			}
-		} else if(!o6.isSelected("Rüstung des Elends")) {
+		} else if(!o6.isSelected("RÃ¼stung des Elends")) {
 			if(armorBool==true){
 				armorBool=false;
 				BuildaHQ.addToInformationVectorGlobal("DEArmour", -1);
@@ -216,14 +216,14 @@ public class ECCorsairPrince extends Eintrag {
 			}
 		}
 
-		if(o6.isSelected("Das Phönix-Juwel")){
-			if(phönixjuwel==false){
-				phönixjuwel=true;
+		if(o6.isSelected("Das PhÃ¶nix-Juwel")){
+			if(phÃ¶nixjuwel==false){
+				phÃ¶nixjuwel=true;
 				BuildaHQ.addToInformationVectorGlobal("ELJuwel", 1);
 			}
-		} else if(!o6.isSelected("Das Phönix-Juwel")){
-			if(phönixjuwel==true){
-				phönixjuwel=false;
+		} else if(!o6.isSelected("Das PhÃ¶nix-Juwel")){
+			if(phÃ¶nixjuwel==true){
+				phÃ¶nixjuwel=false;
 				BuildaHQ.addToInformationVectorGlobal("ELJuwel", -1);
 			}
 		}
@@ -240,38 +240,38 @@ public class ECCorsairPrince extends Eintrag {
 			}
 		}
 
-		if(o6.isSelected("Faolchús Schwinge")){
+		if(o6.isSelected("FaolchÃºs Schwinge")){
 			if(schwinge==false){
 				schwinge=true;
 				BuildaHQ.addToInformationVectorGlobal("ELSchwinge", 1);
 			}
-		} else if(!o6.isSelected("Faolchús Schwinge")) {
+		} else if(!o6.isSelected("FaolchÃºs Schwinge")) {
 			if(schwinge==true){
 				schwinge=false;
 				BuildaHQ.addToInformationVectorGlobal("ELSchwinge", -1);
 			}
 		}
 
-		if(o6.isSelected("Feuersäbel")){
-			if(feuersäbel==false){
-				feuersäbel=true;
+		if(o6.isSelected("FeuersÃ¤bel")){
+			if(feuersÃ¤bel==false){
+				feuersÃ¤bel=true;
 				BuildaHQ.addToInformationVectorGlobal("ELFeuer", 1);
 			}
-		} else if(!o6.isSelected("Feuersäbel")) {
-			if(feuersäbel==true){
-				feuersäbel=false;
+		} else if(!o6.isSelected("FeuersÃ¤bel")) {
+			if(feuersÃ¤bel==true){
+				feuersÃ¤bel=false;
 				BuildaHQ.addToInformationVectorGlobal("ELFeuer", -1);
 			}
 		}
 
-		if(o6.isSelected("Bruchstück von Anaris")){
-			if(bruchstück==false){
-				bruchstück=true;
+		if(o6.isSelected("BruchstÃ¼ck von Anaris")){
+			if(bruchstÃ¼ck==false){
+				bruchstÃ¼ck=true;
 				BuildaHQ.addToInformationVectorGlobal("ELBruch", 1);
 			}
-		} else if(!o6.isSelected("Bruchstück von Anaris")) {
-			if(bruchstück==true){
-				bruchstück=false;
+		} else if(!o6.isSelected("BruchstÃ¼ck von Anaris")) {
+			if(bruchstÃ¼ck==true){
+				bruchstÃ¼ck=false;
 				BuildaHQ.addToInformationVectorGlobal("ELBruch", -1);
 			}
 		}
@@ -326,8 +326,8 @@ public class ECCorsairPrince extends Eintrag {
 			BuildaHQ.addToInformationVectorGlobal("ELSeelenstein", -1);
 		}
 
-		if(phönixjuwel==true){
-			phönixjuwel=false;
+		if(phÃ¶nixjuwel==true){
+			phÃ¶nixjuwel=false;
 			BuildaHQ.addToInformationVectorGlobal("ELJuwel", -1);
 		}
 
@@ -341,13 +341,13 @@ public class ECCorsairPrince extends Eintrag {
 			BuildaHQ.addToInformationVectorGlobal("ELSchwinge", -1);
 		}
 
-		if(feuersäbel==true){
-			feuersäbel=false;
+		if(feuersÃ¤bel==true){
+			feuersÃ¤bel=false;
 			BuildaHQ.addToInformationVectorGlobal("ELFeuer", -1);
 		}
 
-		if(bruchstück==true){
-			bruchstück=false;
+		if(bruchstÃ¼ck==true){
+			bruchstÃ¼ck=false;
 			BuildaHQ.addToInformationVectorGlobal("ELBruch", -1);
 		}
 

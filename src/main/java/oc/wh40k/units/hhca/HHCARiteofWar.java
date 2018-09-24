@@ -9,7 +9,7 @@ public class HHCARiteofWar extends Eintrag {
 
 	public HHCARiteofWar() {
 		name = "Rite of War Orbital assault";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		this.setEintragsCNT(0);
 		
 		setInformationVectorValue("HHCARoW", 3);

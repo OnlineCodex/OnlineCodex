@@ -29,10 +29,10 @@ public class CSFahrzeugruestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Kombiflammenwerfer", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombimelter", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombiplasmawerfer", 10));
-	        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzliche Panzerung", 10));
+	        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzliche Panzerung", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 12));
-	        ogE.addElement(new OptionsGruppeEintrag("Zerstˆrer-Klingen", 15));
-	        ogE.addElement(new OptionsGruppeEintrag("D‰monenmaschine", 15));
+	        ogE.addElement(new OptionsGruppeEintrag("Zerst√∂rer-Klingen", 15));
+	        ogE.addElement(new OptionsGruppeEintrag("D√§monenmaschine", 15));
 	        add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,9));
 		} else {
 	        ogE.addElement(new OptionsGruppeEintrag("Kombibolter", 5));
@@ -41,7 +41,7 @@ public class CSFahrzeugruestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Kombiflammenwerfer", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombimelter", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombiplasmawerfer", 10));
-	        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzliche Panzerung", 10));
+	        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzliche Panzerung", 10));
 	        ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 12));
 	        add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,6));
 		}

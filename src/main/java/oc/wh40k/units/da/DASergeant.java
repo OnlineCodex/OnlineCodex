@@ -53,7 +53,7 @@ public class DASergeant extends RuestkammerVater {
 	    if(isScout){
 	    	ogE.addElement(new OptionsGruppeEintrag("Schrotflinte", "Space-Marine-Schrotflinte", 0));
 			ogE.addElement(new OptionsGruppeEintrag("Kampfmesser", "Kampfmesser", 0));
-			ogE.addElement(new OptionsGruppeEintrag("Scharfschützengewehr", "Scharfschützengewehr", 1));
+			ogE.addElement(new OptionsGruppeEintrag("ScharfschÃ¼tzengewehr", "ScharfschÃ¼tzengewehr", 1));
 	    }
 	    ogE.addElement(new OptionsGruppeEintrag("Kettenschwert", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Energieklaue", 15));

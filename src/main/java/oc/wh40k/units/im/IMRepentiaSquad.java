@@ -19,7 +19,7 @@ public class IMRepentiaSquad extends Eintrag {
 	public IMRepentiaSquad() {
 		name = "Repentia Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentias", 3, 9, getPts("Repentia Squad"));
 		add(squad);

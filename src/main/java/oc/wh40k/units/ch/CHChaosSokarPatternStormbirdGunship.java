@@ -17,7 +17,7 @@ public class CHChaosSokarPatternStormbirdGunship extends Eintrag {
 		name = "Chaos Sokar Pattern Stormbird Gunship";
 		grundkosten = getPts("Chaos Sokar Pattern Stormbird Gunship");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		ogE.addElement(new OptionsGruppeEintrag("4 Twin lascannon", getPts("Twin lascannon")*4));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

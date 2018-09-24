@@ -5,7 +5,7 @@ import oc.Eintrag;
 public class CMKharnderVerraeter extends Eintrag {
 
 	public CMKharnderVerraeter() {
-		name = "Kharn der Verräter";
+		name = "Kharn der VerrÃ¤ter";
 		grundkosten = 160;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KharntheBetrayer.gif"));

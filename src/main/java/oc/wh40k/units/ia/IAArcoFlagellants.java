@@ -13,7 +13,7 @@ public class IAArcoFlagellants extends Eintrag {
 	public IAArcoFlagellants() {
 		name = "Arco Flagellants\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Arco-flagellants", 3, 10, 10);
 		add(squad);

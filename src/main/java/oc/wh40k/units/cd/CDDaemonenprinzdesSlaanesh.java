@@ -21,23 +21,23 @@ public class CDDaemonenprinzdesSlaanesh extends Eintrag {
 	boolean nurgleBild;
 
 	public CDDaemonenprinzdesSlaanesh() {
-		name = "Dämonenprinz";
+		name = "DÃ¤monenprinz";
 		grundkosten = 145;
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDDaemonenprinzdesChaos.gif"));
 
-		add(mal = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dämon des Slaanesh", 10));
+		add(mal = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "DÃ¤mon des Slaanesh", 10));
 		
 		seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dämonischer Flug", 40));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Warpgeschmiedete Rüstung", "Warprüstung", 20));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "DÃ¤monischer Flug", 40));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Warpgeschmiedete RÃ¼stung", "WarprÃ¼stung", 20));
 
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnungen", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 5));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnungen", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnungen", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		ogE.addElement(new OptionsGruppeEintrag("Erhabene Belohnungen", 30));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -52,7 +52,7 @@ public class CDDaemonenprinzdesSlaanesh extends Eintrag {
 	
 		seperator();
 		
-		//HöllengeschmiedeteArtefakte
+		//HÃ¶llengeschmiedeteArtefakte
 		artefakte = new RuestkammerStarter(ID, randAbstand, cnt, "CDArtefakte", "");
 		artefakte.initKammer();
 		artefakte.setButtonText(BuildaHQ.translate("Artefakte"));
@@ -71,19 +71,19 @@ public class CDDaemonenprinzdesSlaanesh extends Eintrag {
         
 		int max = 50;
 		int geringeBelohnung = 10;
-		int mächtigeBelohnung = 20;
+		int mÃ¤chtigeBelohnung = 20;
 		int erhabeneBelohnung = 30;
 		
-		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*mächtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
+		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*mÃ¤chtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
 		if(freePoints < erhabeneBelohnung){
 			o3.setMaxAnzahl(o3.getAnzahl());
 		} else {
 			o3.setMaxAnzahl(freePoints/erhabeneBelohnung);
 		}
-		if(freePoints < mächtigeBelohnung){
+		if(freePoints < mÃ¤chtigeBelohnung){
 			o2.setMaxAnzahl(o2.getAnzahl());
 		} else {
-			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/mächtigeBelohnung);
+			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/mÃ¤chtigeBelohnung);
 		}
 		if(freePoints < geringeBelohnung){
 			o1.setMaxAnzahl(o1.getAnzahl());

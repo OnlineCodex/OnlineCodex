@@ -107,9 +107,9 @@ public class INGefolgedesInquisitorsKammer extends RuestkammerVater {
 		rkAquila.setButtonText("[IA Aeronautica] Aquila ");
 		add(rkAquila);
 		
-		rkValk = new RuestkammerStarter(ID, randAbstand, cnt, "INWalkuereKammer", "Walküre");
+		rkValk = new RuestkammerStarter(ID, randAbstand, cnt, "INWalkuereKammer", "WalkÃ¼re");
 		rkValk.initKammer();
-		rkValk.setButtonText("Walküre");
+		rkValk.setButtonText("WalkÃ¼re");
 		add(rkValk);
 
 		sizeSetzen();

@@ -85,9 +85,9 @@ public class AMCommanderKammer extends RuestkammerVater {
 		seperator();
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sprenggranaten", 2));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Plattenr¸stung", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Plattenr√ºstung", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnm‰ntel", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnm√§ntel", 10));
 
 		sizeSetzen();
 	}
@@ -132,7 +132,7 @@ public class AMCommanderKammer extends RuestkammerVater {
 		o8.setAktiv("Shroud of the Anti-Martyr (GS)", EcclesiarchyRelics);
 		o8.setAktiv("Desvalles's Holy Circle (GS)", EcclesiarchyRelics);
 		
-		//Einzigartige Gegenst‰nde
+		//Einzigartige Gegenst√§nde
 		if(o8.isSelected("Wrath of Cadia (Cadians)")){
 			if(WrathofCadia==false){
 				WrathofCadia=true;

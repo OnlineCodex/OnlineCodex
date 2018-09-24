@@ -9,23 +9,23 @@ public class VOLKCrimsonSlaughter extends BuildaVater {
 	public VOLKCrimsonSlaughter() {
 		reflectionKennung = "CS";
 
-		HQeintr‰ge = new String[] {"", "Chaosgeneral", "Hexer", "D‰monenprinz", "Warpschmied", "Dunkler Apostel", "", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", 
-									   "Huron Schwarzherz", "Kharn der Verr‰ter", "Lucius der Ewige", "Typhus", "BeLakor", 
+		HQeintr√§ge = new String[] {"", "Chaosgeneral", "Hexer", "D√§monenprinz", "Warpschmied", "Dunkler Apostel", "", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", 
+									   "Huron Schwarzherz", "Kharn der Verr√§ter", "Lucius der Ewige", "Typhus", "BeLakor", 
 								   "", "[IA Apo 2013] Zhufor", "[Forgeworld] Necrosius"};
 
-		Eliteeintr‰ge = new String[] {"", "Chaosterminatoren", "Hˆllenschl‰chter", "Mutilator",
+		Eliteeintr√§ge = new String[] {"", "Chaosterminatoren", "H√∂llenschl√§chter", "Mutilator",
 				"", "[IA Experimental] Land Raider Proteus",
 				"", "[IA Apo 2013] Chaos Contemptor Dreadnought", "[IA Apo 2013] Giant Chaos Spawn","[IA Apo 2013] Chaos Decimator Daemon Engine", ""};
-		Standardeintr‰ge = new String[] {"", "Besessene", "Chaos Space Marines", "Chaoskultisten"};
-		Sturmeintr‰ge = new String[] {"", "Chaosbiker", "Raptoren", "Warpkrallen", "Chaosbrut", "[DftS] Hˆllendrache",
+		Standardeintr√§ge = new String[] {"", "Besessene", "Chaos Space Marines", "Chaoskultisten"};
+		Sturmeintr√§ge = new String[] {"", "Chaosbiker", "Raptoren", "Warpkrallen", "Chaosbrut", "[DftS] H√∂llendrache",
 				  "","[IA Apo 2013] Chaos Storm Eagle","[IA Aeronautica] Dreadclaw", "[IA Aeronautica] Hell Blade","[IA Aeronautica] Hell Talon"};
 
-		Unterst¸tzungeintr‰ge = new String[] {"", "Havocs", "Kyborg", "Geissel", "Schmiedemonstrum", "Klauenmonstrum", "Land Raider des Chaos", "Vindicator des Chaos", 
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Havocs", "Kyborg", "Geissel", "Schmiedemonstrum", "Klauenmonstrum", "Land Raider des Chaos", "Vindicator des Chaos", 
 												  "Predator des Chaos", 
 											  "", "[IA Apo 2013] Chaos Spartan Assault Tank", "[IA Apo 2013] Chaos Relic Predator", "[IA Apo 2013] Spined Chaos Beast"
 											  };
 		LordofWar = new String[] {
-	            "", "Sch‰delherrscher des Khorne", 
+	            "", "Sch√§delherrscher des Khorne", 
 	            "", "[IA Apo 2013] Chaos Warhound Titan", "[IA Apo 2013] Chaos Reaver Battle Titan", "[IA Apo 2013] Greater Brass Scorpion of Khorne", 
 	            	"[IA Apo 2013] Thunderhawk Gunship",
 	            "", "[IA Experimental] Chaos Knight Paladin", "[IA Experimental] Chaos Knight Errant", "[IA Experimental] Kytan Daemon Engine of Khorne",
@@ -118,15 +118,15 @@ public class VOLKCrimsonSlaughter extends BuildaVater {
 			1 unit of Daemonettes of Slaanesh
 		*/
         
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -195,7 +195,7 @@ public class VOLKCrimsonSlaughter extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

@@ -20,7 +20,7 @@ public class CSSeuchenmarines extends Eintrag {
 	public CSSeuchenmarines() {
 		//name = "Seuchenmarines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Seuchenmarines", 5, 20, 24);
 		add(squad);

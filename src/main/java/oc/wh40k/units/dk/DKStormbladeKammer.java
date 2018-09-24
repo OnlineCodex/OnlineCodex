@@ -23,7 +23,7 @@ public class DKStormbladeKammer extends RuestkammerVater {
 
 
                 add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 10));
+		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 10));
 //                add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "improved comms", 0));
 //                add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "minesweeper", 0));
 //                add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "searchlight", 0));
@@ -32,7 +32,7 @@ public class DKStormbladeKammer extends RuestkammerVater {
                 seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("zwei Seitenkuppeln", 0));
-		ogE.addElement(new OptionsGruppeEintrag("zus‰tzliche Panzerplatten", 0));
+		ogE.addElement(new OptionsGruppeEintrag("zus√§tzliche Panzerplatten", 0));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
                 
 		sizeSetzen();

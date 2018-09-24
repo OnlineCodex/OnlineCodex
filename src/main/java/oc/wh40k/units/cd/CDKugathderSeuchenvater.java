@@ -12,9 +12,9 @@ public class CDKugathderSeuchenvater extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDKugathderSeuchenvater.gif"));
 
-		addToInformationVector("CDDämonenprinz", 1);
-		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Dämonenprinz des Nurgle");
-		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Dämonenprinz des Nurgle");
+		addToInformationVector("CDDÃ¤monenprinz", 1);
+		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("DÃ¤monenprinz des Nurgle");
+		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("DÃ¤monenprinz des Nurgle");
 		
 		seperator();
 		complete();
@@ -28,10 +28,10 @@ public class CDKugathderSeuchenvater extends Eintrag {
 	
 	@Override
 	public void deleteYourself() {
-		addToInformationVector("CDDämonenprinz", -1);
-		if(getCountFromInformationVector("CDDämonenprinz")<1){
-			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Dämonenprinz des Nurgle");
-			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Dämonenprinz des Nurgle");
+		addToInformationVector("CDDÃ¤monenprinz", -1);
+		if(getCountFromInformationVector("CDDÃ¤monenprinz")<1){
+			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("DÃ¤monenprinz des Nurgle");
+			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("DÃ¤monenprinz des Nurgle");
 		}
 		super.deleteYourself();
 	}

@@ -68,7 +68,7 @@ public class DADeathwingCommandSquad extends Eintrag {
 
 		seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Düsteres Relikt der alten Legion", "Düsteres Relikt", 15));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "DÃ¼steres Relikt der alten Legion", "DÃ¼steres Relikt", 15));
 		
 		seperator();
 

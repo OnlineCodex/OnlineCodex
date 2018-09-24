@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class DWLibrarian extends Eintrag {
 
-	boolean addedSpezialAuswahl = false; // spezialauswahl ist abh‰ngig von "Space Marine bike"
+	boolean addedSpezialAuswahl = false; // spezialauswahl ist abh√§ngig von "Space Marine bike"
 	OptionsEinzelUpgrade meister, sturm, termi;
 	RuestkammerStarter waffenUndReliquien;
 	RuestkammerStarter termiWaffen;

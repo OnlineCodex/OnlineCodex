@@ -42,10 +42,10 @@ public class AMMilitarumTempestusCommandSquad extends RuestkammerVater {
 
 		seperator();
 		
-		add(oe2 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Sanit‰tsausr¸stung", "Scion mit Sanit‰tsausr¸stung", 1, 15));
+		add(oe2 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Sanit√§tsausr√ºstung", "Scion mit Sanit√§tsausr√ºstung", 1, 15));
 		add(oe3 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Zugstandarte", "Scion mit Zugstandarte", 1, 10));
-		add(oe4 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Funk + HE Gewehr", "Scion mit Funkger‰t und HE Lasergewehr", 1, 5));
-		add(oe5 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Funk + HE Pistole", "Scion mit Funkger‰t und HE Laserpistole", 1, 5));
+		add(oe4 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Funk + HE Gewehr", "Scion mit Funkger√§t und HE Lasergewehr", 1, 5));
+		add(oe5 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Funk + HE Pistole", "Scion mit Funkger√§t und HE Laserpistole", 1, 5));
 		
 		seperator();
 		
@@ -80,11 +80,11 @@ public class AMMilitarumTempestusCommandSquad extends RuestkammerVater {
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chim‰re");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chim√§re");
 		rkTransport.initKammer(true);
 		add(rkTransport);
 		
-		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chim‰re");
+		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chim√§re");
 		rkTransport2.initKammer(true);
 		add(rkTransport2);
 

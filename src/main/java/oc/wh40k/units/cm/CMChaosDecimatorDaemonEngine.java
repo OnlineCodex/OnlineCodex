@@ -59,6 +59,6 @@ public class CMChaosDecimatorDaemonEngine extends Eintrag {
 		
 		beam.setMaxAnzahl(wpns.getAnzahl()<2?1:0);
 		
-		//TODO Abgleich: Marks können nur verwendet werden, wenn es ein UC mit dem Mark oder einen andern Dämon der Gottheit gibt.
+		//TODO Abgleich: Marks kÃ¶nnen nur verwendet werden, wenn es ein UC mit dem Mark oder einen andern DÃ¤mon der Gottheit gibt.
 	}
 }

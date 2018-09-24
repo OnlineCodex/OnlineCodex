@@ -19,7 +19,7 @@ public class DKABCombatEngineerSquad extends Eintrag {
 	public DKABCombatEngineerSquad() {
 		name = "Death Corps Combat Engineer Squad";
 		grundkosten = 10;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         System.out.println(getKategorie());
         

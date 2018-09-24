@@ -16,13 +16,13 @@ public class FODeflektorRelaisnetzwerk extends Eintrag {
 	/*
 	1-3 Promethium-Relaisleitungen
 	1-3 Deflektorschildgeneratoren
-	0-1 Ehrwürdiges Imperium
+	0-1 EhrwÃ¼rdiges Imperium
 	 */
 	
 	public FODeflektorRelaisnetzwerk() {
 		name = "Deflektor-Relaisnetzwerk";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 
@@ -58,7 +58,7 @@ public class FODeflektorRelaisnetzwerk extends Eintrag {
 		schild3.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(schild3);
 		
-		erimp = new RuestkammerStarter(ID, randAbstand, cnt, "FOEhrwuerdigesImperium1Kammer", "Ehrwürdiges Imperium 1");
+		erimp = new RuestkammerStarter(ID, randAbstand, cnt, "FOEhrwuerdigesImperium1Kammer", "EhrwÃ¼rdiges Imperium 1");
 		erimp.initKammer();
 		erimp.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(erimp);

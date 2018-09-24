@@ -46,11 +46,11 @@ public class INInquisitordesOrdoHereticus extends Eintrag {
 
             seperator();
 
-            add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-Schädel", 3, 3));
+            add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-SchÃ¤del", 3, 3));
 
             seperator();
 
-            ogE.addElement(new OptionsGruppeEintrag("Servorüstung", 8));
+            ogE.addElement(new OptionsGruppeEintrag("ServorÃ¼stung", 8));
             ogE.addElement(new OptionsGruppeEintrag("Psiokular", 25));
             add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 100));
 

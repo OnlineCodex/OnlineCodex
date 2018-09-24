@@ -18,7 +18,7 @@ public class ECCorsairCloudDancerBand extends Eintrag {
     public ECCorsairCloudDancerBand() {
         name = "Corsair Cloud Dancer Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Cloud Dancer Corsairs", 3, 10, 20);
         add(squad);

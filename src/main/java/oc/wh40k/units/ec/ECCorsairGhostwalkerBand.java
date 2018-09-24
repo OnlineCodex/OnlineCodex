@@ -18,7 +18,7 @@ public class ECCorsairGhostwalkerBand extends Eintrag {
     public ECCorsairGhostwalkerBand() {
         name = "Corsair Ghostwalker Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Corsair Ghostwalkers", 5, 10, 12);
         add(squad);

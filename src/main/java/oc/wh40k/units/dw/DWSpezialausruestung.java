@@ -34,7 +34,7 @@ public class DWSpezialausruestung extends RuestkammerVater {
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "",BuildaHQ.translate("Teleportpeilsender "), 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "",BuildaHQ.translate("Digitalwaffen "), 10));
 		
-		setUeberschrift("Spezielle Ausrüstung");
+		setUeberschrift("Spezielle AusrÃ¼stung");
 		sizeSetzen();
 	}
 

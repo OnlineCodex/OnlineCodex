@@ -16,13 +16,13 @@ public class FODeflektorSchildgenerator extends Eintrag {
 	public FODeflektorSchildgenerator() {
 		name = "Deflektorschildgenerator";
 		grundkosten = 50;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 		
 		seperator();
 		
-		add(oez = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Zus. proj. Deflektorschilde","Zusätzliche projizierte Deflektorschilde",2,25));
+		add(oez = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Zus. proj. Deflektorschilde","ZusÃ¤tzliche projizierte Deflektorschilde",2,25));
 		
 		seperator();
 		

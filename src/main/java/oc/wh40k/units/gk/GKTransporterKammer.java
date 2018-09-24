@@ -1,4 +1,4 @@
-/* Regeln f¸r Deimos-Lux Pattern Psycannon unter:
+/* Regeln f√ºr Deimos-Lux Pattern Psycannon unter:
  * http://www.forgeworld.co.uk/Downloads/Product/PDF/g/greyknightsupd.pdf
  * nicht mehr existent!
  */
@@ -56,14 +56,14 @@ public class GKTransporterKammer extends RuestkammerVater {
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5),
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5),
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10),
-            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10)
+            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10)
 		};
 
 		OptionsVater[] razor = new OptionsVater[]{
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5),
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5),
             new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10),
-            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10)
+            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10)
 		};
 		
 		add(switcher = new OptionsPanelSwitcher(randAbstand, cnt, rhino, razor));
@@ -81,7 +81,7 @@ public class GKTransporterKammer extends RuestkammerVater {
 			switcher.forceSwitchPanel(0);
         } else if (typ.isSelected("Razorback")) {
 			switcher.forceSwitchPanel(1);
-		} else if (typ.isSelected("Inquisitions-Chim‰re")) {
+		} else if (typ.isSelected("Inquisitions-Chim√§re")) {
 			switcher.forceSwitchPanel(2);
 		}
 

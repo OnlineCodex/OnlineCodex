@@ -21,7 +21,7 @@ public class GKJusticar extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();

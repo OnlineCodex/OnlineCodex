@@ -14,7 +14,7 @@ public class CSDreadClawTalonChaosCybotKammer extends RuestkammerVater {
 	public CSDreadClawTalonChaosCybotKammer() {}
 	
 	public void initButtons(boolean... defaults) {
-		name = "Hˆllenschl‰chter";
+		name = "H√∂llenschl√§chter";
 		grundkosten = 100;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ChaosDreadnought.gif"));
@@ -29,13 +29,13 @@ public class CSDreadClawTalonChaosCybotKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Energiehammer", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Energiegeiﬂel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Energiegei√üel", 10));
 		add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Energiehammer", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Energiegeiﬂel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Energiegei√üel", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
 		add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));	
 		seperator();

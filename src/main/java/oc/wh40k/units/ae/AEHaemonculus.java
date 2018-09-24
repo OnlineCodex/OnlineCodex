@@ -40,7 +40,7 @@ public class AEHaemonculus extends Eintrag {
 		
 		seperator();
 		
-		//Punkte für Crucible of malediction fehlen im Index und im FAQ
+		//Punkte fÃ¼r Crucible of malediction fehlen im Index und im FAQ
 		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Crucible of malediction", getPts("Crucible of malediction")));
 		
 		complete();

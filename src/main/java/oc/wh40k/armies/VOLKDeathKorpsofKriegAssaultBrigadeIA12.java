@@ -16,11 +16,11 @@ public class VOLKDeathKorpsofKriegAssaultBrigadeIA12 extends BuildaVater {
 	public VOLKDeathKorpsofKriegAssaultBrigadeIA12() {
 		reflectionKennung = "DKAB";
 
-		HQeintr‰ge = new String[] {"", "Company Command Squad", "Quartermaster Cadre"};//,"Marshal Karis Venner" nun im CCS
-		Eliteeintr‰ge = new String[] {"", "Combat Engineer Squad", "Griffon Strike Battery", "Leman Russ Forward Command Tank", "Hydra Flak Tank Battery", "Rapier Laser Destroyer Battery"};
-		Standardeintr‰ge = new String[] {"", "Infantry Platoon", "Grenadier Storm Squad"};
-		Sturmeintr‰ge = new String[] {"", "Hellhound Flame Tank Squadron","Death Rider Platoon", "Salamander Reconnaissance Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"","Heavy Weapons Platoon", "Thunderer Siege Squadron", "Leman Russ Tank Squadron","Ordnance Battery","Field Artillery Battery","Thunderbolt","Lightning","Avenger"};
+		HQeintr√§ge = new String[] {"", "Company Command Squad", "Quartermaster Cadre"};//,"Marshal Karis Venner" nun im CCS
+		Eliteeintr√§ge = new String[] {"", "Combat Engineer Squad", "Griffon Strike Battery", "Leman Russ Forward Command Tank", "Hydra Flak Tank Battery", "Rapier Laser Destroyer Battery"};
+		Standardeintr√§ge = new String[] {"", "Infantry Platoon", "Grenadier Storm Squad"};
+		Sturmeintr√§ge = new String[] {"", "Hellhound Flame Tank Squadron","Death Rider Platoon", "Salamander Reconnaissance Squadron"};
+		Unterst√ºtzungeintr√§ge = new String[] {"","Heavy Weapons Platoon", "Thunderer Siege Squadron", "Leman Russ Tank Squadron","Ordnance Battery","Field Artillery Battery","Thunderbolt","Lightning","Avenger"};
 		LordofWar = new String[] {
 				"", "[FW Download] Arkurian Pattern Stormblade",
 				"", "[WZ Mont'ka] Baneblade", "[WZ Mont'ka] Banehammer", "[WZ Mont'ka] Banesword", "[WZ Mont'ka] Doomhammer", "[WZ Mont'ka] Hellhammer", 
@@ -37,15 +37,15 @@ public class VOLKDeathKorpsofKriegAssaultBrigadeIA12 extends BuildaVater {
 				"", "[Alt] Imperator-Kampftitan", "[Alt] Warlord-Kampftitan"
 		};
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -108,7 +108,7 @@ public class VOLKDeathKorpsofKriegAssaultBrigadeIA12 extends BuildaVater {
 	}
 
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

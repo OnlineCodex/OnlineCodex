@@ -52,10 +52,10 @@ public class CSTransporter extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Kombiflammenwerfer", 10));
         ogE.addElement(new OptionsGruppeEintrag("Kombimelter", 10));
         ogE.addElement(new OptionsGruppeEintrag("Kombiplasmawerfer", 10));
-        ogE.addElement(new OptionsGruppeEintrag("Zusätzliche Panzerung", 10));
+        ogE.addElement(new OptionsGruppeEintrag("ZusÃ¤tzliche Panzerung", 10));
         ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 12));
-        ogE.addElement(new OptionsGruppeEintrag("Zerstörer-Klingen", 15));
-        ogE.addElement(new OptionsGruppeEintrag("Dämonenmaschine", 15));
+        ogE.addElement(new OptionsGruppeEintrag("ZerstÃ¶rer-Klingen", 15));
+        ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenmaschine", 15));
 		add(fahrzeugausruestung = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
 		
 		sizeSetzen();

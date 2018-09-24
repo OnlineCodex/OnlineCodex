@@ -12,9 +12,9 @@ public class FOEhrwuerdigesImperium1 extends Eintrag {
 	OptionsUpgradeGruppe o2;
 
 	public FOEhrwuerdigesImperium1() {
-		name = "Ehrwürdiges Imperium1";
+		name = "EhrwÃ¼rdiges Imperium1";
 		grundkosten = 40;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 		

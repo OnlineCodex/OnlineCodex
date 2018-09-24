@@ -26,8 +26,8 @@ public class APOArkurianPatternStormblade extends Eintrag {
 
 
         add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 5));
-		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Sturmbolter", 5));
+		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 5));
+		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Sturmbolter", 5));
 
 		seperator();
 

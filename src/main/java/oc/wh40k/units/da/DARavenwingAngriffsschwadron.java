@@ -23,7 +23,7 @@ public class DARavenwingAngriffsschwadron extends Eintrag {
 	public DARavenwingAngriffsschwadron() {
 		name = "Ravenwing-Angriffsschwadron";
 		grundkosten = -1;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		neuzeile=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DARavenwingAttackSquadron.gif"));

@@ -12,7 +12,7 @@ public class ABColossusBombardBattery extends Eintrag {
 	public ABColossusBombardBattery() {
 		name = "Colossus Bombard Battery";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABOrdnanceBattery.jpg"));
 

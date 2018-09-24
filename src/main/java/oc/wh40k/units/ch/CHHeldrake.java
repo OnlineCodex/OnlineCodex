@@ -16,7 +16,7 @@ public class CHHeldrake extends Eintrag {
 		name = "Heldrake";
 		grundkosten = getPts("Heldrake");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		seperator();
 

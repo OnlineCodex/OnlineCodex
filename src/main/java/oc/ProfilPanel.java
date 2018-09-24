@@ -2,10 +2,10 @@ package oc;
 
 public class ProfilPanel /*extends OptionsVater*/{
     private final String[] NAMEN_LANG = {
-        "[B] Bewegung", "[KG] Kampfgeschick", "[BF] Ballistische F‰higkeit", "[S] St‰rke", "[W] Widerstand", "[LP] Lebenspunkte", "[I] Initiative", "[A] Attacken", "[MW] Moralwert"
+        "[B] Bewegung", "[KG] Kampfgeschick", "[BF] Ballistische F√§higkeit", "[S] St√§rke", "[W] Widerstand", "[LP] Lebenspunkte", "[I] Initiative", "[A] Attacken", "[MW] Moralwert"
     };
     private final String[] NAMEN = {
-        "Bewegung", "Kampfgeschick", "Ballistische F‰higkeit", "St‰rke", "Widerstand", "Lebenspunkte", "Initiative", "Attacken", "Moralwert"
+        "Bewegung", "Kampfgeschick", "Ballistische F√§higkeit", "St√§rke", "Widerstand", "Lebenspunkte", "Initiative", "Attacken", "Moralwert"
     };
     private final String[] NAMEN_KURZ = {
         "B", "KG", "BF", "S", "W", "LP", "I", "A", "MW"

@@ -14,7 +14,7 @@ public class ORGoMorkanaut extends Eintrag {
 
 		kategorie = 5;
 		//name = "GoMorkanaut";
-		überschriftSetzen=false;
+		Ã¼berschriftSetzen=false;
 		grundkosten = 0; 
 		
 		add(ico = new oc.Picture("oc/wh40k/images/Gorkanaut.gif"));
@@ -28,8 +28,8 @@ public class ORGoMorkanaut extends Eintrag {
 		seperator();
 		
 		add(kff = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schpezialkraftfeld", 50));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grothälfaz", 20));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "GrothÃ¤lfaz", 20));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ZusÃ¤tzliche Panzerung", 10));
 
 		complete();
 

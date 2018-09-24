@@ -8,21 +8,21 @@ public class VOLKLegionesAstartesCrusadeArmy extends BuildaVater {
 	public VOLKLegionesAstartesCrusadeArmy() {
 		reflectionKennung = "HHCA";
 
-		HQeintr‰ge = new String[] {"", "Legion Praetor", "Legion Centurion", "Chaplain", "Forge Lord", "Legion Champion", "Librarian", 
+		HQeintr√§ge = new String[] {"", "Legion Praetor", "Legion Centurion", "Chaplain", "Forge Lord", "Legion Champion", "Librarian", 
 									   "Master of Signal", "Moritat", "Primus medicae", "Siege Breaker", "Vigilator", 
 								   "", "Legion Command Squad",}; //(Deathguard) "Deathshroud Terminator Squad" , "Section Leader Crysos Morturg", "Marshall Durak Rask", ""
-		Eliteeintr‰ge = new String[] {"", "Legion Veteran Tactical Squad", "Legion Destroyer Squad", "Legion Terminator Squad", 
+		Eliteeintr√§ge = new String[] {"", "Legion Veteran Tactical Squad", "Legion Destroyer Squad", "Legion Terminator Squad", 
 										  "Techmarine Covenant", "Apothecarion Detachment", "Legion Dreadnought Talon",
 										  "Contemptor Dreadnought Talon", "Legion Rapier Weapons Battery", "Legion Mortis Dreadnought", 
 										  "Contemptor-Mortis Dreadnought"};
-		Standardeintr‰ge = new String[] {"", "Legion Tactical Squad", "Legion Assault Squad", "Legion Breacher Siege Squad", 
+		Standardeintr√§ge = new String[] {"", "Legion Tactical Squad", "Legion Assault Squad", "Legion Breacher Siege Squad", 
 											 "Legion Tactical Support Squad", "Legion Reconnaissance Squad"};
-		Sturmeintr‰ge = new String[] {"", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", 
+		Sturmeintr√§ge = new String[] {"", "Legion Seeker Squad", "Legion Outrider Squad", "Legion Attack Bike Squadron", 
 										  "Legion Jetbike Sky Hunter Squadron", "Primaris-Lightning Strike Fighter",
 										  "Tarantula Sentry Gun Battery", "[NEW] Anvillus Pattern Dreadclav Drop Pod",
 										  "Legion Land Speeder Squadron", "Legion Storm Eagle Assault Gunship",
 										  "Legion Javelin Attack Speeder Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Deathstorm Drop Pod", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron",
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Deathstorm Drop Pod", "Legion Heavy Support Squad", "Legion Predator Strike Armour Squadron",
 												  "Legion Land Raider Battle Squadron", "[NEW] Legion Fire Raptor Gunship", 
 												  "[NEW] Achilles-Alpha Pattern Land Raider", "Legion Artillery Tank Squadron",
 												  "Legion Vindicator", "Legion Spartan Assault Tank", "Legion Caestus Assault Ram",
@@ -37,15 +37,15 @@ public class VOLKLegionesAstartesCrusadeArmy extends BuildaVater {
 		
 		Befestigungen = uniteUnitList(new String[]{"", "Imperial Castellum Stronghold", ""},Befestigungen);
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -100,21 +100,21 @@ public class VOLKLegionesAstartesCrusadeArmy extends BuildaVater {
 				getKontingentTyp().equals("Optional Castellan FOC") ||
 				getKontingentTyp().equals("Alliiertes Kontingent"))
 		{
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar);
 		}
 		else if(getKontingentTyp().equals("Optional Onslaught FOC"))
 		{
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar);
 		}
@@ -133,6 +133,6 @@ public class VOLKLegionesAstartesCrusadeArmy extends BuildaVater {
 	
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

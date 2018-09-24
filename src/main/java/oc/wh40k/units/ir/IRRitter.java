@@ -11,7 +11,7 @@ public class IRRitter extends Eintrag {
 	public IRRitter() {
 		name = "Ritter";
 		grundkosten = 0;
-		überschriftSetzen=false;
+		Ã¼berschriftSetzen=false;
 		
 		ogE.addElement(new OptionsGruppeEintrag("Fahrender Ritter", 370));
 		ogE.addElement(new OptionsGruppeEintrag("Paladinritter", 375));

@@ -12,10 +12,10 @@ public class CDSpinedChaosBeast extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/SpinedChaosBeast.gif"));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Khorne", 0));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Nurgle", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Tzeentch", 5));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Slaanesh", 15));
 		add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		complete();

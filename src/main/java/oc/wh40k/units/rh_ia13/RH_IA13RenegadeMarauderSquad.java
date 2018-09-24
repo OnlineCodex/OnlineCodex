@@ -28,7 +28,7 @@ public class RH_IA13RenegadeMarauderSquad extends Eintrag {
 	public RH_IA13RenegadeMarauderSquad() {
 		name = "Renegade Marauder Squad\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		add(ico = new oc.Picture("oc/wh40k/images/RHCompanyCommandSquad.jpg"));
 		
 		seperator();

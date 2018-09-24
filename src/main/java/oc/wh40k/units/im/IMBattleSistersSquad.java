@@ -19,7 +19,7 @@ public class IMBattleSistersSquad extends Eintrag {
 	public IMBattleSistersSquad() {
 		name = "Battle Sisters Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Battle Sisters", 5, 15, getPts("Battle Sisters Squad"));
 		add(squad);

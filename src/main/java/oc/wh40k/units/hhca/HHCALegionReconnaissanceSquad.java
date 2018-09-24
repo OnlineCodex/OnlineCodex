@@ -22,7 +22,7 @@ public class HHCALegionReconnaissanceSquad extends Eintrag {
 	public HHCALegionReconnaissanceSquad() {
 		name = "Legion Reconnaissance Squad\n";
 		grundkosten = 50;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, 15);
 		add(squad);

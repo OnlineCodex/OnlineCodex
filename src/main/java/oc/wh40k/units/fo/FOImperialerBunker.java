@@ -14,7 +14,7 @@ public class FOImperialerBunker extends Eintrag {
 	public FOImperialerBunker() {
 		name = "Imperialer Bunker";
 		grundkosten = 55;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

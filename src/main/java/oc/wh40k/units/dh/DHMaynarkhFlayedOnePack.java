@@ -11,7 +11,7 @@ public class DHMaynarkhFlayedOnePack extends Eintrag {
 	public DHMaynarkhFlayedOnePack() {
 		grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Albtr‰ume", 10, 20, 13);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "Albtr√§ume", 10, 20, 13);
 		add(squad);
 
 		add(ico = new oc.Picture("oc/wh40k/images/NEAlbtraumMeute.jpg"));

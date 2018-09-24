@@ -49,7 +49,7 @@ public class GKDreadnought extends Eintrag {
 
 		seperator(8);
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 
 		seperator();
 		

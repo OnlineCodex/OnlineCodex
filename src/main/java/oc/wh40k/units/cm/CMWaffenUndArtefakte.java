@@ -19,7 +19,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
     OptionsEinzelUpgrade daemonheart;
     OptionsEinzelUpgrade prophet;
     OptionsEinzelUpgrade schriftrollen;
-    OptionsEinzelUpgrade dimensionsschlüssel;
+    OptionsEinzelUpgrade dimensionsschlÃ¼ssel;
     OptionsEinzelUpgrade handwaffe = null;
     OptionsEinzelUpgrade boltpistole = null;
     OptionsEinzelUpgrade bolter = null;
@@ -133,7 +133,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 		
 		seperator();
 		
-		add(dimensionsschlüssel = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", BuildaHQ.translate("Dimensionsschlüssel"), 25));
+		add(dimensionsschlÃ¼ssel = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", BuildaHQ.translate("DimensionsschlÃ¼ssel"), 25));
 		add(schriftrollen = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", BuildaHQ.translate("Schriftrollen des Magnus"), 45));seperator();
 
 		cnt=randAbstand;
@@ -306,7 +306,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 				o1.setAktiv("Axt der blinden Wut", malDesKhorne && artefakte>0);
 				o1.setAktiv("Das Mordschwert", artefakte>0);
 				o1.setAktiv("Der schwarze Streitkolben", artefakte>0);
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(true);
@@ -327,7 +327,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 				o1.setAktiv("Axt der blinden Wut", malDesKhorne && artefakte>0);
 				o1.setAktiv("Das Mordschwert", artefakte>0);
 				o1.setAktiv("Der schwarze Streitkolben", artefakte>0);
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(false);
@@ -347,7 +347,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 				o1.setAktiv("Axt der blinden Wut", malDesKhorne && artefakte>0);
 				o1.setAktiv("Das Mordschwert", artefakte>0);
 				o1.setAktiv("Der schwarze Streitkolben", artefakte>0);
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(false);
@@ -366,7 +366,7 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 			}
 		}
 		
-	    //Einzigartige Gegenstände
+	    //Einzigartige GegenstÃ¤nde
 		if(o1.isSelected("Brandfackel von Skalathrax")){
 			if(fackelBool==false){
 				fackelBool=true;
@@ -415,12 +415,12 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 			}
 		}
 		
-		if(dimensionsschlüssel.isSelected()){
+		if(dimensionsschlÃ¼ssel.isSelected()){
 			if(schluesselBool==false){
 				schluesselBool=true;
 				BuildaHQ.addToInformationVectorGlobal("CMSchluessel", 1);
 			}
-		} else if(!dimensionsschlüssel.isSelected()) {
+		} else if(!dimensionsschlÃ¼ssel.isSelected()) {
 			if(schluesselBool==true){
 				schluesselBool=false;
 				BuildaHQ.addToInformationVectorGlobal("CMSchluessel", -1);
@@ -634,8 +634,8 @@ public class CMWaffenUndArtefakte extends RuestkammerVater {
 			}
 		
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

@@ -12,7 +12,7 @@ public class HHCAApothecarionDetachment extends Eintrag {
 	public HHCAApothecarionDetachment() {
 		name = "Apothecarion Detachment";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
 		seperator();
 

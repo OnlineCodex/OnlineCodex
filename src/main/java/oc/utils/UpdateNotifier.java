@@ -60,7 +60,7 @@ public class UpdateNotifier {
                 // create some simple html as a string
                 String htmlString = String.format("<html>\n"
                     + "<body>\n"
-                    + "<h1>Eine neue Version ist verfügbar!</h1>\n"
+                    + "<h1>Eine neue Version ist verfÃ¼gbar!</h1>\n"
                     + "%s\n"
                     + "</body>\n",
                     sb.toString()

@@ -10,7 +10,7 @@ public class EDCyclopsDemolitionSquad extends Eintrag {
 	public EDCyclopsDemolitionSquad() {
 		name = "Cyclops Demolition Squad";
 		grundkosten = 160;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGVendettaGunshipSquadron.jpg"));
 

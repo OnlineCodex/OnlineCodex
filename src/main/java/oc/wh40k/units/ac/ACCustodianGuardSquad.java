@@ -17,7 +17,7 @@ public class ACCustodianGuardSquad extends Eintrag {
 	public ACCustodianGuardSquad() {
 		name = "Custodian Guard\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Custodian Guard", 5, 10, getPts("Custodian Guard"));
 		add(squad);

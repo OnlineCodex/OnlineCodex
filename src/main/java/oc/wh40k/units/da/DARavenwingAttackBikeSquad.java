@@ -14,7 +14,7 @@ public class DARavenwingAttackBikeSquad extends Eintrag {
 	public DARavenwingAttackBikeSquad() {
 		name = "Ravenwing Attack Bike Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Attack Bike", "Attack Bikes", 1, 5, 45);
 		add(squad);

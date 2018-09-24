@@ -19,7 +19,7 @@ public class DKABFieldArtilleryBattery extends Eintrag {
 	public DKABFieldArtilleryBattery() {
 		name = "Heavy Quad Launcher Battery";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 

@@ -14,7 +14,7 @@ public class ABOrdnanceBattery extends Eintrag {
 	public ABOrdnanceBattery() {
 		name = "Ordnance Battery";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABOrdnanceBattery.jpg"));
 

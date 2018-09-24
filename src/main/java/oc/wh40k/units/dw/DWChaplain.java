@@ -28,7 +28,7 @@ public class DWChaplain extends Eintrag {
 
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DWSpezialausruestung", "");
 		spezialAusruestung.initKammer(false, true, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		spezialAusruestung.setAbwaehlbar(false);
 

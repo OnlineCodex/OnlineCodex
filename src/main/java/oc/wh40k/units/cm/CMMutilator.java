@@ -27,7 +27,7 @@ public class CMMutilator extends Eintrag {
 	public CMMutilator() {
 		//name = "Mulilator\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Mutilator","Mutilatoren", 1, 3, 55);
 		add(squad);

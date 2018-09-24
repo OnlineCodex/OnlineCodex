@@ -8,10 +8,10 @@ public class ASLaeuterer extends Eintrag {
 	AnzahlPanel squad;
 
 	public ASLaeuterer() {
-		name = "Läuterer";
+		name = "LÃ¤uterer";
 		grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Läuterer", 1, 3, 80);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "LÃ¤uterer", 1, 3, 80);
 		add(squad);
 
 		add(ico = new oc.Picture("oc/wh40k/images/ASLaeuterer.jpg"));

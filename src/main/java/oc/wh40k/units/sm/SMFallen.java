@@ -32,7 +32,7 @@ public class SMFallen extends Eintrag {
 	public SMFallen() {
 		//name = "Auserkorene Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Fallen", 5, 10, 20);
 		add(squad);

@@ -10,7 +10,7 @@ import oc.OptionsZaehlerGruppe;
 public class CDPinkHorrors extends Eintrag {
 
 	AnzahlPanel CDRosaHorrorsdesTzeentch;
-	OptionsEinzelUpgrade GleißenderHorror, Chaosikone, Standarte;
+	OptionsEinzelUpgrade GleiÃŸenderHorror, Chaosikone, Standarte;
 	OptionsZaehlerGruppe o1,o2;
 
 	boolean WechselbalgSelected = false;
@@ -33,11 +33,11 @@ public class CDPinkHorrors extends Eintrag {
 		
 		seperator();
 
-		add(GleißenderHorror = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gleißender Horror", 5));
+		add(GleiÃŸenderHorror = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "GleiÃŸender Horror", 5));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		seperator();
@@ -48,7 +48,7 @@ public class CDPinkHorrors extends Eintrag {
 
 	}
 
-	public void deleteYourself() {  // WICHTIG: wird nicht beim Volkwechseln ausgeführt. Dafür wird BuildaHQ.leereChooserGruppenArray(); aufgerufen, was das ersetzt
+	public void deleteYourself() {  // WICHTIG: wird nicht beim Volkwechseln ausgefÃ¼hrt. DafÃ¼r wird BuildaHQ.leereChooserGruppenArray(); aufgerufen, was das ersetzt
 
         BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("[Forgeworld] Aetaos'rau'keres - Slayer of Souls");
 
@@ -59,8 +59,8 @@ public class CDPinkHorrors extends Eintrag {
 	@Override
 	public void refreshen() {
 		Standarte.setAktiv(Chaosikone.isSelected());
-		o1.setAktiv(GleißenderHorror.isSelected());
-		o2.setAktiv(GleißenderHorror.isSelected());
+		o1.setAktiv(GleiÃŸenderHorror.isSelected());
+		o2.setAktiv(GleiÃŸenderHorror.isSelected());
 		
 		if(o1.getAnzahl() > 0) {
 			o2.setMaxAnzahl(0);

@@ -18,7 +18,7 @@ public class TAStrikeTeam extends Eintrag {
 
 	public TAStrikeTeam() {
 		name = "Strike Team\n";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Fire warrior", 5, 12, getPts("Strike Team") + getPts("Photon grenades"));

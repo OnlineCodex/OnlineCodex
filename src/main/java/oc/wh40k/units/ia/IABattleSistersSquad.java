@@ -18,7 +18,7 @@ public class IABattleSistersSquad extends Eintrag {
 	public IABattleSistersSquad() {
 		name = "Battle Sisters Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Battle Sisters", 5, 20, 12);
 		add(squad);

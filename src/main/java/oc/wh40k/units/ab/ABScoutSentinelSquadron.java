@@ -15,7 +15,7 @@ public class ABScoutSentinelSquadron extends Eintrag {
 	public ABScoutSentinelSquadron() {
 		name = "Scout Sentinel Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABScoutSentinelSquadron.jpg"));
 

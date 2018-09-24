@@ -22,7 +22,7 @@ public class DAVindicator extends Eintrag {
 		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
 		add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 
 		complete();
 	}

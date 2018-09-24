@@ -17,7 +17,7 @@ public class RH_IA13RenegadeInfantryPlatoon extends Eintrag {
 	public RH_IA13RenegadeInfantryPlatoon() {
 		name = "Renegade Infantry Platoon";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/RHRenegadeMilitiaPlatoon.jpg"));
 		

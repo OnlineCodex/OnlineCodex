@@ -15,7 +15,7 @@ public class IMDamnedLegionnaires extends Eintrag {
 	public IMDamnedLegionnaires() {
 		name = "Damned Legionnaires\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Legionnaires", 5, 10, getPts("Damned Legionnaires") + getPts("Boltgun (SM)") + getPts("Bolt pistol (SM)"));
 		add(squad);

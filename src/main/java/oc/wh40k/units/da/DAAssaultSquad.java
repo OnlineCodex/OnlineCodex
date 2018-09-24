@@ -19,7 +19,7 @@ public class DAAssaultSquad extends Eintrag {
 	public DAAssaultSquad() {
 		name = "Sturmtrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DAAssaultSquad.gif"));
 

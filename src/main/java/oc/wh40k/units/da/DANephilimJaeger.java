@@ -12,13 +12,13 @@ public class DANephilimJaeger extends Eintrag {
 	boolean added = false;
 
 	public DANephilimJaeger() {
-		name = "Nephilim-Jäger";
+		name = "Nephilim-JÃ¤ger";
 		grundkosten = 180;
 	
 		seperator();
         	
 		ogE.addElement(new OptionsGruppeEintrag("Sync. Laser", "Synchronisierter Laserkanone", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Megabolter", "Rächer-Megabolter", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Megabolter", "RÃ¤cher-Megabolter", 0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		o1.setSelected(0, true);
 

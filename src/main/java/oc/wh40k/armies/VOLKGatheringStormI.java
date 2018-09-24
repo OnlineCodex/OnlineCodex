@@ -13,23 +13,23 @@ public class VOLKGatheringStormI extends BuildaVater {
 	public VOLKGatheringStormI() {
 		reflectionKennung = "";
 		
-		HQeintr‰ge = new String[] {"", ""};
-		Eliteeintr‰ge = new String[] {"", ""};
-		Standardeintr‰ge = new String[] {"", ""};
-		Sturmeintr‰ge = new String[] {"", ""};
-		Unterst¸tzungeintr‰ge = new String[] {"", ""};
+		HQeintr√§ge = new String[] {"", ""};
+		Eliteeintr√§ge = new String[] {"", ""};
+		Standardeintr√§ge = new String[] {"", ""};
+		Sturmeintr√§ge = new String[] {"", ""};
+		Unterst√ºtzungeintr√§ge = new String[] {"", ""};
 		LordofWar = new String[] {"", ""};
 //        Formationen = new String[] {"", ""};
                 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -165,7 +165,7 @@ public class VOLKGatheringStormI extends BuildaVater {
 			superformation.createKategorieDynamisch(1,2);
 			superformation.addEintragDynamisch("", "");
 			superformation.addEintragDynamisch("SK", "Battle Maniple"); //(1-2)
-			superformation.addEintragDynamisch("SK", "War Cohort");		//oder 1 //TODO Gewichtung f¸r Formationen auswerten
+			superformation.addEintragDynamisch("SK", "War Cohort");		//oder 1 //TODO Gewichtung f√ºr Formationen auswerten
 			
 			superformation.createKategorieDynamisch(1,1);
 			superformation.addEintragDynamisch("", "");
@@ -182,7 +182,7 @@ public class VOLKGatheringStormI extends BuildaVater {
 			superformation.createKategorieDynamisch(0,1);
 			superformation.addEintragDynamisch("", "");
 			superformation.addEintragDynamisch("IR", "Imperial Knights"); //(1-2)
-			superformation.addEintragDynamisch("IR", "Baronial Court"); //oder 1 //TODO Gewichtung f¸r Formationen auswerten
+			superformation.addEintragDynamisch("IR", "Baronial Court"); //oder 1 //TODO Gewichtung f√ºr Formationen auswerten
 
 			
 
@@ -257,7 +257,7 @@ public class VOLKGatheringStormI extends BuildaVater {
 					"SM Assault Squad", "SM Scout Bike Squad", "SM Bike Squad", "SM Attack Bike Squad", "SM Land Speeders", "SM Land Speeder Storm", "SM Rhino", "SM Razorback", "SM Drop Pod", "SM Stormtalon Gunship"
 					});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "AM Leman Russ Squadron", "AM Hydra Battery", "AM Basilisk Battery", "AM Wyvern Battery", "AM Manticore", "AM Deathstrike", "",
-					"AS Exorzist", "AS L‰uterer", "AS Retributortrupp", "", 
+					"AS Exorzist", "AS L√§uterer", "AS Retributortrupp", "", 
 					"IA Retributor Squad", "IA Exorcist", "IA Penitent Engines", "",
 					"SM Contemptor Dreadnought", "SM Devastator Squad", "SM Centurion Devastator Squad", "SM Thunderfire-Cannons", "SM Predators", 
 					"SM Whirlwinds", "SM Vindicators", "SM Hunters", "SM Stalkers", "SM Stormraven Gunship", "SM Land Raider", 
@@ -328,7 +328,7 @@ public class VOLKGatheringStormI extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

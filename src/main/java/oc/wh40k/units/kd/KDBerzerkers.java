@@ -20,12 +20,12 @@ public class KDBerzerkers extends Eintrag {
 	OptionsZaehlerGruppe o7;
     RuestkammerStarter champion;
     RuestkammerStarter chaosTransport;
-	OptionsZaehlerGruppe ketten‰xte;
+	OptionsZaehlerGruppe ketten√§xte;
     
 	public KDBerzerkers() {
 		//name = "Khorne-Berserker\n";
 		grundkosten = 0;
-		¸berschriftSetzen = true;
+		√ºberschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Berzerkers", 8, 20, 19);
 		add(squad);
@@ -38,8 +38,8 @@ public class KDBerzerkers extends Eintrag {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Ketten‰xte", "Ketten‰xte", 3));
-		add(ketten‰xte = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+		ogE.addElement(new OptionsGruppeEintrag("Ketten√§xte", "Ketten√§xte", 3));
+		add(ketten√§xte = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		seperator();
 		
@@ -84,7 +84,7 @@ public class KDBerzerkers extends Eintrag {
 				(int) champion.getPanel().getLocation().getY() + champion.getPanel().getSize().height + 5
 	    );
 		
-		int subtractor = 1; // Sch‰delchampion
-		ketten‰xte.setMaxAnzahl(squad.getModelle() - subtractor);
+		int subtractor = 1; // Sch√§delchampion
+		ketten√§xte.setMaxAnzahl(squad.getModelle() - subtractor);
 	}
 }

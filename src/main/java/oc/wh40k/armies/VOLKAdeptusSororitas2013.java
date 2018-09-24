@@ -8,24 +8,24 @@ public class VOLKAdeptusSororitas2013 extends BuildaVater {
 	public VOLKAdeptusSororitas2013() {
 		reflectionKennung = "AS";
 
-		HQeintr‰ge = new String[] {"", "Sankt Celestine", "Uriah Jacobus", "", "Principalis", "Ekklesiarchie KampfKonklave", "Ministorum Priest", "Kommandotrupp", "","Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
-		Eliteeintr‰ge = new String[] {"", "Celestiatrupp", "Repentiatrupp"};
-		Standardeintr‰ge = new String[] {"", "Sororitastrupp"};
-		Sturmeintr‰ge = new String[] {"", "Seraphimtrupp", "Dominatortrupp",
+		HQeintr√§ge = new String[] {"", "Sankt Celestine", "Uriah Jacobus", "", "Principalis", "Ekklesiarchie KampfKonklave", "Ministorum Priest", "Kommandotrupp", "","Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
+		Eliteeintr√§ge = new String[] {"", "Celestiatrupp", "Repentiatrupp"};
+		Standardeintr√§ge = new String[] {"", "Sororitastrupp"};
+		Sturmeintr√§ge = new String[] {"", "Seraphimtrupp", "Dominatortrupp",
 								  "", "[IA Aeronautica] Aquila Lander", "[IA Aeronautica] Arvus Lighter"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Exorzist", "L‰uterer", "Retributortrupp",
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Exorzist", "L√§uterer", "Retributortrupp",
 										  "", "[IA Aeronautica] Avenger Strike Fighter"};
 		LordofWar = new String[] {"","[APO2 Armageddon] Reaver Battle Titan", "[APO2 Armageddon] Warhound-Scouttitan"};
 		
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HQ, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HQ, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, EL, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, EL, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FA, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FA, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HS, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HS, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, FORT, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -83,6 +83,6 @@ public class VOLKAdeptusSororitas2013 extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

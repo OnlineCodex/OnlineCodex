@@ -16,7 +16,7 @@ public class CHChaosXiphonInterceptor extends Eintrag {
 		name = "Chaos Xiphon Interceptor";
 		grundkosten = getPts("Chaos Xiphon Interceptor");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		seperator();
 

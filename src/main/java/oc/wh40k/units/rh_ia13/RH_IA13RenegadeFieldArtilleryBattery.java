@@ -16,7 +16,7 @@ public class RH_IA13RenegadeFieldArtilleryBattery extends Eintrag {
 	public RH_IA13RenegadeFieldArtilleryBattery() {
 		name = "Renegade Field Artillery Battery";
 		grundkosten = 0;
-        überschriftSetzen=true;
+        Ã¼berschriftSetzen=true;
 		
 
 

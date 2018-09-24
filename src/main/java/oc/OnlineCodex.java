@@ -79,7 +79,7 @@ public class OnlineCodex extends BuildaPanel {
 
 	//private final JComboBox buildaChooser = new JComboBox(buildazWh40k);
 	private JComboBox buildaChooser;
-	public final static int menuHöhe = 23;
+	public final static int menuHÃ¶he = 23;
 	public final static int FRAME_MIN_WIDTH = 750;
 	private static OnlineCodex onlineCodex;
 	private final JButton openMenu = new JButton();
@@ -174,7 +174,7 @@ public class OnlineCodex extends BuildaPanel {
 		}
 
 		@Override
-		public String toString() {  // fürn Reflection-ActionListener unten wichtig
+		public String toString() {  // fÃ¼rn Reflection-ActionListener unten wichtig
 			return text;
 		}
 	}
@@ -276,11 +276,11 @@ public class OnlineCodex extends BuildaPanel {
 		
 
 		buildaChooser.setBounds(5, 3, 290, 18);
-		buildaChooser.setFocusable(false); // sie hat nie den Focus und wird deshalb nie durch die Pfeil-Unten-Taste geöffnet
+		buildaChooser.setFocusable(false); // sie hat nie den Focus und wird deshalb nie durch die Pfeil-Unten-Taste geÃ¶ffnet
 		buildaChooser.addActionListener(volkChangeListener);
 		BuildaHQ.newGUIComponent(buildaChooser);
 		buildaChooser.setMaximumRowCount(30);
-		buildaChooser.setToolTipText(BuildaHQ.translate("Hier können Sie Ihr Volk auswählen. Die Einträge des alten Volkes bleiben im Arbeitsspeicher und werden geladen, sobald sie es wieder auswählen."));
+		buildaChooser.setToolTipText(BuildaHQ.translate("Hier kÃ¶nnen Sie Ihr Volk auswÃ¤hlen. Die EintrÃ¤ge des alten Volkes bleiben im Arbeitsspeicher und werden geladen, sobald sie es wieder auswÃ¤hlen."));
 
 		if (getGame() == WHFB) {
 			budget.setEnabled(false);
@@ -310,11 +310,11 @@ public class OnlineCodex extends BuildaPanel {
 		}
 		menuPanel.add(kostenLabel);
 		menuPanel.setLayout(null);
-		menuPanel.setBounds(-1, -1, 2500 + 1, menuHöhe + 1 ); // -1 damit border oben net sichtbar ist    soll nur den unterens schwarzen Trennstrich machen
+		menuPanel.setBounds(-1, -1, 2500 + 1, menuHÃ¶he + 1 ); // -1 damit border oben net sichtbar ist    soll nur den unterens schwarzen Trennstrich machen
 		menuPanel.setBackground(Color.WHITE);
 		menuPanel.setBorder(BorderFactory.createLineBorder(new Color(10, 40, 160)));
 
-		openMenu.setText(BuildaHQ.translate("Menü"));
+		openMenu.setText(BuildaHQ.translate("MenÃ¼"));
 		openMenu.setBounds(BILDSCHIRMBREITE - 75, 4, 65, 16);
 		BuildaHQ.newGUIComponent(openMenu);
 		openMenu.addActionListener(new ActionListener() {
@@ -396,7 +396,7 @@ public class OnlineCodex extends BuildaPanel {
 		myBuilderTextArea = new BuildaTextArea();
 		textPanel = myBuilderTextArea.getPanel();
 		tab.addTab("Liste",null,textPanel);
-		tab.setLocation(5, menuHöhe + 5);
+		tab.setLocation(5, menuHÃ¶he + 5);
 		tab.setSize((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth()-25,(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-55);
 		tab.addChangeListener(tabChangeListener);
 		myWindow.add(tab);
@@ -610,7 +610,7 @@ public class OnlineCodex extends BuildaPanel {
 				}
 				
 				if (name.equals("")) {
-					return;//Es soll kein Leerer Tab eingefügt werden
+					return;//Es soll kein Leerer Tab eingefÃ¼gt werden
 				} else {
 					System.out.println(Class.forName(armyPackage + "armies.VOLK" + name));
 					myBuilder = (BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + name).newInstance());
@@ -633,8 +633,8 @@ public class OnlineCodex extends BuildaPanel {
 					JScrollPane sp = new JScrollPane(buildaPanel);
 					sp.addMouseMotionListener(dragAndDropMouseMotionListener);
 					sp.addMouseListener(dragAndDropMouseListener);
-					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
-					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
+					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
+					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
 					tab.addTab(name,null,sp);
 					if(getGame()==WH40K){
 						tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab,onlineCodex));
@@ -723,7 +723,7 @@ public class OnlineCodex extends BuildaPanel {
 		myDialog.add(myButton);
 
 		myDialog.setSize(myTextPane.getWidth() + 10, myTextPane.getHeight() + 90);
-		myDialog.setLocation(BILDSCHIRMBREITE / 2 - myDialog.getWidth() / 2, BILDSCHIRMHÖHE / 2 - myDialog.getHeight() / 2);
+		myDialog.setLocation(BILDSCHIRMBREITE / 2 - myDialog.getWidth() / 2, BILDSCHIRMHÃ–HE / 2 - myDialog.getHeight() / 2);
 		myDialog.setVisible(true);
 	}
 
@@ -845,8 +845,8 @@ public class OnlineCodex extends BuildaPanel {
 					JScrollPane sp = new JScrollPane(buildaPanel);
 					sp.addMouseMotionListener(dragAndDropMouseMotionListener);
 					sp.addMouseListener(dragAndDropMouseListener);
-					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
-					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
+					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
+					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
 					String name = armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
 					tab.addTab(name,null,sp);
 					if(getGame()==WH40K){
@@ -935,8 +935,8 @@ public class OnlineCodex extends BuildaPanel {
 					JScrollPane sp = new JScrollPane(buildaPanel);
 					sp.addMouseMotionListener(dragAndDropMouseMotionListener);
 					sp.addMouseListener(dragAndDropMouseListener);
-					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
-					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHöhe-28));
+					sp.setMaximumSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
+					sp.setPreferredSize(new Dimension((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(),(int)Toolkit.getDefaultToolkit().getScreenSize().getHeight()-menuHÃ¶he-28));
 					String name = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
 					tab.addTab(name,null,sp);
 					if(getGame()==WH40K){
@@ -1058,7 +1058,7 @@ public class OnlineCodex extends BuildaPanel {
 			ChooserGruppe cg = bV.getChooserGruppe(j);
 			while(cg.getmC().size()>0){
 				if(cg.getmC().get(0).getEintrag() != null ){
-					cg.getmC().get(0).aktuellenEintragLöschen();
+					cg.getmC().get(0).aktuellenEintragLÃ¶schen();
 					cg.getmC().remove(0);
 				}else{
 					break;

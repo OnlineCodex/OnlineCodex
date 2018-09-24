@@ -28,13 +28,13 @@ public class KDHelbrute extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Energiehammer", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Energiegeiﬂel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Energiegei√üel", 10));
 		add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Energiehammer", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Energiegeiﬂel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Energiegei√üel", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
 		add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));	
 		seperator();

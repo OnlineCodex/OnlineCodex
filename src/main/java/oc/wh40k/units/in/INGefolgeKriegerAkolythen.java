@@ -49,10 +49,10 @@ public class INGefolgeKriegerAkolythen extends RuestkammerVater {
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Armaplastrüstung", 0));
+		ogE.addElement(new OptionsGruppeEintrag("ArmaplastrÃ¼stung", 0));
         add(o3def = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-		ogE.addElement(new OptionsGruppeEintrag("Plattenrüstung", 4));
-		ogE.addElement(new OptionsGruppeEintrag("Servorüstung", 10));
+		ogE.addElement(new OptionsGruppeEintrag("PlattenrÃ¼stung", 4));
+		ogE.addElement(new OptionsGruppeEintrag("ServorÃ¼stung", 10));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();

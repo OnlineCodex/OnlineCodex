@@ -14,7 +14,7 @@ public class FOImperialeVerteidigungslinie extends Eintrag {
 	public FOImperialeVerteidigungslinie() {
 		name = "Imperiale Verteidigungslinie";
 		grundkosten = 80;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

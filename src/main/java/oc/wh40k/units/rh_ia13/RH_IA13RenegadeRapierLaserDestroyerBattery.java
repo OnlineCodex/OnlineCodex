@@ -17,7 +17,7 @@ public class RH_IA13RenegadeRapierLaserDestroyerBattery extends Eintrag {
 	public RH_IA13RenegadeRapierLaserDestroyerBattery() {
 		name = "Rapier Laser Destroyer Battery";
 		grundkosten = 0;      
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGChimera.jpg"));
 

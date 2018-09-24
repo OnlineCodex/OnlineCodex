@@ -16,7 +16,7 @@ public class TAXV107RvarnaBattlesuit extends Eintrag {
 		name = "XV107 R'varna Battlesuit";
 		grundkosten = 260;
 
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 		

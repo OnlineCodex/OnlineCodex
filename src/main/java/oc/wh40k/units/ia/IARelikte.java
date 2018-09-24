@@ -39,7 +39,7 @@ public class IARelikte extends RuestkammerVater {
 	@Override
 	public void refreshen() {
 		
-	    //Einzigartige Gegenst‰nde
+	    //Einzigartige Gegenst√§nde
 		if(o1.isSelected("The Grimoire of True Names")){
 			if(grimoireBool==false){
 				grimoireBool=true;

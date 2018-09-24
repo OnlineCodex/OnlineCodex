@@ -11,21 +11,21 @@ public class VOLKSkitarii extends BuildaVater {
   public VOLKSkitarii() {
     reflectionKennung = "SK";
 
-    HQeintr‰ge = new String[] {"", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
-    Eliteeintr‰ge = new String[] {"", "Sicarian Ruststalkers", "Sicarian Infiltrators"};
-    Standardeintr‰ge = new String[] {"", "Skitarii Vanguard", "Skitarii Rangers"};
-    Sturmeintr‰ge = new String[] {"", "Sydonian Dragoons"};
-    Unterst¸tzungeintr‰ge = new String[] {"", "Ironstrider Ballistarii", "Onager Dunecrawlers"};
+    HQeintr√§ge = new String[] {"", "Belisarius Cawl", "Celestine", "Inquisitor Greyfax"};
+    Eliteeintr√§ge = new String[] {"", "Sicarian Ruststalkers", "Sicarian Infiltrators"};
+    Standardeintr√§ge = new String[] {"", "Skitarii Vanguard", "Skitarii Rangers"};
+    Sturmeintr√§ge = new String[] {"", "Sydonian Dragoons"};
+    Unterst√ºtzungeintr√§ge = new String[] {"", "Ironstrider Ballistarii", "Onager Dunecrawlers"};
     LordofWar = new String[] {""};
     
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
     cnt += CHOOSERGRUPPEN_X_ABSTAND;
     adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     adden(new ChooserGruppe(this,"APO", outOfPanel, 0, 7, LordofWar));
@@ -136,7 +136,7 @@ public class VOLKSkitarii extends BuildaVater {
 
   @Override
 	public void volkRefresh() {
-	  //TODO Auswahlliste Einf¸gen
+	  //TODO Auswahlliste Einf√ºgen
 		
 	  
 	  if(getKontingentTyp().equals("Adeptus Mechanicus War Convocation")){ //Superformation))
@@ -240,7 +240,7 @@ public class VOLKSkitarii extends BuildaVater {
   
   @Override
   protected void finalize() {
-    System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+    System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
   }
 }
 
@@ -261,8 +261,8 @@ public class VOLKSkitarii extends BuildaVater {
 //Arkhan's Divinator= Arkhans Divinator
 //The Phase Taser= Phasentaser
 //The Omniscent Mask= Maske der Allwissenheit
-//Phosphoenix= Phosphˆnix
-//The Skull of Elder Nikola= Sch‰del des ƒltesten Nikola
+//Phosphoenix= Phosph√∂nix
+//The Skull of Elder Nikola= Sch√§del des √Ñltesten Nikola
 //Galvanic rifle= Galvanisches Gewehr
 //Taser lance= Taserlanze
 //Radium jezzail= Radium-Jezzail

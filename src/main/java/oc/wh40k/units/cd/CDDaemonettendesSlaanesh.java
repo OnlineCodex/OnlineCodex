@@ -15,10 +15,10 @@ public class CDDaemonettendesSlaanesh extends Eintrag {
 
 	public CDDaemonettendesSlaanesh() {
 
-		name = "Dämonetten des Slaanesh";
+		name = "DÃ¤monetten des Slaanesh";
 		grundkosten = 0;
 
-		CDDaemonettendesSlaanesh = new AnzahlPanel(ID, randAbstand, cnt, "Dämonetten des Slaanesh", 10, 20, 9);
+		CDDaemonettendesSlaanesh = new AnzahlPanel(ID, randAbstand, cnt, "DÃ¤monetten des Slaanesh", 10, 20, 9);
 		add(CDDaemonettendesSlaanesh);
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDDaemonettendesSlaanesh.gif"));
@@ -27,7 +27,7 @@ public class CDDaemonettendesSlaanesh extends Eintrag {
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument des Chaos", 10));
 		add(Chaosikone = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ikone des Chaos", 10));
-		add(Standarte  = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Standarte der Verzückung", 10));
+		add(Standarte  = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Standarte der VerzÃ¼ckung", 10));
 		
 		seperator();
 
@@ -35,7 +35,7 @@ public class CDDaemonettendesSlaanesh extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
         BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("[Forgeworld] Zarakynel");

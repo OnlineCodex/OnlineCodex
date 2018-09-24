@@ -21,7 +21,7 @@ public class CHChosen extends Eintrag {
 	public CHChosen() {
 		//name = "Auserkorene Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chosen", 5, 10, getPts("Chosen"));
 		add(squad);

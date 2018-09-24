@@ -14,7 +14,7 @@ public class DKMinotaurBattery extends Eintrag {
 	public DKMinotaurBattery() {
 		name = "Minotaur Battery";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 		this.gesamtpunkteImmerAnzeigen=false;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DKMinotaurSquadron.jpg"));

@@ -17,7 +17,7 @@ public class HHCALegionAssaultSquad extends Eintrag {
 	public HHCALegionAssaultSquad() {
 		name = "Legion Assault Squad\n";
 		grundkosten = 100;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Assault Marine", 10, 20, 15);
 		add(squad);

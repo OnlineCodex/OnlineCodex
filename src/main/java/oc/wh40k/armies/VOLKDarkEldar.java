@@ -15,24 +15,24 @@ public class VOLKDarkEldar extends BuildaVater {
 
         reflectionKennung = "DE";
 
-        HQeintr‰ge = new String[]{"", "Archon", "Court of the Archon", "Succubus", "Lelith Hesperax", "Haemonculus", "Urien Rakarth", "Drazhar"};
-        Eliteeintr‰ge = new String[]{"", "Incubi", "Mandrakes", "Wracks", "Grotesques", "Kabalite Trueborn", "Bloodbrides"};
-        Standardeintr‰ge = new String[]{"", "Kabalite Warriors", "Wyches"};
-        Sturmeintr‰ge = new String[]{"", "Beastmaster", "Raider", "Venom", "Reavers", "Hellions", "Razorwing Jetfighter", "Scourges",
+        HQeintr√§ge = new String[]{"", "Archon", "Court of the Archon", "Succubus", "Lelith Hesperax", "Haemonculus", "Urien Rakarth", "Drazhar"};
+        Eliteeintr√§ge = new String[]{"", "Incubi", "Mandrakes", "Wracks", "Grotesques", "Kabalite Trueborn", "Bloodbrides"};
+        Standardeintr√§ge = new String[]{"", "Kabalite Warriors", "Wyches"};
+        Sturmeintr√§ge = new String[]{"", "Beastmaster", "Raider", "Venom", "Reavers", "Hellions", "Razorwing Jetfighter", "Scourges",
         						  "", "[IA Aeronautica] Raven Strike Fighter"};
-        Unterst¸tzungeintr‰ge = new String[]{"", "Talos", "Cronos", "Ravager", "Voidraven Bomber",
+        Unterst√ºtzungeintr√§ge = new String[]{"", "Talos", "Cronos", "Ravager", "Voidraven Bomber",
         								  "", "[IA Apo 2013] Reaper", "[Forgeworld] Void Dragon Phoenix", "[IA Apo 2013] Tantalus"};
         LordofWar = new String[]{""};
         
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND; 
         adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -362,11 +362,11 @@ public class VOLKDarkEldar extends BuildaVater {
 			kontingentBox.setEnabled(false);
 			formationBox.setEnabled(false);
 		}else{
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(1).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(2).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(3).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(4).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(Befestigungen);
 			myChooserGruppen.get(6).changeComboBoxAuswahlen(LordofWar);
 		}
@@ -376,6 +376,6 @@ public class VOLKDarkEldar extends BuildaVater {
     
     @Override
     protected void finalize() {    	
-        System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+        System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
     }
 }

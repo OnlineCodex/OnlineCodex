@@ -10,7 +10,7 @@ public class RH_IA13RoguePsykersCoven extends Eintrag {
 	public RH_IA13RoguePsykersCoven() {
 		name = "Rogue Psykers Coven";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		addToInformationVector("RHRoguePsykersCoven", +1);
 		

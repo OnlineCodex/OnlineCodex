@@ -20,9 +20,9 @@ public class CDHerrscherdesWandels extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDHerrscherdesWandels.gif"));
 		
-		addToInformationVector("CDDämonenprinz", 1);
-		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("Dämonenprinz des Tzeentch");
-		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Dämonenprinz des Tzeentch");
+		addToInformationVector("CDDÃ¤monenprinz", 1);
+		BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
+		BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
 		
 		seperator();
 
@@ -32,14 +32,14 @@ public class CDHerrscherdesWandels extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnungen", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 5));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnungen", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnungen", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		ogE.addElement(new OptionsGruppeEintrag("Erhabene Belohnungen", 30));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		seperator();
 		
-		//HöllengeschmiedeteArtefakte
+		//HÃ¶llengeschmiedeteArtefakte
 		artefakte = new RuestkammerStarter(ID, randAbstand, cnt, "CDArtefakte", "");
 		artefakte.initKammer();
 		artefakte.setButtonText(BuildaHQ.translate("Artefakte"));
@@ -57,19 +57,19 @@ public class CDHerrscherdesWandels extends Eintrag {
 	public void refreshen() {
 		int max = 50;
 		int geringeBelohnung = 10;
-		int mächtigeBelohnung = 20;
+		int mÃ¤chtigeBelohnung = 20;
 		int erhabeneBelohnung = 30;
 		
-		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*mächtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
+		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*mÃ¤chtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
 		if(freePoints < erhabeneBelohnung){
 			o3.setMaxAnzahl(o3.getAnzahl());
 		} else {
 			o3.setMaxAnzahl(freePoints/erhabeneBelohnung);
 		}
-		if(freePoints < mächtigeBelohnung){
+		if(freePoints < mÃ¤chtigeBelohnung){
 			o2.setMaxAnzahl(o2.getAnzahl());
 		} else {
-			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/mächtigeBelohnung);
+			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/mÃ¤chtigeBelohnung);
 		}
 		if(freePoints < geringeBelohnung){
 			o1.setMaxAnzahl(o1.getAnzahl());
@@ -86,10 +86,10 @@ public class CDHerrscherdesWandels extends Eintrag {
 	
 	@Override
 	public void deleteYourself() {
-		addToInformationVector("CDDämonenprinz", -1);
-		if(getCountFromInformationVector("CDDämonenprinz")<1){
-			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("Dämonenprinz des Tzeentch");
-			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Dämonenprinz des Tzeentch");
+		addToInformationVector("CDDÃ¤monenprinz", -1);
+		if(getCountFromInformationVector("CDDÃ¤monenprinz")<1){
+			BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
+			BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("DÃ¤monenprinz des Tzeentch");
 		}
 		super.deleteYourself();
 	}

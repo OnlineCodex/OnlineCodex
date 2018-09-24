@@ -25,7 +25,7 @@ public class DAInterrogatorChaplain extends Eintrag {
 		
 		seperator();
 		
-		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 30));
+		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 30));
 		
 		seperator();
        
@@ -48,7 +48,7 @@ public class DAInterrogatorChaplain extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DASpezialausruestung", "");
 		spezialAusruestung.initKammer(false, false, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		
 		seperator(5);

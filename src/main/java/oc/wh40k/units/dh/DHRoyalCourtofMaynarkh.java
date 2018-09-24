@@ -14,7 +14,7 @@ public class DHRoyalCourtofMaynarkh extends Eintrag {
 	public DHRoyalCourtofMaynarkh() {
 		name = "Royal Court of Maynarkh";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
         setEintragsCNT(0.0);
         
         addToInformationVector("DHHerrscherrat", 1);
@@ -102,7 +102,7 @@ public class DHRoyalCourtofMaynarkh extends Eintrag {
         int highLords = getCountFromInformationVector("DHHochlord");
         int councils = getCountFromInformationVector("DHHerrscherrat");
         if(councils > highLords) {
-            setFehlermeldung("Zu viele Räte!");
+            setFehlermeldung("Zu viele RÃ¤te!");
         } else {
             String duplicateItem = checkDuplicateItems();
             if(duplicateItem == null) {
@@ -133,7 +133,7 @@ public class DHRoyalCourtofMaynarkh extends Eintrag {
         items.add("Chronometrum");
         items.add("Zeitsplittermantel");
         items.add("Hochspannungsfeld");
-        items.add("Ätherkristall");
+        items.add("Ã„therkristall");
         items.add("Schockwelleninduktor");
         items.add("Harfe der Dissonanz");
         

@@ -16,7 +16,7 @@ public class APOMarneusCalgar extends Eintrag {
 
 		seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rüstung des Antilochus", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "RÃ¼stung des Antilochus", 10));
 
 		complete();
 	}

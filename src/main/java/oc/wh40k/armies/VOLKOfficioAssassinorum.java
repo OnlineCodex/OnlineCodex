@@ -9,19 +9,19 @@ public class VOLKOfficioAssassinorum extends BuildaVater {
   public VOLKOfficioAssassinorum() {
     reflectionKennung = "OA";
 
-    HQeintr‰ge = new String[] {""};
-    Eliteeintr‰ge = new String[] {"", "Vindicare Assassine", "Callidus Assassine", "Eversor Assassine", "Culexus Assassine"};
-    Standardeintr‰ge = new String[] {""};
-    Sturmeintr‰ge = new String[] {""};
-    Unterst¸tzungeintr‰ge = new String[] {""};
+    HQeintr√§ge = new String[] {""};
+    Eliteeintr√§ge = new String[] {"", "Vindicare Assassine", "Callidus Assassine", "Eversor Assassine", "Culexus Assassine"};
+    Standardeintr√§ge = new String[] {""};
+    Sturmeintr√§ge = new String[] {""};
+    Unterst√ºtzungeintr√§ge = new String[] {""};
     Befestigungen = new String[]{""};
     LordofWar = new String[] {""};
     
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst¸tzungeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst√ºtzungeintr√§ge));
     adden(new ChooserGruppe(this,"FO", outOfPanel, 0, 6, Befestigungen));
     adden(new ChooserGruppe(this,"APO", outOfPanel, 0, 7, LordofWar));
     
@@ -123,6 +123,6 @@ public class VOLKOfficioAssassinorum extends BuildaVater {
   
   @Override
   protected void finalize() {
-    System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+    System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
   }
 }

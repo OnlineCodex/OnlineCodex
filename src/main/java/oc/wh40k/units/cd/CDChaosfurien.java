@@ -22,10 +22,10 @@ public class CDChaosfurien extends Eintrag {
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDChaosgargoyle.gif"));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", "Dämon des Khorne", 2));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", "Dämon des Tzeentch", 1));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", "Dämon des Nurgle", 2));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", "Dämon des Slaanesh", 2));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Khorne", "DÃ¤mon des Khorne", 2));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Tzeentch", "DÃ¤mon des Tzeentch", 1));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Nurgle", "DÃ¤mon des Nurgle", 2));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Slaanesh", "DÃ¤mon des Slaanesh", 2));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		complete();
@@ -35,9 +35,9 @@ public class CDChaosfurien extends Eintrag {
 	@Override
 	public void refreshen() {
 		int count = CDChaosfurien.getModelle();
-		o1.setPreis("Dämon des Khorne", 2 * count);
-		o1.setPreis("Dämon des Tzeentch", 1 * count);
-		o1.setPreis("Dämon des Nurgle", 2 * count);
-		o1.setPreis("Dämon des Slaanesh", 2 * count);
+		o1.setPreis("DÃ¤mon des Khorne", 2 * count);
+		o1.setPreis("DÃ¤mon des Tzeentch", 1 * count);
+		o1.setPreis("DÃ¤mon des Nurgle", 2 * count);
+		o1.setPreis("DÃ¤mon des Slaanesh", 2 * count);
 	}
 }

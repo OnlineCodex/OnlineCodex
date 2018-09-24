@@ -18,7 +18,7 @@ public class HHCALegionOutriderSquad extends Eintrag {
 	public HHCALegionOutriderSquad() {
 		name = "Legion Outrider Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Outriders", 3, 10, 30);
 		add(squad);

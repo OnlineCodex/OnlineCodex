@@ -24,7 +24,7 @@ public class ASKommandotrupp extends Eintrag {
 		name = "Kommandotrupp";
 		grundkosten = 65;
 		this.setEintragsCNT(0);
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("ASKommandotrupp", 1);
 

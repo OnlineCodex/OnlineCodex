@@ -1,4 +1,4 @@
-/* Regeln für Deimos-Lux Pattern Psycannon unter:
+/* Regeln fÃ¼r Deimos-Lux Pattern Psycannon unter:
  * http://www.forgeworld.co.uk/Downloads/Product/PDF/g/greyknightsupd.pdf
  * nicht mehr existent!
  */
@@ -25,7 +25,7 @@ public class GKVortimerPatternLandRaiderRedeemer extends Eintrag {
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 15));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ZusÃ¤tzliche Panzerung", 15));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psiaktive Munition", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warpstabilisierungsfeld", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wahrsilberpanzerung", 10));

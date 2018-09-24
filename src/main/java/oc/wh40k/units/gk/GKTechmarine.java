@@ -7,7 +7,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class GKTechmarine extends Eintrag {
-	//TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
+	//TODO AusrÃ¼stung in eine Kammer verlegen. Artefakte richtig handhaben
 
     OptionsUpgradeGruppe o1, o1x;
     OptionsUpgradeGruppe o2;
@@ -33,7 +33,7 @@ public class GKTechmarine extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();

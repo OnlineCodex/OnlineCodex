@@ -18,7 +18,7 @@ public class DKEngineerSquad extends Eintrag {
 	public DKEngineerSquad() {
 		name = "Death Korps Engineer Squad";
 		grundkosten = 10;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         System.out.println(getKategorie());
         

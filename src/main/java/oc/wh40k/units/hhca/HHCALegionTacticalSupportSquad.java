@@ -20,7 +20,7 @@ public class HHCALegionTacticalSupportSquad extends Eintrag {
 	public HHCALegionTacticalSupportSquad() {
 		name = "Legion Tactical Support Squad\n";
 		grundkosten = 25;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		setCountToMinimum(false);
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, 15);

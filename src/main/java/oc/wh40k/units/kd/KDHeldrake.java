@@ -15,7 +15,7 @@ public class KDHeldrake extends Eintrag {
 		name = "Heldrake";
 		grundkosten = 170;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		seperator();
 

@@ -26,7 +26,7 @@ public class CDHerolddesTzeentch extends CDHerold {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnungen", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 5));
-		ogE.addElement(new OptionsGruppeEintrag("M‰chtige Belohnungen", 20));
+		ogE.addElement(new OptionsGruppeEintrag("M√§chtige Belohnungen", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		ogE.addElement(new OptionsGruppeEintrag("Erhabene Belohnungen", 30));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -39,20 +39,20 @@ public class CDHerolddesTzeentch extends CDHerold {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰zens Transformation", "Geringe Pr‰senz der Transformation", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰senz des Wandels", "M‰chtige Pr‰senz des Wandels", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰senz der Beschwˆrung", "Erhabene Pr‰senz der Beschwˆrung", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§zens Transformation", "Geringe Pr√§senz der Transformation", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§senz des Wandels", "M√§chtige Pr√§senz des Wandels", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§senz der Beschw√∂rung", "Erhabene Pr√§senz der Beschw√∂rung", 25));
 		add(praesenz = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Flugd‰mon des Tzeentch", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Flugd√§mon des Tzeentch", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Brennender Streitwagen", "Brennender Streitwagen des Tzeentch", 50));
 		add(mount = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 		
-		//HˆllengeschmiedeteArtefakte
+		//H√∂llengeschmiedeteArtefakte
 		artefakte = new RuestkammerStarter(ID, randAbstand, cnt, "CDArtefakte", "");
 		artefakte.initKammer();
 		artefakte.setButtonText(BuildaHQ.translate("Artefakte"));
@@ -81,19 +81,19 @@ public class CDHerolddesTzeentch extends CDHerold {
         super.refreshen();
 		int max = 30;
 		int geringeBelohnung = 10;
-		int m‰chtigeBelohnung = 20;
+		int m√§chtigeBelohnung = 20;
 		int erhabeneBelohnung = 30;
 		
-		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*m‰chtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
+		int freePoints = max - o1.getAnzahl()*geringeBelohnung - o2.getAnzahl()*m√§chtigeBelohnung - o3.getAnzahl()*erhabeneBelohnung;
 		if(freePoints < erhabeneBelohnung){
 			o3.setMaxAnzahl(o3.getAnzahl());
 		} else {
 			o3.setMaxAnzahl(freePoints/erhabeneBelohnung);
 		}
-		if(freePoints < m‰chtigeBelohnung){
+		if(freePoints < m√§chtigeBelohnung){
 			o2.setMaxAnzahl(o2.getAnzahl());
 		} else {
-			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/m‰chtigeBelohnung);
+			o2.setMaxAnzahl(o2.getAnzahl() + freePoints/m√§chtigeBelohnung);
 		}
 		if(freePoints < geringeBelohnung){
 			o1.setMaxAnzahl(o1.getAnzahl());

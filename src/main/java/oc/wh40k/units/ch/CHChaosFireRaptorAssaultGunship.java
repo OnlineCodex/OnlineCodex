@@ -16,7 +16,7 @@ public class CHChaosFireRaptorAssaultGunship extends Eintrag {
 		name = "Chaos Fire Raptor Assault Gunship";
 		grundkosten = getPts("Chaos Fire Raptor Assault Gunship");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		ogE.addElement(new OptionsGruppeEintrag("2 Quad heavy bolter", getPts("Quad heavy bolter")*2));
 		ogE.addElement(new OptionsGruppeEintrag("2 Reaper batteries", getPts("Reaper battery")));

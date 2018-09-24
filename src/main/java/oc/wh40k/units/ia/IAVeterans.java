@@ -28,7 +28,7 @@ public class IAVeterans extends Eintrag {//Sternguard
 	public IAVeterans() {
 		name = "Veterans\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		rk=new Vector<RuestkammerStarter>();
 		

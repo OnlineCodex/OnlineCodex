@@ -10,13 +10,13 @@ public class ORDeffDreads extends Eintrag {
 
 	AnzahlPanel Gargbot;
 	OptionsZaehlerGruppe GargbotFK;
-	OptionsEinzelZaehler Grothälfaz;
+	OptionsEinzelZaehler GrothÃ¤lfaz;
 	OptionsEinzelZaehler Panzaplattenz;
 
 	public ORDeffDreads() {
 
 		kategorie = 3;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		add(Gargbot = new AnzahlPanel(ID, randAbstand, cnt, "Deff Dread", "Deff Dreads", 1, 3, getPts("Deff Dreads") + getPts("Dread klaw") + getPts("each subsequent dread klaw")));

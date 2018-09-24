@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORBattlewagonwithSupaKannon extends Eintrag {
 
-	OptionsEinzelUpgrade Panzakanon‰;
+	OptionsEinzelUpgrade Panzakanon√§;
 	OptionsUpgradeGruppe FK2;
 	OptionsZaehlerGruppe KampfpanzaFK;
 

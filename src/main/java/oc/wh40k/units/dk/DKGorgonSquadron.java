@@ -14,7 +14,7 @@ public class DKGorgonSquadron extends Eintrag {
 	public DKGorgonSquadron() {
 		name = "Gorgon Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 		this.gesamtpunkteImmerAnzeigen=false;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DKGorgonSquadron.jpg"));

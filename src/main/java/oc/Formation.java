@@ -75,9 +75,9 @@ public class Formation implements BuildaSTK{
 		public void actionPerformed(ActionEvent event) {
 			String entry = (String)((JComboBox)event.getSource()).getSelectedItem();
 			for(int i=0;i<buildaVater.myChooserGruppen.size();i++){
-				int maxJ=buildaVater.myChooserGruppen.get(i).alleEinträge.length;
+				int maxJ=buildaVater.myChooserGruppen.get(i).alleEintrÃ¤ge.length;
 				for(int j=0;j<maxJ;j++){
-					if(((String)buildaVater.myChooserGruppen.get(i).alleEinträge[j]).equals(entry)){
+					if(((String)buildaVater.myChooserGruppen.get(i).alleEintrÃ¤ge[j]).equals(entry)){
 						buildaVater.myChooserGruppen.get(i).mC.lastElement().selectEntryNotLocked(entry);
 					}
 				}

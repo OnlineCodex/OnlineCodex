@@ -14,10 +14,10 @@ public class ASEkklesiarchieKampfKonklave extends Eintrag {
 	boolean added = false;
 
 	public ASEkklesiarchieKampfKonklave() {
-		name = "Jünger der Ekklesiarchie";
+		name = "JÃ¼nger der Ekklesiarchie";
 		grundkosten = 0;
 		this.setEintragsCNT(0);
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("ASJuengerderEkklesiarchie", 1);
 

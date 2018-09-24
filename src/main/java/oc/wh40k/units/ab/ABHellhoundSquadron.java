@@ -15,7 +15,7 @@ public class ABHellhoundSquadron extends Eintrag {
 	public ABHellhoundSquadron() {
 		name = "Hellhound Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABHellhoundSquadron.jpg"));
 

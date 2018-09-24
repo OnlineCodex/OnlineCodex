@@ -9,22 +9,22 @@ public class VOLKInquisition extends BuildaVater {
 
 		reflectionKennung = "IN";
 
-		HQeintr‰ge = new String[] {"", "Inquisitor des Ordo Malleus", "Inquisitor des Ordo Hereticus", "Inquisitor des Ordo Xenos", "", "Inquisitor Coteaz", "Inquisitor Karamasov", "",
+		HQeintr√§ge = new String[] {"", "Inquisitor des Ordo Malleus", "Inquisitor des Ordo Hereticus", "Inquisitor des Ordo Xenos", "", "Inquisitor Coteaz", "Inquisitor Karamasov", "",
 				"Belisarius Cawl", "Celestine", "Inquisitor Greyfax",
 								   "", "[IA5 2nd Ed] Inquisitor-Lord Hector Rex", "[IA4 2nd Ed] Ordo Xenos Inquisitor Solomon Lok"};
-		Eliteeintr‰ge = new String[] {"","Gefolge des Inquisitors"};
-		Standardeintr‰ge = new String[] {""};
-		Sturmeintr‰ge = new String[] {"", "[IA2 2nd Ed] Inquisitorial Valkyrie Squadron"};//‹ber das FAQ mˆglich
-		Unterst¸tzungeintr‰ge = new String[] {""};
+		Eliteeintr√§ge = new String[] {"","Gefolge des Inquisitors"};
+		Standardeintr√§ge = new String[] {""};
+		Sturmeintr√§ge = new String[] {"", "[IA2 2nd Ed] Inquisitorial Valkyrie Squadron"};//√úber das FAQ m√∂glich
+		Unterst√ºtzungeintr√§ge = new String[] {""};
 		Befestigungen = new String[] {""};
 		LordofWar = new String[] {""};
 		
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
-		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr‰ge));
-		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr‰ge));
-		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
+		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr√§ge));
+		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr√§ge));
+		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst√ºtzungeintr√§ge));
 //		adden(new ChooserGruppe(this,"FO", outOfPanel, 0, 6, Befestigungen));
 		adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 6, Befestigungen));
         adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 7, LordofWar));
@@ -102,7 +102,7 @@ public class VOLKInquisition extends BuildaVater {
 	
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

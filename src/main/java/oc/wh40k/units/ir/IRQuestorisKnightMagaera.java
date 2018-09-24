@@ -63,7 +63,7 @@ public class IRQuestorisKnightMagaera extends Eintrag {
 			fk1.setAktiv("Die Erste Faust", baron.isSelected() && !fk4.isSelected());
 			fk1.setAktiv("Zerfleischer", baron.isSelected() && !fk4.isSelected());
 
-			//Einzigartige Gegenst‰nde
+			//Einzigartige Gegenst√§nde
 			if(fk4.isSelected("Banner des glorreichen Macharius")){
 				if(bannerBool==false){
 					bannerBool=true;

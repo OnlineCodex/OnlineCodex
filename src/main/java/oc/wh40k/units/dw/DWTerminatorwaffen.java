@@ -117,7 +117,7 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Der Zorn des Primarchen", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Die Zähne Terras", 35));
+		ogE.addElement(new OptionsGruppeEintrag("Die ZÃ¤hne Terras", 35));
 		ogE.addElement(new OptionsGruppeEintrag("Der Schild der Ewigkeit", 50));
 		ogE.addElement(new OptionsGruppeEintrag("Die Brennende Klinge", 55));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
@@ -130,8 +130,8 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 		}
 		ogE.addElement(new OptionsGruppeEintrag("[CR] The Axe of Medusa", 25));
 		ogE.addElement(new OptionsGruppeEintrag("[CR] The Ironstone", 30));
-		ogE.addElement(new OptionsGruppeEintrag("[CR] Betrayer´s Bane", 25));
-		ogE.addElement(new OptionsGruppeEintrag("[CR] The Gorgon´s Chain", 45));
+		ogE.addElement(new OptionsGruppeEintrag("[CR] BetrayerÂ´s Bane", 25));
+		ogE.addElement(new OptionsGruppeEintrag("[CR] The GorgonÂ´s Chain", 45));
 		ogE.addElement(new OptionsGruppeEintrag("[CR] The Tempered Helm", 35));		    
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand + 280, cnt, "", ogE, 1));
 		
@@ -204,12 +204,12 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 
 			if(o2.isSelected()){
 				o3.setPreis("Der Zorn des Primarchen", 25);
-				o3.setPreis("Die Zähne Terras", 40);
+				o3.setPreis("Die ZÃ¤hne Terras", 40);
 				o3.setPreis("Der Schild der Ewigkeit", 55);
 				o3.setPreis("Die Brennende Klinge", 60);
 			}else{
 				o3.setPreis("Der Zorn des Primarchen", 20);
-				o3.setPreis("Die Zähne Terras", 35);
+				o3.setPreis("Die ZÃ¤hne Terras", 35);
 				o3.setPreis("Der Schild der Ewigkeit", 50);
 				o3.setPreis("Die Brennende Klinge", 55);
 			}
@@ -246,7 +246,7 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 	    mantleOfTheStormseer.setAktiv(SonsOfTheGreatKhan && isScriptor);
 	    scimitarOfTheGreatKhan.setAktiv(SonsOfTheGreatKhan);
 
-		//Einzigartige Gegenstände
+		//Einzigartige GegenstÃ¤nde
 		if(o1.isSelected("Der Zorn des Primarchen")){
 			if(wrathBool==false){
 				wrathBool=true;
@@ -259,12 +259,12 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Die Zähne Terras")){
+		if(o1.isSelected("Die ZÃ¤hne Terras")){
 			if(teethBool==false){
 				teethBool=true;
 				BuildaHQ.addToInformationVectorGlobal("SMTeeth", 1);
 			}
-		} else if(!o1.isSelected("Die Zähne Terras")) {
+		} else if(!o1.isSelected("Die ZÃ¤hne Terras")) {
 			if(teethBool==true){
 				teethBool=false;
 				BuildaHQ.addToInformationVectorGlobal("SMTeeth", -1);
@@ -415,24 +415,24 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 			}
 		}
 
-		if(o4.isSelected("Betrayer´s Bane")){
+		if(o4.isSelected("BetrayerÂ´s Bane")){
 			if(baneBool==false){
 				baneBool=true;
 				BuildaHQ.addToInformationVectorGlobal("SMBane", 1);
 			}
-		} else if(!o4.isSelected("Betrayer´s Bane")) {
+		} else if(!o4.isSelected("BetrayerÂ´s Bane")) {
 			if(baneBool==true){
 				baneBool=false;
 				BuildaHQ.addToInformationVectorGlobal("SMBane", -1);
 			}
 		}
 
-		if(o4.isSelected("The Gorgon´s Chain")){
+		if(o4.isSelected("The GorgonÂ´s Chain")){
 			if(chainBool==false){
 				chainBool=true;
 				BuildaHQ.addToInformationVectorGlobal("SMChain", 1);
 			}
-		} else if(!o4.isSelected("The Gorgon´s Chain")) {
+		} else if(!o4.isSelected("The GorgonÂ´s Chain")) {
 			if(chainBool==true){
 				chainBool=false;
 				BuildaHQ.addToInformationVectorGlobal("SMChain", -1);
@@ -537,8 +537,8 @@ public class DWTerminatorwaffen extends RuestkammerVater {
 		boolean entrySwitched=false;
 
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

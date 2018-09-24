@@ -16,7 +16,7 @@ public class CHChaosHellBlade extends Eintrag {
 		name = "Chaos Hell Blade";
 		grundkosten = getPts("Chaos Hell Blade");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		seperator();
 

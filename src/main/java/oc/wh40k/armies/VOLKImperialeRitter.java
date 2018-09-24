@@ -11,22 +11,22 @@ public class VOLKImperialeRitter extends BuildaVater {
   public VOLKImperialeRitter() {
     reflectionKennung = "IR";
     
-    HQeintr‰ge = new String[] {""};
-    Eliteeintr‰ge = new String[] {""};
-    Standardeintr‰ge = new String[] {""};
-    Sturmeintr‰ge = new String[] {""};
-    Unterst¸tzungeintr‰ge = new String[] {""};
+    HQeintr√§ge = new String[] {""};
+    Eliteeintr√§ge = new String[] {""};
+    Standardeintr√§ge = new String[] {""};
+    Sturmeintr√§ge = new String[] {""};
+    Unterst√ºtzungeintr√§ge = new String[] {""};
     LordofWar = new String[] {"", "Knight Paladin", "Knight Errant", "Knight Warden", "Knight Crusader", "Knight Gallant",
     		"","[WDW] Gerantinus",
     		"","[FW] Cerastus Knight-Acheron","[FW] Cerastus Knight-Castigator","[FW] Cerastus Knight-Lancer","[FW] Questoris Knight Magaera"};
     
     
     
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 2, Eliteeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr‰ge));
-    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst¸tzungeintr‰ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 1, HQeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 2, Eliteeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 3, Standardeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 4, Sturmeintr√§ge));
+    adden(new ChooserGruppe(this,reflectionKennung, outOfPanel, 0, 5, Unterst√ºtzungeintr√§ge));
     adden(new ChooserGruppe(this,"FO", outOfPanel, 0, 6, Befestigungen));
     adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 7, LordofWar));
 
@@ -82,7 +82,7 @@ public class VOLKImperialeRitter extends BuildaVater {
     
 	//Verschiedene Spezialkontingente der IR
 		kontingente.add("");
-		kontingente.add("Hausverband-Kontingent");//Lord Baron: darf 1 Erbst¸ck haben
+		kontingente.add("Hausverband-Kontingent");//Lord Baron: darf 1 Erbst√ºck haben
 		kontingente.add("Eidgebundenen-Kontingent");//Nicht als Hauptkontingent
 		kontingente.add("");
 		kontingente.add("Adeptus Mechanicus War Convocation");
@@ -99,11 +99,11 @@ public class VOLKImperialeRitter extends BuildaVater {
 		maxAuswahlen.put("Adamantine Lance (Sanctus Reach)", new int[]{0,0,0,0,0,0,3,0});
 		
 		formationen.add("");
-		formationen.add("Royal Court");//5 Ritter alle d¸rfen Erbst¸cke haben
-		formationen.add("Baronial Court");//3-5 Lord Baron: darf 1 Erbst¸ck haben
+		formationen.add("Royal Court");//5 Ritter alle d√ºrfen Erbst√ºcke haben
+		formationen.add("Baronial Court");//3-5 Lord Baron: darf 1 Erbst√ºck haben
 		formationen.add("Tripartite Lance");//Warden, Gallant, Crusader
 		formationen.add("Gallant Lance");//3 Gallant
-		formationen.add("Skyreaper Lance");//3 Ritter //alle m¸ssen Icarus w‰hlen
+		formationen.add("Skyreaper Lance");//3 Ritter //alle m√ºssen Icarus w√§hlen
 		
 		minAuswahlen.put("Royal Court", new int[]{0,0,0,0,0,0,5,0});
 		maxAuswahlen.put("Royal Court", new int[]{0,0,0,0,0,0,5,0});
@@ -223,6 +223,6 @@ public class VOLKImperialeRitter extends BuildaVater {
   
   @Override
   protected void finalize() {
-    System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+    System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
   }
 }

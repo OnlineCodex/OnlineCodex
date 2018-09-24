@@ -14,7 +14,7 @@ public class HHCALegionJavelinAttackSpeederSquadron extends Eintrag {
 	public HHCALegionJavelinAttackSpeederSquadron() {
 		name = "Legion Javelin Attack Speeder Squadron";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         seperator();
 		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "HHCAJavelinKammer", "Javelin Attack Speeder");

@@ -13,7 +13,7 @@ public class IMDeathCultAssassins extends Eintrag {
 	public IMDeathCultAssassins() {
 		name = "Death Cult Assassins\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		power = 1;
 		
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Death Cult Assassin", 2, 10, getPts("Death Cult Assassins")+getPts("Death Cult power blades"));

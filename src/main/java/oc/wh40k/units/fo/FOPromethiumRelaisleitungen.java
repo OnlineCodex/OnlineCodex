@@ -14,7 +14,7 @@ public class FOPromethiumRelaisleitungen extends Eintrag {
 	public FOPromethiumRelaisleitungen() {
 		name = "Promethium-Relaisleitungen";
 		grundkosten = 40;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

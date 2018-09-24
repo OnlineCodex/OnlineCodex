@@ -17,7 +17,7 @@ public class ORBoyz extends Eintrag {
 	OptionsEinzelUpgrade wummen;
 	OptionsZaehlerGruppe boyzFK;
 	OptionsEinzelUpgrade panzaboys;
-	OptionsEinzelUpgrade troph‰enstange;
+	OptionsEinzelUpgrade troph√§enstange;
 	RuestkammerStarter PikkUp;
 	RuestkammerStarter Boss;
 

@@ -8,7 +8,7 @@ import oc.RuestkammerStarter;
 public class ORWarbikers extends Eintrag {
 
 	AnzahlPanel waaghbikaz;
-	OptionsEinzelUpgrade troph‰enstange;
+	OptionsEinzelUpgrade troph√§enstange;
 	RuestkammerStarter Boss;
 
 	public ORWarbikers() {

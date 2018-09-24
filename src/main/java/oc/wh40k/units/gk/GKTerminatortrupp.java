@@ -25,7 +25,7 @@ public class GKTerminatortrupp extends Eintrag {
     public GKTerminatortrupp() {
         name = "Terminatortrupp\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminatoren", 5, 10, 40);
         add(squad);
@@ -38,7 +38,7 @@ public class GKTerminatortrupp extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Psischwert", "Nemesis-Psischwert", 0));
         add(o1def = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 0));
-        ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 0));
+        ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 0));
         ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 5));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
@@ -46,7 +46,7 @@ public class GKTerminatortrupp extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
         add(o2def = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flamer", "Erlöser-Flammenwerfer", 5));
+        ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flamer", "ErlÃ¶ser-Flammenwerfer", 5));
         ogE.addElement(new OptionsGruppeEintrag("Psipulser", 15));
         ogE.addElement(new OptionsGruppeEintrag("Psibolter", 25));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));

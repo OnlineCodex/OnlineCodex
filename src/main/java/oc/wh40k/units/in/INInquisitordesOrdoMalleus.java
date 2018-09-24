@@ -41,17 +41,17 @@ public class INInquisitordesOrdoMalleus extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Kombi-Melter", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Kombi-Plasmawerfer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flamer", "Erlöser-Flammenwerfer", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenklinge", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Höllengewehr", 15));
+		ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flamer", "ErlÃ¶ser-Flammenwerfer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenklinge", 15));
+		ogE.addElement(new OptionsGruppeEintrag("HÃ¶llengewehr", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Psischwert", 0));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Servo-Rüstung", 8));
-		ogE.addElement(new OptionsGruppeEintrag("Terminatorrüstung", 40));
+		ogE.addElement(new OptionsGruppeEintrag("Servo-RÃ¼stung", 8));
+		ogE.addElement(new OptionsGruppeEintrag("TerminatorrÃ¼stung", 40));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -66,13 +66,13 @@ public class INInquisitordesOrdoMalleus extends Eintrag {
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 0));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Psischwert", 0));
         add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 
-		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-Schädel", 3, 3));
+		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-SchÃ¤del", 3, 3));
 
         seperator();
 
@@ -96,18 +96,18 @@ public class INInquisitordesOrdoMalleus extends Eintrag {
 
 	@Override
 	public void refreshen() {
-		bp.setAktiv(!o2.isSelected("Terminatorrüstung"));
-		cs.setAktiv(!o2.isSelected("Terminatorrüstung"));
-        o1.setAktiv(!o2.isSelected("Terminatorrüstung"));
-        o3.setAktiv(o2.isSelected("Terminatorrüstung"));
-        o4.setAktiv(o2.isSelected("Terminatorrüstung"));
+		bp.setAktiv(!o2.isSelected("TerminatorrÃ¼stung"));
+		cs.setAktiv(!o2.isSelected("TerminatorrÃ¼stung"));
+        o1.setAktiv(!o2.isSelected("TerminatorrÃ¼stung"));
+        o3.setAktiv(o2.isSelected("TerminatorrÃ¼stung"));
+        o4.setAktiv(o2.isSelected("TerminatorrÃ¼stung"));
 
-        o1.setAktiv("Psischwert", psi.isSelected() && !o2.isSelected("Terminatorrüstung"));
-        o3.setAktiv("Psischwert", psi.isSelected() && o2.isSelected("Terminatorrüstung") && !o4.isSelected("Psischwert"));
-        o4.setAktiv("Psischwert", psi.isSelected() && o2.isSelected("Terminatorrüstung") && !o3.isSelected("Psischwert"));
+        o1.setAktiv("Psischwert", psi.isSelected() && !o2.isSelected("TerminatorrÃ¼stung"));
+        o3.setAktiv("Psischwert", psi.isSelected() && o2.isSelected("TerminatorrÃ¼stung") && !o4.isSelected("Psischwert"));
+        o4.setAktiv("Psischwert", psi.isSelected() && o2.isSelected("TerminatorrÃ¼stung") && !o3.isSelected("Psischwert"));
 
-        if(o2.isSelected("Terminatorrüstung")) o3.alwaysSelected();
-        if(o2.isSelected("Terminatorrüstung")) o4.alwaysSelected();
+        if(o2.isSelected("TerminatorrÃ¼stung")) o3.alwaysSelected();
+        if(o2.isSelected("TerminatorrÃ¼stung")) o4.alwaysSelected();
 
         o1.setMaxAnzahl(2-(cs.isSelected()?1:0)-(bp.isSelected()?1:0));
         

@@ -12,13 +12,13 @@ public class TAInfanterieKammer extends RuestkammerVater {
 	boolean[] defaults;
 	boolean shasui = false;
 	boolean former = false;
-	boolean sp‰her = false;
+	boolean sp√§her = false;
 
 	public void initButtons(boolean... defaults) {
 		this.defaults = defaults;
 		shasui = defaults[0];
 		former = defaults[1];
-		sp‰her = defaults[2];
+		sp√§her = defaults[2];
 		
 		if(shasui){
 			//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zielmarker", 10));
@@ -37,7 +37,7 @@ public class TAInfanterieKammer extends RuestkammerVater {
 			add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jagdmunition", 1));
 		}
 		
-		if(sp‰her){
+		if(sp√§her){
 			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Pulse pistol", getPts("Pulse pistol")));
 		}
 		

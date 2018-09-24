@@ -7,7 +7,7 @@ public class CDSchaedelkanonedesKhorne extends Eintrag {
 
 	public CDSchaedelkanonedesKhorne() {
 
-		name = "Sch‰delkanone des Khorne";
+		name = "Sch√§delkanone des Khorne";
 
 		grundkosten = 125;
 
