@@ -91,8 +91,8 @@ public class CMExaltedSorcerer extends Eintrag {
         	RefreshListener.fireRefresh();
         }
 		
-        chaosBelohnungen.getKammer().switchEntry("Flugd‰mon des Tzeentch", mal.isSelected("Mal des Tzeentch"));
-        chaosBelohnungen.getKammer().switchEntry("S‰nfte des Nurgle", mal.isSelected("Mal des Nurgle"));
+        chaosBelohnungen.getKammer().switchEntry("Flugd√§mon des Tzeentch", mal.isSelected("Mal des Tzeentch"));
+        chaosBelohnungen.getKammer().switchEntry("S√§nfte des Nurgle", mal.isSelected("Mal des Nurgle"));
         chaosBelohnungen.getKammer().switchEntry("Slaaneshpferd", mal.isSelected("Mal des Slaanesh"));
         chaosBelohnungen.getKammer().switchEntry("Seuchengranaten", mal.isSelected("Mal des Nurgle"));
         

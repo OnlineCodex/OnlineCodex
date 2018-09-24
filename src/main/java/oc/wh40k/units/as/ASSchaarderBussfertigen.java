@@ -12,7 +12,7 @@ public class ASSchaarderBussfertigen extends Eintrag {
     Vector<RuestkammerStarter> laeuterer = new Vector<RuestkammerStarter>();//3+
     
 	public ASSchaarderBussfertigen() {
-		name = "Schaar der Buﬂfertigen";
+		name = "Schaar der Bu√üfertigen";
 		grundkosten = 50;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ASSchaarderBussfertigen.gif"));
@@ -31,7 +31,7 @@ public class ASSchaarderBussfertigen extends Eintrag {
         repentias.get(3).setAktiv(false);
         
         for(int i=0;i<4;i++){
-        	laeuterer.add(new RuestkammerStarter(ID, randAbstand, cnt, "ASLaeutererKammer", "L‰uterer",1));
+        	laeuterer.add(new RuestkammerStarter(ID, randAbstand, cnt, "ASLaeutererKammer", "L√§uterer",1));
         	laeuterer.get(i).initKammer();
             add(laeuterer.get(i));
         }
@@ -55,7 +55,7 @@ public class ASSchaarderBussfertigen extends Eintrag {
 		repentias.get(1).setAktiv(true);
 		repentias.get(2).setAktiv(true);
 		
-		adjustOptions(laeuterer,3,"ASLaeutererKammer", "L‰uterer",1+repentias.size(),1);
+		adjustOptions(laeuterer,3,"ASLaeutererKammer", "L√§uterer",1+repentias.size(),1);
 		laeuterer.get(0).setLegal(laeuterer.get(0).isSelected());
 		laeuterer.get(1).setLegal(laeuterer.get(1).isSelected());
 		laeuterer.get(2).setLegal(laeuterer.get(2).isSelected());
@@ -68,8 +68,8 @@ public class ASSchaarderBussfertigen extends Eintrag {
 		
 	}
 	
-	//Entfernt aus dem Vektor alle ¸berz‰hligen nicht ausgew‰hlten Eintr‰ge.
-	//F¸gt einen neuen ausw‰hlbaren Eintrag hinter dem letzten der gleichen Einheit ein, falls alle ausgew‰hlt wurden.
+	//Entfernt aus dem Vektor alle √ºberz√§hligen nicht ausgew√§hlten Eintr√§ge.
+	//F√ºgt einen neuen ausw√§hlbaren Eintrag hinter dem letzten der gleichen Einheit ein, falls alle ausgew√§hlt wurden.
 	public void adjustOptions(Vector<RuestkammerStarter> starter, int minOptions, String unit, String unitName, int offset, int einrueck){
 		
 		

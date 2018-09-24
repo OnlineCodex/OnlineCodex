@@ -26,7 +26,7 @@ public class RH_IA13RenegadeInfantryVeterans extends Eintrag {
 	public RH_IA13RenegadeInfantryVeterans() {
 		name = "Renegade Infantry Veterans\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		add(ico = new oc.Picture("oc/wh40k/images/RHCompanyCommandSquad.jpg"));
 
 		seperator();

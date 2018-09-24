@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class SMLibrarian extends Eintrag {
 
-	boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
+	boolean addedSpezialAuswahl = false; // spezialauswahl ist abhÃ¤ngig von "Space Marine bike"
 	OptionsEinzelUpgrade termi;
 	RuestkammerStarter waffenUndReliquien;
 	RuestkammerStarter termiWaffen;
@@ -27,7 +27,7 @@ public class SMLibrarian extends Eintrag {
 
 		seperator();
 
-		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 25));
+		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 25));
 
 		seperator();
 
@@ -49,7 +49,7 @@ public class SMLibrarian extends Eintrag {
 
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "SMSpezialausruestung", "");
 		spezialAusruestung.initKammer(false, true, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 
 		complete();

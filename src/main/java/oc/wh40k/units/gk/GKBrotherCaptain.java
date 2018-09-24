@@ -7,7 +7,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class GKBrotherCaptain extends Eintrag {
-	//TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
+	//TODO AusrÃ¼stung in eine Kammer verlegen. Artefakte richtig handhaben
 	OptionsUpgradeGruppe o1, o1x;
 	OptionsUpgradeGruppe o2, reliquien;
 	boolean grandmasterBool;
@@ -27,7 +27,7 @@ public class GKBrotherCaptain extends Eintrag {
         seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flammenwerfer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flammenwerfer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Psipulser", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Psibolter", 20));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -38,7 +38,7 @@ public class GKBrotherCaptain extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -57,7 +57,7 @@ public class GKBrotherCaptain extends Eintrag {
         
 		ogE.addElement(new OptionsGruppeEintrag("Deimos Wut", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Knochensplitter", "Knochensplitter des Solor", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Kürass der Märtyer", "Kürass der Märtyer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("KÃ¼rass der MÃ¤rtyer", "KÃ¼rass der MÃ¤rtyer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Seelengleve", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Domina Liber Daemonica", "Domina Liber Daemonica", 25));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Skull of Petronella the Pious (GS)"), 30));
@@ -118,7 +118,7 @@ public class GKBrotherCaptain extends Eintrag {
         }
         
         if(getCountFromInformationVector("Grey Knight Brotherhood")==1 && getCountFromInformationVector("GKGrandmaster")!=1){
-        	setFehlermeldung("1 Grandmaster wählen" );
+        	setFehlermeldung("1 Grandmaster wÃ¤hlen" );
         }else{
         	setFehlermeldung("");
         }

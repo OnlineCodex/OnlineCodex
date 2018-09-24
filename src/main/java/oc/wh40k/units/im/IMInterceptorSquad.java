@@ -20,7 +20,7 @@ public class IMInterceptorSquad extends Eintrag {
 	public IMInterceptorSquad() {
 		name = "Interceptor Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Interceptor", 5, 10, getPts("Interceptor Squad"));
 		squad.setGrundkosten(10);

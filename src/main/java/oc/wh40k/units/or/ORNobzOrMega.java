@@ -10,7 +10,7 @@ public class ORNobzOrMega extends Eintrag {
 	public ORNobzOrMega() {
 		kategorie = 2;
 		grundkosten = 0;
-		überschriftSetzen=false;
+		Ã¼berschriftSetzen=false;
 
 		seperator();
 

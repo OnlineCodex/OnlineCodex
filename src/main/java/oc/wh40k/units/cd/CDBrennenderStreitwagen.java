@@ -25,11 +25,11 @@ public class CDBrennenderStreitwagen extends Eintrag {
 
 		seperator();
 		
-		add(ErhabenerFeuerdaemon = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Erhabener Feuerd‰mon", 0));
+		add(ErhabenerFeuerdaemon = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Erhabener Feuerd√§mon", 0));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("M‰chtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("M√§chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		complete();

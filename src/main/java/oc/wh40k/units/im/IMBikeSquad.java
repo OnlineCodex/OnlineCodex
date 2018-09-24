@@ -18,7 +18,7 @@ public class IMBikeSquad extends Eintrag {
 	public IMBikeSquad() {
 		name = "Bike Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines Biker", 3, 8, getPts("Bike Squad") + getPts("Twin boltgun")));
 

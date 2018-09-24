@@ -15,10 +15,10 @@ public class CDSeuchenhueterdesNurgle extends Eintrag {
 
 	public CDSeuchenhueterdesNurgle() {
 
-		name = "Seuchenhüter des Nurgle";
+		name = "SeuchenhÃ¼ter des Nurgle";
 		grundkosten = 0;
 
-		CDSeuchenhueterdesNurgle = new AnzahlPanel(ID, randAbstand, cnt, "Seuchenhüter des Nurgle", 10, 20, 9);
+		CDSeuchenhueterdesNurgle = new AnzahlPanel(ID, randAbstand, cnt, "SeuchenhÃ¼ter des Nurgle", 10, 20, 9);
 		add(CDSeuchenhueterdesNurgle);
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDSeuchenhueterdesNurgle.gif"));
@@ -35,7 +35,7 @@ public class CDSeuchenhueterdesNurgle extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
         BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("[Forgeworld] Scabeiathrax the Bloated");

@@ -40,7 +40,7 @@ public class DASpezialausruestung extends RuestkammerVater {
 		//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "",BuildaHQ.translate("Warpsprungfeld"), 25));
 		//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "",BuildaHQ.translate("Kraftfeldgenerator"), 30));
 		
-		setUeberschrift("Spezielle Ausrüstung");
+		setUeberschrift("Spezielle AusrÃ¼stung");
 		sizeSetzen();
 	}
 
@@ -80,8 +80,8 @@ public class DASpezialausruestung extends RuestkammerVater {
 			}
 		}
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

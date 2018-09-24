@@ -34,7 +34,7 @@ public class CMAuserkorene extends Eintrag {
 	public CMAuserkorene() {
 		//name = "Auserkorene Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Auserkorene", 5, 10, 18);
 		add(squad);

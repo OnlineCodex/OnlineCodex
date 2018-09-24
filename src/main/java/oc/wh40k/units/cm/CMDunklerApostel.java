@@ -63,8 +63,8 @@ public class CMDunklerApostel extends Eintrag {
 		vdlk.setAktiv(getCountFromInformationVector("CrimsonSlaughter")==0);
 		
         chaosBelohnungen.getKammer().switchEntry("Moloch des Khorne", false);
-        chaosBelohnungen.getKammer().switchEntry("Flugd‰mon des Tzeentch", false);
-        chaosBelohnungen.getKammer().switchEntry("S‰nfte des Nurgle", false);
+        chaosBelohnungen.getKammer().switchEntry("Flugd√§mon des Tzeentch", false);
+        chaosBelohnungen.getKammer().switchEntry("S√§nfte des Nurgle", false);
         chaosBelohnungen.getKammer().switchEntry("Slaaneshpferd", false);
         
         waffenUndArtefakte.getKammer().switchEntry("Axt der blinden Wut", mal.isSelected("Mal des Khorne"));

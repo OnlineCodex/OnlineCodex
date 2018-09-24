@@ -23,7 +23,7 @@ public class ECCorsairBalestrikeBand extends Eintrag {
     public ECCorsairBalestrikeBand() {
         name = "Corsair Balestrike Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Corsairs", 5, 10, 10);
         add(squad);

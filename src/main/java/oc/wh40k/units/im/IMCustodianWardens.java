@@ -15,7 +15,7 @@ public class IMCustodianWardens extends Eintrag {
 	public IMCustodianWardens() {
 		name = "Custodian Warden\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Custodian Warden", 3, 10, getPts("Custodian Wardens") + getPts("Misericordia"));

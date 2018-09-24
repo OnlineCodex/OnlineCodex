@@ -12,7 +12,7 @@ public class ABSiegeTankSquadron extends Eintrag {
 	public ABSiegeTankSquadron() {
 		name = "Siege Tank Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABThundererSiegeTankSquadron.jpg"));
 

@@ -12,7 +12,7 @@ public class DKSRHellhoundSquadron extends Eintrag {
 	public DKSRHellhoundSquadron() {
 		name = "Hellhound Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 

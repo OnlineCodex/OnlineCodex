@@ -16,7 +16,7 @@ public class IMCustodianGuard extends Eintrag {
 	public IMCustodianGuard() {
 		name = "Custodian Guard\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Custodian Guard", 3, 10, getPts("Custodian Guard"));

@@ -22,7 +22,7 @@ public class IMCrusaderSquad extends Eintrag {
 	public IMCrusaderSquad() {
 		name = "Crusader Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		Initiates = new AnzahlPanel(ID, randAbstand, cnt, "Initiates", 5, 10, getPts("Crusader Squad"));
 		add(Initiates);

@@ -22,12 +22,12 @@ public class DACompanyMaster extends Eintrag {
 		seperator();
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Sturmschild", "Sturmschild", 15));
-		//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Düsteres Relikt der alten Legion", "Düsteres Relikt", 15));
-		add(meister =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Meisterhafte Rüstung", "Meisterhafte Rüstung", 20));
+		//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "DÃ¼steres Relikt der alten Legion", "DÃ¼steres Relikt", 15));
+		add(meister =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Meisterhafte RÃ¼stung", "Meisterhafte RÃ¼stung", 20));
 
 		seperator();
 
-		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 30));
+		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 30));
 		
 		seperator();
        
@@ -49,7 +49,7 @@ public class DACompanyMaster extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DASpezialausruestung", "");
 		spezialAusruestung.initKammer(false, true, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		
 		seperator(5);

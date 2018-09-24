@@ -25,8 +25,8 @@ public class APOPraetorArmouredAssaultLauncherKammer extends RuestkammerVater {
 
         seperator(5);
 
-        ogE.addElement(new OptionsGruppeEintrag("zus‰tzliches Maschinengewehr", 10));
-        ogE.addElement(new OptionsGruppeEintrag("zus‰tzlicher Sturmbolter", 10));
+        ogE.addElement(new OptionsGruppeEintrag("zus√§tzliches Maschinengewehr", 10));
+        ogE.addElement(new OptionsGruppeEintrag("zus√§tzlicher Sturmbolter", 10));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

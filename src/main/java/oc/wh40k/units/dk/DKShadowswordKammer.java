@@ -29,8 +29,8 @@ public class DKShadowswordKammer extends RuestkammerVater {
 
 
     add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-    add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzlicher Sturmbolter", 10));
-    add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 10));
+    add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzlicher Sturmbolter", 10));
+    add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 10));
     add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "snychr. schw. Bolter", "synchronisierter schwerer Bolter", 25));
 
     seperator(3);
@@ -41,7 +41,7 @@ public class DKShadowswordKammer extends RuestkammerVater {
 
     ogE.addElement(new OptionsGruppeEintrag("zwei Seitenkuppeln", 0));
     ogE.addElement(new OptionsGruppeEintrag("vier Seitenkuppeln", 100));
-    ogE.addElement(new OptionsGruppeEintrag("zus‰tzliche Panzerplatten", 0));
+    ogE.addElement(new OptionsGruppeEintrag("zus√§tzliche Panzerplatten", 0));
     add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
     seperator();

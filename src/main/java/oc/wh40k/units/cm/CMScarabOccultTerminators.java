@@ -25,7 +25,7 @@ public class CMScarabOccultTerminators extends Eintrag {
 	public CMScarabOccultTerminators() {
 		//name = "Thousand Sons\n";
 		grundkosten = 90;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Scarab Occult Terminators", 4, 9, 40);
 		add(squad);

@@ -12,7 +12,7 @@ public class SMDeathstormDropPod extends Eintrag {
 	public SMDeathstormDropPod() {
 		name = "Deathstorm Drop Pod";
 		grundkosten = 75;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/SMDeathwindDropPod.jpg"));
 

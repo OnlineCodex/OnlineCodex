@@ -20,12 +20,12 @@ public class CSThousandSons extends Eintrag {
 	OptionsZaehlerGruppe o7;
     RuestkammerStarter champion;
     RuestkammerStarter chaosTransport;
-	OptionsZaehlerGruppe kettenäxte;
+	OptionsZaehlerGruppe kettenÃ¤xte;
     
 	public CSThousandSons() {
 		//name = "Thousand Sons\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Thousand Sons", 5, 20, 23);
 		add(squad);

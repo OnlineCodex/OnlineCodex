@@ -18,7 +18,7 @@ public class RH_IA13RenegadeSupportSquad extends Eintrag {
 	public RH_IA13RenegadeSupportSquad() {
         grundkosten = 0;
         name = "Renegade Support Squad";
-        überschriftSetzen=true;
+        Ã¼berschriftSetzen=true;
 		
 
         add(wummen = new AnzahlPanel(ID, randAbstand, cnt, "Renegade Weapon Teams", 3, 6, 10));

@@ -12,7 +12,7 @@ public class HHCATechmarineCovenant extends Eintrag {
 	public HHCATechmarineCovenant() {
 		name = "Techmarine Covenant";
 		grundkosten = 0;
-                überschriftSetzen = true;
+                Ã¼berschriftSetzen = true;
 
 		seperator();
 		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "HHCATechmarineKammer", "Techmarine");

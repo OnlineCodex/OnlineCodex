@@ -25,7 +25,7 @@ public class FOFeuersturmAbwehrstellungKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Icarus-Laserkanone", 0));
 		add(ozgX = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		ogE.addElement(new OptionsGruppeEintrag("Vollstrecker-Stuka","Vollstrecker-Sturmkanone", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Kampfgeschütz", 10));
+		ogE.addElement(new OptionsGruppeEintrag("KampfgeschÃ¼tz", 10));
 		add(ozg1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 		
 		seperator();
@@ -38,7 +38,7 @@ public class FOFeuersturmAbwehrstellungKammer extends RuestkammerVater {
 		
 		seperator();
 		
-		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Gebäude");
+		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "GebÃ¤ude");
 		hauptGeb.initKammer(true);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptGeb);

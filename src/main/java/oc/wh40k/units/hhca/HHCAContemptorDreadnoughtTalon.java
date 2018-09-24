@@ -16,7 +16,7 @@ public class HHCAContemptorDreadnoughtTalon extends Eintrag {
 	public HHCAContemptorDreadnoughtTalon() {
 		name = "Contemptor Dreadnought Talon";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Dreadclaw Drop Pod", 85));

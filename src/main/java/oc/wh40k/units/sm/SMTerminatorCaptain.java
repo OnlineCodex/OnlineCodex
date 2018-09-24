@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class SMTerminatorCaptain extends Eintrag {
 
-	boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
+	boolean addedSpezialAuswahl = false; // spezialauswahl ist abhÃ¤ngig von "Space Marine bike"
 	OptionsEinzelUpgrade termi;
 	RuestkammerStarter termiWaffen;
 	RuestkammerStarter spezialAusruestung;
@@ -22,7 +22,7 @@ public class SMTerminatorCaptain extends Eintrag {
 
 		seperator();
 
-		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 0));
+		add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 0));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cataphractii Armour", 0));
 
 		seperator();
@@ -36,7 +36,7 @@ public class SMTerminatorCaptain extends Eintrag {
 
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "SMSpezialausruestung", "");
 		spezialAusruestung.initKammer(false, true, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		spezialAusruestung.setAbwaehlbar(false);
 

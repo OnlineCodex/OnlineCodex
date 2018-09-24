@@ -12,7 +12,7 @@ public class CHLegion extends Eintrag {
 	public CHLegion() {
 		grundkosten = 0;
 		name="Legion:";
-		//überschriftSetzen=true;
+		//Ã¼berschriftSetzen=true;
 		this.setEintragsCNT(0);
 		
 		seperator();

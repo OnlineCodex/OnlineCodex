@@ -21,9 +21,9 @@ public class KDHerald extends Eintrag {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰senz des Trotzes", "Geringe Pr‰senz der Trotzes", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰senz der Wut", "M‰chtige Pr‰senz der Wut", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Pr‰senz des Zorns", "Erhabene Pr‰senz des Zorns", 25));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§senz des Trotzes", "Geringe Pr√§senz der Trotzes", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§senz der Wut", "M√§chtige Pr√§senz der Wut", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Pr√§senz des Zorns", "Erhabene Pr√§senz des Zorns", 25));
 		add(praesenz = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();

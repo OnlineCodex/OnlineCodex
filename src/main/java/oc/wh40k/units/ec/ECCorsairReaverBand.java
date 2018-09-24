@@ -24,7 +24,7 @@ public class ECCorsairReaverBand extends Eintrag {
     public ECCorsairReaverBand() {
         name = "Corsair Reaver Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Corsairs", 5, 20, 10);
         add(squad);

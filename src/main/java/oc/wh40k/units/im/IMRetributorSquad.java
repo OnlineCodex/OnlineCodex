@@ -20,7 +20,7 @@ public class IMRetributorSquad extends Eintrag {
 	public IMRetributorSquad() {
 		name = "Retributor Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Retributor Squad", 5, 10, getPts("Retributor Squad"));
 		add(squad);

@@ -25,7 +25,7 @@ public class CSChaosartefakte extends RuestkammerVater {
 		malDesNurgle = defaults[2];
 		malDesSlaanesh = defaults[3];
 
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Dimensionsschlüssel"), 25));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("DimensionsschlÃ¼ssel"), 25));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Brandfackel von Skalathrax"), 30));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Axt der blinden Wut"), 35));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das Mordschwert"), 35));

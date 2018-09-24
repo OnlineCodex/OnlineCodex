@@ -12,22 +12,22 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 	public VOLKEldarCorsairsIA112ndEd() {
 		reflectionKennung = "EC";
 
-		HQeintr‰ge = new String[] {"", "Corsair Prince", "Corsair Void Dreamer", "Corsair Baron"};
-		Standardeintr‰ge = new String[] {"", "Corsair Reaver Band", "Corsair Ghostwalker Band", "Corsair Cloud Dancer Band",}; 
-		Eliteeintr‰ge = new String[] {"", "Corsair Voidstorm Band", "Corsair Malevolent Band", "Corsair Wasp Squadron"}; 
-		Sturmeintr‰ge = new String[] {"", "Corsair Vyper Squadron" , "Corsair Nightwing", "Corsair Phoenix", "Corsair Hornet Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Corsair Balestrike Band", "Corsair Lynx", "Corsair Warp Hunter Squadron", "Corsair Night Spinner", 
+		HQeintr√§ge = new String[] {"", "Corsair Prince", "Corsair Void Dreamer", "Corsair Baron"};
+		Standardeintr√§ge = new String[] {"", "Corsair Reaver Band", "Corsair Ghostwalker Band", "Corsair Cloud Dancer Band",}; 
+		Eliteeintr√§ge = new String[] {"", "Corsair Voidstorm Band", "Corsair Malevolent Band", "Corsair Wasp Squadron"}; 
+		Sturmeintr√§ge = new String[] {"", "Corsair Vyper Squadron" , "Corsair Nightwing", "Corsair Phoenix", "Corsair Hornet Squadron"};
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Corsair Balestrike Band", "Corsair Lynx", "Corsair Warp Hunter Squadron", "Corsair Night Spinner", 
 												  "Corsair Fire Storm", "Corsair Fire Prism"};
 		LordofWar = new String[] {"", "Corsair Vampire Raider"};
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -160,13 +160,13 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 		if(getKontingentTyp().equals("Command Crew"))
 		{
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr‰ge);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr√§ge);
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar);
 			
 			formation=new Formation(this);
 			formation.infoLabel.setText("<html>Info:<br>"
-					+ "F¸r die gesamte Corsair Fleet Raiding Company gilt:<br>"
+					+ "F√ºr die gesamte Corsair Fleet Raiding Company gilt:<br>"
 					+ "1 Corsair Prince.<br>"
 					+ "0-1 Corsair Void Dreamer.<br>"
 					+ "0-1 Corsair Lynx.<br>"
@@ -182,14 +182,14 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 		else if(getKontingentTyp().equals("Primary Cotorie") || getKontingentTyp().equals("Optional Cotorie"))
 		{
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr‰ge);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr‰ge);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr‰ge);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr‰ge);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst¸tzungeintr‰ge);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeintr√§ge);
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeintr√§ge);
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeintr√§ge);
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeintr√§ge);
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterst√ºtzungeintr√§ge);
 			
 			formation.infoLabel.setText("<html>Info:<br>"
-					+ "F¸r die gesamte Corsair Fleet Raiding Company gilt:<br>"
+					+ "F√ºr die gesamte Corsair Fleet Raiding Company gilt:<br>"
 					+ "1 Corsair Prince.<br>"
 					+ "0-1 Corsair Void Dreamer.<br>"
 					+ "0-1 Corsair Lynx.<br>"
@@ -221,7 +221,7 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

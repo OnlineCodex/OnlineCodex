@@ -15,7 +15,7 @@ public class HHCALegionAttackBikeSquadron extends Eintrag {
 	public HHCALegionAttackBikeSquadron() {
 		name = "Legion Attack Bike Squadron\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Attack bike", "Attack bikes", 1, 5, 40);
 		add(squad);

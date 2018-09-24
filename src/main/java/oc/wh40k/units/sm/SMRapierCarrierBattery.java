@@ -14,7 +14,7 @@ public class SMRapierCarrierBattery extends Eintrag {
 	public SMRapierCarrierBattery() {
 		name = "Rapier Carrier Battery\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Rapier","Rapiers", 1, 3, 40);
 		add(squad);

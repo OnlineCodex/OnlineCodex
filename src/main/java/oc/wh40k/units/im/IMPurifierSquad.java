@@ -20,7 +20,7 @@ public class IMPurifierSquad extends Eintrag {
 	public IMPurifierSquad() {
 		name = "Purificator-Trupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Purifier", 5, 10, getPts("Purifier Squad"));
 		add(squad);

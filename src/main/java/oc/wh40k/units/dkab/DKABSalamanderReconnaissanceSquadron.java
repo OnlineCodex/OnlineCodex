@@ -15,7 +15,7 @@ public class DKABSalamanderReconnaissanceSquadron extends Eintrag {
 	public DKABSalamanderReconnaissanceSquadron() {
 		name = "Salamander Recon Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABSalamanderReconSquadron.jpg"));
 

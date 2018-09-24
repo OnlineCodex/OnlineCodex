@@ -33,11 +33,11 @@ public class CDZerschmettererdesKhorne extends Eintrag {
 		
 		seperator();
 
-		add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutj‰ger", 5));
+		add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutj√§ger", 5));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("M‰chtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("M√§chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		seperator();

@@ -29,7 +29,7 @@ public class SMHonourGuard extends Eintrag {
 	public SMHonourGuard() {
 		name = "Honour Guard\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("Honour Guard", 1);
 

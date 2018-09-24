@@ -7,7 +7,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class GKLibrarian extends Eintrag {
-	//TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
+	//TODO AusrÃ¼stung in eine Kammer verlegen. Artefakte richtig handhaben
 
 	OptionsUpgradeGruppe o1, o1x;
 	OptionsUpgradeGruppe o2, reliquien;
@@ -37,7 +37,7 @@ public class GKLibrarian extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psischwert", "Nemesis-Psischwert", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 5));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -56,7 +56,7 @@ public class GKLibrarian extends Eintrag {
         
 		ogE.addElement(new OptionsGruppeEintrag("Deimos Wut", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Knochensplitter", "Knochensplitter des Solor", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Kürass der Märtyer", "Kürass der Märtyer", 15));
+		ogE.addElement(new OptionsGruppeEintrag("KÃ¼rass der MÃ¤rtyer", "KÃ¼rass der MÃ¤rtyer", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Seelengleve", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Domina Liber Daemonica", "Domina Liber Daemonica", 25));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Skull of Petronella the Pious (GS)"), 30));

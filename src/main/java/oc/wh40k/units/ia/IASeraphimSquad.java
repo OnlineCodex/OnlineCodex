@@ -15,7 +15,7 @@ public class IASeraphimSquad extends Eintrag {
 	public IASeraphimSquad() {
 		name = "Seraphim Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Seraphim", 5, 10, 15);
 		add(squad);

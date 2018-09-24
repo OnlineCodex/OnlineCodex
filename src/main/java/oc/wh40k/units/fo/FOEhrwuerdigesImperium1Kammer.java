@@ -13,7 +13,7 @@ public class FOEhrwuerdigesImperium1Kammer extends RuestkammerVater {
 
 	public FOEhrwuerdigesImperium1Kammer() {}
 	public void initButtons(boolean... defaults) {
-		name = "Ehrwürdiges Imperium1";
+		name = "EhrwÃ¼rdiges Imperium1";
 		grundkosten = 40;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));

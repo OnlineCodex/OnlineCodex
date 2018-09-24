@@ -19,7 +19,7 @@ public class GKPurifierSquad extends Eintrag {
 	public GKPurifierSquad() {
 		name = "Purificator-Trupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Purificatoren", 5, 10, 25);
 		add(squad);
@@ -34,7 +34,7 @@ public class GKPurifierSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
 		seperator();
@@ -42,7 +42,7 @@ public class GKPurifierSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
-		ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flamer", "Erlöser-Flammenwerfer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flamer", "ErlÃ¶ser-Flammenwerfer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Psipulser", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Psibolter", 15));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));

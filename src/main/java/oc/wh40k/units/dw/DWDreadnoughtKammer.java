@@ -29,7 +29,7 @@ public class DWDreadnoughtKammer extends RuestkammerVater {
 
 		seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 		
 		seperator();
 

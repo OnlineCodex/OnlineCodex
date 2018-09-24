@@ -58,7 +58,7 @@ public class CMChaosContemptorDreadnought extends Eintrag {
 
 		seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Havoc Launcher", "Carapace-mounted Havoc Launcher", 15));
 
 		complete();

@@ -20,7 +20,7 @@ public class IMPurgationSquad extends Eintrag {
 	public IMPurgationSquad() {
 		name = "Purgatortrupp\n";
 		grundkosten = 10;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Purgator", 5, 10, getPts("Purgation Squad"));
 		add(squad);

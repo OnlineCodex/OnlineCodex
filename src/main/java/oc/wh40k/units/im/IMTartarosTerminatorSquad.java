@@ -17,7 +17,7 @@ public class IMTartarosTerminatorSquad extends Eintrag {
 	public IMTartarosTerminatorSquad() {
 		name = "Tartaros Terminator Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Tartaros Terminators", 5, 10, getPts("Tartaros Terminator Squad")));
 

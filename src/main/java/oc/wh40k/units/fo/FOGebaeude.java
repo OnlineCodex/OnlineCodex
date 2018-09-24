@@ -10,7 +10,7 @@ public class FOGebaeude extends RuestkammerVater {
 
 	public FOGebaeude() {}
 	public void initButtons(boolean... defaults) {
-		name = "Geb‰ude";
+		name = "Geb√§ude";
 		grundkosten = 0;
 		
 

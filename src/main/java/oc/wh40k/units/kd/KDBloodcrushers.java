@@ -29,7 +29,7 @@ public class KDBloodcrushers extends Eintrag {
 		
 		seperator();
 
-		add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutj‰ger", 5));
+		add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutj√§ger", 5));
 		
 		seperator();
 

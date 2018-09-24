@@ -21,12 +21,12 @@ public class CSGeissel extends Eintrag {
 		
 		seperator();
 
-		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Kampfgeschütz", 0));
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "KampfgeschÃ¼tz", 0));
 
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("sync. Schwerer Flamer", "sync. Schwerer Flammenwerfer", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Energiegeißel", 25));
+		ogE.addElement(new OptionsGruppeEintrag("EnergiegeiÃŸel", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 5));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		o2.setSelected(0, true);
@@ -42,9 +42,9 @@ public class CSGeissel extends Eintrag {
 
 		seperator();
 				
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CSFahrzeugruestkammer", "Ausrüstung");
+		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CSFahrzeugruestkammer", "AusrÃ¼stung");
 		ausruestung.initKammer(false);
-		ausruestung.setButtonText("Ausrüstung");
+		ausruestung.setButtonText("AusrÃ¼stung");
 		add(ausruestung);
 		
 		complete();

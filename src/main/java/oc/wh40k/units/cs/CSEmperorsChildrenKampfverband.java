@@ -21,9 +21,9 @@ public class CSEmperorsChildrenKampfverband extends Eintrag {
             
             seperator();
 
-            rkGeneral = new RuestkammerStarter(ID, randAbstand, cnt, "CMEmperorsChildrenAnfuehrer", "Anführer");
+            rkGeneral = new RuestkammerStarter(ID, randAbstand, cnt, "CMEmperorsChildrenAnfuehrer", "AnfÃ¼hrer");
             rkGeneral.initKammer();
-            rkGeneral.setButtonText("Anführer");
+            rkGeneral.setButtonText("AnfÃ¼hrer");
             add(rkGeneral);
             
             seperator(15);

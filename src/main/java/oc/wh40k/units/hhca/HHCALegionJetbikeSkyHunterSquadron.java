@@ -18,7 +18,7 @@ public class HHCALegionJetbikeSkyHunterSquadron extends Eintrag {
 	public HHCALegionJetbikeSkyHunterSquadron() {
 		name = "Legion Jetbike Sky Hunter Squadron Squad\n";
 		grundkosten = 30;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Sky Hunter", 3, 10, 35);
 		add(squad);

@@ -18,7 +18,7 @@ public class RH_IA13RenegadeOgrynBrutes extends Eintrag {
 	public RH_IA13RenegadeOgrynBrutes() {
 		name = "Renegade Ogryn Berserkers\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Ogryn Brute", 1, 10, 60);
 		squad.setGrundkosten(0);

@@ -16,7 +16,7 @@ public class TABreacherTeam extends Eintrag {
 
 	public TABreacherTeam() {
 		name = "Breacher Team\n";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Breacher", 5, 10, getPts("Breacher Team")+getPts("Photon grenades") +  getPts("Pulse blaster"));

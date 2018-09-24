@@ -31,7 +31,7 @@ public class KDChaosTerminators extends Eintrag {
 	public KDChaosTerminators() {
 		//name = "Chaos Terminatoren\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Terminators", 3, 10, 34);
 		add(squad);

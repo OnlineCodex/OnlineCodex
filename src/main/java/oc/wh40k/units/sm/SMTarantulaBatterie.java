@@ -17,7 +17,7 @@ public class SMTarantulaBatterie extends Eintrag {
     public SMTarantulaBatterie() {
         name = "Tarantula-Batterie\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Tarantula", "Tarantulas", 1, 3, 15);
         add(squad);

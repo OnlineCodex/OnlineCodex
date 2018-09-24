@@ -27,7 +27,7 @@ public class AMVendettaSquadron extends Eintrag {
 
 		
 		ogE.addElement(new OptionsGruppeEintrag("2 sync. Laser", "Paar Laserkanonen", 0));
-		ogE.addElement(new OptionsGruppeEintrag("2 Höllenfeuerraketen", "Paar Höllenfeuerraketen", 10));
+		ogE.addElement(new OptionsGruppeEintrag("2 HÃ¶llenfeuerraketen", "Paar HÃ¶llenfeuerraketen", 10));
 		add(oe1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		seperator();

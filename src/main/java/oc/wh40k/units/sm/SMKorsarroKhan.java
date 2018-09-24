@@ -6,7 +6,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class SMKorsarroKhan extends Eintrag {
 
-	boolean addedSpezialAuswahl = false; // spezialauswahl ist abh‰ngig von "Space Marine bike"
+	boolean addedSpezialAuswahl = false; // spezialauswahl ist abh√§ngig von "Space Marine bike"
 	OptionsEinzelUpgrade o1;
 
 	public SMKorsarroKhan() {

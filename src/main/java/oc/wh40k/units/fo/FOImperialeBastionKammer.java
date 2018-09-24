@@ -28,7 +28,7 @@ public class FOImperialeBastionKammer extends RuestkammerVater {
 		
 		seperator();
 		
-		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Geb‰ude");
+		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Geb√§ude");
 		hauptGeb.initKammer(true);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptGeb);

@@ -19,13 +19,13 @@ public class GKNemesisDreadknight extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Nemesis-Dämonenhammer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Nemesis-DÃ¤monenhammer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Nemesis-Langschwert", 10));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Schwerer Erlöser-Flamer", "Schwerer Erlöser-Flammenwerfer", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Schwerer ErlÃ¶ser-Flamer", "Schwerer ErlÃ¶ser-Flammenwerfer", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Schnellfeuer-Psipulser", 30));
 		ogE.addElement(new OptionsGruppeEintrag("Schwerer Psibolter", 35));
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));

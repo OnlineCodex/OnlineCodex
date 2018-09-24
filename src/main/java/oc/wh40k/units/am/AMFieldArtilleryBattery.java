@@ -20,7 +20,7 @@ public class AMFieldArtilleryBattery extends Eintrag {
 	public AMFieldArtilleryBattery() {
 		name = "Field Artillery Battery";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 

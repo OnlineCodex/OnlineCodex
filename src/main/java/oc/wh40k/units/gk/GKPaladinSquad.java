@@ -22,7 +22,7 @@ public class GKPaladinSquad extends Eintrag {
 	public GKPaladinSquad() {
 		name = "Paladin-Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Paladin", "Paladine", 3, 10, 55);
 		add(squad);
@@ -37,14 +37,14 @@ public class GKPaladinSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhaftes Schwert", "Meisterhaftes Nemesis-Psischwert", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhafte Hellebarde", "Meisterhafte Nemesis-Psihellebarde", 12));
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhafte Falchions", "Paar Meisterhafte Nemesis-Falchions", 14));
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Wehrstab", "Meisterhafter Wehrstab", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Meisterh. Däm.hammer", "Meisterhafter Nemesis-Dämonenhammer", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Meisterh. DÃ¤m.hammer", "Meisterhafter Nemesis-DÃ¤monenhammer", 20));
 		add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		seperator();
@@ -55,12 +55,12 @@ public class GKPaladinSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Meisterh. Sturmbolter", 10));
 		add(o3x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 
-		ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flamer", "Erlöser-Flammenwerfer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flamer", "ErlÃ¶ser-Flammenwerfer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Psipulser", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Psibolter", 20));
 		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Flamer", "Meisterhafter Erlöser-Flammenwerfer", 20));
+		ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Flamer", "Meisterhafter ErlÃ¶ser-Flammenwerfer", 20));
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Psipulser", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Meisterhafter Psibolter", 30));
 		add(o4x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));

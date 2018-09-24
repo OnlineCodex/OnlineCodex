@@ -19,7 +19,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 
 	public TAXV8CrisisBattlesuits() {
 		name = "XV8 Crisis Battlesuits";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
@@ -111,7 +111,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 		
 		if(((TAKampfanzugKammer)ob1.getKammer()).uniqueError 
 				|| error){
-			setFehlermeldung("Ausrüstung doppelt!");
+			setFehlermeldung("AusrÃ¼stung doppelt!");
 		}else if(getCountFromInformationVector("FEWarscaper")>1){
 			setFehlermeldung("Warscaper doppelt!");
 		}else{

@@ -14,7 +14,7 @@ public class ECCorsairWarpHunterSquadron extends Eintrag {
 
 	public ECCorsairWarpHunterSquadron() {
 		name = "Corsair Warp Hunter Squadron\n";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ECCorsairWarpHunter.jpg"));

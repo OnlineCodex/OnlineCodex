@@ -15,7 +15,7 @@ public class HHCATarantulaSentryGunBattery extends Eintrag {
 	public HHCATarantulaSentryGunBattery() {
 		name = "Tarantula Sentry Gun Battery\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Sentry Gun", "Sentry Guns", 1, 3, 30);
 		add(squad);

@@ -79,11 +79,11 @@ public class AMPlatooncommandsquad extends RuestkammerVater {
 
 		seperator();
 		
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chimäre");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "ChimÃ¤re");
 		rkTransport.initKammer(true);
 		add(rkTransport);
 
-		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chimäre");
+		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] ChimÃ¤re");
 		rkTransport2.initKammer(true);
 		add(rkTransport2);
 
@@ -97,14 +97,14 @@ public class AMPlatooncommandsquad extends RuestkammerVater {
 
 		cnt = randAbstand;
 
-		add(oe1 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "Sanitätsausrüstung", "Soldat mit Sanitätsausrüstung", 1, 15));
+		add(oe1 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "SanitÃ¤tsausrÃ¼stung", "Soldat mit SanitÃ¤tsausrÃ¼stung", 1, 15));
 		add(oe2 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "Zugstandarte", "Soldat mit Zugstandarte", 1, 10));
-		add(oe3 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "Funkgerät", "Soldat mit Funkgerät", 1, 5));
+		add(oe3 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "FunkgerÃ¤t", "Soldat mit FunkgerÃ¤t", 1, 5));
 		add(oe4 = new OptionsEinzelZaehler(0, randAbstand + 280, cnt, "", "Schwerer Flamer", "Soldat mit Schwerem Flammenwerfer", 1, 10));
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Mörser Team", "Waffenteam mit Mörser", 5));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¶rser Team", "Waffenteam mit MÃ¶rser", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Maschinenkanonen Team", "Waffenteam mit Maschinenkanone", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Schwerer Bolter Team", "Waffenteam mit schwerem Bolter", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer Team", "Waffenteam mit Raketenwerfer", 15));
@@ -119,7 +119,7 @@ public class AMPlatooncommandsquad extends RuestkammerVater {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Scharfschützengewehr", "Soldat mit Scharfschützengewehr", 2));
+		ogE.addElement(new OptionsGruppeEintrag("ScharfschÃ¼tzengewehr", "Soldat mit ScharfschÃ¼tzengewehr", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Flammenwerfer", "Soldat mit Flammenwerfer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Granatwerfer", "Soldat mit Granatwerfer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Melter", "Soldat mit Melter", 10));

@@ -24,14 +24,14 @@ public class DKHellhammerKammer extends RuestkammerVater {
 
 
                 add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzlicher Sturmbolter", 10));
-		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 10));
+		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzlicher Sturmbolter", 10));
+		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 10));
 
                 seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("zwei Seitenkuppeln", 0));
 		ogE.addElement(new OptionsGruppeEintrag("vier Seitenkuppeln", 100));
-		ogE.addElement(new OptionsGruppeEintrag("zus‰tzliche Panzerplatten", 0));
+		ogE.addElement(new OptionsGruppeEintrag("zus√§tzliche Panzerplatten", 0));
 		add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		sizeSetzen();

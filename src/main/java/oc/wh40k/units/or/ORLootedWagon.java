@@ -22,7 +22,7 @@ public class ORLootedWagon extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/Beutepanza.gif"));
 		
 
-		ogE.addElement(new OptionsGruppeEintrag("Panzakanon‰", 30));
+		ogE.addElement(new OptionsGruppeEintrag("Panzakanon√§", 30));
 		add(FK2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
@@ -34,18 +34,18 @@ public class ORLootedWagon extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Todeswalz‰", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Vast‰rkt‰ Ramm‰", 5));
+		ogE.addElement(new OptionsGruppeEintrag("Todeswalz√§", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Vast√§rkt√§ Ramm√§", 5));
 		add(RammGruppe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zugetakkat", 15));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Megagreifa", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rote Farb‰", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rote Farb√§", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbombschlueda", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzlich Panzerung", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth‰lfaz", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn‰", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank‰", 15));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzlich Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth√§lfaz", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn√§", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank√§", 15));
 
 		complete();
 

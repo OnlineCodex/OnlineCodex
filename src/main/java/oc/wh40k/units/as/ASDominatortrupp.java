@@ -18,7 +18,7 @@ public class ASDominatortrupp extends Eintrag {
 	public ASDominatortrupp() {
 		name = "Dominatortrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Dominator-Schwestern", 5, 10, 13);
 		add(squad);

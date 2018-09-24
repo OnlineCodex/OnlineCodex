@@ -17,9 +17,9 @@ public class FOFestungderErloesung extends Eintrag {
 	RuestkammerStarter verbHind;
 
 	public FOFestungderErloesung() {
-		name = "Festung der Erlˆsung";
+		name = "Festung der Erl√∂sung";
 		grundkosten = 220;
-		¸berschriftSetzen = true;
+		√ºberschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Festung.jpg"));
 
@@ -28,7 +28,7 @@ public class FOFestungderErloesung extends Eintrag {
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sprengsturm-Raketen",30));
 		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Schwere Bolter",4,10));
 		
-		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Hauptturm: Geb‰ude");
+		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Hauptturm: Geb√§ude");
 		hauptGeb.initKammer(true);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptGeb);
@@ -38,7 +38,7 @@ public class FOFestungderErloesung extends Eintrag {
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptHind);
 		
-		bunker1Geb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Bunker1: Geb‰ude");//Mit nur einer Auswahl
+		bunker1Geb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Bunker1: Geb√§ude");//Mit nur einer Auswahl
 		bunker1Geb.initKammer(false);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(bunker1Geb);
@@ -48,7 +48,7 @@ public class FOFestungderErloesung extends Eintrag {
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(bunker1Hind);
 		
-		bunker2Geb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Bunker2: Geb‰ude");//Mit nur einer Auswahl
+		bunker2Geb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Bunker2: Geb√§ude");//Mit nur einer Auswahl
 		bunker2Geb.initKammer(false);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(bunker2Geb);
@@ -58,7 +58,7 @@ public class FOFestungderErloesung extends Eintrag {
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(bunker2Hind);
 		
-		verbGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Verbindungskorridor: Geb‰ude");//Mit nur einer Auswahl
+		verbGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Verbindungskorridor: Geb√§ude");//Mit nur einer Auswahl
 		verbGeb.initKammer(false);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(verbGeb);

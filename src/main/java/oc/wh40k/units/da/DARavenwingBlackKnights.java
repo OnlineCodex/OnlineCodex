@@ -32,7 +32,7 @@ public class DARavenwingBlackKnights extends Eintrag {
 
 		seperator();
 
-		add(ej = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Erster Jäger", "Erster Jäger", 0));
+		add(ej = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Erster JÃ¤ger", "Erster JÃ¤ger", 0));
 		ej.setSelected(true);
 		
 		ogE.addElement(new OptionsGruppeEintrag("Corvus-Hammer", 0));

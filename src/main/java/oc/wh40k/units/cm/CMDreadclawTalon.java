@@ -82,8 +82,8 @@ public class CMDreadclawTalon extends Eintrag {
 	    }
 	}
 	
-	//Entfernt aus dem Vektor alle überzähligen nicht ausgewählten Einträge.
-	//Fügt einen neuen auswählbaren Eintrag hinter dem letzten der gleichen Einheit ein, falls alle ausgewählt wurden.
+	//Entfernt aus dem Vektor alle Ã¼berzÃ¤hligen nicht ausgewÃ¤hlten EintrÃ¤ge.
+	//FÃ¼gt einen neuen auswÃ¤hlbaren Eintrag hinter dem letzten der gleichen Einheit ein, falls alle ausgewÃ¤hlt wurden.
 	public void adjustOptions(Vector<RuestkammerStarter> starter, int minOptions, String unit, String unitName, int offset, int einrueck){
 		
 		

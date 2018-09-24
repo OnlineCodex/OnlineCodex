@@ -33,17 +33,17 @@ public class KDFernkampfwaffen extends RuestkammerVater {
 
 	@Override
 	public void refreshen() {
-		//o1.setAktiv(BuildaHQ.translate("Kampft‰nzer-Sippe"), keinZauberer);
-		//o1.setAktiv(BuildaHQ.translate("Wilde J‰ger-Sippe"), keinZauberer);
-		//o1.setAktiv(BuildaHQ.translate("Waldl‰ufer-Sippe"), keinZauberer);
+		//o1.setAktiv(BuildaHQ.translate("Kampft√§nzer-Sippe"), keinZauberer);
+		//o1.setAktiv(BuildaHQ.translate("Wilde J√§ger-Sippe"), keinZauberer);
+		//o1.setAktiv(BuildaHQ.translate("Waldl√§ufer-Sippe"), keinZauberer);
 		//o1.setAktiv(BuildaHQ.translate("Wandler-Sippe"), keinZauberer);
 		//o1.setAktiv(BuildaHQ.translate("Kundschafter-Sippe"), keinZauberer);
 		//o1.setAktiv(BuildaHQ.translate("Ewigkeit-Sippe"), keinZauberer);
 
 		//if(Preis) {
-		//	o1.setPreis(BuildaHQ.translate("Kampft‰nzer-Sippe"), 30);
-		//	o1.setPreis(BuildaHQ.translate("Wilde J‰ger-Sippe"), 35);
-		//	o1.setPreis(BuildaHQ.translate("Waldl‰ufer-Sippe"), 35);
+		//	o1.setPreis(BuildaHQ.translate("Kampft√§nzer-Sippe"), 30);
+		//	o1.setPreis(BuildaHQ.translate("Wilde J√§ger-Sippe"), 35);
+		//	o1.setPreis(BuildaHQ.translate("Waldl√§ufer-Sippe"), 35);
 		//	o1.setPreis(BuildaHQ.translate("Wandler-Sippe"), 25);
 		//	o1.setPreis(BuildaHQ.translate("Kundschafter-Sippe"), 15);
 		//	o1.setPreis(BuildaHQ.translate("Ewigkeit-Sippe"), 5);

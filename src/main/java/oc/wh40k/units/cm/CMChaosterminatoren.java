@@ -33,7 +33,7 @@ public class CMChaosterminatoren extends Eintrag {
 	public CMChaosterminatoren() {
 		//name = "Chaos Terminatoren\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Terminatoren", 3, 10, 31);
 		add(squad);

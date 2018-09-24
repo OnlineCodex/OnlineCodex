@@ -20,7 +20,7 @@ public class DAFahrzeugruestkammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Bulldozerschaufel", 5));
         ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 5));
         ogE.addElement(new OptionsGruppeEintrag("Suchkopfrakete", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzlich Panzerung", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzlich Panzerung", 5));
         add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,9));
 
 		sizeSetzen();

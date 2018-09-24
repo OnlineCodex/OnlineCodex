@@ -10,7 +10,7 @@ public class SMQuadMortarSupportBattery extends Eintrag {
 	public SMQuadMortarSupportBattery() {
 		name = "Quad Mortar Support Battery\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Quad Mortar Rapier Carrier", "Quad Mortar Rapier Carriers", 1, 3, 60);

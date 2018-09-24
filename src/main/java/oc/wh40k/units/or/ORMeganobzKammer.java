@@ -13,7 +13,7 @@ public class ORMeganobzKammer extends RuestkammerVater {
 	OptionsZaehlerGruppe GargbosseFK;
 	RuestkammerStarter PikkUp;
 	RuestkammerStarter Kampfpanza;
-	OptionsEinzelZaehler Troph‰enstange;
+	OptionsEinzelZaehler Troph√§enstange;
 
 	public ORMeganobzKammer() {}
 	
@@ -34,7 +34,7 @@ public class ORMeganobzKammer extends RuestkammerVater {
 
 		seperator(5);
 		
-		add(Troph‰enstange = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Troph‰enstange", Gargbosse.getModelle(), 5));
+		add(Troph√§enstange = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Troph√§enstange", Gargbosse.getModelle(), 5));
 		
 		seperator();
 
@@ -54,7 +54,7 @@ public class ORMeganobzKammer extends RuestkammerVater {
 	//@OVERRIDE
 	public void refreshen() {
 		
-		Troph‰enstange.setMaxAnzahl(Gargbosse.getModelle());
+		Troph√§enstange.setMaxAnzahl(Gargbosse.getModelle());
 		GargbosseFK.setMaxAnzahl(Gargbosse.getModelle());
 		PikkUp.setAktiv(!Kampfpanza.isSelected());
 		Kampfpanza.setAktiv(!PikkUp.isSelected());

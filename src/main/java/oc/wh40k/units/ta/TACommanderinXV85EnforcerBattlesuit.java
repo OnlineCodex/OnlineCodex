@@ -16,7 +16,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 		name = "Commander in XV85 Enforcer Battlesuit";
 		grundkosten = getPts("Commander in XV85 Enforcer Battlesuit");
 
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 		
@@ -32,7 +32,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 		ob = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Commander in XV85 Enforcer Battlesuit");
 		ob.setGrundkosten(0);
 		ob.initKammer(true, false, false, false, false, false, false);
-		ob.setButtonText("Rüstkammer");
+		ob.setButtonText("RÃ¼stkammer");
 		add(ob);
 		
 		complete();

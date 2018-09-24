@@ -12,7 +12,7 @@ public class RH_IA13RenegadeBombardBattery extends Eintrag {
 	public RH_IA13RenegadeBombardBattery() {
 		name = "Renegade Bombard Battery";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 		

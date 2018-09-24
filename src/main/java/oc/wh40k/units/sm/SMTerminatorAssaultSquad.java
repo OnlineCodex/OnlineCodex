@@ -17,7 +17,7 @@ public class SMTerminatorAssaultSquad extends Eintrag {
 	public SMTerminatorAssaultSquad() {
 		name = "Terminator Assault Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("Terminator Assault Squad", 1);
 

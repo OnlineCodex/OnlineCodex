@@ -29,7 +29,7 @@ public class KDChaosSpaceMarines extends Eintrag {
 	public KDChaosSpaceMarines() {
 		//name = "Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Space Marines", 8, 20, 15);
 		add(squad);

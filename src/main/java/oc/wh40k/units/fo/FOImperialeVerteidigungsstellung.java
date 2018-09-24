@@ -14,7 +14,7 @@ public class FOImperialeVerteidigungsstellung extends Eintrag {
 	public FOImperialeVerteidigungsstellung() {
 		name = "Imperiale Verteidigungsstellung";
 		grundkosten = 40;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

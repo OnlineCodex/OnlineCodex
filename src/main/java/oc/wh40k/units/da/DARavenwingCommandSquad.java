@@ -18,7 +18,7 @@ public class DARavenwingCommandSquad extends Eintrag {
 	public DARavenwingCommandSquad() {
 		name = "Ravenwing Command Squad\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Black Knights", 3, 6, 40));

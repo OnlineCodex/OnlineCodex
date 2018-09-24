@@ -28,7 +28,7 @@ public class KDChaosLord extends Eintrag {
 
 		seperator();
         
-        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 40));
+        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 40));
 		
         seperator();
         
@@ -56,7 +56,7 @@ public class KDChaosLord extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "KDSpezialausruestung", "");
 		spezialAusruestung.initKammer(termi.isSelected(), false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		
 		seperator(5);

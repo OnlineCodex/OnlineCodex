@@ -15,7 +15,7 @@ public class HHCALegionArtilleryTankSquadron extends Eintrag {
 	public HHCALegionArtilleryTankSquadron() {
 		name = "Legion Artillery Tank Squadron";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         seperator();        		
         ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));

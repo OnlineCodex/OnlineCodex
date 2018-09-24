@@ -11,22 +11,22 @@ public class VOLKElysianDropTroopsIA32ndEd extends BuildaVater {
 	public VOLKElysianDropTroopsIA32ndEd() {
 		reflectionKennung = "ED";
 
-		HQeintr‰ge = new String[] {"", "Company Command Squad", "Lord Commissar",
+		HQeintr√§ge = new String[] {"", "Company Command Squad", "Lord Commissar",
 				 			   "", "[IA8] Captain Thanstadt", "[IA8] Sword Force Command Squad","[IA8] A-Company Command Tauros"};
-		Eliteeintr‰ge = new String[] {"", "Storm Trooper Squad", "Drop Sentinel Squadron"};
-		Standardeintr‰ge = new String[] {"", "Drop Infantry Platoon", "Veteran Squad"};
-		Sturmeintr‰ge = new String[] {"", "Tauros Squadron", "Vendetta Gunship Squadron", "Vulture Gunship Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Sentry Gun Battery","Cyclops Demolition Squad", "Thunderbolt", "Lightning", "Avenger"};
+		Eliteeintr√§ge = new String[] {"", "Storm Trooper Squad", "Drop Sentinel Squadron"};
+		Standardeintr√§ge = new String[] {"", "Drop Infantry Platoon", "Veteran Squad"};
+		Sturmeintr√§ge = new String[] {"", "Tauros Squadron", "Vendetta Gunship Squadron", "Vulture Gunship Squadron"};
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Sentry Gun Battery","Cyclops Demolition Squad", "Thunderbolt", "Lightning", "Avenger"};
 		LordofWar = new String[] {""};
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -88,7 +88,7 @@ public class VOLKElysianDropTroopsIA32ndEd extends BuildaVater {
 	}
 
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

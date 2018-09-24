@@ -19,7 +19,7 @@ public class TAXV8CrisisBodyguards extends Eintrag {
 
 	public TAXV8CrisisBodyguards() {
 		name = "XV8 Crisis Bodyguards";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
@@ -90,7 +90,7 @@ public class TAXV8CrisisBodyguards extends Eintrag {
 		if(getCountFromInformationVector("Contingent Headquarters")>0 && getCountFromInformationVector("Bodyguards")>2){
         	setFehlermeldung("1-2 Bodyguards");  	
         }else if(error){
-			setFehlermeldung("Ausrüstung doppelt!");
+			setFehlermeldung("AusrÃ¼stung doppelt!");
 		}else if(getCountFromInformationVector("FEWarscaper")>1){
 			setFehlermeldung("Warscaper doppelt!");
 		}else{

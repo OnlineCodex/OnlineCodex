@@ -34,7 +34,7 @@ public class GKStormravenGunship extends Eintrag {
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hurricane-Boltersysteme", "Seitenkuppeln mit Hurricane-Boltersystemen", 30));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchscheinwerfer", 1));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10));
 		
 		seperator();

@@ -14,11 +14,11 @@ public class CDJaegerinnendesSlaanesh extends Eintrag {
 
 	public CDJaegerinnendesSlaanesh() {
 
-		name = "Jägerinnen des Slaanesh";
+		name = "JÃ¤gerinnen des Slaanesh";
 
 		grundkosten = 0;
 
-		CDJaegerinnendesSlaanesh = new AnzahlPanel(ID, randAbstand, cnt, "Jägerinnen des Slaanesh", 5, 20, 12);
+		CDJaegerinnendesSlaanesh = new AnzahlPanel(ID, randAbstand, cnt, "JÃ¤gerinnen des Slaanesh", 5, 20, 12);
 
 		add(CDJaegerinnendesSlaanesh);
 
@@ -28,15 +28,15 @@ public class CDJaegerinnendesSlaanesh extends Eintrag {
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument des Chaos", 10));
 		add(Chaosikone = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ikone des Chaos", 10));
-		add(Standarte  = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Standarte der Verzückung", 20));
+		add(Standarte  = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Standarte der VerzÃ¼ckung", 20));
 		
 		seperator();
 
-		add(Seelenjaegerin = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Seelenjägerin", 5));
+		add(Seelenjaegerin = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "SeelenjÃ¤gerin", 5));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		seperator();

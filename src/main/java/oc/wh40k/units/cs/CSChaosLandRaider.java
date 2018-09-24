@@ -15,9 +15,9 @@ public class CSChaosLandRaider extends Eintrag {
 		
 		seperator();
 		
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
+		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "AusrÃ¼stung");
 		ausruestung.initKammer(true);
-		ausruestung.setButtonText("Ausrüstung");
+		ausruestung.setButtonText("AusrÃ¼stung");
 		add(ausruestung);
 		
 		complete();

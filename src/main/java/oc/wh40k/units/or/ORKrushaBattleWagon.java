@@ -28,7 +28,7 @@ public class ORKrushaBattleWagon extends Eintrag {
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Kanon‰", 10));
+		ogE.addElement(new OptionsGruppeEintrag("Kanon√§", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Schleuda", 15));
 		ogE.addElement(new OptionsGruppeEintrag("Zzapwumme", 20));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -41,12 +41,12 @@ public class ORKrushaBattleWagon extends Eintrag {
         seperator();
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zugetakkat", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rot‰ Farb‰", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth‰lfaz", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rot√§ Farb√§", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth√§lfaz", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbombschlueda", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Panzaplattenz", 10));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank‰", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn‰", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank√§", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn√§", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Megagreifa", 5));
 
         seperator();

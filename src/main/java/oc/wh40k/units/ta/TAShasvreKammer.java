@@ -30,7 +30,7 @@ public class TAShasvreKammer extends RuestkammerVater {
 		
 		seperator();
 		
-		// Unterstützungssysteme
+		// UnterstÃ¼tzungssysteme
 		ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (all other models)")));
 		ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
 		ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));

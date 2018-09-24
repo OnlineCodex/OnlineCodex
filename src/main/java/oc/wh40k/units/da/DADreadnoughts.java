@@ -55,7 +55,7 @@ public class DADreadnoughts extends Eintrag {
         
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzliche Panzerung", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzliche Panzerung", 10));
         add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()));
         
         seperator();

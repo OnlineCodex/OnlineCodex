@@ -18,7 +18,7 @@ public class IARetributorSquad extends Eintrag {
 	public IARetributorSquad() {
 		name = "Retributor Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Retributor-Schwestern", 5, 10, 12);
 		add(squad);

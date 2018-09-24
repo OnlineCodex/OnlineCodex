@@ -20,7 +20,7 @@ public class IMScoutSquad extends Eintrag {
 
 	public IMScoutSquad() {
 		name = "Scout Squad\n";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Scouts", 5, 10, getPts("Scout Squad")));
 

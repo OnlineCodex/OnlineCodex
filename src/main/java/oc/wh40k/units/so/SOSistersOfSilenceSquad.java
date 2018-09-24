@@ -16,7 +16,7 @@ public class SOSistersOfSilenceSquad extends Eintrag {
 	public SOSistersOfSilenceSquad() {
 		name = "Sororitastrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Sisters", 5, 10, 15);
 		add(squad);

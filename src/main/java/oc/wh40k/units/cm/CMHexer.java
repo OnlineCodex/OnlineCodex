@@ -48,7 +48,7 @@ public class CMHexer extends Eintrag {
         
 		seperator();
 		
-        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 25));
+        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 25));
 		
         seperator();
         
@@ -77,7 +77,7 @@ public class CMHexer extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMSpezialausruestung", "");
 		spezialAusruestung.initKammer(mal.isSelected("Mal des Khorne"), mal.isSelected("Mal des Tzeentch"), mal.isSelected("Mal des Nurgle"), mal.isSelected("Mal des Slaanesh"));
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 
 		complete();
@@ -108,8 +108,8 @@ public class CMHexer extends Eintrag {
         	RefreshListener.fireRefresh();
         }
 		
-        chaosBelohnungen.getKammer().switchEntry("Flugdämon des Tzeentch", mal.isSelected("Mal des Tzeentch") && !termi.isSelected());
-        chaosBelohnungen.getKammer().switchEntry("Sänfte des Nurgle", mal.isSelected("Mal des Nurgle") && !termi.isSelected());
+        chaosBelohnungen.getKammer().switchEntry("FlugdÃ¤mon des Tzeentch", mal.isSelected("Mal des Tzeentch") && !termi.isSelected());
+        chaosBelohnungen.getKammer().switchEntry("SÃ¤nfte des Nurgle", mal.isSelected("Mal des Nurgle") && !termi.isSelected());
         chaosBelohnungen.getKammer().switchEntry("Slaaneshpferd", mal.isSelected("Mal des Slaanesh") && !termi.isSelected());
         chaosBelohnungen.getKammer().switchEntry("Seuchengranaten", mal.isSelected("Mal des Nurgle"));
         

@@ -21,7 +21,7 @@ public class DAScoutTrupp extends Eintrag {
 	public DAScoutTrupp() {
 		//name = "Scout-Trupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DAScoutSquad.gif"));
 
@@ -32,7 +32,7 @@ public class DAScoutTrupp extends Eintrag {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Tarnmäntel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("TarnmÃ¤ntel", 10));
 		add(tarnmantel = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		seperator();
@@ -41,7 +41,7 @@ public class DAScoutTrupp extends Eintrag {
 		add(bolter = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()-1));
 		ogE.addElement(new OptionsGruppeEintrag("Schrotflinte", "Space-Marine-Schrotflinte", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Kampfmesser", "Kampfmesser", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Scharfschützengewehr", "Scharfschützengewehr", 0));
+		ogE.addElement(new OptionsGruppeEintrag("ScharfschÃ¼tzengewehr", "ScharfschÃ¼tzengewehr", 0));
 		add(waffen = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()-1));
 		bolter.setAnzahl(0, squad.getModelle()-1);
 		
@@ -70,7 +70,7 @@ public class DAScoutTrupp extends Eintrag {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
         int count = squad.getModelle();
-		tarnmantel.setPreis("Tarnmäntel", 2*squad.getModelle());
+		tarnmantel.setPreis("TarnmÃ¤ntel", 2*squad.getModelle());
 		tarnmantel.setMaxAnzahl(count);
 		
 		waffen.setMaxAnzahl(count - 1 - (o2.isSelected()?1:0));

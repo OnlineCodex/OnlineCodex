@@ -5,7 +5,7 @@ import oc.Eintrag;
 public class CMSchaedelturmdesKhorne extends Eintrag {
 
 	public CMSchaedelturmdesKhorne() {
-		name = "Sch‰delturm des Khorne";
+		name = "Sch√§delturm des Khorne";
 		grundkosten = 700;
 
 		add(ico = new oc.Picture("oc/wh40k/images/SchaedelturmdesKhorne.gif"));

@@ -14,7 +14,7 @@ public class TAXV104RiptideBattlesuits extends Eintrag {
 
 	public TAXV104RiptideBattlesuits() {
 		name = "XV104 Riptide Battlesuits";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));

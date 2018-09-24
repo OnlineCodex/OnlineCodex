@@ -20,7 +20,7 @@ public class IMSeraphimSquad extends Eintrag {
 	public IMSeraphimSquad() {
 		name = "Seraphim Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Seraphim Squad", 5, 10, getPts("Seraphim Squad"));
 		add(squad);

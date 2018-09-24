@@ -12,7 +12,7 @@ public class FOHimmelsschildLandeplattform extends Eintrag {
 	public FOHimmelsschildLandeplattform() {
 		name = "Himmelsschild-Landeplattform";
 		grundkosten = 75;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Landeplattform.jpg"));
 

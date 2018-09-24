@@ -14,7 +14,7 @@ public class DKReaverTitanManiple extends Eintrag {
 	public DKReaverTitanManiple() {
 		name = "Reaver Titan Maniple";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 		this.gesamtpunkteImmerAnzeigen=false;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));

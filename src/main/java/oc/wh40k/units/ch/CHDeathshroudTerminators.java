@@ -24,7 +24,7 @@ public class CHDeathshroudTerminators extends Eintrag {
 	public CHDeathshroudTerminators() {
 		//name = "Thousand Sons\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Deathshroud Terminators", 3, 6, getPts("Deathshroud Terminators"));
 		add(squad);

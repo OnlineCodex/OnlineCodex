@@ -9,7 +9,7 @@ import oc.OptionsEinzelZaehler;
 public class AMManticorePlatformBattery extends Eintrag {
 
 	AnzahlPanel Buggies;
-	OptionsEinzelUpgrade Rot‰Farb‰;
+	OptionsEinzelUpgrade Rot√§Farb√§;
 	OptionsEinzelZaehler rockets;
 
 	public AMManticorePlatformBattery() {
@@ -23,7 +23,7 @@ public class AMManticorePlatformBattery extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
 		seperator();
 
-		add(Rot‰Farb‰ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
+		add(Rot√§Farb√§ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
 		add(rockets = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "4 Sky eagle rockets", 1, 0));
 		
 		complete();
@@ -33,7 +33,7 @@ public class AMManticorePlatformBattery extends Eintrag {
 	public void refreshen() {
 
 
-		Rot‰Farb‰.setPreis(Buggies.getModelle()*20);
+		Rot√§Farb√§.setPreis(Buggies.getModelle()*20);
 		rockets.setMaxAnzahl(Buggies.getModelle());
 	}
 }

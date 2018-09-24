@@ -14,7 +14,7 @@ public class AMCentaurSquadron extends Eintrag {
 	public AMCentaurSquadron() {
 		name = "Centaur Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 

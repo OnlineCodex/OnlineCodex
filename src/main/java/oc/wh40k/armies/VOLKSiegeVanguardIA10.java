@@ -8,7 +8,7 @@ public class VOLKSiegeVanguardIA10 extends BuildaVater {
 	public VOLKSiegeVanguardIA10() {
 		reflectionKennung = "SF";
 
-		HQeintr‰ge = new String[] {"", "Siege Master", "Space Marine Ordensmeister", "Space Marine Captain", "Space Marine Scriptor", "Space Marine Ordenspriester", "Meister der Schmiede", "", "Ehrengarde", "Kommandotrupp", 
+		HQeintr√§ge = new String[] {"", "Siege Master", "Space Marine Ordensmeister", "Space Marine Captain", "Space Marine Scriptor", "Space Marine Ordenspriester", "Meister der Schmiede", "", "Ehrengarde", "Kommandotrupp", 
 				               "", "Marneus Calgar", "Captain Cato Sicarius", "Scriptor-Magister Tigurius", "Ordenspriester Cassius", "Ordensmeister Pedro Kantor", "Captain Darnath Lysander", "Schatten-Captain Kayvaan Shrike", "Schmiedevater Vulkan He'stan", "Kor'sarro Khan",
 				               "", "[IA2 2nd Ed] Damocles Command Vehicle",
 				               "", "[IA12] Lord Asterion Moloc", "[IA12] Minotaurus Chaplain Ivanus Enkomi", "[IA12] Hecaton Aiakos",
@@ -17,12 +17,12 @@ public class VOLKSiegeVanguardIA10 extends BuildaVater {
 				               	   "[IA9] Captain Mordaci Blaylock","[IA9] Captain Pellas Mir'san","[IA9] Knight-Captain Elam Courbray","[IA9] Captain Corien Sumatris", 
 				               	   "[IA9] Armenneus Valthex",
 				               "", "[Forgeworld] Chapter Master Lias Issodon", "[Forgeworld] Chapter Master Lugft Huron", /*"[Forgeworld] Damocles Rhino",*/ "[Forgeworld] Tyberos The Red Wake","[Forgeworld] Master Harath Shen"};
-		Standardeintr‰ge = new String[] {"", "Siege Dreadnought Talon", "Taktischer Trupp", "Siege Assault Squad"};
-		Eliteeintr‰ge = new String[] {"", "Terminator-Trupp", "Terminator-Sturmtrupp", "Protektorgarde", "Cybot", "Techmarine", "Servitoren",
+		Standardeintr√§ge = new String[] {"", "Siege Dreadnought Talon", "Taktischer Trupp", "Siege Assault Squad"};
+		Eliteeintr√§ge = new String[] {"", "Terminator-Trupp", "Terminator-Sturmtrupp", "Protektorgarde", "Cybot", "Techmarine", "Servitoren",
 								  "", "[IA2 2nd Ed] Land Raider Prometheus", "[IA2 2nd Ed] Contemptor Mortis Pattern Dreadnought", "[IA2 2nd Ed] Chaplain Dreadnought", "[IA2 2nd Ed] Siege Dreadnought", "[IA2 2nd Ed] Mark V Mortis Pattern Dreadnought" };
-		Sturmeintr‰ge = new String[] {"", "Sturmtrupp", "Expugnatorgarde", 
+		Sturmeintr√§ge = new String[] {"", "Sturmtrupp", "Expugnatorgarde", 
 								  "", "[IA2 2nd Ed] Caestus Assault Ram","[IA2 2nd Ed] Land Speeder Tempest Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Devastor-Trupp", "Salvenkanone", "Predator Tank Squadron", "Whirlwind Support Squadron", "Vindicator Tank Squadron",
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Devastor-Trupp", "Salvenkanone", "Predator Tank Squadron", "Whirlwind Support Squadron", "Vindicator Tank Squadron",
 				  						  "", "[IA Experimental] Quad Mortar Support Battery",
 										  "", "[IA2 2nd Ed] Land Raider Helios", "[IA2 2nd Ed] Land Raider Proteus", "[IA2 2nd Ed] Land Raider Achilles",
 										      "[IA2 2nd Ed] Deimos Predator","[IA2 2nd Ed] Whirlwind Hyperios","[IA2 2nd Ed] Relic Whirlwind Scorpius",
@@ -35,15 +35,15 @@ public class VOLKSiegeVanguardIA10 extends BuildaVater {
 				  			  "","[IA2 2nd Ed] Fellblade","[IA2 2nd Ed] Typhon","[IA2 2nd Ed] Cerberus", "[IA2 2nd Ed] Thunderhawk Gunship",
 			                     "[IA2 2nd Ed] Thunderhawk Transporter"};
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -103,7 +103,7 @@ public class VOLKSiegeVanguardIA10 extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

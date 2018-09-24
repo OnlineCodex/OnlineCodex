@@ -12,7 +12,7 @@ public class ASWaffenUndRelikte extends RuestkammerVater {
 	OptionsUpgradeGruppe o1;
 	OptionsZaehlerGruppe o2, o3;
     OptionsEinzelUpgrade schriftrollen;
-    OptionsEinzelUpgrade dimensionsschlüssel;
+    OptionsEinzelUpgrade dimensionsschlÃ¼ssel;
     OptionsEinzelUpgrade handwaffe = null;
     OptionsEinzelUpgrade boltpistole = null;
     OptionsEinzelUpgrade bolter = null;
@@ -203,7 +203,7 @@ public class ASWaffenUndRelikte extends RuestkammerVater {
 			o1.setMaxAnzahl(1);
 		}
 		
-	    //Einzigartige Gegenstände
+	    //Einzigartige GegenstÃ¤nde
 		if(o1.isSelected("Das Schwert der Mahnung")){
 			if(SchwertDerMahnungBool==false){
 				SchwertDerMahnungBool=true;

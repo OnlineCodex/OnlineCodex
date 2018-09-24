@@ -18,7 +18,7 @@ public class IMWolfGuardonBikes extends Eintrag {
 	public IMWolfGuardonBikes() {
 		name = "Wolf Guard on Bikes\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Wolf Guard on Bike", 5, 10, getPts("Wolf Guard on Bikes")));
 

@@ -18,7 +18,7 @@ public class RH_IA13RenegadeSentinelSquadron extends Eintrag {
 	public RH_IA13RenegadeSentinelSquadron() {
 		name = "Renegade Sentinel Squadron\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Scout Sentinel", "Scout Sentinels", 3, 6, 20);
 		squad.setGrundkosten(0);

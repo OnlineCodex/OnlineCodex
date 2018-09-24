@@ -22,35 +22,35 @@ public class VOLKChaosdaemons extends BuildaVater {
 		InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/cd.csv");
 		pointValues = BuildaHQ.loadindexFile(is);
 		
-		HQeintr‰ge = new String[] {"", "Karanak", "Skarbrand", "Skulltaker", "Bloodthirster of Insensate Rage", "Bloodthirster of Unfettered Fury", "Wrath of Khorne Bloodthirster",
+		HQeintr√§ge = new String[] {"", "Karanak", "Skarbrand", "Skulltaker", "Bloodthirster of Insensate Rage", "Bloodthirster of Unfettered Fury", "Wrath of Khorne Bloodthirster",
 									"Herald of Khorne", "Herald of Khorne on Blood Throne", "Herald of Khorne on Juggernaut", "", "Kairos Fateweaver", "The Changeling", "The Blue Scribes",
 									"Lord of Change", "Herald of Tzeentch", "Herald of Tzeentch on Disc", "Herald of Tzeentch on Burning Chariot",
 									"", "Epidemius", "Great Unclean One", "Herald of Nurgle", "", "The Masque of Slaanesh", "Keeper of Secrets", "Herald of Slaanesh", "Herald of Slaanesh on Steed",
 									"Herald of Slaanesh on Seeker Chariot", "Herald of Slaanesh on Exalted Seeker Chariot", "", "Be'lakor", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings"};
-		Eliteeintr‰ge = new String[] {"", "Bloodcrushers", "", "Flamers", "Exalted Flamer", "", "Beasts of Nurgle", "", "Fiends of Slaanesh"};
-		Standardeintr‰ge = new String[] {"", "Bloodletters", "", "Horrors", "", "Plaguebearers", "Nurglings", "", "Daemonettes"};
-		Sturmeintr‰ge = new String[] {"", "Flesh Hounds", "", "Screamers", "", "Plague Drones", "", "Hellflayer", "Seekers", "", "Chaos Furies"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Skull Cannon", "", "Burning Chariot", "", "Seeker Chariot", "Exalted Seeker Chariot", "", "Soulgrinder"};
+		Eliteeintr√§ge = new String[] {"", "Bloodcrushers", "", "Flamers", "Exalted Flamer", "", "Beasts of Nurgle", "", "Fiends of Slaanesh"};
+		Standardeintr√§ge = new String[] {"", "Bloodletters", "", "Horrors", "", "Plaguebearers", "Nurglings", "", "Daemonettes"};
+		Sturmeintr√§ge = new String[] {"", "Flesh Hounds", "", "Screamers", "", "Plague Drones", "", "Hellflayer", "Seekers", "", "Chaos Furies"};
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Skull Cannon", "", "Burning Chariot", "", "Seeker Chariot", "Exalted Seeker Chariot", "", "Soulgrinder"};
 		LordofWar = new String[] {""};
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 7, LordofWar));
         cnt += 480;
 
-		nameDerArtDerArmee = "Chaosd‰monen";
-		nameDerArtDerArmeeDekliniert = "Chaosd‰monen";
-		textAreaUeberschrift = BuildaHQ.translate("Meine") + " Chaosd‰monen";
+		nameDerArtDerArmee = "Chaosd√§monen";
+		nameDerArtDerArmeeDekliniert = "Chaosd√§monen";
+		textAreaUeberschrift = BuildaHQ.translate("Meine") + " Chaosd√§monen";
 
 		noAllies.clear();
 		noAllies.add("CD");
@@ -290,7 +290,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		}
 		
 		if(getKontingentTyp().equals("Murderhorde (CotW)")){
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Khorne", "Sch‰delsammler"});
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Khorne", "Sch√§delsammler"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{"", "Zerschmetterer des Khorne"});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "Zerfleischer des Khorne"});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{"", "Bluthunde des Khorne"});
@@ -331,7 +331,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		
 		if(getKontingentTyp().equals("Warpflame Host (CotW)")){
 			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Tzeentch", "Der Wechselbalg", "Exalted Flamer of Tzeentch"});
-			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{"", "Feuerd‰monen des Tzeentch"});
+			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{"", "Feuerd√§monen des Tzeentch"});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "Pink Horrors"});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(4).changeComboBoxAuswahlen(new String[]{""});
@@ -340,7 +340,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Herold des Tzeentch", "Der Wechselbalg"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"Pink Horrors", "Feuerd‰monen des Tzeentch", "Exalted Flamer of Tzeentch"}, 9, 9));
+			formation.entries.add(new FormationEntry(new String[]{"Pink Horrors", "Feuerd√§monen des Tzeentch", "Exalted Flamer of Tzeentch"}, 9, 9));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Herold des Tzeentch");
@@ -369,7 +369,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		if(getKontingentTyp().equals("Tallyband (CotW)")){
 			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Nurgle", "Epidemius"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "Seuchenh¸ter des Nurgle", "Nurglings"});
+			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "Seuchenh√ºter des Nurgle", "Nurglings"});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(4).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(new String[]{""});
@@ -377,7 +377,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Herold des Nurgle", "Epidemius"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"Seuchenh¸ter des Nurgle", "Nurglings"}, 7, 7));
+			formation.entries.add(new FormationEntry(new String[]{"Seuchenh√ºter des Nurgle", "Nurglings"}, 7, 7));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Herold des Nurgle");
@@ -405,7 +405,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		if(getKontingentTyp().equals("Flayertroupe (CotW)")){
 			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Slaanesh", "Die Maske"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{"","Slaaneshbestien"});
-			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "D‰monetten des Slaanesh"});
+			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{"", "D√§monetten des Slaanesh"});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(4).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(new String[]{""});
@@ -413,7 +413,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Herold des Slaanesh", "Die Maske"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"D‰monetten des Slaanesh", "Slaaneshbestien"}, 6, 6));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monetten des Slaanesh", "Slaaneshbestien"}, 6, 6));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Herold des Slaanesh");
@@ -425,14 +425,14 @@ public class VOLKChaosdaemons extends BuildaVater {
 			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Herold des Slaanesh"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{"", "J‰gerinnen des Slaanesh", "Hˆllenschinder des Slaanesh"});
+			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{"", "J√§gerinnen des Slaanesh", "H√∂llenschinder des Slaanesh"});
 			myChooserGruppen.get(4).changeComboBoxAuswahlen(new String[]{"", "Jagdkavalkade"});
 			myChooserGruppen.get(5).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(6).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Herold des Slaanesh"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"J‰gerinnen des Slaanesh", "Hˆllenschinder des Slaanesh", "Jagdkavalkade"}, 6, 6));
+			formation.entries.add(new FormationEntry(new String[]{"J√§gerinnen des Slaanesh", "H√∂llenschinder des Slaanesh", "Jagdkavalkade"}, 6, 6));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Herold des Slaanesh");
@@ -440,7 +440,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		}
 		
 		if(getKontingentTyp().equals("Infernal Tetrad (CotW)")){
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "D‰monenprinz des Khorne","D‰monenprinz des Nurgle","D‰monenprinz des Slaanesh","D‰monenprinz des Tzeentch"});
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "D√§monenprinz des Khorne","D√§monenprinz des Nurgle","D√§monenprinz des Slaanesh","D√§monenprinz des Tzeentch"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
@@ -449,16 +449,16 @@ public class VOLKChaosdaemons extends BuildaVater {
 			myChooserGruppen.get(6).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"D‰monenprinz des Khorne"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"D‰monenprinz des Nurgle"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"D‰monenprinz des Slaanesh"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"D‰monenprinz des Tzeentch"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monenprinz des Khorne"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monenprinz des Nurgle"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monenprinz des Slaanesh"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monenprinz des Tzeentch"}, 1, 1));
 			
 			if(!isLoading){
-				addUnitNotLocked(0,"D‰monenprinz des Khorne");
-				addUnitNotLocked(0,"D‰monenprinz des Nurgle");
-				addUnitNotLocked(0,"D‰monenprinz des Slaanesh");
-				addUnitNotLocked(0,"D‰monenprinz des Tzeentch");
+				addUnitNotLocked(0,"D√§monenprinz des Khorne");
+				addUnitNotLocked(0,"D√§monenprinz des Nurgle");
+				addUnitNotLocked(0,"D√§monenprinz des Slaanesh");
+				addUnitNotLocked(0,"D√§monenprinz des Tzeentch");
 			}
 		}
 		
@@ -483,9 +483,9 @@ public class VOLKChaosdaemons extends BuildaVater {
 		
 		if(getKontingentTyp().equals("Daemon Lord (CotW)")){
 			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"","Bloodthirster Of Unfettered Fury", "Bloodthirster Of Insensate Rage", "Wrath Of Khorne Bloodthirster", 
-																		    "Skarbrand", "Schicksalsweber, Orakel des Tzeentch", "Ku'gath, der Seuchenvater", "Groﬂer Verpester", "Herrscher des Wandels", 
-																		    "H¸ter der Geheimnisse", "Be'lakor", "D‰monenprinz des Khorne","D‰monenprinz des Nurgle","D‰monenprinz des Slaanesh",
-																		    "D‰monenprinz des Tzeentch"});
+																		    "Skarbrand", "Schicksalsweber, Orakel des Tzeentch", "Ku'gath, der Seuchenvater", "Gro√üer Verpester", "Herrscher des Wandels", 
+																		    "H√ºter der Geheimnisse", "Be'lakor", "D√§monenprinz des Khorne","D√§monenprinz des Nurgle","D√§monenprinz des Slaanesh",
+																		    "D√§monenprinz des Tzeentch"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
@@ -495,9 +495,9 @@ public class VOLKChaosdaemons extends BuildaVater {
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Bloodthirster Of Unfettered Fury", "Bloodthirster Of Insensate Rage", "Wrath Of Khorne Bloodthirster", 
-				    "Skarbrand", "Schicksalsweber, Orakel des Tzeentch", "Ku'gath, der Seuchenvater", "Groﬂer Verpester", "Herrscher des Wandels", 
-				    "H¸ter der Geheimnisse", "Be'lakor", "D‰monenprinz des Khorne","D‰monenprinz des Nurgle","D‰monenprinz des Slaanesh",
-				    "D‰monenprinz des Tzeentch"}, 1, 1));
+				    "Skarbrand", "Schicksalsweber, Orakel des Tzeentch", "Ku'gath, der Seuchenvater", "Gro√üer Verpester", "Herrscher des Wandels", 
+				    "H√ºter der Geheimnisse", "Be'lakor", "D√§monenprinz des Khorne","D√§monenprinz des Nurgle","D√§monenprinz des Slaanesh",
+				    "D√§monenprinz des Tzeentch"}, 1, 1));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Bloodthirster Of Unfettered Fury");
@@ -619,7 +619,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 		}
     	
     	if(getKontingentTyp().equals("Lord of Pandemonium")){
-			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Schicksalsweber, Orakel des Tzeentch", "Herrscher des Wandels", "Herold des Tzeentch", "D‰monenprinz des Tzeentch"});
+			myChooserGruppen.get(0).changeComboBoxAuswahlen(new String[]{"", "Schicksalsweber, Orakel des Tzeentch", "Herrscher des Wandels", "Herold des Tzeentch", "D√§monenprinz des Tzeentch"});
 			myChooserGruppen.get(1).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(2).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(3).changeComboBoxAuswahlen(new String[]{""});
@@ -631,7 +631,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 			formation.entries.add(new FormationEntry(new String[]{"Schicksalsweber, Orakel des Tzeentch"}, 0, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Herrscher des Wandels"}, 0, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Herold des Tzeentch"}, 0, 1));
-			formation.entries.add(new FormationEntry(new String[]{"D‰monenprinz des Tzeentch"}, 0, 1));
+			formation.entries.add(new FormationEntry(new String[]{"D√§monenprinz des Tzeentch"}, 0, 1));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Schicksalsweber, Orakel des Tzeentch");
@@ -665,7 +665,7 @@ public class VOLKChaosdaemons extends BuildaVater {
 	
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

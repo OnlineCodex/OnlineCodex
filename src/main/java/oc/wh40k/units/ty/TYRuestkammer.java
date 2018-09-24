@@ -190,7 +190,7 @@ public class TYRuestkammer extends RuestkammerVater {
 	    boolean entrySwitched=false;
 	    
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
 			RefreshListener.fireRefresh();
 		}
 	}

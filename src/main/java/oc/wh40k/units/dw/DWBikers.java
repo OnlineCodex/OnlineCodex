@@ -16,7 +16,7 @@ public class DWBikers extends Eintrag {
 	public DWBikers() {
 		name = "Bike Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Bikers", 1, 5, 30);
 		add(squad);

@@ -35,7 +35,7 @@ public class CDJagdkavalkade extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Peitschen der Pein"), 15));//Exalted Allures
 		add(o8 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
@@ -46,7 +46,7 @@ public class CDJagdkavalkade extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Peitschen der Pein"), 15));//Exalted Allures
 		add(o9 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
@@ -57,7 +57,7 @@ public class CDJagdkavalkade extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("MÃ¤chtige Belohnung", 20));
 		add(o7 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Peitschen der Pein"), 15));//Exalted Allures
 		add(o10 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));

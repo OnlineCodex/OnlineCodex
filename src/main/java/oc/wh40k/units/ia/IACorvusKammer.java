@@ -39,7 +39,7 @@ public class IACorvusKammer extends RuestkammerVater {
 		seperator();
 		
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchscheinwerfer", 1));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hurricane Bolter", 15));
 		

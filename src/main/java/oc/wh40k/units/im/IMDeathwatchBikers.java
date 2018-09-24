@@ -17,7 +17,7 @@ public class IMDeathwatchBikers extends Eintrag {
 	public IMDeathwatchBikers() {
 		name = "Bike Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Bikers", 3, 6, getPts("Deathwatch Bikers"));
 		add(squad);

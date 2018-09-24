@@ -77,42 +77,42 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		pointValues.put("Cypher", 110);
 		pointValues.put("Fabius Bile", 109);
 		pointValues.put("Huron Blackheart", 125);
-		pointValues.put("Khârn the Betrayer", 173);
+		pointValues.put("KhÃ¢rn the Betrayer", 173);
 		pointValues.put("Lucius the Eternal", 115);
 		pointValues.put("Magnus the Red", 415);
 		pointValues.put("Typhus", 164);
 		
-		HQeinträge = new String[] {"", "Chaosgeneral", "Hexer", "Exalted Sorcerer", "Dämonenprinz", "Warpschmied", "Dunkler Apostel", "", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", 
-								       "Huron Schwarzherz", "Kharn der Verräter", "Lucius der Ewige", "Typhus", "BeLakor", "Vrosh Tattersoul", 
+		HQeintrÃ¤ge = new String[] {"", "Chaosgeneral", "Hexer", "Exalted Sorcerer", "DÃ¤monenprinz", "Warpschmied", "Dunkler Apostel", "", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", 
+								       "Huron Schwarzherz", "Kharn der VerrÃ¤ter", "Lucius der Ewige", "Typhus", "BeLakor", "Vrosh Tattersoul", 
 							       "", "[IA Apo 2013] Zhufor", "[Forgeworld] Necrosius"};
-		Eliteeinträge = new String[] {"", "Chaosterminatoren", "Höllenschlächter", "Mutilator",
+		EliteeintrÃ¤ge = new String[] {"", "Chaosterminatoren", "HÃ¶llenschlÃ¤chter", "Mutilator",
 				"", "[IA Experimental] Land Raider Proteus",
 				"", "[IA Apo 2013] Chaos Contemptor Dreadnought", "[IA Apo 2013] Giant Chaos Spawn","[IA Apo 2013] Chaos Decimator Daemon Engine", ""};
-		Standardeinträge = new String[] {"", "Chaos Space Marines", "Chaoskultisten", "Tzaangors"};
-		Sturmeinträge = new String[] {"", "Chaosbiker", "Raptoren", "Warpkrallen", "Chaosbrut", "[DftS] Höllendrache",
+		StandardeintrÃ¤ge = new String[] {"", "Chaos Space Marines", "Chaoskultisten", "Tzaangors"};
+		SturmeintrÃ¤ge = new String[] {"", "Chaosbiker", "Raptoren", "Warpkrallen", "Chaosbrut", "[DftS] HÃ¶llendrache",
 								  "","[IA Apo 2013] Chaos Storm Eagle","[IA Aeronautica] Dreadclaw", "[IA Aeronautica] Hell Blade","[IA Aeronautica] Hell Talon"};
-		Unterstützungeinträge = new String[] {"", "Havocs", "Kyborg", "Geissel", "Schmiedemonstrum", "Klauenmonstrum", "Land Raider des Chaos", "Vindicator des Chaos", 
+		UnterstÃ¼tzungeintrÃ¤ge = new String[] {"", "Havocs", "Kyborg", "Geissel", "Schmiedemonstrum", "Klauenmonstrum", "Land Raider des Chaos", "Vindicator des Chaos", 
 												  "Predator des Chaos",
 											  "", "[FW online] Deimos Pattern Vindicator Tank Destroyer", 
 											  "", "[IA Experimental] Fire Raptor Gunship",
 											  "", "[IA Apo 2013] Chaos Spartan Assault Tank", "[IA Apo 2013] Chaos Relic Predator", "[IA Apo 2013] Spined Chaos Beast"
 											};
 		LordofWar = new String[] {
-            "", "Magnus The Red", "Schädelherrscher des Khorne", 
+            "", "Magnus The Red", "SchÃ¤delherrscher des Khorne", 
             "", "[IA Apo 2013] Chaos Warhound Titan", "[IA Apo 2013] Chaos Reaver Battle Titan", "[IA Apo 2013] Greater Brass Scorpion of Khorne", 
                 "[IA Apo 2013] Thunderhawk Gunship",
             "", "[IA Experimental] Chaos Knight Paladin", "[IA Experimental] Chaos Knight Errant", "[IA Experimental] Kytan Daemon Engine of Khorne",
         };
         
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeinträge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintrÃ¤ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeinträge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, EliteeintrÃ¤ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeinträge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, StandardeintrÃ¤ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeinträge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, SturmeintrÃ¤ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterstützungeinträge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, UnterstÃ¼tzungeintrÃ¤ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -1608,7 +1608,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			addToInformationVector("Formation", 1);
 			clearCombo();
 			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral"});
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Auserkorene", "Chaosterminatoren", "Höllenschlächter"});
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Auserkorene", "Chaosterminatoren", "HÃ¶llenschlÃ¤chter"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Chaoskultisten"});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "Raptoren"});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Land Raider des Chaos"});
@@ -1620,7 +1620,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			formation.entries.add(new FormationEntry(new String[]{"Chaoskultisten"}, 2, 2));
 			formation.entries.add(new FormationEntry(new String[]{"Raptoren"}, 1, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Land Raider des Chaos"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"Höllenschlächter"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"HÃ¶llenschlÃ¤chter"}, 1, 1));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Chaosgeneral");
@@ -1629,7 +1629,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 				addUnitNotLocked(2,"Chaoskultisten");
 				addUnitNotLocked(3,"Raptoren");
 				addUnitNotLocked(4,"Land Raider des Chaos");
-				addUnitNotLocked(1,"Höllenschlächter");
+				addUnitNotLocked(1,"HÃ¶llenschlÃ¤chter");
 			}
 			
 			supplementBox.setEnabled(false);
@@ -1727,15 +1727,15 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		}else if(getKontingentTyp().equals("The Tormented (BL)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Dämonenprinz"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "DÃ¤monenprinz"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Besessene"});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Dämonenprinz"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"DÃ¤monenprinz"}, 1, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Besessene"}, 2, 5));
 			
 			if(!isLoading){
-				addUnitNotLocked(0,"Dämonenprinz");
+				addUnitNotLocked(0,"DÃ¤monenprinz");
 				addUnitNotLocked(1,"Besessene");
 			}
 			
@@ -1746,7 +1746,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			addToInformationVector("Formation", 1);
 			clearCombo();
 			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer"});
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Besessene", "Chaosterminatoren", "Höllenschlächter"});
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Besessene", "Chaosterminatoren", "HÃ¶llenschlÃ¤chter"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Auserkorene", "Chaos Space Marines"});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "Chaosbiker", "Raptoren", "Warpkrallen"});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Havocs"});
@@ -1757,7 +1757,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			formation.entries.add(new FormationEntry(new String[]{"Auserkorene", "Chaos Space Marines"}, 2, 6));
 			formation.entries.add(new FormationEntry(new String[]{"Besessene", "Chaosterminatoren"}, 1, 3));
 			formation.entries.add(new FormationEntry(new String[]{"Chaosbiker", "Raptoren", "Warpkrallen"}, 1, 3));
-			formation.entries.add(new FormationEntry(new String[]{"Havocs", "Höllenschlächter"}, 1, 3));
+			formation.entries.add(new FormationEntry(new String[]{"Havocs", "HÃ¶llenschlÃ¤chter"}, 1, 3));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Chaosgeneral");
@@ -1769,11 +1769,11 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		}else if(getKontingentTyp().equals("Chaos Warband (TL)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", "Huron Schwarzherz", "Kharn der Verräter", "Lucius der Ewige", "Typhus"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "Abaddon der Vernichter", "Ahriman", "Fabius Gallus", "Huron Schwarzherz", "Kharn der VerrÃ¤ter", "Lucius der Ewige", "Typhus"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Besessene", "Chaosterminatoren", "Auserkorene"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Chaos Space Marines"});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "Chaosbiker", "Raptoren", "Warpkrallen"});
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Havocs", "Höllenschlächter"});
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Havocs", "HÃ¶llenschlÃ¤chter"});
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral"}, 1, 1));
@@ -1781,7 +1781,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			formation.entries.add(new FormationEntry(new String[]{"Chaos Space Marines"}, 2, 6));
 			formation.entries.add(new FormationEntry(new String[]{"Auserkorene", "Besessene", "Chaosterminatoren"}, 1, 3));
 			formation.entries.add(new FormationEntry(new String[]{"Chaosbiker", "Raptoren", "Warpkrallen"}, 1, 3));
-			formation.entries.add(new FormationEntry(new String[]{"Havocs", "Höllenschlächter"}, 1, 3));
+			formation.entries.add(new FormationEntry(new String[]{"Havocs", "HÃ¶llenschlÃ¤chter"}, 1, 3));
 			
 			if(!isLoading){
 				addUnitNotLocked(0,"Chaosgeneral");
@@ -1795,14 +1795,14 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		}else if(getKontingentTyp().equals("Maelstrom of Gore (TL)")){
 			addToInformationVector("Maelstrom of Gore (TL)", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Kharn der Verräter"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Kharn der VerrÃ¤ter"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Khorne Berserker"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Kharn der Verräter"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Kharn der VerrÃ¤ter"}, 1, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Khorne Berserker"}, 4, 8));
 			
 			if(!isLoading){
@@ -1848,14 +1848,14 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{"", "[BK] Aegis-Verteidigungslinie", "[BK] Himmelsschild-Landeplattform", "[BK] Imperiale Bastion", "[BK] Festung der Erlösung", "[BK] Vergelter Waffenbatterie","[BK] Feuersturm Abwehrstellung",
-							"[BK] Aquilla-Artilleriebunker", "[BK] Deflektor-Relaisnetzwerk", "[BK] Deflektor-Schildgenerator","[BK] Ehrwürdiges Imperium 1","[BK] Befestigte Stellung","[BK] Imperialer Bunker",
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{"", "[BK] Aegis-Verteidigungslinie", "[BK] Himmelsschild-Landeplattform", "[BK] Imperiale Bastion", "[BK] Festung der ErlÃ¶sung", "[BK] Vergelter Waffenbatterie","[BK] Feuersturm Abwehrstellung",
+							"[BK] Aquilla-Artilleriebunker", "[BK] Deflektor-Relaisnetzwerk", "[BK] Deflektor-Schildgenerator","[BK] EhrwÃ¼rdiges Imperium 1","[BK] Befestigte Stellung","[BK] Imperialer Bunker",
 							"[BK] Imperiale Verteidigungslinie","[BK] Imperiale Verteidigungsstellung","[BK] Promethium-Relaisleitungen","[BK] Imperiales Verteidigungsnetzwerk",
 							"", "Plasma Obliterator"});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"[BK] Aegis-Verteidigungslinie", "[BK] Himmelsschild-Landeplattform", "[BK] Imperiale Bastion", "[BK] Festung der Erlösung", "[BK] Vergelter Waffenbatterie","[BK] Feuersturm Abwehrstellung",
-							"[BK] Aquilla-Artilleriebunker", "[BK] Deflektor-Relaisnetzwerk", "[BK] Deflektor-Schildgenerator","[BK] Ehrwürdiges Imperium 1","[BK] Befestigte Stellung","[BK] Imperialer Bunker",
+			formation.entries.add(new FormationEntry(new String[]{"[BK] Aegis-Verteidigungslinie", "[BK] Himmelsschild-Landeplattform", "[BK] Imperiale Bastion", "[BK] Festung der ErlÃ¶sung", "[BK] Vergelter Waffenbatterie","[BK] Feuersturm Abwehrstellung",
+							"[BK] Aquilla-Artilleriebunker", "[BK] Deflektor-Relaisnetzwerk", "[BK] Deflektor-Schildgenerator","[BK] EhrwÃ¼rdiges Imperium 1","[BK] Befestigte Stellung","[BK] Imperialer Bunker",
 							"[BK] Imperiale Verteidigungslinie","[BK] Imperiale Verteidigungsstellung","[BK] Promethium-Relaisleitungen","[BK] Imperiales Verteidigungsnetzwerk",
 							"Plasma Obliterator"}, 1, 3));
 			
@@ -1872,11 +1872,11 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Höllenschlächter", "Schmiedemonstrum", "Klauenmonstrum", "Geißel" });
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "HÃ¶llenschlÃ¤chter", "Schmiedemonstrum", "Klauenmonstrum", "GeiÃŸel" });
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Warpschmied"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"Höllenschlächter", "Schmiedemonstrum", "Klauenmonstrum", "Geißel"}, 3, 5));
+			formation.entries.add(new FormationEntry(new String[]{"HÃ¶llenschlÃ¤chter", "Schmiedemonstrum", "Klauenmonstrum", "GeiÃŸel"}, 3, 5));
 			
 			if(!isLoading){
 				addUnit(0,"Warpschmied");
@@ -1887,15 +1887,15 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "Höllendrache"});
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "HÃ¶llendrache"});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Höllendrache"}, 2, 4));
+			formation.entries.add(new FormationEntry(new String[]{"HÃ¶llendrache"}, 2, 4));
 			
 			if(!isLoading){
-				addUnit(FA,"Höllendrache");
-				addUnit(FA,"Höllendrache");
+				addUnit(FA,"HÃ¶llendrache");
+				addUnit(FA,"HÃ¶llendrache");
 			}
 		}else if(getKontingentTyp().equals("Cult Of Destruction (TL)")){
 			addToInformationVector("Formation", 1);
@@ -1967,18 +1967,18 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		} else if(getKontingentTyp().equals("Favoured Of Chaos (TL)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Dämonenprinz"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "DÃ¤monenprinz"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Besessene"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Dämonenprinz"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"DÃ¤monenprinz"}, 1, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Besessene"}, 3, 5));
 			
 			if(!isLoading){
-				addUnitNotLocked(0,"Dämonenprinz");
+				addUnitNotLocked(0,"DÃ¤monenprinz");
 				addUnit(1,"Besessene");
 				addUnit(1,"Besessene");
 				addUnit(1,"Besessene");
@@ -1991,20 +1991,20 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{"", "Schädelherrscher des Khorne"});
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{"", "SchÃ¤delherrscher des Khorne"});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Schädelherrscher des Khorne"}, 3, 3));
+			formation.entries.add(new FormationEntry(new String[]{"SchÃ¤delherrscher des Khorne"}, 3, 3));
 			
 			if(!isLoading){
-				addUnit(LOW,"Schädelherrscher des Khorne");
-				addUnit(LOW,"Schädelherrscher des Khorne");
-				addUnit(LOW,"Schädelherrscher des Khorne");
+				addUnit(LOW,"SchÃ¤delherrscher des Khorne");
+				addUnit(LOW,"SchÃ¤delherrscher des Khorne");
+				addUnit(LOW,"SchÃ¤delherrscher des Khorne");
 			}
 		} else if(getKontingentTyp().equals("War Cabal (TS)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "Dämonenprinz", "Exalted Sorcerer", "Hexer"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "DÃ¤monenprinz", "Exalted Sorcerer", "Hexer"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Scarab Occult Terminators"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Rubric Marines"});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
@@ -2012,7 +2012,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Ahriman", "Dämonenprinz"}, 0, 1));
+			formation.entries.add(new FormationEntry(new String[]{"Ahriman", "DÃ¤monenprinz"}, 0, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Exalted Sorcerer", "Hexer"}, 1, 4));
 			formation.entries.add(new FormationEntry(new String[]{"Rubric Marines"}, 1, 3));
 			formation.entries.add(new FormationEntry(new String[]{"Scarab Occult Terminators"}, 1, 3));
@@ -2026,7 +2026,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		} else if(getKontingentTyp().equals("War Coven (TS)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Dämonenprinz", "Exalted Sorcerer", "Hexer"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "DÃ¤monenprinz", "Exalted Sorcerer", "Hexer"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Scarab Occult Terminators"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Rubric Marines"});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
@@ -2034,11 +2034,11 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Dämonenprinz"}, 0, 1));
+			formation.entries.add(new FormationEntry(new String[]{"DÃ¤monenprinz"}, 0, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Exalted Sorcerer", "Hexer"}, 3, 10));
 			
 			if(!isLoading){
-				addUnitNotLocked(HQ,"Dämonenprinz");
+				addUnitNotLocked(HQ,"DÃ¤monenprinz");
 				addUnitNotLocked(HQ,"Exalted Sorcerer");
 				addUnitNotLocked(HQ,"Exalted Sorcerer");
 				addUnitNotLocked(HQ,"Exalted Sorcerer");
@@ -2065,7 +2065,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		} else if(getKontingentTyp().equals("Sekhmet Conclave (TS)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "Dämonenprinz", "Exalted Sorcerer", "Hexer"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "DÃ¤monenprinz", "Exalted Sorcerer", "Hexer"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{"", "Scarab Occult Terminators"});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
@@ -2073,7 +2073,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{"", "Magnus The Red"});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Ahriman", "Dämonenprinz", "Exalted Sorcerer", "Hexer", "Magnus The Red"}, 1, 1));
+			formation.entries.add(new FormationEntry(new String[]{"Ahriman", "DÃ¤monenprinz", "Exalted Sorcerer", "Hexer", "Magnus The Red"}, 1, 1));
 			formation.entries.add(new FormationEntry(new String[]{"Scarab Occult Terminators"}, 3, 9));
 			
 			if(!isLoading){
@@ -2105,7 +2105,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 		} else if(getKontingentTyp().equals("Rehati War Sect (TS)")){
 			addToInformationVector("Formation", 1);
 			clearCombo();
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Dämonenprinz", "Exalted Sorcerer"});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "DÃ¤monenprinz", "Exalted Sorcerer"});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
@@ -2114,7 +2114,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			
 			formation=new Formation(this);
 			formation.entries.add(new FormationEntry(new String[]{"Magnus The Red"}, 1, 1));
-			formation.entries.add(new FormationEntry(new String[]{"Dämonenprinz", "Exalted Sorcerer"}, 3, 9));
+			formation.entries.add(new FormationEntry(new String[]{"DÃ¤monenprinz", "Exalted Sorcerer"}, 3, 9));
 			
 			if(!isLoading){
 				addUnit(LOW,"Magnus The Red");
@@ -2169,23 +2169,23 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			formation=new Formation(this);
 			if(getCountFromInformationVector("BlackLegion")==1)
 			{
-				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "Dämonenprinz", "Dunkler Apostel", "Abaddon der Vernichter"});
-				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Hexer", "Dämonenprinz", "Dunkler Apostel", "Abaddon der Vernichter"}, 1, 1));
+				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "DÃ¤monenprinz", "Dunkler Apostel", "Abaddon der Vernichter"});
+				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Hexer", "DÃ¤monenprinz", "Dunkler Apostel", "Abaddon der Vernichter"}, 1, 1));
 			}
 			else if(getCountFromInformationVector("World Eaters")==1)
 			{
-				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Dämonenprinz", "Dunkler Apostel"});
-				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Dämonenprinz", "Dunkler Apostel"}, 1, 1));
+				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "DÃ¤monenprinz", "Dunkler Apostel"});
+				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "DÃ¤monenprinz", "Dunkler Apostel"}, 1, 1));
 			}
 			else if(getCountFromInformationVector("Thousand Sons")==1)
 			{
-				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "Dämonenprinz", "Dunkler Apostel"});
-				formation.entries.add(new FormationEntry(new String[]{"Ahriman", "Dämonenprinz", "Dunkler Apostel", "Magnus The Red"}, 1, 1));
+				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Ahriman", "DÃ¤monenprinz", "Dunkler Apostel"});
+				formation.entries.add(new FormationEntry(new String[]{"Ahriman", "DÃ¤monenprinz", "Dunkler Apostel", "Magnus The Red"}, 1, 1));
 			}
 			else
 			{
-				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "Dämonenprinz", "Dunkler Apostel"});
-				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Hexer", "Dämonenprinz", "Dunkler Apostel"}, 1, 1));
+				myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{"", "Chaosgeneral", "Hexer", "DÃ¤monenprinz", "Dunkler Apostel"});
+				formation.entries.add(new FormationEntry(new String[]{"Chaosgeneral", "Hexer", "DÃ¤monenprinz", "Dunkler Apostel"}, 1, 1));
 			}
 				
 				
@@ -2218,12 +2218,12 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{""});
 			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "Höllendrache"});
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Höllenschlächter", "Schmiedemonstrum", "Klauenmonstrum", "Geißel"});
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{"", "HÃ¶llendrache"});
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "HÃ¶llenschlÃ¤chter", "Schmiedemonstrum", "Klauenmonstrum", "GeiÃŸel"});
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
 			
 			formation=new Formation(this);
-			formation.entries.add(new FormationEntry(new String[]{"Höllendrache", "Höllenschlächter", "Schmiedemonstrum", "Klauenmonstrum", "Geißel"}, 1, 3));
+			formation.entries.add(new FormationEntry(new String[]{"HÃ¶llendrache", "HÃ¶llenschlÃ¤chter", "Schmiedemonstrum", "Klauenmonstrum", "GeiÃŸel"}, 1, 3));
 			
 			if(!isLoading){
 			}
@@ -2253,7 +2253,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gelÃ¶scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

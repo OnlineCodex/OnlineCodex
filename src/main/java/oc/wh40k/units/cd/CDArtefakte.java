@@ -45,30 +45,30 @@ public class CDArtefakte extends RuestkammerVater {
 	public void initButtons(boolean... defaults) {
 
 		//Khorne
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("A'rgath König der Klingen"), 15)); //Khorne DP/Herold
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("A'rgath KÃ¶nig der Klingen"), 15)); //Khorne DP/Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Todbringer"), 15)); //Khorne DP, Bloodthirster
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die Karmesinrote Krone"), 40));//Khorne DP/Herold, Bloodthirster
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Schädelräuber"), 30));//Khorne DP, Bloodthirster
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("SchÃ¤delrÃ¤uber"), 30));//Khorne DP, Bloodthirster
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Khartoth der Blutdurst"), 25));//Khorne DP/Herold
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Rüstung der Verachtung"), 30));//Khorne DP, Bloodthirster
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("RÃ¼stung der Verachtung"), 30));//Khorne DP, Bloodthirster
 		//Nurgle
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Grotti der Nurgling"), 40));//Great Unclean One, DP/Herold des Nurgle	
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Verderbnis"), 25));//Great Unclean One, DP/Herold des Nurgle
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Epidemia"), 20));//Great Unclean One
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die Glocke des Untergangs"), 30));//Herold des Nurgle
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Horn der Fäulnis"), 35));//DP/Herold des Nurgle
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Herzog Olaks' Totenschädel"), 15));//Herold des Nurgle
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Horn der FÃ¤ulnis"), 35));//DP/Herold des Nurgle
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Herzog Olaks' TotenschÃ¤del"), 15));//Herold des Nurgle
 		//Slaanesh
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Seelenfresser"), 20));//Keeper of Secrets, DP
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das Verbotene Juwel"), 15));//Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Silbersplitter"), 30));//Keeper of Secrets, DP
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die Träge Klaue"), 10));//Keeper of Secrets, Herold
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die TrÃ¤ge Klaue"), 10));//Keeper of Secrets, Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das Mal des Exzesses"), 15));//Keeper of Secrets, DP, Herold
 		//Tzeentch
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Paradoxon"), 25));//Lord of Change, Herold	
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die Orakelscheibe"), 35));//Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Das Endlose Grimoire"), 35));//Herold
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die Unmögliche Robe"), 25));//Lord of Change, DP, Herold
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Die UnmÃ¶gliche Robe"), 25));//Lord of Change, DP, Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Seelenfluch"), 15));//DP, Herold
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Der Immerstab"), 20));//Lord of Change, Herold
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -91,7 +91,7 @@ public class CDArtefakte extends RuestkammerVater {
 	@Override
 	public void refreshen() {
 
-		//Einzigartige Gegenstände
+		//Einzigartige GegenstÃ¤nde
 		if(o1.isSelected("Der Immerstab")){
 			if(immerstab==false){
 				immerstab=true;
@@ -116,7 +116,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Die Unmögliche Robe")){
+		if(o1.isSelected("Die UnmÃ¶gliche Robe")){
 			if(robe==false){
 				robe=true;
 				BuildaHQ.addToInformationVectorGlobal("CDrobe", 1);
@@ -176,7 +176,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Die Träge Klaue")){
+		if(o1.isSelected("Die TrÃ¤ge Klaue")){
 			if(klaue==false){
 				klaue=true;
 				BuildaHQ.addToInformationVectorGlobal("CDklaue", 1);
@@ -224,7 +224,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Herzog Olaks' Totenschädel")){
+		if(o1.isSelected("Herzog Olaks' TotenschÃ¤del")){
 			if(totenschaedel==false){
 				totenschaedel=true;
 				BuildaHQ.addToInformationVectorGlobal("CDtotenschaedel", 1);
@@ -236,7 +236,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Horn der Fäulnis")){
+		if(o1.isSelected("Horn der FÃ¤ulnis")){
 			if(horn==false){
 				horn=true;
 				BuildaHQ.addToInformationVectorGlobal("CDhorn", 1);
@@ -296,7 +296,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Rüstung der Verachtung")){
+		if(o1.isSelected("RÃ¼stung der Verachtung")){
 			if(verachtung==false){
 				verachtung=true;
 				BuildaHQ.addToInformationVectorGlobal("CDverachtung", 1);
@@ -320,7 +320,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("Schädelräuber")){
+		if(o1.isSelected("SchÃ¤delrÃ¤uber")){
 			if(schaedelraeuber==false){
 				schaedelraeuber=true;
 				BuildaHQ.addToInformationVectorGlobal("CDschaedelraeuber", 1);
@@ -356,7 +356,7 @@ public class CDArtefakte extends RuestkammerVater {
 			}
 		}
 
-		if(o1.isSelected("A'rgath König der Klingen")){
+		if(o1.isSelected("A'rgath KÃ¶nig der Klingen")){
 			if(argath==false){
 				argath=true;
 				BuildaHQ.addToInformationVectorGlobal("CDargath", 1);

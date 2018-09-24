@@ -21,7 +21,7 @@ public class HHCALegionTerminatorSquad extends Eintrag {
 	public HHCALegionTerminatorSquad() {
 		name = "Legion Terminator Squad\n";
 		grundkosten = 25;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, 30);
 		add(squad);

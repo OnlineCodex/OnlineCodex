@@ -11,7 +11,7 @@ public class TATX7HammerheadGunships extends Eintrag {
 
 	public TATX7HammerheadGunships() {
 		name = "TX7 Hammerhead Gunships";
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		grundkosten = 0;
 		
 		seperator();

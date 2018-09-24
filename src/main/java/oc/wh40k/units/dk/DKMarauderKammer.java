@@ -23,8 +23,8 @@ public class DKMarauderKammer extends RuestkammerVater {
 		
 		seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Bomben","zwölf Bomben", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Höllensturm-Bomben","zwei Höllensturm-Bomben",0));
+        ogE.addElement(new OptionsGruppeEintrag("Bomben","zwÃ¶lf Bomben", 0));
+		ogE.addElement(new OptionsGruppeEintrag("HÃ¶llensturm-Bomben","zwei HÃ¶llensturm-Bomben",0));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		seperator();

@@ -16,7 +16,7 @@ public class CHChaosHellTalon extends Eintrag {
 		name = "Chaos Hell Talon";
 		grundkosten = getPts("Chaos Hell Talon");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

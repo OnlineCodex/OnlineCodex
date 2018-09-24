@@ -26,7 +26,7 @@ public class SMFahrzeugruestkammer extends RuestkammerVater {
 		}
         ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 5));
         ogE.addElement(new OptionsGruppeEintrag("Suchkopfrakete", 10));
-        ogE.addElement(new OptionsGruppeEintrag("Zus‰tzlich Panzerung", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Zus√§tzlich Panzerung", 10));
         add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,9));
 
 		sizeSetzen();

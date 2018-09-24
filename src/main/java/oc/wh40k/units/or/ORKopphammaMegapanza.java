@@ -17,7 +17,7 @@ public class ORKopphammaMegapanza extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/KopphammaMegapanza.gif"));
 		
 
-        add(o1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "Supa-Grotraket‰nz", 3, 15));
+        add(o1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "Supa-Grotraket√§nz", 3, 15));
         
         seperator();
         

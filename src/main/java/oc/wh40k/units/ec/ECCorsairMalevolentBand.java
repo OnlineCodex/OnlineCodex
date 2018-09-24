@@ -19,7 +19,7 @@ public class ECCorsairMalevolentBand extends Eintrag {
     public ECCorsairMalevolentBand() {
         name = "Corsair Malevolent Band\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Corsair Malevolent", 5, 10, 15);
         add(squad);

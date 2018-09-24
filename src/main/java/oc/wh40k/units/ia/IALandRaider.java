@@ -1,4 +1,4 @@
-/* Regeln für Deimos-Lux Pattern Psycannon unter:
+/* Regeln fÃ¼r Deimos-Lux Pattern Psycannon unter:
  * http://www.forgeworld.co.uk/Downloads/Product/PDF/g/greyknightsupd.pdf
  * nicht mehr existent!
  */
@@ -28,7 +28,7 @@ public class IALandRaider extends Eintrag {
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ZusÃ¤tzliche Panzerung", 10));
 		complete();
 	}
 

@@ -14,7 +14,7 @@ public class ECCorsairFireStorm extends Eintrag {
 
 	public ECCorsairFireStorm() {
 		name = "Corsair Fire Storm\n";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		grundkosten = 0;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ECCorsairWarpHunter.jpg"));

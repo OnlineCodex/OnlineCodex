@@ -22,8 +22,8 @@ public class APOBanehammer extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/Banehammer.gif"));
 		
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzliches Maschinengewehr", 5));
-        add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus‰tzlicher Sturmbolter", 5));
+		add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzliches Maschinengewehr", 5));
+        add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "zus√§tzlicher Sturmbolter", 5));
 
         seperator();
 

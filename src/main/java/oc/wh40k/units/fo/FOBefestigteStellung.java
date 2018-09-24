@@ -19,7 +19,7 @@ public class FOBefestigteStellung extends Eintrag {
 	public FOBefestigteStellung() {
 		name = "Befestigte Stellung";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 
@@ -70,7 +70,7 @@ public class FOBefestigteStellung extends Eintrag {
 		hischi.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hischi);
 		
-		erimp = new RuestkammerStarter(ID, randAbstand, cnt, "FOEhrwuerdigesImperium1Kammer", "Ehrwürdiges Imperium 1",1);
+		erimp = new RuestkammerStarter(ID, randAbstand, cnt, "FOEhrwuerdigesImperium1Kammer", "EhrwÃ¼rdiges Imperium 1",1);
 		erimp.initKammer();
 		erimp.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(erimp);

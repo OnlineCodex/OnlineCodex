@@ -44,11 +44,11 @@ public class INInquisitordesOrdoXenos extends Eintrag {
 
         seperator();
 
-		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-Schädel", 3, 3));
+		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Servo-SchÃ¤del", 3, 3));
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Servorüstung", 8));
+		ogE.addElement(new OptionsGruppeEintrag("ServorÃ¼stung", 8));
 		ogE.addElement(new OptionsGruppeEintrag("Digitalwaffen", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Plasma-Verzerrer", "Ulumeathischer Plasma-Verzerrer", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Strahlungsgranaten", 15));

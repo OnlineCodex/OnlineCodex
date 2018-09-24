@@ -34,7 +34,7 @@ public class IMDeathwatchVeterans extends Eintrag {//Sternguard
 	public IMDeathwatchVeterans() {
 		name = "Veterans\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		rkVeterans=new Vector<RuestkammerStarter>();
 		rkSergeant=new Vector<RuestkammerStarter>();

@@ -7,7 +7,7 @@ public class SMDamoclesRhino extends Eintrag {
 	public SMDamoclesRhino() {
 		name = "Damocles Rhino";
 		grundkosten = 60;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 		addToInformationVector("SMHQ", 1);
 

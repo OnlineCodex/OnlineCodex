@@ -16,7 +16,7 @@ public class IMRavenwingBlackKnights extends Eintrag {
 		name = "Ravenwing Black Knights";
 		grundkosten = 0;
 		
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Ravenwing Black Knights", 3, 10, getPts("Ravenwing Black Knights") + getPts("Corvus hammer") + getPts("Bolt pistol (SM)") + getPts("Frag grenade") + getPts("Krak grenade") + getPts("Plasma talon") /*sollten weniger werden, wenn o1 ausgew‰hlt ist*/);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "Ravenwing Black Knights", 3, 10, getPts("Ravenwing Black Knights") + getPts("Corvus hammer") + getPts("Bolt pistol (SM)") + getPts("Frag grenade") + getPts("Krak grenade") + getPts("Plasma talon") /*sollten weniger werden, wenn o1 ausgew√§hlt ist*/);
 		add(squad);
 		
 		ogE.addElement(new OptionsGruppeEintrag("Plasma talon", getPts("Plasma talon")));

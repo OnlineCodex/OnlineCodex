@@ -26,7 +26,7 @@ public class SMContemptorMortisPatternDreadnought extends Eintrag {
 
 		seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cyclone Missile Launcher", "Carapace-mounted Cyclone Missile Launcher", 35));
 
 		complete();

@@ -13,7 +13,7 @@ public class AMWalkuereKammer extends RuestkammerVater {
 
     public AMWalkuereKammer() {
         grundkosten = 100;
-        name = "Walküre";
+        name = "WalkÃ¼re";
     }
 
     @Override

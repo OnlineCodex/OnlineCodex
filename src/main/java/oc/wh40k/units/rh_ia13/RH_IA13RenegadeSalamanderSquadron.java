@@ -12,7 +12,7 @@ public class RH_IA13RenegadeSalamanderSquadron extends Eintrag {
 	public RH_IA13RenegadeSalamanderSquadron() {
 		name = "Renegade Hellhound Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 

@@ -22,9 +22,9 @@ public class CMChaosReaverBattleTitan extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Turbolaser", "Doppelläufiger Turbolaseer-Annihilator", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Plasmageschütz", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Inferno-Geschütz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Turbolaser", "DoppellÃ¤ufiger Turbolaseer-Annihilator", 0));
+		ogE.addElement(new OptionsGruppeEintrag("PlasmageschÃ¼tz", 0));
+		ogE.addElement(new OptionsGruppeEintrag("Inferno-GeschÃ¼tz", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Vulkan-Megabolter", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", "Apokalypse-Raketenbwerfer", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Warpfeldgranate", 0));
@@ -33,8 +33,8 @@ public class CMChaosReaverBattleTitan extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Gatlingblaster", 0));
-        ogE.addElement(new OptionsGruppeEintrag("Meltergeschütz", 0));
-        ogE.addElement(new OptionsGruppeEintrag("Vulkangeschütz", 0));
+        ogE.addElement(new OptionsGruppeEintrag("MeltergeschÃ¼tz", 0));
+        ogE.addElement(new OptionsGruppeEintrag("VulkangeschÃ¼tz", 0));
         ogE.addElement(new OptionsGruppeEintrag("Multilaserkanone", 0));
         ogE.addElement(new OptionsGruppeEintrag("Titanen-NKW", "Titanen-Nahkampfwaffe", 0));
 		add(o2 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));

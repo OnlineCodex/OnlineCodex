@@ -13,13 +13,13 @@ public class FOPlasmaObliterator extends Eintrag {
 	public FOPlasmaObliterator() {
 		name = "Plasma Obliterator";
 		grundkosten = 230;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 
 		seperator();
 		
-		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Gebäude");
+		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "GebÃ¤ude");
 		hauptGeb.initKammer(true);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptGeb);

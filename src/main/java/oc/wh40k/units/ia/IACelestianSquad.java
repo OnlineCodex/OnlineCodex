@@ -18,7 +18,7 @@ public class IACelestianSquad extends Eintrag {
 	public IACelestianSquad() {
 		name = "Celestiatrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Celestian Squad", 5, 10, 14);
 		add(squad);

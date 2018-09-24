@@ -30,7 +30,7 @@ public class AMGeneralMyndorasOdon extends Eintrag {
 
 		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Regimentsstandarte", "Veteran mit Regimentsstandarte", 0));
 		add(oe1b = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Standard of the Lost 113th", "Veteran mit Standard of the Lost 113th", 1, 30));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Funkger‰t", "Veteran mit Funkger‰t", 0));
+		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Funkger√§t", "Veteran mit Funkger√§t", 0));
 		add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melter", "Veteran mit Melter", 0));
 
 		seperator();
@@ -38,19 +38,19 @@ public class AMGeneralMyndorasOdon extends Eintrag {
 		add(new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Astropath", 1, 30));
 		add(new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Artillerieoffizier", 1, 30));
 		add(new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Flottenoffizier", 1, 30));
-		add(new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Leibw‰chter", 2, 15));
+		add(new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Leibw√§chter", 2, 15));
 
 		seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chim‰re");
+		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaere", "Chim√§re");
 		rkTransport.initKammer(true);
 		add(rkTransport);
 		
-		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chim‰re");
+		rkTransport2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMChimaereIA1", "[IA1 2nd Ed] Chim√§re");
 		rkTransport2.initKammer(true);
 		add(rkTransport2);
 
-		rkValkyrie = new RuestkammerStarter(ID, randAbstand, cnt, "AMWalkuereKammer", "Walk¸re");
+		rkValkyrie = new RuestkammerStarter(ID, randAbstand, cnt, "AMWalkuereKammer", "Walk√ºre");
 		rkValkyrie.initKammer();
 		add(rkValkyrie);
 

@@ -120,7 +120,7 @@ public class CSTerminatorwaffen extends RuestkammerVater {
 		o2.setLegal(auswahlen>=2);
 		
 		if(isChaosgeneral || isHexer){
-		//Einzigartige Gegenst‰nde
+		//Einzigartige Gegenst√§nde
 				if(crozius.isSelected()){
 					if(croziusBool==false){
 						croziusBool=true;
@@ -216,8 +216,8 @@ public class CSTerminatorwaffen extends RuestkammerVater {
 		boolean entrySwitched=false;
 		
 		if(entrySwitched){
-			//Aktualisisert alle Eintr‰ge, auch die, welche diese R¸stkammer enth‰lt.
-			//Sonst werden dort zwar beim abw‰hlen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle Eintr√§ge, auch die, welche diese R√ºstkammer enth√§lt.
+			//Sonst werden dort zwar beim abw√§hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

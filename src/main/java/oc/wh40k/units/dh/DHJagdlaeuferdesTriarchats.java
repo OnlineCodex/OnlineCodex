@@ -9,7 +9,7 @@ public class DHJagdlaeuferdesTriarchats extends Eintrag {
 	OptionsUpgradeGruppe o1;
 
 	public DHJagdlaeuferdesTriarchats() {
-		name = "Jagdl‰ufer des Triarchats";
+		name = "Jagdl√§ufer des Triarchats";
 		grundkosten = 150;
 
 		add(ico = new oc.Picture("oc/wh40k/images/NEJagdlaeuferdesTriarchats.jpg"));

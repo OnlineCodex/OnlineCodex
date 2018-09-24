@@ -15,7 +15,7 @@ public class HHCALegionDreadnoughtTalon extends Eintrag {
 	public HHCALegionDreadnoughtTalon() {
 		name = "Legion Dreadnought Talon";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		seperator();
 		ogE.addElement(new OptionsGruppeEintrag("Legion Drop Pod", 35));

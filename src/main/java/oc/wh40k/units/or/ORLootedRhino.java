@@ -25,12 +25,12 @@ public class ORLootedRhino extends Eintrag {
         seperator();
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zugetakkat", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rot‰ Farb‰", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth‰lfaz", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rot√§ Farb√§", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Groth√§lfaz", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbombschlueda", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Panzaplattenz", 10));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank‰", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn‰", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Entaplank√§", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirn√§", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Megagreifa", 5));
 
        	complete();

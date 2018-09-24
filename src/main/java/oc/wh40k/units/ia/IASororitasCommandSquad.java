@@ -23,7 +23,7 @@ public class IASororitasCommandSquad extends Eintrag {
 	public IASororitasCommandSquad() {
 		name = "Kommandotrupp";
 		grundkosten = 65;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		addToInformationVector("ASKommandotrupp", 1);
 

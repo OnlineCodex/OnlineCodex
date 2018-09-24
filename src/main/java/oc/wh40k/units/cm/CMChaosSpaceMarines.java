@@ -31,7 +31,7 @@ public class CMChaosSpaceMarines extends Eintrag {
 	public CMChaosSpaceMarines() {
 		//name = "Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Space Marines", 5, 20, 13);
 		add(squad);

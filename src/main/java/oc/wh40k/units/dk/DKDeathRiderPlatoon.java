@@ -16,7 +16,7 @@ public class DKDeathRiderPlatoon extends Eintrag {
 	public DKDeathRiderPlatoon() {
 		name = "Death Rider Platoon";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGInfantryPlatoon.jpg"));

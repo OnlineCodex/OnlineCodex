@@ -36,7 +36,7 @@ public class SMSpezialausruestung extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Space-Marine-Bike"), 20));
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
-		setUeberschrift("Spezielle Ausrüstung");
+		setUeberschrift("Spezielle AusrÃ¼stung");
 		sizeSetzen();
 	}
 
@@ -70,8 +70,8 @@ public class SMSpezialausruestung extends RuestkammerVater {
 			}
 		}
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

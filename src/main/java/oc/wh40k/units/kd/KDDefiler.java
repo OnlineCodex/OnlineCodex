@@ -21,7 +21,7 @@ public class KDDefiler extends Eintrag {
 		
 		seperator();
 
-		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Kampfgeschütz", 0));
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "KampfgeschÃ¼tz", 0));
 
 		seperator();
 
@@ -42,9 +42,9 @@ public class KDDefiler extends Eintrag {
 
 		seperator();
 				
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
+		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "AusrÃ¼stung");
 		ausruestung.initKammer(false);
-		ausruestung.setButtonText("Ausrüstung");
+		ausruestung.setButtonText("AusrÃ¼stung");
 		add(ausruestung);
 		
 		complete();

@@ -20,44 +20,44 @@ public class CMGeisselSturmverband extends Eintrag {
             
             seperator();
 
-            rkBefehlsgeissel = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Befehls-Geiﬂel");
+            rkBefehlsgeissel = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Befehls-Gei√üel");
             rkBefehlsgeissel.initKammer(true);
-            rkBefehlsgeissel.setButtonText("Befehls-Geiﬂel");
+            rkBefehlsgeissel.setButtonText("Befehls-Gei√üel");
             add(rkBefehlsgeissel);
 
             seperator(15);
 
-            rkGeissel1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geiﬂel");
+            rkGeissel1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Gei√üel");
             rkGeissel1.initKammer(false);
-            rkGeissel1.setButtonText("Chaos-Geiﬂel");
+            rkGeissel1.setButtonText("Chaos-Gei√üel");
             add(rkGeissel1);
 
             seperator();
 
-            rkGeissel2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geiﬂel");
+            rkGeissel2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Gei√üel");
             rkGeissel2.initKammer(false);
-            rkGeissel2.setButtonText("Chaos-Geiﬂel");
+            rkGeissel2.setButtonText("Chaos-Gei√üel");
             add(rkGeissel2);
 
             seperator();
 
-            rkGeissel3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geiﬂel");
+            rkGeissel3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Gei√üel");
             rkGeissel3.initKammer(false);
-            rkGeissel3.setButtonText("Chaos-Geiﬂel");
+            rkGeissel3.setButtonText("Chaos-Gei√üel");
             add(rkGeissel3);
 
             seperator();
 
-            rkGeissel4 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geiﬂel");
+            rkGeissel4 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Gei√üel");
             rkGeissel4.initKammer(false);
-            rkGeissel4.setButtonText("Chaos-Geiﬂel");
+            rkGeissel4.setButtonText("Chaos-Gei√üel");
             add(rkGeissel4);
 
             seperator();
 
-            rkGeissel5 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geiﬂel");
+            rkGeissel5 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Gei√üel");
             rkGeissel5.initKammer(false);
-            rkGeissel5.setButtonText("Chaos-Geiﬂel");
+            rkGeissel5.setButtonText("Chaos-Gei√üel");
             add(rkGeissel5);
 
             complete();

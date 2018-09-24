@@ -14,7 +14,7 @@ public class FOImperialeBastion extends Eintrag {
 	public FOImperialeBastion() {
 		name = "Imperiale Bastion";
 		grundkosten = 75;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 
@@ -28,7 +28,7 @@ public class FOImperialeBastion extends Eintrag {
 		
 		seperator();
 		
-		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "Gebäude");
+		hauptGeb = new RuestkammerStarter(ID, randAbstand, cnt, "FOGebaeude", "GebÃ¤ude");
 		hauptGeb.initKammer(true);
 		hauptGeb.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(hauptGeb);

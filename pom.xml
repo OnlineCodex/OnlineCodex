@@ -11,7 +11,7 @@
   <url>http://www.onlinecodex.de</url>
 
   <properties>
-    <project.build.sourceEncoding>cp1252</project.build.sourceEncoding>
+    <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>

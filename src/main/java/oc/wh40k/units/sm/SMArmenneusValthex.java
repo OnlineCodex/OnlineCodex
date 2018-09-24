@@ -16,7 +16,7 @@ public class SMArmenneusValthex extends Eintrag {
 		add(ico = new oc.Picture("oc/wh40k/images/SMArmenneusValthex.gif"));
 
         if(getCountFromInformationVector("SMMeisterderSchmiede") == 1) {
-            BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Ehrwürdiger Cybot");
+            BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("EhrwÃ¼rdiger Cybot");
             BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Cybot");
             BuildaHQ.getChooserGruppe(5).addSpezialAuswahl("Ironclad-Cybot");
         }
@@ -37,7 +37,7 @@ public class SMArmenneusValthex extends Eintrag {
         addToInformationVector("SMTechmarineOderMeister", -1);
         
         if(getCountFromInformationVector("SMMeisterderSchmiede") == 0) {
-            BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Ehrwürdiger Cybot");
+            BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("EhrwÃ¼rdiger Cybot");
             BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Cybot");
             BuildaHQ.getChooserGruppe(5).removeSpezialAuswahl("Ironclad-Cybot");
         }

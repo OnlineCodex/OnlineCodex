@@ -10,7 +10,7 @@ public class ABArmouredFistCyclopsDemolitionSquad extends Eintrag {
 		
 		name = "Armoured Fist Cyclops Demolition Squad";
 		grundkosten = 115;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
 

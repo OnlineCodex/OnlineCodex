@@ -25,7 +25,7 @@ public class CHBlightlordTerminators extends Eintrag {
 	public CHBlightlordTerminators() {
 		//name = "Thousand Sons\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Blightlord Terminators", 5, 10, getPts("Blightlord Terminators"));
 		add(squad);

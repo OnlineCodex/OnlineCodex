@@ -21,7 +21,7 @@ public class HHCAJustaerinTerminatorSquad extends Eintrag {
 	public HHCAJustaerinTerminatorSquad() {
 		name = "Justaerin Terminator Squad\n";
 		grundkosten = 90;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Justaerin Terminators", 3, 10, 45);
 		add(squad);

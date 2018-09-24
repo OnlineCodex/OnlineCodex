@@ -16,7 +16,7 @@ public class TAXV109YvahraBattlesuit extends Eintrag {
 		name = "XV109 Y'vahra Battlesuit";
 		grundkosten = 230;
 
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 		
@@ -29,7 +29,7 @@ public class TAXV109YvahraBattlesuit extends Eintrag {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag("Drohnensteuerung", 8));
-		ogE.addElement(new OptionsGruppeEintrag("Frühwarnsystem", "Frühwarn-Reaktivsystem", 5));
+		ogE.addElement(new OptionsGruppeEintrag("FrÃ¼hwarnsystem", "FrÃ¼hwarn-Reaktivsystem", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Gegenfeuersystem", "Gegenfeuer-Abwehrsystem", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Zielsystem", "Hochentwickeltes Zielsystem", 3));
 		ogE.addElement(new OptionsGruppeEintrag("Luftzielverfolger", 20));

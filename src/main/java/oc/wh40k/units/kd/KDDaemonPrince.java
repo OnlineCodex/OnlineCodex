@@ -23,8 +23,8 @@ public class KDDaemonPrince extends Eintrag {
 		
 		seperator();
 
-		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flügel", 40));
-		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Servorüstung", 20));
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "FlÃ¼gel", 40));
+		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ServorÃ¼stung", 20));
 
 		seperator();
 		

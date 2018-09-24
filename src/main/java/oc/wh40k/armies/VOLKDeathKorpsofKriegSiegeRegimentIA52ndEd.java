@@ -14,11 +14,11 @@ public class VOLKDeathKorpsofKriegSiegeRegimentIA52ndEd extends BuildaVater {
 	public VOLKDeathKorpsofKriegSiegeRegimentIA52ndEd() {
 		reflectionKennung = "DKSR";
 
-		HQeintr‰ge = new String[] {"", "Company Command Squad", "Commissar-General", "Quartermaster Cadre"};
-		Eliteeintr‰ge = new String[] {"", "Grenadier Squad", "Hydra Flakk Platform", "Rapier Laser Destroyer Battery", "Field Artillery Battery"};
-		Standardeintr‰ge = new String[] {"", "Infantry Platoon", "Engineer Squad"};
-		Sturmeintr‰ge = new String[] {"","Cyclops Demolition Squadron", "Hellhound Squadron","Death Rider Platoon"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Thunderer Siege Tank Squadron", "Leman Russ Squadron", "Heavy Weapons Platoon", "Bombard Battery", "Heavy Artillery Battery"};//,"Thunderbolt","Lightning","Avenger"
+		HQeintr√§ge = new String[] {"", "Company Command Squad", "Commissar-General", "Quartermaster Cadre"};
+		Eliteeintr√§ge = new String[] {"", "Grenadier Squad", "Hydra Flakk Platform", "Rapier Laser Destroyer Battery", "Field Artillery Battery"};
+		Standardeintr√§ge = new String[] {"", "Infantry Platoon", "Engineer Squad"};
+		Sturmeintr√§ge = new String[] {"","Cyclops Demolition Squadron", "Hellhound Squadron","Death Rider Platoon"};
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Thunderer Siege Tank Squadron", "Leman Russ Squadron", "Heavy Weapons Platoon", "Bombard Battery", "Heavy Artillery Battery"};//,"Thunderbolt","Lightning","Avenger"
 		LordofWar = new String[] {
 				"", "Death Korps Macharius Heavy Tank", "Death Korps Macharius Vulcan", "Death Korps Macharius Vanquisher",
 				"", "[WZ Mont'ka] Baneblade",
@@ -28,15 +28,15 @@ public class VOLKDeathKorpsofKriegSiegeRegimentIA52ndEd extends BuildaVater {
 				"","[IA Aeronautica] Marauder Bomber"
 				};
 
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -144,7 +144,7 @@ public class VOLKDeathKorpsofKriegSiegeRegimentIA52ndEd extends BuildaVater {
 }
 	
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

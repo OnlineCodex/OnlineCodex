@@ -8,7 +8,7 @@ import oc.OptionsEinzelUpgrade;
 public class AMHydraPlatformBattery extends Eintrag {
 
 	AnzahlPanel Buggies;
-	OptionsEinzelUpgrade Rot‰Farb‰;
+	OptionsEinzelUpgrade Rot√§Farb√§;
 
 	public AMHydraPlatformBattery() {
 
@@ -22,7 +22,7 @@ public class AMHydraPlatformBattery extends Eintrag {
 		seperator();
 
 		
-		add(Rot‰Farb‰ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
+		add(Rot√§Farb√§ = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
 		
 		complete();
 	}
@@ -30,6 +30,6 @@ public class AMHydraPlatformBattery extends Eintrag {
 	//@OVERRIDE
 	public void refreshen() {
 
-		Rot‰Farb‰.setPreis(Buggies.getModelle()*20);
+		Rot√§Farb√§.setPreis(Buggies.getModelle()*20);
 	}
 }

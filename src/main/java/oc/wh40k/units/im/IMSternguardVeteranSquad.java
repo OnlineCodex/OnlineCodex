@@ -19,7 +19,7 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
 	public IMSternguardVeteranSquad() {
 		name = "Sternguard Veteran Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Veterans", 5, 10, getPts("Sternguard Veteran Squad")));
 		
@@ -34,7 +34,7 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
 		ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
 		ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
 		ogE.addAll(IMSpaceMarinesHeavyWeapons.createRK("", "", buildaVater));
-//		ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater)); Ist zwar laut Eintrag möglich, aber unnötig, da es sowieso schon oben gewählt werden kann.
+//		ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater)); Ist zwar laut Eintrag mÃ¶glich, aber unnÃ¶tig, da es sowieso schon oben gewÃ¤hlt werden kann.
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 		seperator();

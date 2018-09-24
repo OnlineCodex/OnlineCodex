@@ -14,7 +14,7 @@ public class DKSRLemanRussSquadron extends Eintrag {
 	public DKSRLemanRussSquadron() {
 		name = "Leman Russ Squadron";
 		grundkosten = 0;
-		this.überschriftSetzen = true;
+		this.Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 

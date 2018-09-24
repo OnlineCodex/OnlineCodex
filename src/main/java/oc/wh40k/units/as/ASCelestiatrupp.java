@@ -18,7 +18,7 @@ public class ASCelestiatrupp extends Eintrag {
 	public ASCelestiatrupp() {
 		name = "Celestiatrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Celestia", 5, 10, 14);
 		add(squad);

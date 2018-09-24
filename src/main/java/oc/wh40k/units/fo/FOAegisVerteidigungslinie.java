@@ -13,7 +13,7 @@ public class FOAegisVerteidigungslinie extends Eintrag {
 	public FOAegisVerteidigungslinie() {
 		name = "Aegis-Verteidigungslinie";
 		grundkosten = 50;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Aegis.jpg"));
 

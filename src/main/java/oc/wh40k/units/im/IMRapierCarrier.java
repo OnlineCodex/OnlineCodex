@@ -19,7 +19,7 @@ public class IMRapierCarrier extends Eintrag {
 
 		ogE.addElement(new OptionsGruppeEintrag("Quad heavy bolter", getPts("Quad heavy bolter")));
 		ogE.addElement(new OptionsGruppeEintrag("Laser destroyer", getPts("Laser destroyer")));
-		ogE.addElement(new OptionsGruppeEintrag("Quad launcher", getPts("Quad launcher")));	//Änderung FAQ IA Adeptus Astartes 1.0
+		ogE.addElement(new OptionsGruppeEintrag("Quad launcher", getPts("Quad launcher")));	//Ã„nderung FAQ IA Adeptus Astartes 1.0
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		complete();

@@ -35,7 +35,7 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
 
 		seperator();
 		
-		// Unterstützungssysteme
+		// UnterstÃ¼tzungssysteme
 		ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Ghostkeel Riptide and Stormsurge)")));
 		ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
 		ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));

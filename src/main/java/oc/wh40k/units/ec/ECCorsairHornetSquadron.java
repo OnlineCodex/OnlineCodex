@@ -17,7 +17,7 @@ public class ECCorsairHornetSquadron extends Eintrag {
     public ECCorsairHornetSquadron() {
         name = "Corsair Hornet Squadron";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/ECCorsairHornetSquadron.jpg"));
 

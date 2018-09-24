@@ -20,7 +20,7 @@ public class CMDreadclawTalonKhorneBerserkerKammer extends RuestkammerVater {
 	OptionsUpgradeGruppe vdlk;
 	OptionsZaehlerGruppe o7;
     RuestkammerStarter champion;
-	OptionsZaehlerGruppe ketten‰xte;
+	OptionsZaehlerGruppe ketten√§xte;
 
 	public CMDreadclawTalonKhorneBerserkerKammer() {}
 	
@@ -38,8 +38,8 @@ public class CMDreadclawTalonKhorneBerserkerKammer extends RuestkammerVater {
 		
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Ketten‰xte", "Ketten‰xte", 3));
-		add(ketten‰xte = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+		ogE.addElement(new OptionsGruppeEintrag("Ketten√§xte", "Ketten√§xte", 3));
+		add(ketten√§xte = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		seperator();
 		
@@ -74,8 +74,8 @@ int count = squad.getModelle();
 		
         if(!champion.isSelected()) champion.setSelected(true);
 		
-		int subtractor = 1; // Sch‰delchampion
-		ketten‰xte.setMaxAnzahl(squad.getModelle() - subtractor);
+		int subtractor = 1; // Sch√§delchampion
+		ketten√§xte.setMaxAnzahl(squad.getModelle() - subtractor);
 	}
 
 }

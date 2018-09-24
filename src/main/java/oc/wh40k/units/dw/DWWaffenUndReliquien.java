@@ -56,11 +56,11 @@ public class DWWaffenUndReliquien extends RuestkammerVater {
 			
 			seperator();
 			
-			add(meister =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Meisterhafte Rüstung", "Meisterhafte Rüstung", 20));
+			add(meister =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Meisterhafte RÃ¼stung", "Meisterhafte RÃ¼stung", 20));
 			
 			seperator();
 			
-			add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 25));
+			add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 25));
 			add(stormbolter =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Sturmbolter", "Sturmbolter", getPts("Storm bolter (DW)")));
 			ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
 			ogE.addElement(new OptionsGruppeEintrag("Relic-blade", getPts("Relic-blade")));
@@ -116,7 +116,7 @@ public class DWWaffenUndReliquien extends RuestkammerVater {
 			
 			seperator();
 			
-			add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 25));
+			add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 25));
 			add(stormbolter =new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Sturm bolter", "Sturm bolter", getPts("Storm bolter (DW)")));
 			ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
 			ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav (DW)")));
@@ -223,8 +223,8 @@ public class DWWaffenUndReliquien extends RuestkammerVater {
 	    boolean entrySwitched=false;
 		
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

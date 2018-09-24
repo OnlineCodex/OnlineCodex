@@ -22,7 +22,7 @@ public class TASniperDroneTeam extends Eintrag {
 		add(new AnzahlPanel(ID, randAbstand, cnt, "Jagddrohnen", 3, 9, 15));
 		seperator();
 		
-		add(drohnen =new OptionsEinzelZaehler(ID,randAbstand,cnt,"", "Feuerleitschütze", 3, 13));
+		add(drohnen =new OptionsEinzelZaehler(ID,randAbstand,cnt,"", "FeuerleitschÃ¼tze", 3, 13));
 		drohnen.setAnzahl(1);
 	
 		complete();

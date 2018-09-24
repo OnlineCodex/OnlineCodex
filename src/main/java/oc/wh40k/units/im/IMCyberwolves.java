@@ -13,7 +13,7 @@ public class IMCyberwolves extends Eintrag {
 	public IMCyberwolves() {
 		name = "Cyberwolves\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Cyberwolf", "Cyberwolves", 1, 5, getPts("Cyberwolves"));
 		add(squad);

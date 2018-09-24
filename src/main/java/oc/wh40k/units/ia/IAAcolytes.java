@@ -48,10 +48,10 @@ public class IAAcolytes extends Eintrag {
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Armaplastrüstung", 0));
+		ogE.addElement(new OptionsGruppeEintrag("ArmaplastrÃ¼stung", 0));
         add(o3def = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-		ogE.addElement(new OptionsGruppeEintrag("Plattenrüstung", 2));
-		ogE.addElement(new OptionsGruppeEintrag("Servorüstung", 5));
+		ogE.addElement(new OptionsGruppeEintrag("PlattenrÃ¼stung", 2));
+		ogE.addElement(new OptionsGruppeEintrag("ServorÃ¼stung", 5));
 		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();

@@ -35,11 +35,11 @@ public class DHMaynarkhOverlord extends Eintrag {
 		seperator();
 
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phylakterium", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gedankenkontrollskarab‰en", 15));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gedankenkontrollskarab√§en", 15));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Durasempisches Geflecht", 15));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tesserakt-Labyrinth", 20));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tachyonenpfeil", 30));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Regeneratorsph‰re", 30));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Regeneratorsph√§re", 30));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phasenverzerrer", 45));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flensing scarabs", 5));
 

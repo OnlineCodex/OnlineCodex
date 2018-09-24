@@ -11,30 +11,30 @@ public class VOLKAdeptusCustodes extends BuildaVater {
 		reflectionKennung = "AC";
 
 		AdditionalInformation = new String[] {""};
-		HQeintr‰ge = new String[] {""};
-		Eliteeintr‰ge = new String[] {"", "Custodian Guard Squad"};
-		Standardeintr‰ge = new String[] {""};
-		Sturmeintr‰ge = new String[] {""};
-		Unterst¸tzungeintr‰ge = new String[] {""};
-		Fliegereintr‰ge = new String[] {""};
+		HQeintr√§ge = new String[] {""};
+		Eliteeintr√§ge = new String[] {"", "Custodian Guard Squad"};
+		Standardeintr√§ge = new String[] {""};
+		Sturmeintr√§ge = new String[] {""};
+		Unterst√ºtzungeintr√§ge = new String[] {""};
+		Fliegereintr√§ge = new String[] {""};
 		Befestigungen = new String[] {""};
 		LordofWar = new String[] {""};
 		
 		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, AI, AdditionalInformation));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HQ, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HQ, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, EL, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, EL, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FA, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FA, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HS, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, HS, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Transporteintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, TR, Transporteintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FL, Fliegereintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FL, Fliegereintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, FORT, Befestigungen));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -101,7 +101,7 @@ public class VOLKAdeptusCustodes extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 	
 	@Override

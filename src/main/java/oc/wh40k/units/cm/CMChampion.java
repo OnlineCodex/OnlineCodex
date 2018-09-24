@@ -21,7 +21,7 @@ public class CMChampion extends RuestkammerVater {
 
 	boolean isBesessen = false; // Nur Mutationen
 	boolean isHexer = false;    // Nur Mutationen und Melterbombe
-	boolean isSlaanesh = false; // Schockverst‰rker und Bolter und Boltpistole
+	boolean isSlaanesh = false; // Schockverst√§rker und Bolter und Boltpistole
 	boolean isChampion = false; // Bolter, Boltpistole und Handwaffe
 	boolean isNurgle = false;   // Seuchenmesser, Bolter und Boltpistole
 	boolean isKhorne = false;   // Boltpistole, Nahkampfwaffe
@@ -64,7 +64,7 @@ public class CMChampion extends RuestkammerVater {
 			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Geschenk der Mutation", 10));	
 			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));				
 			if(isSlaanesh) {
-				add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schockverst‰rker", 15));
+				add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schockverst√§rker", 15));
 			}
 			
 			seperator();

@@ -18,7 +18,7 @@ Heavy flamers kostenlos
 Autocannon 5 pkt. pro Schwerer Bolter
 Lascannon 10 pkt. pro Schwerer Bolter
 
-Darf zus‰tzlich eine von den folgenden Optionen erhalten:
+Darf zus√§tzlich eine von den folgenden Optionen erhalten:
 Hunter-killer missile 10 pkt.
 Dozer blade 10 pkt.
 Pintle-mounted storm bolter or heavy stubber 10 pkt.
@@ -43,8 +43,8 @@ public class APOPraetorArmouredAssaultLauncherAirDefence extends Eintrag {
 
     seperator(5);
 
-    ogE.addElement(new OptionsGruppeEintrag("zus‰tzliches Maschinengewehr", 10));
-    ogE.addElement(new OptionsGruppeEintrag("zus‰tzlicher Sturmbolter", 10));
+    ogE.addElement(new OptionsGruppeEintrag("zus√§tzliches Maschinengewehr", 10));
+    ogE.addElement(new OptionsGruppeEintrag("zus√§tzlicher Sturmbolter", 10));
     add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
     seperator();

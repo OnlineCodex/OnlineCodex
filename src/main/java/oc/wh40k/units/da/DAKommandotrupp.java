@@ -63,8 +63,8 @@ public class DAKommandotrupp extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Verehrte Standarte", 25));
 		ogE.addElement(new OptionsGruppeEintrag("Ordensbanner", "Ordensbanner der Dark Angels", 45));
 		ogE.addElement(new OptionsGruppeEintrag("Banner der Vergeltung", 45));
-		ogE.addElement(new OptionsGruppeEintrag("Banner der Verwüstung", 65));
-		ogE.addElement(new OptionsGruppeEintrag("Banner der Stärke", 85));
+		ogE.addElement(new OptionsGruppeEintrag("Banner der VerwÃ¼stung", 65));
+		ogE.addElement(new OptionsGruppeEintrag("Banner der StÃ¤rke", 85));
 		add(specialStandards = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
@@ -149,20 +149,20 @@ public class DAKommandotrupp extends Eintrag {
 		specialStandards.setLegal("Banner der Vergeltung", !specialStandards.isSelected("Banner der Vergeltung") || 
 				getCountFromInformationVector("DABannerDerVergeltung")<=1);
 		
-		if(bdVerwuestung!=specialStandards.isSelected("Banner der Verwüstung")){
-			bdVerwuestung=specialStandards.isSelected("Banner der Verwüstung");
+		if(bdVerwuestung!=specialStandards.isSelected("Banner der VerwÃ¼stung")){
+			bdVerwuestung=specialStandards.isSelected("Banner der VerwÃ¼stung");
 			addToInformationVector("DABannerDerVerwuestung", (bdVerwuestung?1:-1));
 			RefreshListener.fireRefresh();
 		}
-		specialStandards.setLegal("Banner der Verwüstung", !specialStandards.isSelected("Banner der Verwüstung") || 
+		specialStandards.setLegal("Banner der VerwÃ¼stung", !specialStandards.isSelected("Banner der VerwÃ¼stung") || 
 				getCountFromInformationVector("DABannerDerVerwuestung")<=1);
 		
-		if(bdStaerke!=specialStandards.isSelected("Banner der Stärke")){
-			bdStaerke=specialStandards.isSelected("Banner der Stärke");
+		if(bdStaerke!=specialStandards.isSelected("Banner der StÃ¤rke")){
+			bdStaerke=specialStandards.isSelected("Banner der StÃ¤rke");
 			addToInformationVector("DABannerDerStaerke", (bdStaerke?1:-1));
 			RefreshListener.fireRefresh();
 		}
-		specialStandards.setLegal("Banner der Stärke", !specialStandards.isSelected("Banner der Stärke") || 
+		specialStandards.setLegal("Banner der StÃ¤rke", !specialStandards.isSelected("Banner der StÃ¤rke") || 
 				getCountFromInformationVector("DABannerDerStaerke")<=1);
 		
 		

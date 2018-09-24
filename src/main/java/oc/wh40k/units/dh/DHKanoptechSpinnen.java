@@ -12,7 +12,7 @@ public class DHKanoptechSpinnen extends Eintrag {
 	public DHKanoptechSpinnen() {
 		name = "Kanoptech-Spinnen";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
         
 		add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSpinnen.jpg"));
 

@@ -19,7 +19,7 @@ public class IMAssaultSquadBA extends Eintrag {
 	public IMAssaultSquadBA() {
 		name = "Assault Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Assault Squad") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)"));
 		add(squad);

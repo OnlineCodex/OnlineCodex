@@ -39,7 +39,7 @@ public class DATechmarine extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DASpezialausruestung", "");
 		spezialAusruestung.initKammer(false, false, true);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		
 		seperator();

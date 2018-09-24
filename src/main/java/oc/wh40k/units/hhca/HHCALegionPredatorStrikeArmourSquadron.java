@@ -15,7 +15,7 @@ public class HHCALegionPredatorStrikeArmourSquadron extends Eintrag {
 	public HHCALegionPredatorStrikeArmourSquadron() {
 		name = "Legion Predator Strike Armour Squadron";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         seperator();
         		

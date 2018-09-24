@@ -13,7 +13,7 @@ public class HHCALegionLandSpeederSquadron extends Eintrag {
 	public HHCALegionLandSpeederSquadron() {
 		name = "Legion Land Speeder Squadron\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder", 1, 5, 50);
 		add(squad);

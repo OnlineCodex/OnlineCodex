@@ -52,9 +52,9 @@ public class ORHermanvonStrab extends Eintrag {
 		seperator();
 		
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sprenggranaten", 2));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Plattenrüstung", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "PlattenrÃ¼stung", 5));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnmäntel", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TarnmÃ¤ntel", 10));
 
 		complete();
 	}

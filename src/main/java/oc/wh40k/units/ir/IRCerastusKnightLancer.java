@@ -50,7 +50,7 @@ public class IRCerastusKnightLancer extends Eintrag {
 
 		fk4.setAktiv(baron.isSelected());
 
-		//Einzigartige Gegenst‰nde
+		//Einzigartige Gegenst√§nde
 		if(fk4.isSelected("Banner des glorreichen Macharius")){
 			if(bannerBool==false){
 				bannerBool=true;

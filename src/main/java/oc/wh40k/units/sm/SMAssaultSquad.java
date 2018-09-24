@@ -23,7 +23,7 @@ public class SMAssaultSquad extends Eintrag {
 	public SMAssaultSquad() {
 		name = "Assault Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 		addToInformationVector("Assault Squad", 1);
 

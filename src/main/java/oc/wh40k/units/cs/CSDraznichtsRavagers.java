@@ -32,7 +32,7 @@ public class CSDraznichtsRavagers extends Eintrag {
 	public CSDraznichtsRavagers() {
 		//name = "Elite-Krieger\n";
 		grundkosten = 10;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Draznicht's Ravagers", 5, 20, 13);
 		add(squad);

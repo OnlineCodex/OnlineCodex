@@ -13,10 +13,10 @@ public class CDFeuerdaemonendesTzeentch extends Eintrag {
 	
 	public CDFeuerdaemonendesTzeentch() {
 
-		name = "Feuerd‰monen des Tzeentch";
+		name = "Feuerd√§monen des Tzeentch";
 		grundkosten = 0;
 
-		add(new AnzahlPanel(ID, randAbstand, cnt, "Feuerd‰monen des Tzeentch", 3, 9, 23));
+		add(new AnzahlPanel(ID, randAbstand, cnt, "Feuerd√§monen des Tzeentch", 3, 9, 23));
 
 		add(ico = new oc.Picture("oc/wh40k/images/CDFeuerdaemonendesTzeentch.gif"));
 
@@ -26,7 +26,7 @@ public class CDFeuerdaemonendesTzeentch extends Eintrag {
 		
 		ogE.addElement(new OptionsGruppeEintrag("Geringe Belohnung", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
-		ogE.addElement(new OptionsGruppeEintrag("M‰chtige Belohnung", 20));
+		ogE.addElement(new OptionsGruppeEintrag("M√§chtige Belohnung", 20));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
 		complete();

@@ -12,7 +12,7 @@ public class ABDestroyerTankHunterSquadron extends Eintrag {
 	public ABDestroyerTankHunterSquadron() {
 		name = "Destroyer Tank Hunter Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABDestroyerTankHunterSquadron.jpg"));
 

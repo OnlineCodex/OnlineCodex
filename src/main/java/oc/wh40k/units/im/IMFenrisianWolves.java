@@ -12,7 +12,7 @@ public class IMFenrisianWolves extends Eintrag {
 	public IMFenrisianWolves() {
 		name = "Fenrisian Wolves\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Fenrisian Wolves", 5, 15, getPts("Fenrisian Wolves")));
 

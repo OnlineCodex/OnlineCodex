@@ -76,8 +76,8 @@ public class KDChaosbelohnungen extends RuestkammerVater {
 		} 
 		
 		if(entrySwitched){
-			//Aktualisisert alle Eintr‰ge, auch die, welche diese R¸stkammer enth‰lt.
-			//Sonst werden dort zwar beim abw‰hlen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle Eintr√§ge, auch die, welche diese R√ºstkammer enth√§lt.
+			//Sonst werden dort zwar beim abw√§hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}

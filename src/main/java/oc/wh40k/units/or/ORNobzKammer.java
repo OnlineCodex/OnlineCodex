@@ -14,8 +14,8 @@ public class ORNobzKammer extends RuestkammerVater {
 	OptionsEinzelUpgrade Bossbikaz;
 	OptionsZaehlerGruppe BosseCC;
 	OptionsZaehlerGruppe BosseFK;
-	OptionsEinzelUpgrade Panzarüstung;
-	OptionsEinzelZaehler Trophäenstange;
+	OptionsEinzelUpgrade PanzarÃ¼stung;
+	OptionsEinzelZaehler TrophÃ¤enstange;
 	OptionsEinzelUpgrade Waaaghbanner;
 	OptionsEinzelZaehler Munigrotz;
 	RuestkammerStarter PikkUp;
@@ -34,7 +34,7 @@ public class ORNobzKammer extends RuestkammerVater {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Fette Spalta", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Energiekrallä", 25));
+		ogE.addElement(new OptionsGruppeEintrag("EnergiekrallÃ¤", 25));
 		BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1);
 		add(BosseCC);
 
@@ -53,12 +53,12 @@ public class ORNobzKammer extends RuestkammerVater {
 		
 		seperator(5);
 		
-		add(Trophäenstange = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Trophäenstange", Bosse.getModelle(), 5));
+		add(TrophÃ¤enstange = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "TrophÃ¤enstange", Bosse.getModelle(), 5));
 		add(Munigrotz = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Munigrotz", Bosse.getModelle(), 3));
 		
 		seperator(5);
 		
-		add(Panzarüstung = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Panzarüstungen", 4, Bosse.getModelle()));
+		add(PanzarÃ¼stung = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "PanzarÃ¼stungen", 4, Bosse.getModelle()));
 		add(Bossbikaz = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bossbikaz", 27, Bosse.getModelle()));
 
 		seperator();
@@ -76,13 +76,13 @@ public class ORNobzKammer extends RuestkammerVater {
 	
 	//@OVERRIDE
 	public void refreshen() {
-		Bossbikaz.setAktiv(!Panzarüstung.isSelected());
-		Panzarüstung.setAktiv(!Bossbikaz.isSelected());
+		Bossbikaz.setAktiv(!PanzarÃ¼stung.isSelected());
+		PanzarÃ¼stung.setAktiv(!Bossbikaz.isSelected());
 		
 		BosseFK.setMaxAnzahl(Bosse.getModelle());
 		BosseCC.setMaxAnzahl(Bosse.getModelle());
-		Panzarüstung.setModelle(Bosse.getModelle());
-		Trophäenstange.setMaxAnzahl(Bosse.getModelle());
+		PanzarÃ¼stung.setModelle(Bosse.getModelle());
+		TrophÃ¤enstange.setMaxAnzahl(Bosse.getModelle());
 		Munigrotz.setMaxAnzahl(Bosse.getModelle());
 
 		Bossbikaz.setModelle(Bosse.getModelle());

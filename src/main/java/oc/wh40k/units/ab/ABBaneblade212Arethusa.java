@@ -10,7 +10,7 @@ public class ABBaneblade212Arethusa extends Eintrag {
 		
 		name = "Baneblade 212 'Arethusa'";
 		grundkosten = 600;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
 

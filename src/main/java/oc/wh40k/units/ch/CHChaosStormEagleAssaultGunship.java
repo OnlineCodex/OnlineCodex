@@ -16,7 +16,7 @@ public class CHChaosStormEagleAssaultGunship extends Eintrag {
 		name = "Chaos Storm Eagle Assault Gunship";
 		grundkosten = getPts("Chaos Storm Eagle Assault Gunship");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
+		add(ico = new oc.Picture("oc/wh40k/images/HÃ¶llendrache.gif"));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
 		ogE.addElement(new OptionsGruppeEintrag("Twin multi-melta", getPts("Twin multi-melta")));

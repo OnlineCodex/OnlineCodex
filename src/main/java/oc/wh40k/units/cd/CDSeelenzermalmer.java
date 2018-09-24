@@ -19,10 +19,10 @@ public class CDSeelenzermalmer extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Khorne", 0));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Tzeentch", 5));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Nurgle", 15));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤mon des Slaanesh", 15));
 		add(mal = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
 		seperator();
@@ -44,7 +44,7 @@ public class CDSeelenzermalmer extends Eintrag {
 	public void refreshen() {
         if(mal.getAnzahl() < 1) {
             mal.setLegal(false);
-            setFehlermeldung("Wähle einen Gott");
+            setFehlermeldung("WÃ¤hle einen Gott");
         } else {
             mal.setLegal(true);
             setFehlermeldung("");

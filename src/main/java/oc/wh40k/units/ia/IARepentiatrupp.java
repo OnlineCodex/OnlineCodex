@@ -13,7 +13,7 @@ public class IARepentiatrupp extends Eintrag {
 	public IARepentiatrupp() {
 		name = "Repentiatrupp\n";
 		grundkosten = 15;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentia", 5, 10, 14);
 		add(squad);

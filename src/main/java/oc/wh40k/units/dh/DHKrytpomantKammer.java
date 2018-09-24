@@ -29,7 +29,7 @@ public class DHKrytpomantKammer extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Krytpomant", 25));
         ogE.addElement(new OptionsGruppeEintrag("Bote der Verzweiflung", 30));
-        ogE.addElement(new OptionsGruppeEintrag("Bote der Zerstörung", 35));
+        ogE.addElement(new OptionsGruppeEintrag("Bote der ZerstÃ¶rung", 35));
         ogE.addElement(new OptionsGruppeEintrag("Bote der Ewigkeit", 25));
         ogE.addElement(new OptionsGruppeEintrag("Bote des Sturms", 25));
         ogE.addElement(new OptionsGruppeEintrag("Bote der Verwandlung", 30));
@@ -54,7 +54,7 @@ public class DHKrytpomantKammer extends RuestkammerVater {
 
 		sturm = new OptionsVater[]{
 			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hochspannungsfeld", 10),
-			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ätherkristall", 15),
+			new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ã„therkristall", 15),
 		};
 
 		verwandlung = new OptionsVater[]{
@@ -78,7 +78,7 @@ public class DHKrytpomantKammer extends RuestkammerVater {
 
 		if (typ.isSelected("Bote der Verzweiflung")) {
 			switcher.forceSwitchPanel(0);
-		} else if (typ.isSelected("Bote der Zerstörung")) {
+		} else if (typ.isSelected("Bote der ZerstÃ¶rung")) {
 			switcher.forceSwitchPanel(1);
 		} else if (typ.isSelected("Bote der Ewigkeit")) {
 			switcher.forceSwitchPanel(2);

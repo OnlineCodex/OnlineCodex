@@ -18,7 +18,7 @@ public class IMSanguinaryGuard extends Eintrag {
 	public IMSanguinaryGuard() {
 		name = "Sanguinary Guard\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Sanguinary Guard", 5, 10, getPts("Sanguinary Guard")));
 		

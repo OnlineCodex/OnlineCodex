@@ -20,9 +20,9 @@ public class TAFahrzeugKammer extends RuestkammerVater {
 		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Filteroptik", 1)); //Blacksun Filter
 		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Flechettewerfer", 10)); //Flechette discharger
 		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "Hochentwickeltes Zielsystem", "Zielsystem", 10));//Advanced targeting system
-		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Ködersystem", 3)); //Decoy launcher
+		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "KÃ¶dersystem", 3)); //Decoy launcher
 		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "Punktverteidigungs-Zielrelais", "Punktverteidigung", 10)); //Point defence targeting relay
-		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Störsystem", 15)); //Disruption pod
+		add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "StÃ¶rsystem", 15)); //Disruption pod
 		
 		sizeSetzen();
 	}

@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 public class AMThunderboltAbfangjaeger extends Eintrag {
 
 	public AMThunderboltAbfangjaeger() {
-		name = "Thunderbolt-Abfangj‰ger";
+		name = "Thunderbolt-Abfangj√§ger";
 		grundkosten = 180;
 
 

@@ -21,7 +21,7 @@ public class CMNoisemarines extends Eintrag {
 	public CMNoisemarines() {
 		//name = "Noisemarines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Noisemarines", 5, 20, 17);
 		add(squad);

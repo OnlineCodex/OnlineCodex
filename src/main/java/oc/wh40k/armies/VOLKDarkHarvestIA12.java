@@ -13,24 +13,24 @@ public class VOLKDarkHarvestIA12 extends BuildaVater {
 
         BuildaHQ.Items = new Vector<String>();
 
-        HQeintr‰ge = new String[] {"", "Maynarkh Overlord", "Destruktor-Lord","Royal Court of Maynarkh", "", "Kutlakh the World Killer", "Toholk the Blinded"};
-        Eliteeintr‰ge = new String[] {"", "Canoptek Tomb Stalker", "Charnel Lychguard", "Eliminatoren", "Pr‰torianer des Triarchats", "Jagdl‰ufer des Triarchats"};
-        Standardeintr‰ge = new String[] {"", "Maynarkh Warrior Phalanx", "Maynarkh Flayed One Pack", "Maynarkh Immortals"};
-        Sturmeintr‰ge = new String[] {"","Canoptek Acanthrites", "Kanoptech-Phantome", "Exovenatoren", "Destruktoren", "Maynarkh Canoptek Scarab Swarms", "Canoptek Tomb Sentinel"};
-        Unterst¸tzungeintr‰ge = new String[] {"", "Tesseract Ark", "Sentry Pylon", "Nightshroud Bomber", "Dominator-Barke", "Annihilator-Gleiter", "Monolith", "Kanoptech-Spinnen", "[DftS] Todessichel"};
+        HQeintr√§ge = new String[] {"", "Maynarkh Overlord", "Destruktor-Lord","Royal Court of Maynarkh", "", "Kutlakh the World Killer", "Toholk the Blinded"};
+        Eliteeintr√§ge = new String[] {"", "Canoptek Tomb Stalker", "Charnel Lychguard", "Eliminatoren", "Pr√§torianer des Triarchats", "Jagdl√§ufer des Triarchats"};
+        Standardeintr√§ge = new String[] {"", "Maynarkh Warrior Phalanx", "Maynarkh Flayed One Pack", "Maynarkh Immortals"};
+        Sturmeintr√§ge = new String[] {"","Canoptek Acanthrites", "Kanoptech-Phantome", "Exovenatoren", "Destruktoren", "Maynarkh Canoptek Scarab Swarms", "Canoptek Tomb Sentinel"};
+        Unterst√ºtzungeintr√§ge = new String[] {"", "Tesseract Ark", "Sentry Pylon", "Nightshroud Bomber", "Dominator-Barke", "Annihilator-Gleiter", "Monolith", "Kanoptech-Spinnen", "[DftS] Todessichel"};
         Befestigungen= uniteUnitList(Befestigungen, new String[]{"", "Necron Tomb Citadel", "Necron Tomb Fortress","Necron City of the Dead"});
         LordofWar = new String[] {"", "[LoW]Gauss Pylon"};
 //        Formationen = new String[] {"", "[IA APO 2013] Gauss Pylon Network"};
 
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+        adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
         if (oc.OnlineCodex.getInstance().isApo()) {
@@ -95,6 +95,6 @@ public class VOLKDarkHarvestIA12 extends BuildaVater {
 
     @Override
     protected void finalize() {
-        System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+        System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
     }
 }

@@ -11,25 +11,25 @@ public class VOLKRenegadesandHereticsIA13 extends BuildaVater {
 	public VOLKRenegadesandHereticsIA13() {
 		reflectionKennung = "RH_IA13";
 
-		HQeintr‰ge = new String[] {"", "[EDIT] Renegade Command Squad", "Rogue Psykers Coven", "Renegade Enforcers Cadre"};
-		Eliteeintr‰ge = new String[] {"", "Renegade Disciple Squad", "Renegade Ogryn Brutes"};
-		Standardeintr‰ge = new String[] {"", "Renegade Infantry Platoon", "Renegade Mutant Rabble", "Renegade Infantry Veterans"};
-		Sturmeintr‰ge = new String[] {"", "Renegade Hellhound Squadron", "Renegade Sentinel Squadron", "Renegade Salamander Squadron", 
+		HQeintr√§ge = new String[] {"", "[EDIT] Renegade Command Squad", "Rogue Psykers Coven", "Renegade Enforcers Cadre"};
+		Eliteeintr√§ge = new String[] {"", "Renegade Disciple Squad", "Renegade Ogryn Brutes"};
+		Standardeintr√§ge = new String[] {"", "Renegade Infantry Platoon", "Renegade Mutant Rabble", "Renegade Infantry Veterans"};
+		Sturmeintr√§ge = new String[] {"", "Renegade Hellhound Squadron", "Renegade Sentinel Squadron", "Renegade Salamander Squadron", 
 									  "Renegade Arvus Lighter Squadron", "Renegade Valkyrie Squadron"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Renegade Tank Squadron", "Renegade Artillery Battery", "Renegade Strike Battery", "Renegade Hydra Battery", 
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Renegade Tank Squadron", "Renegade Artillery Battery", "Renegade Strike Battery", "Renegade Hydra Battery", 
 										      "Renegade Bombard Battery", "Renegade Heavy Ordnance Battery", "Renegade Support Squad", 
 										      "Renegade Rapier Laser Destroyer Battery", "Renegade Field Artillery Battery"};
 		LordofWar = new String[] {"", "Malcador","Malcador Defender","Minotaur","Baneblade"};			
 		
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -91,6 +91,6 @@ public class VOLKRenegadesandHereticsIA13 extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

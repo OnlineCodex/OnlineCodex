@@ -1,4 +1,4 @@
-/* Regeln f¸r Deimos-Lux Pattern Psycannon unter:
+/* Regeln f√ºr Deimos-Lux Pattern Psycannon unter:
  * http://www.forgeworld.co.uk/Downloads/Product/PDF/g/greyknightsupd.pdf
  * nicht mehr existent!
  */
@@ -32,7 +32,7 @@ public class INTransporterKammer extends RuestkammerVater {
 
 		ogE.addElement(new OptionsGruppeEintrag("Rhino", 35));
 		ogE.addElement(new OptionsGruppeEintrag("Razorback", 40));
-		ogE.addElement(new OptionsGruppeEintrag("Inquisitions-Chim‰re", 55));
+		ogE.addElement(new OptionsGruppeEintrag("Inquisitions-Chim√§re", 55));
 		ogE.addElement(new OptionsGruppeEintrag("Land Raider", 250));
 		ogE.addElement(new OptionsGruppeEintrag("Land Raider Crusader", 250));
 		ogE.addElement(new OptionsGruppeEintrag("Land Raider Redeemer", 240));
@@ -48,7 +48,7 @@ public class INTransporterKammer extends RuestkammerVater {
 		ogE.addElement(new OptionsGruppeEintrag("Suchkopfrakete", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Wahrsilberpanzerung", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Zus‰tzliche Panzerung", 15));
+		ogE.addElement(new OptionsGruppeEintrag("Zus√§tzliche Panzerung", 15));
 		add(vehicleUpgrades = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 7));
 		ogE.addElement(new OptionsGruppeEintrag("Psiaktives Promethium", 15));//LR Redeemer u Razor SFlamer
 		add(promethium = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -93,8 +93,8 @@ public class INTransporterKammer extends RuestkammerVater {
 			typ.setSelected(0, true);
 		}
 		
-		chimeraWeapons1.setAktiv(typ.isSelected("Inquisitions-Chim‰re"));
-		chimeraWeapons2.setAktiv(typ.isSelected("Inquisitions-Chim‰re"));
+		chimeraWeapons1.setAktiv(typ.isSelected("Inquisitions-Chim√§re"));
+		chimeraWeapons2.setAktiv(typ.isSelected("Inquisitions-Chim√§re"));
 		razorWeapons.setAktiv(typ.isSelected("Razorback"));
 		LRWeapons.setAktiv(0, typ.isSelected("Land Raider"));
 		LRWeapons.setAktiv(1, (typ.isSelected("Land Raider Crusader") || typ.isSelected("Land Raider Redeemer")));
@@ -114,11 +114,11 @@ public class INTransporterKammer extends RuestkammerVater {
 			razorWeapons.setSelected(0, true);
 		}
 		
-		if(typ.isSelected("Inquisitions-Chim‰re") && !chimeraWeapons1.isSelected()){
+		if(typ.isSelected("Inquisitions-Chim√§re") && !chimeraWeapons1.isSelected()){
 			chimeraWeapons1.setSelected(0, true);
 		}
 		
-		if(typ.isSelected("Inquisitions-Chim‰re") && !chimeraWeapons2.isSelected()){
+		if(typ.isSelected("Inquisitions-Chim√§re") && !chimeraWeapons2.isSelected()){
 			chimeraWeapons2.setSelected(0, true);
 		}
 		

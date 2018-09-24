@@ -54,9 +54,9 @@ public class TAPiranhaTX42 extends Eintrag {
 		add(oez3 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Filteroptik",1, 1));
 		add(oez4 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Flechettewerfer",1, 10));
 		add(oez5 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Zielsystem", "Hochentwickeltes Zielsystem",1, 10));
-		add(oez6 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Ködersystem",1, 3));
+		add(oez6 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "KÃ¶dersystem",1, 3));
 		add(oez7 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Punktverteidigung", "Punktverteidigungs-Zielrelais",1, 10));
-		add(oez8 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Störsystem",1, 15));
+		add(oez8 =new OptionsEinzelZaehler(0, randAbstand, cnt, "", "StÃ¶rsystem",1, 15));
 		add(oez9 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Lenkraketen", 2, 10));
 
 		complete();

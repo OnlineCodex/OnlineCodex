@@ -17,7 +17,7 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
 	public IMCataphractiiTerminatorSquad() {
 		name = "Cataphractii Terminator Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Cataphractii Terminators", 5, 10, getPts("Cataphractii Terminator Squad")));
 

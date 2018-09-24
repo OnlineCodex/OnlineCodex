@@ -24,7 +24,7 @@ public class CMSchmiedemonstrum extends Eintrag {
 		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		o1.setSelected(0, true);
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ektoplasma-Kanone", "zus‰tzliche Ektoplasma-Kanone", 25));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ektoplasma-Kanone", "zus√§tzliche Ektoplasma-Kanone", 25));
 		
 		complete();
 	}

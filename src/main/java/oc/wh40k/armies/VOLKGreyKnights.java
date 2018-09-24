@@ -11,15 +11,15 @@ public class VOLKGreyKnights extends BuildaVater {
 
 		reflectionKennung = "GK";
 
-		HQeintr‰ge = new String[] {"", "Brother-Captain", "Brother-Captain Stern", "Brotherhood Champion", "Castellan Crowe", "Librarian", "Techmarine", "Grand Master Voldus", "",
+		HQeintr√§ge = new String[] {"", "Brother-Captain", "Brother-Captain Stern", "Brotherhood Champion", "Castellan Crowe", "Librarian", "Techmarine", "Grand Master Voldus", "",
 				"Belisarius Cawl", "Celestine", "Inquisitor Greyfax",
 								   "", "[IA4 2nd Ed] Ordo Xenos Inquisitor Solomon Lok"};
-		Eliteeintr‰ge = new String[] {"", "", "Purifier Squad", "Paladin Squad", "Dreadnought",
+		Eliteeintr√§ge = new String[] {"", "", "Purifier Squad", "Paladin Squad", "Dreadnought",
 								  "", "[IA2 2nd Ed] Doomglaive Dreadnought"};
-		Standardeintr‰ge = new String[] {"", "Strike Squad", "Terminator Squad"};
-		Sturmeintr‰ge = new String[] {"", "Rhino", "Razorback", "Interceptor Squad", "[DftS] Stormraven Gunship",
+		Standardeintr√§ge = new String[] {"", "Strike Squad", "Terminator Squad"};
+		Sturmeintr√§ge = new String[] {"", "Rhino", "Razorback", "Interceptor Squad", "[DftS] Stormraven Gunship",
 				"", "[IA Experimental] Xiphon Pattern Interceptor"};
-		Unterst¸tzungeintr‰ge = new String[] {"", "Purgation Squad", "Nemesis Dreadknight", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer",
+		Unterst√ºtzungeintr√§ge = new String[] {"", "Purgation Squad", "Nemesis Dreadknight", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer",
 										  "", "[IA2 2nd Ed] Vortimer Pattern Land Raider Redeemer"};
 		LordofWar = new String[] {"", "Kaldor Draigo", "[APO2 Armageddon] Reaver Battle Titan", "[APO2 Armageddon] Warhound-Scouttitan",
 							  "","[IA2 2nd Ed] Greyknight Thunderhawk Gunship"};
@@ -47,15 +47,15 @@ public class VOLKGreyKnights extends BuildaVater {
 
 */
 		
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 1, HQeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 2, Eliteeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 3, Standardeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 4, Sturmeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
-		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst¸tzungeintr‰ge));
+		adden(new ChooserGruppe(this,reflectionKennung, cnt, 0, 5, Unterst√ºtzungeintr√§ge));
 		cnt += CHOOSERGRUPPEN_X_ABSTAND;
 		adden(new ChooserGruppe(this,"FO", cnt, 0, 6, Befestigungen));
     	cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -177,7 +177,7 @@ public class VOLKGreyKnights extends BuildaVater {
 	
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelˆscht in " + nameDerArtDerArmee + "Builda !!");
+		System.out.println("Object gel√∂scht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

@@ -19,7 +19,7 @@ public class GKStrikeSquad extends Eintrag {
 	public GKStrikeSquad() {
 		name = "Angriffstrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Grey Knights", 5, 10, 20);
 		squad.setGrundkosten(10);
@@ -35,14 +35,14 @@ public class GKStrikeSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Psihellebarde", "Nemesis-Psihellebarde", 2));
 		ogE.addElement(new OptionsGruppeEintrag("Falchions", "Paar Nemesis-Falchions", 4));
 		ogE.addElement(new OptionsGruppeEintrag("Wehrstab", "Nemesis-Wehrstab", 2));
-		ogE.addElement(new OptionsGruppeEintrag("Dämonenhammer", "Nemesis-Dämonenhammer", 10));
+		ogE.addElement(new OptionsGruppeEintrag("DÃ¤monenhammer", "Nemesis-DÃ¤monenhammer", 10));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
 		add(o2def = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-		ogE.addElement(new OptionsGruppeEintrag("Erlöser-Flamer", "Erlöser-Flammenwerfer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("ErlÃ¶ser-Flamer", "ErlÃ¶ser-Flammenwerfer", 5));
 		ogE.addElement(new OptionsGruppeEintrag("Psipulser", 10));
 		ogE.addElement(new OptionsGruppeEintrag("Psibolter", 15));
 		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));

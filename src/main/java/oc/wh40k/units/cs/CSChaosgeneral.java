@@ -36,7 +36,7 @@ public class CSChaosgeneral extends Eintrag {
         
 		seperator();
         
-        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Terminatorrüstung", 40));
+        add(termi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "TerminatorrÃ¼stung", 40));
 		
         seperator();
         
@@ -65,7 +65,7 @@ public class CSChaosgeneral extends Eintrag {
 		
 		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CSSpezialausruestung", "");
 		spezialAusruestung.initKammer(termi.isSelected(), mal.isSelected("Mal des Nurgle"));
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle AusrÃ¼stung"));
 		add(spezialAusruestung);
 		
 		seperator(5);
@@ -76,8 +76,8 @@ public class CSChaosgeneral extends Eintrag {
 	@Override
 	public void refreshen() {
         chaosBelohnungen.getKammer().switchEntry("Moloch des Khorne", mal.isSelected("Mal des Khorne") && !termi.isSelected());
-        chaosBelohnungen.getKammer().switchEntry("Flugdämon des Tzeentch", mal.isSelected("Mal des Tzeentch") && !termi.isSelected());
-        chaosBelohnungen.getKammer().switchEntry("Sänfte des Nurgle", mal.isSelected("Mal des Nurgle") && !termi.isSelected());
+        chaosBelohnungen.getKammer().switchEntry("FlugdÃ¤mon des Tzeentch", mal.isSelected("Mal des Tzeentch") && !termi.isSelected());
+        chaosBelohnungen.getKammer().switchEntry("SÃ¤nfte des Nurgle", mal.isSelected("Mal des Nurgle") && !termi.isSelected());
         chaosBelohnungen.getKammer().switchEntry("Slaaneshpferd", mal.isSelected("Mal des Slaanesh") && !termi.isSelected());
         
         spezialAusruestung.getKammer().switchEntry("Seuchengranaten", mal.isSelected("Mal des Nurgle"));

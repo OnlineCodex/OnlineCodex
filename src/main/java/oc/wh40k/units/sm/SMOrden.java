@@ -13,7 +13,7 @@ public class SMOrden extends Eintrag {
 	public SMOrden() {
 		grundkosten = 0;
 		name="Orden:";
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		this.setEintragsCNT(0);
 		
 		seperator();
@@ -26,7 +26,7 @@ public class SMOrden extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Salamanders", 0));//Each Character may upgrade one Weapon to an mastercrafted one (0)
 		ogE.addElement(new OptionsGruppeEintrag("Raven Guard", 0));
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Red Scorpions", 0)); //Tactical sarges und Vet Sarges duerfen Narthecium erhalten 
-		ogE.addElement(new OptionsGruppeEintrag("[FW] Carcharodons", 0));//alle Tcticals mit Bolter: bolter gegen ccw (0) oder +1ccw (1) //Nur mit Imperialer Fraktion verbünden (desperate allies)
+		ogE.addElement(new OptionsGruppeEintrag("[FW] Carcharodons", 0));//alle Tcticals mit Bolter: bolter gegen ccw (0) oder +1ccw (1) //Nur mit Imperialer Fraktion verbÃ¼nden (desperate allies)
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Howling Griffons", 0));//Ultras
 		//ogE.addElement(new OptionsGruppeEintrag("[FW] Lamenters", 0)); //BA
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Fire Angels", 0));//Ultras
@@ -37,7 +37,7 @@ public class SMOrden extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Red Scorpions", 0));
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Executioners", 0));
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Angels Revenant", 0));//Ultras
-		ogE.addElement(new OptionsGruppeEintrag("[FW] Red Hunters", 0));//GK und AS mit Inq zählen als BB
+		ogE.addElement(new OptionsGruppeEintrag("[FW] Red Hunters", 0));//GK und AS mit Inq zÃ¤hlen als BB
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Star Phantoms", 0));
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Minotaurus", 0));
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Sons of Medusa", 0));//Iron Hands

@@ -23,7 +23,7 @@ public class DATerminatorwaffen extends RuestkammerVater {
 	boolean schnitterBool=false;
     boolean stimmeBool=false;
     boolean streitkolbenBool=false;
-    boolean bestientöterBool=false;
+    boolean bestientÃ¶terBool=false;
     boolean leichentuchBool=false;
     boolean augeBool=false;
     boolean SkullofPetronella=false;
@@ -83,9 +83,9 @@ public class DATerminatorwaffen extends RuestkammerVater {
 		seperator();
 		
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Feindschnitter"), 15));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Stimme des Löwen"), 20));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Streitkolben der Erlösung"), 30));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bestientöter von Caliban"), 40));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Stimme des LÃ¶wen"), 20));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Streitkolben der ErlÃ¶sung"), 30));
+		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("BestientÃ¶ter von Caliban"), 40));
 		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Blade of the Worthy (GS)"), 30)); // TODO NKW ersetzen
 		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		setUeberschrift("Waffen und Artefakte");
@@ -155,7 +155,7 @@ public class DATerminatorwaffen extends RuestkammerVater {
 		o2.setLegal(legal);
 		o3.setLegal(legal);
 		
-		//Einzigartige Gegenstände
+		//Einzigartige GegenstÃ¤nde
 				if(o3.isSelected("Feindschnitter")){
 					if(schnitterBool==false){
 						schnitterBool=true;
@@ -168,39 +168,39 @@ public class DATerminatorwaffen extends RuestkammerVater {
 					}
 				}
 				
-				if(o3.isSelected("Stimme des Löwen")){
+				if(o3.isSelected("Stimme des LÃ¶wen")){
 					if(stimmeBool==false){
 						stimmeBool=true;
 						BuildaHQ.addToInformationVectorGlobal("DAStimme", 1);
 					}
-				} else if(!o1.isSelected("Stimme des Löwen")) {
+				} else if(!o1.isSelected("Stimme des LÃ¶wen")) {
 					if(stimmeBool==true){
 						stimmeBool=false;
 						BuildaHQ.addToInformationVectorGlobal("DAStimme", -1);
 					}
 				}
 				
-				if(o3.isSelected("Streitkolben der Erlösung")){
+				if(o3.isSelected("Streitkolben der ErlÃ¶sung")){
 					if(streitkolbenBool==false){
 						streitkolbenBool=true;
 						BuildaHQ.addToInformationVectorGlobal("DAStreitkolben", 1);
 					}
-				} else if(!o1.isSelected("Streitkolben der Erlösung")) {
+				} else if(!o1.isSelected("Streitkolben der ErlÃ¶sung")) {
 					if(streitkolbenBool==true){
 						streitkolbenBool=false;
 						BuildaHQ.addToInformationVectorGlobal("DAStreitkolben", -1);
 					}
 				}
 				
-				if(o3.isSelected("Bestientöter von Caliban")){
-					if(bestientöterBool==false){
-						bestientöterBool=true;
-						BuildaHQ.addToInformationVectorGlobal("DABestientöter", 1);
+				if(o3.isSelected("BestientÃ¶ter von Caliban")){
+					if(bestientÃ¶terBool==false){
+						bestientÃ¶terBool=true;
+						BuildaHQ.addToInformationVectorGlobal("DABestientÃ¶ter", 1);
 					}
-				} else if(!o1.isSelected("Bestientöter von Caliban")) {
-					if(bestientöterBool==true){
-						bestientöterBool=false;
-						BuildaHQ.addToInformationVectorGlobal("DABestientöter", -1);
+				} else if(!o1.isSelected("BestientÃ¶ter von Caliban")) {
+					if(bestientÃ¶terBool==true){
+						bestientÃ¶terBool=false;
+						BuildaHQ.addToInformationVectorGlobal("DABestientÃ¶ter", -1);
 					}
 				}
 				
@@ -303,7 +303,7 @@ public class DATerminatorwaffen extends RuestkammerVater {
 				if(BuildaHQ.getCountFromInformationVectorGlobal("DASchnitter")>1 ||
 						BuildaHQ.getCountFromInformationVectorGlobal("DAStimme")>1 ||
 						BuildaHQ.getCountFromInformationVectorGlobal("DAStreitkolben")>1 ||
-						BuildaHQ.getCountFromInformationVectorGlobal("DABestientöter")>1 ||
+						BuildaHQ.getCountFromInformationVectorGlobal("DABestientÃ¶ter")>1 ||
 						BuildaHQ.getCountFromInformationVectorGlobal("DALeichtentuch")>1 ||
 						BuildaHQ.getCountFromInformationVectorGlobal("DAAuge")>1 ||
 						BuildaHQ.getCountFromInformationVectorGlobal("SkullofPetronella")>1 ||
@@ -328,8 +328,8 @@ public class DATerminatorwaffen extends RuestkammerVater {
 		boolean entrySwitched=false;
 		
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}
@@ -353,9 +353,9 @@ public class DATerminatorwaffen extends RuestkammerVater {
 			BuildaHQ.addToInformationVectorGlobal("DAStreitkolben", -1);
 		}
 					
-		if(bestientöterBool==true){
-			bestientöterBool=false;
-			BuildaHQ.addToInformationVectorGlobal("DABestientöter", -1);
+		if(bestientÃ¶terBool==true){
+			bestientÃ¶terBool=false;
+			BuildaHQ.addToInformationVectorGlobal("DABestientÃ¶ter", -1);
 		}
 						
 		if(leichentuchBool==true){

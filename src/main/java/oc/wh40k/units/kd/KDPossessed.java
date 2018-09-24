@@ -27,7 +27,7 @@ public class KDPossessed extends Eintrag {
 	public KDPossessed() {
 		//name = "Besessene Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Possessed", 5, 20, 30);
 		add(squad);

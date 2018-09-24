@@ -249,7 +249,7 @@ public class CSWaffenUndArtefakte extends RuestkammerVater {
 			handwaffe.setLegal(legal);
 		}
 			
-	    //Einzigartige Gegenst‰nde
+	    //Einzigartige Gegenst√§nde
 		if(crozius.isSelected()){
 			if(croziusBool==false){
 				croziusBool=true;

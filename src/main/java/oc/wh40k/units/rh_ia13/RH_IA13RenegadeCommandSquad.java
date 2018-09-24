@@ -39,7 +39,7 @@ public class RH_IA13RenegadeCommandSquad extends Eintrag {
 		name = "Renegade Command Squad\n";
 		grundkosten = 0;
 		add(ico = new oc.Picture("oc/wh40k/images/RHCompanyCommandSquad.jpg"));
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Disciples", 5, 15, 10);
 		squad.setGrundkosten(-5);

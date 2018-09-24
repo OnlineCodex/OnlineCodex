@@ -24,7 +24,7 @@ public class RH_IA13RenegadeDiscipleSquad extends Eintrag {
 	public RH_IA13RenegadeDiscipleSquad() {
 		name = "Renegade Disciple Squad\n";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Disciples", 5, 10, 10);
 		squad.setGrundkosten(-15);

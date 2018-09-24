@@ -24,7 +24,7 @@ public class CSBesessene extends Eintrag {
 	public CSBesessene() {
 		//name = "Besessene Chaos Space Marines\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Besessene", 5, 20, 26);
 		add(squad);

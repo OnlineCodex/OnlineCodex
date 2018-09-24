@@ -14,7 +14,7 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 		name = "Commander";
 		grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
 
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -24,7 +24,7 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 		ob.setGrundkosten(0);
         ((TAKampfanzugKammer)ob.getKammer()).setColdstar(true);
 		ob.initKammer(true, false, false, false, false, false, false);
-		ob.setButtonText("Rüstkammer");
+		ob.setButtonText("RÃ¼stkammer");
 		add(ob);
 		ob.setAbwaehlbar(false);
 
@@ -45,13 +45,13 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 			if(getCountFromInformationVector("Commander")>1){
 				setFehlermeldung("Max 1 Commander");
 			}else if(((TAKampfanzugKammer)ob.getKammer()).uniqueError){
-				setFehlermeldung("Ausrüstung doppelt!");
+				setFehlermeldung("AusrÃ¼stung doppelt!");
 			} else{
 				setFehlermeldung("");
 			}
 		}else{
 			if(((TAKampfanzugKammer)ob.getKammer()).uniqueError){
-				setFehlermeldung("Ausrüstung doppelt!");
+				setFehlermeldung("AusrÃ¼stung doppelt!");
 			} else{
 				setFehlermeldung("");
 			}

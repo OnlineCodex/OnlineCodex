@@ -17,9 +17,9 @@ public class IADamnedLegionnaires extends Eintrag {
 	public IADamnedLegionnaires() {
 		name = "Legion of the Damned\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Legionäre", 5, 10, 25);
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "LegionÃ¤re", 5, 10, 25);
 		add(squad);
 
 		add(ico = new oc.Picture("oc/wh40k/images/SMLegionoftheDamnedSquad.gif"));

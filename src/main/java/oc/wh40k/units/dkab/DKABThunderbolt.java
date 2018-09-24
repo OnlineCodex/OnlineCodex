@@ -12,7 +12,7 @@ public class DKABThunderbolt extends Eintrag {
 	public DKABThunderbolt() {
 		name = "Thunderbolt Squadron";
 		grundkosten = 0;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/ABThunderbolt.jpg"));
 		

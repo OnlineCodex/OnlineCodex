@@ -17,7 +17,7 @@ public class IMCenturionAssaultSquad extends Eintrag {
 	public IMCenturionAssaultSquad() {
 		name = "Centurion Assault Squad\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Centurions", 3, 6, getPts("Centurion Assault Squad"));
 		add(squad);
 

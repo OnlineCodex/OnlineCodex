@@ -14,7 +14,7 @@ public class ABBattleTankSquadron extends Eintrag {
 	public ABBattleTankSquadron() {
 		name = "Tank Squadron";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 

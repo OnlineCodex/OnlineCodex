@@ -18,7 +18,7 @@ public class ASSororitastrupp extends Eintrag {
 	public ASSororitastrupp() {
 		name = "Sororitastrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Sororitas", 5, 20, 12);
 		add(squad);

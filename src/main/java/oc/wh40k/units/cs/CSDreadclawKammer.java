@@ -70,7 +70,7 @@ public class CSDreadclawKammer extends RuestkammerVater {
         		cybot = new RuestkammerStarter(ID, randAbstand, cnt, "CMDreadClawTalonChaosCybotKammer", "Chaos Cybot",1);
         		cybot.initKammer();
         		add(cybot);
-        		cybot.setButtonText("Höllenschlächter");
+        		cybot.setButtonText("HÃ¶llenschlÃ¤chter");
         		
 
                 sizeSetzen();

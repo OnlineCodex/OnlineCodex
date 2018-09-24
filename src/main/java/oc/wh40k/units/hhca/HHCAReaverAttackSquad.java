@@ -23,7 +23,7 @@ public class HHCAReaverAttackSquad extends Eintrag {
 	public HHCAReaverAttackSquad() {
 		name = "Reaver Attack Squad\n";
 		grundkosten = 60;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Reavers", 5, 15, 15);
 		add(squad);

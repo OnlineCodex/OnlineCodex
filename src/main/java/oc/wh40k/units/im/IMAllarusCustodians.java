@@ -16,7 +16,7 @@ public class IMAllarusCustodians extends Eintrag {
 	public IMAllarusCustodians() {
 		name = "Allarus Custodians\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 		
 
 		squad = new AnzahlPanel(ID, randAbstand, cnt, "Allarus Custodians", 3, 10, getPts("Allarus Custodians"));

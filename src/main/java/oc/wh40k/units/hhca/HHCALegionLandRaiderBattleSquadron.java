@@ -15,7 +15,7 @@ public class HHCALegionLandRaiderBattleSquadron extends Eintrag {
 	public HHCALegionLandRaiderBattleSquadron() {
 		name = "Legion Land Raider Battle Squadron";
 		grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         seperator();        		
         ogE.addElement(new OptionsGruppeEintrag("Command tank", 25));

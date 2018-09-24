@@ -18,7 +18,7 @@ public class AMHeavyArtilleryBattery extends Eintrag {
     public AMHeavyArtilleryBattery() {
         name = "Heavy Artillery Battery";
         grundkosten = 0;
-        this.überschriftSetzen = true;
+        this.Ã¼berschriftSetzen = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/IGOrdnanceBattery.jpg"));
 

@@ -21,7 +21,7 @@ public class DAScoutSquad extends Eintrag {
 	public DAScoutSquad() {
 		//name = "Scout-Trupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DAScoutSquad.gif"));
 
@@ -32,7 +32,7 @@ public class DAScoutSquad extends Eintrag {
 
 		seperator();
 		
-		ogE.addElement(new OptionsGruppeEintrag("Tarnmäntel", 10));
+		ogE.addElement(new OptionsGruppeEintrag("TarnmÃ¤ntel", 10));
 		add(tarnmantel = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		seperator();
@@ -41,7 +41,7 @@ public class DAScoutSquad extends Eintrag {
 		add(bolter = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()-1));
 		ogE.addElement(new OptionsGruppeEintrag("Schrotflinte", "Space-Marine-Schrotflinte", 0));
 		ogE.addElement(new OptionsGruppeEintrag("Kampfmesser", "Kampfmesser", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Scharfschützengewehr", "Scharfschützengewehr", 1));
+		ogE.addElement(new OptionsGruppeEintrag("ScharfschÃ¼tzengewehr", "ScharfschÃ¼tzengewehr", 1));
 		add(waffen = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()-1));
 		bolter.setAnzahl(0, squad.getModelle()-1);
 		
@@ -51,7 +51,7 @@ public class DAScoutSquad extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 15));
 		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		ogE.addElement(new OptionsGruppeEintrag("Höllenfeuer", 5));
+		ogE.addElement(new OptionsGruppeEintrag("HÃ¶llenfeuer", 5));
 		add(hf = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Flugabwehrraketen", "Flugabwehrraketen", 10));
@@ -73,7 +73,7 @@ public class DAScoutSquad extends Eintrag {
         if(!rkBoss.isSelected()) rkBoss.setSelected(true);
         
         int count = squad.getModelle();
-		tarnmantel.setPreis("Tarnmäntel", 2*squad.getModelle());
+		tarnmantel.setPreis("TarnmÃ¤ntel", 2*squad.getModelle());
 		tarnmantel.setMaxAnzahl(count);
 		
 		waffen.setMaxAnzahl(count - 1 - (o2.isSelected()?1:0));

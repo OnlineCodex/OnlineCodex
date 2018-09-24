@@ -17,7 +17,7 @@ public class DADevastorSquad extends Eintrag {
 	public DADevastorSquad() {
 		name = "Devastortrupp\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		Ã¼berschriftSetzen = true;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DADevastatorSquad.gif"));
 

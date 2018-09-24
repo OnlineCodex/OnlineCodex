@@ -100,7 +100,7 @@ public class DATransporterKammer extends RuestkammerVater {
 	        if(!landraider)add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
 			add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
 	        add(o3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
-	        add(o4 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus‰tzliche Panzerung", 10));
+	        add(o4 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zus√§tzliche Panzerung", 10));
 	        if(!landraider)o1.setAktiv(false);
 			o2.setAktiv(false);
 			o3.setAktiv(false);

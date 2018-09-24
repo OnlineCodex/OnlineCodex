@@ -31,11 +31,11 @@ public class AMDeathstrike extends Eintrag {
 
 		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
 		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Maschinengewehr", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schützende Reliquien", 3));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "SchÃ¼tzende Reliquien", 3));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bergeausrüstung", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Promethiumfässer", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "BergeausrÃ¼stung", 5));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "ZusÃ¤tzliche Panzerung", 10));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "PromethiumfÃ¤sser", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnnetze", 15));
 		//add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gepanzerte Kabine", 15));

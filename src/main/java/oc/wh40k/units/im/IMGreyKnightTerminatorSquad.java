@@ -22,7 +22,7 @@ public class IMGreyKnightTerminatorSquad extends Eintrag {
     public IMGreyKnightTerminatorSquad() {
         name = "TerminatorSquad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        Ã¼berschriftSetzen = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminatoren", 5, 10, getPts("Grey Knight Terminator Squad"));
         add(squad);

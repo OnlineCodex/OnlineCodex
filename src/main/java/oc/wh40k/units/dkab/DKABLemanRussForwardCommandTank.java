@@ -12,7 +12,7 @@ public class DKABLemanRussForwardCommandTank extends Eintrag {
 	public DKABLemanRussForwardCommandTank() {
 		name = "Leman Russ Forward Command Tank";
 		grundkosten = 35;
-		überschriftSetzen=true;
+		Ã¼berschriftSetzen=true;
 		
 
 		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));

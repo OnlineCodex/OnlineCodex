@@ -15,7 +15,7 @@ public class DKSRHeavyArtilleryBattery extends Eintrag {
     public DKSRHeavyArtilleryBattery() {
         name = "Ordnance Battery";
         grundkosten = 0;
-        this.überschriftSetzen = true;
+        this.Ã¼berschriftSetzen = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/IGOrdnanceBattery.jpg"));
 

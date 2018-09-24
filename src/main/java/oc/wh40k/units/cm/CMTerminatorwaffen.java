@@ -21,7 +21,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 	OptionsEinzelUpgrade prophet;
 
 	OptionsEinzelUpgrade schriftrollen, handwaffe, kombibolter;
-	OptionsEinzelUpgrade dimensionsschlüssel;
+	OptionsEinzelUpgrade dimensionsschlÃ¼ssel;
 
 	OptionsEinzelUpgrade spineshiver;
 	OptionsEinzelUpgrade crucible;
@@ -123,7 +123,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 
 			seperator();
 
-			add(dimensionsschlüssel = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dimensionsschlüssel", 25));
+			add(dimensionsschlÃ¼ssel = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "DimensionsschlÃ¼ssel", 25));
 			add(schriftrollen = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schriftrollen des Magnus", 45));
 
 			cnt=randAbstand;
@@ -164,7 +164,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 				o3.setAktiv("Axt der blinden Wut", malDesKhorne && (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Das Mordschwert", (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Der schwarze Streitkolben", (!o1.isSelected() || !o2.isSelected()));
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(true);
@@ -184,7 +184,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 				o3.setAktiv("Axt der blinden Wut", malDesKhorne && (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Das Mordschwert", (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Der schwarze Streitkolben", (!o1.isSelected() || !o2.isSelected()));
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(false);
@@ -204,7 +204,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 				o3.setAktiv("Axt der blinden Wut", malDesKhorne && (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Das Mordschwert", (!o1.isSelected() || !o2.isSelected()));
 				o3.setAktiv("Der schwarze Streitkolben", (!o1.isSelected() || !o2.isSelected()));
-				dimensionsschlüssel.setAktiv(true);
+				dimensionsschlÃ¼ssel.setAktiv(true);
 				schriftrollen.setAktiv(malDesTzeentch);
 				//BL
 				spineshiver.setAktiv(false);
@@ -229,7 +229,7 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 		o1.setLegal(auswahlen>=2);
 		o2.setLegal(auswahlen>=2);
 
-		//Einzigartige Gegenstände
+		//Einzigartige GegenstÃ¤nde
 		if(isChaosgeneral || isHexer){
 			if(o3.isSelected("Brandfackel von Skalathrax")){
 				if(fackelBool==false){
@@ -279,12 +279,12 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 				}
 			}
 
-			if((isChaosgeneral || isHexer) && dimensionsschlüssel.isSelected()){
+			if((isChaosgeneral || isHexer) && dimensionsschlÃ¼ssel.isSelected()){
 				if(schluesselBool==false){
 					schluesselBool=true;
 					BuildaHQ.addToInformationVectorGlobal("CMSchluessel", 1);
 				}
-			} else if((isChaosgeneral || isHexer) && !dimensionsschlüssel.isSelected()) {
+			} else if((isChaosgeneral || isHexer) && !dimensionsschlÃ¼ssel.isSelected()) {
 				if(schluesselBool==true){
 					schluesselBool=false;
 					BuildaHQ.addToInformationVectorGlobal("CMSchluessel", -1);
@@ -483,8 +483,8 @@ public class CMTerminatorwaffen extends RuestkammerVater {
 		}
 
 		if(entrySwitched){
-			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
+			//Aktualisisert alle EintrÃ¤ge, auch die, welche diese RÃ¼stkammer enthÃ¤lt.
+			//Sonst werden dort zwar beim abwÃ¤hlen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.
 			RefreshListener.fireRefresh();
 		}
