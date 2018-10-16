@@ -40,7 +40,7 @@ import javax.swing.ToolTipManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import oc.utils.UpdateCheck;
+import oc.utils.ManifestUtils;
 import oc.wh40k.armies.VOLKAstraMilitarum;
 import oc.wh40k.armies.VOLKSpaceMarines;
 //import oc.wh40k.armies.VOLKSternenreichderTau;
@@ -93,7 +93,7 @@ public class OnlineCodex extends BuildaPanel {
 	private Vector<JPanel> buildaPanelz = new Vector<JPanel>();
 	private BuildaTextArea myBuilderTextArea;
 	private final Hashtable<String, String> dokumente = new Hashtable<String, String>();
-	private final String VERSION = (Version.getInstance().getDay() < 10 ? "0" : "") + Version.getInstance().getDay() + (Version.getInstance().getMonth() < 10 ? ".0" : ".") + Version.getInstance().getMonth() + "." + Version.getInstance().getYear();
+	private final String VERSION = ManifestUtils.getVersion().map(Object::toString).orElse("unknown Version");
 	private final String FENSTER = "powered by OnlineCodex.de" + " - Version vom " + VERSION;
 	private final JFrame myWindow = new JFrame("OnlineCodex powered by OnlineCodex.de");
 	private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
@@ -490,16 +490,6 @@ public class OnlineCodex extends BuildaPanel {
 		BuildaHQ.newGUIComponent(myWindow);
 
 		myWindow.setVisible(true);
-
-		// Try to check oC website for any new update. If server is not reachable, ignore any errors.
-		if (getGame() == WHFB || getGame() == WH40K || getGame() == NECROMUNDA) {
-			UpdateCheck updateChedck = new UpdateCheck(getGame());
-			try {
-				updateChedck.run();
-			} catch (Throwable ex) {
-				// ignore connection error!
-			}
-		}
 
 		// neuGerri
 		if(args.length > 0) {
