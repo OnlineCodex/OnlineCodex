@@ -132,8 +132,8 @@ public class DeathWatchKammer extends RuestkammerVater {
 		{
 			ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
 			ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
-			ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer (SM)")));
-			ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (SM)")));
+			ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer")));
+			ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (DW)")));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
 			add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 			
