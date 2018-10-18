@@ -26,12 +26,14 @@ public final class ManifestUtils {
     }
 
     public static Optional<Version> getVersion(Class<?> cls) {
-        return fromManifestEntries(cls, attrs -> Version.valueOf(attrs.getValue(MANIFEST_VERSION)));
+        return fromManifestEntries(cls,
+                attrs -> Version.valueOf(attrs.getValue(MANIFEST_VERSION))
+        );
     }
 
     public static <T> Optional<T> fromManifestEntries(Class<?> cls, Function<? super Attributes, T> f) {
         String clsPath = cls.getResource(cls.getSimpleName() + ".class").toString();
-        String manifestPath = clsPath.substring(0, clsPath.lastIndexOf("!") + 1) + MANIFEST_PATH;
+        String manifestPath = clsPath.substring(0, clsPath.lastIndexOf('!') + 1) + MANIFEST_PATH;
         try (InputStream in = new URL(manifestPath).openStream()) {
             return Optional.of(new Manifest(in).getMainAttributes())
                     .map(f);
