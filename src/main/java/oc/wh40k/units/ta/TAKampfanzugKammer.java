@@ -2,7 +2,6 @@ package oc.wh40k.units.ta;
 
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelUpgradeUnique;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsUpgradeGruppeUnique;
@@ -19,8 +18,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 //	OptionsUpgradeGruppe o3;
 	OptionsUpgradeGruppeUnique o3u;
 	OptionsZaehlerGruppe o4;
-	OptionsEinzelUpgradeUnique oeu1;
-	OptionsEinzelUpgradeUnique oeu2;
 	OptionsUpgradeGruppe o5, o6/*, o7*/;
 	boolean[] defaults;
 	boolean commander = false;
@@ -408,14 +405,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 			}
 			if (o4!=null && o4.isSelected()){
 				o4.setMaxAnzahl(0);
-				entryCleared=true;
-			}
-			if (oeu1!=null && oeu1.isSelected()){
-				oeu1.setSelected(false);
-				entryCleared=true;
-			}
-			if (oeu2!=null && oeu2.isSelected()){
-				oeu2.setSelected(false);
 				entryCleared=true;
 			}
 			if (o5!=null && o5.isSelected()){

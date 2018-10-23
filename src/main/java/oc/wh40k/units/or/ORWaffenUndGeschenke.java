@@ -1,5 +1,6 @@
 package oc.wh40k.units.or;
 
+import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
@@ -60,6 +61,12 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			character = defaults[6];
 		} catch(Exception e) {}
 		
+		if(character) {
+	        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Super Cyborg Body", 0).setRelic(true));
+	        
+	        seperator();
+		}
+		
 		if(!defaultFK.equals("no weapon")) {
 		    if(defaultFK.equals("")){
 		    	ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
@@ -85,7 +92,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    if(meleeForRange) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
-    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setUnique(true));
+	    	if(character) {
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+	    	}
 	    } 
 	    if(bigmek){
 			ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field"))); 
@@ -122,7 +132,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	if(defaultNK != "Big choppa"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	}
-    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setUnique(true));
+	    	if(character) {
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+	    	}
 	    }
 		if(killsawNK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
