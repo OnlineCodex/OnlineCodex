@@ -11,7 +11,9 @@ import oc.ChooserGruppe;
 public class VOLKDarkEldar extends BuildaVater {
 	
     public VOLKDarkEldar() {
-        BuildaHQ.Items = new Vector<String>();
+		if(BuildaHQ.Items == null) {
+			BuildaHQ.Items = new Vector<String>();
+		}
 
         reflectionKennung = "DE";
 

@@ -19,6 +19,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean meleeForSouped = false;
 	boolean killsawFK = false;
 	boolean killsawNK = false;
+	boolean character = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -56,6 +57,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			bigmek = defaults[3]; 
 			meleeForRange = defaults[4];
 			meleeForSouped = defaults[5];
+			character = defaults[6];
 		} catch(Exception e) {}
 		
 		if(!defaultFK.equals("no weapon")) {
@@ -83,6 +85,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    if(meleeForRange) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setUnique(true));
 	    } 
 	    if(bigmek){
 			ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field"))); 
@@ -119,6 +122,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	if(defaultNK != "Big choppa"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	}
+    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setUnique(true));
 	    }
 		if(killsawNK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));

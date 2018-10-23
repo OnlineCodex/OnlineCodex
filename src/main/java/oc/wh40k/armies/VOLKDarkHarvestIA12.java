@@ -11,7 +11,9 @@ public class VOLKDarkHarvestIA12 extends BuildaVater {
     public VOLKDarkHarvestIA12() {
         reflectionKennung = "DH";
 
-        BuildaHQ.Items = new Vector<String>();
+		if(BuildaHQ.Items == null) {
+			BuildaHQ.Items = new Vector<String>();
+		}
 
         HQeinträge = new String[] {"", "Maynarkh Overlord", "Destruktor-Lord","Royal Court of Maynarkh", "", "Kutlakh the World Killer", "Toholk the Blinded"};
         Eliteeinträge = new String[] {"", "Canoptek Tomb Stalker", "Charnel Lychguard", "Eliminatoren", "Prätorianer des Triarchats", "Jagdläufer des Triarchats"};
