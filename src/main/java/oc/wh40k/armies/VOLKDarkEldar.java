@@ -1,9 +1,5 @@
 package oc.wh40k.armies;
 
-
-
-import java.util.Vector;
-
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
@@ -11,9 +7,6 @@ import oc.ChooserGruppe;
 public class VOLKDarkEldar extends BuildaVater {
 	
     public VOLKDarkEldar() {
-		if(BuildaHQ.Items == null) {
-			BuildaHQ.Items = new Vector<String>();
-		}
 
         reflectionKennung = "DE";
 
