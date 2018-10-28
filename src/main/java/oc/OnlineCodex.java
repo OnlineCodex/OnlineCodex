@@ -663,6 +663,15 @@ public class OnlineCodex extends BuildaPanel {
 			
 			double kosten=getKosten();
 			double cp=3+getCP();
+			
+			int  relics = BuildaHQ.getCountFromInformationVectorGlobal("Relic");
+			System.out.println("Relics = " +  relics);
+			if(relics == 2) {
+				cp-=1;
+			} else if(relics == 3) {
+				cp-=3;
+			}
+			
 			if (kosten != 0) {
 				kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
 				try {
