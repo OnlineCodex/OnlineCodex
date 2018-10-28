@@ -1,5 +1,6 @@
 package oc.wh40k.units.or;
 
+import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
@@ -19,6 +20,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean meleeForSouped = false;
 	boolean killsawFK = false;
 	boolean killsawNK = false;
+	boolean character = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -56,7 +58,14 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			bigmek = defaults[3]; 
 			meleeForRange = defaults[4];
 			meleeForSouped = defaults[5];
+			character = defaults[6];
 		} catch(Exception e) {}
+		
+		if(character) {
+	        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Super Cyborg Body", 0).setRelic(true));
+	        
+	        seperator();
+		}
 		
 		if(!defaultFK.equals("no weapon")) {
 		    if(defaultFK.equals("")){
@@ -83,6 +92,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    if(meleeForRange) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+	    	if(character) {
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+	    	}
 	    } 
 	    if(bigmek){
 			ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field"))); 
@@ -118,6 +131,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	if(defaultNK != "Big choppa"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+	    	}
+	    	if(character) {
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
 	    	}
 	    }
 		if(killsawNK){
