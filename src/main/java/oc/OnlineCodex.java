@@ -663,6 +663,15 @@ public class OnlineCodex extends BuildaPanel {
 			
 			double kosten=getKosten();
 			double cp=3+getCP();
+			
+			switch(BuildaHQ.getCountFromInformationVectorGlobal("Relic")) {
+				case 2: cp-=1;
+						break;
+				case 3: cp-=3;
+						break;
+				default: break;
+			}
+			
 			if (kosten != 0) {
 				kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
 				try {
