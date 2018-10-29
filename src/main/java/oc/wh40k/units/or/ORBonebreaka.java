@@ -6,13 +6,13 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
-public class ORBonesplitta extends Eintrag {
+public class ORBonebreaka extends Eintrag {
 
 	OptionsEinzelUpgrade Panzakanonä;
 	OptionsUpgradeGruppe FK2;
 	OptionsZaehlerGruppe KampfpanzaFK;
 
-	public ORBonesplitta() {
+	public ORBonebreaka() {
 
 		name = "Battlewagon";
 		grundkosten = getPts("Battlewagon");
