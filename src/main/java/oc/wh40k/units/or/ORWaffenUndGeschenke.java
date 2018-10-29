@@ -1,5 +1,6 @@
 package oc.wh40k.units.or;
 
+import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -21,11 +22,20 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean killsawFK = false;
 	boolean killsawNK = false;
 	boolean character = false;
+	boolean psyker = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
 	
 	public boolean megaruestung = false;
+	
+	OptionsEinzelUpgrade daLuckyStikk;
+	OptionsEinzelUpgrade morgogsFinkinCap;
+	OptionsEinzelUpgrade rezmekkasRedderArmour;
+	OptionsEinzelUpgrade daFixxerUpperz;
+	OptionsEinzelUpgrade broggsBuzzbom;
+	OptionsEinzelUpgrade daBadskullBanner;
+	OptionsEinzelUpgrade gitstoppaShells;
 	
     //BP/NK gg RNG/NK
     
@@ -59,11 +69,21 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			meleeForRange = defaults[4];
 			meleeForSouped = defaults[5];
 			character = defaults[6];
+			psyker = defaults[7];
 		} catch(Exception e) {}
 		
 		if(character) {
 	        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Super Cyborg Body", 0).setRelic(true));
-	        
+	        add(daLuckyStikk = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Lucky Stikk", 0).setRelic(true));
+	        add(morgogsFinkinCap = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Morgogs Finkin Cap", 0).setRelic(true));
+	        add(rezmekkasRedderArmour = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rezmekkas Redder Armour", 0).setRelic(true));
+	        add(daFixxerUpperz = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Fixxer Upperz", 0).setRelic(true));
+	        add(broggsBuzzbom = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Broggs Buzzbom", 0).setRelic(true));
+	        add(daBadskullBanner = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Badskull Banner", 0).setRelic(true));
+	        if(psyker){
+		        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Scorched Gitbonez", 0).setRelic(true));
+	        }
+	        add(gitstoppaShells = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gitstoppa Shells", 0).setRelic(true));
 	        seperator();
 		}
 		
@@ -79,7 +99,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta",getPts("Kustom mega-blasta"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
-	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));  
+	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga"))); 
+	        if(character){
+	        	ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); //TODO Kosten? allgemein für range abhandeln?
+	        }
 	    }
 	    if(range) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Shoota", getPts("Shoota")));
@@ -88,6 +111,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	}
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+    		ogE.addElement(new OptionsGruppeEintrag("Da Ded Shiny Shoota", getPts("Kustom shoota")).setRelic(true));
+	    	if(character){
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true));//TODO Kosten? allgemein für range abhandeln?
+	    	}
 	    } 
 	    if(meleeForRange) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
@@ -125,7 +152,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta",getPts("Kustom mega-blasta"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
-	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));  
+	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));
+	        if(character){
+	        	ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); 
+	        }
 	    }
 		if(melee) {
 	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
@@ -162,7 +192,17 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			handwaffen.alwaysSelected();
 		}
 		
-		System.out.print("");
+		daLuckyStikk.setAktiv((chosenRelic == null || daLuckyStikk.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Goff"));
+		morgogsFinkinCap.setAktiv((chosenRelic == null || morgogsFinkinCap.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Blood Axe"));
+		rezmekkasRedderArmour.setAktiv((chosenRelic == null || rezmekkasRedderArmour.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Evil Sunz"));
+		daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskullz"));
+		broggsBuzzbom.setAktiv((chosenRelic == null || broggsBuzzbom.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Snakebites"));
+		daBadskullBanner.setAktiv((chosenRelic == null || daBadskullBanner.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Freebooterz"));
+		fkwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || fkwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+		handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+		gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
+								(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
+								 handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
 	}
 	
 }
