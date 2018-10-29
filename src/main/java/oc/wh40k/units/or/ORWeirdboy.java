@@ -9,6 +9,7 @@ public class ORWeirdboy extends Eintrag {
 
 	OptionsEinzelUpgrade o1;
 	RuestkammerStarter psychicPowers;
+    RuestkammerStarter waffen;
 	
 	public ORWeirdboy() {
 
@@ -26,6 +27,16 @@ public class ORWeirdboy extends Eintrag {
 		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(psychicPowers);
 		psychicPowers.setAbwaehlbar(false);
+		
+		seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false,false,false,false,false,false,true,true);
+        waffen.setButtonText("Waffen und Geschenke");
+        add(waffen);
+        waffen.setAbwaehlbar(false);
 		
 		complete();
 	}

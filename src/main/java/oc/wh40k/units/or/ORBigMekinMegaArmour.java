@@ -34,7 +34,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kustom mega-blasta");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power Klaw");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawFK(true);
-        waffen.initKammer(false,true,false,false,false,false);
+        waffen.initKammer(false,true,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);

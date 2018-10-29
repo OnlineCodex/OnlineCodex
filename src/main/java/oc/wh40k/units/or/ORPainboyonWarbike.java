@@ -21,7 +21,7 @@ public class ORPainboyonWarbike extends Eintrag {
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power Klaw");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(false,false,false,false,false,false);
+        waffen.initKammer(false,false,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);

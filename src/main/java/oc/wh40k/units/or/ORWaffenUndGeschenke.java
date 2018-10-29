@@ -120,8 +120,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	if(character) {
-	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
-	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true)); //TODO Generell am Ende prüfen
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true)); //TODO Generell am Ende prüfen
 	    	}
 	    } 
 	    if(bigmek){
@@ -163,8 +163,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	}
 	    	if(character) {
-	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
-	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true)); //TODO Generell am Ende prüfen
+	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true)); //TODO Generell am Ende prüfen
 	    	}
 	    }
 		if(killsawNK){
@@ -199,11 +199,17 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskullz"));
 			broggsBuzzbom.setAktiv((chosenRelic == null || broggsBuzzbom.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Snakebites"));
 			daBadskullBanner.setAktiv((chosenRelic == null || daBadskullBanner.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Freebooterz"));
-			fkwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || fkwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
-			handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
-			gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
-									(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
-									 handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
+			if(fkwaffen != null){
+				fkwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || fkwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+			}
+			if(handwaffen != null){
+				handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+			}
+			if(handwaffen != null && fkwaffen != null){//TODO auftrennen
+				gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
+										(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
+										handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
+			}
 		}
 	}
 	
