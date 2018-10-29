@@ -25,7 +25,7 @@ public class ORMek extends Eintrag {
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(false,false,true,false,false);
+        waffen.initKammer(false,false,true,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);

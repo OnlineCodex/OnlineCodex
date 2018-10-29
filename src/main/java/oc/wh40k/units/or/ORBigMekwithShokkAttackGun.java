@@ -26,7 +26,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(true,false,true,true,true,true);
+        waffen.initKammer(true,false,true,true,true,true,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
