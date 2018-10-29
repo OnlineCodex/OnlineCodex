@@ -1,43 +1,51 @@
 Ammo Runt;4
-Battlewagon;161
+Battlewagon;120
 Big Gunz;8
 Big Mek;55
 Big Mek in Mega Armour;77
 Big Mek on Warbike;81
+Big Mek with Shokk Attack Gun;55
 Blitza-bommer;108
 Bomb Squig;10
-Boyz;6
-Burna Boyz;14
+Bonebreaka;140
+Boomdakka Snazzwagon;95
+Boyz;7
+Burna Boyz;12
 Burna-bommer;102
 Dakkajet;88
-Deff Dreads;74
-Deffkoptas;55
-Flash Gitz;27
-Gorkanaut;295
+Deff Dreads;55
+Deffkilla Wartrike;120
+Deffkoptas;30
+Flash Gitz;30
+Gorkanaut;250
 Gretchin;3
 Grot Gunners;2
 Grot Oiler;4
 Grot Orderly;4
-Killa Kans;51
+Gunwagon;140
+Killa Kans;40
 Kommandos;9
+Kustom Boosta Blastas;100
 Lootas;17
-Meganobz;25
+Meganobz;20
+Megatrukk Scrapajets;90
 Mek;22
 Mek Gunz;15
-Morkanaut;250
+Morkanaut;220
 Nob with Waaagh! Banner;75
-Nobz;17
-Nobz on Warbikes;42
-Painboy;40
+Nobz;14
+Nobz on Warbikes;38
+Painboy;52
 Painboy on Warbike;90
-Runtherd;26
+Rukkatrukk Squigbuggies;140
+Runtherd;35
 Skorchas;37
-Stompa;900
-Stormboyz;8
+Stompa;850
+Stormboyz;9
 Tankbustas;5
-Trukk;76
-Warbikers;27
-Warboss;55
+Trukk;59
+Warbikers;23
+Warboss;63
 Warboss in Mega Armour;107
 Warboss on Warbike;86
 Warbuggies;33
@@ -45,16 +53,16 @@ Wartrakks;37
 Wazbom Blastajet;99
 Weirdboy;62
 
-Boss Snikrot;69
+Boss Snikrot;70
 Boss Zagstruk;88
-Ghazghkull Thraka;215
+Ghazghkull Thraka;235
 Kaptin Badrukk;84
-Mad Dok Grotsnik;74
+Mad Dok Grotsnik;86
 
-Big shoota;6
+Big shoota;5
 Bigbomm;0
 Boom bomb;0
-Bubblechukka;32
+Bubblechukka;30
 Burna;0
 Burna bomb;0
 Dakkagun;0
@@ -63,46 +71,61 @@ Deffkannon;0
 Deffstorm mega-shoota;0
 Grot blasta;0
 Grotzooka;10
+Heavy squig launcha;0
 Kannon;15
+Killa jet;0
 Killkannon;15
-Kombi-weapon with rokkit-launcha;14
-Kombi-weapon with skorcha;19
+Kombi-weapon with rokkit-launcha;12
+Kombi-weapon with skorcha;17
 Kopta rokkits;24
 Kustom mega-blasta;9
-Kustom mega-kannon;17
+Kustom mega-kannon;45
 Kustom mega-slugga;7
-Kustom shoota;4
+Kustom mega-zappa;17
+Kustom shokk rifle;0
+Kustom shoota;2
 Lobba;18
+Mek spehul;0
+Rivet kannon;0
+Rokkit kannon;0
 Rack of Rokkits;24
 Rokkit launcha;12
 Pair of rokkit pistols;12
 Shokk attack gun;25
 Shoota;0
+Shotgun;0
 Skorcha;17
 Skorcha missile;20
 Slugga;0
 Smasha gun;16
 Snazzgun;0
 Squig bomb;0
+Squig launcha;0
+Stikkbomb chukka;4
 Stikkbomb flinga;4
 Stikkbombs;0
+S_squigs:0
 Supa shoota;10
 Supa-gatler;28
 Supa-rokkit;0
 Tankbusta-bombs;0
 Tellyport blasta;11
 Tellyport mega-blasta;18
-Traktor kannon;15
+Traktor kannon;30
 Twin big shoota;10
 Wazbom mega-kannon;12
+Wing missiles;0
 Zzap gun;18
 
 Attack squig;0
-Big choppa;7
+Big choppa;5
+Buzz saw;0
 Choppa;0
 Deff rolla;19
-Dread klaw;30
+Dread klaw;15
 each subsequent dread klaw;15
+Dread saw;10
+Drilla;0
 Grabba stikk;0
 Grabbin' klaw;5
 Grot-prod;0
@@ -111,8 +134,10 @@ Killsaw;15
 Two killsaws;23
 Klaw of Gork (or possibly Mork);0
 Mega-choppa;0
+Nose drill;0
 Power klaw;13
 Power stabba;3
+Saw blades;0
 Spinnin' blades;0
 Tankhammer;10
 'Urty syringe;0
@@ -120,8 +145,11 @@ Waaagh! banner;0
 Weirdboy staff;0
 Wreckin' ball;3
 
+'Ard case;0
 Cybork body;5
+Gitfinda squig;0
 Grot lash;0
+Grot rigger;5
 Kustom force field;20
 Squig hound;0
 
