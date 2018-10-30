@@ -37,7 +37,16 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	OptionsEinzelUpgrade daBadskullBanner;
 	OptionsEinzelUpgrade gitstoppaShells;
 	
-    //BP/NK gg RNG/NK
+    //
+	boolean bigChoppaNK = false;
+	boolean powerKlawNK = false;
+	boolean kustomShootaNK = false;
+	boolean kombiNK = false;
+	
+	boolean bigChoppaFK = false;
+	boolean powerKlawFK = false;
+	boolean kustomShootaFK = false;
+	boolean kombiFK = false;
     
 	public ORWaffenUndGeschenke() {
 		grundkosten = 0;
@@ -92,6 +101,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		    	ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
 		    } else {
 		    	ogE.addElement(new OptionsGruppeEintrag(defaultFK, getPts(defaultFK)));
+		    	if(defaultFK.equals("Kustom shoota")) {
+		    		kustomShootaFK = true;
+		    	}
 		    }
 		}
 	    if(souped) {
@@ -100,9 +112,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga"))); 
-	        if(character){
-	        	ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); //TODO Kosten? allgemein für range abhandeln?
-	        }
+	        kombiFK = true;
 	    }
 	    if(range) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Shoota", getPts("Shoota")));
@@ -111,18 +121,14 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	}
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
-    		ogE.addElement(new OptionsGruppeEintrag("Da Ded Shiny Shoota", getPts("Kustom shoota")).setRelic(true));
-	    	if(character){
-	    		ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true));//TODO Kosten? allgemein für range abhandeln?
-	    	}
+	        kombiFK = true;
+	        kustomShootaFK = true;
 	    } 
 	    if(meleeForRange) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
-	    	if(character) {
-	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true)); //TODO Generell am Ende prüfen
-	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true)); //TODO Generell am Ende prüfen
-	    	}
+	    	powerKlawFK = true;
+	    	bigChoppaFK = true;
 	    } 
 	    if(bigmek){
 			ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field"))); 
@@ -131,7 +137,22 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		if(killsawFK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		}
-		if(ogE.size() > 0){
+		if(ogE.size() > 0) {
+			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
+				if(kustomShootaFK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Ded Shiny Shoota", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoota
+					ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoot oder kombi
+				} else if(kombiFK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kombi-weapon with rokkit-launcha")).setRelic(true)); //Kustom Shoot oder kombi
+				}
+				if(bigChoppaFK){
+					ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+				}
+				if(powerKlawFK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+				}
+	    	}
+			
 		    add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		    if(!defaultFK.equals("no weapon")) {
 		    	fkwaffen.setSelected(0, true);
@@ -145,6 +166,12 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 				ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
 			} else {
 				ogE.addElement(new OptionsGruppeEintrag(defaultNK, getPts(defaultNK)));
+				if(defaultNK.equals("Power klaw")) {
+		    		powerKlawNK = true;
+		    	}
+				if(defaultNK.equals("Big choppa")) {
+		    		bigChoppaNK = true;
+		    	}
 			}
 		}
 		if(meleeForSouped) {
@@ -153,24 +180,36 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));
-	        if(character){
-	        	ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); 
-	        }
+	        kombiNK = true;
 	    }
 		if(melee) {
 	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 	    	if(defaultNK != "Big choppa"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	}
-	    	if(character) {
-	    		ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true)); //TODO Generell am Ende prüfen
-	    		ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true)); //TODO Generell am Ende prüfen
-	    	}
+	        powerKlawNK = true;
+	        bigChoppaNK = true;
 	    }
 		if(killsawNK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		}
+		
 		if(ogE.size() > 0) {
+			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
+				if(kustomShootaNK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Ded Shiny Shoota", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoota
+					ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoot oder kombi
+				} else if(kombiNK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kombi-weapon with rokkit-launcha")).setRelic(true)); //Kustom Shoot oder kombi
+				}
+				if(bigChoppaNK){
+					ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("Big choppa")).setRelic(true));
+				}
+				if(powerKlawNK) {
+					ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
+				}
+	    	}
+			
 			add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 			if(!defaultNK.equals("no weapon")) {
 				handwaffen.setSelected(0, true);
