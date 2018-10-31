@@ -13,23 +13,23 @@ public class ORDeffkillaWartrike extends Eintrag {
     boolean gazzBool=false;
 
     public ORDeffkillaWartrike() {
-        name = "Warboss on Warbike";
-        grundkosten = getPts("Warboss on Warbike");
+        name = "Deffkilla Wartrike";
+        grundkosten = getPts("Deffkilla Wartrike");
         power = 5;
 
-        add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
-
-        add(attacksquig = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
-        
-        seperator();
-        
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Big choppa");
-        waffen.initKammer(true,true,false,false,true);
-        waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
-        waffen.setAbwaehlbar(false);
+//        add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
+//
+//        add(attacksquig = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
+//        
+//        seperator();
+//        
+//        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+//        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
+//        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Big choppa");
+//        waffen.initKammer(true,true,false,false,true);
+//        waffen.setButtonText("Waffen und Geschenke");
+//        add(waffen);
+//        waffen.setAbwaehlbar(false);
         
         complete();
     }
