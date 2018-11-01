@@ -6,8 +6,8 @@ public class ORBlitzaBommer extends Eintrag {
 
 	public ORBlitzaBommer() {
 		name = "Blitza-Bommer";
-		grundkosten = getPts("Blitza-Bommer") + getPts("supa shoota") * 2 + getPts("Twin big shoota") + getPts("Boom bomb") *2;
-		power = 7;
+		grundkosten = getPts("Blitza-Bommer") + getPts("supa shoota") * 2 + getPts("Big shoota");
+		power = 6;
 		complete();
 	}
 

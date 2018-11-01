@@ -1,8 +1,6 @@
 package oc.wh40k.units.or;
 
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
