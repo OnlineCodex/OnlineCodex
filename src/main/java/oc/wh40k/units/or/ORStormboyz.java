@@ -20,8 +20,11 @@ public class ORStormboyz extends Eintrag {
 
 		seperator();
 
-		boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");//TODO: Nob-Waffen
-		boss.initKammer(true,false,false,false,false);
+		boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        ((ORWaffenUndGeschenke)boss.getKammer()).setBossNob(true);
+        ((ORWaffenUndGeschenke)boss.getKammer()).setDefaultFK("Slugga");
+        ((ORWaffenUndGeschenke)boss.getKammer()).setDefaultNK("Choppa");
+		boss.initKammer();
 		boss.setGrundkosten(getPts("Boss Nob"));
 		boss.setUeberschriftTrotzNullKostenAusgeben(true);
 		add(boss);

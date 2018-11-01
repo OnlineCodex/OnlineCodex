@@ -25,6 +25,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean psyker = false;
 	boolean spanner = false;
 	boolean kaptin = false;
+	boolean bossNob = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -76,6 +77,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	
 	public void setKaptin(boolean b){
 		kaptin = b;
+	}
+	
+	public void setBossNob(boolean b){
+		bossNob = b;
 	}
 	
 	@Override
@@ -164,6 +169,15 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
 		}
+		if(bossNob)
+		{ 
+	        ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+	        ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
+	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+	        ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
+	        ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+		}
+		
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
 				if(kustomShootaFK) {
@@ -224,6 +238,14 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		if(killsawNK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		}
+		if(bossNob)
+		{ 
+	        ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+	        ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
+	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+	        ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
+	        ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
+		}
 		
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
@@ -280,11 +302,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			if(handwaffen != null){
 				handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
 			}
-			if(handwaffen != null && fkwaffen != null){//TODO auftrennen //TODO taucht asl Option auf, wenn keine NK/FK Waffe ausgerüstet ist (z.B. beim Deffkilla)
-				gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
-										(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
-										handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
-			}
+			
+			boolean gitstoppaNK = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
+			boolean gitstoppaFK = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
+			gitstoppaShells.setAktiv(gitstoppaNK || gitstoppaFK);
+			
 		}
 	}
 	

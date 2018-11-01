@@ -5,8 +5,5 @@ import oc.Eintrag;
 public class ORKustomMekaDread extends Eintrag {
 
 	@Override
-	public void refreshen() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void refreshen() {}
 }

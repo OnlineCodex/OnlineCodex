@@ -30,8 +30,11 @@ public class ORWarbikers extends Eintrag {
 
 		seperator();
 
-		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");//TODO: Nob-Waffen
-		Boss.initKammer(true,false,false,false,false);
+		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setBossNob(true);
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultFK("Slugga");
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultNK("Choppa");
+		Boss.initKammer();
 		Boss.setGrundkosten(getPts("Boss Nob"));
 		add(Boss);
 		
