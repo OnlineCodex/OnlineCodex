@@ -3,17 +3,19 @@ package oc.wh40k.units.or;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class ORRuntherd extends Eintrag {
 
     OptionsUpgradeGruppe o1 = null;
     OptionsUpgradeGruppe o2 = null;
+    RuestkammerStarter waffen;
 
     public ORRuntherd() {
         kategorie = 1;
         name = "Runtherd";
         grundkosten = getPts("Runtherd");
-        power = 1;
+        power = 2;
 
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
@@ -27,6 +29,16 @@ public class ORRuntherd extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Grot lash", getPts("Grot lash")));
         ogE.addElement(new OptionsGruppeEintrag("Squig hound", getPts("Squig hound")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false,false,false,false,false,false,true,false);
+        waffen.setButtonText("Waffen und Geschenke");
+        add(waffen);
+        waffen.setAbwaehlbar(false);
 
         complete();
     }

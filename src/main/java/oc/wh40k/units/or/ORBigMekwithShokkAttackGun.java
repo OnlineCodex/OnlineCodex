@@ -4,7 +4,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
-public class ORBigMek extends Eintrag {
+public class ORBigMekwithShokkAttackGun extends Eintrag {
 
 	OptionsEinzelUpgrade grotoiler;
     RuestkammerStarter waffen;
@@ -12,11 +12,11 @@ public class ORBigMek extends Eintrag {
     boolean megaBool=false;
     boolean gazzBool=false;
 
-    public ORBigMek() {
+    public ORBigMekwithShokkAttackGun() {
         kategorie = 1;
-        name = "Big Mek";
-        grundkosten = getPts("Big Mek") + getPts("Stikkbombs");
-        power = 5;
+        name = "Big Mek with Shokk attack gun";
+        grundkosten = getPts("Big Mek") + getPts("Stikkbombs") + getPts("Shokk attack gun");
+        power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
@@ -25,8 +25,9 @@ public class ORBigMek extends Eintrag {
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(true,false,true,true,true,true,true,false);
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false,false,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);

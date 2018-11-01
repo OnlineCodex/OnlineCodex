@@ -6,16 +6,16 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
-public class ORBattlewagon extends Eintrag {
+public class ORGunwagon extends Eintrag {
 
 	OptionsUpgradeGruppe fk;
 	OptionsZaehlerGruppe fk2;
 
-	public ORBattlewagon() {
+	public ORGunwagon() {
 
-		name = "Battlewagon";
-		grundkosten = getPts("Battlewagon");
-		power =8;
+		name = "Gunwagon";
+		grundkosten = getPts("Gunwagon");
+		power = 9;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Kampfpanza.gif"));
 		
@@ -32,12 +32,12 @@ public class ORBattlewagon extends Eintrag {
 		add(fk2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 		seperator();
-		
+
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Deff rolla", getPts("Deff rolla")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "'Ard Case", getPts("'Ard Case")));
 		
 		seperator();
-		
+
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grabbin' klaw", getPts("Grabbin' klaw")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot rigger", getPts("Grot rigger")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Lobba", getPts("Lobba")));
@@ -49,5 +49,6 @@ public class ORBattlewagon extends Eintrag {
 
 	//@OVERRIDE
 	public void refreshen() {
+		fk.alwaysSelected();
 	}
 }

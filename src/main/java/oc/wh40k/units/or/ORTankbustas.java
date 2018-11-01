@@ -4,16 +4,13 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsEinzelZaehler;
-import oc.RuestkammerStarter;
-import oc.RuestkammerVater;
-
 public class ORTankbustas extends Eintrag {
 
 	AnzahlPanel Panzaknakkaz;
 	OptionsEinzelZaehler Sprengsquiks;
 	OptionsEinzelZaehler Panzakloppa;
 	OptionsEinzelZaehler Pistolen;
-	RuestkammerStarter Boss;
+	OptionsEinzelUpgrade Boss;
 
 	public ORTankbustas() {
 
@@ -30,14 +27,7 @@ public class ORTankbustas extends Eintrag {
 
 		seperator();
 
-		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
-		Boss.setGrundkosten(getPts("Boss Nob"));
-		((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultNK("no weapon");
-		((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultFK("Rokkit launcha");
-		Boss.initKammer(false,false,false,false,true);
-		Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(Boss);
-		Boss.setAbwaehlbar(false);
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Boss Nob", getPts("Boss Nob")));
 		
 		seperator();
 
@@ -46,14 +36,14 @@ public class ORTankbustas extends Eintrag {
 
 	//@OVERRIDE
 	public void refreshen() {
-		Boss.setAbwaehlbar(true);
 		Sprengsquiks.setMaxAnzahl(Panzaknakkaz.getModelle()/5*2);
 		Pistolen.setMaxAnzahl(Panzaknakkaz.getModelle()/5);
-		if(Boss.isSelected()){
-			grundkosten = - getPts("Rokkit launcha");
+		if(Panzaknakkaz.getModelle()>10) {
+			power = 13;
+		} else if(Panzaknakkaz.getModelle()>5) {
+			power = 8;
 		} else {
-			grundkosten = 0;
+			power = 4;
 		}
-		power = 4 + (Panzaknakkaz.getModelle()-5)/5 * 3 + (Panzaknakkaz.getModelle()%5 > 0 ? 1 : 0) * 3;
 	}
 }

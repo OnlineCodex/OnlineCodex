@@ -4,24 +4,24 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
-public class ORPainboy extends Eintrag {
-    OptionsEinzelUpgrade grotorderly;
+public class ORDeffkillaWartrike extends Eintrag {
+
+    OptionsEinzelUpgrade attacksquig;
     RuestkammerStarter waffen;
     
     boolean megaBool=false;
+    boolean gazzBool=false;
 
-    public ORPainboy() {
-        name = "Painboy";
-        grundkosten = getPts("Painboy") + getPts("'Urty syringe");
-        power = 3;
+    public ORDeffkillaWartrike() {
+        name = "Deffkilla Wartrike";
+        grundkosten = getPts("Deffkilla Wartrike");
+        power = 6;
 
-        add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
-       
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power klaw");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
         waffen.initKammer(false,false,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
@@ -31,14 +31,5 @@ public class ORPainboy extends Eintrag {
     }
 
     @Override
-    public void refreshen() {
-    	
-    }
-    
-    @Override
-    public void deleteYourself() {
-    	addToInformationVector("ORHQ", -1);
-        super.deleteYourself();
-    }
-
+    public void refreshen() {}
 }

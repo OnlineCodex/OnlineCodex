@@ -3,8 +3,8 @@ package oc.wh40k.units.or;
 import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class ORDeffDreads extends Eintrag {
 
@@ -12,6 +12,10 @@ public class ORDeffDreads extends Eintrag {
 	OptionsZaehlerGruppe GargbotFK;
 	OptionsEinzelZaehler Grothälfaz;
 	OptionsEinzelZaehler Panzaplattenz;
+	
+	RuestkammerStarter d1;
+	RuestkammerStarter d2;
+	RuestkammerStarter d3;
 
 	public ORDeffDreads() {
 
@@ -19,30 +23,37 @@ public class ORDeffDreads extends Eintrag {
 		überschriftSetzen=true;
 		grundkosten = 0;
 
-		add(Gargbot = new AnzahlPanel(ID, randAbstand, cnt, "Deff Dread", "Deff Dreads", 1, 3, getPts("Deff Dreads") + getPts("Dread klaw") + getPts("each subsequent dread klaw")));
-
 		add(ico = new oc.Picture("oc/wh40k/images/Gargbot.gif"));
+
+		d1 = new RuestkammerStarter(ID, randAbstand, cnt, "ORDeffDreadKammer", "", 1);
+		d1.initKammer();
+		d1.setButtonText("Deff Dread 1");
+		add(d1);
+		d1.setAbwaehlbar(false);
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-		ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
-		ogE.addElement(new OptionsGruppeEintrag("Skorcha", getPts("skorcha")));
-		ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta", getPts("kustom mega-blasta")));
-		ogE.addElement(new OptionsGruppeEintrag("Dread klaw", getPts("each subsequent dread klaw")));
-		GargbotFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2);
-		add(GargbotFK);
-		seperator(15);
+		d2 = new RuestkammerStarter(ID, randAbstand, cnt, "ORDeffDreadKammer", "", 1);
+		d2.initKammer();
+		d2.setButtonText("Deff Dread 2");
+		add(d2);
+
+		seperator();
+
+		d3 = new RuestkammerStarter(ID, randAbstand, cnt, "ORDeffDreadKammer", "", 1);
+		d3.initKammer();
+		d3.setButtonText("Deff Dread 3");
+		add(d3);
 
 		complete();
-
 	}
 
 	//@OVERRIDE
 	public void refreshen() {
-		GargbotFK.setMaxAnzahl(Gargbot.getModelle()*2);
-		GargbotFK.setLegal(Gargbot.getModelle()*2 == GargbotFK.getAnzahl());
-		power = 1 + Gargbot.getModelle()* 7;
+		int selected = (d1.isSelected()?1:0) + (d2.isSelected()?1:0) + (d3.isSelected()?1:0);
+		if(selected == 1) power = 5;
+		if(selected == 2) power = 10;
+		if(selected == 3) power = 16;
 	}
 }
 

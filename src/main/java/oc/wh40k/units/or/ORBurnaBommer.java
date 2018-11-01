@@ -5,11 +5,16 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORBurnaBommer extends Eintrag {
 
+	OptionsEinzelUpgrade o1, o2;
+	
 	public ORBurnaBommer() {
 		name = "Burna-Bommer";
-		grundkosten = getPts("Burna-Bommer") + getPts("supa shoota") * 2 + getPts("Twin big shoota") + getPts("Burna bomb") *2;
-		power = 8;
+		grundkosten = getPts("Burna-Bommer");
+		power = 7;
 
+		add(o1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Supa shoota", getPts("supa shoota")));
+		add(o2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Twin big shoota", getPts("Twin big shoota")));
+		
 		add(ico = new oc.Picture("oc/wh40k/images/BrennaBomma.gif"));
 		
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt,"", "Skorcha missiles", getPts("Skorcha missile")));
@@ -19,5 +24,7 @@ public class ORBurnaBommer extends Eintrag {
 	}
 
 	public void refreshen() {
+		o1.setSelected(true);
+		o2.setSelected(true);
 	}
 }

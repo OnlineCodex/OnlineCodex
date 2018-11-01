@@ -8,7 +8,7 @@ public class ORMadDokGrotsnik extends Eintrag {
 		name = "Mad Dok Grotsnik";
 		kategorie = 1;
 		grundkosten = getPts("Mad Dok Grotsnik");
-        power = 7;
+        power = 5;
 
 		add(ico = new oc.Picture("oc/wh40k/images/DokGrotsnik.gif"));
 		

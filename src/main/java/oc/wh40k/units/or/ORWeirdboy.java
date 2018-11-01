@@ -9,13 +9,14 @@ public class ORWeirdboy extends Eintrag {
 
 	OptionsEinzelUpgrade o1;
 	RuestkammerStarter psychicPowers;
+    RuestkammerStarter waffen;
 	
 	public ORWeirdboy() {
 
 		kategorie = 1;
 		name = "Wyrdboy";
 		grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
-        power = 4;
+        power = 3;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Wyrdboy.gif"));
 		
@@ -27,11 +28,25 @@ public class ORWeirdboy extends Eintrag {
 		add(psychicPowers);
 		psychicPowers.setAbwaehlbar(false);
 		
+		seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false,false,false,false,false,false,true,true);
+        waffen.setButtonText("Waffen und Geschenke");
+        add(waffen);
+        waffen.setAbwaehlbar(false);
+		
 		complete();
 	}
 
 	//@OVERRIDE
 	public void refreshen() {
+		waffen.getPanel().setLocation(
+				(int) waffen.getPanel().getLocation().getX(),
+				(int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+	    );
 	}
 	
 }
