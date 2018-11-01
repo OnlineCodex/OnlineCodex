@@ -24,7 +24,7 @@ public class ORBattlewagon extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
 		ogE.addElement(new OptionsGruppeEintrag("Killkannon", getPts("Killkannon")));
 		ogE.addElement(new OptionsGruppeEintrag("Zzap gun", getPts("Zzap gun")));
-		add(fk);
+		add(fk = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 		seperator();
 
