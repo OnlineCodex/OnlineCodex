@@ -305,7 +305,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			
 			boolean gitstoppaNK = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
 			boolean gitstoppaFK = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
-			gitstoppaShells.setAktiv(gitstoppaNK || gitstoppaFK);
+			gitstoppaShells.setAktiv(chosenRelic == null && (gitstoppaNK || gitstoppaFK));
 			
 		}
 	}
