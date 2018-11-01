@@ -8,7 +8,7 @@ Big Mek with Shokk Attack Gun;55
 Blitza-bommer;108
 Bomb Squig;10
 Bonebreaka;140
-Boomdakka Snazzwagon;95
+Boomdakka Snazzwagons;95
 Boyz;7
 Burna Boyz;12
 Burna-bommer;102
@@ -28,7 +28,7 @@ Kommandos;9
 Kustom Boosta Blastas;100
 Lootas;17
 Meganobz;20
-Megatrukk Scrapajets;90
+Megatrakk Scrapjets;90
 Mek;22
 Mek Gunz;15
 Morkanaut;220
@@ -39,13 +39,14 @@ Painboy;52
 Painboy on Warbike;90
 Rukkatrukk Squigbuggies;140
 Runtherd;35
+Shokkjump Dragstas;108
 Skorchas;37
 Stompa;850
 Stormboyz;9
 Tankbustas;5
 Trukk;59
 Warbikers;23
-Warboss;63
+Warboss;65
 Warboss in Mega Armour;107
 Warboss on Warbike;86
 Warbuggies;33
@@ -104,7 +105,7 @@ Squig launcha;0
 Stikkbomb chukka;4
 Stikkbomb flinga;4
 Stikkbombs;0
-S_squigs:0
+Stikksquigs:0
 Supa shoota;10
 Supa-gatler;28
 Supa-rokkit;0

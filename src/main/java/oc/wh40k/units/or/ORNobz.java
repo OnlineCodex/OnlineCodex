@@ -14,6 +14,7 @@ public class ORNobz extends Eintrag {
 	OptionsZaehlerGruppe BosseFK;
 	OptionsZaehlerGruppe BosseFKx;
 	OptionsEinzelZaehler Munigrotz;
+	OptionsEinzelZaehler Cyborg;
 
 	public ORNobz() {
 		kategorie = 2;
@@ -26,7 +27,7 @@ public class ORNobz extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));//TODO: Nob-Waffen?
 		add(BosseCCx = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
@@ -44,7 +45,13 @@ public class ORNobz extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
         add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
+		seperator(5);
+		
 		add(Munigrotz = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo Runt", Bosse.getModelle(), getPts("Ammo Runt")));
+
+		seperator(5);
+		
+		add(Cyborg = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cybork body", Bosse.getModelle()/5, getPts("Cybork body")));
 
 		complete();
 	}
@@ -61,10 +68,12 @@ public class ORNobz extends Eintrag {
 		
 		Munigrotz.setMaxAnzahl(Bosse.getModelle());
 		
+		Cyborg.setMaxAnzahl(Bosse.getModelle()/5);
+		
 		if(Bosse.getModelle()>5){
-			power = 21;
+			power = 14;
 		} else {
-			power = 11;
+			power = 7;
 		}
 	}
 

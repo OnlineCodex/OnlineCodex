@@ -17,14 +17,14 @@ public class ORNobzonWarbikes extends Eintrag {
 		kategorie = 2;
 		grundkosten = 0;
 
-		Bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 3, 10, getPts("Nobz on Warbikes") + getPts("Stikkbombs"));
+		Bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 3, 9, getPts("Nobz on Warbikes") + getPts("Stikkbombs"));
 		add(Bosse);
 
 		add(ico = new oc.Picture("oc/wh40k/images/Bosse.gif"));
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));//TODO Nobwaffen
 		add(BosseCCx = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
@@ -54,11 +54,11 @@ public class ORNobzonWarbikes extends Eintrag {
 		BosseCC.setMaxAnzahl(Bosse.getModelle());
 		
 		if(Bosse.getModelle()>6){
-			power = 28;
-		} else if(Bosse.getModelle()>3){
 			power = 19;
+		} else if(Bosse.getModelle()>3){
+			power = 14;
 		} else {
-			power = 10;
+			power = 7;
 		}
 		
 	}

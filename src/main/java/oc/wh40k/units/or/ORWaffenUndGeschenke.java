@@ -99,7 +99,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		if(!defaultFK.equals("no weapon")) {
 		    if(defaultFK.equals("")){
 		    	ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
-		    } else {
+		    } else if(defaultFK.equals("Kombi-weapon with rokkit-launcha")) {
+		    	ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha"))); 
+		    	kombiFK = true;
+	    	} else {
 		    	ogE.addElement(new OptionsGruppeEintrag(defaultFK, getPts(defaultFK)));
 		    	if(defaultFK.equals("Kustom shoota")) {
 		    		kustomShootaFK = true;
@@ -107,7 +110,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		    }
 		}
 	    if(souped) {
-	    	ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha"))); 
+	    	if(!defaultFK.equals("Kombi-weapon with rokkit-launcha")) {
+		    	ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha"))); 
+	    	}
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta",getPts("Kustom mega-blasta"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
@@ -119,7 +124,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	    	if(defaultFK != "Kustom shoota"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Kustom shoota", getPts("Kustom shoota")));
 	    	}
-	        ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
+	    	if(!defaultFK.equals("Kombi-weapon with rokkit-launcha")) {
+	    		ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
+	    	}
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
 	        kombiFK = true;
 	        kustomShootaFK = true;
@@ -179,11 +186,15 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta",getPts("Kustom mega-blasta"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
-	        ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));
+			if(!defaultNK.equals("Kustom mega-slugga")) {
+				ogE.addElement(new OptionsGruppeEintrag("Kustom mega-slugga",getPts("Kustom mega-slugga")));
+			}
 	        kombiNK = true;
 	    }
 		if(melee) {
-	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+			if(!defaultNK.equals("Power klaw")) {
+				ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+			}
 	    	if(defaultNK != "Big choppa"){
 	    		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
 	    	}
@@ -244,7 +255,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			if(handwaffen != null){
 				handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
 			}
-			if(handwaffen != null && fkwaffen != null){//TODO auftrennen
+			if(handwaffen != null && fkwaffen != null){//TODO auftrennen //TODO taucht asl Option auf, wenn keine NK/FK Waffe ausgerüstet ist (z.B. beim Deffkilla)
 				gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
 										(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
 										handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));

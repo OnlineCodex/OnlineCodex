@@ -23,15 +23,16 @@ public class ORBurnaBoyz extends Eintrag {
 		seperator();
 
 		Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
+		((ORWaffenUndGeschenke)Spanner1.getKammer()).setDefaultNK("No weapon");
         ((ORWaffenUndGeschenke)Spanner1.getKammer()).setKillsawNK(true);
-        Spanner1.initKammer(false,false,true,false,false,false);
+        Spanner1.initKammer(false,false,true,false,false,false); //TODO: können nur mit mega-blasta, big shoota oder rokkit bewaffnet werden
         Spanner1.setGrundkosten(getPts("Spanner"));
         add(Spanner1);
         
         seperator();
 
 		Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
-        ((ORWaffenUndGeschenke)Spanner2.getKammer()).setKillsawNK(true);
+		((ORWaffenUndGeschenke)Spanner2.getKammer()).setDefaultNK("No weapon");
         Spanner2.initKammer(false,false,true,false,false,false);
         Spanner2.setGrundkosten(getPts("Spanner"));
         add(Spanner2);
@@ -39,6 +40,7 @@ public class ORBurnaBoyz extends Eintrag {
         seperator();
 
 		Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
+		((ORWaffenUndGeschenke)Spanner3.getKammer()).setDefaultNK("No weapon");
         ((ORWaffenUndGeschenke)Spanner3.getKammer()).setKillsawNK(true);
         Spanner3.initKammer(false,false,true,false,false,false);
         Spanner3.setGrundkosten(getPts("Spanner"));
@@ -50,6 +52,6 @@ public class ORBurnaBoyz extends Eintrag {
 
 	@Override
 	public void refreshen() {
-		power = 5 + (boyz.getModelle()-10)/10 * 4 + (boyz.getModelle()%10 > 0 ? 1 : 0) * 4;
+		power = boyz.getModelle()/10 * 3;
 	}
 }

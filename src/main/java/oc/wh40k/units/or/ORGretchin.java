@@ -21,6 +21,12 @@ public class ORGretchin extends Eintrag {
 
 	@Override
 	public void refreshen() {
-		power = 2 + (squad.getModelle()-10)/10 * 1 + (squad.getModelle()%10 > 0 ? 1 : 0) * 1;
+		if(squad.getModelle()>20) {
+			power = 4;
+		} else if(squad.getModelle()>10) {
+			power = 2;
+		} else {
+			power = 1;
+		}
 	}
 }

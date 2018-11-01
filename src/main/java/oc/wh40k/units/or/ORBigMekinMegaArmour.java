@@ -16,7 +16,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
         kategorie = 1;
         name = "Big Mek in Mega Armour";
         grundkosten = getPts("Big Mek in Mega Armour");
-        power = 7;
+        power = 6;
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
@@ -31,7 +31,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
         seperator();
     
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kustom mega-blasta");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kustom mega-blasta"); //TODO: Durch Killasäga oder Liste der Schießeisän
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power klaw");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawFK(true);
         waffen.initKammer(false,true,false,false,false,false,true,false);
