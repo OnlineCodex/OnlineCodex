@@ -6,28 +6,26 @@ import oc.RuestkammerStarter;
 
 public class ORStormboyz extends Eintrag {
 
-	AnzahlPanel Stormboyz;
-	RuestkammerStarter Boss;
-	
-	boolean ZagstrukSelected = false;
+	AnzahlPanel stormboyz;
+	RuestkammerStarter boss;
 	
 	public ORStormboyz() {
 
 		kategorie = 4;
 		grundkosten = 0;
 
-		add(Stormboyz = new AnzahlPanel(ID, randAbstand, cnt, "Stormboyz", 5, 30, getPts("Stormboyz")));
+		add(stormboyz = new AnzahlPanel(ID, randAbstand, cnt, "Stormboyz", 5, 30, getPts("Stormboyz")));
 
 		add(ico = new oc.Picture("oc/wh40k/images/Stormboyz.gif"));
 
 		seperator();
 
-		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
-		Boss.initKammer(true,false,false,false,false);
-		Boss.setGrundkosten(getPts("Boss Nob"));
-		Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(Boss);
-		Boss.setAbwaehlbar(false);
+		boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");//TODO: Nob-Waffen
+		boss.initKammer(true,false,false,false,false);
+		boss.setGrundkosten(getPts("Boss Nob"));
+		boss.setUeberschriftTrotzNullKostenAusgeben(true);
+		add(boss);
+		boss.setAbwaehlbar(false);
 
 		complete();
 	}
@@ -35,12 +33,12 @@ public class ORStormboyz extends Eintrag {
 	
 	//@OVERRIDE
 	public void refreshen() {
-		Boss.setAbwaehlbar(true);
-		if(Stormboyz.getModelle() > 20){
-			power = 13;
-		} else if(Stormboyz.getModelle() > 10){
+		boss.setAbwaehlbar(true);
+		if(stormboyz.getModelle() > 20){
+			power = 14;
+		} else if(stormboyz.getModelle() > 10){
 			power = 9;
-		} else if(Stormboyz.getModelle() > 5){
+		} else if(stormboyz.getModelle() > 5){
 			power = 5;
 		} else {
 			power = 3;
