@@ -53,5 +53,8 @@ public class ORBurnaBoyz extends Eintrag {
 	@Override
 	public void refreshen() {
 		power = boyz.getModelle()/10 * 3;
+		
+		Spanner2.setAktiv(boyz.getModelle()>=10);
+		Spanner3.setAktiv(boyz.getModelle()==15);
 	}
 }

@@ -63,5 +63,8 @@ public class ORLootas extends Eintrag {
 		} else {
 			power = 4;
 		}
+		
+		Spanner2.setAktiv(Pluenderaz.getModelle()>=10);
+		Spanner3.setAktiv(Pluenderaz.getModelle()==15);
 	}
 }
