@@ -43,6 +43,10 @@ public class ORWeirdboy extends Eintrag {
 
 	//@OVERRIDE
 	public void refreshen() {
+		waffen.getPanel().setLocation(
+				(int) waffen.getPanel().getLocation().getX(),
+				(int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+	    );
 	}
 	
 }
