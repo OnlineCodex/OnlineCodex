@@ -13,18 +13,15 @@ public class ORPainboy extends Eintrag {
     public ORPainboy() {
         name = "Painboy";
         grundkosten = getPts("Painboy") + getPts("'Urty syringe");
-        power = 6;
+        power = 3;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
-
-        add(grotorderly = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot orderly", getPts("Grot orderly")));
        
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power klaw");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
         waffen.initKammer(false,false,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

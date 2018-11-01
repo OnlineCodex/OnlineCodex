@@ -13,7 +13,7 @@ public class ORMek extends Eintrag {
     public ORMek() {
         name = "Mek";
         grundkosten = getPts("Mek") + getPts("Stikkbombs");
-        power = 3;
+        power = 2;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
      
@@ -24,8 +24,9 @@ public class ORMek extends Eintrag {
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kustom mega-slugga");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(false,false,true,false,false,false,true,false);
+        waffen.initKammer(false,false,false,false,false,false,true,false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);

@@ -8,16 +8,16 @@ import oc.RuestkammerStarter;
 
 public class ORKommandos extends Eintrag {
 
-	AnzahlPanel Kommandoz;
-	OptionsZaehlerGruppe KommandozFK;
-	RuestkammerStarter Boss;
+	AnzahlPanel kommandoz;
+	OptionsZaehlerGruppe kommandozFK;
+	RuestkammerStarter boss;
 
 	public ORKommandos() {
 		kategorie = 2;
 		grundkosten = 0;
 
-		Kommandoz = new AnzahlPanel(ID, randAbstand, cnt, "Kommandos", 5, 15, getPts("Kommandos"));
-		add(Kommandoz);
+		kommandoz = new AnzahlPanel(ID, randAbstand, cnt, "Kommandos", 5, 15, getPts("Kommandos"));
+		add(kommandoz);
 
 		add(ico = new oc.Picture("oc/wh40k/images/Kommandoz.gif"));
 		
@@ -27,24 +27,32 @@ public class ORKommandos extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
 		ogE.addElement(new OptionsGruppeEintrag("Burna", getPts("Burna")));
 		ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
-		add(KommandozFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+		add(kommandozFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 		seperator();
 
-		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
-		Boss.initKammer(true,false,false,false,false);
-		Boss.setGrundkosten(getPts("Boss Nob"));
-		Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(Boss);
-		Boss.setAbwaehlbar(false);
+		boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        ((ORWaffenUndGeschenke)boss.getKammer()).setDefaultNK("Power klaw");
+        ((ORWaffenUndGeschenke)boss.getKammer()).setDefaultFK("Slugga");
+        boss.initKammer(false,false,false,false,false);
+        boss.setGrundkosten(getPts("Boss Nob"));
+        boss.setUeberschriftTrotzNullKostenAusgeben(true);
+		add(boss);
+		boss.setAbwaehlbar(false);
 		
 		complete();
 	}
 	
 	//@OVERRIDE
 	public void refreshen() {
-		Boss.setAbwaehlbar(true);
-		power = 2 + Kommandoz.getModelle()/5*2;
+		boss.setAbwaehlbar(true);
+		if(kommandoz.getModelle()> 10) {
+			power = 6;
+		} else if(kommandoz.getModelle()> 5) {
+			power = 4;
+		} else {
+			power = 2;
+		}
 	}
 
 }

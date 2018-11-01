@@ -14,7 +14,7 @@ public class ORWarboss extends Eintrag {
 
     public ORWarboss() {
         name = "Warboss";
-        grundkosten = getPts("Warboss");
+        grundkosten = getPts("Warboss") + getPts("Slugga") * 2 + getPts("Stikkbombs");
         power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
@@ -24,8 +24,8 @@ public class ORWarboss extends Eintrag {
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kustom shoota");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Big choppa");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kombi-weapon with rokkit-launcha");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power klaw");
         waffen.initKammer(true,true,false,false,true,false,true);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

@@ -16,9 +16,8 @@ public class ORBoyz extends Eintrag {
 	
 	OptionsEinzelUpgrade wummen;
 	OptionsZaehlerGruppe boyzFK;
+	OptionsZaehlerGruppe boyzFK2;
 	OptionsEinzelUpgrade panzaboys;
-	OptionsEinzelUpgrade trophäenstange;
-	RuestkammerStarter PikkUp;
 	RuestkammerStarter Boss;
 
 	public ORBoyz() {
@@ -41,6 +40,9 @@ public class ORBoyz extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
 		add(boyzFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
+		ogE.addElement(new OptionsGruppeEintrag("Tankbusta-bombs", getPts("Tankbusta-bombs")));
+		add(boyzFK2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		
 		seperator();
 
 		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
@@ -61,6 +63,13 @@ public class ORBoyz extends Eintrag {
 		o1x.setAnzahl(0,o1x.getMaxAnzahl());
 		o1.setMaxAnzahl(boyz.getModelle() - (Boss.isSelected()?1:0) - boyzFK.getAnzahl());
 		boyzFK.setMaxAnzahl(boyz.getModelle() / 10);
-		power = 5 + (boyz.getModelle()-10)/10 * 4 + (boyz.getModelle()%10 > 0 ? 1 : 0) * 4;
+		boyzFK2.setMaxAnzahl(boyz.getModelle() / 10);
+		if(boyz.getModelle()>20) {
+			power = 11;
+		} else if(boyz.getModelle()>10) {
+			power = 7;
+		} else {
+			power = 4;
+		}
 	}
 }

@@ -16,7 +16,7 @@ public class ORWeirdboy extends Eintrag {
 		kategorie = 1;
 		name = "Wyrdboy";
 		grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
-        power = 4;
+        power = 3;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Wyrdboy.gif"));
 		
