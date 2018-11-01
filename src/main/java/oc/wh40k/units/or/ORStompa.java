@@ -15,7 +15,7 @@ public class ORStompa extends Eintrag {
 					  getPts("Supa-rokkit") +
 					  getPts("Skorcha") +
 					  getPts("Mega-choppa");
-		power = 49;
+		power = 46;
 
 		add(ico = new oc.Picture("oc/wh40k/images/Stampfa.gif"));
 		
