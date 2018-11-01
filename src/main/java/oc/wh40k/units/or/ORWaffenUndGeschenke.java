@@ -23,6 +23,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean killsawNK = false;
 	boolean character = false;
 	boolean psyker = false;
+	boolean spanner = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -66,6 +67,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	
 	public void setKillsawNK(boolean b){
 		killsawNK = b;
+	}
+	
+	public void setSpanner(boolean b){
+		spanner = b;
 	}
 	
 	@Override
@@ -159,6 +164,12 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 					ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
 				}
 	    	}
+			
+			if(spanner)
+			{ 
+		        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
+		        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
+			}
 			
 		    add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		    if(!defaultFK.equals("no weapon")) {
