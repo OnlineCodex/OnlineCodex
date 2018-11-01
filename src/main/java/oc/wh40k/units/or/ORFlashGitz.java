@@ -5,13 +5,15 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class ORFlashGitz extends Eintrag {
 
 	AnzahlPanel Gargbosse;
 	OptionsZaehlerGruppe GargbosseFK;
 	OptionsEinzelUpgrade captain;
-
+	RuestkammerStarter Boss;
+	
 	public ORFlashGitz() {
 
 		grundkosten = 0;
@@ -26,9 +28,16 @@ public class ORFlashGitz extends Eintrag {
 		add(GargbosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 5));
 
 		seperator();
-		
-		add(captain = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Kaptin: Choppa + Slugga", getPts("Choppa") + getPts("Slugga")));
-		captain.setSelected(true);
+				
+		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Kaptin");
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setKaptin(true);
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultNK("no weapon");
+        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultFK("no weapon");
+		Boss.initKammer(false,false,false,false,false);
+		Boss.setUeberschriftTrotzNullKostenAusgeben(true);
+		Boss.setGrundkosten(getPts("Kaptin"));
+		add(Boss);
+		Boss.setAbwaehlbar(false);
 		
 		complete();
 
@@ -37,10 +46,10 @@ public class ORFlashGitz extends Eintrag {
 	
 	//@OVERRIDE
 	public void refreshen() {
-		GargbosseFK.setMaxAnzahl(Gargbosse.getModelle());
+		GargbosseFK.setMaxAnzahl(Gargbosse.getModelle()/5);
 		power = 7;
 		if(Gargbosse.getModelle()>5){
-			power = 13;
+			power = 14;
 		}
 	}
 }
