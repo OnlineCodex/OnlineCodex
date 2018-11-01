@@ -24,6 +24,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean character = false;
 	boolean psyker = false;
 	boolean spanner = false;
+	boolean kaptin = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -71,6 +72,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	
 	public void setSpanner(boolean b){
 		spanner = b;
+	}
+	
+	public void setKaptin(boolean b){
+		kaptin = b;
 	}
 	
 	@Override
@@ -149,6 +154,16 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		if(killsawFK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		}
+		if(kaptin)
+		{ 
+	        ogE.addElement(new OptionsGruppeEintrag("Choppa",getPts("Choppa"))); 
+	        ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
+		}
+		if(spanner)
+		{ 
+	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
+	        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
+		}
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
 				if(kustomShootaFK) {
@@ -164,12 +179,6 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 					ogE.addElement(new OptionsGruppeEintrag("Da Killa Klaw", getPts("Power klaw")).setRelic(true));
 				}
 	    	}
-			
-			if(spanner)
-			{ 
-		        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
-		        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-			}
 			
 		    add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		    if(!defaultFK.equals("no weapon")) {
@@ -236,6 +245,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			if(!defaultNK.equals("no weapon")) {
 				handwaffen.setSelected(0, true);
 			}
+		}
+		
+		if(kaptin)
+		{
+			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gitfinda squig", getPts("Gitfinda squig")));
 		}
 		
 		seperator();

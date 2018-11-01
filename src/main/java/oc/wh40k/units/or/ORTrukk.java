@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORTrukk extends Eintrag {
 
-	OptionsEinzelUpgrade ball;
+	OptionsUpgradeGruppe ball;
 	OptionsUpgradeGruppe tech;
 
 	public ORTrukk() {
@@ -20,13 +20,19 @@ public class ORTrukk extends Eintrag {
 		seperator();
 
 		ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
+        //ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
         add(tech = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		seperator();
-
-        add(ball=new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", getPts("Wreckin' ball")));
-
+       
+		ogE.addElement(new OptionsGruppeEintrag("Wreckin' ball", getPts("Wreckin' ball")));
+        ogE.addElement(new OptionsGruppeEintrag("Megagreifa", getPts("Megagreifa")));
+        add(ball = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		
+        seperator();
+		
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb flinga", getPts("Stikkbomb flinga")));
+        
 		complete();
 	}
 
