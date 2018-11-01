@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 public class ORMekGunz extends Eintrag {
 
 	AnzahlPanel wummen;
-	OptionsZaehlerGruppe FK2;
+	OptionsZaehlerGruppe fk2;
 
 	public ORMekGunz() {
         grundkosten = 0;
@@ -16,7 +16,7 @@ public class ORMekGunz extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/MegawummeKanonae.gif"));
 		
 
-        add(wummen = new AnzahlPanel(ID, randAbstand, cnt, "Mek Gun","Mek Gunz", 1, 6, getPts("Mek Gunz") + getPts("Grot gunners") * 5));
+        add(wummen = new AnzahlPanel(ID, randAbstand, cnt, "Mek Gun","Mek Gunz", 1, 6, getPts("Mek Gunz")));
 
 		seperator();
 
@@ -24,8 +24,8 @@ public class ORMekGunz extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("Kustom mega-kannon", getPts("Kustom mega-kannon")));
 		ogE.addElement(new OptionsGruppeEintrag("Smasha gun", getPts("Smasha gun")));
 		ogE.addElement(new OptionsGruppeEintrag("Traktor kannon", getPts("Traktor kannon")));
-		add(FK2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		FK2.setAnzahl(1, 1);
+		add(fk2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+		fk2.setAnzahl(1, 1);
 		
 		complete();
 	}
@@ -33,10 +33,10 @@ public class ORMekGunz extends Eintrag {
 
 	//@OVERRIDE
 	public void refreshen() {
-		FK2.setMaxAnzahl(wummen.getModelle());
-		FK2.setLegal(FK2.getAnzahl() == wummen.getModelle());
+		fk2.setMaxAnzahl(wummen.getModelle());
+		fk2.setLegal(fk2.getAnzahl() == wummen.getModelle());
 
-		power = 1 + wummen.getModelle() * 2;
+		power = wummen.getModelle() * 2;
 		
 	}
 }
