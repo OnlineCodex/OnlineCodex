@@ -26,7 +26,7 @@ public class ORTrukk extends Eintrag {
 		seperator();
        
 		ogE.addElement(new OptionsGruppeEintrag("Wreckin' ball", getPts("Wreckin' ball")));
-        ogE.addElement(new OptionsGruppeEintrag("Megagreifa", getPts("Megagreifa")));
+        ogE.addElement(new OptionsGruppeEintrag("Grabbin' klaw", getPts("Grabbin' klaw")));
         add(ball = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 		
         seperator();
