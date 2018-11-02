@@ -118,7 +118,7 @@ public String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"", "Kytan Ra
 	public String[] Fliegereinträge_Questor_Traitoris = new String[]{""};
 	public String[] Transporteinträge_Questor_Traitoris = new String[]{""};
 	public String[] Befestigungseinträge_Questor_Traitoris = new String[]{""};
-	public String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight"};
+	public String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight", "Renegade Knight Dominus", "Renegade Armiger"};
 	
 	/*
 	 * Daemons
