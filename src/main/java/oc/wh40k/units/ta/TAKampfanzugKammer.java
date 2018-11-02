@@ -105,6 +105,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 			ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
 			ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
 			ogE.addElement(new OptionsGruppeEintrag("Plasma rifle", getPts("Plasma rifle")));
+			if(!coldstar)
+				ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
 			add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
 			if(commander){		
 				o1.setMaxAnzahl(4);
