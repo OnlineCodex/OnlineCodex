@@ -18,7 +18,7 @@ public class ORKaptinBadrukk extends Eintrag {
 
 		seperator();
 
-		Munigrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo runt", 3, getPts("Ammo runt"));
+		Munigrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo runt", 1, getPts("Ammo runt"));
 		add(Munigrot);
 
 		complete();
