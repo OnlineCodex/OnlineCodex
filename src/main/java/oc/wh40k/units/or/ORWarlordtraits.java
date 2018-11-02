@@ -17,11 +17,11 @@ public class ORWarlordtraits extends Eintrag {
 		grundkosten = 0;
 		power = 0;
 
-		ogE.addElement(new OptionsGruppeEintrag("Mir nach, Boyz!", getPts("")));
-		ogE.addElement(new OptionsGruppeEintrag("Grosswildjäga", getPts("")));
-		ogE.addElement(new OptionsGruppeEintrag("Zäh wie Suqigleda", getPts("")));
-		ogE.addElement(new OptionsGruppeEintrag("Brutal, aba Kläva", getPts("")));
-		ogE.addElement(new OptionsGruppeEintrag("Kläva, aber Brutal", getPts("")));
+		ogE.addElement(new OptionsGruppeEintrag("Follow me Ladz", getPts("")));
+		ogE.addElement(new OptionsGruppeEintrag("Big Killa Boss", getPts("")));
+		ogE.addElement(new OptionsGruppeEintrag("Ard as Nails", getPts("")));
+		ogE.addElement(new OptionsGruppeEintrag("Brutal but Kunnin", getPts("")));
+		ogE.addElement(new OptionsGruppeEintrag("Kunnin but Brutal", getPts("")));
 		ogE.addElement(new OptionsGruppeEintrag("Might is Right", getPts("")));
 		
 		ogE.addElement(new OptionsGruppeEintrag("Bad Moons: Da bestä Rüstung wo man für Zähnä kauf'n kann", getPts("")));
