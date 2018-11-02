@@ -77,18 +77,29 @@ Instrument of Chaos;10
 Rod of sorcery;10
 Staff of change;5
 
-Renegade Knight;320
+Renegade Armiger;160
+Renegade Knight;285
+Renegeade Knight Dominus;500
 
 Reaper chainsword;30
 Thunderstrike gauntlet;35
 Titanic feet;0
+Reaper chain-cleaver;0
 
-Avenger gatling cannon;95
+Armiger autocannon;5
+Avenger gatling cannon;75
+Conflagration cannon;0
 Ironstorm missile pod;16
 Rapid fire battle cannon;100
 Stormspear rocket pod;45
 Thermal cannon;76
+Thermal spear;0
 Twin Icarus autocannon;30
+Shieldbreaker missile;12
+Thundercoil harpoon;0
+Twin meltagun;0
+Twin siegebreaker cannon;35
+Volcano lance;10
 
 Chaos Bastion;160
 
@@ -381,6 +392,7 @@ Kheres assault cannon;25
 Twin multi-melta:54
 Soulburner bombard;90
 Plasma destroyer;52
+Plasma decimator;0
 Infernal flamestorm cannon;45
 Magna-melta cannon;70
 Scorpius multi-launcher;40
