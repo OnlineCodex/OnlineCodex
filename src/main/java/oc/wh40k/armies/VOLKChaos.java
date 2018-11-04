@@ -9,9 +9,12 @@ import oc.Formation;
 import oc.FormationEntry;
 import oc.RefreshListener;
 import oc.Superformation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKChaos extends BuildaVater {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKChaos.class);
 
 	/*
 	 * FW
@@ -410,7 +413,7 @@ public String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"", "Kytan Ra
 	
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

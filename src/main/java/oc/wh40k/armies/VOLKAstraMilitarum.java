@@ -11,8 +11,12 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.RefreshListener;
 import oc.Superformation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKAstraMilitarum extends BuildaVater {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKAstraMilitarum.class);	
 
 	public JCheckBox Cadian = new JCheckBox("Cadians");
 
@@ -698,7 +702,7 @@ public class VOLKAstraMilitarum extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 	public void hideVolkCheckboxes(){

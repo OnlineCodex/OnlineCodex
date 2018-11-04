@@ -69,7 +69,7 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
 	@Override
 	public void refreshen() {
 		
-		//System.out.println("numVeterans" + numVeterans + "squad.getModelle()" + squad.getModelle() + "rk.size()" + rk.size());
+		//LOGGER.info("numVeterans" + numVeterans + "squad.getModelle()" + squad.getModelle() + "rk.size()" + rk.size());
 		
 		boolean intercessorChanged = numIntercessor != intercessors.getModelle();
 		boolean sergeantChanged = numSergeant != sergeant.getModelle();

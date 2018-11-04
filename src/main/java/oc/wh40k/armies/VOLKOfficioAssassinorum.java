@@ -3,8 +3,12 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKOfficioAssassinorum extends BuildaVater {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKOfficioAssassinorum.class);
 
   public VOLKOfficioAssassinorum() {
     reflectionKennung = "OA";
@@ -123,6 +127,6 @@ public class VOLKOfficioAssassinorum extends BuildaVater {
   
   @Override
   protected void finalize() {
-    System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+    LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
   }
 }

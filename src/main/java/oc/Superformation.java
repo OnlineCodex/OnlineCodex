@@ -1,5 +1,8 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -18,6 +21,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class Superformation implements BuildaSTK{
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(Superformation.class);
 
 	private static Superformation superformation;
 	public String reflectionKennungLokal="";
@@ -52,7 +57,7 @@ public class Superformation implements BuildaSTK{
 	        JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
 	        int index = sourceTabbedPane.getSelectedIndex();
 
-	        System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
+	        LOGGER.info("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
 	        if(index==0){
 	        	BuildaVater bV = buildaVater;
 	        	for(int i=0;i<bV.getChooserAnzahl();i++){
@@ -260,7 +265,7 @@ public class Superformation implements BuildaSTK{
 	}
 	
 	public String getSaveText() {
-		//System.out.println(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
+		//LOGGER.info(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
 		String s="";
 		for(int i=0;i<formationen.size();i++){
 			String title = tab.getTitleAt(i+1);
@@ -282,7 +287,7 @@ public class Superformation implements BuildaSTK{
 		String armies[]=saveText.split(SAVETEXT_SUBDETACHMENTTRENNER);
 		for(int i=0;i<armies.length;i++){
 			try{
-				System.out.println(armies[i]);
+				LOGGER.info(armies[i]);
 				BuildaVater myBuilder= new LeererBuilder();
 				String name = volkFile;
 				
@@ -296,7 +301,6 @@ public class Superformation implements BuildaSTK{
 				myBuilder = (BuildaVater) (Class.forName(name).newInstance());
 				formationen.add(myBuilder);
 				
-				System.out.println(formationen.size());
 				JPanel buildaPanel = formationen.get(i).getPanel();
 				buildaPanel.setPreferredSize(new Dimension(3450, 7950));
 				buildaPanel.setSize(3450, 7950);
@@ -369,7 +373,7 @@ public class Superformation implements BuildaSTK{
 					}else if(event.getSource()==comboSupport && comboSupport.getSelectedItem().equals("")){
 						return;//Es soll kein Leerer Tab eingefügt werden
 					}else {
-						System.out.println(Class.forName(name));
+						LOGGER.info(name);
 						myBuilder = (BuildaVater) (Class.forName(name).newInstance());
 					}
 				} else if(type == 1){
@@ -383,7 +387,7 @@ public class Superformation implements BuildaSTK{
 		        		} else {
 		        			name = volkFile;
 		        		}
-						System.out.println(Class.forName(name));
+						LOGGER.info(name);
 						myBuilder = (BuildaVater) (Class.forName(name).newInstance());
 					}
 				}
@@ -394,7 +398,7 @@ public class Superformation implements BuildaSTK{
 				buildaPanel.setSize(3450, 7950);
 				formationen.add(myBuilder);
 				myBuilder.setTextArea(tA);
-				System.out.println(BuildaHQ.aktBuildaVater.informationList);
+				LOGGER.info("BuilderVater.informationList: {}", BuildaHQ.aktBuildaVater.informationList);
 				
 				JScrollPane sp = new JScrollPane(buildaPanel);
 				sp.addMouseMotionListener(OnlineCodex.getInstance().getDragAndDropMouseMotionListener());
@@ -453,8 +457,8 @@ public class Superformation implements BuildaSTK{
 				tA.textAreaRefresh();
 				RefreshListener.fireRefresh();
 				tab.setSelectedIndex(0);
-				System.out.println("Formationen1:"+superformation.formationen.size());
-				System.out.println("Formationen2:"+formationen.size());
+				LOGGER.info("Formationen1:"+superformation.formationen.size());
+				LOGGER.info("Formationen2:"+formationen.size());
 			} catch (Exception e) {
 //				fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
 				e.printStackTrace();

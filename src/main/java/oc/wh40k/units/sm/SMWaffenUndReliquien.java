@@ -7,8 +7,13 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RefreshListener;
 import oc.RuestkammerVater;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SMWaffenUndReliquien extends RuestkammerVater {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(SMWaffenUndReliquien.class);
+    
 	//TODO Nur 1 Artefakt
 	OptionsUpgradeGruppe o1;
 	OptionsZaehlerGruppe o2;
@@ -238,7 +243,7 @@ public class SMWaffenUndReliquien extends RuestkammerVater {
 	@Override
 	public void refreshen() {
 
-		System.out.println("refresh SMWaffenundReliquien");
+		LOGGER.info("refresh SMWaffenundReliquien");
 		
 		boolean EcclesiarchyRelics = getCountFromInformationVector("EcclesiarchyRelics")>0;
 		
@@ -719,7 +724,7 @@ public class SMWaffenUndReliquien extends RuestkammerVater {
 		boolean entrySwitched=false;
 
 		if(entrySwitched){
-			System.out.println("entryswitched SMWaffenundReliquien");
+			LOGGER.info("entryswitched SMWaffenundReliquien");
 			//Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
 			//Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet, 
 			//der Text aber nicht aktualisiert.

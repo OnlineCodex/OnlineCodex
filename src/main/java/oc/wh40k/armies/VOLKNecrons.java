@@ -5,8 +5,12 @@ import java.io.InputStream;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKNecrons extends BuildaVater {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKNecrons.class);
 	
 	//Vanilla Necrons
 	public String[] HQeinträge_NE = new String[] {"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
@@ -203,6 +207,6 @@ public class VOLKNecrons extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

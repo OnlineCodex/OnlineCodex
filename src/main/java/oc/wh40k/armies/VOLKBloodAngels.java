@@ -2,11 +2,13 @@ package oc.wh40k.armies;
 
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKBloodAngels extends BuildaVater {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKBloodAngels.class);
 
-	
 	public VOLKBloodAngels() {
 		reflectionKennung = "BA";
 
@@ -522,6 +524,6 @@ public class VOLKBloodAngels extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

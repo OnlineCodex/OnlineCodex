@@ -4,8 +4,12 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RefreshListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class SMOrden extends Eintrag {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(SMOrden.class);
 
     OptionsUpgradeGruppe ordenHaupt;
 	int orden=-1;
@@ -46,7 +50,7 @@ public class SMOrden extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Astral Claws", 0));
 		add(ordenHaupt = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		System.out.println(ally);
+		LOGGER.info(ally);
 		
 		complete();
 	}

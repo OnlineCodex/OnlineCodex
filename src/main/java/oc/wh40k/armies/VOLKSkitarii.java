@@ -5,8 +5,12 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.RefreshListener;
 import oc.Superformation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKSkitarii extends BuildaVater {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKSkitarii.class);
 
   public VOLKSkitarii() {
     reflectionKennung = "SK";
@@ -240,7 +244,7 @@ public class VOLKSkitarii extends BuildaVater {
   
   @Override
   protected void finalize() {
-    System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+    LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
   }
 }
 

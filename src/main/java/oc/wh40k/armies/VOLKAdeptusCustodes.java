@@ -4,8 +4,12 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.Formation;
 import oc.FormationEntry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKAdeptusCustodes extends BuildaVater {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKAdeptusCustodes.class);
 
 	public VOLKAdeptusCustodes() {
 		reflectionKennung = "AC";
@@ -101,7 +105,7 @@ public class VOLKAdeptusCustodes extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 	
 	@Override
