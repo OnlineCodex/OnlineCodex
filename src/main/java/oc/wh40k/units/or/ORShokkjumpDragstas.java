@@ -13,7 +13,7 @@ public class ORShokkjumpDragstas extends Eintrag {
 		kategorie = 4;
 		grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas"));
+		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas") + getPts("Rokkit launcha"));
 		add(buggies);
 
 		add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));

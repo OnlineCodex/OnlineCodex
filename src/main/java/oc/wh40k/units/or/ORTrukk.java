@@ -11,17 +11,10 @@ public class ORTrukk extends Eintrag {
 	OptionsUpgradeGruppe tech;
 
 	public ORTrukk() {
-		grundkosten = getPts("Trukk");
+		grundkosten = getPts("Trukk") + getPts("Big shoota");
 		power = 3;
 		name= "Trukk";
 		add(ico = new oc.Picture("oc/wh40k/images/Pikk-Up.gif"));
-		
-
-		seperator();
-
-		ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-        //ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
-        add(tech = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 		seperator();
        
@@ -31,14 +24,13 @@ public class ORTrukk extends Eintrag {
 		
         seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb Chucka", getPts("Stikkbomb chukka")));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb Chukka", getPts("Stikkbomb chukka")));
         
 		complete();
 	}
 
 	// @OVERRIDE
 	public void refreshen() {
-		tech.alwaysSelected();
 	}
 
 }
