@@ -30,7 +30,17 @@
     </issueManagement>
 
   <dependencies>
-    <dependency>
+      <dependency>
+          <groupId>com.google.guava</groupId>
+          <artifactId>guava</artifactId>
+          <version>27.0-jre</version>
+      </dependency>
+      <dependency>
+          <groupId>org.kohsuke</groupId>
+          <artifactId>github-api</artifactId>
+          <version>1.94</version>
+      </dependency>
+      <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
       <version>1.7.5</version>
