@@ -25,8 +25,6 @@ public class DKABCombatEngineerSquad extends Eintrag {
 		grundkosten = 10;
         überschriftSetzen = true;
 
-        LOGGER.info(getKategorie());
-        
 		add(ico = new oc.Picture("oc/wh40k/images/IGVeteranSquad.jpg"));
 
 		seperator();

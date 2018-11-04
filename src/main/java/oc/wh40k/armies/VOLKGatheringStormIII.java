@@ -239,9 +239,4 @@ public class VOLKGatheringStormIII extends BuildaVater {
 		fillChooserSpace();
 	}
 
-	@Override
-	protected void finalize() {
-		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
-
 }

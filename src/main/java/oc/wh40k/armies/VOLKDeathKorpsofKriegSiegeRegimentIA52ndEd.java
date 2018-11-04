@@ -142,9 +142,5 @@ public class VOLKDeathKorpsofKriegSiegeRegimentIA52ndEd extends BuildaVater {
 
 	fillChooserSpace();
 }
-	
-	protected void finalize() {
-		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
 
 }

@@ -56,7 +56,6 @@ public class TAXV8CrisisBodyguards extends Eintrag {
 	public void refreshen() {
     	int krisisNumber = 0;
     	for(int i=0;i<9;i++){
-    		LOGGER.info(i);
     		krisisNumber+=(rk.get(i).isSelected() && rk.get(i).isAktiv() ? 1 : 0);
     	}
     			

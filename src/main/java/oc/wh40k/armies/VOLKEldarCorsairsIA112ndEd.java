@@ -219,9 +219,4 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 		fillChooserSpace();
 	}
 
-	@Override
-	protected void finalize() {
-		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
-
 }

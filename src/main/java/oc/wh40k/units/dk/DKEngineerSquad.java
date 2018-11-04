@@ -12,8 +12,6 @@ import org.slf4j.LoggerFactory;
 
 public class DKEngineerSquad extends Eintrag {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(DKEngineerSquad.class);
-
 	OptionsEinzelUpgrade o1;
 	OptionsEinzelUpgrade o2;
 	RuestkammerStarter rkTransport;
@@ -24,8 +22,6 @@ public class DKEngineerSquad extends Eintrag {
 		grundkosten = 10;
         überschriftSetzen = true;
 
-        LOGGER.info(getKategorie());
-        
 		add(ico = new oc.Picture("oc/wh40k/images/IGVeteranSquad.jpg"));
 
 		seperator();

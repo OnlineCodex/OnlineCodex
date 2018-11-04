@@ -92,9 +92,4 @@ public class VOLKDeathKorpsofKriegSiegeRegimentDownload extends BuildaVater {
 		
 		complete();
 	}
-
-	protected void finalize() {
-		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
-
 }
