@@ -48,7 +48,7 @@ public class CHRenegadeKnight extends Eintrag {
         add(stubber = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         stubber.setSelected(0, true);
         
-        power = 23;
+        power = 25;
         
 		complete();
 	}

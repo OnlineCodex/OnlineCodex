@@ -14,6 +14,23 @@ public class VOLKChaos extends BuildaVater {
 
 
 	/*
+	 * FW
+	 */
+	
+	public String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Uraka The Warfiend", "Samus", "Mamon Transfigured", "Corbax Utterblight"};
+public String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator", "Hellforged Contemptor Dreadnought"};
+public String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
+public String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw", "Plague Toads Of Nurgle", "Pox Riders Of Nurgle"};
+public String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Plague Hulk Of Nurgle", 
+		"Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Predator", "Hellforged Scorpius", "Hellforged Sicarian", "Hellforged Sicarian Venator", "Hellforged Deredeo Dreadnought", "Hellforged Rapier Battery", "Hellforged Leviathan Dreadnought", "Spined Chaos Beast"};
+public String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{""};
+public String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Hell Blade", "Chaos Hell Talon", "Chaos Storm Eagle Assault Gunship", "Chaos Fire Raptor Assault Gunship", "Chaos Xiphon Interceptor"};
+public String[] Befestigungseinträge_Chaos_Space_Marines_FW = new String[]{""};
+public String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"", "Kytan Ravager", "Greater Brass Scorpion Of Khorne", "Hellforged Spartan Assault Tank", "Hellforged Cerberus Heavy Destroyer", "Hellforged Typhon Heavy Siege Tank", "Hellforged Fellblade", 
+		"Hellforged Falchion", "Hellforged Mastodon", "Chaos Thunderhawk Assault Gunship", "Chaos Sokar Pattern Stormbird Gunship", "Anggrath The Unbound", "Zarakynel", "Aetaos'rau'keres", "Scabeiathrax The Bloated",
+		"Renegade Knight Acheron", "Renegade Knight Lancer", "Renegade Knight Castigator", "Renegade Knight Atropos", "Renegade Knight Magaera", "Renegade Knight Porphyrion", "Renegade Knight Styrix", "", "Chaos Warlord Battle Titan", "Chaos Reaver Battle Titan", "Chaos Warhound Scout Titan"};
+	
+	/*
 	 * Chaos Space Marines
 	 */
 	
@@ -21,18 +38,15 @@ public class VOLKChaos extends BuildaVater {
 				"Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour", "Chaos Lord on Bike", "Chaos Lord on Juggernaut of Khorne", "Chaos Lord on Disc of Tzeentch",
 				"Chaos Lord on Palanquin of Nurgle", "Chaos Lord on Steed of Slaanesh", "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
 				"Sorcerer", "Sorcerer in Terminator Armour", "Sorcerer on Bike", "Sorcerer on Disc of Tzeentch", "Sorcerer on Palanquin of Nurgle", "Sorcerer on Steed of Slaanesh", 
-				"Warpsmith", "Lord of Contagion", "Malignant Plaguecaster", "", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Uraka The Warfiend", "Samus", "Mamon Transfigured", "Corbax Utterblight"};
-	public String[] Eliteeinträge_Chaos_Space_Marines = new String[]{"", "Fallen", "Chaos Terminators", "Khorne Berzerkers", "Rubric Marines", "Plague Marines CSM", "Noise Marines", "Chosen", "Possessed", "Helbrute", "Mutilators", "", "Chaos Decimator", "Hellforged Contemptor Dreadnought"};
+				"Warpsmith", "Lord of Contagion", "Malignant Plaguecaster"};
+	public String[] Eliteeinträge_Chaos_Space_Marines = new String[]{"", "Fallen", "Chaos Terminators", "Khorne Berzerkers", "Rubric Marines", "Plague Marines CSM", "Noise Marines", "Chosen", "Possessed", "Helbrute", "Mutilators"};
 	public String[] Standardeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers", "Bloodletters", "Horrors", "Plaguebearers", "Daemonettes"};
-	public String[] Sturmeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn", "", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw", "Plague Toads Of Nurgle", "Pox Riders Of Nurgle"};
-	public String[] Unterstützungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler", "", "Plague Hulk Of Nurgle", 
-			"Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Predator", "Hellforged Scorpius", "Hellforged Sicarian", "Hellforged Sicarian Venator", "Hellforged Deredeo Dreadnought", "Hellforged Rapier Battery", "Hellforged Leviathan Dreadnought", "Spined Chaos Beast"};
+	public String[] Sturmeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
+	public String[] Unterstützungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler"};
 	public String[] Transporteinträge_Chaos_Space_Marines = new String[]{"", "Chaos Rhino"};
-	public String[] Fliegereinträge_Chaos_Space_Marines = new String[]{"", "Heldrake", "", "Chaos Hell Blade", "Chaos Hell Talon", "Chaos Storm Eagle Assault Gunship", "Chaos Fire Raptor Assault Gunship", "Chaos Xiphon Interceptor"};
+	public String[] Fliegereinträge_Chaos_Space_Marines = new String[]{"", "Heldrake"};
 	public String[] Befestigungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bastions"};
-	public String[] LOWeinträge_Chaos_Space_Marines = new String[]{"", "Khorne Lord of Skulls", "", "Kytan Ravager", "Greater Brass Scorpion Of Khorne", "Hellforged Spartan Assault Tank", "Hellforged Cerberus Heavy Destroyer", "Hellforged Typhon Heavy Siege Tank", "Hellforged Fellblade", 
-			"Hellforged Falchion", "Hellforged Mastodon", "Chaos Thunderhawk Assault Gunship", "Chaos Sokar Pattern Stormbird Gunship", "Anggrath The Unbound", "Zarakynel", "Aetaos'rau'keres", "Scabeiathrax The Bloated",
-			"Renegade Knight Acheron", "Renegade Knight Lancer", "Renegade Knight Castigator", "Renegade Knight Atropos", "Renegade Knight Magaera", "Renegade Knight Porphyrion", "Renegade Knight Styrix", "", "Chaos Warlord Battle Titan", "Chaos Reaver Battle Titan", "Chaos Warhound Scout Titan"};
+	public String[] LOWeinträge_Chaos_Space_Marines = new String[]{"", "Khorne Lord of Skulls"};
 
 	/*
 	 * World Eaters
@@ -104,7 +118,7 @@ public class VOLKChaos extends BuildaVater {
 	public String[] Fliegereinträge_Questor_Traitoris = new String[]{""};
 	public String[] Transporteinträge_Questor_Traitoris = new String[]{""};
 	public String[] Befestigungseinträge_Questor_Traitoris = new String[]{""};
-	public String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight"};
+	public String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight", "Renegade Knight Dominus", "Renegade Armiger"};
 	
 	/*
 	 * Daemons
@@ -235,89 +249,132 @@ public class VOLKChaos extends BuildaVater {
   	public void volkRefresh() {
 		
     	if(getFormationType().equals("CHAOS")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard),HQeinträge_ThousandSons), HQeinträge_Daemons));
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard),Eliteeinträge_ThousandSons), Eliteeinträge_Daemons));
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Daemons));
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard),Sturmeinträge_ThousandSons), Sturmeinträge_Daemons));
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard),Unterstützungseinträge_ThousandSons), Unterstüzungseinträge_Daemons));
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Daemons));
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
-					LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard),LOWeinträge_ThousandSons),LOWeinträge_Questor_Traitoris));
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard), HQeinträge_ThousandSons), HQeinträge_Daemons), HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard),Eliteeinträge_ThousandSons), Eliteeinträge_Daemons), Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
+					new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Daemons), Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard),Sturmeinträge_ThousandSons), Sturmeinträge_Daemons), Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard),Unterstützungseinträge_ThousandSons), Unterstüzungseinträge_Daemons), Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+					Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+					Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
+					Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Daemons), Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard),LOWeinträge_ThousandSons),LOWeinträge_Questor_Traitoris), LOWeinträge_Chaos_Space_Marines_FW));
 		}
     	
     	if(getFormationType().equals("Heretic Astartes")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard),HQeinträge_ThousandSons));
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard),Eliteeinträge_ThousandSons));
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"});
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard),Sturmeinträge_ThousandSons));
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard),Unterstützungseinträge_ThousandSons));
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungseinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
-					LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard),LOWeinträge_ThousandSons),LOWeinträge_Questor_Traitoris));
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+					HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard),HQeinträge_ThousandSons), HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+					Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard),Eliteeinträge_ThousandSons), Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+					new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+					Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard),Sturmeinträge_ThousandSons), Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+					Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard),Unterstützungseinträge_ThousandSons), Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+					Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+					Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+					Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+					LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard),LOWeinträge_ThousandSons),LOWeinträge_Questor_Traitoris), LOWeinträge_Chaos_Space_Marines_FW));
 		}
 		
     	if(getFormationType().equals("Chaos Space Marines")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungseinträge_Chaos_Space_Marines);
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_Chaos_Space_Marines);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+					HQeinträge_Chaos_Space_Marines, HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(
+					uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+					Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+					Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+					Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+					Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+					Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+					Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+					LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
 		}
     	
     	if(getFormationType().equals("World Eaters")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_World_Eaters);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_World_Eaters);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_World_Eaters);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_World_Eaters);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_World_Eaters);
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_World_Eaters);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_World_Eaters);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_World_Eaters);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+					HQeinträge_World_Eaters, HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(
+					Eliteeinträge_World_Eaters, Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+					Standardeinträge_World_Eaters, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+					Sturmeinträge_World_Eaters, Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+					Unterstützungseinträge_World_Eaters, Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+					Transporteinträge_World_Eaters, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+					Fliegereinträge_World_Eaters, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+					new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+					LOWeinträge_World_Eaters, LOWeinträge_Chaos_Space_Marines_FW));
 		}
     	
     	if(getFormationType().equals("Thousand Sons")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_ThousandSons);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_ThousandSons);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_ThousandSons);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_ThousandSons);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_ThousandSons);
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_ThousandSons);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_ThousandSons);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_ThousandSons);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+					HQeinträge_ThousandSons, HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(
+					Eliteeinträge_ThousandSons, Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+					Standardeinträge_ThousandSons, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+					Sturmeinträge_ThousandSons, Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+					Unterstützungseinträge_ThousandSons, Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+					Transporteinträge_ThousandSons, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+					Fliegereinträge_ThousandSons, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+					new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+					LOWeinträge_ThousandSons, LOWeinträge_Chaos_Space_Marines_FW));
 		}
     	
     	if(getFormationType().equals("Death Guard")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Death_Guard);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Death_Guard);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Death_Guard);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Death_Guard);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Death_Guard);
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Death_Guard);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Death_Guard);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Death_Guard, HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Death_Guard, Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Death_Guard, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Death_Guard, Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Death_Guard, Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Death_Guard, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Death_Guard, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
 			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_Death_Guard);
 		}
     	
     	if(getFormationType().equals("Emperor's Children")){
-			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Emperors_Children);
-			myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Emperors_Children);
-			myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Emperors_Children);
-			myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Emperors_Children);
-			myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Emperors_Children);
-			myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Emperors_Children);
-			myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Emperors_Children);
-			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
-			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_Emperors_Children);
+			myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Emperors_Children, HQeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Emperors_Children, Eliteeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Emperors_Children, Standardeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Emperors_Children, Sturmeinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Emperors_Children, Unterstützungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Emperors_Children, Transporteinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Emperors_Children, Fliegereinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
+			myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(LOWeinträge_Emperors_Children, LOWeinträge_Chaos_Space_Marines_FW));
 		}
     	
     	if(getFormationType().equals("Questor Traitoris")){

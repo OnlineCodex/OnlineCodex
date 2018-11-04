@@ -9,8 +9,8 @@ public class IMBrotherhoodChampion extends Eintrag {
 	RuestkammerStarter psychicPowers;
 	
 	public IMBrotherhoodChampion() {
-		name = "Brother Champion";
-		grundkosten = getPts("Brother Champion") + getPts("Storm bolter (SM)") + getPts("Frag grenades (SM)") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
+		name = "Brotherhood Champion";
+		grundkosten = getPts("Brotherhood Champion") + getPts("Storm bolter (SM)") + getPts("Frag grenades (SM)") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
 
 		add(ico = new oc.Picture("oc/wh40k/images/GKBruderCaptainderGreyKnights.jpg"));
 

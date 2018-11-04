@@ -12,7 +12,7 @@ public class ORTrukk extends Eintrag {
 
 	public ORTrukk() {
 		grundkosten = getPts("Trukk");
-		power = 5;
+		power = 3;
 		name= "Trukk";
 		add(ico = new oc.Picture("oc/wh40k/images/Pikk-Up.gif"));
 		
@@ -31,7 +31,7 @@ public class ORTrukk extends Eintrag {
 		
         seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb flinga", getPts("Stikkbomb flinga")));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb Chucka", getPts("Stikkbomb chukka")));
         
 		complete();
 	}
