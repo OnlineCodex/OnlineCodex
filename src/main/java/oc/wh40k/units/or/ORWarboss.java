@@ -24,9 +24,10 @@ public class ORWarboss extends Eintrag {
         seperator();
         
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        ((ORWaffenUndGeschenke)waffen.getKammer()).setWarboss(true);
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("Kombi-weapon with rokkit-launcha");
         ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("Power klaw");
-        waffen.initKammer(true,true,false,false,true,false,true);
+        waffen.initKammer(true,false,false,false,false,false,true);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
