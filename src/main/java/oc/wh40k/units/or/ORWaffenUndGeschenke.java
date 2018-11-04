@@ -4,12 +4,16 @@ import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
 public class ORWaffenUndGeschenke extends RuestkammerVater {
 
     OptionsUpgradeGruppe handwaffen = null;
     OptionsUpgradeGruppe fkwaffen = null;
+    
+    OptionsZaehlerGruppe BosseCC;
+    OptionsZaehlerGruppe BosseFK;
     
     public boolean uniqueError=false;
 
@@ -25,7 +29,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean psyker = false;
 	boolean spanner = false;
 	boolean kaptin = false;
-	boolean bossNob = false;
+	boolean warboss = false;
+	boolean boyboss = false;
+	boolean warbikerboss = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -79,8 +85,16 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		kaptin = b;
 	}
 	
-	public void setBossNob(boolean b){
-		bossNob = b;
+	public void setWarboss(boolean b){
+		warboss = b;
+	}
+	
+	public void setBoyBoss(boolean b){
+		boyboss = b;
+	}
+	
+	public void setWarbikerBoss(boolean b){
+		warbikerboss = b;
 	}
 	
 	@Override
@@ -169,15 +183,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
 		}
-		if(bossNob)
-		{ 
-	        ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
-	        ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
-	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
-	        ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
-	        ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+		if(warboss)
+		{
+			ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+			ogE.addElement(new OptionsGruppeEintrag("Kustom shoota", getPts("Kustom shoota")));
 		}
-		
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
 				if(kustomShootaFK) {
@@ -238,14 +248,6 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 		if(killsawNK){
 			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		}
-		if(bossNob)
-		{ 
-	        ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
-	        ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
-	        ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
-	        ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
-	        ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
-		}
 		
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
@@ -269,9 +271,28 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			}
 		}
 		
-		if(kaptin)
-		{
+		if(kaptin){
 			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gitfinda squig", getPts("Gitfinda squig")));
+		}
+		
+		if(boyboss || warbikerboss){
+			ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
+			ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
+			ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+			ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+			ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
+			add(BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+			BosseCC.setAnzahl(0, 1);
+			BosseCC.setAnzahl(5, 1);
+
+			seperator(5);
+			
+			if(!warbikerboss){
+		        ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
+		        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+		        add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+			}
 		}
 		
 		seperator();
@@ -302,11 +323,28 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			if(handwaffen != null){
 				handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
 			}
+			if(handwaffen != null && fkwaffen != null){//TODO auftrennen //TODO taucht asl Option auf, wenn keine NK/FK Waffe ausgerüstet ist (z.B. beim Deffkilla)
+				gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
+										(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
+										handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
+			}
+		}
+		
+		if(boyboss || warbikerboss){
 			
-			boolean gitstoppaNK = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
-			boolean gitstoppaFK = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
-			gitstoppaShells.setAktiv(chosenRelic == null && (gitstoppaNK || gitstoppaFK));
-			
+			if(warbikerboss){
+				BosseCC.setMaxAnzahl(2);
+				
+				boolean legal = BosseCC.getAnzahl() == 2;
+				BosseCC.setLegal(legal);
+			} else {
+				if(BosseFK.isSelected()) BosseCC.setMaxAnzahl(0);
+				else BosseCC.setMaxAnzahl(2);
+				
+				boolean legal = BosseFK.getAnzahl()*2 + BosseCC.getAnzahl() == 2;
+				BosseFK.setLegal(legal);
+				BosseCC.setLegal(legal);
+			}
 		}
 	}
 	

@@ -77,18 +77,28 @@ Instrument of Chaos;10
 Rod of sorcery;10
 Staff of change;5
 
-Renegade Knight;320
+Renegade Knight;285
 
+Reaper chain-cleaver;0
 Reaper chainsword;30
 Thunderstrike gauntlet;35
 Titanic feet;0
 
-Avenger gatling cannon;95
+Armiger autocannon;5
+Avenger gatling cannon;75
+Conflagration cannon;0
 Ironstorm missile pod;16
+Plasma decimator;0
 Rapid fire battle cannon;100
 Stormspear rocket pod;45
 Thermal cannon;76
+Shieldbreaker missile;12
+Thermal spear;0
+Thundercoil harpoon;0
 Twin Icarus autocannon;30
+Twin meltagun;0
+Twin siegebreaker cannon;35
+Volcano lance;10
 
 Chaos Bastion;160
 
@@ -490,6 +500,7 @@ Churning fangs and spines;0
 Blade of decay;0
 Nurglings;0
  
+Renegade Armiger;160
 Renegade Knight Acheron;358
 Renegade Knight Lancer;420
 Renegade Knight Castigator;350
@@ -497,6 +508,7 @@ Renegade Knight Atropos;405
 Renegade Knight Magaera;440
 Renegade Knight Porphyrion;600
 Renegade Knight Styrix;340
+Renegade Knight Dominus;500
 Titanic feet;0
 Helaton siege claw;30
 Reaper chainsword;30
