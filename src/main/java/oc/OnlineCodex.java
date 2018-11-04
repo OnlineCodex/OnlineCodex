@@ -418,7 +418,7 @@ public class OnlineCodex extends BuildaPanel {
 						try {
 							System.exit(0);
 						} catch (Exception e) {
-							e.printStackTrace();
+							LOGGER.error("", e);
 						}
 					} // WICHTIG! sonst bleibt der Thread bestehen   (im Task Manager beenden).   Online: Acces denid...
 
@@ -449,7 +449,7 @@ public class OnlineCodex extends BuildaPanel {
 						try {
 							System.exit(0);
 						} catch (Exception e) {
-							e.printStackTrace();
+							LOGGER.error("", e);
 						}
 					} // WICHTIG! sonst bleibt der Thread bestehen   (im Task Manager beenden).   Online: Acces denid...
 				});
@@ -639,7 +639,7 @@ public class OnlineCodex extends BuildaPanel {
 				myWindow.repaint();
 			} catch (Exception e) {
 				fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
-				e.printStackTrace();
+				LOGGER.error("", e);
 			}
 		}
 	};
@@ -805,7 +805,7 @@ public class OnlineCodex extends BuildaPanel {
 			BuildaHQ.loadWindow = false;
 			loadWindow.setVisible(false);
 		} catch(Exception ex) {
-			ex.printStackTrace();
+			LOGGER.error("", ex);
 			JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden"));
 		}
 	}
@@ -1015,7 +1015,7 @@ public class OnlineCodex extends BuildaPanel {
 
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.error("", e);
 			JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden."));
 		}
 
