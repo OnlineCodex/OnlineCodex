@@ -31,7 +31,7 @@ public class ORTrukk extends Eintrag {
 		
         seperator();
 		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb flinga", getPts("Stikkbomb flinga")));
+		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb Chucka", getPts("Stikkbomb chukka")));
         
 		complete();
 	}
