@@ -50,8 +50,6 @@ public class SMOrden extends Eintrag {
 		ogE.addElement(new OptionsGruppeEintrag("[FW] Astral Claws", 0));
 		add(ordenHaupt = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 		
-		LOGGER.info(ally);
-		
 		complete();
 	}
 

@@ -87,8 +87,4 @@ public class VOLKElysianDropTroopsIA32ndEd extends BuildaVater {
 		complete();
 	}
 
-	protected void finalize() {
-		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
-
 }
