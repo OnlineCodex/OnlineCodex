@@ -17,7 +17,7 @@ public class CHRenegadeArmiger extends Eintrag {
 		grundkosten = 0;
 		power = 9;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Renegade Armiger", 1, 3, getPts("Armiger Helverin"));
+		squad = new AnzahlPanel(ID, randAbstand, cnt, "Renegade Armiger", 1, 3, getPts("Renegade Armiger"));
 		add(squad);
 		
 		seperator();
