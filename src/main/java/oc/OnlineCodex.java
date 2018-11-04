@@ -18,6 +18,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.Hashtable;
+import java.util.Optional;
 import java.util.Vector;
 import java.util.prefs.Preferences;
 
@@ -40,6 +41,7 @@ import javax.swing.ToolTipManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import com.github.zafarkhaja.semver.Version;
 import oc.utils.ManifestUtils;
 import oc.wh40k.armies.VOLKAstraMilitarum;
 import oc.wh40k.armies.VOLKSpaceMarines;
@@ -63,7 +65,9 @@ public class OnlineCodex extends BuildaPanel {
 	//boolean scrollLock = true;
 
 	public static void main(String[] args) {
-		new OnlineCodex(args); // neuGerrig
+		Optional<Version> version = ManifestUtils.getVersion();
+		version.ifPresent(VersionChecker::execute);
+		new OnlineCodex(version, args); // neuGerrig
 	}
 
 	Object[] buildazWh40k = new Object[]{
@@ -93,8 +97,8 @@ public class OnlineCodex extends BuildaPanel {
 	private Vector<JPanel> buildaPanelz = new Vector<JPanel>();
 	private BuildaTextArea myBuilderTextArea;
 	private final Hashtable<String, String> dokumente = new Hashtable<String, String>();
-	private final String VERSION = ManifestUtils.getVersion().map(Object::toString).orElse("unknown Version");
-	private final String FENSTER = "powered by OnlineCodex.de" + " - Version vom " + VERSION;
+	private final Optional<Version> version;
+	private final String windowTitle;
 	private final JFrame myWindow = new JFrame("OnlineCodex powered by OnlineCodex.de");
 	private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
 	private int clickXWindow = 0;
@@ -169,7 +173,6 @@ public class OnlineCodex extends BuildaPanel {
 		String text;
 
 		public IconedText(String t, String path) {
-			//try{this.icon = new ImageIcon(this.getClass().getClassLoader().getResource(path));}catch (Exception e) {System.out.println("Volksymbol nicht gefunden: "+path);}
 			this.text = t;
 		}
 
@@ -179,7 +182,11 @@ public class OnlineCodex extends BuildaPanel {
 		}
 	}
 
-	public OnlineCodex(String [] args) {// neuGerri
+	public OnlineCodex(Optional<Version> version, String[] args) {
+	    this.version = version;
+ 	    this.windowTitle = "powered by OnlineCodex.de" + version
+                .map(v -> " – Version " + v)
+                .orElse("");
 		boolean gameFound = false;
 
 		try {
@@ -271,7 +278,7 @@ public class OnlineCodex extends BuildaPanel {
 		myWindow.getContentPane().setBackground(Color.WHITE);
 		myWindow.setIconImage(BuildaHQ.oCLogo);
 
-		myWindow.setTitle("OnlineCodex Wh40k - " + FENSTER);
+		myWindow.setTitle("OnlineCodex Wh40k - " + windowTitle);
 		buildaChooser = new JComboBox(buildazWh40k);
 		
 
@@ -651,7 +658,6 @@ public class OnlineCodex extends BuildaPanel {
 
 		@Override
 		public void keyReleased(KeyEvent e) {
-			//refreshListener2.refresh();
 			refreshListener.refresh();
 		}
 	};
