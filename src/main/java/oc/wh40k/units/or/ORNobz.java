@@ -10,9 +10,7 @@ public class ORNobz extends Eintrag {
 
 	AnzahlPanel Bosse;
 	OptionsZaehlerGruppe BosseCC;
-	OptionsZaehlerGruppe BosseCCx;
 	OptionsZaehlerGruppe BosseFK;
-	OptionsZaehlerGruppe BosseFKx;
 	OptionsEinzelZaehler Munigrotz;
 	OptionsEinzelZaehler Cyborg;
 
@@ -27,20 +25,18 @@ public class ORNobz extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));//TODO: Nob-Waffen?
-		add(BosseCCx = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
 		ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
 		ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
 		ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
 		ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+		ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
 		add(BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+		BosseCC.setAnzahl(0, Bosse.getModelle());
+		BosseCC.setAnzahl(5, Bosse.getModelle());
 
 		seperator(5);
-
-		ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
-		add(BosseFKx = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		ogE.addElement(new OptionsGruppeEintrag("Shoota", getPts("Shoota")));
-    	ogE.addElement(new OptionsGruppeEintrag("Kustom shoota", getPts("Kustom shoota")));
+		
         ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
         ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
         add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -58,13 +54,12 @@ public class ORNobz extends Eintrag {
 	
 	//@OVERRIDE
 	public void refreshen() {
-		BosseFKx.setMaxAnzahl(Bosse.getModelle()-BosseFK.getAnzahl());
-		BosseFKx.setAnzahl(0, Bosse.getModelle()-BosseFK.getAnzahl());
+		BosseCC.setMaxAnzahl(Bosse.getModelle()*2);
 		BosseFK.setMaxAnzahl(Bosse.getModelle());
 		
-		BosseCCx.setMaxAnzahl(Bosse.getModelle()-BosseCC.getAnzahl());
-		BosseCCx.setAnzahl(0, Bosse.getModelle()-BosseCC.getAnzahl());
-		BosseCC.setMaxAnzahl(Bosse.getModelle());
+		boolean legal = (BosseCC.getAnzahl() + BosseFK.getAnzahl()*2) == Bosse.getModelle()*2;
+		BosseCC.setLegal(legal);
+		BosseFK.setLegal(legal);
 		
 		Munigrotz.setMaxAnzahl(Bosse.getModelle());
 		

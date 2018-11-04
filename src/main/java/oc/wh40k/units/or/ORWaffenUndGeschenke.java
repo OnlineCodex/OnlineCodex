@@ -4,12 +4,16 @@ import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
 public class ORWaffenUndGeschenke extends RuestkammerVater {
 
     OptionsUpgradeGruppe handwaffen = null;
     OptionsUpgradeGruppe fkwaffen = null;
+    
+    OptionsZaehlerGruppe BosseCC;
+    OptionsZaehlerGruppe BosseFK;
     
     public boolean uniqueError=false;
 
@@ -25,6 +29,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	boolean psyker = false;
 	boolean spanner = false;
 	boolean kaptin = false;
+	boolean warboss = false;
+	boolean boyboss = false;
+	boolean warbikerboss = false;
 	
 	String defaultNK = "";
 	String defaultFK = "";
@@ -76,6 +83,18 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	
 	public void setKaptin(boolean b){
 		kaptin = b;
+	}
+	
+	public void setWarboss(boolean b){
+		warboss = b;
+	}
+	
+	public void setBoyBoss(boolean b){
+		boyboss = b;
+	}
+	
+	public void setWarbikerBoss(boolean b){
+		warbikerboss = b;
 	}
 	
 	@Override
@@ -164,6 +183,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha",getPts("Rokkit launcha"))); 
 	        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
 		}
+		if(warboss)
+		{
+			ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+			ogE.addElement(new OptionsGruppeEintrag("Kustom shoota", getPts("Kustom shoota")));
+		}
 		if(ogE.size() > 0) {
 			if(character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
 				if(kustomShootaFK) {
@@ -247,9 +271,28 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 			}
 		}
 		
-		if(kaptin)
-		{
+		if(kaptin){
 			add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gitfinda squig", getPts("Gitfinda squig")));
+		}
+		
+		if(boyboss || warbikerboss){
+			ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
+			ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
+			ogE.addElement(new OptionsGruppeEintrag("Power stabba", getPts("Power stabba")));
+			ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
+			ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
+			ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
+			add(BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+			BosseCC.setAnzahl(0, 1);
+			BosseCC.setAnzahl(5, 1);
+
+			seperator(5);
+			
+			if(!warbikerboss){
+		        ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit","Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
+		        ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+		        add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+			}
 		}
 		
 		seperator();
@@ -284,6 +327,23 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 				gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
 										(fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
 										handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
+			}
+		}
+		
+		if(boyboss || warbikerboss){
+			
+			if(warbikerboss){
+				BosseCC.setMaxAnzahl(2);
+				
+				boolean legal = BosseCC.getAnzahl() == 2;
+				BosseCC.setLegal(legal);
+			} else {
+				if(BosseFK.isSelected()) BosseCC.setMaxAnzahl(0);
+				else BosseCC.setMaxAnzahl(2);
+				
+				boolean legal = BosseFK.getAnzahl()*2 + BosseCC.getAnzahl() == 2;
+				BosseFK.setLegal(legal);
+				BosseCC.setLegal(legal);
 			}
 		}
 	}

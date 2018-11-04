@@ -12,7 +12,7 @@ public class ORTrukk extends Eintrag {
 
 	public ORTrukk() {
 		grundkosten = getPts("Trukk");
-		power = 5;
+		power = 3;
 		name= "Trukk";
 		add(ico = new oc.Picture("oc/wh40k/images/Pikk-Up.gif"));
 		
