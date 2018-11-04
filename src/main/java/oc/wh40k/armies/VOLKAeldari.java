@@ -18,7 +18,7 @@ public class VOLKAeldari extends BuildaVater {
 		InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ae.csv");
 		pointValues = BuildaHQ.loadindexFile(is);
 		
-		System.err.println("File: " + "/oc/wh40k/indices/de.csv");
+		LOGGER.error("File: " + "/oc/wh40k/indices/de.csv");
 		is = this.getClass().getResourceAsStream("/oc/wh40k/indices/de.csv");
 		appendPointList(BuildaHQ.loadindexFile(is));
 		
