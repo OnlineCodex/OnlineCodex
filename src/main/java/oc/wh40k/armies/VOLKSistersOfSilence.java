@@ -4,8 +4,12 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.Formation;
 import oc.FormationEntry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKSistersOfSilence extends BuildaVater {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKSistersOfSilence.class);
 
 	public VOLKSistersOfSilence() {
 		reflectionKennung = "SO";
@@ -92,7 +96,7 @@ public class VOLKSistersOfSilence extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 	
 	@Override

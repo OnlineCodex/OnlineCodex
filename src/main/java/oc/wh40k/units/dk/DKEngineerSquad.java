@@ -7,8 +7,12 @@ import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class DKEngineerSquad extends Eintrag {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(DKEngineerSquad.class);
 
 	OptionsEinzelUpgrade o1;
 	OptionsEinzelUpgrade o2;
@@ -20,7 +24,7 @@ public class DKEngineerSquad extends Eintrag {
 		grundkosten = 10;
         überschriftSetzen = true;
 
-        System.out.println(getKategorie());
+        LOGGER.info(getKategorie());
         
 		add(ico = new oc.Picture("oc/wh40k/images/IGVeteranSquad.jpg"));
 

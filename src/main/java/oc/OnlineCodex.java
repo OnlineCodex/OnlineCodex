@@ -45,10 +45,14 @@ import oc.wh40k.armies.VOLKAstraMilitarum;
 import oc.wh40k.armies.VOLKSpaceMarines;
 //import oc.wh40k.armies.VOLKSternenreichderTau;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 
 public class OnlineCodex extends BuildaPanel {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(OnlineCodex.class);
 
 	public static int WH40K = 0;
 	public static int WHFB = 1;
@@ -169,7 +173,7 @@ public class OnlineCodex extends BuildaPanel {
 		String text;
 
 		public IconedText(String t, String path) {
-			//try{this.icon = new ImageIcon(this.getClass().getClassLoader().getResource(path));}catch (Exception e) {System.out.println("Volksymbol nicht gefunden: "+path);}
+			//try{this.icon = new ImageIcon(this.getClass().getClassLoader().getResource(path));}catch (Exception e) {LOGGER.info("Volksymbol nicht gefunden: "+path);}
 			this.text = t;
 		}
 
@@ -235,7 +239,7 @@ public class OnlineCodex extends BuildaPanel {
 
 		if (!gameFound) {
 			fehler("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
-			System.out.println("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
+			LOGGER.info("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
 			System.exit(0);
 		}
 
@@ -506,7 +510,7 @@ public class OnlineCodex extends BuildaPanel {
 	        JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
 	        int index = sourceTabbedPane.getSelectedIndex();
 
-	        //System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
+	        //LOGGER.info("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
 	        if(index!=0){
 	        	BuildaVater bV = myBuilderz.get(index-1);
 	        	for(int i=0;i<bV.getChooserAnzahl();i++){
@@ -602,8 +606,9 @@ public class OnlineCodex extends BuildaPanel {
 				if (name.equals("")) {
 					return;//Es soll kein Leerer Tab eingefügt werden
 				} else {
-					System.out.println(Class.forName(armyPackage + "armies.VOLK" + name));
-					myBuilder = (BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + name).newInstance());
+					String clsName = armyPackage + "armies.VOLK" + name;
+					LOGGER.info(clsName);
+					myBuilder = (BuildaVater) (Class.forName(clsName).newInstance());
 				}
 				if(getGame()!=WH40K){
 					if (loadWithDokumenteHashtable && dokumente.get(name) != null) {
@@ -732,7 +737,7 @@ public class OnlineCodex extends BuildaPanel {
 		for(int i=0;i<myBuilderz.size();i++){
 			kostenD+=myBuilderz.get(i).getKosten();
 		}
-		//System.out.println("OC: " + kostenD);
+		//LOGGER.info("OC: " + kostenD);
 		return kostenD;
 	}
 	
@@ -741,12 +746,12 @@ public class OnlineCodex extends BuildaPanel {
 		for(int i=0;i<myBuilderz.size();i++){
 			kostenD+=myBuilderz.get(i).getCP();
 		}
-		//System.out.println("OC: " + kostenD);
+		//LOGGER.info("OC: " + kostenD);
 		return kostenD;
 	}
 
 	public String getSaveText() {
-		//System.out.println(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
+		//LOGGER.info(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
 		String s="";
 		for(int i=0;i<myBuilderz.size();i++){
 			s+= tab.getTitleAt(i+1) + SAVETEXT_UEBERSCHRIFTTRENNER2 + 
@@ -814,7 +819,7 @@ public class OnlineCodex extends BuildaPanel {
 			
 			
 				BuildaHQ.leereStatischeInformationen();
-//				System.out.println("myBuilderz.size()"+myBuilderz.size());
+//				LOGGER.info("myBuilderz.size()"+myBuilderz.size());
 				while(myBuilderz.size()>0){
 					myBuilderTextArea.removeBuildaVater(myBuilderz.get(0));
 					buildaPanelz.remove(0);
@@ -830,9 +835,9 @@ public class OnlineCodex extends BuildaPanel {
 						setSelectedItemInBuildaChooser(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)));
 						loadWithDokumenteHashtable = true;
 					}*/
-					System.out.println(armies[i]);
+					LOGGER.info(armies[i]);
 					myBuilderz.add((BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + BuildaHQ.formZuKlassenName(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
-//					System.out.println(myBuilderz.size());
+//					LOGGER.info(myBuilderz.size());
 					JPanel buildaPanel = myBuilderz.get(i).getPanel();
 					buildaPanel.setPreferredSize(new Dimension(3500, 8000));
 					buildaPanel.setSize(3500, 8000);
@@ -921,9 +926,9 @@ public class OnlineCodex extends BuildaPanel {
 					loadWithDokumenteHashtable = true;
 				}*/
 				
-					System.out.println(saveText);
+					LOGGER.info(saveText);
 					myBuilderz.add((BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + BuildaHQ.formZuKlassenName(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
-//					System.out.println(myBuilderz.size());
+//					LOGGER.info(myBuilderz.size());
 					JPanel buildaPanel = myBuilderz.get(0).getPanel();
 					buildaPanel.setPreferredSize(new Dimension(3500, 8000));
 					buildaPanel.setSize(3500, 8000);

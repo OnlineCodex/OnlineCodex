@@ -5,8 +5,12 @@ package oc.wh40k.armies;
 
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKRenegadesandHereticsIA13 extends BuildaVater {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKRenegadesandHereticsIA13.class);
 
 	public VOLKRenegadesandHereticsIA13() {
 		reflectionKennung = "RH_IA13";
@@ -91,6 +95,6 @@ public class VOLKRenegadesandHereticsIA13 extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 }

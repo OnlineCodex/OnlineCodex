@@ -8,8 +8,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RefreshListener;
 import oc.RuestkammerStarter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CMChaosterminatoren extends Eintrag {
+	
+	private static final Logger LOGGER = LoggerFactory.getLogger(CMChaosterminatoren.class);
 
 	AnzahlPanel squad;
 	OptionsZaehlerGruppe o1;
@@ -155,7 +159,7 @@ public class CMChaosterminatoren extends Eintrag {
 		}
 		int bodInt=getCountFromInformationVector("BLBringersOfDespair");
 		int abbaInt=getCountFromInformationVector("BLAbaddon");
-		System.out.println(bodInt+" "+abbaInt);
+		LOGGER.info(bodInt+" "+abbaInt);
 		bod.setLegal((bodInt<=abbaInt) || !bod.isSelected());
 		////////////////////////////////////////////////////////////////////////////
 		

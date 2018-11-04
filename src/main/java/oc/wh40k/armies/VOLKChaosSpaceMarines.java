@@ -7,8 +7,12 @@ import oc.Formation;
 import oc.FormationEntry;
 import oc.RefreshListener;
 import oc.Superformation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VOLKChaosSpaceMarines extends BuildaVater {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(VOLKChaosSpaceMarines.class);
 	
 	public VOLKChaosSpaceMarines() {
 		reflectionKennung = "CM";
@@ -2253,7 +2257,7 @@ public class VOLKChaosSpaceMarines extends BuildaVater {
 
 	@Override
 	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
+		LOGGER.info("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
 	}
 
 }

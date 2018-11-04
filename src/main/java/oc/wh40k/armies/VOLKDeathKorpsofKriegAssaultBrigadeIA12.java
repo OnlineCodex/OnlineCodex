@@ -107,8 +107,4 @@ public class VOLKDeathKorpsofKriegAssaultBrigadeIA12 extends BuildaVater {
 		complete();
 	}
 
-	protected void finalize() {
-		System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-	}
-
 }
