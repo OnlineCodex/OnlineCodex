@@ -39,3 +39,5 @@ buildNumber.properties
 
 /.classpath
 /.project
+
+bin/
