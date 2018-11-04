@@ -5,17 +5,17 @@ import oc.RuestkammerStarter;
 
 public class IMMurderfang extends Eintrag {
 
-	RuestkammerStarter rkPod;
+    RuestkammerStarter rkPod;
 
-	public IMMurderfang() {
-		name = "Murderfang";
-		grundkosten = getPts("Murderfang");
-		power = 10;
-		complete();
-	}
+    public IMMurderfang() {
+        name = "Murderfang";
+        grundkosten = getPts("Murderfang");
+        power = 10;
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

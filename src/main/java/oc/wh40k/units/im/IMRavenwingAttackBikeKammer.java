@@ -6,23 +6,23 @@ import oc.RuestkammerVater;
 
 public class IMRavenwingAttackBikeKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMRavenwingAttackBikeKammer() {
-		grundkosten = getPts("Ravenwing Attack Bike Squad") + getPts("Twin boltgun");
-	}
+    public IMRavenwingAttackBikeKammer() {
+        grundkosten = getPts("Ravenwing Attack Bike Squad") + getPts("Twin boltgun");
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    @Override
+    public void initButtons(boolean... defaults) {
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

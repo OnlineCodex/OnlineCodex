@@ -6,21 +6,21 @@ import oc.Eintrag;
 
 public class ORRukkatrukkSquigbuggys extends Eintrag {
 
-	AnzahlPanel buggies;
+    AnzahlPanel buggies;
 
-	public ORRukkatrukkSquigbuggys() {
+    public ORRukkatrukkSquigbuggys() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Rukkatrukk Squigbuggy", "Rukkatrukk Squigbuggies", 1, 3, getPts("Rukkatrukk Squigbuggies"));
-		add(buggies);
-		
-		complete();
-	}
+        buggies = new AnzahlPanel(ID, randAbstand, cnt, "Rukkatrukk Squigbuggy", "Rukkatrukk Squigbuggies", 1, 3, getPts("Rukkatrukk Squigbuggies"));
+        add(buggies);
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = buggies.getModelle() * 7;
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        power = buggies.getModelle() * 7;
+    }
 }

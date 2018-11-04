@@ -1,24 +1,20 @@
 package oc.wh40k.units.ae;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class AEKabaliteTrueborn extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o2;
-	RuestkammerStarter rkBoss;
+    RuestkammerStarter rkBoss;
 
-	public AEKabaliteTrueborn() {
-		name = "Kabalite Trueborn";
-		grundkosten = 0;
-		
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Kabalite Trueborn", 5, 20, getPts("Kabalite Trueborn"));
-		add(squad);
+    public AEKabaliteTrueborn() {
+        name = "Kabalite Trueborn";
+        grundkosten = 0;
+
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Kabalite Trueborn", 5, 20, getPts("Kabalite Trueborn"));
+        add(squad);
 
         seperator();
 
@@ -36,34 +32,34 @@ public class AEKabaliteTrueborn extends Eintrag {
 
         seperator();
 
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEDracon", "Dracon");
-		rkBoss.initKammer();
-		add(rkBoss);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEDracon", "Dracon");
+        rkBoss.initKammer();
+        add(rkBoss);
 
-		seperator();
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
 
-        int o1max = squad.getModelle() - 1- o2.getAnzahl();
+    @Override
+    public void refreshen() {
+
+        int o1max = squad.getModelle() - 1 - o2.getAnzahl();
         o1.setMaxAnzahl(o1max > 4 ? 4 : o1max);
 
         int o2max = squad.getModelle() - 1 - o1.getAnzahl();
         o2.setMaxAnzahl(o2max > 2 ? 2 : o2max);
-        
-        if(squad.getModelle() > 15) {
-        	power = 14;
-        } else if(squad.getModelle() > 10) {
-        	power = 11;
-        } else if(squad.getModelle() > 5) {
-        	power = 8;
-        } else{
-        	power = 5;
+
+        if (squad.getModelle() > 15) {
+            power = 14;
+        } else if (squad.getModelle() > 10) {
+            power = 11;
+        } else if (squad.getModelle() > 5) {
+            power = 8;
+        } else {
+            power = 5;
         }
-        
-	}
+
+    }
 
 }

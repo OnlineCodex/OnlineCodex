@@ -10,29 +10,29 @@ public class DALandRaider extends Eintrag {
     OptionsEinzelUpgrade oe2;
     OptionsEinzelUpgrade oe3;
 
-	public DALandRaider() {
-		name = "Land Raider";
-		grundkosten = 250;
+    public DALandRaider() {
+        name = "Land Raider";
+        grundkosten = 250;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DALandRaider.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/DALandRaider.gif"));
 
         seperator();
 
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
-		
-		seperator();
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

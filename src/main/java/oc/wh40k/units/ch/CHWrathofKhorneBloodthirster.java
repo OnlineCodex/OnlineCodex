@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHWrathofKhorneBloodthirster extends Eintrag {
 
-	
-	public CHWrathofKhorneBloodthirster() {
 
-		name = "Wrath Of Khorne Bloodthirster";
+    public CHWrathofKhorneBloodthirster() {
+
+        name = "Wrath Of Khorne Bloodthirster";
         grundkosten = getPts("Wrath Of Khorne Bloodthirster");
-        power = 17;   
-		complete();
+        power = 17;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

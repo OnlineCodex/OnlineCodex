@@ -7,20 +7,20 @@ import oc.OptionsUpgradeGruppe;
 
 public class APOKytanDaemonEngineofKhorne extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public APOKytanDaemonEngineofKhorne() {
-		name = "Kytan Daemon Engine of Khorne";
-		grundkosten = 525;
-                
-		complete();
-	}
+    OptionsUpgradeGruppe o1;
 
-	public void refreshen() {
-		getCountFromInformationVector("");
-		if(buildaVater.reflectionKennungLokal=="KD"){
-			o1.setSelected(0, true);
-		}
-	}
+    public APOKytanDaemonEngineofKhorne() {
+        name = "Kytan Daemon Engine of Khorne";
+        grundkosten = 525;
+
+        complete();
+    }
+
+    public void refreshen() {
+        getCountFromInformationVector("");
+        if (buildaVater.reflectionKennungLokal == "KD") {
+            o1.setSelected(0, true);
+        }
+    }
 }
 

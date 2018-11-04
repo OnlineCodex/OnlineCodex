@@ -4,46 +4,44 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
 
 public class IAAstropath extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public IAAstropath() {
-		name = "Astropath";
-		grundkosten = 25;
+    OptionsUpgradeGruppe o1;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGTechpriestEnginseer.jpg"));
+    public IAAstropath() {
+        name = "Astropath";
+        grundkosten = 25;
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/IGTechpriestEnginseer.jpg"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Nahkampfwaffe", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Laserpistole", 0));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		o1.setSelected(0, true);
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Meisterschaftsgrad 2", 25));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Digitalwaffen", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Refractor Feld", 10));
+        seperator();
 
-		seperator();
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Nahkampfwaffe", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Laserpistole", 0));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        o1.setSelected(0, true);
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
 
-	@Override
-	public void deleteYourself() {
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Meisterschaftsgrad 2", 25));
+
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Digitalwaffen", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "", "Refractor Feld", 10));
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+    }
 
 }

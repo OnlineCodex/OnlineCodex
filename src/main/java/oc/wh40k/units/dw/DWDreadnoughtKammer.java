@@ -1,68 +1,63 @@
 package oc.wh40k.units.dw;
 
-import oc.OnlineCodex;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
-import oc.RuestkammerVater;
+import oc.*;
 
 public class DWDreadnoughtKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
-	OptionsUpgradeGruppe o3;
-	RuestkammerStarter rkPod;
-        
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o3;
+    RuestkammerStarter rkPod;
+
     boolean siegeForce;
-        
-	public DWDreadnoughtKammer() {
-		name = "Cybot";
-		grundkosten = 100;
-	}
 
-	@Override
-	public void initButtons(boolean... defaults) {
+    public DWDreadnoughtKammer() {
+        name = "Cybot";
+        grundkosten = 100;
+    }
+
+    @Override
+    public void initButtons(boolean... defaults) {
         siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
-                
-		add(ico = new oc.Picture("oc/wh40k/images/SMCybot.jpg"));
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/SMCybot.jpg"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o3.setSelected(0, true);
+        seperator();
 
-		seperator();
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Schwerer Flamer", "Schwerer Flammenwerfer", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o1.setSelected(0, true);
+        seperator();
 
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Energiefaust", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Raketenwerfer", 10));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o3.setSelected(0, true);
 
-		ogE.addElement(new OptionsGruppeEintrag("Multimelter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Plasmakanone", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Sturmkanone", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Sync. Laserkanone", "Synchronisierte Laserkanone", 15));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));      
+        seperator();
 
-		sizeSetzen();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Schwerer Flamer", "Schwerer Flammenwerfer", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o1.setSelected(0, true);
 
-	@Override
-	public void refreshen() {
-                o1.alwaysSelected();
-                o2.alwaysSelected();
-                o3.alwaysSelected();
+        seperator();
 
-		o1.setAktiv(o3.isSelected("Energiefaust"));
-	}
-	
+        ogE.addElement(new OptionsGruppeEintrag("Multimelter", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Plasmakanone", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Sturmkanone", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Sync. Laserkanone", "Synchronisierte Laserkanone", 15));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+        o3.alwaysSelected();
+
+        o1.setAktiv(o3.isSelected("Energiefaust"));
+    }
+
 }

@@ -6,21 +6,21 @@ import oc.Eintrag;
 public class NECtanShardoftheNightbringer extends Eintrag {
 
 
-	public NECtanShardoftheNightbringer() {
-		name = "C'tan Shard of the Nightbringer";
-		grundkosten = getPts("C'tan Shard of the Nightbringer");
+    public NECtanShardoftheNightbringer() {
+        name = "C'tan Shard of the Nightbringer";
+        grundkosten = getPts("C'tan Shard of the Nightbringer");
 
-		add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
 
-        
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-		power = 12;
-	}
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+        power = 12;
+    }
 }

@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHAetaosraukeres extends Eintrag {
 
-	public CHAetaosraukeres() {
+    public CHAetaosraukeres() {
 
-		name = "Aetaos'rau'keres";
+        name = "Aetaos'rau'keres";
         grundkosten = getPts("Aetaos'rau'keres");
-        power = 35;   
+        power = 35;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

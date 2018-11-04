@@ -5,30 +5,28 @@ import oc.Eintrag;
 
 public class TAMV71SniperDrones extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public TAMV71SniperDrones() {
-		name = "MV71 Sniper Drones";
-		
-		grundkosten = 0;
+    public TAMV71SniperDrones() {
+        name = "MV71 Sniper Drones";
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "MV71 Sniper Drones", 3, 9, getPts("MV71 Sniper Drone") + getPts("Longshot pulse rifle"));
-		add(squad);
+        grundkosten = 0;
 
-		complete();
-	}
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "MV71 Sniper Drones", 3, 9, getPts("MV71 Sniper Drone") + getPts("Longshot pulse rifle"));
+        add(squad);
+
+        complete();
+    }
 
     @Override
-	public void refreshen() {
-    	if (squad.getModelle() > 6) {
-    		power = 8;
-    	}
-    	else if (squad.getModelle() > 3) {
-    		power = 6;
-    	} 
-    	else {
-    		power = 3;
-    	}
-	}  
-	
+    public void refreshen() {
+        if (squad.getModelle() > 6) {
+            power = 8;
+        } else if (squad.getModelle() > 3) {
+            power = 6;
+        } else {
+            power = 3;
+        }
+    }
+
 }

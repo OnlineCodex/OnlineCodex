@@ -7,41 +7,42 @@ import oc.RuestkammerVater;
 
 public class ORRuntsAndSquigs extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	boolean mek = false;
-	boolean dok = false;
-	OptionsEinzelZaehler schmiergrot;
-	OptionsEinzelUpgrade assistent;
+    boolean mek = false;
+    boolean dok = false;
+    OptionsEinzelZaehler schmiergrot;
+    OptionsEinzelUpgrade assistent;
 
-	public ORRuntsAndSquigs() {
-		grundkosten = 0;
-	}
+    public ORRuntsAndSquigs() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		try {
-			mek = defaults[0]; 
-			dok = defaults[1];        
-		} catch(Exception e) {}
-		
-		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Munigrot", 3,3));
-		if(mek){
-			add(schmiergrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Schmiergrot",3, 5)); //Nur Meks
-		}
-		if(dok){
-			add(assistent = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grotassistent", 5)); //Nur Doks
-		}
+    @Override
+    public void initButtons(boolean... defaults) {
+        try {
+            mek = defaults[0];
+            dok = defaults[1];
+        } catch (Exception e) {
+        }
+
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Munigrot", 3, 3));
+        if (mek) {
+            add(schmiergrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Schmiergrot", 3, 5)); //Nur Meks
+        }
+        if (dok) {
+            add(assistent = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grotassistent", 5)); //Nur Doks
+        }
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schnappasquiq", 15));
-		
-		
-		setUeberschrift("Runts & Squigs");
-		sizeSetzen();
-	}
 
-	@Override
-	public void refreshen() {
-		
-	}
-	
+
+        setUeberschrift("Runts & Squigs");
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
+
 }

@@ -5,23 +5,23 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class ORSquiggoth extends Eintrag {
-        OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public ORSquiggoth() {
-		name = "Squiggoth (FW)";
-		grundkosten = getPts("Squiggoth") + getPts("gorin' horns");
-		power = 12;
-		
-		ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Lobba", getPts("Lobba")));
-		ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", getPts("Zzap Gun")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    public ORSquiggoth() {
+        name = "Squiggoth (FW)";
+        grundkosten = getPts("Squiggoth") + getPts("gorin' horns");
+        power = 12;
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Lobba", getPts("Lobba")));
+        ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", getPts("Zzap Gun")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	//@OVERRIDE
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+    }
 
 }

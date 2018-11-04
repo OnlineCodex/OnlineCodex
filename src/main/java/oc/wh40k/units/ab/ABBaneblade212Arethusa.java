@@ -4,22 +4,21 @@ import oc.Eintrag;
 
 public class ABBaneblade212Arethusa extends Eintrag {
 
-    
 
-	public ABBaneblade212Arethusa() {
-		
-		name = "Baneblade 212 'Arethusa'";
-		grundkosten = 600;
-		überschriftSetzen=true;
+    public ABBaneblade212Arethusa() {
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
+        name = "Baneblade 212 'Arethusa'";
+        grundkosten = 600;
+        überschriftSetzen = true;
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
 
-	@Override
-	public void refreshen() {
-        
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

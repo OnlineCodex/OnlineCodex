@@ -7,36 +7,36 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMRelicDeredeoDreadnought extends Eintrag {
 
-	OptionsZaehlerGruppe o1, o2, o3;
+    OptionsZaehlerGruppe o1, o2, o3;
 
-	public IMRelicDeredeoDreadnought() {
-		name = "Relic Deredeo Dreadnought";
-		grundkosten = getPts("Relic Deredeo Dreadnought");
-		power = 14;
-		
-		seperator();
+    public IMRelicDeredeoDreadnought() {
+        name = "Relic Deredeo Dreadnought";
+        grundkosten = getPts("Relic Deredeo Dreadnought");
+        power = 14;
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Aiolos missile launcher", getPts("Aiolos missile launcher")));
-		ogE.addElement(new OptionsGruppeEintrag("Atomantic pavaise", getPts("Atomantic pavaise")));
-		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Anvillus autocannon battery", getPts("Anvillus autocannon battery")));
-		ogE.addElement(new OptionsGruppeEintrag("Hellfire plasma carronade", getPts("Hellfire plasma carronade")));
-		ogE.addElement(new OptionsGruppeEintrag("Arachnus heavy lascannon battery", getPts("Arachnus heavy lascannon battery")));
-		add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {	
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Aiolos missile launcher", getPts("Aiolos missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Atomantic pavaise", getPts("Atomantic pavaise")));
+        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Anvillus autocannon battery", getPts("Anvillus autocannon battery")));
+        ogE.addElement(new OptionsGruppeEintrag("Hellfire plasma carronade", getPts("Hellfire plasma carronade")));
+        ogE.addElement(new OptionsGruppeEintrag("Arachnus heavy lascannon battery", getPts("Arachnus heavy lascannon battery")));
+        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

@@ -5,22 +5,22 @@ import oc.RuestkammerVater;
 
 public class INGefolgeKreuzritter extends RuestkammerVater {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public INGefolgeKreuzritter() {
-		grundkosten = 0;
-	}
+    public INGefolgeKreuzritter() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Kreuzritter", 1, 12, 15));
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Kreuzritter", 1, 12, 15));
 
-		sizeSetzen(200, 100, 390, KAMMER_HOEHE + cnt);
-	}
+        sizeSetzen(200, 100, 390, KAMMER_HOEHE + cnt);
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
     @Override
     public Object getSpecialValue() {

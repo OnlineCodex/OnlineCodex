@@ -1,11 +1,6 @@
 package oc.wh40k.units.ab;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class ABArmouredFistSquad extends Eintrag {
 
@@ -24,15 +19,15 @@ public class ABArmouredFistSquad extends Eintrag {
         grundkosten = 50;
 
         add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistSquad.jpg"));
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Lasgun", 0));
-        add(lasgun = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE,9));
+        add(lasgun = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 9));
 
         ogE.addElement(new OptionsGruppeEintrag("Laspistol", 0));
-        add(laspistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE,9));
-        
+        add(laspistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 9));
+
         seperator();
-        
+
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Voxcaster", 5));
 
         seperator();
@@ -78,17 +73,17 @@ public class ABArmouredFistSquad extends Eintrag {
     @Override
     public void refreshen() {
         rkTransport.getPanel().setLocation(
-            (int) rkTransport.getPanel().getLocation().getX(),
-            (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height
+                (int) rkTransport.getPanel().getLocation().getX(),
+                (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height
         );
-        
-        lasgun.setMaxAnzahl(9-(o1.isSelected()?2:0)-(o2.isSelected()?1:0)-laspistol.getAnzahl());
+
+        lasgun.setMaxAnzahl(9 - (o1.isSelected() ? 2 : 0) - (o2.isSelected() ? 1 : 0) - laspistol.getAnzahl());
         lasgun.setAnzahl(0, lasgun.getMaxAnzahl());
-        
-        laspistol.setMaxAnzahl(9-(o1.isSelected()?2:0)-(o2.isSelected()?1:0));
-        
-        o1.setAktiv(lasgun.getMaxAnzahl()>1 || o1.isSelected());
-        o2.setAktiv(lasgun.getMaxAnzahl()>0 || o2.isSelected());
-        
+
+        laspistol.setMaxAnzahl(9 - (o1.isSelected() ? 2 : 0) - (o2.isSelected() ? 1 : 0));
+
+        o1.setAktiv(lasgun.getMaxAnzahl() > 1 || o1.isSelected());
+        o2.setAktiv(lasgun.getMaxAnzahl() > 0 || o2.isSelected());
+
     }
 }

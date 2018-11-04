@@ -4,15 +4,15 @@ import oc.Eintrag;
 
 public class IMCulexusAssassin extends Eintrag {
 
-	public IMCulexusAssassin() {
-		name = "Culexus Assassin";
-		grundkosten = getPts("Culexus Assassin");
-		power = 5;
-		
-		complete();
-	}
+    public IMCulexusAssassin() {
+        name = "Culexus Assassin";
+        grundkosten = getPts("Culexus Assassin");
+        power = 5;
 
-	@Override
-	public void refreshen() {
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

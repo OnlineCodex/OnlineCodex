@@ -1,10 +1,6 @@
 package oc.wh40k.units.in;
 
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerVater;
+import oc.*;
 
 public class INWalkuereKammer extends RuestkammerVater {
 
@@ -33,11 +29,11 @@ public class INWalkuereKammer extends RuestkammerVater {
         seperator();
 
         add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "2 Schwere Bolter", "Paar schwere Bolter", 1, 20));
-        
+
         seperator();
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Fliegerass", 50));
-        
+
         sizeSetzen();
     }
 
@@ -46,5 +42,5 @@ public class INWalkuereKammer extends RuestkammerVater {
         o1.alwaysSelected();
         o2.alwaysSelected();
     }
-    
+
 }

@@ -7,28 +7,28 @@ import oc.OptionsEinzelUpgrade;
 
 public class KDWarpTalons extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsEinzelUpgrade rkBoss;
+    AnzahlPanel squad;
+    OptionsEinzelUpgrade rkBoss;
 
-	public KDWarpTalons() {
-		//name = "Warpkrallen\n";
-		grundkosten = 0;
+    public KDWarpTalons() {
+        //name = "Warpkrallen\n";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Warp Talons", 5, 10, 34, "Warpkrallen");
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Warp Talons", 5, 10, 34, "Warpkrallen");
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosBikers.gif"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosBikers.gif"));
 
-		add(rkBoss = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp Talon Champion", 10));
+        seperator();
 
-		complete();
-	}
+        add(rkBoss = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp Talon Champion", 10));
 
-	@Override
-	public void refreshen() {		
-		rkBoss.setSelected(true);
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        rkBoss.setSelected(true);
+    }
 
 }

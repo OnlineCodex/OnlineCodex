@@ -4,34 +4,34 @@ import oc.Eintrag;
 
 public class SMChapterMasterLugftHuron extends Eintrag {
 
-	public SMChapterMasterLugftHuron() {
-		name = "Lugft Huron, Ordensmeister der Astral Claws";
-		grundkosten = 235;
+    public SMChapterMasterLugftHuron() {
+        name = "Lugft Huron, Ordensmeister der Astral Claws";
+        grundkosten = 235;
 
-		addToInformationVector("SMChapterMaster", 1);
+        addToInformationVector("SMChapterMaster", 1);
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMChapterMasterLugftHuron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMChapterMasterLugftHuron.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
+    @Override
+    public void refreshen() {
+        setUnikat(true);
 
-		if(getCountFromInformationVector("SMChapterMaster") > 1 && getCountFromInformationVector("SMOnlyOneChapterMaster") > 0) {
-			setFehlermeldung("nur ein Ordensmeister");
-		} else {
-			setFehlermeldung("");
-		}
-	}
+        if (getCountFromInformationVector("SMChapterMaster") > 1 && getCountFromInformationVector("SMOnlyOneChapterMaster") > 0) {
+            setFehlermeldung("nur ein Ordensmeister");
+        } else {
+            setFehlermeldung("");
+        }
+    }
 
-	@Override
-	public void deleteYourself() {
-		addToInformationVector("SMChapterMaster", -1);
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("SMChapterMaster", -1);
+        super.deleteYourself();
+    }
 
 }

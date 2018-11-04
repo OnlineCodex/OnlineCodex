@@ -6,34 +6,34 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORSkalkBluetoof extends Eintrag {
 
-	
-	public ORSkalkBluetoof() {
 
-		kategorie = 1;
-		name = "Skalk Bluetoof";
-		grundkosten = 95;
+    public ORSkalkBluetoof() {
 
-		add(ico = new oc.Picture("oc/wh40k/images/SkalkBluetoof.gif"));
+        kategorie = 1;
+        name = "Skalk Bluetoof";
+        grundkosten = 95;
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bonemuncha", 600));
+        add(ico = new oc.Picture("oc/wh40k/images/SkalkBluetoof.gif"));
 
-		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Lootas");
-		addToInformationVector("ORHQ", 1);
-		complete();
+        seperator();
 
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bonemuncha", 600));
 
-	@Override
-    public void deleteYourself() {  
+        BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Lootas");
+        addToInformationVector("ORHQ", 1);
+        complete();
+
+    }
+
+    @Override
+    public void deleteYourself() {
         BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Lootas");
         addToInformationVector("ORHQ", -1);
         super.deleteYourself();
     }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

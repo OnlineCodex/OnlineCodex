@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class CDGreatUncleanOne extends Eintrag {
 
-	public CDGreatUncleanOne() {
+    public CDGreatUncleanOne() {
 
-		name = "Great Unclean One";
+        name = "Great Unclean One";
         grundkosten = getPts("Great Unclean One");
-        power = 12;   
-		complete();
+        power = 12;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

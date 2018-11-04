@@ -8,12 +8,12 @@ public class AESolarite extends RuestkammerVater {
 
     OptionsUpgradeGruppe o1;
 
-	public AESolarite() {
-	}
+    public AESolarite() {
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		ogE.addElement(new OptionsGruppeEintrag("Shardcarbine", getPts("Shardcarbine")));
+    @Override
+    public void initButtons(boolean... defaults) {
+        ogE.addElement(new OptionsGruppeEintrag("Shardcarbine", getPts("Shardcarbine")));
         ogE.addElement(new OptionsGruppeEintrag("Splinter pistol", getPts("Splinter Pistol")));
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
         ogE.addElement(new OptionsGruppeEintrag("Splinter pistol & venom blade", getPts("Splinter pistol") + getPts("Venom blade")));
@@ -24,13 +24,13 @@ public class AESolarite extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol & agoniser", getPts("Blast pistol") + getPts("Agoniser")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
-        
-		sizeSetzen();
-	}
 
-	@Override
-	public void refreshen() {
-		o1.setLegal(o1.isSelected());
-	}
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.setLegal(o1.isSelected());
+    }
 
 }

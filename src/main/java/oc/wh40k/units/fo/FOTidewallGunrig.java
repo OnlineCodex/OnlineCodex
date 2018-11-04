@@ -5,14 +5,14 @@ import oc.Eintrag;
 public class FOTidewallGunrig extends Eintrag {
 
 
-	public FOTidewallGunrig() {
-		name = "Tidewall Gunrig";
-		grundkosten = 85;
+    public FOTidewallGunrig() {
+        name = "Tidewall Gunrig";
+        grundkosten = 85;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

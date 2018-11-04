@@ -4,30 +4,29 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 
 public class AEAutarchSkyrunner extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	OptionsUpgradeGruppe o1;
+    OptionsEinzelUpgrade oe1;
+    OptionsUpgradeGruppe o1;
 
-	public AEAutarchSkyrunner() {
-		name = "Autarch Skyrunner";
-		grundkosten = getPts("Autarch Skyrunner") + getPts("Twin shuriken catapult");
-		power = 7;
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
-		ogE.addElement(new OptionsGruppeEintrag("Laser lance", getPts("Laser lance")));
-		ogE.addElement(new OptionsGruppeEintrag("Fusion gun", getPts("Fusion gun")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		complete();
-	}
+    public AEAutarchSkyrunner() {
+        name = "Autarch Skyrunner";
+        grundkosten = getPts("Autarch Skyrunner") + getPts("Twin shuriken catapult");
+        power = 7;
 
-	@Override
-	public void refreshen() {	
-		o1.alwaysSelected();
-	}
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
+        ogE.addElement(new OptionsGruppeEintrag("Laser lance", getPts("Laser lance")));
+        ogE.addElement(new OptionsGruppeEintrag("Fusion gun", getPts("Fusion gun")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

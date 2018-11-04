@@ -5,22 +5,22 @@ import oc.Eintrag;
 public class CMVroshTattersoul extends Eintrag {
 
 
-	public CMVroshTattersoul() {
-		name = "Vrosh Tattersoul";
-		grundkosten = 65;
+    public CMVroshTattersoul() {
+        name = "Vrosh Tattersoul";
+        grundkosten = 65;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Ahriman.gif"));
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/Ahriman.gif"));
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
+    @Override
+    public void deleteYourself() {
 
-	}
+    }
 }

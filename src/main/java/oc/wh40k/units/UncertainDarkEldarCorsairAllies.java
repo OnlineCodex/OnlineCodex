@@ -32,5 +32,5 @@ public class UncertainDarkEldarCorsairAllies extends Eintrag {
             addToInformationVector("ECDarkEldarAllies", -1);
         }
     }
-    
+
 }

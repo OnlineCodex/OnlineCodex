@@ -5,19 +5,19 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYMawloc extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public TYMawloc() {
-		name = "Mawloc";
-		grundkosten = getPts("Mawloc") + getPts("Distensible jaws") + getPts("Prehensile pincer tail") + getPts("Scything talons") * 3;
-		power = 5;
-		add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
+    OptionsUpgradeGruppe o1;
 
-		complete();
-	}
+    public TYMawloc() {
+        name = "Mawloc";
+        grundkosten = getPts("Mawloc") + getPts("Distensible jaws") + getPts("Prehensile pincer tail") + getPts("Scything talons") * 3;
+        power = 5;
+        add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

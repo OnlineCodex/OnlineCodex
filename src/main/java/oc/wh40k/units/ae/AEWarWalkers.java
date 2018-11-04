@@ -18,8 +18,8 @@ public class AEWarWalkers extends Eintrag {
         grundkosten = 0;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "War Walkers", 1, 3, getPts("War Walkers"));
-		add(squad);
-        
+        add(squad);
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Aeldari missile launcher", getPts("Aeldari missile launcher")));
@@ -35,9 +35,9 @@ public class AEWarWalkers extends Eintrag {
 
     @Override
     public void refreshen() {
-    	o1.setMaxAnzahl(squad.getModelle()*2);
-        o1.setLegal((squad.getModelle()*2) == o1.getAnzahl());
+        o1.setMaxAnzahl(squad.getModelle() * 2);
+        o1.setLegal((squad.getModelle() * 2) == o1.getAnzahl());
         power = squad.getModelle() * 5;
     }
-    
+
 }

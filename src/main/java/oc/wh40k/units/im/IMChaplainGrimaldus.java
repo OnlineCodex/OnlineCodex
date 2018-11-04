@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMChaplainGrimaldus extends Eintrag {
 
-	public IMChaplainGrimaldus() {
-		name = "Chaplain Grimaldus";
-		grundkosten = getPts("Chaplain Grimaldus");
-		power = 6;
-		seperator();
+    public IMChaplainGrimaldus() {
+        name = "Chaplain Grimaldus";
+        grundkosten = getPts("Chaplain Grimaldus");
+        power = 6;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

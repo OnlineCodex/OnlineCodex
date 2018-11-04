@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CDHeraldofNurgle extends Eintrag {
 
-	public CDHeraldofNurgle() {
-		name = "Herald of Nurgle";
+    public CDHeraldofNurgle() {
+        name = "Herald of Nurgle";
         grundkosten = getPts("Herald of Nurgle");
-        power = 4;   
-       	
-		complete();
-	}
+        power = 4;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

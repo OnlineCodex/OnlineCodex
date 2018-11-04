@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHMamonTransfigured extends Eintrag {
 
-	public CHMamonTransfigured() {
+    public CHMamonTransfigured() {
 
-		name = "Mamon Transfigured";
+        name = "Mamon Transfigured";
         grundkosten = getPts("Mamon Transfigured");
-        power = 9;   
+        power = 9;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

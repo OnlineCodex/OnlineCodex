@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class KDSkulltaker extends Eintrag {
 
-	public KDSkulltaker() {
+    public KDSkulltaker() {
 
-		name = "Skulltaker";
+        name = "Skulltaker";
 
-		grundkosten = 100;
+        grundkosten = 100;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSchaedelsammler.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDSchaedelsammler.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

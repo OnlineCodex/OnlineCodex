@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CMHerrscherderSchlachten extends Eintrag {
 
-	public CMHerrscherderSchlachten() {
-		name = "Herrscher der Schlachten";
-		grundkosten = 750;
+    public CMHerrscherderSchlachten() {
+        name = "Herrscher der Schlachten";
+        grundkosten = 750;
 
-		add(ico = new oc.Picture("oc/wh40k/images/HerrscherderSchlachten.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/HerrscherderSchlachten.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
+    }
+
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

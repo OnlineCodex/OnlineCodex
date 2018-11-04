@@ -8,31 +8,31 @@ import oc.OptionsEinzelZaehler;
 
 public class TASniperDroneTeam extends Eintrag {
 
-	OptionsEinzelZaehler drohnen;
-	
-	public TASniperDroneTeam() {
+    OptionsEinzelZaehler drohnen;
 
-		name = "Sniper Drone Team";
+    public TASniperDroneTeam() {
 
-		grundkosten = 0;
-		add(ico = new oc.Picture("oc/wh40k/images/Jagddrohnenteam.gif"));
-		
-		seperator();
-		
-		add(new AnzahlPanel(ID, randAbstand, cnt, "Jagddrohnen", 3, 9, 15));
-		seperator();
-		
-		add(drohnen =new OptionsEinzelZaehler(ID,randAbstand,cnt,"", "Feuerleitschütze", 3, 13));
-		drohnen.setAnzahl(1);
-	
-		complete();
+        name = "Sniper Drone Team";
 
-	}
+        grundkosten = 0;
+        add(ico = new oc.Picture("oc/wh40k/images/Jagddrohnenteam.gif"));
 
-	//@OVERRIDE
-	public void refreshen() {
-		if(drohnen.getAnzahl()<1){
-			drohnen.setAnzahl(1);
-		}
-	}
+        seperator();
+
+        add(new AnzahlPanel(ID, randAbstand, cnt, "Jagddrohnen", 3, 9, 15));
+        seperator();
+
+        add(drohnen = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Feuerleitschütze", 3, 13));
+        drohnen.setAnzahl(1);
+
+        complete();
+
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        if (drohnen.getAnzahl() < 1) {
+            drohnen.setAnzahl(1);
+        }
+    }
 }

@@ -5,17 +5,17 @@ import oc.RuestkammerStarter;
 
 public class IMCaptaininGravisArmour extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMCaptaininGravisArmour() {
-		name = "Captain in Gravis Armour";
-		grundkosten = getPts("Captain in Gravis Armour") + getPts("Master-crafted power sword") + getPts("Boltstorm gauntlet");
-		power = 7;
+    public IMCaptaininGravisArmour() {
+        name = "Captain in Gravis Armour";
+        grundkosten = getPts("Captain in Gravis Armour") + getPts("Master-crafted power sword") + getPts("Boltstorm gauntlet");
+        power = 7;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

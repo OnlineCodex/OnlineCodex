@@ -7,41 +7,41 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMRavenwingLandSpeeders extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsZaehlerGruppe o1, o2;
-	
-	public IMRavenwingLandSpeeders() {
-		name = "Ravenwing Land Speeders";
-		grundkosten = 0;
+    AnzahlPanel squad;
+    OptionsZaehlerGruppe o1, o2;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Ravenwing Land Speeders", 1, 5, getPts("Ravenwing Land Speeders"));
-		add(squad);
-		
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		o1.setAktiv(0, true);
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
+    public IMRavenwingLandSpeeders() {
+        name = "Ravenwing Land Speeders";
+        grundkosten = 0;
 
-		complete();
-	}
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Ravenwing Land Speeders", 1, 5, getPts("Ravenwing Land Speeders"));
+        add(squad);
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle() * 6;
-		
-		o1.setMaxAnzahl(squad.getModelle());
-		o2.setMaxAnzahl(squad.getModelle());
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        o1.setAktiv(0, true);
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = squad.getModelle() * 6;
+
+        o1.setMaxAnzahl(squad.getModelle());
+        o2.setMaxAnzahl(squad.getModelle());
+    }
 }

@@ -5,22 +5,22 @@ import oc.OptionsEinzelUpgrade;
 
 public class CMHellBlade extends Eintrag {
 
-	public CMHellBlade() {
-		name = "Hell Blade";
-		grundkosten = 115;
+    public CMHellBlade() {
+        name = "Hell Blade";
+        grundkosten = 115;
 
-		add(ico = new oc.Picture("oc/wh40k/images/HellBlade.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/HellBlade.gif"));
 
-		seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonic Possession", 20));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonic Possession", 20));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

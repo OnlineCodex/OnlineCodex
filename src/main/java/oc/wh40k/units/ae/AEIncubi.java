@@ -6,34 +6,34 @@ import oc.RuestkammerStarter;
 
 public class AEIncubi extends Eintrag {
 
-	AnzahlPanel squad;
-	RuestkammerStarter rkBoss;
+    AnzahlPanel squad;
+    RuestkammerStarter rkBoss;
 
-	public AEIncubi() {
-		name = "Incubi";
-		grundkosten = 0;
-		
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Incubi", 5, 10, getPts("Incubi") + getPts("Klaive"));
-		add(squad);
+    public AEIncubi() {
+        name = "Incubi";
+        grundkosten = 0;
 
-		seperator();
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Incubi", 5, 10, getPts("Incubi") + getPts("Klaive"));
+        add(squad);
 
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEKlaivex", "Klaivex");
-		rkBoss.initKammer();
-		add(rkBoss);
+        seperator();
 
-		seperator();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEKlaivex", "Klaivex");
+        rkBoss.initKammer();
+        add(rkBoss);
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		if(squad.getModelle() > 5){
-			power = 9;
-		} else{
-			power = 5;
-		}
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (squad.getModelle() > 5) {
+            power = 9;
+        } else {
+            power = 5;
+        }
+    }
 
 }

@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class APOKaldorDraigo extends Eintrag {
 
-	public APOKaldorDraigo() {
-		name = "Hochmeister Kaldor Draigo";
-		grundkosten = 245;
+    public APOKaldorDraigo() {
+        name = "Hochmeister Kaldor Draigo";
+        grundkosten = 245;
 
-		add(ico = new oc.Picture("oc/wh40k/images/GKHochmeisterKaldorDraigo.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/GKHochmeisterKaldorDraigo.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

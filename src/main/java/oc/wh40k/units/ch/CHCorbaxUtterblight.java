@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHCorbaxUtterblight extends Eintrag {
 
-	public CHCorbaxUtterblight() {
+    public CHCorbaxUtterblight() {
 
-		name = "Cor'bax Utterblight";
+        name = "Cor'bax Utterblight";
         grundkosten = getPts("Cor'bax Utterblight");
-        power = 12;   
+        power = 12;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

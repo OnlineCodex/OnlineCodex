@@ -5,19 +5,19 @@ import oc.Eintrag;
 public class KDSkullCannon extends Eintrag {
 
 
-	public KDSkullCannon() {
+    public KDSkullCannon() {
 
-		name = "Skull Cannon";
+        name = "Skull Cannon";
 
-		grundkosten = 125;
+        grundkosten = 125;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

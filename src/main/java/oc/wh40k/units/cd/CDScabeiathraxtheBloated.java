@@ -5,18 +5,18 @@ import oc.Eintrag;
 
 public class CDScabeiathraxtheBloated extends Eintrag {
 
-	public CDScabeiathraxtheBloated() {
-		name = "Scabeiathrax the Bloated";
-		grundkosten = 777;
+    public CDScabeiathraxtheBloated() {
+        name = "Scabeiathrax the Bloated";
+        grundkosten = 777;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ScabeiathraxtheBloated.gif"));
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ScabeiathraxtheBloated.gif"));
 
-	@Override
-	public void refreshen() {
-        setUnikat(true);    
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 
 }

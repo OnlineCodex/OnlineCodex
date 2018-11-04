@@ -6,30 +6,29 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class ORBigSquiggoth extends Eintrag {
-        OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public ORBigSquiggoth() {
-		name = "Big Squiggoth";
-		grundkosten = 180;
+    public ORBigSquiggoth() {
+        name = "Big Squiggoth";
+        grundkosten = 180;
 
-		add(ico = new oc.Picture("oc/wh40k/images/BigSquiggoth.jpg"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/BigSquiggoth.jpg"));
 
 
-		ogE.addElement(new OptionsGruppeEintrag("Kannon", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Lobba", 25));
-		ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", 20));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Kannon", 20));
+        ogE.addElement(new OptionsGruppeEintrag("Lobba", 25));
+        ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", 20));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Snakebite Combat Drugs", 15));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Snakebite Combat Drugs", 15));
 
-	//@OVERRIDE
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+    }
 
 }

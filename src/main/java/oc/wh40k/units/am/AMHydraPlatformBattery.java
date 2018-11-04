@@ -7,29 +7,29 @@ import oc.OptionsEinzelUpgrade;
 
 public class AMHydraPlatformBattery extends Eintrag {
 
-	AnzahlPanel Buggies;
-	OptionsEinzelUpgrade RotäFarbä;
+    AnzahlPanel Buggies;
+    OptionsEinzelUpgrade RotäFarbä;
 
-	public AMHydraPlatformBattery() {
+    public AMHydraPlatformBattery() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		Buggies = new AnzahlPanel(ID, randAbstand, cnt, "Hydra Platform","Hydra Platforms", 1, 3, 50);
-		add(Buggies);
+        Buggies = new AnzahlPanel(ID, randAbstand, cnt, "Hydra Platform", "Hydra Platforms", 1, 3, 50);
+        add(Buggies);
 
-		add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
+        seperator();
 
-		
-		add(RotäFarbä = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
-		
-		complete();
-	}
 
-	//@OVERRIDE
-	public void refreshen() {
+        add(RotäFarbä = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo-netting", 20));
 
-		RotäFarbä.setPreis(Buggies.getModelle()*20);
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+
+        RotäFarbä.setPreis(Buggies.getModelle() * 20);
+    }
 }

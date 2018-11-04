@@ -5,22 +5,22 @@ import oc.Eintrag;
 
 public class TYLictor extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public TYLictor() {
-		name = "Lictor";
-		grundkosten = getPts("Lictor") + getPts("Flesh Hooks") + getPts("Grasping talons")+ getPts("Rending claws");
-		power = 2;
+    public TYLictor() {
+        name = "Lictor";
+        grundkosten = getPts("Lictor") + getPts("Flesh Hooks") + getPts("Grasping talons") + getPts("Rending claws");
+        power = 2;
 
-		seperator();
+        seperator();
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYLiktor.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/TYLiktor.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

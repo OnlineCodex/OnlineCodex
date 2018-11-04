@@ -5,29 +5,29 @@ import oc.RuestkammerVater;
 
 public class DAWhirlwindKammer extends RuestkammerVater {
 
-	public DAWhirlwindKammer() {
-		name = "Whirlwind";
-		grundkosten = 65;
-	}
+    public DAWhirlwindKammer() {
+        name = "Whirlwind";
+        grundkosten = 65;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		add(ico = new oc.Picture("oc/wh40k/images/Whirlwind.gif"));
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(ico = new oc.Picture("oc/wh40k/images/Whirlwind.gif"));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 
 }

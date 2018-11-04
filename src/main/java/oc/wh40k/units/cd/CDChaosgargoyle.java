@@ -5,37 +5,28 @@ import oc.Eintrag;
 
 public class CDChaosgargoyle extends Eintrag {
 
-	AnzahlPanel CDChaosgargoyle;
+    AnzahlPanel CDChaosgargoyle;
 
-	public CDChaosgargoyle() {
+    public CDChaosgargoyle() {
 
-		name = "Chaosgargoyle";
+        name = "Chaosgargoyle";
 
-		grundkosten = 0;
-
-
-
-		CDChaosgargoyle = new AnzahlPanel(ID, randAbstand, cnt, "Chaosgargoyle", 5, 20, 15);
-
-		add(CDChaosgargoyle);
+        grundkosten = 0;
 
 
+        CDChaosgargoyle = new AnzahlPanel(ID, randAbstand, cnt, "Chaosgargoyle", 5, 20, 15);
+
+        add(CDChaosgargoyle);
 
 
-
-		add(ico = new oc.Picture("oc/wh40k/images/CDChaosgargoyle.gif"));
-
+        add(ico = new oc.Picture("oc/wh40k/images/CDChaosgargoyle.gif"));
 
 
+        complete();
 
+    }
 
-
-
-		complete();
-
-	}
-
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

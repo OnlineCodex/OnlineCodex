@@ -1,22 +1,22 @@
 package oc.wh40k.units.cd;
 
 
-public class CDDerWechselbalg  extends CDHerold {
+public class CDDerWechselbalg extends CDHerold {
 
-	boolean nurgleBild;
+    boolean nurgleBild;
 
-	public CDDerWechselbalg() {
-		name = "Der Wechselbalg";
-		grundkosten = 75;
+    public CDDerWechselbalg() {
+        name = "Der Wechselbalg";
+        grundkosten = 75;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDDaemonenprinzdesChaos.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDDaemonenprinzdesChaos.gif"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		super.refreshen();
-	}
+    @Override
+    public void refreshen() {
+        super.refreshen();
+    }
 
 }

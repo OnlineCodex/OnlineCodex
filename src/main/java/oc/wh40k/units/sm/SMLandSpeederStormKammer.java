@@ -6,35 +6,35 @@ import oc.RuestkammerVater;
 
 public class SMLandSpeederStormKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public SMLandSpeederStormKammer() {
-		name = "Land Speeder Storm";
-		grundkosten = 40;
-		}
+    public SMLandSpeederStormKammer() {
+        name = "Land Speeder Storm";
+        grundkosten = 40;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
+    @Override
+    public void initButtons(boolean... defaults) {
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederStorm.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederStorm.jpg"));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Schwerer Bolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Schwerer Flamer", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Multimelter", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Sturmkanone", 15));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o1.setSelected("Schwerer Bolter", true);
+        ogE.addElement(new OptionsGruppeEintrag("Schwerer Bolter", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Schwerer Flamer", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Multimelter", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Sturmkanone", 15));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o1.setSelected("Schwerer Bolter", true);
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		if (!o1.isSelected()) {
-			o1.setSelected("Schwerer Bolter", true);
-		}
-	}
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) {
+            o1.setSelected("Schwerer Bolter", true);
+        }
+    }
 
 }

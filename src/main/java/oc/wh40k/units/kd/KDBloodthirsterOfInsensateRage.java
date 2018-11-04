@@ -6,24 +6,24 @@ import oc.OptionsZaehlerGruppe;
 
 public class KDBloodthirsterOfInsensateRage extends Eintrag {
 
-	OptionsZaehlerGruppe o1,o2,o3;
-	
-	public KDBloodthirsterOfInsensateRage() {
+    OptionsZaehlerGruppe o1, o2, o3;
 
-		name = "Bloodthirster Of Insensate Rage";
+    public KDBloodthirsterOfInsensateRage() {
 
-		grundkosten = 275;
+        name = "Bloodthirster Of Insensate Rage";
 
-		complete();
+        grundkosten = 275;
 
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
-	}
-	
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 }

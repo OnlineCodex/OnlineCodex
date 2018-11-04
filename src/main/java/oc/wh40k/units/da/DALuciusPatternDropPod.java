@@ -16,5 +16,5 @@ public class DALuciusPatternDropPod extends Eintrag {
     @Override
     public void refreshen() {
     }
-    
+
 }

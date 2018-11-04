@@ -7,15 +7,15 @@ public class ABCaptainObadiahSchfeer extends Eintrag {
 
     OptionsUpgradeGruppe oAce;
 
-	public ABCaptainObadiahSchfeer() {
-		name = "Captain Obadiah Schfeer (Steel Dog Alpha)";
-		grundkosten = 260;
-		add(ico = new oc.Picture("oc/wh40k/images/ABSteelDogAlpha.jpg"));
-		complete();
-	}
+    public ABCaptainObadiahSchfeer() {
+        name = "Captain Obadiah Schfeer (Steel Dog Alpha)";
+        grundkosten = 260;
+        add(ico = new oc.Picture("oc/wh40k/images/ABSteelDogAlpha.jpg"));
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

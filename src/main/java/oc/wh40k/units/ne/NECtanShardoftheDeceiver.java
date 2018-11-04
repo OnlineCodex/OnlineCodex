@@ -6,22 +6,22 @@ import oc.Eintrag;
 public class NECtanShardoftheDeceiver extends Eintrag {
 
 
-	public NECtanShardoftheDeceiver() {
-		name = "C'tan Shard of the Deceiver";
-		grundkosten = getPts("C'tan Shard of the Deceiver");
+    public NECtanShardoftheDeceiver() {
+        name = "C'tan Shard of the Deceiver";
+        grundkosten = getPts("C'tan Shard of the Deceiver");
 
-		add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
 
-        
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-		power = 12;
-	}
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+        power = 12;
+    }
 
 }

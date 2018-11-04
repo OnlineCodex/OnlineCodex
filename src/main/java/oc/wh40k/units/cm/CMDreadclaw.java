@@ -5,18 +5,18 @@ import oc.Eintrag;
 public class CMDreadclaw extends Eintrag {
 
 
-	public CMDreadclaw() {
-                name = "Dreadclaw";
-                grundkosten = 85;
+    public CMDreadclaw() {
+        name = "Dreadclaw";
+        grundkosten = 85;
 
-                add(ico = new oc.Picture("oc/wh40k/images/Ahriman.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/Ahriman.gif"));
 
 
-                complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

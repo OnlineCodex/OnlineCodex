@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class TAAunva extends Eintrag {
 
-	public TAAunva() {
+    public TAAunva() {
 
-		name = "Aun'va";
+        name = "Aun'va";
 
-		grundkosten = getPts("Aun'Va") + 2*getPts("Ethereal Guard");
+        grundkosten = getPts("Aun'Va") + 2 * getPts("Ethereal Guard");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Aunva.gif"));
-		
-		complete();
+        add(ico = new oc.Picture("oc/wh40k/images/Aunva.gif"));
 
-	}
+        complete();
 
-	//@OVERRIDE
-	public void refreshen() {
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
         power = 5;
-	}
-	
-	@Override
+    }
+
+    @Override
     public void deleteYourself() {
         super.deleteYourself();
     }

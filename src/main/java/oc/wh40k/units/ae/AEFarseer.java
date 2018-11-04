@@ -8,35 +8,35 @@ import oc.wh40k.units.PsychicPowers;
 
 public class AEFarseer extends Eintrag {
 
-	OptionsZaehlerGruppe o1;
-	RuestkammerStarter psychicPowers;
-	
-	public AEFarseer() {
-		name = "Farseer";
-		grundkosten = getPts("Farseer") + getPts("Shuriken pistol");
-		power = 6;
-		
-		seperator();
+    OptionsZaehlerGruppe o1;
+    RuestkammerStarter psychicPowers;
 
-		ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
-		ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		o1.setAktiv(0, true);
-		
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(2);
-		((PsychicPowers)psychicPowers.getKammer()).enableRunesOfFate();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
-	}
+    public AEFarseer() {
+        name = "Farseer";
+        grundkosten = getPts("Farseer") + getPts("Shuriken pistol");
+        power = 6;
 
-	@Override
-	public void refreshen() {	
-	}
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
+        ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        o1.setAktiv(0, true);
+
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfFate();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

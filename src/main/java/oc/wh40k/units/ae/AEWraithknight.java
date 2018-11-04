@@ -14,8 +14,8 @@ public class AEWraithknight extends Eintrag {
         name = "Wraithknight";
         grundkosten = getPts("Wraithknight") + getPts("Titanic wraithbone fists") + getPts("Titanic feet");
         power = 27;
-        
-        ogE.addElement(new OptionsGruppeEintrag("2 Heavy wraithcannons", 2*getPts("Heavy wraithcannon")));
+
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy wraithcannons", 2 * getPts("Heavy wraithcannon")));
         ogE.addElement(new OptionsGruppeEintrag("Titanic ghostglaive and scattershield", getPts("Titanic ghostglaive") + getPts("Scattershield")));
         ogE.addElement(new OptionsGruppeEintrag("Sun cannon and scattershield", getPts("Sun cannon") + getPts("Scattershield")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -34,7 +34,7 @@ public class AEWraithknight extends Eintrag {
 
     @Override
     public void refreshen() {
-    	o2.alwaysSelected();
+        o2.alwaysSelected();
     }
-    
+
 }

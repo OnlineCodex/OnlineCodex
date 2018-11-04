@@ -7,35 +7,35 @@ import oc.OptionsUpgradeGruppe;
 
 public class NELord extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public NELord() {
-		
-		name = "Lord";
-		grundkosten = getPts("Lord");
+    public NELord() {
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEHochlord.jpg"));
-		
-		seperator();
+        name = "Lord";
+        grundkosten = getPts("Lord");
 
-		ogE.addElement(new OptionsGruppeEintrag("Staff of light", getPts("Staff of light")));
-		ogE.addElement(new OptionsGruppeEintrag("Hyperphase sword", getPts("Hyperphase sword")));
-		ogE.addElement(new OptionsGruppeEintrag("Voidblade", getPts("Voidblade")));
-		ogE.addElement(new OptionsGruppeEintrag("Warscythe", getPts("Warscythe")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NEHochlord.jpg"));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Resurrection orb", getPts("Resurrection orb")));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Staff of light", getPts("Staff of light")));
+        ogE.addElement(new OptionsGruppeEintrag("Hyperphase sword", getPts("Hyperphase sword")));
+        ogE.addElement(new OptionsGruppeEintrag("Voidblade", getPts("Voidblade")));
+        ogE.addElement(new OptionsGruppeEintrag("Warscythe", getPts("Warscythe")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	@Override
-	public void refreshen() {
-        if(!o1.isSelected()) o1.setSelected(0, true);
-        
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Resurrection orb", getPts("Resurrection orb")));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+
         power = 5;
-	}
+    }
 
 }

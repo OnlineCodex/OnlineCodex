@@ -6,24 +6,24 @@ import oc.OptionsUpgradeGruppe;
 
 public class HHCALegionCaestusAssaultRam extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public HHCALegionCaestusAssaultRam() {
-		name = "Legion Caestus Assault Ram";
-		grundkosten = 305;
-		
-		seperator();
+    public HHCALegionCaestusAssaultRam() {
+        name = "Legion Caestus Assault Ram";
+        grundkosten = 305;
 
-		ogE.addElement(new OptionsGruppeEintrag("Auxiliary drive", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
-				
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-				
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Auxiliary drive", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Frag assault launchers", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

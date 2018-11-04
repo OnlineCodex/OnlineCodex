@@ -4,46 +4,47 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsEinzelZaehler;
+
 public class ORTankbustas extends Eintrag {
 
-	AnzahlPanel Panzaknakkaz;
-	OptionsEinzelZaehler Sprengsquiks;
-	OptionsEinzelZaehler Panzakloppa;
-	OptionsEinzelZaehler Pistolen;
-	OptionsEinzelUpgrade Boss;
+    AnzahlPanel Panzaknakkaz;
+    OptionsEinzelZaehler Sprengsquiks;
+    OptionsEinzelZaehler Panzakloppa;
+    OptionsEinzelZaehler Pistolen;
+    OptionsEinzelUpgrade Boss;
 
-	public ORTankbustas() {
+    public ORTankbustas() {
 
-		kategorie = 2;
-		grundkosten = 0;
-		add(Panzaknakkaz = new AnzahlPanel(ID, randAbstand, cnt, "Tankbustas", 5, 15, getPts("Tankbustas")+ getPts("Rokkit launcha")+ getPts("Stikkbombs")+ getPts("Tankbusta bombs")));
-		add(ico = new oc.Picture("oc/wh40k/images/Panzaknakkaz.gif"));
-		
-		seperator();
+        kategorie = 2;
+        grundkosten = 0;
+        add(Panzaknakkaz = new AnzahlPanel(ID, randAbstand, cnt, "Tankbustas", 5, 15, getPts("Tankbustas") + getPts("Rokkit launcha") + getPts("Stikkbombs") + getPts("Tankbusta bombs")));
+        add(ico = new oc.Picture("oc/wh40k/images/Panzaknakkaz.gif"));
 
-		add(Sprengsquiks = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Bomb Squigs", 2, getPts("Bomb Squig")));
-		add(Panzakloppa = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Tankhammer", 2, getPts("Tankhammer")- getPts("Rokkit launcha")));
-		add(Pistolen = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Pair of rokkit pistols", 1, getPts("Pair of rokkit pistols")- getPts("Rokkit launcha")));
+        seperator();
 
-		seperator();
+        add(Sprengsquiks = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Bomb Squigs", 2, getPts("Bomb Squig")));
+        add(Panzakloppa = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Tankhammer", 2, getPts("Tankhammer") - getPts("Rokkit launcha")));
+        add(Pistolen = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Pair of rokkit pistols", 1, getPts("Pair of rokkit pistols") - getPts("Rokkit launcha")));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Boss Nob", getPts("Boss Nob")));
-		
-		seperator();
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Boss Nob", getPts("Boss Nob")));
 
-	//@OVERRIDE
-	public void refreshen() {
-		Sprengsquiks.setMaxAnzahl(Panzaknakkaz.getModelle()/5*2);
-		Pistolen.setMaxAnzahl(Panzaknakkaz.getModelle()/5);
-		if(Panzaknakkaz.getModelle()>10) {
-			power = 13;
-		} else if(Panzaknakkaz.getModelle()>5) {
-			power = 8;
-		} else {
-			power = 4;
-		}
-	}
+        seperator();
+
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        Sprengsquiks.setMaxAnzahl(Panzaknakkaz.getModelle() / 5 * 2);
+        Pistolen.setMaxAnzahl(Panzaknakkaz.getModelle() / 5);
+        if (Panzaknakkaz.getModelle() > 10) {
+            power = 13;
+        } else if (Panzaknakkaz.getModelle() > 5) {
+            power = 8;
+        } else {
+            power = 4;
+        }
+    }
 }

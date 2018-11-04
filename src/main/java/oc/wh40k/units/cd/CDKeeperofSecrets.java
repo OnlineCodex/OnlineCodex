@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class CDKeeperofSecrets extends Eintrag {
 
-	public CDKeeperofSecrets() {
+    public CDKeeperofSecrets() {
 
-		name = "Keeper of Secrets";
+        name = "Keeper of Secrets";
         grundkosten = getPts("Keeper of Secrets");
-        power = 11;   
-		complete();
+        power = 11;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

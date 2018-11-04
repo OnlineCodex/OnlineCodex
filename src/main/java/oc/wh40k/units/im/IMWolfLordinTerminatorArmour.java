@@ -4,9 +4,9 @@ import oc.RuestkammerStarter;
 
 public class IMWolfLordinTerminatorArmour extends IMCaptaininTerminatorArmour {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMWolfLordinTerminatorArmour() {
-		name = "Wolf Lord in Terminator Armour";
-	}
+    public IMWolfLordinTerminatorArmour() {
+        name = "Wolf Lord in Terminator Armour";
+    }
 }

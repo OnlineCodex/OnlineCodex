@@ -5,26 +5,26 @@ import oc.RuestkammerStarter;
 
 public class OAVindicareAssassine extends Eintrag {
 
-	RuestkammerStarter rkTransport;
+    RuestkammerStarter rkTransport;
 
-	public OAVindicareAssassine() {
-		name = "Vindicare Assassine";
-		grundkosten = 150;
+    public OAVindicareAssassine() {
+        name = "Vindicare Assassine";
+        grundkosten = 150;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
-		
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

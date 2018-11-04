@@ -1,50 +1,46 @@
 package oc.wh40k.units.or;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
+import oc.*;
 
 public class ORGunwagon extends Eintrag {
 
-	OptionsUpgradeGruppe fk;
-	OptionsZaehlerGruppe fk2;
+    OptionsUpgradeGruppe fk;
+    OptionsZaehlerGruppe fk2;
 
-	public ORGunwagon() {
+    public ORGunwagon() {
 
-		name = "Gunwagon";
-		grundkosten = getPts("Gunwagon");
-		power = 9;
+        name = "Gunwagon";
+        grundkosten = getPts("Gunwagon");
+        power = 9;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kampfpanza.gif"));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Killkannon", getPts("Killkannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Zzap gun", getPts("Zzap gun")));
-		add(fk = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(ico = new oc.Picture("oc/wh40k/images/Kampfpanza.gif"));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-		add(fk2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+        ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Killkannon", getPts("Killkannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Zzap gun", getPts("Zzap gun")));
+        add(fk = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Deff rolla", getPts("Deff rolla")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "'Ard Case", getPts("'Ard Case")));
-		
-		//TODO Battlewagon Ausrüstung
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grabbin' klaw", getPts("Grabbin' klaw")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", getPts("Wreckin' ball")));
+        ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
+        add(fk2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
-		complete();
-	}
+        seperator();
 
-	//@OVERRIDE
-	public void refreshen() {
-		fk.alwaysSelected();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Deff rolla", getPts("Deff rolla")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "'Ard Case", getPts("'Ard Case")));
+
+        //TODO Battlewagon Ausrüstung
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grabbin' klaw", getPts("Grabbin' klaw")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", getPts("Wreckin' ball")));
+
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        fk.alwaysSelected();
+    }
 }

@@ -6,25 +6,25 @@ import oc.Eintrag;
 
 public class CDSchleimbestiendesNurgle extends Eintrag {
 
-	AnzahlPanel CDSchleimbestiendesNurgle;
+    AnzahlPanel CDSchleimbestiendesNurgle;
 
-	public CDSchleimbestiendesNurgle() {
+    public CDSchleimbestiendesNurgle() {
 
-		name = "Schleimbestien des Nurgle";
+        name = "Schleimbestien des Nurgle";
 
-		grundkosten = 0;
-		
-		add(new AnzahlPanel(ID, randAbstand, cnt, "Schleimbestie des Nurgle", "Schleimbestien des Nurgle", 1, 9, 52));
+        grundkosten = 0;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSchleimbestiendesNurgle.gif"));
+        add(new AnzahlPanel(ID, randAbstand, cnt, "Schleimbestie des Nurgle", "Schleimbestien des Nurgle", 1, 9, 52));
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/CDSchleimbestiendesNurgle.gif"));
 
-		complete();
+        seperator();
 
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
-	}
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

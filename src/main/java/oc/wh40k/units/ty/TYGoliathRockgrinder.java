@@ -7,27 +7,27 @@ import oc.OptionsZaehlerGruppe;
 
 public class TYGoliathRockgrinder extends Eintrag {
 
-	OptionsZaehlerGruppe o1;
-	OptionsEinzelZaehler oe1;
-	
-	public TYGoliathRockgrinder() {
-		name = "Goliath Rockgrinder";
-		grundkosten = getPts("Goliath Rockgrinder") + getPts("Heavy stubber");
-		power = 6;
+    OptionsZaehlerGruppe o1;
+    OptionsEinzelZaehler oe1;
 
-		ogE.addElement(new OptionsGruppeEintrag("Heavy mining laser", getPts("Heavy mining laser")));
-		ogE.addElement(new OptionsGruppeEintrag("Clearance incinerator", getPts("Clearance incinerator")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy seismic cannon", getPts("Heavy seismic cannon")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+    public TYGoliathRockgrinder() {
+        name = "Goliath Rockgrinder";
+        grundkosten = getPts("Goliath Rockgrinder") + getPts("Heavy stubber");
+        power = 6;
 
-		seperator();
-		
-		add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cache of demolition charges", 1, getPts("Cache of demolition charges")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy mining laser", getPts("Heavy mining laser")));
+        ogE.addElement(new OptionsGruppeEintrag("Clearance incinerator", getPts("Clearance incinerator")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy seismic cannon", getPts("Heavy seismic cannon")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-	}
+        add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cache of demolition charges", 1, getPts("Cache of demolition charges")));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

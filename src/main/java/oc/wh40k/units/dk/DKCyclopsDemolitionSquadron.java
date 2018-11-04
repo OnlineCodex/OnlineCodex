@@ -5,22 +5,22 @@ import oc.Eintrag;
 
 public class DKCyclopsDemolitionSquadron extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public DKCyclopsDemolitionSquadron() {
-		name = "Cyclops Demolition Squadron";
-		grundkosten = 0;
+    public DKCyclopsDemolitionSquadron() {
+        name = "Cyclops Demolition Squadron";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Cyclops team", 1, 3, 30);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Cyclops team", 1, 3, 30);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGVendettaGunshipSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGVendettaGunshipSquadron.jpg"));
 
         complete();
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

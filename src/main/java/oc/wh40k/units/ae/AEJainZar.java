@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEJainZar extends Eintrag {
 
-	public AEJainZar() {
-		name = "Jain Zar";
-		grundkosten = getPts("Jain Zar");
-		power = 7;
-		seperator();
+    public AEJainZar() {
+        name = "Jain Zar";
+        grundkosten = getPts("Jain Zar");
+        power = 7;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

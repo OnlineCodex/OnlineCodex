@@ -7,17 +7,17 @@ import oc.OptionsUpgradeGruppe;
 
 public class KDKytanDaemonEngineofKhorne extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public KDKytanDaemonEngineofKhorne() {
-		name = "Kytan Daemon Engine of Khorne";
-		grundkosten = 525;
-                
-		complete();
-	}
+    OptionsUpgradeGruppe o1;
 
-	public void refreshen() {
-		getCountFromInformationVector("");
-	}
+    public KDKytanDaemonEngineofKhorne() {
+        name = "Kytan Daemon Engine of Khorne";
+        grundkosten = 525;
+
+        complete();
+    }
+
+    public void refreshen() {
+        getCountFromInformationVector("");
+    }
 }
 

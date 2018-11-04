@@ -1,50 +1,45 @@
 package oc.wh40k.units.ae;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class AEStrikingScorpions extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsEinzelUpgrade boss;
-	OptionsUpgradeGruppe o1, o2, o3;
-	RuestkammerStarter rkBoss;
-	
-	public AEStrikingScorpions() {
+    AnzahlPanel squad;
+    OptionsEinzelUpgrade boss;
+    OptionsUpgradeGruppe o1, o2, o3;
+    RuestkammerStarter rkBoss;
 
-		name = "Striking Scorpions";
+    public AEStrikingScorpions() {
 
-		grundkosten = 0;
+        name = "Striking Scorpions";
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Striking Scorpions", 5, 10, getPts("Striking Scorpions") + getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade"));
-		add(squad);
+        grundkosten = 0;
 
-		seperator();
-		
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEExarch", "Exarch");
-		((AEExarch)rkBoss.getKammer()).type = "Striking Scorpions";
-		((AEExarch)rkBoss.getKammer()).weaponCost = getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade");
-		rkBoss.initKammer();
-		rkBoss.setGrundkosten(getPts("Exarch"));
-		rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(rkBoss);
-		rkBoss.setAbwaehlbar(true);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Striking Scorpions", 5, 10, getPts("Striking Scorpions") + getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade"));
+        add(squad);
 
-		complete();
+        seperator();
 
-	}
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEExarch", "Exarch");
+        ((AEExarch) rkBoss.getKammer()).type = "Striking Scorpions";
+        ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade");
+        rkBoss.initKammer();
+        rkBoss.setGrundkosten(getPts("Exarch"));
+        rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(rkBoss);
+        rkBoss.setAbwaehlbar(true);
 
-	//@OVERRIDE
-	public void refreshen() {
+        complete();
 
-		if (squad.getModelle() > 5){
-			power = 10;
-		}else{
-			power = 5;
-		}
-	}
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+
+        if (squad.getModelle() > 5) {
+            power = 10;
+        } else {
+            power = 5;
+        }
+    }
 }

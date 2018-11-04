@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class SMMinotaurusChaplainIvanusEnkomi extends Eintrag {
 
-	public SMMinotaurusChaplainIvanusEnkomi() {
-		name = "Minotaurus Chaplain Ivanus Enkomi";
-		grundkosten = 145;
+    public SMMinotaurusChaplainIvanusEnkomi() {
+        name = "Minotaurus Chaplain Ivanus Enkomi";
+        grundkosten = 145;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMCaptainCatoSicarius.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMCaptainCatoSicarius.gif"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
+    }
+
 }

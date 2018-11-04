@@ -5,36 +5,36 @@ import oc.RuestkammerStarter;
 
 public class DHKanoptechSpinnen extends Eintrag {
 
-	RuestkammerStarter s1;
-	RuestkammerStarter s2;
-	RuestkammerStarter s3;
+    RuestkammerStarter s1;
+    RuestkammerStarter s2;
+    RuestkammerStarter s3;
 
-	public DHKanoptechSpinnen() {
-		name = "Kanoptech-Spinnen";
-		grundkosten = 0;
-		überschriftSetzen = true;
-        
-		add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSpinnen.jpg"));
+    public DHKanoptechSpinnen() {
+        name = "Kanoptech-Spinnen";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSpinnen.jpg"));
 
-		s1 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
-		s1.initKammer();
-		add(s1);
+        seperator();
 
-		s2 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
-		s2.initKammer();
-		add(s2);
+        s1 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
+        s1.initKammer();
+        add(s1);
 
-		s3 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
-		s3.initKammer();
-		add(s3);
+        s2 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
+        s2.initKammer();
+        add(s2);
 
-		complete();
-	}
+        s3 = new RuestkammerStarter(ID, randAbstand, cnt, "DHKanoptechSpinneKammer", "Kanoptech-Spinne");
+        s3.initKammer();
+        add(s3);
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

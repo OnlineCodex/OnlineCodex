@@ -5,40 +5,40 @@ import oc.RuestkammerStarter;
 
 public class DKABLightning extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKABLightning() {
-		name = "Lightning Squadron";
-		grundkosten = 0;
-		überschriftSetzen=true;
+    public DKABLightning() {
+        name = "Lightning Squadron";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABLightning.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ABLightning.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
-		t1.initKammer();
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
+        t1.initKammer();
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
-		t2.initKammer();
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
+        t2.initKammer();
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
-		t3.initKammer();
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABLightningKammer", "Lightning");
+        t3.initKammer();
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

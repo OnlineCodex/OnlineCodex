@@ -16,8 +16,8 @@ public class AEVaulsWrathSupportBattery extends Eintrag {
         grundkosten = 0;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Vaul's Wrath Support Battery", 1, 3, getPts("Vaul's Wrath Support Battery") + getPts("Shuriken catapult"));
-		add(squad);
-        
+        add(squad);
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Shadow weaver", getPts("Shadow weaver")));
@@ -32,8 +32,8 @@ public class AEVaulsWrathSupportBattery extends Eintrag {
 
     @Override
     public void refreshen() {
-    	o1.setMaxAnzahl(squad.getModelle());
-		o1.setLegal(o1.getAnzahl() == squad.getModelle());
+        o1.setMaxAnzahl(squad.getModelle());
+        o1.setLegal(o1.getAnzahl() == squad.getModelle());
         power = squad.getModelle() * 5;
     }
 }

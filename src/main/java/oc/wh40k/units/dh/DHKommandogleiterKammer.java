@@ -15,7 +15,7 @@ public class DHKommandogleiterKammer extends RuestkammerVater {
     @Override
     public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/NEKommandogleiter.jpg"));
-        
+
 
         seperator();
 

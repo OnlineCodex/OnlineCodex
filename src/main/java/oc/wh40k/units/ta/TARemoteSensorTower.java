@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class TARemoteSensorTower extends Eintrag {
 
-	public TARemoteSensorTower() {
+    public TARemoteSensorTower() {
 
-		name = "Remote Sensor Tower";
+        name = "Remote Sensor Tower";
 
-		grundkosten = getPts("Remote Sensor Tower") + getPts("High intensity markerlight");
-		
-		complete();
+        grundkosten = getPts("Remote Sensor Tower") + getPts("High intensity markerlight");
 
-	}
+        complete();
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = 2;
-	}
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        power = 2;
+    }
 }

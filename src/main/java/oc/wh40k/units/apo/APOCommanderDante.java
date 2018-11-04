@@ -5,25 +5,25 @@ import oc.Eintrag;
 
 public class APOCommanderDante extends Eintrag {
 
-	public APOCommanderDante() {
-		name = "Commander Dante";
-		grundkosten = 220;
+    public APOCommanderDante() {
+        name = "Commander Dante";
+        grundkosten = 220;
 
-		add(ico = new oc.Picture("oc/wh40k/images/BACommanderDante.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/BACommanderDante.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

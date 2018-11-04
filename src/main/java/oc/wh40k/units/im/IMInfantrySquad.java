@@ -7,41 +7,42 @@ import oc.RuestkammerStarter;
 
 public class IMInfantrySquad extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
-	RuestkammerStarter kammer;
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
+    RuestkammerStarter kammer;
 
-	public IMInfantrySquad() {
-		checkBuildaVater();
-		name = "Infantry Squad";
-		grundkosten = (getPts("Infantry Squad") + getPts("Frag grenade (AM)")) * 10;
-		power = 3;
+    public IMInfantrySquad() {
+        checkBuildaVater();
+        name = "Infantry Squad";
+        grundkosten = (getPts("Infantry Squad") + getPts("Frag grenade (AM)")) * 10;
+        power = 3;
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
 
-		seperator();
+        seperator();
 
-		ogE = IMAstraMilitarumSpecialWeapons.createRK("", "", buildaVater);
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE = IMAstraMilitarumSpecialWeapons.createRK("", "", buildaVater);
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "Sergeant");
-		((IMAstraMilitarumRuestkammer)kammer.getKammer()).setType("Sergeant");
-		kammer.initKammer();
-		add(kammer);
-		kammer.setUeberschriftTrotzNullKostenAusgeben(true);
-		kammer.setAbwaehlbar(false);
-		
-		complete();
-	}
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "Sergeant");
+        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Sergeant");
+        kammer.initKammer();
+        add(kammer);
+        kammer.setUeberschriftTrotzNullKostenAusgeben(true);
+        kammer.setAbwaehlbar(false);
 
-	// @OVERRIDE
-	public void refreshen() {}
+        complete();
+    }
+
+    // @OVERRIDE
+    public void refreshen() {
+    }
 
 }

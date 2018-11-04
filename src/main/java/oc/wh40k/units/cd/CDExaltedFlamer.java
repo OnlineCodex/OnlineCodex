@@ -2,18 +2,18 @@ package oc.wh40k.units.cd;
 
 public class CDExaltedFlamer extends CDHerold {
 
-	public CDExaltedFlamer() {
+    public CDExaltedFlamer() {
 
-		name = "Exalted Flamer";
+        name = "Exalted Flamer";
         grundkosten = getPts("Exalted Flamer");
-        power = 4;        
-        
+        power = 4;
+
         complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            super.refreshen();
-	}
+    @Override
+    public void refreshen() {
+        super.refreshen();
+    }
 }

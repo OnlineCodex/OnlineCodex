@@ -1,9 +1,9 @@
 package oc.wh40k.units.ae;
 
 import oc.AnzahlPanel;
+import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
-import oc.Eintrag;
 
 public class AEVypers extends Eintrag {
 
@@ -20,7 +20,7 @@ public class AEVypers extends Eintrag {
         add(squad);
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", getPts("Shuriken cannon")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, squad.getModelle()));
         ogE.addElement(new OptionsGruppeEintrag("Aeldari missile launcher", getPts("Aeldari missile launcher")));
@@ -40,14 +40,14 @@ public class AEVypers extends Eintrag {
     }
 
     @Override
-    public void refreshen() {      
+    public void refreshen() {
         o1.setMaxAnzahl(squad.getModelle());
-        o1x.setMaxAnzahl(squad.getModelle()-o1.getAnzahl());
-        o1x.setAnzahl(0,squad.getModelle()-o1.getAnzahl());
+        o1x.setMaxAnzahl(squad.getModelle() - o1.getAnzahl());
+        o1x.setAnzahl(0, squad.getModelle() - o1.getAnzahl());
         o7.setMaxAnzahl(squad.getModelle());
-        
+
         o7.setLegal(o7.getAnzahl() == squad.getModelle());
-        
+
         power = squad.getModelle() * 4;
     }
 }

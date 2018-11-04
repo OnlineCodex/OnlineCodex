@@ -6,20 +6,21 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMRhinoPrimaris extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMRhinoPrimaris() {
-		name = "Rhino Primaris";
-		grundkosten = getPts("Rhino Primaris") + getPts("Twin plasma gun") + getPts("Orbital array");
-		power = 9;
+    public IMRhinoPrimaris() {
+        name = "Rhino Primaris";
+        grundkosten = getPts("Rhino Primaris") + getPts("Twin plasma gun") + getPts("Orbital array");
+        power = 9;
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {}
+    @Override
+    public void refreshen() {
+    }
 }

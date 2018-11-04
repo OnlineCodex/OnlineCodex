@@ -5,27 +5,27 @@ import oc.OptionsEinzelZaehler;
 
 public class ORKaptinBadrukk extends Eintrag {
 
-	OptionsEinzelZaehler Munigrot;
+    OptionsEinzelZaehler Munigrot;
 
-	public ORKaptinBadrukk() {
+    public ORKaptinBadrukk() {
 
-		kategorie = 1;
-		name = "Kaptin Badrukk";
-		grundkosten = getPts("Kaptin Badrukk");
+        kategorie = 1;
+        name = "Kaptin Badrukk";
+        grundkosten = getPts("Kaptin Badrukk");
         power = 5;
-        
-		add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
 
-		Munigrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo runt", 1, getPts("Ammo runt"));
-		add(Munigrot);
+        seperator();
 
-		complete();
-	}
+        Munigrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo runt", 1, getPts("Ammo runt"));
+        add(Munigrot);
 
-	//@OVERRIDE
-	public void refreshen() {
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

@@ -5,28 +5,28 @@ import oc.OptionsEinzelUpgrade;
 
 public class SMWhirlwindHyperios extends Eintrag {
 
-	public SMWhirlwindHyperios() {
-		name = "Whirlwind Hyperios";
-		grundkosten = 115;
+    public SMWhirlwindHyperios() {
+        name = "Whirlwind Hyperios";
+        grundkosten = 115;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMWhirlwindHyperios.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMWhirlwindHyperios.jpg"));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
-	@Override
-	public void deleteYourself() {
-	}
+    @Override
+    public void deleteYourself() {
+    }
 
 }

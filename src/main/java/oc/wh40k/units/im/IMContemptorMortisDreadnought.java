@@ -8,35 +8,35 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMContemptorMortisDreadnought extends Eintrag {
 
-	OptionsZaehlerGruppe o1;
-	OptionsEinzelUpgrade oe1;
+    OptionsZaehlerGruppe o1;
+    OptionsEinzelUpgrade oe1;
 
-	public IMContemptorMortisDreadnought() {
-		name = "Contemptor Mortis Dreadnought";
-		grundkosten = getPts("Contemptor Mortis Dreadnought");
-		power = 9;
-		
-		seperator();
+    public IMContemptorMortisDreadnought() {
+        name = "Contemptor Mortis Dreadnought";
+        grundkosten = getPts("Contemptor Mortis Dreadnought");
+        power = 9;
 
-		ogE.addElement(new OptionsGruppeEintrag("2 twin heavy bolters", 2*getPts("Twin heavy bolter")));
-		ogE.addElement(new OptionsGruppeEintrag("2 twin autocannon", 2*getPts("Twin autocannon")));
-		ogE.addElement(new OptionsGruppeEintrag("2 twin lascannon", 2*getPts("Twin lascannon")));
-		ogE.addElement(new OptionsGruppeEintrag("2 missile launcher", 2*getPts("Missile launcher")));
-		ogE.addElement(new OptionsGruppeEintrag("2 assault cannon", 2*getPts("Assault cannon")));
-		ogE.addElement(new OptionsGruppeEintrag("2 multi-melta", 2*getPts("Multi-melta")));
-		ogE.addElement(new OptionsGruppeEintrag("2 heavy plasma cannon", 2*getPts("Heavy plasma cannon")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
-		
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cyclone missile launcher", getPts("Cyclone missile launcher")));
+        seperator();
 
-		seperator();
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("2 twin heavy bolters", 2 * getPts("Twin heavy bolter")));
+        ogE.addElement(new OptionsGruppeEintrag("2 twin autocannon", 2 * getPts("Twin autocannon")));
+        ogE.addElement(new OptionsGruppeEintrag("2 twin lascannon", 2 * getPts("Twin lascannon")));
+        ogE.addElement(new OptionsGruppeEintrag("2 missile launcher", 2 * getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("2 assault cannon", 2 * getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("2 multi-melta", 2 * getPts("Multi-melta")));
+        ogE.addElement(new OptionsGruppeEintrag("2 heavy plasma cannon", 2 * getPts("Heavy plasma cannon")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	@Override
-	public void refreshen() {	
-	}
+        seperator();
+
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cyclone missile launcher", getPts("Cyclone missile launcher")));
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

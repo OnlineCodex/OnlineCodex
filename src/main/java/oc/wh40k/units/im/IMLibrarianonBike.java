@@ -5,26 +5,26 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMLibrarianonBike extends Eintrag {
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMLibrarianonBike() {
-		name = "Librarian on Bike";
-		grundkosten = getPts("Librarian on Bike") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
-		power = 8;
+    public IMLibrarianonBike() {
+        name = "Librarian on Bike";
+        grundkosten = getPts("Librarian on Bike") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 8;
 
-		seperator();
+        seperator();
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Librarian on Bike");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Librarian on Bike");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

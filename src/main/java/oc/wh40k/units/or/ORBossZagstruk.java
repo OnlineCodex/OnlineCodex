@@ -5,19 +5,19 @@ import oc.Eintrag;
 public class ORBossZagstruk extends Eintrag {
 
 
-	public ORBossZagstruk() {
+    public ORBossZagstruk() {
 
-		kategorie = 1;
-		name = "Boss Zagstruk";
-		grundkosten = getPts("Boss Zagstruk");
+        kategorie = 1;
+        name = "Boss Zagstruk";
+        grundkosten = getPts("Boss Zagstruk");
         power = 5;
-        
-		add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
-		complete();
-	}
 
-	//@OVERRIDE
-	public void refreshen() {
+        add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

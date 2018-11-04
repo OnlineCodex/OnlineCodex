@@ -1,10 +1,6 @@
 package oc.wh40k.units.sm;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class SMChaplainDreadnought extends Eintrag {
 
@@ -17,7 +13,7 @@ public class SMChaplainDreadnought extends Eintrag {
         grundkosten = 135;
 
         add(ico = new oc.Picture("oc/wh40k/images/SMChaplainDreadnought.jpg"));
-        
+
 
         seperator();
 
@@ -45,11 +41,11 @@ public class SMChaplainDreadnought extends Eintrag {
 
         seperator();
 
-		rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
-		rkPod.initKammer(true);
-		rkPod.setButtonText("Landungskapsel");
-		rkPod.setSeperator(0);
-		add(rkPod);
+        rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
+        rkPod.initKammer(true);
+        rkPod.setButtonText("Landungskapsel");
+        rkPod.setSeperator(0);
+        add(rkPod);
 
         complete();
     }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMHighMarshalHelbrecht extends Eintrag {
 
-	public IMHighMarshalHelbrecht() {
-		name = "High Marshal Helbrecht";
-		grundkosten = getPts("High Marshal Helbrecht");
-		power = 9;
-		seperator();
+    public IMHighMarshalHelbrecht() {
+        name = "High Marshal Helbrecht";
+        grundkosten = getPts("High Marshal Helbrecht");
+        power = 9;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

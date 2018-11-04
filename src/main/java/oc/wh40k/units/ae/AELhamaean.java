@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class AELhamaean extends Eintrag {
 
-	public AELhamaean() {
-		name = "Lhamaean";
-		grundkosten = getPts("Lhamaean") + getPts("Splinter pistol") + getPts("Shaimeshi blade");
-		power = 2;
-		seperator();
+    public AELhamaean() {
+        name = "Lhamaean";
+        grundkosten = getPts("Lhamaean") + getPts("Splinter pistol") + getPts("Shaimeshi blade");
+        power = 2;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() { 
-	}
+    @Override
+    public void refreshen() {
+    }
 }

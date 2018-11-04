@@ -5,26 +5,26 @@ import oc.RuestkammerStarter;
 
 public class IAEversorAssassin extends Eintrag {
 
-	RuestkammerStarter rkTransport;
+    RuestkammerStarter rkTransport;
 
-	public IAEversorAssassin() {
-		name = "Eversor Assassine";
-		grundkosten = 135;
+    public IAEversorAssassin() {
+        name = "Eversor Assassine";
+        grundkosten = 135;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
-		
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

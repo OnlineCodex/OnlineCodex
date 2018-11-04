@@ -4,33 +4,32 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 
 public class AEVoidraven extends Eintrag {
-	
-	OptionsUpgradeGruppe o1, o2;
 
-	public AEVoidraven() {
-		name = "Voidraven";
-		grundkosten = getPts("Voidraven");
+    OptionsUpgradeGruppe o1, o2;
 
-		power = 8;
+    public AEVoidraven() {
+        name = "Voidraven";
+        grundkosten = getPts("Voidraven");
 
-		ogE.addElement(new OptionsGruppeEintrag("2 Void lances", 2*getPts("Void lance")));
-    	ogE.addElement(new OptionsGruppeEintrag("2 Dark scythes", 2*getPts("Dark scythe")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        power = 8;
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Voidraven missiles", getPts("Voidraven missiles")));
-		
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("2 Void lances", 2 * getPts("Void lance")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Dark scythes", 2 * getPts("Dark scythe")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() { 
-		o1.alwaysSelected();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Voidraven missiles", getPts("Voidraven missiles")));
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

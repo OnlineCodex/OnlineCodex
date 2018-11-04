@@ -9,33 +9,33 @@ import oc.OptionsUpgradeGruppe;
 
 public class APOChaosKnightPaladin extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public APOChaosKnightPaladin() {
-		name = "Chaos Knight Paladin";
-		grundkosten = 375;
+    OptionsUpgradeGruppe o1;
+
+    public APOChaosKnightPaladin() {
+        name = "Chaos Knight Paladin";
+        grundkosten = 375;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/Macharius.gif"));
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dirge caster", 5));
+        add(ico = new oc.Picture("oc/wh40k/images/Macharius.gif"));
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dirge caster", 5));
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Khorne", "Daemon Knight of Khorne", 50));
-		ogE.addElement(new OptionsGruppeEintrag("Nurgle", "Daemon Knight of Nurgle", 75));
-		ogE.addElement(new OptionsGruppeEintrag("Tzeentch", "Daemon Knight of Tzeentch", 65));
-		ogE.addElement(new OptionsGruppeEintrag("Slaanesh", "Daemon Knight of Slaanesh", 50));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-                
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Khorne", "Daemon Knight of Khorne", 50));
+        ogE.addElement(new OptionsGruppeEintrag("Nurgle", "Daemon Knight of Nurgle", 75));
+        ogE.addElement(new OptionsGruppeEintrag("Tzeentch", "Daemon Knight of Tzeentch", 65));
+        ogE.addElement(new OptionsGruppeEintrag("Slaanesh", "Daemon Knight of Slaanesh", 50));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	public void refreshen() {
-		getCountFromInformationVector("");
-		if(buildaVater.reflectionKennungLokal=="KD"){
-			o1.setSelected(0, true);
-		}
-	}
+        complete();
+    }
+
+    public void refreshen() {
+        getCountFromInformationVector("");
+        if (buildaVater.reflectionKennungLokal == "KD") {
+            o1.setSelected(0, true);
+        }
+    }
 }
 

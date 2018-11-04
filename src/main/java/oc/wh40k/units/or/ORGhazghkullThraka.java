@@ -7,18 +7,18 @@ public class ORGhazghkullThraka extends Eintrag {
 
     RuestkammerStarter squigs;
 
-	public ORGhazghkullThraka() {
+    public ORGhazghkullThraka() {
 
-		kategorie = 1;
-		name = "Ghazghkull Thraka";
-		grundkosten = getPts("Ghazghkull Thraka");
+        kategorie = 1;
+        name = "Ghazghkull Thraka";
+        grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
 
-		complete();
-	}
-	
-	//@OVERRIDE
-	public void refreshen() {
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

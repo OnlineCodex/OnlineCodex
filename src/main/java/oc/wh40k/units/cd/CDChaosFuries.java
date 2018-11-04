@@ -5,26 +5,26 @@ import oc.Eintrag;
 
 public class CDChaosFuries extends Eintrag {
 
-	AnzahlPanel furies;
+    AnzahlPanel furies;
 
-	public CDChaosFuries() {
+    public CDChaosFuries() {
 
-		name = "Chaos Furies";
+        name = "Chaos Furies";
         grundkosten = 0;
-        power = 3; 
+        power = 3;
 
         add(furies = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Furies", 5, 20, getPts("Chaos Furies")));
-        
-		complete();
 
-	}
+        complete();
 
-	public void deleteYourself() { 
-	}
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		power = furies.getModelle();
-	}
+    @Override
+    public void refreshen() {
+        power = furies.getModelle();
+    }
 }

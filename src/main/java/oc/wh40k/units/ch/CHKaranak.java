@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHKaranak extends Eintrag {
 
-	public CHKaranak() {
+    public CHKaranak() {
 
-		name = "Karanak";
+        name = "Karanak";
         grundkosten = getPts("Karanak");
-        power = 6;        
-        
+        power = 6;
+
         complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

@@ -6,15 +6,15 @@ import oc.OptionsEinzelUpgrade;
 public class DKHydraFlakkPlatform extends Eintrag {
 
 
-	public DKHydraFlakkPlatform() {
-		grundkosten = 50;
+    public DKHydraFlakkPlatform() {
+        grundkosten = 50;
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo netting", 20));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Camo netting", 20));
 
-		complete();
-	}
+        complete();
+    }
 
-  @Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

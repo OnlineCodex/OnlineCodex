@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEWebwayGate extends Eintrag {
 
-	public AEWebwayGate() {
-		name = "Webway Gate";
-		grundkosten = getPts("Webway Gates");
-		power = 6;
-		seperator();
+    public AEWebwayGate() {
+        name = "Webway Gate";
+        grundkosten = getPts("Webway Gates");
+        power = 6;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

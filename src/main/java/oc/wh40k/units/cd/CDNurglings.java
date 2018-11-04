@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class CDNurglings extends Eintrag {
 
-	AnzahlPanel Nurglings;
+    AnzahlPanel Nurglings;
 
-	public CDNurglings() {
+    public CDNurglings() {
 
-		name = "Nurglings";
+        name = "Nurglings";
         grundkosten = 0;
-        power = 3; 
+        power = 3;
 
         add(Nurglings = new AnzahlPanel(ID, randAbstand, cnt, "Nurglings", 3, 9, getPts("Nurglings")));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

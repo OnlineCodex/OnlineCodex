@@ -17,14 +17,14 @@ public class IMKataphronDestroyers extends Eintrag {
         add(Kampflaeuferschwadron = new AnzahlPanel(ID, randAbstand, cnt, "Kataphron Destroyers", 3, 12, getPts("Kataphron Destroyers")));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Plasma culverin", getPts("Plasma culverin")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
         ogE.addElement(new OptionsGruppeEintrag("Heavy grav cannon", getPts("Heavy grav cannon")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Phosphor blaster", getPts("Phosphor blaster")));
         add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
         ogE.addElement(new OptionsGruppeEintrag("Cognis flamer", getPts("Cognis flamer")));
@@ -42,16 +42,16 @@ public class IMKataphronDestroyers extends Eintrag {
 
         o2.setMaxAnzahl(Kampflaeuferschwadron.getModelle());
         o2x.setMaxAnzahl(Kampflaeuferschwadron.getModelle());
-        o2x.setAnzahl(0, o2x.getMaxAnzahl() - o2.getAnzahl());  
-        
+        o2x.setAnzahl(0, o2x.getMaxAnzahl() - o2.getAnzahl());
+
         power = 10;
-		if(Kampflaeuferschwadron.getModelle() > 9){
-			power = 40;
-		} else if(Kampflaeuferschwadron.getModelle() > 6){
-			power = 30;
-		} else if(Kampflaeuferschwadron.getModelle() > 3){
-			power = 20;
-		}
+        if (Kampflaeuferschwadron.getModelle() > 9) {
+            power = 40;
+        } else if (Kampflaeuferschwadron.getModelle() > 6) {
+            power = 30;
+        } else if (Kampflaeuferschwadron.getModelle() > 3) {
+            power = 20;
+        }
     }
-    
+
 }

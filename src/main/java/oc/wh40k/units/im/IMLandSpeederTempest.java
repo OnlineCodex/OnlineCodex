@@ -5,22 +5,22 @@ import oc.Eintrag;
 
 public class IMLandSpeederTempest extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public IMLandSpeederTempest() {
-		name = "Land Speeder Tempest";
+    public IMLandSpeederTempest() {
+        name = "Land Speeder Tempest";
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt,"Land Speeder Tempest", "Land Speeder Tempest", 1, 3, getPts("Land Speeder Tempest") + getPts("Assault cannon") + 2*getPts("Tempest salvo launcher"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder Tempest", "Land Speeder Tempest", 1, 3, getPts("Land Speeder Tempest") + getPts("Assault cannon") + 2 * getPts("Tempest salvo launcher"));
+        add(squad);
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle() * 8;
-	}
+    @Override
+    public void refreshen() {
+        power = squad.getModelle() * 8;
+    }
 
 }

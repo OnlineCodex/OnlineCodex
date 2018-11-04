@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMCanisWolfborn extends Eintrag {
 
-	public IMCanisWolfborn() {
-		name = "Canis Wolfborn";
-		grundkosten = getPts("Canis Wolfborn");
-		power = 8;
-		complete();
-	}
+    public IMCanisWolfborn() {
+        name = "Canis Wolfborn";
+        grundkosten = getPts("Canis Wolfborn");
+        power = 8;
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

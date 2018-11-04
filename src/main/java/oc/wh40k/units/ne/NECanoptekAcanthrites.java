@@ -5,29 +5,29 @@ import oc.Eintrag;
 
 public class NECanoptekAcanthrites extends Eintrag {
 
-	AnzahlPanel squad;
-	
-	public NECanoptekAcanthrites() {
-		name = "Canoptek Acanthrites";
-		grundkosten = 0;
+    AnzahlPanel squad;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Acanthrites", 3, 9, getPts("Canoptek Acanthrites") + getPts("Cutting beam") + getPts("Voidblade"));
-		add(squad);
+    public NECanoptekAcanthrites() {
+        name = "Canoptek Acanthrites";
+        grundkosten = 0;
 
-		seperator();
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Acanthrites", 3, 9, getPts("Canoptek Acanthrites") + getPts("Cutting beam") + getPts("Voidblade"));
+        add(squad);
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
 
-        if(squad.getModelle() > 6){
-        	power = 27;
-        }else if (squad.getModelle() > 3){
-        	power = 18;
-        }else{
-        	power = 9;
+    @Override
+    public void refreshen() {
+
+        if (squad.getModelle() > 6) {
+            power = 27;
+        } else if (squad.getModelle() > 3) {
+            power = 18;
+        } else {
+            power = 9;
         }
-	} 
+    }
 }

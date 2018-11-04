@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class NENecronWarriors extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public NENecronWarriors() {
-		grundkosten = 0;
+    public NENecronWarriors() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Warriors", 10, 20, getPts("Warriors")+getPts("Gauss flayer"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Warriors", 10, 20, getPts("Warriors") + getPts("Gauss flayer"));
+        add(squad);
 
-		seperator();
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		power = 6 + ((squad.getModelle() > 10)?6:0);
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = 6 + ((squad.getModelle() > 10) ? 6 : 0);
+    }
 }

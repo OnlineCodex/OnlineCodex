@@ -4,23 +4,23 @@ import oc.Eintrag;
 
 public class INInquisitorLordHectorRex extends Eintrag {
 
-	public INInquisitorLordHectorRex() {
-		name = "Inquisitor-Lord Hector Rex";
-		grundkosten = 175;
+    public INInquisitorLordHectorRex() {
+        name = "Inquisitor-Lord Hector Rex";
+        grundkosten = 175;
 
-		add(ico = new oc.Picture("oc/wh40k/images/GKInquisitorKaramasov.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/GKInquisitorKaramasov.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

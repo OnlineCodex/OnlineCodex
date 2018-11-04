@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHCypher extends Eintrag {
 
-	public CHCypher() {
+    public CHCypher() {
 
-		name = "Cypher";
+        name = "Cypher";
         grundkosten = getPts("Cypher");
-        power = 6;   
+        power = 6;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

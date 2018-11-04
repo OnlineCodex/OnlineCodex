@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMCaptainLysander extends Eintrag {
 
-	public IMCaptainLysander() {
-		name = "Captain Lysander";
-		grundkosten = getPts("Captain Lysander");
-		power = 8;
-		seperator();
+    public IMCaptainLysander() {
+        name = "Captain Lysander";
+        grundkosten = getPts("Captain Lysander");
+        power = 8;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

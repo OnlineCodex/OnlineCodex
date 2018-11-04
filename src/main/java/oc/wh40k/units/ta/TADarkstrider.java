@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class TADarkstrider extends Eintrag {
 
-	public TADarkstrider() {
+    public TADarkstrider() {
 
-		name = "Darkstrider";
+        name = "Darkstrider";
 
-		grundkosten = getPts("Darkstrider");
+        grundkosten = getPts("Darkstrider");
 
-		complete();
+        complete();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
         power = 3;
-	}
+    }
 }

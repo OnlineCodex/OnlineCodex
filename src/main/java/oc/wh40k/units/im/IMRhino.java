@@ -6,21 +6,22 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMRhino extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMRhino() {
-		name = "Rhino";
-		grundkosten = getPts("Rhino") + getPts("Storm bolter (SM)");
-		power = 4;
+    public IMRhino() {
+        name = "Rhino";
+        grundkosten = getPts("Rhino") + getPts("Storm bolter (SM)");
+        power = 4;
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {}
+    @Override
+    public void refreshen() {
+    }
 }

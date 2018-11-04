@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHZhuforTheImpaler extends Eintrag {
 
-	public CHZhuforTheImpaler() {
+    public CHZhuforTheImpaler() {
 
-		name = "Zhufor the Impaler";
+        name = "Zhufor the Impaler";
         grundkosten = getPts("Zhufor the Impaler");
-        power = 8;   
+        power = 8;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

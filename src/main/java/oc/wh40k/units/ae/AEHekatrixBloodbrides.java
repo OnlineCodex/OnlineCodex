@@ -1,11 +1,6 @@
 package oc.wh40k.units.ae;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class AEHekatrixBloodbrides extends Eintrag {
 
@@ -36,29 +31,26 @@ public class AEHekatrixBloodbrides extends Eintrag {
         add(rkBoss);
 
         seperator();
-        
+
         complete();
     }
 
     @Override
     public void refreshen() {
-        if(squad.getModelle() < 10)
-        {
-        	o1.setMaxAnzahl(1);
-        }
-        else
-        {
-        	o1.setMaxAnzahl(3);
-        }
-        
-        if(squad.getModelle() > 15){
-        	power = 13;
-        } else if(squad.getModelle() > 10){
-        	power = 10;
-        } else if(squad.getModelle() > 5){
-        	power = 7;
+        if (squad.getModelle() < 10) {
+            o1.setMaxAnzahl(1);
         } else {
-        	power = 4;
+            o1.setMaxAnzahl(3);
+        }
+
+        if (squad.getModelle() > 15) {
+            power = 13;
+        } else if (squad.getModelle() > 10) {
+            power = 10;
+        } else if (squad.getModelle() > 5) {
+            power = 7;
+        } else {
+            power = 4;
         }
     }
 }

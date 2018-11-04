@@ -1,23 +1,19 @@
 package oc.wh40k.units.ae;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class AEScourges extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
-	RuestkammerStarter rkBoss;
+    RuestkammerStarter rkBoss;
 
-	public AEScourges() {
-		name = "Scourges";
-		grundkosten = 0;
-        
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Scourges", 5, 10, getPts("Scourges"));
-		add(squad);
+    public AEScourges() {
+        name = "Scourges";
+        grundkosten = 0;
+
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Scourges", 5, 10, getPts("Scourges"));
+        add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Shardcarbine", getPts("Shardcarbine")));
         ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
@@ -30,20 +26,20 @@ public class AEScourges extends Eintrag {
 
         seperator();
 
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AESolarite", "Solarite");
-		rkBoss.initKammer();
-		add(rkBoss);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AESolarite", "Solarite");
+        rkBoss.initKammer();
+        add(rkBoss);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		if(squad.getModelle() > 5){
-			power = 10;
-		}else{
-			power = 6;
-		}
-	}
+    @Override
+    public void refreshen() {
+        if (squad.getModelle() > 5) {
+            power = 10;
+        } else {
+            power = 6;
+        }
+    }
 
 }

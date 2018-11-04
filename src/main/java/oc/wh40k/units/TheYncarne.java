@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class TheYncarne extends Eintrag {
 
-	public TheYncarne() {
-		name = "The Yncarne";
-		grundkosten = 275;
+    public TheYncarne() {
+        name = "The Yncarne";
+        grundkosten = 275;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
+
 }

@@ -6,30 +6,30 @@ import oc.OptionsEinzelUpgrade;
 
 public class DASableclaw extends Eintrag {
 
-	OptionsEinzelUpgrade speeder;
-	boolean troopAdd=false;
-	
-	public DASableclaw() {
-		name = "Sableclaw";
-		grundkosten = 200;
+    OptionsEinzelUpgrade speeder;
+    boolean troopAdd = false;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DASammael.gif"));
-		
-		seperator();
+    public DASableclaw() {
+        name = "Sableclaw";
+        grundkosten = 200;
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/DASammael.gif"));
 
-	@Override
-	public void deleteYourself() {
-		
-		super.deleteYourself();
-	}
+        seperator();
 
-	
-	@Override
-	public void refreshen() {
-		
+        complete();
+    }
+
+    @Override
+    public void deleteYourself() {
+
+        super.deleteYourself();
+    }
+
+
+    @Override
+    public void refreshen() {
+
         setUnikat(true);
-	}
+    }
 }

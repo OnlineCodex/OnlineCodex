@@ -5,19 +5,19 @@ import oc.Eintrag;
 
 public class SMLandSpeederTempestSquadron extends Eintrag {
 
-	public SMLandSpeederTempestSquadron() {
-		name = "Land Speeder Tempest Squadron";
-		grundkosten = 0;
+    public SMLandSpeederTempestSquadron() {
+        name = "Land Speeder Tempest Squadron";
+        grundkosten = 0;
 
-		add(new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder Tempest", 1, 3, 90));
+        add(new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder Tempest", 1, 3, 90));
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederTempest.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederTempest.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

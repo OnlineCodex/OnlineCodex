@@ -5,17 +5,17 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYToxicrene extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	
-	public TYToxicrene() {
-		name = "Toxicrene";
-		grundkosten = getPts("Toxicrene") + getPts("Choking spores") + getPts("Massive toxic lashes (NK)") + getPts("Massive toxic lashes (FK)");
-		power = 7;
-		add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
-		complete();
-	}
+    OptionsUpgradeGruppe o1;
 
-	@Override
-	public void refreshen() {
-	}
+    public TYToxicrene() {
+        name = "Toxicrene";
+        grundkosten = getPts("Toxicrene") + getPts("Choking spores") + getPts("Massive toxic lashes (NK)") + getPts("Massive toxic lashes (FK)");
+        power = 7;
+        add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

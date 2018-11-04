@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class TAOrcaDropship extends Eintrag {
 
-	public TAOrcaDropship() {
+    public TAOrcaDropship() {
 
-		name = "Orca Dropship";
+        name = "Orca Dropship";
 
-		grundkosten = getPts("Orca Dropship") + 2*getPts("Long-barrelled burst cannon") + getPts("Missile pod");
-		
-		complete();
+        grundkosten = getPts("Orca Dropship") + 2 * getPts("Long-barrelled burst cannon") + getPts("Missile pod");
 
-	}
+        complete();
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = 14;
-	}
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        power = 14;
+    }
 }

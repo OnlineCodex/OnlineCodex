@@ -6,32 +6,32 @@ import oc.OptionsEinzelUpgrade;
 
 public class CDFlamers extends Eintrag {
 
-	AnzahlPanel flamers;
-	OptionsEinzelUpgrade pyro;
-	
-	public CDFlamers() {
+    AnzahlPanel flamers;
+    OptionsEinzelUpgrade pyro;
 
-		name = "Flamers";
+    public CDFlamers() {
+
+        name = "Flamers";
         grundkosten = 0;
-        power = 5; 
+        power = 5;
 
         add(flamers = new AnzahlPanel(ID, randAbstand, cnt, "Flamers", 3, 9, getPts("Flamers")));
-        
+
         seperator();
-        	
-		add(pyro = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Pyrocaster", getPts("Bloodreaper")));
-        
-		complete();
 
-	}
+        add(pyro = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Pyrocaster", getPts("Bloodreaper")));
 
-	public void deleteYourself() { 
-	}
+        complete();
+
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		power = flamers.getModelle();
-		if(!pyro.isSelected())pyro.setSelected(true);
-	}
+    @Override
+    public void refreshen() {
+        power = flamers.getModelle();
+        if (!pyro.isSelected()) pyro.setSelected(true);
+    }
 }

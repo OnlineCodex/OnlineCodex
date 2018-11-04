@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMAsmodai extends Eintrag {
 
-	public IMAsmodai() {
-		name = "Asmodai";
-		grundkosten = getPts("Asmodai");
-		power = 7;
-		seperator();
+    public IMAsmodai() {
+        name = "Asmodai";
+        grundkosten = getPts("Asmodai");
+        power = 7;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

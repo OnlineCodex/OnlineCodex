@@ -10,9 +10,9 @@ public class DHTesseractArk extends Eintrag {
 
     public DHTesseractArk() {
         grundkosten = 250;
-        name="Tesseract Ark";
+        name = "Tesseract Ark";
         add(ico = new oc.Picture("oc/wh40k/images/NEKommandogleiter.jpg"));
-        
+
 
         seperator();
 

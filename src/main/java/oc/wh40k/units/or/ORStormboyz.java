@@ -6,45 +6,45 @@ import oc.RuestkammerStarter;
 
 public class ORStormboyz extends Eintrag {
 
-	AnzahlPanel stormboyz;
-	RuestkammerStarter Boss;
-	
-	public ORStormboyz() {
+    AnzahlPanel stormboyz;
+    RuestkammerStarter Boss;
 
-		kategorie = 4;
-		grundkosten = 0;
+    public ORStormboyz() {
 
-		add(stormboyz = new AnzahlPanel(ID, randAbstand, cnt, "Stormboyz", 5, 30, getPts("Stormboyz")));
+        kategorie = 4;
+        grundkosten = 0;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Stormboyz.gif"));
+        add(stormboyz = new AnzahlPanel(ID, randAbstand, cnt, "Stormboyz", 5, 30, getPts("Stormboyz")));
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/Stormboyz.gif"));
 
-		Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
-        ((ORWaffenUndGeschenke)Boss.getKammer()).setBoyBoss(true);
-        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)Boss.getKammer()).setDefaultNK("no weapon");
-		Boss.initKammer(false,false,false,false,false);
-		Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-		Boss.setGrundkosten(getPts("Boss Nob"));
-		add(Boss);
-		Boss.setAbwaehlbar(false);
+        seperator();
 
-		complete();
-	}
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        ((ORWaffenUndGeschenke) Boss.getKammer()).setBoyBoss(true);
+        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultNK("no weapon");
+        Boss.initKammer(false, false, false, false, false);
+        Boss.setUeberschriftTrotzNullKostenAusgeben(true);
+        Boss.setGrundkosten(getPts("Boss Nob"));
+        add(Boss);
+        Boss.setAbwaehlbar(false);
 
-	
-	//@OVERRIDE
-	public void refreshen() {
-		Boss.setAbwaehlbar(true);
-		if(stormboyz.getModelle() > 20){
-			power = 14;
-		} else if(stormboyz.getModelle() > 10){
-			power = 9;
-		} else if(stormboyz.getModelle() > 5){
-			power = 5;
-		} else {
-			power = 3;
-		}
-	}
+        complete();
+    }
+
+
+    //@OVERRIDE
+    public void refreshen() {
+        Boss.setAbwaehlbar(true);
+        if (stormboyz.getModelle() > 20) {
+            power = 14;
+        } else if (stormboyz.getModelle() > 10) {
+            power = 9;
+        } else if (stormboyz.getModelle() > 5) {
+            power = 5;
+        } else {
+            power = 3;
+        }
+    }
 }

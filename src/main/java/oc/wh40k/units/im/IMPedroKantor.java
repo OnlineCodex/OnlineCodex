@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMPedroKantor extends Eintrag {
 
-	public IMPedroKantor() {
-		name = "Pedro Kantor";
-		grundkosten = getPts("Pedro Kantor");
-		power = 9;
-		seperator();
+    public IMPedroKantor() {
+        name = "Pedro Kantor";
+        grundkosten = getPts("Pedro Kantor");
+        power = 9;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

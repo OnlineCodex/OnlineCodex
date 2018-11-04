@@ -1,157 +1,153 @@
 package oc.wh40k.units.ir;
 
-import oc.BuildaHQ;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
+import oc.*;
 
 public class IRCerastusKnightAcheron extends Eintrag {
 
-	OptionsUpgradeGruppe fk4;
-	OptionsEinzelUpgrade baron;
-	
-	boolean bannerBool=false;
-	boolean faustBool=false;
-	boolean zerfleischerBool=false;
-	boolean zufluchtBool=false;
-	boolean helmBool=false;
-	boolean zeichenBool=false;
-	
-	public IRCerastusKnightAcheron() {
-		name = "Cerastus Knight-Acheron";
-		grundkosten = 415;
-		
-		seperator();
+    OptionsUpgradeGruppe fk4;
+    OptionsEinzelUpgrade baron;
 
-		add(baron = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Lord Baron", 0));
+    boolean bannerBool = false;
+    boolean faustBool = false;
+    boolean zerfleischerBool = false;
+    boolean zufluchtBool = false;
+    boolean helmBool = false;
+    boolean zeichenBool = false;
 
-		seperator();
+    public IRCerastusKnightAcheron() {
+        name = "Cerastus Knight-Acheron";
+        grundkosten = 415;
 
-		ogE.addElement(new OptionsGruppeEintrag("Banner des glorreichen Macharius", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Zuflucht", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Helm des namenlosen Kriegers", 30));
-		ogE.addElement(new OptionsGruppeEintrag("Zeichen des Omnissiah", 30));
-		add(fk4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		complete();
-	}
+        seperator();
 
-	//@OVERRIDE
-	public void refreshen() {
+        add(baron = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Lord Baron", 0));
 
-		baron.setAktiv(getCountFromInformationVector("Lord Baron")>0);
+        seperator();
 
-		boolean skyErr=false;
+        ogE.addElement(new OptionsGruppeEintrag("Banner des glorreichen Macharius", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Zuflucht", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Helm des namenlosen Kriegers", 30));
+        ogE.addElement(new OptionsGruppeEintrag("Zeichen des Omnissiah", 30));
+        add(fk4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		if(getCountFromInformationVector("Skyreaper")>0){
-			skyErr=true;
-		}
+        complete();
+    }
 
-		fk4.setAktiv(baron.isSelected());
+    //@OVERRIDE
+    public void refreshen() {
 
-		//Einzigartige Gegenstände
-		if(fk4.isSelected("Banner des glorreichen Macharius")){
-			if(bannerBool==false){
-				bannerBool=true;
-				BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", 1);
-			}
-		} else if(!fk4.isSelected("Banner des glorreichen Macharius")) {
-			if(bannerBool==true){
-				bannerBool=false;
-				BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", -1);
-			}
-		}
+        baron.setAktiv(getCountFromInformationVector("Lord Baron") > 0);
 
-		if(fk4.isSelected("Zuflucht")){
-			if(zufluchtBool==false){
-				zufluchtBool=true;
-				BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", 1);
-			}
-		} else if(!fk4.isSelected("Zuflucht")) {
-			if(zufluchtBool==true){
-				zufluchtBool=false;
-				BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", -1);
-			}
-		}
+        boolean skyErr = false;
 
-		if(fk4.isSelected("Helm des namenlosen Kriegers")){
-			if(helmBool==false){
-				helmBool=true;
-				BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", 1);
-			}
-		} else if(!fk4.isSelected("Helm des namenlosen Kriegers")) {
-			if(helmBool==true){
-				helmBool=false;
-				BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", -1);
-			}
-		}
+        if (getCountFromInformationVector("Skyreaper") > 0) {
+            skyErr = true;
+        }
 
-		if(fk4.isSelected("Zeichen des Omnissiah")){
-			if(zeichenBool==false){
-				zeichenBool=true;
-				BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", 1);
-			}
-		} else if(!fk4.isSelected("Zeichen des Omnissiah")) {
-			if(zeichenBool==true){
-				zeichenBool=false;
-				BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", -1);
-			}
-		}
+        fk4.setAktiv(baron.isSelected());
 
-		int artefaktCnt = BuildaHQ.getCountFromInformationVectorGlobal("IR Banner des glorreichen Macharius")+
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Zuflucht")+
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Helm des namenlosen Kriegers")+
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Zeichen des Omnissiah");
+        //Einzigartige Gegenstände
+        if (fk4.isSelected("Banner des glorreichen Macharius")) {
+            if (bannerBool == false) {
+                bannerBool = true;
+                BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", 1);
+            }
+        } else if (!fk4.isSelected("Banner des glorreichen Macharius")) {
+            if (bannerBool == true) {
+                bannerBool = false;
+                BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", -1);
+            }
+        }
 
-		if(skyErr){
-			setFehlermeldung("Kein Icarus");
-		}else if(artefaktCnt > getCountFromInformationVector("Lord Baron")){
-			setFehlermeldung("Zu viele Artefakte");
-		}else if(BuildaHQ.getCountFromInformationVectorGlobal("IR Banner des glorreichen Macharius")>1 ||
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Zuflucht")>1 ||
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Helm des namenlosen Kriegers")>1 ||
-				BuildaHQ.getCountFromInformationVectorGlobal("IR Zeichen des Omnissiah")>1) {
-			setFehlermeldung("Artefakt doppelt");
-		}else{
-			setFehlermeldung("");
-		}
-	}
+        if (fk4.isSelected("Zuflucht")) {
+            if (zufluchtBool == false) {
+                zufluchtBool = true;
+                BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", 1);
+            }
+        } else if (!fk4.isSelected("Zuflucht")) {
+            if (zufluchtBool == true) {
+                zufluchtBool = false;
+                BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", -1);
+            }
+        }
 
-	@Override
-	public void deleteYourself() {
+        if (fk4.isSelected("Helm des namenlosen Kriegers")) {
+            if (helmBool == false) {
+                helmBool = true;
+                BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", 1);
+            }
+        } else if (!fk4.isSelected("Helm des namenlosen Kriegers")) {
+            if (helmBool == true) {
+                helmBool = false;
+                BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", -1);
+            }
+        }
 
-		if(bannerBool==true){
-			bannerBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", -1);
-		}
+        if (fk4.isSelected("Zeichen des Omnissiah")) {
+            if (zeichenBool == false) {
+                zeichenBool = true;
+                BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", 1);
+            }
+        } else if (!fk4.isSelected("Zeichen des Omnissiah")) {
+            if (zeichenBool == true) {
+                zeichenBool = false;
+                BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", -1);
+            }
+        }
 
-		if(zufluchtBool==true){
-			zufluchtBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", -1);
-		}
+        int artefaktCnt = BuildaHQ.getCountFromInformationVectorGlobal("IR Banner des glorreichen Macharius") +
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Zuflucht") +
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Helm des namenlosen Kriegers") +
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Zeichen des Omnissiah");
 
-		if(helmBool==true){
-			helmBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", -1);
-		}
+        if (skyErr) {
+            setFehlermeldung("Kein Icarus");
+        } else if (artefaktCnt > getCountFromInformationVector("Lord Baron")) {
+            setFehlermeldung("Zu viele Artefakte");
+        } else if (BuildaHQ.getCountFromInformationVectorGlobal("IR Banner des glorreichen Macharius") > 1 ||
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Zuflucht") > 1 ||
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Helm des namenlosen Kriegers") > 1 ||
+                BuildaHQ.getCountFromInformationVectorGlobal("IR Zeichen des Omnissiah") > 1) {
+            setFehlermeldung("Artefakt doppelt");
+        } else {
+            setFehlermeldung("");
+        }
+    }
 
-		if(zeichenBool==true){
-			zeichenBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", -1);
-		}
+    @Override
+    public void deleteYourself() {
 
-		if(faustBool==true){
-			faustBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Die Erste Faust", -1);
-		}
+        if (bannerBool == true) {
+            bannerBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Banner des glorreichen Macharius", -1);
+        }
 
-		if(zerfleischerBool==true){
-			zerfleischerBool=false;
-			BuildaHQ.addToInformationVectorGlobal("IR Zerfleischer", -1);
-		}
+        if (zufluchtBool == true) {
+            zufluchtBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Zuflucht", -1);
+        }
 
-		super.deleteYourself();
-	}
+        if (helmBool == true) {
+            helmBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Helm des namenlosen Kriegers", -1);
+        }
+
+        if (zeichenBool == true) {
+            zeichenBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Zeichen des Omnissiah", -1);
+        }
+
+        if (faustBool == true) {
+            faustBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Die Erste Faust", -1);
+        }
+
+        if (zerfleischerBool == true) {
+            zerfleischerBool = false;
+            BuildaHQ.addToInformationVectorGlobal("IR Zerfleischer", -1);
+        }
+
+        super.deleteYourself();
+    }
 
 }

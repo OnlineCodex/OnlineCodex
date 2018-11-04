@@ -5,18 +5,18 @@ import oc.RuestkammerVater;
 
 public class IADominatris extends RuestkammerVater {
 
-	public IADominatris() {
-		grundkosten = 0;
-	}
+    public IADominatris() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-    	add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
-		sizeSetzen();
-	}
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

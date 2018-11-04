@@ -5,21 +5,21 @@ import oc.OptionsEinzelUpgrade;
 
 public class SMLandRaiderTerminusUltra extends Eintrag {
 
-	public SMLandRaiderTerminusUltra() {
-		name = "Land Raider Terminus Ultra";
-		grundkosten = 300;
+    public SMLandRaiderTerminusUltra() {
+        name = "Land Raider Terminus Ultra";
+        grundkosten = 300;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandRaiderTerminus Ultra.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandRaiderTerminus Ultra.jpg"));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

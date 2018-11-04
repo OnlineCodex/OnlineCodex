@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class OREvilEyeInDaSky extends Eintrag {
 
-	public OREvilEyeInDaSky() {
-		name = "Evil Eye in da Sky";
-		grundkosten = 650;
+    public OREvilEyeInDaSky() {
+        name = "Evil Eye in da Sky";
+        grundkosten = 650;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/EvilEyeInDaSky.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/EvilEyeInDaSky.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CMGreaterBrassScorpionofKhorne extends Eintrag {
 
-	public CMGreaterBrassScorpionofKhorne() {
-		name = "Greater Brass Scorpion of Khorne";
-		grundkosten = 700;
+    public CMGreaterBrassScorpionofKhorne() {
+        name = "Greater Brass Scorpion of Khorne";
+        grundkosten = 700;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CMGreaterBrassScorpionofKhorne.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/CMGreaterBrassScorpionofKhorne.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

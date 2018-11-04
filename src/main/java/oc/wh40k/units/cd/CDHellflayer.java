@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CDHellflayer extends Eintrag {
 
-	public CDHellflayer() {
-		name = "Hellflayer";
+    public CDHellflayer() {
+        name = "Hellflayer";
         grundkosten = getPts("Hellflayer");
-        power = 5;   
-       	
-		complete();
-	}
+        power = 5;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

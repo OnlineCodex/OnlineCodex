@@ -1,12 +1,6 @@
 package oc.wh40k.units.gk;
 
-import oc.AnzahlPanel;
-import oc.BuildaHQ;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class GKTerminatortrupp extends Eintrag {
 
@@ -31,7 +25,7 @@ public class GKTerminatortrupp extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/GKTerminatortrupp.jpg"));
-        
+
 
         seperator();
 
@@ -74,7 +68,7 @@ public class GKTerminatortrupp extends Eintrag {
 
     @Override
     public void refreshen() {
-        if(!rkBoss.isSelected()) rkBoss.setSelected(true);
+        if (!rkBoss.isSelected()) rkBoss.setSelected(true);
 
         int subtractor = (stab.isSelected() ? 1 : 0) + (banner.isSelected() ? 1 : 0) + 1; // last one is the boss
 
@@ -95,24 +89,24 @@ public class GKTerminatortrupp extends Eintrag {
         rkBoss.getKammer().switchEntry("BANNER", !banner.isSelected());
 
         // Unique entry: Justicar Thawn
-		boolean thawnGlobal = ( getCountFromInformationVector("GKThawn") > 0 ? true : false );
-		if(thawnGlobal && !thawnSelected) thawn.setAktiv(false);
-		else thawn.setAktiv(true);
+        boolean thawnGlobal = (getCountFromInformationVector("GKThawn") > 0 ? true : false);
+        if (thawnGlobal && !thawnSelected) thawn.setAktiv(false);
+        else thawn.setAktiv(true);
 
-		if(thawn.isSelected()) {
-			thawnSelected = true;
-			addToInformationVector("GKThawn", 1);
-		} else {
-			if(thawnSelected) {
-				thawnSelected = false;
-				setInformationVectorValue("GKThawn", 0);
-				BuildaHQ.refreshEntries(1);
-				BuildaHQ.refreshEntries(2);
-				BuildaHQ.refreshEntries(3);
-				BuildaHQ.refreshEntries(4);
-				BuildaHQ.refreshEntries(5);
-			}
-		}
+        if (thawn.isSelected()) {
+            thawnSelected = true;
+            addToInformationVector("GKThawn", 1);
+        } else {
+            if (thawnSelected) {
+                thawnSelected = false;
+                setInformationVectorValue("GKThawn", 0);
+                BuildaHQ.refreshEntries(1);
+                BuildaHQ.refreshEntries(2);
+                BuildaHQ.refreshEntries(3);
+                BuildaHQ.refreshEntries(4);
+                BuildaHQ.refreshEntries(5);
+            }
+        }
     }
 
 }

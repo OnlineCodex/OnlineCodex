@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class ORGrotBommLauncha extends Eintrag {
 
-	public ORGrotBommLauncha() {
-		name = "Grot Bomm Launcha";
-		grundkosten = 35;
+    public ORGrotBommLauncha() {
+        name = "Grot Bomm Launcha";
+        grundkosten = 35;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/GrotBommLauncha.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/GrotBommLauncha.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

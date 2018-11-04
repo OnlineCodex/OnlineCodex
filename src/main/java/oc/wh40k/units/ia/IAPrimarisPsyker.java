@@ -5,31 +5,31 @@ import oc.OptionsEinzelUpgrade;
 
 public class IAPrimarisPsyker extends Eintrag {
 
-	public IAPrimarisPsyker() {
-		name = "Primaris-Psioniker";
-		grundkosten = 50;
-		
-		add(ico = new oc.Picture("oc/wh40k/images/IGPrimarisPsyker.gif"));
+    public IAPrimarisPsyker() {
+        name = "Primaris-Psioniker";
+        grundkosten = 50;
 
-		addToInformationVector("AMPrimarisPsyker", 1);
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Meisterschaftsgrad 2", 25));
+        add(ico = new oc.Picture("oc/wh40k/images/IGPrimarisPsyker.gif"));
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Digitalwaffen", 10));
-		
-		complete();
-	}
+        addToInformationVector("AMPrimarisPsyker", 1);
 
-	@Override
-	public void refreshen() {
-	}
-	
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Meisterschaftsgrad 2", 25));
+
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Digitalwaffen", 10));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 
 }

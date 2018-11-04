@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CSBanelordTitandesKhorne extends Eintrag {
 
-	public CSBanelordTitandesKhorne() {
-		name = "Banelord-Titan des Khorne";
-		grundkosten = 2500;
+    public CSBanelordTitandesKhorne() {
+        name = "Banelord-Titan des Khorne";
+        grundkosten = 2500;
 
-		add(ico = new oc.Picture("oc/wh40k/images/BanelordTitandesKhorne.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/BanelordTitandesKhorne.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

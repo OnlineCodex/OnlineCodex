@@ -6,31 +6,30 @@ import oc.RuestkammerStarter;
 
 public class HHCAVigilator extends Eintrag {
 
-	RuestkammerStarter Servo;
+    RuestkammerStarter Servo;
 
-	public HHCAVigilator() {
-		name = "Vigilator";
-		grundkosten = 95;
+    public HHCAVigilator() {
+        name = "Vigilator";
+        grundkosten = 95;
 
-		seperator();
-		
-		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "HHCAConsulServoKammer", "");
-		//Centurion, Champion, Chaplain, Forge, Librarian, Master, Moritat, Primus, Siege, Vigilator
-		Servo.initKammer(false, false, false, false, false, false, false, false, false, true);
-		Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
-		add(Servo);
-		Servo.setAbwaehlbar(false);		
-		
+        seperator();
 
-		complete();
-	}
+        Servo = new RuestkammerStarter(ID, randAbstand, cnt, "HHCAConsulServoKammer", "");
+        //Centurion, Champion, Chaplain, Forge, Librarian, Master, Moritat, Primus, Siege, Vigilator
+        Servo.initKammer(false, false, false, false, false, false, false, false, false, true);
+        Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
+        add(Servo);
+        Servo.setAbwaehlbar(false);
 
-	
 
-	@Override
-	public void refreshen() {
-				
-		
-	}
+        complete();
+    }
+
+
+    @Override
+    public void refreshen() {
+
+
+    }
 
 }

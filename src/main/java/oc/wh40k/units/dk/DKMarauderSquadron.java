@@ -6,46 +6,46 @@ import oc.RuestkammerStarter;
 
 public class DKMarauderSquadron extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKMarauderSquadron() {
-		name = "Marauder Squadron";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
-		this.gesamtpunkteImmerAnzeigen=false;
+    public DKMarauderSquadron() {
+        name = "Marauder Squadron";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
+        this.gesamtpunkteImmerAnzeigen = false;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKMarauderKammer", "Marauder");
-		t1.initKammer();
-		t1.setButtonText("Marauder");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKMarauderKammer", "Marauder");
+        t1.initKammer();
+        t1.setButtonText("Marauder");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Marauder");
-		t2.initKammer();
-		t2.setButtonText("Marauder 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Marauder");
+        t2.initKammer();
+        t2.setButtonText("Marauder 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Marauder");
-		t3.initKammer();
-		t3.setButtonText("Marauder 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Marauder");
+        t3.initKammer();
+        t3.setButtonText("Marauder 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 }

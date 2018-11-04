@@ -1,10 +1,6 @@
 package oc.wh40k.units.am;
 
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerVater;
+import oc.*;
 
 public class AMWalkuereKammer extends RuestkammerVater {
 
@@ -33,11 +29,11 @@ public class AMWalkuereKammer extends RuestkammerVater {
         seperator();
 
         add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "2 Schwere Bolter", "Paar schwere Bolter", 3, 10));
-        
+
         seperator();
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Fliegerass", 50));
-        
+
         sizeSetzen();
     }
 
@@ -46,5 +42,5 @@ public class AMWalkuereKammer extends RuestkammerVater {
         o1.alwaysSelected();
         o2.alwaysSelected();
     }
-    
+
 }

@@ -6,29 +6,29 @@ import oc.RuestkammerStarter;
 
 public class CMDeimosPatternVindicatorTankDestroyer extends Eintrag {
 
-	RuestkammerStarter ausruestung;
-	
-	public CMDeimosPatternVindicatorTankDestroyer() {
-		name = "Deimos Pattern Vindicator Tank Destroyer";
-		grundkosten = 130;
-		add(ico = new oc.Picture("oc/wh40k/images/SMVindicator.jpg"));
+    RuestkammerStarter ausruestung;
 
-		seperator();
+    public CMDeimosPatternVindicatorTankDestroyer() {
+        name = "Deimos Pattern Vindicator Tank Destroyer";
+        grundkosten = 130;
+        add(ico = new oc.Picture("oc/wh40k/images/SMVindicator.jpg"));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Siege Shield", 10));
-		
-		seperator();
-		
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
-		ausruestung.initKammer(true);
-		ausruestung.setButtonText("Ausrüstung");
-		add(ausruestung);
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Siege Shield", 10));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
+        ausruestung.initKammer(true);
+        ausruestung.setButtonText("Ausrüstung");
+        add(ausruestung);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

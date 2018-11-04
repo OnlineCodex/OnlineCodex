@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHBloodmaster extends Eintrag {
 
-	public CHBloodmaster() {
-		name = "Bloodmaster";
+    public CHBloodmaster() {
+        name = "Bloodmaster";
         grundkosten = getPts("Bloodmaster");
-        power = 3;   
-       	
-		complete();
-	}
+        power = 3;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

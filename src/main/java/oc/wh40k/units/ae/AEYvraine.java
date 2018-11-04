@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEYvraine extends Eintrag {
 
-	public AEYvraine() {
-		name = "Yvraine";
-		grundkosten = getPts("Yvraine");
-		power = 7;
-		seperator();
+    public AEYvraine() {
+        name = "Yvraine";
+        grundkosten = getPts("Yvraine");
+        power = 7;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

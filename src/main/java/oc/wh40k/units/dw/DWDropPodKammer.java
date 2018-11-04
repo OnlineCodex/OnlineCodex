@@ -1,12 +1,6 @@
 package oc.wh40k.units.dw;
 
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsPanelSwitcher;
-import oc.OptionsSeperator;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsVater;
-import oc.RuestkammerVater;
+import oc.*;
 
 public class DWDropPodKammer extends RuestkammerVater {
 
@@ -38,9 +32,9 @@ public class DWDropPodKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Deathwind-System", 15));
 
         OptionsVater[] pod = new OptionsVater[]{
-            podWeapon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE),
-            new OptionsSeperator(5),
-            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10)
+                podWeapon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE),
+                new OptionsSeperator(5),
+                new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10)
         };
 
         OptionsVater[] empty = new OptionsVater[]{};
@@ -53,7 +47,7 @@ public class DWDropPodKammer extends RuestkammerVater {
     @Override
     public void refreshen() {
         switcher.switchPanel(typ.getSelectedIndex());
-        
+
         if (!typ.isSelected()) {
             typ.setSelected(0, true);
         }
@@ -62,5 +56,5 @@ public class DWDropPodKammer extends RuestkammerVater {
             podWeapon.setSelected(0, true);
         }
     }
-    
+
 }

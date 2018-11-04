@@ -6,51 +6,51 @@ import oc.RuestkammerStarter;
 
 public class RH_IA13RenegadeHydraBattery extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
-	
-	OptionsEinzelUpgrade mt;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public RH_IA13RenegadeHydraBattery() {
-		name = "Renegade Hydra Battery";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    OptionsEinzelUpgrade mt;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
+    public RH_IA13RenegadeHydraBattery() {
+        name = "Renegade Hydra Battery";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(mt = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Militia Training", 10,1));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
-		t1.initKammer();
-		add(t1);
+        add(mt = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Militia Training", 10, 1));
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
-		t2.initKammer();
-		add(t2);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
+        t1.initKammer();
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
-		t3.initKammer();
-		add(t3);
-		
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
+        t2.initKammer();
+        add(t2);
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		int tanks = (t1.isSelected()?1:0) + (t2.isSelected()?1:0) + (t3.isSelected()?1:0);
-		mt.setModelle(tanks);
-		
-		if(getCountFromInformationVector("RHBloodyHandedReaver")==1){
-        	mt.setSelected(true);
-		}
-	}
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeHydraKammer", "Renegade Hydra", 1);
+        t3.initKammer();
+        add(t3);
+
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        int tanks = (t1.isSelected() ? 1 : 0) + (t2.isSelected() ? 1 : 0) + (t3.isSelected() ? 1 : 0);
+        mt.setModelle(tanks);
+
+        if (getCountFromInformationVector("RHBloodyHandedReaver") == 1) {
+            mt.setSelected(true);
+        }
+    }
 
 }

@@ -6,31 +6,31 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
 public class FOHimmelsschildLandeplattform extends Eintrag {
-	
-	OptionsZaehlerGruppe ozg1;
-	
-	public FOHimmelsschildLandeplattform() {
-		name = "Himmelsschild-Landeplattform";
-		grundkosten = 75;
-		überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Landeplattform.jpg"));
+    OptionsZaehlerGruppe ozg1;
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "[BK] Startklar",5));
-		
-		seperator();
+    public FOHimmelsschildLandeplattform() {
+        name = "Himmelsschild-Landeplattform";
+        grundkosten = 75;
+        überschriftSetzen = true;
 
-		ogE.addElement(new OptionsGruppeEintrag("Stacheldraht", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Barrikaden", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Panzersperren", 15));
-		add(ozg1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE,6));
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/Landeplattform.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "[BK] Startklar", 5));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Stacheldraht", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Barrikaden", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Panzersperren", 15));
+        add(ozg1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 6));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

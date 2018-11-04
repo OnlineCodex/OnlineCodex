@@ -6,24 +6,24 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMCyberwolves extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsZaehlerGruppe o1;
-	OptionsZaehlerGruppe o2;
+    AnzahlPanel squad;
+    OptionsZaehlerGruppe o1;
+    OptionsZaehlerGruppe o2;
 
-	public IMCyberwolves() {
-		name = "Cyberwolves\n";
-		grundkosten = 0;
-		überschriftSetzen = true;
+    public IMCyberwolves() {
+        name = "Cyberwolves\n";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Cyberwolf", "Cyberwolves", 1, 5, getPts("Cyberwolves"));
-		add(squad);
-		
-		complete();
-	}
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Cyberwolf", "Cyberwolves", 1, 5, getPts("Cyberwolves"));
+        add(squad);
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = squad.getModelle();
+    }
 
 }

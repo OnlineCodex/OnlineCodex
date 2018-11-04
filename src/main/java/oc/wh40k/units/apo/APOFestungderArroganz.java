@@ -5,18 +5,18 @@ import oc.Eintrag;
 public class APOFestungderArroganz extends Eintrag {
 
 
-	public APOFestungderArroganz() {
-		name = "Festung der Arroganz";
-		grundkosten = 960;
+    public APOFestungderArroganz() {
+        name = "Festung der Arroganz";
+        grundkosten = 960;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/FestungderArroganz.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/FestungderArroganz.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

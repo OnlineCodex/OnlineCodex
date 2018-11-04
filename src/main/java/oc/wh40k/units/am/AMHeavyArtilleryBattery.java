@@ -11,9 +11,9 @@ public class AMHeavyArtilleryBattery extends Eintrag {
     RuestkammerStarter t1;
     RuestkammerStarter t2;
     RuestkammerStarter t3;
-	RuestkammerStarter tr1;
-	RuestkammerStarter tr2;
-	RuestkammerStarter tr3;
+    RuestkammerStarter tr1;
+    RuestkammerStarter tr2;
+    RuestkammerStarter tr3;
 
     public AMHeavyArtilleryBattery() {
         name = "Heavy Artillery Battery";
@@ -24,10 +24,10 @@ public class AMHeavyArtilleryBattery extends Eintrag {
 
         seperator();
 
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo Netting", 30));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Bastion-breacher shells", 5));
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo Netting", 30));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Bastion-breacher shells", 5));
 
-		seperator();
+        seperator();
 
         t1 = new RuestkammerStarter(ID, randAbstand, cnt, "AMHeavyArtilleryCarriage", "", 1);
         t1.initKammer();
@@ -35,19 +35,19 @@ public class AMHeavyArtilleryBattery extends Eintrag {
         add(t1);
 
         tr1 = new RuestkammerStarter(ID, randAbstand, cnt, "AMTrojan", "Trojan");
-		tr1.initKammer();
-		add(tr1);
-		
+        tr1.initKammer();
+        add(tr1);
+
         seperator();
 
         t2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMHeavyArtilleryCarriage", "", 1);
         t2.initKammer();
         t2.setButtonText("Heavy Artillery Carriage 2");
         add(t2);
-        
+
         tr2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMTrojan", "Trojan");
-		tr2.initKammer();
-		add(tr2);
+        tr2.initKammer();
+        add(tr2);
 
         seperator();
 
@@ -57,8 +57,8 @@ public class AMHeavyArtilleryBattery extends Eintrag {
         add(t3);
 
         tr3 = new RuestkammerStarter(ID, randAbstand, cnt, "AMTrojan", "Trojan");
-		tr3.initKammer();
-		add(tr3);
+        tr3.initKammer();
+        add(tr3);
         complete();
     }
 
@@ -66,15 +66,15 @@ public class AMHeavyArtilleryBattery extends Eintrag {
     public void refreshen() {
         int tanks = (t1.isSelected() ? 1 : 0) + (t2.isSelected() ? 1 : 0) + (t3.isSelected() ? 1 : 0);
 
-		oe1.setPreis(tanks * 30);
-		oe1.setAktiv(tanks > 0);
-		
-		oe2.setAktiv((((AMHeavyArtilleryCarriage)t1.getKammer()).o1.isSelected(1) || !t1.isSelected()) &&
-				(((AMHeavyArtilleryCarriage)t2.getKammer()).o1.isSelected(1) || !t2.isSelected()) &&
-				(((AMHeavyArtilleryCarriage)t3.getKammer()).o1.isSelected(1) || !t3.isSelected()) && (tanks > 0));
-		
-		oe2.setPreis(tanks * 5);
-		
+        oe1.setPreis(tanks * 30);
+        oe1.setAktiv(tanks > 0);
+
+        oe2.setAktiv((((AMHeavyArtilleryCarriage) t1.getKammer()).o1.isSelected(1) || !t1.isSelected()) &&
+                (((AMHeavyArtilleryCarriage) t2.getKammer()).o1.isSelected(1) || !t2.isSelected()) &&
+                (((AMHeavyArtilleryCarriage) t3.getKammer()).o1.isSelected(1) || !t3.isSelected()) && (tanks > 0));
+
+        oe2.setPreis(tanks * 5);
+
     }
-    
+
 }

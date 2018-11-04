@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CDHeraldofKhorneonJuggernaut extends Eintrag {
 
-	public CDHeraldofKhorneonJuggernaut() {
-		name = "Herald of Khorne on Juggernaut";
+    public CDHeraldofKhorneonJuggernaut() {
+        name = "Herald of Khorne on Juggernaut";
         grundkosten = getPts("Herald of Khorne on Juggernaut");
-        power = 5;   
-       	
-		complete();
-	}
+        power = 5;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

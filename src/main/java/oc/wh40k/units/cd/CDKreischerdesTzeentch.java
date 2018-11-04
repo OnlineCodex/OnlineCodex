@@ -5,25 +5,25 @@ import oc.Eintrag;
 
 public class CDKreischerdesTzeentch extends Eintrag {
 
-	AnzahlPanel CDKreischerdesTzeentch;
+    AnzahlPanel CDKreischerdesTzeentch;
 
-	public CDKreischerdesTzeentch() {
+    public CDKreischerdesTzeentch() {
 
-		name = "Kreischer des Tzeentch";
+        name = "Kreischer des Tzeentch";
 
-		grundkosten = 0;
+        grundkosten = 0;
 
-		CDKreischerdesTzeentch = new AnzahlPanel(ID, randAbstand, cnt, "Kreischer des Tzeentch", 3, 9, 25);
+        CDKreischerdesTzeentch = new AnzahlPanel(ID, randAbstand, cnt, "Kreischer des Tzeentch", 3, 9, 25);
 
-		add(CDKreischerdesTzeentch);
+        add(CDKreischerdesTzeentch);
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDKreischerdesTzeentch.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDKreischerdesTzeentch.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

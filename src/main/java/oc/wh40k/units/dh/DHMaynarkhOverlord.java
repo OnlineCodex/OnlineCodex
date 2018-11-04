@@ -1,66 +1,62 @@
 package oc.wh40k.units.dh;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class DHMaynarkhOverlord extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
     RuestkammerStarter rkTransport;
 
-	public DHMaynarkhOverlord() {
-		name = "Maynarkh Overlord";
-		grundkosten = 90;
+    public DHMaynarkhOverlord() {
+        name = "Maynarkh Overlord";
+        grundkosten = 90;
 
-		addToInformationVector("DHHochlord", 1);
+        addToInformationVector("DHHochlord", 1);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEHochlord.jpg"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NEHochlord.jpg"));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Aufwertung zum Phaeron", 20));
+        seperator();
 
-		seperator();
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Aufwertung zum Phaeron", 20));
 
-		ogE.addElement(new OptionsGruppeEintrag("Hyperphasenschwert", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Stab des Lichts", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Flammenfaust", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Entropieklinge", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Kriegssense", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        seperator();
 
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Hyperphasenschwert", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Stab des Lichts", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Flammenfaust", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Entropieklinge", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Kriegssense", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phylakterium", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gedankenkontrollskarabäen", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Durasempisches Geflecht", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tesserakt-Labyrinth", 20));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tachyonenpfeil", 30));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Regeneratorsphäre", 30));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phasenverzerrer", 45));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flensing scarabs", 5));
+        seperator();
 
-		seperator();
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phylakterium", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gedankenkontrollskarabäen", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Durasempisches Geflecht", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tesserakt-Labyrinth", 20));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tachyonenpfeil", 30));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Regeneratorsphäre", 30));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phasenverzerrer", 45));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flensing scarabs", 5));
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHKommandogleiterKammer", "Kommando-Gleiter");
-		rkTransport.initKammer();
-		add(rkTransport);
+        seperator();
 
-		complete();
-	}
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHKommandogleiterKammer", "Kommando-Gleiter");
+        rkTransport.initKammer();
+        add(rkTransport);
 
-	@Override
-	public void refreshen() {
-        if(!o1.isSelected()) o1.setSelected(0, true);
-	}
+        complete();
+    }
 
-	@Override
-	public void deleteYourself() {
-		addToInformationVector("DHHochlord", -1);
-		super.deleteYourself();
-	}
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+    }
+
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("DHHochlord", -1);
+        super.deleteYourself();
+    }
 
 }

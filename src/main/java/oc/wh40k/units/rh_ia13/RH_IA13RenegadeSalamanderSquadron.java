@@ -5,44 +5,44 @@ import oc.RuestkammerStarter;
 
 public class RH_IA13RenegadeSalamanderSquadron extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public RH_IA13RenegadeSalamanderSquadron() {
-		name = "Renegade Hellhound Squadron";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    public RH_IA13RenegadeSalamanderSquadron() {
+        name = "Renegade Hellhound Squadron";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 
-		
-		seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
-		t1.initKammer();
-		t1.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(t1);
+        seperator();
 
-		seperator();
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
+        t1.initKammer();
+        t1.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(t1);
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
-		t2.initKammer();
-		t2.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(t2);
+        seperator();
 
-		seperator();
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
+        t2.initKammer();
+        t2.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(t2);
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
-		t3.initKammer();
-		t3.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(t3);
+        seperator();
 
-		complete();
-	}
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "RH_IA13RenegadeSalamanderKammer", "Renegade Salamander", 1);
+        t3.initKammer();
+        t3.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(t3);
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

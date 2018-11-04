@@ -8,36 +8,36 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYMaleceptor extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter psychicPowers;
-	
-	public TYMaleceptor() {
-		name = "Maleceptor";
-		grundkosten = getPts("Maleceptor") + getPts("Massive Scything Talons (Maleceptor)");
-		power = 9;
+    OptionsUpgradeGruppe o1;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter psychicPowers;
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
-		
-		seperator();
+    public TYMaleceptor() {
+        name = "Maleceptor";
+        grundkosten = getPts("Maleceptor") + getPts("Massive Scything Talons (Maleceptor)");
+        power = 9;
 
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-		
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(1);
-		((PsychicPowers)psychicPowers.getKammer()).enableHiveMind();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
+        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMRavenwingTalonmaster extends Eintrag {
 
-	public IMRavenwingTalonmaster() {
-		name = "Ravenwing Talonmaster";
-		grundkosten = getPts("Ravenwing Talonmaster") + getPts("Twin assault cannon") + getPts("Twin heavy bolter") + getPts("Power sword (SM)");
-		power = 9;
-		seperator();
-		
-		complete();
-	}
+    public IMRavenwingTalonmaster() {
+        name = "Ravenwing Talonmaster";
+        grundkosten = getPts("Ravenwing Talonmaster") + getPts("Twin assault cannon") + getPts("Twin heavy bolter") + getPts("Power sword (SM)");
+        power = 9;
+        seperator();
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

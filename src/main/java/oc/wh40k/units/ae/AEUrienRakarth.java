@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEUrienRakarth extends Eintrag {
 
-	public AEUrienRakarth() {
-		name = "Urien Rakarth";
-		grundkosten = getPts("Urien Rakarth");
-		power = 6;
-		seperator();
+    public AEUrienRakarth() {
+        name = "Urien Rakarth";
+        grundkosten = getPts("Urien Rakarth");
+        power = 6;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

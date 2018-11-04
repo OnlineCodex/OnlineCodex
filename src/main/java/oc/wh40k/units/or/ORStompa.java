@@ -5,28 +5,29 @@ import oc.OptionsEinzelZaehler;
 
 public class ORStompa extends Eintrag {
 
-	public ORStompa() {
-		name = "Stompa";
-		grundkosten = getPts("Stompa") +
-					  getPts("Deffkannon") +
-					  getPts("Supa Gatler") +
-					  getPts("Big shoota") * 3 +
-					  getPts("Twin big shoota") +
-					  getPts("Supa-rokkit") +
-					  getPts("Skorcha") +
-					  getPts("Mega-choppa");
-		power = 46;
+    public ORStompa() {
+        name = "Stompa";
+        grundkosten = getPts("Stompa") +
+                getPts("Deffkannon") +
+                getPts("Supa Gatler") +
+                getPts("Big shoota") * 3 +
+                getPts("Twin big shoota") +
+                getPts("Supa-rokkit") +
+                getPts("Skorcha") +
+                getPts("Mega-choppa");
+        power = 46;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Stampfa.gif"));
-		
-		seperator();
-		
-		add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Additional Supa-rokkits", 2, getPts("Supa-rokkit")));
+        add(ico = new oc.Picture("oc/wh40k/images/Stampfa.gif"));
 
-		
-		complete();
+        seperator();
 
-	}
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Additional Supa-rokkits", 2, getPts("Supa-rokkit")));
 
-	public void refreshen(){}
+
+        complete();
+
+    }
+
+    public void refreshen() {
+    }
 }

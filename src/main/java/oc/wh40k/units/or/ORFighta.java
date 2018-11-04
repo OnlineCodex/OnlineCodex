@@ -8,24 +8,23 @@ public class ORFighta extends Eintrag {
 
     OptionsUpgradeGruppe o1;
 
-	public ORFighta() {
-		name = "Fighta";
-		grundkosten = 140;
+    public ORFighta() {
+        name = "Fighta";
+        grundkosten = 140;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/Fighta.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/Fighta.gif"));
 
 
-		ogE.addElement(new OptionsGruppeEintrag("Bomms", "two Bomms", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Rokkits", "two Rokkits", 0));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Bomms", "two Bomms", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Rokkits", "two Rokkits", 0));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	public void refreshen() {
+    public void refreshen() {
         o1.alwaysSelected();
-	}
+    }
 }

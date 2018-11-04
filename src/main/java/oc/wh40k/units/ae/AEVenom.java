@@ -4,40 +4,39 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 
 public class AEVenom extends Eintrag {
-	
-	OptionsUpgradeGruppe o1, o2;
 
-	public AEVenom() {
-		name = "Venom";
-		grundkosten = getPts("Venom") +  + getPts("Bladevanes");
+    OptionsUpgradeGruppe o1, o2;
 
-		power = 4;
+    public AEVenom() {
+        name = "Venom";
+        grundkosten = getPts("Venom") + +getPts("Bladevanes");
 
-		seperator();
-		
-    	ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        power = 4;
 
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Twin splinter rifle", getPts("Twin splinter rifle")));
-    	ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        seperator();
 
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chain-snares", getPts("Chain-snares")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grisly trophies", getPts("Grisly trophies")));
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() { 
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Twin splinter rifle", getPts("Twin splinter rifle")));
+        ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chain-snares", getPts("Chain-snares")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grisly trophies", getPts("Grisly trophies")));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+    }
 }

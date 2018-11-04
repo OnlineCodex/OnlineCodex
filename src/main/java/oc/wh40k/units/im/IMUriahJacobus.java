@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMUriahJacobus extends Eintrag {
 
-	public IMUriahJacobus() {
-		name = "UriahJacobus";
-		grundkosten = getPts("UriahJacobus");
-		power = 5;
-		
-		complete();
-	}
+    public IMUriahJacobus() {
+        name = "UriahJacobus";
+        grundkosten = getPts("UriahJacobus");
+        power = 5;
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

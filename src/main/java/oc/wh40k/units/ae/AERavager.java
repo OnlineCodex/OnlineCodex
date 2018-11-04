@@ -6,32 +6,32 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
 public class AERavager extends Eintrag {
-	
-	OptionsZaehlerGruppe o1, o2;
 
-	public AERavager() {
-		name = "Ravager";
-		grundkosten = getPts("Ravager") + getPts("Bladevanes");
+    OptionsZaehlerGruppe o1, o2;
 
-		power = 8;
+    public AERavager() {
+        name = "Ravager";
+        grundkosten = getPts("Ravager") + getPts("Bladevanes");
 
-		ogE.addElement(new OptionsGruppeEintrag("Dark lance", getPts("Dark lance")));
-    	ogE.addElement(new OptionsGruppeEintrag("Disintegrator cannon", getPts("Disintegrator cannon")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
-		o1.setAnzahl(0, 3);
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chain-snares", getPts("Chain-snares")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grisly trophies", getPts("Grisly trophies")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phantasm grenade launcher", getPts("Phantasm grenade launcher")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Shock prow", getPts("Shock prow")));
-		seperator();
+        power = 8;
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Dark lance", getPts("Dark lance")));
+        ogE.addElement(new OptionsGruppeEintrag("Disintegrator cannon", getPts("Disintegrator cannon")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        o1.setAnzahl(0, 3);
 
-	@Override
-	public void refreshen() { 
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chain-snares", getPts("Chain-snares")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grisly trophies", getPts("Grisly trophies")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phantasm grenade launcher", getPts("Phantasm grenade launcher")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Shock prow", getPts("Shock prow")));
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

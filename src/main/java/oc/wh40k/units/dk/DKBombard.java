@@ -21,12 +21,12 @@ public class DKBombard extends RuestkammerVater {
         add(ico = new oc.Picture("oc/wh40k/images/IGHellhound.jpg"));
 
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bombard", 140));
-        
+
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 0));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 0));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 5));
-        	
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 10));
@@ -47,8 +47,8 @@ public class DKBombard extends RuestkammerVater {
     @Override
     public void refreshen() {
         if (!oe1.isSelected()) oe1.setSelected(true);
-        
-        if (!o2.isSelected()) o2.setSelected(0,true);
+
+        if (!o2.isSelected()) o2.setSelected(0, true);
 
         o1.setAktiv(0, !o1.isSelected(1));
         o1.setAktiv(1, !o1.isSelected(0));

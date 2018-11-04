@@ -5,26 +5,26 @@ import oc.Eintrag;
 
 public class CHFiendsofSlaanesh extends Eintrag {
 
-	AnzahlPanel fiends;
+    AnzahlPanel fiends;
 
-	public CHFiendsofSlaanesh() {
+    public CHFiendsofSlaanesh() {
 
-		name = "Fiends of Slaanesh";
+        name = "Fiends of Slaanesh";
         grundkosten = 0;
-        power = 5; 
+        power = 5;
 
         add(fiends = new AnzahlPanel(ID, randAbstand, cnt, "Fiends of Slaanesh", 1, 9, getPts("Fiends of Slaanesh")));
-        
-		complete();
 
-	}
+        complete();
 
-	public void deleteYourself() { 
-	}
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		power = fiends.getModelle() * 2;
-	}
+    @Override
+    public void refreshen() {
+        power = fiends.getModelle() * 2;
+    }
 }

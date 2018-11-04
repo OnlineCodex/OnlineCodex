@@ -5,78 +5,78 @@ import oc.RuestkammerStarter;
 
 public class CMGeisselSturmverband extends Eintrag {
 
-	RuestkammerStarter rkBefehlsgeissel;
-	RuestkammerStarter rkGeissel1;
-	RuestkammerStarter rkGeissel2;
-	RuestkammerStarter rkGeissel3;
-	RuestkammerStarter rkGeissel4;
-	RuestkammerStarter rkGeissel5;
+    RuestkammerStarter rkBefehlsgeissel;
+    RuestkammerStarter rkGeissel1;
+    RuestkammerStarter rkGeissel2;
+    RuestkammerStarter rkGeissel3;
+    RuestkammerStarter rkGeissel4;
+    RuestkammerStarter rkGeissel5;
 
-	public CMGeisselSturmverband() {
-            name = "Geissel-Sturmverband";
-            grundkosten = 100;
+    public CMGeisselSturmverband() {
+        name = "Geissel-Sturmverband";
+        grundkosten = 100;
 
-            add(ico = new oc.Picture("oc/wh40k/images/ThousandSons.gif"));
-            
-            seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ThousandSons.gif"));
 
-            rkBefehlsgeissel = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Befehls-Geißel");
-            rkBefehlsgeissel.initKammer(true);
-            rkBefehlsgeissel.setButtonText("Befehls-Geißel");
-            add(rkBefehlsgeissel);
+        seperator();
 
-            seperator(15);
+        rkBefehlsgeissel = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Befehls-Geißel");
+        rkBefehlsgeissel.initKammer(true);
+        rkBefehlsgeissel.setButtonText("Befehls-Geißel");
+        add(rkBefehlsgeissel);
 
-            rkGeissel1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
-            rkGeissel1.initKammer(false);
-            rkGeissel1.setButtonText("Chaos-Geißel");
-            add(rkGeissel1);
+        seperator(15);
 
-            seperator();
+        rkGeissel1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
+        rkGeissel1.initKammer(false);
+        rkGeissel1.setButtonText("Chaos-Geißel");
+        add(rkGeissel1);
 
-            rkGeissel2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
-            rkGeissel2.initKammer(false);
-            rkGeissel2.setButtonText("Chaos-Geißel");
-            add(rkGeissel2);
+        seperator();
 
-            seperator();
+        rkGeissel2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
+        rkGeissel2.initKammer(false);
+        rkGeissel2.setButtonText("Chaos-Geißel");
+        add(rkGeissel2);
 
-            rkGeissel3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
-            rkGeissel3.initKammer(false);
-            rkGeissel3.setButtonText("Chaos-Geißel");
-            add(rkGeissel3);
+        seperator();
 
-            seperator();
+        rkGeissel3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
+        rkGeissel3.initKammer(false);
+        rkGeissel3.setButtonText("Chaos-Geißel");
+        add(rkGeissel3);
 
-            rkGeissel4 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
-            rkGeissel4.initKammer(false);
-            rkGeissel4.setButtonText("Chaos-Geißel");
-            add(rkGeissel4);
+        seperator();
 
-            seperator();
+        rkGeissel4 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
+        rkGeissel4.initKammer(false);
+        rkGeissel4.setButtonText("Chaos-Geißel");
+        add(rkGeissel4);
 
-            rkGeissel5 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
-            rkGeissel5.initKammer(false);
-            rkGeissel5.setButtonText("Chaos-Geißel");
-            add(rkGeissel5);
+        seperator();
 
-            complete();
-	}
+        rkGeissel5 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosGeisselKammer", "Chaos-Geißel");
+        rkGeissel5.initKammer(false);
+        rkGeissel5.setButtonText("Chaos-Geißel");
+        add(rkGeissel5);
 
-	@Override
-	public void refreshen() {
-            rkBefehlsgeissel.setAbwaehlbar(false);
-            rkGeissel1.setAbwaehlbar(false);
-            rkGeissel2.setAbwaehlbar(false);
-            rkGeissel3.setAktiv(rkGeissel1.isSelected() && rkGeissel2.isSelected());
-            rkGeissel4.setAktiv(rkGeissel3.isSelected());
-            rkGeissel5.setAktiv(rkGeissel4.isSelected());
+        complete();
+    }
 
-            rkGeissel1.getPanel().setLocation((int) rkGeissel1.getPanel().getLocation().getX(), (int) (rkBefehlsgeissel.getPanel().getLocation().getY() + rkBefehlsgeissel.getPanel().getHeight()));
-            rkGeissel2.getPanel().setLocation((int) rkGeissel2.getPanel().getLocation().getX(), (int) (rkGeissel1.getPanel().getLocation().getY() + rkGeissel1.getPanel().getHeight()));
-            rkGeissel3.getPanel().setLocation((int) rkGeissel3.getPanel().getLocation().getX(), (int) (rkGeissel2.getPanel().getLocation().getY() + rkGeissel2.getPanel().getHeight()));
-            rkGeissel4.getPanel().setLocation((int) rkGeissel4.getPanel().getLocation().getX(), (int) (rkGeissel3.getPanel().getLocation().getY() + rkGeissel3.getPanel().getHeight()));
-            rkGeissel5.getPanel().setLocation((int) rkGeissel5.getPanel().getLocation().getX(), (int) (rkGeissel4.getPanel().getLocation().getY() + rkGeissel4.getPanel().getHeight()));
-        }
+    @Override
+    public void refreshen() {
+        rkBefehlsgeissel.setAbwaehlbar(false);
+        rkGeissel1.setAbwaehlbar(false);
+        rkGeissel2.setAbwaehlbar(false);
+        rkGeissel3.setAktiv(rkGeissel1.isSelected() && rkGeissel2.isSelected());
+        rkGeissel4.setAktiv(rkGeissel3.isSelected());
+        rkGeissel5.setAktiv(rkGeissel4.isSelected());
+
+        rkGeissel1.getPanel().setLocation((int) rkGeissel1.getPanel().getLocation().getX(), (int) (rkBefehlsgeissel.getPanel().getLocation().getY() + rkBefehlsgeissel.getPanel().getHeight()));
+        rkGeissel2.getPanel().setLocation((int) rkGeissel2.getPanel().getLocation().getX(), (int) (rkGeissel1.getPanel().getLocation().getY() + rkGeissel1.getPanel().getHeight()));
+        rkGeissel3.getPanel().setLocation((int) rkGeissel3.getPanel().getLocation().getX(), (int) (rkGeissel2.getPanel().getLocation().getY() + rkGeissel2.getPanel().getHeight()));
+        rkGeissel4.getPanel().setLocation((int) rkGeissel4.getPanel().getLocation().getX(), (int) (rkGeissel3.getPanel().getLocation().getY() + rkGeissel3.getPanel().getHeight()));
+        rkGeissel5.getPanel().setLocation((int) rkGeissel5.getPanel().getLocation().getX(), (int) (rkGeissel4.getPanel().getLocation().getY() + rkGeissel4.getPanel().getHeight()));
+    }
 
 }

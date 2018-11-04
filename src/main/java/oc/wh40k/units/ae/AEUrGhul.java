@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class AEUrGhul extends Eintrag {
 
-	public AEUrGhul() {
-		name = "Ur-Ghul";
-		grundkosten = getPts("Ur-Ghul") + getPts("Claws and talons");
-		power = 2;
-		seperator();
+    public AEUrGhul() {
+        name = "Ur-Ghul";
+        grundkosten = getPts("Ur-Ghul") + getPts("Claws and talons");
+        power = 2;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() { 
-	}
+    @Override
+    public void refreshen() {
+    }
 }

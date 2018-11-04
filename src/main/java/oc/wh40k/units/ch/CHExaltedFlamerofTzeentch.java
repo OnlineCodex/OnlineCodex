@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class CHExaltedFlamerofTzeentch extends Eintrag {
 
-	
-	public CHExaltedFlamerofTzeentch() {
 
-		name = "Exalted Flamer of Tzeentch";
+    public CHExaltedFlamerofTzeentch() {
 
-		grundkosten = 50;
-		
-		add(ico = new oc.Picture("oc/wh40k/images/CDHerolddesTzeentch.gif"));
+        name = "Exalted Flamer of Tzeentch";
 
-		complete();
+        grundkosten = 50;
 
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/CDHerolddesTzeentch.gif"));
 
-	@Override
-	public void refreshen() {
-       
-	}
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 }

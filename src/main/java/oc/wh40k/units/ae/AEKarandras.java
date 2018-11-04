@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEKarandras extends Eintrag {
 
-	public AEKarandras() {
-		name = "Karandras";
-		grundkosten = getPts("Karandras");
-		power = 9;
-		seperator();
+    public AEKarandras() {
+        name = "Karandras";
+        grundkosten = getPts("Karandras");
+        power = 9;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

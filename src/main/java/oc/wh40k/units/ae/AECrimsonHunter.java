@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class AECrimsonHunter extends Eintrag {
 
-	public AECrimsonHunter() {
-		name = "Crimson Hunter";
-		grundkosten = getPts("Crimson Hunter") + 2*getPts("Bright lance") + getPts("Pulse laser");
-		power = 9;
-		seperator();
+    public AECrimsonHunter() {
+        name = "Crimson Hunter";
+        grundkosten = getPts("Crimson Hunter") + 2 * getPts("Bright lance") + getPts("Pulse laser");
+        power = 9;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() { 
-	}
+    @Override
+    public void refreshen() {
+    }
 }

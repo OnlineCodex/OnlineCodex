@@ -6,22 +6,22 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMVindicator extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMVindicator() {
-		name = "Vindicator";
-		grundkosten = getPts("Vindicator") + getPts("Demolisher cannon (SM)");
-		power = 7;
+    public IMVindicator() {
+        name = "Vindicator";
+        grundkosten = getPts("Vindicator") + getPts("Demolisher cannon (SM)");
+        power = 7;
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

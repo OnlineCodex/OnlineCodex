@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class AEStarweaver extends Eintrag {
 
-	public AEStarweaver() {
-		name = "Starweaver";
-		grundkosten = getPts("Starweaver") + 2*getPts("Shuriken cannon (Harlequins)");
-		power = 5;
-		seperator();
+    public AEStarweaver() {
+        name = "Starweaver";
+        grundkosten = getPts("Starweaver") + 2 * getPts("Shuriken cannon (Harlequins)");
+        power = 5;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() { 
-	}
+    @Override
+    public void refreshen() {
+    }
 }

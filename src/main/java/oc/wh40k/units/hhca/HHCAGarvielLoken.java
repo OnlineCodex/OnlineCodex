@@ -4,31 +4,31 @@ import oc.Eintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class HHCAGarvielLoken extends Eintrag {
-	
-	OptionsUpgradeGruppe o0;
 
-	public HHCAGarvielLoken() {
-		name = "Garviel Loken";
-		grundkosten = 175;
+    OptionsUpgradeGruppe o0;
 
-		add(ico = new oc.Picture("oc/wh40k/images/xy.jpg"));
+    public HHCAGarvielLoken() {
+        name = "Garviel Loken";
+        grundkosten = 175;
 
-		addToInformationVector("HHCAPraetor", 1);
+        add(ico = new oc.Picture("oc/wh40k/images/xy.jpg"));
 
-		complete();
-	}
+        addToInformationVector("HHCAPraetor", 1);
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
-	@Override
-	public void deleteYourself() {
-		
-		addToInformationVector("HHCAPraetor", -1);
-		super.deleteYourself();
-	}
-	
+    }
+
+    @Override
+    public void deleteYourself() {
+
+        addToInformationVector("HHCAPraetor", -1);
+        super.deleteYourself();
+    }
+
 
 }

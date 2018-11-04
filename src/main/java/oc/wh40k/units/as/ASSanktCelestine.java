@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class ASSanktCelestine extends Eintrag {
 
-	public ASSanktCelestine() {
-		name = "Sankt Celestine";
-		grundkosten = 135;
+    public ASSanktCelestine() {
+        name = "Sankt Celestine";
+        grundkosten = 135;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

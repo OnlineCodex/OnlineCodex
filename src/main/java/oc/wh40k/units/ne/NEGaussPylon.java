@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class NEGaussPylon extends Eintrag {
 
-	public NEGaussPylon() {
-		name = "Gauss Pylon";
-		grundkosten = getPts("Gauss Pylon") + getPts("Gauss annihilator") + getPts("Tesla arc");
-		power = 24;
-		seperator();
+    public NEGaussPylon() {
+        name = "Gauss Pylon";
+        grundkosten = getPts("Gauss Pylon") + getPts("Gauss annihilator") + getPts("Tesla arc");
+        power = 24;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

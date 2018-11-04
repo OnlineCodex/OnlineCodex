@@ -6,24 +6,24 @@ import oc.OptionsZaehlerGruppe;
 
 public class KDBloodthirsterOfUnfetteredFury extends Eintrag {
 
-	OptionsZaehlerGruppe o1,o2,o3;
-	
-	public KDBloodthirsterOfUnfetteredFury() {
+    OptionsZaehlerGruppe o1, o2, o3;
 
-		name = "Bloodthirster Of Unfettered Fury";
+    public KDBloodthirsterOfUnfetteredFury() {
 
-		grundkosten = 250;
+        name = "Bloodthirster Of Unfettered Fury";
 
-		complete();
+        grundkosten = 250;
 
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
-	}
-	
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 }

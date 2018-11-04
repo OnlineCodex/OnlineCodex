@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEPrinceYriel extends Eintrag {
 
-	public AEPrinceYriel() {
-		name = "Prince Yriel";
-		grundkosten = getPts("Prince Yriel");
-		power = 5;
-		seperator();
+    public AEPrinceYriel() {
+        name = "Prince Yriel";
+        grundkosten = getPts("Prince Yriel");
+        power = 5;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

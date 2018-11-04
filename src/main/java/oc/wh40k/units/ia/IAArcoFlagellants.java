@@ -6,30 +6,30 @@ import oc.RuestkammerStarter;
 
 public class IAArcoFlagellants extends Eintrag {
 
-	AnzahlPanel squad;
-	RuestkammerStarter rkBoss;
-	RuestkammerStarter rkTransport;
+    AnzahlPanel squad;
+    RuestkammerStarter rkBoss;
+    RuestkammerStarter rkTransport;
 
-	public IAArcoFlagellants() {
-		name = "Arco Flagellants\n";
-		grundkosten = 0;
-		überschriftSetzen = true;
+    public IAArcoFlagellants() {
+        name = "Arco Flagellants\n";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Arco-flagellants", 3, 10, 10);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Arco-flagellants", 3, 10, 10);
+        add(squad);
 
-		seperator();
+        seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "IATransporterKammer", "Transporter");
-		rkTransport.initKammer(true, true, false);
-		rkTransport.setButtonText("Transporter");
-		add(rkTransport);
-		
-		complete();
-	}
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "IATransporterKammer", "Transporter");
+        rkTransport.initKammer(true, true, false);
+        rkTransport.setButtonText("Transporter");
+        add(rkTransport);
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -1,54 +1,50 @@
 package oc.wh40k.units.as;
 
-import oc.BuildaHQ;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class ASPrincipalis extends Eintrag {
 
-	OptionsZaehlerGruppe o1;
+    OptionsZaehlerGruppe o1;
     RuestkammerStarter waffenUndRelikte;
-    
-	public ASPrincipalis() {
-		name = "Principalis";
-		grundkosten = 65;
 
-		addToInformationVector("ASPrincipalis", 1);
+    public ASPrincipalis() {
+        name = "Principalis";
+        grundkosten = 65;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASPrincipalis.jpg"));
+        addToInformationVector("ASPrincipalis", 1);
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ASPrincipalis.jpg"));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rosarius", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
+        seperator();
 
-		seperator();
-		
-		waffenUndRelikte = new RuestkammerStarter(ID, randAbstand, cnt, "ASWaffenUndRelikte", "");
-		// General, Hexer, Warpschmied, Apostel, Daemon 
-		waffenUndRelikte.initKammer(true, false, false, false, false);
-		waffenUndRelikte.setButtonText(BuildaHQ.translate("Waffen & Relikte"));
-		add(waffenUndRelikte);
-		waffenUndRelikte.setAbwaehlbar(false);
-		
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rosarius", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melterbomben", 5));
 
-	@Override
-	public void deleteYourself() {
-		addToInformationVector("ASPrincipalis", -1);
-		super.deleteYourself();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		if(((ASWaffenUndRelikte)waffenUndRelikte.getKammer()).uniqueError){
-			setFehlermeldung("Artefakt doppelt!");
-		} else{
-			setFehlermeldung("");
-		}
-	}
+        waffenUndRelikte = new RuestkammerStarter(ID, randAbstand, cnt, "ASWaffenUndRelikte", "");
+        // General, Hexer, Warpschmied, Apostel, Daemon
+        waffenUndRelikte.initKammer(true, false, false, false, false);
+        waffenUndRelikte.setButtonText(BuildaHQ.translate("Waffen & Relikte"));
+        add(waffenUndRelikte);
+        waffenUndRelikte.setAbwaehlbar(false);
+
+        complete();
+    }
+
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("ASPrincipalis", -1);
+        super.deleteYourself();
+    }
+
+    @Override
+    public void refreshen() {
+        if (((ASWaffenUndRelikte) waffenUndRelikte.getKammer()).uniqueError) {
+            setFehlermeldung("Artefakt doppelt!");
+        } else {
+            setFehlermeldung("");
+        }
+    }
 
 }

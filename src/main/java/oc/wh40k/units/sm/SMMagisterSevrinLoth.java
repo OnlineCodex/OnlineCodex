@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class SMMagisterSevrinLoth extends Eintrag {
 
-	public SMMagisterSevrinLoth() {
-		name = "Magister Sevrin Loth";
-		grundkosten = 175;
+    public SMMagisterSevrinLoth() {
+        name = "Magister Sevrin Loth";
+        grundkosten = 175;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMMagisterSevrinLoth.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMMagisterSevrinLoth.gif"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);       
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

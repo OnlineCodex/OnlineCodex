@@ -7,51 +7,51 @@ import oc.RuestkammerVater;
 
 public class DAPredatorKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public DAPredatorKammer() {
-		name = "Predator";
-		grundkosten = 75;
-	}
+    public DAPredatorKammer() {
+        name = "Predator";
+        grundkosten = 75;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		add(ico = new oc.Picture("oc/wh40k/images/SMPredator.jpg"));
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(ico = new oc.Picture("oc/wh40k/images/SMPredator.jpg"));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Maschinenkanone", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Sync. Laserkanone", "Synchronisierte Laserkanone", 25));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o1.setSelected("Maschinenkanone", true);
+        ogE.addElement(new OptionsGruppeEintrag("Maschinenkanone", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Sync. Laserkanone", "Synchronisierte Laserkanone", 25));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o1.setSelected("Maschinenkanone", true);
 
-		seperator(8);
+        seperator(8);
 
-		ogE.addElement(new OptionsGruppeEintrag("2 Schwere Bolter", 20));
-		ogE.addElement(new OptionsGruppeEintrag("2 Laserkanonen", 40));
-		add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("2 Schwere Bolter", 20));
+        ogE.addElement(new OptionsGruppeEintrag("2 Laserkanonen", 40));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator(8);
+        seperator(8);
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		if (!o1.isSelected()) {
-			o1.setSelected("Maschinenkanone", true);
-		}
-	}
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) {
+            o1.setSelected("Maschinenkanone", true);
+        }
+    }
 
-	@Override
-	public void deleteYourself() {
+    @Override
+    public void deleteYourself() {
 
-		super.deleteYourself();
-	}
+        super.deleteYourself();
+    }
 
 }

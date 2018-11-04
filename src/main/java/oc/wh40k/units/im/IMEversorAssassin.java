@@ -4,15 +4,15 @@ import oc.Eintrag;
 
 public class IMEversorAssassin extends Eintrag {
 
-	public IMEversorAssassin() {
-		name = "Eversor Assassin";
-		grundkosten = getPts("Eversor Assassin");
-		power = 4;
-		
-		complete();
-	}
+    public IMEversorAssassin() {
+        name = "Eversor Assassin";
+        grundkosten = getPts("Eversor Assassin");
+        power = 4;
 
-	@Override
-	public void refreshen() {
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

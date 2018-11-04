@@ -1,25 +1,21 @@
 package oc.wh40k.units.ae;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class AEWracks extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
-	RuestkammerStarter rkBoss;
+    RuestkammerStarter rkBoss;
 
-	public AEWracks() {
-		name = "Wracks";
-		grundkosten = 0;
+    public AEWracks() {
+        name = "Wracks";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Wracks", 5, 10, getPts("Wracks") + getPts("Haemonculus tools"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Wracks", 5, 10, getPts("Wracks") + getPts("Haemonculus tools"));
+        add(squad);
 
-		seperator();
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Liquifier gun", getPts("Liquifier gun")));
         ogE.addElement(new OptionsGruppeEintrag("Ossefactor", getPts("Ossefactor")));
@@ -27,24 +23,24 @@ public class AEWracks extends Eintrag {
 
         seperator();
 
-		rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEAcothyst", "Acothyst");
-		rkBoss.initKammer();
-		add(rkBoss);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEAcothyst", "Acothyst");
+        rkBoss.initKammer();
+        add(rkBoss);
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         o1.setMaxAnzahl(Double.valueOf(Math.floor(squad.getModelle() / 5)).intValue());
-        
-        if (squad.getModelle() > 5){
-        	power = 6;
-        } else{
-        	power = 3;
+
+        if (squad.getModelle() > 5) {
+            power = 6;
+        } else {
+            power = 3;
         }
-	}
+    }
 
 }

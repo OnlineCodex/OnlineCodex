@@ -5,26 +5,26 @@ import oc.RuestkammerStarter;
 
 public class IACallidusAssassin extends Eintrag {
 
-	RuestkammerStarter rkTransport;
+    RuestkammerStarter rkTransport;
 
-	public IACallidusAssassin() {
-		name = "Callidus Assassine";
-		grundkosten = 145;
+    public IACallidusAssassin() {
+        name = "Callidus Assassine";
+        grundkosten = 145;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
-		
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/IGCommissarYarrick.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

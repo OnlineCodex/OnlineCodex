@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CDSeekerChariot extends Eintrag {
 
-	public CDSeekerChariot() {
-		name = "Seeker Chariot";
+    public CDSeekerChariot() {
+        name = "Seeker Chariot";
         grundkosten = getPts("Seeker Chariot");
-        power = 4;   
-       	
-		complete();
-	}
+        power = 4;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

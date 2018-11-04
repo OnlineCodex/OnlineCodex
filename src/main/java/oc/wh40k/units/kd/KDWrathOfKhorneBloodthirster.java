@@ -4,24 +4,24 @@ import oc.Eintrag;
 
 public class KDWrathOfKhorneBloodthirster extends Eintrag {
 
-	
-	public KDWrathOfKhorneBloodthirster() {
 
-		name = "Wrath Of Khorne Bloodthirster";
+    public KDWrathOfKhorneBloodthirster() {
 
-		grundkosten = 300;
+        name = "Wrath Of Khorne Bloodthirster";
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDBlutdaemon.gif"));
+        grundkosten = 300;
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/CDBlutdaemon.gif"));
 
-	@Override
-	public void refreshen() {
-	}
-	
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 }

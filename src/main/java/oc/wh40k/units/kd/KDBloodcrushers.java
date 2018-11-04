@@ -7,37 +7,37 @@ import oc.OptionsEinzelUpgrade;
 
 public class KDBloodcrushers extends Eintrag {
 
-	AnzahlPanel CDZerschmettererdesKhorne;
-	OptionsEinzelUpgrade Blutjaeger, Chaosikone;
-	
-	public KDBloodcrushers() {
+    AnzahlPanel CDZerschmettererdesKhorne;
+    OptionsEinzelUpgrade Blutjaeger, Chaosikone;
 
-		name = "Bloodcrushers";
+    public KDBloodcrushers() {
 
-		grundkosten = 0;
+        name = "Bloodcrushers";
 
-		CDZerschmettererdesKhorne = new AnzahlPanel(ID, randAbstand, cnt, "Bloodcrushers", 3, 9, 45);
+        grundkosten = 0;
 
-		add(CDZerschmettererdesKhorne);
+        CDZerschmettererdesKhorne = new AnzahlPanel(ID, randAbstand, cnt, "Bloodcrushers", 3, 9, 45);
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDZerschmettererdesKhorne.gif"));
+        add(CDZerschmettererdesKhorne);
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/CDZerschmettererdesKhorne.gif"));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument des Chaos", 10));
-		add(Chaosikone = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutbanner", 20));
-		
-		seperator();
+        seperator();
 
-		add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutjäger", 5));
-		
-		seperator();
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument des Chaos", 10));
+        add(Chaosikone = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutbanner", 20));
 
-		complete();
+        seperator();
 
-	}
+        add(Blutjaeger = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Blutjäger", 5));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

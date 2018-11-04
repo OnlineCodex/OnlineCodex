@@ -6,25 +6,25 @@ import oc.OptionsZaehlerGruppe;
 
 public class TATidewallDroneport extends Eintrag {
 
-	OptionsZaehlerGruppe ozg1;
+    OptionsZaehlerGruppe ozg1;
 
-	public TATidewallDroneport() {
-		name = "Tidewall Droneport";
-		grundkosten = getPts("Tidewall Droneport");
+    public TATidewallDroneport() {
+        name = "Tidewall Droneport";
+        grundkosten = getPts("Tidewall Droneport");
 
-		ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
-		ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
-		ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
-		add(ozg1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE,4));
-		
-		add(ico = new oc.Picture("oc/wh40k/images/TARemoteSensorTowerTeam.jpg"));
+        ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
+        add(ozg1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/TARemoteSensorTowerTeam.jpg"));
 
-	@Override
-	public void refreshen() {
-        ozg1.setLegal(ozg1.getAnzahl()==4);
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        ozg1.setLegal(ozg1.getAnzahl() == 4);
         power = 5;
-	}
+    }
 }

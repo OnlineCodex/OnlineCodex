@@ -1,35 +1,29 @@
 package oc.wh40k.units.ch;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class CHChaosRhino extends Eintrag {
 
-	AnzahlPanel marines;
-	OptionsUpgradeGruppe fkwaffen;
-	OptionsEinzelUpgrade combi;
+    AnzahlPanel marines;
+    OptionsUpgradeGruppe fkwaffen;
+    OptionsEinzelUpgrade combi;
     OptionsUpgradeGruppe mark;
-    
-	public CHChaosRhino() {
 
-		kategorie = 1;
+    public CHChaosRhino() {
 
-		name = "Chaos Rhino";
-		grundkosten = getPts("Chaos Rhino");
+        kategorie = 1;
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Havoc launcher", getPts("Havoc launcher")));
-		
-		seperator();
-		
-		add(combi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Combi-bolter", getPts("Combi-bolter")));
-		
-		seperator();
-		
+        name = "Chaos Rhino";
+        grundkosten = getPts("Chaos Rhino");
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Havoc launcher", getPts("Havoc launcher")));
+
+        seperator();
+
+        add(combi = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Combi-bolter", getPts("Combi-bolter")));
+
+        seperator();
+
         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
@@ -38,20 +32,20 @@ public class CHChaosRhino extends Eintrag {
         fkwaffen.setSelected(0, true);
 
         seperator();
-        
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-		add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		complete();
-	}
-	
 
-	@Override
-	public void refreshen() {
-		if(!combi.isSelected())combi.setSelected(true);
-		power = 4;
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        complete();
+    }
+
+
+    @Override
+    public void refreshen() {
+        if (!combi.isSelected()) combi.setSelected(true);
+        power = 4;
+    }
 }

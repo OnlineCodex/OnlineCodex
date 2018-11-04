@@ -1,48 +1,46 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHRenegadeKnightAcheron extends Eintrag {
 
-	OptionsUpgradeGruppe o1, o2, o3;
-    
-	public CHRenegadeKnightAcheron() {
-		name = "Renegade Knight Acheron";
-		grundkosten = getPts("Renegade Knight Acheron");
+    OptionsUpgradeGruppe o1, o2, o3;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
-		
+    public CHRenegadeKnightAcheron() {
+        name = "Renegade Knight Acheron";
+        grundkosten = getPts("Renegade Knight Acheron");
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Acheron flame cannon", getPts("Acheron flame cannon")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Reaper chainfist", getPts("Reaper chainfist")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Acheron flame cannon", getPts("Acheron flame cannon")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Reaper chainfist", getPts("Reaper chainfist")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-		o3.alwaysSelected();
-		
-		power = 25;
-	}
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+        o3.alwaysSelected();
+
+        power = 25;
+    }
 
 }

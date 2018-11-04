@@ -4,20 +4,20 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class NETrazyntheInfinite extends Eintrag {
-    
+
     RuestkammerStarter rkTransport;
 
-	public NETrazyntheInfinite() {
-		name = "Trazyn the Infinite";
-		grundkosten = getPts("Trazyn the Infinite");
+    public NETrazyntheInfinite() {
+        name = "Trazyn the Infinite";
+        grundkosten = getPts("Trazyn the Infinite");
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
         power = 5;
-	}
+    }
 
 }

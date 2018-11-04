@@ -10,7 +10,7 @@ public class DHCanoptekTombStalker extends Eintrag {
         grundkosten = 205;
 
         add(ico = new oc.Picture("oc/wh40k/images/NETombStalker.jpg"));
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sepulchral scarabs", 15));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Gloom Prism", 15));
 

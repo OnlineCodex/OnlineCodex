@@ -1,10 +1,6 @@
 package oc.wh40k.units.ia;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
+import oc.*;
 
 public class IAValkyries extends Eintrag {
 
@@ -58,5 +54,5 @@ public class IAValkyries extends Eintrag {
 
         oe1.setMaxAnzahl(squad.getModelle());
     }
-    
+
 }

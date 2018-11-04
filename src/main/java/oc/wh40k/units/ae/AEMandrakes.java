@@ -5,28 +5,28 @@ import oc.Eintrag;
 
 public class AEMandrakes extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public AEMandrakes() {
-		name = "Mandrakes";
-		grundkosten = 0;
-		
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Mandrakes", 5, 10, getPts("Mandrakes") + 
-				getPts("Bale blast") + getPts("Glimmersteel blade"));
-		add(squad);
+    public AEMandrakes() {
+        name = "Mandrakes";
+        grundkosten = 0;
 
-		seperator();
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Mandrakes", 5, 10, getPts("Mandrakes") +
+                getPts("Bale blast") + getPts("Glimmersteel blade"));
+        add(squad);
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		if(squad.getModelle() > 5) {
-			power = 9;
-		} else{
-			power = 5;
-		}
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (squad.getModelle() > 5) {
+            power = 9;
+        } else {
+            power = 5;
+        }
+    }
 
 }

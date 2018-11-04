@@ -5,22 +5,22 @@ import oc.OptionsUpgradeGruppe;
 
 public class CMMagnusTheRed extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
 
-	
-	public CMMagnusTheRed() {
-		name = "Magnus the Red";
-		grundkosten = 650;
 
-		setUnikat(true);
+    public CMMagnusTheRed() {
+        name = "Magnus the Red";
+        grundkosten = 650;
 
-		complete();
-	}
+        setUnikat(true);
 
-	@Override
-	public void refreshen() {
-	 
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

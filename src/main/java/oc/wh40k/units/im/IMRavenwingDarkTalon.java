@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMRavenwingDarkTalon extends Eintrag {
 
-	public IMRavenwingDarkTalon() {
-		name = "Ravenwing Dark Talon";
-		grundkosten = getPts("Ravenwing Dark Talon") + 2*getPts("Hurricane bolter") + getPts("Rift cannon");
-		power = 8;
-		seperator();
+    public IMRavenwingDarkTalon() {
+        name = "Ravenwing Dark Talon";
+        grundkosten = getPts("Ravenwing Dark Talon") + 2 * getPts("Hurricane bolter") + getPts("Rift cannon");
+        power = 8;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

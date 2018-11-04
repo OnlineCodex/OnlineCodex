@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMLordCastellanCreed extends Eintrag {
 
-	public IMLordCastellanCreed() {
-		name = "Lord Castellan Creed";
-		grundkosten = getPts("Lord Castellan Creed");
-		power = 4;
-		
-		complete();
-	}
+    public IMLordCastellanCreed() {
+        name = "Lord Castellan Creed";
+        grundkosten = getPts("Lord Castellan Creed");
+        power = 4;
 
-	//@OVERRIDE
-		public void refreshen() {
-	        setUnikat(true);
-		}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

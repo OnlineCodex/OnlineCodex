@@ -6,34 +6,33 @@ import oc.RuestkammerVater;
 
 public class ORFlakkTrukkKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
-	
-	
+    OptionsUpgradeGruppe o1;
 
-	public ORFlakkTrukkKammer() {
-		grundkosten = 75;
-	}
 
-	public void initButtons(boolean... defaults) {
-		add(ico = new oc.Picture("oc/wh40k/images/ORFlakkTrukk.gif"));
-		
+    public ORFlakkTrukkKammer() {
+        grundkosten = 75;
+    }
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rokkit launcha", 5));
+    public void initButtons(boolean... defaults) {
+        add(ico = new oc.Picture("oc/wh40k/images/ORFlakkTrukk.gif"));
+
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Rokkit launcha", 5));
 
         seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Red paint job", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot riggers", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb chukka", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Reinforced ram", 5));
-		
-		sizeSetzen();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Red paint job", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot riggers", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb chukka", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Reinforced ram", 5));
 
-	// @OVERRIDE
-	public void refreshen() {
-        
-	}
+        sizeSetzen();
+    }
+
+    // @OVERRIDE
+    public void refreshen() {
+
+    }
 
 }

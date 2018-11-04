@@ -1,25 +1,24 @@
 package oc;
 
-import java.awt.Color;
+import org.w3c.dom.Element;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
-import javax.swing.JComboBox;
-
-import org.w3c.dom.Element;
 
 public class RuestkammerChooser extends OptionsVater {
     JComboBox box;
 
     public RuestkammerChooser(int x, int y, int width, int height, Vector<String> items) {
         box = new JComboBox(items);
-		box.setBounds(x, y, width, height);
-		BuildaHQ.newGUIComponent(box);
-		box.setBackground(Color.WHITE);
-		box.setMaximumRowCount(items.size());
-		box.setEditable(false);
+        box.setBounds(x, y, width, height);
+        BuildaHQ.newGUIComponent(box);
+        box.setBackground(Color.WHITE);
+        box.setMaximumRowCount(items.size());
+        box.setEditable(false);
         box.setFocusable(false);
-		box.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
+        box.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
 
         panel.add(box);
         panel.setBounds(x - 20, y, width + 20, height + 10);
@@ -42,23 +41,26 @@ public class RuestkammerChooser extends OptionsVater {
     public String getSaveText() {
         return "";
     }
-        
+
     public Element getSaveElement() {
         return null;
     }
 
     @Override
-    public void load(String s) {    }
+    public void load(String s) {
+    }
 
     @Override
-    public void loadElement(Element e) {    }
-    
-    @Override
-    public void setLegal(boolean b) {    }
+    public void loadElement(Element e) {
+    }
 
     @Override
     public boolean isLegal() {
         return false;
+    }
+
+    @Override
+    public void setLegal(boolean b) {
     }
 
     @Override

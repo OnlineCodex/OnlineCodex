@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class TYMucolidSpores extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public TYMucolidSpores() {
-		name = "Mucolid Spores";
-		grundkosten = 0;
+    public TYMucolidSpores() {
+        name = "Mucolid Spores";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Mucolid Spore", 1, 3, getPts("Mucolid Spore"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Mucolid Spore", 1, 3, getPts("Mucolid Spore"));
+        add(squad);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle() * 1;
-	}
+    @Override
+    public void refreshen() {
+        power = squad.getModelle() * 1;
+    }
 
 }

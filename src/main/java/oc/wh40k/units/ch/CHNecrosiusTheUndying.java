@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHNecrosiusTheUndying extends Eintrag {
 
-	public CHNecrosiusTheUndying() {
+    public CHNecrosiusTheUndying() {
 
-		name = "Necrosius the Undying";
+        name = "Necrosius the Undying";
         grundkosten = getPts("Necrosius the Undying");
-        power = 7;   
+        power = 7;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

@@ -8,33 +8,33 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYNeurotrophe extends Eintrag {
 
-	AnzahlPanel squad;
-	RuestkammerStarter psychicPowers;
-	
-	public TYNeurotrophe() {
-		name = "Neurotrophe";
-		grundkosten = getPts("Neurotrophe");
+    AnzahlPanel squad;
+    RuestkammerStarter psychicPowers;
 
-		seperator();
+    public TYNeurotrophe() {
+        name = "Neurotrophe";
+        grundkosten = getPts("Neurotrophe");
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYMalanthrope.jpg"));
+        seperator();
 
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(1);
-		((PsychicPowers)psychicPowers.getKammer()).enableHiveMind();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/TYMalanthrope.jpg"));
 
-	@Override
-	public void refreshen() {
-		power = 13;
-	}
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
+        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = 13;
+    }
 
 }

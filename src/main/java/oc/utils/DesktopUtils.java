@@ -1,13 +1,14 @@
 package oc.utils;
 
-import java.awt.Desktop;
+import java.awt.*;
 import java.net.URI;
 
 /**
  * Utilities for interacting with real desktop environments.
  */
 public final class DesktopUtils {
-    private DesktopUtils() {}
+    private DesktopUtils() {
+    }
 
     public static void openLink(String uri) {
         try {
@@ -23,17 +24,17 @@ public final class DesktopUtils {
         }
     }
 
-    private static String[] toOpenURLCmd(String uri){
+    private static String[] toOpenURLCmd(String uri) {
         switch (getOs()) {
-            case WIN: return new String[] {"rundll32 url.dll,FileProtocolHandler " + uri};
-            case MAC: return new String[] {"open", uri};
-            case NIX: return new String[] {"xdg-open", uri};
-            default: throw new IllegalStateException("unsupported OS: " + getOs());
+            case WIN:
+                return new String[]{"rundll32 url.dll,FileProtocolHandler " + uri};
+            case MAC:
+                return new String[]{"open", uri};
+            case NIX:
+                return new String[]{"xdg-open", uri};
+            default:
+                throw new IllegalStateException("unsupported OS: " + getOs());
         }
-    }
-
-    public enum OS {
-        WIN, MAC, NIX
     }
 
     public static OS getOs() {
@@ -45,6 +46,10 @@ public final class DesktopUtils {
         } else {
             return OS.NIX;
         }
+    }
+
+    public enum OS {
+        WIN, MAC, NIX
     }
 
 }

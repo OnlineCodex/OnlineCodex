@@ -6,79 +6,79 @@ import oc.RuestkammerStarter;
 
 public class CSHexerzirkelderThousandSons extends Eintrag {
 
-	RuestkammerStarter rkHexer;
-	RuestkammerStarter rkTermi1;
-	RuestkammerStarter rkTermi2;
-	RuestkammerStarter rkTermi3;
-	RuestkammerStarter rkTermi4;
-	RuestkammerStarter rkTermi5;
-	RuestkammerStarter rkTermi6;
-        OptionsEinzelUpgrade ahriman;
-        RuestkammerStarter rkAuserkorene;
+    RuestkammerStarter rkHexer;
+    RuestkammerStarter rkTermi1;
+    RuestkammerStarter rkTermi2;
+    RuestkammerStarter rkTermi3;
+    RuestkammerStarter rkTermi4;
+    RuestkammerStarter rkTermi5;
+    RuestkammerStarter rkTermi6;
+    OptionsEinzelUpgrade ahriman;
+    RuestkammerStarter rkAuserkorene;
 
-	public CSHexerzirkelderThousandSons() {
-            name = "Hexerzirkel der Thousand Sons";
-            grundkosten = 200;
+    public CSHexerzirkelderThousandSons() {
+        name = "Hexerzirkel der Thousand Sons";
+        grundkosten = 200;
 
-            add(ico = new oc.Picture("oc/wh40k/images/ThousandSons.gif"));
-            
-            seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ThousandSons.gif"));
 
-            rkHexer = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaoshexerKammer", "Chaoshexer");
-            rkHexer.initKammer(true);
-            rkHexer.setButtonText("Chaoshexer");
-            add(rkHexer);
+        seperator();
 
-            seperator();
+        rkHexer = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaoshexerKammer", "Chaoshexer");
+        rkHexer.initKammer(true);
+        rkHexer.setButtonText("Chaoshexer");
+        add(rkHexer);
 
-            add(ahriman = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ahriman", 250));
+        seperator();
 
-            seperator(15);
+        add(ahriman = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ahriman", 250));
 
-            rkAuserkorene = new RuestkammerStarter(ID, randAbstand, cnt, "CMAuserkoreneThousandSons", "Auserkorene Thousand Sons");
-            rkAuserkorene.initKammer();
-            rkAuserkorene.setButtonText("Auserkorene");
-            add(rkAuserkorene);
+        seperator(15);
 
-            seperator(15);
+        rkAuserkorene = new RuestkammerStarter(ID, randAbstand, cnt, "CMAuserkoreneThousandSons", "Auserkorene Thousand Sons");
+        rkAuserkorene.initKammer();
+        rkAuserkorene.setButtonText("Auserkorene");
+        add(rkAuserkorene);
 
-            rkTermi1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
-            rkTermi1.initKammer(true);
-            rkTermi1.setButtonText("Chaosterminatoren");
-            add(rkTermi1);
+        seperator(15);
 
-            seperator();
+        rkTermi1 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
+        rkTermi1.initKammer(true);
+        rkTermi1.setButtonText("Chaosterminatoren");
+        add(rkTermi1);
 
-            rkTermi2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
-            rkTermi2.initKammer(true);
-            rkTermi2.setButtonText("Chaosterminatoren");
-            add(rkTermi2);
+        seperator();
 
-            seperator();
+        rkTermi2 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
+        rkTermi2.initKammer(true);
+        rkTermi2.setButtonText("Chaosterminatoren");
+        add(rkTermi2);
 
-            rkTermi3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
-            rkTermi3.initKammer(true);
-            rkTermi3.setButtonText("Chaosterminatoren");
-            add(rkTermi3);
+        seperator();
 
-            complete();
-	}
+        rkTermi3 = new RuestkammerStarter(ID, randAbstand, cnt, "CMChaosterminatorenKammer", "Chaosterminatoren");
+        rkTermi3.initKammer(true);
+        rkTermi3.setButtonText("Chaosterminatoren");
+        add(rkTermi3);
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
 //            rkHexer.setAktiv(!ahriman.isSelected());
 //            ahriman.setAktiv(!rkHexer.isSelected());
 
-            rkHexer.setAbwaehlbar(ahriman.isSelected());
-            rkHexer.setAktiv(!ahriman.isSelected());
+        rkHexer.setAbwaehlbar(ahriman.isSelected());
+        rkHexer.setAktiv(!ahriman.isSelected());
 
-            rkAuserkorene.setAbwaehlbar(false);
+        rkAuserkorene.setAbwaehlbar(false);
 
-            ahriman.getPanel().setLocation(ahriman.getPanel().getX(), rkHexer.getPanel().getHeight() + rkHexer.getPanel().getY() + 5);
-            rkAuserkorene.getPanel().setLocation(rkAuserkorene.getPanel().getX(), ahriman.getPanel().getHeight() + ahriman.getPanel().getY() + 15);
-            rkTermi1.getPanel().setLocation(rkTermi1.getPanel().getX(), rkAuserkorene.getPanel().getHeight() + rkAuserkorene.getPanel().getY() + 15);
-            rkTermi2.getPanel().setLocation(rkTermi2.getPanel().getX(), rkTermi1.getPanel().getHeight() + rkTermi1.getPanel().getY() + 10);
-            rkTermi3.getPanel().setLocation(rkTermi3.getPanel().getX(), rkTermi2.getPanel().getHeight() + rkTermi2.getPanel().getY() + 10);
-        }
+        ahriman.getPanel().setLocation(ahriman.getPanel().getX(), rkHexer.getPanel().getHeight() + rkHexer.getPanel().getY() + 5);
+        rkAuserkorene.getPanel().setLocation(rkAuserkorene.getPanel().getX(), ahriman.getPanel().getHeight() + ahriman.getPanel().getY() + 15);
+        rkTermi1.getPanel().setLocation(rkTermi1.getPanel().getX(), rkAuserkorene.getPanel().getHeight() + rkAuserkorene.getPanel().getY() + 15);
+        rkTermi2.getPanel().setLocation(rkTermi2.getPanel().getX(), rkTermi1.getPanel().getHeight() + rkTermi1.getPanel().getY() + 10);
+        rkTermi3.getPanel().setLocation(rkTermi3.getPanel().getX(), rkTermi2.getPanel().getHeight() + rkTermi2.getPanel().getY() + 10);
+    }
 
 }

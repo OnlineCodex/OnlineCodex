@@ -16,5 +16,5 @@ public class SMLuciusPatternDropPod extends Eintrag {
     @Override
     public void refreshen() {
     }
-    
+
 }

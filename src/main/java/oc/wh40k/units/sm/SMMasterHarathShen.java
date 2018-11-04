@@ -4,21 +4,21 @@ import oc.Eintrag;
 
 public class SMMasterHarathShen extends Eintrag {
 
-	public SMMasterHarathShen() {
-		//TODO Salamanders only
-		name = "Master Harath Shen";
-		grundkosten = 135;
+    public SMMasterHarathShen() {
+        //TODO Salamanders only
+        name = "Master Harath Shen";
+        grundkosten = 135;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CaptainLysander.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CaptainLysander.gif"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
+    }
+
 }

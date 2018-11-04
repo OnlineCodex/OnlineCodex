@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHHorticulousSlimux extends Eintrag {
 
-	public CHHorticulousSlimux() {
-		name = "Horticulous Slimux";
+    public CHHorticulousSlimux() {
+        name = "Horticulous Slimux";
         grundkosten = getPts("Horticulous Slimux");
-        power = 4;   
-       	
-		complete();
-	}
+        power = 4;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

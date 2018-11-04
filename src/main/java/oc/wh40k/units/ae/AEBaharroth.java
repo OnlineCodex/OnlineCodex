@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEBaharroth extends Eintrag {
 
-	public AEBaharroth() {
-		name = "Baharroth";
-		grundkosten = getPts("Baharroth");
-		power = 6;
-		seperator();
+    public AEBaharroth() {
+        name = "Baharroth";
+        grundkosten = getPts("Baharroth");
+        power = 6;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

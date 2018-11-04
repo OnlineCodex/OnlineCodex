@@ -6,48 +6,48 @@ import oc.RuestkammerStarter;
 
 public class DKBombardBattery extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
     OptionsEinzelUpgrade oe2;
 
-	public DKBombardBattery() {
-		name = "Bombard Battery";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    public DKBombardBattery() {
+        name = "Bombard Battery";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
-
-		seperator();
-
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo netting", 20));
+        add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 
         seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
-		t1.initKammer();
-		t1.setButtonText("Bombard");
-		add(t1);
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo netting", 20));
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
-		t2.initKammer();
-		t2.setButtonText("Bombard");
-		add(t2);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
+        t1.initKammer();
+        t1.setButtonText("Bombard");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
-		t3.initKammer();
-		t3.setButtonText("Bombard");
-		add(t3);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
+        t2.initKammer();
+        t2.setButtonText("Bombard");
+        add(t2);
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKBombard", "Bombard", 1);
+        t3.initKammer();
+        t3.setButtonText("Bombard");
+        add(t3);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         int tanks = t1.getSelectedAsInt() + t2.getSelectedAsInt() + t3.getSelectedAsInt();
 
         t1.setAbwaehlbar(false);

@@ -9,29 +9,29 @@ public class ABThunderbolt extends Eintrag {
 
     OptionsUpgradeGruppe o1;
 
-	public ABThunderbolt() {
-		name = "Thunderbolt";
-		grundkosten = 180;
+    public ABThunderbolt() {
+        name = "Thunderbolt";
+        grundkosten = 180;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABThunderbolt.jpg"));
-		
-		ogE.addElement(new OptionsGruppeEintrag("4 Hellstrike missiles", 40));
-		ogE.addElement(new OptionsGruppeEintrag("6 Tactical Bombs", 40));
-		ogE.addElement(new OptionsGruppeEintrag("6 Skystrike missiles", 50));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(ico = new oc.Picture("oc/wh40k/images/ABThunderbolt.jpg"));
 
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("4 Hellstrike missiles", 40));
+        ogE.addElement(new OptionsGruppeEintrag("6 Tactical Bombs", 40));
+        ogE.addElement(new OptionsGruppeEintrag("6 Skystrike missiles", 50));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Flare/chaff launcher", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Infra-red targeting", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Illum flares", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Distinctive paint", "Distinctive paint scheme/decals", 10));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Flare/chaff launcher", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Infra-red targeting", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Illum flares", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Distinctive paint", "Distinctive paint scheme/decals", 10));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

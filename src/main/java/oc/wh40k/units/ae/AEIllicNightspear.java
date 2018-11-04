@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEIllicNightspear extends Eintrag {
 
-	public AEIllicNightspear() {
-		name = "Illic Nightspear";
-		grundkosten = getPts("Illic Nightspear");
-		power = 4;
-		seperator();
+    public AEIllicNightspear() {
+        name = "Illic Nightspear";
+        grundkosten = getPts("Illic Nightspear");
+        power = 4;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

@@ -1,10 +1,6 @@
 package oc.wh40k.units.ae;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
+import oc.*;
 
 public class AEWraithlord extends Eintrag {
 
@@ -24,9 +20,9 @@ public class AEWraithlord extends Eintrag {
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ghostglaive", getPts("Ghostglaive")));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Aeldari missile launcher", getPts("Aeldari missile launcher")));
@@ -43,5 +39,5 @@ public class AEWraithlord extends Eintrag {
     public void refreshen() {
         o3x.setAnzahl(0, o3x.getMaxAnzahl() - o3.getAnzahl());
     }
-    
+
 }

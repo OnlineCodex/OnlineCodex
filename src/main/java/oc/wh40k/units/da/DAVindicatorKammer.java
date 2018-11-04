@@ -5,30 +5,30 @@ import oc.RuestkammerVater;
 
 public class DAVindicatorKammer extends RuestkammerVater {
 
-	public DAVindicatorKammer() {
-		name = "Vindicator";
-		grundkosten = 120;
-	}
+    public DAVindicatorKammer() {
+        name = "Vindicator";
+        grundkosten = 120;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		add(ico = new oc.Picture("oc/wh40k/images/SMVindicator.jpg"));
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(ico = new oc.Picture("oc/wh40k/images/SMVindicator.jpg"));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 
 }

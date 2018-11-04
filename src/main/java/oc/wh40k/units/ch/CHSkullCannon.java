@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class CHSkullCannon extends Eintrag {
 
-	public CHSkullCannon() {
+    public CHSkullCannon() {
 
-		name = "Skull Cannon";
+        name = "Skull Cannon";
         grundkosten = getPts("Skull Cannon");
-        power = 7;   
-		complete();
+        power = 7;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

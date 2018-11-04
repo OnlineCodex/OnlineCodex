@@ -21,7 +21,7 @@ public class ECCorsairWaspSquadron extends Eintrag {
         seperator();
 
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Corsair void burners", 5));
-        
+
         seperator();
 
         w1 = new RuestkammerStarter(ID, randAbstand, cnt, "ECWaspAssaultWalkerKammer", "Wasp");
@@ -42,9 +42,9 @@ public class ECCorsairWaspSquadron extends Eintrag {
     @Override
     public void refreshen() {
         w1.setAbwaehlbar(false);
-        
+
         int walkers = (w1.isSelected() ? 1 : 0) + (w2.isSelected() ? 1 : 0) + (w3.isSelected() ? 1 : 0);
 
         oe1.setPreis(walkers * 5);
-    }  
+    }
 }

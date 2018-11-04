@@ -4,15 +4,15 @@ import oc.Eintrag;
 
 public class IMCallidusAssassin extends Eintrag {
 
-	public IMCallidusAssassin() {
-		name = "Callidus Assassin";
-		grundkosten = getPts("Callidus Assassin");
-		power = 5;
-		
-		complete();
-	}
+    public IMCallidusAssassin() {
+        name = "Callidus Assassin";
+        grundkosten = getPts("Callidus Assassin");
+        power = 5;
 
-	@Override
-	public void refreshen() {
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

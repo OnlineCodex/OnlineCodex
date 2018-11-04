@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHLordArkos extends Eintrag {
 
-	public CHLordArkos() {
+    public CHLordArkos() {
 
-		name = "Lord Arkos";
+        name = "Lord Arkos";
         grundkosten = getPts("Lord Arkos");
-        power = 7;   
+        power = 7;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

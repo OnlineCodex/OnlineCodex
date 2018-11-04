@@ -5,16 +5,16 @@ import oc.Eintrag;
 
 public class IMSlyMarbo extends Eintrag {
 
-	public IMSlyMarbo() {
-		name = "Sly Marbo";
-		grundkosten = getPts("Sly Marbo");
-		power = 4;
-		
-		complete();
-	}
+    public IMSlyMarbo() {
+        name = "Sly Marbo";
+        grundkosten = getPts("Sly Marbo");
+        power = 4;
 
-	//@OVERRIDE
-		public void refreshen() {
-	        setUnikat(true);
-		}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

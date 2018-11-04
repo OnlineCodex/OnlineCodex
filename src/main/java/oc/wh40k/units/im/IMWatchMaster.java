@@ -7,26 +7,26 @@ import oc.RuestkammerStarter;
 
 public class IMWatchMaster extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
-	RuestkammerStarter spezialAusruestung;
-	OptionsUpgradeGruppe o1;
-	
-	public IMWatchMaster() {
-		name = "Watch Master";
-		grundkosten = getPts("Watch Master");
+    RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter spezialAusruestung;
+    OptionsUpgradeGruppe o1;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
+    public IMWatchMaster() {
+        name = "Watch Master";
+        grundkosten = getPts("Watch Master");
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

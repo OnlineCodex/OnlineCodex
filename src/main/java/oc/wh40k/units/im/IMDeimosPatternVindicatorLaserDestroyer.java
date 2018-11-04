@@ -5,19 +5,19 @@ import oc.OptionsEinzelUpgrade;
 
 public class IMDeimosPatternVindicatorLaserDestroyer extends Eintrag {
 
-	public IMDeimosPatternVindicatorLaserDestroyer() {
-		name = "Deimos Pattern Vindicator Laser Destroyer";
-		grundkosten = getPts("Deimos Pattern Vindicator Laser Destroyer") + getPts("Laser volley cannon") + getPts("Storm bolter (IA)");
-		power = 10;
+    public IMDeimosPatternVindicatorLaserDestroyer() {
+        name = "Deimos Pattern Vindicator Laser Destroyer";
+        grundkosten = getPts("Deimos Pattern Vindicator Laser Destroyer") + getPts("Laser volley cannon") + getPts("Storm bolter (IA)");
+        power = 10;
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (IA)")));
-		
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (IA)")));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

@@ -5,17 +5,17 @@ import oc.Eintrag;
 
 public class IMXiphonInterceptor extends Eintrag {
 
-	public IMXiphonInterceptor() {
-		name = "Xiphon Interceptor";
-		grundkosten = getPts("Xiphon Interceptor") + 2*getPts("Twin lascannon") + getPts("Xiphon missile battery");
-		power = 11;
-		
-		seperator();
+    public IMXiphonInterceptor() {
+        name = "Xiphon Interceptor";
+        grundkosten = getPts("Xiphon Interceptor") + 2 * getPts("Twin lascannon") + getPts("Xiphon missile battery");
+        power = 11;
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {	
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

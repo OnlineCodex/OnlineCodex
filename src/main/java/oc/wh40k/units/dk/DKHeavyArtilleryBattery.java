@@ -21,10 +21,10 @@ public class DKHeavyArtilleryBattery extends Eintrag {
 
         seperator();
 
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo Netting", 30));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Bastion-breacher shells", 5));
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo Netting", 30));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Bastion-breacher shells", 5));
 
-		seperator();
+        seperator();
 
         t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKHeavyArtilleryCarriage", "", 1);
         t1.initKammer();
@@ -52,15 +52,15 @@ public class DKHeavyArtilleryBattery extends Eintrag {
     public void refreshen() {
         int tanks = (t1.isSelected() ? 1 : 0) + (t2.isSelected() ? 1 : 0) + (t3.isSelected() ? 1 : 0);
 
-		oe1.setPreis(tanks * 30);
-		oe1.setAktiv(tanks > 0);
-		
-		oe2.setAktiv((((DKHeavyArtilleryCarriage)t1.getKammer()).o1.isSelected(1) || !t1.isSelected()) &&
-				(((DKHeavyArtilleryCarriage)t2.getKammer()).o1.isSelected(1) || !t2.isSelected()) &&
-				(((DKHeavyArtilleryCarriage)t3.getKammer()).o1.isSelected(1) || !t3.isSelected()) && (tanks > 0));
-		
-		oe2.setPreis(tanks * 5);
-		
+        oe1.setPreis(tanks * 30);
+        oe1.setAktiv(tanks > 0);
+
+        oe2.setAktiv((((DKHeavyArtilleryCarriage) t1.getKammer()).o1.isSelected(1) || !t1.isSelected()) &&
+                (((DKHeavyArtilleryCarriage) t2.getKammer()).o1.isSelected(1) || !t2.isSelected()) &&
+                (((DKHeavyArtilleryCarriage) t3.getKammer()).o1.isSelected(1) || !t3.isSelected()) && (tanks > 0));
+
+        oe2.setPreis(tanks * 5);
+
     }
-    
+
 }

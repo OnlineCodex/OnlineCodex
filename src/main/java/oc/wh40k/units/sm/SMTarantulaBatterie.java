@@ -1,10 +1,6 @@
 package oc.wh40k.units.sm;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
+import oc.*;
 
 public class SMTarantulaBatterie extends Eintrag {
 
@@ -23,7 +19,7 @@ public class SMTarantulaBatterie extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/SMTarantulaBatterie.jpg"));
-        
+
 
         seperator();
 
@@ -31,17 +27,17 @@ public class SMTarantulaBatterie extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Multimelter", "Multimelter mit Suchscheinwerfer", 5));
         ogE.addElement(new OptionsGruppeEintrag("Sync. Laserkanone", "Synchronisierte Laserkanone", 10));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Hyperios-Raketenwerfer", 20));
         ogE.addElement(new OptionsGruppeEintrag("Hyperios-Kommandoplattform", 30));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        
+
         seperator();
-        
-        add(tn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnnetze",10));
-        add(st = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schocktruppen",10));
+
+        add(tn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tarnnetze", 10));
+        add(st = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Schocktruppen", 10));
 
         complete();
     }
@@ -50,12 +46,12 @@ public class SMTarantulaBatterie extends Eintrag {
     public void refreshen() {
         o1.setAktiv(!o2.isSelected());
         o2.setAktiv(!o1.isSelected());
-        
-        o1.setLegal(o1.getAnzahl()==squad.getModelle());
-        o2.setLegal(o2.getAnzahl()==squad.getModelle());
-        
-        tn.setPreis(squad.getModelle()*10);
-        st.setPreis(squad.getModelle()*10);
+
+        o1.setLegal(o1.getAnzahl() == squad.getModelle());
+        o2.setLegal(o2.getAnzahl() == squad.getModelle());
+
+        tn.setPreis(squad.getModelle() * 10);
+        st.setPreis(squad.getModelle() * 10);
     }
-    
+
 }

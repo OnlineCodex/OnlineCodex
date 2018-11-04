@@ -6,30 +6,30 @@ import oc.OptionsEinzelUpgrade;
 
 public class KDFleshHounds extends Eintrag {
 
-	AnzahlPanel CDBluthundedesKhorne;
-	OptionsEinzelUpgrade karanak;
+    AnzahlPanel CDBluthundedesKhorne;
+    OptionsEinzelUpgrade karanak;
 
-	boolean karanakSelected  = false;
+    boolean karanakSelected = false;
 
-	public KDFleshHounds() {
+    public KDFleshHounds() {
 
-		name = "Flesh Hounds";
+        name = "Flesh Hounds";
 
-		grundkosten = 0;
+        grundkosten = 0;
 
-		CDBluthundedesKhorne = new AnzahlPanel(ID, randAbstand, cnt, "Bluthunde des Khorne", 5, 20, 16);
+        CDBluthundedesKhorne = new AnzahlPanel(ID, randAbstand, cnt, "Bluthunde des Khorne", 5, 20, 16);
 
-		add(CDBluthundedesKhorne);
+        add(CDBluthundedesKhorne);
 
-		complete();
+        complete();
 
-	}
+    }
 
-	public void deleteYourself() { 
-	}
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

@@ -6,21 +6,21 @@ import oc.OptionsZaehlerGruppe;
 
 public class TYPatriarch extends Eintrag {
 
-	OptionsZaehlerGruppe o1;
-	
-	public TYPatriarch() {
-		name = "Patriarch";
-		grundkosten = getPts("Patriarch") + getPts("Monstrous rending claws (GSC)");
-		power = 7;
-		
-		ogE.addElement(new OptionsGruppeEintrag("Familiars", getPts("Familiars")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-		
-		complete();
-	}
+    OptionsZaehlerGruppe o1;
 
-	@Override
-	public void refreshen() {
-	}
+    public TYPatriarch() {
+        name = "Patriarch";
+        grundkosten = getPts("Patriarch") + getPts("Monstrous rending claws (GSC)");
+        power = 7;
+
+        ogE.addElement(new OptionsGruppeEintrag("Familiars", getPts("Familiars")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -5,19 +5,19 @@ import oc.Eintrag;
 public class CDSchaedelkanonedesKhorne extends Eintrag {
 
 
-	public CDSchaedelkanonedesKhorne() {
+    public CDSchaedelkanonedesKhorne() {
 
-		name = "Schädelkanone des Khorne";
+        name = "Schädelkanone des Khorne";
 
-		grundkosten = 125;
+        grundkosten = 125;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

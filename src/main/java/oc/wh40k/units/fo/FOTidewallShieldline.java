@@ -5,14 +5,14 @@ import oc.Eintrag;
 public class FOTidewallShieldline extends Eintrag {
 
 
-	public FOTidewallShieldline() {
-		name = "Tidewall Shieldline";
-		grundkosten = 60;
+    public FOTidewallShieldline() {
+        name = "Tidewall Shieldline";
+        grundkosten = 60;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

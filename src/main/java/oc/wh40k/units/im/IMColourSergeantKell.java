@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMColourSergeantKell extends Eintrag {
 
-	public IMColourSergeantKell() {
-		name = "Colour Sergeant Kell";
-		grundkosten = getPts("Colour Sergeant Kell");
-		power = 3;
-		
-		complete();
-	}
+    public IMColourSergeantKell() {
+        name = "Colour Sergeant Kell";
+        grundkosten = getPts("Colour Sergeant Kell");
+        power = 3;
 
-	//@OVERRIDE
-		public void refreshen() {
-	        setUnikat(true);
-		}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

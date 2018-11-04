@@ -10,27 +10,27 @@ public class AMAtlasRecoveryTank extends Eintrag {
 
     boolean mutex = false;
 
-	public AMAtlasRecoveryTank() {
-		name = "Atlas Recovery Tank";
-		grundkosten = 85;
+    public AMAtlasRecoveryTank() {
+        name = "Atlas Recovery Tank";
+        grundkosten = 85;
         setEintragsCNT(0);
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABAtlasRecoveryTank.jpg"));
-		
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Heavy stubber", 10));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Storm bolter", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Hunter-killer missile", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dozerblade", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Extra armour", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo-netting", 20));
+        add(ico = new oc.Picture("oc/wh40k/images/ABAtlasRecoveryTank.jpg"));
 
-		complete();
-	}
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Heavy stubber", 10));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Storm bolter", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Hunter-killer missile", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dozerblade", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Extra armour", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo-netting", 20));
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         oe1.setAktiv(!oe2.isSelected());
         oe2.setAktiv(!oe1.isSelected());
-	}
+    }
 
 }

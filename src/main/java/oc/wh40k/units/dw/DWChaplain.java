@@ -6,44 +6,44 @@ import oc.RuestkammerStarter;
 
 public class DWChaplain extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
-	RuestkammerStarter spezialAusruestung;
+    RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter spezialAusruestung;
 
-	public DWChaplain() {
-		name = "Watch Master";
-		grundkosten = 95;
+    public DWChaplain() {
+        name = "Watch Master";
+        grundkosten = 95;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
 
-		seperator();
-		
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DWWaffenUndReliquien", "");
-		// Kompaniemeister, Absolutionspriester, Ordenspriester, Skriptor, Techmarine
-		waffenUndReliquien.initKammer(false, false, true);
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        seperator();
 
-		seperator();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DWWaffenUndReliquien", "");
+        // Kompaniemeister, Absolutionspriester, Ordenspriester, Skriptor, Techmarine
+        waffenUndReliquien.initKammer(false, false, true);
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DWSpezialausruestung", "");
-		spezialAusruestung.initKammer(false, true, false);
-		spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
-		add(spezialAusruestung);
-		spezialAusruestung.setAbwaehlbar(false);
+        seperator();
 
-		complete();
-	}
+        spezialAusruestung = new RuestkammerStarter(ID, randAbstand, cnt, "DWSpezialausruestung", "");
+        spezialAusruestung.initKammer(false, true, false);
+        spezialAusruestung.setButtonText(BuildaHQ.translate("Spezielle Ausrüstung"));
+        add(spezialAusruestung);
+        spezialAusruestung.setAbwaehlbar(false);
 
-	@Override
-	public void deleteYourself() {
+        complete();
+    }
 
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
 
-	@Override
-	public void refreshen() {
+        super.deleteYourself();
+    }
 
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 }

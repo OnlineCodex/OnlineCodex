@@ -5,26 +5,26 @@ import oc.Eintrag;
 
 public class CDScreamers extends Eintrag {
 
-	AnzahlPanel hounds;
+    AnzahlPanel hounds;
 
-	public CDScreamers() {
+    public CDScreamers() {
 
-		name = "Screamers";
+        name = "Screamers";
         grundkosten = 0;
-        power = 5; 
+        power = 5;
 
         add(hounds = new AnzahlPanel(ID, randAbstand, cnt, "Screamers", 3, 9, getPts("Screamers")));
-        
-		complete();
 
-	}
+        complete();
 
-	public void deleteYourself() { 
-	}
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		power = hounds.getModelle();
-	}
+    @Override
+    public void refreshen() {
+        power = hounds.getModelle();
+    }
 }

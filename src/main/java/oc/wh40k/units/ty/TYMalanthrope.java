@@ -6,25 +6,25 @@ import oc.Eintrag;
 
 public class TYMalanthrope extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public TYMalanthrope() {
-		name = "Malanthrope";
-		grundkosten = 0;
+    public TYMalanthrope() {
+        name = "Malanthrope";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Malanthrope", "Malanthrope", 1, 3, getPts("Malanthrope") + getPts("Grasping tail"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Malanthrope", "Malanthrope", 1, 3, getPts("Malanthrope") + getPts("Grasping tail"));
+        add(squad);
 
-		seperator();
+        seperator();
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYMalanthrope.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/TYMalanthrope.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle() * 5;
-	}
+    @Override
+    public void refreshen() {
+        power = squad.getModelle() * 5;
+    }
 
 }

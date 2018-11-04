@@ -5,28 +5,28 @@ import oc.Eintrag;
 
 public class ORGretchin extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public ORGretchin() {
-		kategorie = 3;
-		grundkosten = 0;
+    public ORGretchin() {
+        kategorie = 3;
+        grundkosten = 0;
 
-		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Gretchin", 10, 30, getPts("Gretchin")));
-		add(ico = new oc.Picture("oc/wh40k/images/Grotz.gif"));
-		
-		seperator();
-		
-		complete();
-	}
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Gretchin", 10, 30, getPts("Gretchin")));
+        add(ico = new oc.Picture("oc/wh40k/images/Grotz.gif"));
 
-	@Override
-	public void refreshen() {
-		if(squad.getModelle()>20) {
-			power = 4;
-		} else if(squad.getModelle()>10) {
-			power = 2;
-		} else {
-			power = 1;
-		}
-	}
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (squad.getModelle() > 20) {
+            power = 4;
+        } else if (squad.getModelle() > 10) {
+            power = 2;
+        } else {
+            power = 1;
+        }
+    }
 }

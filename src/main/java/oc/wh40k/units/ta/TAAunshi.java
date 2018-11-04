@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class TAAunshi extends Eintrag {
 
-	public TAAunshi() {
+    public TAAunshi() {
 
-		name = "Aun'shi";
+        name = "Aun'shi";
 
-		grundkosten = getPts("Aun'Shi");
+        grundkosten = getPts("Aun'Shi");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Aunva.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/Aunva.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
         power = 3;
-	}
-	
-	@Override
+    }
+
+    @Override
     public void deleteYourself() {
 
         super.deleteYourself();

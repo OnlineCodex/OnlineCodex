@@ -7,28 +7,28 @@ import oc.OptionsUpgradeGruppe;
 
 public class AECrimsonHunterExarch extends Eintrag {
 
-	boolean exarch = false;
-	boolean uniqueError = false;
+    boolean exarch = false;
+    boolean uniqueError = false;
     OptionsUpgradeGruppe o1;
-	OptionsEinzelUpgrade boss;
-	
-	public AECrimsonHunterExarch() {
+    OptionsEinzelUpgrade boss;
 
-		name = "Crimson Hunter Exarch";
+    public AECrimsonHunterExarch() {
 
-		grundkosten = getPts("Crimson Hunter Exarch") + getPts("Pulse laser");
-		power = 11;
+        name = "Crimson Hunter Exarch";
 
-        ogE.addElement(new OptionsGruppeEintrag("2 bright lances", 2*getPts("Bright lance")));
-        ogE.addElement(new OptionsGruppeEintrag("2 Starcannons", 2*getPts("Starcannon")));
+        grundkosten = getPts("Crimson Hunter Exarch") + getPts("Pulse laser");
+        power = 11;
+
+        ogE.addElement(new OptionsGruppeEintrag("2 bright lances", 2 * getPts("Bright lance")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Starcannons", 2 * getPts("Starcannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
-		o1.alwaysSelected();
+    //@OVERRIDE
+    public void refreshen() {
+        o1.alwaysSelected();
     }
 }

@@ -5,23 +5,23 @@ import oc.Eintrag;
 
 public class CDHoellenschinderdesSlaanesh extends Eintrag {
 
-	AnzahlPanel CDKreischerdesTzeentch;
+    AnzahlPanel CDKreischerdesTzeentch;
 
-	public CDHoellenschinderdesSlaanesh() {
+    public CDHoellenschinderdesSlaanesh() {
 
-		name = "Höllenschinder des Slaanesh";
+        name = "Höllenschinder des Slaanesh";
 
-		grundkosten = 60;
+        grundkosten = 60;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDHöllenschinderdesSlaanesh.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDHöllenschinderdesSlaanesh.gif"));
 
-		seperator();
+        seperator();
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

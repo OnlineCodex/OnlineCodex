@@ -1,10 +1,6 @@
 package oc.wh40k.units.sm;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
+import oc.*;
 
 public class SMSiegeDreadnought extends Eintrag {
 
@@ -21,12 +17,12 @@ public class SMSiegeDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Flamestorm cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		seperator();
-		
-		add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Hunter-killer missiles", 2,10));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 0));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        seperator();
+
+        add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Hunter-killer missiles", 2, 10));
 
         seperator();
 
@@ -37,9 +33,9 @@ public class SMSiegeDreadnought extends Eintrag {
 
     @Override
     public void refreshen() {
-    	if(!o1.isSelected()){
-    		o1.setSelected(0, true);
-    	}
+        if (!o1.isSelected()) {
+            o1.setSelected(0, true);
+        }
     }
-    
+
 }

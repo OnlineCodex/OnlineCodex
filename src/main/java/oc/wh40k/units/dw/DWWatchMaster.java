@@ -1,41 +1,39 @@
 package oc.wh40k.units.dw;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 
 public class DWWatchMaster extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
-	RuestkammerStarter spezialAusruestung;
-	OptionsUpgradeGruppe o1;
-	
-	public DWWatchMaster() {
-		name = "Watch Master";
-		grundkosten = getPts("Watch Master");
+    RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter spezialAusruestung;
+    OptionsUpgradeGruppe o1;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
+    public DWWatchMaster() {
+        name = "Watch Master";
+        grundkosten = getPts("Watch Master");
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
-	@Override
-	public void deleteYourself() {
+        complete();
+    }
 
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+        super.deleteYourself();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 
 }

@@ -8,20 +8,20 @@ public class AEArenaChampion extends RuestkammerVater {
 
     OptionsUpgradeGruppe o1;
 
-	public AEArenaChampion() {
-	}
+    public AEArenaChampion() {
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
+    @Override
+    public void initButtons(boolean... defaults) {
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (Drukhari)")));
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

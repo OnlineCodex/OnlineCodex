@@ -1,1 +1,1 @@
-package oc;public enum Sprache{	German,	English}
+package oc;public enum Sprache {    German,    English}

@@ -5,35 +5,35 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
 public class AETroupeMaster extends Eintrag {
-	
-	OptionsZaehlerGruppe o1, o2;
 
-	public AETroupeMaster() {
-		name = "Troupe Master";
-		grundkosten = getPts("Troupe Master");
+    OptionsZaehlerGruppe o1, o2;
 
-		power = 4;
+    public AETroupeMaster() {
+        name = "Troupe Master";
+        grundkosten = getPts("Troupe Master");
 
-		ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol (Harlequins)")));
-    	ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
-    	ogE.addElement(new OptionsGruppeEintrag("Fusion pistol", getPts("Fusion pistol (Harlequins)")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        power = 4;
 
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Harlequin's blade", getPts("Harlequin's blade")));
-    	ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (Harlequins)")));
-    	ogE.addElement(new OptionsGruppeEintrag("Harlequin's embrace", getPts("Harlequin's embrace")));
-    	ogE.addElement(new OptionsGruppeEintrag("Harlequin's kiss", getPts("Harlequin's kiss")));
-    	ogE.addElement(new OptionsGruppeEintrag("Harlequin's caress", getPts("Harlequin's caress")));
-		add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol (Harlequins)")));
+        ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
+        ogE.addElement(new OptionsGruppeEintrag("Fusion pistol", getPts("Fusion pistol (Harlequins)")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Harlequin's blade", getPts("Harlequin's blade")));
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (Harlequins)")));
+        ogE.addElement(new OptionsGruppeEintrag("Harlequin's embrace", getPts("Harlequin's embrace")));
+        ogE.addElement(new OptionsGruppeEintrag("Harlequin's kiss", getPts("Harlequin's kiss")));
+        ogE.addElement(new OptionsGruppeEintrag("Harlequin's caress", getPts("Harlequin's caress")));
+        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	@Override
-	public void refreshen() { 
-	}
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

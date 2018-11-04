@@ -6,30 +6,30 @@ import oc.RuestkammerStarter;
 
 public class CSChaosVindicator extends Eintrag {
 
-	RuestkammerStarter ausruestung;
-	
-	public CSChaosVindicator() {
-		name = "Chaos-Vindicator";
-		grundkosten = 120;
+    RuestkammerStarter ausruestung;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosVindicator.gif"));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
-		
-		seperator();
+    public CSChaosVindicator() {
+        name = "Chaos-Vindicator";
+        grundkosten = 120;
 
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CSFahrzeugruestkammer", "Ausrüstung");
-		ausruestung.initKammer(true);
-		ausruestung.setButtonText("Ausrüstung");
-		add(ausruestung);
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosVindicator.gif"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
+
+        seperator();
+
+        ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CSFahrzeugruestkammer", "Ausrüstung");
+        ausruestung.initKammer(true);
+        ausruestung.setButtonText("Ausrüstung");
+        add(ausruestung);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -5,25 +5,25 @@ import oc.Eintrag;
 
 public class TYBiovores extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public TYBiovores() {
-		name = "Biovores";
-		grundkosten = 0;
+    public TYBiovores() {
+        name = "Biovores";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Biovore", "Biovores", 1, 3, getPts("Biovores") + getPts("Spore mine launcher"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Biovore", "Biovores", 1, 3, getPts("Biovores") + getPts("Spore mine launcher"));
+        add(squad);
 
-		seperator();
+        seperator();
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYBiovoren.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/TYBiovoren.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = squad.getModelle() * 2;
-	}
+    @Override
+    public void refreshen() {
+        power = squad.getModelle() * 2;
+    }
 
 }

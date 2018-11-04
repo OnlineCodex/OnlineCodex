@@ -3,36 +3,35 @@ package oc.wh40k.units.ae;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 
 public class AERazorwingJetfighter extends Eintrag {
-	
-	OptionsUpgradeGruppe o1, o2;
 
-	public AERazorwingJetfighter() {
-		name = "Razorwing Jetfighter";
-		grundkosten = getPts("Razorwing Jetfighter") + getPts("Razorwing missile");
+    OptionsUpgradeGruppe o1, o2;
 
-		power = 8;
+    public AERazorwingJetfighter() {
+        name = "Razorwing Jetfighter";
+        grundkosten = getPts("Razorwing Jetfighter") + getPts("Razorwing missile");
 
-    	ogE.addElement(new OptionsGruppeEintrag("2 Disintegrator cannons", 2*getPts("Disintegrator cannon")));
-    	ogE.addElement(new OptionsGruppeEintrag("2 Dark lances", 2*getPts("Dark lance")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        power = 8;
 
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Twin splinter rifle", getPts("Twin splinter rifle")));
-    	ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        ogE.addElement(new OptionsGruppeEintrag("2 Disintegrator cannons", 2 * getPts("Disintegrator cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Dark lances", 2 * getPts("Dark lance")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Twin splinter rifle", getPts("Twin splinter rifle")));
+        ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 
-	@Override
-	public void refreshen() { 
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-	}
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+    }
 }

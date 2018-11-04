@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class AEFuegan extends Eintrag {
 
-	public AEFuegan() {
-		name = "Fuegan";
-		grundkosten = getPts("Fuegan");
-		power = 8;
-		seperator();
+    public AEFuegan() {
+        name = "Fuegan";
+        grundkosten = getPts("Fuegan");
+        power = 8;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

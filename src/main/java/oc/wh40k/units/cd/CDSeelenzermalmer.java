@@ -7,47 +7,47 @@ import oc.OptionsUpgradeGruppe;
 
 public class CDSeelenzermalmer extends Eintrag {
 
-	OptionsUpgradeGruppe mal, waffe;
-	
-	public CDSeelenzermalmer() {
+    OptionsUpgradeGruppe mal, waffe;
 
-		name = "Seelenzermalmer";
+    public CDSeelenzermalmer() {
 
-		grundkosten = 135;
+        name = "Seelenzermalmer";
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
+        grundkosten = 135;
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/CDSeelenzermalmer.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", 15));
-		add(mal = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Hexenfeuerschwall", 20));
-		ogE.addElement(new OptionsGruppeEintrag("Warpblick", 25));
-		ogE.addElement(new OptionsGruppeEintrag("Explodierender Auswurf", 30));
-		add(waffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warpschwert", 25));
+        seperator();
 
-		complete();
+        ogE.addElement(new OptionsGruppeEintrag("Dämon des Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Dämon des Tzeentch", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Dämon des Nurgle", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Dämon des Slaanesh", 15));
+        add(mal = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-        if(mal.getAnzahl() < 1) {
+        ogE.addElement(new OptionsGruppeEintrag("Hexenfeuerschwall", 20));
+        ogE.addElement(new OptionsGruppeEintrag("Warpblick", 25));
+        ogE.addElement(new OptionsGruppeEintrag("Explodierender Auswurf", 30));
+        add(waffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warpschwert", 25));
+
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+        if (mal.getAnzahl() < 1) {
             mal.setLegal(false);
             setFehlermeldung("Wähle einen Gott");
         } else {
             mal.setLegal(true);
             setFehlermeldung("");
         }
-	}
+    }
 }

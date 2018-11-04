@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMSammaelinSableclaw extends Eintrag {
 
-	public IMSammaelinSableclaw() {
-		name = "Sammael in Sableclaw";
-		grundkosten = getPts("Sammael in Sableclaw");
-		power = 11;
-		seperator();
+    public IMSammaelinSableclaw() {
+        name = "Sammael in Sableclaw";
+        grundkosten = getPts("Sammael in Sableclaw");
+        power = 11;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

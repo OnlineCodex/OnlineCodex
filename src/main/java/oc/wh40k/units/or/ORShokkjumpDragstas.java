@@ -6,25 +6,25 @@ import oc.Eintrag;
 
 public class ORShokkjumpDragstas extends Eintrag {
 
-	AnzahlPanel buggies;
+    AnzahlPanel buggies;
 
-	public ORShokkjumpDragstas() {
+    public ORShokkjumpDragstas() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas") + getPts("Rokkit launcha"));
-		add(buggies);
+        buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas") + getPts("Rokkit launcha"));
+        add(buggies);
 
-		add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
+        seperator();
 
-	//@OVERRIDE
-	public void refreshen() {
+        complete();
+    }
 
-		power = buggies.getModelle() * 6;
-	}
+    //@OVERRIDE
+    public void refreshen() {
+
+        power = buggies.getModelle() * 6;
+    }
 }

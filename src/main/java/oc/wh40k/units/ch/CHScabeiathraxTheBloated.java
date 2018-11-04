@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHScabeiathraxTheBloated extends Eintrag {
 
-	public CHScabeiathraxTheBloated() {
+    public CHScabeiathraxTheBloated() {
 
-		name = "Scabeiathrax the Bloated";
+        name = "Scabeiathrax the Bloated";
         grundkosten = getPts("Scabeiathrax the Bloated");
-        power = 30;   
+        power = 30;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

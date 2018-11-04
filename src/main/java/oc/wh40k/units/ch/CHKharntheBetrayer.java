@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class CHKharntheBetrayer extends Eintrag {
 
-	public CHKharntheBetrayer() {
+    public CHKharntheBetrayer() {
 
-		name = "Kharn the Betrayer";
+        name = "Kharn the Betrayer";
         grundkosten = getPts("Kharn the Betrayer");
-        power = 9;   
-		complete();
+        power = 9;
+        complete();
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

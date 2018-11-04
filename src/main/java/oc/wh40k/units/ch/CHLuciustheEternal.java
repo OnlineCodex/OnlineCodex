@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class CHLuciustheEternal extends Eintrag {
 
-	public CHLuciustheEternal() {
+    public CHLuciustheEternal() {
 
-		name = "Lucius the Eternal";
+        name = "Lucius the Eternal";
         grundkosten = getPts("Lucius the Eternal");
-        power = 6;   
-		complete();
+        power = 6;
+        complete();
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

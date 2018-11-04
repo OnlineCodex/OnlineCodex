@@ -6,23 +6,23 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMLandRaider extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMLandRaider() {
-		name = "Land Raider";
-		grundkosten = getPts("Land Raider") + getPts("Twin lascannon") * 2 + getPts("Twin Heavy bolter (SM)");
-		power = 19;
+    public IMLandRaider() {
+        name = "Land Raider";
+        grundkosten = getPts("Land Raider") + getPts("Twin lascannon") * 2 + getPts("Twin Heavy bolter (SM)");
+        power = 19;
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-melta", getPts("Multi-melta (SM)")));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-melta", getPts("Multi-melta (SM)")));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

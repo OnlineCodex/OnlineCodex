@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHAbaddontheDespoiler extends Eintrag {
 
-	public CHAbaddontheDespoiler() {
+    public CHAbaddontheDespoiler() {
 
-		name = "Abaddon the Despoiler";
+        name = "Abaddon the Despoiler";
         grundkosten = getPts("Abaddon the Despoiler");
-        power = 13;   
+        power = 13;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

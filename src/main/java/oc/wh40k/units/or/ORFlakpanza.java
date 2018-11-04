@@ -5,13 +5,12 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORFlakpanza extends Eintrag {
 
-	public ORFlakpanza() {
-		name = "Flakpanza";
-		grundkosten = 60;
+    public ORFlakpanza() {
+        name = "Flakpanza";
+        grundkosten = 60;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/Flakpanza.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/Flakpanza.gif"));
 
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Leuchtspurwumme", "Grot-Leuchtspurwumme", 15));
@@ -19,12 +18,12 @@ public class ORFlakpanza extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot Hälfaz", 5));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Panzaplattenz", 5));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Abrizzbirnä", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vastärktä Rammä", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vastärktä Rammä", 5));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	public void refreshen() {
-	}
+    public void refreshen() {
+    }
 }
