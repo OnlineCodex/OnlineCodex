@@ -346,7 +346,7 @@ public class Superformation implements BuildaSTK{
 				formationen.get(i).isLoading=false;
 			} catch (Exception e) {
 //				fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
-				e.printStackTrace();
+				LOGGER.error("", e);
 			}
 		}
 		refreshCounts();
@@ -461,7 +461,7 @@ public class Superformation implements BuildaSTK{
 				LOGGER.info("Formationen2:"+formationen.size());
 			} catch (Exception e) {
 //				fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
-				e.printStackTrace();
+				LOGGER.error("", e);
 			}
 		}
 	};
