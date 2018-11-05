@@ -518,9 +518,4 @@ public class VOLKBloodAngels extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
 }

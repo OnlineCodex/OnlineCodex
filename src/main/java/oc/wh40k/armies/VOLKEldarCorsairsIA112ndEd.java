@@ -151,7 +151,6 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
             RefreshListener.fireRefresh();
         }
 
-
         if (getKontingentTyp().equals("Command Crew")) {
             clearCombo();
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge);
@@ -165,11 +164,6 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
                     + "0-1 Corsair Void Dreamer.<br>"
                     + "0-1 Corsair Lynx.<br>"
                     + "0-1 Corsair Warp Hunter Squadron.<br><html>");
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Prince"},1, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Void Dreamer"},0, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Lynx"},0, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Warp Hunter Squadron"},0, 1));
-
             kontingentBox.setEnabled(false);
             formationBox.setEnabled(false);
         } else if (getKontingentTyp().equals("Primary Cotorie") || getKontingentTyp().equals("Optional Cotorie")) {
@@ -186,11 +180,6 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
                     + "0-1 Corsair Void Dreamer.<br>"
                     + "0-1 Corsair Lynx.<br>"
                     + "0-1 Corsair Warp Hunter Squadron.<br><html>");
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Prince"},1, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Void Dreamer"},0, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Lynx"},0, 1));
-//			formation.entries.add(new FormationEntry(new String[]{"Corsair Warp Hunter Squadron"},0, 1));
-
             kontingentBox.setEnabled(false);
             formationBox.setEnabled(false);
         } else {
@@ -208,10 +197,4 @@ public class VOLKEldarCorsairsIA112ndEd extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

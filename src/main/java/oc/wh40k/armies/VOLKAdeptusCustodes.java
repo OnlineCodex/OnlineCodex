@@ -100,11 +100,6 @@ public class VOLKAdeptusCustodes extends BuildaVater {
     }
 
     @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
-    @Override
     public void volkRefresh() {
 
         if (getKontingentTyp().equals("Golden Legion Task Force")) {

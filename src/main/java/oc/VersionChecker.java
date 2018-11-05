@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableTable;
 import com.google.common.collect.Table;
 import oc.utils.DesktopUtils;
 import oc.utils.GitHubUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
@@ -13,6 +15,8 @@ import java.awt.*;
 import java.text.MessageFormat;
 
 public final class VersionChecker {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VersionChecker.class);
 
     private static final String LATETEST_RELEASE_URL = "https://github.com/OnlineCodex/OnlineCodex/releases/latest";
     private static final Table<Sprache, String, String> TRANSLATIONS = ImmutableTable.<Sprache, String, String>builder()
@@ -41,7 +45,7 @@ public final class VersionChecker {
     }
 
     private static void showVersionPopup(Sprache lang, Version currentVersion, Version releaseVersion) {
-        System.out.println("Found newer version. current: " + currentVersion + " latest: " + releaseVersion);
+        LOGGER.info("Found newer version. current: " + currentVersion + " latest: " + releaseVersion);
         createVersionMessageBox(lang, currentVersion, releaseVersion)
                 .setVisible(true);
     }

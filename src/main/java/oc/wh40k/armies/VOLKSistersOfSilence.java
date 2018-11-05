@@ -91,11 +91,6 @@ public class VOLKSistersOfSilence extends BuildaVater {
     }
 
     @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
-    @Override
     public void volkRefresh() {
 
         if (getKontingentTyp().equals("Null-Maiden Task Force")) {

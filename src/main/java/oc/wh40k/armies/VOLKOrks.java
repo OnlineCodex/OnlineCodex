@@ -324,7 +324,6 @@ public class VOLKOrks extends BuildaVater {
 
     @Override
     public void refreshAction() {
-//		System.out.println("ORZhadsnark? "+BuildaHQ.getCountFromInformationVectorGlobal("ORZhadsnark"));
         if (BuildaHQ.getCountFromInformationVectorGlobal("ORZhadsnark") > 0) {
             myChooserGruppen.get(TR).addSpezialAuswahl("Warbikers");
         } else {
@@ -332,10 +331,4 @@ public class VOLKOrks extends BuildaVater {
         }
         super.refreshAction();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

@@ -83,9 +83,4 @@ public class VOLKRenegadesandHeretics extends BuildaVater {
 
         complete();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
 }

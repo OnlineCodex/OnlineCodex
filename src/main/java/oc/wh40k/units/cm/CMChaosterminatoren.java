@@ -148,7 +148,6 @@ public class CMChaosterminatoren extends Eintrag {
         }
         int bodInt = getCountFromInformationVector("BLBringersOfDespair");
         int abbaInt = getCountFromInformationVector("BLAbaddon");
-        System.out.println(bodInt + " " + abbaInt);
         bod.setLegal((bodInt <= abbaInt) || !bod.isSelected());
         ////////////////////////////////////////////////////////////////////////////
 

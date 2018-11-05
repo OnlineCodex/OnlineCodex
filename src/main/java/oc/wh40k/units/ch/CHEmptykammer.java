@@ -19,7 +19,7 @@ public class CHEmptykammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-        System.out.print("");
+
     }
 
 }

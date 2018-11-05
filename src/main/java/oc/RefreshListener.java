@@ -84,16 +84,16 @@ public abstract class RefreshListener {
     public static void fireRefresh() {
 
         for (int reihenfolgeIndex = reihenfolgeMin; reihenfolgeIndex <= reihenfolgeMax; ++reihenfolgeIndex) {
-            //System.out.println("reihenfolgeIndex: "+reihenfolgeIndex);
+            //LOGGER.info("reihenfolgeIndex: "+reihenfolgeIndex);
             for (int i = 0; i < listener.size(); ++i) {
 
                 if (listener.elementAt(i).reihenfolge == reihenfolgeIndex) {
-                    //	System.out.println("(vor) listener.elementAt(i).refresh():"+i);
+                    //	LOGGER.info("(vor) listener.elementAt(i).refresh():"+i);
                     listener.elementAt(i).refresh();
-                    //System.out.println("(nach) listener.elementAt(i).refresh():"+i);
+                    //LOGGER.info("(nach) listener.elementAt(i).refresh():"+i);
                 }
             }
-            //System.out.println("refresh fertig");
+            //LOGGER.info("refresh fertig");
         }
     }
 

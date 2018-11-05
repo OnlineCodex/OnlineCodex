@@ -25,7 +25,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
     boolean apoSelected = false;
     KeyListener closeKeyListener = new KeyListener() {
         public void keyPressed(KeyEvent event) {
-            //System.out.println(getMousePosition());    zum GUI bauen^^
+            //LOGGER.info(getMousePosition());    zum GUI bauen^^
             if (event.getKeyCode() == KeyEvent.VK_ENTER || event.getKeyCode() == KeyEvent.VK_ESCAPE) {
                 closeBuildaMenu();
             }

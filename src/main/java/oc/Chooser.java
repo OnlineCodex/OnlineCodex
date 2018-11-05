@@ -1,5 +1,7 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import javax.swing.*;
@@ -10,6 +12,8 @@ import java.util.HashMap;
 import java.util.Vector;
 
 public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Chooser.class);
 
     private static ListCellRenderer defaultRenderer = new JComboBox().getRenderer(); // mein eigener Renderer "überschreibt" sozusagen den default renderer, indem er seine Methode aufruft und das reurnte verändert. Dafür muss ich diesen aber einmal haben
     BuildaVater buildaVater;
@@ -22,7 +26,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     ListCellRenderer renderer = new ListCellRenderer() {
 
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-            ////System.out.println("Chooser - getListCellRendererComponent");
+            ////LOGGER.info("Chooser - getListCellRendererComponent");
             Component c = defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
 
@@ -49,7 +53,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     private HashMap<String, String> multipleArmyClasses = new HashMap<String, String>();
 
     public Chooser(BuildaVater bv, int lX, int lY, String reflectionKennung, Object[] alleEinträge, int kategorie, ActionListener cloneListener) {  // ACHTUNG: wenn mehr oder weniger als 2 Hauptsachen zum panel geaddet werden, muss aktuellenEintragLöschen geändert werden! weil dann der index falsch ist, an dem irgendwas ins panel geaddet ist.
-        //System.out.println("Chooser-Konstruktor");
+        //LOGGER.info("Chooser-Konstruktor");
         this.buildaVater = bv;
         this.kategorie = kategorie;
         this.panel.setLocation(lX, lY);
@@ -63,7 +67,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         BuildaHQ.newGUIComponent(myComboBox);
         myComboBox.setBackground(Color.WHITE);
         //myComboBox.setMaximumRowCount(25);
-        //System.out.println((BILDSCHIRMHÖHE-100)/20);
+        //LOGGER.info((BILDSCHIRMHÖHE-100)/20);
         myComboBox.setMaximumRowCount((BILDSCHIRMHÖHE - 150) / 20);
         myComboBox.setEditable(false);
         myComboBox.setRenderer(renderer);
@@ -92,35 +96,35 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         new RefreshListener((byte) 9) {
             @Override
             public void refresh() {
-                //System.out.print("");
+                //
                 sizeSetzen();
-                //System.out.print("");
+                //
             }  // guckstu ende erstelleEintrag()  wenn du das hier ämndern willst
         };
     }
 
     public int getKategorie() {
-        //System.out.println("Chooser-getKategorie");
+        //LOGGER.info("Chooser-getKategorie");
         return this.kategorie;
     }
 
     public Eintrag getEintrag() {
-        //System.out.println("Chooser-getEintrag");
+        //LOGGER.info("Chooser-getEintrag");
         return this.myEintrag;
     }
 
     public JButton getCloneButton() {
-        //System.out.println("Chooser-getCloneButton");
+        //LOGGER.info("Chooser-getCloneButton");
         return cloneButton;
     }
 
     public JComboBox getComboBox() {
-        //System.out.println("Chooser-getComboBox");
+        //LOGGER.info("Chooser-getComboBox");
         return this.myComboBox;
     }
 
     public double getKosten() {
-        //System.out.println("Chooser-getKosten");
+        //LOGGER.info("Chooser-getKosten");
         try {
             return ((Eintrag) myEintrag).getKosten();
         } catch (Exception e) {
@@ -129,19 +133,19 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public Chooser setStatischeEinträge(Object[] sE) {
-        //System.out.println("Chooser-setStatistischeEinträge");
+        //LOGGER.info("Chooser-setStatistischeEinträge");
         this.statischeEinträge = sE;
         return this;
     } // muss extra gemacht werden, weil als Parameter dem Kosntruktor auch alle Spezialauswahlen mitgegeben werden, ich aber für den Renderer die Info brauch was statisch ist...
 
     public Chooser setSpezialEinträge(Vector<String> sE) {
-        //System.out.println("Chooser-setSpezialEinträge");
+        //LOGGER.info("Chooser-setSpezialEinträge");
         this.spezialEinträge = sE;
         return this;
     }
 
     public void sizeSetzen() {
-        //System.out.println("Chooser-sizeSetzen");
+        //LOGGER.info("Chooser-sizeSetzen");
         int x = myComboBox.getSize().width;
         int y = myComboBox.getSize().height;
 
@@ -158,7 +162,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     @SuppressWarnings("rawtypes")
     public void setAuswahlen(Vector v) {
-        //System.out.println("Chooser-setAuswahlen");
+        //LOGGER.info("Chooser-setAuswahlen");
         useActionPerformed = false;
         String currentSelected = selectedEntry();
 
@@ -170,9 +174,9 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
         myComboBox.setSelectedItem(currentSelected);
 
-//	    System.out.println("myComboBox.size "+myComboBox.getComponentCount());
-//	    System.out.println("selectedEntry() "+selectedEntry());
-//	    System.out.println("currentSelected "+currentSelected);
+//	    LOGGER.info("myComboBox.size "+myComboBox.getComponentCount());
+//	    LOGGER.info("selectedEntry() "+selectedEntry());
+//	    LOGGER.info("currentSelected "+currentSelected);
 
         if (!selectedEntry().equals(currentSelected)) {
             myEintrag.deleteYourself();
@@ -183,7 +187,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     @SuppressWarnings("rawtypes")
     public void erstelleEintrag(String name) {
-        //System.out.println("Chooser-erstelleEintrag name: "+name+" reflection: "+reflectionKennung);
+        //LOGGER.info("Chooser-erstelleEintrag name: "+name+" reflection: "+reflectionKennung);
         String umgeformterName = BuildaHQ.formZuKlassenName(name);
         if (umgeformterName.equals("")) {
             erstelleLeerenEintrag();
@@ -202,7 +206,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                 finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
 
                 try {
-                    //System.out.println("Chooser-erstelleEintrag class(try1): "+armyPackage + "units." + finalClassName);
+                    //LOGGER.info("Chooser-erstelleEintrag class(try1): "+armyPackage + "units." + finalClassName);
                     Class myClass = Class.forName(armyPackage + "units." + finalClassName);
 
                     aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
@@ -212,14 +216,14 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
                     try {
                         if (reflectionKennung == "") {
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //LOGGER.info("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
                             myEintrag = (Eintrag) (myClass.newInstance());
                         } else {
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //LOGGER.info("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
@@ -229,14 +233,14 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
                     } catch (Exception ex) {
                         if (reflectionKennung == "") { //Fall für Einheiten in APO
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //LOGGER.info("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
                             myEintrag = (Eintrag) (myClass.newInstance());
                         } else {
-                            //System.out.println("Chooser-erstelleEintrag class(try3): "+armyPackage + "units." + umgeformterName);
+                            //LOGGER.info("Chooser-erstelleEintrag class(try3): "+armyPackage + "units." + umgeformterName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
@@ -257,38 +261,38 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                 panel.add(myEintrag.getPanel());
             } catch (ClassNotFoundException e) {
                 OnlineCodex.getInstance().fehler("Klasse \"" + finalClassName + "\" nicht gefunden.\nBitte melden!!");
-                //System.out.println("Klasse \"" + finalClassName+"\" nicht gefunden. Bitte melden!!");
+                //LOGGER.info("Klasse \"" + finalClassName+"\" nicht gefunden. Bitte melden!!");
                 erstelleLeerenEintrag();
-                //System.out.println(e.getStackTrace());
+                //LOGGER.info(e.getStackTrace());
             } catch (ClassCastException e) {
-                //System.out.println(e.toString());
+                //LOGGER.info(e.toString());
             } catch (InstantiationException e) {
-                //System.out.println(e.toString());
+                //LOGGER.info(e.toString());
             } catch (IllegalAccessException e) {
-                //System.out.println(e.toString());
+                //LOGGER.info(e.toString());
             }
         }
 
         RefreshListener.fireRefresh();  // fireRefresh macht SizeSetzen()
-        //System.out.println("Chooser-erstelleEintrag myEintrag instanceof LeererEintrag: "+(myEintrag instanceof LeererEintrag));
+        //LOGGER.info("Chooser-erstelleEintrag myEintrag instanceof LeererEintrag: "+(myEintrag instanceof LeererEintrag));
         cloneButton.setVisible(!(myEintrag instanceof LeererEintrag));
 
     }
 
     public String selectedEntry() {
-        //System.out.println("Chooser-selectedEntry");
+        //LOGGER.info("Chooser-selectedEntry");
         return ((String) (myComboBox.getSelectedObjects()[0]));
     }
 
     public void actionPerformed(ActionEvent event) {
-        //System.out.println("Chooser-actionPerformed");
+        //LOGGER.info("Chooser-actionPerformed");
         if (useActionPerformed) {
             erstelleEintrag(selectedEntry());
         }
     }
 
     public void aktuellenEintragLöschen() {
-        //System.out.println("Chooser-aktuellenEintragLöschen");
+        //LOGGER.info("Chooser-aktuellenEintragLöschen");
         if (myEintrag != null) {
             myEintrag.deleteYourself();
             RefreshListener.remove(myEintrag.getID());
@@ -296,13 +300,13 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
             try {
                 panel.remove(2);
             } catch (Exception e) {
-                e.printStackTrace();
+                LOGGER.error("", e);
             }  // zahl ändern wenn mehr oder weniger Components aufem Panel sind!
         }
     }
 
     public void erstelleLeerenEintrag() {
-        //System.out.println("Chooser-erstelleLeerenEintrag");
+        //LOGGER.info("Chooser-erstelleLeerenEintrag");
         aktuellenEintragLöschen();
         myEintrag = new LeererEintrag(0, 0);
         myEintrag.getPanel().setLocation(0, 30);
@@ -310,7 +314,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public String getText() {
-        //System.out.println("Chooser-getText");
+        //LOGGER.info("Chooser-getText");
         try {
             return myEintrag.getText();
         } catch (Exception e) {
@@ -319,7 +323,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public String getSaveText(String trenner) {
-        //System.out.println("Chooser-getSaveText");
+        //LOGGER.info("Chooser-getSaveText");
         try {
             return myEintrag.getSaveText(trenner);
         } catch (Exception e) {
@@ -328,7 +332,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public Element getSaveElement() {
-        //System.out.println("Chooser-getSaveElement");
+        //LOGGER.info("Chooser-getSaveElement");
         if (getComboBox().getSelectedObjects()[0].toString().trim().equals("")) return null;
 
         Element root = myEintrag.getSaveElement();
@@ -343,12 +347,12 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public void load(String s, String s2) {
-        //System.out.println("Chooser-load");
+        //LOGGER.info("Chooser-load");
         myEintrag.load(s, s2);
     }
 
     public void loadElement(Element e) {
-        //System.out.println("Chooser-loadElement");
+        //LOGGER.info("Chooser-loadElement");
         myEintrag.loadElement(e);
     }
 
@@ -367,7 +371,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public void changeEntries(String[] units) { //Tauscht den Inhalt der Combobox aus
-        //System.out.println("Chooser-setAuswahlen");
+        //LOGGER.info("Chooser-setAuswahlen");
         useActionPerformed = false;
 
         // leeren und neufüllen der Liste

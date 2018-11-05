@@ -3,10 +3,14 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 
 public class VOLKTauEmpire extends BuildaVater {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
 
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
     public String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
@@ -57,7 +61,7 @@ public class VOLKTauEmpire extends BuildaVater {
         InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ta.csv");
         pointValues = BuildaHQ.loadindexFile(is);
 
-        System.err.println("File: " + "/oc/wh40k/indices/taaa.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/taaa.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/taaa.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
@@ -208,9 +212,5 @@ public class VOLKTauEmpire extends BuildaVater {
         }
 
         fillChooserSpace();
-    }
-
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
     }
 }

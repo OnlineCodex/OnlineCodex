@@ -1,10 +1,15 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.StringTokenizer;
 
 public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
 
     protected int kategorie;
     protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
@@ -120,7 +125,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     }
 
     public void setBuildaVater(BuildaVater buildaVater) {
-        System.out.println("setBuildaVater " + buildaVater == null);
+        LOGGER.info("setBuildaVater " + (buildaVater == null));
         this.buildaVater = buildaVater;
     }
 
@@ -320,7 +325,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     }
 
     public void deleteYourself() {
-        System.out.println("Eintrag-deleteyourself");
+        LOGGER.info("Eintrag-deleteyourself");
         BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
 
         for (int i = 0; i < optionen.size(); ++i) {
@@ -348,7 +353,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                 }
 
                 BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
-                System.out.println("RuestkammerStarter-rk-deleteyourself");
+                LOGGER.info("RuestkammerStarter-rk-deleteyourself");
                 rk.deleteYourself();
             } else if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
                 ((OptionsUpgradeGruppe) optionen.elementAt(i)).deleteYourself();
@@ -409,7 +414,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         s = s.toLowerCase();
 
         if (buildaVater.pointValues.get(s) == null) {
-            System.err.println("getPts - " + s);
+            LOGGER.error("getPts - " + s);
             return 0;
         } else {
             return buildaVater.pointValues.get(s);

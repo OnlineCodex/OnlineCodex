@@ -84,9 +84,4 @@ public class VOLKElysianDropTroopsIA32ndEd extends BuildaVater {
 
         complete();
     }
-
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

@@ -2,6 +2,8 @@ package oc;
 
 import oc.wh40k.armies.VOLKAstraMilitarum;
 import oc.wh40k.armies.VOLKSpaceMarines;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -11,10 +13,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Vector;
-//import oc.wh40k.armies.VOLKSternenreichderTau;
 
-public class BuildaTextArea extends BuildaPanel implements
-        ActionListener, ItemListener, BuildaSTK {
+public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(BuildaTextArea.class);
 
     public Vector<String> triedAllies = new Vector<String>();
     public Vector<String> noAllies = new Vector<String>();
@@ -211,8 +213,8 @@ public class BuildaTextArea extends BuildaPanel implements
         for (int k = 0; k < myBuildaVaterVec.size(); k++) {
             bV = myBuildaVaterVec.get(k);
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
-//			System.out.println("superformation:");
-//			System.out.println(bV.superformation!=null);
+//			LOGGER.info("superformation:");
+//			LOGGER.info(bV.superformation!=null);
             if (bV.superformation != null) {
                 if (bV.reflectionKennungLokal.equals("SM")) {
                     if (((VOLKSpaceMarines) bV).Raukaan.isSelected()) {
@@ -291,10 +293,10 @@ public class BuildaTextArea extends BuildaPanel implements
             }
 
             for (int i = 0; i < noAllies.size(); i++) {
-                System.out.println("No Allies: " + noAllies.get(i));
+                LOGGER.info("No Allies: " + noAllies.get(i));
             }
             for (int i = 0; i < triedAllies.size(); i++) {
-                System.out.println("Tried Ally: " + triedAllies.get(i));
+                LOGGER.info("Tried Ally: " + triedAllies.get(i));
                 if (noAllies.contains(triedAllies.get(i))) {
                     allyError = true;
                     break;
@@ -473,8 +475,8 @@ public class BuildaTextArea extends BuildaPanel implements
 
             for (int i = 0; i < bV.getChooserAnzahl(); ++i) {
                 cg = bV.getChooserGruppe(i);
-                System.out.println("cg.getKosten()" + cg.getKosten());
-                System.out.println("getKosten()" + getKosten());
+                LOGGER.info("cg.getKosten()" + cg.getKosten());
+                LOGGER.info("getKosten()" + getKosten());
                 if (OnlineCodex.getGame() == OnlineCodex.WH40K
                         || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) {
                     text.append(cg.getAnzahlText(false)
@@ -572,7 +574,7 @@ public class BuildaTextArea extends BuildaPanel implements
         for (int i = 0; i < myBuildaVaterVec.size(); i++) {
             kosten += myBuildaVaterVec.get(i).getKosten();
         }
-        System.out.println("TextArea-Kosten: " + kosten);
+        LOGGER.info("TextArea-Kosten: " + kosten);
         return kosten;
     }
 

@@ -201,17 +201,4 @@ public class VOLKSiegeVanguardIA10 extends BuildaVater {
         complete();
 
     }
-
-
-
-    @Override
-
-    protected void finalize() {
-
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-
-    }
-
-
-
 }

@@ -1,5 +1,7 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
@@ -14,8 +16,9 @@ import java.util.Hashtable;
 import java.util.Set;
 import java.util.Vector;
 
-public abstract class BuildaVater extends BuildaPanel implements
-        ActionListener, ItemListener, BuildaSTK {
+public abstract class BuildaVater extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(BuildaVater.class);
 
     public Vector<ChooserGruppe> myChooserGruppen = new Vector<ChooserGruppe>();
     public boolean isLoading = false;
@@ -211,7 +214,7 @@ public abstract class BuildaVater extends BuildaPanel implements
         if (!(this instanceof LeererBuilder)) {
             if (getGame() == 0) {
                 reflectionKennungLokal = reflectionKennung;
-                System.out.println("reflectionKennungLokal:" + reflectionKennungLokal);
+                LOGGER.info("reflectionKennungLokal:" + reflectionKennungLokal);
 
                 kontingente.add(0, "Auxiliary Support Detachment"); //-1CP
                 kontingente.add(0, "Fortification Network"); //+0CP
@@ -338,7 +341,7 @@ public abstract class BuildaVater extends BuildaPanel implements
         int[] min = minAuswahlen.get(getKontingentTyp());
         int[] max = maxAuswahlen.get(getKontingentTyp());
 
-        System.out.println("BUildvater" + getKontingentTyp());
+        LOGGER.info("BUildvater" + getKontingentTyp());
 
         for (int i = 0; i < myChooserGruppen.size(); i++) {
             myChooserGruppen.get(i).minAnzahl = min[i];
@@ -370,7 +373,7 @@ public abstract class BuildaVater extends BuildaPanel implements
         if (superformation != null) {
             kosten += superformation.getKosten();
         }
-        //System.out.println("BuildaVater-Kosten: " + kosten);
+        //LOGGER.info("BuildaVater-Kosten: " + kosten);
         return kosten;
     }
 
@@ -382,7 +385,7 @@ public abstract class BuildaVater extends BuildaPanel implements
         if (superformation != null) {
             kosten += superformation.getPower();
         }
-        //System.out.println("BuildaVater-Kosten: " + kosten);
+        //LOGGER.info("BuildaVater-Kosten: " + kosten);
         return kosten;
     }
 
@@ -391,7 +394,7 @@ public abstract class BuildaVater extends BuildaPanel implements
     }
 
     public void textAreaRefresh() {
-        //		System.out.println("textAreaRefresh");
+        //		LOGGER.info("textAreaRefresh");
         if (buildatextArea != null) {
             buildatextArea.textAreaRefresh();
         }
@@ -403,18 +406,18 @@ public abstract class BuildaVater extends BuildaPanel implements
 
         panel.add(myChooserGruppen.lastElement().getPanel());
 
-        System.out.println("adden" + c.getKategorie());
+        LOGGER.info("adden" + c.getKategorie());
 
     }
 
     public void itemStateChanged(ItemEvent event) {
-        System.out.println("itemStateChanged");
+        LOGGER.info("itemStateChanged");
         buildatextArea.itemStateChanged(event);
 
     }
 
     public void actionPerformed(ActionEvent event) {
-        System.out.println("actionPerformed");
+        LOGGER.info("actionPerformed");
         buildatextArea.actionPerformed(event);
     }
 
@@ -704,7 +707,7 @@ public abstract class BuildaVater extends BuildaPanel implements
             }
 
             for (int i = 0; i < myChooserGruppen.size(); i++) {
-                //			System.out.println(myChooserGruppen.get(i).alleEinträge.length);
+                //			LOGGER.info(myChooserGruppen.get(i).alleEinträge.length);
                 if (myChooserGruppen.get(i).alleEinträge.length == 1 || (myChooserGruppen.get(i).minAnzahl == 0 && myChooserGruppen.get(i).maxAnzahl == 0)) {//Falls die Gruppe nur einen leeren Eintrag enthält, wird sie aus dem Bild geschoben
                     myChooserGruppen.get(i).panel.setLocation(outOfPanel, myChooserGruppen.get(i).panel.getLocation().y);
                 } else {
@@ -712,7 +715,7 @@ public abstract class BuildaVater extends BuildaPanel implements
                     cnt += CHOOSERGRUPPEN_X_ABSTAND;
                 }
             }
-            //			System.out.println(cnt);
+            //			LOGGER.info(cnt);
             panel.setPreferredSize(new Dimension(cnt + 10, panel.getSize().height));
             panel.setSize(cnt + 10, panel.getSize().height);
         }
@@ -745,8 +748,8 @@ public abstract class BuildaVater extends BuildaPanel implements
         Object[] pointArray = pointset.toArray();
         for (int i = 0; i < pointArray.length; i++) {
             if (pointValues.containsKey(pointArray[i])) {
-//				System.err.println("Doppelter Key: " + pointArray[i]);
-                System.err.println("Doppelter Key: " + pointArray[i] + " - " + appendList.get(pointArray[i]) + " Vorhanden als: " + pointArray[i] + " - " + pointValues.get(pointArray[i]));
+//				LOGGER.error("Doppelter Key: " + pointArray[i]);
+                LOGGER.error("Doppelter Key: " + pointArray[i] + " - " + appendList.get(pointArray[i]) + " Vorhanden als: " + pointArray[i] + " - " + pointValues.get(pointArray[i]));
             } else {
                 pointValues.put((String) pointArray[i], appendList.get(pointArray[i]));
             }

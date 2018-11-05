@@ -4,6 +4,8 @@ import com.github.zafarkhaja.semver.Version;
 import oc.utils.ManifestUtils;
 import oc.wh40k.armies.VOLKAstraMilitarum;
 import oc.wh40k.armies.VOLKSpaceMarines;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import javax.swing.*;
@@ -16,10 +18,10 @@ import java.util.Optional;
 import java.util.Vector;
 import java.util.prefs.Preferences;
 
-//import oc.wh40k.armies.VOLKSternenreichderTau;
-
 
 public class OnlineCodex extends BuildaPanel {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(OnlineCodex.class);
 
     public final static int menuHöhe = 23;
     public final static int FRAME_MIN_WIDTH = 750;
@@ -65,7 +67,7 @@ public class OnlineCodex extends BuildaPanel {
             JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
             int index = sourceTabbedPane.getSelectedIndex();
 
-            //System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
+            //LOGGER.info("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
             if (index != 0) {
                 BuildaVater bV = myBuilderz.get(index - 1);
                 for (int i = 0; i < bV.getChooserAnzahl(); i++) {
@@ -160,7 +162,7 @@ public class OnlineCodex extends BuildaPanel {
                 if (name.equals("")) {
                     return;//Es soll kein Leerer Tab eingefügt werden
                 } else {
-                    System.out.println(Class.forName(armyPackage + "armies.VOLK" + name));
+                    LOGGER.info(armyPackage + "armies.VOLK" + name);
                     myBuilder = (BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + name).newInstance());
                 }
                 if (getGame() != WH40K) {
@@ -192,7 +194,7 @@ public class OnlineCodex extends BuildaPanel {
                 myWindow.repaint();
             } catch (Exception e) {
                 fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
-                e.printStackTrace();
+                LOGGER.error("", e);
             }
         }
     };
@@ -307,7 +309,7 @@ public class OnlineCodex extends BuildaPanel {
 
         if (!gameFound) {
             fehler("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
-            System.out.println("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
+            LOGGER.info("Es konnte nicht bestimmt werden, welches Spiel geladen werden soll.");
             System.exit(0);
         }
 
@@ -486,7 +488,7 @@ public class OnlineCodex extends BuildaPanel {
                         try {
                             System.exit(0);
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            LOGGER.error("", e);
                         }
                     } // WICHTIG! sonst bleibt der Thread bestehen   (im Task Manager beenden).   Online: Acces denid...
 
@@ -517,7 +519,7 @@ public class OnlineCodex extends BuildaPanel {
                         try {
                             System.exit(0);
                         } catch (Exception e) {
-                            e.printStackTrace();
+                            LOGGER.error("", e);
                         }
                     } // WICHTIG! sonst bleibt der Thread bestehen   (im Task Manager beenden).   Online: Acces denid...
                 });
@@ -659,7 +661,7 @@ public class OnlineCodex extends BuildaPanel {
         for (int i = 0; i < myBuilderz.size(); i++) {
             kostenD += myBuilderz.get(i).getKosten();
         }
-        //System.out.println("OC: " + kostenD);
+        //LOGGER.info("OC: " + kostenD);
         return kostenD;
     }
 
@@ -668,12 +670,12 @@ public class OnlineCodex extends BuildaPanel {
         for (int i = 0; i < myBuilderz.size(); i++) {
             kostenD += myBuilderz.get(i).getCP();
         }
-        //System.out.println("OC: " + kostenD);
+        //LOGGER.info("OC: " + kostenD);
         return kostenD;
     }
 
     public String getSaveText() {
-        //System.out.println(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
+        //LOGGER.info(buildaChooser.getSelectedObjects()[0].toString() + SAVETEXT_UEBERSCHRIFTTRENNER2 + myBuilder.getSaveText());
         String s = "";
         for (int i = 0; i < myBuilderz.size(); i++) {
             s += tab.getTitleAt(i + 1) + SAVETEXT_UEBERSCHRIFTTRENNER2 +
@@ -726,7 +728,7 @@ public class OnlineCodex extends BuildaPanel {
             BuildaHQ.loadWindow = false;
             loadWindow.setVisible(false);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOGGER.error("", ex);
             JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden"));
         }
     }
@@ -740,7 +742,7 @@ public class OnlineCodex extends BuildaPanel {
 
 
             BuildaHQ.leereStatischeInformationen();
-//				System.out.println("myBuilderz.size()"+myBuilderz.size());
+//				LOGGER.info("myBuilderz.size()"+myBuilderz.size());
             while (myBuilderz.size() > 0) {
                 myBuilderTextArea.removeBuildaVater(myBuilderz.get(0));
                 buildaPanelz.remove(0);
@@ -756,9 +758,9 @@ public class OnlineCodex extends BuildaPanel {
 						setSelectedItemInBuildaChooser(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)));
 						loadWithDokumenteHashtable = true;
 					}*/
-                    System.out.println(armies[i]);
+                    LOGGER.info(armies[i]);
                     myBuilderz.add((BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + BuildaHQ.formZuKlassenName(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
-//					System.out.println(myBuilderz.size());
+//					LOGGER.info(myBuilderz.size());
                     JPanel buildaPanel = myBuilderz.get(i).getPanel();
                     buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                     buildaPanel.setSize(3500, 8000);
@@ -847,9 +849,9 @@ public class OnlineCodex extends BuildaPanel {
 					loadWithDokumenteHashtable = true;
 				}*/
 
-                System.out.println(saveText);
+                LOGGER.info(saveText);
                 myBuilderz.add((BuildaVater) (Class.forName(armyPackage + "armies.VOLK" + BuildaHQ.formZuKlassenName(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
-//					System.out.println(myBuilderz.size());
+//					LOGGER.info(myBuilderz.size());
                 JPanel buildaPanel = myBuilderz.get(0).getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                 buildaPanel.setSize(3500, 8000);
@@ -934,7 +936,7 @@ public class OnlineCodex extends BuildaPanel {
 
 
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("", e);
             JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden."));
         }
 

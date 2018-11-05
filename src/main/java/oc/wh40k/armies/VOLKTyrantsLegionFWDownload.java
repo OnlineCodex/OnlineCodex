@@ -101,10 +101,4 @@ public class VOLKTyrantsLegionFWDownload extends BuildaVater {
         myChooserGruppen.get(LOW).getPanel().setVisible(Hauptkontingent.isSelected());
         super.refreshAction();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

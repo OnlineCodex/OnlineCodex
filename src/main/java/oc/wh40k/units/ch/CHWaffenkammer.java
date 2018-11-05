@@ -221,7 +221,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                     handwaffen.setPreis("Lightning claw", getPts("Lightning claw single"));
                 }
             }
-            System.out.print("");
+
         }
     }
 

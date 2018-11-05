@@ -1,5 +1,7 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 
 import javax.swing.*;
@@ -9,6 +11,8 @@ import java.util.StringTokenizer;
 import java.util.Vector;
 
 public class RuestkammerStarter extends OptionsVater {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerStarter.class);
 
     static final int ruestkammerIconBreite = 20;
     static final Font bold = new Font("arial", Font.BOLD, 12);
@@ -190,38 +194,38 @@ public class RuestkammerStarter extends OptionsVater {
 
         try {
             try {
-                //System.out.println(armyPackage + "units." + kammerName);
+                //LOGGER.info(armyPackage + "units." + kammerName);
                 myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + kammerName).newInstance();
             } catch (Exception e) {
                 try {
-                    //System.out.println(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
+                    //LOGGER.info(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                     myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName).newInstance();
                 } catch (Exception ex2) {
                     try {
-                        //System.out.println(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
+                        //LOGGER.info(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                         myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "fo" + "." + kammerName).newInstance();
                     } catch (Exception ex3) {
                         try {
-                            //System.out.println(armyPackage + "units." + "form" + "." + kammerName);
+                            //LOGGER.info(armyPackage + "units." + "form" + "." + kammerName);
                             myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "form" + "." + kammerName).newInstance();
                         } catch (Exception ex4) {
                             try {
                                 String autoRef = kammerName.substring(0, 2);
-                                System.out.println(armyPackage + "units." + autoRef + "." + kammerName);
+                                LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
                                 myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
                             } catch (Exception ex5) {
                                 try {
                                     String autoRef = kammerName.substring(0, 3);
-                                    System.out.println(armyPackage + "units." + autoRef + "." + kammerName);
+                                    LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
                                     myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
                                 } catch (Exception ex6) {
                                     try {
                                         String autoRef = kammerName.substring(0, 4);
-                                        System.out.println(armyPackage + "units." + autoRef + "." + kammerName);
+                                        LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
                                         myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
                                     } catch (Exception ex7) {
                                         String autoRef = kammerName.substring(0, 6);
-                                        System.out.println(armyPackage + "units." + autoRef + "." + kammerName);
+                                        LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
                                         myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
 
                                     }
@@ -234,8 +238,8 @@ public class RuestkammerStarter extends OptionsVater {
 
         } catch (Exception e) {
             OnlineCodex.getInstance().fehler(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName + ".class nicht gefunden. Rüstkammer kann nicht geöffnet werden." + ZEILENUMBRUCH + "Bitte melden!");
-            System.out.println(kammerName + ".class nicht gefunden. Rüstkammer kann nicht geöffnet werden.");
-            e.printStackTrace();
+            LOGGER.info(kammerName + ".class nicht gefunden. Rüstkammer kann nicht geöffnet werden.");
+            LOGGER.error("", e);
         }
 
         myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, closeListenerAction);
@@ -254,12 +258,12 @@ public class RuestkammerStarter extends OptionsVater {
         new RefreshListener((byte) 6) {
             @Override
             public void refresh() {
-                System.out.print("");
+
                 if (isSelected()) {
                     textUebernehmen();
                     setLegal(legal);
                 }
-                System.out.print("");
+
             }
         };
 
@@ -405,14 +409,14 @@ public class RuestkammerStarter extends OptionsVater {
 
 
         String arr[] = texte.split(ZEILENUMBRUCH);
-        //System.out.println(arr.length);
+        //LOGGER.info(arr.length);
         while (textfelder.size() > 0) {
             panel.remove(textfelder.get(0));
             textfelder.remove(textfelder.get(0));
         }
         for (int i = 0; i < arr.length; i++) {
             if (!arr[i].equals("")) {
-                //System.out.println(arr[i]);
+                //LOGGER.info(arr[i]);
                 JLabel ta = new JLabel(arr[i]);
                 ta.setLocation(randAbstand + einrueckAbstand + 1, buttonHoehe + 6 + buttonHoehe * i);
                 ta.setForeground(Color.GRAY);
@@ -543,7 +547,7 @@ public class RuestkammerStarter extends OptionsVater {
     }
 
     public void deselectYourself() {
-        System.out.println("RuestkammerStarter-deleteyourself");
+        LOGGER.info("RuestkammerStarter-deleteyourself");
         if (this.abwaehlbar) {
             selected = false;
             fontSetzen(false);
