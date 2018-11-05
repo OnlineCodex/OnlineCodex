@@ -38,6 +38,9 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-/.classpath
-/.project
+# eclipse
+
+.classpath
+.project
+.settings/
 bin/
