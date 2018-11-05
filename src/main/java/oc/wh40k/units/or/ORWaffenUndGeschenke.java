@@ -174,6 +174,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
         if (warboss) {
             ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
             ogE.addElement(new OptionsGruppeEintrag("Kustom shoota", getPts("Kustom shoota")));
+            kustomShootaFK = true;
+            kombiFK = true;
         }
         if (ogE.size() > 0) {
             if (character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
