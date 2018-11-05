@@ -312,11 +312,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             if (handwaffen != null) {
                 handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
             }
-            if (handwaffen != null && fkwaffen != null) {//TODO auftrennen //TODO taucht asl Option auf, wenn keine NK/FK Waffe ausgerüstet ist (z.B. beim Deffkilla)
-                gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) &&
-                        (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota") ||
-                                handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota")));
-            }
+            
+            boolean nkGitstoppa = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
+            boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
+            
+            gitstoppaShells.setAktiv(chosenRelic == null && (nkGitstoppa || fkGitstoppa));
         }
 
         if (boyboss || warbikerboss) {
