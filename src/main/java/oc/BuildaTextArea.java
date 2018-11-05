@@ -1,8 +1,5 @@
 package oc;
 
-import oc.wh40k.armies.VOLKAstraMilitarum;
-import oc.wh40k.armies.VOLKSpaceMarines;
-
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
@@ -211,29 +208,12 @@ public class BuildaTextArea extends BuildaPanel implements
         for (int k = 0; k < myBuildaVaterVec.size(); k++) {
             bV = myBuildaVaterVec.get(k);
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
-//			System.out.println("superformation:");
-//			System.out.println(bV.superformation!=null);
             if (bV.superformation != null) {
                 if (bV.reflectionKennungLokal.equals("SM")) {
-                    if (((VOLKSpaceMarines) bV).Raukaan.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Clan Raukaan): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else if (((VOLKSpaceMarines) bV).SoT.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Sentinels of Terra): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else {
-                        text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    }
                 } else if (bV.reflectionKennungLokal.equals("AM")) {
-                    if (((VOLKAstraMilitarum) bV).Cadian.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Cadians): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else {
-                        text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    }
-                } else if (bV.reflectionKennungLokal.equals("TA")) {
-//					if(((VOLKSternenreichderTau)bV).Farsight.isSelected()){
-//						text.append(bV.nameDerArtDerArmee+" (Farsight Enclave): "+((String)bV.kontingentBox.getSelectedItem()).toUpperCase()+": START");
-//					}else{
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-//					}
+                } else if (bV.reflectionKennungLokal.equals("TA")) {
+                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
                 } else {
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
                 }
@@ -393,24 +373,6 @@ public class BuildaTextArea extends BuildaPanel implements
                 }
             }
             text.append(/*bV.volk + " " +*/ bV.getFormationType());
-            if (bV.reflectionKennungLokal.equals("SM")) {
-                if (((VOLKSpaceMarines) bV).Raukaan.isSelected()) {
-                    text.append(" (Clan Raukaan)");
-                } else if (((VOLKSpaceMarines) bV).SoT.isSelected()) {
-                    text.append(" (Sentinels of Terra)");
-                }
-//					else{
-//						text.append(bV.nameDerArtDerArmee+": "+((String)bV.kontingentBox.getSelectedItem()).toUpperCase()+": START");
-//					}
-            } else if (bV.reflectionKennungLokal.equals("AM")) {
-                if (((VOLKAstraMilitarum) bV).Cadian.isSelected()) {
-                    text.append(" (Cadians)");
-                }
-            }/*else if(bV.reflectionKennungLokal.equals("TA")){
-					if(((VOLKSternenreichderTau)bV).Farsight.isSelected()){
-						text.append(" (Farsight Enclave)");
-					}
-				}*/
             text.append(": " + bV.getKontingentTyp());
             if (bV.Hauptkontingent.isSelected()) {
                 nameDerArtDerArmeeDekliniert = bV.nameDerArtDerArmeeDekliniert;

@@ -9,7 +9,6 @@ public class SMThunderfireCannons extends Eintrag {
 
     RuestkammerStarter rkPod;
     AnzahlPanel squad;
-    boolean siegeForce;
 
     public SMThunderfireCannons() {
         name = "Thunderfire-Cannons";
@@ -20,22 +19,15 @@ public class SMThunderfireCannons extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Thunderfire-Cannon", "Thunderfire-Cannons", 1, 3, 100);
         add(squad);
 
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
-
-
         add(ico = new oc.Picture("oc/wh40k/images/SMSalvenkanone.jpg"));
 
-        if (!siegeForce) {
+        seperator();
 
-            seperator();
-
-            rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
-            rkPod.initKammer(false);
-            rkPod.setButtonText("Landungskapsel");
-            rkPod.setSeperator(0);
-            add(rkPod);
-
-        }
+        rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
+        rkPod.initKammer(false);
+        rkPod.setButtonText("Landungskapsel");
+        rkPod.setSeperator(0);
+        add(rkPod);
 
         complete();
     }

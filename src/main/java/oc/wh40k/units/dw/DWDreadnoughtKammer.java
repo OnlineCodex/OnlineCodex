@@ -9,8 +9,6 @@ public class DWDreadnoughtKammer extends RuestkammerVater {
     OptionsUpgradeGruppe o3;
     RuestkammerStarter rkPod;
 
-    boolean siegeForce;
-
     public DWDreadnoughtKammer() {
         name = "Cybot";
         grundkosten = 100;
@@ -18,8 +16,6 @@ public class DWDreadnoughtKammer extends RuestkammerVater {
 
     @Override
     public void initButtons(boolean... defaults) {
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
-
         add(ico = new oc.Picture("oc/wh40k/images/SMCybot.jpg"));
 
         seperator();

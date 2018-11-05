@@ -23,18 +23,18 @@ public class IMMilitarumTempestusCommandSquad extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + HS laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + HEAVY_SUPPORT laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-        ogE.addElement(new OptionsGruppeEintrag("+ Vox-caster + HS lasistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("+ Vox-caster + HEAVY_SUPPORT lasistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
         add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Medi-pack + HS laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Medi-pack + HEAVY_SUPPORT laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-        ogE.addElement(new OptionsGruppeEintrag("+ Medi-pack + HS laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("+ Medi-pack + HEAVY_SUPPORT laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
         add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

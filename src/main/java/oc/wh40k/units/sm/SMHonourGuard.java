@@ -17,16 +17,12 @@ public class SMHonourGuard extends Eintrag {
     boolean bannerBool = false;
     boolean khanBannerBool;
 
-    boolean siegeForce;
-
     public SMHonourGuard() {
         name = "Honour Guard\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
         addToInformationVector("Honour Guard", 1);
-
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Ehrengardisten", 3, 10, 25);
         add(squad);
@@ -65,17 +61,13 @@ public class SMHonourGuard extends Eintrag {
         rkTransport.setButtonText("Transporter");
         add(rkTransport);
 
-        if (!siegeForce) {
+        seperator();
 
-            seperator();
-
-            rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
-            rkPod.initKammer(false);
-            rkPod.setButtonText("Landungskapsel");
-            rkPod.setSeperator(0);
-            add(rkPod);
-
-        }
+        rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
+        rkPod.initKammer(false);
+        rkPod.setButtonText("Landungskapsel");
+        rkPod.setSeperator(0);
+        add(rkPod);
 
         complete();
     }
@@ -95,16 +87,13 @@ public class SMHonourGuard extends Eintrag {
         if (!rkBoss.isSelected()) rkBoss.setSelected(true);
 
         o1.setMaxAnzahl(squad.getModelle());
-        //o2.setMaxAnzahl(squad.getModelle());
 
-        if (!siegeForce) {
 
-            rkTransport.setAktiv(!rkPod.isSelected() && !rkRaider.isSelected());
-            rkPod.setAktiv(!rkTransport.isSelected() && !rkRaider.isSelected());
-            rkRaider.setAktiv(!rkPod.isSelected() && !rkTransport.isSelected());
-            ((SMLandRaiderKammer) rkRaider.getKammer()).o1.setAktiv(1, false);
-            ((SMLandRaiderKammer) rkRaider.getKammer()).o1.setAktiv(2, false);
-        }
+        rkTransport.setAktiv(!rkPod.isSelected() && !rkRaider.isSelected());
+        rkPod.setAktiv(!rkTransport.isSelected() && !rkRaider.isSelected());
+        rkRaider.setAktiv(!rkPod.isSelected() && !rkTransport.isSelected());
+        ((SMLandRaiderKammer) rkRaider.getKammer()).o1.setAktiv(1, false);
+        ((SMLandRaiderKammer) rkRaider.getKammer()).o1.setAktiv(2, false);
 
         //Einzigartige Banner
         if (empBannerBool != empBanner.isSelected()) {

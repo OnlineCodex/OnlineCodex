@@ -191,7 +191,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
             String finalClassName = "";
             try {
                 // Determine whether to use a WHFB or a Wh40k Army-Class
-                String armyPackage = OnlineCodex.armyPackage;
+                String armyPackage = OnlineCodex.ARMY_PACKAGE;
 
                 // Check if the requested class is used by multiple armies
                 if (this.multipleArmyClasses.containsKey(name)) {
@@ -202,7 +202,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                 finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
 
                 try {
-                    //System.out.println("Chooser-erstelleEintrag class(try1): "+armyPackage + "units." + finalClassName);
+                    //System.out.println("Chooser-erstelleEintrag class(try1): "+ARMY_PACKAGE + "units." + finalClassName);
                     Class myClass = Class.forName(armyPackage + "units." + finalClassName);
 
                     aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
@@ -212,14 +212,14 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
                     try {
                         if (reflectionKennung == "") {
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //System.out.println("Chooser-erstelleEintrag class(try2): "+ARMY_PACKAGE + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
                             myEintrag = (Eintrag) (myClass.newInstance());
                         } else {
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //System.out.println("Chooser-erstelleEintrag class(try2): "+ARMY_PACKAGE + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
@@ -229,14 +229,14 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
                     } catch (Exception ex) {
                         if (reflectionKennung == "") { //Fall für Einheiten in APO
-                            //System.out.println("Chooser-erstelleEintrag class(try2): "+armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            //System.out.println("Chooser-erstelleEintrag class(try2): "+ARMY_PACKAGE + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
                             myEintrag = (Eintrag) (myClass.newInstance());
                         } else {
-                            //System.out.println("Chooser-erstelleEintrag class(try3): "+armyPackage + "units." + umgeformterName);
+                            //System.out.println("Chooser-erstelleEintrag class(try3): "+ARMY_PACKAGE + "units." + umgeformterName);
                             Class myClass = Class.forName(armyPackage + "units." + umgeformterName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...

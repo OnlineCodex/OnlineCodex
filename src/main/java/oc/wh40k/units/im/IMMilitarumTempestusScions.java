@@ -21,7 +21,7 @@ public class IMMilitarumTempestusScions extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + HS laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + HEAVY_SUPPORT laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

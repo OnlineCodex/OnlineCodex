@@ -23,7 +23,7 @@ public class Picture extends OptionsVater {
     }
 
     private String getImagePackage() {
-        return OnlineCodex.armyPackage.replace(".", "/") + "images";
+        return OnlineCodex.ARMY_PACKAGE.replace(".", "/") + "images";
     }
 
     @Override

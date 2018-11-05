@@ -186,23 +186,23 @@ public class RuestkammerStarter extends OptionsVater {
 
         String kammerName = BuildaHQ.formZuKlassenName(kammer);
 
-        String armyPackage = OnlineCodex.armyPackage;
+        String armyPackage = OnlineCodex.ARMY_PACKAGE;
 
         try {
             try {
-                //System.out.println(armyPackage + "units." + kammerName);
+                //System.out.println(ARMY_PACKAGE + "units." + kammerName);
                 myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + kammerName).newInstance();
             } catch (Exception e) {
                 try {
-                    //System.out.println(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
+                    //System.out.println(ARMY_PACKAGE + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                     myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName).newInstance();
                 } catch (Exception ex2) {
                     try {
-                        //System.out.println(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
+                        //System.out.println(ARMY_PACKAGE + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                         myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "fo" + "." + kammerName).newInstance();
                     } catch (Exception ex3) {
                         try {
-                            //System.out.println(armyPackage + "units." + "form" + "." + kammerName);
+                            //System.out.println(ARMY_PACKAGE + "units." + "form" + "." + kammerName);
                             myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "form" + "." + kammerName).newInstance();
                         } catch (Exception ex4) {
                             try {

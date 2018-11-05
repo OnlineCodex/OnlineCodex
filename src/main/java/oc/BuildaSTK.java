@@ -181,14 +181,14 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
 
     final static int AI = 0;
     final static int HQ = 1;
-    final static int TR = 2;
-    final static int EL = 3;
-    final static int FA = 4;
-    final static int HS = 5;
-    final static int DT = 6;
-    final static int FL = 7;
-    final static int FORT = 8;
-    final static int LOW = 9;
+    final static int TROOPS = 2;
+    final static int ELITE = 3;
+    final static int FAST_ATTACK = 4;
+    final static int HEAVY_SUPPORT = 5;
+    final static int DEDICATED_TRANSPORT = 6;
+    final static int FLIER = 7;
+    final static int FORTIFICATION = 8;
+    final static int LORD_OF_WAR = 9;
 
     final static HashMap<String, String> volkMap = new HashMap<String, String>() {
         {
