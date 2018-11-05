@@ -1,5 +1,8 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Vector;
@@ -7,6 +10,7 @@ import java.util.Vector;
 
 public abstract class BuildaPanel implements BuildaSTK {  // Die Vaterklasse für alle anderen OC-Klassen, da jede oC Klasse ein weißes JPanel brauch^^
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BuildaPanel.class);
 
     public static int game;
     public static int WH40K = 0;
@@ -87,7 +91,7 @@ public abstract class BuildaPanel implements BuildaSTK {  // Die Vaterklasse fü
         for (int i = 0; i < myBuilderz.size(); i++) {
             kosten += myBuilderz.get(i).getKosten();
         }
-        System.out.println("TextArea-Kosten: " + kosten);
+        LOGGER.info("TextArea-Kosten: " + kosten);
         return kosten;
     }
 

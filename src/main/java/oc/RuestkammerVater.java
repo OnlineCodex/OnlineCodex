@@ -1,5 +1,8 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -7,6 +10,8 @@ import java.awt.event.FocusListener;
 import java.awt.event.WindowListener;
 
 public abstract class RuestkammerVater extends OptionsCollection implements BuildaSTK {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerVater.class);
 
     protected int cntX = randAbstand;
     protected boolean legal = true;
@@ -67,11 +72,11 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
         new RefreshListener((byte) 4, ID) {
             public void refresh() {
-                System.out.println("RuestkammerVater refresh");
+                LOGGER.info("RuestkammerVater refresh");
                 refreshen();
                 uniqueError = false;
                 Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
-                System.out.print("");
+
                 if (!frame.getSize().equals(size)) {
                     panel.setSize(size);
                     frame.setSize(size);
@@ -116,9 +121,9 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
                     }
                 }
 
-                System.out.print("");
+
                 refreshen();
-                System.out.print("");
+
             }
         };
     }
@@ -215,7 +220,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
     public abstract void initButtons(boolean... b);
 
     public void deleteYourself() {
-        System.out.println("RuestkammerStarter-deleteyourself");
+        LOGGER.info("RuestkammerStarter-deleteyourself");
         for (int i = 0; i < optionen.size(); i++) {
             if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
                 ((OptionsUpgradeGruppe) optionen.elementAt(i)).deleteYourself();
@@ -284,7 +289,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
         s = s.toLowerCase();
 
         if (buildaVater.pointValues.get(s) == null) {
-            System.err.println("getPts - " + s);
+            LOGGER.error("getPts - " + s);
             return 0;
         } else {
             return buildaVater.pointValues.get(s);

@@ -38,8 +38,8 @@ public class DWSpezialausruestung extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-		/*System.out.println("Termi: "+isTermi);
-		System.out.println("Techmarine: "+isTechmarine);
-		System.out.println("Kompaniemeister: "+isKompaniemeister);*/
+		/*LOGGER.info("Termi: "+isTermi);
+		LOGGER.info("Techmarine: "+isTechmarine);
+		LOGGER.info("Kompaniemeister: "+isKompaniemeister);*/
     }
 }

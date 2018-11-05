@@ -1,5 +1,7 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -17,6 +19,8 @@ import java.io.*;
 import java.util.Locale;
 
 public class SaveTextWindow extends JDialog implements BuildaSTK {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SaveTextWindow.class);
 
     public static final String TOKEN = "###"; // Trennzeichen fuer Armeelistze in Maschinenformat und lesbares Format
     private static final long serialVersionUID = 1L;
@@ -127,9 +131,9 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
             File file = new File(fc.getSelectedFile().getAbsolutePath() + ".xml");
             writer = new OutputStreamWriter(new FileOutputStream(file), "UTF8");
         } catch (UnsupportedEncodingException ex) {
-            ex.printStackTrace();
+            LOGGER.error("", ex);
         } catch (FileNotFoundException ex) {
-            ex.printStackTrace();
+            LOGGER.error("", ex);
         }
 
         try {
@@ -140,9 +144,9 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
             transformer.transform(source, result);
 
         } catch (TransformerConfigurationException ex) {
-            ex.printStackTrace();
+            LOGGER.error("", ex);
         } catch (TransformerException ex) {
-            ex.printStackTrace();
+            LOGGER.error("", ex);
         } finally {
             try {
                 writer.close();

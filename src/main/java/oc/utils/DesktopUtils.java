@@ -1,5 +1,8 @@
 package oc.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.awt.*;
 import java.net.URI;
 
@@ -7,8 +10,10 @@ import java.net.URI;
  * Utilities for interacting with real desktop environments.
  */
 public final class DesktopUtils {
-    private DesktopUtils() {
-    }
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DesktopUtils.class);
+
+    private DesktopUtils() {}
 
     public static void openLink(String uri) {
         try {
@@ -20,7 +25,7 @@ public final class DesktopUtils {
                         .waitFor();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("", e);
         }
     }
 

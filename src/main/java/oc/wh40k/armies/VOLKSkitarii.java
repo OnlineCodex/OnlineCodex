@@ -231,44 +231,4 @@ public class VOLKSkitarii extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
 }
-
-//Enhanced data-tether= Verbesserte Dataverbindung
-//Arc rifle= Lichtbogen-Gewehr
-//Transuranic arquebus= Transuranische Arkebuse
-//Plasma Caliver= Plasma-Kaliver
-//Radium Carbine= Radium-Karabiner
-//Phosphor blast pistol= Phosphorblast-Pistole
-//Radium pistol= Radium-Pistole
-//Arc pistol= Lichtbogen-Pistole
-//Taser goad= Taserstab
-//Power Sword= Energieschwert
-//Arc maul= Lichtbogen-Streikolben
-//Refractor field= Refraktorfeld
-//Conversion field= Konverterfeld
-//Digital weapon= Digitalwaffen
-//Arkhan's Divinator= Arkhans Divinator
-//The Phase Taser= Phasentaser
-//The Omniscent Mask= Maske der Allwissenheit
-//Phosphoenix= Phosphönix
-//The Skull of Elder Nikola= Schädel des Ältesten Nikola
-//Galvanic rifle= Galvanisches Gewehr
-//Taser lance= Taserlanze
-//Radium jezzail= Radium-Jezzail
-//Phosphor Serpenta= Phosphor-Serpenta
-//sync. Cognis autocannon= sync. Cognis-Maschinenkanone
-//sync. Cognis lascannon= sync. Cognis-Laserkanone
-//Eradiction beamer= Vernichtungsstrahler
-//sync. schwerer phosphor blaster= sync. schwerer Phosphorblaster
-//Neutron Laser and cognis heavy stubber=
-//Neutronenlaser und Cognis-Maschinengewehr
-//Icarus array= Ikarus-Waffenstation
-//Cognis heavy stubber= Cognis-Maschinengewehr
-//Smoke launchers= Nebelwerfer
-//Mindscanner probe= Geistscannersonde
-//Cognis manipulator= Cognis-Manipulator

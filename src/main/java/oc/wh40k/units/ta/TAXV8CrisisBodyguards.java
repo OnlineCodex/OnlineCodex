@@ -11,7 +11,6 @@ public class TAXV8CrisisBodyguards extends Eintrag {
 
     RuestkammerStarter ob2;
     Vector<RuestkammerStarter> rk;
-    //	OptionsEinzelUpgrade o5;
     OptionsZaehlerGruppe o4;
     boolean warscaper = false;
 
@@ -37,10 +36,6 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
-//		seperator();
-//
-//		add(o5 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Ritual des Klingenbundes", "Klingenbund", 1));
-
         addToInformationVector("Bodyguards", 1);
 
         complete();
@@ -50,29 +45,13 @@ public class TAXV8CrisisBodyguards extends Eintrag {
     public void refreshen() {
         int krisisNumber = 0;
         for (int i = 0; i < 9; i++) {
-            System.out.println(i);
             krisisNumber += (rk.get(i).isSelected() && rk.get(i).isAktiv() ? 1 : 0);
         }
-
-//        o5.setPreis(krisisNumber); 
-
         o4.setMaxAnzahl(krisisNumber * 2);
-
-//        if(getCountFromInformationVector("Farsight Enclave")>0){
-//			o5.setSelected(true);
-//		}
-
         o4.getPanel().setLocation(
                 (int) o4.getPanel().getLocation().getX(),
                 (int) rk.get(8).getPanel().getLocation().getY() + rk.get(8).getPanel().getSize().height + 5
         );
-
-
-//		o5.getPanel().setLocation(
-//				(int) o5.getPanel().getLocation().getX(),
-//				(int) o4.getPanel().getLocation().getY() + o4.getPanel().getSize().height + 5
-//	    );
-
 
         boolean error = false;
         for (int i = 0; i < 9; i++) {
@@ -94,8 +73,6 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         } else {
             setFehlermeldung("");
         }
-
-
     }
 
     @Override

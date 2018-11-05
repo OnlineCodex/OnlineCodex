@@ -86,7 +86,7 @@ public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, Mou
     public void refresh() {
     }
 
-    //protected void finalize(){System.out.println("Object in OptionsVater gelöscht");}
+    //protected void finalize(){LOGGER.info("Object in OptionsVater gelöscht");}
 
 
 }

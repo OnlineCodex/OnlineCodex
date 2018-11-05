@@ -4,10 +4,14 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 
 public class VOLKImperium extends BuildaVater {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKImperium.class);
 
     //AM /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
@@ -361,51 +365,51 @@ public class VOLKImperium extends BuildaVater {
         InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/sm.csv");
         pointValues = BuildaHQ.loadindexFile(is);
 
-        System.err.println("File: " + "/oc/wh40k/indices/ba.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/ba.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ba.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/da.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/da.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/da.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/sw.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/sw.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/sw.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/dw.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/dw.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/dw.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/gk.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/gk.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/gk.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/am.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/am.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/am.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/ame.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/ame.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ame.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/qi.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/qi.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/qi.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/ami.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/ami.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ami.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/oa.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/oa.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/oa.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/ac.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/ac.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ac.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
-        System.err.println("File: " + "/oc/wh40k/indices/iaaa.csv");
+        LOGGER.error("File: " + "/oc/wh40k/indices/iaaa.csv");
         is = this.getClass().getResourceAsStream("/oc/wh40k/indices/iaaa.csv");
         appendPointList(BuildaHQ.loadindexFile(is));
 
@@ -873,10 +877,4 @@ public class VOLKImperium extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

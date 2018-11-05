@@ -114,7 +114,7 @@ public class LoadWindow extends JPanel {
 
             loadText = tokenizer.nextToken();
             loadText = loadText.substring(0, loadText.indexOf(SaveTextWindow.TOKEN)); // Trennzeichen
-            //System.out.println(loadText);
+            //LOGGER.info(loadText);
 
             if (game == BuildaPanel.WHFB) {
                 BuildaHQ.Items = new Vector<String>();

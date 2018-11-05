@@ -1,10 +1,15 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class OptionsButtonUpgrade extends OptionsButton {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(OptionsButtonUpgrade.class);
+    
     boolean showKosten = true;
     boolean unique = false;
     boolean relic = false;
@@ -57,8 +62,8 @@ public class OptionsButtonUpgrade extends OptionsButton {
     }
 
     public void switsch() {
-        System.out.println("switsch unique: " + unique);
-        System.out.println("switsch relic: " + relic);
+        LOGGER.info("switsch unique: " + unique);
+        LOGGER.info("switsch relic: " + relic);
         if (unique || relic) {
             switsch(this.name);
         } else {
@@ -77,7 +82,7 @@ public class OptionsButtonUpgrade extends OptionsButton {
 
             if (selected) {
                 BuildaHQ.addToInformationVectorGlobal(txt, 1);
-                System.out.println(txt + ": " + BuildaHQ.getCountFromInformationVectorGlobal(txt));
+                LOGGER.info(txt + ": " + BuildaHQ.getCountFromInformationVectorGlobal(txt));
                 if (BuildaHQ.getCountFromInformationVectorGlobal(txt) > 1) {
                     JOptionPane op = new JOptionPane(txt + " " + BuildaHQ.translate("darf nur einmal enthalten sein."), JOptionPane.ERROR_MESSAGE);
                     JDialog dialog = op.createDialog(BuildaHQ.translate("Fehler"));

@@ -37,9 +37,9 @@ public class SMSpezialausruestung extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-		/*System.out.println("Termi: "+isTermi);
-		System.out.println("Techmarine: "+isTechmarine);
-		System.out.println("Kompaniemeister: "+isKompaniemeister);*/
+		/*LOGGER.info("Termi: "+isTermi);
+		LOGGER.info("Techmarine: "+isTechmarine);
+		LOGGER.info("Kompaniemeister: "+isKompaniemeister);*/
         o1.setAktiv(BuildaHQ.translate("Sprungmodul"), !isTermi && !isTechmarine && !isWraith && !isRaven);
         o1.setAktiv(BuildaHQ.translate("Space-Marine-Bike"), !isTermi && !isWraith && !isRaven);
     }

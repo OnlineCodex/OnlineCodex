@@ -1,5 +1,7 @@
 package oc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -19,6 +21,8 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Methoden und globalen Variablen bereit.   Komplett static
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(BuildaHQ.class);
 
     public final static HashMap<String, String> germanEnglishHashMap = new HashMap<String, String>();
     public static final boolean noErrors = true; // <-- Lamekhs Online Codex
@@ -127,7 +131,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         try {
             oCLogo = new ImageIcon(OnlineCodex.getInstance().getClass().getClassLoader().getResource("oc/sysimages/oCLogo.png")).getImage();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("", e);
         }
 
         germanEnglishHashMap.put("Laden", "Load");
@@ -307,7 +311,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
                     icon = new ImageIcon(OnlineCodex.getInstance().getClass().getClassLoader().getResource(path));
                     bilda.put(path, icon);
                 } catch (Exception e) {
-                    //System.out.println("Bild nicht vorhanden. Datei sollte unter : " + path + " abgespeichert sein");
+                    //LOGGER.info("Bild nicht vorhanden. Datei sollte unter : " + path + " abgespeichert sein");
                     //JOptionPane.showConfirmDialog(null, e, "gudden tag", JOptionPane.YES_NO_OPTION); zur fehlerausgabe!
                 }
             } else {
@@ -451,10 +455,6 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         return sb.toString();
     }
 
-    public static void sop(Object s) {
-        System.out.println(s);
-    } // Zeitersparniss beim tippen
-
     public static void writeTextdatei(String path, String text) {
         try {
             FileOutputStream out = new FileOutputStream(path);
@@ -464,8 +464,8 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
             out.close();
             out.flush();
         } catch (IOException e) {
-            System.out.println("Konnte nicht geschrieben werden: " + text + " wegen: ");
-            e.printStackTrace();
+            LOGGER.info("Konnte nicht geschrieben werden: " + text + " wegen: ");
+            LOGGER.error("", e);
         }
     }
 
@@ -474,7 +474,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
             try {
                 XMLDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
             } catch (ParserConfigurationException ex) {
-                ex.printStackTrace();
+                LOGGER.error("", ex);
             }
         }
 
@@ -525,14 +525,14 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
             String line;
             while ((line = br.readLine()) != null) {
                 if (line.contains(";")) {
-//		    		System.out.println(line);
+//		    		LOGGER.info(line);
                     String[] sL = line.split(";");
                     sL[0] = sL[0].replaceAll(" ", "");
                     sL[0] = sL[0].replaceAll("-", "");
                     sL[0] = sL[0].toLowerCase();
 
                     if (map.containsKey((String) sL[0])) {
-                        System.err.println("Doppelter Key: " + sL[0] + " - " + Integer.parseInt(sL[1]) + " Vorhanden als: " + sL[0] + " - " + map.get(sL[0]));
+                        LOGGER.error("Doppelter Key: " + sL[0] + " - " + Integer.parseInt(sL[1]) + " Vorhanden als: " + sL[0] + " - " + map.get(sL[0]));
                     } else {
                         map.put(sL[0], Integer.parseInt(sL[1]));
                     }
@@ -540,10 +540,10 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
             }
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            LOGGER.error("", e);
         } catch (IOException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+            LOGGER.error("", e);
         }
 
         return map;

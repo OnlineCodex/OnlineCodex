@@ -1726,11 +1726,6 @@ public class VOLKSpaceMarines extends BuildaVater {
     }
 
     @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
-    @Override
     public void hideVolkCheckboxes() {
         if (getCountFromInformationVector("Clan Raukaan") > 0) {
             Raukaan.doClick();

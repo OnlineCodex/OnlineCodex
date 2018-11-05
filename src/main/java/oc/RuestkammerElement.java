@@ -2,12 +2,16 @@ package oc;
 
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Vector;
 
 
 
 public class RuestkammerElement {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerElement.class);
 
 
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, BuildaVater bv) {
@@ -32,7 +36,7 @@ public class RuestkammerElement {
 
         if (buildaVater.pointValues.get(s) == null) {
 
-            System.err.println("getPts - " + s);
+            LOGGER.error("getPts - " + s);
 
             return 0;
 

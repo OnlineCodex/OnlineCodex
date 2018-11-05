@@ -231,8 +231,6 @@ public class SMWaffenUndReliquien extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        System.out.println("refresh SMWaffenundReliquien");
-
         boolean EcclesiarchyRelics = getCountFromInformationVector("EcclesiarchyRelics") > 0;
 
         o6.setAktiv("Skull of Petronella the Pious (GS)", EcclesiarchyRelics);
@@ -710,10 +708,6 @@ public class SMWaffenUndReliquien extends RuestkammerVater {
         boolean entrySwitched = false;
 
         if (entrySwitched) {
-            System.out.println("entryswitched SMWaffenundReliquien");
-            //Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-            //Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet,
-            //der Text aber nicht aktualisiert.
             RefreshListener.fireRefresh();
         }
     }

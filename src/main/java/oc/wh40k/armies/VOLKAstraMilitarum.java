@@ -691,11 +691,6 @@ public class VOLKAstraMilitarum extends BuildaVater {
         fillChooserSpace();
     }
 
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
     public void hideVolkCheckboxes() {
         if (getCountFromInformationVector("Cadian Detachment") > 0) {
             Cadian.doClick();
