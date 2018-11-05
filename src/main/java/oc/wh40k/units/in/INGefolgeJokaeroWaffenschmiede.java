@@ -5,22 +5,22 @@ import oc.RuestkammerVater;
 
 public class INGefolgeJokaeroWaffenschmiede extends RuestkammerVater {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public INGefolgeJokaeroWaffenschmiede() {
-		grundkosten = 0;
-	}
+    public INGefolgeJokaeroWaffenschmiede() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Jokaero-Waffenschmied", "Jokaero-Waffenschmiede", 1, 12, 35));
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Jokaero-Waffenschmied", "Jokaero-Waffenschmiede", 1, 12, 35));
 
-		sizeSetzen(200, 100, 390, KAMMER_HOEHE + cnt);
-	}
+        sizeSetzen(200, 100, 390, KAMMER_HOEHE + cnt);
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
     @Override
     public Object getSpecialValue() {

@@ -5,24 +5,24 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMTerminatorAncient extends Eintrag {
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o2;
 
-	public IMTerminatorAncient() {
-		name = "Terminator Ancient";
-		grundkosten = getPts("Terminator Ancient");
-		power = 6;
-		
-		seperator();
+    public IMTerminatorAncient() {
+        name = "Terminator Ancient";
+        grundkosten = getPts("Terminator Ancient");
+        power = 6;
 
-		ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
-		ogE.addElement(new OptionsGruppeEintrag("thunder hammer", getPts("thunder hammer (Characters)")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
+        ogE.addElement(new OptionsGruppeEintrag("thunder hammer", getPts("thunder hammer (Characters)")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-		o2.alwaysSelected();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o2.alwaysSelected();
+    }
 }

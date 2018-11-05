@@ -4,22 +4,21 @@ import oc.Eintrag;
 
 public class ABArmouredFistCyclopsDemolitionSquad extends Eintrag {
 
-    
 
-	public ABArmouredFistCyclopsDemolitionSquad() {
-		
-		name = "Armoured Fist Cyclops Demolition Squad";
-		grundkosten = 115;
-		überschriftSetzen=true;
+    public ABArmouredFistCyclopsDemolitionSquad() {
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
+        name = "Armoured Fist Cyclops Demolition Squad";
+        grundkosten = 115;
+        überschriftSetzen = true;
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ABArmouredFistPlatoonCommandSquad.jpg"));
 
-	@Override
-	public void refreshen() {
-        
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

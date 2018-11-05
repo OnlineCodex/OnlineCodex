@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMSergeantHarker extends Eintrag {
 
-	public IMSergeantHarker() {
-		name = "Sergeant Harker";
-		grundkosten = getPts("Sergeant Harker");
-		power = 3;
-		
-		complete();
-	}
+    public IMSergeantHarker() {
+        name = "Sergeant Harker";
+        grundkosten = getPts("Sergeant Harker");
+        power = 3;
 
-	//@OVERRIDE
-		public void refreshen() {
-	        setUnikat(true);
-		}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

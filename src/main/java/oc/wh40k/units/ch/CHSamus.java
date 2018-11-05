@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHSamus extends Eintrag {
 
-	public CHSamus() {
+    public CHSamus() {
 
-		name = "Samus";
+        name = "Samus";
         grundkosten = getPts("Samus");
-        power = 12;   
+        power = 12;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

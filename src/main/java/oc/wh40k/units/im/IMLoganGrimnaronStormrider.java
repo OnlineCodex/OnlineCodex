@@ -5,17 +5,17 @@ import oc.OptionsEinzelUpgrade;
 
 public class IMLoganGrimnaronStormrider extends Eintrag {
 
-	OptionsEinzelUpgrade stormrider;
-	
-	public IMLoganGrimnaronStormrider() {
-		name = "Logan Grimnar on Stormrider";
-		grundkosten = getPts("Logan Grimnar on Stormrider");
-		power = 12;
-		complete();
-	}
+    OptionsEinzelUpgrade stormrider;
 
-	@Override
-	public void refreshen() {
+    public IMLoganGrimnaronStormrider() {
+        name = "Logan Grimnar on Stormrider";
+        grundkosten = getPts("Logan Grimnar on Stormrider");
+        power = 12;
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

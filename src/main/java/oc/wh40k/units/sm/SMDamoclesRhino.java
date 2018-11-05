@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class SMDamoclesRhino extends Eintrag {
 
-	public SMDamoclesRhino() {
-		name = "Damocles Rhino";
-		grundkosten = 60;
-		überschriftSetzen = true;
-		
-		addToInformationVector("SMHQ", 1);
+    public SMDamoclesRhino() {
+        name = "Damocles Rhino";
+        grundkosten = 60;
+        überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMDamoclesRhino.jpg"));
+        addToInformationVector("SMHQ", 1);
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/SMDamoclesRhino.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
 
-	@Override
-	public void deleteYourself() {
-		addToInformationVector("SMHQ", -1);
-		super.deleteYourself();
-	}
+    @Override
+    public void refreshen() {
+    }
+
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("SMHQ", -1);
+        super.deleteYourself();
+    }
 }

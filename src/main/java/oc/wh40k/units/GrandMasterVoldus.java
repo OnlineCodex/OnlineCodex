@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class GrandMasterVoldus extends Eintrag {
 
-	public GrandMasterVoldus() {
-		name = "Grand Master Voldus";
-		grundkosten = 240;
+    public GrandMasterVoldus() {
+        name = "Grand Master Voldus";
+        grundkosten = 240;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
+
 }

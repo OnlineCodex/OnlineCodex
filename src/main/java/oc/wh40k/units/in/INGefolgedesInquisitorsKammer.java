@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class INGefolgedesInquisitorsKammer extends RuestkammerVater {
 
-	OptionsEinzelUpgrade durra;
+    OptionsEinzelUpgrade durra;
     RuestkammerStarter rk1;
     RuestkammerStarter rk2;
     RuestkammerStarter rk3;
@@ -21,20 +21,20 @@ public class INGefolgedesInquisitorsKammer extends RuestkammerVater {
     RuestkammerStarter rkAquila;
     RuestkammerStarter rkValk;
 
-	public INGefolgedesInquisitorsKammer() {
-		name = "Gefolge des Inquisitors";
-		grundkosten = 0;
-	}
-		
-		@Override
-		public void initButtons(boolean... b) {
-        
-		add(ico = new oc.Picture("oc/wh40k/images/GKGefolgedesInquisitors.jpg"));
+    public INGefolgedesInquisitorsKammer() {
+        name = "Gefolge des Inquisitors";
+        grundkosten = 0;
+    }
 
-		add(durra=new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Major Markus Durra",35));
-		
-		seperator();
-		
+    @Override
+    public void initButtons(boolean... b) {
+
+        add(ico = new oc.Picture("oc/wh40k/images/GKGefolgedesInquisitors.jpg"));
+
+        add(durra = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Major Markus Durra", 35));
+
+        seperator();
+
         rk1 = new RuestkammerStarter(ID, randAbstand, cnt, "INGefolgeArcoFlagellanten", "");
         rk1.initKammer();
         rk1.setButtonText("Arco-Flagellanten");
@@ -95,45 +95,45 @@ public class INGefolgedesInquisitorsKammer extends RuestkammerVater {
         rk10.setUeberschriftTrotzNullKostenAusgeben(false);
         add(rk10);
 
-		seperator();
+        seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "INTransporterKammer", "Transporter");
-		rkTransport.initKammer();
-		rkTransport.setButtonText("Transporter");
-		add(rkTransport);
-		
-		rkAquila = new RuestkammerStarter(ID, randAbstand, cnt, "INAquilaLanderKammer", "[IA Aeronautica] Aquila ");
-		rkAquila.initKammer();
-		rkAquila.setButtonText("[IA Aeronautica] Aquila ");
-		add(rkAquila);
-		
-		rkValk = new RuestkammerStarter(ID, randAbstand, cnt, "INWalkuereKammer", "Walküre");
-		rkValk.initKammer();
-		rkValk.setButtonText("Walküre");
-		add(rkValk);
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "INTransporterKammer", "Transporter");
+        rkTransport.initKammer();
+        rkTransport.setButtonText("Transporter");
+        add(rkTransport);
 
-		sizeSetzen();
-	}
+        rkAquila = new RuestkammerStarter(ID, randAbstand, cnt, "INAquilaLanderKammer", "[IA Aeronautica] Aquila ");
+        rkAquila.initKammer();
+        rkAquila.setButtonText("[IA Aeronautica] Aquila ");
+        add(rkAquila);
 
-	@Override
-	public void refreshen() {
-        
-		rkAquila.setAktiv(!rkTransport.isSelected() && !rkValk.isSelected());
+        rkValk = new RuestkammerStarter(ID, randAbstand, cnt, "INWalkuereKammer", "Walküre");
+        rkValk.initKammer();
+        rkValk.setButtonText("Walküre");
+        add(rkValk);
+
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+
+        rkAquila.setAktiv(!rkTransport.isSelected() && !rkValk.isSelected());
         rkTransport.setAktiv(!rkAquila.isSelected() && !rkValk.isSelected());
         rkValk.setAktiv(!rkAquila.isSelected() && !rkTransport.isSelected());
 
         int models =
-            (rk1.isSelected() ? (Integer)rk1.getKammer().getSpecialValue() : 0) +
-            (rk2.isSelected() ? (Integer)rk2.getKammer().getSpecialValue() : 0) +
-            (rk3.isSelected() ? (Integer)rk3.getKammer().getSpecialValue() : 0) +
-            (rk4.isSelected() ? (Integer)rk4.getKammer().getSpecialValue() : 0) +
-            (rk5.isSelected() ? (Integer)rk5.getKammer().getSpecialValue() : 0) +
-            (rk6.isSelected() ? (Integer)rk6.getKammer().getSpecialValue() : 0) +
-            (rk7.isSelected() ? (Integer)rk7.getKammer().getSpecialValue() : 0) +
-            (rk8.isSelected() ? (Integer)rk8.getKammer().getSpecialValue() : 0) +
-            (rk9.isSelected() ? (Integer)rk9.getKammer().getSpecialValue() : 0) +
-            (rk10.isSelected() ? (Integer)rk10.getKammer().getSpecialValue() : 0) +
-            (durra.isSelected()?1:0);
+                (rk1.isSelected() ? (Integer) rk1.getKammer().getSpecialValue() : 0) +
+                        (rk2.isSelected() ? (Integer) rk2.getKammer().getSpecialValue() : 0) +
+                        (rk3.isSelected() ? (Integer) rk3.getKammer().getSpecialValue() : 0) +
+                        (rk4.isSelected() ? (Integer) rk4.getKammer().getSpecialValue() : 0) +
+                        (rk5.isSelected() ? (Integer) rk5.getKammer().getSpecialValue() : 0) +
+                        (rk6.isSelected() ? (Integer) rk6.getKammer().getSpecialValue() : 0) +
+                        (rk7.isSelected() ? (Integer) rk7.getKammer().getSpecialValue() : 0) +
+                        (rk8.isSelected() ? (Integer) rk8.getKammer().getSpecialValue() : 0) +
+                        (rk9.isSelected() ? (Integer) rk9.getKammer().getSpecialValue() : 0) +
+                        (rk10.isSelected() ? (Integer) rk10.getKammer().getSpecialValue() : 0) +
+                        (durra.isSelected() ? 1 : 0);
 
         rk1.setLegal(models >= 3 && models <= 12);
         rk2.setLegal(models >= 3 && models <= 12);
@@ -146,7 +146,7 @@ public class INGefolgedesInquisitorsKammer extends RuestkammerVater {
         rk9.setLegal(models >= 3 && models <= 12);
         rk10.setLegal(models >= 3 && models <= 12);
         durra.setLegal(models >= 3 && models <= 12);
-        
-	}
+
+    }
 
 }

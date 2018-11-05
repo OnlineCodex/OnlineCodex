@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class ORMadDokGrotsnik extends Eintrag {
 
-	public ORMadDokGrotsnik() {
-		name = "Mad Dok Grotsnik";
-		kategorie = 1;
-		grundkosten = getPts("Mad Dok Grotsnik");
+    public ORMadDokGrotsnik() {
+        name = "Mad Dok Grotsnik";
+        kategorie = 1;
+        grundkosten = getPts("Mad Dok Grotsnik");
         power = 5;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DokGrotsnik.gif"));
-		
-		complete();
-	}
-	
-	//@OVERRIDE
-	public void refreshen() {
+        add(ico = new oc.Picture("oc/wh40k/images/DokGrotsnik.gif"));
+
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

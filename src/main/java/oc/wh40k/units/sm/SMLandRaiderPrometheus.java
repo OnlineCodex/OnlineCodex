@@ -7,31 +7,31 @@ import oc.OptionsUpgradeGruppe;
 
 public class SMLandRaiderPrometheus extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public SMLandRaiderPrometheus() {
-		name = "Land Raider Prometheus";
-		grundkosten = 270;
-		
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandRaiderPrometheus.jpg"));
+    public SMLandRaiderPrometheus() {
+        name = "Land Raider Prometheus";
+        grundkosten = 270;
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandRaiderPrometheus.jpg"));
 
-        ogE.addElement(new OptionsGruppeEintrag("Sturmbolter",5));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bulldozerschaufel", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 15));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

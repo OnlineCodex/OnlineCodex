@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class SMCaptainZhrukhalAndrocles extends Eintrag {
 
-	public SMCaptainZhrukhalAndrocles() {
-		name = "Captain Zhrukhal Androcles";
-		grundkosten = 145;
+    public SMCaptainZhrukhalAndrocles() {
+        name = "Captain Zhrukhal Androcles";
+        grundkosten = 145;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMKorsarroKhan.gif"));
-                
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/SMKorsarroKhan.gif"));
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-            
-        }
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+
+    }
 
 }

@@ -6,26 +6,26 @@ import oc.OptionsEinzelUpgrade;
 
 public class DHMaynarkhFlayedOnePack extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public DHMaynarkhFlayedOnePack() {
-		grundkosten = 0;
+    public DHMaynarkhFlayedOnePack() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Albträume", 10, 20, 13);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Albträume", 10, 20, 13);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEAlbtraumMeute.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/NEAlbtraumMeute.jpg"));
 
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flensing scrarabs",10));
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flensing scrarabs", 10));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

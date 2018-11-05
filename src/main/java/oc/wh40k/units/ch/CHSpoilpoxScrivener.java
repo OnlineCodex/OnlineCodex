@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHSpoilpoxScrivener extends Eintrag {
 
-	public CHSpoilpoxScrivener() {
-		name = "Spoilpox Scrivener";
+    public CHSpoilpoxScrivener() {
+        name = "Spoilpox Scrivener";
         grundkosten = getPts("Spoilpox Scrivener") /*+ getPts("Plaguesword") + getPts("Distended maw") + getPts("Disgusting sneezes")*/;
-        power = 3;   
-       	
-		complete();
-	}
+        power = 3;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

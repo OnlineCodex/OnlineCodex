@@ -5,37 +5,39 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class HHCAEzekyleAbaddon extends Eintrag {
-	
-	OptionsUpgradeGruppe o0, o1;
 
-	public HHCAEzekyleAbaddon() {
-		name = "Ezekyle Abaddon";
-		grundkosten = 215;
-		
-		seperator();
-		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Power sword", 0));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    OptionsUpgradeGruppe o0, o1;
 
-		addToInformationVector("HHCAPraetor", 1);
-		
-		seperator();
+    public HHCAEzekyleAbaddon() {
+        name = "Ezekyle Abaddon";
+        grundkosten = 215;
 
-		complete();
-	}
+        seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", 0));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
+        addToInformationVector("HHCAPraetor", 1);
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-        if (!o1.isSelected()) {o1.setSelected(0, true);}
-	}
-	
-	@Override
-	public void deleteYourself() {
-		
-		addToInformationVector("HHCAPraetor", -1);
-		super.deleteYourself();
-	}
-	
+        if (!o1.isSelected()) {
+            o1.setSelected(0, true);
+        }
+    }
+
+    @Override
+    public void deleteYourself() {
+
+        addToInformationVector("HHCAPraetor", -1);
+        super.deleteYourself();
+    }
+
 
 }

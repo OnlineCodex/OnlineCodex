@@ -6,31 +6,31 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHBeLakor extends Eintrag {
 
-	RuestkammerStarter psychicPowers;
-	
-	public CHBeLakor() {
+    RuestkammerStarter psychicPowers;
 
-		name = "Be'Lakor";
+    public CHBeLakor() {
+
+        name = "Be'Lakor";
         grundkosten = getPts("Be'Lakor");
-        power = 12;   
+        power = 12;
 
         seperator();
-        
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers)psychicPowers.getKammer()).enableDarkHereticus();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-        
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
         complete();
 
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

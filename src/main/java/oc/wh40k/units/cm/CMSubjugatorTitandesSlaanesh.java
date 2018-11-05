@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CMSubjugatorTitandesSlaanesh extends Eintrag {
 
-	public CMSubjugatorTitandesSlaanesh() {
-		name = "Subjugator-Titan des Slaanesh";
-		grundkosten = 500;
+    public CMSubjugatorTitandesSlaanesh() {
+        name = "Subjugator-Titan des Slaanesh";
+        grundkosten = 500;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CMSubjugatorTitandesSlaanesh.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/CMSubjugatorTitandesSlaanesh.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

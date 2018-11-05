@@ -4,21 +4,21 @@ import oc.Eintrag;
 
 public class SMCaptainMordaciBlaylock extends Eintrag {
 
-	public SMCaptainMordaciBlaylock() {
-		//TODO Ultramarines only
-		name = "Captain Mordaci Blaylock";
-		grundkosten = 185;
+    public SMCaptainMordaciBlaylock() {
+        //TODO Ultramarines only
+        name = "Captain Mordaci Blaylock";
+        grundkosten = 185;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CaptainLysander.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CaptainLysander.gif"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
+    }
+
 }

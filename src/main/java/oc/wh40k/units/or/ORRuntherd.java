@@ -19,23 +19,23 @@ public class ORRuntherd extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Grabba Stikk", getPts("Grabba Stikk")));
         ogE.addElement(new OptionsGruppeEintrag("Grot-prod", getPts("Grot-prod")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
-    
+
         ogE.addElement(new OptionsGruppeEintrag("Grot lash", getPts("Grot lash")));
         ogE.addElement(new OptionsGruppeEintrag("Squig hound", getPts("Squig hound")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
-        waffen.initKammer(false,false,false,false,false,false,true,false);
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false, false, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
@@ -45,7 +45,7 @@ public class ORRuntherd extends Eintrag {
 
     @Override
     public void refreshen() {
-    	o1.alwaysSelected();
+        o1.alwaysSelected();
     }
 
 }

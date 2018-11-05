@@ -19,7 +19,8 @@ public final class ManifestUtils {
     public static final String MANIFEST_VERSION = "Implementation-Version";
     private static final String MANIFEST_PATH = "/META-INF/MANIFEST.MF";
 
-    private ManifestUtils() {}
+    private ManifestUtils() {
+    }
 
     public static Optional<Version> getVersion() {
         return getVersion(OnlineCodex.class);

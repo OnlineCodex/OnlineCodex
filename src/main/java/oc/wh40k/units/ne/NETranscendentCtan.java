@@ -6,21 +6,21 @@ import oc.Eintrag;
 public class NETranscendentCtan extends Eintrag {
 
 
-	public NETranscendentCtan() {
-		name = "Transcendent C'tan";
-		grundkosten = getPts("Transcendent C'tan")+getPts("Crackling tendrils");
+    public NETranscendentCtan() {
+        name = "Transcendent C'tan";
+        grundkosten = getPts("Transcendent C'tan") + getPts("Crackling tendrils");
 
-		add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
 
-        
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		power = 12;
-	}
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = 12;
+    }
 
 }

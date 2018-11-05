@@ -5,20 +5,20 @@ import oc.Eintrag;
 
 public class CDSlaaneshbestien extends Eintrag {
 
-	public CDSlaaneshbestien() {
+    public CDSlaaneshbestien() {
 
-		name = "Slaaneshbestien";
-		grundkosten = 0;
+        name = "Slaaneshbestien";
+        grundkosten = 0;
 
-		add(new AnzahlPanel(ID, randAbstand, cnt, "Slaaneshbestie", "Slaaneshbestien", 3, 9, 35));
+        add(new AnzahlPanel(ID, randAbstand, cnt, "Slaaneshbestie", "Slaaneshbestien", 3, 9, 35));
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDSlaaneshbestien.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/CDSlaaneshbestien.gif"));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

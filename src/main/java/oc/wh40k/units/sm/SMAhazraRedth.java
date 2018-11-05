@@ -4,15 +4,15 @@ import oc.Eintrag;
 
 public class SMAhazraRedth extends Eintrag {
     //TODO Mantis Warriors only
-	public SMAhazraRedth() {
-		name = "Ahazra Redth";
-		grundkosten = 165;
-       complete();
-	}
+    public SMAhazraRedth() {
+        name = "Ahazra Redth";
+        grundkosten = 165;
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 
 }

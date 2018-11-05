@@ -7,28 +7,28 @@ import oc.RuestkammerStarter;
 
 public class KDMaulerfiend extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	RuestkammerStarter ausruestung;
+    OptionsUpgradeGruppe o1;
+    RuestkammerStarter ausruestung;
 
-	public KDMaulerfiend() {
-		name = "Maulerfiend";
-		grundkosten = 130;
+    public KDMaulerfiend() {
+        name = "Maulerfiend";
+        grundkosten = 130;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Klauenmonstrum.gif"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/Klauenmonstrum.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Magmaschneider", "2 Magmaschneider", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Peitschententakel", "2 Paar Peitschententakel", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o1.setSelected(0, true);
-		
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		if(!o1.isSelected()) o1.setSelected(0, true);
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Magmaschneider", "2 Magmaschneider", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Peitschententakel", "2 Paar Peitschententakel", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o1.setSelected(0, true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+    }
 
 }

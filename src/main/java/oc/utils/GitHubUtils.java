@@ -11,7 +11,8 @@ import java.util.Optional;
  */
 public final class GitHubUtils {
 
-    private GitHubUtils() {}
+    private GitHubUtils() {
+    }
 
     /**
      * Fetch the latest release version from github synchronously

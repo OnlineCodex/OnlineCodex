@@ -4,28 +4,28 @@ import oc.Eintrag;
 
 public class Celestine extends Eintrag {
 
-	public Celestine() {
-		name = "Sankt Celestine";
-		grundkosten = 200;
+    public Celestine() {
+        name = "Sankt Celestine";
+        grundkosten = 200;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-		
-		addToInformationVector("EcclesiarchyRelics", 1);
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
+        addToInformationVector("EcclesiarchyRelics", 1);
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		addToInformationVector("EcclesiarchyRelics", -1);
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("EcclesiarchyRelics", -1);
+        super.deleteYourself();
+    }
+
 }

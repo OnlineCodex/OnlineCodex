@@ -6,26 +6,26 @@ import oc.OptionsEinzelUpgrade;
 
 public class DHMaynarkhCanoptekScarabSwarms extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsEinzelUpgrade cs;
+    AnzahlPanel squad;
+    OptionsEinzelUpgrade cs;
 
-	public DHMaynarkhCanoptekScarabSwarms() {
-		grundkosten = 0;
+    public DHMaynarkhCanoptekScarabSwarms() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Kanoptech-Skarabäen", 3, 10, 15);
-		add(squad);
-		
-		seperator();
-		add(cs = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Charnel scarabs", 15));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Kanoptech-Skarabäen", 3, 10, 15);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSkarabaeen.jpg"));
+        seperator();
+        add(cs = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Charnel scarabs", 15));
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSkarabaeen.jpg"));
 
-	@Override
-	public void refreshen() {
-		cs.setPreis(squad.getModelle()*5);
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        cs.setPreis(squad.getModelle() * 5);
+    }
 
 }

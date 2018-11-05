@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class NEVargardObyron extends Eintrag {
 
-	public NEVargardObyron() {
-		name = "Vargard Obyron";
-		grundkosten = getPts("Vargard Obyron");
-       		
-		complete();
-	}
+    public NEVargardObyron() {
+        name = "Vargard Obyron";
+        grundkosten = getPts("Vargard Obyron");
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
         power = 7;
-	}
+    }
 }

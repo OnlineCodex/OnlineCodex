@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHZarakynel extends Eintrag {
 
-	public CHZarakynel() {
+    public CHZarakynel() {
 
-		name = "Zarakynel";
+        name = "Zarakynel";
         grundkosten = getPts("Zarakynel");
-        power = 23;   
+        power = 23;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

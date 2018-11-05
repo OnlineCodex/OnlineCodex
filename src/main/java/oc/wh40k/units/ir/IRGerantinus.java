@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IRGerantinus extends Eintrag {
 
-	public IRGerantinus() {
-		name = "Gerantinus";
-		grundkosten = 500;
+    public IRGerantinus() {
+        name = "Gerantinus";
+        grundkosten = 500;
 
-		complete();
-	}
+        complete();
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
-		setUnikat(true);
-	}
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 
 }

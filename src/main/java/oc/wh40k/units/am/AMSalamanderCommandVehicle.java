@@ -11,34 +11,34 @@ public class AMSalamanderCommandVehicle extends Eintrag {
     OptionsUpgradeGruppe o5;
 
     boolean mutex = false;
-    
-	public AMSalamanderCommandVehicle() {
-		name = "Salamander Reconnaisance Commander";
-		grundkosten = 60;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABCompanyCommandTank.jpg"));
+    public AMSalamanderCommandVehicle() {
+        name = "Salamander Reconnaisance Commander";
+        grundkosten = 60;
 
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 0));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(ico = new oc.Picture("oc/wh40k/images/ABCompanyCommandTank.jpg"));
 
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 0));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Storm bolter", 10));
-		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Hunter-killer missile", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dozerblade", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Extra armour", 15));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo-netting", 20));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", 10));
+        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Hunter-killer missile", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dozerblade", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Extra armour", 15));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Camo-netting", 20));
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         o2.alwaysSelected();
-	}
+    }
 
 }

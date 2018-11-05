@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class IMCompanyChampiononBike extends Eintrag {
 
-	public IMCompanyChampiononBike() {
-		name = "Company Champion on Bike";
-		grundkosten = getPts("Company Champion on Bike") + 
-					  getPts("Frag grenade (SM)") + 
-					  getPts("Krak grenade (SM)") + 
-					  getPts("Bolt pistol (SM)") + 
-					  getPts("Master-crafted power sword") + 
-					  getPts("Twin boltgun");
-		power = 5;
+    public IMCompanyChampiononBike() {
+        name = "Company Champion on Bike";
+        grundkosten = getPts("Company Champion on Bike") +
+                getPts("Frag grenade (SM)") +
+                getPts("Krak grenade (SM)") +
+                getPts("Bolt pistol (SM)") +
+                getPts("Master-crafted power sword") +
+                getPts("Twin boltgun");
+        power = 5;
 
-		complete();
-	}
+        complete();
+    }
 
-		public void refreshen() {
-		}
+    public void refreshen() {
+    }
 }

@@ -5,21 +5,21 @@ import oc.RuestkammerStarter;
 
 public class IMApothecary extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMApothecary() {
-		name = "Apothecary";
-		grundkosten = getPts("Apothecary") + 
-					  getPts("Frag grenade (SM)") + 
-					  getPts("Krak grenade (SM)") + 
-					  getPts("Chainsword (SM)") + 
-					  getPts("Bolt pistol (SM)");
-		power = 3;
+    public IMApothecary() {
+        name = "Apothecary";
+        grundkosten = getPts("Apothecary") +
+                getPts("Frag grenade (SM)") +
+                getPts("Krak grenade (SM)") +
+                getPts("Chainsword (SM)") +
+                getPts("Bolt pistol (SM)");
+        power = 3;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

@@ -1,66 +1,65 @@
 package oc.wh40k.units.ta;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	RuestkammerStarter ob;
+    OptionsUpgradeGruppe o1;
+    RuestkammerStarter ob;
 
-	public TACommanderinXV86ColdstarBattlesuit() {
-		name = "Commander";
-		grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
+    public TACommanderinXV86ColdstarBattlesuit() {
+        name = "Commander";
+        grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
 
-		überschriftSetzen = true;
+        überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
-		seperator();
+        seperator();
 
-		ob = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Commander");
-		ob.setGrundkosten(0);
-        ((TAKampfanzugKammer)ob.getKammer()).setColdstar(true);
-		ob.initKammer(true, false, false, false, false, false, false);
-		ob.setButtonText("Rüstkammer");
-		add(ob);
-		ob.setAbwaehlbar(false);
+        ob = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Commander");
+        ob.setGrundkosten(0);
+        ((TAKampfanzugKammer) ob.getKammer()).setColdstar(true);
+        ob.initKammer(true, false, false, false, false, false, false);
+        ob.setButtonText("Rüstkammer");
+        add(ob);
+        ob.setAbwaehlbar(false);
 
-		addToInformationVector("Commander", 1);
+        addToInformationVector("Commander", 1);
 
-		complete();
-	}
+        complete();
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
-		if(!ob.isSelected()){
-			((TAKampfanzugKammer)ob.getKammer()).clearEntries();
-		}
-		
-		((TAKampfanzugKammer)ob.getKammer()).farsight=getCountFromInformationVector("Farsight Enclave")>0;
-		
-		if(getCountFromInformationVector("Contingent Headquarters")>0){
-			if(getCountFromInformationVector("Commander")>1){
-				setFehlermeldung("Max 1 Commander");
-			}else if(((TAKampfanzugKammer)ob.getKammer()).uniqueError){
-				setFehlermeldung("Ausrüstung doppelt!");
-			} else{
-				setFehlermeldung("");
-			}
-		}else{
-			if(((TAKampfanzugKammer)ob.getKammer()).uniqueError){
-				setFehlermeldung("Ausrüstung doppelt!");
-			} else{
-				setFehlermeldung("");
-			}
-		}
-	}
+    //@OVERRIDE
+    public void refreshen() {
+        if (!ob.isSelected()) {
+            ((TAKampfanzugKammer) ob.getKammer()).clearEntries();
+        }
 
-	//@OVERRIDE
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+        ((TAKampfanzugKammer) ob.getKammer()).farsight = getCountFromInformationVector("Farsight Enclave") > 0;
+
+        if (getCountFromInformationVector("Contingent Headquarters") > 0) {
+            if (getCountFromInformationVector("Commander") > 1) {
+                setFehlermeldung("Max 1 Commander");
+            } else if (((TAKampfanzugKammer) ob.getKammer()).uniqueError) {
+                setFehlermeldung("Ausrüstung doppelt!");
+            } else {
+                setFehlermeldung("");
+            }
+        } else {
+            if (((TAKampfanzugKammer) ob.getKammer()).uniqueError) {
+                setFehlermeldung("Ausrüstung doppelt!");
+            } else {
+                setFehlermeldung("");
+            }
+        }
+    }
+
+    //@OVERRIDE
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

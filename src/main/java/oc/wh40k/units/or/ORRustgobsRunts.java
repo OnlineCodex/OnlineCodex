@@ -4,23 +4,23 @@ import oc.Eintrag;
 
 public class ORRustgobsRunts extends Eintrag {
 
-	public ORRustgobsRunts() {
+    public ORRustgobsRunts() {
 
-		kategorie = 2;
-		name = "Rustgob's Runts";
-		grundkosten = 45;
+        kategorie = 2;
+        name = "Rustgob's Runts";
+        grundkosten = 45;
 
-		add(ico = new oc.Picture("oc/wh40k/images/MekBossBuzzgob.gif"));
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/MekBossBuzzgob.gif"));
+        complete();
+    }
 
-	public void deleteYourself() {
-		super.deleteYourself();
+    public void deleteYourself() {
+        super.deleteYourself();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

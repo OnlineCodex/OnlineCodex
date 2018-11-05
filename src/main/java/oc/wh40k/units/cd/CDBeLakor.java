@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CDBeLakor extends Eintrag {
 
-	public CDBeLakor() {
+    public CDBeLakor() {
 
-		name = "Be'Lakor";
+        name = "Be'Lakor";
 
-		grundkosten = 350;
+        grundkosten = 350;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

@@ -6,30 +6,30 @@ import oc.RuestkammerStarter;
 
 public class CMVindicatordesChaos extends Eintrag {
 
-	RuestkammerStarter ausruestung;
-	
-	public CMVindicatordesChaos() {
-		name = "Vindicator des Chaos";
-		grundkosten = 120;
+    RuestkammerStarter ausruestung;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosVindicator.gif"));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
-		
-		seperator();
+    public CMVindicatordesChaos() {
+        name = "Vindicator des Chaos";
+        grundkosten = 120;
 
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
-		ausruestung.initKammer(true);
-		ausruestung.setButtonText("Ausrüstung");
-		add(ausruestung);
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosVindicator.gif"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Belagerungsschild", 10));
+
+        seperator();
+
+        ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "CMFahrzeugruestkammer", "Ausrüstung");
+        ausruestung.initKammer(true);
+        ausruestung.setButtonText("Ausrüstung");
+        add(ausruestung);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

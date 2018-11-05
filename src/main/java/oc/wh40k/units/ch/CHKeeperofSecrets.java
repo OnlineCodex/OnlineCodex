@@ -6,29 +6,29 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHKeeperofSecrets extends Eintrag {
 
-	RuestkammerStarter psychicPowers;
-	
-	public CHKeeperofSecrets() {
+    RuestkammerStarter psychicPowers;
 
-		name = "Keeper of Secrets";
+    public CHKeeperofSecrets() {
+
+        name = "Keeper of Secrets";
         grundkosten = getPts("Keeper of Secrets");
         power = 11;
-        
+
         seperator();
-        
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers)psychicPowers.getKammer()).enableSlaanesh();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
 
-	}
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableSlaanesh();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

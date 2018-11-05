@@ -6,58 +6,58 @@ import oc.RuestkammerStarter;
 
 public class AMFaustdesImperatorsPanzerkompanie extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter tff;
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter tff;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
 
-	public AMFaustdesImperatorsPanzerkompanie() {
-		name = "'Faust des Imperators' - Panzerkompanie";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    public AMFaustdesImperatorsPanzerkompanie() {
+        name = "'Faust des Imperators' - Panzerkompanie";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		tff = new RuestkammerStarter(ID, randAbstand, cnt, "AMLemanRuss", "", 1);
-		tff.initKammer();
-		tff.setButtonText("Leman Russ Formationsführer");
-		add(tff);
+        tff = new RuestkammerStarter(ID, randAbstand, cnt, "AMLemanRuss", "", 1);
+        tff.initKammer();
+        tff.setButtonText("Leman Russ Formationsführer");
+        add(tff);
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
-		t1.initKammer();
-		t1.setButtonText("Leman Russ Schwadron 1");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
+        t1.initKammer();
+        t1.setButtonText("Leman Russ Schwadron 1");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
-		t2.initKammer();
-		t2.setButtonText("Leman Russ Schwadron 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
+        t2.initKammer();
+        t2.setButtonText("Leman Russ Schwadron 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
-		t3.initKammer();
-		t3.setButtonText("Leman Russ Schwadron 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "AMFaustdesImperatorsPanzer", "", 1);
+        t3.initKammer();
+        t3.setButtonText("Leman Russ Schwadron 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		tff.setAbwaehlbar(false);
-		t1.setAbwaehlbar(false);
-		t2.setAbwaehlbar(false);
-		t3.setAbwaehlbar(false);
-		
-	}
+    @Override
+    public void refreshen() {
+        tff.setAbwaehlbar(false);
+        t1.setAbwaehlbar(false);
+        t2.setAbwaehlbar(false);
+        t3.setAbwaehlbar(false);
+
+    }
 
 }

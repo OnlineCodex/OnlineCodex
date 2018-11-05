@@ -6,25 +6,25 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYTyrannocyte extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public TYTyrannocyte() {
-		grundkosten = getPts("Tyrannocyte");
-		name = "Tyrannocyte";
-		power = 7;
-		add(ico = new oc.Picture("oc/wh40k/images/TYLandungsspore.jpg"));
-		
-		ogE.addElement(new OptionsGruppeEintrag("5 Deathspitters", getPts("Deathspitter") * 5));
-		ogE.addElement(new OptionsGruppeEintrag("5 Barbed Stranglers", getPts("Barbed Strangler") * 5));
-		ogE.addElement(new OptionsGruppeEintrag("5 Venom cannons", getPts("Venom cannon") * 5));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+    public TYTyrannocyte() {
+        grundkosten = getPts("Tyrannocyte");
+        name = "Tyrannocyte";
+        power = 7;
+        add(ico = new oc.Picture("oc/wh40k/images/TYLandungsspore.jpg"));
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("5 Deathspitters", getPts("Deathspitter") * 5));
+        ogE.addElement(new OptionsGruppeEintrag("5 Barbed Stranglers", getPts("Barbed Strangler") * 5));
+        ogE.addElement(new OptionsGruppeEintrag("5 Venom cannons", getPts("Venom cannon") * 5));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
-	@Override
-	public void refreshen() {
-		if(!o1.isSelected()) o1.setSelected(0,  true);
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+    }
 
 }

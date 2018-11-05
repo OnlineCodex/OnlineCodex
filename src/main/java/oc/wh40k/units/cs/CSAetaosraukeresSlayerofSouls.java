@@ -5,24 +5,24 @@ import oc.OnlineCodex;
 
 public class CSAetaosraukeresSlayerofSouls extends Eintrag {
 
-	public CSAetaosraukeresSlayerofSouls() {
-		name = "Aetaos'rau'keres - Slayer of Souls";
-		grundkosten = 999;
+    public CSAetaosraukeresSlayerofSouls() {
+        name = "Aetaos'rau'keres - Slayer of Souls";
+        grundkosten = 999;
 
-		add(ico = new oc.Picture("oc/wh40k/images/AetaosraukeresSlayerofSouls.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/AetaosraukeresSlayerofSouls.gif"));
 
-		complete();
-	}
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-        if(OnlineCodex.getInstance().getKosten() < 2000 && OnlineCodex.getInstance().getCurrentArmy().equals("Chaosdaemonen")) {
+        if (OnlineCodex.getInstance().getKosten() < 2000 && OnlineCodex.getInstance().getCurrentArmy().equals("Chaosdaemonen")) {
             this.setFehlermeldung("Armee < 2000 Punkte");
         } else {
             this.setFehlermeldung("");
         }
-	}
+    }
 
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CDHeraldofSlaanesh extends Eintrag {
 
-	public CDHeraldofSlaanesh() {
-		name = "Herald of Slaanesh";
+    public CDHeraldofSlaanesh() {
+        name = "Herald of Slaanesh";
         grundkosten = getPts("Herald of Slaanesh");
-        power = 3;   
-       	
-		complete();
-	}
+        power = 3;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

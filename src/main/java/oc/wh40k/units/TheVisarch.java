@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class TheVisarch extends Eintrag {
 
-	public TheVisarch() {
-		name = "The Visarch";
-		grundkosten = 150;
+    public TheVisarch() {
+        name = "The Visarch";
+        grundkosten = 150;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
+
 }

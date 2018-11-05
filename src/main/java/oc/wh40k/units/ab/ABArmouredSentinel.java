@@ -7,35 +7,35 @@ import oc.RuestkammerVater;
 
 public class ABArmouredSentinel extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public ABArmouredSentinel() {
-		grundkosten = 55;
-	}
-	
-  @Override
-	public void initButtons(boolean... defaults) {
-		ogE.addElement(new OptionsGruppeEintrag("Multi-laser", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Autocannon", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Missile launcher", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Multiple rocket pod", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Lascannon", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 20));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    public ABArmouredSentinel() {
+        grundkosten = 55;
+    }
+
+    @Override
+    public void initButtons(boolean... defaults) {
+        ogE.addElement(new OptionsGruppeEintrag("Multi-laser", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Autocannon", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Multiple rocket pod", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", 20));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         setHeadline(o1, "Weapons & options");
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Searchlight", 1));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Searchlight", 1));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-  @Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         o1.alwaysSelected();
-	}
+    }
 
 }

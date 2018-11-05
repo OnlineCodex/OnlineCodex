@@ -6,44 +6,44 @@ import oc.RuestkammerVater;
 
 public class ECCorsairHornetKammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
 
-	boolean added = false;
+    boolean added = false;
 
-	public ECCorsairHornetKammer() {
-		grundkosten = 70;
-	}
+    public ECCorsairHornetKammer() {
+        grundkosten = 70;
+    }
 
     @Override
-	public void initButtons(boolean... defaults) {
-    	ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Scatter laser", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Starcannon", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Bright lance", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Pulse laser", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Eldar missile launcher", 15));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    public void initButtons(boolean... defaults) {
+        ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Scatter laser", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Starcannon", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Bright lance", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Pulse laser", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Eldar missile launcher", 15));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Scatter laser", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Starcannon", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Bright lance", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Pulse laser", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Eldar missile launcher", 15));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Scatter laser", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Starcannon", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Bright lance", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Pulse laser", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Eldar missile launcher", 15));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
         o2.alwaysSelected();
-	}
+    }
 
 }

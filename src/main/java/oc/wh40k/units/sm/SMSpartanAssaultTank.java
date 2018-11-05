@@ -11,45 +11,45 @@ public class SMSpartanAssaultTank extends Eintrag {
     OptionsUpgradeGruppe o2;
     OptionsUpgradeGruppe o3;
 
-	public SMSpartanAssaultTank() {
-		name = "Spartan Assault Tank";
-		grundkosten = 295;
+    public SMSpartanAssaultTank() {
+        name = "Spartan Assault Tank";
+        grundkosten = 295;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMSpartanAssaultTank.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMSpartanAssaultTank.jpg"));
 
-		seperator();
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("TL Heavy Bolter", "twin-linked heavy bolter", 0));
-		ogE.addElement(new OptionsGruppeEintrag("TL Heavy Flamer", "Twin-linked heavy flamer", 0));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		seperator();
+        ogE.addElement(new OptionsGruppeEintrag("TL Heavy Flamer", "Twin-linked heavy flamer", 0));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Two quad lascannons", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Two laser destroyers", 0));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        ogE.addElement(new OptionsGruppeEintrag("Two laser destroyers", 0));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Frag assault launcher", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armoured ceramite", 20));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armoured ceramite", 20));
 
-		seperator();
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 20));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", 15));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", 20));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         o1.alwaysSelected();
         o2.alwaysSelected();
-	}
+    }
 
 }

@@ -1,12 +1,6 @@
 package oc.wh40k.units.da;
 
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsPanelSwitcher;
-import oc.OptionsSeperator;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsVater;
-import oc.RuestkammerVater;
+import oc.*;
 
 public class DADropPodKammer extends RuestkammerVater {
 
@@ -45,9 +39,9 @@ public class DADropPodKammer extends RuestkammerVater {
         OptionsVater[] dropPod = new OptionsVater[]{ /*keine*/};
 
         OptionsVater[] dropPodIA2 = new OptionsVater[]{
-            podWeapon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE),
-            new OptionsSeperator(5),
-            new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10)
+                podWeapon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE),
+                new OptionsSeperator(5),
+                new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10)
         };
 
         OptionsVater[] empty = new OptionsVater[]{};
@@ -69,5 +63,5 @@ public class DADropPodKammer extends RuestkammerVater {
             podWeapon.setSelected(0, true);
         }
     }
-    
+
 }

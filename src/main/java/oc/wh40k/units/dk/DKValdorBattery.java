@@ -6,46 +6,46 @@ import oc.RuestkammerStarter;
 
 public class DKValdorBattery extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKValdorBattery() {
-		name = "Valdor Battery";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
-		this.gesamtpunkteImmerAnzeigen=false;
+    public DKValdorBattery() {
+        name = "Valdor Battery";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
+        this.gesamtpunkteImmerAnzeigen = false;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DKValdorSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/DKValdorSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
-		t1.initKammer();
-		t1.setButtonText("Valdor 1");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
+        t1.initKammer();
+        t1.setButtonText("Valdor 1");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
-		t2.initKammer();
-		t2.setButtonText("Valdor 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
+        t2.initKammer();
+        t2.setButtonText("Valdor 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
-		t3.initKammer();
-		t3.setButtonText("Valdor 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKValdorKammer", "Valdor\n");
+        t3.initKammer();
+        t3.setButtonText("Valdor 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 }

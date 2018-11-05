@@ -5,40 +5,40 @@ import oc.RuestkammerStarter;
 
 public class DKABThunderbolt extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKABThunderbolt() {
-		name = "Thunderbolt Squadron";
-		grundkosten = 0;
-		überschriftSetzen=true;
+    public DKABThunderbolt() {
+        name = "Thunderbolt Squadron";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABThunderbolt.jpg"));
-		
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ABThunderbolt.jpg"));
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
-		t1.initKammer();
-		add(t1);
+        seperator();
 
-		seperator();
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
+        t1.initKammer();
+        add(t1);
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
-		t2.initKammer();
-		add(t2);
+        seperator();
 
-		seperator();
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
+        t2.initKammer();
+        add(t2);
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
-		t3.initKammer();
-		add(t3);
+        seperator();
 
-		complete();
-	}
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABThunderboltKammer", "Thunderbolt");
+        t3.initKammer();
+        add(t3);
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

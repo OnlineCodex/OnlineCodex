@@ -7,42 +7,42 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMCorvusBlackstar extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
-	OptionsUpgradeGruppe o3;
-	
-	public IMCorvusBlackstar() {
-		name = "Corvus Blackstar";
-		grundkosten = getPts("Corvus Blackstar");
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o3;
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon",  getPts("Twin lascannon")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+    public IMCorvusBlackstar() {
+        name = "Corvus Blackstar";
+        grundkosten = getPts("Corvus Blackstar");
 
-		seperator();
-		
-		add(ico = new oc.Picture("oc/wh40k/images/Stormtalon.gif"));
-		
-		ogE.addElement(new OptionsGruppeEintrag("2 Stormstrike missile launchers", getPts("Stormstrike missile launcher")*2));
-		ogE.addElement(new OptionsGruppeEintrag("2 Blackstar rocket launcher", getPts("Blackstar rocket launcher")*2));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hurricane bolter", getPts("Hurricane bolter")));
-		
-		seperator();
-			
-		ogE.addElement(new OptionsGruppeEintrag("Infernum halo-launcher", getPts("Infernum halo-launcher")));
-		ogE.addElement(new OptionsGruppeEintrag("Auspex array", getPts("Auspex array")));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
-		
-		complete();
+        ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 
-	}
+        seperator();
 
-	public void refreshen() {
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/Stormtalon.gif"));
+
+        ogE.addElement(new OptionsGruppeEintrag("2 Stormstrike missile launchers", getPts("Stormstrike missile launcher") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Blackstar rocket launcher", getPts("Blackstar rocket launcher") * 2));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hurricane bolter", getPts("Hurricane bolter")));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Infernum halo-launcher", getPts("Infernum halo-launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Auspex array", getPts("Auspex array")));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+
+        complete();
+
+    }
+
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+    }
 }

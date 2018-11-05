@@ -1,12 +1,6 @@
 package oc.wh40k.units.ta;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelZaehler;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class TAXV25StealthBattlesuits extends Eintrag {
 
@@ -15,10 +9,10 @@ public class TAXV25StealthBattlesuits extends Eintrag {
     OptionsEinzelZaehler o2;
     RuestkammerStarter ob2;
     RuestkammerStarter[] geister = new RuestkammerStarter[6];
-    
+
     public TAXV25StealthBattlesuits() {
         name = "XV25 Stealth Battlesuits";
-		überschriftSetzen = true;
+        überschriftSetzen = true;
         grundkosten = 0;
 
         addToInformationVector("TA2006GeistKampfanzugteam", 1);
@@ -26,36 +20,36 @@ public class TAXV25StealthBattlesuits extends Eintrag {
         seperator();
 
         add(ico = new oc.Picture("oc/wh40k/images/GeistKampfanzugteam.gif"));
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Homin beacon", getPts("Homing beacon")));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
-		ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
-		ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
-		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-        
-		seperator();
-		
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+
+        seperator();
+
         ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TAShasvreKammer", "Stealth Shas'vre");
         ob2.initKammer(true, true);
         ob2.setGrundkosten(getPts("XV25 Stealth Battlesuit"));
         ob2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(ob2);
-		
-		for (int i = 0; i < geister.length; ++i) {
-			geister[i] = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Stealth Shas'ui");
 
-			geister[i].setGrundkosten(getPts("XV25 Stealth Battlesuit"));
+        for (int i = 0; i < geister.length; ++i) {
+            geister[i] = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Stealth Shas'ui");
 
-			geister[i].initKammer(false, false, false, false, true, false, false);
+            geister[i].setGrundkosten(getPts("XV25 Stealth Battlesuit"));
 
-			add(geister[i]);
+            geister[i].initKammer(false, false, false, false, true, false, false);
 
-			geister[i].setSeperator(0);
-		}
-		
+            add(geister[i]);
+
+            geister[i].setSeperator(0);
+        }
+
         seperator();
 
         complete();
@@ -63,39 +57,39 @@ public class TAXV25StealthBattlesuits extends Eintrag {
     }
 
     @Override
-    public void refreshen() {        
-		int Select = 0;
-		int blaster = 0;
-		blaster += ((TAShasvreKammer)ob2.getKammer()).o1.isSelected("Fusion blaster") ? 1 : 0;
-		for(int k = 0; k < geister.length; ++k) {
-			Select += (geister[k].isSelected() ? 1 : 0);
-			blaster += ((TAKampfanzugKammer)geister[k].getKammer()).o5.isSelected("Fusion blaster") ? 1 : 0;
-		}
-		Select += (ob2.isSelected() ? 1 : 0);
-		
-		geister[5].setAktiv(!ob2.isSelected());
-				
-		if(Select<3){
-			setFehlermeldung("Min. 3 Modelle");
-		} else if(blaster > (Select/3)){
-			setFehlermeldung("Max. "+(Select/3)+" Fusion blaster");
-		}else{
-			setFehlermeldung("");
-		}
-		
-		power = 6;
-		if (Select > 3) {
-			power += 6;
-		}
-		if (o1.isSelected()) {
-			power++;
-		}
-		
+    public void refreshen() {
+        int Select = 0;
+        int blaster = 0;
+        blaster += ((TAShasvreKammer) ob2.getKammer()).o1.isSelected("Fusion blaster") ? 1 : 0;
+        for (int k = 0; k < geister.length; ++k) {
+            Select += (geister[k].isSelected() ? 1 : 0);
+            blaster += ((TAKampfanzugKammer) geister[k].getKammer()).o5.isSelected("Fusion blaster") ? 1 : 0;
+        }
+        Select += (ob2.isSelected() ? 1 : 0);
+
+        geister[5].setAktiv(!ob2.isSelected());
+
+        if (Select < 3) {
+            setFehlermeldung("Min. 3 Modelle");
+        } else if (blaster > (Select / 3)) {
+            setFehlermeldung("Max. " + (Select / 3) + " Fusion blaster");
+        } else {
+            setFehlermeldung("");
+        }
+
+        power = 6;
+        if (Select > 3) {
+            power += 6;
+        }
+        if (o1.isSelected()) {
+            power++;
+        }
+
     }
 
     @Override
     public void deleteYourself() {
         super.deleteYourself();
     }
-    
+
 }

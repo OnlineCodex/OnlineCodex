@@ -7,65 +7,65 @@ import oc.RuestkammerVater;
 
 public class IMLemanRussDemolisher extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
-	OptionsUpgradeGruppe o3;
-	OptionsEinzelUpgrade pask;
-	OptionsEinzelUpgrade oe1;
-	OptionsEinzelUpgrade oe2;
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o3;
+    OptionsEinzelUpgrade pask;
+    OptionsEinzelUpgrade oe1;
+    OptionsEinzelUpgrade oe2;
 
-	boolean paskSelected = false;
+    boolean paskSelected = false;
 
-	public IMLemanRussDemolisher() {
-		grundkosten = getPts("Leman RussBattle Tanks");
-	}
+    public IMLemanRussDemolisher() {
+        grundkosten = getPts("Leman RussBattle Tanks");
+    }
 
-  @Override
-	public void initButtons(boolean... defaults) {
-		add(ico = new oc.Picture("oc/wh40k/images/IGLemanRuss.jpg"));
-		
+    @Override
+    public void initButtons(boolean... defaults) {
+        add(ico = new oc.Picture("oc/wh40k/images/IGLemanRuss.jpg"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Executioner plasma cannon", getPts("Executioner plasma cannon")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o1.setSelected(0, true);	
-		
-		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM)")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		o2.setSelected(0, true);
+        ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Executioner plasma cannon", getPts("Executioner plasma cannon")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o1.setSelected(0, true);
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolters", getPts("Heavy bolter (AM)")*2));
-		ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)")*2));
-		ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)")*2));
-		ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)")*2));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM)")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o2.setSelected(0, true);
 
-		seperator();
+        seperator();
 
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AM)")));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Heavy stubber", getPts("Heavy stubber")));
-		
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolters", getPts("Heavy bolter (AM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		sizeSetzen();
-	}
+        seperator();
 
-  @Override
-	public void refreshen() {
-		if(!o1.isSelected()) o1.setSelected(0,true);
-        if(!o2.isSelected()) o2.setSelected(0,true);
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AM)")));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Heavy stubber", getPts("Heavy stubber")));
 
-		oe1.setAktiv(!oe2.isSelected());
-		oe2.setAktiv(!oe1.isSelected());
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
+
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+        if (!o2.isSelected()) o2.setSelected(0, true);
+
+        oe1.setAktiv(!oe2.isSelected());
+        oe2.setAktiv(!oe1.isSelected());
+    }
 
 }

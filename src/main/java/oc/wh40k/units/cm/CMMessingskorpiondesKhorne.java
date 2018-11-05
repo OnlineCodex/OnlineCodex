@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CMMessingskorpiondesKhorne extends Eintrag {
 
-	public CMMessingskorpiondesKhorne() {
-		name = "Messingskorpion des Khorne";
-		grundkosten = 400;
+    public CMMessingskorpiondesKhorne() {
+        name = "Messingskorpion des Khorne";
+        grundkosten = 400;
 
-		add(ico = new oc.Picture("oc/wh40k/images/MessingskorpiondesKhorne.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/MessingskorpiondesKhorne.gif"));
 
-		complete();
-	}
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

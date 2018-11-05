@@ -1,49 +1,48 @@
 package oc.wh40k.units.im;
 
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
 public class IMJusticar extends RuestkammerVater {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
     OptionsUpgradeGruppe o2;
     OptionsUpgradeGruppe o3;
 
-	public IMJusticar() {
-		grundkosten = 0;
-	}
+    public IMJusticar() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
-		ogE.addElement(new OptionsGruppeEintrag("Nemesis force halberd", getPts("Nemesis force halberd")));
-		ogE.addElement(new OptionsGruppeEintrag("Nemesis daemon hammer", getPts("Nemesis daemon hammer")));
-		ogE.addElement(new OptionsGruppeEintrag("Nemesis warding stave", getPts("Nemesis warding stave")));
-		ogE.addElement(new OptionsGruppeEintrag("Two Nemesis falchions", getPts("Two Nemesis falchions")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+    @Override
+    public void initButtons(boolean... defaults) {
+        ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
+        ogE.addElement(new OptionsGruppeEintrag("Nemesis force halberd", getPts("Nemesis force halberd")));
+        ogE.addElement(new OptionsGruppeEintrag("Nemesis daemon hammer", getPts("Nemesis daemon hammer")));
+        ogE.addElement(new OptionsGruppeEintrag("Nemesis warding stave", getPts("Nemesis warding stave")));
+        ogE.addElement(new OptionsGruppeEintrag("Two Nemesis falchions", getPts("Two Nemesis falchions")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
-		
-		sizeSetzen();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
+        sizeSetzen();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
         //o1.setAktiv(!o2.isSelected());
 
-       o3.alwaysSelected();
-	}
+        o3.alwaysSelected();
+    }
 
-	@Override
-	public void switchEntry(String name, boolean aktiv) {
-	}
+    @Override
+    public void switchEntry(String name, boolean aktiv) {
+    }
 
 }

@@ -6,29 +6,30 @@ import oc.RuestkammerStarter;
 
 public class DHEliminatoren extends Eintrag {
 
-	AnzahlPanel squad;
-	RuestkammerStarter rkTransport;
+    AnzahlPanel squad;
+    RuestkammerStarter rkTransport;
 
-	public DHEliminatoren() {
-		grundkosten = 0;
+    public DHEliminatoren() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Eliminatoren", 5, 10, 19);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Eliminatoren", 5, 10, 19);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEEliminatoren.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/NEEliminatoren.jpg"));
 
-        seperator();;
+        seperator();
+        ;
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHTransporterKammer", "Transporter");
-		rkTransport.initKammer(false, true);
-		rkTransport.setButtonText("Transporter");
-		add(rkTransport);
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHTransporterKammer", "Transporter");
+        rkTransport.initKammer(false, true);
+        rkTransport.setButtonText("Transporter");
+        add(rkTransport);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

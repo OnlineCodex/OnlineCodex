@@ -4,35 +4,35 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class DHKutlakhtheWorldKiller extends Eintrag {
-    
+
     RuestkammerStarter rkTransport;
 
-	public DHKutlakhtheWorldKiller() {
-		name = "Kutlakh the World Killer";
-		grundkosten = 220;
+    public DHKutlakhtheWorldKiller() {
+        name = "Kutlakh the World Killer";
+        grundkosten = 220;
 
-		addToInformationVector("DHHochlord", 1);
+        addToInformationVector("DHHochlord", 1);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEImotekhderSturmherr.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/NEImotekhderSturmherr.jpg"));
 
-		seperator();
+        seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHKommandogleiterKammer", "Kommando-Gleiter");
-		rkTransport.initKammer();
-		add(rkTransport);
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DHKommandogleiterKammer", "Kommando-Gleiter");
+        rkTransport.initKammer();
+        add(rkTransport);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-		addToInformationVector("DHHochlord", -1);
-	}
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+        addToInformationVector("DHHochlord", -1);
+    }
 
 }

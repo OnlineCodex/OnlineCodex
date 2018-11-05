@@ -7,28 +7,28 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMLandSpeederStorm extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsUpgradeGruppe o1;
+    AnzahlPanel squad;
+    OptionsUpgradeGruppe o1;
 
-	public IMLandSpeederStorm() {
-		name = "Land Speeder Storm";
-		grundkosten = getPts("Land Speeder Storm");
-		power = 5;
+    public IMLandSpeederStorm() {
+        name = "Land Speeder Storm";
+        grundkosten = getPts("Land Speeder Storm");
+        power = 5;
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 
 }

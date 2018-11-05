@@ -5,27 +5,27 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMTechmarine extends Eintrag {
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMTechmarine() {
-		name = "Techmarine";
-		grundkosten = getPts("Techmarine") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+    public IMTechmarine() {
+        name = "Techmarine";
+        grundkosten = getPts("Techmarine") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
-		seperator();
+        seperator();
 
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Techmarine");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Techmarine");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = 4 + (((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).oe1.isSelected()?1:0);
-	}
+    @Override
+    public void refreshen() {
+        power = 4 + (((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).oe1.isSelected() ? 1 : 0);
+    }
 }

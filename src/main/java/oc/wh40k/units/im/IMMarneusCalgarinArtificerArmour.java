@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMMarneusCalgarinArtificerArmour extends Eintrag {
 
-	public IMMarneusCalgarinArtificerArmour() {
-		name = "Marneus Calgar in Artificer Armour";
-		grundkosten = getPts("Marneus Calgar in Artificer Armour");
-		power = 12;
-		seperator();
+    public IMMarneusCalgarinArtificerArmour() {
+        name = "Marneus Calgar in Artificer Armour";
+        grundkosten = getPts("Marneus Calgar in Artificer Armour");
+        power = 12;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);    
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

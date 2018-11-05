@@ -1,41 +1,37 @@
 package oc.wh40k.units.im;
 
-import oc.AnzahlPanel;
-import oc.BuildaHQ;
-import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
+import oc.*;
 
 public class IMIronPriest extends Eintrag {
 
-	AnzahlPanel servitors;
-	OptionsUpgradeGruppe o1, o5;
+    AnzahlPanel servitors;
+    OptionsUpgradeGruppe o1, o5;
 
-	public IMIronPriest() {
-		name = "Iron Priest";
-		grundkosten = getPts("Iron Priest") + getPts("Servo-arm");
-		power = 6;
+    public IMIronPriest() {
+        name = "Iron Priest";
+        grundkosten = getPts("Iron Priest") + getPts("Servo-arm");
+        power = 6;
 
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Boltgun"), getPts("Boltgun (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bolt pistol"), getPts("Bolt pistol (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Helfrost pistol"), getPts("Helfrost pistol")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		o1.setSelected(0, true);
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Thunder hammer"), getPts("Thunder hammer (Characters)")));
-		ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Tempest hammer"), getPts("Tempest hammer")));
-		add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		o5.setSelected(0, true);
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Boltgun"), getPts("Boltgun (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bolt pistol"), getPts("Bolt pistol (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Helfrost pistol"), getPts("Helfrost pistol")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        o1.setSelected(0, true);
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-		o5.alwaysSelected();
-	}
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Thunder hammer"), getPts("Thunder hammer (Characters)")));
+        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Tempest hammer"), getPts("Tempest hammer")));
+        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        o5.setSelected(0, true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o5.alwaysSelected();
+    }
 
 }

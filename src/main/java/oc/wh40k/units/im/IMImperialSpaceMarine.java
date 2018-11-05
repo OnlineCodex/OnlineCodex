@@ -5,22 +5,22 @@ import oc.RuestkammerStarter;
 
 public class IMImperialSpaceMarine extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMImperialSpaceMarine() {
-		name = "Imperial Space Marine";
-		grundkosten = getPts("Imperial Space Marine") + 
-					  getPts("Frag grenade (SM)") + 
-					  getPts("Krak grenade (SM)") + 
-					  getPts("disintegration combi-gun") + 
-					  getPts("disintegration pistol,");
-		power = 3;
+    public IMImperialSpaceMarine() {
+        name = "Imperial Space Marine";
+        grundkosten = getPts("Imperial Space Marine") +
+                getPts("Frag grenade (SM)") +
+                getPts("Krak grenade (SM)") +
+                getPts("disintegration combi-gun") +
+                getPts("disintegration pistol,");
+        power = 3;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

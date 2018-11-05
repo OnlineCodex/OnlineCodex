@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class CHFabiusBile extends Eintrag {
 
-	public CHFabiusBile() {
+    public CHFabiusBile() {
 
-		name = "Fabius Bile";
+        name = "Fabius Bile";
         grundkosten = getPts("Fabius Bile");
-        power = 6;   
-		complete();
+        power = 6;
+        complete();
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

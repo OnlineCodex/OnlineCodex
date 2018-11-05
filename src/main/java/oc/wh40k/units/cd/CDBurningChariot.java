@@ -2,18 +2,18 @@ package oc.wh40k.units.cd;
 
 public class CDBurningChariot extends CDHerold {
 
-	public CDBurningChariot() {
+    public CDBurningChariot() {
 
-		name = "Burning Chariot";
+        name = "Burning Chariot";
         grundkosten = getPts("Burning Chariot");
-        power = 5;        
-        
+        power = 5;
+
         complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            super.refreshen();
-	}
+    @Override
+    public void refreshen() {
+        super.refreshen();
+    }
 }

@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHChaosHellwrightOnDarkAbeyant extends Eintrag {
 
-	public CHChaosHellwrightOnDarkAbeyant() {
+    public CHChaosHellwrightOnDarkAbeyant() {
 
-		name = "Chaos Hellwright on Dark Abeyant";
+        name = "Chaos Hellwright on Dark Abeyant";
         grundkosten = getPts("Chaos Hellwright on Dark Abeyant");
-        power = 9;   
+        power = 9;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

@@ -22,9 +22,9 @@ public class IMKataphronBreachers extends Eintrag {
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
         ogE.addElement(new OptionsGruppeEintrag("Torsion cannon", getPts("Torsion cannon")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Arc claw", getPts("Arc claw")));
         add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, Kampflaeuferschwadron.getModelle()));
         ogE.addElement(new OptionsGruppeEintrag("Hydraulic claw", getPts("Hydraulic claw")));
@@ -42,16 +42,16 @@ public class IMKataphronBreachers extends Eintrag {
 
         o2.setMaxAnzahl(Kampflaeuferschwadron.getModelle());
         o2x.setMaxAnzahl(Kampflaeuferschwadron.getModelle());
-        o2x.setAnzahl(0, o2x.getMaxAnzahl() - o2.getAnzahl());  
-        
+        o2x.setAnzahl(0, o2x.getMaxAnzahl() - o2.getAnzahl());
+
         power = 9;
-		if(Kampflaeuferschwadron.getModelle() > 9){
-			power = 36;
-		} else if(Kampflaeuferschwadron.getModelle() > 6){
-			power = 27;
-		} else if(Kampflaeuferschwadron.getModelle() > 3){
-			power = 18;
-		}
+        if (Kampflaeuferschwadron.getModelle() > 9) {
+            power = 36;
+        } else if (Kampflaeuferschwadron.getModelle() > 6) {
+            power = 27;
+        } else if (Kampflaeuferschwadron.getModelle() > 3) {
+            power = 18;
+        }
     }
-    
+
 }

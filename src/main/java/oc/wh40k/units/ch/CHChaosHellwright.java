@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHChaosHellwright extends Eintrag {
 
-	public CHChaosHellwright() {
+    public CHChaosHellwright() {
 
-		name = "Chaos Hellwright";
+        name = "Chaos Hellwright";
         grundkosten = getPts("Chaos Hellwright");
-        power = 8;   
+        power = 8;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

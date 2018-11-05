@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHHeraldofSlaaneshonSteed extends Eintrag {
 
-	public CHHeraldofSlaaneshonSteed() {
-		name = "Herald of Slaanesh on Steed";
+    public CHHeraldofSlaaneshonSteed() {
+        name = "Herald of Slaanesh on Steed";
         grundkosten = getPts("Herald of Slaanesh on Steed");
-        power = 4;   
-       	
-		complete();
-	}
+        power = 4;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

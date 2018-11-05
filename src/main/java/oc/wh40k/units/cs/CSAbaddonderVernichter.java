@@ -6,28 +6,28 @@ import oc.Eintrag;
 public class CSAbaddonderVernichter extends Eintrag {
 
 
-	public CSAbaddonderVernichter() {
-		name = "Abaddon der Vernichter";
-		grundkosten = 265;
+    public CSAbaddonderVernichter() {
+        name = "Abaddon der Vernichter";
+        grundkosten = 265;
 
-		add(ico = new oc.Picture("oc/wh40k/images/AbbaddontheDespoiler.gif"));
-		
-		BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Auserkorene");
-		BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Auserkorene");
+        add(ico = new oc.Picture("oc/wh40k/images/AbbaddontheDespoiler.gif"));
 
-		complete();
-	}
+        BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Auserkorene");
+        BuildaHQ.getChooserGruppe(2).removeSpezialAuswahl("Auserkorene");
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
-	@Override
-	public void deleteYourself() {
-		BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Auserkorene");
-		BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Auserkorene");
-		super.deleteYourself();
-	}
+    }
+
+    @Override
+    public void deleteYourself() {
+        BuildaHQ.getChooserGruppe(2).addSpezialAuswahl("Auserkorene");
+        BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Auserkorene");
+        super.deleteYourself();
+    }
 
 }

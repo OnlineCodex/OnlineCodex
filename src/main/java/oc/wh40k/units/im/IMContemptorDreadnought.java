@@ -5,26 +5,26 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMContemptorDreadnought extends Eintrag {
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o2;
 
-	public IMContemptorDreadnought() {
-		name = "Contemptor Dreadnought";
-		grundkosten = getPts("Contemptor Dreadnought") + 
-				      getPts("Dreadnought combat weapon (other models)") + 
-				      getPts("Combi-bolter");
-		power = 8;
+    public IMContemptorDreadnought() {
+        name = "Contemptor Dreadnought";
+        grundkosten = getPts("Contemptor Dreadnought") +
+                getPts("Dreadnought combat weapon (other models)") +
+                getPts("Combi-bolter");
+        power = 8;
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", "Kheres patternassault cannon", getPts("Kheres patternassault cannon")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", "Kheres patternassault cannon", getPts("Kheres patternassault cannon")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		o2.alwaysSelected();
-	}
+    @Override
+    public void refreshen() {
+        o2.alwaysSelected();
+    }
 }

@@ -4,23 +4,23 @@ import oc.Eintrag;
 
 public class ORSkraksSkullNobz extends Eintrag {
 
-	public ORSkraksSkullNobz() {
+    public ORSkraksSkullNobz() {
 
-		kategorie = 2;
-		name = "Skrak's Skull-Nobz";
-		grundkosten = 190;
+        kategorie = 2;
+        name = "Skrak's Skull-Nobz";
+        grundkosten = 190;
 
-		add(ico = new oc.Picture("oc/wh40k/images/MekBossBuzzgob.gif"));
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/MekBossBuzzgob.gif"));
+        complete();
+    }
 
-	public void deleteYourself() {
-		super.deleteYourself();
+    public void deleteYourself() {
+        super.deleteYourself();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

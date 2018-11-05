@@ -5,24 +5,24 @@ import oc.OptionsEinzelUpgrade;
 
 public class SMXiphonPatternInterceptor extends Eintrag {
 
-	public SMXiphonPatternInterceptor() {
-		name = "Xiphon Pattern Interceptor";
-		grundkosten = 205;
+    public SMXiphonPatternInterceptor() {
+        name = "Xiphon Pattern Interceptor";
+        grundkosten = 205;
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chaff launcher", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armoured cockpit", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chaff launcher", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armoured cockpit", 5));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
-	@Override
-	public void deleteYourself() {
-	}
+    @Override
+    public void deleteYourself() {
+    }
 
 }

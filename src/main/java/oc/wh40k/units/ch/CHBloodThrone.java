@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHBloodThrone extends Eintrag {
 
-	public CHBloodThrone() {
-		name = "Blood Throne";
+    public CHBloodThrone() {
+        name = "Blood Throne";
         grundkosten = getPts("Blood Throne");
-        power = 6;   
-       	
-		complete();
-	}
+        power = 6;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

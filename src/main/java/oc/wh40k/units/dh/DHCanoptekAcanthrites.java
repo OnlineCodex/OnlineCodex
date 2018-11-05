@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class DHCanoptekAcanthrites extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public DHCanoptekAcanthrites() {
-		grundkosten = 0;
+    public DHCanoptekAcanthrites() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Acanthrites", 3, 9, 50);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Acanthrites", 3, 9, 50);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NECanoptekAcanthrites.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/NECanoptekAcanthrites.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

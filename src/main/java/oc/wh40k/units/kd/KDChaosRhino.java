@@ -4,25 +4,25 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class KDChaosRhino extends Eintrag {
-	RuestkammerStarter ausruestung;
-	
-	public KDChaosRhino() {
-		name = "Rhino";
-		grundkosten = 35;
+    RuestkammerStarter ausruestung;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SWEhrwuerdigerCybot.jpg"));
+    public KDChaosRhino() {
+        name = "Rhino";
+        grundkosten = 35;
 
-		seperator();
-		
-		ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "KDFahrzeugruestkammer", "Ausrüstung");
-		ausruestung.initKammer(false);
-		ausruestung.setButtonText("Ausrüstung");
-		add(ausruestung);
+        add(ico = new oc.Picture("oc/wh40k/images/SWEhrwuerdigerCybot.jpg"));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-	}
+        ausruestung = new RuestkammerStarter(ID, randAbstand, cnt, "KDFahrzeugruestkammer", "Ausrüstung");
+        ausruestung.initKammer(false);
+        ausruestung.setButtonText("Ausrüstung");
+        add(ausruestung);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

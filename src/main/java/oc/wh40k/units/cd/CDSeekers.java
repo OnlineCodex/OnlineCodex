@@ -6,36 +6,36 @@ import oc.OptionsEinzelUpgrade;
 
 public class CDSeekers extends Eintrag {
 
-	AnzahlPanel seekers;
-	OptionsEinzelUpgrade heartseeker;
+    AnzahlPanel seekers;
+    OptionsEinzelUpgrade heartseeker;
 
-	public CDSeekers() {
+    public CDSeekers() {
 
-		name = "Bloodcrushers";
+        name = "Bloodcrushers";
         grundkosten = 0;
-        power = 5; 
+        power = 5;
 
         add(seekers = new AnzahlPanel(ID, randAbstand, cnt, "Seekers", 5, 20, getPts("Seekers")));
-        
+
         seperator();
-        
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument of Chaos", getPts("Instrument of Chaos")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonic Icon", getPts("Daemonic Icon")));
-		
-		seperator();
-		
-		add(heartseeker = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Heartseeker", getPts("Heartseeker")));
-		
-		complete();
 
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Instrument of Chaos", getPts("Instrument of Chaos")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonic Icon", getPts("Daemonic Icon")));
 
-	public void deleteYourself() { 
-	}
+        seperator();
+
+        add(heartseeker = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Heartseeker", getPts("Heartseeker")));
+
+        complete();
+
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		if(!heartseeker.isSelected())heartseeker.setSelected(true);
-	}
+    @Override
+    public void refreshen() {
+        if (!heartseeker.isSelected()) heartseeker.setSelected(true);
+    }
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHSloppityBilepiper extends Eintrag {
 
-	public CHSloppityBilepiper() {
-		name = "Sloppity Bilepiper";
+    public CHSloppityBilepiper() {
+        name = "Sloppity Bilepiper";
         grundkosten = getPts("Sloppity Bilepiper") + getPts("Marotter");
-        power = 3;   
-       	
-		complete();
-	}
+        power = 3;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

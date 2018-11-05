@@ -5,15 +5,15 @@ import oc.Eintrag;
 public class TATidewallGunrig extends Eintrag {
 
 
-	public TATidewallGunrig() {
-		name = "Tidewall Gunrig";
-		grundkosten = getPts("Tidewall Gunring") + getPts("Supremacy railgun");
+    public TATidewallGunrig() {
+        name = "Tidewall Gunrig";
+        grundkosten = getPts("Tidewall Gunring") + getPts("Supremacy railgun");
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = 6;
-	}
+    @Override
+    public void refreshen() {
+        power = 6;
+    }
 }

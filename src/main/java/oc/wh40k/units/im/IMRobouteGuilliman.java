@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class IMRobouteGuilliman extends Eintrag {
 
-	public IMRobouteGuilliman() {
-		name = "Roboute Guilliman";
-		grundkosten = getPts("Roboute Guilliman");
-		power = 18;
-		seperator();
+    public IMRobouteGuilliman() {
+        name = "Roboute Guilliman";
+        grundkosten = getPts("Roboute Guilliman");
+        power = 18;
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	
+
 }

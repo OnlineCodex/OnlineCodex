@@ -1,39 +1,37 @@
 package oc.wh40k.units.dw;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RefreshListener;
 
 public class DWLandRaider extends Eintrag {
 
-	boolean chronusSelected = false;
+    boolean chronusSelected = false;
 
-	public DWLandRaider() {
-		name = "Land Raider";
-		grundkosten = 250;
+    public DWLandRaider() {
+        name = "Land Raider";
+        grundkosten = 250;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandRaider.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandRaider.jpg"));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Radarsuchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
 
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
+    @Override
+    public void deleteYourself() {
 
-		super.deleteYourself();
-	}
+        super.deleteYourself();
+    }
 
 }

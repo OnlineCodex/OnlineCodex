@@ -5,24 +5,24 @@ import oc.Eintrag;
 
 public class CHNurglings extends Eintrag {
 
-	AnzahlPanel Nurglings;
+    AnzahlPanel Nurglings;
 
-	public CHNurglings() {
+    public CHNurglings() {
 
-		name = "Nurglings";
+        name = "Nurglings";
         grundkosten = 0;
-        power = 3; 
+        power = 3;
 
         add(Nurglings = new AnzahlPanel(ID, randAbstand, cnt, "Nurglings", 3, 9, getPts("Nurglings")));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-		power = 3 +
-				((Nurglings.getModelle()==6)?3:0) +
-				((Nurglings.getModelle()==9)?6:0);
-	}
+    @Override
+    public void refreshen() {
+        power = 3 +
+                ((Nurglings.getModelle() == 6) ? 3 : 0) +
+                ((Nurglings.getModelle() == 9) ? 6 : 0);
+    }
 }

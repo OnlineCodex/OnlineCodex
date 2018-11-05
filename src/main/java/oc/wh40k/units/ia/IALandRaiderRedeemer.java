@@ -10,24 +10,24 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsUpgradeGruppe;
 
 public class IALandRaiderRedeemer extends Eintrag {
-        OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o2;
 
-	public IALandRaiderRedeemer() {
-		name = "Land Raider Redeemer";
-		grundkosten = 240;
-                
-		add(ico = new oc.Picture("oc/wh40k/images/GKLandRaiderRedeemer.jpg"));
+    public IALandRaiderRedeemer() {
+        name = "Land Raider Redeemer";
+        grundkosten = 240;
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
+        add(ico = new oc.Picture("oc/wh40k/images/GKLandRaiderRedeemer.jpg"));
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multimelter", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sturmbolter", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suchkopfrakete", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zusätzliche Panzerung", 10));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

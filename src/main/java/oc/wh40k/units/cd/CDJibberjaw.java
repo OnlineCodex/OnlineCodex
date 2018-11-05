@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class CDJibberjaw extends Eintrag {
 
-		public CDJibberjaw() {
+    public CDJibberjaw() {
 
-		name = "Jibberjaw";
-		grundkosten = 150;
+        name = "Jibberjaw";
+        grundkosten = 150;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDJibberjaw.gif"));
-		
-		complete();
+        add(ico = new oc.Picture("oc/wh40k/images/CDJibberjaw.gif"));
 
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

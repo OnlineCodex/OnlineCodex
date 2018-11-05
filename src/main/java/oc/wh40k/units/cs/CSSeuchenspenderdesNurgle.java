@@ -6,25 +6,25 @@ import oc.OptionsUpgradeGruppe;
 
 public class CSSeuchenspenderdesNurgle extends Eintrag {
 
-	public CSSeuchenspenderdesNurgle() {
-		name = "Seuchenspender des Nurgle";
-		grundkosten = 450;
+    public CSSeuchenspenderdesNurgle() {
+        name = "Seuchenspender des Nurgle";
+        grundkosten = 450;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SeuchenspenderdesNurgle.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/SeuchenspenderdesNurgle.gif"));
 
-		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Synchronisierter Bolter", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Kombi-Flammenwerfer", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 15));
-		add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Synchronisierter Bolter", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Kombi-Flammenwerfer", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Inferno-Raketenwerfer", 15));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

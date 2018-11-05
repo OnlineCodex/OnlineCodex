@@ -6,46 +6,46 @@ import oc.RuestkammerStarter;
 
 public class DKReaverTitanManiple extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKReaverTitanManiple() {
-		name = "Reaver Titan Maniple";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
-		this.gesamtpunkteImmerAnzeigen=false;
+    public DKReaverTitanManiple() {
+        name = "Reaver Titan Maniple";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
+        this.gesamtpunkteImmerAnzeigen = false;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/DKMarauderSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
-		t1.initKammer();
-		t1.setButtonText("Reaver");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
+        t1.initKammer();
+        t1.setButtonText("Reaver");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
-		t2.initKammer();
-		t2.setButtonText("Reaver 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
+        t2.initKammer();
+        t2.setButtonText("Reaver 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
-		t3.initKammer();
-		t3.setButtonText("Reaver 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKReaverKammer", "Reaver\n");
+        t3.initKammer();
+        t3.setButtonText("Reaver 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 }

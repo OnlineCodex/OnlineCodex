@@ -6,26 +6,26 @@ import oc.RuestkammerStarter;
 
 public class IMCaptaininCataphractiiArmour extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMCaptaininCataphractiiArmour() {
-		name = "Captain in Cataphractii Armour";
-		grundkosten = getPts("Captain in Cataphractii Armour");
-		power = 8;
+    public IMCaptaininCataphractiiArmour() {
+        name = "Captain in Cataphractii Armour";
+        grundkosten = getPts("Captain in Cataphractii Armour");
+        power = 8;
 
-		seperator();
+        seperator();
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Captain in Cataphractii Armour");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain in Cataphractii Armour");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

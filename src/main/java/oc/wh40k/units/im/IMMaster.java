@@ -6,31 +6,31 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMMaster extends Eintrag {
-	OptionsEinzelUpgrade jump;
-	RuestkammerStarter waffenUndReliquien;
+    OptionsEinzelUpgrade jump;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMMaster() {
-		name = "Master";
-		grundkosten = getPts("Master") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+    public IMMaster() {
+        name = "Master";
+        grundkosten = getPts("Master") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
-		seperator();
+        seperator();
 
-		add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Master with Jump Pack") - getPts("Master")));
+        add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Master with Jump Pack") - getPts("Master")));
 
-		seperator();
+        seperator();
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Captain");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = 5 + (jump.isSelected()?1:0);
-	}
+    @Override
+    public void refreshen() {
+        power = 5 + (jump.isSelected() ? 1 : 0);
+    }
 }

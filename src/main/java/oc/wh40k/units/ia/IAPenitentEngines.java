@@ -5,22 +5,22 @@ import oc.Eintrag;
 
 public class IAPenitentEngines extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public IAPenitentEngines() {
-		name = "Penitent Engines";
-		grundkosten = 0;
+    public IAPenitentEngines() {
+        name = "Penitent Engines";
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Peniten Engines", 1, 3, 80);
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Peniten Engines", 1, 3, 80);
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASLaeuterer.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASLaeuterer.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

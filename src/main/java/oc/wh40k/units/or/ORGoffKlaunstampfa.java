@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class ORGoffKlaunstampfa extends Eintrag {
 
-	public ORGoffKlaunstampfa() {
-		name = "Goff-Klau'nstampfa";
-		grundkosten = 450;
+    public ORGoffKlaunstampfa() {
+        name = "Goff-Klau'nstampfa";
+        grundkosten = 450;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/Goff-Klaunstampfa.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/Goff-Klaunstampfa.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

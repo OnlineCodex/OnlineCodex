@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class NEImotekhtheStormlord extends Eintrag {
 
-	public NEImotekhtheStormlord() {
-		name = "Imotekh the Stormlord";
-		grundkosten = getPts("Imotekh the Stormlord");
+    public NEImotekhtheStormlord() {
+        name = "Imotekh the Stormlord";
+        grundkosten = getPts("Imotekh the Stormlord");
 
-		power = 10;
-				
-		add(ico = new oc.Picture("oc/wh40k/images/NEImotekhderSturmherr.jpg"));
+        power = 10;
 
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/NEImotekhderSturmherr.jpg"));
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

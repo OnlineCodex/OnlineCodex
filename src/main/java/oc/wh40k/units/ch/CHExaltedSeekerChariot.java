@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHExaltedSeekerChariot extends Eintrag {
 
-	public CHExaltedSeekerChariot() {
-		name = "Exalted Seeker Chariot";
+    public CHExaltedSeekerChariot() {
+        name = "Exalted Seeker Chariot";
         grundkosten = getPts("Exalted Seeker Chariot");
-        power = 5;   
-       	
-		complete();
-	}
+        power = 5;
 
-	@Override
-	public void refreshen() {
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

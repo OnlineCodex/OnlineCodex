@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class CDDieBlauenGelehrten extends Eintrag {
 
-	public CDDieBlauenGelehrten() {
+    public CDDieBlauenGelehrten() {
 
-		name = "Die Blauen Gelehrten";
+        name = "Die Blauen Gelehrten";
 
-		grundkosten = 81;
+        grundkosten = 81;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CDDieBlauenGelehrten.gif"));
-		
-		complete();
+        add(ico = new oc.Picture("oc/wh40k/images/CDDieBlauenGelehrten.gif"));
 
-	}
+        complete();
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

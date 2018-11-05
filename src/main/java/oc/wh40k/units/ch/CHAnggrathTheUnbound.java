@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHAnggrathTheUnbound extends Eintrag {
 
-	public CHAnggrathTheUnbound() {
+    public CHAnggrathTheUnbound() {
 
-		name = "An'ggrath the Unbound";
+        name = "An'ggrath the Unbound";
         grundkosten = getPts("An'ggrath the Unbound");
-        power = 35;   
+        power = 35;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

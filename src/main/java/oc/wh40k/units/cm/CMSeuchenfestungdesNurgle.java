@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CMSeuchenfestungdesNurgle extends Eintrag {
 
-	public CMSeuchenfestungdesNurgle() {
-		name = "Seuchenfestung des Nurgle";
-		grundkosten = 700;
+    public CMSeuchenfestungdesNurgle() {
+        name = "Seuchenfestung des Nurgle";
+        grundkosten = 700;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SeuchenfestungdesNurgle.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/SeuchenfestungdesNurgle.gif"));
 
-		complete();
-	}
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -1,10 +1,6 @@
 package oc.wh40k.units.gk;
 
-import oc.AnzahlPanel;
-import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class GKTerminatorSquad extends Eintrag {
 
@@ -27,7 +23,7 @@ public class GKTerminatorSquad extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/GKTerminatortrupp.jpg"));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Psischwert", "Nemesis-Psischwert", 0));
@@ -55,20 +51,20 @@ public class GKTerminatorSquad extends Eintrag {
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
         rkBoss.setAbwaehlbar(false);
-        
+
         seperator();
-        
-		rkRaider = new RuestkammerStarter(ID, randAbstand, cnt, "GKLandRaiderKammer", "Land Raider");
-		rkRaider.initKammer();
-		rkRaider.setButtonText("Land Raider");
-		add(rkRaider);
+
+        rkRaider = new RuestkammerStarter(ID, randAbstand, cnt, "GKLandRaiderKammer", "Land Raider");
+        rkRaider.initKammer();
+        rkRaider.setButtonText("Land Raider");
+        add(rkRaider);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        if(!rkBoss.isSelected()) rkBoss.setSelected(true);
+        if (!rkBoss.isSelected()) rkBoss.setSelected(true);
 
         int subtractor = 1; // last one is the boss
 
@@ -79,11 +75,11 @@ public class GKTerminatorSquad extends Eintrag {
         o2.setMaxAnzahl((int) Math.floor(squad.getModelle() / 5));
         o2def.setMaxAnzahl(squad.getModelle() - o2.getAnzahl() - 1); // last one is the boss
         o2def.setAnzahl(0, squad.getModelle() - o2.getAnzahl() - 1); // last one is the boss
-        
-		rkRaider.getPanel().setLocation(
-				(int) rkRaider.getPanel().getLocation().getX(),
-				(int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
-			);
+
+        rkRaider.getPanel().setLocation(
+                (int) rkRaider.getPanel().getLocation().getX(),
+                (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+        );
     }
 
 }

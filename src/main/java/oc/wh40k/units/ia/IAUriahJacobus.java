@@ -4,26 +4,26 @@ import oc.Eintrag;
 
 public class IAUriahJacobus extends Eintrag {
 
-	public IAUriahJacobus() {
-		name = "Uriah Jacobus";
-		grundkosten = 100;
+    public IAUriahJacobus() {
+        name = "Uriah Jacobus";
+        grundkosten = 100;
 
-		
-		add(ico = new oc.Picture("oc/wh40k/images/ASUriahJacobus.jpg"));
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ASUriahJacobus.jpg"));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
 
 }

@@ -3,21 +3,21 @@ package oc.wh40k.units.cd;
 
 public class CDExaltedFlamerofTzeentch extends CDHerold {
 
-	
-	public CDExaltedFlamerofTzeentch() {
 
-		name = "Exalted Flamer of Tzeentch";
+    public CDExaltedFlamerofTzeentch() {
 
-		grundkosten = 50;
-		
-		add(ico = new oc.Picture("oc/wh40k/images/CDHerolddesTzeentch.gif"));
+        name = "Exalted Flamer of Tzeentch";
 
-		complete();
+        grundkosten = 50;
 
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/CDHerolddesTzeentch.gif"));
 
-	@Override
-	public void refreshen() {
-       
-	}
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 }

@@ -4,19 +4,19 @@ import oc.Eintrag;
 
 public class IMSergeantChronus extends Eintrag {
 
-	public IMSergeantChronus() {
-		name = "Sergeant Chronus";
-		grundkosten = getPts("Sergeant Chronus");
-		power = 3;
+    public IMSergeantChronus() {
+        name = "Sergeant Chronus";
+        grundkosten = getPts("Sergeant Chronus");
+        power = 3;
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
-	
+    }
+
 }

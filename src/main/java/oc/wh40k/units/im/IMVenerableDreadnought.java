@@ -5,44 +5,40 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMVenerableDreadnought extends Eintrag {
-	OptionsUpgradeGruppe o1, o2;
+    OptionsUpgradeGruppe o1, o2;
 
-	public IMVenerableDreadnought() {
-		name = "Venerable Dreadnought";
-		grundkosten = getPts("Venerable Dreadnought");
-		power = 8;
+    public IMVenerableDreadnought() {
+        name = "Venerable Dreadnought";
+        grundkosten = getPts("Venerable Dreadnought");
+        power = 8;
 
-		seperator();
+        seperator();
 
-		if(!buildaVater.getFormationType().equals("Deathwatch"))
-		{
-			ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
-		}
-		else
-		{
-			ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
-			ogE.addElement(new OptionsGruppeEintrag("Heavy plasma cannon", getPts("Heavy plasma cannon")));
-			ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
-		}
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        if (!buildaVater.getFormationType().equals("Deathwatch")) {
+            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+        } else {
+            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Heavy plasma cannon", getPts("Heavy plasma cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
+        }
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("DCW + Storm bolter", "Dreadnought combat weapon + Storm bolter", getPts("Dreadnought combat weapon (other models)") + getPts("Storm bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("DCW + Heavy flamer", "Dreadnought combat weapon + Heavy flamer", getPts("Dreadnought combat weapon (other models)") + getPts("Heavy flamer (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
-		if(!buildaVater.getFormationType().equals("Deathwatch"))
-		{
-			ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
-		}
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("DCW + Storm bolter", "Dreadnought combat weapon + Storm bolter", getPts("Dreadnought combat weapon (other models)") + getPts("Storm bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("DCW + Heavy flamer", "Dreadnought combat weapon + Heavy flamer", getPts("Dreadnought combat weapon (other models)") + getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
+        if (!buildaVater.getFormationType().equals("Deathwatch")) {
+            ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
+        }
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-	}
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+    }
 }

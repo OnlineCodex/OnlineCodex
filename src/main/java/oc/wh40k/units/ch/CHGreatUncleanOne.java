@@ -8,37 +8,37 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHGreatUncleanOne extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	RuestkammerStarter psychicPowers;
-	
-	public CHGreatUncleanOne() {
+    OptionsUpgradeGruppe o1;
+    RuestkammerStarter psychicPowers;
 
-		name = "Great Unclean One";
+    public CHGreatUncleanOne() {
+
+        name = "Great Unclean One";
         grundkosten = 0;
-        power = 12;   
-                
-		ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
-		ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
-		ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and bileblade", getPts("Great Unclean one with Doomsday bell and bileblade")));
-		ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and plague fail", getPts("Great Unclean one with Doomsday bell and plague fail")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers)psychicPowers.getKammer()).enableNurgle();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
+        power = 12;
 
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
+        ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
+        ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and bileblade", getPts("Great Unclean one with Doomsday bell and bileblade")));
+        ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and plague fail", getPts("Great Unclean one with Doomsday bell and plague fail")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableNurgle();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

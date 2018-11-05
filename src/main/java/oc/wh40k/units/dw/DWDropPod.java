@@ -7,31 +7,31 @@ import oc.OptionsUpgradeGruppe;
 
 public class DWDropPod extends Eintrag {
 
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o2;
 
-	public DWDropPod() {
-		name = "Drop Pod";
-		grundkosten = 35;
+    public DWDropPod() {
+        name = "Drop Pod";
+        grundkosten = 35;
 
-		add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederStorm.jpg"));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
+        add(ico = new oc.Picture("oc/wh40k/images/SMLandSpeederStorm.jpg"));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Sturmbolter", 0));
         ogE.addElement(new OptionsGruppeEintrag("Deathwind-System", 15));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
-		
-		seperator();
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Peilsender", 10));
 
-	@Override
-	public void refreshen() {
-		o2.alwaysSelected();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o2.alwaysSelected();
+    }
 
 }
 

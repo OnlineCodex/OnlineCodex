@@ -5,21 +5,21 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHBurningChariot extends Eintrag {
 
-	OptionsEinzelUpgrade waffe2;
-	
-	public CHBurningChariot() {
+    OptionsEinzelUpgrade waffe2;
 
-		name = "Burning Chariot";
+    public CHBurningChariot() {
+
+        name = "Burning Chariot";
         grundkosten = getPts("Burning Chariot");
-        power = 5;        
-        
-		add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
-        
+        power = 5;
+
+        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
+
         complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

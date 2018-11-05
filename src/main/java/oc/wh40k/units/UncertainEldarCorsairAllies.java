@@ -20,7 +20,7 @@ public class UncertainEldarCorsairAllies extends Eintrag {
             } else {
                 int corsairSquads = getCountFromInformationVector("ECCorsairSquad");
                 int uncertainAllies = getCountFromInformationVector("ECUncertainAllies");
-                if(uncertainAllies > corsairSquads) {
+                if (uncertainAllies > corsairSquads) {
                     setFehlermeldung("Corsair Squads < " + uncertainAllies + "!");
                 } else {
                     setFehlermeldung("");
@@ -36,5 +36,5 @@ public class UncertainEldarCorsairAllies extends Eintrag {
             addToInformationVector("ECEldarAllies", -1);
         }
     }
-    
+
 }

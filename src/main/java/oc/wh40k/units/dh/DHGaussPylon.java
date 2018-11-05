@@ -16,5 +16,5 @@ public class DHGaussPylon extends Eintrag {
     @Override
     public void refreshen() {
     }
-    
+
 }

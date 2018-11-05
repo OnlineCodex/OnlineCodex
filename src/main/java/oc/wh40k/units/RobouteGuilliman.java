@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class RobouteGuilliman extends Eintrag {
 
-	public RobouteGuilliman() {
-		name = "Roboute Guilliman";
-		grundkosten = 350;
+    public RobouteGuilliman() {
+        name = "Roboute Guilliman";
+        grundkosten = 350;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
+
 }

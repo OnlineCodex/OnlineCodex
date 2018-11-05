@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class TAFiresightMarksman extends Eintrag {
 
-	public TAFiresightMarksman() {
+    public TAFiresightMarksman() {
 
-		name = "Firesight Marksman";
+        name = "Firesight Marksman";
 
-		grundkosten = getPts("Firesight Marksman") + getPts("Markerlight") + getPts("Pulse pistol");
+        grundkosten = getPts("Firesight Marksman") + getPts("Markerlight") + getPts("Pulse pistol");
 
-		complete();
+        complete();
 
-	}
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = 1;
-	}
+    //@OVERRIDE
+    public void refreshen() {
+        power = 1;
+    }
 }

@@ -5,24 +5,24 @@ import oc.Eintrag;
 
 public class CHMyphiticBlightHaulers extends Eintrag {
 
-	AnzahlPanel Nurglings;
+    AnzahlPanel Nurglings;
 
-	public CHMyphiticBlightHaulers() {
+    public CHMyphiticBlightHaulers() {
 
-		name = "Myphitic Blight-haulers";
+        name = "Myphitic Blight-haulers";
         grundkosten = 0;
-        power = 2; 
-        
-        int pts = getPts("Myphitic Blight-haulers")+ getPts("Bile spurt") + getPts("Missile launcher") + getPts("Multi-melta") + getPts("Gnashing maw");
+        power = 2;
+
+        int pts = getPts("Myphitic Blight-haulers") + getPts("Bile spurt") + getPts("Missile launcher") + getPts("Multi-melta") + getPts("Gnashing maw");
 
         add(Nurglings = new AnzahlPanel(ID, randAbstand, cnt, "Myphitic Blight-haulers", 1, 3, pts));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-		power = Nurglings.getModelle() * 2;
-	}
+    @Override
+    public void refreshen() {
+        power = Nurglings.getModelle() * 2;
+    }
 }

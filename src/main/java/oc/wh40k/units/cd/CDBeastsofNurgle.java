@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class CDBeastsofNurgle extends Eintrag {
 
-	AnzahlPanel Nurglings;
+    AnzahlPanel Nurglings;
 
-	public CDBeastsofNurgle() {
+    public CDBeastsofNurgle() {
 
-		name = "Beasts of Nurgle";
+        name = "Beasts of Nurgle";
         grundkosten = 0;
-        power = 2; 
+        power = 2;
 
         add(Nurglings = new AnzahlPanel(ID, randAbstand, cnt, "Beasts of Nurgle", 1, 9, getPts("Beasts of Nurgle")));
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

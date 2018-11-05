@@ -1,46 +1,42 @@
 package oc.wh40k.units.dk;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 
 public class DKCommissarGeneral extends Eintrag {
 
     RuestkammerStarter rkTransport;
 
-	public DKCommissarGeneral() {
-		name = "Commissar General";
-		grundkosten = 70;
+    public DKCommissarGeneral() {
+        name = "Commissar General";
+        grundkosten = 70;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGLordCommissar.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGLordCommissar.jpg"));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Boltgun", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Power sword", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
-		add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
+        ogE.addElement(new OptionsGruppeEintrag("Boltgun", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Power fist", 15));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 2));
 
-		seperator();
+        seperator();
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Melta bombs", 5));
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Carapace Armour", 10));
-		add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Camo cloak", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Melta bombs", 5));
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Carapace Armour", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand + 10, cnt, "option", "Camo cloak", 10));
 
-		seperator();
+        seperator();
 
-		rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
-		rkTransport.initKammer();
-		add(rkTransport);
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
+        rkTransport.initKammer();
+        add(rkTransport);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CMSilberzitadelledesTzeentch extends Eintrag {
 
-	public CMSilberzitadelledesTzeentch() {
-		name = "Silberzitadelle des Tzeentch";
-		grundkosten = 400;
+    public CMSilberzitadelledesTzeentch() {
+        name = "Silberzitadelle des Tzeentch";
+        grundkosten = 400;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CMSilberzitadelledesTzeentch.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/CMSilberzitadelledesTzeentch.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

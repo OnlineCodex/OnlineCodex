@@ -1,4 +1,3 @@
-
 package oc.wh40k.units.or;
 
 import oc.OptionsGruppeEintrag;
@@ -7,29 +6,29 @@ import oc.RuestkammerVater;
 
 public class ORFahrzeugruestkammer extends RuestkammerVater {
 
-	OptionsUpgradeGruppe fahrzeugausruestung;
+    OptionsUpgradeGruppe fahrzeugausruestung;
 
-	public ORFahrzeugruestkammer() {
-		grundkosten = 0;
-	}
+    public ORFahrzeugruestkammer() {
+        grundkosten = 0;
+    }
 
-	@Override
-	public void initButtons(boolean... defaults) {
-		
-		ogE.addElement(new OptionsGruppeEintrag("Rote Farbä", 5));
+    @Override
+    public void initButtons(boolean... defaults) {
+
+        ogE.addElement(new OptionsGruppeEintrag("Rote Farbä", 5));
         ogE.addElement(new OptionsGruppeEintrag("Vastärktä Rammä", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stikkbombschlueda", 5));
         ogE.addElement(new OptionsGruppeEintrag("Zusätzlich Panzerung", 10));
         ogE.addElement(new OptionsGruppeEintrag("Grothälfaz", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Abrizzbirnä", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Abrizzbirnä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Entaplankä", 15));
-        add(fahrzeugausruestung=new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE,9));
+        add(fahrzeugausruestung = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
 
-		sizeSetzen();
-	}
+        sizeSetzen();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

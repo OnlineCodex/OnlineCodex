@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class CDTheMasqueofSlaanesh extends Eintrag {
 
-	public CDTheMasqueofSlaanesh() {
+    public CDTheMasqueofSlaanesh() {
 
-		name = "The Masque of Slaanesh";
+        name = "The Masque of Slaanesh";
         grundkosten = getPts("The Masque of Slaanesh");
-        power = 4;   
-		complete();
+        power = 4;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

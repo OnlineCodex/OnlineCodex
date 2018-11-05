@@ -6,25 +6,25 @@ import oc.OptionsUpgradeGruppe;
 
 public class HHCALegionWhirlwindScorpius extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public HHCALegionWhirlwindScorpius() {
-		name = "Legion Whirlwind Scorpius";
-		grundkosten = 115;
-		
-		seperator();
+    public HHCALegionWhirlwindScorpius() {
+        name = "Legion Whirlwind Scorpius";
+        grundkosten = 115;
 
-		ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
-		ogE.addElement(new OptionsGruppeEintrag("Dozer blade", 5));
-		ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", 10));
+        ogE.addElement(new OptionsGruppeEintrag("Dozer blade", 5));
+        ogE.addElement(new OptionsGruppeEintrag("Extra armour", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
 
-	@Override
-	public void refreshen() {
-				
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+    }
 
 }

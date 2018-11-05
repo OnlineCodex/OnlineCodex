@@ -8,9 +8,9 @@ public class ORDeffkillaWartrike extends Eintrag {
 
     OptionsEinzelUpgrade attacksquig;
     RuestkammerStarter waffen;
-    
-    boolean megaBool=false;
-    boolean gazzBool=false;
+
+    boolean megaBool = false;
+    boolean gazzBool = false;
 
     public ORDeffkillaWartrike() {
         name = "Deffkilla Wartrike";
@@ -18,18 +18,19 @@ public class ORDeffkillaWartrike extends Eintrag {
         power = 6;
 
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
-        waffen.initKammer(false,false,false,false,false,false,true,false);
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false, false, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         complete();
     }
 
     @Override
-    public void refreshen() {}
+    public void refreshen() {
+    }
 }

@@ -6,25 +6,25 @@ import oc.OptionsUpgradeGruppe;
 
 public class KDChaosSpawn extends Eintrag {
 
-	AnzahlPanel squad;
-	OptionsUpgradeGruppe mal;
-	
-	public KDChaosSpawn() {
-		//name = "Chaosbrut";
-		grundkosten = 0;
+    AnzahlPanel squad;
+    OptionsUpgradeGruppe mal;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Spawn", 1, 5, 32);
-		add(squad);
+    public KDChaosSpawn() {
+        //name = "Chaosbrut";
+        grundkosten = 0;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosSpawn.gif"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Spawn", 1, 5, 32);
+        add(squad);
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosSpawn.gif"));
 
-		complete();
-	}
+        seperator();
 
-	@Override
-	public void refreshen() {
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class IMCommissarYarrick extends Eintrag {
 
-	public IMCommissarYarrick() {
-		name = "Commissar Yarrick";
-		grundkosten = getPts("Commissar Yarrick");
-		power = 9;
-		
-		
-		complete();
-	}
+    public IMCommissarYarrick() {
+        name = "Commissar Yarrick";
+        grundkosten = getPts("Commissar Yarrick");
+        power = 9;
 
-	@Override
-	public void refreshen() {
-		 setUnikat(true);
-	}
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

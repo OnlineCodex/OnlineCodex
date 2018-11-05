@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class IAInquisitorGreyfax extends Eintrag {
 
-	public IAInquisitorGreyfax() {
-		name = "Inquisitor Greyfax";
-		grundkosten = 150;
+    public IAInquisitorGreyfax() {
+        name = "Inquisitor Greyfax";
+        grundkosten = 150;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

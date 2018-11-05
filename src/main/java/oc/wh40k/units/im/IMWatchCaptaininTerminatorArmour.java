@@ -7,41 +7,41 @@ import oc.RuestkammerStarter;
 
 public class IMWatchCaptaininTerminatorArmour extends Eintrag {
 
-	boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
-	OptionsEinzelUpgrade meister, sturm, termi;
-	RuestkammerStarter waffenUndReliquien;
-	RuestkammerStarter termiWaffen;
-	RuestkammerStarter spezialAusruestung;
+    boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
+    OptionsEinzelUpgrade meister, sturm, termi;
+    RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter termiWaffen;
+    RuestkammerStarter spezialAusruestung;
 
-	public IMWatchCaptaininTerminatorArmour() {
-		name = "Watch Captain";
-		grundkosten = getPts("Watch Captain in Terminator Armour");
+    public IMWatchCaptaininTerminatorArmour() {
+        name = "Watch Captain";
+        grundkosten = getPts("Watch Captain in Terminator Armour");
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
 
-		seperator();
+        seperator();
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
-		((DeathWatchKammer)waffenUndReliquien.getKammer()).setType("Watch Captain in Terminator Armour");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
+        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Watch Captain in Terminator Armour");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void deleteYourself() {
+    @Override
+    public void deleteYourself() {
 
-		super.deleteYourself();
-	}
+        super.deleteYourself();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
 
-	}
+    }
 
 }

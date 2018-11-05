@@ -7,40 +7,40 @@ import oc.RuestkammerStarter;
 
 public class TYTyranidPrime extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
-	OptionsUpgradeGruppe o2;
+    OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o2;
 
-	RuestkammerStarter waffen;
-	
-	public TYTyranidPrime() {
-		name = "Tyranid Prime";
-		grundkosten = getPts("TyranidPrime");
-		
-		power = 5;
+    RuestkammerStarter waffen;
 
-		add(ico = new oc.Picture("oc/wh40k/images/TYKrieger.jpg"));
-		
-		seperator();
+    public TYTyranidPrime() {
+        name = "Tyranid Prime";
+        grundkosten = getPts("TyranidPrime");
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flesh Hooks", getPts("Flesh Hooks")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tyranid Prime)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (others)")));
+        power = 5;
 
-		seperator();
-		
-		waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Wargear");
-		((TYRuestkammer)waffen.getKammer()).setType("Tyranid Prime");
-		waffen.initKammer();
-		add(waffen);
-		waffen.setAbwaehlbar(false);
-		
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/TYKrieger.jpg"));
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flesh Hooks", getPts("Flesh Hooks")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tyranid Prime)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (others)")));
+
+        seperator();
+
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Wargear");
+        ((TYRuestkammer) waffen.getKammer()).setType("Tyranid Prime");
+        waffen.initKammer();
+        add(waffen);
+        waffen.setAbwaehlbar(false);
+
+        seperator();
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 
 }

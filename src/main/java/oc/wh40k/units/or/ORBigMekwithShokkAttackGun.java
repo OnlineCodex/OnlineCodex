@@ -6,11 +6,11 @@ import oc.RuestkammerStarter;
 
 public class ORBigMekwithShokkAttackGun extends Eintrag {
 
-	OptionsEinzelUpgrade grotoiler;
+    OptionsEinzelUpgrade grotoiler;
     RuestkammerStarter waffen;
-    
-    boolean megaBool=false;
-    boolean gazzBool=false;
+
+    boolean megaBool = false;
+    boolean gazzBool = false;
 
     public ORBigMekwithShokkAttackGun() {
         kategorie = 1;
@@ -21,13 +21,13 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
         add(grotoiler = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot oiler", getPts("Grot oiler")));
-        
+
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke)waffen.getKammer()).setDefaultNK("no weapon");
-        waffen.initKammer(false,false,false,false,false,false,true,false);
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
+        waffen.initKammer(false, false, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
@@ -36,6 +36,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
     }
 
     @Override
-    public void refreshen() {}
+    public void refreshen() {
+    }
 
 }

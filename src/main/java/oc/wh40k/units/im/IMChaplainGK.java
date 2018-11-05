@@ -7,37 +7,37 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMChaplainGK extends Eintrag {
-	OptionsEinzelUpgrade jump;
-	RuestkammerStarter waffenUndReliquien;
-	RuestkammerStarter psychicPowers;
-	
-	public IMChaplainGK() {
-		name = "Chaplain in Terminator Armour";
-		grundkosten = getPts("Chaplain GK");
-		power = 8;
-		seperator();
+    OptionsEinzelUpgrade jump;
+    RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter psychicPowers;
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Chaplain GK");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+    public IMChaplainGK() {
+        name = "Chaplain in Terminator Armour";
+        grundkosten = getPts("Chaplain GK");
+        power = 8;
+        seperator();
 
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(2);
-		((PsychicPowers)psychicPowers.getKammer()).enableSanctic();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
-	}
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Chaplain GK");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-	@Override
-	public void refreshen() {
-	}
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+    }
 }

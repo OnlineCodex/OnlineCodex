@@ -7,23 +7,23 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORMegatrakkScrapjet extends Eintrag {
 
-	AnzahlPanel buggies;
-	OptionsZaehlerGruppe BuggiesFK;
-	OptionsZaehlerGruppe BuggiesFKx;
+    AnzahlPanel buggies;
+    OptionsZaehlerGruppe BuggiesFK;
+    OptionsZaehlerGruppe BuggiesFKx;
 
-	public ORMegatrakkScrapjet() {
+    public ORMegatrakkScrapjet() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Megatrakk Scrapjet", "Megatrakk Scrapjets", 1, 3, getPts("Megatrakk Scrapjets") + getPts("Twin big shoota") * 2);
-		add(buggies);
-		
-		complete();
-	}
+        buggies = new AnzahlPanel(ID, randAbstand, cnt, "Megatrakk Scrapjet", "Megatrakk Scrapjets", 1, 3, getPts("Megatrakk Scrapjets") + getPts("Twin big shoota") * 2);
+        add(buggies);
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = buggies.getModelle() * 5;
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        power = buggies.getModelle() * 5;
+    }
 }

@@ -7,32 +7,32 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMRazorback extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public IMRazorback() {
-		name = "Razorback";
-		grundkosten = getPts("Razorback");
-		power = 5;
+    public IMRazorback() {
+        name = "Razorback";
+        grundkosten = getPts("Razorback");
+        power = 5;
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
-		ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer (SM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Las + twin plasma gun", getPts("lascannon (SM)") + getPts("Twin plasma gun")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Las + twin plasma gun", getPts("lascannon (SM)") + getPts("Twin plasma gun")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
-		
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        seperator();
 
-		complete();
-	}
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+    }
 }

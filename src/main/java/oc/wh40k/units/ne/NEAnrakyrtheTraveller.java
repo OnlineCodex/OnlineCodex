@@ -4,20 +4,20 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class NEAnrakyrtheTraveller extends Eintrag {
-    
+
     RuestkammerStarter rkTransport;
 
-	public NEAnrakyrtheTraveller() {
-		name = "Anrakyr the Traveller";
-		grundkosten = getPts("Anrakyr the Traveller");
+    public NEAnrakyrtheTraveller() {
+        name = "Anrakyr the Traveller";
+        grundkosten = getPts("Anrakyr the Traveller");
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
         power = 9;
-	}
+    }
 
 }

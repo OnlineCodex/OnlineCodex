@@ -5,33 +5,33 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORWarbossGrahkrag extends Eintrag {
 
-	OptionsEinzelUpgrade Munigrot;
+    OptionsEinzelUpgrade Munigrot;
 
-	public ORWarbossGrahkrag() {
+    public ORWarbossGrahkrag() {
 
-		kategorie = 1;
-		name = "Warboss Grahkrag";
-		grundkosten = 120;
+        kategorie = 1;
+        name = "Warboss Grahkrag";
+        grundkosten = 120;
 
-		add(ico = new oc.Picture("oc/wh40k/images/WarbossGrahkrag.gif"));
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/WarbossGrahkrag.gif"));
+        seperator();
 
         addToInformationVector("ORGrahkrag", 1);
         addToInformationVector("ORHQ", 1);
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-    public void deleteYourself() {  
+    @Override
+    public void deleteYourself() {
         addToInformationVector("ORGrahkrag", -1);
         addToInformationVector("ORHQ", -1);
         super.deleteYourself();
     }
 
-	//@OVERRIDE
-	public void refreshen() {
+    //@OVERRIDE
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 }

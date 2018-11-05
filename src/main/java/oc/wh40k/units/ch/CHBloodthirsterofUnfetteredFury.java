@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CHBloodthirsterofUnfetteredFury extends Eintrag {
 
-	
-	public CHBloodthirsterofUnfetteredFury() {
 
-		name = "Bloodthirster of Unfettered Fury";
+    public CHBloodthirsterofUnfetteredFury() {
+
+        name = "Bloodthirster of Unfettered Fury";
         grundkosten = getPts("Bloodthirster Of Insensate Rage");
-        power = 17;   
-		complete();
+        power = 17;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

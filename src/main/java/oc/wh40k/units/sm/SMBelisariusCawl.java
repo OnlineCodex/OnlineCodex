@@ -4,20 +4,20 @@ import oc.Eintrag;
 
 public class SMBelisariusCawl extends Eintrag {
 
-	public SMBelisariusCawl() {
-		name = "Belisarius Cawl";
-		grundkosten = 200;
+    public SMBelisariusCawl() {
+        name = "Belisarius Cawl";
+        grundkosten = 200;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

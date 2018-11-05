@@ -6,21 +6,21 @@ import oc.Eintrag;
 
 public class ORBoomdakkaSnazzwagons extends Eintrag {
 
-	AnzahlPanel buggies;
+    AnzahlPanel buggies;
 
-	public ORBoomdakkaSnazzwagons() {
+    public ORBoomdakkaSnazzwagons() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Boomdakka Snazzwagon", "Boomdakka Snazzwagons", 1, 3, getPts("Boomdakka Snazzwagons") + getPts("Big shoota"));
-		add(buggies);
-		
-		complete();
-	}
+        buggies = new AnzahlPanel(ID, randAbstand, cnt, "Boomdakka Snazzwagon", "Boomdakka Snazzwagons", 1, 3, getPts("Boomdakka Snazzwagons") + getPts("Big shoota"));
+        add(buggies);
 
-	//@OVERRIDE
-	public void refreshen() {
-		power = buggies.getModelle() * 5;
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        power = buggies.getModelle() * 5;
+    }
 }

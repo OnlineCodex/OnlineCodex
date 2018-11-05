@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class CHUrakaTheWarfiend extends Eintrag {
 
-	public CHUrakaTheWarfiend() {
+    public CHUrakaTheWarfiend() {
 
-		name = "Uraka the Warfiend";
+        name = "Uraka the Warfiend";
         grundkosten = getPts("Uraka the Warfiend");
-        power = 9;   
+        power = 9;
 
-		complete();
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

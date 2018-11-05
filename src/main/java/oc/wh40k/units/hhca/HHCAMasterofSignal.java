@@ -6,36 +6,36 @@ import oc.RuestkammerStarter;
 
 public class HHCAMasterofSignal extends Eintrag {
 
-	RuestkammerStarter Servo;
+    RuestkammerStarter Servo;
 
-	public HHCAMasterofSignal() {
-		name = "Master of signal";
-		grundkosten = 85;
+    public HHCAMasterofSignal() {
+        name = "Master of signal";
+        grundkosten = 85;
 
-		addToInformationVector("HHCASignal", 1);
-		
-		Servo = new RuestkammerStarter(ID, randAbstand, cnt, "HHCAConsulServoKammer", "");
-		//Centurion, Champion, Chaplain, Forge, Librarian, Master, Moritat, Primus, Siege, Vigilator
-		Servo.initKammer(false, false, false, false, false, true, false, false, false, false);
-		Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
-		add(Servo);
-		Servo.setAbwaehlbar(false);
-		
+        addToInformationVector("HHCASignal", 1);
 
-		complete();
-	}
+        Servo = new RuestkammerStarter(ID, randAbstand, cnt, "HHCAConsulServoKammer", "");
+        //Centurion, Champion, Chaplain, Forge, Librarian, Master, Moritat, Primus, Siege, Vigilator
+        Servo.initKammer(false, false, false, false, false, true, false, false, false, false);
+        Servo.setButtonText(BuildaHQ.translate("Weapons & Equipment"));
+        add(Servo);
+        Servo.setAbwaehlbar(false);
 
-	@Override
-	public void deleteYourself() {
-		
-		addToInformationVector("HHCASignal", -1);
-		super.deleteYourself();
-	}
 
-	@Override
-	public void refreshen() {
-				
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void deleteYourself() {
+
+        addToInformationVector("HHCASignal", -1);
+        super.deleteYourself();
+    }
+
+    @Override
+    public void refreshen() {
+
+
+    }
 
 }

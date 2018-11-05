@@ -6,26 +6,26 @@ import oc.OptionsUpgradeGruppe;
 
 public class HHCADeathstormDropPod extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    OptionsUpgradeGruppe o1;
 
-	public HHCADeathstormDropPod() {
-		name = "Deathstorm Drop Pod";
-		grundkosten = 90;
-		
-		seperator();
+    public HHCADeathstormDropPod() {
+        name = "Deathstorm Drop Pod";
+        grundkosten = 90;
 
-		ogE.addElement(new OptionsGruppeEintrag("Frag launchers", "Deathstorm frag launchers", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Krak launchers", "Deathstorm krak launchers", 30));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        seperator();
 
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Frag launchers", "Deathstorm frag launchers", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Krak launchers", "Deathstorm krak launchers", 30));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-				
-		if (!o1.isSelected()) o1.setSelected(0, true);
-		
-	}
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+
+        if (!o1.isSelected()) o1.setSelected(0, true);
+
+    }
 
 }

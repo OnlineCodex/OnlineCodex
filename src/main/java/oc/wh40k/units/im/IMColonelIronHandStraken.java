@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class IMColonelIronHandStraken extends Eintrag {
 
-	public IMColonelIronHandStraken() {
-		name = "Colonel 'Iron Hand' Straken";
-		grundkosten = getPts("Colonel 'Iron Hand' Straken");
-		power = 5;
-		
-		complete();
-	}
+    public IMColonelIronHandStraken() {
+        name = "Colonel 'Iron Hand' Straken";
+        grundkosten = getPts("Colonel 'Iron Hand' Straken");
+        power = 5;
 
-	//@OVERRIDE
-		public void refreshen() {
-	        setUnikat(true);
-		}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+        setUnikat(true);
+    }
 }

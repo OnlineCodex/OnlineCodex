@@ -1,48 +1,46 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHRenegadeKnightMagaera extends Eintrag {
 
-	OptionsUpgradeGruppe o1, o2, o3;
-    
-	public CHRenegadeKnightMagaera() {
-		name = "Renegade Knight Magaera";
-		grundkosten = getPts("Renegade Knight Magaera");
+    OptionsUpgradeGruppe o1, o2, o3;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
-		
+    public CHRenegadeKnightMagaera() {
+        name = "Renegade Knight Magaera";
+        grundkosten = getPts("Renegade Knight Magaera");
 
-		seperator();
+        add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
-		ogE.addElement(new OptionsGruppeEintrag("Lightning cannon", getPts("Lightning cannon")));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Ectoplasma fusil", getPts("Ectoplasma fusil")));
-		add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        ogE.addElement(new OptionsGruppeEintrag("Lightning cannon", getPts("Lightning cannon")));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-		seperator();
+        seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper chainswords")));
-		add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		
-		complete();
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Ectoplasma fusil", getPts("Ectoplasma fusil")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-	@Override
-	public void refreshen() {
-		o1.alwaysSelected();
-		o2.alwaysSelected();
-		o3.alwaysSelected();
-		
-		power = 28;
-	}
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper chainswords")));
+        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        o1.alwaysSelected();
+        o2.alwaysSelected();
+        o3.alwaysSelected();
+
+        power = 28;
+    }
 
 }

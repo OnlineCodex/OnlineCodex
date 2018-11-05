@@ -15,17 +15,17 @@ public class ABGeneralGrizmund extends Eintrag {
     OptionsEinzelUpgrade oe2;
     RuestkammerStarter rkAceCrew;
 
-	public ABGeneralGrizmund() {
-		name = "General Grizmund (Grace of the Throne)";
-		grundkosten = 280;
+    public ABGeneralGrizmund() {
+        name = "General Grizmund (Grace of the Throne)";
+        grundkosten = 280;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ABGraceoftheThrone.jpg"));
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/ABGraceoftheThrone.jpg"));
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
 }

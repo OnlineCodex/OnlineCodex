@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class ORKampfbomba extends Eintrag {
 
-	public ORKampfbomba() {
-		name = "Kampfbomba";
-		grundkosten = 210;
+    public ORKampfbomba() {
+        name = "Kampfbomba";
+        grundkosten = 210;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/Kampfbomba.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/Kampfbomba.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

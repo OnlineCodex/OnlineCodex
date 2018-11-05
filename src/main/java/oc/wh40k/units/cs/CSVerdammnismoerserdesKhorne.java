@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CSVerdammnismoerserdesKhorne extends Eintrag {
 
-	public CSVerdammnismoerserdesKhorne() {
-		name = "Verdammnismörser des Khorne";
-		grundkosten = 350;
+    public CSVerdammnismoerserdesKhorne() {
+        name = "Verdammnismörser des Khorne";
+        grundkosten = 350;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CMVerdammnismoerserKhorne.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/CMVerdammnismoerserKhorne.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

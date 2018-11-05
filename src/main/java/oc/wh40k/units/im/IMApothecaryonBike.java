@@ -5,22 +5,22 @@ import oc.RuestkammerStarter;
 
 public class IMApothecaryonBike extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMApothecaryonBike() {
-		name = "Apothecary on Bike";
-		grundkosten = getPts("Apothecary on Bike") + 
-					  getPts("Frag grenade (SM)") + 
-					  getPts("Krak grenade (SM)") + 
-					  getPts("Chainsword (SM)") + 
-					  getPts("Bolt pistol (SM)") + 
-					  getPts("Twin boltgun");
-		power = 4;
+    public IMApothecaryonBike() {
+        name = "Apothecary on Bike";
+        grundkosten = getPts("Apothecary on Bike") +
+                getPts("Frag grenade (SM)") +
+                getPts("Krak grenade (SM)") +
+                getPts("Chainsword (SM)") +
+                getPts("Bolt pistol (SM)") +
+                getPts("Twin boltgun");
+        power = 4;
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

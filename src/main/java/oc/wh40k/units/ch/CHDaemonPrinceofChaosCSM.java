@@ -1,64 +1,60 @@
 package oc.wh40k.units.ch;
 
-import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
+import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofChaosCSM extends Eintrag {
 
-	OptionsUpgradeGruppe waffe1;
-	OptionsEinzelUpgrade waffe2;
-	OptionsUpgradeGruppe mark;
-	
-	RuestkammerStarter psychicPowers;
-	
-	public CHDaemonPrinceofChaosCSM() {
+    OptionsUpgradeGruppe waffe1;
+    OptionsEinzelUpgrade waffe2;
+    OptionsUpgradeGruppe mark;
 
-		name = "Daemon Prince of Chaos";
+    RuestkammerStarter psychicPowers;
+
+    public CHDaemonPrinceofChaosCSM() {
+
+        name = "Daemon Prince of Chaos";
         grundkosten = getPts("Daemon Prince of Chaos") + getPts("Malefic talons");
         power = 10;
-        
-		ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword CSM")));
-		ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe (CSM)")));
-		ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
-		add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-		waffe1.setSelected(0, true);
-        
-		seperator();
-		
-		add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
-		
-		seperator();
-		
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
-		ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-		add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-		
-		seperator();
-		
-		psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
-        ((PsychicPowers)psychicPowers.getKammer()).setNumberOfPowers(1);
-		((PsychicPowers)psychicPowers.getKammer()).enableDarkHereticus();
-		psychicPowers.initKammer();
-		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-		add(psychicPowers);
-		psychicPowers.setAbwaehlbar(true);
-		
-		complete();
 
-	}
+        ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword CSM")));
+        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe (CSM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
+        add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        waffe1.setSelected(0, true);
 
-	@Override
-	public void refreshen() {
-		psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
-		
-		((PsychicPowers)psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
-		((PsychicPowers)psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
-		((PsychicPowers)psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-	}
+        seperator();
+
+        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
+        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+
+        complete();
+
+    }
+
+    @Override
+    public void refreshen() {
+        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
+
+        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
+        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
+        ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
+    }
 }

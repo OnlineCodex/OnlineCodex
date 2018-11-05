@@ -5,21 +5,21 @@ import oc.Eintrag;
 
 public class NEFlayedOnes extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public NEFlayedOnes() {
-		grundkosten = 0;
+    public NEFlayedOnes() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Flayed Ones", 5, 20, getPts("Flayed Ones"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Flayed Ones", 5, 20, getPts("Flayed Ones"));
+        add(squad);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = 4 	+ ((squad.getModelle() > 5) ?4:0)
-					+ ((squad.getModelle() > 10)?4:0)
-					+ ((squad.getModelle() > 15)?4:0);
-	}
+    @Override
+    public void refreshen() {
+        power = 4 + ((squad.getModelle() > 5) ? 4 : 0)
+                + ((squad.getModelle() > 10) ? 4 : 0)
+                + ((squad.getModelle() > 15) ? 4 : 0);
+    }
 }

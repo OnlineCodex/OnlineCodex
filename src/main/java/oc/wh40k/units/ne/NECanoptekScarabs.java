@@ -5,22 +5,22 @@ import oc.Eintrag;
 
 public class NECanoptekScarabs extends Eintrag {
 
-	AnzahlPanel squad;
+    AnzahlPanel squad;
 
-	public NECanoptekScarabs() {
-		grundkosten = 0;
+    public NECanoptekScarabs() {
+        grundkosten = 0;
 
-		squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Scarabs", 3, 9, getPts("Canoptek Scarabs")+getPts("Feeder mandibles"));
-		add(squad);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Scarabs", 3, 9, getPts("Canoptek Scarabs") + getPts("Feeder mandibles"));
+        add(squad);
 
-		add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSkarabaeen.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/NEKanoptechSkarabaeen.jpg"));
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		power = 2 + ((squad.getModelle() > 3)?2:0) + ((squad.getModelle() > 6)?2:0);
-	}
+    @Override
+    public void refreshen() {
+        power = 2 + ((squad.getModelle() > 3) ? 2 : 0) + ((squad.getModelle() > 6) ? 2 : 0);
+    }
 
 }

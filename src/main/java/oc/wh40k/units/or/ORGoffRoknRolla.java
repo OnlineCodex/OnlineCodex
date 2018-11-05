@@ -4,18 +4,18 @@ import oc.Eintrag;
 
 public class ORGoffRoknRolla extends Eintrag {
 
-	public ORGoffRoknRolla() {
-		name = "Goff Rok'n'Rolla";
-		grundkosten = 520;
+    public ORGoffRoknRolla() {
+        name = "Goff Rok'n'Rolla";
+        grundkosten = 520;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/GoffRoknRolla.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/GoffRoknRolla.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

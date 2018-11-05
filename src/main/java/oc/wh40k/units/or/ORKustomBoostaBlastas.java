@@ -6,25 +6,25 @@ import oc.Eintrag;
 
 public class ORKustomBoostaBlastas extends Eintrag {
 
-	AnzahlPanel buggies;
+    AnzahlPanel buggies;
 
-	public ORKustomBoostaBlastas() {
+    public ORKustomBoostaBlastas() {
 
-		kategorie = 4;
-		grundkosten = 0;
+        kategorie = 4;
+        grundkosten = 0;
 
-		buggies = new AnzahlPanel(ID, randAbstand, cnt, "Kustom Boosta-Blasta", "Kustom Boosta-Blastas", 1, 3, getPts("Kustom Boosta-Blastas"));
-		add(buggies);
+        buggies = new AnzahlPanel(ID, randAbstand, cnt, "Kustom Boosta-Blasta", "Kustom Boosta-Blastas", 1, 3, getPts("Kustom Boosta-Blastas"));
+        add(buggies);
 
-		add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
-		seperator();
-		
-		complete();
-	}
+        add(ico = new oc.Picture("oc/wh40k/images/Buggie.gif"));
+        seperator();
 
-	//@OVERRIDE
-	public void refreshen() {
-		
-		power = buggies.getModelle() * 5;
-	}
+        complete();
+    }
+
+    //@OVERRIDE
+    public void refreshen() {
+
+        power = buggies.getModelle() * 5;
+    }
 }

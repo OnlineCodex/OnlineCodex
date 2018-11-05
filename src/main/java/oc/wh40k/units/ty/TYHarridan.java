@@ -6,21 +6,21 @@ import oc.Eintrag;
 
 public class TYHarridan extends Eintrag {
 
-        AnzahlPanel o1;
+    AnzahlPanel o1;
 
-        public TYHarridan() {
+    public TYHarridan() {
 
-            name = "Harridan";
-            grundkosten = getPts("Harridan") + 2*getPts("Bio-cannon") + getPts("Massive scything talons (single)");
-            power = 32;
+        name = "Harridan";
+        grundkosten = getPts("Harridan") + 2 * getPts("Bio-cannon") + getPts("Massive scything talons (single)");
+        power = 32;
 
-            add(ico = new oc.Picture("oc/wh40k/images/TYHarridan.gif"));
+        add(ico = new oc.Picture("oc/wh40k/images/TYHarridan.gif"));
 
-            complete();
+        complete();
 
-        }
+    }
 
-	//@OVERRIDE
-	public void refreshen() {
-	}
+    //@OVERRIDE
+    public void refreshen() {
+    }
 }

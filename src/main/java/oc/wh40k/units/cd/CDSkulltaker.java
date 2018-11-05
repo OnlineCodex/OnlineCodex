@@ -1,21 +1,19 @@
 package oc.wh40k.units.cd;
 
-import oc.OptionsEinzelUpgrade;
-
 public class CDSkulltaker extends CDHerold {
 
-	public CDSkulltaker() {
+    public CDSkulltaker() {
 
-		name = "Skulltaker";
+        name = "Skulltaker";
         grundkosten = getPts("Skulltaker");
-        power = 5;   
-		complete();
+        power = 5;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-            super.refreshen();
-            setUnikat(true);
-	}
+    @Override
+    public void refreshen() {
+        super.refreshen();
+        setUnikat(true);
+    }
 }

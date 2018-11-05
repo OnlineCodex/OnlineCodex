@@ -6,26 +6,26 @@ import oc.RuestkammerStarter;
 
 public class IMCaptaininTerminatorArmour extends Eintrag {
 
-	RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter waffenUndReliquien;
 
-	public IMCaptaininTerminatorArmour() {
-		name = "Captain in Terminator Armour";
-		grundkosten = getPts("Captain in Terminator Armour");
-		power = 8;
+    public IMCaptaininTerminatorArmour() {
+        name = "Captain in Terminator Armour";
+        grundkosten = getPts("Captain in Terminator Armour");
+        power = 8;
 
-		seperator();
+        seperator();
 
-		waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
-		((IMSpaceMarinesRuestkammer)waffenUndReliquien.getKammer()).setType("Captain in Terminator Armour");
-		waffenUndReliquien.initKammer();
-		waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-		add(waffenUndReliquien);
-		waffenUndReliquien.setAbwaehlbar(false);
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain in Terminator Armour");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

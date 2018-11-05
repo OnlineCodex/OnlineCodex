@@ -4,25 +4,25 @@ import oc.Eintrag;
 
 public class Cypher extends Eintrag {
 
-	public Cypher() {
-		name = "Cypher";
-		grundkosten = 190;
+    public Cypher() {
+        name = "Cypher";
+        grundkosten = 190;
 
-		add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/ASSanktCelestine.jpg"));
 
-		seperator();
+        seperator();
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
+    @Override
+    public void refreshen() {
         setUnikat(true);
-	}
+    }
 
-	@Override
-	public void deleteYourself() {
-		super.deleteYourself();
-	}
-	
+    @Override
+    public void deleteYourself() {
+        super.deleteYourself();
+    }
+
 }

@@ -5,26 +5,26 @@ import oc.Eintrag;
 
 public class CDFleshHounds extends Eintrag {
 
-	AnzahlPanel hounds;
+    AnzahlPanel hounds;
 
-	public CDFleshHounds() {
+    public CDFleshHounds() {
 
-		name = "Flesh Hounds";
+        name = "Flesh Hounds";
         grundkosten = 0;
-        power = 5; 
+        power = 5;
 
         add(hounds = new AnzahlPanel(ID, randAbstand, cnt, "Flesh Hounds", 5, 20, getPts("Flesh Hounds")));
-        
-		complete();
 
-	}
+        complete();
 
-	public void deleteYourself() { 
-	}
+    }
+
+    public void deleteYourself() {
+    }
 
 
-	@Override
-	public void refreshen() {	
-		power = hounds.getModelle();
-	}
+    @Override
+    public void refreshen() {
+        power = hounds.getModelle();
+    }
 }

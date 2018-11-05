@@ -4,16 +4,16 @@ import oc.Eintrag;
 
 public class CDSkullCannon extends Eintrag {
 
-	public CDSkullCannon() {
+    public CDSkullCannon() {
 
-		name = "Skull Cannon";
+        name = "Skull Cannon";
         grundkosten = getPts("Skull Cannon");
-        power = 7;   
-		complete();
+        power = 7;
+        complete();
 
-	}
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 }

@@ -5,71 +5,71 @@ import oc.RuestkammerStarter;
 
 public class DKFieldArtilleryBattery extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
-	RuestkammerStarter t4;
-	RuestkammerStarter tr1;
-	RuestkammerStarter tr2;
-	RuestkammerStarter tr3;
-	RuestkammerStarter tr4;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
+    RuestkammerStarter t4;
+    RuestkammerStarter tr1;
+    RuestkammerStarter tr2;
+    RuestkammerStarter tr3;
+    RuestkammerStarter tr4;
 
-	public DKFieldArtilleryBattery() {
-		name = "Field Artillery Battery";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    public DKFieldArtilleryBattery() {
+        name = "Field Artillery Battery";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
-		t1.initKammer();
-		t1.setButtonText("Field Artillery");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
+        t1.initKammer();
+        t1.setButtonText("Field Artillery");
+        add(t1);
 
-		tr1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
-		tr1.initKammer();
-		add(tr1);
-		
-		seperator();
+        tr1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
+        tr1.initKammer();
+        add(tr1);
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
-		t2.initKammer();
-		t2.setButtonText("Field Artillery");
-		add(t2);
-		
-		tr2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
-		tr2.initKammer();
-		add(tr2);
+        seperator();
 
-		seperator();
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
+        t2.initKammer();
+        t2.setButtonText("Field Artillery");
+        add(t2);
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
-		t3.initKammer();
-		t3.setButtonText("Field Artillery");
-		add(t3);
-		
-		tr3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
-		tr3.initKammer();
-		add(tr3);
+        tr2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
+        tr2.initKammer();
+        add(tr2);
 
-		seperator();
+        seperator();
 
-		t4 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
-		t4.initKammer();
-		t4.setButtonText("Field Artillery");
-		add(t4);
-		
-		tr4 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
-		tr4.initKammer();
-		add(tr4);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
+        t3.initKammer();
+        t3.setButtonText("Field Artillery");
+        add(t3);
 
-		complete();
-	}
+        tr3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
+        tr3.initKammer();
+        add(tr3);
 
-	@Override
-	public void refreshen() {
+        seperator();
+
+        t4 = new RuestkammerStarter(ID, randAbstand, cnt, "DKFieldArtillery", "");
+        t4.initKammer();
+        t4.setButtonText("Field Artillery");
+        add(t4);
+
+        tr4 = new RuestkammerStarter(ID, randAbstand, cnt, "DKCentaur", "Centaur");
+        tr4.initKammer();
+        add(tr4);
+
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
         t1.setAbwaehlbar(false);
 
         t2.setAktiv(t1.isSelected());
@@ -86,15 +86,15 @@ public class DKFieldArtilleryBattery extends Eintrag {
         tr3.getPanel().setLocation(tr3.getPanel().getX(), t3.getPanel().getY() + t3.getPanel().getHeight() + 10);
         t4.getPanel().setLocation(t4.getPanel().getX(), tr3.getPanel().getY() + tr3.getPanel().getHeight() + 10);
         tr4.getPanel().setLocation(tr4.getPanel().getX(), t4.getPanel().getY() + t4.getPanel().getHeight() + 10);
-        
-        boolean legal=true;
-        if(tr1.isSelected() || tr2.isSelected() || tr2.isSelected() || tr2.isSelected()){
-         legal=(tr1.isSelected() || !tr1.isAktiv()) && (tr2.isSelected() || !tr2.isAktiv()) && (tr3.isSelected() || !tr3.isAktiv()) && (tr4.isSelected() || !tr4.isAktiv());
+
+        boolean legal = true;
+        if (tr1.isSelected() || tr2.isSelected() || tr2.isSelected() || tr2.isSelected()) {
+            legal = (tr1.isSelected() || !tr1.isAktiv()) && (tr2.isSelected() || !tr2.isAktiv()) && (tr3.isSelected() || !tr3.isAktiv()) && (tr4.isSelected() || !tr4.isAktiv());
         }
         tr1.setLegal(legal);
         tr2.setLegal(legal);
         tr3.setLegal(legal);
         tr4.setLegal(legal);
-	}
+    }
 
 }

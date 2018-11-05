@@ -3,16 +3,16 @@ package oc.wh40k.units.ne;
 import oc.Eintrag;
 
 public class NEMonolith extends Eintrag {
-    
-	public NEMonolith() {
-		name = "Monolith";
-		grundkosten = getPts("Monolith") + getPts("Gauss flux arc")*4 + getPts("Particle whip");
 
-		complete();
-	}
+    public NEMonolith() {
+        name = "Monolith";
+        grundkosten = getPts("Monolith") + getPts("Gauss flux arc") * 4 + getPts("Particle whip");
 
-	@Override
-	public void refreshen() {
-		power = 19;
-	}	
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        power = 19;
+    }
 }

@@ -5,41 +5,41 @@ import oc.RuestkammerStarter;
 
 public class DKABHellhoundFlameTankSquadron extends Eintrag {
 
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKABHellhoundFlameTankSquadron() {
-		name = "Hellhound Squadron";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
+    public DKABHellhoundFlameTankSquadron() {
+        name = "Hellhound Squadron";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
 
-		add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/IGHellhoundSquadron.jpg"));
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
-		t1.initKammer();
-		t1.setButtonText("Tank 1");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
+        t1.initKammer();
+        t1.setButtonText("Tank 1");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
-		t2.initKammer();
-		t2.setButtonText("Tank 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
+        t2.initKammer();
+        t2.setButtonText("Tank 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
-		t3.initKammer();
-		t3.setButtonText("Tank 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKABHellhound", "", 1);
+        t3.initKammer();
+        t3.setButtonText("Tank 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-	}
+    @Override
+    public void refreshen() {
+    }
 
 }

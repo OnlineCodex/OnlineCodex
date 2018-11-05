@@ -4,17 +4,17 @@ import oc.Eintrag;
 
 public class CMWeltuntergangsmaschine extends Eintrag {
 
-	public CMWeltuntergangsmaschine() {
-		name = "Weltuntergangsmaschine";
-		grundkosten = 400;
+    public CMWeltuntergangsmaschine() {
+        name = "Weltuntergangsmaschine";
+        grundkosten = 400;
 
-		add(ico = new oc.Picture("oc/wh40k/images/CMWeltuntergangsmaschine.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/CMWeltuntergangsmaschine.gif"));
 
-		complete();
 
-	}
+        complete();
 
-	public void refreshen() {
-	}
+    }
+
+    public void refreshen() {
+    }
 }

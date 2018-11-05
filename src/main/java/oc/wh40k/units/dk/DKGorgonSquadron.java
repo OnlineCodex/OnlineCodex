@@ -6,46 +6,46 @@ import oc.RuestkammerStarter;
 
 public class DKGorgonSquadron extends Eintrag {
 
-	OptionsEinzelUpgrade oe1;
-	RuestkammerStarter t1;
-	RuestkammerStarter t2;
-	RuestkammerStarter t3;
+    OptionsEinzelUpgrade oe1;
+    RuestkammerStarter t1;
+    RuestkammerStarter t2;
+    RuestkammerStarter t3;
 
-	public DKGorgonSquadron() {
-		name = "Gorgon Squadron";
-		grundkosten = 0;
-		this.überschriftSetzen = true;
-		this.gesamtpunkteImmerAnzeigen=false;
+    public DKGorgonSquadron() {
+        name = "Gorgon Squadron";
+        grundkosten = 0;
+        this.überschriftSetzen = true;
+        this.gesamtpunkteImmerAnzeigen = false;
 
-		add(ico = new oc.Picture("oc/wh40k/images/DKGorgonSquadron.jpg"));
+        add(ico = new oc.Picture("oc/wh40k/images/DKGorgonSquadron.jpg"));
 
-		seperator();
+        seperator();
 
-		t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
-		t1.initKammer();
-		t1.setButtonText("Gorgon 1");
-		add(t1);
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
+        t1.initKammer();
+        t1.setButtonText("Gorgon 1");
+        add(t1);
 
-		seperator();
+        seperator();
 
-		t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
-		t2.initKammer();
-		t2.setButtonText("Gorgon 2");
-		add(t2);
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
+        t2.initKammer();
+        t2.setButtonText("Gorgon 2");
+        add(t2);
 
-		seperator();
+        seperator();
 
-		t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
-		t3.initKammer();
-		t3.setButtonText("Gorgon 3");
-		add(t3);
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "DKGorgonKammer", "Gorgon\n");
+        t3.initKammer();
+        t3.setButtonText("Gorgon 3");
+        add(t3);
 
-		complete();
-	}
+        complete();
+    }
 
-	@Override
-	public void refreshen() {
-		
-	}
+    @Override
+    public void refreshen() {
+
+    }
 
 }

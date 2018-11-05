@@ -13,33 +13,32 @@ public class APOMachariusVanquisher extends Eintrag {
     OptionsEinzelUpgrade oe1;
     OptionsEinzelUpgrade oe2;
 
-	public APOMachariusVanquisher() {
-		name = "Macharius \"Vanquisher\"";
-		grundkosten = 375;
+    public APOMachariusVanquisher() {
+        name = "Macharius \"Vanquisher\"";
+        grundkosten = 375;
 
 
-		add(ico = new oc.Picture("oc/wh40k/images/MachariusVanquisher.gif"));
-		
+        add(ico = new oc.Picture("oc/wh40k/images/MachariusVanquisher.gif"));
 
 
-		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "hunter-killer missile", 10));
-		add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "heavy stubber", "pintle-mounted heavy stubber", 10));
-		add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "storm bolter", "pintle-mounted storm bolter", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "hunter-killer missile", 10));
+        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "heavy stubber", "pintle-mounted heavy stubber", 10));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "storm bolter", "pintle-mounted storm bolter", 10));
 
         seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("heavy stubbers", "sponsons with heavy stubbers", 0));
-		ogE.addElement(new OptionsGruppeEintrag("heavy bolters", "sponsons with heavy bolters", 10));
-		ogE.addElement(new OptionsGruppeEintrag("heavy flamers", "sponsons with heavy flamers", 10));
-		add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-                
-		complete();
+        ogE.addElement(new OptionsGruppeEintrag("heavy stubbers", "sponsons with heavy stubbers", 0));
+        ogE.addElement(new OptionsGruppeEintrag("heavy bolters", "sponsons with heavy bolters", 10));
+        ogE.addElement(new OptionsGruppeEintrag("heavy flamers", "sponsons with heavy flamers", 10));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
-	}
+        complete();
 
-	public void refreshen() {
-            if (!o1.isSelected()) o1.setSelected(0,true);
-            oe1.setAktiv(!oe2.isSelected());
-            oe2.setAktiv(!oe1.isSelected());
-	}
+    }
+
+    public void refreshen() {
+        if (!o1.isSelected()) o1.setSelected(0, true);
+        oe1.setAktiv(!oe2.isSelected());
+        oe2.setAktiv(!oe1.isSelected());
+    }
 }
