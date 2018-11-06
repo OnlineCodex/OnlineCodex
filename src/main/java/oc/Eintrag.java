@@ -266,7 +266,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         if (grundkosten != 0 && !keineÜberschrift) {
             String kosten = "";
             if (BuildaHQ.allePunktkosten) {
-                kosten = punkteAbstandHalter + entferneNullNachkomma(grundkosten) + " " + BuildaHQ.translate(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA ? "Credits" : "Punkte");
+                kosten = punkteAbstandHalter + entferneNullNachkomma(grundkosten) + " " + BuildaHQ.translate("Punkte");
             }
             titel = BuildaHQ.formatierFett(name + kosten + (neuzeile ? "\n" : ""));
             ++cnt;
@@ -285,7 +285,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
         //Bei alle Punktkosten: hier wird bei kostenlosen Einträgen, bei denen nur die erste Option gewählt ist, welche selbst aber noch Kosten und weitere eigene Optionen hat, die Gesamtpunktzahl nicht angezeigt. Deswegen: "gesamtpunkteImmerAnzeigen" hinzugefügt.
         if (this.getKosten() != 0 && (cnt > 1 || !BuildaHQ.allePunktkosten || (optionen.size() > 0 ? optionen.elementAt(0).getKosten() != this.getKosten() : false) || gesamtpunkteImmerAnzeigen)) {
-            text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA ? "Credits" : "Punkte") + " (PL " + getPower()+ ")"));
+            text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte") + " (PL " + getPower()+ ")"));
         }
 
         // ACHTUNG BEI KOSTENLOSEN EINTRÄGEN, die trotzdem angezeigt werden sollen!
@@ -302,7 +302,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     }
 
     public void kostenLabelAktualisieren() {
-        lKosten.setText((BuildaHQ.getSprache() == Sprache.English ? "    " : "") + BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA ? "Credits" : "Punkte"));
+        lKosten.setText((BuildaHQ.getSprache() == Sprache.English ? "    " : "") + BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte"));
     }
 
     public abstract void refreshen();
