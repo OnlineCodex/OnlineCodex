@@ -29,8 +29,8 @@ public final class VersionChecker {
                             "</html>")
             .put(Sprache.German, "version.dialog.content",
                     "<html>" +
-                            "<h1>Eine neue version des OnlineCodex ist verfügbar</h1>" +
-                            "<p>Um diese herrunter zu laden klicken sie <a href=\"{0}\">hier</a>." +
+                            "<h1>Eine neue Version des OnlineCodex ist verfügbar</h1>" +
+                            "<p>Um diese herunter zu laden, klicken sie <a href=\"{0}\">hier</a>." +
                             "</html>")
             .put(Sprache.English, "version.dialog.ok", "OK")
             .put(Sprache.German, "version.dialog.ok", "OK")
