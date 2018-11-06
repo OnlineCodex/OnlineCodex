@@ -31,16 +31,12 @@ public class ORNobzonWarbikes extends Eintrag {
         BosseCC.setAnzahl(0, Bosse.getModelle());
         BosseCC.setAnzahl(5, Bosse.getModelle());
 
-        seperator(5);
-
         complete();
     }
 
     //@OVERRIDE
     public void refreshen() {
         BosseCC.setMaxAnzahl(Bosse.getModelle() * 2);
-//        boolean legal = (BosseCC.getAnzahl()) == Bosse.getModelle() * 2;
-//        BosseCC.setLegal(legal);
 
         if (Bosse.getModelle() > 6) {
             power = 19;

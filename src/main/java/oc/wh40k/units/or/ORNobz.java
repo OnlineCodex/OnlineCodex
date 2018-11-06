@@ -55,10 +55,6 @@ public class ORNobz extends Eintrag {
         BosseCC.setMaxAnzahl(Bosse.getModelle() * 2);
         BosseFK.setMaxAnzahl(Bosse.getModelle());
 
-//        boolean legal = (BosseCC.getAnzahl() + BosseFK.getAnzahl() * 2) == Bosse.getModelle() * 2;
-//        BosseCC.setLegal(legal);
-//        BosseFK.setLegal(legal);
-
         Munigrotz.setMaxAnzahl(Bosse.getModelle());
 
         Cyborg.setMaxAnzahl(Bosse.getModelle() / 5);
