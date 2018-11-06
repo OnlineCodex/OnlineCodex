@@ -35,6 +35,8 @@ public class ORNobz extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit", "Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
         ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+        ogE.addElement(new OptionsGruppeEintrag("Shoota [Index]", getPts("Shoota")));
+        ogE.addElement(new OptionsGruppeEintrag("Kustom shoota [Index]", getPts("Kustom shoota")));
         add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator(5);
@@ -53,9 +55,9 @@ public class ORNobz extends Eintrag {
         BosseCC.setMaxAnzahl(Bosse.getModelle() * 2);
         BosseFK.setMaxAnzahl(Bosse.getModelle());
 
-        boolean legal = (BosseCC.getAnzahl() + BosseFK.getAnzahl() * 2) == Bosse.getModelle() * 2;
-        BosseCC.setLegal(legal);
-        BosseFK.setLegal(legal);
+//        boolean legal = (BosseCC.getAnzahl() + BosseFK.getAnzahl() * 2) == Bosse.getModelle() * 2;
+//        BosseCC.setLegal(legal);
+//        BosseFK.setLegal(legal);
 
         Munigrotz.setMaxAnzahl(Bosse.getModelle());
 
