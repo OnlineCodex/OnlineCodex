@@ -13,48 +13,48 @@ public class VOLKTauEmpire extends BuildaVater {
     private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
 
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
-    public String[] HQeinträge_Tau_Ethereal = new String[]{"Ethereal"};
-    public String[] Standardeinträge_Tau = new String[]{"", "Strike Team"/*nicht komplett*/, "Breacher Team"/*nicht komplett*/};
-    public String[] Eliteeinträge_Tau = new String[]{"", "XV25 Stealth Battlesuits", "XV8 Crisis Battlesuits"/*ist noch alt*/, "XV8 Crisis Bodyguards"/*ist noch alt*/, "XV95 Ghostkeel Battlesuits", "XV104 Riptide Battlesuits", "Firesight Marksman"};
-    public String[] Sturmeinträge_Tau = new String[]{"", "Pathfinder Team", "TX4 Piranhas", "Tactical Drones"};
-    public String[] Unterstützungeinträge_Tau = new String[]{"", "MV71 Sniper Drones", "TX78 Sky Ray Gunships", "TX7 Hammerhead Gunships", "XV88 Broadside Battlesuits" /*Broadside-Drohnen sind noch falsch*/};
-    public String[] Transporteinträge_Tau = new String[]{"", "TY7 Devilfish"};
-    public String[] Fliegereinträge_Tau = new String[]{"", "AX3 Razorshark Strike Fighter", "AX39 Sun Shark Bomber"};
-    public String[] Befestigungseinträge_Tau = new String[]{"", "Tidewall Droneport", "Tidewall Shieldline", "Tidewall Gunrig"};
-    public String[] LordofWar_Tau = new String[]{"", "KV128 Stormsurge"};
+    private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
+    private static final String[] HQeinträge_Tau_Ethereal = new String[]{"Ethereal"};
+    private static final String[] Standardeinträge_Tau = new String[]{"", "Strike Team"/*nicht komplett*/, "Breacher Team"/*nicht komplett*/};
+    private static final String[] Eliteeinträge_Tau = new String[]{"", "XV25 Stealth Battlesuits", "XV8 Crisis Battlesuits"/*ist noch alt*/, "XV8 Crisis Bodyguards"/*ist noch alt*/, "XV95 Ghostkeel Battlesuits", "XV104 Riptide Battlesuits", "Firesight Marksman"};
+    private static final String[] Sturmeinträge_Tau = new String[]{"", "Pathfinder Team", "TX4 Piranhas", "Tactical Drones"};
+    private static final String[] Unterstützungeinträge_Tau = new String[]{"", "MV71 Sniper Drones", "TX78 Sky Ray Gunships", "TX7 Hammerhead Gunships", "XV88 Broadside Battlesuits" /*Broadside-Drohnen sind noch falsch*/};
+    private static final String[] Transporteinträge_Tau = new String[]{"", "TY7 Devilfish"};
+    private static final String[] Fliegereinträge_Tau = new String[]{"", "AX3 Razorshark Strike Fighter", "AX39 Sun Shark Bomber"};
+    private static final String[] Befestigungseinträge_Tau = new String[]{"", "Tidewall Droneport", "Tidewall Shieldline", "Tidewall Gunrig"};
+    private static final String[] LordofWar_Tau = new String[]{"", "KV128 Stormsurge"};
 
     //T'au Empire Vanilla (FW) /////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_IA_Tau = new String[]{"", /*"Commander in XV81 Crisis Battlesuit",*/ /*"Commander in XV84 Crisis Battlesuit"*/};
-    public String[] Eliteeinträge_IA_Tau = new String[]{"", "DX-4 Technical Drones"/*, "XV9 Hazard Support Team"*/};
-    public String[] Sturmeinträge_IA_Tau = new String[]{""/*, "XV109 Y'vahra Battlesuit"*/, "Tetra Scout Speeder Team"/*, "Piranha TX-42 Light Skimmer"*/};
-    public String[] Unterstützungeinträge_IA_Tau = new String[]{""/*, "XV107 R'varna Battlesuit"*//*, "Heavy Gun Drone Squadron"*//*, "TX7 Heavy Bombardment Hammerdead Gunship"*//*, "TX7 Fire Support Hammerdead Gunship"*/};
-    public String[] Fliegereinträge_IA_Tau = new String[]{""/*, "DX-6 Remora Stealth Drone Squadron"*//*, "Barracuda AX-5-2"*//*, "Tiger Shark"*//*, "Tiger Shark AX-1-0"*/, "Orca Dropship"};
-    public String[] Befestigungseinträge_IA_Tau = new String[]{"", "Remote Sensor Tower"/*, "Drone Sentry Turret"*/};
-    public String[] LordofWar_IA_Tau = new String[]{""/*, "KX139 Ta'unar Supremacy Armour"*/, "Manta Super-heavy Dropship"};
+    private static final String[] HQeinträge_IA_Tau = new String[]{"", /*"Commander in XV81 Crisis Battlesuit",*/ /*"Commander in XV84 Crisis Battlesuit"*/};
+    private static final String[] Eliteeinträge_IA_Tau = new String[]{"", "DX-4 Technical Drones"/*, "XV9 Hazard Support Team"*/};
+    private static final String[] Sturmeinträge_IA_Tau = new String[]{""/*, "XV109 Y'vahra Battlesuit"*/, "Tetra Scout Speeder Team"/*, "Piranha TX-42 Light Skimmer"*/};
+    private static final String[] Unterstützungeinträge_IA_Tau = new String[]{""/*, "XV107 R'varna Battlesuit"*//*, "Heavy Gun Drone Squadron"*//*, "TX7 Heavy Bombardment Hammerdead Gunship"*//*, "TX7 Fire Support Hammerdead Gunship"*/};
+    private static final String[] Fliegereinträge_IA_Tau = new String[]{""/*, "DX-6 Remora Stealth Drone Squadron"*//*, "Barracuda AX-5-2"*//*, "Tiger Shark"*//*, "Tiger Shark AX-1-0"*/, "Orca Dropship"};
+    private static final String[] Befestigungseinträge_IA_Tau = new String[]{"", "Remote Sensor Tower"/*, "Drone Sentry Turret"*/};
+    private static final String[] LordofWar_IA_Tau = new String[]{""/*, "KX139 Ta'unar Supremacy Armour"*/, "Manta Super-heavy Dropship"};
 
     //T'au Sept ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_Tau_Sept = new String[]{"", "Commander Shadowsun", "Aun'va", "Darkstrider", "Longstrike"};
+    private static final String[] HQeinträge_Tau_Sept = new String[]{"", "Commander Shadowsun", "Aun'va", "Darkstrider", "Longstrike"};
 
     //Farsight Enclaves ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_Farsight_Enclaves = new String[]{"", "Commander Farsight"};
+    private static final String[] HQeinträge_Farsight_Enclaves = new String[]{"", "Commander Farsight"};
 
     //Voir'la Sept /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_Voirla_Sept = new String[]{"", "Aun'shi"};
+    private static final String[] HQeinträge_Voirla_Sept = new String[]{"", "Aun'shi"};
 
     //Dal'yth Sept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_IA_Dalyth_Sept = new String[]{"", "Shas'o R'myr"};
+    private static final String[] HQeinträge_IA_Dalyth_Sept = new String[]{"", "Shas'o R'myr"};
 
     //Ke'lshan Sept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] HQeinträge_IA_Kelshan_Sept = new String[]{"", "Shas'o R'alai"};
+    private static final String[] HQeinträge_IA_Kelshan_Sept = new String[]{"", "Shas'o R'alai"};
 
     //Kroot ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] Standardeinträge_Kroot = new String[]{"", "Kroot Carnivores"};
-    public String[] Eliteeinträge_Kroot = new String[]{"", "Kroot Shaper", "Krootox Riders"};
-    public String[] Sturmeinträge_Kroot = new String[]{"", "Kroot Hounds"};
+    private static final String[] Standardeinträge_Kroot = new String[]{"", "Kroot Carnivores"};
+    private static final String[] Eliteeinträge_Kroot = new String[]{"", "Kroot Shaper", "Krootox Riders"};
+    private static final String[] Sturmeinträge_Kroot = new String[]{"", "Kroot Hounds"};
 
     //Vespid ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public String[] Sturmeinträge_Vespid = new String[]{"", "Vespid Stingwings"};
+    private static final String[] Sturmeinträge_Vespid = new String[]{"", "Vespid Stingwings"};
 
     public VOLKTauEmpire() {
         reflectionKennung = "TA";

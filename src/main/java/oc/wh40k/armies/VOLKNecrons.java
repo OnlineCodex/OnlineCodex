@@ -9,48 +9,48 @@ import java.io.InputStream;
 public class VOLKNecrons extends BuildaVater {
 
     //Vanilla Necrons
-    public String[] HQeinträge_NE = new String[]{"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
-    public String[] Standardeinträge_NE = new String[]{"", "Necron Warriors", "Immortals",};
-    public String[] Eliteeinträge_NE = new String[]{"", "Lychguard", "Deathmarks", "Flayed Ones",};
-    public String[] Sturmeinträge_NE = new String[]{"", "Tomb Blades", "Destroyers",};
-    public String[] Unterstützungeinträge_NE = new String[]{"", "Heavy Destroyers", "Monolith", "Annihilation Barge", "Doomsday Ark",};
-    public String[] Transporteinträge_NE = new String[]{"", "Ghost Ark",};
-    public String[] Fliegereinträge_NE = new String[]{"", "Doom Scythe", "Night Scythe",};
-    public String[] LordofWareinträge_NE = new String[]{"", "Obelisk",};
+    private static final String[] HQeinträge_NE = new String[]{"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
+    private static final String[] Standardeinträge_NE = new String[]{"", "Necron Warriors", "Immortals",};
+    private static final String[] Eliteeinträge_NE = new String[]{"", "Lychguard", "Deathmarks", "Flayed Ones",};
+    private static final String[] Sturmeinträge_NE = new String[]{"", "Tomb Blades", "Destroyers",};
+    private static final String[] Unterstützungeinträge_NE = new String[]{"", "Heavy Destroyers", "Monolith", "Annihilation Barge", "Doomsday Ark",};
+    private static final String[] Transporteinträge_NE = new String[]{"", "Ghost Ark",};
+    private static final String[] Fliegereinträge_NE = new String[]{"", "Doom Scythe", "Night Scythe",};
+    private static final String[] LordofWareinträge_NE = new String[]{"", "Obelisk",};
 
     //ohne Dynasty
-    public String[] HQeinträge_Vanilla_only = new String[]{"", "Illuminor Szeras", "Anrakyr the Traveller",};
-    public String[] Eliteeinträge_Vanilla_only = new String[]{"", "Triarch Praetorians", "Triarch Stalker",};
+    private static final String[] HQeinträge_Vanilla_only = new String[]{"", "Illuminor Szeras", "Anrakyr the Traveller",};
+    private static final String[] Eliteeinträge_Vanilla_only = new String[]{"", "Triarch Praetorians", "Triarch Stalker",};
 
     //Sautekh Dynasty
-    public String[] HQeinträge_Sautekh = new String[]{"", "Imotekh the Stormlord", "Nemesor Zahndrekh", "Vargard Obyron", "Orikan the Diviner",};
+    private static final String[] HQeinträge_Sautekh = new String[]{"", "Imotekh the Stormlord", "Nemesor Zahndrekh", "Vargard Obyron", "Orikan the Diviner",};
 
     //Nihilakh Dynasty
-    public String[] HQeinträge_Nihilakh = new String[]{"", "Trazyn the Infinite",};
+    private static final String[] HQeinträge_Nihilakh = new String[]{"", "Trazyn the Infinite",};
 
     //C'tan Shards
-    public String[] Eliteeinträge_Ctan_Shards = new String[]{"", "C'tan Shard of the Deceiver", "C'tan Shard of the Nightbringer",};
-    public String[] Unterstützungeinträge_Ctan_Shards = new String[]{"", "Transcendent C'tan",};
+    private static final String[] Eliteeinträge_Ctan_Shards = new String[]{"", "C'tan Shard of the Deceiver", "C'tan Shard of the Nightbringer",};
+    private static final String[] Unterstützungeinträge_Ctan_Shards = new String[]{"", "Transcendent C'tan",};
 
     //C'tan Shards & Dynasty
-    public String[] LordofWareinträge_Ctan_Shards_Dynasty = new String[]{"", "Tesseract Vault",};
+    private static final String[] LordofWareinträge_Ctan_Shards_Dynasty = new String[]{"", "Tesseract Vault",};
 
     //Canoptek
-    public String[] Sturmeinträge_Canoptek = new String[]{"", "Canoptek Wraiths", "Canoptek Scarabs",};
-    public String[] Unterstützungeinträge_Canoptek = new String[]{"", "Canoptek Spyders",};
+    private static final String[] Sturmeinträge_Canoptek = new String[]{"", "Canoptek Wraiths", "Canoptek Scarabs",};
+    private static final String[] Unterstützungeinträge_Canoptek = new String[]{"", "Canoptek Spyders",};
 
     //Imperial Armour Xenos Vanilla
-    public String[] Unterstützungeinträge_IA_NE = new String[]{"", "Sentry Pylon", "Tesseract Ark",};
-    public String[] Fliegereinträge_IA_NE = new String[]{"", "Night Shroud",};
-    public String[] LordofWareinträge_IA_NE = new String[]{"", "Gauss Pylon",};
-    public String[] Befestigungen_IA_NE = new String[]{"", "Tomb Citadel",};
+    private static final String[] Unterstützungeinträge_IA_NE = new String[]{"", "Sentry Pylon", "Tesseract Ark",};
+    private static final String[] Fliegereinträge_IA_NE = new String[]{"", "Night Shroud",};
+    private static final String[] LordofWareinträge_IA_NE = new String[]{"", "Gauss Pylon",};
+    private static final String[] Befestigungen_IA_NE = new String[]{"", "Tomb Citadel",};
 
     //Imperial Armour Xenos Maynarkh Dynasty
-    public String[] HQeinträge_IA_Maynarkh = new String[]{"", "Kutlakh the World Killer", "Toholk the Blinded",};
+    private static final String[] HQeinträge_IA_Maynarkh = new String[]{"", "Kutlakh the World Killer", "Toholk the Blinded",};
 
     //Imperial Armour Xenos Canoptek
-    public String[] Eliteeinträge_IA_Canoptek = new String[]{"", "Canoptek Tomb Stalker",};
-    public String[] Sturmeinträge_IA_Canoptek = new String[]{"", "Canoptek Acanthrites", "Canoptek Tomb Sentinel",};
+    private static final String[] Eliteeinträge_IA_Canoptek = new String[]{"", "Canoptek Tomb Stalker",};
+    private static final String[] Sturmeinträge_IA_Canoptek = new String[]{"", "Canoptek Acanthrites", "Canoptek Tomb Sentinel",};
 
     public VOLKNecrons() {
         reflectionKennung = "NE";

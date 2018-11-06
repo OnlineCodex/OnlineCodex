@@ -8,120 +8,120 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
+import java.util.stream.Stream;
 
 public class VOLKImperium extends BuildaVater {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(VOLKImperium.class);
 
-    public String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
-    public String[] Standardeinträge_AM = new String[]{"", "Infantry Squad", "Conscripts"};
-    public String[] Eliteeinträge_AM = new String[]{"", "Master of Ordnance", "Platoon Commander", "Command Squad", "Special Weapons Squad", "Veterans", "Tech-Priest Enginseer", "Servitors"};
-    public String[] Sturmeinträge_AM = new String[]{"", "Rough Riders", "Scout Sentinels", "Armoured Sentinels", "Hellhounds"};
-    public String[] Unterstützungeinträge_AM = new String[]{"", "Heavy Weapons Squad", "Basilisks", "Hydras", "Wyverns", "Manticore", "Deathstrike",
+    private static final String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
+    private static final String[] Standardeinträge_AM = new String[]{"", "Infantry Squad", "Conscripts"};
+    private static final String[] Eliteeinträge_AM = new String[]{"", "Master of Ordnance", "Platoon Commander", "Command Squad", "Special Weapons Squad", "Veterans", "Tech-Priest Enginseer", "Servitors"};
+    private static final String[] Sturmeinträge_AM = new String[]{"", "Rough Riders", "Scout Sentinels", "Armoured Sentinels", "Hellhounds"};
+    private static final String[] Unterstützungeinträge_AM = new String[]{"", "Heavy Weapons Squad", "Basilisks", "Hydras", "Wyverns", "Manticore", "Deathstrike",
             "Leman Russ Battle Tanks"};
-    public String[] Transporteinträge_AM = new String[]{"", "Chimera", "Taurox"};
-    public String[] Fliegereinträge_AM = new String[]{"",};
-    public String[] LordofWar_AM = new String[]{"", "Baneblade", "Banehammer", "Banesword", "Doomhammer", "Hellhammer", "Shadowsword", "Stormlord", "Stormsword"};
+    private static final String[] Transporteinträge_AM = new String[]{"", "Chimera", "Taurox"};
+    private static final String[] Fliegereinträge_AM = new String[]{"",};
+    private static final String[] LordofWar_AM = new String[]{"", "Baneblade", "Banehammer", "Banesword", "Doomhammer", "Hellhammer", "Shadowsword", "Stormlord", "Stormsword"};
     //CADIAN
-    public String[] HQeinträge_Cadian = new String[]{"", "Lord Castellan Creed", "Knight Commander Pask"};
-    public String[] Eliteeinträge_Cadian = new String[]{"", "Colour Sergeant Kell"};
+    private static final String[] HQeinträge_Cadian = new String[]{"", "Lord Castellan Creed", "Knight Commander Pask"};
+    private static final String[] Eliteeinträge_Cadian = new String[]{"", "Colour Sergeant Kell"};
     //CATACHAN
-    public String[] HQeinträge_Catachan = new String[]{"", "Colonel 'Iron Hand' Straken", "Sly Marbo"};
-    public String[] Eliteeinträge_Catachan = new String[]{"", "Sergeant Harker"};
+    private static final String[] HQeinträge_Catachan = new String[]{"", "Colonel 'Iron Hand' Straken", "Sly Marbo"};
+    private static final String[] Eliteeinträge_Catachan = new String[]{"", "Sergeant Harker"};
     //OFFICIO PREFECTUS
-    public String[] HQeinträge_Officio_Prefectus = new String[]{"", "Lord Commissar", "Commissar Yarrick"};
-    public String[] Eliteeinträge_Officio_Prefectus = new String[]{"", "Commissar"};
+    private static final String[] HQeinträge_Officio_Prefectus = new String[]{"", "Lord Commissar", "Commissar Yarrick"};
+    private static final String[] Eliteeinträge_Officio_Prefectus = new String[]{"", "Commissar"};
     //MILITARUM TEMPESTUS
-    public String[] HQeinträge_Militarum_Tempestus = new String[]{"", "Tempestor Prime"};
-    public String[] Eliteeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Command Squad"};
-    public String[] Standardeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Scions"};
-    public String[] Transporteinträge_Militarum_Tempestus = new String[]{"", "Taurox Prime"};
+    private static final String[] HQeinträge_Militarum_Tempestus = new String[]{"", "Tempestor Prime"};
+    private static final String[] Eliteeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Command Squad"};
+    private static final String[] Standardeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Scions"};
+    private static final String[] Transporteinträge_Militarum_Tempestus = new String[]{"", "Taurox Prime"};
     //MILITARUM AUXILIA
-    public String[] Eliteeinträge_Militarum_Auxilia = new String[]{"", "Ogryns", "Ogryn Bodyguard", "Bullgryns", "Ratlings", "Nork Deddog"};
+    private static final String[] Eliteeinträge_Militarum_Auxilia = new String[]{"", "Ogryns", "Ogryn Bodyguard", "Bullgryns", "Ratlings", "Nork Deddog"};
     //AERONAUTICA IMPERIALIS
-    public String[] Eliteeinträge_Aeronautica_Imperialis = new String[]{"", "Officer of the Fleet"};
-    public String[] Fliegereinträge_Aeronautica_Imperialis = new String[]{"", "Valkyries"};
+    private static final String[] Eliteeinträge_Aeronautica_Imperialis = new String[]{"", "Officer of the Fleet"};
+    private static final String[] Fliegereinträge_Aeronautica_Imperialis = new String[]{"", "Valkyries"};
     //SCHOLASTICA PSYKANA
-    public String[] HQeinträge_Scholastica_Psykana = new String[]{"", "Primaris Psyker"};
-    public String[] Eliteeinträge_Scholastica_Psykana = new String[]{"", "Wyrdvane Psykers", "Astropath"};
+    private static final String[] HQeinträge_Scholastica_Psykana = new String[]{"", "Primaris Psyker"};
+    private static final String[] Eliteeinträge_Scholastica_Psykana = new String[]{"", "Wyrdvane Psykers", "Astropath"};
     //ADEPTUS MINISTORUM-PART OF ASTRA MILITARUM
-    public String[] Eliteeinträge_Astra_Militarum_Adeptus_Ministorum = new String[]{"", "Ministorum Priest", "Crusaders"};
-
+    private static final String[] Eliteeinträge_Astra_Militarum_Adeptus_Ministorum = new String[]{"", "Ministorum Priest", "Crusaders"};
 
     //AM KOMPLETT
-    public String[] HQeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList
+    private static final String[] HQeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList
                     (HQeinträge_AM, HQeinträge_Cadian), HQeinträge_Catachan),
             HQeinträge_Officio_Prefectus), HQeinträge_Militarum_Tempestus),
             HQeinträge_Scholastica_Psykana);
-    public String[] Standardeinträge_AM_komplett = uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus);
-    public String[] Eliteeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+    private static final String[] Standardeinträge_AM_komplett = uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus);
+    private static final String[] Eliteeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
             Eliteeinträge_AM, Eliteeinträge_Cadian), Eliteeinträge_Catachan), Eliteeinträge_Officio_Prefectus),
             Eliteeinträge_Militarum_Tempestus), Eliteeinträge_Militarum_Auxilia), Eliteeinträge_Aeronautica_Imperialis),
             Eliteeinträge_Scholastica_Psykana), Eliteeinträge_Astra_Militarum_Adeptus_Ministorum);
-    public String[] Sturmeinträge_AM_komplett = Sturmeinträge_AM;
-    public String[] Unterstützungeinträge_AM_komplett = Unterstützungeinträge_AM;
-    public String[] Transporteinträge_AM_komplett = uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus);
-    public String[] Fliegereinträge_AM_komplett = uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis);
-    public String[] LordofWar_AM_komplett = LordofWar_AM;
+    private static final String[] Sturmeinträge_AM_komplett = Sturmeinträge_AM;
+    private static final String[] Unterstützungeinträge_AM_komplett = Unterstützungeinträge_AM;
+    private static final String[] Transporteinträge_AM_komplett = uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus);
+    private static final String[] Fliegereinträge_AM_komplett = uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis);
+    private static final String[] LordofWar_AM_komplett = LordofWar_AM;
 
     //ADEPTUS MECHANICUS ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //CULT MECHANICUS
-    public String[] HQeinträge_Cult_Mechanicus = new String[]{"", "Belisarius Cawl", "Tech-Priest Dominus", "Tech-Priest Enginseer AME"};
-    public String[] Eliteeinträge_Cult_Mechanicus = new String[]{"", "Fulgurite Electro-Priests",
+    private static final String[] HQeinträge_Cult_Mechanicus = new String[]{"", "Belisarius Cawl", "Tech-Priest Dominus", "Tech-Priest Enginseer AME"};
+    private static final String[] Eliteeinträge_Cult_Mechanicus = new String[]{"", "Fulgurite Electro-Priests",
             "Corpuscarii Electro-Priests", "Cybernetica Datasmith"};
-    public String[] Standardeinträge_Cult_Mechanicus = new String[]{"", "Kataphron Breachers", "Kataphron Destroyers"};
-    public String[] Unterstützungseinträge_Cult_Mechanicus = new String[]{"", "Kastelan Robots"};
+    private static final String[] Standardeinträge_Cult_Mechanicus = new String[]{"", "Kataphron Breachers", "Kataphron Destroyers"};
+    private static final String[] Unterstützungseinträge_Cult_Mechanicus = new String[]{"", "Kastelan Robots"};
 
     //SKITARII
-    public String[] Standardeinträge_Skitarii = new String[]{"", "Skitarii Rangers", "Skitarii Vanguard"};
-    public String[] Eliteeinträge_Skitarii = new String[]{"", "Sicarian Infiltrators", "Sicarian Ruststalkers"};
-    public String[] Sturmeinträge_Skitarii = new String[]{"", "Ironstrider Ballistarii", "Sydonian Dragoons"};
-    public String[] Unterstützungseinträge_Skitarii = new String[]{"", "Onager Dunecrawler"};
+    private static final String[] Standardeinträge_Skitarii = new String[]{"", "Skitarii Rangers", "Skitarii Vanguard"};
+    private static final String[] Eliteeinträge_Skitarii = new String[]{"", "Sicarian Infiltrators", "Sicarian Ruststalkers"};
+    private static final String[] Sturmeinträge_Skitarii = new String[]{"", "Ironstrider Ballistarii", "Sydonian Dragoons"};
+    private static final String[] Unterstützungseinträge_Skitarii = new String[]{"", "Onager Dunecrawler"};
 
     //ADEPTUS MECHANICUS Komplett
-    public String[] HQeinträge_Adeptus_Mechanicus = HQeinträge_Cult_Mechanicus;
-    public String[] Standardeinträge_Adeptus_Mechanicus = uniteUnitList(Standardeinträge_Cult_Mechanicus, Standardeinträge_Skitarii);
-    public String[] Eliteeinträge_Adeptus_Mechanicus = uniteUnitList(uniteUnitList(
+    private static final String[] HQeinträge_Adeptus_Mechanicus = HQeinträge_Cult_Mechanicus;
+    private static final String[] Standardeinträge_Adeptus_Mechanicus = uniteUnitList(Standardeinträge_Cult_Mechanicus, Standardeinträge_Skitarii);
+    private static final String[] Eliteeinträge_Adeptus_Mechanicus = uniteUnitList(uniteUnitList(
             Eliteeinträge_Cult_Mechanicus, Eliteeinträge_Skitarii), new String[]{"", "Servitors"});
-    public String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
-    public String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
+    private static final String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
+    private static final String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
 
     //Questor Imperialis
-    public String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
-    public String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
-    public String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
+    private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
+    private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
+    private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
     //Adepta Sororitas
-    public String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Canoness"};
-    public String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    public String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Imagifier", "Hospitaller", "Dialogus", "Celestian Squad",
+    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Canoness"};
+    private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
+    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Imagifier", "Hospitaller", "Dialogus", "Celestian Squad",
             "Mistress Of Repentance", "Repentia Squad"};
-    public String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
-    public String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist"};
-    public String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
+    private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
+    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist"};
+    private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
 
     //Adeptus Ministorum
-    public String[] HQeinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Uriah Jacobus"}, HQeinträge_Adepta_Sororitas);
-    public String[] Standardeinträge_Adeptus_Ministorum = Standardeinträge_Adepta_Sororitas;
-    public String[] Eliteeinträge_Adeptus_Ministorum_Only = new String[]{"Death Cult Assassins", "Arco Flagellants", "Ministorum Priest Adeptus Ministorum"};
-    public String[] Eliteeinträge_Adeptus_Ministorum = uniteUnitList(uniteUnitList(Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Adeptus_Ministorum_Only), Eliteeinträge_Adepta_Sororitas);
-    public String[] Sturmeinträge_Adeptus_Ministorum = Sturmeinträge_Adepta_Sororitas;
-    public String[] Unterstützungseinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Penitent Engines"},
+    private static final String[] HQeinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Uriah Jacobus"}, HQeinträge_Adepta_Sororitas);
+    private static final String[] Standardeinträge_Adeptus_Ministorum = Standardeinträge_Adepta_Sororitas;
+    private static final String[] Eliteeinträge_Adeptus_Ministorum_Only = new String[]{"Death Cult Assassins", "Arco Flagellants", "Ministorum Priest Adeptus Ministorum"};
+    private static final String[] Eliteeinträge_Adeptus_Ministorum = uniteUnitList(uniteUnitList(Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Adeptus_Ministorum_Only), Eliteeinträge_Adepta_Sororitas);
+    private static final String[] Sturmeinträge_Adeptus_Ministorum = Sturmeinträge_Adepta_Sororitas;
+    private static final String[] Unterstützungseinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Penitent Engines"},
             Unterstützungseinträge_Adepta_Sororitas);
-    public String[] Transporteinträge_Adeptus_Ministorum = Transporteinträge_Adepta_Sororitas;
+    private static final String[] Transporteinträge_Adeptus_Ministorum = Transporteinträge_Adepta_Sororitas;
 
     //Sisters of Silence
-    public String[] Eliteeinträge_Sisters_of_Silence = new String[]{"", "Prosecutors", "Vigilators", "Witchseekers"};
-    public String[] Transporteinträge_Sisters_of_Silence = {"", "Null-Maiden Rhino"};
+    private static final String[] Eliteeinträge_Sisters_of_Silence = new String[]{"", "Prosecutors", "Vigilators", "Witchseekers"};
+    private static final String[] Transporteinträge_Sisters_of_Silence = {"", "Null-Maiden Rhino"};
 
     //Adeptus Astra Telepathica -> Gesamtliste
-    public String[] HQeinträge_Adeptus_Astra_Telepathica = HQeinträge_Scholastica_Psykana;
-    public String[] Eliteeinträge_Adeptus_Astra_Telepathica = uniteUnitList(Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Sisters_of_Silence);
-    public String[] Transporteinträge_Adeptus_Astra_Telepathica = Transporteinträge_Sisters_of_Silence;
+    private static final String[] HQeinträge_Adeptus_Astra_Telepathica = HQeinträge_Scholastica_Psykana;
+    private static final String[] Eliteeinträge_Adeptus_Astra_Telepathica = uniteUnitList(Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Sisters_of_Silence);
+    private static final String[] Transporteinträge_Adeptus_Astra_Telepathica = Transporteinträge_Sisters_of_Silence;
 
     //Officio Assassinorum
-    public String[] Eliteeinträge_Officio_Assassinorum = new String[]{"", "Vindicare Assassin", "Callidus Assassin", "Eversor Assassin", "Culexus Assassin"};
+    private static final String[] Eliteeinträge_Officio_Assassinorum = new String[]{"", "Vindicare Assassin", "Callidus Assassin", "Eversor Assassin", "Culexus Assassin"};
 
     //Inquisition TODO: Einfügen in Imperium
     public String[] Eliteeinträge_Inquisition = new String[]{"", /*TODO:"Daemonhost",*/};
@@ -137,275 +137,169 @@ public class VOLKImperium extends BuildaVater {
     public String[] HQeinträge_Ordo_Malleus = new String[]{"", /*TODO:"Ordo Malleus Inquisitor", /*TODO:"Inquisitor Coteaz", */};
 
     //Adeptus Custodes TODO: Einfügen in Imperium
-    public String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
-    public String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
-    public String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
+    private static final String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
+    private static final String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
+    private static final String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
             "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought", "Contemptor-Exemplar Dreadnought"};
-    public String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-tank"};
-    public String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-carrier"};
+    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-tank"};
+    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-carrier"};
 
-    public String[] Befestigungen = new String[]{""};
+    private static final String[] Befestigungen = new String[]{""};
 
-    public String[] HQeinträge_SM = new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
+    private static final String[] HQeinträge_SM = new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
             "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
             "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
             "Chaplain on Bike", "Lieutenants", "", "Primaris Chaplain", "Primaris Librarian", "Primaris Lieutenants", "Primaris Master", "Primaris Captain",
             "Rhino Primaris", "Land Raider Excelsior"};
-    public String[] Standardeinträge_SM = new String[]{"", "Tactical Squad", "Scout Squad", "Intercessor Squad"};
-    public String[] Eliteeinträge_SM = new String[]{"", "Servitors", "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
+    private static final String[] Standardeinträge_SM = new String[]{"", "Tactical Squad", "Scout Squad", "Intercessor Squad"};
+    private static final String[] Eliteeinträge_SM = new String[]{"", "Servitors", "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
             "Company Ancient", "Company Ancient on Bike",
             "Primaris Ancient", "Company Champion", "Company Champion on Bike", "Company Veterans", "Company Veterans on Bikes",
             "Imperial Space Marine", "Honour Guard", "Chapter Ancient", "Chapter Champion", "Centurion Assault Squad",
             "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought",
             "Redemptor Dreadnought", "Ironclad Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Cataphractii Terminator Squad",
             "Tartaros Terminator Squad", "Aggressor Squad", "Reiver Squad"};
-    public String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
+    private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
-    public String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
+    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
             "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
             "Land Raider Crusader", "Land Raider Redeemer"};
-    public String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor",};
-    public String[] Fliegereinträge_SM = new String[]{"", "Stormhawk Interceptor", "Stormtalon Gunship", "Stormraven Gunship",};
-    public String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
+    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor",};
+    private static final String[] Fliegereinträge_SM = new String[]{"", "Stormhawk Interceptor", "Stormtalon Gunship", "Stormraven Gunship",};
+    private static final String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
 
     //Ultramarines
-    public String[] HQeinträge_Ultramarines = new String[]{"", "Marneus Calgar", "Marneus Calgar in Artificer Armour",
+    private static final String[] HQeinträge_Ultramarines = new String[]{"", "Marneus Calgar", "Marneus Calgar in Artificer Armour",
             "Captain Sicarius", "Chief Librarian Tigurius", "Chaplain Cassius", "Sergeant Telion", "Sergeant Chronus"};
-    public String[] Eliteeinträge_Ultramarines = new String[]{"", "Tyrannic War Veterans",};
-    public String[] LordofWar_Ultramarines = new String[]{"", "Roboute Guilliman", "Terminus Ultra",};
+    private static final String[] Eliteeinträge_Ultramarines = new String[]{"", "Tyrannic War Veterans",};
+    private static final String[] LordofWar_Ultramarines = new String[]{"", "Roboute Guilliman", "Terminus Ultra",};
 
     //Imperial Fists
-    public String[] HQeinträge_Imperial_Fists = new String[]{"", "Captain Lysander"};
+    private static final String[] HQeinträge_Imperial_Fists = new String[]{"", "Captain Lysander"};
 
     //Crimson Fists
-    public String[] HQeinträge_Crimson_Fists = new String[]{"", "Pedro Kantor"};
+    private static final String[] HQeinträge_Crimson_Fists = new String[]{"", "Pedro Kantor"};
 
     //Black Templars
-    public String[] HQeinträge_Black_Templars = new String[]{"", "High Marshal Helbrecht", "The Emperor's Champion", "Chaplain Grimaldus"};
-    public String[] Eliteeinträge_Black_Templars = new String[]{"", "Cenobyte Servitors"};
-    public String[] Standardeinträge_Black_Templars = new String[]{"", "Crusader Squad"};
+    private static final String[] HQeinträge_Black_Templars = new String[]{"", "High Marshal Helbrecht", "The Emperor's Champion", "Chaplain Grimaldus"};
+    private static final String[] Eliteeinträge_Black_Templars = new String[]{"", "Cenobyte Servitors"};
+    private static final String[] Standardeinträge_Black_Templars = new String[]{"", "Crusader Squad"};
 
     //Raven Guard
-    public String[] HQeinträge_Raven_Guard = new String[]{"", "Kayvaan Shrike"};
+    private static final String[] HQeinträge_Raven_Guard = new String[]{"", "Kayvaan Shrike"};
 
     //Salamanders
-    public String[] HQeinträge_Salamanders = new String[]{"", "Vulkan He'stan"};
+    private static final String[] HQeinträge_Salamanders = new String[]{"", "Vulkan He'stan"};
 
     //White Scars
-    public String[] HQeinträge_White_Scars = new String[]{"", "Kor'sarro Khan", "Kor'sarro Khan on Moondrakkan"};
+    private static final String[] HQeinträge_White_Scars = new String[]{"", "Kor'sarro Khan", "Kor'sarro Khan on Moondrakkan"};
 
     //Legion of the Damned
-    public String[] Eliteeinträge_Legion_of_the_Damned = new String[]{"", "Damned Legionnaires"};
+    private static final String[] Eliteeinträge_Legion_of_the_Damned = new String[]{"", "Damned Legionnaires"};
 
     //Blood Angels
-    public String[] HQeinträge_Blood_Angels = new String[]{"", "Commander Dante", "Gabriel Seth", "Captain Tycho", "Tycho the Lost",
+    private static final String[] HQeinträge_Blood_Angels = new String[]{"", "Commander Dante", "Gabriel Seth", "Captain Tycho", "Tycho the Lost",
             "Librarian Dreadnought", "Chief Librarian Mephiston", "The Sanguinor",
             "Astorath", "Sanguinary Priest", "Sanguinary Priest on Bike",
             "Brother Corbulo", "Lemartes",};
-    public String[] Eliteeinträge_Blood_Angels = new String[]{"", "Sanguinary Guard Ancient", "Terminator Ancient", "Death Company",
+    private static final String[] Eliteeinträge_Blood_Angels = new String[]{"", "Sanguinary Guard Ancient", "Terminator Ancient", "Death Company",
             "Sanguinary Guard", "Death Company Dreadnought", "Furioso Dreadnought"};
-    public String[] Unterstützungseinträge_Blood_Angels = new String[]{"", "Baal Predator"};
+    private static final String[] Unterstützungseinträge_Blood_Angels = new String[]{"", "Baal Predator"};
 
-    public String[] Sturmeinträge_Blood_Angels = new String[]{"", "Assault Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
+    private static final String[] Sturmeinträge_Blood_Angels = new String[]{"", "Assault Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
 
     //Dark Angels
-    public String[] HQeinträge_Dark_Angels = new String[]{"", "Azrael", "Belial", "Sammael on Corvex", "Sammael in Sableclaw", "Interrogator-Chaplain", "Ravenwing Talonmaster",
+    private static final String[] HQeinträge_Dark_Angels = new String[]{"", "Azrael", "Belial", "Sammael on Corvex", "Sammael in Sableclaw", "Interrogator-Chaplain", "Ravenwing Talonmaster",
             "Interrogator-Chaplain in Terminator Armour", "Interrogator-Chaplain on Bike", "Asmodai", "Ezekiel"};
-    public String[] Eliteeinträge_Dark_Angels = new String[]{"", "Deathwing Apothecary", "Deathwing Ancient", "Deathwing Champion", "Deathwing Terminator Squad", "Deathwing Cataphractii Terminator Squad",
+    private static final String[] Eliteeinträge_Dark_Angels = new String[]{"", "Deathwing Apothecary", "Deathwing Ancient", "Deathwing Champion", "Deathwing Terminator Squad", "Deathwing Cataphractii Terminator Squad",
             "Deathwing Tartaros Terminator Squad", "Deathwing Knights", "Ravenwing Apothecary", "Ravenwing Ancient", "Ravenwing Champion",};
-    public String[] Sturmeinträge_Dark_Angels = new String[]{"", "Ravenwing Bike Squad", "Ravenwing Attack Bike Squad", "Ravenwing Land Speeders", "Ravenwing Darkshroud",
+    private static final String[] Sturmeinträge_Dark_Angels = new String[]{"", "Ravenwing Bike Squad", "Ravenwing Attack Bike Squad", "Ravenwing Land Speeders", "Ravenwing Darkshroud",
             "Ravenwing Black Knights", "Ravenwing Land Speeder Vengeance",};
-    public String[] Fliegereinträge_Dark_Angels = new String[]{"", "Nephilim Jetfighter", "Ravenwing Dark Talon", "Stormraven Gunship"};
-    public String[] Befestigungen_Dark_Angels = new String[]{"", "Fortress of Redemption",};
+    private static final String[] Fliegereinträge_Dark_Angels = new String[]{"", "Nephilim Jetfighter", "Ravenwing Dark Talon", "Stormraven Gunship"};
+    private static final String[] Befestigungen_Dark_Angels = new String[]{"", "Fortress of Redemption",};
 
     //Space Wolves
-    public String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Wolf Lord",
+    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Wolf Lord",
             "Wolf Lord in Terminator Armour", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike", "Wolf Lord on Thunderwolf",
             "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour",
             "Rune Priest on Bike", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour", "Wolf Priest",
             "Wolf Priest in Terminator Armour", "Wolf Priest on Bike", "Ulrik the Slayer", "Wolf Guard Battle Leader",
             "Wolf Guard Battle Leader on Bike", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
             "Bjorn the Fell-Handed", "Iron Priest", "Iron Priest on Bike", "Iron Priest on Thunderwolf", "Arjac Rockfist"};
-    public String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
-    public String[] Eliteeinträge_Space_Wolves = new String[]{"", "SW Venerable Dreadnought", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf",
+    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
+    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "SW Venerable Dreadnought", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf",
             "Lone Wolf in Terminator Armour", "Murderfang", "Wolf Guard", "Wolf Guard on Bikes", "Wolf Guard in Terminator Armour"};
-    public String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes",
+    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes",
             "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws"};
-    public String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship"};
-    public String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
+    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship"};
+    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
 
     //Deathwatch //TODO SM-Einheiten hinzufügen
-    public String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};
-    public String[] Standardeinträge_Deathwatch = new String[]{"", "Deathwatch Veterans", "Deathwatch Intercessors"};
-    public String[] Eliteeinträge_Deathwatch = new String[]{"", "Deathwatch Primaris Apothecary", "Venerable Dreadnought", "Dreadnought", "Redemptor Dreadnought", "Deathwatch Terminator Squad", "Deathwatch Reiver Squad", "Aggressor Squad", "Deathwatch Vanguard Veterans"};
-    public String[] Sturmeinträge_Deathwatch = new String[]{"", "Deathwatch Bikers", "Inceptor Squad"};
-    public String[] Unterstützungseinträge_Deathwatch = new String[]{"", "Hellblaster Squad", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
-    public String[] Transporteinträge_Deathwatch = new String[]{"", "Razorback", "Rhino", "Drop Pod", "Repulsor"};
-    public String[] Fliegereinträge_Deathwatch = new String[]{"", "Corvus Blackstar"};
+    private static final String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};
+    private static final String[] Standardeinträge_Deathwatch = new String[]{"", "Deathwatch Veterans", "Deathwatch Intercessors"};
+    private static final String[] Eliteeinträge_Deathwatch = new String[]{"", "Deathwatch Primaris Apothecary", "Venerable Dreadnought", "Dreadnought", "Redemptor Dreadnought", "Deathwatch Terminator Squad", "Deathwatch Reiver Squad", "Aggressor Squad", "Deathwatch Vanguard Veterans"};
+    private static final String[] Sturmeinträge_Deathwatch = new String[]{"", "Deathwatch Bikers", "Inceptor Squad"};
+    private static final String[] Unterstützungseinträge_Deathwatch = new String[]{"", "Hellblaster Squad", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
+    private static final String[] Transporteinträge_Deathwatch = new String[]{"", "Razorback", "Rhino", "Drop Pod", "Repulsor"};
+    private static final String[] Fliegereinträge_Deathwatch = new String[]{"", "Corvus Blackstar"};
 
     //Grey Knights //TODO SM-Einheiten hinzufügen
-    public String[] HQeinträge_Grey_Knights = new String[]{"", "Lord Kaldor Draigo", "Grand Master Voldus", "Grand Master", "Grand Master in Nemesis Dreadknight",
+    private static final String[] HQeinträge_Grey_Knights = new String[]{"", "Lord Kaldor Draigo", "Grand Master Voldus", "Grand Master", "Grand Master in Nemesis Dreadknight",
             "Castellan Crowe", "Brother Captain Stern", "Brother-Captain", "Librarian GK", "Techmarine GK", "Chaplain GK", "Brotherhood Champion"};
-    public String[] Standardeinträge_Grey_Knights = new String[]{"", "Grey Knight Terminator Squad", "Strike Squad"};
-    public String[] Eliteeinträge_Grey_Knights = new String[]{"", "Brotherhood Ancient", "Purifier Squad", "Paladin Squad",
+    private static final String[] Standardeinträge_Grey_Knights = new String[]{"", "Grey Knight Terminator Squad", "Strike Squad"};
+    private static final String[] Eliteeinträge_Grey_Knights = new String[]{"", "Brotherhood Ancient", "Purifier Squad", "Paladin Squad",
             "Paladin Ancient", "Grey Knight Apothecary", "Dreadnought GK", "Venerable Dreadnought GK", "Servitors"};
-    public String[] Sturmeinträge_Grey_Knights = new String[]{"", "Interceptor Squad"};
-    public String[] Unterstützungseinträge_Grey_Knights = new String[]{"", "Purgation Squad", "Nemesis Dreadknight", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
-    public String[] Transporteinträge_Grey_Knights = new String[]{"", "Razorback", "Rhino"};
-    public String[] Fliegereinträge_Grey_Knights = new String[]{"", "Stormhawk Interceptor", "Stormraven Gunship", "Stormtalon Gunship"};
+    private static final String[] Sturmeinträge_Grey_Knights = new String[]{"", "Interceptor Squad"};
+    private static final String[] Unterstützungseinträge_Grey_Knights = new String[]{"", "Purgation Squad", "Nemesis Dreadknight", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
+    private static final String[] Transporteinträge_Grey_Knights = new String[]{"", "Razorback", "Rhino"};
+    private static final String[] Fliegereinträge_Grey_Knights = new String[]{"", "Stormhawk Interceptor", "Stormraven Gunship", "Stormtalon Gunship"};
 
     //Imperial Armour Adeptus Astartes
-    public String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought", "Damocles Command Rhino",};
-    public String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator", "Relic Sicaran Battle Tank", "Relic Sicaran Venator Tank Destroyer",
+    private static final String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought", "Damocles Command Rhino",};
+    private static final String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator", "Relic Sicaran Battle Tank", "Relic Sicaran Venator Tank Destroyer",
             "Relic Sicaran Punisher Assault Tank", "Relic Sicaran Arcus Strike Tank", "Relic Sicaran Omega Tank Destroyer", "Relic Contemptor Dreadnought",
             "Relic Deredeo Dreadnought", "Relic Javelin Attack Speeder", "Relic Whirlwind Scorpius",};
-    public String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest", "Tarantula Sentry Gun", "Tarantula Air Defence Battery", "Deathstorm Drop Pod",};
-    public String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer", "Relic Land Raider Proteus", "Land Raider Helios",
+    private static final String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest", "Tarantula Sentry Gun", "Tarantula Air Defence Battery", "Deathstorm Drop Pod",};
+    private static final String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer", "Relic Land Raider Proteus", "Land Raider Helios",
             "Land Raider Prometheus", "Land Raider Achilles", "Mortis Dreadnought", "Siege Dreadnought", "Contemptor Mortis Dreadnought", "Relic Leviathan Dreadnought",
             "Whirlwind Hyperios", "Rapier Carrier",};
-    public String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback", "Lucius Pattern Dreadnought Drop Pod",};
-    public String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor", "Storm Eagle Assault Gunship", "Fire Raptor Assault Gunship", "Caestus Assault Ram",};
-    public String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank", "Relic Typhon Heavy Siege Tank", "Relic Cerberus Heavy Tank Destroyer",
+    private static final String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback", "Lucius Pattern Dreadnought Drop Pod",};
+    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor", "Storm Eagle Assault Gunship", "Fire Raptor Assault Gunship", "Caestus Assault Ram",};
+    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank", "Relic Typhon Heavy Siege Tank", "Relic Cerberus Heavy Tank Destroyer",
             "Relic Fellblade Super-heavy Tank", "Relic Falchion Super-heavy Tank Destroyer", "Relic Mastodon Super-heavy Siege Transport",
             "Thunderhawk Assault Gunship", "Thunderhawk Transporter", "Sokar Pattern Stormbird",};
-    public String[] Befestigungen_IA_AA = new String[]{"", "Castellum Stronghold",};
 
-    //FW Character Series Blood Ravens
-    public String[] HQeinträge_FW_Blood_Ravens = new String[]{"", "Gabriel Angelos"};
-
-    //Imperial Armour Adeptus Astartes Minotaurs
-    public String[] HQeinträge_IA_Minotaurs = new String[]{"", "Lord Asterion Moloc", "Chaplain Ivanus Enkomi", "Hecaton Aiakos"};
-    public String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern",};
-
-    //Imperial Armour Adeptus Astartes Red Scorpions
-    public String[] HQeinträge_IA_Red_Scorpions = new String[]{"", "Lord High Commander Carab Culln", "Carab Culln the Risen", "Magister Sevrin Loth"};
-
-    //Imperial Armour Adeptus Astartes Astral Claws
-    public String[] HQeinträge_IA_Astral_Claws = new String[]{"", "Lugft Huron", "Armenneus Valthex", "Arch-Centurion Carnac Commodus"};
-
-    //Imperial Armour Adeptus Astartes Astral Claws/Tiger Claws
-    public String[] HQeinträge_IA_Astral_Claws_Tiger_Claws = new String[]{"", "Captain Corien Sumatris"};
-
-    //Imperial Armour Adeptus Astartes Carcharodons
-    public String[] HQeinträge_IA_Carcharodons = new String[]{"", "Tyberos The Red Wake"};
-
-    //Imperial Armour Adeptus Astartes Howling Griffons
-    public String[] HQeinträge_IA_HowlingGriffons = new String[]{"", "Chaplain Dreadnought Titus"};
-
-    //Imperial Armour Adeptus Astartes Marines Errant
-    public String[] HQeinträge_IA_Marines_Errant = new String[]{"", "Lieutenant Commander Anton Narvaez"};
-
-    //Imperial Armour Adeptus Astartes Fire Angels
-    public String[] HQeinträge_IA_Fire_Angels = new String[]{"", "Captain Tarnus Vale"};
-
-    //Imperial Armour Adeptus Astartes Raptors
-    public String[] HQeinträge_IA_Raptors = new String[]{"", "Lias Issodon"};
-
-    //Imperial Armour Adeptus Astartes Lamenters
-    public String[] HQeinträge_IA_Lamenters = new String[]{"", "Malakim Phoros"};
-
-    //Imperial Armour Adeptus Astartes Novamarines
-    public String[] HQeinträge_IA_Novamarines = new String[]{"", "Captain Mordaci Blaylock"};
-
-    //Imperial Armour Adeptus Astartes Salamanders
-    public String[] HQeinträge_IA_Salamanders = new String[]{"", "Captain Pellas Mir'san", "Bray'arth Ashmantle", "Harath Shen"};
-
-    //Imperial Armour Adeptus Astartes Mantis Warriors
-    public String[] HQeinträge_IA_Mantis_Warriors = new String[]{"", "Ahazra Redth"};
-
-    //Imperial Armour Adeptus Astartes Executioners
-    public String[] HQeinträge_IA_Executioners = new String[]{"", "High Chaplain Thulsa Kane"};
-
-    //Imperial Armour Adeptus Astartes Exorcists
-    public String[] HQeinträge_IA_Exorcists = new String[]{"", "Captain Silas Alberec"};
-
-    //Imperial Armour Adeptus Astartes Fire Hawks
-    public String[] HQeinträge_IA_Fire_Hawks = new String[]{"", "Knight-Captain Elam Courbray"};
-
-    //Imperial Armour Adeptus Astartes Sons of Medusa
-    public String[] HQeinträge_IA_Sons_of_Medusa = new String[]{"", "Vaylund Cal"};
-
-    //Imperial Armour Adeptus Astartes Star Phantoms
-    public String[] HQeinträge_IA_Star_Phantoms = new String[]{"", "Captain Zhrukhal Androcles"};
-
-    //Imperial Armour Inquisition Ordo Malleus
-    public String[] HQeinträge_IA_Ordo_Malleus = new String[]{"", "Inquisitor-Lord Hector Rex"};
-
-    //Imperial Armour Inquisition Ordo Xenos
-    public String[] HQeinträge_IA_Ordo_Xenos = new String[]{"", "Inquisitor-Lord Solomon Lok"};
+    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern",};
 
     //Adeptus Astartes
-    public String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
+    private static final String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
             HQeinträge_Crimson_Fists, HQeinträge_Black_Templars, HQeinträge_Raven_Guard, HQeinträge_Salamanders,
             HQeinträge_White_Scars, HQeinträge_Blood_Angels, HQeinträge_Dark_Angels, HQeinträge_Space_Wolves,
             HQeinträge_Deathwatch, HQeinträge_Grey_Knights, HQeinträge_IA_AA);
-    public String[] Standardeinträge_AA_komplett = uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars,
+    private static final String[] Standardeinträge_AA_komplett = uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars,
             Standardeinträge_Space_Wolves, Standardeinträge_Deathwatch, Standardeinträge_Grey_Knights);
-    public String[] Eliteeinträge_AA_komplett = uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_Black_Templars,
+    private static final String[] Eliteeinträge_AA_komplett = uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_Black_Templars,
             Eliteeinträge_Legion_of_the_Damned, Eliteeinträge_Blood_Angels, Eliteeinträge_Dark_Angels, Eliteeinträge_Space_Wolves,
             Eliteeinträge_Deathwatch, Eliteeinträge_Grey_Knights, Eliteeinträge_IA_AA);
-    public String[] Sturmeinträge_AA_komplett = uniteUnitList(Sturmeinträge_SM, Sturmeinträge_Blood_Angels, Sturmeinträge_Dark_Angels, Sturmeinträge_Space_Wolves,
+    private static final String[] Sturmeinträge_AA_komplett = uniteUnitList(Sturmeinträge_SM, Sturmeinträge_Blood_Angels, Sturmeinträge_Dark_Angels, Sturmeinträge_Space_Wolves,
             Sturmeinträge_Deathwatch, Sturmeinträge_Grey_Knights, Sturmeinträge_IA_AA);
-    public String[] Unterstützungeinträge_AA_komplett = uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_Blood_Angels,
+    private static final String[] Unterstützungeinträge_AA_komplett = uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_Blood_Angels,
             Unterstützungseinträge_Space_Wolves, Unterstützungseinträge_Deathwatch, Unterstützungseinträge_Grey_Knights, Unterstützungseinträge_IA_AA);
-    public String[] Transporteinträge_AA_komplett = uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA);
-    public String[] Fliegereinträge_AA_komplett = uniteUnitList(Fliegereinträge_SM, Fliegereinträge_Dark_Angels,
+    private static final String[] Transporteinträge_AA_komplett = uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA);
+    private static final String[] Fliegereinträge_AA_komplett = uniteUnitList(Fliegereinträge_SM, Fliegereinträge_Dark_Angels,
             Fliegereinträge_Space_Wolves, Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA, Fliegereinträge_IA_Minotaurs);
-    public String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
+    private static final String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
 
     public VOLKImperium() {
         reflectionKennung = "IM";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/sm.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
 
-        LOGGER.error("File: " + "/oc/wh40k/indices/ba.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ba.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/da.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/da.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/sw.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/sw.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/dw.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/dw.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/gk.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/gk.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/am.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/am.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/ame.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ame.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/qi.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/qi.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/ami.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ami.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/oa.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/oa.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/ac.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ac.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/iaaa.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/iaaa.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
+        Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
+                .map(name -> String.format("/oc/wh40k/indices/%s.csv", name))
+                .forEach(file -> {
+                    LOGGER.info("loading file {}", file);
+                    appendPointList(BuildaHQ.loadindexFile(this.getClass().getResourceAsStream(file)));
+                });
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
@@ -414,7 +308,6 @@ public class VOLKImperium extends BuildaVater {
         Sturmeinträge = new String[]{""};
         Unterstützungeinträge = new String[]{""};
         Fliegereinträge = new String[]{""};
-        Befestigungen = new String[]{""};
         Transporteinträge = new String[]{""};
         LordofWar = new String[]{""};
 
@@ -505,6 +398,7 @@ public class VOLKImperium extends BuildaVater {
 
         complete();
     }
+
 
     @Override
     public void volkRefresh() {

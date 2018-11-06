@@ -638,7 +638,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         myChooserGruppen.get(kategorie).setUnitList(units);
     }
 
-    public String[] uniteUnitList(String[]... list) {
+    public static String[] uniteUnitList(String[]... list) {
         int length = 0;
         for (int i = 0; i < list.length; i++) {
             length += list[i].length;
@@ -655,7 +655,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         return sRet;
     }
 
-    public String[] uniteUnitList(String[] sAr1, String[] sAr2) {
+    public static String[] uniteUnitList(String[] sAr1, String[] sAr2) {
         String[] sRet = new String[sAr1.length + sAr2.length];
 
         for (int i = 0; i < sAr1.length; i++) {
