@@ -280,6 +280,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             if (!warbikerboss) {
                 ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit", "Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
                 ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
+                ogE.addElement(new OptionsGruppeEintrag("Shoota [Index]", getPts("Shoota")));
+                ogE.addElement(new OptionsGruppeEintrag("Kustom shoota [Index]", getPts("Kustom shoota")));
                 add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
             }
         }
@@ -317,23 +319,6 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
             
             gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
-        }
-
-        if (boyboss || warbikerboss) {
-
-            if (warbikerboss) {
-                BosseCC.setMaxAnzahl(2);
-
-                boolean legal = BosseCC.getAnzahl() == 2;
-                BosseCC.setLegal(legal);
-            } else {
-                if (BosseFK.isSelected()) BosseCC.setMaxAnzahl(0);
-                else BosseCC.setMaxAnzahl(2);
-
-                boolean legal = BosseFK.getAnzahl() * 2 + BosseCC.getAnzahl() == 2;
-                BosseFK.setLegal(legal);
-                BosseCC.setLegal(legal);
-            }
         }
     }
 

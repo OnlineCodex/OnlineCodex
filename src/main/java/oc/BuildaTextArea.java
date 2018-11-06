@@ -415,6 +415,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             text.append(" - ");
             text.append((int) bV.getKosten());
             text.append(" Punkte");
+            text.append(" (PL " + (int) bV.getPower() + ")");
             text.append(ZEILENUMBRUCH);
         if (BuildaHQ.zusatzInfos) {
             if (text.toString().length() != 0) {

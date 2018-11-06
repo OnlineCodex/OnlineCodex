@@ -275,7 +275,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
         //Bei alle Punktkosten: hier wird bei kostenlosen Einträgen, bei denen nur die erste Option gewählt ist, welche selbst aber noch Kosten und weitere eigene Optionen hat, die Gesamtpunktzahl nicht angezeigt. Deswegen: "gesamtpunkteImmerAnzeigen" hinzugefügt.
         if (this.getKosten() != 0 && (cnt > 1 || !BuildaHQ.allePunktkosten || (optionen.size() > 0 ? optionen.elementAt(0).getKosten() != this.getKosten() : false) || gesamtpunkteImmerAnzeigen)) {
-            text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte")));
+            text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte") + " (PL " + getPower()+ ")"));
         }
 
         // ACHTUNG BEI KOSTENLOSEN EINTRÄGEN, die trotzdem angezeigt werden sollen!
