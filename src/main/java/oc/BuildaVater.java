@@ -66,8 +66,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected JComboBox supplementBox = new JComboBox();
     protected JComboBox kontingentBox = new JComboBox();
     protected JComboBox formationBox = new JComboBox();
-    @SuppressWarnings("unused")
-    private Information informationClass;
     private Sonstige[] sonstige;
     private ActionListener refreshActionListenerKon = new ActionListener() {
 

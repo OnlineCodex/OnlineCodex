@@ -26,8 +26,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     protected String anfangDerTextarea = ""; // s. ImperialeArmee
     String orden = "";
     int mainCnt = 0;
-    @SuppressWarnings("unused")
-    private Information informationClass;
     private Vector<BuildaVater> myBuildaVaterVec = new Vector<BuildaVater>();
     private JScrollPane textAreaScrollPane;
     private JTextAreaWithPopup textArea = new JTextAreaWithPopup(true, false);
