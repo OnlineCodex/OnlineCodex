@@ -44,11 +44,7 @@ public class ChooserGruppe extends BuildaPanel {
         this.reflectionKennung = reflectionKennung;
         this.statischeEinträge = statischeEinträge;
         this.alleEinträge = statischeEinträge;
-        if (getGame() == 0) {
-            panel.setBounds(lX, lY + 25, auswahlBreite + (randAbstand * 3), CHOOSER_Y);
-        } else {
-            panel.setBounds(lX, lY, auswahlBreite + (randAbstand * 3), CHOOSER_Y);
-        }
+        panel.setBounds(lX, lY + 25, auswahlBreite + (randAbstand * 3), CHOOSER_Y);
         panel.add(Lueberschrift);
 
         Lueberschrift.setFont(new Font("arial", Font.BOLD, 12));
@@ -288,12 +284,10 @@ public class ChooserGruppe extends BuildaPanel {
     }
 
     public void überschriftLabelSetzen() {
-        //System.out.println("ChooserGruppe-überschriftLabelSetzen");
         FontMetrics fm = Lueberschrift.getFontMetrics(Lueberschrift.getFont());
-        //
-        StringBuilder abstandshalter = new StringBuilder("");
+        StringBuilder abstandshalter = new StringBuilder();
 
-        String punkteString = BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA ? "Credits" : "Punkte");
+        String punkteString = BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte");
         String kategorieString = " " + getAnzahlText(true) + " " + kategorieText() + " (" + minAnzahl + "-" + maxAnzahl + ")";
 
         int cnt = (Lueberschrift.getSize().width - (fm.stringWidth(kategorieString + punkteString) + 30)) / fm.stringWidth(" ");
@@ -304,28 +298,9 @@ public class ChooserGruppe extends BuildaPanel {
 
         Lueberschrift.setText(kategorieString + abstandshalter.toString() + punkteString);
 
-        if (getGame() == OnlineCodex.WH40K || getGame() == OnlineCodex.WH40K_LEGACY) {
-//			if(maxAnzahl==0){
-//				if(getAnzahl(true, false) > kategorienMaxAnzahl[kategorie - 1]
-//						|| getAnzahl(false, true) < kategorienMinAnzahl[kategorie - 1]) {
-//					Lueberschrift.setForeground(Color.RED);
-//				} else {
-//					Lueberschrift.setForeground(Color.BLACK);
-//				}
-//			}else{ //Lokale Regelung für neues Kontingentsystem
-            if (getAnzahl(true, false) > maxAnzahl
-                    || getAnzahl(false, true) < minAnzahl) {
-                Lueberschrift.setForeground(Color.RED);
-            } else {
-                Lueberschrift.setForeground(Color.BLACK);
-            }
-            //}
-        } else if (getGame() == OnlineCodex.WHFB) {
-            if (getKosten(true, false) > Double.parseDouble(budget.getText()) * kategorienMaxProzent[kategorie - 1] / 100.0 || getKosten(false, true) < Double.parseDouble(budget.getText()) * kategorienMinProzent[kategorie - 1] / 100) {
-                Lueberschrift.setForeground(Color.RED);
-            } else {
-                Lueberschrift.setForeground(Color.BLACK);
-            }
+        if (getAnzahl(true, false) > maxAnzahl
+                || getAnzahl(false, true) < minAnzahl) {
+            Lueberschrift.setForeground(Color.RED);
         } else {
             Lueberschrift.setForeground(Color.BLACK);
         }

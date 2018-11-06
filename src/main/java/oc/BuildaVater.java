@@ -209,7 +209,6 @@ public abstract class BuildaVater extends BuildaPanel implements
 
     public void complete() {
         if (!(this instanceof LeererBuilder)) {
-            if (getGame() == 0) {
                 reflectionKennungLokal = reflectionKennung;
                 System.out.println("reflectionKennungLokal:" + reflectionKennungLokal);
 
@@ -241,11 +240,6 @@ public abstract class BuildaVater extends BuildaPanel implements
                 CP.put("Brigade Detachment", 12); //+12CP
                 CP.put("Battalion Detachment", 5); //+5CP
                 CP.put("Patrol Detachment", 0); //+0CP
-
-//				if(reflectionKennung!="CH" && reflectionKennung!="IM"  && reflectionKennung!="OR"  && reflectionKennung!="TY"){
-//					formationen.add(0,"");
-//				}
-
 
                 kontingentBox = new JComboBox(kontingente);
                 kontingentBox.setMaximumRowCount(25);
@@ -318,7 +312,6 @@ public abstract class BuildaVater extends BuildaPanel implements
                 maxAuswahlen.put("Auxiliary Support Detachment", new int[]{3, 1, 1, 1, 1, 1, 1, 1, 0, 0});
 
                 kontingentBox.setSelectedIndex(1);
-            }
             fillChooserSpace();
         }
     }
@@ -428,9 +421,6 @@ public abstract class BuildaVater extends BuildaPanel implements
                 sammler.append(SAVETEXT_TRENNER4);
             }
 
-            if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA)
-                sammler.append(getSaveTextSonstige());
-
             return sammler.toString();
         } else {
             return superformation.getSaveText();
@@ -534,39 +524,20 @@ public abstract class BuildaVater extends BuildaPanel implements
                 }
             }
         }
-
-        if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA && e.getElementsByTagName(ELEMENT_NAME_SONSTIGESGRUPPE) != null) {
-            Element sonstigesRoot = (Element) e.getElementsByTagName(ELEMENT_NAME_SONSTIGESGRUPPE).item(0);
-            NodeList sonstigeChildren = sonstigesRoot.getChildNodes();
-
-            for (int i = 0; i < sonstigeChildren.getLength(); i++) {
-                Element child = (Element) sonstigeChildren.item(i);
-                sonstige[i].loadElement(child);
-            }
-        }
     }
 
 
     private String getSaveTextSonstige() {
-
         StringBuilder text = new StringBuilder("");
-
         if (sonstige != null) {
-
             for (int i = 0; i < sonstige.length; i++) {
-
                 text.append(SAVETEXT_TRENNER5);
-
                 text.append(sonstige[i].getSaveText(SAVETEXT_TRENNER6));
-
             }
-
         }
-
         return text.toString();
     }
 
-    @SuppressWarnings("unused")
     private Element getSaveElementSonstige() {
         Element root = BuildaHQ.getNewXMLElement("Sonstige");
 

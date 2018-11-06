@@ -209,8 +209,4 @@ public class VOLKTauEmpire extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
 }

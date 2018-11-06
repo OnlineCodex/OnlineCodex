@@ -9,7 +9,6 @@ import java.io.InputStream;
 
 public class VOLKImperium extends BuildaVater {
 
-    //AM /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
     public String[] Standardeinträge_AM = new String[]{"", "Infantry Squad", "Conscripts"};
     public String[] Eliteeinträge_AM = new String[]{"", "Master of Ordnance", "Platoon Commander", "Command Squad", "Special Weapons Squad", "Veterans", "Tech-Priest Enginseer", "Servitors"};
@@ -141,13 +140,8 @@ public class VOLKImperium extends BuildaVater {
     public String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-tank"};
     public String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-carrier"};
 
-    //Fortifications TODO: In alle Armeen übernehmen
-    public String[] Befestigungen = new String[]{"", /*TODO:"Aegis Defence Line", /*TODO:"Imperial Bastion", /*TODO:"Imperial Defence Line",
-	/*TODO:"Imperial Bunker", /*TODO:"Vengeance Weapon Batteries", /*TODO:"Firestorm Redoubt", /*TODO:"Plasma Obliberator", 
-	/*TODO:"Macro-Cannon Aquila Strongpoint", /*TODO:"Vortex Missile Aquila Strongpoint", /*TODO:"Void Shield Generator"
-	 * , /*TODO:"Skyshield Landing Pad"*/};
+    public String[] Befestigungen = new String[]{""};
 
-    //SM TODO: In Chapter verteilen
     public String[] HQeinträge_SM = new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
             "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
             "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
@@ -873,10 +867,4 @@ public class VOLKImperium extends BuildaVater {
 
         fillChooserSpace();
     }
-
-    @Override
-    protected void finalize() {
-        System.out.println("Object gelöscht in " + nameDerArtDerArmee + "Builda !!");
-    }
-
 }

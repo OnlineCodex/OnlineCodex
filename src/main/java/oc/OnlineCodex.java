@@ -6,7 +6,6 @@ import org.w3c.dom.Element;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Hashtable;
@@ -17,30 +16,18 @@ import java.util.prefs.Preferences;
 
 public class OnlineCodex extends BuildaPanel {
 
-    public final static int menuHöhe = 23;
-    public final static int FRAME_MIN_WIDTH = 750;
-    public static final int WH40K = 0;
-    public static final int WHFB = 1;
-    public static final int NECROMUNDA = 2;
-    public static final int WH40K_LEGACY = 3;
-    public static final int WHFB_LEGACY = 4;
-    public static final int WH40K_FANDEX = 5;
-    public static final String ARMY_PACKAGE = "oc.wh40k.";
-    public static String allyArmyPackage;
+    static final int menuHöhe = 23;
+    private final static int FRAME_MIN_WIDTH = 750;
+    static final String ARMY_PACKAGE = "oc.wh40k.";
     private static OnlineCodex onlineCodex;
     private final JButton openMenu = new JButton();
     private final JButton openCredits = new JButton();
     private final JButton saveButton = new JButton();
     private final JButton loadButton = new JButton();
-    private final JPanel menuPanel = new JPanel();
     private final Hashtable<String, String> dokumente = new Hashtable<String, String>();
-    private final Optional<Version> version;
-    private final String windowTitle;
     private final JFrame myWindow = new JFrame("OnlineCodex powered by OnlineCodex.de");
     public SaveTextWindow saveTextWindow;
-    int refreshX = 0;
-    int refreshY = 0;
-    Object[] buildazWh40k = new Object[]{
+    private Object[] buildazWh40k = new Object[]{
             "",
             new IconedText("Aeldari", "oc/images/VSOrks.gif"),
             new IconedText("Chaos", "oc/images/VSOrks.gif"),
@@ -54,22 +41,7 @@ public class OnlineCodex extends BuildaPanel {
     private JComboBox buildaChooser;
     private JPanel textPanel;
     private Vector<BuildaVater> myBuilderz = new Vector<BuildaVater>();
-    public ChangeListener tabChangeListener = new ChangeListener() {
-        public void stateChanged(ChangeEvent changeEvent) {
-            JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
-            int index = sourceTabbedPane.getSelectedIndex();
 
-            //System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
-            if (index != 0) {
-                BuildaVater bV = myBuilderz.get(index - 1);
-                for (int i = 0; i < bV.getChooserAnzahl(); i++) {
-                    BuildaHQ.registerNewChooserGruppe(bV.getChooserGruppe(i), i + 1);
-                }
-                BuildaHQ.aktBuildaVater = bV;
-                reflectionKennung = bV.reflectionKennungLokal;
-            }
-        }
-    };
     private Vector<JPanel> buildaPanelz = new Vector<JPanel>();
     private BuildaTextArea myBuilderTextArea;
     private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
@@ -137,29 +109,13 @@ public class OnlineCodex extends BuildaPanel {
 
                 budget.setEnabled(true);
                 name = BuildaHQ.formZuKlassenName((buildaChooser.getSelectedObjects()[0]).toString());
-                if (getGame() != WH40K) {
-                    dokumente.put(aktVolk, getSaveText());
-                }
 
                 aktVolk = name; // switch to new active army
-
-                if (getGame() != WH40K) {
-                    BuildaHQ.leereStatischeInformationen();
-                    if (tab.getComponentCount() > 1) {
-                        tab.remove(1);
-                        removeBuilda(0);
-                    }
-                }
 
                 if (name.equals("")) {
                     return;//Es soll kein Leerer Tab eingefügt werden
                 } else {
                     myBuilder = (BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + name).newInstance());
-                }
-                if (getGame() != WH40K) {
-                    if (loadWithDokumenteHashtable && dokumente.get(name) != null) {
-                        load(dokumente.get(name), false);
-                    }
                 }
 
                 if (event.getSource() == buildaChooser) {
@@ -177,9 +133,7 @@ public class OnlineCodex extends BuildaPanel {
                     sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
                     sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
                     tab.addTab(name, null, sp);
-                    if (getGame() == WH40K) {
-                        tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab, onlineCodex));
-                    }
+                    tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab, onlineCodex));
                     myBuilderTextArea.textAreaRefresh();
                 }
                 myWindow.repaint();
@@ -210,15 +164,7 @@ public class OnlineCodex extends BuildaPanel {
 
             if (kosten != 0) {
                 kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
-                try {
-                    if (getGame() == WHFB && (budget.getText().equals("") || getKosten() > Integer.valueOf(budget.getText()))) {
-                        kostenLabel.setForeground(Color.RED);
-                    } else {
-                        kostenLabel.setForeground(Color.BLACK);
-                    }
-                } catch (NumberFormatException e) {
-                    JOptionPane.showMessageDialog(null, BuildaHQ.translate("Bitte nur Zahlen eingeben."));
-                }
+                kostenLabel.setForeground(Color.BLACK);
             } else {
                 kostenLabel.setText("");
             }
@@ -241,12 +187,10 @@ public class OnlineCodex extends BuildaPanel {
     };
 
     public OnlineCodex(Optional<Version> version, String[] args) {
-        this.version = version;
-        this.windowTitle = "powered by OnlineCodex.de" + version
+        Optional<Version> version1 = version;
+        String windowTitle = "powered by OnlineCodex.de" + version
                 .map(v -> " – Version " + v)
                 .orElse("");
-
-        setGame(WH40K);
 
         onlineCodex = this;
 
@@ -271,32 +215,16 @@ public class OnlineCodex extends BuildaPanel {
         buildaChooser.setMaximumRowCount(30);
         buildaChooser.setToolTipText(BuildaHQ.translate("Hier können Sie Ihr Volk auswählen. Die Einträge des alten Volkes bleiben im Arbeitsspeicher und werden geladen, sobald sie es wieder auswählen."));
 
-        if (getGame() == WHFB) {
-            budget.setEnabled(false);
-            budget.setBounds(300, 4, 40, 18);
-            budget.addKeyListener(budgetChangeListener);
-            budget.setFont(new Font("arial", Font.BOLD, 12));
-            budget.setBackground(Color.WHITE);
-            budget.setAlignmentY(JComponent.CENTER_ALIGNMENT);
-            budget.setText("2000");
-
-            kostenLabel.setBounds(295, 4, 180, 16);
-            kostenLabel.setFont(new Font("arial", Font.BOLD + Font.ITALIC, 14));
-            kostenLabel.setBackground(Color.GREEN);
-        } else {
-            kostenLabel.setBounds(300, 4, 180, 16);
-            kostenLabel.setFont(new Font("arial", Font.BOLD + Font.ITALIC, 14));
-            kostenLabel.setBackground(Color.GREEN);
-        }
+        kostenLabel.setBounds(300, 4, 180, 16);
+        kostenLabel.setFont(new Font("arial", Font.BOLD + Font.ITALIC, 14));
+        kostenLabel.setBackground(Color.GREEN);
 
         menu = new BuildaMenu();
         credits = new Credits();
 
+        JPanel menuPanel = new JPanel();
         menuPanel.add(buildaChooser);
 
-        if (getGame() == WHFB) {
-            menuPanel.add(budget);
-        }
         menuPanel.add(kostenLabel);
         menuPanel.setLayout(null);
         menuPanel.setBounds(-1, -1, 2500 + 1, menuHöhe + 1); // -1 damit border oben net sichtbar ist    soll nur den unterens schwarzen Trennstrich machen
@@ -356,7 +284,7 @@ public class OnlineCodex extends BuildaPanel {
 
             @Override
             public void actionPerformed(ActionEvent event) {
-                loadWindow.load(getGame());
+                loadWindow.load();
                 loadWindow.setVisible(true);
 
                 if (loadWindow.getLoadElement() != null) {
@@ -387,7 +315,7 @@ public class OnlineCodex extends BuildaPanel {
         tab.addTab("Liste", null, textPanel);
         tab.setLocation(5, menuHöhe + 5);
         tab.setSize((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 25, (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 55);
-        tab.addChangeListener(tabChangeListener);
+        tab.addChangeListener(this::onTabChange);
         myWindow.add(tab);
         myWindow.add(menuPanel);
 
@@ -482,7 +410,7 @@ public class OnlineCodex extends BuildaPanel {
 
         // neuGerri
         if (args.length > 0) {
-            loadWindow.loadFile(new java.io.File(args[0]), getGame());
+            loadWindow.loadFile(new java.io.File(args[0]));
             if (!loadWindow.getLoadText().trim().equals("")) {
                 load(loadWindow.getLoadText(), true);
             }
@@ -508,16 +436,8 @@ public class OnlineCodex extends BuildaPanel {
         return Integer.parseInt(budget.getText());
     }
 
-    public boolean isApo() {
-        return this.menu.isApo();
-    }
-
     public JPanel getBuildaPanel() {
         return panel;
-    }
-
-    public JPanel getTextPanel() {
-        return this.textPanel;
     }
 
     public MouseListener getDragAndDropMouseListener() {
@@ -683,9 +603,7 @@ public class OnlineCodex extends BuildaPanel {
                     sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
                     String name = armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                     tab.addTab(name, null, sp);
-                    if (getGame() == WH40K) {
-                        tab.setTabComponentAt(i + 1, new ButtonTabComponent(tab, onlineCodex));
-                    }
+                    tab.setTabComponentAt(i + 1, new ButtonTabComponent(tab, onlineCodex));
 
                     myBuilderz.get(i).isLoading = true;
                     ////////////////
@@ -738,15 +656,8 @@ public class OnlineCodex extends BuildaPanel {
                     myBuilderz.get(i).isLoading = false;
                 }
             } else {
-				/*if (chooserUmstellen) {
-					loadWithDokumenteHashtable = false;
-					setSelectedItemInBuildaChooser(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)));
-					loadWithDokumenteHashtable = true;
-				}*/
-
                 System.out.println(saveText);
                 myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
-//					System.out.println(myBuilderz.size());
                 JPanel buildaPanel = myBuilderz.get(0).getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                 buildaPanel.setSize(3500, 8000);
@@ -761,9 +672,7 @@ public class OnlineCodex extends BuildaPanel {
                 sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
                 String name = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                 tab.addTab(name, null, sp);
-                if (getGame() == WH40K) {
-                    tab.setTabComponentAt(1, new ButtonTabComponent(tab, onlineCodex));
-                }
+                tab.setTabComponentAt(1, new ButtonTabComponent(tab, onlineCodex));
 
                 myBuilderz.get(0).isLoading = true;
                 ////////////////
@@ -825,6 +734,22 @@ public class OnlineCodex extends BuildaPanel {
 
     }
 
+    private void onTabChange(ChangeEvent changeEvent) {
+        JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
+        int index = sourceTabbedPane.getSelectedIndex();
+
+        //System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
+        if (index != 0) {
+            BuildaVater bV = myBuilderz.get(index - 1);
+            for (int i = 0; i < bV.getChooserAnzahl(); i++) {
+                BuildaHQ.registerNewChooserGruppe(bV.getChooserGruppe(i), i + 1);
+            }
+            BuildaHQ.aktBuildaVater = bV;
+            reflectionKennung = bV.reflectionKennungLokal;
+        }
+    }
+
+
     public void dokumentLeeren() {
         loadWithDokumenteHashtable = false;
         setSelectedItemInBuildaChooser(buildaChooser.getSelectedItem()); // ruft actionPerformed(ActionEvent event) auf
@@ -856,10 +781,6 @@ public class OnlineCodex extends BuildaPanel {
         menu.savePrefs();
     }
 
-    public boolean isCurrentArmy(Class<?> army) {
-        return ("VOLK" + getCurrentArmy()).equals(army.getSimpleName());
-    }
-
     public void removeBuilda(int i) {
         BuildaVater bV = myBuilderz.get(i);
         for (int j = 0; j < bV.getChooserAnzahl(); j++) {
@@ -877,37 +798,6 @@ public class OnlineCodex extends BuildaPanel {
         buildaPanelz.remove(i);
         myBuilderz.remove(i);
         RefreshListener.fireRefresh();
-    }
-
-    @SuppressWarnings("serial")
-    static class ComboBoxRenderer extends JLabel implements ListCellRenderer {
-
-        public ComboBoxRenderer() {
-            setOpaque(true);
-        }
-
-        @Override
-        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-            if (value instanceof IconedText && !value.toString().equals("")) {
-                IconedText wert = (IconedText) value;
-
-                this.setIcon(wert.icon);
-                this.setText(wert.text);
-            } else {
-                this.setText(" ");
-                this.setIcon(null);
-            } // "" wird irgendwie ignoriert
-
-            if (isSelected) {
-                this.setBackground(list.getSelectionBackground());
-                this.setForeground(list.getSelectionForeground());
-            } else {
-                this.setBackground(list.getBackground());
-                this.setForeground(list.getForeground());
-            }
-
-            return this;
-        }
     }
 
     static class IconedText {
