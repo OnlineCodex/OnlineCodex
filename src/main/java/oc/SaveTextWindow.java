@@ -1,15 +1,10 @@
 package oc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.swing.*;
 import java.io.*;
 import java.util.Locale;
 
 public class SaveTextWindow extends JDialog implements BuildaSTK {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(SaveTextWindow.class);
 
     public static final String TOKEN = "###"; // Trennzeichen fuer Armeelistze in Maschinenformat und lesbares Format
     private static final long serialVersionUID = 1L;

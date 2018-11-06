@@ -45,6 +45,7 @@ public class OnlineCodex extends BuildaPanel {
     private JComboBox buildaChooser;
     private JPanel textPanel;
     private Vector<BuildaVater> myBuilderz = new Vector<BuildaVater>();
+
     private Vector<JPanel> buildaPanelz = new Vector<JPanel>();
     private BuildaTextArea myBuilderTextArea;
     private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
