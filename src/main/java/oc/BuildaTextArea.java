@@ -241,8 +241,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
         }
 
-        if (OnlineCodex.getGame() == OnlineCodex.WH40K) {
-
             if (BuildaHQ.zusatzInfos) {
                 boolean waffenbrueder = false;
                 boolean zweckbuendnis = false;
@@ -292,17 +290,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             } else {
                 fehlerLabel.setText("");
             }
-        }
-
-        if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA)
-            text.append(getTextSonstige());
 
         textArea.setText(text.toString());
 
-
-        // nur wenn keine Verticale Scrollleiste angezeigt wird, darf ein
-        // MouseWheelLsitener drauf sein. Ansosnten überschreibt es das
-        // Mausradscrolen der Scrolleiste
 
         boolean vielText = textArea.getText().split(ZEILENUMBRUCH).length > BUILDAVATER_TEXTAREA_MAXROWS;
 
@@ -317,15 +307,13 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         try {
             textArea.select(0, 0);
         } catch (Exception e) {
-        } // textArea wird nach oben gescrollt
-
+        }
     }
 
 
     public StringBuilder getBuildaVaterText(BuildaVater bV) {
         ChooserGruppe cg;
         StringBuilder text = new StringBuilder();
-        if (OnlineCodex.getGame() == OnlineCodex.WH40K) {
             if (bV.getKontingentTyp().startsWith("Alliiertes Kontingent")) {
                 String ordenLokal = "";
                 if (bV.reflectionKennungLokal.equals("SM")) {
@@ -430,7 +418,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             text.append((int) bV.getKosten());
             text.append(" Punkte");
             text.append(ZEILENUMBRUCH);
-        }
         if (BuildaHQ.zusatzInfos) {
             if (text.toString().length() != 0) {
                 text.append(ZEILENUMBRUCH);
@@ -440,22 +427,19 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 cg = bV.getChooserGruppe(i);
                 LOGGER.info("cg.getKosten()" + cg.getKosten());
                 LOGGER.info("getKosten()" + getKosten());
-                if (OnlineCodex.getGame() == OnlineCodex.WH40K
-                        || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) {
-                    text.append(cg.getAnzahlText(false)
-                            + " "
-                            + cg.kategorieText()
-                            + ((cg.getAnzahl()) > 0 ? ": "
-                            + entferneNullNachkomma(cg.getKosten())
-                            + " "
-                            + BuildaHQ.translate("Pkt.")
-                            + "   "
-                            + BuildaHQ.formatDouble(
-                            ((double) cg.getKosten())
-                                    / ((double) getKosten())
-                                    * 100, 1) + "%"
-                            + ZEILENUMBRUCH : ZEILENUMBRUCH));
-                }
+                text.append(cg.getAnzahlText(false)
+                        + " "
+                        + cg.kategorieText()
+                        + ((cg.getAnzahl()) > 0 ? ": "
+                        + entferneNullNachkomma(cg.getKosten())
+                        + " "
+                        + BuildaHQ.translate("Pkt.")
+                        + "   "
+                        + BuildaHQ.formatDouble(
+                        ((double) cg.getKosten())
+                                / ((double) getKosten())
+                                * 100, 1) + "%"
+                        + ZEILENUMBRUCH : ZEILENUMBRUCH));
             }
 
             if (BuildaHQ.kurzerText) {

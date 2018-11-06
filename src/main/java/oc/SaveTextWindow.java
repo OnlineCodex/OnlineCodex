@@ -2,19 +2,8 @@ package oc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 import java.io.*;
 import java.util.Locale;
 
@@ -41,30 +30,15 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
         fc.setDialogTitle(BuildaHQ.getSprache() == Sprache.German ? "Speichern" : "Save");
         fc.setApproveButtonText(BuildaHQ.getSprache() == Sprache.German ? "Speichern" : "Save");
 
-        fc.setFileFilter(new FileFilter() {
-            @Override
-            public boolean accept(File f) {
-                return f.getName().toLowerCase().endsWith("." + BuildaPanel.getFileSuffix())
-                        || f.isDirectory();
-            }
+        fc.setFileFilter(LoadWindow.OC_FILEFILER);
 
-            @Override
-            public String getDescription() {
-                return BuildaHQ.translate("oc Dateien");
-            }
-        });
-
-        fc.setSelectedFile(BuildaHQ.getLastLoaded() == null ? new File("." + BuildaPanel.getFileSuffix()) : new File(BuildaHQ.getLastLoaded()));
+        fc.setSelectedFile(BuildaHQ.getLastLoaded() == null ? new File(".oc") : new File(BuildaHQ.getLastLoaded()));
 
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 
-        fc.addPropertyChangeListener(new PropertyChangeListener() {
-
-            @Override
-            public void propertyChange(PropertyChangeEvent e) {
-                if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(e.getPropertyName())) {
-                    OnlineCodex.getInstance().getPrefs().put(PREFERENCES_SAVE_DIRECTORY, getCurrentDir());
-                }
+        fc.addPropertyChangeListener(e -> {
+            if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(e.getPropertyName())) {
+                OnlineCodex.getInstance().getPrefs().put(PREFERENCES_SAVE_DIRECTORY, getCurrentDir());
             }
         });
     }
@@ -85,73 +59,32 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
         return saveTextAllies;
     }
 
-    public void setSaveTextAllies(String saveText) {
-        this.saveTextAllies = saveText;
-    }
-
     public void setArmyList(String armyList) {
         this.armyList = armyList;
     }
 
     public void save() {
-        int returnVal = fc.showSaveDialog(this);
-
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = fc.getSelectedFile();
-
-            String saveText = BuildaPanel.budget.getText() + ";" + getSaveTextAllies() + ";" + getSaveText() + TOKEN + armyList; // army list in both formats
-
-            try {
-                if (file.getName().endsWith("." + BuildaPanel.getFileSuffix())) {
-                    Writer writer = new FileWriter(file);
-                    writer.write(saveText);
-                    writer.close();
-                } else {
-                    Writer writer = new FileWriter(file + "." + BuildaPanel.getFileSuffix());
-                    writer.write(saveText);
-                    writer.close();
-                }
-            } catch (Exception e) {
+        if (fc.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            try (Writer writer = new FileWriter(ensureFileExtension(fc.getSelectedFile(), "oc"))) {
+                writer.append(BuildaPanel.budget.getText())
+                        .append(";")
+                        .append(getSaveTextAllies())
+                        .append(";")
+                        .append(getSaveText())
+                        .append(TOKEN)
+                        .append(armyList);
+            } catch (IOException e) {
                 JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gespeichert werden."));
             }
-
-//            writeXML();
         }
-
     }
 
-    public void writeXML() {
-        Element root = OnlineCodex.getInstance().getSaveElement();
-
-        Document d = BuildaHQ.getXMLDocument();
-        d.appendChild(root);
-
-        Writer writer = null;
-        try {
-            File file = new File(fc.getSelectedFile().getAbsolutePath() + ".xml");
-            writer = new OutputStreamWriter(new FileOutputStream(file), "UTF8");
-        } catch (UnsupportedEncodingException ex) {
-            LOGGER.error("", ex);
-        } catch (FileNotFoundException ex) {
-            LOGGER.error("", ex);
-        }
-
-        try {
-            Transformer transformer = TransformerFactory.newInstance().newTransformer();
-
-            DOMSource source = new DOMSource(d);
-            StreamResult result = new StreamResult(writer);
-            transformer.transform(source, result);
-
-        } catch (TransformerConfigurationException ex) {
-            LOGGER.error("", ex);
-        } catch (TransformerException ex) {
-            LOGGER.error("", ex);
-        } finally {
-            try {
-                writer.close();
-            } catch (IOException ex) {
-            }
+    private File ensureFileExtension(File file, String extension) {
+        String fileName = file.getName();
+        if (!fileName.endsWith("." + extension)) {
+            return new File(file.getParentFile(), fileName + "." + extension);
+        } else {
+            return file;
         }
     }
 }

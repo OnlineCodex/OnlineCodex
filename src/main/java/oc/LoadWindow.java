@@ -1,6 +1,5 @@
 package oc;
 
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import javax.swing.*;
@@ -10,13 +9,27 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.Locale;
 import java.util.StringTokenizer;
-import java.util.Vector;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
 
 public class LoadWindow extends JPanel {
 
     private static final long serialVersionUID = 4239397313985019958L;
-    JButton openButton, saveButton;
-    JFileChooser fc;
+    private static final Predicate<String> FILE_NAME_REGEX = Pattern.compile("^.*\\.oc[a-z]*$").asPredicate();
+    public static final FileFilter OC_FILEFILER = new FileFilter() {
+
+        @Override
+        public boolean accept(File f) {
+            return f.isDirectory() || FILE_NAME_REGEX.test(f.getName().toLowerCase());
+        }
+
+        @Override
+        public String getDescription() {
+            return BuildaHQ.translate("oc* Dateien");
+        }
+    };
+
+    private JFileChooser fc;
     private String loadText = "";
     private String loadTextAllies = "";
     private Element loadElement;
@@ -33,64 +46,32 @@ public class LoadWindow extends JPanel {
         fc.setDialogTitle(BuildaHQ.getSprache() == Sprache.German ? "Öffnen" : "Open");
         fc.setApproveButtonText(BuildaHQ.getSprache() == Sprache.German ? "Öffnen" : "Open");
 
-        fc.setFileFilter(new FileFilter() {
-
-            @Override
-            public boolean accept(File f) {
-                return f.getName().toLowerCase().endsWith(BuildaPanel.getFileSuffix()) || f.isDirectory();
-            }
-
-            @Override
-            public String getDescription() {
-                return BuildaHQ.translate(BuildaPanel.getFileSuffix() + " Dateien");
-            }
-        });
+        fc.setFileFilter(OC_FILEFILER);
     }
 
     public String getLoadText() {
         return loadText;
     }
 
-    public void setLoadText(String loadText) {
-        this.loadText = loadText;
-    }
-
-    public String getLoadTextAllies() {
-        return loadTextAllies;
-    }
-
-    public void setLoadTextAllies(String loadText) {
-        this.loadTextAllies = loadText;
-    }
-
     public Element getLoadElement() {
         return loadElement;
     }
-
-//    public 
 
     public String getCurrentDir() {
         return fc.getCurrentDirectory().getAbsolutePath();
     }
 
-    public void load(int game) {
+    public void load() {
         int returnVal = fc.showOpenDialog(LoadWindow.this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fc.getSelectedFile();
-            loadFile(file, game);
+            loadFile(file);
         }
     }
 
-    // neuGerri
-    public void loadFile(File file, int game) {
-//        if (!file.getName().endsWith(BuildaPanel.getFileSuffix()) false ) {
-//            JOptionPane.showMessageDialog(null, BuildaHQ.translate("Nur \"." + BuildaPanel.getFileSuffix() + "\" Dateien können geladen werden."));
-//        } else {
-        FileReader leser;
-        String text = "";
-        try {
-
-            leser = new FileReader(file);
+    public void loadFile(File file) {
+        try (FileReader leser = new FileReader(file)) {
+            String text = "";
             loadText = "";
 
             for (; ; ) {
@@ -107,34 +88,12 @@ public class LoadWindow extends JPanel {
             BuildaHQ.loadWindow = true;
             StringTokenizer tokenizer = new StringTokenizer(text, ";");
 
-            if (game == BuildaPanel.WHFB) {
-                String punkte = tokenizer.nextToken();
-                BuildaPanel.budget.setText(punkte);
-            }
-
             loadText = tokenizer.nextToken();
-            loadText = loadText.substring(0, loadText.indexOf(SaveTextWindow.TOKEN)); // Trennzeichen
-            //LOGGER.info(loadText);
-
-            if (game == BuildaPanel.WHFB) {
-                BuildaHQ.Items = new Vector<String>();
-            }
-
+            loadText = loadText.substring(0, loadText.indexOf(SaveTextWindow.TOKEN));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden."));
             OnlineCodex.getInstance().dokumentLeeren();
         }
-//        }
-
-//        loadXMLFile(new File(file.getAbsolutePath()));
-
         BuildaHQ.setLastLoaded(file.getName());
     }
-
-    public void loadXMLFile(File file) {
-        Document doc = BuildaHQ.loadXMLFile(file, true);
-
-        loadElement = doc.getDocumentElement();
-    }
-
 }
