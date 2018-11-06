@@ -428,21 +428,21 @@ public class VOLKImperium extends BuildaVater {
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HQ, HQeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TR, Standardeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TROOPS, Standardeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, EL, Eliteeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, ELITE, Eliteeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FA, Sturmeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FAST_ATTACK, Sturmeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HS, Unterstützungeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, DT, Transporteinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FL, Fliegereinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FLIER, Fliegereinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORT, Befestigungen));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORTIFICATION, Befestigungen));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LOW, LordofWar));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LORD_OF_WAR, LordofWar));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
@@ -524,129 +524,129 @@ public class VOLKImperium extends BuildaVater {
                     HQeinträge_Adeptus_Ministorum,
                     HQeinträge_Adeptus_Astra_Telepathica,
                     HQeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AA_komplett,
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AA_komplett,
                     Standardeinträge_AM_komplett,
                     Standardeinträge_Adeptus_Mechanicus,
                     Standardeinträge_Adeptus_Ministorum,
                     Standardeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AA_komplett,
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AA_komplett,
                     Eliteeinträge_AM_komplett,
                     Eliteeinträge_Adeptus_Mechanicus,
                     Eliteeinträge_Adeptus_Ministorum,
                     Eliteeinträge_Officio_Assassinorum,
                     Eliteeinträge_Adeptus_Astra_Telepathica,
                     Eliteeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_AA_komplett,
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_AA_komplett,
                     Sturmeinträge_AM_komplett,
                     Sturmeinträge_Adeptus_Mechanicus,
                     Sturmeinträge_Adeptus_Ministorum,
                     Sturmeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_AA_komplett,
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_AA_komplett,
                     Unterstützungeinträge_AM_komplett,
                     Unterstützungseinträge_Adeptus_Mechanicus,
                     Unterstützungseinträge_Adeptus_Ministorum,
                     Unterstützungseinträge_Adeptus_Custodes));
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AA_komplett,
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AA_komplett,
                     Transporteinträge_AM_komplett,
                     Transporteinträge_Adeptus_Ministorum,
                     Transporteinträge_Adeptus_Astra_Telepathica));
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AA_komplett,
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AA_komplett,
                     Fliegereinträge_AM_komplett));
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(LordofWar_AA_komplett,
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_AA_komplett,
                     LordofWar_AM_komplett,
                     LordofWar_Questor_Imperialis));
         } else if (getFormationType().equals("Adeptus Astartes")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AA_komplett);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AA_komplett);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_AA_komplett);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AA_komplett);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AA_komplett);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AA_komplett);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AA_komplett);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AA_komplett);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AA_komplett);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AA_komplett);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AA_komplett);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AA_komplett);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AA_komplett);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AA_komplett);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AA_komplett);
         } else if (getFormationType().equals("Ultramarines")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines));
         } else if (getFormationType().equals("Imperial Fists")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Imperial_Fists));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_SM);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_SM);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("Crimson Fists")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Crimson_Fists));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_SM);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_SM);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("Black Templars")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Black_Templars));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars));
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Black_Templars));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Black_Templars));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("Raven Guard")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Raven_Guard));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_SM);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_SM);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("Salamanders")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Salamanders));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_SM);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_SM);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("White Scars")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_White_Scars));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_SM);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_SM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_SM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordOfWar_SM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_SM);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_SM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_SM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_SM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordOfWar_SM);
         } else if (getFormationType().equals("Legion of the Damned")) {
             clearCombo();
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Legion_of_the_Damned);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Legion_of_the_Damned);
         } else if (getFormationType().equals("Blood Angels")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Blood_Angels,
                     new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
                             "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine with Jump Pack", "Techmarine on Bike", "Chaplain",
                             "Chaplain in Terminator Armour", "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
                             "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Blood_Angels,
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Blood_Angels,
                     new String[]{"", "Servitors", "Sanguinary Novitiate",
                             "Company Ancient", "Company Ancient with Jump Pack",
                             "Primaris Ancient", "Company Champion", "Company Champion with Jump Pack", "Company Veterans", "Company Veterans with Jump Packs",
@@ -655,220 +655,220 @@ public class VOLKImperium extends BuildaVater {
                             "", "Primaris Apothecary", "Apothecary", "Company Ancient",
                             "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
                             "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Reiver Squad"}));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Blood_Angels,
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Blood_Angels,
                     new String[]{"", "Inceptor Squad"}));
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Blood_Angels,
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Blood_Angels,
                     new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
                             "Land Raider Crusader", "Land Raider Redeemer"}));
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_SM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_SM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Dark Angels")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Dark_Angels,
                     new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
                             "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine on Bike", "Chaplain",
                             "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
                             "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Dark_Angels, new String[]{"", "Primaris Apothecary", "Apothecary", "Company Ancient", "Primaris Ancient",
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Dark_Angels, new String[]{"", "Primaris Apothecary", "Apothecary", "Company Ancient", "Primaris Ancient",
                     "Company Champion", "Company Veterans", "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
                     "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Servitors", "Reiver Squad"}));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Dark_Angels, new String[]{"", "Scout Bike Squad", "Assault Squad", "Inceptor Squad"}));
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Dark_Angels, new String[]{"", "Scout Bike Squad", "Assault Squad", "Inceptor Squad"}));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
                     "Land Raider Crusader", "Land Raider Redeemer"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Dark_Angels);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Dark_Angels);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Space Wolves")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessor Squad"}));
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Servitors", "Imperial Space Marine", "Primaris Ancient", "Dreadnought", "Venerable Dreadnought"}));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptor Squad", "Land Speeders"}));
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblaster Squad", "Predator", "Whirlwind", "Vindicator", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}));
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Space_Wolves);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessor Squad"}));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Servitors", "Imperial Space Marine", "Primaris Ancient", "Dreadnought", "Venerable Dreadnought"}));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptor Squad", "Land Speeders"}));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblaster Squad", "Predator", "Whirlwind", "Vindicator", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{"", "Rhino", "Razorback", "Drop Pod"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Space_Wolves);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Deathwatch")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Deathwatch);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Deathwatch);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Deathwatch);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Deathwatch);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Deathwatch);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Deathwatch);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Deathwatch);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Deathwatch);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Deathwatch);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Deathwatch);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Deathwatch);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Grey Knights")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Grey_Knights);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Grey_Knights);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Grey_Knights);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Grey_Knights);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Grey_Knights);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Grey_Knights);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Grey_Knights);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Grey_Knights);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Grey_Knights);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Grey_Knights);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Grey_Knights);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Grey_Knights);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Grey_Knights);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Astra Militarum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM_komplett);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_AM_komplett);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM_komplett);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM_komplett);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AM_komplett);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AM_komplett);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM_komplett);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AM_komplett);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM_komplett);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM_komplett);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM_komplett);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM_komplett);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM_komplett);
         } else if (getFormationType().equals("Cadian")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Catachan")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Officio Prefectus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus));
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Militarum Tempestus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Militarum_Tempestus);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Militarum_Tempestus);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Militarum_Tempestus);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Militarum_Tempestus);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Militarum_Tempestus);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Militarum_Tempestus);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Militarum_Tempestus);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Militarum Auxilia")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Militarum_Auxilia));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_AM);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Militarum_Auxilia));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Aeronautica Imperialis")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Aeronautica_Imperialis));
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus));
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_AM);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Scholastica Psykana")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Adeptus Mechanicus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Mechanicus);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Mechanicus);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Cult Mechanicus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Cult_Mechanicus);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Cult_Mechanicus);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Cult_Mechanicus);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Cult_Mechanicus);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Cult_Mechanicus);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Cult_Mechanicus);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Cult_Mechanicus);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Skitarii")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Skitarii);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Skitarii);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Skitarii);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Skitarii);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Skitarii);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Skitarii);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Skitarii);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Skitarii);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Questor Imperialis")) {
             clearCombo();
             kontingentBox.setSelectedItem("Super-Heavy Detachment");
             myChooserGruppen.get(AI).changeComboBoxAuswahlen(AdditionalInformation_Questor_Imperialis);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
         } else if (getFormationType().equals("Officio Assassinorum")) {
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Officio_Assassinorum);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Officio_Assassinorum);
         } else if (getFormationType().equals("Adeptus Astra Telepathica")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Astra_Telepathica);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Astra_Telepathica);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Scholastica Psykana")) {
             clearCombo();
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
         } else if (getFormationType().equals("Sisters of Silence")) {
             clearCombo();
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Sisters_of_Silence);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Sisters_of_Silence);
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Sisters_of_Silence);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Sisters_of_Silence);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
         } else if (getFormationType().equals("Adeptus Custodes")) {
             clearCombo();
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Custodes);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Custodes);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Custodes);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
         } else if (getFormationType().equals("Adepta Sororitas")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Adepta_Sororitas);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adepta_Sororitas);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
         } else if (getFormationType().equals("Adeptus Ministorum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Ministorum);
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Ministorum);
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Ministorum);
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Ministorum);
         }
 
         if (formation != null) {

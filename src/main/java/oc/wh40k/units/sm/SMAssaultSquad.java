@@ -11,16 +11,12 @@ public class SMAssaultSquad extends Eintrag {
     RuestkammerStarter rkRhino;
     RuestkammerStarter rkPod;
 
-    boolean siegeForce;
-
     public SMAssaultSquad() {
         name = "Assault Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
         addToInformationVector("Assault Squad", 1);
-
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, 14);
         add(squad);
@@ -60,17 +56,13 @@ public class SMAssaultSquad extends Eintrag {
         rkRhino.setUeberschriftTrotzNullKostenAusgeben(false);
         add(rkRhino);
 
-        if (!siegeForce) {
+        seperator();
 
-            seperator();
-
-            rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
-            rkPod.initKammer(false, false);
-            rkPod.setButtonText("Landungskapsel");
-            rkPod.setSeperator(0);
-            add(rkPod);
-
-        }
+        rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
+        rkPod.initKammer(false, false);
+        rkPod.setButtonText("Landungskapsel");
+        rkPod.setSeperator(0);
+        add(rkPod);
 
         complete();
     }
@@ -89,12 +81,8 @@ public class SMAssaultSquad extends Eintrag {
 
         if (!rkBoss.isSelected()) rkBoss.setSelected(true);
 
-        if (!siegeForce) {
-            rkRhino.setAktiv(!jet.isSelected() && !rkPod.isSelected());
-            rkPod.setAktiv(!jet.isSelected() && !rkRhino.isSelected());
-        } else {
-            rkRhino.setAktiv(!jet.isSelected());
-        }
+        rkRhino.setAktiv(!jet.isSelected() && !rkPod.isSelected());
+        rkPod.setAktiv(!jet.isSelected() && !rkRhino.isSelected());
 
         //Detachments
         boolean max1Error = false;

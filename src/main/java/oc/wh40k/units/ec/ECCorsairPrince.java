@@ -85,7 +85,7 @@ public class ECCorsairPrince extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Seeker of Forbidden Pleasures", 0));//Jetbikes, infantry, jet pack may select combat drugs for 15
         ogE.addElement(new OptionsGruppeEintrag("Traveller of Forgotten Paths", 0)); // Multiphase Key generator: may be purchases for 25 by other chars of the same dt
-        ogE.addElement(new OptionsGruppeEintrag("Collector of Ancient Treasures", 0));//TODO may select one artifact of EL, DE, HQ, other chars of the dt may upgrade one weapon to a master-crafted for 10
+        ogE.addElement(new OptionsGruppeEintrag("Collector of Ancient Treasures", 0));//TODO may select one artifact of ELITE, DE, HQ, other chars of the dt may upgrade one weapon to a master-crafted for 10
         ogE.addElement(new OptionsGruppeEintrag("Reaper of the Outer Dark", 0));//Jetbikes, infantry, jet pack may select the rage SR for 0
         ogE.addElement(new OptionsGruppeEintrag("Wielder of Profane Powers", 0));
         ogE.addElement(new OptionsGruppeEintrag("Survivor of Endless Darkness", 0));//other chars of the dt may take the FNP(5+) SR for 10

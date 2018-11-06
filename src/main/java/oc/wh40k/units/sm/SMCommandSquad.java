@@ -22,15 +22,11 @@ public class SMCommandSquad extends Eintrag {
     boolean stagandaBannerBool;
     OptionsEinzelUpgrade bikes;
 
-    boolean siegeForce;
-
     public SMCommandSquad() {
         name = "Command Squad";
         grundkosten = 90;
 
         addToInformationVector("Command Squad", 1);
-
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
 
         add(ico = new oc.Picture("oc/wh40k/images/SMKommandotrupp.jpg"));
 
@@ -75,18 +71,6 @@ public class SMCommandSquad extends Eintrag {
         rkTransport.setButtonText("Transporter");
         add(rkTransport);
 
-        if (!siegeForce) {
-
-            seperator();
-
-        } else {
-
-            rkPrometheus = new RuestkammerStarter(ID, randAbstand, cnt, "SFLandRaiderPrometheusKammer", "Land Raider Prometheus");
-            rkPrometheus.initKammer();
-            rkPrometheus.setButtonText("Land Raider Prometheus");
-            add(rkPrometheus);
-        }
-
         complete();
     }
 
@@ -116,15 +100,6 @@ public class SMCommandSquad extends Eintrag {
         oBoss.setAktiv(boss.isSelected());
         if (boss.isSelected() && !oBoss.isSelected()) {
             oBoss.setSelected(0, true);
-        }
-
-        if (!siegeForce) {
-
-
-        } else {
-
-            rkTransport.setAktiv(!rkPrometheus.isSelected());
-            rkPrometheus.setAktiv(!rkTransport.isSelected());
         }
 
         //Einzigartige Banner

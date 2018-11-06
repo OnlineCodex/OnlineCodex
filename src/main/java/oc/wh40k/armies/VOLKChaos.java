@@ -310,35 +310,35 @@ public class VOLKChaos extends BuildaVater {
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TR, Standardeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TROOPS, Standardeinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, EL, Eliteeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, ELITE, Eliteeinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FA, Sturmeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FAST_ATTACK, Sturmeinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HS, Unterstützungeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TR, Transporteinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TROOPS, Transporteinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FL, Fliegereinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FLIER, Fliegereinträge));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORT, Befestigungen));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORTIFICATION, Befestigungen));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LOW, LordofWar));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LORD_OF_WAR, LordofWar));
 
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
@@ -422,7 +422,7 @@ public class VOLKChaos extends BuildaVater {
 
         comeTheApocalypse.add("DH");
 
-        comeTheApocalypse.add("EL");
+        comeTheApocalypse.add("ELITE");
 
         comeTheApocalypse.add("FE");
 
@@ -496,35 +496,35 @@ public class VOLKChaos extends BuildaVater {
 
                     HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard), HQeinträge_ThousandSons), HQeinträge_Daemons), HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard), Eliteeinträge_ThousandSons), Eliteeinträge_Daemons), Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
 
                     new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Daemons), Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard), Sturmeinträge_ThousandSons), Sturmeinträge_Daemons), Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard), Unterstützungseinträge_ThousandSons), Unterstüzungseinträge_Daemons), Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
 
                     Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
 
                     Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Daemons), Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard), LOWeinträge_ThousandSons), LOWeinträge_Questor_Traitoris), LOWeinträge_Chaos_Space_Marines_FW));
 
@@ -538,35 +538,35 @@ public class VOLKChaos extends BuildaVater {
 
                     HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard), HQeinträge_ThousandSons), HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard), Eliteeinträge_ThousandSons), Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
 
                     new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard), Sturmeinträge_ThousandSons), Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard), Unterstützungseinträge_ThousandSons), Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
 
                     Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
 
                     Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
 
                     LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard), LOWeinträge_ThousandSons), LOWeinträge_Questor_Traitoris), LOWeinträge_Chaos_Space_Marines_FW));
 
@@ -580,35 +580,35 @@ public class VOLKChaos extends BuildaVater {
 
                     HQeinträge_Chaos_Space_Marines, HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
 
                     uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
 
                     Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
 
                     Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
 
                     Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
 
                     Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
 
                     LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
 
@@ -622,35 +622,35 @@ public class VOLKChaos extends BuildaVater {
 
                     HQeinträge_World_Eaters, HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(
 
                     Eliteeinträge_World_Eaters, Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
 
                     Standardeinträge_World_Eaters, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
 
                     Sturmeinträge_World_Eaters, Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Unterstützungseinträge_World_Eaters, Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Transporteinträge_World_Eaters, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
 
                     Fliegereinträge_World_Eaters, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
 
                     new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
 
                     LOWeinträge_World_Eaters, LOWeinträge_Chaos_Space_Marines_FW));
 
@@ -664,35 +664,35 @@ public class VOLKChaos extends BuildaVater {
 
                     HQeinträge_ThousandSons, HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(
 
                     Eliteeinträge_ThousandSons, Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
 
                     Standardeinträge_ThousandSons, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
 
                     Sturmeinträge_ThousandSons, Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Unterstützungseinträge_ThousandSons, Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
 
                     Transporteinträge_ThousandSons, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
 
                     Fliegereinträge_ThousandSons, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
 
                     new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
 
                     LOWeinträge_ThousandSons, LOWeinträge_Chaos_Space_Marines_FW));
 
@@ -704,21 +704,21 @@ public class VOLKChaos extends BuildaVater {
 
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Death_Guard, HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Death_Guard, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Death_Guard, Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Death_Guard, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Death_Guard, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Death_Guard, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Death_Guard, Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Death_Guard, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Death_Guard, Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Death_Guard, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Death_Guard, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Death_Guard, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Death_Guard, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_Death_Guard);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Death_Guard);
 
         }
 
@@ -728,21 +728,21 @@ public class VOLKChaos extends BuildaVater {
 
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Emperors_Children, HQeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Emperors_Children, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Emperors_Children, Eliteeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Emperors_Children, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Emperors_Children, Standardeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Emperors_Children, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Emperors_Children, Sturmeinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Emperors_Children, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Emperors_Children, Unterstützungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Emperors_Children, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Emperors_Children, Transporteinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Emperors_Children, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Emperors_Children, Fliegereinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(uniteUnitList(LOWeinträge_Emperors_Children, LOWeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LOWeinträge_Emperors_Children, LOWeinträge_Chaos_Space_Marines_FW));
 
         }
 
@@ -752,21 +752,21 @@ public class VOLKChaos extends BuildaVater {
 
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Questor_Traitoris);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Questor_Traitoris);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Questor_Traitoris);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstüzungseinträge_Questor_Traitoris);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstüzungseinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(Transporteinträge_Questor_Traitoris);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(Fliegereinträge_Questor_Traitoris);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Questor_Traitoris);
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
 
         }
 
@@ -776,21 +776,21 @@ public class VOLKChaos extends BuildaVater {
 
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Daemons);
 
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
 
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(Standardeinträge_Daemons);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);
 
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(Sturmeinträge_Daemons);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Daemons);
 
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(Unterstüzungseinträge_Daemons);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstüzungseinträge_Daemons);
 
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
 
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
 
-            myChooserGruppen.get(FORT).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
 
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
 
         }
 

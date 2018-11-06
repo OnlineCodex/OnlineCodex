@@ -16,7 +16,6 @@ public class SMVanguardVeteranSquad extends Eintrag {//Vanguard
     RuestkammerStarter rkPod;
     RuestkammerStarter rkBoss;
 
-    boolean siegeForce;
     boolean cullnSelected;
 
     public SMVanguardVeteranSquad() {
@@ -25,8 +24,6 @@ public class SMVanguardVeteranSquad extends Eintrag {//Vanguard
         überschriftSetzen = true;
 
         addToInformationVector("Vanguard Veteran Squad", 1);
-
-        siegeForce = OnlineCodex.getInstance().isCurrentArmy(oc.wh40k.armies.VOLKSiegeVanguardIA10.class);
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Veteranen", 5, 10, 19);
         add(squad);
@@ -96,16 +93,12 @@ public class SMVanguardVeteranSquad extends Eintrag {//Vanguard
         rkTransport.setButtonText("Transporter");
         add(rkTransport);
 
-        if (!siegeForce) {
-
-            rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
-            rkPod.initKammer(false);
-            rkPod.setButtonText("Landungskapsel");
-            rkPod.setSeperator(0);
-            add(rkPod);
-            rkPod.setSeperator(0);
-
-        }
+        rkPod = new RuestkammerStarter(ID, randAbstand, cnt, "SMDropPodKammer", "Landungskapsel");
+        rkPod.initKammer(false);
+        rkPod.setButtonText("Landungskapsel");
+        rkPod.setSeperator(0);
+        add(rkPod);
+        rkPod.setSeperator(0);
 
         complete();
     }
@@ -136,18 +129,10 @@ public class SMVanguardVeteranSquad extends Eintrag {//Vanguard
 
         if (!rkBoss.isSelected() && !culln.isSelected()) rkBoss.setSelected(true);
 
-        if (!siegeForce) {
+        rkTransport.setAktiv(!rkPod.isSelected() && !oJP.isSelected());
+        rkPod.setAktiv(!rkTransport.isSelected() && !oJP.isSelected());
 
-            rkTransport.setAktiv(!rkPod.isSelected() && !oJP.isSelected());
-            rkPod.setAktiv(!rkTransport.isSelected() && !oJP.isSelected());
-
-            oJP.setAktiv(!rkPod.isSelected() && !rkTransport.isSelected());
-
-        } else {
-
-            rkTransport.setAktiv(!oJP.isSelected());
-            oJP.setAktiv(!rkTransport.isSelected());
-        }
+        oJP.setAktiv(!rkPod.isSelected() && !rkTransport.isSelected());
 
         // Unique entry: Sergeant Culln
         if (getCountFromInformationVector("SMLordHighCommanderCarabCulln") == 0) {

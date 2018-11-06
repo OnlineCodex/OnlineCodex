@@ -330,7 +330,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
         for (int i = 0; i < optionen.size(); ++i) {
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                //((RuestkammerStarter) optionen.elementAt(i)).deleteYourself();
                 RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
 
                 if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
@@ -402,7 +401,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     }
 
     public int getPower() {
-        // TODO Auto-generated method stub
         return power;
     }
 
