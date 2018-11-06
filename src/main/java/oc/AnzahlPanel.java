@@ -202,12 +202,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
             abstandshalter.append(" .");
         }
 
-        if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA) {
-            lName.setText(n);
-        } else {
-            lName.setText(n + abstandshalter.toString() + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt."));
-        }
-
+        lName.setText(n + abstandshalter.toString() + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt."));
     }
 
     public void mouseReleased(MouseEvent event) {
@@ -287,18 +282,14 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
 
     @Override
     public String getText() {
-        if (getModelle() <= 0 && OnlineCodex.getGame() != OnlineCodex.NECROMUNDA) {
+        if (getModelle() <= 0) {
             return "";
         }
 
         String kosten = "";
 
         if (BuildaHQ.allePunktkosten) {
-//			if (getKosten() == 0) {
-//				kosten = punkteAbstandHalter + BuildaHQ.translate("kostenlos");
-//			} else {
             kosten = punkteAbstandHalter + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Pkt.");
-//			}   // NET myUpgrade.getKosten() !!! das is was anderes!
         }
 
         String n = name;

@@ -1,6 +1,6 @@
 package oc;
 
-public class RuestkammerInfo extends Info {
+public class RuestkammerInfo {
 
 
     String kammerName;

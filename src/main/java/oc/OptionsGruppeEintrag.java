@@ -1,6 +1,6 @@
 package oc;
 
-public class OptionsGruppeEintrag extends Info implements Comparable<OptionsGruppeEintrag> {
+public class OptionsGruppeEintrag implements Comparable<OptionsGruppeEintrag> {
 
     String name;
     String kurzerName = null;

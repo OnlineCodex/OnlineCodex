@@ -8,61 +8,13 @@ import java.util.prefs.Preferences;
 public class BuildaMenu extends JFrame implements BuildaSTK {
 
     private static final long serialVersionUID = 1L;
-    public static JCheckBox bilderAneigen = new JCheckBox("", true); // <-- Lamekhs Online Codex
-    JTextArea tMausradSpeed = new JTextArea(String.valueOf(DEFAULT_MAUSWHEELLSPEED));
-    JLabel lMausradSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit des Mausrads:"));
-    JTextArea tPfeiltastenSpeed = new JTextArea(String.valueOf(DEFAULT_PFEILTASTENSPEED));
-    JLabel lPfeiltastenSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit der Pfeiltasten:"));
-    JCheckBox vertikalScrollen = new JCheckBox("", true);
-    JLabel lVertikalScrollen = new JLabel(BuildaHQ.translate("Scrollrichtung umdrehen"));
-    JCheckBox bildaz = new JCheckBox("", true);
-    JLabel lBildaz = new JLabel(BuildaHQ.translate("Bilder"));
-    //JButton cleanBuilda = new JButton(BuildaHQ.translate("Leere aktuelles Dokument"));
-    JButton ok = new JButton(BuildaHQ.translate("OK"));
-    //JCheckBox apo = new JCheckBox("", false);
-    //JLabel lApo = new JLabel(BuildaHQ.translate("Apokalypse"));
+    public static final Font ARIAL = new Font("arial", Font.PLAIN, 14);
+    private final JTextArea tMausradSpeed = new JTextArea(String.valueOf(DEFAULT_MAUSWHEELLSPEED));
+    private final JTextArea tPfeiltastenSpeed = new JTextArea(String.valueOf(DEFAULT_PFEILTASTENSPEED));
+    private final JCheckBox vertikalScrollen = new JCheckBox("", true);
+    private final JCheckBox bildaz = new JCheckBox("", true);
 
-    boolean apoSelected = false;
-    KeyListener closeKeyListener = new KeyListener() {
-        public void keyPressed(KeyEvent event) {
-            //LOGGER.info(getMousePosition());    zum GUI bauen^^
-            if (event.getKeyCode() == KeyEvent.VK_ENTER || event.getKeyCode() == KeyEvent.VK_ESCAPE) {
-                closeBuildaMenu();
-            }
-        }
-
-        public void keyReleased(KeyEvent event) {
-        }
-
-        public void keyTyped(KeyEvent event) {
-        }
-    };
-    WindowListener windowListener = new WindowAdapter() {
-
-        @Override
-        public void windowClosing(WindowEvent e) {
-            savePrefs();
-        }
-    };
-    ActionListener closeActionListener = new ActionListener() {
-        public void actionPerformed(ActionEvent event) {
-
-            closeBuildaMenu();
-        }
-    };
-    ActionListener dokumentLeerenListener = new ActionListener() {
-        public void actionPerformed(ActionEvent event) {
-            int choose = JOptionPane.showOptionDialog(
-                    null, BuildaHQ.translate("Wollen Sie wirklich alle Einträge des aktiven Volkes löschen?"), BuildaHQ.translate("Wirklich löschen?"), JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{BuildaHQ.translate("Ja"), BuildaHQ.translate("Nein")}, BuildaHQ.translate("Ja"));
-
-            if (choose == 0) {
-                OnlineCodex.getInstance().dokumentLeeren();
-                closeBuildaMenu();
-            }
-        }
-    };
-
-    public BuildaMenu() {
+    BuildaMenu() {
         super(BuildaHQ.translate("Einstellungen"));
         this.setLayout(null);
         this.setBounds(200, 200, 584, 320); // 404 210
@@ -73,18 +25,19 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         int XX = 15;
         int cnt = 10;
 
+        JLabel lMausradSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit des Mausrads:"));
         lMausradSpeed.setBounds(XX, cnt, 190, 18);
         tMausradSpeed.setBounds(XX + 195, cnt + 2, 35, 18);
         cnt += 22;
+        JLabel lVertikalScrollen = new JLabel(BuildaHQ.translate("Scrollrichtung umdrehen"));
         lVertikalScrollen.setBounds(XX, cnt, 180, 18);
         vertikalScrollen.setBounds(XX + 195 - 3, cnt, 30, 18);
         cnt += 25;
+        JLabel lPfeiltastenSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit der Pfeiltasten:"));
         lPfeiltastenSpeed.setBounds(XX, cnt, 190, 18);
         tPfeiltastenSpeed.setBounds(XX + 195, cnt + 2, 35, 18);
 
-        if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) cnt += 25;
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) lApo.setBounds(XX, cnt, 190, 18);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) apo.setBounds(XX + 195 - 3, cnt, 30, 18);
+        cnt += 25;
 
         String h1;
         h1 = BuildaHQ.translate("Hier kann man verändern, wie schnell mit dem Mausrad gescrollt wird");
@@ -97,15 +50,25 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         lPfeiltastenSpeed.setToolTipText(h1);
         tPfeiltastenSpeed.setToolTipText(h1);
 
-        tMausradSpeed.setFont(new Font("arial", Font.PLAIN, 14));
-        tPfeiltastenSpeed.setFont(new Font("arial", Font.PLAIN, 14));
+        tMausradSpeed.setFont(ARIAL);
+        tPfeiltastenSpeed.setFont(ARIAL);
+        KeyListener closeKeyListener = new KeyListener() {
+            public void keyPressed(KeyEvent event) {
+                if (event.getKeyCode() == KeyEvent.VK_ENTER || event.getKeyCode() == KeyEvent.VK_ESCAPE) {
+                    closeBuildaMenu();
+                }
+            }
+
+            public void keyReleased(KeyEvent event) {
+            }
+
+            public void keyTyped(KeyEvent event) {
+            }
+        };
         tMausradSpeed.addKeyListener(closeKeyListener);
         tPfeiltastenSpeed.addKeyListener(closeKeyListener);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) apo.addKeyListener(closeKeyListener);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) lApo.addKeyListener(closeKeyListener);
 
         vertikalScrollen.setBackground(Color.WHITE);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) apo.setBackground(Color.WHITE);
 
         h1 = BuildaHQ.translate("<html>Dreht das scrollen mit dem Mausrad um. Normalerweise wird oben-unten, bei gedrückten STRG links-rechts gescrollt.<br>Wenn angehakt, wird links-rechts gescrollt, wenn STRG gedrückt ist, oben-unten.</html>");
 
@@ -114,10 +77,8 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
 
         h1 = BuildaHQ.translate("Hier kann man einstellen, ob Apokalypse-Einheiten ausgewählt werden können oder nicht.");
 
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) lApo.setToolTipText(h1);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) apo.setToolTipText(h1);
-
         cnt += 25;
+        JLabel lBildaz = new JLabel(BuildaHQ.translate("Bilder"));
         lBildaz.setBounds(XX, cnt, 180, 18);
         bildaz.setBounds(XX + 195 - 3, cnt, 30, 18);
         bildaz.setBackground(Color.WHITE);
@@ -133,26 +94,16 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         this.add(vertikalScrollen);
         this.add(lPfeiltastenSpeed);
         this.add(tPfeiltastenSpeed);
-//		if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) {
-//                    this.add(apo);
-//                    this.add(lApo);
-//                }
         this.add(bildaz);
         this.add(lBildaz);
 
-//		cleanBuilda.setBounds(XX - 1, cnt, 226 - XX - 40, 18);
-//		cleanBuilda.setMargin(new Insets(0, 0, 0, 0));
-//		cleanBuilda.setBorder(null);
-//		cleanBuilda.setFont(new Font("arial", Font.BOLD, 11));
-//		cleanBuilda.addActionListener(dokumentLeerenListener);
-//		cleanBuilda.setToolTipText(BuildaHQ.translate("Löscht alle Einträge des aktiven Volkes."));
-//		this.add(cleanBuilda);
-
+        JButton ok = new JButton(BuildaHQ.translate("OK"));
         ok.setBounds(this.getSize().width - 90, this.getSize().height - 77, 76, 17);
         ok.setBorder(null);
         this.add(ok);
-        this.getRootPane().setDefaultButton(ok); // reagiert dadurch auf die Tastendrücke auch wenn andere Buttons den Focus ham
+        this.getRootPane().setDefaultButton(ok);
         ok.addKeyListener(closeKeyListener);
+        ActionListener closeActionListener = event -> closeBuildaMenu();
         ok.addActionListener(closeActionListener);
 
         JLabel ico = BuildaHQ.createPictureJLabel("oc/sysimages/smArtwork.gif"); // ACHTUNG BEI ÄNDERUNGEN AUCH IN BUILDAPANEL ANPASSEN!!!
@@ -165,7 +116,6 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
 
     public void closeBuildaMenu() {
         this.setVisible(false);
-//                Apo();
     }
 
     public int getMausradSpeed() {
@@ -193,11 +143,6 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
 
     }
 
-    public boolean isApo() {
-        //return apo.isSelected();
-        return true;
-    }
-
     public boolean isVertikalScrolling() {
         return vertikalScrollen.isSelected();
 
@@ -207,27 +152,9 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         return this;
     }
 
-//    @SuppressWarnings({"static-access"})
-//        public void Apo() {
-//            if (OnlineCodex.getGame() == OnlineCodex.WH40K || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) {
-//                String save = null;
-//                if (apo.isSelected() && apoSelected == false) {
-//                    save = OnlineCodex.getInstance().getSaveText() + "_1H_4T_5T_1H_4T_5T";
-//                    apoSelected = true;
-//                    OnlineCodex.getInstance().load(save, true);
-//                }
-//                if (!apo.isSelected()) {
-//                    save = OnlineCodex.getInstance().getChooser().getSelectedObjects()[0].toString() + OnlineCodex.getInstance().SAVETEXT_UEBERSCHRIFTTRENNER2 + OnlineCodex.getInstance().getBuilder().getSaveTextApo();
-//                    apoSelected = false;
-//                    OnlineCodex.getInstance().load(save, true);
-//                }
-//            }
-//        }
-
     public void savePrefs() {
         Preferences prefs = OnlineCodex.getInstance().getPrefs();
 
-        prefs.putBoolean(PREFERENCES_ENABLE_APOCALYPSE, isApo());
         prefs.putBoolean(PREFERENCES_SHOW_PICTURES, isBildaz());
         prefs.putBoolean(PREFERENCES_SCROLL_VERTICAL, isVertikalScrolling());
         prefs.putInt(PREFERENCES_MOUSE_WHEEL_SPEED, getMausradSpeed());
@@ -236,8 +163,6 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
 
     public void loadPrefs() {
         Preferences prefs = OnlineCodex.getInstance().getPrefs();
-
-//            apo.setSelected(prefs.getBoolean(PREFERENCES_ENABLE_APOCALYPSE, isApo()));
         bildaz.setSelected(prefs.getBoolean(PREFERENCES_SHOW_PICTURES, isBildaz()));
         vertikalScrollen.setSelected(prefs.getBoolean(PREFERENCES_SCROLL_VERTICAL, isVertikalScrolling()));
         tMausradSpeed.setText(Integer.toString(prefs.getInt(PREFERENCES_MOUSE_WHEEL_SPEED, getMausradSpeed())));

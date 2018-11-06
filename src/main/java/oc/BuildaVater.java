@@ -66,8 +66,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected JComboBox supplementBox = new JComboBox();
     protected JComboBox kontingentBox = new JComboBox();
     protected JComboBox formationBox = new JComboBox();
-    @SuppressWarnings("unused")
-    private Information informationClass;
     private Sonstige[] sonstige;
     private ActionListener refreshActionListenerKon = new ActionListener() {
 
@@ -212,7 +210,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     public void complete() {
         if (!(this instanceof LeererBuilder)) {
-            if (getGame() == 0) {
                 reflectionKennungLokal = reflectionKennung;
                 LOGGER.info("reflectionKennungLokal:" + reflectionKennungLokal);
 
@@ -244,11 +241,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 CP.put("Brigade Detachment", 12); //+12CP
                 CP.put("Battalion Detachment", 5); //+5CP
                 CP.put("Patrol Detachment", 0); //+0CP
-
-//				if(reflectionKennung!="CH" && reflectionKennung!="IM"  && reflectionKennung!="OR"  && reflectionKennung!="TY"){
-//					formationen.add(0,"");
-//				}
-
 
                 kontingentBox = new JComboBox(kontingente);
                 kontingentBox.setMaximumRowCount(25);
@@ -321,7 +313,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 maxAuswahlen.put("Auxiliary Support Detachment", new int[]{3, 1, 1, 1, 1, 1, 1, 1, 0, 0});
 
                 kontingentBox.setSelectedIndex(1);
-            }
             fillChooserSpace();
         }
     }
@@ -431,9 +422,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 sammler.append(SAVETEXT_TRENNER4);
             }
 
-            if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA)
-                sammler.append(getSaveTextSonstige());
-
             return sammler.toString();
         } else {
             return superformation.getSaveText();
@@ -537,39 +525,20 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 }
             }
         }
-
-        if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA && e.getElementsByTagName(ELEMENT_NAME_SONSTIGESGRUPPE) != null) {
-            Element sonstigesRoot = (Element) e.getElementsByTagName(ELEMENT_NAME_SONSTIGESGRUPPE).item(0);
-            NodeList sonstigeChildren = sonstigesRoot.getChildNodes();
-
-            for (int i = 0; i < sonstigeChildren.getLength(); i++) {
-                Element child = (Element) sonstigeChildren.item(i);
-                sonstige[i].loadElement(child);
-            }
-        }
     }
 
 
     private String getSaveTextSonstige() {
-
         StringBuilder text = new StringBuilder("");
-
         if (sonstige != null) {
-
             for (int i = 0; i < sonstige.length; i++) {
-
                 text.append(SAVETEXT_TRENNER5);
-
                 text.append(sonstige[i].getSaveText(SAVETEXT_TRENNER6));
-
             }
-
         }
-
         return text.toString();
     }
 
-    @SuppressWarnings("unused")
     private Element getSaveElementSonstige() {
         Element root = BuildaHQ.getNewXMLElement("Sonstige");
 
@@ -667,7 +636,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         myChooserGruppen.get(kategorie).setUnitList(units);
     }
 
-    public String[] uniteUnitList(String[]... list) {
+    public static String[] uniteUnitList(String[]... list) {
         int length = 0;
         for (int i = 0; i < list.length; i++) {
             length += list[i].length;
@@ -684,7 +653,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         return sRet;
     }
 
-    public String[] uniteUnitList(String[] sAr1, String[] sAr2) {
+    public static String[] uniteUnitList(String[] sAr1, String[] sAr2) {
         String[] sRet = new String[sAr1.length + sAr2.length];
 
         for (int i = 0; i < sAr1.length; i++) {

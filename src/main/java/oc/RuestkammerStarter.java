@@ -14,10 +14,9 @@ public class RuestkammerStarter extends OptionsVater {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerStarter.class);
 
-    static final int ruestkammerIconBreite = 20;
+    private static final int ruestkammerIconBreite = 20;
     static final Font bold = new Font("arial", Font.BOLD, 12);
     static final Font plain = new Font("arial", Font.PLAIN, 12);
-    //private JTextArea textArea = new JTextArea("");
     public int einrueckIndex = -1;
     boolean abwaehlbar = true;
     private RuestkammerVater myKammer;
@@ -180,33 +179,21 @@ public class RuestkammerStarter extends OptionsVater {
         fontSetzen(false);
         panel.add(startButton);
 
-//		textArea.setForeground(Color.GRAY);
-//		textArea.setEditable(false);
-//		textArea.setFocusable(false);
-//		textArea.setLocation(randAbstand + einrueckAbstand + 1, buttonHoehe + 6);
-//
-//		BuildaHQ.newGUIComponent(textArea);
-//		panel.add(textArea);///iwas mit textarea führt zu scrollverschiebungen
-
         String kammerName = BuildaHQ.formZuKlassenName(kammer);
 
-        String armyPackage = OnlineCodex.armyPackage;
+        String armyPackage = OnlineCodex.ARMY_PACKAGE;
 
         try {
             try {
-                //LOGGER.info(armyPackage + "units." + kammerName);
                 myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + kammerName).newInstance();
             } catch (Exception e) {
                 try {
-                    //LOGGER.info(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                     myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName).newInstance();
                 } catch (Exception ex2) {
                     try {
-                        //LOGGER.info(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName);
                         myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "fo" + "." + kammerName).newInstance();
                     } catch (Exception ex3) {
                         try {
-                            //LOGGER.info(armyPackage + "units." + "form" + "." + kammerName);
                             myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "form" + "." + kammerName).newInstance();
                         } catch (Exception ex4) {
                             try {
@@ -328,11 +315,7 @@ public class RuestkammerStarter extends OptionsVater {
         StringBuilder abstandshalter = new StringBuilder("");
 
         String punkteString = "";
-//		if (myKammer.grundkosten == 0) {
-//			punkteString = BuildaHQ.translate("kostenlos");
-//		} else {
         punkteString = entferneNullNachkomma(myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.");
-//		}
 
         int cnt = (buttonBreite - (fm.stringWidth(name + punkteString) + 30)) / fm.stringWidth(" .");
 
@@ -399,39 +382,25 @@ public class RuestkammerStarter extends OptionsVater {
 
     private void sizeSetzen() {
         int textAreaHoehe = 0;
-//		if (textArea.getText().equals("")) {
-//			textAreaHoehe = -5;
-//		} else {
-//			textAreaHoehe = (vorkommen(textArea.getText(), ZEILENUMBRUCH) + 1);
-//			FontMetrics fm = textArea.getFontMetrics(textArea.getFont());
-//			textAreaHoehe *= fm.getHeight();
-//		}
-
 
         String arr[] = texte.split(ZEILENUMBRUCH);
-        //LOGGER.info(arr.length);
         while (textfelder.size() > 0) {
             panel.remove(textfelder.get(0));
             textfelder.remove(textfelder.get(0));
         }
         for (int i = 0; i < arr.length; i++) {
             if (!arr[i].equals("")) {
-                //LOGGER.info(arr[i]);
                 JLabel ta = new JLabel(arr[i]);
                 ta.setLocation(randAbstand + einrueckAbstand + 1, buttonHoehe + 6 + buttonHoehe * i);
                 ta.setForeground(Color.GRAY);
-                //ta.setEditable(false);
                 ta.setFocusable(false);
                 ta.setSize(buttonBreite + 20, buttonHoehe);
-                //			BuildaHQ.newGUIComponent(textArea);
                 textAreaHoehe += buttonHoehe;
                 textfelder.add(ta);
                 panel.add(ta);///iwas mit textarea führt zu scrollverschiebungen
             }
         }
 
-        //textArea.setSize(buttonBreite + 20, textAreaHoehe);
-        //panel.setSize(ruestkammerIconBreite + randAbstand + buttonBreite, ((int) (textArea.getLocation().getY())) + textAreaHoehe + 5);
         if (textfelder.size() > 0) {
             panel.setSize(ruestkammerIconBreite + randAbstand + buttonBreite, ((int) (textfelder.get(0).getLocation().getY())) + textAreaHoehe + 5);
         } else {
@@ -451,7 +420,6 @@ public class RuestkammerStarter extends OptionsVater {
 
     private void textLeeren() {
         texte = "";
-        //textArea.setText("");
         sizeSetzen();
     }
 
@@ -613,12 +581,7 @@ public class RuestkammerStarter extends OptionsVater {
     @Override
     public Element getSaveElement() {
         Element root = myKammer.getSaveElement();
-
-        //            Element root = BuildaHQ.getNewXMLElement(this.getClass().getSimpleName());
         root.setAttribute("selected", Boolean.toString(isSelected()));
-
-        //            root.appendChild(myKammer.getSaveElement());
-
         return root;
     }
 
@@ -626,7 +589,6 @@ public class RuestkammerStarter extends OptionsVater {
     public void load(String s) {
         myKammer.load(s.substring(s.indexOf(SAVETEXT_SELECTEDTRENNER) + SAVETEXT_SELECTEDTRENNER.length(), s.length()), einrueckIndex > 0 ? SAVETEXT_TRENNER1_6 : SAVETEXT_TRENNER1_5);
         texte = myKammer.getText().replace(", ", "\n- ").trim();
-        //textArea.setText(myKammer.getText().replace(", ", "\n- ").trim());
         sizeSetzen();
         this.setSelected(s.substring(0, 1).equals("Y"), false);
         myKammer.setVisible(false);
@@ -636,7 +598,6 @@ public class RuestkammerStarter extends OptionsVater {
     public void loadElement(Element e) {
         myKammer.loadElement(e);
         texte = myKammer.getText().replace(", ", "\n- ").trim();
-        //textArea.setText(myKammer.getText().replace(", ", "\n- ").trim());
         sizeSetzen();
         this.setSelected(Boolean.parseBoolean(e.getAttribute("selected")), false);
         myKammer.setVisible(false);
@@ -649,7 +610,6 @@ public class RuestkammerStarter extends OptionsVater {
 
     public void textUebernehmen() {
         texte = myKammer.getText().replace(", ", "\n- ").trim();
-        //textArea.setText(myKammer.getText().replace(", ", "\n- ").trim());
         sizeSetzen();
     }
 

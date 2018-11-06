@@ -29,21 +29,21 @@ public class VOLKOrks extends BuildaVater {
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HQ, HQeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TR, Standardeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TROOPS, Standardeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, EL, Eliteeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, ELITE, Eliteeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FA, Sturmeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FAST_ATTACK, Sturmeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HS, Unterstützungeinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, DT, Transporteinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FL, Fliegereinträge));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FLIER, Fliegereinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORT, Befestigungen));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORTIFICATION, Befestigungen));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LOW, LordofWar));
+        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LORD_OF_WAR, LordofWar));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
@@ -70,7 +70,7 @@ public class VOLKOrks extends BuildaVater {
         desperateAllies.add("DE");
         desperateAllies.add("DH");
         desperateAllies.add("EC");
-        desperateAllies.add("EL");
+        desperateAllies.add("ELITE");
         desperateAllies.add("HQ");
         desperateAllies.add("FE");
         desperateAllies.add("NE");
@@ -125,20 +125,20 @@ public class VOLKOrks extends BuildaVater {
                     "", "Ghazghkull Thraka", "Kaptin Badrukk", "Boss Zagstruk", "Boss Snikrot",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
                     "", "Zhadsnark da Rippa [FW]", "Ork Mek Boss Buzzgob [FW]"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Kommandos",
                     "", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz",
                     "", "Mad Dok Grotsnik",
                     "", "Painboy on Warbike [Index]"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers",
                     "", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet",
                     "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]",});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans",
                     "", "Gorkanaut", "Morkanaut",
                     "", "Battlewagon", "Gunwagon", "Bonebreaka",
@@ -146,12 +146,12 @@ public class VOLKOrks extends BuildaVater {
                     "", "Big Gunz [Index]",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]",
                     "Battlewagon with Supa-Kannon [FW]",});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk",
                     "", "'Chinork' Warkopta [FW]"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa",
                     "", "Kill Tank [FW]", "Kustom Stompa [FW]", "Gargantuan Squiggoth [FW]",});
         } else if (getFormationType().equals("Goff")) {
@@ -161,22 +161,22 @@ public class VOLKOrks extends BuildaVater {
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun",
                     "", "Ghazghkull Thraka", "Boss Zagstruk",
                     "", "Ork Mek Boss Buzzgob [FW]"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Blood Axe")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
@@ -184,45 +184,45 @@ public class VOLKOrks extends BuildaVater {
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun",
                     "", "Boss Snikrot"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Deathskulls")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Deffkilla Wartrike",
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos",
                     "", "Mad Dok Grotsnik"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Evil Sunz")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
@@ -230,88 +230,88 @@ public class VOLKOrks extends BuildaVater {
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun",
                     "", "Zhadsnark da Rippa [FW]"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Snakebites")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Deffkilla Wartrike",
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Bad Moonz")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Deffkilla Wartrike",
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         } else if (getFormationType().equals("Freebooterz")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Deffkilla Wartrike",
                     "", "Weirdboy",
                     "", "Big Mek [Index]", "Big Mek in Mega Armour", "Big Mek on Warbike [Index]", "Big Mek with Shokk Attack Gun"});
-            myChooserGruppen.get(TR).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(EL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FA).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
                     "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HS).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DT).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Trukk"});
-            myChooserGruppen.get(FL).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LOW).changeComboBoxAuswahlen(new String[]{
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
         }
 
@@ -325,9 +325,9 @@ public class VOLKOrks extends BuildaVater {
     @Override
     public void refreshAction() {
         if (BuildaHQ.getCountFromInformationVectorGlobal("ORZhadsnark") > 0) {
-            myChooserGruppen.get(TR).addSpezialAuswahl("Warbikers");
+            myChooserGruppen.get(TROOPS).addSpezialAuswahl("Warbikers");
         } else {
-            myChooserGruppen.get(TR).removeSpezialAuswahl("Warbikers");
+            myChooserGruppen.get(TROOPS).removeSpezialAuswahl("Warbikers");
         }
         super.refreshAction();
     }

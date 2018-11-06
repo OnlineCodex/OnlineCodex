@@ -99,16 +99,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                     setFehlermeldung("");
                 }
 
-                if (OnlineCodex.getGame() == OnlineCodex.WHFB) {
-                    if ((kategorie == 4 || kategorie == 5)) {
-                        if (kategorie == 4 && (unikat == false || unikatMax > (OnlineCodex.getInstance().getBudget() >= 3000 ? 6 : 3))) {
-                            setUnikat(true, OnlineCodex.getInstance().getBudget() >= 3000 ? 6 : 3);
-                        } else if (kategorie == 5 && (unikat == false || unikatMax > (OnlineCodex.getInstance().getBudget() >= 3000 ? 4 : 2))) {
-                            setUnikat(true, OnlineCodex.getInstance().getBudget() >= 3000 ? 4 : 2);
-                        }
-                    }
-                }
-
                 String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
                 if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
                     setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
@@ -330,7 +320,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
         for (int i = 0; i < optionen.size(); ++i) {
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                //((RuestkammerStarter) optionen.elementAt(i)).deleteYourself();
                 RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
 
                 if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
@@ -402,7 +391,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     }
 
     public int getPower() {
-        // TODO Auto-generated method stub
         return power;
     }
 

@@ -1,7 +1,5 @@
 package oc;
 
-import oc.wh40k.armies.VOLKAstraMilitarum;
-import oc.wh40k.armies.VOLKSpaceMarines;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -28,8 +26,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     protected String anfangDerTextarea = ""; // s. ImperialeArmee
     String orden = "";
     int mainCnt = 0;
-    @SuppressWarnings("unused")
-    private Information informationClass;
     private Vector<BuildaVater> myBuildaVaterVec = new Vector<BuildaVater>();
     private JScrollPane textAreaScrollPane;
     private JTextAreaWithPopup textArea = new JTextAreaWithPopup(true, false);
@@ -213,29 +209,12 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         for (int k = 0; k < myBuildaVaterVec.size(); k++) {
             bV = myBuildaVaterVec.get(k);
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
-//			LOGGER.info("superformation:");
-//			LOGGER.info(bV.superformation!=null);
             if (bV.superformation != null) {
                 if (bV.reflectionKennungLokal.equals("SM")) {
-                    if (((VOLKSpaceMarines) bV).Raukaan.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Clan Raukaan): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else if (((VOLKSpaceMarines) bV).SoT.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Sentinels of Terra): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else {
-                        text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    }
                 } else if (bV.reflectionKennungLokal.equals("AM")) {
-                    if (((VOLKAstraMilitarum) bV).Cadian.isSelected()) {
-                        text.append(bV.nameDerArtDerArmee + " (Cadians): " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    } else {
-                        text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                    }
-                } else if (bV.reflectionKennungLokal.equals("TA")) {
-//					if(((VOLKSternenreichderTau)bV).Farsight.isSelected()){
-//						text.append(bV.nameDerArtDerArmee+" (Farsight Enclave): "+((String)bV.kontingentBox.getSelectedItem()).toUpperCase()+": START");
-//					}else{
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-//					}
+                } else if (bV.reflectionKennungLokal.equals("TA")) {
+                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
                 } else {
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
                 }
@@ -259,8 +238,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             }
 
         }
-
-        if (OnlineCodex.getGame() == OnlineCodex.WH40K) {
 
             if (BuildaHQ.zusatzInfos) {
                 boolean waffenbrueder = false;
@@ -311,17 +288,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             } else {
                 fehlerLabel.setText("");
             }
-        }
-
-        if (OnlineCodex.getGame() == OnlineCodex.NECROMUNDA)
-            text.append(getTextSonstige());
 
         textArea.setText(text.toString());
 
-
-        // nur wenn keine Verticale Scrollleiste angezeigt wird, darf ein
-        // MouseWheelLsitener drauf sein. Ansosnten überschreibt es das
-        // Mausradscrolen der Scrolleiste
 
         boolean vielText = textArea.getText().split(ZEILENUMBRUCH).length > BUILDAVATER_TEXTAREA_MAXROWS;
 
@@ -336,15 +305,13 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         try {
             textArea.select(0, 0);
         } catch (Exception e) {
-        } // textArea wird nach oben gescrollt
-
+        }
     }
 
 
     public StringBuilder getBuildaVaterText(BuildaVater bV) {
         ChooserGruppe cg;
         StringBuilder text = new StringBuilder();
-        if (OnlineCodex.getGame() == OnlineCodex.WH40K) {
             if (bV.getKontingentTyp().startsWith("Alliiertes Kontingent")) {
                 String ordenLokal = "";
                 if (bV.reflectionKennungLokal.equals("SM")) {
@@ -395,24 +362,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 }
             }
             text.append(/*bV.volk + " " +*/ bV.getFormationType());
-            if (bV.reflectionKennungLokal.equals("SM")) {
-                if (((VOLKSpaceMarines) bV).Raukaan.isSelected()) {
-                    text.append(" (Clan Raukaan)");
-                } else if (((VOLKSpaceMarines) bV).SoT.isSelected()) {
-                    text.append(" (Sentinels of Terra)");
-                }
-//					else{
-//						text.append(bV.nameDerArtDerArmee+": "+((String)bV.kontingentBox.getSelectedItem()).toUpperCase()+": START");
-//					}
-            } else if (bV.reflectionKennungLokal.equals("AM")) {
-                if (((VOLKAstraMilitarum) bV).Cadian.isSelected()) {
-                    text.append(" (Cadians)");
-                }
-            }/*else if(bV.reflectionKennungLokal.equals("TA")){
-					if(((VOLKSternenreichderTau)bV).Farsight.isSelected()){
-						text.append(" (Farsight Enclave)");
-					}
-				}*/
             text.append(": " + bV.getKontingentTyp());
             if (bV.Hauptkontingent.isSelected()) {
                 nameDerArtDerArmeeDekliniert = bV.nameDerArtDerArmeeDekliniert;
@@ -468,7 +417,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             text.append(" Punkte");
             text.append(" (PL " + (int) bV.getPower() + ")");
             text.append(ZEILENUMBRUCH);
-        }
         if (BuildaHQ.zusatzInfos) {
             if (text.toString().length() != 0) {
                 text.append(ZEILENUMBRUCH);
@@ -478,22 +426,19 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 cg = bV.getChooserGruppe(i);
                 LOGGER.info("cg.getKosten()" + cg.getKosten());
                 LOGGER.info("getKosten()" + getKosten());
-                if (OnlineCodex.getGame() == OnlineCodex.WH40K
-                        || OnlineCodex.getGame() == OnlineCodex.WH40K_LEGACY) {
-                    text.append(cg.getAnzahlText(false)
-                            + " "
-                            + cg.kategorieText()
-                            + ((cg.getAnzahl()) > 0 ? ": "
-                            + entferneNullNachkomma(cg.getKosten())
-                            + " "
-                            + BuildaHQ.translate("Pkt.")
-                            + "   "
-                            + BuildaHQ.formatDouble(
-                            ((double) cg.getKosten())
-                                    / ((double) getKosten())
-                                    * 100, 1) + "%"
-                            + ZEILENUMBRUCH : ZEILENUMBRUCH));
-                }
+                text.append(cg.getAnzahlText(false)
+                        + " "
+                        + cg.kategorieText()
+                        + ((cg.getAnzahl()) > 0 ? ": "
+                        + entferneNullNachkomma(cg.getKosten())
+                        + " "
+                        + BuildaHQ.translate("Pkt.")
+                        + "   "
+                        + BuildaHQ.formatDouble(
+                        ((double) cg.getKosten())
+                                / ((double) getKosten())
+                                * 100, 1) + "%"
+                        + ZEILENUMBRUCH : ZEILENUMBRUCH));
             }
 
             if (BuildaHQ.kurzerText) {
