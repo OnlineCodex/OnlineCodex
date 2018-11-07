@@ -305,7 +305,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             daLuckyStikk.setAktiv((chosenRelic == null || daLuckyStikk.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Goff"));
             morgogsFinkinCap.setAktiv((chosenRelic == null || morgogsFinkinCap.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Blood Axe"));
             rezmekkasRedderArmour.setAktiv((chosenRelic == null || rezmekkasRedderArmour.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Evil Sunz"));
-            daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskullz"));
+            daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskulls"));
             broggsBuzzbom.setAktiv((chosenRelic == null || broggsBuzzbom.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Snakebites"));
             daBadskullBanner.setAktiv((chosenRelic == null || daBadskullBanner.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Freebooterz"));
             if (fkwaffen != null) {
