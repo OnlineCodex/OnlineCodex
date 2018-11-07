@@ -427,9 +427,10 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         String[] splittet = s.split(SAVETEXT_TRENNER1);
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
-//			myUpgrades.elementAt(i).setSelected(splittet[i].equals("y"));
             if (splittet[i].equals("y")) {
                 myUpgrades.elementAt(i).switsch();
+            } else {
+            	myUpgrades.elementAt(i).setSelected(false);
             }
         }
     }
