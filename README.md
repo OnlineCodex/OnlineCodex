@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/OnlineCodex/OnlineCodex.svg?branch=master)](https://travis-ci.org/OnlineCodex/OnlineCodex)
 [![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=oc&metric=alert_status)](https://sonarcloud.io/dashboard?id=oc)
-[![Discord](https://img.shields.io/discord/89gv465.svg)](https://discord.gg/89gv465)
+[![Discord](https://img.shields.io/discord/483911587741040659.svg)](https://discord.gg/89gv465)
 
 An armybuilding tool for Warhammer 40k
 
