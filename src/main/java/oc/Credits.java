@@ -43,6 +43,7 @@ public class Credits extends JFrame {
                         "\n\n" +
                         "- Stefan \"Odysseus\" Oswald\n" +
                         "- Jan \"Spacecooky\" Koch\n" +
+			"- Philipp \"chisui\" Dargel\n" +
                         "- Graham \"Lamekh\" Page (bis April 2013)\n" +
                         "- Florian \"Sanguinus\" Cramer (bis Januar 2013)\n" +
                         "- Matthias \"Schandro\" Kalla (bis Februar 2009)\n" +
