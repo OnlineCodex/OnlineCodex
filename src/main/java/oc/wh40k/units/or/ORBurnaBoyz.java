@@ -52,7 +52,13 @@ public class ORBurnaBoyz extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = boyz.getModelle() / 10 * 3;
+    	if(boyz.getModelle() > 10) {
+    		power = 9;
+    	} else if(boyz.getModelle() > 5) {
+    		power = 6;
+    	} else {
+    		power = 3;
+    	}
 
         Spanner2.setAktiv(boyz.getModelle() >= 10);
         Spanner3.setAktiv(boyz.getModelle() == 15);
