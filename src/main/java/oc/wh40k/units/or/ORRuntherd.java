@@ -4,9 +4,13 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ORRuntherd extends Eintrag {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
+    
     OptionsUpgradeGruppe o1 = null;
     OptionsUpgradeGruppe o2 = null;
     RuestkammerStarter waffen;
@@ -16,7 +20,10 @@ public class ORRuntherd extends Eintrag {
         name = "Runtherd";
         grundkosten = getPts("Runtherd");
         power = 2;
+        setEintragsCNT(0.0);
 
+        addToInformationVector("Runtherd", 1);
+        
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
 
@@ -45,7 +52,19 @@ public class ORRuntherd extends Eintrag {
 
     @Override
     public void refreshen() {
+    	LOGGER.error("" + getCountFromInformationVector("Runtherd"));
+    	LOGGER.error("" + getCountFromInformationVector("Gretchin Infantry"));
         o1.alwaysSelected();
+        if(getCountFromInformationVector("Runtherd") > getCountFromInformationVector("Gretchin Infantry")){
+        	setFehlermeldung("Zu wenig Gretchins!");
+        } else {
+        	setFehlermeldung("");
+        }
+    }
+    
+    @Override
+    public void deleteYourself(){
+        addToInformationVector("Runtherd", -1);
     }
 
 }
