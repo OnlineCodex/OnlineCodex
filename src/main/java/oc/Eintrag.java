@@ -96,13 +96,15 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                 if (uniqueError) {
                     setFehlermeldung("Doppeltes Relikt");
                 } else {
-                    setFehlermeldung("");
+                    setFehlermeldung(getFehlermeldung());
                 }
 
-                String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
                 if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
                     setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
-                } else setFehlermeldung(fehlerBuffer);
+                } else {
+                	setFehlermeldung(getFehlermeldung());
+                }
+                
                 kostenLabelAktualisieren();
                 panel.setSize(getBreite(), getHöhe());
                 lKosten.setLocation(278, getHöhe() - 20);
