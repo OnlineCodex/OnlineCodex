@@ -227,13 +227,12 @@ public class VOLKImperium extends BuildaVater {
             "Wolf Priest in Terminator Armour", "Primaris Wolf Priest[NEW]", "Wolf Priest on Bike[INDEX]", "Ulrik the Slayer", "Wolf Guard Battle Leader", "Primaris Battle Leader[NEW]",
             "Wolf Guard Battle Leader on Bike[INDEX]", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
             "Bjorn the Fell-Handed", "Iron Priest", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]", "Arjac Rockfist"};
-    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws[INDEX]", "Grey Hunters[INDEX]"};
-    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster[INDEX]", "Wolf Scouts[INDEX]", "Wulfen[INDEX]", "Lone Wolf[INDEX]",
-            "Lone Wolf in Terminator Armour[INDEX]", "Murderfang[INDEX]", "Wolf Guard[INDEX]", "Wolf Guard on Bikes[INDEX]", "Wolf Guard in Terminator Armour[INDEX]"};
-    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves[INDEX]", "Swiftclaws[INDEX]", "Swiftclaw Attack Bikes[INDEX]",
-            "Thunderwolf Cavalry[INDEX]", "Fenrisian Wolves[INDEX]", "Skyclaws[INDEX]"};
-    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf[INDEX]", "Stormfang Gunship[INDEX]"};
-    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs[INDEX]"};
+    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
+    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wulfen Dreadnought[NEW]", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf[INDEX]",
+            "Lone Wolf in Terminator Armour[INDEX]", "Murderfang", "Wolf Guard", "Wolf Guard on Bikes[INDEX]", "Wolf Guard Terminators [Wolf Guard in Terminator Armour]", "Wolf Guard Cataphractii Terminators[NEW]", "Wolf Guard Tartaros Terminators[NEW]"};
+    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes", "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws", "Wold Scout Bikers[NEW]"};
+    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship", "Stormhawk Interceptor"};
+    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
 
     //Deathwatch //TODO SM-Einheiten hinzufügen
     private static final String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};
@@ -571,11 +570,14 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
-        myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessor Squad"}));
-        myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Servitors[INDEX]", "Imperial Space Marine[INDEX]", "Primaris Ancient[INDEX]", "Dreadnought[INDEX]", "Venerable Dreadnought"}, Eliteeinträge_IA_AA));
-        myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptor Squad[INDEX]", "Land Speeders"}, Sturmeinträge_IA_AA));
-        myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblaster Squad[INDEX]", "Predator[INDEX]", "Whirlwind[INDEX]", "Vindicator[INDEX]", "Land Raider[INDEX]", "Land Raider Crusader[INDEX]", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-        myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino[INDEX]", "Razorback[INDEX]", "Drop Pod"}, Transporteinträge_IA_AA));
+        myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
+        myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers[NEW]", "Agressors[NEW]", "Servitors", "Imperial Space Marine[INDEX]", "Great Company Ancient", "Great Company Champion", "Primaris Ancient", 
+        																										   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought[NEW]", "Redemptor Dreadnought[NEW]"}, Eliteeinträge_IA_AA));
+        myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptors[NEW]", "Land Speeders"}, Sturmeinträge_IA_AA));
+        myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblasters[NEW]", "Hunter[NEW]", "Stalker[NEW]", 
+        																															"", "Predator", "Whirlwind", "Vindicator", 
+        																															"", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
+        myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm[NEW]", "Repulsor[NEW]"}, Transporteinträge_IA_AA));
         myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
         myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
         myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
