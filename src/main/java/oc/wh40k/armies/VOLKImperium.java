@@ -221,19 +221,19 @@ public class VOLKImperium extends BuildaVater {
 
     //Space Wolves
     private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Wolf Lord",
-            "Wolf Lord in Terminator Armour", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike", "Wolf Lord on Thunderwolf",
-            "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour",
-            "Rune Priest on Bike", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour", "Wolf Priest",
-            "Wolf Priest in Terminator Armour", "Wolf Priest on Bike", "Ulrik the Slayer", "Wolf Guard Battle Leader",
-            "Wolf Guard Battle Leader on Bike", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
-            "Bjorn the Fell-Handed", "Iron Priest", "Iron Priest on Bike", "Iron Priest on Thunderwolf", "Arjac Rockfist"};
-    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
-    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "SW Venerable Dreadnought", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf",
-            "Lone Wolf in Terminator Armour", "Murderfang", "Wolf Guard", "Wolf Guard on Bikes", "Wolf Guard in Terminator Armour"};
-    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes",
-            "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws"};
-    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship"};
-    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
+            "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour[NEW]", "Primaris Wolf Lord[NEW]", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike[INDEX]", "Wolf Lord on Thunderwolf",
+            "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour, Primaris Rune Priest[NEW]",
+            "Rune Priest on Bike[INDEX]", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour", "Wolf Priest",
+            "Wolf Priest in Terminator Armour", "Primaris Wolf Priest[NEW]", "Wolf Priest on Bike[INDEX]", "Ulrik the Slayer", "Wolf Guard Battle Leader", "Primaris Battle Leader[NEW]",
+            "Wolf Guard Battle Leader on Bike[INDEX]", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
+            "Bjorn the Fell-Handed", "Iron Priest", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]", "Arjac Rockfist"};
+    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws[INDEX]", "Grey Hunters[INDEX]"};
+    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster[INDEX]", "Wolf Scouts[INDEX]", "Wulfen[INDEX]", "Lone Wolf[INDEX]",
+            "Lone Wolf in Terminator Armour[INDEX]", "Murderfang[INDEX]", "Wolf Guard[INDEX]", "Wolf Guard on Bikes[INDEX]", "Wolf Guard in Terminator Armour[INDEX]"};
+    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves[INDEX]", "Swiftclaws[INDEX]", "Swiftclaw Attack Bikes[INDEX]",
+            "Thunderwolf Cavalry[INDEX]", "Fenrisian Wolves[INDEX]", "Skyclaws[INDEX]"};
+    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf[INDEX]", "Stormfang Gunship[INDEX]"};
+    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs[INDEX]"};
 
     //Deathwatch //TODO SM-Einheiten hinzufügen
     private static final String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};
@@ -570,15 +570,15 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessor Squad"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Servitors", "Imperial Space Marine", "Primaris Ancient", "Dreadnought", "Venerable Dreadnought"}, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptor Squad", "Land Speeders"}, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblaster Squad", "Predator", "Whirlwind", "Vindicator", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod"}, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+        myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessor Squad"}));
+        myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Servitors[INDEX]", "Imperial Space Marine[INDEX]", "Primaris Ancient[INDEX]", "Dreadnought[INDEX]", "Venerable Dreadnought"}, Eliteeinträge_IA_AA));
+        myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptor Squad[INDEX]", "Land Speeders"}, Sturmeinträge_IA_AA));
+        myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblaster Squad[INDEX]", "Predator[INDEX]", "Whirlwind[INDEX]", "Vindicator[INDEX]", "Land Raider[INDEX]", "Land Raider Crusader[INDEX]", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
+        myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino[INDEX]", "Razorback[INDEX]", "Drop Pod"}, Transporteinträge_IA_AA));
+        myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
+        myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+        myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Deathwatch);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
