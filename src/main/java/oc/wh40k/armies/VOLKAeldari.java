@@ -123,7 +123,7 @@ public class VOLKAeldari extends BuildaVater {
                     "Wraithlord",
 
                     "", "Talos", "Cronos", "Ravager",
-                    "", "Reaper", "Tantalus",
+                    "", "Reaper [FW]", "Tantalus [FW]",
                     "", "Voidweavers"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent",
@@ -275,7 +275,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Talos", "Cronos", "Ravager",
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
@@ -296,7 +296,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Ravager",
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
@@ -320,7 +320,7 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
@@ -345,7 +345,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Talos", "Cronos",
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
