@@ -4,12 +4,8 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class ORRuntherd extends Eintrag {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
     
     OptionsUpgradeGruppe o1 = null;
     OptionsUpgradeGruppe o2 = null;
@@ -52,8 +48,6 @@ public class ORRuntherd extends Eintrag {
 
     @Override
     public void refreshen() {
-    	LOGGER.error("" + getCountFromInformationVector("Runtherd"));
-    	LOGGER.error("" + getCountFromInformationVector("Gretchin Infantry"));
         o1.alwaysSelected();
         if(getCountFromInformationVector("Runtherd") > getCountFromInformationVector("Gretchin Infantry")){
         	setFehlermeldung("Zu wenig Gretchins!");
