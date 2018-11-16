@@ -573,7 +573,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
         myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
         myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", /*TODO:"Reivers[NEW]",*/ /*TODO:"Agressors[NEW]",*/ /*TODO:"Servitors",*/ "Imperial Space Marine[INDEX]", /*TODO:"Great Company Ancient",*/ /*TODO:"Great Company Champion",*/ /*TODO:"Primaris Ancient",*/ 
-        																										   "", /*TODO:"Dreadnought",*/ /*TODO:"Venerable Dreadnought",*/ /*TODO:"Contemptor Dreadnought[NEW]",*/ /*TODO:"Redemptor Dreadnought[NEW]"*/}, Eliteeinträge_IA_AA));
+        																										   "", /*TODO:"Dreadnought",*/ /*TODO:"Venerable Dreadnought",*/ "Contemptor Dreadnought", "Redemptor Dreadnought"}, Eliteeinträge_IA_AA));
         myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", /*TODO:"Inceptors[NEW]",*/ /*TODO:"Land Speeders"*/}, Sturmeinträge_IA_AA));
         myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", /*TODO:"Hellblasters[NEW]",*/ "Hunter", "Stalker",
         																															"", "Predator", "Whirlwind", "Vindicator", 
