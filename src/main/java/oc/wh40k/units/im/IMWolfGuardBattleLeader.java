@@ -4,15 +4,8 @@ import oc.*;
 
 public class IMWolfGuardBattleLeader extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
     OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 
     public IMWolfGuardBattleLeader() {
         name = "Wolf Guard Battle Leader";
@@ -36,7 +29,7 @@ public class IMWolfGuardBattleLeader extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 5;
+        power = 4;
         if (oe1.isSelected()) {
             power += 1;
         }

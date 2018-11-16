@@ -2,19 +2,18 @@ package oc.wh40k.units.im;
 
 import oc.*;
 
-public class IMIronPriest extends Eintrag {
-
+public class IMPrimarisWolfLord extends Eintrag {
+	
     RuestkammerStarter waffenUndArtefakte;
-    
-    public IMIronPriest() {
-        name = "Iron Priest";
-        grundkosten = getPts("Iron Priest") + getPts("Servo-arm") + getPts("Tempest hammer") + getPts("Helfrost pistol");
-        power = 5;
 
+    public IMPrimarisWolfLord() {
+        name = "Primaris Wolf Lord";
+        grundkosten = getPts("Primaris Wolf Lord") + getPts("bolt pistol") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 7;
         seperator();
 
         waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Iron Priest");
+        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Wolf Lord");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
         add(waffenUndArtefakte);
@@ -26,5 +25,4 @@ public class IMIronPriest extends Eintrag {
     @Override
     public void refreshen() {
     }
-
 }

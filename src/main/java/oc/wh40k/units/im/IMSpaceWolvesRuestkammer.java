@@ -25,14 +25,16 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
 
-        if(type.contains("Rune Priest") || type.contains("Wolf Priest") || type.contains("Wolf Lord")){//TODO other characters
+        if(type.contains("Rune Priest") || type.contains("Wolf Priest") || type.contains("Wolf Lord") 
+        		|| type.contains("Wolf Guard Battle Leader") || type == "Primaris Battle Leader"
+        		|| type == "Iron Priest"){//TODO other characters
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
         	 character = true;
         	 seperator();
         }
-        if (type.contains("Wolf Lord")) {
+        if (type.contains("Wolf Lord") && !type.contains("Terminator") && !type.contains("Cataphractii")&& !type.contains("Primaris")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
             if(type.contains("Thunderwolf")){
                 ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
@@ -62,7 +64,60 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        } else if (type.contains("Wolf Guard Battle Leader")) {
+        } else if (type == "Wolf Lord in Terminator Armour" || type == "Wolf Lord in Cataphractii Armour") {
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+            addTerminatorMeleeRelic();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            if(type.contains("Cataphractii")){
+            	o1.setSelected("Chain fist", true);
+            } else if(type.contains("Terminator")){
+            	o1.setSelected("Power sword", true);
+            }
+
+            seperator();
+            if(type.contains("Cataphractii")){
+                ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
+            }
+            addCombiFury();
+            addTerminatorMeleeRelic();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            if(type.contains("Cataphractii")){
+            	o2.setSelected("Combi-bolter", true);
+            } else if(type.contains("Terminator")){
+            	o2.setSelected("Storm bolter", true);
+            }
+
+            seperator();
+            
+            ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
+            ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            
+            if(type.contains("Terminator")){
+            	seperator();
+            	add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grenade launcher", "Wrist-mounted grenade launcher", getPts("Wrist-mounted grenade launcher")));
+            }
+        } else if (type == "Primaris Wolf Lord") {
+            ogE.addElement(new OptionsGruppeEintrag("Auto bolt rifle", "Master-crafted auto bolt rifle",getPts("Master-crafted auto bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", "Master-crafted stalker bolt rifle",getPts("Master-crafted stalker bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Sword + Auto bolt rifle", "Power sword + Master-crafted auto bolt rifle", getPts("Power sword (SM)") + getPts("Master-crafted auto bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Sword + Stalker bolt rifle", "Power sword + Master-crafted stalker bolt rifle", getPts("Power sword (SM)") + getPts("Master-crafted stalker bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Fist + Plasma pistol", "Power fist + Plasma pistol", getPts("Power fist") + getPts("Plasma pistol (SM)")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Master-crafted auto bolt rifle", true);
+
+        } else if (type == "Primaris Battle Leader") {
+        	ogE.addElement(new OptionsGruppeEintrag("Axe + Bolt carbine", "Power axe + Bolt carbine", getPts("Power axe (SM)") + getPts("Bolt carbine")));
+        	ogE.addElement(new OptionsGruppeEintrag("Power Sword", getPts("Power sword (SM)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Auto bolt rifle", "Master-crafted auto bolt rifle",getPts("Master-crafted auto bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", "Master-crafted stalker bolt rifle",getPts("Master-crafted stalker bolt rifle")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Power axe + Bolt carbine", true);
+        }  else if (type.contains("Wolf Guard Battle Leader")) {
+            	ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+            if(!type.contains("Terminator") && !type.contains("Thunderwolf")){
+                ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+            }
             addMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             if (type == "Wolf Guard Battle Leader in Terminator Armour") {
@@ -76,7 +131,6 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
-            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Characters)")));
             addCombiFury();
             addMeleeRelic();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -141,7 +195,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt pistol", true);
         } else if (type == "Lone Wolf in Terminator Armour") {
-            ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+            addTerminatorMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Power sword", true);
 
@@ -204,7 +258,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Bolt pistol + Boltgun", true);
         } else if (type == "Wolf Guard Pack Leader in Terminator Armour") {
-            ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+            addTerminatorMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Power sword", true);
 
@@ -215,7 +269,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Storm bolter", true);
         } else if (type == "Wolf Guard Pack Leader in Terminator Armour (Blood Claws)" || type == "Wolf Guard Pack Leader in Terminator Armour (Grey Hunters)") {
-            ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+            addTerminatorMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Power sword", true);
 
@@ -226,14 +280,14 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Storm bolter", true);
         } else if (type == "Wolf Guard in Terminator Armour") {
-            ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+            addTerminatorMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 0));
             o1.setSelected("Power fist", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
-            ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+            addTerminatorMeleeRelic();
             addCombiFury();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 0));
             o2.setSelected("Storm bolter", true);
@@ -302,11 +356,22 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     		ogE.addElement(new OptionsGruppeEintrag("Black Death", getPts("Frost axe")).setRelic(true));
     	}
     }
+    
+    public void addTerminatorMeleeRelic(){
+    	ogE.addAll(IMSpaceWolvesTerminatorMeleeWeapons.createRK("", "", buildaVater));
+        if(character){
+    		ogE.addElement(new OptionsGruppeEintrag("Krakenbone Sword", getPts("Frost sword")).setRelic(true));
+    		ogE.addElement(new OptionsGruppeEintrag("Black Death", getPts("Frost axe")).setRelic(true));
+    	}
+    }
 
     @Override
     public void refreshen() {
 
-        if (type == "Wolf Lord" || type.contains("Wolf Guard Battle Leader") || type == "Wolf Guard in Terminator Armour") {
+        if(type == "Primaris Wolf Lord" || type == "Primaris Battle Leader") {
+        	o1.alwaysSelected();
+        } else if (type.contains("Wolf Lord") || type.contains("Wolf Guard Battle Leader") || type == "Wolf Guard in Terminator Armour") {
+        
             legal = o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2 == 2;
             o1.setLegal(legal);
             o2.setLegal(legal);
@@ -315,6 +380,9 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             o1.setMaxAnzahl(o3.isSelected() ? 0 : 1);
             o2.setMaxAnzahl(o3.isSelected() ? 0 : 1);
             o3.setMaxAnzahl(o1.isSelected() || o2.isSelected() ? 0 : 1);
+            if(type == "Wolf Lord in Terminator Armour"){
+            	oe1.setAktiv(o1.isSelected("Power fist") || o2.isSelected("Power fist"));
+            }
         } else if ((type.contains("Wolf Priest") && !type.contains("Primaris")) || type == "Wolf Guard Bike Leader") {
             o1.alwaysSelected();
         } else if (type == "Grey Hunter Pack Leader") {

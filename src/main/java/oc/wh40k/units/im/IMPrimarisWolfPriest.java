@@ -7,7 +7,7 @@ public class IMPrimarisWolfPriest extends Eintrag {
     RuestkammerStarter waffenUndArtefakte;
 
     public IMPrimarisWolfPriest() {
-        name = "Primaris Rune Priest";
+        name = "Primaris Wolf Priest";
         grundkosten = getPts("Primaris Wolf Priest") + getPts("Crozius arcanum") + getPts("Absolvor bolt pistol") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
         seperator();
