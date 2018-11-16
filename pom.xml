@@ -18,10 +18,10 @@
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:OnlineCodex/OnlineCodex.git</connection>
+        <connection>scm:git:https://github.com/OnlineCodex/OnlineCodex.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
         <url>https://github.com/OnlineCodex/OnlineCodex/tree/${project.scm.tag}</url>
-        <tag>maven</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
@@ -89,6 +89,30 @@
                 </executions>
             </plugin>
         </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                    <configuration>
+                        <tag>v${releaseVersion}</tag>
+                        <tagNameFormat>v@{project.version}</tagNameFormat>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <!-- releaseProfiles configuration will actually force a Maven profile
+                           - the `releases` profile – to become active during the Release process. -->
+                        <releaseProfiles>releases</releaseProfiles>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-scm-plugin</artifactId>
+                            <version>1.8.1</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
 </project>
 
