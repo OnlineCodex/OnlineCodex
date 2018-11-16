@@ -222,7 +222,7 @@ public class VOLKImperium extends BuildaVater {
     //Space Wolves
     private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Wolf Lord",
             "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour[NEW]", "Primaris Wolf Lord[NEW]", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike[INDEX]", "Wolf Lord on Thunderwolf",
-            "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour, Primaris Rune Priest[NEW]",
+            "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour", "Primaris Rune Priest[NEW]",
             "Rune Priest on Bike[INDEX]", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour", "Wolf Priest",
             "Wolf Priest in Terminator Armour", "Primaris Wolf Priest[NEW]", "Wolf Priest on Bike[INDEX]", "Ulrik the Slayer", "Wolf Guard Battle Leader", "Primaris Battle Leader[NEW]",
             "Wolf Guard Battle Leader on Bike[INDEX]", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
