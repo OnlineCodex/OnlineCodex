@@ -415,7 +415,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
         if(type == "Primaris Wolf Lord" || type == "Primaris Battle Leader") {
         	o1.alwaysSelected();
         } else if (type.contains("Wolf Lord") || type.contains("Wolf Guard Battle Leader") || type == "Wolf Guard in Terminator Armour" ||
-        		type == "Wolf Guard Pack Leader in Terminator Armour (Blood Claws)" || type == "Wolf Guard Pack Leader") {
+        		type == "Wolf Guard Pack Leader in Terminator Armour (Blood Claws)" || type == "Wolf Guard Pack Leader" || type == "Wolf Guard Pack Leader (Wolf Scouts)") {
         
             legal = o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2 == 2;
             o1.setLegal(legal);

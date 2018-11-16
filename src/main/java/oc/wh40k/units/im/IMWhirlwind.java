@@ -12,7 +12,7 @@ public class IMWhirlwind extends Eintrag {
     public IMWhirlwind() {
         name = "Whirlwind";
         grundkosten = getPts("Whirlwind");
-        power = 5;
+        power = 6;
 
         seperator();
 
