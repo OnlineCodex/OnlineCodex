@@ -8,8 +8,9 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
     public boolean megaruestung = false;
     OptionsUpgradeGruppe handwaffen = null;
     OptionsUpgradeGruppe fkwaffen = null;
-    OptionsZaehlerGruppe BosseCC;
-    OptionsZaehlerGruppe BosseFK;
+    OptionsZaehlerGruppe bosseCC;
+    OptionsZaehlerGruppe bosseCC2;
+    OptionsZaehlerGruppe bosseFK;
     boolean melee = false;
     boolean range = false;
     boolean souped = false;
@@ -271,10 +272,15 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
             ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
             ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
-            add(BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-            BosseCC.setAnzahl(0, 1);
-            BosseCC.setAnzahl(5, 1);
+            add(bosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+            bosseCC.setAnzahl(0, 1);
+            bosseCC.setAnzahl(5, 1);
 
+            seperator(5);
+            
+            ogE.addElement(new OptionsGruppeEintrag("2 Killsaws", getPts("Two killsaws")));
+            add(bosseCC2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            
             seperator(5);
 
             if (!warbikerboss) {
@@ -282,7 +288,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
                 ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
                 ogE.addElement(new OptionsGruppeEintrag("Shoota [Index]", getPts("Shoota")));
                 ogE.addElement(new OptionsGruppeEintrag("Kustom shoota [Index]", getPts("Kustom shoota")));
-                add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+                add(bosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
             }
         }
 
@@ -320,6 +326,11 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	            boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
 	            
 	            gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
+	        }
+	        
+	        if (boyboss || warbikerboss) {
+	        	bosseCC.setAktiv(!bosseCC2.isSelected());
+	            bosseCC2.setAktiv(!bosseCC.isSelected());
 	        }
 	    }
     }
