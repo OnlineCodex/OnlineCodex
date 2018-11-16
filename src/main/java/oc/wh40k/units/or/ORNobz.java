@@ -4,18 +4,19 @@ import oc.*;
 
 public class ORNobz extends Eintrag {
 
-    AnzahlPanel Bosse;
-    OptionsZaehlerGruppe BosseCC;
-    OptionsZaehlerGruppe BosseFK;
-    OptionsEinzelZaehler Munigrotz;
-    OptionsEinzelZaehler Cyborg;
+    AnzahlPanel bosse;
+    OptionsZaehlerGruppe bosseCC;
+    OptionsZaehlerGruppe bosseCC2;
+    OptionsZaehlerGruppe bosseFK;
+    OptionsEinzelZaehler munigrotz;
+    OptionsEinzelZaehler cyborg;
 
     public ORNobz() {
         kategorie = 2;
         grundkosten = 0;
 
-        Bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 5, 10, getPts("Nobz") + getPts("Stikkbombs"));
-        add(Bosse);
+        bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 5, 10, getPts("Nobz") + getPts("Stikkbombs"));
+        add(bosse);
 
         add(ico = new oc.Picture("oc/wh40k/images/Bosse.gif"));
 
@@ -27,39 +28,44 @@ public class ORNobz extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
         ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
         ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
-        add(BosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        BosseCC.setAnzahl(0, Bosse.getModelle());
-        BosseCC.setAnzahl(5, Bosse.getModelle());
+        add(bosseCC = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        bosseCC.setAnzahl(0, bosse.getModelle());
+        bosseCC.setAnzahl(5, bosse.getModelle());
+        seperator(5);
 
+        ogE.addElement(new OptionsGruppeEintrag("2 Killsaws", getPts("Two killsaws")));
+        add(bosseCC2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
         seperator(5);
 
         ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit", "Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
         ogE.addElement(new OptionsGruppeEintrag("Kombi-skorcha", "Kombi-weapon with skorcha", getPts("Kombi-weapon with skorcha")));
         ogE.addElement(new OptionsGruppeEintrag("Shoota [Index]", getPts("Shoota")));
         ogE.addElement(new OptionsGruppeEintrag("Kustom shoota [Index]", getPts("Kustom shoota")));
-        add(BosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(bosseFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator(5);
 
-        add(Munigrotz = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo Runt", Bosse.getModelle(), getPts("Ammo Runt")));
+        add(munigrotz = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo Runt", bosse.getModelle(), getPts("Ammo Runt")));
 
         seperator(5);
 
-        add(Cyborg = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cybork body", Bosse.getModelle() / 5, getPts("Cybork body")));
+        add(cyborg = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cybork body", bosse.getModelle() / 5, getPts("Cybork body")));
 
         complete();
     }
 
     //@OVERRIDE
     public void refreshen() {
-        BosseCC.setMaxAnzahl(Bosse.getModelle() * 2);
-        BosseFK.setMaxAnzahl(Bosse.getModelle());
+        bosseCC.setMaxAnzahl(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2);
+        bosseCC2.setMaxAnzahl(bosse.getModelle()- bosseCC.getAnzahl() / 2 - bosseCC.getAnzahl() % 2);
+        bosseFK.setMaxAnzahl(bosse.getModelle());
+        
+        munigrotz.setMaxAnzahl(bosse.getModelle() / 5);
 
-        Munigrotz.setMaxAnzahl(Bosse.getModelle());
+        cyborg.setMaxAnzahl(bosse.getModelle() / 5);
 
-        Cyborg.setMaxAnzahl(Bosse.getModelle() / 5);
-
-        if (Bosse.getModelle() > 5) {
+        if (bosse.getModelle() > 5) {
             power = 14;
         } else {
             power = 7;

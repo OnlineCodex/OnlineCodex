@@ -66,8 +66,16 @@ public class VOLKAeldari extends BuildaVater {
         formationen.add("Alaitoc");
         formationen.add("");
         formationen.add("Drukhari");
-        formationen.add("Wych Cult of Strife");
-        formationen.add("Prophets of Flesh");
+        formationen.add("Kabal of the Black Heart");
+        formationen.add("Kabal of the Flayed Skull");
+        formationen.add("Kabal of the Poisoned Tongue");
+        formationen.add("Kabal of the Obsidan Rose");
+        formationen.add("Cult of Strife");
+        formationen.add("Cult of the Cursed Blade");
+        formationen.add("Cult of the Red Grief");
+        formationen.add("The Prophets of Flesh");
+        formationen.add("The Dark Creed");
+        formationen.add("Coven of Twelve");
         formationen.add("Incubi");
         formationen.add("");
         formationen.add("Harlequins");
@@ -115,7 +123,7 @@ public class VOLKAeldari extends BuildaVater {
                     "Wraithlord",
 
                     "", "Talos", "Cronos", "Ravager",
-                    "", "Reaper", "Tantalus",
+                    "", "Reaper [FW]", "Tantalus [FW]",
                     "", "Voidweavers"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent",
@@ -261,46 +269,86 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Kabalite Warriors", "Wyches", "Wracks"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Lhamaean", "Medusae", "Sslyth", "Ur-Ghul", "Kabalite Trueborn", "Hekatrix Bloodbrides", "Incubi",
+                    "", "Lhamaean", "Medusae", "Sslyth", "Ur-Ghul", "Kabalite Trueborn [INDEX]", "Hekatrix Bloodbrides [INDEX]", "Incubi",
                     "Mandrakes", "Grotesques", "Beastmaster"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Talos", "Cronos", "Ravager",
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Razorwing Jetfighter", "Voidraven"});
-        } else if (getFormationType().equals("Wych Cult of Strife")) {
+        } else if (getFormationType().equals("Kabal of the Black Heart")
+        		|| getFormationType().equals("Flayed Skull")
+        		|| getFormationType().equals("Poisoned Tongue")
+        		|| getFormationType().equals("Kabal of the Obsidan Rose")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Succubus",
-                    "", "Lelith Hesperax"});
+                    "", "Archon",
+                    "", "Drazhar"});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
+                    "", "Kabalite Warriors"});
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
+                    "", "Kabalite Trueborn [INDEX]", "Lhamaean", "Medusae", "Sslyth", "Ur-Ghul", "Incubi",
+                    "Mandrakes"});
+        	myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
+                    "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Scourges"});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
+                    "", "Ravager",
+                    "", "Reaper [FW]", "Tantalus [FW]"});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
+                    "", "Raider", "Venom"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
+                    "", "Razorwing Jetfighter", "Voidraven"});
+        } else if (getFormationType().equals("Cult of Strife")
+        		|| getFormationType().equals("Cult of the Cursed Blade")
+        		|| getFormationType().equals("Cult of the Red Grief")) {
+        	if(getFormationType().equals("Cult of Strife")) {
+        		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
+        				"", "Succubus",
+        				"", "Drazhar", "Lelith Hesperax"});
+        	} else {
+        		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
+                        "", "Succubus",
+                        "", "Drazhar"});
+        	}
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Wyches"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Hekatrix Bloodbrides", "Beastmaster"});
+                    "", "Hekatrix Bloodbrides [INDEX]", "Incubi", "Mandrakes", "Beastmaster"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions"});
+                    "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Razorwing Jetfighter", "Voidraven"});
-        } else if (getFormationType().equals("Prophets of Flesh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Haemonculus",
-                    "", "Urien Rakarth"});
+        } else if (getFormationType().equals("The Prophets of Flesh")
+        		|| getFormationType().equals("The Dark Creed")
+        		|| getFormationType().equals("Coven of Twelve")) {
+        	if(getFormationType().equals("The Prophets of Flesh")){
+	            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
+	                    "", "Haemonculus",
+	                    "", "Urien Rakarth", "Drazhar"});
+        	} else {
+        		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
+	                    "", "Haemonculus",
+	                    "", "Drazhar"});
+        	}
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Wracks"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Grotesques"});
+                    "", "Incubi", "Mandrakes", "Grotesques"});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
+                    "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Scourges"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Talos", "Cronos",
-                    "", "Reaper", "Tantalus"});
+                    "", "Reaper [FW]", "Tantalus [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Raider", "Venom"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Incubi")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Drazhar"});
