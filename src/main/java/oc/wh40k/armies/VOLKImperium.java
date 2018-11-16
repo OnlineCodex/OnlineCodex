@@ -220,13 +220,16 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigungen_Dark_Angels = new String[]{"", "Fortress of Redemption",};
 
     //Space Wolves
-    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Wolf Lord",
-            "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour[NEW]", "Primaris Wolf Lord[NEW]", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike[INDEX]", "Wolf Lord on Thunderwolf",
-            "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Canis Wolfborn", "Rune Priest", "Rune Priest in Terminator Armour", "Primaris Rune Priest[NEW]",
-            "Rune Priest on Bike[INDEX]", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour", "Wolf Priest",
-            "Wolf Priest in Terminator Armour", "Primaris Wolf Priest[NEW]", "Wolf Priest on Bike[INDEX]", "Ulrik the Slayer", "Wolf Guard Battle Leader", "Primaris Battle Leader[NEW]",
+    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Arjac Rockfist", "Bjorn the Fell-Handed", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour",  
+    		"", "Rune Priest in Terminator Armour", "Primaris Rune Priest", "Rune Priest",
+    		"", "Ulrik the Slayer", "Wolf Priest in Terminator Armour", "Primaris Wolf Priest", "Wolf Priest",
+    		"", "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Wolf Lord", "Wolf Lord on Thunderwolf", 
+    		"", "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour[NEW]", "Primaris Wolf Lord[NEW]", "Wolf Lord in Gravis Armour", "Wolf Lord on Bike[INDEX]", "Wolf Lord on Thunderwolf",
+            "Canis Wolfborn",
+            "Wolf Guard Battle Leader", "Primaris Battle Leader[NEW]",
             "Wolf Guard Battle Leader on Bike[INDEX]", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
-            "Bjorn the Fell-Handed", "Iron Priest", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]", "Arjac Rockfist"};
+            "Iron Priest", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]",
+            "", "Rune Priest on Bike[INDEX]"};
     private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
     private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wulfen Dreadnought[NEW]", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf[INDEX]",
             "Lone Wolf in Terminator Armour[INDEX]", "Murderfang", "Wolf Guard", "Wolf Guard on Bikes[INDEX]", "Wolf Guard Terminators [Wolf Guard in Terminator Armour]", "Wolf Guard Cataphractii Terminators[NEW]", "Wolf Guard Tartaros Terminators[NEW]"};

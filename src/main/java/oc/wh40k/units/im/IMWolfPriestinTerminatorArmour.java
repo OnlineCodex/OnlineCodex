@@ -17,7 +17,7 @@ public class IMWolfPriestinTerminatorArmour extends Eintrag {
     public IMWolfPriestinTerminatorArmour() {
         name = "Wolf Priest in Terminator Armour";
         grundkosten = getPts("Wolf Priest in Terminator Armour") + getPts("crozius arcanum");
-        power = 7;
+        power = 6;
 
         seperator();
 

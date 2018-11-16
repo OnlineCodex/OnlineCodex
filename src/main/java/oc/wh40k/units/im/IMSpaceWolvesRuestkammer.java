@@ -25,15 +25,44 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
 
-        if(type.contains("Rune Priest") || type == "Wolf Lord" ){//TODO other characters
+        if(type.contains("Rune Priest") || type.contains("Wolf Priest") || type.contains("Wolf Lord")){//TODO other characters
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
         	 character = true;
         	 seperator();
         }
-        
-        if (type == "Wolf Lord" || type.contains("Wolf Guard Battle Leader")) {
+        if (type.contains("Wolf Lord")) {
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+            if(type.contains("Thunderwolf")){
+                ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+            }
+            addMeleeRelic();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Chainsword", true);
+
+            seperator();
+
+            if(!type.contains("Thunderwolf")){
+            	ogE.addElement(new OptionsGruppeEintrag("MC boltgun", "Master-crafted boltgun", getPts("Master-crafted boltgun")));
+            }
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+            addCombiFury();
+            addMeleeRelic();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            if(type.contains("Thunderwolf")){
+            	o2.setSelected("Bolt pistol", true);
+            } else{
+            	o2.setSelected("Master-crafted boltgun", true);
+            }
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
+            ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        } else if (type.contains("Wolf Guard Battle Leader")) {
             addMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             if (type == "Wolf Guard Battle Leader in Terminator Armour") {
@@ -65,14 +94,18 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
         } else if (type == "Wolf Priest") {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
-            addCombiFury();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
+
+            seperator();
+            
+            ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         } else if (type == "Wolf Priest in Terminator Armour") {
             addCombiFury();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Storm bolter", true);
-        } else if (type.contains("Rune Priest")) {
+        } else if (type.contains("Rune Priest") && !type.contains("Primaris")) {
             ogE.addElement(new OptionsGruppeEintrag("Runic axe", getPts("Runic axe")));
             ogE.addElement(new OptionsGruppeEintrag("Runic stave", getPts("Runic stave")));
             ogE.addElement(new OptionsGruppeEintrag("Runic sword", getPts("Runic sword")));
@@ -282,11 +315,11 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             o1.setMaxAnzahl(o3.isSelected() ? 0 : 1);
             o2.setMaxAnzahl(o3.isSelected() ? 0 : 1);
             o3.setMaxAnzahl(o1.isSelected() || o2.isSelected() ? 0 : 1);
-        } else if (type.contains("Wolf Priest") || type == "Wolf Guard Bike Leader") {
+        } else if ((type.contains("Wolf Priest") && !type.contains("Primaris")) || type == "Wolf Guard Bike Leader") {
             o1.alwaysSelected();
         } else if (type == "Grey Hunter Pack Leader") {
             o2.alwaysSelected();
-        } else if (type.contains("Rune Priest") || type.contains("Lone Wolf") || type == "Skyclaw Pack Leader" ||
+        } else if ((type.contains("Rune Priest") && !type.contains("Primaris")) || type.contains("Lone Wolf") || type == "Skyclaw Pack Leader" ||
                 type == "Wolf Guard Sky Leader" || type == "Wolf Guard Pack Leader" || type == "Long Fang Pack Leader" ||
                 type.contains("Wolf Guard Pack Leader in Terminator Armour") || type == "Blood Claw Pack Leader") {
             o1.alwaysSelected();
