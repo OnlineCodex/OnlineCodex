@@ -228,7 +228,7 @@ public class VOLKImperium extends BuildaVater {
             "", "Iron Priest",
             "", "Rune Priest on Bike[INDEX]", "Wolf Priest on Bike[INDEX]", "Wolf Lord on Bike[INDEX]", "Wolf Guard Battle Leader on Bike[INDEX]", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]"};
     private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
-    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wulfen Dreadnought[NEW]", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster", "Wolf Scouts", "Wulfen", "Lone Wolf[INDEX]",
+    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wolf Scouts", "Wulfen Dreadnought[NEW]", "SW Venerable Dreadnought[INDEX]", "Lukas the Trickster", "Wulfen", "Lone Wolf[INDEX]",
             "Lone Wolf in Terminator Armour[INDEX]", "Murderfang", "Wolf Guard", "Wolf Guard on Bikes[INDEX]", "Wolf Guard Terminators [Wolf Guard in Terminator Armour]", "Wolf Guard Cataphractii Terminators[NEW]", "Wolf Guard Tartaros Terminators[NEW]"};
     private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes", "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws", "Wold Scout Bikers[NEW]"};
     private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship", "Stormhawk Interceptor"};

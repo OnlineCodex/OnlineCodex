@@ -256,6 +256,29 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        } else if (type == "Wolf Guard Pack Leader (Wolf Scouts)") {
+    		ogE.addElement(new OptionsGruppeEintrag("Bolt Pistol", getPts("Bolt Pistol (SM)")));
+    		ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
+            addMeleeRelic();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            o1.setSelected("Bolt Pistol", true);
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
+            addMeleeRelic();
+            addCombiFury();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            o2.setSelected("Boltgun", true);
+            
+            seperator();
+            
+            ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
+            ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
         } else if (type == "Long Fang Pack Leader") {
             addMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -337,7 +360,8 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combat knife", getPts("combat knife")));
             ogE.addElement(new OptionsGruppeEintrag("Sniper rifle", getPts("sniper rifle (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Astartes shotgun", getPts("Astartes shotgun")));
-            addMeleeRelic();
+            ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Boltgun", true);
 
@@ -424,29 +448,14 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             o1.alwaysSelected();
             o2.alwaysSelected();
 
-            boolean meleeSelected = o1.isSelected("Frost sword") ||
-                    o1.isSelected("Frost axe") ||
-                    o1.isSelected("Power sword") ||
-                    o1.isSelected("Power axe") ||
-                    o1.isSelected("Power maul") ||
-                    o1.isSelected("Power fist") ||
-                    o1.isSelected("Lightning claw") ||
-                    o1.isSelected("Wolf claw") ||
-                    o1.isSelected("Thunder hammer");
+            boolean meleeSelected = o1.isSelected("Power sword") || o1.isSelected("Power axe");
 
             boolean plasmaSelected = o2.isSelected("Plasma pistol");
 
             o2.setAktiv("Plasma pistol", !meleeSelected);
 
-            o1.setAktiv("Frost sword", !plasmaSelected);
-            o1.setAktiv("Frost axe", !plasmaSelected);
             o1.setAktiv("Power sword", !plasmaSelected);
             o1.setAktiv("Power axe", !plasmaSelected);
-            o1.setAktiv("Power maul", !plasmaSelected);
-            o1.setAktiv("Power fist", !plasmaSelected);
-            o1.setAktiv("Lightning claw", !plasmaSelected);
-            o1.setAktiv("Wolf claw", !plasmaSelected);
-            o1.setAktiv("Thunder hammer", !plasmaSelected);
 
         }
 

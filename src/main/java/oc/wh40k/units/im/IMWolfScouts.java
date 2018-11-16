@@ -5,8 +5,8 @@ import oc.*;
 public class IMWolfScouts extends Eintrag {
 
     AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y, o1z;
-    OptionsZaehlerGruppe o2;
+    OptionsZaehlerGruppe wpn1, wpn2, boltgun, plasmapistol, boltpistol;
+    OptionsZaehlerGruppe nk;
     OptionsEinzelZaehler camo;
     RuestkammerStarter rkBoss;
     RuestkammerStarter rkBoss2;
@@ -26,24 +26,31 @@ public class IMWolfScouts extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("bolt pistol (SM)")));
-        add(o1z = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(boltpistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
-        add(o1y = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(plasmapistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("boltgun (SM)")));
-        add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(boltgun = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Combat knife", getPts("combat knife")));
         ogE.addElement(new OptionsGruppeEintrag("Sniper rifle", getPts("sniper rifle (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Astartes shotgun", getPts("Astartes shotgun")));
+        add(wpn1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
         ogE.addAll(IMSpaceWolvesSpecialWeapons.createRK("", "", buildaVater));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(wpn2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
-        ogE.addAll(IMSpaceWolvesMeleeWeapons.createRK("", "", buildaVater));
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
+        add(nk = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -58,7 +65,7 @@ public class IMWolfScouts extends Eintrag {
         seperator();
 
         rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader");
+        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader (Wolf Scouts)");
         rkBoss2.initKammer();
         rkBoss2.setGrundkosten(getPts("Blood Claws"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -71,15 +78,17 @@ public class IMWolfScouts extends Eintrag {
     public void refreshen() {
         camo.setMaxAnzahl(squad.getModelle() - 1);
 
-        o1z.setMaxAnzahl(squad.getModelle() - 1 - o1y.getAnzahl());
-        o1z.setAnzahl(0, squad.getModelle() - 1 - o1y.getAnzahl());
+        boltpistol.setMaxAnzahl(squad.getModelle() - 1 - plasmapistol.getAnzahl());
+        boltpistol.setAnzahl(0, squad.getModelle() - 1 - plasmapistol.getAnzahl());
 
-        o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
-        o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
-        o1.setMaxAnzahl(squad.getModelle() == 10 ? 2 : 1);
+        boltgun.setMaxAnzahl(squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
+        boltgun.setAnzahl(0, squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
+        
+        wpn1.setMaxAnzahl(squad.getModelle() - 1 - wpn2.getAnzahl() - nk.getAnzahl());
+        wpn2.setMaxAnzahl((wpn1.getAnzahl() + nk.getAnzahl()) < (squad.getModelle() - 1) ? 1 : 0);
 
-        o2.setMaxAnzahl(1 - o1y.getAnzahl());
-        o1y.setMaxAnzahl(1 - o2.getAnzahl());
+        nk.setMaxAnzahl(plasmapistol.isSelected() ? 0 : ((wpn1.getAnzahl() + wpn2.getAnzahl()) < (squad.getModelle() - 1) ? 1 : 0));
+        plasmapistol.setMaxAnzahl(nk.isSelected() ? 0 : 1);
 
         rkBoss.setAbwaehlbar(false);
 
