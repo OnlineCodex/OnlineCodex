@@ -165,7 +165,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
+                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
@@ -189,7 +189,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
+                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
@@ -213,7 +213,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
+                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos",
                     "", "Mad Dok Grotsnik"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
@@ -239,7 +239,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
+                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
@@ -263,7 +263,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Boyz", "Gretchin"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Big Mek on Warbike [Index]", "Runtherd",
+                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
                     "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
