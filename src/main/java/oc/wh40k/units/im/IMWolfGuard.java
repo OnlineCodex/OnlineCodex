@@ -5,7 +5,7 @@ import oc.*;
 public class IMWolfGuard extends Eintrag {
 
     AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
+    OptionsZaehlerGruppe o1x;
     OptionsZaehlerGruppe o2;
     OptionsZaehlerGruppe o3, o3x;
     OptionsEinzelUpgrade jump;
@@ -24,11 +24,9 @@ public class IMWolfGuard extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
+		ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
         ogE.addAll(IMSpaceWolvesCombiWeapons.createRK("", "", buildaVater));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
-
-        seperator();
-
         ogE.addAll(IMSpaceWolvesMeleeWeapons.createRK("", "", buildaVater));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
 
@@ -57,10 +55,8 @@ public class IMWolfGuard extends Eintrag {
 
     @Override
     public void refreshen() {
-        o1x.setMaxAnzahl(squad.getModelle() - o1.getAnzahl());
-        o1x.setAnzahl(0, squad.getModelle() - o1.getAnzahl());
-        o1.setMaxAnzahl(squad.getModelle());
-
+        o1x.setMaxAnzahl(squad.getModelle() - o2.getAnzahl() - wolfsklauen.getAnzahl());
+        o1x.setAnzahl(0, squad.getModelle() - o2.getAnzahl() - wolfsklauen.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - wolfsklauen.getAnzahl());
 
         o3x.setMaxAnzahl(squad.getModelle() - o3.getAnzahl() - wolfsklauen.getAnzahl());
@@ -69,12 +65,12 @@ public class IMWolfGuard extends Eintrag {
 
         wolfsklauen.setMaxAnzahl(squad.getModelle() - (o2.getAnzahl() > o3.getAnzahl() ? o2.getAnzahl() : o3.getAnzahl()));
 
-        power = 9;
+        power = 8;
         if (squad.getModelle() > 5) {
-            power += 9;
+            power += 8;
         }
         if (jump.isSelected()) {
-            power += squad.getModelle() / 5;
+            power += squad.getModelle() % 5 > 0 ? 2 : 1;
         }
     }
 }

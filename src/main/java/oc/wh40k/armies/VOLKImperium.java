@@ -228,12 +228,12 @@ public class VOLKImperium extends BuildaVater {
             "", "Iron Priest",
             "", "Rune Priest on Bike[INDEX]", "Wolf Priest on Bike[INDEX]", "Wolf Lord on Bike[INDEX]", "Wolf Guard Battle Leader on Bike[INDEX]", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]"};
     private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
-    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wolf Scouts", "Lukas the Trickster", /*TODO:"Wulfen Dreadnought[NEW]",*/ /*TODO:"Wolf Guard",*/  /*TODO:"Wolf Guard Terminators [Wolf Guard in Terminator Armour]",*/
-    		 /*TODO:"Wolf Guard Cataphractii Terminators[NEW]",*/ /*TODO:"Wolf Guard Tartaros Terminators[NEW]"*/ /*TODO:"Wulfen",*/ "Murderfang",  
+    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wolf Scouts", "Lukas the Trickster", "Wulfen Dreadnought", "Wolf Guard",  "Wolf Guard Terminators",
+    		 "Wolf Guard Cataphractii Terminators", "Wolf Guard Tartaros Terminators", "Wulfen", "Murderfang",  
             "", "SW Venerable Dreadnought[INDEX]", "Wolf Guard on Bikes[INDEX]", "Lone Wolf[INDEX]", "Lone Wolf in Terminator Armour[INDEX]"};
-    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", /*TODO:"Swiftclaws",*/ /*TODO:"Swiftclaw Attack Bikes",*/ /*TODO:"Thunderwolf Cavalry",*/ /*TODO:"Fenrisian Wolves",*/ /*TODO:"Skyclaws",*/ /*TODO:"Wold Scout Bikers[NEW]"*/};
+    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes", "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws", "Wolf Scout Bikers"};
     private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship", "Stormhawk Interceptor"};
-    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", /*TODO:"Long Fangs"*/};
+    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
 
     //Deathwatch
     private static final String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};

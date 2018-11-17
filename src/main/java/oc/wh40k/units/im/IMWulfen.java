@@ -53,9 +53,9 @@ public class IMWulfen extends Eintrag {
         o2x.setMaxAnzahl(fernkampfwaffen - o2.getAnzahl());
         o2x.setAnzahl(0, fernkampfwaffen - o2.getAnzahl());
 
-        power = 13;
+        power = 11;
         if (squad.getModelle() > 5) {
-            power += 13;
+            power += 11;
         }
 
     }

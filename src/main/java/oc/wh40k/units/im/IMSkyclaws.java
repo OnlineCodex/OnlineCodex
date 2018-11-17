@@ -14,7 +14,7 @@ public class IMSkyclaws extends Eintrag {
         grundkosten = 0;
         überschriftSetzen = true;
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skyclaw", 5, 10, getPts("Skyclaws")));
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skyclaw", 5, 15, getPts("Skyclaws")));
 
         seperator();
         ogE.addElement(new OptionsGruppeEintrag("Chain sword", getPts("Chain sword (SM)")));
@@ -42,7 +42,7 @@ public class IMSkyclaws extends Eintrag {
         rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Sky Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Sky Leader");
         rkBoss2.initKammer();
-        rkBoss2.setGrundkosten(getPts("Swiftclaws"));
+        rkBoss2.setGrundkosten(getPts("Wolf Guard Sky Leader"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss2);
 
@@ -64,6 +64,8 @@ public class IMSkyclaws extends Eintrag {
         power = 5;
         if (squad.getModelle() > 5) {
             power += 4;
+        } else if (squad.getModelle() > 10) {
+            power += 8;
         }
         if (rkBoss2.isSelected()) {
             power += 2;
