@@ -1,5 +1,6 @@
 package oc.wh40k.units.im;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -7,11 +8,30 @@ import oc.RuestkammerStarter;
 public class IMPrimarisAncient extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
-
+    boolean spacewolves = false;
+    
     public IMPrimarisAncient() {
+    	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");
         name = "Primaris Ancient";
         grundkosten = getPts("Primaris Ancient") + getPts("Bolt pistol (SM)") + getPts("Bolt rifle") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
-        power = 4;
+        
+        if(spacewolves) {
+        	power = 5;
+        } else {
+        	power = 4;
+        }
+        
+        seperator();
+
+        if(spacewolves) {
+	        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+	        ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Primaris Ancient");
+	        waffenUndReliquien.initKammer();
+	        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
+	        add(waffenUndReliquien);
+	        waffenUndReliquien.setAbwaehlbar(false);
+        }
+        
         complete();
     }
 

@@ -27,7 +27,8 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
 
         if(type.contains("Rune Priest") || type.contains("Wolf Priest") || type.contains("Wolf Lord") 
         		|| type.contains("Wolf Guard Battle Leader") || type == "Primaris Battle Leader"
-        		|| type == "Iron Priest"){//TODO other characters
+        		|| type == "Iron Priest" || type == "Primaris Ancient" || type == "Great Company Ancient"
+        		|| type == "Great Company Champion"){//TODO other characters
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
@@ -113,7 +114,15 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", "Master-crafted stalker bolt rifle",getPts("Master-crafted stalker bolt rifle")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Power axe + Bolt carbine", true);
-        }  else if (type.contains("Wolf Guard Battle Leader")) {
+        }  else if (type.contains("Great Company Ancient")) {
+        	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
+	        addCombiFury();
+	        addMeleeRelic();
+	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        o1.setSelected("Bolt pistol", true);
+	    }  else if (type.contains("Wolf Guard Battle Leader")) {
             	ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
             if(!type.contains("Terminator") && !type.contains("Thunderwolf")){
                 ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
@@ -412,7 +421,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        if(type == "Primaris Wolf Lord" || type == "Primaris Battle Leader") {
+        if(type == "Primaris Wolf Lord" || type == "Primaris Battle Leader" || type == "Great Company Ancient") {
         	o1.alwaysSelected();
         } else if (type.contains("Wolf Lord") || type.contains("Wolf Guard Battle Leader") || type == "Wolf Guard in Terminator Armour" ||
         		type == "Wolf Guard Pack Leader in Terminator Armour (Blood Claws)" || type == "Wolf Guard Pack Leader" || type == "Wolf Guard Pack Leader (Wolf Scouts)") {

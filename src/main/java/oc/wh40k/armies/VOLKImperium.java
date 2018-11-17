@@ -571,17 +571,18 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
-        myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
-        myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", /*TODO:"Reivers[NEW]",*/ /*TODO:"Agressors[NEW]",*/ /*TODO:"Servitors",*/ "Imperial Space Marine[INDEX]", /*TODO:"Great Company Ancient",*/ /*TODO:"Great Company Champion",*/ /*TODO:"Primaris Ancient",*/ 
-        																										   "", /*TODO:"Dreadnought",*/ /*TODO:"Venerable Dreadnought",*/ "Contemptor Dreadnought", "Redemptor Dreadnought"}, Eliteeinträge_IA_AA));
-        myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", /*TODO:"Inceptors[NEW]",*/ /*TODO:"Land Speeders"*/}, Sturmeinträge_IA_AA));
-        myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", /*TODO:"Hellblasters[NEW]",*/ "Hunter", "Stalker",
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Agressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
+        																										   	   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought",
+        																										   	   "", "Imperial Space Marine[INDEX]"}, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptors", "Land Speeders"}, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblasters", "Hunter", "Stalker",
         																															"", "Predator", "Whirlwind", "Vindicator", 
         																															"", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-        myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm","Repulsor[NEW]"}, Transporteinträge_IA_AA));
-        myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
-        myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-        myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm","Repulsor"}, Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Deathwatch);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);

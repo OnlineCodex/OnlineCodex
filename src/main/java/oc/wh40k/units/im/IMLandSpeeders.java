@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
 import oc.AnzahlPanel;
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
@@ -11,8 +12,10 @@ public class IMLandSpeeders extends Eintrag {
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o1x;
     OptionsZaehlerGruppe o2;
+    boolean spacewolves = false;
 
     public IMLandSpeeders() {
+    	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");
         name = "Land Speeders";
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder", "Land Speeders", 1, 3, getPts("Land Speeders"));
@@ -22,15 +25,19 @@ public class IMLandSpeeders extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+        if(!spacewolves) {
+        	ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+        }
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
+        
+        if(!spacewolves) {
+	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        }
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
