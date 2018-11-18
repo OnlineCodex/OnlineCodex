@@ -1,14 +1,26 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.PsychicPowers;
 
 public class IMPrimarisRunePriest extends Eintrag {
 	
     RuestkammerStarter waffenUndArtefakte;
+	RuestkammerStarter psychicPowers;
 
     public IMPrimarisRunePriest() {
         name = "Primaris Rune Priest";
         grundkosten = getPts("Primaris Rune Priest") + getPts("Runic sword") + getPts("Bolt pistol (SM)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 7;
+        seperator();
+        
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(false);
 
         seperator();
 
@@ -24,6 +36,9 @@ public class IMPrimarisRunePriest extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 7;
+        waffenUndArtefakte.getPanel().setLocation(
+                (int) waffenUndArtefakte.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

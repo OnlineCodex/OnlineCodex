@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriestonBike extends Eintrag {
 
@@ -13,6 +14,7 @@ public class IMRunePriestonBike extends Eintrag {
     RuestkammerStarter waffenUndArtefakte;
     RuestkammerStarter spezialAusruestung;
     boolean fenrisSupp = false;
+	RuestkammerStarter psychicPowers;
 
     public IMRunePriestonBike() {
         name = "Rune Priest on Bike";
@@ -23,6 +25,16 @@ public class IMRunePriestonBike extends Eintrag {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
+
+        seperator();
+        
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(false);
 
         seperator();
 
@@ -38,6 +50,10 @@ public class IMRunePriestonBike extends Eintrag {
 
     @Override
     public void refreshen() {
+        waffenUndArtefakte.getPanel().setLocation(
+                (int) waffenUndArtefakte.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 }

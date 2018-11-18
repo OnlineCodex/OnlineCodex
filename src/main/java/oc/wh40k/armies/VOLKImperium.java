@@ -570,6 +570,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
+        	myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Agressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 

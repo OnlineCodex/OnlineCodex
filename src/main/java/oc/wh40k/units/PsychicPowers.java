@@ -25,10 +25,12 @@ public class PsychicPowers extends RuestkammerVater {
     boolean sanguinary = false;
     boolean interromancy = false;
     boolean powerOfTheWaaagh = false;
+    boolean tempestasDiscipline = false;
 
     boolean nurgle = false;
     boolean tzeentch = false;
     boolean slaanesh = false;
+	private OptionsUpgradeGruppe o17;
 
     public PsychicPowers() {
         grundkosten = 0;
@@ -198,6 +200,16 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Roar of Mork", 0));
             add(o16 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
+        
+        if (tempestasDiscipline) {
+            ogE.addElement(new OptionsGruppeEintrag("Living Lightning", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Tempest's Wrath", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Murderous Hurricane", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Fury of the Wolf Spirits", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Storm Caller", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
+            add(o17 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
 
         sizeSetzen();
     }
@@ -277,6 +289,10 @@ public class PsychicPowers extends RuestkammerVater {
     public void enablePowerOfTheWaaagh() {
         powerOfTheWaaagh = true;
     }
+    
+    public void enableTempestasDiscipline() {
+    	tempestasDiscipline = true;
+    }
 
     @Override
     public void refreshen() {
@@ -342,6 +358,10 @@ public class PsychicPowers extends RuestkammerVater {
 
         if (interromancy) {
             o15.setMaxAnzahl(numPowers);
+        }
+        
+        if(tempestasDiscipline) {
+        	o17.setMaxAnzahl(numPowers);
         }
     }
 
