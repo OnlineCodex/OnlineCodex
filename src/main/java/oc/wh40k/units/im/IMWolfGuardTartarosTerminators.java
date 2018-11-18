@@ -62,18 +62,16 @@ public class IMWolfGuardTartarosTerminators extends Eintrag {
 
         int x = squad.getModelle() - 1 - o4.getAnzahl();
         if (squad.getModelle() == 10) {
-            o3.setMaxAnzahl(x > 2 ? 2 : x);
+            o3.setMaxAnzahl(Math.min(x, 2));
         } else {
-            o3.setMaxAnzahl(x > 1 ? 1 : x);
+            o3.setMaxAnzahl(Math.min(x, 1));
         }
 
         o2x.setMaxAnzahl(squad.getModelle() - 1 - o2.getAnzahl() - o4.getAnzahl());
         o2x.setAnzahl(0, squad.getModelle() - 1 - o2.getAnzahl() - o4.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - 1 - o4.getAnzahl());
 
-        x = squad.getModelle() - 1 - o3.getAnzahl();
-        int y = squad.getModelle() - 1 - o2.getAnzahl();
-        o4.setMaxAnzahl(x > y ? y : x);
+        o4.setMaxAnzahl(squad.getModelle() - 1 - Math.max(o3.getAnzahl(), o2.getAnzahl()));
 
         o5.setMaxAnzahl(squad.getModelle() / 5);
 

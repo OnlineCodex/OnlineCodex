@@ -49,7 +49,7 @@ public class IMThunderwolfCavalry extends Eintrag {
     public void refreshen() {
         o1.setMaxAnzahl(squad.getModelle() - wolfsklauen.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle()- wolfsklauen.getAnzahl());
-        wolfsklauen.setMaxAnzahl(squad.getModelle() - (o1.getAnzahl() > o2.getAnzahl() ? o1.getAnzahl() : o2.getAnzahl()));
+        wolfsklauen.setMaxAnzahl(squad.getModelle() - Math.max(o1.getAnzahl(), o2.getAnzahl()));
         o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
         o2.setLegal(o2.getAnzahl() == o2.getMaxAnzahl());
         wolfsklauen.setLegal(wolfsklauen.getAnzahl() == wolfsklauen.getMaxAnzahl());

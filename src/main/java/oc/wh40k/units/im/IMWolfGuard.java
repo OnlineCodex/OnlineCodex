@@ -62,14 +62,14 @@ public class IMWolfGuard extends Eintrag {
         o3x.setAnzahl(0, squad.getModelle() - o3.getAnzahl() - wolfsklauen.getAnzahl());
         o3.setMaxAnzahl(squad.getModelle() - wolfsklauen.getAnzahl());
 
-        wolfsklauen.setMaxAnzahl(squad.getModelle() - (o2.getAnzahl() > o3.getAnzahl() ? o2.getAnzahl() : o3.getAnzahl()));
+        wolfsklauen.setMaxAnzahl(squad.getModelle() - Math.max(o2.getAnzahl(),o3.getAnzahl()));
 
         power = 8;
         if (squad.getModelle() > 5) {
             power += 8;
         }
         if (jump.isSelected()) {
-            power += squad.getModelle() % 5 > 0 ? 2 : 1;
+            power += squad.getModelle() > 5 ? 2 : 1;
         }
     }
 }
