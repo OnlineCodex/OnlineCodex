@@ -8,7 +8,7 @@ public class IMWulfenDreadnought extends Eintrag {
     OptionsUpgradeGruppe o1, o2;
 
     public IMWulfenDreadnought() {
-        name = "Venerable Dreadnought";
+        name = "Wulfen Dreadnought";
         grundkosten = getPts("Wulfen Dreadnought");
         power = 8;
 
