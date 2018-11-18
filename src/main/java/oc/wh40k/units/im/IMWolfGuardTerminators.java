@@ -13,7 +13,6 @@ public class IMWolfGuardTerminators extends Eintrag {
 
 
     public IMWolfGuardTerminators() {
-        name = "Wolf Guard Terminators\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

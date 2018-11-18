@@ -12,7 +12,6 @@ public class IMSwiftclawAttackBikes extends Eintrag {
     OptionsZaehlerGruppe o1x;
 
     public IMSwiftclawAttackBikes() {
-        name = "Swiftclaw Attack Bikes\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

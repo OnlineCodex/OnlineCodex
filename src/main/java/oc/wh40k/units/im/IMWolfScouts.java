@@ -12,7 +12,6 @@ public class IMWolfScouts extends Eintrag {
     RuestkammerStarter rkBoss2;
 
     public IMWolfScouts() {
-        name = "Wolf Scouts\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

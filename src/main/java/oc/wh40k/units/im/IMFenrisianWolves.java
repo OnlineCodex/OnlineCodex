@@ -10,7 +10,6 @@ public class IMFenrisianWolves extends Eintrag {
     OptionsEinzelUpgrade cyber;
 
     public IMFenrisianWolves() {
-        name = "Fenrisian Wolves\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

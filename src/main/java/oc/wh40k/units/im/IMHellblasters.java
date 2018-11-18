@@ -10,8 +10,7 @@ public class IMHellblasters extends Eintrag {
     AnzahlPanel squad;
 
     public IMHellblasters() {
-        name = "Hellblaster Squad";
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Hellblaster", 5, 10, getPts("Hellblaster Squad") + getPts("Bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Hellblasters", 5, 10, getPts("Hellblaster Squad") + getPts("Bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Plasma incinerator", getPts("Plasma incinerator")));

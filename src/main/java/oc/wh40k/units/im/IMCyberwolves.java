@@ -11,7 +11,6 @@ public class IMCyberwolves extends Eintrag {
     OptionsZaehlerGruppe o2;
 
     public IMCyberwolves() {
-        name = "Cyberwolves\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

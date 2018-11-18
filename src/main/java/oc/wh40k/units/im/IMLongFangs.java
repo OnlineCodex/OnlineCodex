@@ -13,7 +13,6 @@ public class IMLongFangs extends Eintrag {
     RuestkammerStarter rkBoss3;
 
     public IMLongFangs() {
-        name = "Long Fangs\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

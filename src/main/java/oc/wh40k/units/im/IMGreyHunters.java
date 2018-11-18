@@ -12,7 +12,6 @@ public class IMGreyHunters extends Eintrag {
     RuestkammerStarter rkBoss3;
 
     public IMGreyHunters() {
-        name = "Grey Hunters\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

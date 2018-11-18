@@ -13,7 +13,6 @@ public class IMWolfGuardinTerminatorArmour extends Eintrag {
 
 
     public IMWolfGuardinTerminatorArmour() {
-        name = "Wolf Guard in Terminator Armour\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

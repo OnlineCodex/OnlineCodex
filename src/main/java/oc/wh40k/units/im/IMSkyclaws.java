@@ -10,11 +10,10 @@ public class IMSkyclaws extends Eintrag {
 
     public IMSkyclaws() {
         checkBuildaVater();
-        name = "Skyclaws\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skyclaw", 5, 15, getPts("Skyclaws")));
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skyclaws", 5, 15, getPts("Skyclaws")));
 
         seperator();
         ogE.addElement(new OptionsGruppeEintrag("Chain sword", getPts("Chain sword (SM)")));

@@ -13,7 +13,6 @@ public class IMWolfScoutBikers extends Eintrag {
 	OptionsZaehlerGruppe o1;
 
     public IMWolfScoutBikers() {
-        name = "Wolf Scout Bikers\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

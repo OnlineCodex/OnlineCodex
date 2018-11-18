@@ -10,7 +10,6 @@ public class IMWulfen extends Eintrag {
     OptionsEinzelUpgrade oe1;
 
     public IMWulfen() {
-        name = "Wulfen";
         grundkosten = 0;
         überschriftSetzen = true;
 

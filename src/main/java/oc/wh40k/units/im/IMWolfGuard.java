@@ -14,7 +14,6 @@ public class IMWolfGuard extends Eintrag {
 
 
     public IMWolfGuard() {
-        name = "Wolf Guard\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

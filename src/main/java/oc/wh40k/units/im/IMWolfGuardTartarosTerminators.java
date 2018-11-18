@@ -11,7 +11,6 @@ public class IMWolfGuardTartarosTerminators extends Eintrag {
     RuestkammerStarter rkBoss;
 
     public IMWolfGuardTartarosTerminators() {
-        name = "Wolf Guard Tartaros Terminators\n";
         grundkosten = 0;
         überschriftSetzen = true;
 

@@ -9,8 +9,7 @@ public class IMReivers extends Eintrag {
     AnzahlPanel squad;
 
     public IMReivers() {
-        name = "Reiver Squad";
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Reiver", 5, 10, getPts("Reiver Squad") + getPts("Heavy bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Shock grenades"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Reivers", 5, 10, getPts("Reivers") + getPts("Heavy bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Shock grenades"));
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));

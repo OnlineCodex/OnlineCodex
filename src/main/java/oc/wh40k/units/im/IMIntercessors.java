@@ -10,8 +10,7 @@ public class IMIntercessors extends Eintrag {
     AnzahlPanel squad;
 
     public IMIntercessors() {
-        name = "Intercessors";
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Intercessor", 5, 10, getPts("Intercessors") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Intercessors", 5, 10, getPts("Intercessors") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
