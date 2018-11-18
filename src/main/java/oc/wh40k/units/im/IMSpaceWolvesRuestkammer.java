@@ -1,7 +1,8 @@
 package oc.wh40k.units.im;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 import oc.*;
 
@@ -16,7 +17,9 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     String default2 = "";
     boolean character = false;
     
-    List<String> characters = (List<String>) Arrays.asList("Rune Priest", "Wolf Priest", "Wolf Lord", "Wolf Guard Battle Leader", "Primaris Battle Leader", "Iron Priest", "Primaris Ancient", "Great Company Ancient", "Great Company Champion");
+    Set<String> CHARACTERS = ImmutableSet.of("Primaris Battle Leader", "Iron Priest", "Primaris Ancient", "Great Company Ancient", "Great Company Champion", "Rune Priest", "Rune Priest in Terminator Armour", "Rune Priest on Bike", "Primaris Rune Priest",
+    		"Wolf Priest", "Wolf Priest in Terminator Armour", "Wolf Priest on Bike", "Primaris Wolf Priest", "Wolf Lord", "Wolf Lord in Cataphractii Armour", "Wolf Lord in Gravis Armour", "Wolf Lord in Terminator Armour", "Wolf Lord on Bike", 
+    		"Wolf Lord on Thunderwolf", "Primaris Wolf Lord", "Wolf Guard Battle Leader", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Bike", "Wolf Guard Battle Leader on Thunderwolf");
     
     public IMSpaceWolvesRuestkammer() {
         grundkosten = 0;
@@ -30,15 +33,16 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
 
-        if(characters.contains(type)) {
+        if(CHARACTERS.contains(type)) {
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
         	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
         	 character = true;
         	 seperator();
         }
-        if (type.contains("Wolf Lord") && !type.contains("Terminator") && !type.contains("Cataphractii")&& !type.contains("Primaris")) {
-            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+        
+        if (type.equals("Wolf Lord") || type.equals("Wolf Lord in Gravis Armour") || type.equals("Wolf Lord on Bike") || type.equals("Wolf Lord on Thunderwolf")) {
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (characters)")));
             if(type.contains("Thunderwolf")){
                 ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
             }
@@ -68,7 +72,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
         } else if (type.equals("Wolf Lord in Terminator Armour") || type.equals("Wolf Lord in Cataphractii Armour")) {
-            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (characters)")));
             addTerminatorMeleeRelic();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             if(type.contains("Cataphractii")){
@@ -125,7 +129,7 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
 	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 	        o1.setSelected("Bolt pistol", true);
 	    }  else if (type.contains("Wolf Guard Battle Leader")) {
-            	ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield")));
+            	ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (characters)")));
             if(!type.contains("Terminator") && !type.contains("Thunderwolf")){
                 ogE.addElement(new OptionsGruppeEintrag("Plasma Pistol", getPts("Plasma Pistol (SM)")));
             }
