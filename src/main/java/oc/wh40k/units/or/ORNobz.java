@@ -57,9 +57,9 @@ public class ORNobz extends Eintrag {
 
     //@OVERRIDE
     public void refreshen() {
-        bosseCC.setMaxAnzahl(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2);
-        bosseCC2.setMaxAnzahl(bosse.getModelle()- bosseCC.getAnzahl() / 2 - bosseCC.getAnzahl() % 2);
-        bosseFK.setMaxAnzahl(bosse.getModelle());
+        bosseCC.setMaxAnzahl(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2 - bosseFK.getAnzahl());
+        bosseCC2.setMaxAnzahl(bosse.getModelle()- (bosseCC.getAnzahl() + bosseFK.getAnzahl()) / 2 - (bosseCC.getAnzahl() + bosseFK.getAnzahl()) % 2);
+        bosseFK.setMaxAnzahl(Math.min(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2 - bosseCC.getAnzahl(), bosse.getModelle()));
         
         munigrotz.setMaxAnzahl(bosse.getModelle() / 5);
 
