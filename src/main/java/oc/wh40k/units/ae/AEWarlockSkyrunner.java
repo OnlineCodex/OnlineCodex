@@ -28,7 +28,7 @@ public class AEWarlockSkyrunner extends Eintrag {
 
         name = "Warlock Skyrunner";
 
-        grundkosten = getPts("Warlock Skyrunner Conclave") + getPts("Shuriken pistol") + getPts("Twin shuriken catapult");
+        grundkosten = getPts("Warlock Skyrunner") + getPts("Shuriken pistol") + getPts("Twin shuriken catapult");
 
 
 
