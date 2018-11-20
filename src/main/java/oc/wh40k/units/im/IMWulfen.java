@@ -29,7 +29,7 @@ public class IMWulfen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Wulfen claws", getPts("Wulfen claws")));
         add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Frost claws", getPts("frost claws")));
-        ogE.addElement(new OptionsGruppeEintrag("great frost axe", getPts("great frost axe")));
+        ogE.addElement(new OptionsGruppeEintrag("Great frost axe", getPts("great frost axe")));
         ogE.addElement(new OptionsGruppeEintrag("Hammer and	shield", "thunder hammer and storm shield", getPts("thunder hammer (others)") + getPts("storm shield (others)")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
 
