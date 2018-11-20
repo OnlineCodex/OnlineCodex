@@ -573,7 +573,7 @@ public class VOLKImperium extends BuildaVater {
         	myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Agressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
         																										   	   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought",
         																										   	   "", "Imperial Space Marine[INDEX]"}, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptors", "Land Speeders"}, Sturmeinträge_IA_AA));
