@@ -5,14 +5,13 @@ import oc.*;
 public class IMGreyHunters extends Eintrag {
 
     AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y, o1z;
-    OptionsZaehlerGruppe o2;
+    OptionsZaehlerGruppe special, boltguns, chainswords, boltpistols;
+    OptionsZaehlerGruppe plasmapistol;
     RuestkammerStarter rkBoss;
     RuestkammerStarter rkBoss2;
     RuestkammerStarter rkBoss3;
 
     public IMGreyHunters() {
-        name = "Grey Hunters\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -22,30 +21,34 @@ public class IMGreyHunters extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
-        add(o1y = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(chainswords = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("bolt pistol (SM)")));
-        add(o1z = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(boltpistols = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("boltgun (SM)")));
-        add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(boltguns = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
 
         ogE.addAll(IMSpaceWolvesSpecialWeapons.createRK("", "", buildaVater));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(plasmapistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
+        
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wolf standard", getPts("Wolf standard")));
 
+        seperator();
+        
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Grey Hunter Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Grey Hunter Pack Leader");
         rkBoss.initKammer();
@@ -65,10 +68,10 @@ public class IMGreyHunters extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader in TA");
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Terminator Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour (Grey Hunters)");
         rkBoss3.initKammer();
-        rkBoss3.setGrundkosten(getPts("Wolf Guard Pack Leader in Terminator Armour"));
+        rkBoss3.setGrundkosten(getPts("Wolf Guard Terminator Pack Leader"));
         rkBoss3.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss3);
 
@@ -78,22 +81,22 @@ public class IMGreyHunters extends Eintrag {
 
     @Override
     public void refreshen() {
-        o1y.setMaxAnzahl(squad.getModelle() - 1);
-        o1z.setMaxAnzahl(squad.getModelle() - 1);
-        o1z.setAnzahl(0, squad.getModelle() - 1);
+        chainswords.setMaxAnzahl(squad.getModelle() - 1);
+        boltpistols.setMaxAnzahl(squad.getModelle() - 1);
+        boltpistols.setAnzahl(0, squad.getModelle() - 1);
 
-        o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
-        o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
-        o1.setMaxAnzahl(squad.getModelle() == 10 ? 2 : 1);
+        boltguns.setMaxAnzahl(squad.getModelle() - 1 - special.getAnzahl() - plasmapistol.getAnzahl());
+        boltguns.setAnzahl(0, squad.getModelle() - 1 - special.getAnzahl() - plasmapistol.getAnzahl());
+        special.setMaxAnzahl(squad.getModelle() == 10 ? 2 : 1);
         rkBoss.setAbwaehlbar(false);
 
         rkBoss2.setAktiv(!rkBoss3.isSelected());
         rkBoss3.setAktiv(!rkBoss2.isSelected());
 
-        power = 6;
+        power = 4;
 
         if (squad.getModelle() > 5) {
-            power += 5;
+            power += 4;
         }
         if (rkBoss2.isSelected()) {
             power += 2;
@@ -101,6 +104,16 @@ public class IMGreyHunters extends Eintrag {
         if (rkBoss3.isSelected()) {
             power += 3;
         }
+        
+        rkBoss2.getPanel().setLocation(
+                (int) rkBoss2.getPanel().getLocation().getX(),
+                (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+        );
+        
+        rkBoss3.getPanel().setLocation(
+                (int) rkBoss3.getPanel().getLocation().getX(),
+                (int) rkBoss2.getPanel().getLocation().getY() + rkBoss2.getPanel().getSize().height + 5
+        );
     }
 
 }

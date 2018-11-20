@@ -10,12 +10,13 @@ public class IMMurderfang extends Eintrag {
     public IMMurderfang() {
         name = "Murderfang";
         grundkosten = getPts("Murderfang");
-        power = 10;
+        power = 9;
         complete();
     }
 
     @Override
     public void refreshen() {
+        setUnikat(true);
     }
 
 }

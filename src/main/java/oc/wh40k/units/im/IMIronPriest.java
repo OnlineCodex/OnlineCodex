@@ -4,34 +4,27 @@ import oc.*;
 
 public class IMIronPriest extends Eintrag {
 
-    AnzahlPanel servitors;
-    OptionsUpgradeGruppe o1, o5;
-
+    RuestkammerStarter waffenUndArtefakte;
+    
     public IMIronPriest() {
         name = "Iron Priest";
-        grundkosten = getPts("Iron Priest") + getPts("Servo-arm");
-        power = 6;
-
-        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Boltgun"), getPts("Boltgun (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bolt pistol"), getPts("Bolt pistol (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Helfrost pistol"), getPts("Helfrost pistol")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        o1.setSelected(0, true);
+        grundkosten = getPts("Iron Priest") + getPts("Servo-arm") + getPts("Tempest hammer") + getPts("Helfrost pistol");
+        power = 5;
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Thunder hammer"), getPts("Thunder hammer (Characters)")));
-        ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Tempest hammer"), getPts("Tempest hammer")));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        o5.setSelected(0, true);
-
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Iron Priest");
+        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
+        add(waffenUndArtefakte);
+        waffenUndArtefakte.setAbwaehlbar(false);
+        
         complete();
     }
 
     @Override
     public void refreshen() {
-        o1.alwaysSelected();
-        o5.alwaysSelected();
     }
 
 }

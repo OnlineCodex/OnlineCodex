@@ -1,7 +1,5 @@
 package oc.wh40k.units.im;
 
-
-
 import oc.BuildaVater;
 
 import oc.OptionsGruppeEintrag;
@@ -12,19 +10,15 @@ import oc.RuestkammerElement;
 
 import java.util.Vector;
 
-
-
-public class IMSpaceWolvesCombiWeapons extends RuestkammerElement {
-
-
+public class IMSpaceWolvesDreadnoughtHeavyWeapons extends RuestkammerElement {
 
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, String defaultWeaponCost, BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
-        addElement("Combi-flamer", "Combi-flamer", defaultWeapon, ogE, bv);
-        addElement("Combi-melta", "Combi-melta", defaultWeapon, ogE, bv);
-        addElement("Combi-plasma", "Combi-plasma", defaultWeapon, ogE, bv);
-        addElement("Storm bolter", "Storm bolter (SM)", defaultWeapon, ogE, bv);
+        addElement("Heavy plasma cannon", "Heavy plasma cannon", defaultWeapon, ogE, bv);
+        addElement("Helfrost cannon", "Helfrost cannon", defaultWeapon, ogE, bv);
+        addElement("Multi-melta", "Multi-melta (SM)", defaultWeapon, ogE, bv);
+        addElement("Twin lascannon", "Twin lascannon", defaultWeapon, ogE, bv);
         return ogE;
     }
 }

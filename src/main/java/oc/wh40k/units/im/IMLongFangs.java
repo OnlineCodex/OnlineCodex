@@ -13,7 +13,6 @@ public class IMLongFangs extends Eintrag {
     RuestkammerStarter rkBoss3;
 
     public IMLongFangs() {
-        name = "Long Fangs\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -49,10 +48,10 @@ public class IMLongFangs extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader in TA");
-        ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour");
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Terminator Pack Leader");
+        ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour (Long Fangs)");
         rkBoss3.initKammer();
-        rkBoss3.setGrundkosten(getPts("Wolf Guard Pack Leader in Terminator Armour"));
+        rkBoss3.setGrundkosten(getPts("Wolf Guard Terminator Pack Leader"));
         rkBoss3.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss3);
 

@@ -4,15 +4,7 @@ import oc.*;
 
 public class IMWolfGuardBattleLeaderinTerminatorArmour extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 
     public IMWolfGuardBattleLeaderinTerminatorArmour() {
         name = "Wolf Guard Battle Leader in Terminator Armour";

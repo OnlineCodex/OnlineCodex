@@ -10,6 +10,7 @@ public class IMThunderwolfCavalry extends Eintrag {
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o2;
+	OptionsZaehlerGruppe wolfsklauen;
 
     public IMThunderwolfCavalry() {
         name = "Thunderwolf Cavalry\n";
@@ -24,26 +25,34 @@ public class IMThunderwolfCavalry extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
+        ogE.addAll(IMSpaceWolvesMeleeWeapons.createRK("", "", buildaVater));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
         o1.setAnzahl(0, 3);
 
         seperator();
 
-
         ogE.addAll(IMSpaceWolvesMeleeWeapons.createRK("", "", buildaVater));
+        ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
         o2.setAnzahl(0, 3);
 
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("2 Wolf claws", getPts("Wolf claw (pair)")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
+        add(wolfsklauen = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
+        
         complete();
     }
 
     @Override
     public void refreshen() {
-        o1.setMaxAnzahl(squad.getModelle());
-        o2.setMaxAnzahl(squad.getModelle());
-        o1.setLegal(o1.getAnzahl() == squad.getModelle());
-        o2.setLegal(o2.getAnzahl() == squad.getModelle());
+        o1.setMaxAnzahl(squad.getModelle() - wolfsklauen.getAnzahl());
+        o2.setMaxAnzahl(squad.getModelle()- wolfsklauen.getAnzahl());
+        wolfsklauen.setMaxAnzahl(squad.getModelle() - Math.max(o1.getAnzahl(), o2.getAnzahl()));
+        o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
+        o2.setLegal(o2.getAnzahl() == o2.getMaxAnzahl());
+        wolfsklauen.setLegal(wolfsklauen.getAnzahl() == wolfsklauen.getMaxAnzahl());
 
         power = 8;
         if (squad.getModelle() > 3) {

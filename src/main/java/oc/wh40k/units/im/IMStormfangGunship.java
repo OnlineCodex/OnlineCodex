@@ -10,7 +10,7 @@ public class IMStormfangGunship extends Eintrag {
     public IMStormfangGunship() {
         name = "Stormfang Gunship";
         grundkosten = getPts("Stormfang Gunship") + getPts("Helfrost destructor");
-        power = 14;
+        power = 15;
 
         seperator();
 

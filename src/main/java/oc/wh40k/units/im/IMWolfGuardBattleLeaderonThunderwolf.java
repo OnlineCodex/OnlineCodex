@@ -4,15 +4,7 @@ import oc.*;
 
 public class IMWolfGuardBattleLeaderonThunderwolf extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 
     public IMWolfGuardBattleLeaderonThunderwolf() {
         name = "Wolf Guard Battle Leader on Thunderwolf";

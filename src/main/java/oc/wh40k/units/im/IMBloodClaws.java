@@ -60,10 +60,10 @@ public class IMBloodClaws extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader in TA");
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Terminator Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour (Blood Claws)");
         rkBoss3.initKammer();
-        rkBoss3.setGrundkosten(getPts("Wolf Guard Pack Leader in Terminator Armour"));
+        rkBoss3.setGrundkosten(getPts("Wolf Guard Terminator Pack Leader"));
         rkBoss3.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss3);
 
@@ -73,11 +73,11 @@ public class IMBloodClaws extends Eintrag {
 
     @Override
     public void refreshen() {
-        o1y.setMaxAnzahl(squad.getModelle() - 1);
-        o1y.setAnzahl(0, squad.getModelle() - 1);
+        o1y.setMaxAnzahl(squad.getModelle() - 1 - o2.getAnzahl());
+        o1y.setAnzahl(0, squad.getModelle() - 1 - o2.getAnzahl());
 
-        o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
-        o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl() - o2.getAnzahl());
+        o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl());
+        o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl());
         o1.setMaxAnzahl(squad.getModelle() == 15 ? 2 : 1);
         rkBoss.setAbwaehlbar(false);
 
@@ -87,9 +87,9 @@ public class IMBloodClaws extends Eintrag {
         power = 4;
 
         if (squad.getModelle() > 10) {
-            power += 8;
+            power += 6;
         } else if (squad.getModelle() > 5) {
-            power += 4;
+            power += 3;
         }
         if (rkBoss2.isSelected()) {
             power += 2;
@@ -97,6 +97,17 @@ public class IMBloodClaws extends Eintrag {
         if (rkBoss3.isSelected()) {
             power += 3;
         }
+        
+        rkBoss2.getPanel().setLocation(
+                (int) rkBoss2.getPanel().getLocation().getX(),
+                (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
+        );
+        
+        rkBoss3.getPanel().setLocation(
+                (int) rkBoss3.getPanel().getLocation().getX(),
+                (int) rkBoss2.getPanel().getLocation().getY() + rkBoss2.getPanel().getSize().height + 5
+        );
+        
     }
 
 }

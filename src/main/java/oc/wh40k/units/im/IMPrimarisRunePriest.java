@@ -3,32 +3,15 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
-public class IMRunePriest extends Eintrag {
-
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
+public class IMPrimarisRunePriest extends Eintrag {
+	
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 	RuestkammerStarter psychicPowers;
 
-    public IMRunePriest() {
-        name = "Rune Priest";
-        grundkosten = getPts("Rune Priest");
-
-        seperator();
-
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Rune Priest with Jump Pack") - getPts("Rune Priest")));
-
-        seperator();
-
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
-
+    public IMPrimarisRunePriest() {
+        name = "Primaris Rune Priest";
+        grundkosten = getPts("Primaris Rune Priest") + getPts("Runic sword") + getPts("Bolt pistol (SM)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 7;
         seperator();
         
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
@@ -42,26 +25,20 @@ public class IMRunePriest extends Eintrag {
         seperator();
 
         waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Rune Priest");
+        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Rune Priest");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
-
+        
         complete();
     }
 
     @Override
     public void refreshen() {
-        power = 6;
-        if (oe1.isSelected()) {
-            power += 1;
-        }
-        
         waffenUndArtefakte.getPanel().setLocation(
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
     }
-
 }

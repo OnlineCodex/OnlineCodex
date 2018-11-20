@@ -15,11 +15,10 @@ public class IMSwiftclaws extends Eintrag {
 
     public IMSwiftclaws() {
         checkBuildaVater();
-        name = "Swiftclaws\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Swiftclaw", 3, 10, getPts("Swiftclaws") + getPts("Twin boltgun"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Swiftclaws", 3, 15, getPts("Swiftclaws") + getPts("Twin boltgun"));
         add(squad);
 
         seperator();
@@ -76,17 +75,21 @@ public class IMSwiftclaws extends Eintrag {
 
         rkBoss.setAbwaehlbar(false);
 
-        power = 6;
-        if (squad.getModelle() > 6) {
-            power += 11;
+        power = 4;
+        if (squad.getModelle() > 12) {
+            power += 16;
+        } else if (squad.getModelle() > 9) {
+            power += 12;
+        } else if (squad.getModelle() > 6) {
+            power += 8;
         } else if (squad.getModelle() > 3) {
-            power += 5;
+            power += 4;
         }
         if (oe2.isSelected() || oe3.isSelected()) {
             power += 3;
         }
         if (rkBoss2.isSelected()) {
-            power += 3;
+            power += 2;
         }
     }
 

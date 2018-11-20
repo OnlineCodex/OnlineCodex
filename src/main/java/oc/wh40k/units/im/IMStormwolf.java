@@ -10,7 +10,7 @@ public class IMStormwolf extends Eintrag {
     public IMStormwolf() {
         name = "Stormwolf";
         grundkosten = getPts("Stormwolf") + getPts("Twin Helfrost cannon") + getPts("Lascannon (SM)") * 2;
-        power = 14;
+        power = 16;
 
         seperator();
 
