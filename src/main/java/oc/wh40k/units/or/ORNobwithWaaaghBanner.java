@@ -1,6 +1,7 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
 
 public class ORNobwithWaaaghBanner extends Eintrag {
 
@@ -10,6 +11,10 @@ public class ORNobwithWaaaghBanner extends Eintrag {
         power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
+        
+        seperator();
+        
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power klaw", getPts("power klaw")));
 
         complete();
     }
