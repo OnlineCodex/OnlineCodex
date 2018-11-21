@@ -328,10 +328,13 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	            gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
 	        }
 	        
-	        if (boyboss || warbikerboss) {
+	        if (boyboss) {
 	            bosseCC2.setMaxAnzahl(bosseFK.isSelected() || bosseCC.isSelected() ? 0 : 1);
 	            bosseCC.setMaxAnzahl(2 - bosseFK.getAnzahl() - bosseCC2.getAnzahl() * 2);
 	            bosseFK.setMaxAnzahl(bosseCC2.isSelected() || bosseCC.getAnzahl() == 2 ? 0 : 1);
+	        } else if (warbikerboss) {
+	            bosseCC2.setMaxAnzahl(bosseCC.isSelected() ? 0 : 1);
+	            bosseCC.setMaxAnzahl(bosseCC2.isSelected() ? 0 : 2);
 	        }
 	    }
     }
