@@ -14,7 +14,7 @@ public class CHDaemonPrinceofChaosCSM extends Eintrag {
     public CHDaemonPrinceofChaosCSM() {
 
         name = "Daemon Prince of Chaos";
-        grundkosten = getPts("Daemon Prince of Chaos") + getPts("Malefic talons");
+        grundkosten = getPts("Daemon Prince of Chaos");
         power = 10;
 
         ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword CSM")));

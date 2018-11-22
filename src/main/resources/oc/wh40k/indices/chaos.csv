@@ -334,14 +334,14 @@ Manreaper;17
 Mortarion;470
 
 Blood Slaughterer of Khorne;180
-Greater Blight Drone;139
+Greater Blight Drone;170
 Chaos Decimator;90
 Plague Hulk of Nurgle;210
 Kytan Ravager;330
-Greater Brass Scorpion of Khorne;625
+Greater Brass Scorpion of Khorne;650
 Slaughter blade;0
 Plague probe;25
-Decimator siege claw;0
+Decimator siege claw;30
 Warpsword;0
 Great cleaver of Khorne;0
 Hellcrusher claws;0
@@ -353,30 +353,30 @@ Rot cannon;0
 Rancid vomit;0
 Hellflamer;17
 Decimator storm laser;25
-Soulburner petard;30
+Soulburner petard;60
 Butcher cannon;30
 C-beam cannon;30
 Blightreaper cannon;18
 Bile maw;18
 Impaler harpoon;0
 
-Hellforged Contemptor Dreadnought;116
+Hellforged Contemptor Dreadnought;103
 Hellforged Deredeo Dreadnought;135
 Hellforged Leviathan Dreadnought;175
 Hellforged Sicarian;160
-Hellforged Sicarian Venator;160
-Hellforged Predator;110
+Hellforged Sicarian Venator;175
+Hellforged Predator;95
 Hellforged Scorpius;175
 Hellforged Spartan Assault Tank;300
 Hellforged Land Raider Proteus;245
 Hellforged Land Raider Achilles;255
-Hellforged Typhon Heavy Siege Tank;500
-Hellforged Cerberus Heavy Destroyer;470
-Hellforged Fellblade;520
-Hellforged Falchion;600
-Hellforged Mastodon;704
-Hellforged Dreadclaw Drop Pod;200
-Hellforged Kharybdis Assault Claw;300
+Hellforged Typhon Heavy Siege Tank;700
+Hellforged Cerberus Heavy Destroyer;650
+Hellforged Fellblade;740
+Hellforged Falchion;840
+Hellforged Mastodon;934
+Hellforged Dreadclaw Drop Pod;130
+Hellforged Kharybdis Assault Claw;375
 Hellforged Rapier;20
 Chaos Space Marine Crew;13
 Butcher cannon array;60
@@ -426,7 +426,7 @@ Hellfire veil;35
 Chaos Hell Blade;110
 Chaos Hell Talon;180
 Chaos Storm Eagle Assault Gunship;210
-Chaos Fire Raptor Assault Gunship;280
+Chaos Fire Raptor Assault Gunship;190
 Chaos Thunderhawk Assault Gunship;1330
 Chaos Sokar Pattern Stormbird Gunship;2000
 Chaos Xiphon Interceptor;110
