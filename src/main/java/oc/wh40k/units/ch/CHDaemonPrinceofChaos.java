@@ -13,7 +13,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     public CHDaemonPrinceofChaos() {
 
         name = "Daemon Prince of Chaos";
-        grundkosten = getPts("Daemon Prince of Chaos") + getPts("Malefic talons");
+        grundkosten = getPts("Daemon Prince of Chaos");
         power = 10;
 
         ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword")));
