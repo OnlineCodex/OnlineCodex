@@ -9,18 +9,22 @@ import java.io.InputStream;
 
 public class VOLKChaos extends BuildaVater {
 
-    private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Uraka The Warfiend", "Samus", "Mamon Transfigured", "Corbax Utterblight"};
+    private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Mamon Transfigured"};
     private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator", "Hellforged Contemptor Dreadnought"};
     private static final String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
-    private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw", "Plague Toads Of Nurgle", "Pox Riders Of Nurgle"};
-    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Plague Hulk Of Nurgle",
-            "Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Predator", "Hellforged Scorpius", "Hellforged Sicarian", "Hellforged Sicarian Venator", "Hellforged Deredeo Dreadnought", "Hellforged Rapier Battery", "Hellforged Leviathan Dreadnought", "Spined Chaos Beast"};
+    private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw"};
+    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Predator", "Hellforged Scorpius", "Hellforged Sicarian", 
+    		"Hellforged Sicarian Venator", "Hellforged Deredeo Dreadnought", "Hellforged Rapier Battery", "Hellforged Leviathan Dreadnought", "Spined Chaos Beast"};
     private static final String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Hell Blade", "Chaos Hell Talon", "Chaos Storm Eagle Assault Gunship", "Chaos Fire Raptor Assault Gunship", "Chaos Xiphon Interceptor"};
     private static final String[] Befestigungseinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"", "Kytan Ravager", "Greater Brass Scorpion Of Khorne", "Hellforged Spartan Assault Tank", "Hellforged Cerberus Heavy Destroyer", "Hellforged Typhon Heavy Siege Tank", "Hellforged Fellblade",
             "Hellforged Falchion", "Hellforged Mastodon", "Chaos Thunderhawk Assault Gunship", "Chaos Sokar Pattern Stormbird Gunship", "Anggrath The Unbound", "Zarakynel", "Aetaos'rau'keres", "Scabeiathrax The Bloated",
             "Renegade Knight Acheron", "Renegade Knight Lancer", "Renegade Knight Castigator", "Renegade Knight Atropos", "Renegade Knight Magaera", "Renegade Knight Porphyrion", "Renegade Knight Styrix", "", "Chaos Warlord Battle Titan", "Chaos Reaver Battle Titan", "Chaos Warhound Scout Titan"};
+
+    private static final String[] HQeinträge_Daemons_FW = new String[]{"", "Uraka The Warfiend", "Samus", "Corbax Utterblight"};
+    private static final String[] Sturmeinträge_Daemons_FW = new String[]{"", "Plague Toads Of Nurgle", "Pox Riders Of Nurgle"};
+    private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"", "Plague Hulk Of Nurgle"};
 
     private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Legion", "", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
             "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour", "Chaos Lord on Bike", "Chaos Lord on Juggernaut of Khorne", "Chaos Lord on Disc of Tzeentch",
@@ -199,7 +203,7 @@ public class VOLKChaos extends BuildaVater {
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
         formationen.add("Chaosdaemons");
-        formationen.add("Questor Traitoris");
+        formationen.add("Questor Traitoris"); 
 
         complete();
     }
@@ -207,16 +211,13 @@ public class VOLKChaos extends BuildaVater {
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("CHAOS")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
-                    HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard), HQeinträge_ThousandSons), HQeinträge_Daemons), HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Chaos_Space_Marines, HQeinträge_Death_Guard, HQeinträge_ThousandSons, HQeinträge_Daemons, HQeinträge_Chaos_Space_Marines_FW, HQeinträge_Daemons_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
                     Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Death_Guard), Eliteeinträge_ThousandSons), Eliteeinträge_Daemons), Eliteeinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
                     new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Daemons), Standardeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
-                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard), Sturmeinträge_ThousandSons), Sturmeinträge_Daemons), Sturmeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
-                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard), Unterstützungseinträge_ThousandSons), Unterstüzungseinträge_Daemons), Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard, Sturmeinträge_ThousandSons, Sturmeinträge_Daemons, Sturmeinträge_Chaos_Space_Marines_FW, Sturmeinträge_Daemons_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard, Unterstützungseinträge_ThousandSons, Unterstüzungseinträge_Daemons, Unterstützungseinträge_Chaos_Space_Marines_FW, Unterstützungseinträge_Daemons_FW));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
                     Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
@@ -332,11 +333,11 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
         } else if (getFormationType().equals("Chaosdaemons")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Daemons);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Daemons, HQeinträge_Daemons_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Daemons);
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstüzungseinträge_Daemons);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Daemons, Sturmeinträge_Daemons_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstüzungseinträge_Daemons, Unterstützungseinträge_Daemons_FW));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
