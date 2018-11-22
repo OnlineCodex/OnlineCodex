@@ -69,10 +69,9 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         oe1.alwaysSelected();
         oe3.alwaysSelected();
 
-        oe2.setMaxAnzahl((oe3.isSelected("Hellforged chainclaw") || (oe3.isSelected("Hellforged deathclaw")) ? 1 : 0) + (oe3.isSelected("Hellforged chainclaw") || (oe3.isSelected("Hellforged deathclaw")) ? 1 : 0));
-//		oe1.setAktiv("Missile launcher", !oe3.isSelected("Missile launcher"));
-//		oe3.setAktiv("Missile launcher", !oe1.isSelected("Missile launcher"));
-
+        oe2.setMaxAnzahl((oe3.isSelected("Hellforged chainclaw") || (oe3.isSelected("Hellforged deathclaw")) ? 1 : 0) + (oe1.isSelected("Hellforged chainclaw") || (oe1.isSelected("Hellforged deathclaw")) ? 1 : 0));
+		oe2.setLegal(oe2.getAnzahl() == oe2.getMaxAnzahl());
+        
         if (oe1.isSelected("Hellforged chainclaw") && oe3.isSelected("Hellforged chainclaw")) {
             oe1.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (pair)") / 2);
             oe3.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (pair)") / 2);
