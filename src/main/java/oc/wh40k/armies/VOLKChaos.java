@@ -10,10 +10,10 @@ import java.io.InputStream;
 public class VOLKChaos extends BuildaVater {
 
     private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Mamon Transfigured"};
-    private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator", "Hellforged Contemptor Dreadnought"};
+    private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator", "Hellforged Contemptor Dreadnought", "Hellforged Predator"};
     private static final String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw"};
-    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Predator", "Hellforged Scorpius", "Hellforged Sicarian", 
+    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus", "Hellforged Land Raider Achilles", "Hellforged Scorpius", "Hellforged Sicarian", 
     		"Hellforged Sicarian Venator", "Hellforged Deredeo Dreadnought", "Hellforged Rapier Battery", "Hellforged Leviathan Dreadnought", "Spined Chaos Beast"};
     private static final String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Hell Blade", "Chaos Hell Talon", "Chaos Storm Eagle Assault Gunship", "Chaos Fire Raptor Assault Gunship", "Chaos Xiphon Interceptor"};
