@@ -62,11 +62,12 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         oe1.alwaysSelected();
         oe3.alwaysSelected();
 
-        oe2.setMaxAnzahl((oe3.isSelected("Hellforged siege drill") || (oe3.isSelected("Hellforged siege claw")) ? 1 : 0) + (oe3.isSelected("Hellforged siege drill") || (oe3.isSelected("Hellforged siege claw")) ? 1 : 0));
-//		oe1.setAktiv("Missile launcher", !oe3.isSelected("Missile launcher"));
-//		oe3.setAktiv("Missile launcher", !oe1.isSelected("Missile launcher"));
+        oe2.setMaxAnzahl((oe3.isSelected("Hellforged siege drill") || (oe3.isSelected("Hellforged siege claw")) ? 1 : 0) + (oe1.isSelected("Hellforged siege drill") || (oe1.isSelected("Hellforged siege claw")) ? 1 : 0));
+        oe2.setAnzahl(0, oe2.getMaxAnzahl());
         oe4.alwaysSelected();
 
+        
+        
         if (oe1.isSelected("Hellforged siege claw") && oe3.isSelected("Hellforged siege claw")) {
             oe1.setPreis("Hellforged siege claw", getPts("Hellforged siege claw (pair)"));
             oe3.setPreis("Hellforged siege claw", 0);
