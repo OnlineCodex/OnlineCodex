@@ -9,7 +9,7 @@ import java.io.InputStream;
 
 public class VOLKChaos extends BuildaVater {
 
-    private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant", "Mamon Transfigured"};
+    private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler", "Lord Arkos", "Chaos Hellwright", "Chaos Hellwright On Dark Abeyant"};
     private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator", "Hellforged Contemptor Dreadnought", "Hellforged Predator"};
     private static final String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne", "Greater Blight Drone", "Hellforged Dreadclaw Drop Pod", "Hellforged Kharybdis Assault Claw"};
@@ -22,7 +22,7 @@ public class VOLKChaos extends BuildaVater {
             "Hellforged Falchion", "Hellforged Mastodon", "Chaos Thunderhawk Assault Gunship", "Chaos Sokar Pattern Stormbird Gunship", "Anggrath The Unbound", "Zarakynel", "Aetaos'rau'keres", "Scabeiathrax The Bloated",
             "Renegade Knight Acheron", "Renegade Knight Lancer", "Renegade Knight Castigator", "Renegade Knight Atropos", "Renegade Knight Magaera", "Renegade Knight Porphyrion", "Renegade Knight Styrix", "", "Chaos Warlord Battle Titan", "Chaos Reaver Battle Titan", "Chaos Warhound Scout Titan"};
 
-    private static final String[] HQeinträge_Daemons_FW = new String[]{"", "Uraka The Warfiend", "Samus", "Corbax Utterblight"};
+    private static final String[] HQeinträge_Daemons_FW = new String[]{"", "Uraka The Warfiend", "Samus", "Mamon Transfigured", "Corbax Utterblight"};
     private static final String[] Sturmeinträge_Daemons_FW = new String[]{"", "Plague Toads Of Nurgle", "Pox Riders Of Nurgle"};
     private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"", "Plague Hulk Of Nurgle"};
 
@@ -30,9 +30,9 @@ public class VOLKChaos extends BuildaVater {
             "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour", "Chaos Lord on Bike", "Chaos Lord on Juggernaut of Khorne", "Chaos Lord on Disc of Tzeentch",
             "Chaos Lord on Palanquin of Nurgle", "Chaos Lord on Steed of Slaanesh", "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour", "Sorcerer on Bike", "Sorcerer on Disc of Tzeentch", "Sorcerer on Palanquin of Nurgle", "Sorcerer on Steed of Slaanesh",
-            "Warpsmith", "Lord of Contagion", "Malignant Plaguecaster"};
+            "Warpsmith"};
     private static final String[] Eliteeinträge_Chaos_Space_Marines = new String[]{"", "Fallen", "Chaos Terminators", "Khorne Berzerkers", "Rubric Marines", "Plague Marines CSM", "Noise Marines", "Chosen", "Possessed", "Helbrute", "Mutilators"};
-    private static final String[] Standardeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers", "Bloodletters", "Horrors", "Plaguebearers", "Daemonettes"};
+    private static final String[] Standardeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Bloodletters", "Horrors", "Plaguebearers", "Daemonettes"};
     private static final String[] Sturmeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
     private static final String[] Unterstützungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler"};
     private static final String[] Transporteinträge_Chaos_Space_Marines = new String[]{"", "Chaos Rhino"};
@@ -202,8 +202,13 @@ public class VOLKChaos extends BuildaVater {
         formationen.add("World Eaters");
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
+        formationen.add("");
         formationen.add("Chaosdaemons");
+        formationen.add("");
         formationen.add("Questor Traitoris"); 
+        formationen.add("");
+        formationen.add("The Tainted");
+        
 
         complete();
     }
@@ -342,7 +347,17 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        }
+        } else if (getFormationType().equals("The Tainted")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Chaos_Space_Marines, new String[]{"", "Necrosius the Undying", "Mamon Transfigured"}, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
+        } 
 
         if (formation != null) {
             formation.refreshControlPanel();
