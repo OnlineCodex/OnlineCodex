@@ -1,13 +1,12 @@
 package oc.wh40k.units.im;
 
 import oc.AnzahlPanel;
-import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 import java.util.Vector;
 
-public class IMDeathwatchVeterans extends Eintrag {//Sternguard
+public class IMDeathwatchVeterans extends Eintrag {
 
 	AnzahlPanel veterans, terminator, biker, blackshield, sergeant, vanguard;
 
@@ -63,8 +62,6 @@ public class IMDeathwatchVeterans extends Eintrag {//Sternguard
 
 	@Override
 	public void refreshen() {
-
-		//LOGGER.info("numVeterans" + numVeterans + "squad.getModelle()" + squad.getModelle() + "rk.size()" + rk.size());
 
 		boolean veteransChanged = numVeterans != veterans.getModelle();
 		boolean sergeantChanged = numSergeant != sergeant.getModelle();
@@ -249,6 +246,16 @@ public class IMDeathwatchVeterans extends Eintrag {//Sternguard
 			}
 		}
 
+		int numTotal = numBikers + numBlackShield + numSergeant + numTerminators + numVanguards + numVeterans;
+		
+		if(numTotal < 5) {
+			setFehlermeldung("Min. 5");
+		} else if(numTotal > 10) {
+			setFehlermeldung("Max. 10");
+		} else {
+			setFehlermeldung("");
+		}
+		
 		super.refreshAction();
 	}
 
