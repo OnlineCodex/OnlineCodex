@@ -76,6 +76,8 @@ public class IMDeathwatchVeterans extends Eintrag {
 		double x = randAbstand;
 		double y = 0.0;
 		double height = 0.0;
+		
+		int heavyWeapons = 0;
 
 		//------------Veterans
 		if (somethingChanged) {
@@ -246,12 +248,18 @@ public class IMDeathwatchVeterans extends Eintrag {
 			}
 		}
 
+		for (int i = 0; i < numVeterans; i++) {
+			heavyWeapons+= ((IMKillteamKammer) rkVeterans.get(i).getKammer()).o5.getAnzahl();
+		}
+		
 		int numTotal = numBikers + numBlackShield + numSergeant + numTerminators + numVanguards + numVeterans;
 		
 		if(numTotal < 5) {
 			setFehlermeldung("Min. 5");
 		} else if(numTotal > 10) {
 			setFehlermeldung("Max. 10");
+		} else if(heavyWeapons > 4) {
+			setFehlermeldung("Max. 4 schwere Waffen");
 		} else {
 			setFehlermeldung("");
 		}

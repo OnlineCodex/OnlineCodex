@@ -38,6 +38,9 @@ public class IMKillteamKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
             ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (others)")));
+            if(type.equals("Sergeant")) {
+                ogE.addElement(new OptionsGruppeEintrag("Xenophase blade", getPts("Xenophase blade")));
+            }
             add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
@@ -57,13 +60,15 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
-
-            ogE.addElement(new OptionsGruppeEintrag("Deathwatch frag cannon", getPts("Deathwatch frag cannon")));
-            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
-            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
-            ogE.addElement(new OptionsGruppeEintrag("Infernus heavy bolter", getPts("Infernus heavy bolter")));
-            ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
-            add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            
+            if(type.equals("Veteran")){
+	            ogE.addElement(new OptionsGruppeEintrag("Deathwatch frag cannon", getPts("Deathwatch frag cannon")));
+	            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
+	            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+	            ogE.addElement(new OptionsGruppeEintrag("Infernus heavy bolter", getPts("Infernus heavy bolter")));
+	            ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
+	            add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            }
 
             seperator();
 
@@ -207,29 +212,41 @@ public class IMKillteamKammer extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        if (type.equals("Veteran")) {
+        if (type.equals("Veteran") || type.equals("Sergeant")) {
             int maxWeapons = 2;
 
-            if (o1.isSelected()) maxWeapons = maxWeapons - 2;
-            if (o2.isSelected()) maxWeapons = maxWeapons - 2;
-            if (o5.isSelected()) maxWeapons = maxWeapons - 2;
-            maxWeapons = maxWeapons - o3.getAnzahl();
-            maxWeapons = maxWeapons - o4.getAnzahl();
+            if (o1.isSelected() || o2.isSelected()) {
+            	maxWeapons = maxWeapons - 2;
+            }
+            
+            if (type.equals("Veteran")) {
+            	if(o5.isSelected()) {
+            		maxWeapons = maxWeapons - 2;
+            	}
+                o2.setAktiv(!o1.isSelected() && !o3.isSelected() && !o4.isSelected() && !o5.isSelected());
+                o1.setAktiv(!o2.isSelected() && !o3.isSelected() && !o4.isSelected() && !o5.isSelected());
+            } else {
+                o2.setAktiv(!o1.isSelected() && !o3.isSelected() && !o4.isSelected());
+                o1.setAktiv(!o2.isSelected() && !o3.isSelected() && !o4.isSelected());
+            }
+            
+            maxWeapons = maxWeapons - o3.getAnzahl() - o4.getAnzahl();
 
-            if (maxWeapons == 0)
+            if (maxWeapons == 0){
                 o3.setMaxAnzahl(o3.getAnzahl());
-            else
-                o3.setMaxAnzahl(o3.getAnzahl() + maxWeapons);
-
-            if (maxWeapons == 0)
                 o4.setMaxAnzahl(o4.getAnzahl());
-            else
+            } else {
+                o3.setMaxAnzahl(o3.getAnzahl() + maxWeapons);
                 o4.setMaxAnzahl(1);
+            }
 
-            if (maxWeapons == 0)
-                o5.setMaxAnzahl(o5.getAnzahl());
-            else
-                o5.setMaxAnzahl(1);
+            if(type.equals("Veteran")) {
+	            if (o1.isSelected() || o3.isSelected() || o4.isSelected() || o2.isSelected()) {
+	                o5.setMaxAnzahl(0);
+	            } else {
+	                o5.setMaxAnzahl(1);
+	            }
+            }
         }
 
         if (type.equals("Terminator")) {
