@@ -12,7 +12,7 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
     public IMDeathwatchTerminatorSquad() {
         name = "Terminator Squad";
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, getPts("Terminator Squad")));
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, getPts("Deathwatch Terminators")));
         squad.setGrundkosten(getPts("Power sword (SM)"));
         seperator();
 
