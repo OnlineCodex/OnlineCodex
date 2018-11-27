@@ -7,6 +7,7 @@ import oc.wh40k.units.PsychicPowers;
 public class TYBroodlord extends Eintrag {
 
     RuestkammerStarter psychicPowers;
+	private RuestkammerStarter waffen;
 
     public TYBroodlord() {
         name = "Broodlord";
@@ -23,12 +24,25 @@ public class TYBroodlord extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
+        waffen.initKammer();
+        add(waffen);
+        waffen.setButtonText("Wargear");
+        waffen.setAbwaehlbar(false);
 
         complete();
     }
 
     @Override
     public void refreshen() {
+    	waffen.getPanel().setLocation(
+                (int) waffen.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 }
