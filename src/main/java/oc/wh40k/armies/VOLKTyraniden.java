@@ -61,6 +61,7 @@ public class VOLKTyraniden extends BuildaVater {
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("TYRANIDS")) {
+            myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
                     "", "The Swarmlord", "Old One Eye",
