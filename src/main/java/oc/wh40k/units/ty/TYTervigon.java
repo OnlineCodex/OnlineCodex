@@ -36,6 +36,15 @@ public class TYTervigon extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
+        waffen.initKammer();
+        add(waffen);
+        waffen.setButtonText("Wargear");
+        waffen.setAbwaehlbar(false);
 
         complete();
     }
@@ -43,6 +52,11 @@ public class TYTervigon extends Eintrag {
     @Override
     public void refreshen() {
         o1.alwaysSelected();
+        
+        waffen.getPanel().setLocation(
+                (int) waffen.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 

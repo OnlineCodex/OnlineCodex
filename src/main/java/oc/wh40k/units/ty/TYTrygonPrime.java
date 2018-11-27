@@ -4,12 +4,14 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class TYTrygonPrime extends Eintrag {
 
     OptionsUpgradeGruppe o1;
     OptionsEinzelUpgrade oe1;
     OptionsEinzelUpgrade oe2;
+	private RuestkammerStarter waffen;
 
     public TYTrygonPrime() {
         name = "Trygon Prime";
@@ -29,6 +31,15 @@ public class TYTrygonPrime extends Eintrag {
 
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
         add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon Prime)")));
+        
+        seperator();
+        
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
+        waffen.initKammer();
+        add(waffen);
+        waffen.setButtonText("Wargear");
+        waffen.setAbwaehlbar(false);
 
         complete();
     }

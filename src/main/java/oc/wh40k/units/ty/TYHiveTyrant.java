@@ -29,15 +29,6 @@ public class TYHiveTyrant extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
-        ((TYRuestkammer) waffen.getKammer()).setType("Hive Tyrant");
-        waffen.initKammer();
-        add(waffen);
-        waffen.setButtonText("Wargear");
-        waffen.setAbwaehlbar(false);
-
-        seperator();
-
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
@@ -46,12 +37,24 @@ public class TYHiveTyrant extends Eintrag {
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
 
+        seperator();
+
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        ((TYRuestkammer) waffen.getKammer()).setType("Hive Tyrant");
+        waffen.initKammer();
+        add(waffen);
+        waffen.setButtonText("Wargear");
+        waffen.setAbwaehlbar(false);
+        
         complete();
     }
 
     @Override
     public void refreshen() {
-
+    	waffen.getPanel().setLocation(
+                (int) waffen.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 
