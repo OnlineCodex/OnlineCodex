@@ -5,9 +5,14 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 
 import java.io.InputStream;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 public class VOLKTyraniden extends BuildaVater {
 
+    Set<String> HIVEFLEETS = ImmutableSet.of("Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
+	
     public VOLKTyraniden() {
 
         reflectionKennung = "TY";
@@ -53,14 +58,16 @@ public class VOLKTyraniden extends BuildaVater {
         textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("Tyraniden");
 
         formationen.add("TYRANIDS");
+        HIVEFLEETS.forEach(fleet -> formationen.add(fleet));
+        formationen.add("");
         formationen.add("Genestealer Cults");
 
         complete();
     }
-
+    
     @Override
     public void volkRefresh() {
-        if (getFormationType().equals("TYRANIDS")) {
+        if (getFormationType().equals("TYRANIDS") || HIVEFLEETS.contains(getFormationType())) {
             myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
