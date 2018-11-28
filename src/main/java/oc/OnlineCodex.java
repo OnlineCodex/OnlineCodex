@@ -15,6 +15,8 @@ import java.util.Optional;
 import java.util.Vector;
 import java.util.prefs.Preferences;
 
+import static oc.RefreshListener.addRefreshListener;
+
 
 public class OnlineCodex extends BuildaPanel {
 
@@ -147,33 +149,31 @@ public class OnlineCodex extends BuildaPanel {
             }
         }
     };
-    private RefreshListener refreshListener = new RefreshListener((byte) 15) {
+    private RefreshListener refreshListener = addRefreshListener(RefreshListener.Priority.ONLINE_CODEX, this::refresh);
 
-        @Override
-        public void refresh() {
+    private void refresh() {
+        double kosten = getKosten();
+        double cp = 3 + getCP();
 
-            double kosten = getKosten();
-            double cp = 3 + getCP();
-
-            switch (BuildaHQ.getCountFromInformationVectorGlobal("Relic")) {
-                case 2:
-                    cp -= 1;
-                    break;
-                case 3:
-                    cp -= 3;
-                    break;
-                default:
-                    break;
-            }
-
-            if (kosten != 0) {
-                kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
-                kostenLabel.setForeground(Color.BLACK);
-            } else {
-                kostenLabel.setText("");
-            }
+        switch (BuildaHQ.getCountFromInformationVectorGlobal("Relic")) {
+            case 2:
+                cp -= 1;
+                break;
+            case 3:
+                cp -= 3;
+                break;
+            default:
+                break;
         }
-    };
+
+        if (kosten != 0) {
+            kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
+            kostenLabel.setForeground(Color.BLACK);
+        } else {
+            kostenLabel.setText("");
+        }
+    }
+
     private KeyListener budgetChangeListener = new KeyListener() {
 
         @Override
@@ -186,7 +186,7 @@ public class OnlineCodex extends BuildaPanel {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            refreshListener.refresh();
+            refreshListener.run();
         }
     };
 

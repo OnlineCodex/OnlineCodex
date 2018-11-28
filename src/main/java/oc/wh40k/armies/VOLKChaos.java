@@ -4,8 +4,11 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
+
+import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKChaos extends BuildaVater {
 
@@ -109,10 +112,8 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigungseinträge_Daemons = new String[]{"", "Feculent Gnarlmaws"};
 
     public VOLKChaos() {
+        super(loadPoints("/oc/wh40k/indices/chaos.yaml"));
         reflectionKennung = "CH";
-
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/chaos.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

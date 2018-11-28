@@ -16,7 +16,6 @@ public class CHScreamers extends Eintrag {
         add(hounds = new AnzahlPanel(ID, randAbstand, cnt, "Screamers", 3, 9, getPts("Screamers")));
 
         complete();
-
     }
 
     public void deleteYourself() {

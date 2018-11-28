@@ -4,6 +4,7 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -292,14 +293,10 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
 
     public VOLKImperium() {
+        super(ResourceUtils.loadPoints(
+                Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
+                   .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))));
         reflectionKennung = "IM";
-
-        Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
-                .map(name -> String.format("/oc/wh40k/indices/%s.csv", name))
-                .forEach(file -> {
-                    LOGGER.info("loading file {}", file);
-                    appendPointList(BuildaHQ.loadindexFile(this.getClass().getResourceAsStream(file)));
-                });
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

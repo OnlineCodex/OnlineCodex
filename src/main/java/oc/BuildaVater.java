@@ -1,5 +1,6 @@
 package oc;
 
+import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
@@ -11,10 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Set;
-import java.util.Vector;
+import java.util.*;
+
+import static oc.utils.ResourceUtils.sanitzeKey;
 
 public abstract class BuildaVater extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
@@ -50,8 +50,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     public Formation formation;
     public boolean fcountBool = false; // Im Falle einer Subformation mit nur einer Auswahl, kann die Auswahl mehrmals gewählt werden und zählt mehrfach.
     public int fcount = 1; // so
-    public HashMap<String, Integer> pointValues = new HashMap<String, Integer>();
-    public HashMap<String, Integer> CP = new HashMap<String, Integer>();
+    private final Map<String, Integer> pointValues;
+    public Map<String, Integer> CP = new HashMap<String, Integer>();
     protected BuildaTextArea buildatextArea;
     protected boolean nurBeiLeerenBuilderTrue = false;
     protected int cnt = 0;
@@ -151,9 +151,9 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     };
 
-    public BuildaVater() {
+    public BuildaVater(Map<String, Integer> pointValues) {
+        this.pointValues = ImmutableMap.copyOf(pointValues);
         panel.setBackground(Color.WHITE);
-        //panel.setBounds(0, 0, 3500, CHOOSER_Y + 100);
     }
 
     public String getText() {
@@ -691,6 +691,14 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     }
 
+    public int getPts(String key) {
+        return Optional.ofNullable(pointValues.get(sanitzeKey(key)))
+                .orElseGet(() -> {
+                    LOGGER.error("could not determine points for key {}", key);
+                    return 0;
+                });
+    }
+
     public void refreshAction() {
         super.refreshAction();
         if (formation != null) {
@@ -709,18 +717,5 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     //Passt Formationen und Kontingente an, die in einem Supplement nutzbar sind. Muss in der Volk-Datei überschrieben werden
     public void refreshSupplements() {
 
-    }
-
-    public void appendPointList(HashMap<String, Integer> appendList) {
-
-        Set<String> pointset = appendList.keySet();
-        Object[] pointArray = pointset.toArray();
-        for (int i = 0; i < pointArray.length; i++) {
-            if (pointValues.containsKey(pointArray[i]) && appendList.get(pointArray[i]) != pointValues.get(pointArray[i])) {
-                LOGGER.error("Doppelter Key mit verschiedenen Werten: " + pointArray[i] + " - " + appendList.get(pointArray[i]) + " Vorhanden als: " + pointArray[i] + " - " + pointValues.get(pointArray[i]));
-            } else {
-                pointValues.put((String) pointArray[i], appendList.get(pointArray[i]));
-            }
-        }
     }
 }

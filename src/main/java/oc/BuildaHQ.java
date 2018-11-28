@@ -1,5 +1,9 @@
 package oc;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.google.common.collect.ImmutableMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -18,6 +22,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Map;
 import java.util.Vector;
 
 public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Methoden und globalen Variablen bereit.   Komplett static
@@ -519,35 +524,6 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         return doc;
     }
 
-    public static HashMap<String, Integer> loadindexFile(InputStream is) {
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.contains(";")) {
-//		    		LOGGER.info(line);
-                    String[] sL = line.split(";");
-                    sL[0] = sL[0].replaceAll(" ", "");
-                    sL[0] = sL[0].replaceAll("-", "");
-                    sL[0] = sL[0].toLowerCase();
-
-                    if (map.containsKey((String) sL[0]) && Integer.parseInt(sL[1]) != map.get(sL[0])) {
-                        LOGGER.error("Doppelter Key mit verschiedenen Werten: " + sL[0] + " - " + Integer.parseInt(sL[1]) + " Vorhanden als: " + sL[0] + " - " + map.get(sL[0]));
-                    } else {
-                        map.put(sL[0], Integer.parseInt(sL[1]));
-                    }
-                }
-            }
-        } catch (FileNotFoundException e) {
-            // TODO Auto-generated catch block
-            LOGGER.error("", e);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            LOGGER.error("", e);
-        }
-
-        return map;
-    }
 
     public static void bereinigeXML(Document doc) {
         bereinigeElement(doc.getDocumentElement());

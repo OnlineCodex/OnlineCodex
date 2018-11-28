@@ -10,6 +10,9 @@ import java.awt.event.*;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.RUESTKAMMER_STARTER;
+import static oc.RefreshListener.addRefreshListener;
+
 public class RuestkammerStarter extends OptionsVater {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerStarter.class);
@@ -242,18 +245,12 @@ public class RuestkammerStarter extends OptionsVater {
 
         sizeSetzen();
 
-        new RefreshListener((byte) 6) {
-            @Override
-            public void refresh() {
-
-                if (isSelected()) {
-                    textUebernehmen();
-                    setLegal(legal);
-                }
-
+        addRefreshListener(RUESTKAMMER_STARTER, () -> {
+            if (isSelected()) {
+                textUebernehmen();
+                setLegal(legal);
             }
-        };
-
+        });
     }
 
     public void init(int ID, int lX, int lY, RuestkammerVater abteilung) {
@@ -288,16 +285,12 @@ public class RuestkammerStarter extends OptionsVater {
 
         sizeSetzen();
 
-        new RefreshListener((byte) 6) {
-            @Override
-            public void refresh() {
-                if (isSelected()) {
-                    textUebernehmen();
-                    setLegal(legal);
-                }
+        addRefreshListener(RUESTKAMMER_STARTER, () -> {
+            if (isSelected()) {
+                textUebernehmen();
+                setLegal(legal);
             }
-        };
-
+        });
     }
 
     public void initKammer(boolean... b) {

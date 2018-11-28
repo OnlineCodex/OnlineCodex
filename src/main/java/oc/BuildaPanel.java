@@ -5,6 +5,9 @@ import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.ONLINE_CODEX;
+import static oc.RefreshListener.addRefreshListener;
+
 
 public abstract class BuildaPanel implements BuildaSTK {  // Die Vaterklasse für alle anderen OC-Klassen, da jede oC Klasse ein weißes JPanel brauch^^
 
@@ -13,14 +16,10 @@ public abstract class BuildaPanel implements BuildaSTK {  // Die Vaterklasse fü
     public static JTextField budget = new JTextField();
     public final JLabel kostenLabel = new JLabel();
     public Vector<BuildaVater> myBuilderz = new Vector<BuildaVater>();
-    public RefreshListener refreshListener = new RefreshListener((byte) 15) {
-        public void refresh() {
-            refreshAction();
-        }
-    };
     protected JPanel panel = new JPanel(null, false); // kein LayoutManager für ALLE Panels, aber doubleBuffered
 
     public BuildaPanel() {
+        addRefreshListener(ONLINE_CODEX, this::refreshAction);
         panel.setBackground(Color.WHITE);
     }
 

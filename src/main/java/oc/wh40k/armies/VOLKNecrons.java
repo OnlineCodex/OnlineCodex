@@ -3,8 +3,11 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
+
+import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKNecrons extends BuildaVater {
 
@@ -53,12 +56,10 @@ public class VOLKNecrons extends BuildaVater {
     private static final String[] Sturmeinträge_IA_Canoptek = new String[]{"", "Canoptek Acanthrites", "Canoptek Tomb Sentinel",};
 
     public VOLKNecrons() {
+        super(loadPoints(
+                "/oc/wh40k/indices/ne.yaml",
+                "/oc/wh40k/indices/iane.yaml"));
         reflectionKennung = "NE";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ne.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
-
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/iane.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

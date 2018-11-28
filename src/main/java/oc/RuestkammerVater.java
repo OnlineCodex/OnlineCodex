@@ -9,6 +9,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowListener;
 
+import static oc.RefreshListener.Priority.RUESTKAMMER_VATER;
+import static oc.RefreshListener.addRefreshListener;
+
 public abstract class RuestkammerVater extends OptionsCollection implements BuildaSTK {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerVater.class);
@@ -21,7 +24,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
     protected String cawdor = "Cawdor";
     protected String delaque = "Delaque";
     protected String escher = "Escher";
-    protected BuildaVater buildaVater;
     protected OptionsButtonUpgrade chosenRelic = null;
     boolean uniqueError = false;
     private JButton ok = new JButton("OK");
@@ -69,63 +71,59 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
     public void setzteRefreshListener(int ID) {
         this.ID = ID;
+        addRefreshListener(RUESTKAMMER_VATER, ID, this::refreshRuestkammerVater);
+    }
 
-        new RefreshListener((byte) 4, ID) {
-            public void refresh() {
-                LOGGER.info("RuestkammerVater refresh");
-                refreshen();
-                uniqueError = false;
-                Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
+    private void refreshRuestkammerVater() {
+        LOGGER.info("RuestkammerVater refresh");
+        refreshen();
+        uniqueError = false;
+        Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
+        if (!frame.getSize().equals(size)) {
+            panel.setSize(size);
+            frame.setSize(size);
+            frame.repaint();
+            panel.repaint();
 
-                if (!frame.getSize().equals(size)) {
-                    panel.setSize(size);
-                    frame.setSize(size);
-                    frame.repaint();
-                    panel.repaint();
+            ok.setLocation(size.width - 130, size.height - 85);
+            error.setLocation(10, size.height - 85);
+        }
 
-                    ok.setLocation(size.width - 130, size.height - 85);
-                    error.setLocation(10, size.height - 85);
+        chosenRelic = null;
+        for (int i = 0; i < optionen.size(); ++i) {
+            if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+                chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
+                if (chosenRelic != null) {
+                    uniqueError = chosenRelic.uniqueError;
+                    break;
                 }
-
-                chosenRelic = null;
-                for (int i = 0; i < optionen.size(); ++i) {
-                    if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                        chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
-                        if (chosenRelic != null) {
-                            uniqueError = chosenRelic.uniqueError;
-                            break;
-                        }
-                    } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                        chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
-                        if (chosenRelic != null) {
-                            uniqueError = chosenRelic.uniqueError;
-                            break;
-                        }
-                    }
+            } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+                chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
+                if (chosenRelic != null) {
+                    uniqueError = chosenRelic.uniqueError;
+                    break;
                 }
-                if (chosenRelic == null) {
-                    for (int i = 0; i < optionen.size(); ++i) {
-                        if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                            ((OptionsUpgradeGruppe) optionen.elementAt(i)).enableRelics();
-                        } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                            ((OptionsEinzelUpgrade) optionen.elementAt(i)).enableRelics();
-                        }
-                    }
-                } else {
-                    for (int i = 0; i < optionen.size(); ++i) {
-                        if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                            ((OptionsUpgradeGruppe) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
-                        } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                            ((OptionsEinzelUpgrade) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
-                        }
-                    }
-                }
-
-
-                refreshen();
-
             }
-        };
+        }
+        if (chosenRelic == null) {
+            for (int i = 0; i < optionen.size(); ++i) {
+                if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+                    ((OptionsUpgradeGruppe) optionen.elementAt(i)).enableRelics();
+                } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+                    ((OptionsEinzelUpgrade) optionen.elementAt(i)).enableRelics();
+                }
+            }
+        } else {
+            for (int i = 0; i < optionen.size(); ++i) {
+                if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+                    ((OptionsUpgradeGruppe) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
+                } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+                    ((OptionsEinzelUpgrade) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
+                }
+            }
+        }
+
+        refreshen();
     }
 
     public void newColumn() {
@@ -253,53 +251,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
     public boolean isLegal() {
         return legal;
-    }
-
-    public void addToInformationVector(String s, int count) { // um wieviel der key s erhöht/vermindert wird
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            buildaVater.addToInformationVector(s, count);
-        }
-    }
-
-    public int getCountFromInformationVector(String s) {
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            return buildaVater.getCountFromInformationVector(s);
-        } else {
-            return 0;
-        }
-    }
-
-    public void setInformationVectorValue(String s, int value) {
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            buildaVater.setInformationVectorValue(s, value);
-        }
-    }
-
-    public int getPts(String s) {
-        checkBuildaVater();
-
-        s = s.replaceAll(" ", "");
-        s = s.replaceAll("-", "");
-        s = s.toLowerCase();
-
-        if (buildaVater.pointValues.get(s) == null) {
-            LOGGER.error("getPts - " + s);
-            return 0;
-        } else {
-            return buildaVater.pointValues.get(s);
-        }
-    }
-
-    public void checkBuildaVater() {
-        if (buildaVater == null) {
-            buildaVater = BuildaHQ.aktBuildaVater;
-        }
     }
 
 }
