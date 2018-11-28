@@ -10,7 +10,7 @@ public class IMCoronusGravCarrier extends Eintrag {
     public IMCoronusGravCarrier() {
         name = "Coronus Grav-carrier";
         grundkosten = getPts("Coronus Grav-carrier");
-        power = 8;
+        power = 19;
 
         seperator();
 
