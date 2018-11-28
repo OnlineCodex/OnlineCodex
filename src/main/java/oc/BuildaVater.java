@@ -716,9 +716,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         Set<String> pointset = appendList.keySet();
         Object[] pointArray = pointset.toArray();
         for (int i = 0; i < pointArray.length; i++) {
-            if (pointValues.containsKey(pointArray[i])) {
-//				LOGGER.error("Doppelter Key: " + pointArray[i]);
-                LOGGER.error("Doppelter Key: " + pointArray[i] + " - " + appendList.get(pointArray[i]) + " Vorhanden als: " + pointArray[i] + " - " + pointValues.get(pointArray[i]));
+            if (pointValues.containsKey(pointArray[i]) && appendList.get(pointArray[i]) != pointValues.get(pointArray[i])) {
+                LOGGER.error("Doppelter Key mit verschiedenen Werten: " + pointArray[i] + " - " + appendList.get(pointArray[i]) + " Vorhanden als: " + pointArray[i] + " - " + pointValues.get(pointArray[i]));
             } else {
                 pointValues.put((String) pointArray[i], appendList.get(pointArray[i]));
             }
