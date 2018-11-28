@@ -15,7 +15,7 @@ public class IMWolfLordinTerminatorArmour extends Eintrag {
         
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Lord in Terminator Armour");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
@@ -23,10 +23,6 @@ public class IMWolfLordinTerminatorArmour extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 
 }

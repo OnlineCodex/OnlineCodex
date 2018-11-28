@@ -25,7 +25,7 @@ public class NEUndyingLegion extends Eintrag {
         seperator();
 
         for (int i = 0; i < 5; i++) {
-            Warriors.add(new RuestkammerStarter(ID, randAbstand, cnt, "NEWarriorsKammer", "Warriors", 1));
+            Warriors.add(new RuestkammerStarter(ID, randAbstand, cnt, NEWarriorsKammer.class, "Warriors", 1));
             Warriors.get(i).initKammer();
             add(Warriors.get(i));
             Warriors.get(i).setButtonText("Warriors");
@@ -39,7 +39,7 @@ public class NEUndyingLegion extends Eintrag {
     public void refreshen() {
         pylon.setSelected(true);
 
-        adjustOptions(Warriors, 4, "NEWarriorsKammer", "Warriors", 1, 1);
+        adjustOptions(Warriors, 4, NEWarriorsKammer.class, "Warriors", 1, 1);
         Warriors.get(0).setLegal(Warriors.get(0).isSelected());
         Warriors.get(1).setLegal(Warriors.get(1).isSelected());
         Warriors.get(2).setLegal(Warriors.get(2).isSelected());
@@ -58,7 +58,7 @@ public class NEUndyingLegion extends Eintrag {
     //Entfernt aus dem Vektor alle überzähligen nicht ausgewählten Einträge.
     //Fügt einen neuen auswählbaren Eintrag hinter dem letzten der gleichen Einheit ein, falls alle ausgewählt wurden.
     //Könnte man evtl. in Eintrag übermehmen...
-    public void adjustOptions(Vector<RuestkammerStarter> starter, int minOptions, String unit, String unitName, int offset, int einrueck) {
+    public void adjustOptions(Vector<RuestkammerStarter> starter, int minOptions, Class<NEWarriorsKammer> unit, String unitName, int offset, int einrueck) {
 
 
         for (int i = 0; i < starter.size() - 1 && starter.size() > (minOptions + 1); i++) {

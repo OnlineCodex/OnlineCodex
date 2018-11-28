@@ -82,7 +82,7 @@ public class CHChosen extends Eintrag {
 
         seperator();
 
-        champion = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Chosen Champion", 1);
+        champion = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Chosen Champion", 1);
         ((CHWaffenkammer) champion.getKammer()).setChampion(true);
         ((CHWaffenkammer) champion.getKammer()).setDefaultFK("Boltgun");
         ((CHWaffenkammer) champion.getKammer()).setDefaultNK("Bolt pistol");

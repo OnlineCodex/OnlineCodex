@@ -25,7 +25,7 @@ public class CHPlaguebearers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Plagueridden");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Plagueridden");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Plagueridden";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Plagueridden"));

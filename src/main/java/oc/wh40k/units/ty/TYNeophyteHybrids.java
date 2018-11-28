@@ -104,7 +104,7 @@ public class TYNeophyteHybrids extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "TYLeader", "Neophyte Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TYLeader.class, "Neophyte Leader");
 
         ((TYLeader) rkBoss.getKammer()).type = "Acolyte";
 

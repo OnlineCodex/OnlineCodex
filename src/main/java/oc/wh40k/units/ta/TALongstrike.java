@@ -21,7 +21,7 @@ public class TALongstrike extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, "TATX7HammerheadKammer", "Longstrike"));
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TATX7HammerheadKammer.class, "Longstrike"));
             rk.lastElement().initKammer(false, false, false, false, false, false, true);
             rk.lastElement().setGrundkosten(getPts("Longstrike"));
             add(rk.lastElement());

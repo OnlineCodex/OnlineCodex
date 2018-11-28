@@ -36,7 +36,7 @@ public class IMMilitarumTempestusScions extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "Tempestor");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Tempestor");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Tempestor");
         kammer.initKammer();
         add(kammer);

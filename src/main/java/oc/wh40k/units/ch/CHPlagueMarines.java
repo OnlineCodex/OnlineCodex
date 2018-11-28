@@ -63,7 +63,7 @@ public class CHPlagueMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Plague Champion");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Plague Champion");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         ((CHWaffenkammer) Boss.getKammer()).setNurgle(true);
         ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Boltgun");

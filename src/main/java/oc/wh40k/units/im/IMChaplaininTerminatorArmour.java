@@ -15,7 +15,7 @@ public class IMChaplaininTerminatorArmour extends Eintrag {
         power = 6;
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
         ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Chaplain in Terminator Armour");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
@@ -23,9 +23,5 @@ public class IMChaplaininTerminatorArmour extends Eintrag {
         waffenUndReliquien.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

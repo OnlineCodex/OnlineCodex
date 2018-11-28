@@ -60,7 +60,7 @@ public class CHChaosBikers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Chaos Biker Champion", 1);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Chaos Biker Champion", 1);
         ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
         ((CHWaffenkammer) rkBoss.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) rkBoss.getKammer()).setDefaultNK("no weapon");

@@ -17,7 +17,7 @@ public class TYBroodlord extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
         psychicPowers.initKammer();
@@ -27,7 +27,7 @@ public class TYBroodlord extends Eintrag {
         
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
         add(waffen);

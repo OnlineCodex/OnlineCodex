@@ -2,6 +2,8 @@ package oc.wh40k.units.or;
 
 import oc.*;
 
+import javax.xml.ws.Action;
+
 public class ORFlashGitz extends Eintrag {
 
     AnzahlPanel Gargbosse;
@@ -24,7 +26,7 @@ public class ORFlashGitz extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Kaptin");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Kaptin");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setKaptin(true);
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultNK("no weapon");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultFK("no weapon");
@@ -35,11 +37,9 @@ public class ORFlashGitz extends Eintrag {
         Boss.setAbwaehlbar(false);
 
         complete();
-
     }
 
-
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         GargbosseFK.setMaxAnzahl(Gargbosse.getModelle() / 5);
         power = 7;

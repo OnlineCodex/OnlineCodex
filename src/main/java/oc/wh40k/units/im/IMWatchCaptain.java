@@ -30,7 +30,7 @@ public class IMWatchCaptain extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
         ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Watch Captain");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));

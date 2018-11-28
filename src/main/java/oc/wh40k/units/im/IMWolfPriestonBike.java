@@ -9,10 +9,7 @@ public class IMWolfPriestonBike extends Eintrag {
     OptionsUpgradeGruppe o4;
     OptionsEinzelUpgrade oe1;
     OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 
     public IMWolfPriestonBike() {
         name = "Wolf Priest on Bike";
@@ -21,7 +18,7 @@ public class IMWolfPriestonBike extends Eintrag {
 
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Priest");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
@@ -29,10 +26,6 @@ public class IMWolfPriestonBike extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 
 }

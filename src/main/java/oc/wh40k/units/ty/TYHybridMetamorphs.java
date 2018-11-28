@@ -90,7 +90,7 @@ public class TYHybridMetamorphs extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "TYLeader", "Metamorph Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TYLeader.class, "Metamorph Leader");
 
         ((TYLeader) rkBoss.getKammer()).type = "Metamorph";
 

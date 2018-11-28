@@ -88,7 +88,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				}
 			} else {
 				for (int i = 0; i < veterans.getModelle() - numVeterans; i++) {
-					rkVeterans.add(new RuestkammerStarter(ID, randAbstand, cnt, "IMKillteamKammer", "Veteran"));
+					rkVeterans.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Veteran"));
 					((IMKillteamKammer) rkVeterans.lastElement().getKammer()).setType("Veteran");
 					rkVeterans.lastElement().initKammer();
 					rkVeterans.lastElement().setGrundkosten(getPts("Deathwatch Veterans"));
@@ -105,7 +105,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				rkSergeant.remove(rkSergeant.lastElement());
 			} else {
 				if(sergeant.getModelle() > numSergeant) {
-					rkSergeant.add(new RuestkammerStarter(ID, randAbstand, cnt, "IMKillteamKammer", "Sergeant"));
+					rkSergeant.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Sergeant"));
 					((IMKillteamKammer) rkSergeant.lastElement().getKammer()).setType("Sergeant");
 					rkSergeant.lastElement().initKammer();
 					rkSergeant.lastElement().setGrundkosten(getPts("Deathwatch Veterans"));
@@ -123,7 +123,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				rkBlackshield.remove(rkBlackshield.lastElement());
 			} else {
 				if(blackshield.getModelle() > numBlackShield) {
-					rkBlackshield.add(new RuestkammerStarter(ID, randAbstand, cnt, "IMKillteamKammer", "Blackshield"));
+					rkBlackshield.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Blackshield"));
 					((IMKillteamKammer) rkBlackshield.lastElement().getKammer()).setType("Sergeant");
 					rkBlackshield.lastElement().initKammer();
 					rkBlackshield.lastElement().setGrundkosten(getPts("Deathwatch Veterans"));
@@ -143,7 +143,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				}
 			} else {
 				for (int i = 0; i < terminator.getModelle() - numTerminators; i++) {
-					rkTerminators.add(new RuestkammerStarter(ID, randAbstand, cnt, "IMKillteamKammer", "Terminator"));
+					rkTerminators.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Terminator"));
 					((IMKillteamKammer) rkTerminators.lastElement().getKammer()).setType("Terminator");
 					rkTerminators.lastElement().initKammer();
 					rkTerminators.lastElement().setGrundkosten(getPts("Deathwatch Terminators"));
@@ -164,7 +164,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				}
 			} else {
 				for (int i = 0; i < biker.getModelle() - numBikers; i++) {
-					rkBikers.add(new RuestkammerStarter(ID, randAbstand, cnt, "IMKillteamKammer", "Biker"));
+					rkBikers.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Biker"));
 					((IMKillteamKammer) rkBikers.lastElement().getKammer()).setType("Biker");
 					rkBikers.lastElement().initKammer();
 					rkBikers.lastElement().setGrundkosten(getPts("Deathwatch Bikers"));
@@ -183,7 +183,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 				}
 			} else {
 				for (int i = 0; i < vanguard.getModelle() - numVanguards; i++) {
-					rkVanguards.add(new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "Vanguard"));
+					rkVanguards.add(new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Vanguard"));
 					((DeathWatchKammer) rkVanguards.lastElement().getKammer()).setType("Vanguard Veteran");
 					rkVanguards.lastElement().initKammer();
 					rkVanguards.lastElement().setGrundkosten(getPts("Deathwatch Vanguard Veterans"));

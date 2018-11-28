@@ -25,7 +25,7 @@ public class CHBloodcrushers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Bloodhunter");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Bloodhunter");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Bloodhunter";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Bloodhunter"));
@@ -37,13 +37,8 @@ public class CHBloodcrushers extends Eintrag {
 
     }
 
-    public void deleteYourself() {
-    }
-
-
     @Override
     public void refreshen() {
-
         power = 8 +
                 ((bloodcrushers.getModelle() == 6) ? 7 : 0) +
                 ((bloodcrushers.getModelle() == 9) ? 14 : 0) +

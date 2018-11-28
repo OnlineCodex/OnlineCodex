@@ -42,7 +42,7 @@ public class AEHowlingBanshees extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEExarch", "Exarch");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt,AEExarch.class, "Exarch");
 
         ((AEExarch) rkBoss.getKammer()).type = "Howling Banshees";
 

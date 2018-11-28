@@ -83,13 +83,13 @@ public class RuestkammerStarter extends OptionsVater {
         }
     };
 
-    public RuestkammerStarter(int ID, int lX, int lY, String kammer, String name) {
-        init(ID, lX, lY, kammer, name);
+    public RuestkammerStarter(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name) {
+        init(ID, lX, lY, cls, name);
     }
 
-    public RuestkammerStarter(int ID, int lX, int lY, String kammer, String name, int einrueckIndex) {
+    public RuestkammerStarter(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name, int einrueckIndex) {
         this.einrueckIndex = einrueckIndex;
-        init(ID, lX, lY, kammer, name);
+        init(ID, lX, lY, cls, name);
     }
 
     public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung) {
@@ -166,7 +166,7 @@ public class RuestkammerStarter extends OptionsVater {
         return this.startButton;
     }
 
-    public void init(int ID, int lX, int lY, String kammer, String name) {
+    public void init(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name) {
         this.selected = false;
         this.name = name;
         panel.setLocation(lX - 5, lY);
@@ -182,55 +182,7 @@ public class RuestkammerStarter extends OptionsVater {
         fontSetzen(false);
         panel.add(startButton);
 
-        String kammerName = BuildaHQ.formZuKlassenName(kammer);
-
-        String armyPackage = OnlineCodex.ARMY_PACKAGE;
-
-        try {
-            try {
-                myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + kammerName).newInstance();
-            } catch (Exception e) {
-                try {
-                    myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName).newInstance();
-                } catch (Exception ex2) {
-                    try {
-                        myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "fo" + "." + kammerName).newInstance();
-                    } catch (Exception ex3) {
-                        try {
-                            myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + "form" + "." + kammerName).newInstance();
-                        } catch (Exception ex4) {
-                            try {
-                                String autoRef = kammerName.substring(0, 2);
-                                LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
-                                myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
-                            } catch (Exception ex5) {
-                                try {
-                                    String autoRef = kammerName.substring(0, 3);
-                                    LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
-                                    myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
-                                } catch (Exception ex6) {
-                                    try {
-                                        String autoRef = kammerName.substring(0, 4);
-                                        LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
-                                        myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
-                                    } catch (Exception ex7) {
-                                        String autoRef = kammerName.substring(0, 6);
-                                        LOGGER.info(armyPackage + "units." + autoRef + "." + kammerName);
-                                        myKammer = (RuestkammerVater) Class.forName(armyPackage + "units." + autoRef.toLowerCase() + "." + kammerName).newInstance();
-
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-        } catch (Exception e) {
-            OnlineCodex.getInstance().fehler(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + kammerName + ".class nicht gefunden. Rüstkammer kann nicht geöffnet werden." + ZEILENUMBRUCH + "Bitte melden!");
-            LOGGER.info(kammerName + ".class nicht gefunden. Rüstkammer kann nicht geöffnet werden.");
-            LOGGER.error("", e);
-        }
+        myKammer = loadFaction(cls);
 
         myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, closeListenerAction);
         myKammer.setzteRefreshListener(ID);
@@ -251,6 +203,17 @@ public class RuestkammerStarter extends OptionsVater {
                 setLegal(legal);
             }
         });
+    }
+
+    static RuestkammerVater loadFaction(Class<? extends RuestkammerVater> cls) {
+        try {
+            return cls.getConstructor()
+                    .newInstance();
+        } catch (Exception e) {
+            OnlineCodex.getInstance().fehler(cls.getCanonicalName() + " nicht gefunden. Rüstkammer kann nicht geöffnet werden." + ZEILENUMBRUCH + "Bitte melden!");
+            LOGGER.error("could not laod RuestkammerVater " + cls, e);
+            return null;
+        }
     }
 
     public void init(int ID, int lX, int lY, RuestkammerVater abteilung) {

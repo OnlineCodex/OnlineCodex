@@ -27,7 +27,7 @@ public class CHSorcerer extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Force sword");
         ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
@@ -38,7 +38,7 @@ public class CHSorcerer extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
         psychicPowers.initKammer();

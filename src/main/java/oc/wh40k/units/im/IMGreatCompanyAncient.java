@@ -16,7 +16,7 @@ public class IMGreatCompanyAncient extends Eintrag {
         
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Great Company Ancient");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));

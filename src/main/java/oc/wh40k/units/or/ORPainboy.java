@@ -19,7 +19,7 @@ public class ORPainboy extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("Power klaw");
         waffen.initKammer(false, false, false, false, false, false, true, false);
@@ -28,11 +28,6 @@ public class ORPainboy extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-
     }
 
     @Override

@@ -12,7 +12,7 @@ public class IMTempestorPrime extends Eintrag {
         grundkosten = getPts("Tempestor Prime") + getPts("Frag grenade (AM)") + getPts("Krak grenade (AM)");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Temperstor Prime");
         kammer.initKammer();
         kammer.setButtonText("Waffen");

@@ -35,7 +35,7 @@ public class IMDeathwatchBikers extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "Biker Sergeant");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Biker Sergeant");
         ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Biker");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Biker Sergeant"));
@@ -51,11 +51,5 @@ public class IMDeathwatchBikers extends Eintrag {
         o1.setMaxAnzahl(squad.getModelle());
         o3.setMaxAnzahl(squad.getModelle());
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }
 

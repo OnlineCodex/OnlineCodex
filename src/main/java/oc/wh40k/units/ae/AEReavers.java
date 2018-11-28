@@ -64,7 +64,7 @@ public class AEReavers extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEArenaChampion", "Arena Champion");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEArenaChampion.class, "Arena Champion");
 
         rkBoss.initKammer();
 

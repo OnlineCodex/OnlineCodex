@@ -45,7 +45,7 @@ public class IMInterceptorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMJusticar", "Upgrade zum Justicar");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMJusticar.class, "Upgrade zum Justicar");
         rkBoss.initKammer();
         rkBoss.setButtonText("Upgrade zum Justicar", false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -54,7 +54,7 @@ public class IMInterceptorSquad extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
         psychicPowers.initKammer();

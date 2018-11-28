@@ -48,7 +48,7 @@ public class AEWracks extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEAcothyst", "Acothyst");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEAcothyst.class, "Acothyst");
 
         rkBoss.initKammer();
 

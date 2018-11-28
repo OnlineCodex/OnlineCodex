@@ -19,7 +19,7 @@ public class IMDeathwatchChaplain extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
         ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Chaplain");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));

@@ -25,7 +25,7 @@ public class CHBloodletters extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Bloodreaper");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Bloodreaper");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Bloodreaper";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Bloodreaper"));

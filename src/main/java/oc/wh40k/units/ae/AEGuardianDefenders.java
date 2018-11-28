@@ -42,7 +42,7 @@ public class AEGuardianDefenders extends Eintrag {
 
 
 
-        weaponPlatform1 = new RuestkammerStarter(ID, randAbstand, cnt, "AEHeavyWeaponPlatform", "Heavy weapon platform");
+        weaponPlatform1 = new RuestkammerStarter(ID, randAbstand, cnt, AEHeavyWeaponPlatform.class, "Heavy weapon platform");
 
         weaponPlatform1.initKammer();
 
@@ -54,7 +54,7 @@ public class AEGuardianDefenders extends Eintrag {
 
 
 
-        weaponPlatform2 = new RuestkammerStarter(ID, randAbstand, cnt, "AEHeavyWeaponPlatform", "Heavy weapon platform");
+        weaponPlatform2 = new RuestkammerStarter(ID, randAbstand, cnt, AEHeavyWeaponPlatform.class, "Heavy weapon platform");
 
         weaponPlatform2.initKammer();
 

@@ -12,7 +12,7 @@ public class IMPlatoonCommander extends Eintrag {
         grundkosten = getPts("Platoon Commander") + getPts("Frag grenade (AM)");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Platoon Commander");
         kammer.initKammer();
         kammer.setButtonText("Waffen");

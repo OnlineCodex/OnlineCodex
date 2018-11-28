@@ -24,7 +24,7 @@ public class ORBigMek extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
         waffen.initKammer(true, false, true, true, true, true, true, false);
         waffen.setButtonText("Waffen und Geschenke");
@@ -32,10 +32,6 @@ public class ORBigMek extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 
 }

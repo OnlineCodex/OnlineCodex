@@ -82,7 +82,7 @@ public class TYAcolyteHybrids extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "TYLeader", "Acolyte Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TYLeader.class, "Acolyte Leader");
 
         ((TYLeader) rkBoss.getKammer()).type = "Acolyte";
 

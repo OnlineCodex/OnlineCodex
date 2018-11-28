@@ -58,7 +58,7 @@ public class CHChaosSpaceMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Aspiring Champion");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Champion");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         Boss.initKammer(true, true, true, true);
         Boss.setGrundkosten(getPts("Aspiring Champion"));

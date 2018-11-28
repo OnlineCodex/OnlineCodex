@@ -19,7 +19,7 @@ public class IMSanguinaryPriest extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
         ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Sanguinary Priest");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));

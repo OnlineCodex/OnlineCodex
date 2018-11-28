@@ -21,7 +21,7 @@ public class CHFlamers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Pyrocaster");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Pyrocaster");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Pyrocaster";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Pyrocaster"));

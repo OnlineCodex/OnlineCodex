@@ -6,8 +6,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMLordKaldorDraigo extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public IMLordKaldorDraigo() {
         name = "Lord Kaldor Draigo";
         grundkosten = getPts("Lord Kaldor Draigo");
@@ -15,7 +13,7 @@ public class IMLordKaldorDraigo extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
         psychicPowers.initKammer();

@@ -34,11 +34,11 @@ public class ORMeganobzKammer extends RuestkammerVater {
 
         seperator();
 
-        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, "ORTrukkKammer", "Trukk");
+        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, ORTrukkKammer.class, "Trukk");
         PikkUp.initKammer();
         add(PikkUp);
 
-        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, "ORBattlewagonKammer", "Battlewagon");
+        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, ORFahrzeugruestkammer.class, "Battlewagon");
         Kampfpanza.initKammer();
         Kampfpanza.setSeperator(0);
         add(Kampfpanza);

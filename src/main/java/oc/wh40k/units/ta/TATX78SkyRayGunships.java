@@ -18,7 +18,7 @@ public class TATX78SkyRayGunships extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, "TATX78SkyRayKammer", "TX78 Sky Ray Gunship"));
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TATX78SkyRayKammer.class, "TX78 Sky Ray Gunship"));
             rk.lastElement().initKammer(false, false, false, false, false, false, true);
             rk.lastElement().setGrundkosten(getPts("TX78 Sky Ray Gunship") + getPts("Markerlight") * 2 + getPts("Seeker missile") * 6);
             add(rk.lastElement());

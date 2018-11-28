@@ -41,7 +41,7 @@ public class IMSwiftclaws extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Swiftclaw Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Swiftclaw Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Swiftclaw Pack Leader");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Swiftclaw Pack Leader"));
@@ -51,7 +51,7 @@ public class IMSwiftclaws extends Eintrag {
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Bike Leader");
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Bike Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Bike Leader");
         rkBoss2.initKammer();
         rkBoss2.setGrundkosten(getPts("Swiftclaws") + getPts("Twin boltgun"));

@@ -17,7 +17,7 @@ public class IMWolfLord extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Wolf Lord");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));

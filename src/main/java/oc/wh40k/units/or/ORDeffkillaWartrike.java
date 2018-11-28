@@ -19,7 +19,7 @@ public class ORDeffkillaWartrike extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
         waffen.initKammer(false, false, false, false, false, false, true, false);
@@ -28,9 +28,5 @@ public class ORDeffkillaWartrike extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

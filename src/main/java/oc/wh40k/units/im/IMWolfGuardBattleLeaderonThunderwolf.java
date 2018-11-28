@@ -12,7 +12,7 @@ public class IMWolfGuardBattleLeaderonThunderwolf extends Eintrag {
         power = 6;
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Guard Battle Leader");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));

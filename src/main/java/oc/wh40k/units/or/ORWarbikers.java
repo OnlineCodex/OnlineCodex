@@ -26,7 +26,7 @@ public class ORWarbikers extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Boss Nob");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setWarbikerBoss(true);
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultNK("no weapon");
@@ -40,7 +40,7 @@ public class ORWarbikers extends Eintrag {
 
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         sluggas.setMaxAnzahl(waaghbikaz.getModelle() - (Boss.isSelected() ? 1 : 0));
         choppas.setMaxAnzahl(waaghbikaz.getModelle() - (Boss.isSelected() ? 1 : 0));

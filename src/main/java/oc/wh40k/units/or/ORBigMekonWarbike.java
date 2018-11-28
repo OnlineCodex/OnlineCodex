@@ -20,7 +20,7 @@ public class ORBigMekonWarbike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
         waffen.initKammer(true, false, true, true, true, true, true, false);
         waffen.setButtonText("Waffen und Geschenke");

@@ -60,7 +60,7 @@ public class IMRavenwingBikeSquad extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
 
         ((IMSergeant) rkBoss.getKammer()).type = "Ravenwing Bike Squad";
 
@@ -78,7 +78,7 @@ public class IMRavenwingBikeSquad extends Eintrag {
 
 
 
-        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, "IMRavenwingAttackBikeKammer", "Ravenwing Attack Bike");
+        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, IMRavenwingAttackBikeKammer.class, "Ravenwing Attack Bike");
 
         rkTrike.initKammer();
 

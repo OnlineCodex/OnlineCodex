@@ -21,7 +21,7 @@ public class ORLootas extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Pluenderaz.gif"));
 
-        Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
+        Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner1.getKammer()).setSpanner(true);
         ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultNK("no weapon");
         ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultFK("Kustom mega-blasta");
@@ -31,7 +31,7 @@ public class ORLootas extends Eintrag {
 
         seperator();
 
-        Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
+        Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner2.getKammer()).setSpanner(true);
         ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultNK("no weapon");
         ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultFK("Kustom mega-blasta");
@@ -41,7 +41,7 @@ public class ORLootas extends Eintrag {
 
         seperator();
 
-        Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Spanner");
+        Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner3.getKammer()).setSpanner(true);
         ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultNK("no weapon");
         ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultFK("Kustom mega-blasta");

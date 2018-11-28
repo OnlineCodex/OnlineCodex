@@ -44,7 +44,7 @@ public class IMVeterans extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "Veteran Sergeant");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Veteran Sergeant");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Veteran Sergeant");
         kammer.initKammer();
         add(kammer);

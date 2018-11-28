@@ -41,7 +41,7 @@ public class IMBloodClaws extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Blood Claw Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Blood Claw Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Blood Claw Pack Leader");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Blood Claw Pack Leader"));
@@ -51,7 +51,7 @@ public class IMBloodClaws extends Eintrag {
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader");
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader");
         rkBoss2.initKammer();
         rkBoss2.setGrundkosten(getPts("Blood Claws"));
@@ -60,7 +60,7 @@ public class IMBloodClaws extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Terminator Pack Leader");
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Terminator Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour (Blood Claws)");
         rkBoss3.initKammer();
         rkBoss3.setGrundkosten(getPts("Wolf Guard Terminator Pack Leader"));

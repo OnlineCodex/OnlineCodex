@@ -21,7 +21,7 @@ public class TAKV128Stormsurge extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, "TAKV128Stormsurgekammer", "KV128 Stormsurge"));
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAKV128Stormsurgekammer.class, "KV128 Stormsurge"));
             rk.lastElement().initKammer(false, false, false, false, false, false, true);
             rk.lastElement().setGrundkosten(getPts("KV128 Stormsurge") + getPts("Cluster rocket system") + getPts("Destroyer missile") * 4 + getPts("Smart missile system") * 2);
             add(rk.lastElement());

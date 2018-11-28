@@ -39,7 +39,7 @@ public class IMScoutSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Scout Squad";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Sergeant"));

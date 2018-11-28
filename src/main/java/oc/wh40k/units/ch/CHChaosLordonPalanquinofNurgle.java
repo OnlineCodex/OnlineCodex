@@ -20,7 +20,7 @@ public class CHChaosLordonPalanquinofNurgle extends Eintrag {
 
         complete();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Chainsword");
         ((CHWaffenkammer) waffen.getKammer()).setChampion(true);

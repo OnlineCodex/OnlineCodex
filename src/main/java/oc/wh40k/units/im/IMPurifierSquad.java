@@ -45,7 +45,7 @@ public class IMPurifierSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMJusticar", "Knight of the Flame");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMJusticar.class, "Knight of the Flame");
         rkBoss.initKammer();
         rkBoss.setButtonText("Upgrade zum Knight of the Flame", false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -54,7 +54,7 @@ public class IMPurifierSquad extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
         psychicPowers.initKammer();

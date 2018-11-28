@@ -15,7 +15,7 @@ public class TYThornbacks extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Thornback");
+        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
         ((TYRuestkammer) ob1.getKammer()).setType("Thornback");
         ob1.initKammer();
         add(ob1);
@@ -24,7 +24,7 @@ public class TYThornbacks extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Thornback");
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
         ((TYRuestkammer) ob2.getKammer()).setType("Thornback");
         ob2.initKammer();
         ob2.setGrundkosten(getPts("Thornbacks"));
@@ -32,7 +32,7 @@ public class TYThornbacks extends Eintrag {
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Thornback");
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
         ((TYRuestkammer) ob3.getKammer()).setType("Thornback");
         ob3.initKammer();
         ob3.setGrundkosten(getPts("Thornbacks"));

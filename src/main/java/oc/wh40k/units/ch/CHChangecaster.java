@@ -25,7 +25,7 @@ public class CHChangecaster extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
         psychicPowers.initKammer();

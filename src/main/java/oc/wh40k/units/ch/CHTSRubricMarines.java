@@ -40,7 +40,7 @@ public class CHTSRubricMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Aspiring Sorcerer");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Sorcerer");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         ((CHWaffenkammer) Boss.getKammer()).setSorcerer(true);
         ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Inferno bolt pistol");
@@ -54,7 +54,7 @@ public class CHTSRubricMarines extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableChange();
         psychicPowers.initKammer();

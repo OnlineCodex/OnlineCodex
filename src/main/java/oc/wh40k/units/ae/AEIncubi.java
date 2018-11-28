@@ -38,7 +38,7 @@ public class AEIncubi extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEKlaivex", "Klaivex");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEKlaivex.class, "Klaivex");
 
         rkBoss.initKammer();
 

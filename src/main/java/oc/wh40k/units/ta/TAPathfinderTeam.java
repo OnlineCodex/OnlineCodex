@@ -40,7 +40,7 @@ public class TAPathfinderTeam extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "TAInfanterieKammer", "Upgrade zum Shas'ui");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TAInfanterieKammer.class, "Upgrade zum Shas'ui");
         rkBoss.initKammer(false, false, true);
         rkBoss.setGrundkosten(0);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

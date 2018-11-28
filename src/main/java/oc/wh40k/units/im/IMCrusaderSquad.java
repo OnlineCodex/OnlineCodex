@@ -59,7 +59,7 @@ public class IMCrusaderSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sword Brother");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sword Brother");
         ((IMSergeant) rkBoss.getKammer()).type = "Crusader Squad";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Sword Brother"));

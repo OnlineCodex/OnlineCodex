@@ -15,7 +15,7 @@ public class IMMasterinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceMarinesRuestkammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
         ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain in Terminator Armour");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
@@ -23,9 +23,5 @@ public class IMMasterinTerminatorArmour extends Eintrag {
         waffenUndReliquien.setAbwaehlbar(false);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

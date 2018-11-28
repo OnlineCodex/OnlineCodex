@@ -12,7 +12,7 @@ public class IMPrimarisWolfLord extends Eintrag {
         power = 7;
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Wolf Lord");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));

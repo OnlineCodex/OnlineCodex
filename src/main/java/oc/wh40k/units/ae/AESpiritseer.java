@@ -32,7 +32,7 @@ public class AESpiritseer extends Eintrag {
 
 
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
 
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
 

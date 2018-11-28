@@ -43,7 +43,7 @@ public class IMWolfGuardTartarosTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Tartaros Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Tartaros Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).type = "Wolf Guard Tartaros Pack Leader";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Wolf Guard Tartaros Pack Leader"));
