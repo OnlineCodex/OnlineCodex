@@ -1,136 +1,104 @@
 package oc;
 
-import java.util.Vector;
+import com.google.common.collect.ImmutableList;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import static java.util.Comparator.comparing;
+import static java.util.Objects.requireNonNull;
 
 
-public abstract class RefreshListener {
+public final class RefreshListener implements Runnable {
 
+    public enum Priority {
+        ANZAHL_PANEL,
+        OPTIONS_COLLECTION,
+        RUESTKAMMER_VATER,
+        RUESTKAMMER_STARTER,
+        EINTRAG,
+        CHOOSER,
+        CHOOSER_GRUPPE,
+        BUILDA_VATER,
+        ONLINE_CODEX,
+    }
 
-    final static int reihenfolgeMin = 0;
-    final static int reihenfolgeMax = 15;
-    static Vector<RefreshListener> listener = new Vector<RefreshListener>();
-    static private int IDcnt = 0;
-    byte reihenfolge; // wann das aktuelle Object drankommt. von reihenfolgeMin bis reihenfolgeMax, reihenfolgeMin ist als erstes dran, reihenfolgeMax als letztes
+    private static final Logger LOGGER = LoggerFactory.getLogger(RefreshListener.class);
+    private static final List<RefreshListener> LISTENERS = new LinkedList<>();
+    private static final AtomicInteger NEXT_ID = new AtomicInteger(0);
 
-//	OnlineCodex oc;
-    private int ID;
+    private final Priority priority;
+    private final int id;
+    private final Runnable action;
 
-    public RefreshListener(byte reihenfolge) { // neue ID
+    private RefreshListener(Priority priority, int id, Runnable action) {
+        this.priority = requireNonNull(priority, "priority");
+        this.id = id;
+        this.action = requireNonNull(action, "action");
+    }
 
-        if (reihenfolge < reihenfolgeMin || reihenfolge > reihenfolgeMax) {
-            throw new IllegalArgumentException("Bytewert außerhalb des Bereiches");
+    public Priority getPriority() {
+        return priority;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void run() {
+        action.run();
+    }
+
+    public static RefreshListener addRefreshListener(Priority priority, Runnable action) {
+        // must check arguments before incrementing NEXT_ID
+        requireNonNull(priority, "priority");
+        requireNonNull(action, "action");
+        return addRefreshListener(priority, NEXT_ID.getAndIncrement(), action);
+    }
+
+    public static RefreshListener addRefreshListener(Priority priority, int id, Runnable action) {
+        RefreshListener listener = new RefreshListener(priority, id, action);
+        synchronized (LISTENERS) {
+            LISTENERS.add(listener);
         }
-
-        this.reihenfolge = reihenfolge;
-
-
-        addRefreshListener(this);
-
-        this.ID = IDcnt++;
-
+        return listener;
     }
 
-//	public void setOC(OnlineCodex oc){
-//		this.oc = oc;
-//	}
-
-    public RefreshListener(byte reihenfolge, int id) { // selbe ID wie ein anderer Listener. Wenn einer von beiden RefreshListener.remove(myID) macht, werden beide removed...
-
-        if (reihenfolge < reihenfolgeMin || reihenfolge > reihenfolgeMax) {
-            throw new IllegalArgumentException("Bytewert außerhalb des Bereiches");
-        }
-
-        this.reihenfolge = reihenfolge;
-
-
-        addRefreshListener(this);
-
-        this.ID = id;
-
-    }
-
-    public static void addRefreshListener(RefreshListener rl) {
-
-        listener.addElement(rl);
-    }
-
-    public static void remove(RefreshListener rl) {
-
-        for (int i = 0; i < listener.size(); ++i) {
-
-            if (listener.elementAt(i) == rl) {
-
-                listener.remove(i);
-            }
+    public static void remove(RefreshListener listener) {
+        synchronized (LISTENERS) {
+            LISTENERS.remove(listener);
         }
     }
 
     public static void remove(int id) {
-
-        for (int i = 0; i < listener.size(); ++i) {
-
-            if (listener.elementAt(i).ID == id) {
-
-                listener.remove(i);
-            }
+        synchronized (LISTENERS) {
+            LISTENERS.removeIf(l -> l.getId() == id);
         }
     }
 
     public static void removeAll() {
-
-        listener.removeAllElements();
-    }
-
-    public static void fireRefresh() {
-
-        for (int reihenfolgeIndex = reihenfolgeMin; reihenfolgeIndex <= reihenfolgeMax; ++reihenfolgeIndex) {
-            //LOGGER.info("reihenfolgeIndex: "+reihenfolgeIndex);
-            for (int i = 0; i < listener.size(); ++i) {
-
-                if (listener.elementAt(i).reihenfolge == reihenfolgeIndex) {
-                    //	LOGGER.info("(vor) listener.elementAt(i).refresh():"+i);
-                    listener.elementAt(i).refresh();
-                    //LOGGER.info("(nach) listener.elementAt(i).refresh():"+i);
-                }
-            }
-            //LOGGER.info("refresh fertig");
+        synchronized (LISTENERS) {
+            LISTENERS.clear();
         }
     }
 
-    public int getID() {
-        return this.ID;
+    private static List<RefreshListener> copyListeners() {
+        synchronized (LISTENERS) {
+            return ImmutableList.copyOf(LISTENERS);
+        }
     }
 
-
-
-
-
-/*  So ist die aktuelle Index-Reihenfolge:
-
-		0.OC akt Pos
-
-		1. AnzahlPanel
-
-		3. OptionsCollection
-
-		4. RuestkammerVater
-
-		5. OptionsRuestkammerStarterGruppe  // noch in Arbeit...
-
-		6. RuestkammerStarter // nur fürn angezeigten Text, deswegen so hoch...
-
-		7. Eintrag
-
-		9. Chooser
-
-		11. ChooserGruppe
-
-		13. BuildaVater
-
-		15. OnlineCodex
-
-*/
-
-    public abstract void refresh();
+    public static void fireRefresh() {
+        List<RefreshListener> refreshListeners = copyListeners();
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("firefing {} refreshlisteners", refreshListeners.size());
+        }
+        refreshListeners.stream()
+                .sorted(comparing(RefreshListener::getPriority))
+                .forEach(Runnable::run);
+    }
 
 }

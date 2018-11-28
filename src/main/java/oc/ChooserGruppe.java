@@ -12,6 +12,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.CHOOSER_GRUPPE;
+import static oc.RefreshListener.addRefreshListener;
+
 public class ChooserGruppe extends BuildaPanel {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ChooserGruppe.class);
@@ -64,14 +67,11 @@ public class ChooserGruppe extends BuildaPanel {
         adden(c);
         überschriftLabelSetzen();
 
-        new RefreshListener((byte) 11) {
-            public void refresh() {
-                chooserLocationCheck();
-                überschriftLabelSetzen();
-                panel.repaint(); // damit es keine überlappenden Einträge beim Eintrags-Wechsel gibt, wenn beide genau gleichgroß sind. Also wichtig!!
-
-            }
-        };
+        addRefreshListener(CHOOSER_GRUPPE, () -> {
+            chooserLocationCheck();
+            überschriftLabelSetzen();
+            panel.repaint(); // damit es keine überlappenden Einträge beim Eintrags-Wechsel gibt, wenn beide genau gleichgroß sind. Also wichtig!!
+        });
 
         BuildaHQ.registerNewChooserGruppe(this, kategorie);
     }

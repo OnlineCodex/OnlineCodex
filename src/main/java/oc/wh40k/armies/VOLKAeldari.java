@@ -4,6 +4,7 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
 
@@ -11,12 +12,10 @@ import java.io.InputStream;
 public class VOLKAeldari extends BuildaVater {
 
     public VOLKAeldari() {
+        super(ResourceUtils.loadPoints(
+                "/oc/wh40k/indices/ae.yaml",
+                "/oc/wh40k/indices/de.yaml"));
         reflectionKennung = "AE";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ae.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
-
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/de.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

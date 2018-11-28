@@ -11,6 +11,9 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.CHOOSER;
+import static oc.RefreshListener.addRefreshListener;
+
 public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Chooser.class);
@@ -86,12 +89,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         cloneButton.repaint();
         panel.repaint();
 
-        new RefreshListener((byte) 9) {
-            @Override
-            public void refresh() {
-                sizeSetzen();
-            }
-        };
+        addRefreshListener(CHOOSER, this::sizeSetzen);
     }
 
     public int getKategorie() {

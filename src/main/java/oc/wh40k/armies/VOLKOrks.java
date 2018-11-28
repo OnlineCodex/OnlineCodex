@@ -3,16 +3,16 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
 
 public class VOLKOrks extends BuildaVater {
 
     public VOLKOrks() {
+        super(ResourceUtils.loadPoints("/oc/wh40k/indices/or.yaml"));
 
         reflectionKennung = "OR";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/or.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

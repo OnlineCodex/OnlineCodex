@@ -2,6 +2,9 @@ package oc;
 
 import javax.swing.*;
 
+import static oc.RefreshListener.Priority.EINTRAG;
+import static oc.RefreshListener.addRefreshListener;
+
 
 public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
 
@@ -12,14 +15,10 @@ public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
         panel.setBorder(blackBorder);
         panel.setLayout(null);
 
-
-        @SuppressWarnings("unused")
-        RefreshListener rl = new RefreshListener((byte) 7) {
-            public void refresh() {
-                refreshen();
-                panel.setSize(getBreite(), getHöhe());
-            }
-        };
+        addRefreshListener(EINTRAG, () -> {
+            refreshen();
+            panel.setSize(getBreite(), getHöhe());
+        });
     }
 
     @Override

@@ -3,6 +3,7 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -57,13 +58,10 @@ public class VOLKTauEmpire extends BuildaVater {
     private static final String[] Sturmeinträge_Vespid = new String[]{"", "Vespid Stingwings"};
 
     public VOLKTauEmpire() {
+        super(ResourceUtils.loadPoints(
+                "/oc/wh40k/indices/ta.yaml",
+                "oc/wh40k/indices/taaa.yaml"));
         reflectionKennung = "TA";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ta.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
-
-        LOGGER.error("File: " + "/oc/wh40k/indices/taaa.csv");
-        is = this.getClass().getResourceAsStream("/oc/wh40k/indices/taaa.csv");
-        appendPointList(BuildaHQ.loadindexFile(is));
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

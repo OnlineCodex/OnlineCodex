@@ -7,6 +7,9 @@ import javax.swing.*;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.OPTIONS_COLLECTION;
+import static oc.RefreshListener.addRefreshListener;
+
 public abstract class OptionsCollection extends BuildaPanel {
 
     protected Vector<OptionsVater> optionen = new Vector<OptionsVater>();
@@ -18,14 +21,11 @@ public abstract class OptionsCollection extends BuildaPanel {
     protected int cnt = randAbstand;
     protected int ID; // wichtig!
     boolean überschriftSetzen = false;
+    protected BuildaVater buildaVater;
 
 
     public OptionsCollection() { // zum verschieben der Rüstkammerstarter. Wenn der Eintrag selber in refresh sowas macht, ist das gültig, weil es schließlich NACH dem hier passiert (siehe reihenfolge bei RefreshListener)
-        new RefreshListener((byte) 3) {
-            public void refresh() {
-                aktualisiereKammerStarterLocation();
-            }
-        };
+        addRefreshListener(OPTIONS_COLLECTION, this::aktualisiereKammerStarterLocation);
     }
 
     public int getID() {
@@ -220,5 +220,34 @@ public abstract class OptionsCollection extends BuildaPanel {
     public abstract int getBreite();
 
     public abstract String getText();
+
+    public BuildaVater checkBuildaVater() {
+        if (buildaVater == null) {
+            buildaVater = BuildaHQ.aktBuildaVater;
+        }
+        return buildaVater;
+    }
+
+    protected int getPts(String key) {
+        return checkBuildaVater().getPts(key);
+    }
+
+    public void addToInformationVector(String s, int count) { // um wieviel der key s erhöht/vermindert wird
+        checkBuildaVater();
+
+        if (buildaVater != null) {
+            buildaVater.addToInformationVector(s, count);
+        }
+    }
+
+    public int getCountFromInformationVector(String s) {
+        checkBuildaVater();
+
+        if (buildaVater != null) {
+            return buildaVater.getCountFromInformationVector(s);
+        } else {
+            return 0;
+        }
+    }
 
 }

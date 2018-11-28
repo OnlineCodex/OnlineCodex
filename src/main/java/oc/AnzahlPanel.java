@@ -8,6 +8,9 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 
+import static oc.RefreshListener.Priority.ANZAHL_PANEL;
+import static oc.RefreshListener.addRefreshListener;
+
 public class AnzahlPanel extends OptionsVater implements KeyListener {
 
     private int minModelle;
@@ -137,12 +140,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         this.panel.setLocation(lX, lY);
         tModelle.addKeyListener(this);
 
-        new RefreshListener((byte) 1, ID) {
-            @Override
-            public void refresh() {
-                control();
-            }
-        };
+        addRefreshListener(ANZAHL_PANEL, ID, this::control);
     }
 
     public void produceButtons() {

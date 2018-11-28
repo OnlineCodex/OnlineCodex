@@ -1,11 +1,16 @@
 package oc;
 
+import oc.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.StringTokenizer;
+
+import static oc.RefreshListener.Priority.EINTRAG;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.utils.ResourceUtils.sanitzeKey;
 
 public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
@@ -24,7 +29,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     protected boolean unikatFehler;
     protected boolean gesamtpunkteImmerAnzeigen = false; //Um bei einigen Einheiten bei der Auswahl von alle Punkte zu verhinern, dass keine Gesamtpunkte angezeigt werden.
     protected boolean ally = false;
-    protected BuildaVater buildaVater;
     protected int power = 0;
     protected OptionsButtonUpgrade chosenRelic = null;
     protected boolean uniqueError = false;
@@ -51,10 +55,10 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         unikatName = this.getClass().getName();
 
         oc.BuildaHQ.addToInformationVectorGlobal(unikatName, 1);
+        this.ID = addRefreshListener(EINTRAG, this::refreshEintrag).getId();
+    }
 
-        RefreshListener rl = new RefreshListener((byte) 7) {
-            @Override
-            public void refresh() {
+    private void refreshEintrag() {
                 refreshen();
                 uniqueError = false;
                 chosenRelic = null;
@@ -99,21 +103,16 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                     setFehlermeldung(getFehlermeldung());
                 }
 
-                if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
+                if (unikat && BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
                     setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
                 } else {
                 	setFehlermeldung(getFehlermeldung());
                 }
-                
+
                 kostenLabelAktualisieren();
                 panel.setSize(getBreite(), getHöhe());
                 lKosten.setLocation(278, getHöhe() - 20);
                 legalerEintragLabel.setLocation(278, getHöhe() - 40);
-
-            }
-        };
-
-        this.ID = rl.getID();
     }
 
     public void setBuildaVater(BuildaVater buildaVater) {
@@ -133,8 +132,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         }
     }
 
-    protected void updatePosition(OptionsVater ov1, OptionsVater ov2, int seperator) {
-        ov1.getPanel().setLocation(ov1.getPanel().getX(), ov2.getPanel().getY() + ov2.getPanel().getHeight() + seperator);
+    public int getPower() {
+        return power;
     }
 
     /**
@@ -366,55 +365,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         return false;
     }
 
-    public void addToInformationVector(String s, int count) { // um wieviel der key s erhöht/vermindert wird
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            buildaVater.addToInformationVector(s, count);
-        }
-    }
-
-    public int getCountFromInformationVector(String s) {
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            return buildaVater.getCountFromInformationVector(s);
-        } else {
-            return 0;
-        }
-    }
-
     public void setInformationVectorValue(String s, int value) {
-        checkBuildaVater();
-
-        if (buildaVater != null) {
-            buildaVater.setInformationVectorValue(s, value);
-        }
+        checkBuildaVater().setInformationVectorValue(s, value);
     }
-
-    public int getPower() {
-        return power;
-    }
-
-    public int getPts(String s) {
-        checkBuildaVater();
-
-        s = s.replaceAll(" ", "");
-        s = s.replaceAll("-", "");
-        s = s.toLowerCase();
-
-        if (buildaVater.pointValues.get(s) == null) {
-            LOGGER.error("getPts - " + s);
-            return 0;
-        } else {
-            return buildaVater.pointValues.get(s);
-        }
-    }
-
-    public void checkBuildaVater() {
-        if (buildaVater == null) {
-            buildaVater = BuildaHQ.aktBuildaVater;
-        }
-    }
-
 }

@@ -12,6 +12,9 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Vector;
 
+import static oc.RefreshListener.Priority.BUILDA_VATER;
+import static oc.RefreshListener.addRefreshListener;
+
 public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BuildaTextArea.class);
@@ -142,11 +145,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             panel.add(fehlerLabel);
 
             armeelistenFormatAnpassen(true);
-            new RefreshListener((byte) 13) {
-                public void refresh() {
-                    textAreaRefresh();
-                }
-            };
+            addRefreshListener(BUILDA_VATER, this::textAreaRefresh);
         }
     }
 

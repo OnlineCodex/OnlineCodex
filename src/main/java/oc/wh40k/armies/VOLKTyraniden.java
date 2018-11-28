@@ -8,16 +8,16 @@ import java.io.InputStream;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
+import oc.utils.ResourceUtils;
 
 public class VOLKTyraniden extends BuildaVater {
 
     Set<String> HIVEFLEETS = ImmutableSet.of("Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
 	
     public VOLKTyraniden() {
+        super(ResourceUtils.loadPoints( "/oc/wh40k/indices/ty.yaml"));
 
         reflectionKennung = "TY";
-        InputStream is = this.getClass().getResourceAsStream("/oc/wh40k/indices/ty.csv");
-        pointValues = BuildaHQ.loadindexFile(is);
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
