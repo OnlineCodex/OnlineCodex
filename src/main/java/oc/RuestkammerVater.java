@@ -15,15 +15,11 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
     protected int cntX = randAbstand;
     protected boolean legal = true;
-    protected String goliath = "Goliath";
-    protected String orlock = "Orlock";
-    protected String vansaar = "vanSaar";
-    protected String cawdor = "Cawdor";
-    protected String delaque = "Delaque";
-    protected String escher = "Escher";
     protected BuildaVater buildaVater;
     protected OptionsButtonUpgrade chosenRelic = null;
     boolean uniqueError = false;
+    public boolean warlordError = false;
+    public boolean warlord = false;
     private JButton ok = new JButton("OK");
     private JLabel error = new JLabel();
     private JFrame frame = new JFrame();
@@ -92,13 +88,13 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
                     if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
                         chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
                         if (chosenRelic != null) {
-                            uniqueError = chosenRelic.uniqueError;
+                            uniqueError = chosenRelic.hasUniqueError();
                             break;
                         }
                     } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
                         chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
                         if (chosenRelic != null) {
-                            uniqueError = chosenRelic.uniqueError;
+                            uniqueError = chosenRelic.hasUniqueError();
                             break;
                         }
                     }
@@ -120,7 +116,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
                         }
                     }
                 }
-
 
                 refreshen();
 
