@@ -5,8 +5,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORMek extends Eintrag {
-
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     boolean megaBool = false;
 
@@ -30,7 +30,25 @@ public class ORMek extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
+
+
+    @Override
+    public void refreshen() {
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
+    }
+
 }

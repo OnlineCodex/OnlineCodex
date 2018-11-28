@@ -10,6 +10,7 @@ public class ORRuntherd extends Eintrag {
     OptionsUpgradeGruppe o1 = null;
     OptionsUpgradeGruppe o2 = null;
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     public ORRuntherd() {
         kategorie = 1;
@@ -42,6 +43,14 @@ public class ORRuntherd extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
@@ -54,6 +63,11 @@ public class ORRuntherd extends Eintrag {
         } else {
         	setFehlermeldung("");
         }
+        
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
     
     @Override
