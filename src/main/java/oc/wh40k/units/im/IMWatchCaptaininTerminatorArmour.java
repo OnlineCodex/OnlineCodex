@@ -21,7 +21,7 @@ public class IMWatchCaptaininTerminatorArmour extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
         ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Watch Captain in Terminator Armour");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
@@ -32,16 +32,4 @@ public class IMWatchCaptaininTerminatorArmour extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void deleteYourself() {
-
-        super.deleteYourself();
-    }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

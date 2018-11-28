@@ -54,7 +54,7 @@ public class AEScourges extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AESolarite", "Solarite");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AESolarite.class, "Solarite");
 
         rkBoss.initKammer();
 

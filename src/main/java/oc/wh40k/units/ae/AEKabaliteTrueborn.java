@@ -66,7 +66,7 @@ public class AEKabaliteTrueborn extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEDracon", "Dracon");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEDracon.class, "Dracon");
 
         rkBoss.initKammer();
 

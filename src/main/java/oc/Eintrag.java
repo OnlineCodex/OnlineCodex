@@ -296,7 +296,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         lKosten.setText((BuildaHQ.getSprache() == Sprache.English ? "    " : "") + BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte"));
     }
 
-    public abstract void refreshen();
+    public void refreshen() {}
 
     @Override
     public int getBreite() {

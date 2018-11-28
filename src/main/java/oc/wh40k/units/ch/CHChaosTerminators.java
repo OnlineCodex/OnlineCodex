@@ -64,7 +64,7 @@ public class CHChaosTerminators extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Terminator Champion");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Terminator Champion");
         ((CHWaffenkammer) Boss.getKammer()).setTerminatorArmour(true);
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Combi-bolter");

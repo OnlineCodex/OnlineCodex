@@ -15,7 +15,7 @@ public class TYNeurotrophe extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
         psychicPowers.initKammer();
@@ -25,7 +25,7 @@ public class TYNeurotrophe extends Eintrag {
         
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
         add(waffen);
@@ -36,7 +36,6 @@ public class TYNeurotrophe extends Eintrag {
     }
 
     @Override
-
     public void refreshen() {
     	waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),

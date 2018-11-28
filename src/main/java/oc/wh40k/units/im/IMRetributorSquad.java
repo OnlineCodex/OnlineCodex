@@ -29,7 +29,7 @@ public class IMRetributorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMPrioris", "Upgrade zur Prioris");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
         ((IMPrioris) rkBoss.getKammer()).type = "Sister Superior";
         rkBoss.initKammer(true);
         add(rkBoss);

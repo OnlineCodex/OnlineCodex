@@ -62,7 +62,7 @@ public class AEKabaliteWarriors extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AESybarite", "Sybarite");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AESybarite.class, "Sybarite");
 
         rkBoss.initKammer();
 

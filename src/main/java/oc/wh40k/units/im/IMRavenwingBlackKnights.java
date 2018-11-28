@@ -46,7 +46,7 @@ public class IMRavenwingBlackKnights extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMRavenwingHuntmaster", "Ravenwing Huntmaster");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMRavenwingHuntmaster.class, "Ravenwing Huntmaster");
 
         rkBoss.initKammer();
 

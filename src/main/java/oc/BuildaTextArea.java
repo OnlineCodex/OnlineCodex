@@ -209,10 +209,10 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             bV = myBuildaVaterVec.get(k);
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
             if (bV.superformation != null) {
-                if (bV.reflectionKennungLokal.equals("SM")) {
-                } else if (bV.reflectionKennungLokal.equals("AM")) {
+                if (bV.getId().equals("SM")) {
+                } else if (bV.getId().equals("AM")) {
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
-                } else if (bV.reflectionKennungLokal.equals("TA")) {
+                } else if (bV.getId().equals("TA")) {
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
                 } else {
                     text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
@@ -248,13 +248,13 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                         BuildaVater bV1 = myBuildaVaterVec.get(i);
                         for (int j = 0; j < myBuildaVaterVec.size(); j++) {
                             BuildaVater bV2 = myBuildaVaterVec.get(j);
-                            if (bV1.battleBrothers.contains(bV2.reflectionKennungLokal)) {
+                            if (bV1.battleBrothers.contains(bV2.getId())) {
                                 waffenbrueder = true;
-                            } else if (bV1.alliesOfConvenience.contains(bV2.reflectionKennungLokal)) {
+                            } else if (bV1.alliesOfConvenience.contains(bV2.getId())) {
                                 zweckbuendnis = true;
-                            } else if (bV1.desperateAllies.contains(bV2.reflectionKennungLokal)) {
+                            } else if (bV1.desperateAllies.contains(bV2.getId())) {
                                 verzweifelt = true;
-                            } else if (bV1.comeTheApocalypse.contains(bV2.reflectionKennungLokal)) {
+                            } else if (bV1.comeTheApocalypse.contains(bV2.getId())) {
                                 niemals = true;
                             }
                         }
@@ -313,7 +313,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         StringBuilder text = new StringBuilder();
             if (bV.getKontingentTyp().startsWith("Alliiertes Kontingent")) {
                 String ordenLokal = "";
-                if (bV.reflectionKennungLokal.equals("SM")) {
+                if (bV.getId().equals("SM")) {
                     if (bV.getCountFromInformationVector("SMUltramarines") > 0) {
                         ordenLokal = "SMUltramarines";
                     } else if (bV.getCountFromInformationVector("SMWhiteScars") > 0) {
@@ -357,7 +357,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                     ordenLokal = "";
                 }
                 if (orden.equals(ordenLokal)) {
-                    triedAllies.add(bV.reflectionKennungLokal);
+                    triedAllies.add(bV.getId());
                 }
             }
             text.append(/*bV.volk + " " +*/ bV.getFormationType());
@@ -367,7 +367,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 noAllies = (Vector<String>) bV.noAllies.clone();
 
                 text.append(" (Hauptkontingent)");
-                if (bV.reflectionKennungLokal.equals("SM")) {
+                if (bV.getId().equals("SM")) {
                     if (bV.getCountFromInformationVector("SMUltramarines") > 0) {
                         orden = "SMUltramarines";
                     } else if (bV.getCountFromInformationVector("SMWhiteScars") > 0) {

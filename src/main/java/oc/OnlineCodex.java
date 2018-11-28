@@ -515,7 +515,7 @@ public class OnlineCodex extends BuildaPanel {
         String s = "";
         for (int i = 0; i < myBuilderz.size(); i++) {
             s += tab.getTitleAt(i + 1) + SAVETEXT_UEBERSCHRIFTTRENNER2 +
-                    (myBuilderz.get(i).getReflectionKennung().equals("CM") ? myBuilderz.get(i).supplementBox.getSelectedItem() : myBuilderz.get(i).kontingentBox.getSelectedItem()) + SAVETEXT_DETACHMENTTYPTRENNER1 +
+                    (myBuilderz.get(i).getId().equals("CM") ? myBuilderz.get(i).supplementBox.getSelectedItem() : myBuilderz.get(i).kontingentBox.getSelectedItem()) + SAVETEXT_DETACHMENTTYPTRENNER1 +
                     myBuilderz.get(i).formationBox.getSelectedItem() + SAVETEXT_DETACHMENTTYPTRENNER2 +
                     (myBuilderz.get(i).Hauptkontingent.isSelected() ? "y" : "n") + SAVETEXT_DETACHMENTTYPTRENNER3 +
                     myBuilderz.get(i).getSaveText() + SAVETEXT_DETACHMENTTRENNER;
@@ -625,7 +625,7 @@ public class OnlineCodex extends BuildaPanel {
                         raukaan = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_RAUKAAN));
                     }
                     if (!kontingent.equals("")) {
-                        if (myBuilderz.get(i).getReflectionKennung().equals("CM")) {
+                        if (myBuilderz.get(i).getId().equals("CM")) {
                             myBuilderz.get(i).supplementBox.setSelectedItem(kontingent);
                         } else {
                             myBuilderz.get(i).kontingentBox.setSelectedItem(kontingent);
@@ -733,14 +733,12 @@ public class OnlineCodex extends BuildaPanel {
         JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
         int index = sourceTabbedPane.getSelectedIndex();
 
-        //System.out.println("Tab changed to: " + index +":"+sourceTabbedPane.getTitleAt(index));
         if (index != 0) {
             BuildaVater bV = myBuilderz.get(index - 1);
             for (int i = 0; i < bV.getChooserAnzahl(); i++) {
                 BuildaHQ.registerNewChooserGruppe(bV.getChooserGruppe(i), i + 1);
             }
             BuildaHQ.aktBuildaVater = bV;
-            reflectionKennung = bV.reflectionKennungLokal;
         }
     }
 

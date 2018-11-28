@@ -54,7 +54,7 @@ public class AEHekatrixBloodbrides extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AESyren", "Syren");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AESyren.class, "Syren");
 
         rkBoss.initKammer();
 

@@ -6,8 +6,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMGrandMasterVoldus extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public IMGrandMasterVoldus() {
         name = "Grand Master Voldus";
         grundkosten = getPts("Grand Master Voldus");
@@ -15,7 +13,7 @@ public class IMGrandMasterVoldus extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
         ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
         psychicPowers.initKammer();

@@ -17,7 +17,7 @@ public class ORPainboyonWarbike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("Power klaw");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);

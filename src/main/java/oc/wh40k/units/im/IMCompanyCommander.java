@@ -12,7 +12,7 @@ public class IMCompanyCommander extends Eintrag {
         grundkosten = getPts("Company Commander") + getPts("Frag grenade (AM)");
         power = 3;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Company Commander");
         kammer.initKammer();
         kammer.setButtonText("Waffen");

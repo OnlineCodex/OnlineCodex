@@ -46,7 +46,7 @@ public class CHChaosCultists extends Eintrag {
 
         seperator();
 
-        champion = new RuestkammerStarter(ID, randAbstand, cnt, "CHCultistkammer", "Champion");
+        champion = new RuestkammerStarter(ID, randAbstand, cnt, CHCultistkammer.class, "Champion");
         champion.initKammer(false);
         champion.setUeberschriftTrotzNullKostenAusgeben(true);
         champion.setGrundkosten(getPts("Cultist Champion"));

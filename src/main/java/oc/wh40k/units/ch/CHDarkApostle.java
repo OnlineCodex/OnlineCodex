@@ -21,7 +21,7 @@ public class CHDarkApostle extends Eintrag {
 
         complete();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Power maul");
         waffen.initKammer(false, true, false, false);

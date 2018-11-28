@@ -40,7 +40,7 @@ public class ORBoyz extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "Boss Nob");
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Boss Nob");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setBoyBoss(true);
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultNK("no weapon");

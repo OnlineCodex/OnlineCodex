@@ -33,7 +33,7 @@ public class IMBikeSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Bike Squad";
         rkBoss.initKammer();
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -42,7 +42,7 @@ public class IMBikeSquad extends Eintrag {
 
         seperator();
 
-        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, "IMTrikeKammer", "Attack Bike");
+        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, IMTrikeKammer.class, "Attack Bike");
         rkTrike.initKammer();
         add(rkTrike);
 

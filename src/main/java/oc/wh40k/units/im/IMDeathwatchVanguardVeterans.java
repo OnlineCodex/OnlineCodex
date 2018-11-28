@@ -27,7 +27,7 @@ public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
         rk = new Vector<RuestkammerStarter>();
 
         for (int i = 0; i < 10; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "Vanguard Veteran"));
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Vanguard Veteran"));
             ((DeathWatchKammer) rk.get(i).getKammer()).setType("Vanguard Veteran");
             rk.lastElement().initKammer();
             rk.lastElement().setGrundkosten(getPts("Vanguard Veteran Squad with Jump Packs"));

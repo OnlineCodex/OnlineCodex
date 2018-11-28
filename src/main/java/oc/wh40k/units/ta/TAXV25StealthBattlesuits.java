@@ -32,14 +32,14 @@ public class TAXV25StealthBattlesuits extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TAShasvreKammer", "Stealth Shas'vre");
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TAShasvreKammer.class, "Stealth Shas'vre");
         ob2.initKammer(true, true);
         ob2.setGrundkosten(getPts("XV25 Stealth Battlesuit"));
         ob2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(ob2);
 
         for (int i = 0; i < geister.length; ++i) {
-            geister[i] = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Stealth Shas'ui");
+            geister[i] = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Stealth Shas'ui");
 
             geister[i].setGrundkosten(getPts("XV25 Stealth Battlesuit"));
 
@@ -86,10 +86,4 @@ public class TAXV25StealthBattlesuits extends Eintrag {
         }
 
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

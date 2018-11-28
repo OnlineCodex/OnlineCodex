@@ -20,7 +20,7 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
 
         complete();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Force sword");
         ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
@@ -29,9 +29,5 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
         add(waffen);
         waffen.setAbwaehlbar(false);
 
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

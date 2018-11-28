@@ -31,7 +31,7 @@ public class IMInfantrySquad extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "Sergeant");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Sergeant");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Sergeant");
         kammer.initKammer();
         add(kammer);
@@ -40,9 +40,4 @@ public class IMInfantrySquad extends Eintrag {
 
         complete();
     }
-
-    // @OVERRIDE
-    public void refreshen() {
-    }
-
 }

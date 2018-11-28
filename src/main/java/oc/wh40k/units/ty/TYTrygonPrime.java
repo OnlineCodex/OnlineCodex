@@ -34,7 +34,7 @@ public class TYTrygonPrime extends Eintrag {
         
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
         add(waffen);

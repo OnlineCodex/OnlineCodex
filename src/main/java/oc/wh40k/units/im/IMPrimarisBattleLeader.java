@@ -12,7 +12,7 @@ public class IMPrimarisBattleLeader extends Eintrag {
         power = 4;
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Battle Leader");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
@@ -20,9 +20,5 @@ public class IMPrimarisBattleLeader extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
         
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

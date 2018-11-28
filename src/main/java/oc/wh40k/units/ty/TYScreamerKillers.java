@@ -15,7 +15,7 @@ public class TYScreamerKillers extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Screamer-Killer");
+        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
         ((TYRuestkammer) ob1.getKammer()).setType("Screamer-Killer");
         ob1.initKammer();
         add(ob1);
@@ -24,7 +24,7 @@ public class TYScreamerKillers extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Screamer-Killer");
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
         ((TYRuestkammer) ob2.getKammer()).setType("Screamer-Killer");
         ob2.initKammer();
         ob2.setGrundkosten(getPts("Screamer-Killers"));
@@ -32,7 +32,7 @@ public class TYScreamerKillers extends Eintrag {
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Screamer-Killer");
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
         ((TYRuestkammer) ob3.getKammer()).setType("Screamer-Killer");
         ob3.initKammer();
         ob3.setGrundkosten(getPts("Screamer-Killers"));

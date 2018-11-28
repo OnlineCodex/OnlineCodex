@@ -21,40 +21,36 @@ public class ORGunTrukk extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/GunTrukk.gif"));
 
 
-        t1 = new RuestkammerStarter(ID, randAbstand, cnt, "ORGunTrukkKammer", "Gun Trukk");
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, ORGunTrukkKammer.class, "Gun Trukk");
         t1.initKammer();
         add(t1);
 
         seperator();
 
-        t2 = new RuestkammerStarter(ID, randAbstand, cnt, "ORGunTrukkKammer", "Gun Trukk");
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, ORGunTrukkKammer.class, "Gun Trukk");
         t2.initKammer();
         add(t2);
 
         seperator();
 
-        t3 = new RuestkammerStarter(ID, randAbstand, cnt, "ORGunTrukkKammer", "Gun Trukk");
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, ORGunTrukkKammer.class, "Gun Trukk");
         t3.initKammer();
         add(t3);
 
         seperator();
 
-        t4 = new RuestkammerStarter(ID, randAbstand, cnt, "ORGunTrukkKammer", "Gun Trukk");
+        t4 = new RuestkammerStarter(ID, randAbstand, cnt, ORGunTrukkKammer.class, "Gun Trukk");
         t4.initKammer();
         add(t4);
 
         seperator();
 
-        t5 = new RuestkammerStarter(ID, randAbstand, cnt, "ORGunTrukkKammer", "Gun Trukk");
+        t5 = new RuestkammerStarter(ID, randAbstand, cnt, ORGunTrukkKammer.class, "Gun Trukk");
         t5.initKammer();
         add(t5);
 
         complete();
 
 
-    }
-
-    //@OVERRIDE
-    public void refreshen() {
     }
 }

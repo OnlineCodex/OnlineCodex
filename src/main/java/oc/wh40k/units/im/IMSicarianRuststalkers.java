@@ -24,7 +24,7 @@ public class IMSicarianRuststalkers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMAdeptusMechanicusRuestkammer", "Ruststalker Princeps");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Ruststalker Princeps");
         ((IMAdeptusMechanicusRuestkammer) rkBoss.getKammer()).setType("Ruststalker Princeps");
         rkBoss.initKammer(false, false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

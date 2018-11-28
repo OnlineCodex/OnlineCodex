@@ -23,7 +23,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Crisis Shas'vre");
+        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Crisis Shas'vre");
         ob1.setGrundkosten(getPts("XV8 Crisis Battlesuits"));
         ob1.initKammer(false, true, false, false, false, false, false);
         add(ob1);
@@ -32,7 +32,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 9; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Crisis Shas'ui"));
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Crisis Shas'ui"));
             rk.lastElement().initKammer(false, false, true, false, false, false, false);
             rk.lastElement().setGrundkosten(getPts("XV8 Crisis Battlesuits"));
             add(rk.lastElement());

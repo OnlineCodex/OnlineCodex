@@ -23,7 +23,7 @@ public class ORMek extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("Kustom mega-slugga");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
         waffen.initKammer(false, false, false, false, false, false, true, false);
@@ -33,9 +33,4 @@ public class ORMek extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

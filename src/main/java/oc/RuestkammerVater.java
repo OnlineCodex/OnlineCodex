@@ -30,10 +30,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
     private JLabel error = new JLabel();
     private JFrame frame = new JFrame();
 
-    //Object parent;
-
-    //	public RuestkammerVater(Object o) {
-//		this.parent=o;
     public RuestkammerVater() {
         frame.setLayout(null);
         frame.getContentPane().setBackground(Color.WHITE);
@@ -198,13 +194,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
     }
 
     public void setUeberschrift(String s) {
-		/*	JLabel ue = new JLabel(s);
-		ue.setFont(new Font("arial",Font.BOLD,13));
-		ue.setBounds(3,4,500,15);
-		ue.setForeground(new Color(110,110,120));
-		pcnt.add(ue);
-		seperator(20);      NICHT LÖSCHEN !!
-		 */
         frame.setTitle(s);
     }
 
@@ -213,7 +202,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
         cnt += headlineAbstand;
     }
 
-    public abstract void refreshen();
+    public void refreshen(){}
 
     public abstract void initButtons(boolean... b);
 
@@ -227,7 +216,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
             }
         }
         frame.dispose();
-    } // sonst wirds nicht finalize();
+    }
 
 
     /**

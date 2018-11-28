@@ -28,7 +28,7 @@ public class IMSkyclaws extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Skyclaw Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Skyclaw Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Skyclaw Pack Leader");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Skyclaw Pack Leader"));
@@ -38,7 +38,7 @@ public class IMSkyclaws extends Eintrag {
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Sky Leader");
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Sky Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Sky Leader");
         rkBoss2.initKammer();
         rkBoss2.setGrundkosten(getPts("Wolf Guard Sky Leader"));

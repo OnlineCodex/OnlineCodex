@@ -15,7 +15,7 @@ public class TYStonecrusherCarnifexBrood extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Stonecrusher Carnifex");
+        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Stonecrusher Carnifex");
         ((TYRuestkammer) ob1.getKammer()).setType("Stonecrusher Carnifex");
         ob1.initKammer();
         add(ob1);
@@ -24,7 +24,7 @@ public class TYStonecrusherCarnifexBrood extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Stonecrusher Carnifex");
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Stonecrusher Carnifex");
         ((TYRuestkammer) ob2.getKammer()).setType("Stonecrusher Carnifex");
         ob2.initKammer();
         ob2.setGrundkosten(getPts("Stonecrusher Carnifex"));
@@ -32,7 +32,7 @@ public class TYStonecrusherCarnifexBrood extends Eintrag {
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Stonecrusher Carnifex");
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Stonecrusher Carnifex");
         ((TYRuestkammer) ob3.getKammer()).setType("Stonecrusher Carnifex");
         ob3.initKammer();
         ob3.setGrundkosten(getPts("Stonecrusher Carnifex"));

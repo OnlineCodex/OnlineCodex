@@ -49,7 +49,7 @@ public class IMWolfGuardTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader in TA");
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader in TA");
         ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard in Terminator Armour");
         rkBoss3.initKammer();
         rkBoss3.setGrundkosten(0); //Schon in Squadkosten enthalten

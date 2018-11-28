@@ -40,7 +40,7 @@ public class IMWolfGuardCataphractiiTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Cataphractii Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Cataphractii Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).type = "Wolf Guard Cataphractii Pack Leader";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Wolf Guard Cataphractii Pack Leader"));

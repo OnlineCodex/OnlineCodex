@@ -44,7 +44,7 @@ public class IMCompanyVeteranswithJumpPacks extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Company Veterans";
         rkBoss.initKammer();
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -56,7 +56,6 @@ public class IMCompanyVeteranswithJumpPacks extends Eintrag {
 
     @Override
     public void refreshen() {
-
         o1.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
         o3.setMaxAnzahl(squad.getModelle() - 1 - (o1.getAnzahl() > o2.getAnzahl() ? o1.getAnzahl() : o2.getAnzahl()));

@@ -20,7 +20,7 @@ public class ORWeirdboy extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Wyrdboy.gif"));
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enablePowerOfTheWaaagh();
         psychicPowers.initKammer();
@@ -30,7 +30,7 @@ public class ORWeirdboy extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "ORWaffenUndGeschenke", "");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
         waffen.initKammer(false, false, false, false, false, false, true, true);

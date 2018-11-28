@@ -15,7 +15,7 @@ public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
         power = 6;
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "DeathWatchKammer", "");
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
         ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Chaplain in Terminator Armour");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));

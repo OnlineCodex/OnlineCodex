@@ -1,14 +1,10 @@
 package oc.wh40k.units.ta;
 
-//[IA Apo 2013]
-
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
 import oc.RuestkammerStarter;
 
 public class TATigerSharkAX10 extends Eintrag {
-
-    RuestkammerStarter rk;
 
     public TATigerSharkAX10() {
         name = "Tiger Shark AX-1-0";
@@ -20,16 +16,12 @@ public class TATigerSharkAX10 extends Eintrag {
 
         seperator();
 
-        rk = new RuestkammerStarter(ID, randAbstand, cnt, "TAFahrzeugKammer", "Rüstkammer");
+        RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, TAFahrzeugKammer.class, "Rüstkammer");
         rk.initKammer(true, false);
         rk.setButtonText("Rüstkammer");
         add(rk);
 
         complete();
-    }
-
-    //@OVERRIDE
-    public void refreshen() {
     }
 
 }

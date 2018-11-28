@@ -14,16 +14,18 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.*;
 
+import static java.util.Objects.requireNonNull;
 import static oc.utils.ResourceUtils.sanitzeKey;
 
 public abstract class BuildaVater extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BuildaVater.class);
 
+    private final String id;
+
     public Vector<ChooserGruppe> myChooserGruppen = new Vector<ChooserGruppe>();
     public boolean isLoading = false;
     public int outOfPanel = -CHOOSERGRUPPEN_X_ABSTAND;
-    public String reflectionKennungLokal = ""; // Die reflectionKennung wird global geändert, bei jedem Armeeaufruf. Dieser Wert ist der der zugewiesenen Armee.
     public JCheckBox Hauptkontingent = new JCheckBox("Hauptkontingent");
     public Vector<String> noAllies = new Vector<String>();
     public Vector<String> battleBrothers = new Vector<String>();
@@ -99,7 +101,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
             if (!((String) supplementBox.getSelectedItem()).equals("")) {
 
-                if (reflectionKennung.equals("IA")) setMinMaxSupplement();
+                if (id.equals("IA")) setMinMaxSupplement();
             }
 
             RefreshListener.fireRefresh();
@@ -151,9 +153,14 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     };
 
-    public BuildaVater(Map<String, Integer> pointValues) {
+    public BuildaVater(String id, Map<String, Integer> pointValues) {
+        this.id = requireNonNull(id);
         this.pointValues = ImmutableMap.copyOf(pointValues);
         panel.setBackground(Color.WHITE);
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getText() {
@@ -210,9 +217,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     public void complete() {
         if (!(this instanceof LeererBuilder)) {
-                reflectionKennungLokal = reflectionKennung;
-                LOGGER.info("reflectionKennungLokal:" + reflectionKennungLokal);
-
                 kontingente.add(0, "Auxiliary Support Detachment"); //-1CP
                 kontingente.add(0, "Fortification Network"); //+0CP
                 kontingente.add(0, "Super-Heavy Auxiliary Detachment"); //+0CP
@@ -248,7 +252,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 supplementBox = new JComboBox(supplements);
                 supplementBox.setMaximumRowCount(25);
 
-                if (reflectionKennung.equals("CM") || reflectionKennung.equals("IA")) {
+                if (id.equals("CM") || id.equals("IA")) {
                     panel.add(supplementBox);
                     supplementBox.addActionListener(refreshActionListenerSupplements);
                     supplementBox.setBounds(5, 5, 280, 20);

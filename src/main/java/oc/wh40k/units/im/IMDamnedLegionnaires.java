@@ -34,7 +34,7 @@ public class IMDamnedLegionnaires extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Legionnaire Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Legionnaire Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Damned Legionnaires";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Sword Brother"));
@@ -51,8 +51,6 @@ public class IMDamnedLegionnaires extends Eintrag {
         if (squad.getModelle() > 5) {
             power = 15;
         }
-
-
     }
 
 }

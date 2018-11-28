@@ -14,11 +14,11 @@ public class ORNobzOrMega extends Eintrag {
 
         seperator();
 
-        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, "ORNobzKammer", "Nobz", 1);
+        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, ORNobzKammer.class, "Nobz", 1);
         PikkUp.initKammer();
         add(PikkUp);
 
-        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, "ORMeganobzKammer", "Meganobz", 1);
+        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, ORMeganobzKammer.class, "Meganobz", 1);
         Kampfpanza.initKammer();
         add(Kampfpanza);
 

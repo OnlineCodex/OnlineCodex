@@ -49,7 +49,7 @@ public class CHScarabOccultTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Sorcerer");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Sorcerer");
         ((CHWaffenkammer) rkBoss.getKammer()).type = "Scarab Occult Sorcerer";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Scarab Occult Sorcerer"));
@@ -59,7 +59,7 @@ public class CHScarabOccultTerminators extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, "PsychicPowers", "Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableChange();
         psychicPowers.initKammer();

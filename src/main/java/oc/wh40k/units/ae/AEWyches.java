@@ -54,7 +54,7 @@ public class AEWyches extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEHekatrix", "Hekatrix");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEHekatrix.class, "Hekatrix");
 
         rkBoss.initKammer();
 

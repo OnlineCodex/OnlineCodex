@@ -29,7 +29,7 @@ public class IMScoutBikeSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Scout Bike Squad";
         rkBoss.initKammer();
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

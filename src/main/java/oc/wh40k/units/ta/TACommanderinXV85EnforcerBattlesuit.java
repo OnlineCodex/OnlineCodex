@@ -52,7 +52,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
 
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, "TAKampfanzugKammer", "Commander in XV85 Enforcer Battlesuit");
+        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander in XV85 Enforcer Battlesuit");
 
         ob.setGrundkosten(0);
 
@@ -68,10 +68,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
     }
 
-
-
-    //@OVERRIDE
-
+    @Override
     public void refreshen() {
 
         power = 7;

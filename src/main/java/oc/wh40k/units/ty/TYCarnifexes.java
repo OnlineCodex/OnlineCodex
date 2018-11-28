@@ -15,7 +15,7 @@ public class TYCarnifexes extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Carnifex");
+        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Carnifex");
         ((TYRuestkammer) ob1.getKammer()).setType("Carnifex");
         ob1.initKammer();
         add(ob1);
@@ -24,7 +24,7 @@ public class TYCarnifexes extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Carnifex");
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Carnifex");
         ((TYRuestkammer) ob2.getKammer()).setType("Carnifex");
         ob2.initKammer();
         ob2.setGrundkosten(getPts("Carnifex"));
@@ -32,7 +32,7 @@ public class TYCarnifexes extends Eintrag {
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Carnifex");
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Carnifex");
         ((TYRuestkammer) ob3.getKammer()).setType("Carnifex");
         ob3.initKammer();
         ob3.setGrundkosten(getPts("Carnifex"));

@@ -26,7 +26,7 @@ public class IMSkitariiVanguard extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMAdeptusMechanicusRuestkammer", "Vanguard Alpha");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Vanguard Alpha");
         rkBoss.initKammer(true, false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);

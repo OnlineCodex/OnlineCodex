@@ -13,7 +13,7 @@ public class IMWolfLordonThunderwolf extends Eintrag {
 
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
         ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Lord on Thunderwolf");
         waffenUndArtefakte.initKammer();
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
@@ -22,9 +22,4 @@ public class IMWolfLordonThunderwolf extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

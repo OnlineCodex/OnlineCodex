@@ -12,7 +12,7 @@ public class IMLordCommissar extends Eintrag {
         grundkosten = getPts("Lord Commissar");
         power = 4;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, "IMAstraMilitarumRuestkammer", "");
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
         ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Lord Commissar");
         kammer.initKammer();
         kammer.setButtonText("Waffen");
@@ -22,7 +22,7 @@ public class IMLordCommissar extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         setUnikat(true);
     }

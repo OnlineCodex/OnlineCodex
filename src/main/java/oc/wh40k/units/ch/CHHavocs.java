@@ -54,7 +54,7 @@ public class CHHavocs extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHWaffenkammer", "Aspiring Champion", 1);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Champion", 1);
         ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
         rkBoss.initKammer(true, true, true, true);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

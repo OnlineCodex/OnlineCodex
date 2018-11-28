@@ -49,18 +49,13 @@ public class TAStrikeTeam extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "TAInfanterieKammer", "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TAInfanterieKammer.class, "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
         rkBoss.initKammer(true, false, false);
         rkBoss.setGrundkosten(getPts("Shas'ui"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
 
         complete();
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
     }
 
     @Override

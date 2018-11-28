@@ -58,10 +58,9 @@ public class VOLKTauEmpire extends BuildaVater {
     private static final String[] Sturmeinträge_Vespid = new String[]{"", "Vespid Stingwings"};
 
     public VOLKTauEmpire() {
-        super(ResourceUtils.loadPoints(
+        super("TA", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ta.yaml",
                 "oc/wh40k/indices/taaa.yaml"));
-        reflectionKennung = "TA";
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
@@ -74,25 +73,25 @@ public class VOLKTauEmpire extends BuildaVater {
         Transporteinträge = new String[]{""};
         LordofWar = new String[]{""};
 
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, AI, AdditionalInformation));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HQ, HQeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, TROOPS, Standardeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, ELITE, Eliteeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FAST_ATTACK, Sturmeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FLIER, Fliegereinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, FORTIFICATION, Befestigungen));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, reflectionKennung, cnt, 0, LORD_OF_WAR, LordofWar));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;

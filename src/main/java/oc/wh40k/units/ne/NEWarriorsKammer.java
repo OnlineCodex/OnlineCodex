@@ -21,16 +21,11 @@ public class NEWarriorsKammer extends RuestkammerVater {
 
         seperator();
 
-        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, "NETransporterKammer", "Transporter");
+        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, NETransporterKammer.class, "Transporter");
         rkTransport.initKammer(true, true);
         rkTransport.setButtonText("Transporter");
         add(rkTransport);
 
         sizeSetzen();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

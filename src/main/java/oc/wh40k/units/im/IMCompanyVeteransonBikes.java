@@ -45,7 +45,7 @@ public class IMCompanyVeteransonBikes extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Company Veterans";
         rkBoss.initKammer();
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

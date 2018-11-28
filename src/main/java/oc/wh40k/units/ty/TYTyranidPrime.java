@@ -28,7 +28,7 @@ public class TYTyranidPrime extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, "TYRuestkammer", "Wargear");
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Wargear");
         ((TYRuestkammer) waffen.getKammer()).setType("Tyranid Prime");
         waffen.initKammer();
         add(waffen);

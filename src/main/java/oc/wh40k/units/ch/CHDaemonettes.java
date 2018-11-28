@@ -25,7 +25,7 @@ public class CHDaemonettes extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Alluress");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Alluress");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Alluress";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Alluress"));

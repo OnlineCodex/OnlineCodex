@@ -35,7 +35,7 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSergeant", "Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
         ((IMSergeant) rkBoss.getKammer()).type = "Sternguard Veteran Squad";
         rkBoss.initKammer();
         rkBoss.setAbwaehlbar(false);

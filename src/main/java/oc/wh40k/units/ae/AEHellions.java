@@ -38,7 +38,7 @@ public class AEHellions extends Eintrag {
 
 
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "AEHelliarch", "Helliarch");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEHelliarch.class, "Helliarch");
 
         rkBoss.initKammer();
 

@@ -19,15 +19,15 @@ public class TAHazardKampfanzugteam extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/TAHazardKampfanzugteam.jpg"));
 
 
-        o1 = new RuestkammerStarter(ID, randAbstand, cnt, "TAHazardKammer", "Hazard Shas'vre");
+        o1 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
         o1.initKammer(false, false);
         add(o1);
 
-        o2 = new RuestkammerStarter(ID, randAbstand, cnt, "TAHazardKammer", "Hazard Shas'vre");
+        o2 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
         o2.initKammer(false, false);
         add(o2);
 
-        o3 = new RuestkammerStarter(ID, randAbstand, cnt, "TAHazardKammer", "Hazard Shas'vre");
+        o3 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
         o3.initKammer(false, false);
         add(o3);
 

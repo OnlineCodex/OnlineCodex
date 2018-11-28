@@ -23,7 +23,7 @@ public class TATigerShark extends Eintrag {
 
         seperator();
 
-        rk = new RuestkammerStarter(ID, randAbstand, cnt, "TAFahrzeugKammer", "Rüstkammer");
+        rk = new RuestkammerStarter(ID, randAbstand, cnt, TAFahrzeugKammer.class, "Rüstkammer");
         rk.initKammer(true, false);
         rk.setButtonText("Rüstkammer");
         add(rk);

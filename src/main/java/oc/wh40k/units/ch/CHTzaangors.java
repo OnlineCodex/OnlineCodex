@@ -34,7 +34,7 @@ public class CHTzaangors extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Twistbray");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Twistbray");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Twistbray";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Twistbray"));

@@ -27,7 +27,7 @@ public class CHTzaangorEnlightened extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "CHEmptykammer", "Aviarch");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Aviarch");
         ((CHEmptykammer) rkBoss.getKammer()).type = "Aviarch";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Aviarch"));

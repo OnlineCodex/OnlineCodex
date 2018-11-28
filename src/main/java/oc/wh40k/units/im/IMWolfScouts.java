@@ -53,7 +53,7 @@ public class IMWolfScouts extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Scout Pack Leader");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Scout Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Wolf Scout Pack Leader");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Wolf Scout Pack Leader"));
@@ -63,7 +63,7 @@ public class IMWolfScouts extends Eintrag {
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "Wolf Guard Pack Leader");
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader");
         ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader (Wolf Scouts)");
         rkBoss2.initKammer();
         rkBoss2.setGrundkosten(getPts("Blood Claws"));

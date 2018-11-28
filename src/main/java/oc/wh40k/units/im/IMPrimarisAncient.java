@@ -24,7 +24,7 @@ public class IMPrimarisAncient extends Eintrag {
         seperator();
 
         if(spacewolves) {
-	        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, "IMSpaceWolvesRuestkammer", "");
+	        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
 	        ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Primaris Ancient");
 	        waffenUndReliquien.initKammer();
 	        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
@@ -33,9 +33,5 @@ public class IMPrimarisAncient extends Eintrag {
         }
         
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }
