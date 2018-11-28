@@ -37,6 +37,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     private boolean countToMinimum = true;
     private boolean countToMaximum = true;
     private double prozentKosten = 0.0;
+    private boolean warlordError;
+    private boolean warlord = false;
 
     public Eintrag() {
         lKosten.setSize(150, 17);
@@ -61,22 +63,28 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
     private void refreshEintrag() {
                 refreshen();
                 uniqueError = false;
+                warlordError = false;
                 chosenRelic = null;
+                warlord = false;
                 for (int i = 0; i < optionen.size(); ++i) {
                     if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
                         chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
                         if (chosenRelic != null) {
-                            uniqueError = uniqueError || chosenRelic.uniqueError;
+                            uniqueError = uniqueError || chosenRelic.hasUniqueError();
                             break;
                         }
                     } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
                         chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
                         if (chosenRelic != null) {
-                            uniqueError = uniqueError || chosenRelic.uniqueError;
+                            uniqueError = uniqueError || chosenRelic.hasUniqueError();
                             break;
                         }
                     } else if (optionen.elementAt(i) instanceof RuestkammerStarter) {
                         uniqueError = uniqueError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().uniqueError;
+                        warlordError = warlordError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordError;
+                        if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && optionen.elementAt(i).isSelected()){
+                        	warlord = true;
+                        }
                     }
                 }
                 if (chosenRelic == null) {
@@ -97,9 +105,14 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                     }
                 }
 
-                if (uniqueError) {
+                if (warlordError) {
+                    setFehlermeldung("Max. 1 Warlord");
+                } else if (uniqueError) {
                     setFehlermeldung("Doppeltes Relikt");
                 } else {
+                	if(getFehlermeldung().equals("Max. 1 Warlord") || getFehlermeldung().equals("Doppeltes Relikt")){
+                		setFehlermeldung("");
+                	}
                     setFehlermeldung(getFehlermeldung());
                 }
 
@@ -265,6 +278,10 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
             titel = BuildaHQ.formatierItalic(BuildaHQ.formatierFett(name));
         }
 
+        if(warlord){
+        	titel += " [WARLORD]";
+        }
+        
         StringBuilder text = new StringBuilder(titel);
 
         for (int i = 0; i < optionen.size(); ++i) {

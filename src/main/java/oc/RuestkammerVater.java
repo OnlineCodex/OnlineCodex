@@ -18,14 +18,10 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
     protected int cntX = randAbstand;
     protected boolean legal = true;
-    protected String goliath = "Goliath";
-    protected String orlock = "Orlock";
-    protected String vansaar = "vanSaar";
-    protected String cawdor = "Cawdor";
-    protected String delaque = "Delaque";
-    protected String escher = "Escher";
     protected OptionsButtonUpgrade chosenRelic = null;
     boolean uniqueError = false;
+    public boolean warlordError = false;
+    public boolean warlord = false;
     private JButton ok = new JButton("OK");
     private JLabel error = new JLabel();
     private JFrame frame = new JFrame();

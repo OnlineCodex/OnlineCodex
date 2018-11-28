@@ -13,7 +13,6 @@ public class OptionsButtonUpgrade extends OptionsButton {
     boolean showKosten = true;
     boolean unique = false;
     boolean relic = false;
-    boolean uniqueError = false;
     private boolean selected;
     public OptionsButtonUpgrade(int ID, int lX, int lY, String verzierung, String name, boolean selected, double preis) {
         this.name = name;
@@ -73,12 +72,11 @@ public class OptionsButtonUpgrade extends OptionsButton {
             }
         }
     }
-
+    
     public void switsch(String txt) {
         if (aktiv) {
             selected = !selected;  // umdrehen
             fontSetzen((selected ? 1 : 0));
-            uniqueError = false;
 
             if (selected) {
                 BuildaHQ.addToInformationVectorGlobal(txt, 1);
@@ -90,7 +88,6 @@ public class OptionsButtonUpgrade extends OptionsButton {
                     dialog.setModal(true);
                     dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
                     dialog.setVisible(true);
-                    uniqueError = true;
 
                     if (isLegal()) {
                         setLegal(false);
@@ -154,6 +151,10 @@ public class OptionsButtonUpgrade extends OptionsButton {
         button.setText((kurzerName != null ? kurzerName : name) + abstandshalter.toString() + punkteString);
     }
 
+    public boolean hasUniqueError() {
+    	return BuildaHQ.getCountFromInformationVectorGlobal(this.name) > 1;
+    }
+    	
     public boolean isUnique() {
         return unique;
     }
