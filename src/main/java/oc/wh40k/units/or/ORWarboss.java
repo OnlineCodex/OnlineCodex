@@ -8,6 +8,7 @@ public class ORWarboss extends Eintrag {
 
     OptionsEinzelUpgrade attacksquig;
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     boolean megaBool = false;
     boolean gazzBool = false;
@@ -31,12 +32,23 @@ public class ORWarboss extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
 
     @Override
     public void refreshen() {
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

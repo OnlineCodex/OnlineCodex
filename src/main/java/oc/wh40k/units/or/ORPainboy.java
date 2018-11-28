@@ -7,6 +7,7 @@ import oc.RuestkammerStarter;
 public class ORPainboy extends Eintrag {
     OptionsEinzelUpgrade grotorderly;
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     boolean megaBool = false;
 
@@ -26,19 +27,24 @@ public class ORPainboy extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-
-    }
-
-    @Override
-    public void deleteYourself() {
-        addToInformationVector("ORHQ", -1);
-        super.deleteYourself();
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 
 }

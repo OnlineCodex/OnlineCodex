@@ -10,6 +10,7 @@ public class ORWeirdboy extends Eintrag {
     OptionsEinzelUpgrade o1;
     RuestkammerStarter psychicPowers;
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     public ORWeirdboy() {
 
@@ -37,6 +38,14 @@ public class ORWeirdboy extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
@@ -46,6 +55,10 @@ public class ORWeirdboy extends Eintrag {
         waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
 
