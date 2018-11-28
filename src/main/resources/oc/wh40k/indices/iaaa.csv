@@ -2,44 +2,44 @@ Land Raider Helios;252
 Relic Land Raider Proteus;264
 Land Raider Achilles;270
 Land Raider Prometheus;290
-Deimos Pattern Relic Predator;105
-Infernum Pattern Razorback;65
+Deimos Pattern Relic Predator;90
+Infernum Pattern Razorback;70
 Deimos Pattern Vindicator Laser Destroyer;183
 Relic Sicaran Battle Tank;155
-Relic Sicaran Venator Tank Destroyer;245
-Relic Sicaran Punisher Assault Tank;175
-Relic Fellblade Super-heavy Tank;540
-Relic Falchion Super-heavy Tank Destroyer;640
-Relic Typhon Heavy Siege Tank;520
-Relic Cerberus Heavy Tank Destroyer;480
+Relic Sicaran Venator Tank Destroyer;170
+Relic Sicaran Punisher Assault Tank;155
+Relic Fellblade Super-heavy Tank;740
+Relic Falchion Super-heavy Tank Destroyer;840
+Relic Typhon Heavy Siege Tank;720
+Relic Cerberus Heavy Tank Destroyer;680
 Relic Spartan Assault Tank;320
-Relic Mastodon Super-heavy Siege Transport;734
+Relic Mastodon Super-heavy Siege Transport;934
 Chaplain Venerable Dreadnought;120
-Siege Dreadnought;110
+Siege Dreadnought;80
 Mortis Dreadnought;75
 Relic Contemptor Dreadnought;135
 Contemptor Mortis Dreadnought;106
 Relic Leviathan Dreadnought;175
 Relic Deredeo Dreadnought;135
-Land Speeder Tempest;109
-Relic Javelin Attack Speeder;103
-Thunderhawk Gunship;650
-Thunderhawk Transporter;420
-Sokar Pattern Stormbird;651
+Land Speeder Tempest;95
+Relic Javelin Attack Speeder;110
+Thunderhawk Gunship;1330
+Thunderhawk Transporter;1000
+Sokar Pattern Stormbird;2000
 Storm Eagle Assault Gunship;210
 Storm Eagle Assault Gunship - ROC Pattern;253
-Fire Raptor Gunship;280
-Caestus Assault Ram;220
-Xiphon Interceptor;80
+Fire Raptor Gunship;190
+Caestus Assault Ram;250
+Xiphon Interceptor;110
 Whirlwind Hyperios;90
 Relic Whirlwind Scorpius;175
 Lucius Pattern Dreadnought Drop Pod;80
 Deathstorm Drop Pod;160
 Damocles Command Rhino;120
-Tarantula Sentry Gun;10
+Tarantula Sentry Gun;20
 Rapier Weapons Battery Carrier;20
 Space Marine Gunners;10
-Tarantula Air Defence Battery;60
+Tarantula Air Defence Battery;70
 Castellum Stronghold;550
 Inquisitor-Lord Hector Rex;100
 Inquisitor-Lord Solomon Lok;65
@@ -73,9 +73,9 @@ Hunter-killer missile (IA);6
 Twin lascannon;50
 Twin heavy bolter;17
 Twin heavy flamer;34
-Twin autocannon;33
-Assault cannon;21
-Predator autocannon;49
+Twin autocannon;30
+Assault cannon;22
+Predator autocannon;40
 Lascannon (IA);25
 Heavy bolter (IA);10
 Heavy flamer;17
@@ -87,7 +87,7 @@ Typhoon missile launcher;50
 Bolt pistol;0
 Frag grenade;0
 Krak grenade;0
-Twin assault cannon;35
+Twin assault cannon;44
 Whirlwind castellan launcher;25
 Castellum air defence missiles;18
 Castellum battle cannon;55
@@ -117,7 +117,7 @@ Dreadhammer siege cannon;0
 Dreadnought inferno cannon;35
 Fellblade accelerator cannon;0
 Firefury missile battery;0
-Grav-flux bombard;50
+Grav-flux bombard;65
 Graviton blaster;15
 Grenade discharger;0
 Heavy neutron pulse array;0
@@ -139,7 +139,7 @@ Phased conversion beamer;0
 Plasma blastgun;21
 Plasma charger;0
 Plasma destroyer;52
-Punisher rotary cannon;50
+Punisher rotary cannon;0
 Purgator;0
 Quad heavy bolter;36
 Quad lascannon;80
@@ -164,7 +164,7 @@ Vengeance launcher;25
 Xiphon missile battery;30
 Seismic hammer;48
 Dreadnought combat weapon;40
-Power fist;20
+Power fist;12
 Servo arm;12
 Angel's Teeth;0
 Blood Biter;0
