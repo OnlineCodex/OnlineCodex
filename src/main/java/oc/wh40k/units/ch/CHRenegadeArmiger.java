@@ -3,8 +3,7 @@ package oc.wh40k.units.ch;
 import oc.*;
 
 public class CHRenegadeArmiger extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fk1;
+    OptionsZaehlerGruppe fk1;
     OptionsZaehlerGruppe fk2;
     AnzahlPanel squad;
 
@@ -20,7 +19,8 @@ public class CHRenegadeArmiger extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Armiger autocannons", getPts("Armiger autocannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Thermal Spear & Reaper", getPts("Thermal Spear") + getPts("Reaper chain-cleaver")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fk1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        fk1.setAnzahl(0, 1);
 
         seperator();
 
@@ -36,7 +36,8 @@ public class CHRenegadeArmiger extends Eintrag {
 
     //@OVERRIDE
     public void refreshen() {
-        fk1.alwaysSelected();
+        fk1.setMaxAnzahl(squad.getModelle());
+        fk1.setLegal(fk1.getAnzahl() == squad.getModelle());
         fk2.setMaxAnzahl(squad.getModelle());
         fk2.setLegal(fk2.getAnzahl() == squad.getModelle());
 
