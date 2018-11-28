@@ -531,8 +531,8 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
                     sL[0] = sL[0].replaceAll("-", "");
                     sL[0] = sL[0].toLowerCase();
 
-                    if (map.containsKey((String) sL[0])) {
-                        LOGGER.error("Doppelter Key: " + sL[0] + " - " + Integer.parseInt(sL[1]) + " Vorhanden als: " + sL[0] + " - " + map.get(sL[0]));
+                    if (map.containsKey((String) sL[0]) && Integer.parseInt(sL[1]) != map.get(sL[0])) {
+                        LOGGER.error("Doppelter Key mit verschiedenen Werten: " + sL[0] + " - " + Integer.parseInt(sL[1]) + " Vorhanden als: " + sL[0] + " - " + map.get(sL[0]));
                     } else {
                         map.put(sL[0], Integer.parseInt(sL[1]));
                     }

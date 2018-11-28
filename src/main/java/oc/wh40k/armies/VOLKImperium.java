@@ -140,9 +140,9 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
     private static final String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
     private static final String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
-            "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought", "Contemptor-Exemplar Dreadnought"};
-    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-tank"};
-    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-carrier"};
+            "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought [FW]", "Contemptor-Exemplar Dreadnought [FW]"};
+    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-Tank [FW]"};
+    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-carrier [FW]"};
 
     private static final String[] Befestigungen = new String[]{""};
 
@@ -256,21 +256,21 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Fliegereinträge_Grey_Knights = new String[]{"", "Stormhawk Interceptor", "Stormraven Gunship", "Stormtalon Gunship"};
 
     //Imperial Armour Adeptus Astartes
-    private static final String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought", "Damocles Command Rhino",};
-    private static final String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator", "Relic Sicaran Battle Tank", "Relic Sicaran Venator Tank Destroyer",
-            "Relic Sicaran Punisher Assault Tank", "Relic Sicaran Arcus Strike Tank", "Relic Sicaran Omega Tank Destroyer", "Relic Contemptor Dreadnought",
-            "Relic Deredeo Dreadnought", "Relic Javelin Attack Speeder", "Relic Whirlwind Scorpius",};
-    private static final String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest", "Tarantula Sentry Gun", "Tarantula Air Defence Battery", "Deathstorm Drop Pod",};
-    private static final String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer", "Relic Land Raider Proteus", "Land Raider Helios",
-            "Land Raider Prometheus", "Land Raider Achilles", "Mortis Dreadnought", "Siege Dreadnought", "Contemptor Mortis Dreadnought", "Relic Leviathan Dreadnought",
-            "Whirlwind Hyperios", "Rapier Carrier",};
-    private static final String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback", "Lucius Pattern Dreadnought Drop Pod",};
-    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor", "Storm Eagle Assault Gunship", "Fire Raptor Assault Gunship", "Caestus Assault Ram",};
-    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank", "Relic Typhon Heavy Siege Tank", "Relic Cerberus Heavy Tank Destroyer",
-            "Relic Fellblade Super-heavy Tank", "Relic Falchion Super-heavy Tank Destroyer", "Relic Mastodon Super-heavy Siege Transport",
-            "Thunderhawk Assault Gunship", "Thunderhawk Transporter", "Sokar Pattern Stormbird",};
+    private static final String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought [FW]", "Damocles Command Rhino [FW]",};
+    private static final String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator [FW]", "Relic Sicaran Battle Tank [FW]", "Relic Sicaran Venator Tank Destroyer [FW]",
+            "Relic Sicaran Punisher Assault Tank [FW]", "Relic Sicaran Arcus Strike Tank [FW]", "Relic Sicaran Omega Tank Destroyer [FW]", "Relic Contemptor Dreadnought [FW]",
+            "Relic Deredeo Dreadnought [FW]", "Relic Javelin Attack Speeder [FW]", "Relic Whirlwind Scorpius [FW]",};
+    private static final String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest [FW]", "Tarantula Sentry Gun [FW]", "Tarantula Air Defence Battery [FW]", "Deathstorm Drop Pod [FW]",};
+    private static final String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer [FW]", "Relic Land Raider Proteus [FW]", "Land Raider Helios [FW]",
+            "Land Raider Prometheus [FW]", "Land Raider Achilles [FW]", "Mortis Dreadnought [FW]", "Siege Dreadnought [FW]", "Contemptor Mortis Dreadnought [FW]", "Relic Leviathan Dreadnought [FW]",
+            "Whirlwind Hyperios [FW]", "Rapier Carrier [FW]",};
+    private static final String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback [FW]", "Lucius Pattern Dreadnought Drop Pod [FW]",};
+    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor [FW]", "Storm Eagle Assault Gunship [FW]", "Fire Raptor Assault Gunship [FW]", "Caestus Assault Ram [FW]",};
+    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank [FW]", "Relic Typhon Heavy Siege Tank [FW]", "Relic Cerberus Heavy Tank Destroyer [FW]",
+            "Relic Fellblade Super-heavy Tank [FW]", "Relic Falchion Super-heavy Tank Destroyer [FW]", "Relic Mastodon Super-heavy Siege Transport [FW]",
+            "Thunderhawk Assault Gunship [FW]", "Thunderhawk Transporter [FW]", "Sokar Pattern Stormbird [FW]",};
 
-    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern",};
+    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern [FW]",};
 
     //Adeptus Astartes
     private static final String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,

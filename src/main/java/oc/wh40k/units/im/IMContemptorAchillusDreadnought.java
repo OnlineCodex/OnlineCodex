@@ -10,7 +10,7 @@ public class IMContemptorAchillusDreadnought extends Eintrag {
     public IMContemptorAchillusDreadnought() {
         name = "Contemptor-Achillus Dreadnought";
         grundkosten = getPts("Contemptor-Achillus");
-        power = 8;
+        power = 13;
 
         seperator();
 

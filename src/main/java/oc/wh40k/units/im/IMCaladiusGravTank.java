@@ -10,7 +10,7 @@ public class IMCaladiusGravTank extends Eintrag {
     public IMCaladiusGravTank() {
         name = "Caladius Grav-tank";
         grundkosten = getPts("Caladius Grav-tank");
-        power = 8;
+        power = 16;
 
         seperator();
 
