@@ -14,375 +14,375 @@ import static oc.utils.ResourceUtils.sanitzeKey;
 
 public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
 
-    protected int kategorie;
-    protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
-    protected boolean überschriftSetzen = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-    protected boolean neuzeile = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-    protected boolean keineÜberschrift = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-    protected boolean unikat = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden,
-    protected String unikatName;
-    protected String auswahl = "Auswahl";
-    protected int unikatMin = 0;
-    protected int unikatMax = 1;
-    protected boolean unikatFehler;
-    protected boolean gesamtpunkteImmerAnzeigen = false; //Um bei einigen Einheiten bei der Auswahl von alle Punkte zu verhinern, dass keine Gesamtpunkte angezeigt werden.
-    protected boolean ally = false;
-    protected int power = 0;
-    protected OptionsButtonUpgrade chosenRelic = null;
-    protected boolean uniqueError = false;
-    private JLabel lKosten = new JLabel("");
-    private JLabel legalerEintragLabel = new JLabel();
-    private boolean countToMinimum = true;
-    private boolean countToMaximum = true;
-    private double prozentKosten = 0.0;
-    private boolean warlordError;
-    private boolean warlord = false;
+	protected int kategorie;
+	protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
+	protected boolean überschriftSetzen = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
+	protected boolean neuzeile = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
+	protected boolean keineÜberschrift = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
+	protected boolean unikat = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden,
+	protected String unikatName;
+	protected String auswahl = "Auswahl";
+	protected int unikatMin = 0;
+	protected int unikatMax = 1;
+	protected boolean unikatFehler;
+	protected boolean gesamtpunkteImmerAnzeigen = false; //Um bei einigen Einheiten bei der Auswahl von alle Punkte zu verhinern, dass keine Gesamtpunkte angezeigt werden.
+	protected boolean ally = false;
+	protected int power = 0;
+	protected OptionsButtonUpgrade chosenRelic = null;
+	protected boolean uniqueError = false;
+	private JLabel lKosten = new JLabel("");
+	private JLabel legalerEintragLabel = new JLabel();
+	private boolean countToMinimum = true;
+	private boolean countToMaximum = true;
+	private double prozentKosten = 0.0;
+	private boolean warlordError;
+	private boolean warlord = false;
 
-    public Eintrag() {
-        lKosten.setSize(150, 17);
-        panel.add(lKosten);
-        kostenLabelAktualisieren();
+	public Eintrag() {
+		lKosten.setSize(150, 17);
+		panel.add(lKosten);
+		kostenLabelAktualisieren();
 
-        legalerEintragLabel.setFont(new Font("arial", Font.BOLD, 12));
-        legalerEintragLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        legalerEintragLabel.setForeground(Color.RED);
-        legalerEintragLabel.setSize(150, 17);
+		legalerEintragLabel.setFont(new Font("arial", Font.BOLD, 12));
+		legalerEintragLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+		legalerEintragLabel.setForeground(Color.RED);
+		legalerEintragLabel.setSize(150, 17);
 
-        panel.add(legalerEintragLabel);
-        panel.setBorder(blackBorder);
-        panel.setLayout(null);
+		panel.add(legalerEintragLabel);
+		panel.setBorder(blackBorder);
+		panel.setLayout(null);
 
-        unikatName = this.getClass().getName();
+		unikatName = this.getClass().getName();
 
-        oc.BuildaHQ.addToInformationVectorGlobal(unikatName, 1);
-        this.ID = addRefreshListener(EINTRAG, this::refreshEintrag).getId();
-    }
+		oc.BuildaHQ.addToInformationVectorGlobal(unikatName, 1);
+		this.ID = addRefreshListener(EINTRAG, this::refreshEintrag).getId();
+	}
 
-    private void refreshEintrag() {
-                refreshen();
-                uniqueError = false;
-                warlordError = false;
-                chosenRelic = null;
-                warlord = false;
-                for (int i = 0; i < optionen.size(); ++i) {
-                    if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                        chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
-                        if (chosenRelic != null) {
-                            uniqueError = uniqueError || chosenRelic.hasUniqueError();
-                            break;
-                        }
-                    } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                        chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
-                        if (chosenRelic != null) {
-                            uniqueError = uniqueError || chosenRelic.hasUniqueError();
-                            break;
-                        }
-                    } else if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                        uniqueError = uniqueError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().uniqueError;
-                        warlordError = warlordError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordError;
-                        if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && optionen.elementAt(i).isSelected()){
-                        	warlord = true;
-                        }
-                    }
-                }
-                if (chosenRelic == null) {
-                    for (int i = 0; i < optionen.size(); ++i) {
-                        if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                            ((OptionsUpgradeGruppe) optionen.elementAt(i)).enableRelics();
-                        } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                            ((OptionsEinzelUpgrade) optionen.elementAt(i)).enableRelics();
-                        }
-                    }
-                } else {
-                    for (int i = 0; i < optionen.size(); ++i) {
-                        if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                            ((OptionsUpgradeGruppe) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
-                        } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                            ((OptionsEinzelUpgrade) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
-                        }
-                    }
-                }
+	private void refreshEintrag() {
+		refreshen();
+		uniqueError = false;
+		warlordError = false;
+		chosenRelic = null;
+		warlord = false;
+		for (int i = 0; i < optionen.size(); ++i) {
+			if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+				chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
+				if (chosenRelic != null) {
+					uniqueError = uniqueError || chosenRelic.hasUniqueError();
+					break;
+				}
+			} else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+				chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
+				if (chosenRelic != null) {
+					uniqueError = uniqueError || chosenRelic.hasUniqueError();
+					break;
+				}
+			} else if (optionen.elementAt(i) instanceof RuestkammerStarter) {
+				uniqueError = uniqueError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().uniqueError;
+				warlordError = warlordError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordError;
+				if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && optionen.elementAt(i).isSelected()){
+					warlord = true;
+				}
+			}
+		}
+		if (chosenRelic == null) {
+			for (int i = 0; i < optionen.size(); ++i) {
+				if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+					((OptionsUpgradeGruppe) optionen.elementAt(i)).enableRelics();
+				} else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+					((OptionsEinzelUpgrade) optionen.elementAt(i)).enableRelics();
+				}
+			}
+		} else {
+			for (int i = 0; i < optionen.size(); ++i) {
+				if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+					((OptionsUpgradeGruppe) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
+				} else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+					((OptionsEinzelUpgrade) optionen.elementAt(i)).disableOtherRelics(chosenRelic);
+				}
+			}
+		}
 
-                if (warlordError) {
-                    setFehlermeldung("Max. 1 Warlord");
-                } else if (uniqueError) {
-                    setFehlermeldung("Doppeltes Relikt");
-                } else {
-                	if(getFehlermeldung().equals("Max. 1 Warlord") || getFehlermeldung().equals("Doppeltes Relikt")){
-                		setFehlermeldung("");
-                	}
-                    setFehlermeldung(getFehlermeldung());
-                }
+		if (warlordError) {
+			setFehlermeldung("Max. 1 Warlord");
+		} else if (uniqueError) {
+			setFehlermeldung("Doppeltes Relikt");
+		} else {
+			if(getFehlermeldung().equals("Max. 1 Warlord") || getFehlermeldung().equals("Doppeltes Relikt")){
+				setFehlermeldung("");
+			}
+			setFehlermeldung(getFehlermeldung());
+		}
 
-                if (unikat && BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
-                    setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
-                } else {
-                	setFehlermeldung(getFehlermeldung());
-                }
+		if (unikat && BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
+			setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
+		} else {
+			setFehlermeldung(getFehlermeldung());
+		}
 
-                kostenLabelAktualisieren();
-                panel.setSize(getBreite(), getHöhe());
-                lKosten.setLocation(278, getHöhe() - 20);
-                legalerEintragLabel.setLocation(278, getHöhe() - 40);
-    }
+		kostenLabelAktualisieren();
+		panel.setSize(getBreite(), getHöhe());
+		lKosten.setLocation(278, getHöhe() - 20);
+		legalerEintragLabel.setLocation(278, getHöhe() - 40);
+	}
 
-    public void setBuildaVater(BuildaVater buildaVater) {
-        LOGGER.info("setBuildaVater " + (buildaVater == null));
-        this.buildaVater = buildaVater;
-    }
+	public void setBuildaVater(BuildaVater buildaVater) {
+		LOGGER.info("setBuildaVater " + (buildaVater == null));
+		this.buildaVater = buildaVater;
+	}
 
-    private void checkUnikatErrorMessageState() {
-        String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
+	private void checkUnikatErrorMessageState() {
+		String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
 
-        if (isUnikat()) {
-            if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
-                setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
-            } else {
-                setFehlermeldung(fehlerBuffer);
-            }
-        }
-    }
+		if (isUnikat()) {
+			if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
+				setFehlermeldung((unikatMin == unikatMax ? unikatMin : unikatMin + "-" + unikatMax) + " " + auswahl, true);
+			} else {
+				setFehlermeldung(fehlerBuffer);
+			}
+		}
+	}
 
-    public int getPower() {
-        return power;
-    }
+	public int getPower() {
+		return power;
+	}
 
-    /**
-     * minimal null, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
-     */
-    public void setUnikat(boolean unikat, int unikatMax) {
-        checkUnikatErrorMessageState();
-        this.unikat = unikat;
-        this.unikatMax = unikatMax;
-    }
+	/**
+	 * minimal null, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
+	 */
+	public void setUnikat(boolean unikat, int unikatMax) {
+		checkUnikatErrorMessageState();
+		this.unikat = unikat;
+		this.unikatMax = unikatMax;
+	}
 
-    /**
-     * minimal null, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
-     */
-    public void setUnikat(boolean unikat, int unikatMax, String auswahl) {
-        checkUnikatErrorMessageState();
-        this.unikat = unikat;
-        this.unikatMax = unikatMax;
-        this.auswahl = auswahl;
-    }
+	/**
+	 * minimal null, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
+	 */
+	public void setUnikat(boolean unikat, int unikatMax, String auswahl) {
+		checkUnikatErrorMessageState();
+		this.unikat = unikat;
+		this.unikatMax = unikatMax;
+		this.auswahl = auswahl;
+	}
 
-    /**
-     * minimal unikatMin, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
-     */
-    public void setUnikat(boolean unikat, int unikatMin, int unikatMax) {
-        checkUnikatErrorMessageState();
-        this.unikat = unikat;
-        this.unikatMin = unikatMin;
-        this.unikatMax = unikatMax;
-    }
+	/**
+	 * minimal unikatMin, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
+	 */
+	public void setUnikat(boolean unikat, int unikatMin, int unikatMax) {
+		checkUnikatErrorMessageState();
+		this.unikat = unikat;
+		this.unikatMin = unikatMin;
+		this.unikatMax = unikatMax;
+	}
 
-    /**
-     * minimal unikatMin, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
-     */
-    public void setUnikat(boolean unikat, int unikatMin, int unikatMax, String auswahl) {
-        checkUnikatErrorMessageState();
-        this.unikat = unikat;
-        this.unikatMin = unikatMin;
-        this.unikatMax = unikatMax;
-        this.auswahl = auswahl;
-    }
+	/**
+	 * minimal unikatMin, maximal unikatMax solcher Auswahl, sonst Fehlermeldung, wenn unikat = true
+	 */
+	public void setUnikat(boolean unikat, int unikatMin, int unikatMax, String auswahl) {
+		checkUnikatErrorMessageState();
+		this.unikat = unikat;
+		this.unikatMin = unikatMin;
+		this.unikatMax = unikatMax;
+		this.auswahl = auswahl;
+	}
 
-    public void setUnikatName(String unikatName) {
-        BuildaHQ.addToInformationVectorGlobal(unikatName, BuildaHQ.getCountFromInformationVectorGlobal(this.unikatName));
-        this.unikatName = unikatName;
-    }
+	public void setUnikatName(String unikatName) {
+		BuildaHQ.addToInformationVectorGlobal(unikatName, BuildaHQ.getCountFromInformationVectorGlobal(this.unikatName));
+		this.unikatName = unikatName;
+	}
 
-    public boolean isUnikat() {
-        return this.unikat;
-    }
+	public boolean isUnikat() {
+		return this.unikat;
+	}
 
-    /**
-     * minimal null, maximal eine solche Auswahl, sonst Fehlermeldung, wenn unikat = true
-     */
-    public void setUnikat(boolean unikat) {
-        checkUnikatErrorMessageState();
-        this.unikat = unikat;
-    }
+	/**
+	 * minimal null, maximal eine solche Auswahl, sonst Fehlermeldung, wenn unikat = true
+	 */
+	public void setUnikat(boolean unikat) {
+		checkUnikatErrorMessageState();
+		this.unikat = unikat;
+	}
 
-    public boolean isCountToMinimum() {
-        return this.countToMinimum;
-    }
+	public boolean isCountToMinimum() {
+		return this.countToMinimum;
+	}
 
-    public void setCountToMinimum(boolean state) {
-        this.countToMinimum = state;
-    }
+	public void setCountToMinimum(boolean state) {
+		this.countToMinimum = state;
+	}
 
-    public boolean isCountToMaximum() {
-        return this.countToMaximum;
-    }
+	public boolean isCountToMaximum() {
+		return this.countToMaximum;
+	}
 
-    public void setCountToMaximum(boolean state) {
-        this.countToMaximum = state;
-    }
+	public void setCountToMaximum(boolean state) {
+		this.countToMaximum = state;
+	}
 
-    public int getKategorie() {
-        return this.kategorie;
-    }
+	public int getKategorie() {
+		return this.kategorie;
+	}
 
-    public void setKategorie(int i) {
-        kategorie = i;
-    }
+	public void setKategorie(int i) {
+		kategorie = i;
+	}
 
-    @Override
-    public JPanel getPanel() {
-        return this.panel;
-    }
+	@Override
+	public JPanel getPanel() {
+		return this.panel;
+	}
 
-    public double getEintragsCNT() {
-        return eintragsCNT;
-    }
+	public double getEintragsCNT() {
+		return eintragsCNT;
+	}
 
-    protected void setEintragsCNT(double eintragsCNT) {
-        this.eintragsCNT = eintragsCNT;
-    }
+	protected void setEintragsCNT(double eintragsCNT) {
+		this.eintragsCNT = eintragsCNT;
+	}
 
-    public void setKostenLabelVisible(boolean b) {
-        lKosten.setVisible(b);
-    }
+	public void setKostenLabelVisible(boolean b) {
+		lKosten.setVisible(b);
+	}
 
-    public void setFehlermeldung(String meldung, boolean unikatFehler) {
-        legalerEintragLabel.setText(meldung);
-        this.unikatFehler = unikatFehler;
-    }
+	public void setFehlermeldung(String meldung, boolean unikatFehler) {
+		legalerEintragLabel.setText(meldung);
+		this.unikatFehler = unikatFehler;
+	}
 
-    public String getFehlermeldung() {
-        return legalerEintragLabel.getText();
-    }
+	public String getFehlermeldung() {
+		return legalerEintragLabel.getText();
+	}
 
-    public void setFehlermeldung(String meldung) {
-        setFehlermeldung(meldung, false);
-    }
+	public void setFehlermeldung(String meldung) {
+		setFehlermeldung(meldung, false);
+	}
 
-    @Override
-    public String getText() {  // der Text, der in der Textarea als Armeeliste angezeigt wird, wird immer in  getText()  Methoden generiert.
-        if (this instanceof LeererEintrag) return "";
+	@Override
+	public String getText() {  // der Text, der in der Textarea als Armeeliste angezeigt wird, wird immer in  getText()  Methoden generiert.
+		if (this instanceof LeererEintrag) return "";
 
-        String titel = "";
-        int cnt = 0;
+		String titel = "";
+		int cnt = 0;
 
-        if (grundkosten != 0 && !keineÜberschrift) {
-            String kosten = "";
-            if (BuildaHQ.allePunktkosten) {
-                kosten = punkteAbstandHalter + entferneNullNachkomma(grundkosten) + " " + BuildaHQ.translate("Punkte");
-            }
-            titel = BuildaHQ.formatierFett(name + kosten + (neuzeile ? "\n" : ""));
-            ++cnt;
-        } else if (überschriftSetzen) {
-            titel = BuildaHQ.formatierItalic(BuildaHQ.formatierFett(name));
-        }
+		if (grundkosten != 0 && !keineÜberschrift) {
+			String kosten = "";
+			if (BuildaHQ.allePunktkosten) {
+				kosten = punkteAbstandHalter + entferneNullNachkomma(grundkosten) + " " + BuildaHQ.translate("Punkte");
+			}
+			titel = BuildaHQ.formatierFett(name + kosten + (neuzeile ? "\n" : ""));
+			++cnt;
+		} else if (überschriftSetzen) {
+			titel = BuildaHQ.formatierItalic(BuildaHQ.formatierFett(name));
+		}
 
-        if(warlord){
-        	titel += " [WARLORD]";
-        }
-        
-        StringBuilder text = new StringBuilder(titel);
+		if(warlord){
+			titel += " [WARLORD]";
+		}
 
-        for (int i = 0; i < optionen.size(); ++i) {
-            if (optionen.elementAt(i).isSelected()) {
-                text.append(optionen.elementAt(i).getText());
-                ++cnt;
-            }
-        }
+		StringBuilder text = new StringBuilder(titel);
 
-        //Bei alle Punktkosten: hier wird bei kostenlosen Einträgen, bei denen nur die erste Option gewählt ist, welche selbst aber noch Kosten und weitere eigene Optionen hat, die Gesamtpunktzahl nicht angezeigt. Deswegen: "gesamtpunkteImmerAnzeigen" hinzugefügt.
-        if (this.getKosten() != 0 && (cnt > 1 || !BuildaHQ.allePunktkosten || (optionen.size() > 0 ? optionen.elementAt(0).getKosten() != this.getKosten() : false) || gesamtpunkteImmerAnzeigen)) {
-            text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte") + " (PL " + getPower()+ ")"));
-        }
+		for (int i = 0; i < optionen.size(); ++i) {
+			if (optionen.elementAt(i).isSelected()) {
+				text.append(optionen.elementAt(i).getText());
+				++cnt;
+			}
+		}
 
-        // ACHTUNG BEI KOSTENLOSEN EINTRÄGEN, die trotzdem angezeigt werden sollen!
-        text.append(ZEILENUMBRUCH);
-        text.append(ZEILENUMBRUCH);
+		//Bei alle Punktkosten: hier wird bei kostenlosen Einträgen, bei denen nur die erste Option gewählt ist, welche selbst aber noch Kosten und weitere eigene Optionen hat, die Gesamtpunktzahl nicht angezeigt. Deswegen: "gesamtpunkteImmerAnzeigen" hinzugefügt.
+		if (this.getKosten() != 0 && (cnt > 1 || !BuildaHQ.allePunktkosten || (optionen.size() > 0 ? optionen.elementAt(0).getKosten() != this.getKosten() : false) || gesamtpunkteImmerAnzeigen)) {
+			text.append(" " + BuildaHQ.formatierItalic(" - - - > " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte") + " (PL " + getPower()+ ")"));
+		}
 
-        String s = text.toString();
+		// ACHTUNG BEI KOSTENLOSEN EINTRÄGEN, die trotzdem angezeigt werden sollen!
+		text.append(ZEILENUMBRUCH);
+		text.append(ZEILENUMBRUCH);
 
-        if (s.indexOf(BuildaHQ.abstand) == 0) {
-            s = s.substring(BuildaHQ.abstand.length(), s.length());
-        }
+		String s = text.toString();
 
-        return s;
-    }
+		if (s.indexOf(BuildaHQ.abstand) == 0) {
+			s = s.substring(BuildaHQ.abstand.length(), s.length());
+		}
 
-    public void kostenLabelAktualisieren() {
-        lKosten.setText((BuildaHQ.getSprache() == Sprache.English ? "    " : "") + BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte"));
-    }
+		return s;
+	}
 
-    public void refreshen() {}
+	public void kostenLabelAktualisieren() {
+		lKosten.setText((BuildaHQ.getSprache() == Sprache.English ? "    " : "") + BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte"));
+	}
 
-    @Override
-    public int getBreite() {
-        return auswahlBreite + randAbstand;
-    }
+	public void refreshen() {}
 
-    @Override
-    public int getHöhe() {
-        return super.getHöhe() > 60 ? super.getHöhe() : 60;
-    }
+	@Override
+	public int getBreite() {
+		return auswahlBreite + randAbstand;
+	}
 
-    public void complete() {
-        panel.setSize(getBreite(), getHöhe());
-        lKosten.setLocation(278, getHöhe() - 20);
-        refreshen();
-        kostenLabelAktualisieren();
-    }
+	@Override
+	public int getHöhe() {
+		return super.getHöhe() > 60 ? super.getHöhe() : 60;
+	}
 
-    public void deleteYourself() {
-        LOGGER.info("Eintrag-deleteyourself");
-        BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
+	public void complete() {
+		panel.setSize(getBreite(), getHöhe());
+		lKosten.setLocation(278, getHöhe() - 20);
+		refreshen();
+		kostenLabelAktualisieren();
+	}
 
-        for (int i = 0; i < optionen.size(); ++i) {
-            if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
+	public void deleteYourself() {
+		LOGGER.info("Eintrag-deleteyourself");
+		BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
 
-                if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
-                        || !(rk.getKammer().toString().indexOf("GiftsOf") == -1) || !(rk.getKammer().toString().indexOf("Spites") == -1) || !(rk.getKammer().toString().indexOf("Assassin") == -1)) {
+		for (int i = 0; i < optionen.size(); ++i) {
+			if (optionen.elementAt(i) instanceof RuestkammerStarter) {
+				RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
 
-                    String text = "";
-                    if (rk.getKammer().getText().length() > 2) {
-                        text = rk.getKammer().getText().substring(1, rk.getKammer().getText().length());
-                    }
-                    text = text.replaceAll("\n- ", "-");
-                    StringTokenizer tokenizer = new StringTokenizer(text, ",");
-                    while (tokenizer.hasMoreElements()) {
-                        String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
+				if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
+						|| !(rk.getKammer().toString().indexOf("GiftsOf") == -1) || !(rk.getKammer().toString().indexOf("Spites") == -1) || !(rk.getKammer().toString().indexOf("Assassin") == -1)) {
 
-                        if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
-                            BuildaHQ.Items.remove(tok);
-                        }
+					String text = "";
+					if (rk.getKammer().getText().length() > 2) {
+						text = rk.getKammer().getText().substring(1, rk.getKammer().getText().length());
+					}
+					text = text.replaceAll("\n- ", "-");
+					StringTokenizer tokenizer = new StringTokenizer(text, ",");
+					while (tokenizer.hasMoreElements()) {
+						String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
 
-                    }
-                }
+						if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
+							BuildaHQ.Items.remove(tok);
+						}
 
-                BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
-                LOGGER.info("RuestkammerStarter-rk-deleteyourself");
-                rk.deleteYourself();
-            } else if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
-                ((OptionsUpgradeGruppe) optionen.elementAt(i)).deleteYourself();
-            } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
-                ((OptionsEinzelUpgrade) optionen.elementAt(i)).deleteYourself();
-            }
-        }
-    }
+					}
+				}
 
-    public double getProzentKosten() {
-        return prozentKosten;
-    }
+				BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
+				LOGGER.info("RuestkammerStarter-rk-deleteyourself");
+				rk.deleteYourself();
+			} else if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
+				((OptionsUpgradeGruppe) optionen.elementAt(i)).deleteYourself();
+			} else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
+				((OptionsEinzelUpgrade) optionen.elementAt(i)).deleteYourself();
+			}
+		}
+	}
 
-    public void setProzentKosten(double prozentKosten) {
-        this.prozentKosten = prozentKosten;
-    }
+	public double getProzentKosten() {
+		return prozentKosten;
+	}
 
-    public boolean hasSpecialValue(String key) {
-        return false;
-    }
+	public void setProzentKosten(double prozentKosten) {
+		this.prozentKosten = prozentKosten;
+	}
 
-    public void setInformationVectorValue(String s, int value) {
-        checkBuildaVater().setInformationVectorValue(s, value);
-    }
+	public boolean hasSpecialValue(String key) {
+		return false;
+	}
+
+	public void setInformationVectorValue(String s, int value) {
+		checkBuildaVater().setInformationVectorValue(s, value);
+	}
 }

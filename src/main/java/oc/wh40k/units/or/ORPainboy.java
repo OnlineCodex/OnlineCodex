@@ -47,5 +47,5 @@ public class ORPainboy extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
+    
 }

@@ -24,7 +24,6 @@ public class ORRuntherd extends Eintrag {
         
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
-
         ogE.addElement(new OptionsGruppeEintrag("Grabba Stikk", getPts("Grabba Stikk")));
         ogE.addElement(new OptionsGruppeEintrag("Grot-prod", getPts("Grot-prod")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
