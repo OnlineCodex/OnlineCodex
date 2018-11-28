@@ -3,6 +3,7 @@ package oc.wh40k.units.or;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORBigMekonWarbike extends Eintrag {
 
@@ -30,7 +31,7 @@ public class ORBigMekonWarbike extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
         warlord.initKammer();
         warlord.setUeberschriftTrotzNullKostenAusgeben(true);
         warlord.setButtonText("Warlord");

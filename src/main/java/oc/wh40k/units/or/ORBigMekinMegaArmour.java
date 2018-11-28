@@ -1,6 +1,7 @@
 package oc.wh40k.units.or;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORBigMekinMegaArmour extends Eintrag {
 
@@ -38,7 +39,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
         warlord.initKammer();
         warlord.setUeberschriftTrotzNullKostenAusgeben(true);
         warlord.setButtonText("Warlord");

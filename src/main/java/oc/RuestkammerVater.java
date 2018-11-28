@@ -86,13 +86,13 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
             if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
                 chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
                 if (chosenRelic != null) {
-                    uniqueError = chosenRelic.uniqueError;
+                    uniqueError = chosenRelic.hasUniqueError();
                     break;
                 }
             } else if (optionen.elementAt(i) instanceof OptionsEinzelUpgrade) {
                 chosenRelic = ((OptionsEinzelUpgrade) optionen.elementAt(i)).getChosenRelic();
                 if (chosenRelic != null) {
-                    uniqueError = chosenRelic.uniqueError;
+                    uniqueError = chosenRelic.hasUniqueError();
                     break;
                 }
             }

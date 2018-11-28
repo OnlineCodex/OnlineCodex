@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORWeirdboy extends Eintrag {
 
@@ -41,7 +42,7 @@ public class ORWeirdboy extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
         warlord.initKammer();
         warlord.setUeberschriftTrotzNullKostenAusgeben(true);
         warlord.setButtonText("Warlord");

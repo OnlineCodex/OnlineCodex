@@ -3,6 +3,7 @@ package oc.wh40k.units.or;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORWarboss extends Eintrag {
 
@@ -43,7 +44,6 @@ public class ORWarboss extends Eintrag {
 
         complete();
     }
-}
 
     @Override
     public void refreshen() {

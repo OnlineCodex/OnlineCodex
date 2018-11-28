@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORRuntherd extends Eintrag {
     
@@ -46,7 +47,7 @@ public class ORRuntherd extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, "Warlordtraits", "Warlordtrait: ");
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
         warlord.initKammer();
         warlord.setUeberschriftTrotzNullKostenAusgeben(true);
         warlord.setButtonText("Warlord");
