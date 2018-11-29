@@ -113,9 +113,6 @@ public class VOLKOrks extends BuildaVater {
     public void volkRefresh() {
 
         if (getFormationType().equals("ORK")) {
-            myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{
-                    "", "Warlordtraits"/*, "Artefacts"*/});
-
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
                     "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",

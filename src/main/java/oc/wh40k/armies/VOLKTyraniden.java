@@ -68,7 +68,6 @@ public class VOLKTyraniden extends BuildaVater {
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("TYRANIDS")) {
-            myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
                     "", "The Swarmlord", "Old One Eye",
@@ -98,7 +97,6 @@ public class VOLKTyraniden extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});
         } else if (HIVEFLEETS.contains(getFormationType())) {
-            myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
                     "", "The Swarmlord", "Old One Eye"});
