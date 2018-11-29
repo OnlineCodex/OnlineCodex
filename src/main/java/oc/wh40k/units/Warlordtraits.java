@@ -20,7 +20,6 @@ public class Warlordtraits extends RuestkammerVater {
 	@Override
 	public void initButtons(boolean... b) {
 		warlord = true;
-    	addToInformationVector("Warlord", 1);
     	checkBuildaVater();
     	String army = buildaVater.getFormationType();
 
@@ -50,8 +49,6 @@ public class Warlordtraits extends RuestkammerVater {
     //@OVERRIDE
     public void refreshen() {
     	warlordtraits.alwaysSelected();
-        warlordError = getCountFromInformationVector("Warlord") > 1;
-        showErrorMessage(warlordError ? "Max. 1 Warlord" : "");
         String army= buildaVater.getFormationType();
         if(armeeKennung.equals("OR")){
 	        warlordtraits.setAktiv("Bad Moons: Da best armout teef can buy", army.equals("Bad Moonz"));
@@ -63,11 +60,4 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Snakebites: Surly as a Squiggoth", army.equals("Snakebites"));
         }
     }
-    
-    public void deleteYourself() {
-    	addToInformationVector("Warlord", -1);
-    	super.deleteYourself();
-    }
-
-    
 }

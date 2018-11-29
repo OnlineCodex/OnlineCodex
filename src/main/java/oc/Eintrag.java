@@ -66,6 +66,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		warlordError = false;
 		chosenRelic = null;
 		warlord = false;
+		boolean warlordChange = false;
 		for (int i = 0; i < optionen.size(); ++i) {
 			if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
 				chosenRelic = ((OptionsUpgradeGruppe) optionen.elementAt(i)).getChosenRelic();
@@ -81,9 +82,20 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 				}
 			} else if (optionen.elementAt(i) instanceof RuestkammerStarter) {
 				uniqueError = uniqueError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().uniqueError;
-				warlordError = warlordError || ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordError;
 				if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && optionen.elementAt(i).isSelected()){
 					warlord = true;
+					warlordError = BuildaHQ.getCountFromInformationVectorGlobal("Warlord") > 1;
+					if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == false){
+						((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = true;
+				    	BuildaHQ.addToInformationVectorGlobal("Warlord", 1);
+				    	warlordChange = true;
+					}
+				} else if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && !optionen.elementAt(i).isSelected()) {
+					if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == true){
+						((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = false;
+						BuildaHQ.addToInformationVectorGlobal("Warlord", -1);
+				    	warlordChange = true;
+					}
 				}
 			}
 		}
@@ -126,6 +138,10 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		panel.setSize(getBreite(), getHöhe());
 		lKosten.setLocation(278, getHöhe() - 20);
 		legalerEintragLabel.setLocation(278, getHöhe() - 40);
+		
+		if(warlordChange == true) {
+			RefreshListener.fireRefresh();
+		}
 	}
 
 	public void setBuildaVater(BuildaVater buildaVater) {
@@ -355,10 +371,14 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 						if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
 							BuildaHQ.Items.remove(tok);
 						}
-
 					}
 				}
-
+				
+				if(optionen.elementAt(i).isSelected() && ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == true) {
+					((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = false;
+					BuildaHQ.addToInformationVectorGlobal("Warlord", -1);
+				}
+				
 				BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
 				LOGGER.info("RuestkammerStarter-rk-deleteyourself");
 				rk.deleteYourself();

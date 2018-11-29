@@ -20,8 +20,8 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	protected boolean legal = true;
 	protected OptionsButtonUpgrade chosenRelic = null;
 	boolean uniqueError = false;
-	public boolean warlordError = false;
 	public boolean warlord = false;
+	public boolean warlordSelected = false;
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
