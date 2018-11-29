@@ -9,6 +9,7 @@ import oc.*;
 public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits;
     String armeeKennung = "";
+    String pflichtauswahl = "";
 
     public Warlordtraits() {
         grundkosten = 0;
@@ -48,8 +49,8 @@ public class Warlordtraits extends RuestkammerVater {
 
     //@OVERRIDE
     public void refreshen() {
-    	warlordtraits.alwaysSelected();
         String army= buildaVater.getFormationType();
+    	warlordtraits.alwaysSelected();
         if(armeeKennung.equals("OR")){
 	        warlordtraits.setAktiv("Bad Moons: Da best armout teef can buy", army.equals("Bad Moonz"));
 	    	warlordtraits.setAktiv("Blood Axes: I've got a plan, Ladz", army.equals("Blood Axe"));
@@ -59,5 +60,13 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Goffs: Proper Killy", army.equals("Goff"));
     		warlordtraits.setAktiv("Snakebites: Surly as a Squiggoth", army.equals("Snakebites"));
         }
+        if(!pflichtauswahl.equals("")){
+        	warlordtraits.deselectAll();
+        	warlordtraits.setSelected(pflichtauswahl, true);
+        }
+    }
+    
+    public void setPflichtauswahl(String s){
+    	pflichtauswahl = s;
     }
 }

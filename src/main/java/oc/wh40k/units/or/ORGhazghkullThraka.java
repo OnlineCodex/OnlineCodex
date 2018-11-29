@@ -2,10 +2,11 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class ORGhazghkullThraka extends Eintrag {
 
-    RuestkammerStarter squigs;
+    RuestkammerStarter warlord;
 
     public ORGhazghkullThraka() {
 
@@ -13,6 +14,15 @@ public class ORGhazghkullThraka extends Eintrag {
         name = "Ghazghkull Thraka";
         grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        ((Warlordtraits) warlord.getKammer()).setPflichtauswahl("Goffs: Proper Killy");
+        add(warlord);
 
         complete();
     }
