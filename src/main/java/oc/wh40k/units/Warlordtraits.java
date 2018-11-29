@@ -24,6 +24,12 @@ public class Warlordtraits extends RuestkammerVater {
     	checkBuildaVater();
     	String army = buildaVater.getFormationType();
 
+    	//ALL
+    	ogE.addElement(new OptionsGruppeEintrag("Legendary Fighter (BRB p.186)", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Inspiring Leader (BRB p.186)", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Tenacious Survivor (BRB p.186)", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Insane Bravado (BRB p.253)", 0));
+    	
     	//ORKS
     	if(ORKS.contains(army)) {
     		armeeKennung = "OR";
