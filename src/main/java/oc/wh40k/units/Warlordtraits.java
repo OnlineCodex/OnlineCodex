@@ -15,6 +15,7 @@ public class Warlordtraits extends RuestkammerVater {
     }
 
     
+    Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Space Wolves");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     
@@ -30,6 +31,16 @@ public class Warlordtraits extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Tenacious Survivor (BRB p.186)", 0));
         ogE.addElement(new OptionsGruppeEintrag("Insane Bravado (BRB p.253)", 0));
     	
+        //Imperium
+        if(IMPERIUM.contains(army) || army.equals("Space Wolves")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Wolfkin (SW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of Majesty (SW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Beastslayer (SW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Hunter (SW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Bear (SW)", 0));
+        }
+        
     	if(ORKS.contains(army)) { //ORKS
 	        ogE.addElement(new OptionsGruppeEintrag("Follow me Ladz", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Big Killa Boss", 0));

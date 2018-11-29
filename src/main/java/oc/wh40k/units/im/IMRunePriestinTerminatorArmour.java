@@ -2,6 +2,7 @@ package oc.wh40k.units.im;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMRunePriestinTerminatorArmour extends Eintrag {
 
@@ -9,6 +10,7 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
     RuestkammerStarter waffenUndArtefakte;
     boolean fenrisSupp = false;
 	RuestkammerStarter psychicPowers;
+    RuestkammerStarter warlord;
 
     public IMRunePriestinTerminatorArmour() {
         name = "Rune Priest on Bike";
@@ -39,6 +41,14 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+
         complete();
     }
 
@@ -47,6 +57,10 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         waffenUndArtefakte.getPanel().setLocation(
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }
 

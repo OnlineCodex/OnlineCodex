@@ -4,10 +4,12 @@ import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisAncient extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter warlord;
     boolean spacewolves = false;
     
     public IMPrimarisAncient() {
@@ -30,8 +32,26 @@ public class IMPrimarisAncient extends Eintrag {
 	        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
 	        add(waffenUndReliquien);
 	        waffenUndReliquien.setAbwaehlbar(false);
+
+	        seperator();
         }
         
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+        
         complete();
+    }
+
+    @Override
+    public void refreshen() {
+    	if(spacewolves) {
+	        warlord.getPanel().setLocation(
+	                (int) warlord.getPanel().getLocation().getX(),
+	                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+	        );
+    	}
     }
 }
