@@ -5,6 +5,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class TYTrygonPrime extends Eintrag {
 
@@ -12,6 +13,7 @@ public class TYTrygonPrime extends Eintrag {
     OptionsEinzelUpgrade oe1;
     OptionsEinzelUpgrade oe2;
 	private RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     public TYTrygonPrime() {
         name = "Trygon Prime";
@@ -41,12 +43,25 @@ public class TYTrygonPrime extends Eintrag {
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
 
+        seperator();
+        
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+
         complete();
     }
 
     @Override
     public void refreshen() {
         o1.alwaysSelected();
+    	
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 
 }

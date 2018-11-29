@@ -67,7 +67,7 @@ public class VOLKTyraniden extends BuildaVater {
     
     @Override
     public void volkRefresh() {
-        if (getFormationType().equals("TYRANIDS") || HIVEFLEETS.contains(getFormationType())) {
+        if (getFormationType().equals("TYRANIDS")) {
             myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
@@ -94,6 +94,30 @@ public class VOLKTyraniden extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Tyrannocyte",
                     "", "Goliath Truck", "Cult Chimera"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Sporocyst"});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
+                    "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});
+        } else if (HIVEFLEETS.contains(getFormationType())) {
+            myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
+                    "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
+                    "", "The Swarmlord", "Old One Eye"});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
+                    "", "Tyranid Warriors", "Genestealers", "Termagants", "Hormagaunts", "Ripper Swarm"});
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
+                    "", "Tyrant Guard", "Hive Guard", "Lictor", "Maleceptor", "Zoanthropes", "Venomthropes",
+                    "Pyrovores", "Haruspex",
+                    "", "Deathleaper", "The Red Terror"});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
+                    "", "Tyranid Shrikes", "Raveners", "Sky-Slasher Swarm", "Gargoyles",
+                    "Mucolid Spores", "Sporenmines", "Dimachaeron", "Meiotic Spores"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
+                    "", "Harpy", "Hive Crone"});
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
+                    "", "Carnifexes", "Screamer-Killers", "Thornbacks", "Biovores", "Trygon Prime", "Trygon", "Mawloc", "Exocrine", "Toxicrene",
+                    "Tyrannofex", "Stonecrusher Carnifex Brood"});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
+                    "", "Tyrannocyte"});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Sporocyst"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});

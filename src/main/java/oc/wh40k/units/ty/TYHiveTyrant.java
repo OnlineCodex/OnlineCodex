@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.Warlordtraits;
 
 public class TYHiveTyrant extends Eintrag {
 
@@ -12,6 +13,7 @@ public class TYHiveTyrant extends Eintrag {
     OptionsEinzelUpgrade oe3;
     RuestkammerStarter psychicPowers;
     RuestkammerStarter waffen;
+    RuestkammerStarter warlord;
 
     public TYHiveTyrant() {
         name = "Hive Tyrant";
@@ -45,6 +47,14 @@ public class TYHiveTyrant extends Eintrag {
         add(waffen);
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
+
+        seperator();
+        
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
         
         complete();
     }
@@ -54,6 +64,11 @@ public class TYHiveTyrant extends Eintrag {
     	waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+    	
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
 

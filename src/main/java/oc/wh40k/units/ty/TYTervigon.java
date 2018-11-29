@@ -2,6 +2,7 @@ package oc.wh40k.units.ty;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.Warlordtraits;
 
 public class TYTervigon extends Eintrag {
 
@@ -11,6 +12,7 @@ public class TYTervigon extends Eintrag {
 
     RuestkammerStarter waffen;
     RuestkammerStarter psychicPowers;
+    RuestkammerStarter warlord;
 
     public TYTervigon() {
         name = "Tervigon";
@@ -46,6 +48,14 @@ public class TYTervigon extends Eintrag {
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
 
+        seperator();
+        
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+
         complete();
     }
 
@@ -56,6 +66,11 @@ public class TYTervigon extends Eintrag {
         waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+    	
+    	warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
 
