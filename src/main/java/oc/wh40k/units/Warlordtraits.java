@@ -74,13 +74,14 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Huntsman (DA)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Master of Manoeuvre (DA)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Stubborn Tenacity (DA)", 0));
-	        
-//	        NAMED CHARACTERS
-//	        Azrael		Brilliant Strategist
-//	        Belial 		Huntsman
-//	        Sammael 	Master of Manoeuvre
-//	        Ezekiel 	Courage of the First Legion
-//	        Asmodai 	Fury of the Lion
+        }
+        if(army.equals("IMPERIUM") || army.equals("Deathwatch")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Bane of Monstrosities (DW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Lord of Hidden Knowledge (DW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Castellan of the Black Vault (DW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("The Watch Eternal (DW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Vigilance Incarnate (DW)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Nowhere to Hide (DW)", 0));
         }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
