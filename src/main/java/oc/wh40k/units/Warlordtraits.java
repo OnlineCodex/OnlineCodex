@@ -16,7 +16,7 @@ public class Warlordtraits extends RuestkammerVater {
     }
 
     
-    Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Space Wolves");
+    Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Adeptus Custodes", "Space Wolves");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
@@ -35,7 +35,15 @@ public class Warlordtraits extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Insane Bravado (BRB p.253)", 0));
     	
         //Imperium
-        if(IMPERIUM.contains(army) || army.equals("Space Wolves")) {
+        if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Peerless Warrior (AC)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Superior Creation (AC)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Impregnable Mind (AC)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Radiant Mantle (AC)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Companion (AC)", 0));
+        }
+        if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Wolfkin (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of Majesty (SW)", 0));
