@@ -2,14 +2,12 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 import java.util.Vector;
 
 public class TALongstrike extends Eintrag {
 
     Vector<RuestkammerStarter> rk;
-    RuestkammerStarter warlord;
 
     public TALongstrike() {
         name = "Longstrike";
@@ -34,12 +32,7 @@ public class TALongstrike extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("T'au: Strength of Belief");
-        add(warlord);
+        addWarlordTraits("T'au: Strength of Belief", true);
 
         complete();
     }
@@ -48,8 +41,8 @@ public class TALongstrike extends Eintrag {
     public void refreshen() {
         setUnikat(true);
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) rk.lastElement().getPanel().getLocation().getY() + rk.lastElement().getPanel().getSize().height + 5
         );
     }

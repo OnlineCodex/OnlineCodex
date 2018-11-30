@@ -2,11 +2,9 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class OROrkMekBossBuzzgob extends Eintrag {
 
-    RuestkammerStarter warlord;
     
     public OROrkMekBossBuzzgob() {
         name = "Ork Mek Boss Buzzgob";
@@ -22,12 +20,7 @@ public class OROrkMekBossBuzzgob extends Eintrag {
 
         seperator();
         
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits) warlord.getKammer()).setPflichtauswahl("Goffs: Proper Killy");
-        add(warlord);
+        addWarlordTraits("Goffs: Proper Killy", true);
         
         complete();
     }

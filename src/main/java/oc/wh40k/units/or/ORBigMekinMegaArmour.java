@@ -1,13 +1,11 @@
 package oc.wh40k.units.or;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class ORBigMekinMegaArmour extends Eintrag {
 
     OptionsEinzelUpgrade grotoiler;
     RuestkammerStarter waffen;
-    RuestkammerStarter warlord;
     OptionsUpgradeGruppe tech = null;
 
     public ORBigMekinMegaArmour() {
@@ -39,19 +37,15 @@ public class ORBigMekinMegaArmour extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-    	warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }

@@ -2,13 +2,11 @@ package oc.wh40k.units.im;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisRunePriest extends Eintrag {
 	
     RuestkammerStarter waffenUndArtefakte;
 	RuestkammerStarter psychicPowers;
-    RuestkammerStarter warlord;
 
     public IMPrimarisRunePriest() {
         name = "Primaris Rune Priest";
@@ -35,11 +33,7 @@ public class IMPrimarisRunePriest extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
         
         complete();
     }
@@ -51,8 +45,8 @@ public class IMPrimarisRunePriest extends Eintrag {
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }

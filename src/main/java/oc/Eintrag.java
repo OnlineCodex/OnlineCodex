@@ -1,6 +1,8 @@
 package oc;
 
 import oc.utils.ResourceUtils;
+import oc.wh40k.units.Warlordtraits;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,6 +39,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	private boolean countToMinimum = true;
 	private boolean countToMaximum = true;
 	private double prozentKosten = 0.0;
+	protected RuestkammerStarter warlordTraits;
 	private boolean warlordError;
 	private boolean warlord = false;
 
@@ -404,5 +407,16 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
 	public void setInformationVectorValue(String s, int value) {
 		checkBuildaVater().setInformationVectorValue(s, value);
+	}
+	
+	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed) {
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+		warlordTraits.initKammer();
+		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
+		warlordTraits.setButtonText("Warlord");
+		if(!mandatoryChoice.equals("")) {
+			((Warlordtraits)warlordTraits.getKammer()).setMandatoryChoice(mandatoryChoice);
+		}
+        add(warlordTraits);
 	}
 }

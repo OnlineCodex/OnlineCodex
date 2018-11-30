@@ -1,14 +1,12 @@
 package oc.wh40k.units.im;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisLieutenants extends Eintrag {
 
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o1x;
-    RuestkammerStarter warlord;
 
     OptionsEinzelUpgrade mantlets;
 
@@ -27,11 +25,7 @@ public class IMPrimarisLieutenants extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }

@@ -1,14 +1,12 @@
 package oc.wh40k.units.ta;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
     OptionsUpgradeGruppe o1;
     RuestkammerStarter ob;
     OptionsZaehlerGruppe o5;
-    RuestkammerStarter warlord;
 
     public TACommanderinXV85EnforcerBattlesuit() {
         name = "Commander in XV85 Enforcer Battlesuit";
@@ -34,11 +32,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
 
@@ -51,8 +45,8 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
             power++;
         }
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
         );
     }

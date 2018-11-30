@@ -5,13 +5,11 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMLibrarianDreadnought extends Eintrag {
 
     OptionsUpgradeGruppe o2;
     RuestkammerStarter psychicPowers;
-    RuestkammerStarter warlord;
 
     public IMLibrarianDreadnought() {
         name = "Librarian Dreadnought";
@@ -37,11 +35,7 @@ public class IMLibrarianDreadnought extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -49,8 +43,8 @@ public class IMLibrarianDreadnought extends Eintrag {
     @Override
     public void refreshen() {
         o2.alwaysSelected();
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
     }

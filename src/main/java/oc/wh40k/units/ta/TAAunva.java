@@ -2,11 +2,9 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TAAunva extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public TAAunva() {
         name = "Aun'va";
@@ -16,12 +14,7 @@ public class TAAunva extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("Through Unity, Devastation");
-        add(warlord);
+        addWarlordTraits("Through Unity, Devastation", true);
 
         complete();
 

@@ -4,12 +4,10 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TACadreFireblade extends Eintrag {
 
     OptionsZaehlerGruppe o1;
-    RuestkammerStarter warlord;
 
     public TACadreFireblade() {
 
@@ -24,11 +22,7 @@ public class TACadreFireblade extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
 

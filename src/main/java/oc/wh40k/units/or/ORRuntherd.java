@@ -4,14 +4,12 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class ORRuntherd extends Eintrag {
     
     OptionsUpgradeGruppe o1 = null;
     OptionsUpgradeGruppe o2 = null;
     RuestkammerStarter waffen;
-    RuestkammerStarter warlord;
 
     public ORRuntherd() {
         kategorie = 1;
@@ -46,11 +44,7 @@ public class ORRuntherd extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -64,8 +58,8 @@ public class ORRuntherd extends Eintrag {
         	setFehlermeldung("");
         }
         
-    	warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }

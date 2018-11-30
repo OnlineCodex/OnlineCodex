@@ -3,11 +3,9 @@ package oc.wh40k.units.im;
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMTechmarine extends Eintrag {
     RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter warlord;
 
     public IMTechmarine() {
         name = "Techmarine";
@@ -25,11 +23,7 @@ public class IMTechmarine extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -38,8 +32,8 @@ public class IMTechmarine extends Eintrag {
     public void refreshen() {
         power = 4 + (((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).oe1.isSelected() ? 1 : 0);
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
         );
     }

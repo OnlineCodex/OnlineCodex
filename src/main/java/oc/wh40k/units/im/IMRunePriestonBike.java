@@ -2,14 +2,12 @@ package oc.wh40k.units.im;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMRunePriestonBike extends Eintrag {
 
     OptionsEinzelUpgrade oe1;
     RuestkammerStarter waffenUndArtefakte;
 	RuestkammerStarter psychicPowers;
-    RuestkammerStarter warlord;
 
     public IMRunePriestonBike() {
         name = "Rune Priest on Bike";
@@ -42,11 +40,7 @@ public class IMRunePriestonBike extends Eintrag {
 
         seperator();
         
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -57,8 +51,8 @@ public class IMRunePriestonBike extends Eintrag {
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }

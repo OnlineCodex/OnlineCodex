@@ -8,7 +8,7 @@ import oc.*;
 
 public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits;
-    String pflichtauswahl = "";
+    String mandatoryChoice = "";
     boolean subfactionsAllowed = true;
 
     public Warlordtraits() {
@@ -191,14 +191,14 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Hydra: Endless Regeneration", army.equals("Hydra"));
     		warlordtraits.setAktiv("Kronos: Soul hunger", army.equals("Kronos"));
         }
-        if(!pflichtauswahl.equals("")) {
+        if(!mandatoryChoice.equals("")) {
         	warlordtraits.deselectAll();
-        	warlordtraits.setSelected(pflichtauswahl, true);
+        	warlordtraits.setSelected(mandatoryChoice, true);
         }
     }
     
-    public void setPflichtauswahl(String s) {
-    	pflichtauswahl = s;
+    public void setMandatoryChoice(String s) {
+    	mandatoryChoice = s;
     }
     
     public void allowSubfactions(boolean b) {

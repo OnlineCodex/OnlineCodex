@@ -3,11 +3,9 @@ package oc.wh40k.units.ne;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class NETranscendentCtan extends Eintrag {
 
-    RuestkammerStarter warlord;
 
     public NETranscendentCtan() {
         name = "Transcendent C'tan";
@@ -17,12 +15,7 @@ public class NETranscendentCtan extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).allowSubfactions(false);
-        add(warlord);
+        addWarlordTraits("", false);
 
         complete();
     }

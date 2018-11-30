@@ -2,11 +2,9 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TACommanderFarsight extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public TACommanderFarsight() {
         name = "Commander Farsight";
@@ -17,12 +15,7 @@ public class TACommanderFarsight extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("Farsight Enclaves: Hero of the Enclaves");
-        add(warlord);
+        addWarlordTraits("Farsight Enclaves: Hero of the Enclaves", true);
 
         complete();
     }

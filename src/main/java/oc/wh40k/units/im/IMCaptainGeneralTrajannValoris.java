@@ -2,11 +2,9 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMCaptainGeneralTrajannValoris extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public IMCaptainGeneralTrajannValoris() {
         name = "Captain-General Trajann Valoris";
@@ -15,12 +13,7 @@ public class IMCaptainGeneralTrajannValoris extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("Champion of the Imperium (AC)");
-        add(warlord);
+        addWarlordTraits("Champion of the Imperium (AC)", true);
         
         complete();
     }

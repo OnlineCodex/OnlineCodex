@@ -2,11 +2,9 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TAAunshi extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public TAAunshi() {
         name = "Aun'shi";
@@ -16,12 +14,7 @@ public class TAAunshi extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("Vior'la: Academy Luminary");
-        add(warlord);
+        addWarlordTraits("Vior'la: Academy Luminary", true);
 
         complete();
 

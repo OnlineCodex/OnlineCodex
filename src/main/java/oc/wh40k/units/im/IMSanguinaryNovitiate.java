@@ -2,12 +2,10 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMSanguinaryNovitiate extends Eintrag {
 
     RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter warlord;
 
     public IMSanguinaryNovitiate() {
         name = "Sanguinary Novitiate";
@@ -20,11 +18,7 @@ public class IMSanguinaryNovitiate extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }

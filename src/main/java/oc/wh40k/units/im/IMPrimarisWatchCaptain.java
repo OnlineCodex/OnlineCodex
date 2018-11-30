@@ -1,13 +1,11 @@
 package oc.wh40k.units.im;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisWatchCaptain extends Eintrag {
     OptionsUpgradeGruppe o1, o2;
     RuestkammerStarter waffenUndReliquien;
     OptionsEinzelUpgrade fist;
-    RuestkammerStarter warlord;
 
     public IMPrimarisWatchCaptain() {
         name = "Primaris Watch Captain";
@@ -33,11 +31,7 @@ public class IMPrimarisWatchCaptain extends Eintrag {
 
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }

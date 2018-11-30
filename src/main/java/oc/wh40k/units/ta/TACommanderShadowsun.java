@@ -5,13 +5,11 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TACommanderShadowsun extends Eintrag {
 
     OptionsZaehlerGruppe o1;
     OptionsEinzelUpgrade oe1;
-    RuestkammerStarter warlord;
 
     public TACommanderShadowsun() {
         name = "Commander Shadowsun";
@@ -26,12 +24,7 @@ public class TACommanderShadowsun extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("Exemplar of the Kauyon");
-        add(warlord);
+        addWarlordTraits("Exemplar of the Kauyon", true);
 
         complete();
     }

@@ -2,11 +2,9 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TAFiresightMarksman extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public TAFiresightMarksman() {
         name = "Firesight Marksman";
@@ -14,11 +12,7 @@ public class TAFiresightMarksman extends Eintrag {
         power = 1;
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
 

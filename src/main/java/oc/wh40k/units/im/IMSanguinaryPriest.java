@@ -4,12 +4,10 @@ import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMSanguinaryPriest extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter warlord;
 
     public IMSanguinaryPriest() {
         name = "Sanguinary Priest";
@@ -30,11 +28,7 @@ public class IMSanguinaryPriest extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -42,8 +36,8 @@ public class IMSanguinaryPriest extends Eintrag {
     @Override
     public void refreshen() {
         power = 4 + (jump.isSelected() ? 1 : 0);
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
         );
     }

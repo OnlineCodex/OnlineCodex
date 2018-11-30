@@ -1,14 +1,12 @@
 package oc.wh40k.units.ta;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
     OptionsUpgradeGruppe o1;
     OptionsZaehlerGruppe o5;
     RuestkammerStarter ob;
-    RuestkammerStarter warlord;
 
     public TACommanderinXV8CrisisBattlesuit() {
         name = "Commander";
@@ -38,11 +36,7 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -54,8 +48,8 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
             power++;
         }
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
         );
     }

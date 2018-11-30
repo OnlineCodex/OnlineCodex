@@ -1,13 +1,11 @@
 package oc.wh40k.units.im;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMWolfGuardBattleLeader extends Eintrag {
 
     OptionsEinzelUpgrade oe1;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter warlord;
 
     public IMWolfGuardBattleLeader() {
         name = "Wolf Guard Battle Leader";
@@ -28,11 +26,7 @@ public class IMWolfGuardBattleLeader extends Eintrag {
         
         seperator();
         
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -44,8 +38,8 @@ public class IMWolfGuardBattleLeader extends Eintrag {
             power += 1;
         }
         
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }

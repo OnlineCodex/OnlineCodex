@@ -2,11 +2,9 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class ORZhadsnarkdaRippa extends Eintrag {
 	
-    RuestkammerStarter warlord;
 
     public ORZhadsnarkdaRippa() {
 
@@ -15,12 +13,7 @@ public class ORZhadsnarkdaRippa extends Eintrag {
         grundkosten = getPts("Zhadsnark Da Rippa") + getPts("Da Pain Klaw") + getPts("Slugga") + getPts("Stikkbomm") + getPts("Big shoota") * 2;
         power = 7;
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        ((Warlordtraits) warlord.getKammer()).setPflichtauswahl("Evil Sunz: Speed Freak");
-        add(warlord);
+        addWarlordTraits("Evil Sunz: Speed Freak", true);
         
         complete();
     }

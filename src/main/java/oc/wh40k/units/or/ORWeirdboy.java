@@ -4,14 +4,12 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
-import oc.wh40k.units.Warlordtraits;
 
 public class ORWeirdboy extends Eintrag {
 
     OptionsEinzelUpgrade o1;
     RuestkammerStarter psychicPowers;
     RuestkammerStarter waffen;
-    RuestkammerStarter warlord;
 
     public ORWeirdboy() {
 
@@ -42,11 +40,7 @@ public class ORWeirdboy extends Eintrag {
         
         seperator();
 
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -57,8 +51,8 @@ public class ORWeirdboy extends Eintrag {
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }

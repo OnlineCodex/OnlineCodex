@@ -1,12 +1,10 @@
 package oc.wh40k.units.im;
 
 import oc.*;
-import oc.wh40k.units.Warlordtraits;
 
 public class IMWolfPriestinTerminatorArmour extends Eintrag {
 
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter warlord;
 
     public IMWolfPriestinTerminatorArmour() {
         name = "Wolf Priest in Terminator Armour";
@@ -24,19 +22,15 @@ public class IMWolfPriestinTerminatorArmour extends Eintrag {
 
         seperator();
         
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }

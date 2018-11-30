@@ -4,7 +4,6 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.Warlordtraits;
 
 public class TYTyranidPrime extends Eintrag {
 
@@ -12,7 +11,6 @@ public class TYTyranidPrime extends Eintrag {
     OptionsUpgradeGruppe o2;
 
     RuestkammerStarter waffen;
-    RuestkammerStarter warlord;
 
     public TYTyranidPrime() {
         name = "Tyranid Prime";
@@ -38,19 +36,15 @@ public class TYTyranidPrime extends Eintrag {
 
         seperator();
         
-        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
-        warlord.initKammer();
-        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
-        warlord.setButtonText("Warlord");
-        add(warlord);
+		addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-    	warlord.getPanel().setLocation(
-                (int) warlord.getPanel().getLocation().getX(),
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
