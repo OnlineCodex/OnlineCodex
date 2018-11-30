@@ -1,10 +1,12 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisMaster extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter warlord;
 
     OptionsUpgradeGruppe o1;
     OptionsEinzelUpgrade oe1, oe2;
@@ -23,7 +25,15 @@ public class IMPrimarisMaster extends Eintrag {
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword (SM)")));
 
         add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power fist und Plasma pisotl", getPts("Power fist (SM)") + getPts("Plasma pistol (SM)")));
+        
+        seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+        
         complete();
     }
 

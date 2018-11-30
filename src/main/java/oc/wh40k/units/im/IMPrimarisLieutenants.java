@@ -1,12 +1,14 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisLieutenants extends Eintrag {
 
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o1x;
+    RuestkammerStarter warlord;
 
     OptionsEinzelUpgrade mantlets;
 
@@ -22,7 +24,14 @@ public class IMPrimarisLieutenants extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MC stalker bolt rifle", "Master-crafted stalker bolt rifle", getPts("Master-crafted stalker bolt rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }

@@ -4,10 +4,12 @@ import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMCaptain extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
+    RuestkammerStarter warlord;
 
     public IMCaptain() {
         name = "Captain";
@@ -25,6 +27,14 @@ public class IMCaptain extends Eintrag {
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
@@ -32,5 +42,10 @@ public class IMCaptain extends Eintrag {
     @Override
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
+        
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
     }
 }

@@ -1,14 +1,15 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMLieutenants extends Eintrag {
 
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1, o2;
     OptionsZaehlerGruppe o1x;
-
     OptionsEinzelUpgrade mantlets;
+    RuestkammerStarter warlord;
 
     public IMLieutenants() {
 
@@ -51,7 +52,14 @@ public class IMLieutenants extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Jump pack", getPts("Lieutenants with Jump Pack") - getPts("Lieutenants")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }

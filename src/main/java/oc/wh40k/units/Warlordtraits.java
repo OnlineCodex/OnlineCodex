@@ -59,6 +59,26 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Stygies VIII: Xenarite Studies (AdMech)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ryza: First-hand Field Testing (AdMech)", 0));
         }
+        if(army.equals("IMPERIUM") || army.equals("Blood Angels")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Speed of the Primarch (BA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Artisan of War (BA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Soulwarden (BA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Heroic Bearing (BA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Gift of Foresight (BA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Selfless Valour (BA)", 0));
+//	        TODO: NAMED CHARACTERS AND WARLORD TRAITS
+//	        If one of the following named characters is yourWarlord, they
+//	        must be given the associatedWarlord Trait shown below.
+//	        NAMED CHARACTER WARLORD TRAIT
+//	        Astorath:		 				Soulwarden
+//	        Brother Corbulo: 				Gift of Foresight
+//	        Captain Tycho/Tycho the Lost: 	Selfless Valour
+//	        Chief Librarian Mephiston: 		Speed of the Primarch
+//	        Commander Dante: 				Heroic Bearing
+//	        Gabriel Seth: 					Selfless Valour
+//	        Lemartes: 						Soulwarden
+//	        The Sanguinor: 					Heroic Bearing
+        }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Wolfkin (SW)", 0));
@@ -141,8 +161,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
     		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
     		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
-        } 
-    	if(NECRONS.contains(army)) {
+        } else if(NECRONS.contains(army)) {
 	        warlordtraits.setAktiv("Sautekh: Hyperlogical Strategist", army.equals("Sautekh") && subfactionsAllowed);
 	        warlordtraits.setAktiv("Mephrit: Merciless Tyrant", army.equals("Mephrit") && subfactionsAllowed);
 	        warlordtraits.setAktiv("Nihilakh: Precognitive Strike", army.equals("Nihilakh") && subfactionsAllowed);

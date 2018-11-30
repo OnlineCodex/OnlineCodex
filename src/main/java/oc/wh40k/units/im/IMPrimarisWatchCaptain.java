@@ -1,15 +1,18 @@
 package oc.wh40k.units.im;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMPrimarisWatchCaptain extends Eintrag {
     OptionsUpgradeGruppe o1, o2;
     RuestkammerStarter waffenUndReliquien;
     OptionsEinzelUpgrade fist;
+    RuestkammerStarter warlord;
 
     public IMPrimarisWatchCaptain() {
         name = "Primaris Watch Captain";
         grundkosten = getPts("Primaris Watch Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 6;
 
         ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", getPts("Master crafted auto bolt rifle (DW)")));
         ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", getPts("Master crafted stalker bolt rifle (DW)")));
@@ -30,13 +33,17 @@ public class IMPrimarisWatchCaptain extends Eintrag {
 
         seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
+
         complete();
     }
 
     @Override
     public void refreshen() {
-        power = 6;
-
         o1.alwaysSelected();
         o2.alwaysSelected();
         o1.setAktiv(!fist.isSelected());

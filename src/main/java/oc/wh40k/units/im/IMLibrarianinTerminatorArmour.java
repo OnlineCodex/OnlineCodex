@@ -5,11 +5,13 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMLibrarianinTerminatorArmour extends Eintrag {
     OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
     RuestkammerStarter psychicPowers;
+    RuestkammerStarter warlord;
 
     public IMLibrarianinTerminatorArmour() {
         name = "Librarian in Terminator Armour";
@@ -39,6 +41,14 @@ public class IMLibrarianinTerminatorArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
@@ -47,6 +57,11 @@ public class IMLibrarianinTerminatorArmour extends Eintrag {
     public void refreshen() {
         psychicPowers.getPanel().setLocation(
                 (int) psychicPowers.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
+        
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
                 (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
         );
     }

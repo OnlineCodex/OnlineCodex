@@ -1,8 +1,12 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMCompanyChampionwithJumpPack extends Eintrag {
+	
+    RuestkammerStarter warlord;
 
     public IMCompanyChampionwithJumpPack() {
         name = "Company Champion with Jump Pack";
@@ -12,7 +16,14 @@ public class IMCompanyChampionwithJumpPack extends Eintrag {
                 getPts("Bolt pistol (SM)") +
                 getPts("Master-crafted power sword");
         power = 5;
+        
+        seperator();
 
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }
