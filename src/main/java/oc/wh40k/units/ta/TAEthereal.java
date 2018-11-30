@@ -1,12 +1,14 @@
 package oc.wh40k.units.ta;
 
 import oc.*;
+import oc.wh40k.units.Warlordtraits;
 
 public class TAEthereal extends Eintrag {
 
     OptionsUpgradeGruppe o2;
     OptionsZaehlerGruppe o1;
     OptionsEinzelUpgrade hd;
+    RuestkammerStarter warlord;
 
     public TAEthereal() {
         name = "Ethereal";
@@ -31,6 +33,14 @@ public class TAEthereal extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         addToInformationVector("Ethereal", 1);
 

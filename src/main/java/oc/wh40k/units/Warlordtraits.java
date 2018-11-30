@@ -17,6 +17,7 @@ public class Warlordtraits extends RuestkammerVater {
     
     Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Space Wolves");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
+    Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     
 	@Override
@@ -55,6 +56,20 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Freebooterz: Killa Reputation", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Goffs: Proper Killy", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Snakebites: Surly as a Squiggoth", 0));
+    	} else if(TAU.contains(army)) { //TAU
+	    	ogE.addElement(new OptionsGruppeEintrag("Precision of the Hunter", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Through Unity, Devastation", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("A Ghost Walks Among Us", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Through Boldness, Victory", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Exemplar of the Kauyon", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Exemplar of the Mont'ka", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("T'au: Strength of Belief", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Vior'la: Academy Luminary", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Dal'yth: Gunship Diplomat", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Sa'cea: Beacon of Honour", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Bork'an: Seeker of Perfection", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Farsight Enclaves: Hero of the Enclaves", 0));
     	} else if(TYRANIDS.contains(army)) { //TYRANIDS
 	    	ogE.addElement(new OptionsGruppeEintrag("Alien Cunning", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Heightened Senses", 0));
@@ -88,7 +103,14 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Freebooterz: Killa Reputation", army.equals("Freebooterz"));
     		warlordtraits.setAktiv("Goffs: Proper Killy", army.equals("Goff"));
     		warlordtraits.setAktiv("Snakebites: Surly as a Squiggoth", army.equals("Snakebites"));
-        } else if(TYRANIDS.contains(army)){
+        }else if(TAU.contains(army)) { //TAU
+        	warlordtraits.setAktiv("T'au: Strength of Belief", army.equals("T'au Sept"));
+        	warlordtraits.setAktiv("Vior'la: Academy Luminary", army.equals("Vior'la Sept"));
+        	warlordtraits.setAktiv("Dal'yth: Gunship Diplomat", army.equals("Dal'yth Sept"));
+        	warlordtraits.setAktiv("Sa'cea: Beacon of Honour", army.equals("Sa'cea Sept"));
+        	warlordtraits.setAktiv("Bork'an: Seeker of Perfection", army.equals("Bork'an Sept"));
+        	warlordtraits.setAktiv("Farsight Enclaves: Hero of the Enclaves", army.equals("Farsight Enclaves"));
+    	} else if(TYRANIDS.contains(army)){
 	        warlordtraits.setAktiv("Behemoth: Monstrous Hunger", army.equals("Behemoth"));
 	    	warlordtraits.setAktiv("Kraken: One Step Ahead", army.equals("Kraken"));
     		warlordtraits.setAktiv("Leviathan: Perfectly Adapted", army.equals("Leviathan"));

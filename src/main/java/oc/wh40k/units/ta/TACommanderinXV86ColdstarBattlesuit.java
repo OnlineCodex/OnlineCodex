@@ -3,11 +3,13 @@ package oc.wh40k.units.ta;
 import oc.Eintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
     OptionsUpgradeGruppe o1;
     RuestkammerStarter ob;
+    RuestkammerStarter warlord;
 
     public TACommanderinXV86ColdstarBattlesuit() {
         name = "Commander";
@@ -26,6 +28,14 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         ob.setButtonText("Rüstkammer");
         add(ob);
         ob.setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         addToInformationVector("Commander", 1);
 
@@ -55,6 +65,11 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
                 setFehlermeldung("");
             }
         }
+        
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
+        );
     }
 
     //@OVERRIDE

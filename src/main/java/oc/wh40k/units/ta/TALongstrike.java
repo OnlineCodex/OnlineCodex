@@ -2,17 +2,20 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 import java.util.Vector;
 
 public class TALongstrike extends Eintrag {
 
     Vector<RuestkammerStarter> rk;
+    RuestkammerStarter warlord;
 
     public TALongstrike() {
-        name = "TX7 Hammerhead Gunships";
+        name = "Longstrike";
         überschriftSetzen = true;
         grundkosten = 0;
+        power = 10;
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
 
@@ -28,6 +31,15 @@ public class TALongstrike extends Eintrag {
         }
 
         rk.firstElement().setAbwaehlbar(false);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        ((Warlordtraits)warlord.getKammer()).setPflichtauswahl("T'au: Strength of Belief");
+        add(warlord);
 
         complete();
     }
@@ -35,6 +47,10 @@ public class TALongstrike extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        power = 10;
+        
+        warlord.getPanel().setLocation(
+                (int) warlord.getPanel().getLocation().getX(),
+                (int) rk.lastElement().getPanel().getLocation().getY() + rk.lastElement().getPanel().getSize().height + 5
+        );
     }
 }
