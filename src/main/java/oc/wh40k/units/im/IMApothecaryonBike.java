@@ -16,6 +16,10 @@ public class IMApothecaryonBike extends Eintrag {
                 getPts("Bolt pistol (SM)") +
                 getPts("Twin boltgun");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

@@ -66,18 +66,21 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Heroic Bearing (BA)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Gift of Foresight (BA)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Selfless Valour (BA)", 0));
-//	        TODO: NAMED CHARACTERS AND WARLORD TRAITS
-//	        If one of the following named characters is yourWarlord, they
-//	        must be given the associatedWarlord Trait shown below.
-//	        NAMED CHARACTER WARLORD TRAIT
-//	        Astorath:		 				Soulwarden
-//	        Brother Corbulo: 				Gift of Foresight
-//	        Captain Tycho/Tycho the Lost: 	Selfless Valour
-//	        Chief Librarian Mephiston: 		Speed of the Primarch
-//	        Commander Dante: 				Heroic Bearing
-//	        Gabriel Seth: 					Selfless Valour
-//	        Lemartes: 						Soulwarden
-//	        The Sanguinor: 					Heroic Bearing
+        }
+        if(army.equals("IMPERIUM") || army.equals("Dark Angels")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Fury of the Lion (DA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Courage of the First Legion (DA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Brilliant Strategist (DA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Huntsman (DA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Master of Manoeuvre (DA)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Stubborn Tenacity (DA)", 0));
+	        
+//	        NAMED CHARACTERS
+//	        Azrael		Brilliant Strategist
+//	        Belial 		Huntsman
+//	        Sammael 	Master of Manoeuvre
+//	        Ezekiel 	Courage of the First Legion
+//	        Asmodai 	Fury of the Lion
         }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
