@@ -4,10 +4,13 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class NECatacombCommandBarge extends Eintrag {
 
     OptionsUpgradeGruppe o1, o2;
+    RuestkammerStarter warlord;
 
     public NECatacombCommandBarge() {
         name = "Catacomb Command Barge";
@@ -30,6 +33,14 @@ public class NECatacombCommandBarge extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Tesla cannon", getPts("Tesla cannon")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }

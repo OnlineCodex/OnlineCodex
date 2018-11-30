@@ -9,6 +9,7 @@ import oc.*;
 public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits;
     String pflichtauswahl = "";
+    boolean subfactionsAllowed = true;
 
     public Warlordtraits() {
         grundkosten = 0;
@@ -16,6 +17,7 @@ public class Warlordtraits extends RuestkammerVater {
 
     
     Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Space Wolves");
+    Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
@@ -42,7 +44,19 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Bear (SW)", 0));
         }
         
-    	if(ORKS.contains(army)) { //ORKS
+        if(NECRONS.contains(army)) { //NECRONS
+	        ogE.addElement(new OptionsGruppeEintrag("Enduring Will", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Eternal Madness", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Immortal Pride", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Thrall of the Silent King", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Implacable Conqueror", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Honourable Combatant", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Sautekh: Hyperlogical Strategist", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Mephrit: Merciless Tyrant", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nihilakh: Precognitive Strike", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nephrekh: Skin of Living Gold", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Novokh: Crimson Haze", 0));
+    	} else if(ORKS.contains(army)) { //ORKS
 	        ogE.addElement(new OptionsGruppeEintrag("Follow me Ladz", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Big Killa Boss", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ard as Nails", 0));
@@ -95,7 +109,13 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
-        if(ORKS.contains(army)){
+    	if(NECRONS.contains(army)) {
+	        warlordtraits.setAktiv("Sautekh: Hyperlogical Strategist", army.equals("Sautekh") && subfactionsAllowed);
+	        warlordtraits.setAktiv("Mephrit: Merciless Tyrant", army.equals("Mephrit") && subfactionsAllowed);
+	        warlordtraits.setAktiv("Nihilakh: Precognitive Strike", army.equals("Nihilakh") && subfactionsAllowed);
+	        warlordtraits.setAktiv("Nephrekh: Skin of Living Gold", army.equals("Nephrekh") && subfactionsAllowed);
+	        warlordtraits.setAktiv("Novokh: Crimson Haze", army.equals("Novokh") && subfactionsAllowed);
+        }else if(ORKS.contains(army)) {
 	        warlordtraits.setAktiv("Bad Moons: Da best armout teef can buy", army.equals("Bad Moonz"));
 	    	warlordtraits.setAktiv("Blood Axes: I've got a plan, Ladz", army.equals("Blood Axe"));
     		warlordtraits.setAktiv("Deathskull: Opportunist", army.equals("Deathskulls"));
@@ -110,7 +130,7 @@ public class Warlordtraits extends RuestkammerVater {
         	warlordtraits.setAktiv("Sa'cea: Beacon of Honour", army.equals("Sa'cea Sept"));
         	warlordtraits.setAktiv("Bork'an: Seeker of Perfection", army.equals("Bork'an Sept"));
         	warlordtraits.setAktiv("Farsight Enclaves: Hero of the Enclaves", army.equals("Farsight Enclaves"));
-    	} else if(TYRANIDS.contains(army)){
+    	} else if(TYRANIDS.contains(army)) {
 	        warlordtraits.setAktiv("Behemoth: Monstrous Hunger", army.equals("Behemoth"));
 	    	warlordtraits.setAktiv("Kraken: One Step Ahead", army.equals("Kraken"));
     		warlordtraits.setAktiv("Leviathan: Perfectly Adapted", army.equals("Leviathan"));
@@ -119,13 +139,17 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Hydra: Endless Regeneration", army.equals("Hydra"));
     		warlordtraits.setAktiv("Kronos: Soul hunger", army.equals("Kronos"));
         }
-        if(!pflichtauswahl.equals("")){
+        if(!pflichtauswahl.equals("")) {
         	warlordtraits.deselectAll();
         	warlordtraits.setSelected(pflichtauswahl, true);
         }
     }
     
-    public void setPflichtauswahl(String s){
+    public void setPflichtauswahl(String s) {
     	pflichtauswahl = s;
+    }
+    
+    public void allowSubfactions(boolean b) {
+    	subfactionsAllowed = b;
     }
 }
