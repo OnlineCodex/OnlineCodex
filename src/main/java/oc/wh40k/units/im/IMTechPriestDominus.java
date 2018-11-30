@@ -3,11 +3,14 @@ package oc.wh40k.units.im;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
+import oc.wh40k.units.Warlordtraits;
 
 public class IMTechPriestDominus extends Eintrag {
 
     OptionsUpgradeGruppe o1;
     OptionsUpgradeGruppe o2;
+    RuestkammerStarter warlord;
 
     public IMTechPriestDominus() {
         name = "Tech-Priest Dominus";
@@ -26,6 +29,14 @@ public class IMTechPriestDominus extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Phosphor serpenta", getPts("Phosphor serpenta")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
         o2.setSelected(0, true);
+        
+        seperator();
+
+        warlord = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+        warlord.initKammer();
+        warlord.setUeberschriftTrotzNullKostenAusgeben(true);
+        warlord.setButtonText("Warlord");
+        add(warlord);
 
         complete();
     }

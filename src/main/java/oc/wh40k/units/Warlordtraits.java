@@ -16,7 +16,7 @@ public class Warlordtraits extends RuestkammerVater {
     }
 
     
-    Set<String> IMPERIUM = ImmutableSet.of("IMPERIUM", "Adeptus Custodes", "Space Wolves");
+    Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
@@ -42,6 +42,22 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Impregnable Mind (AC)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Radiant Mantle (AC)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Companion (AC)", 0));
+        }
+        if(army.equals("IMPERIUM") || ADEPTUS_MECHANICUS.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Monitor Malevolus (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Magos Biologis (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Mechadominator (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Necromechanic (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Chorister Technis (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Prime Hermeticon (AdMech)", 0));
+
+	        ogE.addElement(new OptionsGruppeEintrag("Mars: Static Psalm-code (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Graia: Emotionless Clarity (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Metalica: Ordered Efficiency (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Lucius: Masterwork Bionics (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Agripinaa: Reinforced Exoskeleton (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Stygies VIII: Xenarite Studies (AdMech)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ryza: First-hand Field Testing (AdMech)", 0));
         }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
@@ -117,6 +133,15 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
+    	if(ADEPTUS_MECHANICUS.contains(army)) {
+    		warlordtraits.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
+    		warlordtraits.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
+    		warlordtraits.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));
+    		warlordtraits.setAktiv("Lucius: Masterwork Bionics (AdMech)", army.equals("Forge World Lucius"));
+    		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
+    		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
+    		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        } 
     	if(NECRONS.contains(army)) {
 	        warlordtraits.setAktiv("Sautekh: Hyperlogical Strategist", army.equals("Sautekh") && subfactionsAllowed);
 	        warlordtraits.setAktiv("Mephrit: Merciless Tyrant", army.equals("Mephrit") && subfactionsAllowed);

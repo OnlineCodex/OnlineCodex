@@ -8,7 +8,10 @@ import oc.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.ImmutableSet;
+
 import java.io.InputStream;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class VOLKImperium extends BuildaVater {
@@ -292,6 +295,9 @@ public class VOLKImperium extends BuildaVater {
             Fliegereinträge_Space_Wolves, Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA, Fliegereinträge_IA_Minotaurs);
     private static final String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
 
+  //Subfactions
+    private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
+    
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
@@ -380,6 +386,7 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Scholastica Psykana");
         formationen.add("");
         formationen.add("Adeptus Mechanicus");
+        FORGEWORLDS.forEach(fleet -> formationen.add(fleet));
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
         formationen.add("");
@@ -678,7 +685,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Adeptus Mechanicus")) {
+        } else if (getFormationType().equals("Adeptus Mechanicus") || FORGEWORLDS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);
