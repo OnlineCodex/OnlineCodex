@@ -9,6 +9,9 @@ public class IMAstorath extends Eintrag {
         grundkosten = getPts("Astorath");
         power = 8;
         seperator();
+        
+        addWarlordTraits("Soulwarden (BA)", true);
+        
         complete();
     }
 

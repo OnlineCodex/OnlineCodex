@@ -8,7 +8,11 @@ public class IMTheSanguinor extends Eintrag {
         name = "The Sanguinor";
         grundkosten = getPts("The Sanguinor");
         power = 9;
+        
         seperator();
+        
+        addWarlordTraits("Heroic Bearing (BA)", true);
+        
         complete();
     }
 

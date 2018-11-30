@@ -8,7 +8,11 @@ public class IMCommanderDante extends Eintrag {
         name = "Commander Dante";
         grundkosten = getPts("Commander Dante");
         power = 11;
+        
         seperator();
+        
+        addWarlordTraits("Heroic Bearing (BA)", true);
+        
         complete();
     }
 
