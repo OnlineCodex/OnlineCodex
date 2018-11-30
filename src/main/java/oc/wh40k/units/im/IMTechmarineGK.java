@@ -33,6 +33,10 @@ public class IMTechmarineGK extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -40,5 +44,14 @@ public class IMTechmarineGK extends Eintrag {
     @Override
     public void refreshen() {
         power = 5 + (((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).oe1.isSelected() ? 1 : 0);
+        
+    	psychicPowers.getPanel().setLocation(
+                (int) psychicPowers.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

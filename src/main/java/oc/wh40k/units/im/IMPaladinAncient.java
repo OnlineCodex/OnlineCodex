@@ -38,6 +38,10 @@ public class IMPaladinAncient extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -46,5 +50,10 @@ public class IMPaladinAncient extends Eintrag {
     public void refreshen() {
         power = 7;
         o1.alwaysSelected();
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

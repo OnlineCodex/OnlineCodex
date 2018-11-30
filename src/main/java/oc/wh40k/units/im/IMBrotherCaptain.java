@@ -42,6 +42,10 @@ public class IMBrotherCaptain extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -51,5 +55,10 @@ public class IMBrotherCaptain extends Eintrag {
         power = 9;
         if (!o1.isSelected()) o1.setSelected(0, true);
         if (!o2.isSelected()) o2.setSelected(0, true);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

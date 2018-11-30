@@ -83,6 +83,14 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Vigilance Incarnate (DW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Nowhere to Hide (DW)", 0));
         }
+        if(army.equals("IMPERIUM") || army.equals("Grey Knights")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Daemon-Slayer (GK)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Hammer of Righteousness (GK)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Unyielding Anvil (GK)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("First to the Fray (GK)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Nemesis Lord (GK)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Lore Master (GK)", 0));
+        }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Wolfkin (SW)", 0));

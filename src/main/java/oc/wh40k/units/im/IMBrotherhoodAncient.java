@@ -35,6 +35,10 @@ public class IMBrotherhoodAncient extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -43,5 +47,10 @@ public class IMBrotherhoodAncient extends Eintrag {
     public void refreshen() {
         power = 7;
         if (!o1.isSelected()) o1.setSelected(0, true);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }
