@@ -297,6 +297,7 @@ public class VOLKImperium extends BuildaVater {
 
   //Subfactions
     private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
+    private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
@@ -342,20 +343,14 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Adeptus Custodes");
         formationen.add("");
         formationen.add("Adeptus Astartes");
-        formationen.add("Black Templars");
-        formationen.add("Blood Angels");
-        formationen.add("Crimson Fists");
-        formationen.add("Dark Angels");
-        formationen.add("Imperial Fists");
-        formationen.add("Legion of the Damned");
-        formationen.add("Ultramarines");
-        formationen.add("Raven Guard");
-        formationen.add("Salamanders");
-        formationen.add("Space Wolves");
-        formationen.add("White Scars");
+        SM_CHAPTERS.forEach(chapter -> formationen.add(chapter));
         formationen.add("");
+        formationen.add("Blood Angels");
+        formationen.add("Dark Angels");
         formationen.add("Deathwatch");
         formationen.add("Grey Knights");
+        formationen.add("Legion of the Damned");
+        formationen.add("Space Wolves");
         formationen.add("");
         formationen.add("Astral Claws");
         formationen.add("Blood Ravens");

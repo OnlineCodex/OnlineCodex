@@ -19,6 +19,7 @@ public class Warlordtraits extends RuestkammerVater {
     Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
+    Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     
@@ -90,6 +91,23 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("First to the Fray (GK)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Nemesis Lord (GK)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Lore Master (GK)", 0));
+        }
+        if(army.equals("IMPERIUM") || SM_CHAPTERS.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Angel of Death (SM)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("The Imperium's Sword (SM)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Iron Resolve (SM)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Storm of Fire (SM)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Rites of War (SM)", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Champion of Humanity (SM)", 0));
+
+	        ogE.addElement(new OptionsGruppeEintrag("Ultramarines: Adept of the Codex", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("White Scars: Deadly Hunter", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Imperial Fists: Architect of War", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Crimson Fists: Tenacious Opponent", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Black Templars: Oathkeeper", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Salamanders: Anvil of Strength", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Raven Guard: Silent Stalker", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Iron Hands: Merciless Logic", 0));
         }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
@@ -187,7 +205,16 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Freebooterz: Killa Reputation", army.equals("Freebooterz"));
     		warlordtraits.setAktiv("Goffs: Proper Killy", army.equals("Goff"));
     		warlordtraits.setAktiv("Snakebites: Surly as a Squiggoth", army.equals("Snakebites"));
-        }else if(TAU.contains(army)) { //TAU
+        } else if(SM_CHAPTERS.contains(army)) {
+        	warlordtraits.setAktiv("Ultramarines: Adept of the Codex", army.equals("Ultramarines"));
+        	warlordtraits.setAktiv("White Scars: Deadly Hunter", army.equals("White Scars"));
+        	warlordtraits.setAktiv("Imperial Fists: Architect of War", army.equals("Imperial Fists"));
+        	warlordtraits.setAktiv("Crimson Fists: Tenacious Opponent", army.equals("Crimson Fists"));
+        	warlordtraits.setAktiv("Black Templars: Oathkeeper", army.equals("Black Templars"));
+        	warlordtraits.setAktiv("Salamanders: Anvil of Strength", army.equals("Salamanders"));
+        	warlordtraits.setAktiv("Raven Guard: Silent Stalker", army.equals("Raven Guard"));
+        	warlordtraits.setAktiv("Iron Hands: Merciless Logic", army.equals("Iron Hands"));
+        } else if(TAU.contains(army)) { //TAU
         	warlordtraits.setAktiv("T'au: Strength of Belief", army.equals("T'au Sept"));
         	warlordtraits.setAktiv("Vior'la: Academy Luminary", army.equals("Vior'la Sept"));
         	warlordtraits.setAktiv("Dal'yth: Gunship Diplomat", army.equals("Dal'yth Sept"));
