@@ -8,7 +8,10 @@ public class IMRobouteGuilliman extends Eintrag {
         name = "Roboute Guilliman";
         grundkosten = getPts("Roboute Guilliman");
         power = 18;
+        
         seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }

@@ -8,8 +8,10 @@ public class IMSergeantChronus extends Eintrag {
         name = "Sergeant Chronus";
         grundkosten = getPts("Sergeant Chronus");
         power = 3;
-
+        
         seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }

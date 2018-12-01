@@ -8,7 +8,10 @@ public class IMCaptainSicarius extends Eintrag {
         name = "Captain Sicarius";
         grundkosten = getPts("Captain Sicarius");
         power = 7;
+        
         seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }

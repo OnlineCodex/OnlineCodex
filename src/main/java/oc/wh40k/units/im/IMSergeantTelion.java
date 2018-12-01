@@ -8,8 +8,10 @@ public class IMSergeantTelion extends Eintrag {
         name = "Sergeant Telion";
         grundkosten = getPts("Sergeant Telion");
         power = 5;
-
+        
         seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }
