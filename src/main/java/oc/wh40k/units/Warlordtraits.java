@@ -18,6 +18,7 @@ public class Warlordtraits extends RuestkammerVater {
 
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
+    Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
     Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
@@ -77,11 +78,21 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("The Dark Creed: Fear Incarnate", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Coven of Twelve: Scarlet Epicurean", 0));
         }
-        
-//        NAMED CHARACTERS AND WARLORD TRAITS
-//        Drazhar:	 		Hatred Eternal
-//        Lelith Hesperax: 	Blood Dancer
-//        Urien Rakarth: 		Diabolical Soothsayer
+        if(army.equals("AELDARI") || HARLEQUINS.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Luck of the Laughing God", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Fractal Storm", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("A Foot in the Future", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Player of the Light", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Player of the Dark", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Player of the Twilight", 0));
+
+	        ogE.addElement(new OptionsGruppeEintrag("Midnight Sorrow: Nemesis of the Damned", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Veiled Path: Webway Walker", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Frozen Stars: Our Kin Shall Rise Again", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Dreaming Shadow: Warden of the Dead", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Soaring Spite: Skystrider", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Silent Shroud: The Final Joke", 0));
+        }
         
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
@@ -261,13 +272,19 @@ public class Warlordtraits extends RuestkammerVater {
         	warlordtraits.setAktiv("Prophets of Flesh: Diabolical Soothsayer", army.equals("The Prophets of Flesh"));
         	warlordtraits.setAktiv("The Dark Creed: Fear Incarnate", army.equals("The Dark Creed"));
         	warlordtraits.setAktiv("Coven of Twelve: Scarlet Epicurean", army.equals("Coven of Twelve"));
-	        
         } else if(CRAFTWORLDS.contains(army)) {
     		warlordtraits.setAktiv("Alaitoc: Puritanical Leader", army.equals("Alaitoc"));
     		warlordtraits.setAktiv("Biel-Tan: Natural Leader", army.equals("Biel-Tan"));
     		warlordtraits.setAktiv("Iyanden: Enduring Resolve", army.equals("Iyanden"));
     		warlordtraits.setAktiv("Saim-Hann: Wild Rider Chieftain", army.equals("Saim-Hann"));
     		warlordtraits.setAktiv("Ulthwé: Fate Reader", army.equals("Ulthwe"));
+        } else if(HARLEQUINS.contains(army)) {
+    		warlordtraits.setAktiv("Midnight Sorrow: Nemesis of the Damned", army.equals("Midnight Sorrow"));
+    		warlordtraits.setAktiv("Veiled Path: Webway Walker", army.equals("Veiled Path"));
+    		warlordtraits.setAktiv("Frozen Stars: Our Kin Shall Rise Again", army.equals("Frozen Stars"));
+    		warlordtraits.setAktiv("Dreaming Shadow: Warden of the Dead", army.equals("Dreaming Shadow"));
+    		warlordtraits.setAktiv("Soaring Spite: Skystrider", army.equals("Soaring Spite"));
+    		warlordtraits.setAktiv("Silent Shroud: The Final Joke", army.equals("Silent Shroud"));
         } else if(NECRONS.contains(army)) {
 	        warlordtraits.setAktiv("Sautekh: Hyperlogical Strategist", army.equals("Sautekh") && subfactionsAllowed);
 	        warlordtraits.setAktiv("Mephrit: Merciless Tyrant", army.equals("Mephrit") && subfactionsAllowed);

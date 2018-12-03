@@ -15,6 +15,7 @@ public class VOLKAeldari extends BuildaVater {
 
 	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
 	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
+	private static final Set<String> HARLEQUINS = ImmutableSet.of("Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
 
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
@@ -71,7 +72,8 @@ public class VOLKAeldari extends BuildaVater {
         DRUKHARI.forEach(drukhari -> formationen.add(drukhari));
         formationen.add("Incubi");
         formationen.add("");
-        formationen.add("Harlequins");
+        formationen.add("HARLEQUINS");
+        HARLEQUINS.forEach(harlequins -> formationen.add(harlequins));
         formationen.add("");
         formationen.add("Ynnari");
 
@@ -347,7 +349,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Drazhar"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Incubi"});
-        } else if (getFormationType().equals("Harlequins")) {
+        } else if (getFormationType().equals("HARLEQUINS") || HARLEQUINS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Troupe Master", "Shadowseer"});
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
