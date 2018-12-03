@@ -15,7 +15,7 @@ public class Warlordtraits extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    
+    Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
@@ -35,6 +35,21 @@ public class Warlordtraits extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Tenacious Survivor (BRB p.186)", 0));
         ogE.addElement(new OptionsGruppeEintrag("Insane Bravado (BRB p.253)", 0));
     	
+        if(army.equals("AELDARI") || CRAFTWORLDS.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Ambush of Blades", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("An Eye on Distant Events", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Falcon's Swiftness", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Fate's Messenger", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Mark of the Incomparable Hunter", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Seer of the Shifting Vector", 0));
+
+	        ogE.addElement(new OptionsGruppeEintrag("Alaitoc: Puritanical Leader", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Biel-Tan: Natural Leader", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Iyanden: Enduring Resolve", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Saim-Hann: Wild Rider Chieftain", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ulthwé: Fate Reader", 0));
+        }
+        
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));
@@ -183,7 +198,7 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
-    	if(ADEPTUS_MECHANICUS.contains(army)) {
+        if(ADEPTUS_MECHANICUS.contains(army)) {
     		warlordtraits.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
     		warlordtraits.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
     		warlordtraits.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));
@@ -191,6 +206,12 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
     		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
     		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        } else if(CRAFTWORLDS.contains(army)) {
+    		warlordtraits.setAktiv("Alaitoc: Puritanical Leader", army.equals("Alaitoc"));
+    		warlordtraits.setAktiv("Biel-Tan: Natural Leader", army.equals("Biel-Tan"));
+    		warlordtraits.setAktiv("Iyanden: Enduring Resolve", army.equals("Iyanden"));
+    		warlordtraits.setAktiv("Saim-Hann: Wild Rider Chieftain", army.equals("Saim-Hann"));
+    		warlordtraits.setAktiv("Ulthwé: Fate Reader", army.equals("Ulthwe"));
         } else if(NECRONS.contains(army)) {
 	        warlordtraits.setAktiv("Sautekh: Hyperlogical Strategist", army.equals("Sautekh") && subfactionsAllowed);
 	        warlordtraits.setAktiv("Mephrit: Merciless Tyrant", army.equals("Mephrit") && subfactionsAllowed);

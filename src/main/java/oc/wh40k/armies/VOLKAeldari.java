@@ -6,10 +6,14 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
-import java.io.InputStream;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 
 public class VOLKAeldari extends BuildaVater {
+
+	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
 
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
@@ -53,15 +57,14 @@ public class VOLKAeldari extends BuildaVater {
         nameDerArtDerArmee = BuildaHQ.translate("AELDARI");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("AELDARI");
         textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("AELDARI");
-
+        
         formationen.add("AELDARI");
-        formationen.add("Asuryani");
+        formationen.add("");
+        formationen.add("ASURYANI");
+        CRAFTWORLDS.forEach(craftworld -> formationen.add(craftworld));
         formationen.add("Warhost");
         formationen.add("Spirit Host");
         formationen.add("Aspect Warrior");
-        formationen.add("Ulthwe");
-        formationen.add("Iyanden");
-        formationen.add("Alaitoc");
         formationen.add("");
         formationen.add("Drukhari");
         formationen.add("Kabal of the Black Heart");
@@ -132,7 +135,7 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Crimson Hunter", "Crimson Hunter Exarch", "Hemlock Wraithfighter",
                     "", "Razorwing Jetfighter", "Voidraven"});
-        } else if (getFormationType().equals("Asuryani")) {
+        } else if (getFormationType().equals("ASURYANI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Autarch", "Autarch with Swooping Hawk Wings", "Autarch Skyrunner",
                     "Farseer", "Farseer Skyrunner", "Warlock", "Warlock Conclave", "Warlock Skyrunner",
