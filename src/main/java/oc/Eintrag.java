@@ -419,4 +419,16 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		}
         add(warlordTraits);
 	}
+	
+	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed, String exclusiveKeyword) {
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+		warlordTraits.initKammer();
+		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
+		warlordTraits.setButtonText("Warlord");
+		if(!mandatoryChoice.equals("")) {
+			((Warlordtraits)warlordTraits.getKammer()).setMandatoryChoice(mandatoryChoice);
+		}
+		((Warlordtraits)warlordTraits.getKammer()).setExclusiveKeyword(exclusiveKeyword);
+        add(warlordTraits);
+	}
 }

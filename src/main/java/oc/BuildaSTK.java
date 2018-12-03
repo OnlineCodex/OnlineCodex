@@ -93,8 +93,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
             0
     };
 
-
-
     String[] gerSg = {
             "Additional Info",
             "HQ",

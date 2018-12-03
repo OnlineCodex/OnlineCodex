@@ -9,6 +9,7 @@ import oc.*;
 public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits;
     String mandatoryChoice = "";
+    String exclusiveKeyword = "";
     boolean subfactionsAllowed = true;
 
     public Warlordtraits() {
@@ -16,12 +17,17 @@ public class Warlordtraits extends RuestkammerVater {
     }
 
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
+    Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
     Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
     Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
     Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
+    
+    private static final String KABAL = "KABAL";
+    private static final String WYCH_CULT = "WYCH CULT";
+    private static final String HAEMUNCULUS_COVEN = "HAEMUNCULUS COVEN";
     
 	@Override
 	public void initButtons(boolean... b) {
@@ -49,6 +55,33 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Saim-Hann: Wild Rider Chieftain", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ulthwé: Fate Reader", 0));
         }
+        if(army.equals("AELDARI") || DRUKHARI.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Hatred Eternal", 0)); //Kabal
+	        ogE.addElement(new OptionsGruppeEintrag("Soul Thirst", 0)); //Kabal
+	        ogE.addElement(new OptionsGruppeEintrag("Ancient Evil", 0)); //Kabal
+	        ogE.addElement(new OptionsGruppeEintrag("Quicksilver Fighter", 0)); //Wych Cult
+	        ogE.addElement(new OptionsGruppeEintrag("Stimm Addict", 0)); //Wych Cult
+	        ogE.addElement(new OptionsGruppeEintrag("Precision Blows", 0)); //Wych Cult
+	        ogE.addElement(new OptionsGruppeEintrag("Master Regenesist", 0));//Coven
+	        ogE.addElement(new OptionsGruppeEintrag("Master Nemesine", 0));//Coven
+	        ogE.addElement(new OptionsGruppeEintrag("Master Artisan", 0));//Coven
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Black Heart: Labyrinthine Cunning", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Poisoned Tongue: Towering Arrogance", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Obsidian Rose: Deathly Perfectionist", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Flayed Skull: Famed Savagery", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Cult of Strife: Blood Dancer", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Cult of Red Grief: Hyper-swift Reflexes", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Cult of the Cursed Blade: Treacherous Deceiver", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Prophets of Flesh: Diabolical Soothsayer", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("The Dark Creed: Fear Incarnate", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Coven of Twelve: Scarlet Epicurean", 0));
+        }
+        
+//        NAMED CHARACTERS AND WARLORD TRAITS
+//        Drazhar:	 		Hatred Eternal
+//        Lelith Hesperax: 	Blood Dancer
+//        Urien Rakarth: 		Diabolical Soothsayer
         
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
@@ -206,6 +239,29 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
     		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
     		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) && 
+        		(exclusiveKeyword.equals(KABAL) || exclusiveKeyword.equals(WYCH_CULT) || exclusiveKeyword.equals(HAEMUNCULUS_COVEN))) {
+        	warlordtraits.setAktiv("Hatred Eternal", exclusiveKeyword.equals(KABAL));
+        	warlordtraits.setAktiv("Soul Thirst", exclusiveKeyword.equals(KABAL));
+        	warlordtraits.setAktiv("Ancient Evil", exclusiveKeyword.equals(KABAL));
+        	warlordtraits.setAktiv("Quicksilver Fighter", exclusiveKeyword.equals(WYCH_CULT));
+        	warlordtraits.setAktiv("Stimm Addict", exclusiveKeyword.equals(WYCH_CULT));
+        	warlordtraits.setAktiv("Precision Blows", exclusiveKeyword.equals(WYCH_CULT));
+        	warlordtraits.setAktiv("Master Regenesist", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
+        	warlordtraits.setAktiv("Master Nemesine", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
+        	warlordtraits.setAktiv("Master Artisan", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
+
+        	warlordtraits.setAktiv("Kabal of the Black Heart: Labyrinthine Cunning", army.equals("Kabal of the Black Heart"));
+        	warlordtraits.setAktiv("Kabal of the Poisoned Tongue: Towering Arrogance", army.equals("Kabal of the Poisoned Tongue"));
+        	warlordtraits.setAktiv("Kabal of the Obsidian Rose: Deathly Perfectionist", army.equals("Kabal of the Obsidian Rose"));
+        	warlordtraits.setAktiv("Kabal of the Flayed Skull: Famed Savagery", army.equals("Kabal of the Flayed Skull"));
+        	warlordtraits.setAktiv("Cult of Strife: Blood Dancer", army.equals("Cult of Strife"));
+        	warlordtraits.setAktiv("Cult of Red Grief: Hyper-swift Reflexes", army.equals("Cult of Red Grief"));
+        	warlordtraits.setAktiv("Cult of the Cursed Blade: Treacherous Deceiver", army.equals("Cult of the Cursed Blade"));
+        	warlordtraits.setAktiv("Prophets of Flesh: Diabolical Soothsayer", army.equals("The Prophets of Flesh"));
+        	warlordtraits.setAktiv("The Dark Creed: Fear Incarnate", army.equals("The Dark Creed"));
+        	warlordtraits.setAktiv("Coven of Twelve: Scarlet Epicurean", army.equals("Coven of Twelve"));
+	        
         } else if(CRAFTWORLDS.contains(army)) {
     		warlordtraits.setAktiv("Alaitoc: Puritanical Leader", army.equals("Alaitoc"));
     		warlordtraits.setAktiv("Biel-Tan: Natural Leader", army.equals("Biel-Tan"));
@@ -263,5 +319,9 @@ public class Warlordtraits extends RuestkammerVater {
     
     public void allowSubfactions(boolean b) {
     	subfactionsAllowed = b;
+    }
+    
+    public void setExclusiveKeyword(String s) {
+    	exclusiveKeyword = s;
     }
 }
