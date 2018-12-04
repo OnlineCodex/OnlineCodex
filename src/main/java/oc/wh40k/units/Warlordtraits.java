@@ -112,6 +112,30 @@ public class Warlordtraits extends RuestkammerVater {
         	ogE.addElement(new OptionsGruppeEintrag("High Magister", 0));
         }
         
+//		Astra Militarum
+//        Grand Strategist
+//        Old Grudges
+//        Implacable Determination
+//        Draconian Disciplinarian
+//        Bellowing Voice
+//        Master of Command
+//
+//        NAMED CHARACTERS AND WARLORD TRAITS
+//        If a named character with a specific regiment keyword is yourWarlord, they must be
+//        given the associatedWarlord Trait. For example, Colonel ‘Iron Hand’ Straken must
+//        take the Catachan ‘Lead From the Front’ Warlord Trait (see opposite) as he has the
+//        CATACHAN keyword.
+//        If Commissar Yarrick is yourWarlord, he must have the Master of CommandWarlord
+//        Trait (above).
+//
+//        Cadian: Superior Tactical Training 
+//        Catachan Lead From the Front
+//        Valhallan Tenacious
+//        Vostroyan Honoured Duellist
+//        Tallarn Swift Attacker
+//        Militarum Tempestus Faithful Servant of the Throne
+//        Mordian Iron Discipline
+        
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));
