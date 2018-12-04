@@ -4,10 +4,13 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
+import oc.wh40k.units.PsychicPowers;
 
 public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
     OptionsUpgradeGruppe inferno, stave;
+    RuestkammerStarter psychicPowers;
 
     public CHExaltedSorcereronDiscofTzeentch() {
 
@@ -31,6 +34,21 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword")));
 
+        seperator();
+
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
+        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
+        psychicPowers.initKammer();
+        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(psychicPowers);
+        psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
+
         complete();
     }
 
@@ -38,5 +56,10 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
     public void refreshen() {
         inferno.alwaysSelected();
         stave.alwaysSelected();
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

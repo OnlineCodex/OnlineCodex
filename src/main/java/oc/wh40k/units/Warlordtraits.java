@@ -103,6 +103,14 @@ public class Warlordtraits extends RuestkammerVater {
         	ogE.addElement(new OptionsGruppeEintrag("Rotten Constitution", 0));
         	ogE.addElement(new OptionsGruppeEintrag("Arch-Contaminator", 0));
         }
+        if(army.equals("CHAOS") || army.equals("Thousand Sons")){
+        	ogE.addElement(new OptionsGruppeEintrag("Arrogance of Aeons", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Undying Form", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Aetherstride", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Lord of Forbidden Lore", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Otherworldly Prescience", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("High Magister", 0));
+        }
         
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {

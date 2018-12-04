@@ -38,6 +38,10 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
 
@@ -47,5 +51,9 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
     public void refreshen() {
         inferno.alwaysSelected();
         stave.alwaysSelected();
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

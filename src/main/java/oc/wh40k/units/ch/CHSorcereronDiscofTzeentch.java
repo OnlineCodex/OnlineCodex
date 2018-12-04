@@ -14,7 +14,6 @@ public class CHSorcereronDiscofTzeentch extends Eintrag {
         name = "Sorcerer on Disc of Tzeentch";
         grundkosten = getPts("Sorcerer on Disc of Tzeentch");
         power = 8;
-        complete();
 
         seperator();
 

@@ -14,7 +14,6 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
         name = "Sorcerer on Palanquin of Nurgle";
         grundkosten = getPts("Sorcerer on Palanquin of Nurgle");
         power = 8;
-        complete();
 
         seperator();
 
