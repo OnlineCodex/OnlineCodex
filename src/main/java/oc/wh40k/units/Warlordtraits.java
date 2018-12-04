@@ -94,6 +94,16 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Silent Shroud: The Final Joke", 0));
         }
         
+        //CHAOS
+        if(army.equals("CHAOS") || army.equals("Death Guard")){
+        	ogE.addElement(new OptionsGruppeEintrag("Revoltingly Resilient", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Living Plague", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Tainted Regeneration", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Hulking Physique", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Rotten Constitution", 0));
+        	ogE.addElement(new OptionsGruppeEintrag("Arch-Contaminator", 0));
+        }
+        
         //Imperium
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));

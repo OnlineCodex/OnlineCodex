@@ -12,6 +12,10 @@ public class CHPlagueSurgeon extends Eintrag {
         name = "Plague Surgeon";
         grundkosten = getPts("Plague Surgeon") + getPts("Bolt pistol") + getPts("Balesword") + getPts("Blight grenades") + getPts("Krak grenades");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
 

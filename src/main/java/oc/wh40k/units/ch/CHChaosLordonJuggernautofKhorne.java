@@ -14,11 +14,8 @@ public class CHChaosLordonJuggernautofKhorne extends Eintrag {
         name = "Chaos Lord on Juggernaut of Khorne";
         grundkosten = getPts("Chaos Lord on Juggernaut of Khorne") + getPts("Juggernaut's bladed horn");
         power = 7;
-        complete();
 
         seperator();
-
-        complete();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
@@ -28,6 +25,19 @@ public class CHChaosLordonJuggernautofKhorne extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

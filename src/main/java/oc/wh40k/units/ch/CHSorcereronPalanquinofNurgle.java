@@ -18,8 +18,6 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
 
         seperator();
 
-        complete();
-
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Force sword");
@@ -28,6 +26,19 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

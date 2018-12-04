@@ -18,8 +18,12 @@ public class CHLordofContagion extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Manreaper", getPts("Manreaper")));
         add(reaper = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         reaper.setSelected(0, true);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
-
     }
 
     @Override

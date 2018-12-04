@@ -19,10 +19,12 @@ public class CHNoxiousBlightbringer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
         add(pp = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
-
     }
 
     @Override

@@ -12,9 +12,9 @@ public class CHMalignantPlaguecaster extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHMalignantPlaguecaster() {
-
         name = "Malignant Plaguecaster";
         grundkosten = getPts("Malignant Plaguecaster");
+        power = 6;
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
         add(pistol = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -31,16 +31,21 @@ public class CHMalignantPlaguecaster extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
-
     }
 
     @Override
     public void refreshen() {
         pistol.setSelected(0, true);
         staff.setSelected(0, true);
-
-        power = 6;
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }
