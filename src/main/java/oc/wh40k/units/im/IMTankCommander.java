@@ -28,8 +28,6 @@ public class IMTankCommander extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Executioner plasma cannon", getPts("Executioner plasma cannon")));
-//		ogE.addElement(new OptionsGruppeEintrag("Leman Russ Conqueror [IA1 2nd Ed]", 150));
-//		ogE.addElement(new OptionsGruppeEintrag("Leman Russ Annihilator [IA1 2nd Ed]", 130));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
@@ -60,6 +58,10 @@ public class IMTankCommander extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", getPts("Dozer blade")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Track guards", getPts("Track guards")));
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

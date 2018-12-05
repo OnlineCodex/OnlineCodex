@@ -8,6 +8,10 @@ public class IMColonelIronHandStraken extends Eintrag {
         name = "Colonel 'Iron Hand' Straken";
         grundkosten = getPts("Colonel 'Iron Hand' Straken");
         power = 5;
+        
+        seperator();
+
+        addWarlordTraits("Catachan: Lead From the Front", true);
 
         complete();
     }

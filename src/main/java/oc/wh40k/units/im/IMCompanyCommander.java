@@ -18,11 +18,19 @@ public class IMCompanyCommander extends Eintrag {
         kammer.setButtonText("Waffen");
         add(kammer);
         kammer.setAbwaehlbar(false);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
 
     //@OVERRIDE
     public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) kammer.getPanel().getLocation().getY() + kammer.getPanel().getSize().height + 5
+        );
     }
 }

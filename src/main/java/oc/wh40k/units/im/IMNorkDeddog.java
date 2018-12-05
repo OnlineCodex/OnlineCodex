@@ -8,6 +8,10 @@ public class IMNorkDeddog extends Eintrag {
         name = "Nork Deddog";
         grundkosten = getPts("Nork Deddog");
         power = 4;
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

@@ -16,6 +16,7 @@ public class Warlordtraits extends RuestkammerVater {
         grundkosten = 0;
     }
 
+    Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
     Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
@@ -111,32 +112,25 @@ public class Warlordtraits extends RuestkammerVater {
         	ogE.addElement(new OptionsGruppeEintrag("Otherworldly Prescience", 0));
         	ogE.addElement(new OptionsGruppeEintrag("High Magister", 0));
         }
-        
-//		Astra Militarum
-//        Grand Strategist
-//        Old Grudges
-//        Implacable Determination
-//        Draconian Disciplinarian
-//        Bellowing Voice
-//        Master of Command
-//
-//        NAMED CHARACTERS AND WARLORD TRAITS
-//        If a named character with a specific regiment keyword is yourWarlord, they must be
-//        given the associatedWarlord Trait. For example, Colonel ‘Iron Hand’ Straken must
-//        take the Catachan ‘Lead From the Front’ Warlord Trait (see opposite) as he has the
-//        CATACHAN keyword.
-//        If Commissar Yarrick is yourWarlord, he must have the Master of CommandWarlord
-//        Trait (above).
-//
-//        Cadian: Superior Tactical Training 
-//        Catachan Lead From the Front
-//        Valhallan Tenacious
-//        Vostroyan Honoured Duellist
-//        Tallarn Swift Attacker
-//        Militarum Tempestus Faithful Servant of the Throne
-//        Mordian Iron Discipline
-        
-        //Imperium
+      //Imperium
+        if(army.equals("IMPERIUM") || ASTRA_MILITARUM.contains(army)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Grand Strategist", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Old Grudges", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Implacable Determination", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Draconian Disciplinarian", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Bellowing Voice", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Master of Command", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Cadian: Superior Tactical Training", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Catachan: Lead From the Front", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Valhallan: Tenacious", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Vostroyan: Honoured Duellist", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Armageddon: Ex-gang Leader", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Tallarn: Swift Attacker", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Militarum Tempestus: Faithful Servant of the Throne", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Mordian: Iron Discipline", 0));
+        }  
+ 
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Peerless Warrior (AC)", 0));
@@ -284,7 +278,16 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
-        if(ADEPTUS_MECHANICUS.contains(army)) {
+        if(ASTRA_MILITARUM.contains(army)) {
+    		warlordtraits.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
+    		warlordtraits.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
+    		warlordtraits.setAktiv("Valhallan: Tenacious", army.equals("Valhallan"));
+    		warlordtraits.setAktiv("Vostroyan: Honoured Duellist", army.equals("Vostroyan"));
+    		warlordtraits.setAktiv("Armageddon: Ex-gang Leader", army.equals("Armageddon"));
+    		warlordtraits.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
+    		warlordtraits.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
+    		warlordtraits.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+        } else if(ADEPTUS_MECHANICUS.contains(army)) {
     		warlordtraits.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
     		warlordtraits.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
     		warlordtraits.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));

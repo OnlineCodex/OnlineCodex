@@ -298,7 +298,8 @@ public class VOLKImperium extends BuildaVater {
   //Subfactions
     private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
-    
+    private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
@@ -371,11 +372,9 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Star Phantoms");
         formationen.add("Tiger Claws");
         formationen.add("");
-        formationen.add("Astra Militarum");
-        formationen.add("Cadian");
-        formationen.add("Catachan");
+        formationen.add("ASTRA MILITARUM");
+        ASTRA_MILITARUM.forEach(regiment -> formationen.add(regiment));
         formationen.add("Officio Prefectus");
-        formationen.add("Militarum Tempestus");
         formationen.add("Militarum Auxilia");
         formationen.add("Aeronautica Imperialis");
         formationen.add("Scholastica Psykana");
@@ -601,7 +600,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Grey_Knights);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Astra Militarum")) {
+        } else if (getFormationType().equals("ASTRA MILITARUM")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM_komplett);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AM_komplett);
