@@ -116,6 +116,7 @@ public class VOLKChaos extends BuildaVater {
 
 
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+    private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
     
     public VOLKChaos() {
         super("CH", loadPoints("/oc/wh40k/indices/chaos.yaml"));
@@ -213,6 +214,7 @@ public class VOLKChaos extends BuildaVater {
         formationen.add("Thousand Sons");
         formationen.add("");
         formationen.add("Chaosdaemons");
+        CHAOS_GODS.forEach(god -> formationen.add(god));
         formationen.add("");
         formationen.add("Questor Traitoris"); 
         formationen.add("");
@@ -346,7 +348,7 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Questor_Traitoris);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
-        } else if (getFormationType().equals("Chaosdaemons")) {
+        } else if (getFormationType().equals("Chaosdaemons") || CHAOS_GODS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Daemons, HQeinträge_Daemons_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);

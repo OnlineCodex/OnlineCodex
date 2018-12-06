@@ -9,6 +9,10 @@ public class CHExaltedFlamer extends Eintrag {
         name = "Exalted Flamer";
         grundkosten = getPts("Exalted Flamer");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
 

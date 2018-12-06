@@ -8,6 +8,10 @@ public class CHBloodmaster extends Eintrag {
         name = "Bloodmaster";
         grundkosten = getPts("Bloodmaster");
         power = 3;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

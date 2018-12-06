@@ -8,6 +8,10 @@ public class CHSloppityBilepiper extends Eintrag {
         name = "Sloppity Bilepiper";
         grundkosten = getPts("Sloppity Bilepiper") + getPts("Marotter");
         power = 3;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

@@ -17,6 +17,10 @@ public class CHHeraldofSlaaneshonExaltedSeekerChariot extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Lashes of torment", getPts("Lashes of torment")));
         add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

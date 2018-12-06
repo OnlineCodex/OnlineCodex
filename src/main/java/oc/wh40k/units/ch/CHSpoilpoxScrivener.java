@@ -8,6 +8,10 @@ public class CHSpoilpoxScrivener extends Eintrag {
         name = "Spoilpox Scrivener";
         grundkosten = getPts("Spoilpox Scrivener") /*+ getPts("Plaguesword") + getPts("Distended maw") + getPts("Disgusting sneezes")*/;
         power = 3;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

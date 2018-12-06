@@ -16,6 +16,7 @@ public class Warlordtraits extends RuestkammerVater {
         grundkosten = 0;
     }
 
+    Set<String> CHAOS_GODS = ImmutableSet.of("Chaosdaemons", "Khorne", "Tzeentch", "Nurgle", "Slaanesh");
 	Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
@@ -96,6 +97,45 @@ public class Warlordtraits extends RuestkammerVater {
         }
         
         //CHAOS
+        if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Aspect of Death", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Glory of Battle", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Oblivious to Pain", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Immense Power", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Devastating Blow", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Rage Incarnate", 0));
+	    	
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Born of Sorcery", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Incorporeal Form", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Warp Tehter", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Lorekeeper of Tzeentch", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Tyrant of the Warp", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Daemonspark", 0));
+	    	
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Blessed with Corpulence", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Acidic Ichor", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Plaguefly Hive", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Virulent Touch", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Impenetrable Hide", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Pestilent Miasma", 0));
+	    	
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Celerity of Slaanesh", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Quicksilver Duelist", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: The Murderdance", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Fatal Caress", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Savage Hedonist", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Bewitching Aura", 0));
+	    		
+//	    	Skarbrand: rage Incarnate
+//	    	Skulltaker: Devastating Blow
+//	    	Karanak: Aspect of Death
+//	    	Kairos: Tyrant of the Warp
+//	    	The Changeling: Incorporeal Form
+//	    	The Blue Scribes: Daemonspark
+//	    	Rotigus: Pestilent Miasma
+//	    	Horti Slmux; Acidic Ichor
+//	    	Epidemus: Virulent Touch
+	    }
         if(army.equals("CHAOS") || LEGIONS.contains(army)){
 	    	ogE.addElement(new OptionsGruppeEintrag("Eternal Vendetta", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Flames of Spite", 0));
@@ -294,8 +334,36 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
+        //CHAOS
+        if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
+        	warlordtraits.setAktiv("Khorne: Aspect of Death", army.equals("Khorne"));
+        	warlordtraits.setAktiv("Khorne: Glory of Battle", army.equals("Khorne"));
+        	warlordtraits.setAktiv("Khorne: Oblivious to Pain", army.equals("Khorne"));
+        	warlordtraits.setAktiv("Khorne: Immense Power", army.equals("Khorne"));
+        	warlordtraits.setAktiv("Khorne: Devastating Blow", army.equals("Khorne"));
+        	warlordtraits.setAktiv("Khorne: Rage Incarnate", army.equals("Khorne"));
 
-    	if(LEGIONS.contains(army)) {
+        	warlordtraits.setAktiv("Tzeentch: Born of Sorcery", army.equals("Tzeentch"));
+        	warlordtraits.setAktiv("Tzeentch: Incorporeal Form", army.equals("Tzeentch"));
+        	warlordtraits.setAktiv("Tzeentch: Warp Tehter", army.equals("Tzeentch"));
+        	warlordtraits.setAktiv("Tzeentch: Lorekeeper of Tzeentch", army.equals("Tzeentch"));
+        	warlordtraits.setAktiv("Tzeentch: Tyrant of the Warp", army.equals("Tzeentch"));
+        	warlordtraits.setAktiv("Tzeentch: Daemonspark", army.equals("Tzeentch"));
+
+        	warlordtraits.setAktiv("Nurgle: Blessed with Corpulence", army.equals("Nurgle"));
+        	warlordtraits.setAktiv("Nurgle: Acidic Ichor", army.equals("Nurgle"));
+        	warlordtraits.setAktiv("Nurgle: Plaguefly Hive", army.equals("Nurgle"));
+        	warlordtraits.setAktiv("Nurgle: Virulent Touch", army.equals("Nurgle"));
+        	warlordtraits.setAktiv("Nurgle: Impenetrable Hide", army.equals("Nurgle"));
+        	warlordtraits.setAktiv("Nurgle: Pestilent Miasma", army.equals("Nurgle"));
+
+        	warlordtraits.setAktiv("Slaanesh: Celerity of Slaanesh", army.equals("Slaanesh"));
+        	warlordtraits.setAktiv("Slaanesh: Quicksilver Duelist", army.equals("Slaanesh"));
+        	warlordtraits.setAktiv("Slaanesh: The Murderdance", army.equals("Slaanesh"));
+        	warlordtraits.setAktiv("Slaanesh: Fatal Caress", army.equals("Slaanesh"));
+        	warlordtraits.setAktiv("Slaanesh: Savage Hedonist", army.equals("Slaanesh"));
+        	warlordtraits.setAktiv("Slaanesh: Bewitching Aura", army.equals("Slaanesh"));
+	    } else if(LEGIONS.contains(army)) {
     		warlordtraits.setAktiv("Alpha Legion: I am Alpharius", army.equals("Alpha Legion"));
     		warlordtraits.setAktiv("Black Legion: First Amongst Traitors", army.equals("Black Legion"));
     		warlordtraits.setAktiv("Emperor's Children: Stimulated by Pain", army.equals("Emperor's Children"));

@@ -8,6 +8,10 @@ public class CHSkullmaster extends Eintrag {
         name = "Skullmaster";
         grundkosten = getPts("Skullmaster");
         power = 5;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

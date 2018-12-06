@@ -8,6 +8,10 @@ public class CHHorticulousSlimux extends Eintrag {
         name = "Horticulous Slimux";
         grundkosten = getPts("Horticulous Slimux");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("Nurgle: Acidic Ichor", true);
 
         complete();
     }
