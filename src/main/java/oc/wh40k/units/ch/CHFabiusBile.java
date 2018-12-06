@@ -9,7 +9,10 @@ public class CHFabiusBile extends Eintrag {
         name = "Fabius Bile";
         grundkosten = getPts("Fabius Bile");
         power = 6;
-        complete();
+        
+        seperator();
+
+        addWarlordTraits("Lord of Terror", true);
 
         complete();
 

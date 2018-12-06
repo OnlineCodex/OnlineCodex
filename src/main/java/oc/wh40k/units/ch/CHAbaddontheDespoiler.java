@@ -9,6 +9,10 @@ public class CHAbaddontheDespoiler extends Eintrag {
         name = "Abaddon the Despoiler";
         grundkosten = getPts("Abaddon the Despoiler");
         power = 13;
+        
+        seperator();
+
+        addWarlordTraits("Black Legion: First Amongst Traitors", true);
 
         complete();
 

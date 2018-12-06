@@ -16,7 +16,7 @@ public class Warlordtraits extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+	Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
     Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
@@ -96,6 +96,22 @@ public class Warlordtraits extends RuestkammerVater {
         }
         
         //CHAOS
+        if(army.equals("CHAOS") || LEGIONS.contains(army)){
+	    	ogE.addElement(new OptionsGruppeEintrag("Eternal Vendetta", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Flames of Spite", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Unholy Fortitude", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Hatred Incarnate", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Lord of Terror", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Exalted Champion", 0));
+	        
+	    	ogE.addElement(new OptionsGruppeEintrag("Alpha Legion: I am Alpharius", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: First Amongst Traitors", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Emperor's Children: Stimulated by Pain", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Iron Warriors: Cold and Bitter", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Night Lords: Night Haunter's Curse", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("World Eaters: Slaughterborn", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Word Bearers: The Voice of Lorgar", 0));
+	    }
         if(army.equals("CHAOS") || army.equals("Death Guard")){
         	ogE.addElement(new OptionsGruppeEintrag("Revoltingly Resilient", 0));
         	ogE.addElement(new OptionsGruppeEintrag("Living Plague", 0));
@@ -278,7 +294,16 @@ public class Warlordtraits extends RuestkammerVater {
     public void refreshen() {
         String army= buildaVater.getFormationType();
     	warlordtraits.alwaysSelected();
-        if(ASTRA_MILITARUM.contains(army)) {
+
+    	if(LEGIONS.contains(army)) {
+    		warlordtraits.setAktiv("Alpha Legion: I am Alpharius", army.equals("Alpha Legion"));
+    		warlordtraits.setAktiv("Black Legion: First Amongst Traitors", army.equals("Black Legion"));
+    		warlordtraits.setAktiv("Emperor's Children: Stimulated by Pain", army.equals("Emperor's Children"));
+    		warlordtraits.setAktiv("Iron Warriors: Cold and Bitter", army.equals("Iron Warriors"));
+    		warlordtraits.setAktiv("Night Lords: Night Haunter's Curse", army.equals("Night Lords"));
+    		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
+    		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
+        } else if(ASTRA_MILITARUM.contains(army)) {
     		warlordtraits.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
     		warlordtraits.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
     		warlordtraits.setAktiv("Valhallan: Tenacious", army.equals("Valhallan"));

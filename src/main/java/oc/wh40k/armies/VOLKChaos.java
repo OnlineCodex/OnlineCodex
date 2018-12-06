@@ -7,6 +7,9 @@ import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 import static oc.utils.ResourceUtils.loadPoints;
 
@@ -111,6 +114,9 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstüzungseinträge_Daemons = new String[]{"", "Skull Cannon", "", "Burning Chariot", "", "Seeker Chariot", "Exalted Seeker Chariot", "", "Soulgrinder"};
     private static final String[] Befestigungseinträge_Daemons = new String[]{"", "Feculent Gnarlmaws"};
 
+
+    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+    
     public VOLKChaos() {
         super("CH", loadPoints("/oc/wh40k/indices/chaos.yaml"));
 
@@ -197,13 +203,12 @@ public class VOLKChaos extends BuildaVater {
         kontingente.add("");
         kontingente.add("Daemonic Incursion Detachment (CotW)");
         kontingente.add("Daemon Legions of Tzeentch");
-
+        
         //Formationen
         formationen.add("CHAOS");
         formationen.add("Heretic Astartes");
         formationen.add("Chaos Space Marines");
-        formationen.add("Emperor's Children");
-        formationen.add("World Eaters");
+        LEGIONS.forEach(legion -> formationen.add(legion));
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
         formationen.add("");
