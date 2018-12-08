@@ -39,6 +39,10 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
@@ -47,6 +51,10 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         waffenUndArtefakte.getPanel().setLocation(
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }
 

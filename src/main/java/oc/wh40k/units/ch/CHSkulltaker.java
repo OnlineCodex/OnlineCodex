@@ -9,8 +9,12 @@ public class CHSkulltaker extends Eintrag {
         name = "Skulltaker";
         grundkosten = getPts("Skulltaker");
         power = 5;
+        
+        seperator();
+        
+        addWarlordTraits("Khorne: Devastating Blow", true);
+        
         complete();
-
     }
 
     @Override

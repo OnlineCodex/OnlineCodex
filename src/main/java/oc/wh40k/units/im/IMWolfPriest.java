@@ -24,6 +24,10 @@ public class IMWolfPriest extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
@@ -33,6 +37,11 @@ public class IMWolfPriest extends Eintrag {
         if (oe1.isSelected()) {
             power += 1;
         }
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
+        );
     }
 
 }

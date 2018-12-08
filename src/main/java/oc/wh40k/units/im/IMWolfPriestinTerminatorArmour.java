@@ -4,15 +4,7 @@ import oc.*;
 
 public class IMWolfPriestinTerminatorArmour extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 
     public IMWolfPriestinTerminatorArmour() {
         name = "Wolf Priest in Terminator Armour";
@@ -28,11 +20,19 @@ public class IMWolfPriestinTerminatorArmour extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
     @Override
     public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
+        );
     }
 
 }

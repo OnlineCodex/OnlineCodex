@@ -9,8 +9,12 @@ public class CHTheBlueScribes extends Eintrag {
         name = "The Blue Scribes";
         grundkosten = getPts("The Blue Scribes");
         power = 5;
+        
+        seperator();
+        
+        addWarlordTraits("Tzeentch: Daemonspark", true);
+        
         complete();
-
     }
 
     @Override

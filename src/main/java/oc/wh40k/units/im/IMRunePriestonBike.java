@@ -5,15 +5,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriestonBike extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
     OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
     RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
 	RuestkammerStarter psychicPowers;
 
     public IMRunePriestonBike() {
@@ -45,6 +38,10 @@ public class IMRunePriestonBike extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
@@ -53,6 +50,10 @@ public class IMRunePriestonBike extends Eintrag {
         waffenUndArtefakte.getPanel().setLocation(
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }
 

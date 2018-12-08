@@ -22,11 +22,19 @@ public class IMGreatCompanyChampion extends Eintrag {
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+
+        seperator();
+        
+		addWarlordTraits("", true);
         
         complete();
     }
 
     @Override
     public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
     }
 }

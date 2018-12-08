@@ -31,6 +31,10 @@ public class TAEthereal extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         addToInformationVector("Ethereal", 1);
 

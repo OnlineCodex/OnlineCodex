@@ -10,6 +10,10 @@ public class IMMasterofOrdnance extends Eintrag {
         power = 2;
 
         add(ico = new oc.Picture("oc/wh40k/images/IGCaptainThanstadt.jpg"));
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

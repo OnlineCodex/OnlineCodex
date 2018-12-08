@@ -4,15 +4,16 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class NEOverlord extends Eintrag {
 
     OptionsUpgradeGruppe o1;
 
     public NEOverlord() {
-
         name = "Overlord";
         grundkosten = getPts("Overlord");
+        power = 6;
 
         add(ico = new oc.Picture("oc/wh40k/images/NEHochlord.jpg"));
 
@@ -28,6 +29,10 @@ public class NEOverlord extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Resurrection orb", getPts("Resurrection orb")));
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -35,8 +40,6 @@ public class NEOverlord extends Eintrag {
     @Override
     public void refreshen() {
         if (!o1.isSelected()) o1.setSelected(0, true);
-
-        power = 6;
     }
 
 }

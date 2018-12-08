@@ -36,6 +36,10 @@ public class CHWarpsmith extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
 
@@ -46,5 +50,10 @@ public class CHWarpsmith extends Eintrag {
         if (!flamer.isSelected()) flamer.setSelected(true);
         if (!melta.isSelected()) melta.setSelected(true);
         if (!mecha.isSelected()) mecha.setSelected(true);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

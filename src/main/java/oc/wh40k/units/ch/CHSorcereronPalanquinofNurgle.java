@@ -14,11 +14,8 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
         name = "Sorcerer on Palanquin of Nurgle";
         grundkosten = getPts("Sorcerer on Palanquin of Nurgle");
         power = 8;
-        complete();
 
         seperator();
-
-        complete();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
@@ -28,6 +25,19 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
+        complete();
+    }
+
+    @Override
+    public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

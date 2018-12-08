@@ -22,6 +22,18 @@ public class IMWolfLordinCataphractiiArmour extends Eintrag {
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
+    }
+
+    @Override
+    public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
+        );
     }
 }

@@ -3,6 +3,7 @@ package oc.wh40k.units.im;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class IMTerminatorAncient extends Eintrag {
     OptionsUpgradeGruppe o2;
@@ -17,6 +18,10 @@ public class IMTerminatorAncient extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("thunder hammer", getPts("thunder hammer (Characters)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }

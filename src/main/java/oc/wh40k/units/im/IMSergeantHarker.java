@@ -8,6 +8,10 @@ public class IMSergeantHarker extends Eintrag {
         name = "Sergeant Harker";
         grundkosten = getPts("Sergeant Harker");
         power = 3;
+        
+        seperator();
+
+        addWarlordTraits("Catachan: Lead From the Front", true);
 
         complete();
     }

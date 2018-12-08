@@ -11,8 +11,10 @@ public class IMDeathwatchPrimarisChaplain extends Eintrag {
     public IMDeathwatchPrimarisChaplain() {
         name = "Primaris Chaplain";
         grundkosten = getPts("Primaris Chaplain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Crozius arcanum") + getPts("Absolver bolt pistol (DW)");
-
+        
         seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

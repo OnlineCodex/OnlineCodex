@@ -7,6 +7,9 @@ import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
 import java.io.InputStream;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 import static oc.utils.ResourceUtils.loadPoints;
 
@@ -111,6 +114,10 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstüzungseinträge_Daemons = new String[]{"", "Skull Cannon", "", "Burning Chariot", "", "Seeker Chariot", "Exalted Seeker Chariot", "", "Soulgrinder"};
     private static final String[] Befestigungseinträge_Daemons = new String[]{"", "Feculent Gnarlmaws"};
 
+
+    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+    private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
+    
     public VOLKChaos() {
         super("CH", loadPoints("/oc/wh40k/indices/chaos.yaml"));
 
@@ -197,17 +204,17 @@ public class VOLKChaos extends BuildaVater {
         kontingente.add("");
         kontingente.add("Daemonic Incursion Detachment (CotW)");
         kontingente.add("Daemon Legions of Tzeentch");
-
+        
         //Formationen
         formationen.add("CHAOS");
         formationen.add("Heretic Astartes");
         formationen.add("Chaos Space Marines");
-        formationen.add("Emperor's Children");
-        formationen.add("World Eaters");
+        LEGIONS.forEach(legion -> formationen.add(legion));
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
         formationen.add("");
         formationen.add("Chaosdaemons");
+        CHAOS_GODS.forEach(god -> formationen.add(god));
         formationen.add("");
         formationen.add("Questor Traitoris"); 
         formationen.add("");
@@ -341,7 +348,7 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Questor_Traitoris);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
-        } else if (getFormationType().equals("Chaosdaemons")) {
+        } else if (getFormationType().equals("Chaosdaemons") || CHAOS_GODS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Daemons, HQeinträge_Daemons_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);

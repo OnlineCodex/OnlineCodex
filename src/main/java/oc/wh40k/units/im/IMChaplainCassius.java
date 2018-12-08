@@ -8,6 +8,10 @@ public class IMChaplainCassius extends Eintrag {
         name = "Chaplain Cassius";
         grundkosten = getPts("Chaplain Cassius");
         power = 7;
+        
+        seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }

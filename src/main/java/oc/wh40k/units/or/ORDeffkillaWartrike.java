@@ -26,7 +26,19 @@ public class ORDeffkillaWartrike extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
+    }
+    
+    @Override
+    public void refreshen() {
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

@@ -12,6 +12,10 @@ public class CHBiologusPutrifier extends Eintrag {
         name = "Biologus Putrifier";
         grundkosten = getPts("Biologus Putrifier") + getPts("Injector pistol") + getPts("Plague knife") + getPts("Hyper blight grenades") + getPts("Krak grenades");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
 

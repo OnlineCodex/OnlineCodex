@@ -1,8 +1,10 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMCompanyChampion extends Eintrag {
+	
 
     public IMCompanyChampion() {
         name = "Company Champion";
@@ -12,12 +14,17 @@ public class IMCompanyChampion extends Eintrag {
                 getPts("Bolt pistol (SM)") +
                 getPts("Combat shield");
 
-        if (buildaVater.getFormationType().equals("Dark Angels"))
+        if (buildaVater.getFormationType().equals("Dark Angels")) {
             grundkosten += getPts("Blade of Caliban");
-        else
+        } else {
             grundkosten += getPts("Master-crafted power sword");
+        }
 
         power = 3;
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
 
         complete();

@@ -6,10 +6,16 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
-import java.io.InputStream;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
 
 
 public class VOLKAeldari extends BuildaVater {
+
+	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
+	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
+	private static final Set<String> HARLEQUINS = ImmutableSet.of("Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
 
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
@@ -53,30 +59,21 @@ public class VOLKAeldari extends BuildaVater {
         nameDerArtDerArmee = BuildaHQ.translate("AELDARI");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("AELDARI");
         textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("AELDARI");
-
+        
         formationen.add("AELDARI");
-        formationen.add("Asuryani");
+        formationen.add("");
+        formationen.add("ASURYANI");
+        CRAFTWORLDS.forEach(craftworld -> formationen.add(craftworld));
         formationen.add("Warhost");
         formationen.add("Spirit Host");
         formationen.add("Aspect Warrior");
-        formationen.add("Ulthwe");
-        formationen.add("Iyanden");
-        formationen.add("Alaitoc");
         formationen.add("");
-        formationen.add("Drukhari");
-        formationen.add("Kabal of the Black Heart");
-        formationen.add("Kabal of the Flayed Skull");
-        formationen.add("Kabal of the Poisoned Tongue");
-        formationen.add("Kabal of the Obsidan Rose");
-        formationen.add("Cult of Strife");
-        formationen.add("Cult of the Cursed Blade");
-        formationen.add("Cult of the Red Grief");
-        formationen.add("The Prophets of Flesh");
-        formationen.add("The Dark Creed");
-        formationen.add("Coven of Twelve");
+        formationen.add("DRUKHARI");
+        DRUKHARI.forEach(drukhari -> formationen.add(drukhari));
         formationen.add("Incubi");
         formationen.add("");
-        formationen.add("Harlequins");
+        formationen.add("HARLEQUINS");
+        HARLEQUINS.forEach(harlequins -> formationen.add(harlequins));
         formationen.add("");
         formationen.add("Ynnari");
 
@@ -132,7 +129,7 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Crimson Hunter", "Crimson Hunter Exarch", "Hemlock Wraithfighter",
                     "", "Razorwing Jetfighter", "Voidraven"});
-        } else if (getFormationType().equals("Asuryani")) {
+        } else if (getFormationType().equals("ASURYANI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Autarch", "Autarch with Swooping Hawk Wings", "Autarch Skyrunner",
                     "Farseer", "Farseer Skyrunner", "Warlock", "Warlock Conclave", "Warlock Skyrunner",
@@ -260,7 +257,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Wraithknight"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Crimson Hunter", "Crimson Hunter Exarch", "Hemlock Wraithfighter"});
-        } else if (getFormationType().equals("Drukhari")) {
+        } else if (getFormationType().equals("DRUKHARI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Archon", "Succubus", "Haemonculus",
                     "", "Lelith Hesperax", "Urien Rakarth", "Drazhar"});
@@ -281,7 +278,7 @@ public class VOLKAeldari extends BuildaVater {
         } else if (getFormationType().equals("Kabal of the Black Heart")
         		|| getFormationType().equals("Flayed Skull")
         		|| getFormationType().equals("Poisoned Tongue")
-        		|| getFormationType().equals("Kabal of the Obsidan Rose")) {
+        		|| getFormationType().equals("Kabal of the Obsidian Rose")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Archon",
                     "", "Drazhar"});
@@ -352,7 +349,7 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Drazhar"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Incubi"});
-        } else if (getFormationType().equals("Harlequins")) {
+        } else if (getFormationType().equals("HARLEQUINS") || HARLEQUINS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Troupe Master", "Shadowseer"});
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{

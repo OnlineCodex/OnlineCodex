@@ -42,6 +42,10 @@ public class IMGrandMaster extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -51,5 +55,10 @@ public class IMGrandMaster extends Eintrag {
         power = 10;
         o1.alwaysSelected();
         o2.alwaysSelected();
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

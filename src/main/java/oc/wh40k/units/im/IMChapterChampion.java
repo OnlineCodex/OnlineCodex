@@ -29,6 +29,10 @@ public class IMChapterChampion extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Characters)")));
         ogE.addElement(new OptionsGruppeEintrag("Relic blade", getPts("relic blade")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

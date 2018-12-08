@@ -7,7 +7,6 @@ public class IMLieutenants extends Eintrag {
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1, o2;
     OptionsZaehlerGruppe o1x;
-
     OptionsEinzelUpgrade mantlets;
 
     public IMLieutenants() {
@@ -51,7 +50,10 @@ public class IMLieutenants extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Jump pack", getPts("Lieutenants with Jump Pack") - getPts("Lieutenants")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
 
+		addWarlordTraits("", true);
 
         complete();
     }

@@ -2,16 +2,17 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 
-public class IMCaptainTycho extends Eintrag {
+public class IMGabrielSeth extends Eintrag {
 
-    public IMCaptainTycho() {
-        name = "Captain Tycho";
-        grundkosten = getPts("Captain Tycho");
-        power = 5;
+    public IMGabrielSeth() {
+        name = "Gabriel Seth";
+        grundkosten = getPts("Gabriel Seth");
+        power = 7;
+        
         seperator();
         
         addWarlordTraits("Selfless Valour (BA)", true);
-        
+
         complete();
     }
 
@@ -19,5 +20,5 @@ public class IMCaptainTycho extends Eintrag {
     public void refreshen() {
         setUnikat(true);
     }
-
 }
+

@@ -22,7 +22,6 @@ public class ORRuntherd extends Eintrag {
         
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
-
         ogE.addElement(new OptionsGruppeEintrag("Grabba Stikk", getPts("Grabba Stikk")));
         ogE.addElement(new OptionsGruppeEintrag("Grot-prod", getPts("Grot-prod")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -42,6 +41,10 @@ public class ORRuntherd extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -54,6 +57,11 @@ public class ORRuntherd extends Eintrag {
         } else {
         	setFehlermeldung("");
         }
+        
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
     
     @Override

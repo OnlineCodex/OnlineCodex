@@ -8,6 +8,10 @@ public class CHHeraldofSlaaneshonSteed extends Eintrag {
         name = "Herald of Slaanesh on Steed";
         grundkosten = getPts("Herald of Slaanesh on Steed");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

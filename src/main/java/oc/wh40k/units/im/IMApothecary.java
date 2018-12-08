@@ -15,6 +15,10 @@ public class IMApothecary extends Eintrag {
                 getPts("Chainsword (SM)") +
                 getPts("Bolt pistol (SM)");
         power = 3;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

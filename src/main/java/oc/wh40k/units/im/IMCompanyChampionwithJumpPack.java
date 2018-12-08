@@ -1,8 +1,10 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMCompanyChampionwithJumpPack extends Eintrag {
+	
 
     public IMCompanyChampionwithJumpPack() {
         name = "Company Champion with Jump Pack";
@@ -12,7 +14,10 @@ public class IMCompanyChampionwithJumpPack extends Eintrag {
                 getPts("Bolt pistol (SM)") +
                 getPts("Master-crafted power sword");
         power = 5;
+        
+        seperator();
 
+		addWarlordTraits("", true);
 
         complete();
     }

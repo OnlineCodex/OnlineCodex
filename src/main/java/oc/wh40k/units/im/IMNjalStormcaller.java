@@ -23,12 +23,21 @@ public class IMNjalStormcaller extends Eintrag {
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
     @Override
     public void refreshen() {
         setUnikat(true);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 }

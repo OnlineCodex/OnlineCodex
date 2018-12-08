@@ -10,6 +10,7 @@ public class IMPrimarisWatchCaptain extends Eintrag {
     public IMPrimarisWatchCaptain() {
         name = "Primaris Watch Captain";
         grundkosten = getPts("Primaris Watch Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        power = 6;
 
         ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", getPts("Master crafted auto bolt rifle (DW)")));
         ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", getPts("Master crafted stalker bolt rifle (DW)")));
@@ -30,13 +31,13 @@ public class IMPrimarisWatchCaptain extends Eintrag {
 
         seperator();
 
+		addWarlordTraits("", true);
+
         complete();
     }
 
     @Override
     public void refreshen() {
-        power = 6;
-
         o1.alwaysSelected();
         o2.alwaysSelected();
         o1.setAktiv(!fist.isSelected());

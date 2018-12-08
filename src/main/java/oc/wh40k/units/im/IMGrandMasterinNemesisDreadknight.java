@@ -48,6 +48,10 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }
@@ -65,6 +69,11 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
             o1.setPreis("Dreadfist", getPts("Dreadfist (single)"));
             o2.setPreis("Dreadfist", getPts("Dreadfist (single)"));
         }
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 }

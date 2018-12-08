@@ -5,7 +5,6 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORMek extends Eintrag {
-
     RuestkammerStarter waffen;
 
     boolean megaBool = false;
@@ -30,7 +29,21 @@ public class ORMek extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
+
+
+    @Override
+    public void refreshen() {
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
+    }
+
 }

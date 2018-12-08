@@ -5,11 +5,15 @@ import oc.RuestkammerStarter;
 
 public class NEAnrakyrtheTraveller extends Eintrag {
 
-    RuestkammerStarter rkTransport;
 
     public NEAnrakyrtheTraveller() {
         name = "Anrakyr the Traveller";
         grundkosten = getPts("Anrakyr the Traveller");
+        power = 9;
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -17,7 +21,6 @@ public class NEAnrakyrtheTraveller extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        power = 9;
     }
 
 }

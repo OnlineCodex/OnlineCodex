@@ -9,8 +9,12 @@ public class CHTheMasqueofSlaanesh extends Eintrag {
         name = "The Masque of Slaanesh";
         grundkosten = getPts("The Masque of Slaanesh");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("Slaanesh: The Murderdance", true);
+        
         complete();
-
     }
 
     @Override

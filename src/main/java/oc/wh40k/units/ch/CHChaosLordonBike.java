@@ -15,7 +15,6 @@ public class CHChaosLordonBike extends Eintrag {
         name = "Chaos Lord on Bike";
         grundkosten = getPts("Chaos Lord on Bike");
         power = 7;
-        complete();
 
         seperator();
 
@@ -35,11 +34,19 @@ public class CHChaosLordonBike extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 }

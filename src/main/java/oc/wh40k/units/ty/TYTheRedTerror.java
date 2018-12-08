@@ -1,8 +1,10 @@
 package oc.wh40k.units.ty;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class TYTheRedTerror extends Eintrag {
+	
 
     public TYTheRedTerror() {
         name = "The Red Terror";
@@ -10,6 +12,10 @@ public class TYTheRedTerror extends Eintrag {
         power = 3;
         add(ico = new oc.Picture("oc/wh40k/images/TYBroodlord.jpg"));
         complete();
+
+        seperator();
+        
+		addWarlordTraits("", true);
     }
 
     @Override

@@ -9,6 +9,9 @@ public class IMTychotheLost extends Eintrag {
         grundkosten = getPts("Tycho the Lost");
         power = 4;
         seperator();
+        
+        addWarlordTraits("Selfless Valour (BA)", true);
+        
         complete();
     }
 

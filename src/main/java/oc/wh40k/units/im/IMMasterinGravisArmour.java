@@ -11,6 +11,10 @@ public class IMMasterinGravisArmour extends Eintrag {
         name = "Master in Gravis Armour";
         grundkosten = getPts("Master in Gravis Armour") + getPts("Master-crafted power sword") + getPts("Boltstorm gauntlet");
         power = 7;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

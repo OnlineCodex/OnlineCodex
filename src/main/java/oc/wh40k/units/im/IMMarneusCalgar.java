@@ -8,7 +8,10 @@ public class IMMarneusCalgar extends Eintrag {
         name = "Marneus Calgar";
         grundkosten = getPts("Marneus Calgar");
         power = 13;
+        
         seperator();
+
+        addWarlordTraits("Ultramarines: Adept of the Codex", true);
 
         complete();
     }

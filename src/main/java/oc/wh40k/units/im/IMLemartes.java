@@ -8,7 +8,11 @@ public class IMLemartes extends Eintrag {
         name = "Lemartes";
         grundkosten = getPts("Lemartes");
         power = 7;
+        
         seperator();
+        
+        addWarlordTraits("Soulwarden (BA)", true);
+        
         complete();
     }
 

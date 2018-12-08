@@ -11,6 +11,10 @@ public class CHEpidemius extends Eintrag {
         power = 5;
 
         add(ico = new oc.Picture("oc/wh40k/images/CDEpidemius.gif"));
+        
+        seperator();
+        
+        addWarlordTraits("Nurgle: Virulent Touch", true);
 
         complete();
 

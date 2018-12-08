@@ -2,6 +2,7 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
+import oc.RuestkammerStarter;
 
 public class ORKaptinBadrukk extends Eintrag {
 
@@ -20,6 +21,10 @@ public class ORKaptinBadrukk extends Eintrag {
 
         Munigrot = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Ammo runt", 1, getPts("Ammo runt"));
         add(Munigrot);
+
+        seperator();
+        
+        addWarlordTraits("Freebooterz: Killa Reputation", true);
 
         complete();
     }

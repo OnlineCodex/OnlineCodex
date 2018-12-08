@@ -1,9 +1,11 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class OROrkMekBossBuzzgob extends Eintrag {
 
+    
     public OROrkMekBossBuzzgob() {
         name = "Ork Mek Boss Buzzgob";
         grundkosten = getPts("Ork Mek Boss Buzzgob") +
@@ -15,6 +17,11 @@ public class OROrkMekBossBuzzgob extends Eintrag {
                 getPts("Lunk");
 
         power = 6;
+
+        seperator();
+        
+        addWarlordTraits("Goffs: Proper Killy", true);
+        
         complete();
     }
 

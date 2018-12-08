@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class TACommanderShadowsun extends Eintrag {
 
@@ -11,9 +12,7 @@ public class TACommanderShadowsun extends Eintrag {
     OptionsEinzelUpgrade oe1;
 
     public TACommanderShadowsun() {
-
         name = "Commander Shadowsun";
-
         grundkosten = getPts("Commander Shadowsun");
 
         add(ico = new oc.Picture("oc/wh40k/images/OShaserra.gif"));
@@ -22,6 +21,10 @@ public class TACommanderShadowsun extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("MV52 Shield Drone", "MV52 Shield Drone", getPts("MV52 Shield Drone")));
         add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
+
+        addWarlordTraits("Exemplar of the Kauyon", true);
 
         complete();
     }
@@ -36,9 +39,4 @@ public class TACommanderShadowsun extends Eintrag {
 
     }
 
-    //@OVERRIDE
-    public void deleteYourself() {
-
-        super.deleteYourself();
-    }
 }

@@ -22,7 +22,10 @@ public class IMPrimarisLieutenants extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MC stalker bolt rifle", "Master-crafted stalker bolt rifle", getPts("Master-crafted stalker bolt rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
 
+		addWarlordTraits("", true);
 
         complete();
     }

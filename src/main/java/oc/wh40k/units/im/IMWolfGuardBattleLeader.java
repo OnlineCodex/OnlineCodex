@@ -23,6 +23,10 @@ public class IMWolfGuardBattleLeader extends Eintrag {
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
         add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        
+        seperator();
+        
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -33,6 +37,11 @@ public class IMWolfGuardBattleLeader extends Eintrag {
         if (oe1.isSelected()) {
             power += 1;
         }
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
+        );
     }
 
 }

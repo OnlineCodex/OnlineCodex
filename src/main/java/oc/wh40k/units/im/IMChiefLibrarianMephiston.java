@@ -22,6 +22,10 @@ public class IMChiefLibrarianMephiston extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+        
+        addWarlordTraits("Selfless Valour (BA)", true);
 
         complete();
     }
@@ -29,6 +33,11 @@ public class IMChiefLibrarianMephiston extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 
 }

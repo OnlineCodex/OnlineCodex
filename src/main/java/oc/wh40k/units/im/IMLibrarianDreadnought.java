@@ -32,6 +32,10 @@ public class IMLibrarianDreadnought extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -39,5 +43,9 @@ public class IMLibrarianDreadnought extends Eintrag {
     @Override
     public void refreshen() {
         o2.alwaysSelected();
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

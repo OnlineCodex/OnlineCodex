@@ -11,8 +11,10 @@ public class IMDeathwatchPrimarisApothecary extends Eintrag {
     public IMDeathwatchPrimarisApothecary() {
         name = "Primaris Apothecary";
         grundkosten = getPts("Primaris Apothecary") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Absolver bolt pistol (DW)") + getPts("Reductor pistol");
-
+        
         seperator();
+
+        addWarlordTraits("", true);
 
         complete();
     }

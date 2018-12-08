@@ -24,11 +24,20 @@ public class IMWolfLord extends Eintrag {
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
     @Override
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
     }
 }

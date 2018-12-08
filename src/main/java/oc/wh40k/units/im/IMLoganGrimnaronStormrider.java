@@ -1,16 +1,20 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerStarter;
 
 public class IMLoganGrimnaronStormrider extends Eintrag {
 
-    OptionsEinzelUpgrade stormrider;
 
     public IMLoganGrimnaronStormrider() {
         name = "Logan Grimnar on Stormrider";
         grundkosten = getPts("Logan Grimnar on Stormrider");
         power = 12;
+
+        seperator();
+        
+		addWarlordTraits("", true);
+        
         complete();
     }
 

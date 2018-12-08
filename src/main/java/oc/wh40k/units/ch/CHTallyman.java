@@ -12,6 +12,10 @@ public class CHTallyman extends Eintrag {
         name = "Tallyman";
         grundkosten = getPts("Tallyman") + getPts("Plasma pistol") + getPts("Blight grenades") + getPts("Krak grenades");
         power = 4;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
 

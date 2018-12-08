@@ -46,6 +46,10 @@ public class TYTervigon extends Eintrag {
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
@@ -56,6 +60,11 @@ public class TYTervigon extends Eintrag {
         waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
+    	
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
 

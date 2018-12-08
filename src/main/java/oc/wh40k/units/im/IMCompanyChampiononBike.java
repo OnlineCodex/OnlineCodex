@@ -1,8 +1,10 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMCompanyChampiononBike extends Eintrag {
+	
 
     public IMCompanyChampiononBike() {
         name = "Company Champion on Bike";
@@ -13,6 +15,10 @@ public class IMCompanyChampiononBike extends Eintrag {
                 getPts("Master-crafted power sword") +
                 getPts("Twin boltgun");
         power = 5;
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }

@@ -8,6 +8,10 @@ public class CHBloodThrone extends Eintrag {
         name = "Blood Throne";
         grundkosten = getPts("Blood Throne");
         power = 6;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
     }

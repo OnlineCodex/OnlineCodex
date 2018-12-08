@@ -8,7 +8,10 @@ import oc.utils.ResourceUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.collect.ImmutableSet;
+
 import java.io.InputStream;
+import java.util.Set;
 import java.util.stream.Stream;
 
 public class VOLKImperium extends BuildaVater {
@@ -292,6 +295,11 @@ public class VOLKImperium extends BuildaVater {
             Fliegereinträge_Space_Wolves, Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA, Fliegereinträge_IA_Minotaurs);
     private static final String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
 
+  //Subfactions
+    private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
+    private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
+    private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
@@ -336,20 +344,14 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Adeptus Custodes");
         formationen.add("");
         formationen.add("Adeptus Astartes");
-        formationen.add("Black Templars");
-        formationen.add("Blood Angels");
-        formationen.add("Crimson Fists");
-        formationen.add("Dark Angels");
-        formationen.add("Imperial Fists");
-        formationen.add("Legion of the Damned");
-        formationen.add("Ultramarines");
-        formationen.add("Raven Guard");
-        formationen.add("Salamanders");
-        formationen.add("Space Wolves");
-        formationen.add("White Scars");
+        SM_CHAPTERS.forEach(chapter -> formationen.add(chapter));
         formationen.add("");
+        formationen.add("Blood Angels");
+        formationen.add("Dark Angels");
         formationen.add("Deathwatch");
         formationen.add("Grey Knights");
+        formationen.add("Legion of the Damned");
+        formationen.add("Space Wolves");
         formationen.add("");
         formationen.add("Astral Claws");
         formationen.add("Blood Ravens");
@@ -370,16 +372,15 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Star Phantoms");
         formationen.add("Tiger Claws");
         formationen.add("");
-        formationen.add("Astra Militarum");
-        formationen.add("Cadian");
-        formationen.add("Catachan");
+        formationen.add("ASTRA MILITARUM");
+        ASTRA_MILITARUM.forEach(regiment -> formationen.add(regiment));
         formationen.add("Officio Prefectus");
-        formationen.add("Militarum Tempestus");
         formationen.add("Militarum Auxilia");
         formationen.add("Aeronautica Imperialis");
         formationen.add("Scholastica Psykana");
         formationen.add("");
         formationen.add("Adeptus Mechanicus");
+        FORGEWORLDS.forEach(fleet -> formationen.add(fleet));
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
         formationen.add("");
@@ -566,7 +567,6 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
-        	myChooserGruppen.get(AI).changeComboBoxAuswahlen(new String[]{"", "Warlordtraits"});
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
@@ -600,7 +600,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Grey_Knights);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Astra Militarum")) {
+        } else if (getFormationType().equals("ASTRA MILITARUM")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM_komplett);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AM_komplett);
@@ -679,7 +679,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Adeptus Mechanicus")) {
+        } else if (getFormationType().equals("Adeptus Mechanicus") || FORGEWORLDS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);

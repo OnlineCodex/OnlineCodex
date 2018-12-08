@@ -25,19 +25,20 @@ public class ORPainboyonWarbike extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-
-    }
-
-    @Override
-    public void deleteYourself() {
-        addToInformationVector("ORHQ", -1);
-        super.deleteYourself();
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 
 }

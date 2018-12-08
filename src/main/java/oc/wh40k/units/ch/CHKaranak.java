@@ -9,9 +9,12 @@ public class CHKaranak extends Eintrag {
         name = "Karanak";
         grundkosten = getPts("Karanak");
         power = 6;
+        
+        seperator();
+        
+        addWarlordTraits("Khorne: Aspect of Death", true);
 
         complete();
-
     }
 
     @Override

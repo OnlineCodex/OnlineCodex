@@ -14,6 +14,8 @@ public class IMPrimarisChaplain extends Eintrag {
 
         seperator();
 
+		addWarlordTraits("", true);
+
         complete();
     }
 

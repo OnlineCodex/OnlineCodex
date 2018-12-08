@@ -8,6 +8,10 @@ public class IMBrotherCorbulo extends Eintrag {
         name = "Brother Corbulo";
         grundkosten = getPts("Brother Corbulo");
         power = 5;
+        seperator();
+        
+        addWarlordTraits("Gift of Foresight (BA)", true);
+        
         complete();
     }
 

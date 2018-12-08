@@ -13,7 +13,7 @@ public class IMPrimarisLibrarian extends Eintrag {
     public IMPrimarisLibrarian() {
         name = "Primaris Librarian";
         grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol") + getPts("Force sword");
-
+        power = 7;
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -29,12 +29,19 @@ public class IMPrimarisLibrarian extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        power = 7;
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
+        );
     }
 }

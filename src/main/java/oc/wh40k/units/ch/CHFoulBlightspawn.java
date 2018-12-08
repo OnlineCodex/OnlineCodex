@@ -16,10 +16,12 @@ public class CHFoulBlightspawn extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Plague sprayer", getPts("Plague sprayer")));
         add(bell = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
-
     }
 
     @Override

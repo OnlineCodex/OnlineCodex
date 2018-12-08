@@ -10,8 +10,12 @@ public class CHBloodthirsterofUnfetteredFury extends Eintrag {
         name = "Bloodthirster of Unfettered Fury";
         grundkosten = getPts("Bloodthirster Of Insensate Rage");
         power = 17;
+        
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
-
     }
 
     @Override

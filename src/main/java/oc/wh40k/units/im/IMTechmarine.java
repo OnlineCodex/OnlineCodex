@@ -20,6 +20,10 @@ public class IMTechmarine extends Eintrag {
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
@@ -27,5 +31,10 @@ public class IMTechmarine extends Eintrag {
     @Override
     public void refreshen() {
         power = 4 + (((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).oe1.isSelected() ? 1 : 0);
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
     }
 }

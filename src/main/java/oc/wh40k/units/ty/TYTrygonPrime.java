@@ -41,12 +41,21 @@ public class TYTrygonPrime extends Eintrag {
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 
     @Override
     public void refreshen() {
         o1.alwaysSelected();
+    	
+    	warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
+        );
     }
 
 }

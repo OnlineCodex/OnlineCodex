@@ -26,6 +26,10 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         ob.setButtonText("Rüstkammer");
         add(ob);
         ob.setAbwaehlbar(false);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         addToInformationVector("Commander", 1);
 
@@ -55,6 +59,11 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
                 setFehlermeldung("");
             }
         }
+        
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
+        );
     }
 
     //@OVERRIDE

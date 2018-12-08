@@ -5,7 +5,6 @@ import oc.RuestkammerStarter;
 
 public class ORGhazghkullThraka extends Eintrag {
 
-    RuestkammerStarter squigs;
 
     public ORGhazghkullThraka() {
 
@@ -13,6 +12,10 @@ public class ORGhazghkullThraka extends Eintrag {
         name = "Ghazghkull Thraka";
         grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
+        
+        seperator();
+
+        addWarlordTraits("Goffs: Proper Killy", true);
 
         complete();
     }

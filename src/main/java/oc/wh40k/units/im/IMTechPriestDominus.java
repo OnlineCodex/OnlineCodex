@@ -3,6 +3,7 @@ package oc.wh40k.units.im;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class IMTechPriestDominus extends Eintrag {
 
@@ -26,6 +27,10 @@ public class IMTechPriestDominus extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Phosphor serpenta", getPts("Phosphor serpenta")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
         o2.setSelected(0, true);
+        
+        seperator();
+
+		addWarlordTraits("", true);
 
         complete();
     }
