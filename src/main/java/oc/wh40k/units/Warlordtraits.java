@@ -9,6 +9,7 @@ import oc.*;
 public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits;
     OptionsUpgradeGruppe warlordtraits2;
+    OptionsUpgradeGruppe warlordtraits3;
     String mandatoryChoice = "";
     String exclusiveKeyword = "";
     boolean subfactionsAllowed = true;
@@ -189,6 +190,9 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Radiant Mantle (AC)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Companion (AC)", 0));
         }
+        if(army.equals("IMPERIUM")) {
+        	add(warlordtraits3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
+        }
         if(army.equals("IMPERIUM") || ADEPTUS_MECHANICUS.contains(army)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Monitor Malevolus (AdMech)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Magos Biologis (AdMech)", 0));
@@ -228,6 +232,9 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("The Watch Eternal (DW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Vigilance Incarnate (DW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Nowhere to Hide (DW)", 0));
+        }
+        if(army.equals("IMPERIUM")) {
+        	add(warlordtraits2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
         }
         if(army.equals("IMPERIUM") || army.equals("Grey Knights")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Daemon-Slayer (GK)", 0));
@@ -320,12 +327,21 @@ public class Warlordtraits extends RuestkammerVater {
     	}
         add(warlordtraits = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
 
+        if(warlordtraits3 != null) {
+        	warlordtraits2.getPanel().setLocation(
+                    (int) warlordtraits3.getPanel().getLocation().getX() + warlordtraits3.getPanel().getSize().width + 5 ,
+                    (int) warlordtraits3.getPanel().getLocation().getY()
+            );
+        } 
+        
         if(warlordtraits2 != null) {
         	warlordtraits.getPanel().setLocation(
                     (int) warlordtraits2.getPanel().getLocation().getX() + warlordtraits2.getPanel().getSize().width + 5 ,
                     (int) warlordtraits2.getPanel().getLocation().getY()
             );
         }
+        
+        
         
         setUeberschrift("Warlord Traits");
         sizeSetzen();
@@ -334,11 +350,11 @@ public class Warlordtraits extends RuestkammerVater {
     //@OVERRIDE
     public void refreshen() {
         String army= buildaVater.getFormationType();
-        if(warlordtraits2 != null) {
-        	warlordtraits.getPanel().setLocation(
-                    (int) warlordtraits2.getPanel().getLocation().getX() + warlordtraits2.getPanel().getSize().width + 5 ,
-                    (int) warlordtraits2.getPanel().getLocation().getY()
-            );
+        if(warlordtraits3 != null) {
+        	warlordtraits.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
+        	warlordtraits2.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
+        	warlordtraits3.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
+        } else if(warlordtraits2 != null) {
         	warlordtraits.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() == 1);
         	warlordtraits2.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() == 1);
         } else {
@@ -412,22 +428,43 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
     		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
         } else if(ASTRA_MILITARUM.contains(army)) {
-    		warlordtraits.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
-    		warlordtraits.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
-    		warlordtraits.setAktiv("Valhallan: Tenacious", army.equals("Valhallan"));
-    		warlordtraits.setAktiv("Vostroyan: Honoured Duellist", army.equals("Vostroyan"));
-    		warlordtraits.setAktiv("Armageddon: Ex-gang Leader", army.equals("Armageddon"));
-    		warlordtraits.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
-    		warlordtraits.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
-    		warlordtraits.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+        	if(warlordtraits3 != null) {
+        		warlordtraits3.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
+        		warlordtraits3.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
+        		warlordtraits3.setAktiv("Valhallan: Tenacious", army.equals("Valhallan"));
+        		warlordtraits3.setAktiv("Vostroyan: Honoured Duellist", army.equals("Vostroyan"));
+        		warlordtraits3.setAktiv("Armageddon: Ex-gang Leader", army.equals("Armageddon"));
+        		warlordtraits3.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
+        		warlordtraits3.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
+        		warlordtraits3.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+        	} else {
+	    		warlordtraits.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
+	    		warlordtraits.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
+	    		warlordtraits.setAktiv("Valhallan: Tenacious", army.equals("Valhallan"));
+	    		warlordtraits.setAktiv("Vostroyan: Honoured Duellist", army.equals("Vostroyan"));
+	    		warlordtraits.setAktiv("Armageddon: Ex-gang Leader", army.equals("Armageddon"));
+	    		warlordtraits.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
+	    		warlordtraits.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
+	    		warlordtraits.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+        	}
         } else if(ADEPTUS_MECHANICUS.contains(army)) {
-    		warlordtraits.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
-    		warlordtraits.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
-    		warlordtraits.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));
-    		warlordtraits.setAktiv("Lucius: Masterwork Bionics (AdMech)", army.equals("Forge World Lucius"));
-    		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
-    		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
-    		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        	if(warlordtraits2 != null) {
+        		warlordtraits2.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
+        		warlordtraits2.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
+        		warlordtraits2.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));
+        		warlordtraits2.setAktiv("Lucius: Masterwork Bionics (AdMech)", army.equals("Forge World Lucius"));
+        		warlordtraits2.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
+        		warlordtraits2.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
+        		warlordtraits2.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        	} else {
+        		warlordtraits.setAktiv("Mars: Static Psalm-code (AdMech)", army.equals("Forge World Mars"));
+        		warlordtraits.setAktiv("Graia: Emotionless Clarity (AdMech)", army.equals("Forge World Graia"));
+        		warlordtraits.setAktiv("Metalica: Ordered Efficiency (AdMech)", army.equals("Forge World Metalica"));
+        		warlordtraits.setAktiv("Lucius: Masterwork Bionics (AdMech)", army.equals("Forge World Lucius"));
+        		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
+        		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
+        		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        	}
         } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) && 
         		(exclusiveKeyword.equals(KABAL) || exclusiveKeyword.equals(WYCH_CULT) || exclusiveKeyword.equals(HAEMUNCULUS_COVEN))) {
         	warlordtraits.setAktiv("Hatred Eternal", exclusiveKeyword.equals(KABAL));
