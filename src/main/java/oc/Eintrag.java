@@ -414,7 +414,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		warlordTraits.initKammer();
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");
-		if(!mandatoryChoice.equals("")) {
+		if(!"".equals(mandatoryChoice)) {
 			((Warlordtraits)warlordTraits.getKammer()).setMandatoryChoice(mandatoryChoice);
 		}
         add(warlordTraits);
