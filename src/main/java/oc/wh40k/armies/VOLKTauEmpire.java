@@ -60,7 +60,7 @@ public class VOLKTauEmpire extends BuildaVater {
     public VOLKTauEmpire() {
         super("TA", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ta.yaml",
-                "oc/wh40k/indices/taaa.yaml"));
+                "/oc/wh40k/indices/taaa.yaml"));
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};

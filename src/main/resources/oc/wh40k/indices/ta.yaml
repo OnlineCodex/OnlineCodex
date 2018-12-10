@@ -9,23 +9,23 @@
 "DS8 Tactical Support Turret": 0
 "Kroot Carnivores": 5
 "Strike Team": 7
-"TY7 Devilfish": 80
-"XV8 Crisis Battlesuits": 42
-"XV8 Crisis Bodyguards": 45
+"TY7 Devilfish": 70
+"XV8 Crisis Battlesuits": 27
+"XV8 Crisis Bodyguards": 30
 "Firesight Marksman": 21
-"XV95 Ghostkeel Battlesuit": 82
+"XV95 Ghostkeel Battlesuit": 70
 "Krootox Riders": 34
 "Kroot Shaper": 31
 "XV104 Riptide Battlesuit": 185
 "XV25 Stealth Battlesuit": 20
 "Kroot Hounds": 4
 "Pathfinder Team": 5
-"TX4 Piranhas": 38
+"TX4 Piranhas": 30
 "Vespid Stingwings": 14
 "MV62 Command-link Drone": 6
 "MV33 Grav-inhibitor Drone": 8
 "MV36 Guardian Drone": 8
-"MV1 Gun Drone": 12
+"MV1 Gun Drone": 10
 "MV17 Interceptor Drone": 15
 "MV7 Marker Drone": 10
 "MV8 Missile Drone": 20
@@ -36,9 +36,9 @@
 "MV84 Shielded Missile Drone": 25
 "MV71 Sniper Drone": 18
 "MV5 Stealth Drone": 10
-"XV88 Broadside Battlesuit": 60
+"XV88 Broadside Battlesuit": 35
 "TX7 Hammerhead Gunship": 100
-"TX78 Sky Ray Gunship": 100
+"TX78 Sky Ray Gunship": 80
 "AX3 Razorshark Strike Fighter": 72
 "AX39 Sun Shark Bomber": 90
 "Tidewall Droneport": 70
@@ -49,13 +49,13 @@
 "Aun'Shi": 60
 "Aun'Va": 85
 "Ethereal Guard": 5
-"Commander Farsight": 151
-"Commander Shadowsun": 167
+"Commander Farsight": 125
+"Commander Shadowsun": 110
 "Darkstrider": 45
 "Advanced targeting system (Ghostkeel Riptide and Stormsurge)": 18
-"Advanced targeting system (all other models)": 12
+"Advanced targeting system (all other models)": 6
 "Counterfire defence system": 10
-"XV8-02 Crisis Iridium battlesuite": 15
+"XV8-02 Crisis Iridium battlesuite": 10
 "Drone controller": 5
 "Early warning override (Ghostkeel Riptide and Stormsurge)": 10
 "Early warning override (all other models)": 5
@@ -71,36 +71,36 @@
 "Burst cannon": 8
 "Cluster rocket system": 25
 "Cyclic ion blaster": 18
-"Cyclic ion raker": 39
+"Cyclic ion raker": 32
 "Destroyer missile": 10
-"Flamer": 9
-"Fusion blaster": 21
-"Fusion collider": 35
+"Flamer": 6
+"Fusion blaster": 18
+"Fusion collider": 30
 "Heavy burst cannon": 35
 "Heavy rail rifle": 35
-"High-output burst cannon": 20
+"High-output burst cannon": 16
 "High-yield missile pod": 25
-"Ion accelerator": 65
+"Ion accelerator": 50
 "Ion cannon": 35
 "Ion rifle": 7
 "Kroot gun": 0
 "Kroot rifle": 0
 "Longshot pulse rifle": 0
 "Markerlight": 3
-"Missile pod": 24
+"Missile pod": 15
 "Neutron blaster": 0
 "Photon grenades": 0
-"Plasma rifle": 11
+"Plasma rifle": 8
 "Pulse blastcannon": 43
 "Pulse blaster": 0
 "Pulse bomb": 0
 "Pulse carbine": 0
-"Pulse driver cannon": 97
+"Pulse driver cannon": 50
 "Pulse pistol": 1
 "Pulse rifle": 0
-"Quad ion turret": 45
-"Rail rifle": 17
-"Railgun": 38
+"Quad ion turret": 30
+"Rail rifle": 12
+"Railgun": 30
 "Seeker missile": 5
 "Smart missile system": 15
 "Supremacy railgun": 50

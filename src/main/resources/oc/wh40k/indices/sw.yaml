@@ -1,8 +1,8 @@
 "Bjorn the Fell-handed": 180
 "Primaris Battle Leader": 70
 "Primaris Rune Priest": 93
-"Primaris Wolf Lord": 87
-"Primaris Wolf Priest": 88
+"Primaris Wolf Lord": 78
+"Primaris Wolf Priest": 80
 "Blood Claws": 13
 "Cyberwolves": 15
 "Fenrisian Wolves": 8
@@ -15,22 +15,22 @@
 "Lone Wolf in Terminator Armour": 115
 "Long Fangs": 14
 "Rune Priest": 88
-"Rune Priest in Terminator Armour": 120
+"Rune Priest in Terminator Armour": 102
 "Rune Priest on Bike": 109
 "Rune Priest with Jump Pack": 112
-"Skyclaws": 16
+"Skyclaws": 15
 "Stormfang Gunship": 175
 "Stormhawk Interceptor": 85
 "Stormwolf": 165
-"Swiftclaw Attack Bikes": 45
-"Swiftclaws": 23
-"Swiftclaw Attack Bike": 35
+"Swiftclaw Attack Bikes": 25
+"Swiftclaws": 21
+"Swiftclaw Attack Bike": 25
 "Thunderwolf Cavalry": 40
-"Wolf Guard": 15
-"Wolf Guard Cataphractii Terminators": 30
+"Wolf Guard": 14
+"Wolf Guard Cataphractii Terminators": 26
 "Wolf Guard Pack Leader": 16
-"Wolf Guard Tartaros Terminators": 26
-"Wolf Guard Terminators": 26
+"Wolf Guard Tartaros Terminators": 23
+"Wolf Guard Terminators": 23
 "Wolf Guard Terminator Pack Leader": 26
 "Wolf Guard Battle Leader": 60
 "Wolf Guard Battle Leader in Terminator Armour": 91
@@ -45,13 +45,13 @@
 "Wolf Scout Bikers": 31
 "Wolf Scouts": 11
 "Wolf Lord": 74
-"Wolf Lord in Cataphractii Armour": 126
-"Wolf Lord in Gravis Armour": 102
-"Wolf Lord in Terminator Armour": 105
+"Wolf Lord in Cataphractii Armour": 95
+"Wolf Lord in Gravis Armour": 90
+"Wolf Lord in Terminator Armour": 95
 "Wolf Lord on Thunderwolf": 118
 "Wolf Lord with Jump Pack": 93
 "Wolf Priest": 75
-"Wolf Priest in Terminator Armour": 105
+"Wolf Priest in Terminator Armour": 95
 "Wolf Priest on Bike": 135
 "Wolf Priest with Jump Pack": 97
 "Wolf Scouts": 11
@@ -65,8 +65,8 @@
 "Primaris Ancient": 69
 "Redemptor Dreadnought": 140
 "Reivers": 18
-"Servitors": 2
-"Venerable Dreadnought": 90
+"Servitors": 5
+"Venerable Dreadnought": 80
 "Inceptors": 25
 "Land Speeders": 70
 "Hellblasters": 18

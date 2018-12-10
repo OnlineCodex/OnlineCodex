@@ -13,7 +13,7 @@ public class TYTrygon extends Eintrag {
 
     public TYTrygon() {
         name = "Trygon";
-        grundkosten = getPts("Trygon") + getPts("Bio-electric pulse") + getPts("Massive Scything Talons (two or more pairs)(Tervigon)");
+        grundkosten = getPts("Trygon") + getPts("Bio-electric pulse") + getPts("Massive Scything Talons (Trygon)");
         power = 8;
 
         add(ico = new oc.Picture("oc/wh40k/images/TYTrygon.jpg"));
