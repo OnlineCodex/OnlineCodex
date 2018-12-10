@@ -15,7 +15,7 @@ public class TYTrygonPrime extends Eintrag {
 
     public TYTrygonPrime() {
         name = "Trygon Prime";
-        grundkosten = getPts("Trygon Prime") + getPts("Bio-electric pulse with containment spines") + getPts("Massive Scything Talons (two or more pairs)(Tervigon)");
+        grundkosten = getPts("Trygon Prime") + getPts("Bio-electric pulse with containment spines") + getPts("Massive Scything Talons (Trygon)");
         power = 10;
 
         add(ico = new oc.Picture("oc/wh40k/images/TYTrygon.jpg"));

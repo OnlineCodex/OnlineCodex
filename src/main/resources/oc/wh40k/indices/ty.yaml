@@ -1,28 +1,28 @@
 "Barbed Hierodule": 380
 "Biovores": 50
-"Broodlord": 162
+"Broodlord": 115
 "Carnifex": 67
 "Dimachaeron": 200
-"Exocrine": 216
+"Exocrine": 170
 "Gargoyles": 6
 "Genestealers": 10
-"Harpy": 121
+"Harpy": 105
 "Harridan": 740
-"Haruspex": 198
+"Haruspex": 178
 "Hierophantbio-titan": 1800
-"Hive Crone": 153
+"Hive Crone": 135
 "Hive Guard": 18
 "Hive Tyrant": 143
 "Hive Tyrant with Wings": 190
 "Hormagaunts": 5
-"Lictor": 41
+"Lictor": 30
 "Malanthrope": 140
-"Maleceptor": 162
+"Maleceptor": 150
 "Mawloc": 104
 "Meiotic Spores": 18
 "Mucolid Spore": 20
-"Neurotrophe": 70
-"Pyrovores": 38
+"Neurotrophe": 90
+"Pyrovores": 25
 "Raveners": 23
 "Ripper Swarms": 11
 "Scythed Hierodule": 350
@@ -32,23 +32,23 @@
 "Sporocyst": 79
 "Stonecrusher Carnifex": 80
 "Termagants": 4
-"Tervigon": 225
+"Tervigon": 180
 "Thornbacks": 70
-"Toxicrene": 157
+"Toxicrene": 140
 "Trygon": 108
 "Trygon Prime": 138
-"Tyranid Prime": 100
+"Tyranid Prime": 70
 "Tyranid Shrikes": 26
 "Tyranid Warriors": 20
-"Tyrannocyte": 98
-"Tyrannofex": 181
+"Tyrannocyte": 75
+"Tyrannofex": 151
 "Tyrant Guard": 35
 "Venomthropes": 30
 "Zoanthropes": 40
-"Deathleaper": 90
+"Deathleaper": 60
 "Old One Eye": 200
-"The Red Terror": 75
-"The Swarmlord": 300
+"The Red Terror": 50
+"The Swarmlord": 250
 "Acid spray": 25
 "Barbed strangler": 10
 "Bio-acid spray": 0
@@ -71,7 +71,7 @@
 "Fleshborer": 0
 "Fleshborer hive": 15
 "Grasping tongue": 0
-"Heavy venom cannon": 25
+"Heavy venom cannon": 18
 "Impaler cannon": 30
 "Massive toxic lashes (FK)": 0
 "Rupture cannon": 49
@@ -84,11 +84,11 @@
 "Spore mine launcher": 0
 "Spore node": 0
 "Stinger salvo": 8
-"Stranglethorn cannon": 25
+"Stranglethorn cannon": 15
 "Strangleweb": 0
 "Tentaclids": 0
 "Toxic lashes (FK)": 0
-"Venom cannon": 20
+"Venom cannon": 12
 "Acid maw": 0
 "Bio-flail": 15
 "Biostatic rattle": 0
@@ -111,6 +111,7 @@
 "Massive scything talons (two or more pairs)(Tervigon)": 60
 "Massive scything talons (two or more pairs)(Maleceptor)": 60
 "Massive scything talons (pair)": 60
+"Massive scything talons (Trygon)": 40
 "Massive toxic lashes (NK)": 0
 "Monstrous acid maw": 10
 "Monstrous boneswords": 20
