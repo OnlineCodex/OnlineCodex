@@ -141,13 +141,13 @@
 "Heldrake": 120
 "Khorne Berzerkers": 16
 "Khorne Lord of Skulls": 380
-"Lord of Contagion": 100
+"Lord of Contagion": 95
 "Malignant Plaguecaster": 110
 "Maulerfiend": 120
 "Mutalith Vortex Beast": 150
 "Mutilators": 35
 "Noise Marines": 15
-"Noxious Blightbringer": 58
+"Noxious Blightbringer": 50
 "Obliterators": 65
 "Plague Marines": 16
 "Possessed": 20
@@ -294,7 +294,7 @@
 "Palaquin of Nurgle's Nurglings claws and teeth": 6
 "Plague knife": 0
 "Plague probe": 25
-"Plaguereaper": 30
+"Plaguereaper": 20
 "Plaguesword": 1
 "Power axe": 5
 "Power fist": 9
@@ -307,26 +307,26 @@
 "Brayhorn": 10
 "Familiar": 9
 
-"Biologus Putrifier": 74
-"Blightlord Terminators": 38
+"Biologus Putrifier": 60
+"Blightlord Terminators": 34
 "Daemon Prince of Nurgle": 146
 "Daemon Prince of Nurgle with Wings": 170
 "Deathshroud Terminators": 35
 "Foul Blightspawn": 77
-"Myphitic Blight-haulers": 85
+"Myphitic Blight-haulers": 75
 "Plague Surgeon": 59
 "Plagueburst Crawler": 100
-"Tallyman": 55
+"Tallyman": 50
 
-"Bile spurt": 5
-"Entropy cannon": 20
+"Bile spurt": 0
+"Entropy cannon": 15
 "Heavy blight launcher": 35
 "Heavy slugger": 6
 "Hyper blight grenades": 0
 "Injector pistol": 0
 "Plagueburst mortar": 0
 "Plague sprayer": 0
-"Plaguespurt gauntlet": 8
+"Plaguespurt gauntlet": 0
 "Rothail volley gun": 12
 "Balesword": 6
 "Fleshmower": 12
