@@ -1,84 +1,86 @@
-"Astropath": 30
-"Armoured Sentinels": 40
+"Astropath": 26
+"Armoured Sentinels": 30
 "Baneblade": 390
-"Banehammer": 390
-"Banesword": 390
+"Banehammer": 370
+"Banesword": 370
 "Basilisks": 100
 "Bullgryns": 35
-"Chimera": 75
+"Chimera": 60
 "CommandSquad": 6
 "Commissar": 15
 "Company Commander": 30
 "Conscripts": 4
 "Crusaders": 11
-"Deathstrike": 155
+"Deathstrike": 125
 "Doomhammer": 420
 "Heavy Weapons Squad": 6
 "Hellhammer": 410
 "Hellhounds": 73
-"Hydras": 100
+"Hydras": 85
 "Infantry Squad": 4
 "Knight Commander Pask": 177
 "Leman Russ Battle Tanks": 122
 "Lord Commissar": 30
-"Manticore": 135
+"Manticore": 125
 "Master of Ordnance": 30
 "Militarum Tempestus Command Squad": 9
 "Militarum Tempestus Scions": 9
-"Officer of the Fleet": 25
-"Ogryn Bodyguard": 55
-"Ogryns": 30
+"Officer of the Fleet": 20
+"Ogryn Bodyguard": 45
+"Ogryns": 24
 "Platoon Commander": 20
 "Primaris Psyker": 38
 "Ratlings": 7
 "Rough Riders": 8
-"Scout Sentinels": 35
-"Shadowsword": 390
+"Scout Sentinels": 30
+"Shadowsword": 410
 "Special Weapon Squad": 4
-"Stormlord": 430
-"Stormsword": 390
-"Tank Commander": 167
+"Stormlord": 410
+"Stormsword": 370
+"Tank Commander": 142
 "Taurox": 50
 "Taurox Prime": 80
 "Tempestor Prime": 40
-"Valkyries": 110
-"Veterans": 6
-"Wyrdvane Psykers": 8
+"Valkyries": 100
+"Veterans": 5
+"Wyrdvane Psykers": 7
 "Wyverns": 95
+
 "Colonel 'Iron Hand' Straken": 75
-"Colour Sergeant Kell": 50
-"Commissar Yarrick": 130
-"Lord Castellan Creed": 70
-"Nork Deddog": 80
+"Colour Sergeant Kell": 40
+"Commissar Yarrick": 100
+"Lord Castellan Creed": 55
+"Nork Deddog": 60
 "Sergeant Harker": 50
-"Sly Marbo": 65
+"Sly Marbo": 55
+
 "Artillery barrage": 0
-"Autocannon": 12
+"Autocannon": 10
 "Autogun": 0
 "Baneblade cannon": 0
 "Battle cannon": 22
 "Bolt pistol (AM)": 1
 "Bolt gun (AM)": 1
-"Chem cannon": 15
+"Chem cannon": 7
 "Deathstrike missile": 0
-"Demolisher cannon (AM)": 40
+"Demolisher cannon (AM)": 20
 "Demolition charge": 5
 "Earthshaker cannon": 0
-"Eradicator nova cannon": 25
-"Executioner plasma cannon": 20
+"Eradicator nova cannon": 15
+"Executioner plasma cannon": 15
 "Exterminator autocannon": 25
-"Flamer (AM)": 7
+"Flamer (AM)": 6
 "Frag bomb": 0
 "Frag grenade (AM)": 0
-"Grenade launcher": 5
-"Grenadier gauntlet": 10
+"Grenade launcher": 3
+"Grenadier gauntlet": 5
 "Heavy bolter (AM)": 8
-"Heavy flamer (AM)": 17
-"Heavy stubber": 4
+"Heavy flamer (AM)": 14
+"Heavy stubber": 2
 "Hellhammer cannon": 0
-"Hellstrike missiles": 20
-"Hot-shot lasgun": 1
-"Hot-shot laspistol": 1
+"Hellstrike missiles": 12
+"Hot-shot lasgun": 0
+"Hot-shot laspistol": 0
 "Hot-shot volley gun": 7
 "Hunter-killer missile (AM)": 6
 "Hydra quad autocannon": 0
@@ -90,16 +92,16 @@
 "Laspistol": 0
 "Magma cannon": 0
 "Melta cannon": 20
-"Meltagun (AM)": 12
-"Meltagun (AM 3+)": 17
-"Missile launcher (AM)": 20
+"Meltagun (AM)": 10
+"Meltagun (AM 3+)": 14
+"Missile launcher (AM)": 15
 "Mortar": 5
-"Multi-laser": 10
-"Multi-melta (AM)": 20
-"Multiple rocket pod": 11
-"Plasma cannon (AM)": 15
+"Multi-laser": 5
+"Multi-melta (AM)": 15
+"Multiple rocket pod": 8
+"Plasma cannon (AM)": 10
 "Plasma gun (AM)": 7
-"Plasma gun (AM 3+)": 13
+"Plasma gun (AM 3+)": 11
 "Plasma pistol (AM)": 5
 "Punisher Gatling cannon": 20
 "Quake cannon": 0
@@ -109,13 +111,13 @@
 "Storm bolter (AM)": 2
 "Storm eagle rockets": 0
 "Stormsword siege cannon": 0
-"Taurox battle cannon": 28
+"Taurox battle cannon": 18
 "Taurox gatling cannon": 20
-"Taurox missile launcher": 50
+"Taurox missile launcher": 30
 "Tremor cannon": 0
 "Twin heavy bolter (AM)": 14
-"Twin heavy flamer (AM)": 30
-"Vanquisher battle cannon": 20
+"Twin heavy flamer (AM)": 28
+"Vanquisher battle cannon": 15
 "Volcano cannon": 0
 "Vulcan mega-bolter": 0
 "Wyvern quad stormshard mortar": 0
@@ -138,7 +140,7 @@
 "Brute shield": 0
 "Bullgryn plate": 5
 "Dozer blade": 5
-"Medi-pack": 10
+"Medi-pack": 5
 "Platoon standard": 5
 "Regimental standard": 5
 "Slabshield": 0
