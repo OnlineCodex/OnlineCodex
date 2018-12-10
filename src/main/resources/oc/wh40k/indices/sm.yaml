@@ -62,7 +62,7 @@
 "Primaris Ancient": 69
 "Redemptor Dreadnought": 140
 "Reiver Squad": 18
-"Servitors": 2
+"Servitors": 5
 "Sternguard Veteran Squad": 16
 "Tartaros Terminator Squad": 26
 "Terminator Assault Squad": 26
@@ -88,9 +88,9 @@
 "Devastator Squad - Armorium Cherub": 5
 "Hellblaster Squad": 18
 "Hunter": 90
-"Land Raider": 239
-"Land Raider Crusader": 244
-"Land Raider Redeemer": 244
+"Land Raider": 200
+"Land Raider Crusader": 200
+"Land Raider Redeemer": 180
 "Predator": 90
 "Stalker": 75
 "Thunderfire Cannon": 28
@@ -129,17 +129,17 @@
 "Centurion missile launcher": 25
 "Cerberus launcher": 5
 "Combi-bolter": 2
-"Combi-flamer": 11
+"Combi-flamer": 8
 "Combi-grav": 17
-"Combi-melta": 19
-"Combi-plasma": 15
+"Combi-melta": 15
+"Combi-plasma": 11
 "Conversion beamer": 20
 "Cyclone missile launcher": 50
 "Deathwind launcher": 5
 "Demolisher cannon (SM)": 0
 "Disintegration combi gun": 0
 "Disintegration pistol": 0
-"Flamer (SM)": 9
+"Flamer (SM)": 6
 "Flamestorm cannon": 30
 "Flamestorm gauntlets": 18
 "Frag grenade (SM)": 0
@@ -150,15 +150,15 @@
 "Grenade harness": 8
 "Heavy bolter (SM)": 10
 "Heavy bolt pistol": 0
-"Heavy flamer (SM)": 17
+"Heavy flamer (SM)": 14
 "Heavy onslaught gatling cannon": 36
-"Heavy plasma cannon": 30
+"Heavy plasma cannon": 16
 "Heavy plasma incinerator": 17
 "Hunter killer missile (SM)": 6
 "Hurricane bolter": 10
 "Icarus ironhail heavy stubber": 6
 "Icarus rocket pod": 6
-"Icarus stormcannon": 17
+"Icarus stormcannon": 10
 "Ironhail heavy stubber": 6
 "Kheres pattern assault cannon": 25
 "Krak grenade (SM)": 0
@@ -172,13 +172,13 @@
 "Master crafted stalker bolt rifle": 5
 "Melta bombs": 5
 "Meltagun (SM)": 17
-"Missile launcher (SM)": 25
-"Multi-melta (SM)": 27
+"Missile launcher (SM)": 20
+"Multi-melta (SM)": 22
 "Onslaught gatling cannon": 16
 "Orbital array": 50
 "Plasma blaster": 17
-"Plasma cannon (SM)": 21
-"Plasma cutter": 7
+"Plasma cannon (SM)": 16
+"Plasma cutter": 5
 "Plasma exterminator": 17
 "Plasma gun (SM)": 13
 "Plasma incinerator": 15
@@ -200,11 +200,11 @@
 "Twin boltgun": 2
 "Twin heavy bolter (SM)": 17
 "Twin heavy flamer (SM)": 34
-"Twin heavy plasma cannon": 34
-"Twin lascannon": 50
-"Twin multi-melta": 54
+"Twin heavy plasma cannon": 24
+"Twin lascannon": 40
+"Twin multi-melta": 40
 "Twin plasma gun": 20
-"Typhoon missile launcher": 50
+"Typhoon missile launcher": 38
 "Volkite charger": 6
 "Whirlwind castellan launcher": 25
 "Whirlwind vengeance launcher": 34
@@ -216,7 +216,7 @@
 "Crozius Arcanum": 0
 "Dreadnought chainfist": 46
 "Dreadnought combat weapon (Ironclad)": 0
-"Dreadnought combat weapon (other models)": 40
+"Dreadnought combat weapon (other models)": 30
 "Eviscerator": 22
 "Force axe": 10
 "Force stave": 8
@@ -232,7 +232,7 @@
 "Redemptor fist": 0
 "Relic-blade": 21
 "Seismic hammer": 48
-"Servo-arm": 12
+"Servo-arm": 0
 "Siege drills": 0
 "Thunder hammer (Characters)": 21
 "Thunder hammer (others)": 16
