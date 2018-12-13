@@ -299,7 +299,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 maxAuswahlen.put("Outrider Detachment", new int[]{3, 2, 3, 2, 6, 2, 17, 2, 0, 0});
 
                 minAuswahlen.put("Supreme Command Detachment", new int[]{0, 3, 0, 0, 0, 0, 0, 0, 0, 0});
-                maxAuswahlen.put("Supreme Command Detachment", new int[]{3, 5, 0, 1, 0, 0, 0, 0, 0, 1});
+                maxAuswahlen.put("Supreme Command Detachment", new int[]{3, 5, 0, 1, 0, 0, 7, 0, 0, 1});
 
                 minAuswahlen.put("Super-Heavy Detachment", new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 3});
                 maxAuswahlen.put("Super-Heavy Detachment", new int[]{3, 0, 0, 0, 0, 0, 0, 0, 0, 5});
