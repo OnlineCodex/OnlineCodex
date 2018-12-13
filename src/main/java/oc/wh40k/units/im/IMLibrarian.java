@@ -53,15 +53,5 @@ public class IMLibrarian extends Eintrag {
     @Override
     public void refreshen() {
         power = 6 + (jump.isSelected() ? 1 : 0);
-
-        psychicPowers.getPanel().setLocation(
-                (int) psychicPowers.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
     }
 }

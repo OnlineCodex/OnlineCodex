@@ -1,6 +1,5 @@
 package oc;
 
-import oc.utils.ResourceUtils;
 import oc.wh40k.units.Warlordtraits;
 
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import java.util.StringTokenizer;
 
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
-import static oc.utils.ResourceUtils.sanitzeKey;
 
 public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
@@ -69,6 +67,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		warlordError = false;
 		chosenRelic = null;
 		warlord = false;
+		RuestkammerStarter previousRuestKammer = null;
 		boolean warlordChange = false;
 		for (int i = 0; i < optionen.size(); ++i) {
 			if (optionen.elementAt(i) instanceof OptionsUpgradeGruppe) {
@@ -100,6 +99,11 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 				    	warlordChange = true;
 					}
 				}
+				// Korrektur der RuestKammer-Positionen
+				if(previousRuestKammer != null) {
+					correctRuestkammerPosition((RuestkammerStarter) optionen.elementAt(i), previousRuestKammer);
+				}
+				previousRuestKammer = (RuestkammerStarter) optionen.elementAt(i);	
 			}
 		}
 		if (chosenRelic == null) {
@@ -430,5 +434,12 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		}
 		((Warlordtraits)warlordTraits.getKammer()).setExclusiveKeyword(exclusiveKeyword);
         add(warlordTraits);
+	}
+	
+	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
+		ruestkammer.getPanel().setLocation(
+                (int) ruestkammer.getPanel().getLocation().getX(),
+                (int) reference.getPanel().getLocation().getY() + reference.getPanel().getSize().height + 5
+        );
 	}
 }
