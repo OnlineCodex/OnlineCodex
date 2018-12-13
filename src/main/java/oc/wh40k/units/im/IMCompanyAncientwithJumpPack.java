@@ -17,6 +17,7 @@ public class IMCompanyAncientwithJumpPack extends Eintrag {
         ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Company Ancient");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = true;
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
 

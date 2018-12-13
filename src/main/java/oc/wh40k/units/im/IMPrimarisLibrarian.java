@@ -6,7 +6,6 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMPrimarisLibrarian extends Eintrag {
-    OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
     RuestkammerStarter psychicPowers;
 
