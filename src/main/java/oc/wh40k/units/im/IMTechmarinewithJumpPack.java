@@ -18,6 +18,8 @@ public class IMTechmarinewithJumpPack extends Eintrag {
         ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Techmarine");
         waffenUndReliquien.initKammer();
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = true;
+        
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
 

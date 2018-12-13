@@ -2,11 +2,9 @@ package oc.wh40k.units.im;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMPrimarisAncient extends Eintrag {
-    OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
     boolean spacewolves = false;
     

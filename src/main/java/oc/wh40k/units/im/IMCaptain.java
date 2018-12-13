@@ -37,6 +37,11 @@ public class IMCaptain extends Eintrag {
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
         
+        if(((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump != jump.isSelected()){
+        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = jump.isSelected();
+        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).refreshen();
+        }
+        
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5

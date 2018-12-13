@@ -1,5 +1,6 @@
 package oc.wh40k.units.im;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
@@ -13,6 +14,15 @@ public class IMMasterinGravisArmour extends Eintrag {
         power = 7;
         
         seperator();
+
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
+        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Master in Gravis Armour");
+        waffenUndReliquien.initKammer();
+        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
+        add(waffenUndReliquien);
+        waffenUndReliquien.setAbwaehlbar(false);
+        
+        seperator();
         
         addWarlordTraits("", true);
 
@@ -21,5 +31,9 @@ public class IMMasterinGravisArmour extends Eintrag {
 
     @Override
     public void refreshen() {
+        warlordTraits.getPanel().setLocation(
+                (int) warlordTraits.getPanel().getLocation().getX(),
+                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+        );
     }
 }
