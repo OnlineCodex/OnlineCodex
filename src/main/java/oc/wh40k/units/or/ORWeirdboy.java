@@ -44,9 +44,4 @@ public class ORWeirdboy extends Eintrag {
 
         complete();
     }
-
-    //@OVERRIDE
-    public void refreshen() {
-    }
-
 }
