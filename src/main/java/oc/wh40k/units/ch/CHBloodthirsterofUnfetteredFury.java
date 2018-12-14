@@ -13,7 +13,7 @@ public class CHBloodthirsterofUnfetteredFury extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, KHORNE);
         
         complete();
     }

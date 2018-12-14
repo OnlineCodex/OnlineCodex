@@ -12,7 +12,7 @@ public class CHSkulltaker extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Khorne: Devastating Blow", true);
+        addWarlordTraits("Khorne: Devastating Blow", true, KHORNE);
         
         complete();
     }

@@ -152,4 +152,10 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
             put("SK", "VOLKSkitarii");
         }
     };
+    
+    public static final String KHORNE = "KHORNE";
+    public static final String SLAANESH = "SLAANESH";
+    public static final String TZEENTCH = "TZEENTCH";
+    public static final String NURGLE = "NURGLE";
+    public static final String ALLEGIANCE = "ALLEGIANCE";
 }

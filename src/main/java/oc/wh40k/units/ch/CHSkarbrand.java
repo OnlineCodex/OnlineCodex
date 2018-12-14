@@ -12,7 +12,7 @@ public class CHSkarbrand extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Khorne: Rage Incarnate", true);
+        addWarlordTraits("Khorne: Rage Incarnate", true, KHORNE);
         
         complete();
     }

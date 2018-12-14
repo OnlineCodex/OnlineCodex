@@ -9,6 +9,10 @@ public class CHScabeiathraxTheBloated extends Eintrag {
         name = "Scabeiathrax the Bloated";
         grundkosten = getPts("Scabeiathrax the Bloated");
         power = 30;
+        
+        seperator();
+
+        addWarlordTraits("", true, NURGLE);
 
         complete();
 

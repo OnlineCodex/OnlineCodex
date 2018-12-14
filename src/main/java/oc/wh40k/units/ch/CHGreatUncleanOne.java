@@ -35,19 +35,9 @@ public class CHGreatUncleanOne extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, NURGLE);
 
         complete();
 
-    }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

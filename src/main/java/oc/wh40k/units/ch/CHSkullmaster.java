@@ -11,14 +11,9 @@ public class CHSkullmaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, KHORNE);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-
     }
 
 }

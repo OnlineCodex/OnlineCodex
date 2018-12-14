@@ -9,6 +9,10 @@ public class CHSamus extends Eintrag {
         name = "Samus";
         grundkosten = getPts("Samus");
         power = 12;
+        
+        seperator();
+
+        addWarlordTraits("", true, KHORNE);
 
         complete();
 

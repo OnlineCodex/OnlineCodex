@@ -12,12 +12,13 @@ public class CHTheBlueScribes extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Daemonspark", true);
+        addWarlordTraits("Tzeentch: Daemonspark", true, TZEENTCH);
         
         complete();
     }
 
     @Override
     public void refreshen() {
+    	setUnikat(true);
     }
 }

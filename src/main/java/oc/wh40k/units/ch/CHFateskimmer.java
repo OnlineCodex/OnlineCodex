@@ -38,7 +38,7 @@ public class CHFateskimmer extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, TZEENTCH);
 
         complete();
 
@@ -47,10 +47,5 @@ public class CHFateskimmer extends Eintrag {
     @Override
     public void refreshen() {
         if (!waffe1.isSelected()) waffe1.setSelected(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

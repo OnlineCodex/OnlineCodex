@@ -12,12 +12,13 @@ public class CHTheMasqueofSlaanesh extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Slaanesh: The Murderdance", true);
+        addWarlordTraits("Slaanesh: The Murderdance", true, SLAANESH);
         
         complete();
     }
 
     @Override
     public void refreshen() {
+    	setUnikat(true);
     }
 }

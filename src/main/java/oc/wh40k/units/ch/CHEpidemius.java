@@ -14,7 +14,7 @@ public class CHEpidemius extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Nurgle: Virulent Touch", true);
+        addWarlordTraits("Nurgle: Virulent Touch", true, NURGLE);
 
         complete();
 

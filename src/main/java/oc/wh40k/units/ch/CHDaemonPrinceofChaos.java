@@ -48,7 +48,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, ALLEGIANCE);
 
         complete();
     }
@@ -56,9 +56,5 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     @Override
     public void refreshen() {
         psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

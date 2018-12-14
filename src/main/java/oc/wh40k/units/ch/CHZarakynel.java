@@ -9,9 +9,12 @@ public class CHZarakynel extends Eintrag {
         name = "Zarakynel";
         grundkosten = getPts("Zarakynel");
         power = 23;
+        
+        seperator();
+
+        addWarlordTraits("", true, SLAANESH);
 
         complete();
-
     }
 
     @Override

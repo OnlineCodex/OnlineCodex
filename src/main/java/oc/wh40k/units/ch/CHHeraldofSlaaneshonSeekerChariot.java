@@ -20,14 +20,8 @@ public class CHHeraldofSlaaneshonSeekerChariot extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, SLAANESH);
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

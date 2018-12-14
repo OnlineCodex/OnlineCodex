@@ -26,7 +26,7 @@ public class CHRotigus extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Nurgle: Pestilent Miasma", true);
+        addWarlordTraits("Nurgle: Pestilent Miasma", true, NURGLE);
         
         complete();
     }
@@ -34,10 +34,5 @@ public class CHRotigus extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

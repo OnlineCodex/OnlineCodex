@@ -9,6 +9,10 @@ public class CHMamonTransfigured extends Eintrag {
         name = "Mamon Transfigured";
         grundkosten = getPts("Mamon Transfigured");
         power = 9;
+        
+        seperator();
+
+        addWarlordTraits("", true, NURGLE);
 
         complete();
 

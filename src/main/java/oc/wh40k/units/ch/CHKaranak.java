@@ -12,7 +12,7 @@ public class CHKaranak extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Khorne: Aspect of Death", true);
+        addWarlordTraits("Khorne: Aspect of Death", true, KHORNE);
 
         complete();
     }

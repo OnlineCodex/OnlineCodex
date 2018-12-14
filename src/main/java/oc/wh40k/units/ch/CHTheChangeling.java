@@ -26,7 +26,7 @@ public class CHTheChangeling extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Incorporeal Form", true);
+        addWarlordTraits("Tzeentch: Incorporeal Form", true, TZEENTCH);
 
         complete();
 
@@ -35,9 +35,5 @@ public class CHTheChangeling extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

@@ -33,7 +33,7 @@ public class CHKairosFateweaver extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Tyrant of the Warp", true);
+        addWarlordTraits("Tzeentch: Tyrant of the Warp", true, TZEENTCH);
 
         complete();
 
@@ -42,10 +42,5 @@ public class CHKairosFateweaver extends Eintrag {
     @Override
     public void refreshen() {
         if (!waffe2.isSelected()) waffe2.setSelected(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

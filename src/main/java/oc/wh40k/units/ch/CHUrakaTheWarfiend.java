@@ -9,6 +9,10 @@ public class CHUrakaTheWarfiend extends Eintrag {
         name = "Uraka the Warfiend";
         grundkosten = getPts("Uraka the Warfiend");
         power = 9;
+        
+        seperator();
+
+        addWarlordTraits("", true, KHORNE);
 
         complete();
 

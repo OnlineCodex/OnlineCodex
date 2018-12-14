@@ -34,7 +34,7 @@ public class CHFluxmaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, TZEENTCH);
 
         complete();
 

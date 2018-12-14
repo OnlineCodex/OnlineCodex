@@ -11,7 +11,7 @@ public class CHSpoilpoxScrivener extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, NURGLE);
 
         complete();
     }

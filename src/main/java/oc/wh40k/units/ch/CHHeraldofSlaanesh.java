@@ -25,17 +25,8 @@ public class CHHeraldofSlaanesh extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, SLAANESH);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

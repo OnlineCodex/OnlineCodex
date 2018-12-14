@@ -35,7 +35,7 @@ public class CHLordofChange extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, TZEENTCH);
 
         complete();
 
@@ -44,10 +44,5 @@ public class CHLordofChange extends Eintrag {
     @Override
     public void refreshen() {
         if (!waffe2.isSelected()) waffe2.setSelected(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

@@ -9,6 +9,10 @@ public class CHCorbaxUtterblight extends Eintrag {
         name = "Cor'bax Utterblight";
         grundkosten = getPts("Cor'bax Utterblight");
         power = 12;
+        
+        seperator();
+
+        addWarlordTraits("", true, NURGLE);
 
         complete();
 

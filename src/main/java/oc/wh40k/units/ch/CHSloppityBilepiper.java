@@ -11,14 +11,8 @@ public class CHSloppityBilepiper extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, NURGLE);
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

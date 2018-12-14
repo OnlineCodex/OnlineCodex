@@ -12,7 +12,7 @@ public class CHExaltedFlamer extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, TZEENTCH);
 
         complete();
 

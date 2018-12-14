@@ -35,7 +35,7 @@ public class CHChangecaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, TZEENTCH);
 
         complete();
 

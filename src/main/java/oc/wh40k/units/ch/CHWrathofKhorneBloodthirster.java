@@ -12,12 +12,8 @@ public class CHWrathofKhorneBloodthirster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", true, KHORNE);
         
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

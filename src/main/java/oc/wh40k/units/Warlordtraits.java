@@ -362,62 +362,67 @@ public class Warlordtraits extends RuestkammerVater {
         }
         //CHAOS
         if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
+        	boolean undivided = exclusiveKeyword.equals(ALLEGIANCE) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
+        	boolean khorne = army.equals("Khorne") || exclusiveKeyword.equals(KHORNE) || undivided;
+        	boolean tzeentch = army.equals("Tzeentch") || exclusiveKeyword.equals(TZEENTCH) || undivided;
+        	boolean nurgle = army.equals("Nurgle") || exclusiveKeyword.equals(NURGLE) || undivided;
+        	boolean slaanesh = army.equals("Slaanesh") || exclusiveKeyword.equals(SLAANESH) || undivided;
         	if(warlordtraits2 != null) {
-	        	warlordtraits2.setAktiv("Khorne: Aspect of Death", army.equals("Khorne"));
-	        	warlordtraits2.setAktiv("Khorne: Glory of Battle", army.equals("Khorne"));
-	        	warlordtraits2.setAktiv("Khorne: Oblivious to Pain", army.equals("Khorne"));
-	        	warlordtraits2.setAktiv("Khorne: Immense Power", army.equals("Khorne"));
-	        	warlordtraits2.setAktiv("Khorne: Devastating Blow", army.equals("Khorne"));
-	        	warlordtraits2.setAktiv("Khorne: Rage Incarnate", army.equals("Khorne"));
+	        	warlordtraits2.setAktiv("Khorne: Aspect of Death", khorne);
+	        	warlordtraits2.setAktiv("Khorne: Glory of Battle", khorne);
+	        	warlordtraits2.setAktiv("Khorne: Oblivious to Pain", khorne);
+	        	warlordtraits2.setAktiv("Khorne: Immense Power", khorne);
+	        	warlordtraits2.setAktiv("Khorne: Devastating Blow", khorne);
+	        	warlordtraits2.setAktiv("Khorne: Rage Incarnate", khorne);
 	
-	        	warlordtraits2.setAktiv("Tzeentch: Born of Sorcery", army.equals("Tzeentch"));
-	        	warlordtraits2.setAktiv("Tzeentch: Incorporeal Form", army.equals("Tzeentch"));
-	        	warlordtraits2.setAktiv("Tzeentch: Warp Tehter", army.equals("Tzeentch"));
-	        	warlordtraits2.setAktiv("Tzeentch: Lorekeeper of Tzeentch", army.equals("Tzeentch"));
-	        	warlordtraits2.setAktiv("Tzeentch: Tyrant of the Warp", army.equals("Tzeentch"));
-	        	warlordtraits2.setAktiv("Tzeentch: Daemonspark", army.equals("Tzeentch"));
+	        	warlordtraits2.setAktiv("Tzeentch: Born of Sorcery", tzeentch);
+	        	warlordtraits2.setAktiv("Tzeentch: Incorporeal Form", tzeentch);
+	        	warlordtraits2.setAktiv("Tzeentch: Warp Tehter", tzeentch);
+	        	warlordtraits2.setAktiv("Tzeentch: Lorekeeper of Tzeentch", tzeentch);
+	        	warlordtraits2.setAktiv("Tzeentch: Tyrant of the Warp", tzeentch);
+	        	warlordtraits2.setAktiv("Tzeentch: Daemonspark", tzeentch);
 	
-	        	warlordtraits2.setAktiv("Nurgle: Blessed with Corpulence", army.equals("Nurgle"));
-	        	warlordtraits2.setAktiv("Nurgle: Acidic Ichor", army.equals("Nurgle"));
-	        	warlordtraits2.setAktiv("Nurgle: Plaguefly Hive", army.equals("Nurgle"));
-	        	warlordtraits2.setAktiv("Nurgle: Virulent Touch", army.equals("Nurgle"));
-	        	warlordtraits2.setAktiv("Nurgle: Impenetrable Hide", army.equals("Nurgle"));
-	        	warlordtraits2.setAktiv("Nurgle: Pestilent Miasma", army.equals("Nurgle"));
+	        	warlordtraits2.setAktiv("Nurgle: Blessed with Corpulence", nurgle);
+	        	warlordtraits2.setAktiv("Nurgle: Acidic Ichor", nurgle);
+	        	warlordtraits2.setAktiv("Nurgle: Plaguefly Hive", nurgle);
+	        	warlordtraits2.setAktiv("Nurgle: Virulent Touch", nurgle);
+	        	warlordtraits2.setAktiv("Nurgle: Impenetrable Hide", nurgle);
+	        	warlordtraits2.setAktiv("Nurgle: Pestilent Miasma", nurgle);
 	
-	        	warlordtraits2.setAktiv("Slaanesh: Celerity of Slaanesh", army.equals("Slaanesh"));
-	        	warlordtraits2.setAktiv("Slaanesh: Quicksilver Duelist", army.equals("Slaanesh"));
-	        	warlordtraits2.setAktiv("Slaanesh: The Murderdance", army.equals("Slaanesh"));
-	        	warlordtraits2.setAktiv("Slaanesh: Fatal Caress", army.equals("Slaanesh"));
-	        	warlordtraits2.setAktiv("Slaanesh: Savage Hedonist", army.equals("Slaanesh"));
-	        	warlordtraits2.setAktiv("Slaanesh: Bewitching Aura", army.equals("Slaanesh"));
+	        	warlordtraits2.setAktiv("Slaanesh: Celerity of Slaanesh", slaanesh);
+	        	warlordtraits2.setAktiv("Slaanesh: Quicksilver Duelist", slaanesh);
+	        	warlordtraits2.setAktiv("Slaanesh: The Murderdance", slaanesh);
+	        	warlordtraits2.setAktiv("Slaanesh: Fatal Caress", slaanesh);
+	        	warlordtraits2.setAktiv("Slaanesh: Savage Hedonist", slaanesh);
+	        	warlordtraits2.setAktiv("Slaanesh: Bewitching Aura", slaanesh);
         	} else {
-	        	warlordtraits.setAktiv("Khorne: Aspect of Death", army.equals("Khorne"));
-	        	warlordtraits.setAktiv("Khorne: Glory of Battle", army.equals("Khorne"));
-	        	warlordtraits.setAktiv("Khorne: Oblivious to Pain", army.equals("Khorne"));
-	        	warlordtraits.setAktiv("Khorne: Immense Power", army.equals("Khorne"));
-	        	warlordtraits.setAktiv("Khorne: Devastating Blow", army.equals("Khorne"));
-	        	warlordtraits.setAktiv("Khorne: Rage Incarnate", army.equals("Khorne"));
+	        	warlordtraits.setAktiv("Khorne: Aspect of Death", khorne);
+	        	warlordtraits.setAktiv("Khorne: Glory of Battle", khorne);
+	        	warlordtraits.setAktiv("Khorne: Oblivious to Pain", khorne);
+	        	warlordtraits.setAktiv("Khorne: Immense Power", khorne);
+	        	warlordtraits.setAktiv("Khorne: Devastating Blow", khorne);
+	        	warlordtraits.setAktiv("Khorne: Rage Incarnate", khorne);
 	
-	        	warlordtraits.setAktiv("Tzeentch: Born of Sorcery", army.equals("Tzeentch"));
-	        	warlordtraits.setAktiv("Tzeentch: Incorporeal Form", army.equals("Tzeentch"));
-	        	warlordtraits.setAktiv("Tzeentch: Warp Tehter", army.equals("Tzeentch"));
-	        	warlordtraits.setAktiv("Tzeentch: Lorekeeper of Tzeentch", army.equals("Tzeentch"));
-	        	warlordtraits.setAktiv("Tzeentch: Tyrant of the Warp", army.equals("Tzeentch"));
-	        	warlordtraits.setAktiv("Tzeentch: Daemonspark", army.equals("Tzeentch"));
+	        	warlordtraits.setAktiv("Tzeentch: Born of Sorcery", tzeentch);
+	        	warlordtraits.setAktiv("Tzeentch: Incorporeal Form", tzeentch);
+	        	warlordtraits.setAktiv("Tzeentch: Warp Tehter", tzeentch);
+	        	warlordtraits.setAktiv("Tzeentch: Lorekeeper of Tzeentch", tzeentch);
+	        	warlordtraits.setAktiv("Tzeentch: Tyrant of the Warp", tzeentch);
+	        	warlordtraits.setAktiv("Tzeentch: Daemonspark", tzeentch);
 	
-	        	warlordtraits.setAktiv("Nurgle: Blessed with Corpulence", army.equals("Nurgle"));
-	        	warlordtraits.setAktiv("Nurgle: Acidic Ichor", army.equals("Nurgle"));
-	        	warlordtraits.setAktiv("Nurgle: Plaguefly Hive", army.equals("Nurgle"));
-	        	warlordtraits.setAktiv("Nurgle: Virulent Touch", army.equals("Nurgle"));
-	        	warlordtraits.setAktiv("Nurgle: Impenetrable Hide", army.equals("Nurgle"));
-	        	warlordtraits.setAktiv("Nurgle: Pestilent Miasma", army.equals("Nurgle"));
+	        	warlordtraits.setAktiv("Nurgle: Blessed with Corpulence", nurgle);
+	        	warlordtraits.setAktiv("Nurgle: Acidic Ichor", nurgle);
+	        	warlordtraits.setAktiv("Nurgle: Plaguefly Hive", nurgle);
+	        	warlordtraits.setAktiv("Nurgle: Virulent Touch", nurgle);
+	        	warlordtraits.setAktiv("Nurgle: Impenetrable Hide", nurgle);
+	        	warlordtraits.setAktiv("Nurgle: Pestilent Miasma", nurgle);
 	
-	        	warlordtraits.setAktiv("Slaanesh: Celerity of Slaanesh", army.equals("Slaanesh"));
-	        	warlordtraits.setAktiv("Slaanesh: Quicksilver Duelist", army.equals("Slaanesh"));
-	        	warlordtraits.setAktiv("Slaanesh: The Murderdance", army.equals("Slaanesh"));
-	        	warlordtraits.setAktiv("Slaanesh: Fatal Caress", army.equals("Slaanesh"));
-	        	warlordtraits.setAktiv("Slaanesh: Savage Hedonist", army.equals("Slaanesh"));
-	        	warlordtraits.setAktiv("Slaanesh: Bewitching Aura", army.equals("Slaanesh"));
+	        	warlordtraits.setAktiv("Slaanesh: Celerity of Slaanesh", slaanesh);
+	        	warlordtraits.setAktiv("Slaanesh: Quicksilver Duelist", slaanesh);
+	        	warlordtraits.setAktiv("Slaanesh: The Murderdance", slaanesh);
+	        	warlordtraits.setAktiv("Slaanesh: Fatal Caress", slaanesh);
+	        	warlordtraits.setAktiv("Slaanesh: Savage Hedonist", slaanesh);
+	        	warlordtraits.setAktiv("Slaanesh: Bewitching Aura", slaanesh);
         	}
 	    } else if(LEGIONS.contains(army)) {
     		warlordtraits.setAktiv("Alpha Legion: I am Alpharius", army.equals("Alpha Legion"));

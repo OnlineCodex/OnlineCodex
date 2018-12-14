@@ -9,6 +9,10 @@ public class CHAnggrathTheUnbound extends Eintrag {
         name = "An'ggrath the Unbound";
         grundkosten = getPts("An'ggrath the Unbound");
         power = 35;
+        
+        seperator();
+
+        addWarlordTraits("", true, KHORNE);
 
         complete();
 
