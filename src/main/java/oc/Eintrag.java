@@ -1,13 +1,13 @@
 package oc;
 
 import oc.wh40k.units.Warlordtraits;
-import oc.wh40k.units.ch.CHWaffenkammer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Set;
 import java.util.StringTokenizer;
 
 import static oc.RefreshListener.Priority.EINTRAG;
@@ -42,6 +42,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	private boolean warlordError;
 	private boolean warlord = false;
 	protected RuestkammerStarter waffen;
+	protected Set<String> keywords;
 
 	public Eintrag() {
 		lKosten.setSize(150, 17);
@@ -440,6 +441,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
 		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        waffen.getKammer().setType(name);
+        waffen.getKammer().setKeywords(keywords);
         waffen.initKammer();
         waffen.setButtonText("Waffen");
         add(waffen);
@@ -448,6 +451,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
 		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        waffen.getKammer().setType(name);
+        waffen.getKammer().setKeywords(keywords);
         waffen.getKammer().setDefaultFK(defaultFK);
         waffen.getKammer().setDefaultNK(defaultNK);
         waffen.initKammer();
@@ -461,5 +466,13 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
                 (int) ruestkammer.getPanel().getLocation().getX(),
                 (int) reference.getPanel().getLocation().getY() + reference.getPanel().getSize().height + 5
         );
+	}
+
+	public Set<String> getKeywords() {
+		return keywords;
+	}
+
+	public void setKeywords(Set<String> keywords) {
+		this.keywords = keywords;
 	}
 }

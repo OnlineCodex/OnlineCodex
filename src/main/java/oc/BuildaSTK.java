@@ -153,9 +153,19 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
         }
     };
     
+    //Faction Keywords
+    public static final String CHAOS = "CHAOS";
+    public static final String DAEMON = "DAEMON";
     public static final String KHORNE = "KHORNE";
     public static final String SLAANESH = "SLAANESH";
     public static final String TZEENTCH = "TZEENTCH";
     public static final String NURGLE = "NURGLE";
     public static final String ALLEGIANCE = "ALLEGIANCE";
+    
+    //Keywords
+    public static final String CHARACTER = "CHARACTER";
+    public static final String MONSTER = "MONSTER";
+    public static final String BLOODTHIRSTER = "BLOODTHIRSTER";
+    public static final String FLY = "FLY";
+    
 }

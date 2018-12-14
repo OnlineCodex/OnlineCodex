@@ -103,7 +103,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstuezung_Daemons_All_Gods = new String[]{"", "Soulgrinder"};
     
     //KHORNE
-    private static final String[] HQ_Daemons_Khorne = new String[]{"", "Skarbrand", "Bloodthirster of Insensate Rage", "Wrath of Khorne Bloodthirster", "Skulltaker", "Bloodmaster", "Skullmaster", "Blood Throne", "Karanak"};
+    private static final String[] HQ_Daemons_Khorne = new String[]{"", "Skarbrand", "Bloodthirster of Insensate Rage", "Wrath of Khorne Bloodthirster", "Bloodthirster of Unfetted Fury", "Skulltaker", "Bloodmaster", "Skullmaster", "Blood Throne", "Karanak"};
     private static final String[] Elite_Daemons_Khorne = new String[]{"", "Bloodcrushers"};
     private static final String[] Standard_Daemons_Khorne = new String[]{"", "Bloodletters"};
     private static final String[] Sturm_Daemons_Khorne = new String[]{"", "Flesh Hounds"};
