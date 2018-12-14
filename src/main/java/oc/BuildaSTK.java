@@ -165,7 +165,10 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     //Keywords
     public static final String CHARACTER = "CHARACTER";
     public static final String MONSTER = "MONSTER";
+    public static final String PSYKER = "PSYKER";
     public static final String BLOODTHIRSTER = "BLOODTHIRSTER";
     public static final String FLY = "FLY";
+    public static final String HERALD_OF_TZEENTCH = "HERALD OF TZEENTCH";
+    public static final String HERALD_OF_SLAANESH = "HERALD OF SLAANESH";
     
 }

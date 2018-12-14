@@ -1,7 +1,5 @@
 package oc.wh40k.units.ch;
 
-import java.util.Set;
-
 import com.google.common.collect.ImmutableSet;
 
 import oc.Eintrag;

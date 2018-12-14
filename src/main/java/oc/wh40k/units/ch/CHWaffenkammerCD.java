@@ -13,7 +13,6 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 
     OptionsUpgradeGruppe handwaffen = null;
     OptionsUpgradeGruppe fkwaffen = null;
-    private String allegiance;
     //boolean psyker = false; //Daemon Prince, if not Khorne
     
     OptionsEinzelUpgrade armourofScorn;
@@ -31,26 +30,9 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     OptionsEinzelUpgrade theMarkofExcess;
     OptionsEinzelUpgrade soulstealer;
     OptionsEinzelUpgrade slothfulClaws;
-
-    Set<String> MONSTER = ImmutableSet.of("Bloodthirster of Insensate Rage", "Wrath of Khorne Bloodthirster", "Bloodthirster of Unfetted Fury", 
-    									  "Lord of Change", "Great Unclean One", "Keeper of Secrets", 
-    									  "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings");
-    Set<String> PSYKER = ImmutableSet.of("Lord of Change", "Changecaster", "Fateskimmer", "Fluxmaster",
-    									 "Great Unclean One", "Poxbringer", "Keeper of Secrets", "Herald of Slaanesh", 
-    									 "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings");
-    Set<String> BLADEOFBLOOD = ImmutableSet.of("Bloodmaster", "Skullmaster", "Blood Throne", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings");
-    Set<String> AXEOFKHORNE = ImmutableSet.of("Wrath of Khorne Bloodthirster", "Bloodthirster of Unfetted Fury", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings");
-    Set<String> ROD = ImmutableSet.of("Lord of Change", "Changecaster", "Fateskimmer");
-    Set<String> PLAGUESWORD = ImmutableSet.of("Spoilpox Scrivener");
-    Set<String> WITSTEALER = ImmutableSet.of("Keeper of Secrets", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings");
-    Set<String> HERALD_OF_TZEENTCH = ImmutableSet.of("Changecaster", "Fateskimmer", "Fluxmaster"); 
     
     public CHWaffenkammerCD() {
         grundkosten = 0;
-    }
-
-    public void setAllegiance(String s) {
-    	allegiance = s;
     }
 
     @Override
@@ -79,27 +61,36 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     public void refreshen() {
     	checkBuildaVater();
         String army = buildaVater.getFormationType();
-    	boolean undivided = allegiance.equals(ALLEGIANCE) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
-    	boolean khorne = army.equals("Khorne") || allegiance.equals(KHORNE) || undivided;
-    	boolean tzeentch = army.equals("Tzeentch") || allegiance.equals(TZEENTCH) || undivided;
-    	boolean nurgle = army.equals("Nurgle") || allegiance.equals(NURGLE) || undivided;
-    	boolean slaanesh = army.equals("Slaanesh") || allegiance.equals(SLAANESH) || undivided;
+    	boolean undivided = keywords.contains(ALLEGIANCE) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
+    	boolean khorne = army.equals("Khorne") || keywords.contains(KHORNE) || undivided;
+    	boolean tzeentch = army.equals("Tzeentch") || keywords.contains(TZEENTCH) || undivided;
+    	boolean nurgle = army.equals("Nurgle") || keywords.contains(NURGLE) || undivided;
+    	boolean slaanesh = army.equals("Slaanesh") || keywords.contains(SLAANESH) || undivided;
     	
-    	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && khorne && MONSTER.contains("type"));
+    	boolean blade_of_blood = true;
+    	boolean hellforged_sword = true;
+    	boolean axe_of_khorne = true;
+    	boolean daemonic_axe = true;
+    	boolean rod_of_sorcery = true;
+    	boolean staff_of_change = true;
+    	boolean plaguesword = true;
+    	boolean witstealer_sword = true;
+    	
+    	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && khorne && keywords.contains(MONSTER));
     	theCrimsonCrown.setAktiv((chosenRelic == null || theCrimsonCrown.isSelected()) && khorne);
-    	argaththeKingofBlades.setAktiv((chosenRelic == null || argaththeKingofBlades.isSelected()) && khorne && BLADEOFBLOOD.contains("type"));
-    	skullreaver.setAktiv((chosenRelic == null || skullreaver.isSelected()) && khorne && AXEOFKHORNE.contains("type"));
-    	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && tzeentch && PSYKER.contains("type"));
-    	soulBane.setAktiv((chosenRelic == null || soulBane.isSelected()) && HERALD_OF_TZEENTCH.contains("type"));
+    	argaththeKingofBlades.setAktiv((chosenRelic == null || argaththeKingofBlades.isSelected()) && khorne && (blade_of_blood || hellforged_sword));
+    	skullreaver.setAktiv((chosenRelic == null || skullreaver.isSelected()) && khorne && (axe_of_khorne || daemonic_axe));
+    	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && tzeentch && keywords.contains(PSYKER));
+    	soulBane.setAktiv((chosenRelic == null || soulBane.isSelected()) && keywords.contains(HERALD_OF_TZEENTCH));
     	theImpossibleRobe.setAktiv((chosenRelic == null || theImpossibleRobe.isSelected()) && tzeentch);
-    	theEverstave.setAktiv((chosenRelic == null || theEverstave.isSelected()) && tzeentch  && ROD.contains("type"));
+    	theEverstave.setAktiv((chosenRelic == null || theEverstave.isSelected()) && tzeentch  && (rod_of_sorcery || staff_of_change));
     	hornofNurglesRot.setAktiv((chosenRelic == null || hornofNurglesRot.isSelected()) && nurgle);
     	theEntropicKnell.setAktiv((chosenRelic == null || theEntropicKnell.isSelected()) && nurgle);
-    	corruption.setAktiv((chosenRelic == null || corruption.isSelected()) && nurgle && PLAGUESWORD.contains(type));
+    	corruption.setAktiv((chosenRelic == null || corruption.isSelected()) && nurgle && plaguesword);
     	theForbiddenGem.setAktiv((chosenRelic == null || theForbiddenGem.isSelected()) && slaanesh);
     	theMarkofExcess.setAktiv((chosenRelic == null || theMarkofExcess.isSelected()) && slaanesh);
-    	soulstealer.setAktiv((chosenRelic == null || soulstealer.isSelected()) && slaanesh && WITSTEALER.contains(type));
-    	slothfulClaws.setAktiv((chosenRelic == null || slothfulClaws.isSelected()) && type.equals("Herald of Slaanesh"));
+    	soulstealer.setAktiv((chosenRelic == null || soulstealer.isSelected()) && slaanesh && (witstealer_sword || hellforged_sword));
+    	slothfulClaws.setAktiv((chosenRelic == null || slothfulClaws.isSelected()) && keywords.contains(HERALD_OF_SLAANESH));
     	
     	
 //      A'rgath, the King of Blades - KHORNE with blade of blood or hellforged sword. Replace //TODO check if option
