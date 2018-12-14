@@ -36,14 +36,4 @@ public class IMPrimarisAncient extends Eintrag {
         
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    	if(spacewolves) {
-	        warlordTraits.getPanel().setLocation(
-	                (int) warlordTraits.getPanel().getLocation().getX(),
-	                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-	        );
-    	}
-    }
 }

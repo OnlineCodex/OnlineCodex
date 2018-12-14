@@ -33,8 +33,4 @@ public class IMApothecaryonBike extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
 }

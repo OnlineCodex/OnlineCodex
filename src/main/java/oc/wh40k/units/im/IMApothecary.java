@@ -32,8 +32,4 @@ public class IMApothecary extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
 }

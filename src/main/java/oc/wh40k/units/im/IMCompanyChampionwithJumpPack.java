@@ -1,7 +1,6 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCompanyChampionwithJumpPack extends Eintrag {
 	
@@ -20,8 +19,5 @@ public class IMCompanyChampionwithJumpPack extends Eintrag {
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    public void refreshen() {
     }
 }
