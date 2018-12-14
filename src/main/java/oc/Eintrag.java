@@ -438,7 +438,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(warlordTraits);
 	}
 	
-	public void addWaffen(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
+	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
 		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
         waffen.initKammer();
         waffen.setButtonText("Waffen");
@@ -446,7 +446,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         waffen.setAbwaehlbar(!mandatoryChoice);
 	}
 	
-	public void addWaffen(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
+	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
 		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
         waffen.getKammer().setDefaultFK(defaultFK);
         waffen.getKammer().setDefaultNK(defaultNK);
