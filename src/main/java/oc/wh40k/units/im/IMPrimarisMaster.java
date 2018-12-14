@@ -3,7 +3,6 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMPrimarisMaster extends Eintrag {
-    OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
 
     OptionsUpgradeGruppe o1;

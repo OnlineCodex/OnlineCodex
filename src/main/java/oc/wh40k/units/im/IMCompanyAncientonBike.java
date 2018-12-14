@@ -20,6 +20,10 @@ public class IMCompanyAncientonBike extends Eintrag {
         add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
 
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
     }
 }

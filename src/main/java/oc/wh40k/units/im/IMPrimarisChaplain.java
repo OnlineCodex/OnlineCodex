@@ -5,7 +5,6 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMPrimarisChaplain extends Eintrag {
-    OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
 
     public IMPrimarisChaplain() {

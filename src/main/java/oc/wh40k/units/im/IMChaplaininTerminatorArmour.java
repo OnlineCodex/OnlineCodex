@@ -2,11 +2,9 @@ package oc.wh40k.units.im;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMChaplaininTerminatorArmour extends Eintrag {
-    OptionsEinzelUpgrade jump;
     RuestkammerStarter waffenUndReliquien;
 
     public IMChaplaininTerminatorArmour() {
@@ -28,12 +26,4 @@ public class IMChaplaininTerminatorArmour extends Eintrag {
 
         complete();
     }
-
-	//@OVERRIDE
-	public void refreshen() {
-	    warlordTraits.getPanel().setLocation(
-	            (int) warlordTraits.getPanel().getLocation().getX(),
-	            (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-	    );
-	}
 }

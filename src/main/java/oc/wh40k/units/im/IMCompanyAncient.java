@@ -26,12 +26,4 @@ public class IMCompanyAncient extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
-    }
 }
