@@ -1,6 +1,7 @@
 package oc;
 
 import oc.wh40k.units.Warlordtraits;
+import oc.wh40k.units.ch.CHWaffenkammer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected RuestkammerStarter warlordTraits;
 	private boolean warlordError;
 	private boolean warlord = false;
+	protected RuestkammerStarter waffen;
 
 	public Eintrag() {
 		lKosten.setSize(150, 17);
@@ -434,6 +436,24 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		}
 		((Warlordtraits)warlordTraits.getKammer()).setExclusiveKeyword(exclusiveKeyword);
         add(warlordTraits);
+	}
+	
+	public void addWaffen(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
+		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        waffen.initKammer();
+        waffen.setButtonText("Waffen");
+        add(waffen);
+        waffen.setAbwaehlbar(!mandatoryChoice);
+	}
+	
+	public void addWaffen(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
+		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        waffen.getKammer().setDefaultFK(defaultFK);
+        waffen.getKammer().setDefaultNK(defaultNK);
+        waffen.initKammer();
+        waffen.setButtonText("Waffen");
+        add(waffen);
+        waffen.setAbwaehlbar(!mandatoryChoice);
 	}
 	
 	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){

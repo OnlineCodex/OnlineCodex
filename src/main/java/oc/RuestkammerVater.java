@@ -25,6 +25,9 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
+    protected String defaultNK = "";
+    protected String defaultFK = "";
+    protected String type = "";
 
 	public RuestkammerVater() {
 		frame.setLayout(null);
@@ -237,5 +240,17 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	public boolean isLegal() {
 		return legal;
 	}
+
+    public void setDefaultNK(String s) {
+        defaultNK = s;
+    }
+
+    public void setDefaultFK(String s) {
+        defaultFK = s;
+    }
+
+    public void setType(String s) {
+        type = s;
+    }
 
 }
