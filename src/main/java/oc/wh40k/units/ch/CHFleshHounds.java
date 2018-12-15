@@ -2,10 +2,13 @@ package oc.wh40k.units.ch;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class CHFleshHounds extends Eintrag {
 
     AnzahlPanel hounds;
+    OptionsZaehlerGruppe gorehounds;
 
     public CHFleshHounds() {
 
@@ -15,6 +18,13 @@ public class CHFleshHounds extends Eintrag {
 
         add(hounds = new AnzahlPanel(ID, randAbstand, cnt, "Flesh Hounds", 5, 20, getPts("Flesh Hounds")));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Gore Hounds", getPts("Gore Hounds") - getPts("Flesh Hounds")));
+        add(gorehounds = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        
+        seperator();
+        
         complete();
 
     }
@@ -29,5 +39,7 @@ public class CHFleshHounds extends Eintrag {
                 ((hounds.getModelle() == 10) ? 5 : 0) +
                 ((hounds.getModelle() == 15) ? 10 : 0) +
                 ((hounds.getModelle() == 20) ? 15 : 0);
+        
+        gorehounds.setMaxAnzahl(hounds.getModelle()/5);
     }
 }
