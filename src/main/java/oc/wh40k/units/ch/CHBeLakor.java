@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -13,6 +15,7 @@ public class CHBeLakor extends Eintrag {
         name = "Be'Lakor";
         grundkosten = getPts("Be'Lakor");
         power = 12;
+        setKeywords(ImmutableSet.of(CHAOS, DAEMON, CHARACTER, MONSTER, DAEMON_PRINCE, FLY, PSYKER, BE_LAKOR));
 
         seperator();
 

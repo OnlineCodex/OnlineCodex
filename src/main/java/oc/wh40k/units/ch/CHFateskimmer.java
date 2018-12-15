@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -16,6 +18,11 @@ public class CHFateskimmer extends Eintrag {
         name = "Fateskimmer";
         grundkosten = getPts("Fateskimmer");
         power = 7;
+        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, CHARIOT, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FATESKIMMER));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         add(waffe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ritual dagger", getPts("Ritual dagger")));
         waffe1.setSelected(true);

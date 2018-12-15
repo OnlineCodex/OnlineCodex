@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -13,6 +15,7 @@ public class CHTheChangeling extends Eintrag {
         name = "The Changeling";
         grundkosten = getPts("The Changeling");
         power = 5;
+        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, PSYKER, HERALD_OF_TZEENTCH, HORROR, THE_CHANGELING));
 
         seperator();
 

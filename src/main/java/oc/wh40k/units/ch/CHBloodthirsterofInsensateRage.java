@@ -13,6 +13,8 @@ public class CHBloodthirsterofInsensateRage extends Eintrag {
         power = 17;
         setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY));
         
+        seperator();
+        
         addWeapons(CHWaffenkammerCD.class, false);
         
         seperator();

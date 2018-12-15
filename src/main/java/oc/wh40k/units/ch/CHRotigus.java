@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -13,6 +15,7 @@ public class CHRotigus extends Eintrag {
         name = "Rotigus";
         grundkosten = getPts("Rotigus");
         power = 17;
+        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS));
 
         seperator();
 

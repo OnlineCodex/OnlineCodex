@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
@@ -15,6 +17,13 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         name = "Daemon Prince of Chaos";
         grundkosten = getPts("Daemon Prince of Chaos");
         power = 10;
+        setKeywords(ImmutableSet.of(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
+        
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword")));
         ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));

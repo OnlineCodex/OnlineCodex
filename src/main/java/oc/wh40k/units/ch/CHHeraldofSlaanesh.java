@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -12,6 +14,11 @@ public class CHHeraldofSlaanesh extends Eintrag {
         name = "Herald of Slaanesh";
         grundkosten = getPts("Herald of Slaanesh");
         power = 3;
+        setKeywords(ImmutableSet.of(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
 

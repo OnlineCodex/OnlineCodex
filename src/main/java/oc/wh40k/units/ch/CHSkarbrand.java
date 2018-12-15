@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 
 public class CHSkarbrand extends Eintrag {
@@ -9,6 +11,7 @@ public class CHSkarbrand extends Eintrag {
         name = "Skarbrand";
         grundkosten = getPts("Skarbrand");
         power = 19;
+        setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, SKARBRAND));
         
         seperator();
         

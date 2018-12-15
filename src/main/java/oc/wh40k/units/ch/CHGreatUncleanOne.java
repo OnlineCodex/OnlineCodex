@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -16,6 +18,11 @@ public class CHGreatUncleanOne extends Eintrag {
         name = "Great Unclean One";
         grundkosten = 0;
         power = 12;
+        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));

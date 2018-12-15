@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -16,6 +18,11 @@ public class CHFluxmaster extends Eintrag {
         name = "Fluxmaster";
         grundkosten = getPts("Fluxmaster");
         power = 5;
+        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CAVALRY, CHARACTER, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FLUXMASTER));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         add(waffe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ritual dagger", getPts("Ritual dagger")));
         waffe1.setSelected(true);

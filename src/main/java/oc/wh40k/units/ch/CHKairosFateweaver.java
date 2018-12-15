@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsUpgradeGruppe;
@@ -17,6 +19,7 @@ public class CHKairosFateweaver extends Eintrag {
         name = "Kairos Fateweaver";
         grundkosten = getPts("Kairos Fateweaver");
         power = 20;
+        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE, KAIROS_FATEWEAVER));
 
         add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of Tomorrow", getPts("Staff of Tomorrow")));
         waffe2.setSelected(true);

@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
@@ -14,6 +16,11 @@ public class CHLordofChange extends Eintrag {
         name = "Lord of Change";
         grundkosten = getPts("Lord of Change");
         power = 17;
+        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         ogE.addElement(new OptionsGruppeEintrag("Baleful sword", getPts("Baleful sword")));
         ogE.addElement(new OptionsGruppeEintrag("Rod of sorcery", getPts("Rod of sorcery")));
