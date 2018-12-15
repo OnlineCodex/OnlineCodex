@@ -1,11 +1,7 @@
 package oc.wh40k.units.ch;
 
-import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
-
-import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
@@ -17,41 +13,101 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     
     OptionsEinzelUpgrade armourofScorn;
     OptionsEinzelUpgrade theCrimsonCrown;
-    OptionsEinzelUpgrade argaththeKingofBlades;
-    OptionsEinzelUpgrade skullreaver;
     OptionsEinzelUpgrade theEndlessGrimoire;
     OptionsEinzelUpgrade soulBane;
     OptionsEinzelUpgrade theImpossibleRobe;
-    OptionsEinzelUpgrade theEverstave;
     OptionsEinzelUpgrade hornofNurglesRot;
     OptionsEinzelUpgrade theEntropicKnell;
-    OptionsEinzelUpgrade corruption;
     OptionsEinzelUpgrade theForbiddenGem;
     OptionsEinzelUpgrade theMarkofExcess;
-    OptionsEinzelUpgrade soulstealer;
     OptionsEinzelUpgrade slothfulClaws;
+    
+    OptionsUpgradeGruppe nkwaffe;
+    OptionsUpgradeGruppe fkwaffe;
     
     public CHWaffenkammerCD() {
         grundkosten = 0;
     }
 
+    public void addRelics() {
+    	if(keywords.contains(CHARACTER)) {
+        	boolean hellforgedSword = false;
+        	boolean bladeOfBlood = false;
+        	boolean axeOfKhorne = false;
+        	boolean daemonicAxe = false;
+        	boolean rodOfSorcery = false;
+        	boolean staffOfChange = false;
+        	boolean plaguesword = false;
+        	boolean witstealerSword = false;
+	    	
+	    	for(int i = 0; i < ogE.size(); i++) {
+	    		if(ogE.get(i).getName().equals("Hellforged sword")) {
+	    			hellforgedSword = true;
+	    		} else if(ogE.get(i).getName().equals("Blade of blood")) {
+	    			bladeOfBlood = true;
+	    		} else if(ogE.get(i).getName().equals("Axe of khorne")) {
+	    			axeOfKhorne = true;
+	    		} else if(ogE.get(i).getName().equals("Daemonic axe")) {
+	    			daemonicAxe = true;
+	    		} else if(ogE.get(i).getName().equals("Rod of sorcery")) {
+	    			rodOfSorcery = true;
+	    		} else if(ogE.get(i).getName().equals("Staff of change")) {
+	    			staffOfChange = true;
+	    		} else if(ogE.get(i).getName().equals("Plaguesword")) {
+	    			plaguesword = true;
+	    		} else if(ogE.get(i).getName().equals("Witstealer sword")) {
+	    			witstealerSword = true;
+	    		}
+	    	}
+	    	
+	    	if(hellforgedSword || bladeOfBlood) {
+        		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Hellforged sword")).setRelic(true));
+	    	}
+	    	if(axeOfKhorne || daemonicAxe) {
+        		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Axe of Khorne")).setRelic(true));
+	    	}
+	    	if(rodOfSorcery || staffOfChange) {
+        		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Rod of Sorcery")).setRelic(true));
+	    	}
+	    	if(plaguesword) {
+        		ogE.addElement(new OptionsGruppeEintrag("Corruption", getPts("Plaguesword")).setRelic(true));
+	    	}
+	    	if(hellforgedSword || witstealerSword) {
+        		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Hellforged sword")).setRelic(true));
+	    	}
+    	}
+    }
+    
     @Override
     public void initButtons(boolean... defaults) {
     	add(armourofScorn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armour of Scorn", 0).setRelic(true));
     	add(theCrimsonCrown = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Crimson Crown", 0).setRelic(true));
-    	add(argaththeKingofBlades = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "A'rgath, the King of Blades", 0).setRelic(true));
-    	add(skullreaver = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Skullreaver", 0).setRelic(true));
     	add(theEndlessGrimoire = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Endless Grimoire", 0).setRelic(true));
     	add(soulBane = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Soul Bane", 0).setRelic(true));
     	add(theImpossibleRobe = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Impossible Robe", 0).setRelic(true));
-    	add(theEverstave = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Everstave", 0).setRelic(true));
     	add(hornofNurglesRot = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Horn of Nurgle's Rot", 0).setRelic(true));
     	add(theEntropicKnell = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Entropic Knell", 0).setRelic(true));
-    	add(corruption = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Corruption", 0).setRelic(true));
     	add(theForbiddenGem = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Forbidden Gem", 0).setRelic(true));
     	add(theMarkofExcess = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Mark of Excess", 0).setRelic(true));
-    	add(soulstealer = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Soulstealer", 0).setRelic(true));
     	add(slothfulClaws = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Slothful Claws", 0).setRelic(true));
+    	
+
+        seperator();
+    	
+        if(keywords.contains(DAEMON_PRINCE_OF_CHAOS)) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword")));
+	        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
+	        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        nkwaffe.setSelected(0, true);
+	
+	        seperator();
+	
+	        ogE.addElement(new OptionsGruppeEintrag("Warp bolter", getPts("Warp bolter")));
+	        addRelics();
+	        add(fkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        }
     	
         setUeberschrift("Waffen");
         sizeSetzen();
@@ -67,37 +123,24 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     	boolean nurgle = army.equals("Nurgle") || keywords.contains(NURGLE) || undivided;
     	boolean slaanesh = army.equals("Slaanesh") || keywords.contains(SLAANESH) || undivided;
     	
-    	boolean blade_of_blood = true;
-    	boolean hellforged_sword = true;
-    	boolean axe_of_khorne = true;
-    	boolean daemonic_axe = true;
-    	boolean rod_of_sorcery = true;
-    	boolean staff_of_change = true;
-    	boolean plaguesword = true;
-    	boolean witstealer_sword = true;
-    	
     	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && khorne && keywords.contains(MONSTER));
     	theCrimsonCrown.setAktiv((chosenRelic == null || theCrimsonCrown.isSelected()) && khorne);
-    	argaththeKingofBlades.setAktiv((chosenRelic == null || argaththeKingofBlades.isSelected()) && khorne && (blade_of_blood || hellforged_sword));
-    	skullreaver.setAktiv((chosenRelic == null || skullreaver.isSelected()) && khorne && (axe_of_khorne || daemonic_axe));
     	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && tzeentch && keywords.contains(PSYKER));
     	soulBane.setAktiv((chosenRelic == null || soulBane.isSelected()) && keywords.contains(HERALD_OF_TZEENTCH));
     	theImpossibleRobe.setAktiv((chosenRelic == null || theImpossibleRobe.isSelected()) && tzeentch);
-    	theEverstave.setAktiv((chosenRelic == null || theEverstave.isSelected()) && tzeentch  && (rod_of_sorcery || staff_of_change));
     	hornofNurglesRot.setAktiv((chosenRelic == null || hornofNurglesRot.isSelected()) && nurgle);
     	theEntropicKnell.setAktiv((chosenRelic == null || theEntropicKnell.isSelected()) && nurgle);
-    	corruption.setAktiv((chosenRelic == null || corruption.isSelected()) && nurgle && plaguesword);
     	theForbiddenGem.setAktiv((chosenRelic == null || theForbiddenGem.isSelected()) && slaanesh);
     	theMarkofExcess.setAktiv((chosenRelic == null || theMarkofExcess.isSelected()) && slaanesh);
-    	soulstealer.setAktiv((chosenRelic == null || soulstealer.isSelected()) && slaanesh && (witstealer_sword || hellforged_sword));
     	slothfulClaws.setAktiv((chosenRelic == null || slothfulClaws.isSelected()) && keywords.contains(HERALD_OF_SLAANESH));
     	
-    	
-//      A'rgath, the King of Blades - KHORNE with blade of blood or hellforged sword. Replace //TODO check if option
-//      Skullreaver - KHORNE with axe of khorne or daemonic axe. Replace //TODO check if option   	
-//      The Everstave - TZEENTCH with rod of sorcery or staff of change //TODO check if option
-//      Corruption - NURGLE with plaguesword. Replace //TODO check if option	
-//      Soulstealer - SLAANESH with witstealer sword or hellforged sword. Replace //TODO check if option
+    	if(nkwaffe != null) {
+    		nkwaffe.setAktiv("A'rgath, the King of Blades", (chosenRelic == null || nkwaffe.isSelected("A'rgath, the King of Blades")) && khorne);
+    		nkwaffe.setAktiv("Skullreaver", (chosenRelic == null || nkwaffe.isSelected("Skullreaver")) && khorne);
+    		nkwaffe.setAktiv("The Everstave", (chosenRelic == null || nkwaffe.isSelected("The Everstave")) && tzeentch);
+    		nkwaffe.setAktiv("Corruption", (chosenRelic == null || nkwaffe.isSelected("Corruption")) && nurgle);
+    		nkwaffe.setAktiv("Soulstealer", (chosenRelic == null || nkwaffe.isSelected("Soulstealer")) && slaanesh);
+    	}
     	
     }
 

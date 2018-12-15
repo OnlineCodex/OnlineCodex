@@ -20,28 +20,16 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         setKeywords(ImmutableSet.of(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS));
         
         seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
-        
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword")));
-        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
-        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
-        add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        waffe1.setSelected(0, true);
-
-        seperator();
-
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
-
-        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
 
@@ -64,6 +52,6 @@ public class CHDaemonPrinceofChaos extends Eintrag {
 
     @Override
     public void refreshen() {
-        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
+        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && (mark.getAnzahl() != 0));
     }
 }
