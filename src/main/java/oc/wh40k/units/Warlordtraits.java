@@ -363,11 +363,11 @@ public class Warlordtraits extends RuestkammerVater {
         }
         //CHAOS
         if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
-        	boolean undivided = exclusiveKeyword.equals(ALLEGIANCE) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
-        	boolean khorne = army.equals("Khorne") || exclusiveKeyword.equals(KHORNE) || undivided;
-        	boolean tzeentch = army.equals("Tzeentch") || exclusiveKeyword.equals(TZEENTCH) || undivided;
-        	boolean nurgle = army.equals("Nurgle") || exclusiveKeyword.equals(NURGLE) || undivided;
-        	boolean slaanesh = army.equals("Slaanesh") || exclusiveKeyword.equals(SLAANESH) || undivided;
+        	boolean undivided = ALLEGIANCE.equals(exclusiveKeyword) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
+        	boolean khorne = army.equals("Khorne") || KHORNE.equals(exclusiveKeyword) || undivided;
+        	boolean tzeentch = army.equals("Tzeentch") || TZEENTCH.equals(exclusiveKeyword) || undivided;
+        	boolean nurgle = army.equals("Nurgle") || NURGLE.equals(exclusiveKeyword) || undivided;
+        	boolean slaanesh = army.equals("Slaanesh") || SLAANESH.equals(exclusiveKeyword) || undivided;
         	if(warlordtraits2 != null) {
 	        	warlordtraits2.setAktiv("Khorne: Aspect of Death", khorne);
 	        	warlordtraits2.setAktiv("Khorne: Glory of Battle", khorne);
@@ -472,16 +472,16 @@ public class Warlordtraits extends RuestkammerVater {
         		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
         	}
         } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) && 
-        		(exclusiveKeyword.equals(KABAL) || exclusiveKeyword.equals(WYCH_CULT) || exclusiveKeyword.equals(HAEMUNCULUS_COVEN))) {
-        	warlordtraits.setAktiv("Hatred Eternal", exclusiveKeyword.equals(KABAL));
-        	warlordtraits.setAktiv("Soul Thirst", exclusiveKeyword.equals(KABAL));
-        	warlordtraits.setAktiv("Ancient Evil", exclusiveKeyword.equals(KABAL));
-        	warlordtraits.setAktiv("Quicksilver Fighter", exclusiveKeyword.equals(WYCH_CULT));
-        	warlordtraits.setAktiv("Stimm Addict", exclusiveKeyword.equals(WYCH_CULT));
-        	warlordtraits.setAktiv("Precision Blows", exclusiveKeyword.equals(WYCH_CULT));
-        	warlordtraits.setAktiv("Master Regenesist", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
-        	warlordtraits.setAktiv("Master Nemesine", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
-        	warlordtraits.setAktiv("Master Artisan", exclusiveKeyword.equals(HAEMUNCULUS_COVEN));
+        		(KABAL.equals(exclusiveKeyword) || WYCH_CULT.equals(exclusiveKeyword) || HAEMUNCULUS_COVEN.equals(exclusiveKeyword))) {
+        	warlordtraits.setAktiv("Hatred Eternal", KABAL.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Soul Thirst", KABAL.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Ancient Evil", KABAL.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Quicksilver Fighter", WYCH_CULT.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Stimm Addict", WYCH_CULT.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Precision Blows", WYCH_CULT.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Master Regenesist", HAEMUNCULUS_COVEN.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Master Nemesine", HAEMUNCULUS_COVEN.equals(exclusiveKeyword));
+        	warlordtraits.setAktiv("Master Artisan", HAEMUNCULUS_COVEN.equals(exclusiveKeyword));
 
         	warlordtraits.setAktiv("Kabal of the Black Heart: Labyrinthine Cunning", army.equals("Kabal of the Black Heart"));
         	warlordtraits.setAktiv("Kabal of the Poisoned Tongue: Towering Arrogance", army.equals("Kabal of the Poisoned Tongue"));
