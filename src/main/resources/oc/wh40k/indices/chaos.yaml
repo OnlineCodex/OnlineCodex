@@ -96,7 +96,7 @@
 "Shieldbreaker missile": 12
 "Thermal spear": 0
 "Thundercoil harpoon": 0
-"Twin Icarus autocannon": 30
+"Twin Icarus autocannon": 20
 "Twin meltagun": 0
 "Twin siegebreaker cannon": 35
 "Volcano lance": 10
@@ -499,14 +499,13 @@
 "Warp spines": 0
 "Churning fangs and spines": 0
 "Blade of decay": 0
-"Nurglings": 0
 
 "Renegade Armiger": 160
 "Renegade Knight Acheron": 358
-"Renegade Knight Lancer": 420
+"Renegade Knight Lancer": 360
 "Renegade Knight Castigator": 350
 "Renegade Knight Atropos": 405
-"Renegade Knight Magaera": 440
+"Renegade Knight Magaera": 380
 "Renegade Knight Porphyrion": 600
 "Renegade Knight Styrix": 340
 "Renegade Knight Dominus": 500
@@ -526,7 +525,7 @@
 "Ecotplasma fusil": 20
 "Atropos lascutter": 80
 "Graviton singularity cannon": 70
-"Castigator bolt cannon": 120
+"Castigator bolt cannon": 50
 "Shock blast": 0
 "Acheron flame cannon": 80
 
