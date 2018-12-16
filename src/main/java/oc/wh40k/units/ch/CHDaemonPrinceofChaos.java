@@ -7,9 +7,6 @@ import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofChaos extends Eintrag {
-
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
     OptionsUpgradeGruppe mark;
     RuestkammerStarter psychicPowers;
     int lastMark = -1;
