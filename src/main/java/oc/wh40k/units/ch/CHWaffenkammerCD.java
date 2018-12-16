@@ -177,5 +177,4 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     		}
     	}
     }
-
 }
