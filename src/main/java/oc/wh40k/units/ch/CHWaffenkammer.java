@@ -153,7 +153,7 @@ public class CHWaffenkammer extends RuestkammerVater {
             }
             if (melee) {
                 if (sorcerer) {
-                    ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
+                    ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
                     ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
                 } else {
                     if (nurgle) {
