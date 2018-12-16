@@ -27,8 +27,8 @@ public class CHExaltedChampion extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Chainsword");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Chainsword");
         ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
         waffen.initKammer(true, true, true, true);
         waffen.setButtonText("Waffenkammer");

@@ -43,8 +43,8 @@ public class CHRaptors extends Eintrag {
         seperator();
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Raptor Champion", 1);
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultFK("Bolt pistol");
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultNK("Chainsword");
+        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultRanged("Bolt pistol");
+        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultCloceCombat("Chainsword");
         ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
         rkBoss.initKammer(true, true, true, true);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

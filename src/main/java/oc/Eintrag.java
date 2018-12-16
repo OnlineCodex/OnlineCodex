@@ -453,8 +453,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
         weapons.getKammer().setType(name);
         weapons.getKammer().setKeywords(keywords);
-        weapons.getKammer().setDefaultFK(defaultFK);
-        weapons.getKammer().setDefaultNK(defaultNK);
+        weapons.getKammer().setDefaultRanged(defaultFK);
+        weapons.getKammer().setDefaultCloceCombat(defaultNK);
         weapons.initKammer();
         weapons.setButtonText("Waffen");
         add(weapons);

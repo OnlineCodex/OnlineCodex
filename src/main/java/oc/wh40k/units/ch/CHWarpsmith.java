@@ -29,8 +29,8 @@ public class CHWarpsmith extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Power axe");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power axe");
         ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
         waffen.initKammer(false, true, false, false);
         waffen.setButtonText("Waffenkammer");

@@ -84,8 +84,8 @@ public class CHChosen extends Eintrag {
 
         champion = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Chosen Champion", 1);
         ((CHWaffenkammer) champion.getKammer()).setChampion(true);
-        ((CHWaffenkammer) champion.getKammer()).setDefaultFK("Boltgun");
-        ((CHWaffenkammer) champion.getKammer()).setDefaultNK("Bolt pistol");
+        ((CHWaffenkammer) champion.getKammer()).setDefaultRanged("Boltgun");
+        ((CHWaffenkammer) champion.getKammer()).setDefaultCloceCombat("Bolt pistol");
         champion.initKammer(true, true, true, true);
         champion.setUeberschriftTrotzNullKostenAusgeben(true);
         add(champion);

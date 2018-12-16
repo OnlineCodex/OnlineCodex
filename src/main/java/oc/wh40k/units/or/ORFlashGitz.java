@@ -28,8 +28,8 @@ public class ORFlashGitz extends Eintrag {
 
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Kaptin");
         ((ORWaffenUndGeschenke) Boss.getKammer()).setKaptin(true);
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultNK("no weapon");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultFK("no weapon");
+        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultRanged("no weapon");
         Boss.initKammer(false, false, false, false, false);
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Kaptin"));

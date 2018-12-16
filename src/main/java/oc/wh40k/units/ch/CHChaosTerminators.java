@@ -67,8 +67,8 @@ public class CHChaosTerminators extends Eintrag {
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Terminator Champion");
         ((CHWaffenkammer) Boss.getKammer()).setTerminatorArmour(true);
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Combi-bolter");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultNK("Power axe");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Combi-bolter");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Power axe");
         Boss.initKammer(true, true, true, true);
         Boss.setGrundkosten(getPts("Terminator Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);

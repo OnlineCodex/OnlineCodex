@@ -49,8 +49,8 @@ public class CHKhorneBerzerkers extends Eintrag {
 
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Berzerker Champion");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Bolt pistole");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultNK("Chainsword");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Bolt pistole");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Chainsword");
         Boss.initKammer(true, true, true, true);
         Boss.setGrundkosten(getPts("Berzerker Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);

@@ -26,8 +26,8 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
-    protected String defaultNK = "";
-    protected String defaultFK = "";
+    protected String defaultCloceCombat = "";
+    protected String defaultRanged = "";
     protected String type = "";
 	protected Set<String> keywords;
 
@@ -243,12 +243,12 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		return legal;
 	}
 
-    public void setDefaultNK(String s) {
-        defaultNK = s;
+    public void setDefaultCloceCombat(String s) {
+        defaultCloceCombat = s;
     }
 
-    public void setDefaultFK(String s) {
-        defaultFK = s;
+    public void setDefaultRanged(String s) {
+        defaultRanged = s;
     }
 
     public void setType(String s) {

@@ -23,8 +23,8 @@ public class ORLootas extends Eintrag {
 
         Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner1.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultNK("no weapon");
-        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultFK("Kustom mega-blasta");
+        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultRanged("Kustom mega-blasta");
         Spanner1.initKammer(false, false, false, false, false, false);
         Spanner1.setGrundkosten(getPts("Spanner"));
         add(Spanner1);
@@ -33,8 +33,8 @@ public class ORLootas extends Eintrag {
 
         Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner2.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultNK("no weapon");
-        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultFK("Kustom mega-blasta");
+        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultRanged("Kustom mega-blasta");
         Spanner2.initKammer(false, false, false, false, false, false);
         Spanner2.setGrundkosten(getPts("Spanner"));
         add(Spanner2);
@@ -43,8 +43,8 @@ public class ORLootas extends Eintrag {
 
         Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
         ((ORWaffenUndGeschenke) Spanner3.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultNK("no weapon");
-        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultFK("Kustom mega-blasta");
+        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultRanged("Kustom mega-blasta");
         Spanner3.initKammer(false, false, false, false, false, false);
         Spanner3.setGrundkosten(getPts("Spanner"));
         add(Spanner3);
