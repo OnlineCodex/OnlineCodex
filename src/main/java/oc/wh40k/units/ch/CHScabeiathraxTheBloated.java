@@ -2,6 +2,8 @@ package oc.wh40k.units.ch;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.NURGLE;
+
 public class CHScabeiathraxTheBloated extends Eintrag {
 
     public CHScabeiathraxTheBloated() {
@@ -12,7 +14,7 @@ public class CHScabeiathraxTheBloated extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, NURGLE);
+        addWarlordTraits("", NURGLE);
 
         complete();
 

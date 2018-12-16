@@ -1,21 +1,21 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
 public class CHSkarbrand extends Eintrag {
 
     public CHSkarbrand() {
+        super(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, SKARBRAND);
 
         name = "Skarbrand";
         grundkosten = getPts("Skarbrand");
         power = 19;
-        setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, SKARBRAND));
-        
+
         seperator();
         
-        addWarlordTraits("Khorne: Rage Incarnate", true, KHORNE);
+        addWarlordTraits("Khorne: Rage Incarnate", KHORNE);
         
         complete();
     }

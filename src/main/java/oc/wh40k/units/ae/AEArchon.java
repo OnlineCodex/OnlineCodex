@@ -1,11 +1,10 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.KABAL;
+
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 public class AEArchon extends Eintrag {
@@ -38,7 +37,7 @@ public class AEArchon extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true, "KABAL");
+        addWarlordTraits("", KABAL);
         
         complete();
     }

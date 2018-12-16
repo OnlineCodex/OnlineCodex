@@ -1,24 +1,24 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
 public class CHSloppityBilepiper extends Eintrag {
 
     public CHSloppityBilepiper() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, HERALD_OF_NURGLE, SLOPPITY_BILEPIPER);
         name = "Sloppity Bilepiper";
         grundkosten = getPts("Sloppity Bilepiper") + getPts("Marotter");
         power = 3;
-        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, HERALD_OF_NURGLE, SLOPPITY_BILEPIPER));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
         
         seperator();
         
-        addWarlordTraits("", true, NURGLE);
+        addWarlordTraits("", NURGLE);
 
         complete();
     }

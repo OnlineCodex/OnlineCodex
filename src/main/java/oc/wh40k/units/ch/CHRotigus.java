@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -11,11 +11,11 @@ public class CHRotigus extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHRotigus() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS);
 
         name = "Rotigus";
         grundkosten = getPts("Rotigus");
         power = 17;
-        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS));
 
         seperator();
 
@@ -29,7 +29,7 @@ public class CHRotigus extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Nurgle: Pestilent Miasma", true, NURGLE);
+        addWarlordTraits("Nurgle: Pestilent Miasma", NURGLE);
         
         complete();
     }

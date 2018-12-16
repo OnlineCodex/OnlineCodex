@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -11,11 +11,11 @@ public class CHTheChangeling extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHTheChangeling() {
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, PSYKER, HERALD_OF_TZEENTCH, HORROR, THE_CHANGELING);
 
         name = "The Changeling";
         grundkosten = getPts("The Changeling");
         power = 5;
-        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, PSYKER, HERALD_OF_TZEENTCH, HORROR, THE_CHANGELING));
 
         seperator();
 
@@ -29,7 +29,7 @@ public class CHTheChangeling extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Incorporeal Form", true, TZEENTCH);
+        addWarlordTraits("Tzeentch: Incorporeal Form", TZEENTCH);
 
         complete();
 

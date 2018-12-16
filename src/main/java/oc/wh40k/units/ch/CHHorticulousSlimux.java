@@ -1,27 +1,21 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
 public class CHHorticulousSlimux extends Eintrag {
 
     public CHHorticulousSlimux() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, CAVALRY, HERALD_OF_NURGLE, PLAGUEBEARER, HORTICULOUS_SLIMUX);
         name = "Horticulous Slimux";
         grundkosten = getPts("Horticulous Slimux");
         power = 4;
-        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, CAVALRY, HERALD_OF_NURGLE, PLAGUEBEARER, HORTICULOUS_SLIMUX));
-        
+
         seperator();
         
         addWarlordTraits("Nurgle: Acidic Ichor", true);
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

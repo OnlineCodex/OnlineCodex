@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
@@ -11,11 +11,11 @@ public class CHHeraldofSlaaneshonExaltedSeekerChariot extends Eintrag {
     OptionsUpgradeGruppe waffe1;
 
     public CHHeraldofSlaaneshonExaltedSeekerChariot() {
+        super(CHAOS, SLAANESH, DAEMON, CHARACTER, CHARIOT, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
         name = "Herald of Slaanesh on Exalted Seeker Chariot";
         grundkosten = getPts("Herald of Slaanesh on Exalted Seeker Chariot");
         power = 7;
-        setKeywords(ImmutableSet.of(CHAOS, SLAANESH, DAEMON, CHARACTER, CHARIOT, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
@@ -27,7 +27,7 @@ public class CHHeraldofSlaaneshonExaltedSeekerChariot extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, SLAANESH);
+        addWarlordTraits("", SLAANESH);
 
         complete();
     }

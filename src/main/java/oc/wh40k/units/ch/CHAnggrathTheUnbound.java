@@ -2,6 +2,8 @@ package oc.wh40k.units.ch;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.KHORNE;
+
 public class CHAnggrathTheUnbound extends Eintrag {
 
     public CHAnggrathTheUnbound() {
@@ -12,7 +14,7 @@ public class CHAnggrathTheUnbound extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, KHORNE);
+        addWarlordTraits("", KHORNE);
 
         complete();
 

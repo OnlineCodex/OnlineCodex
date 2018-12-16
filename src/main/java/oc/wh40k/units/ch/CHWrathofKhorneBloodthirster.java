@@ -1,25 +1,24 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
 public class CHWrathofKhorneBloodthirster extends Eintrag {
 
-
     public CHWrathofKhorneBloodthirster() {
+        super(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY);
         name = "Wrath Of Khorne Bloodthirster";
         grundkosten = getPts("Wrath Of Khorne Bloodthirster");
         power = 17;
-        setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, true);
         
         seperator();
         
-        addWarlordTraits("", true, KHORNE);
+        addWarlordTraits("", KHORNE);
         
         complete();
     }

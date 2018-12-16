@@ -1,30 +1,26 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
 public class CHBloodthirsterofInsensateRage extends Eintrag {
 
     public CHBloodthirsterofInsensateRage() {
+        super(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY);
 
         name = "Bloodthirster of Insensate Rage";
         grundkosten = getPts("Bloodthirster Of Insensate Rage");
         power = 17;
-        setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
         
         seperator();
         
-        addWarlordTraits("", true, KHORNE);
+        addWarlordTraits("", KHORNE);
         
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

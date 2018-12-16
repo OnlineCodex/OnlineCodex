@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -11,11 +11,11 @@ public class CHPoxbringer extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHPoxbringer() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, PSYKER, HERALD_OF_NURGLE, POXBRINGER);
         name = "Poxbringer";
         grundkosten = getPts("Poxbringer") /*+ getPts("Balesword")*/;
         power = 4;
-        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, PSYKER, HERALD_OF_NURGLE, POXBRINGER));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
@@ -32,7 +32,7 @@ public class CHPoxbringer extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, NURGLE);
+        addWarlordTraits("", NURGLE);
 
         complete();
     }

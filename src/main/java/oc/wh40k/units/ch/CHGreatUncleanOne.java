@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
@@ -14,12 +14,12 @@ public class CHGreatUncleanOne extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHGreatUncleanOne() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);
 
         name = "Great Unclean One";
         grundkosten = 0;
         power = 12;
-        setKeywords(ImmutableSet.of(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
@@ -42,7 +42,7 @@ public class CHGreatUncleanOne extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, NURGLE);
+        addWarlordTraits("", NURGLE);
 
         complete();
 

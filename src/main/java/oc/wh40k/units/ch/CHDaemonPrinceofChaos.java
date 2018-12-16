@@ -1,7 +1,6 @@
 package oc.wh40k.units.ch;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import static oc.KeyWord.*;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
@@ -12,12 +11,12 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     int lastMark = -1;
 
     public CHDaemonPrinceofChaos() {
+        super(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS);
 
         name = "Daemon Prince of Chaos";
         grundkosten = getPts("Daemon Prince of Chaos");
         power = 10;
-        setKeywords(new HashSet<String>(Arrays.asList(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS)));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -44,7 +43,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, ALLEGIANCE);
+        addWarlordTraits("", ALLEGIANCE);
 
         complete();
     }

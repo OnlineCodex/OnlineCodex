@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -14,12 +14,12 @@ public class CHFateskimmer extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHFateskimmer() {
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, CHARIOT, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FATESKIMMER);
 
         name = "Fateskimmer";
         grundkosten = getPts("Fateskimmer");
         power = 7;
-        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, CHARIOT, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FATESKIMMER));
-        
+
         seperator();
 
         add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
@@ -40,7 +40,7 @@ public class CHFateskimmer extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, TZEENTCH);
+        addWarlordTraits("", TZEENTCH);
 
         complete();
 

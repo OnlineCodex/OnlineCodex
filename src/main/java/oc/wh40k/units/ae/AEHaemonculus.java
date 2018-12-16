@@ -1,12 +1,8 @@
 package oc.wh40k.units.ae;
 
-import oc.Eintrag;
+import oc.*;
 
-import oc.OptionsEinzelUpgrade;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsUpgradeGruppe;
+import static oc.KeyWord.HAEMUNCULUS_COVEN;
 
 public class AEHaemonculus extends Eintrag {
     OptionsEinzelUpgrade oe1;
@@ -48,7 +44,7 @@ public class AEHaemonculus extends Eintrag {
 
         seperator();
         
-        addWarlordTraits("", true, "HAEMUNCULUS COVEN");
+        addWarlordTraits("", HAEMUNCULUS_COVEN);
 
         complete();
     }

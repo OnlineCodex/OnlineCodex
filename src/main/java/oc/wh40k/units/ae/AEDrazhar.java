@@ -2,6 +2,8 @@ package oc.wh40k.units.ae;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.KABAL;
+
 public class AEDrazhar extends Eintrag {
 	
     public AEDrazhar() {
@@ -11,7 +13,7 @@ public class AEDrazhar extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("Hatred Eternal", true, "KABAL");
+        addWarlordTraits("Hatred Eternal", KABAL);
 
         complete();
     }

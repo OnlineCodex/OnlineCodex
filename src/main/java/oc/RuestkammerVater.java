@@ -29,7 +29,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
     protected String defaultCloceCombat = "";
     protected String defaultRanged = "";
     protected String type = "";
-	protected Set<String> keywords;
+	protected Set<KeyWord> keywords;
 
 	public RuestkammerVater() {
 		frame.setLayout(null);
@@ -255,19 +255,19 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
         type = s;
     }
 
-	public Set<String> getKeywords() {
+	public Set<KeyWord> getKeywords() {
 		return keywords;
 	}
 
-	public void setKeywords(Set<String> keywords) {
+	public void setKeywords(Set<KeyWord> keywords) {
 		this.keywords = keywords;
 	}
 	
-	public void removeKeyword(String key) {
+	public void removeKeyword(KeyWord key) {
 		keywords.remove(key);
 	}
 	
-	public void addKeyword(String key) {
+	public void addKeyword(KeyWord key) {
 		keywords.add(key);
 	}
 

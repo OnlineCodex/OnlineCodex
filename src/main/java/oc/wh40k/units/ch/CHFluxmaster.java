@@ -1,9 +1,8 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -11,12 +10,12 @@ public class CHFluxmaster extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHFluxmaster() {
+        super(CHAOS, TZEENTCH, DAEMON, CAVALRY, CHARACTER, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FLUXMASTER);
 
         name = "Fluxmaster";
         grundkosten = getPts("Fluxmaster");
         power = 5;
-        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CAVALRY, CHARACTER, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FLUXMASTER));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
@@ -33,7 +32,7 @@ public class CHFluxmaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, TZEENTCH);
+        addWarlordTraits("", TZEENTCH);
 
         complete();
     }

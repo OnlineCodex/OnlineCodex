@@ -1,5 +1,6 @@
 package oc.wh40k.units;
 
+import static oc.KeyWord.*;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
@@ -11,7 +12,7 @@ public class Warlordtraits extends RuestkammerVater {
     OptionsUpgradeGruppe warlordtraits2;
     OptionsUpgradeGruppe warlordtraits3;
     String mandatoryChoice = "";
-    String exclusiveKeyword = "";
+	KeyWord exclusiveKeyword = null;
     boolean subfactionsAllowed = true;
 
     public Warlordtraits() {
@@ -558,7 +559,7 @@ public class Warlordtraits extends RuestkammerVater {
     	subfactionsAllowed = b;
     }
     
-    public void setExclusiveKeyword(String s) {
+    public void setExclusiveKeyword(KeyWord s) {
     	exclusiveKeyword = s;
     }
 }

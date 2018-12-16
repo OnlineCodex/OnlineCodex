@@ -2,9 +2,12 @@ package oc.wh40k.units.ae;
 
 import oc.Eintrag;
 
+import oc.KeyWord;
 import oc.OptionsGruppeEintrag;
 
 import oc.OptionsUpgradeGruppe;
+
+import static oc.KeyWord.WYCH_CULT;
 
 public class AELelithHesperax extends Eintrag {
     OptionsUpgradeGruppe o1;
@@ -20,7 +23,7 @@ public class AELelithHesperax extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("Cult of Strife: Blood Dancer", true, "WYCH CULT");
+        addWarlordTraits("Cult of Strife: Blood Dancer", WYCH_CULT);
 
         complete();
     }

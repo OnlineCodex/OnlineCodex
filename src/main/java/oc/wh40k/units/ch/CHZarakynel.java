@@ -2,6 +2,8 @@ package oc.wh40k.units.ch;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.SLAANESH;
+
 public class CHZarakynel extends Eintrag {
 
     public CHZarakynel() {
@@ -12,7 +14,7 @@ public class CHZarakynel extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, SLAANESH);
+        addWarlordTraits("", SLAANESH);
 
         complete();
     }

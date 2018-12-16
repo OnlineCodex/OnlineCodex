@@ -1,5 +1,6 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.WYCH_CULT;
 import oc.Eintrag;
 
 import oc.OptionsEinzelUpgrade;
@@ -7,7 +8,6 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 
 import oc.OptionsZaehlerGruppe;
-import oc.wh40k.units.Warlordtraits;
 
 public class AEBeastmaster extends Eintrag {
     OptionsEinzelUpgrade oe1;
@@ -26,12 +26,8 @@ public class AEBeastmaster extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, "WYCH CULT");
+        addWarlordTraits("", WYCH_CULT);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

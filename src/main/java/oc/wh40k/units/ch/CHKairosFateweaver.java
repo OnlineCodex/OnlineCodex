@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -15,11 +15,11 @@ public class CHKairosFateweaver extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHKairosFateweaver() {
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE, KAIROS_FATEWEAVER);
 
         name = "Kairos Fateweaver";
         grundkosten = getPts("Kairos Fateweaver");
         power = 20;
-        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE, KAIROS_FATEWEAVER));
 
         add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of Tomorrow", getPts("Staff of Tomorrow")));
         waffe2.setSelected(true);
@@ -36,7 +36,7 @@ public class CHKairosFateweaver extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Tyrant of the Warp", true, TZEENTCH);
+        addWarlordTraits("Tzeentch: Tyrant of the Warp", TZEENTCH);
 
         complete();
 

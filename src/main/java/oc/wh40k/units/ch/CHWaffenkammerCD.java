@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;

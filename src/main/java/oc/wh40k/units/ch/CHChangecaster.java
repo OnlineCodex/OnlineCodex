@@ -1,6 +1,6 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -15,12 +15,11 @@ public class CHChangecaster extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHChangecaster() {
-
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, HORROR, PSYKER, HERALD_OF_TZEENTCH, CHANGECASTER);
         name = "Changecaster";
         grundkosten = getPts("Changecaster");
         power = 4;
-        setKeywords(ImmutableSet.of(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, HORROR, PSYKER, HERALD_OF_TZEENTCH, CHANGECASTER));
-        
+
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
@@ -37,7 +36,7 @@ public class CHChangecaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true, TZEENTCH);
+        addWarlordTraits("", TZEENTCH);
 
         complete();
 
