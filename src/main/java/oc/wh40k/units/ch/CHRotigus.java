@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,6 +11,7 @@ public class CHRotigus extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHRotigus() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS);
 
         name = "Rotigus";
         grundkosten = getPts("Rotigus");
@@ -26,7 +29,7 @@ public class CHRotigus extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Nurgle: Pestilent Miasma", true);
+        addWarlordTraits("Nurgle: Pestilent Miasma", NURGLE);
         
         complete();
     }
@@ -34,10 +37,5 @@ public class CHRotigus extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

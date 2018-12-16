@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,6 +11,7 @@ public class CHBeLakor extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHBeLakor() {
+        super(CHAOS, DAEMON, CHARACTER, MONSTER, DAEMON_PRINCE, FLY, PSYKER, BE_LAKOR);
 
         name = "Be'Lakor";
         grundkosten = getPts("Be'Lakor");

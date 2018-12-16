@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,6 +11,7 @@ public class CHTheChangeling extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHTheChangeling() {
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, PSYKER, HERALD_OF_TZEENTCH, HORROR, THE_CHANGELING);
 
         name = "The Changeling";
         grundkosten = getPts("The Changeling");
@@ -26,7 +29,7 @@ public class CHTheChangeling extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("Tzeentch: Incorporeal Form", true);
+        addWarlordTraits("Tzeentch: Incorporeal Form", TZEENTCH);
 
         complete();
 
@@ -35,9 +38,5 @@ public class CHTheChangeling extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

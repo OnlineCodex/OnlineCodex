@@ -66,8 +66,8 @@ public class CHPlagueMarinesCSM extends Eintrag {
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Plague Champion");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         ((CHWaffenkammer) Boss.getKammer()).setNurgle(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Boltpistol and Boltgun");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultNK("Plague knife");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Boltpistol and Boltgun");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Plague knife");
         Boss.initKammer(true, true, true, false);
         Boss.setGrundkosten(getPts("Plague Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);

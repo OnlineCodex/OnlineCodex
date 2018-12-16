@@ -1,16 +1,9 @@
 package oc.wh40k.armies;
 
-
-import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
-import oc.utils.ResourceUtils;
-
-import java.io.InputStream;
 import java.util.Set;
-
 import com.google.common.collect.ImmutableSet;
-
 import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKChaos extends BuildaVater {
@@ -25,12 +18,13 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"","Chaos Hell Blade [FW]","Chaos Hell Talon [FW]","Chaos Storm Eagle Assault Gunship [FW]","Chaos Fire Raptor Assault Gunship [FW]","Chaos Xiphon Interceptor [FW]"};
     private static final String[] Befestigungseinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"","Kytan Ravager [FW]","Greater Brass Scorpion Of Khorne [FW]","Hellforged Spartan Assault Tank [FW]","Hellforged Cerberus Heavy Destroyer [FW]","Hellforged Typhon Heavy Siege Tank [FW]","Hellforged Fellblade [FW]",
-            "Hellforged Falchion [FW]","Hellforged Mastodon [FW]","Chaos Thunderhawk Assault Gunship [FW]","Chaos Sokar Pattern Stormbird Gunship [FW]","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]",
+            "Hellforged Falchion [FW]","Hellforged Mastodon [FW]","Chaos Thunderhawk Assault Gunship [FW]","Chaos Sokar Pattern Stormbird Gunship [FW]",
             "Renegade Knight Acheron [FW]","Renegade Knight Lancer [FW]","Renegade Knight Castigator [FW]","Renegade Knight Atropos [FW]","Renegade Knight Magaera [FW]","Renegade Knight Porphyrion [FW]","Renegade Knight Styrix [FW]","","Chaos Warlord Battle Titan [FW]","Chaos Reaver Battle Titan [FW]", "Chaos Warhound Scout Titan [FW]"};
 
     private static final String[] HQeinträge_Daemons_FW = new String[]{"","Uraka The Warfiend [FW]","Samus [FW]","Mamon Transfigured [FW]","Corbax Utterblight [FW]"};
     private static final String[] Sturmeinträge_Daemons_FW = new String[]{"","Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"};
     private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"","Plague Hulk Of Nurgle [FW]"};
+    private static final String[] LOWeinträge_Daemons_FW = new String[]{"","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]"};
 
     private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Legion", "", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
             "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour",
@@ -102,19 +96,48 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Transporteinträge_Questor_Traitoris = new String[]{""};
     private static final String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight", "Renegade Knight Dominus", "Renegade Armiger"};
 
-    private static final String[] HQeinträge_Daemons = new String[]{
-            "", "Skarbrand", "Bloodthirster of Insensate Rage", "Wrath of Khorne Bloodthirster", "Bloodthirster of Unfettered Fury", "Skulltaker", "Bloodmaster", "Skullmaster", "Blood Throne", "Karanak",
-            "", "Kairos Fateweaver", "Lord of Change", "The Changeling", "The Blue Scribes", "Changecaster", "Fateskimmer", "Fluxmaster",
-            "", "Rotigus", "Great Unclean One", "Epidemius", "Horticulous Slimux", "Poxbringer", "Sloppity Bilepiper", "Spoilpox Scrivener",
-            "", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Herald of Slaanesh on Steed", "Herald of Slaanesh on Seeker Chariot", "Herald of Slaanesh on Exalted Seeker Chariot",
-            "", "Be'Lakor", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings"};
-    private static final String[] Eliteeinträge_Daemons = new String[]{"", "Bloodcrushers", "", "Flamers", "Exalted Flamer", "", "Beasts of Nurgle", "", "Fiends of Slaanesh"};
-    private static final String[] Standardeinträge_Daemons = new String[]{"", "Bloodletters", "", "Horrors", "", "Plaguebearers", "Nurglings", "", "Daemonettes"};
-    private static final String[] Sturmeinträge_Daemons = new String[]{"", "Flesh Hounds", "", "Screamers", "", "Plague Drones", "", "Seekers", "Hellflayer", "", "Furies"};
-    private static final String[] Unterstüzungseinträge_Daemons = new String[]{"", "Skull Cannon", "", "Burning Chariot", "", "Seeker Chariot", "Exalted Seeker Chariot", "", "Soulgrinder"};
-    private static final String[] Befestigungseinträge_Daemons = new String[]{"", "Feculent Gnarlmaws"};
+    //CHAOSDAEMONS
+    private static final String[] HQ_Daemons_No_God = new String[]{"", "Be'Lakor"};
+    private static final String[] HQ_Daemons_All_Gods = new String[]{"", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings"};
+    private static final String[] Sturm_Daemons_All_Gods = new String[]{"", "Furies"};
+    private static final String[] Unterstuezung_Daemons_All_Gods = new String[]{"", "Soulgrinder"};
+    
+    //KHORNE
+    private static final String[] HQ_Daemons_Khorne = new String[]{"", "Skarbrand", "Bloodthirster of Insensate Rage", "Wrath of Khorne Bloodthirster", "Bloodthirster of Unfettered Fury", "Skulltaker", "Bloodmaster", "Skullmaster", "Blood Throne", "Karanak"};
+    private static final String[] Elite_Daemons_Khorne = new String[]{"", "Bloodcrushers"};
+    private static final String[] Standard_Daemons_Khorne = new String[]{"", "Bloodletters"};
+    private static final String[] Sturm_Daemons_Khorne = new String[]{"", "Flesh Hounds"};
+    private static final String[] Unterstuezung_Daemons_Khorne = new String[]{"", "Skull Cannon",};
+    
+    //Tzeentch
+    private static final String[] HQ_Daemons_Tzeentch = new String[]{"", "", "Kairos Fateweaver", "Lord of Change", "The Changeling", "The Blue Scribes", "Changecaster", "Fateskimmer", "Fluxmaster"};
+    private static final String[] Elite_Daemons_Tzeentch = new String[]{"", "Flamers", "Exalted Flamer"};
+    private static final String[] Standard_Daemons_Tzeentch = new String[]{"", "Horrors"};
+    private static final String[] Sturm_Daemons_Tzeentch = new String[]{"", "Screamers"};
+    private static final String[] Unterstuezung_Daemons_Tzeentch = new String[]{"", "Burning Chariot"};
+    
+    //Nurgle
+    private static final String[] HQ_Daemons_Nurgle = new String[]{"", "Rotigus", "Great Unclean One", "Epidemius", "Horticulous Slimux", "Poxbringer", "Sloppity Bilepiper", "Spoilpox Scrivener"};
+    private static final String[] Elite_Daemons_Nurgle = new String[]{"", "Beasts of Nurgle"};
+    private static final String[] Standard_Daemons_Nurgle = new String[]{"", "Plaguebearers", "Nurglings"};
+    private static final String[] Sturm_Daemons_Nurgle = new String[]{"", "Plague Drones"};
+    private static final String[] Befestigung_Daemons_Nurgle = new String[]{"", "Feculent Gnarlmaws"};
+    
+    //Slaanesh
+    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
+    private static final String[] Elite_Daemons_Slaanesh = new String[]{"", "Fiends of Slaanesh"};
+    private static final String[] Standard_Daemons_Slaanesh = new String[]{"", "Daemonettes"};
+    private static final String[] Sturm_Daemons_Slaanesh = new String[]{"", "Seekers", "Hellflayer"};
+    private static final String[] Unterstuezung_Daemons_Slaanesh = new String[]{"", "Seeker Chariot", "Exalted Seeker Chariot"};
 
-
+    //All Daemons
+    private static final String[] HQeinträge_Daemons = uniteUnitList(HQ_Daemons_No_God, HQ_Daemons_All_Gods, HQ_Daemons_Khorne, HQ_Daemons_Tzeentch, HQ_Daemons_Nurgle, HQ_Daemons_Slaanesh);
+    private static final String[] Standardeinträge_Daemons = uniteUnitList(Standard_Daemons_Khorne, Standard_Daemons_Tzeentch, Standard_Daemons_Nurgle, Standard_Daemons_Slaanesh);
+    private static final String[] Eliteeinträge_Daemons = uniteUnitList(Elite_Daemons_Khorne, Elite_Daemons_Tzeentch, Elite_Daemons_Nurgle, Elite_Daemons_Slaanesh);
+    private static final String[] Sturmeinträge_Daemons = uniteUnitList(Sturm_Daemons_Khorne, Sturm_Daemons_Tzeentch, Sturm_Daemons_Nurgle, Sturm_Daemons_Slaanesh, Sturm_Daemons_All_Gods);
+    private static final String[] Unterstüzungseinträge_Daemons = uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods);
+    private static final String[] Befestigungseinträge_Daemons = Befestigung_Daemons_Nurgle;
+    
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
     
@@ -348,7 +371,7 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Questor_Traitoris);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Questor_Traitoris);
-        } else if (getFormationType().equals("Chaosdaemons") || CHAOS_GODS.contains(getFormationType())) {
+        } else if (getFormationType().equals("Chaosdaemons")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Daemons, HQeinträge_Daemons_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);
@@ -357,7 +380,47 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Daemons_FW);
+        } else if (getFormationType().equals("Khorne")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Khorne, HQ_Daemons_All_Gods, new String[]{"","Uraka The Warfiend [FW]", "Samus [FW]"}));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Khorne);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Khorne);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Khorne, Sturm_Daemons_All_Gods));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Anggrath The Unbound [FW]"});
+        }  else if (getFormationType().equals("Tzeentch")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Tzeentch, HQ_Daemons_All_Gods));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Tzeentch);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Tzeentch);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Tzeentch, Sturm_Daemons_All_Gods));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Aetaos'rau'keres [FW]"});
+        }  else if (getFormationType().equals("Slaanesh")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Slaanesh, HQ_Daemons_All_Gods));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Slaanesh);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Slaanesh);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Slaanesh, Sturm_Daemons_All_Gods));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Zarakynel [FW]"});
+        }  else if (getFormationType().equals("Nurgle")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Nurgle, HQ_Daemons_All_Gods, new String[]{"","Mamon Transfigured [FW]", "Corbax Utterblight [FW]"}));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Nurgle);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Nurgle);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Nurgle, Sturm_Daemons_All_Gods, new String[]{"","Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"}));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_All_Gods, new String[]{"","Plague Hulk Of Nurgle [FW]"}));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigung_Daemons_Nurgle);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Scabeiathrax The Bloated [FW]"});
         } else if (getFormationType().equals("The Tainted")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Chaos_Space_Marines, new String[]{"", "Necrosius the Undying [FW]", "Mamon Transfigured [FW]"}, HQeinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));

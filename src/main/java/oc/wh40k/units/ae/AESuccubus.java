@@ -1,5 +1,6 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.WYCH_CULT;
 import oc.Eintrag;
 
 import oc.OptionsGruppeEintrag;
@@ -32,7 +33,7 @@ public class AESuccubus extends Eintrag {
         
         seperator();
 
-        addWarlordTraits("", true, "WYCH CULT");
+        addWarlordTraits("", WYCH_CULT);
 
         complete();
     }

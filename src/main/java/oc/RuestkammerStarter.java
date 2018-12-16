@@ -7,6 +7,7 @@ import org.w3c.dom.Element;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
@@ -76,12 +77,6 @@ public class RuestkammerStarter extends OptionsVater {
         public void windowOpened(WindowEvent e) {
         }
     };
-    private ActionListener closeListenerAction = new ActionListener() {
-        @Override
-        public void actionPerformed(ActionEvent event) {
-            ruestkammerClosed();
-        }
-    };
 
     public RuestkammerStarter(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name) {
         init(ID, lX, lY, cls, name);
@@ -94,6 +89,11 @@ public class RuestkammerStarter extends OptionsVater {
 
     public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung) {
         init(ID, lX, lY, abteilung);
+    }
+
+    public RuestkammerStarter(int id, int randAbstand, int cnt, Class<? extends RuestkammerVater> cls, String name, Set<KeyWord> keywords) {
+        this(id, randAbstand, cnt, cls, name);
+        getKammer().setKeywords(keywords);
     }
 
     public static int vorkommen(String Sa, String b) {  // wie oft b in a vorkommt     Hilfsmethode
@@ -184,7 +184,7 @@ public class RuestkammerStarter extends OptionsVater {
 
         myKammer = loadFaction(cls);
 
-        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, closeListenerAction);
+        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
         myKammer.setzteRefreshListener(ID);
 
         myKammer.setName(name);
@@ -238,7 +238,7 @@ public class RuestkammerStarter extends OptionsVater {
             JOptionPane.showMessageDialog(this.getPanel(), abteilung.getName() + ".class" + BuildaHQ.translate("nicht gefunden. Rüstkammer kann nicht geöffnet werden:") + " " + e.getMessage());
         }
 
-        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, closeListenerAction);
+        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
         myKammer.setzteRefreshListener(ID);
 
         if (!abteilung.getName().equals("")) {

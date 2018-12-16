@@ -18,8 +18,8 @@ public class CHSorcereronSteedofSlaanesh extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Force sword");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Force sword");
         ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
         waffen.initKammer(true, true, true, false);
         waffen.setButtonText("Waffenkammer");

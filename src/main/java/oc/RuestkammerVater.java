@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowListener;
+import java.util.Set;
 
 import static oc.RefreshListener.Priority.RUESTKAMMER_VATER;
 import static oc.RefreshListener.addRefreshListener;
@@ -25,6 +26,10 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
+    protected String defaultCloceCombat = "";
+    protected String defaultRanged = "";
+    protected String type = "";
+	protected Set<KeyWord> keywords;
 
 	public RuestkammerVater() {
 		frame.setLayout(null);
@@ -236,6 +241,34 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
 	public boolean isLegal() {
 		return legal;
+	}
+
+    public void setDefaultCloceCombat(String s) {
+        defaultCloceCombat = s;
+    }
+
+    public void setDefaultRanged(String s) {
+        defaultRanged = s;
+    }
+
+    public void setType(String s) {
+        type = s;
+    }
+
+	public Set<KeyWord> getKeywords() {
+		return keywords;
+	}
+
+	public void setKeywords(Set<KeyWord> keywords) {
+		this.keywords = keywords;
+	}
+	
+	public void removeKeyword(KeyWord key) {
+		keywords.remove(key);
+	}
+	
+	public void addKeyword(KeyWord key) {
+		keywords.add(key);
 	}
 
 }

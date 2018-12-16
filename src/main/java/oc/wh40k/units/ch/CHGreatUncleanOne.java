@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -12,10 +14,15 @@ public class CHGreatUncleanOne extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHGreatUncleanOne() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);
 
         name = "Great Unclean One";
         grundkosten = 0;
         power = 12;
+
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
@@ -35,19 +42,9 @@ public class CHGreatUncleanOne extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", NURGLE);
 
         complete();
 
-    }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

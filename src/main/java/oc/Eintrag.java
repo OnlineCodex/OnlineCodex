@@ -1,5 +1,7 @@
 package oc;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import oc.wh40k.units.Warlordtraits;
 
 import org.slf4j.Logger;
@@ -7,8 +9,10 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Set;
 import java.util.StringTokenizer;
 
+import static com.google.common.collect.Sets.newHashSet;
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
 
@@ -40,8 +44,11 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected RuestkammerStarter warlordTraits;
 	private boolean warlordError;
 	private boolean warlord = false;
+	protected RuestkammerStarter weapons;
+	private final Set<KeyWord> keywords;
 
-	public Eintrag() {
+	public Eintrag(KeyWord... keywords) {
+		this.keywords = Sets.newEnumSet(ImmutableList.copyOf(keywords), KeyWord.class);
 		lKosten.setSize(150, 17);
 		panel.add(lKosten);
 		kostenLabelAktualisieren();
@@ -424,7 +431,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(warlordTraits);
 	}
 	
-	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed, String exclusiveKeyword) {
+	public void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword) {
 		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
 		warlordTraits.initKammer();
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
@@ -436,10 +443,46 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(warlordTraits);
 	}
 	
+	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
+		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
+        weapons.getKammer().setType(name);
+        weapons.initKammer();
+        weapons.setButtonText("Waffen");
+        add(weapons);
+        weapons.setAbwaehlbar(!mandatoryChoice);
+	}
+	
+	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
+		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
+        weapons.getKammer().setType(name);
+        weapons.getKammer().setDefaultRanged(defaultFK);
+        weapons.getKammer().setDefaultCloceCombat(defaultNK);
+        weapons.initKammer();
+        weapons.setButtonText("Waffen");
+        add(weapons);
+        weapons.setAbwaehlbar(!mandatoryChoice);
+	}
+	
+	public RuestkammerVater getWeapons() {
+		return weapons.getKammer();
+	}
+	
 	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
 		ruestkammer.getPanel().setLocation(
                 (int) ruestkammer.getPanel().getLocation().getX(),
                 (int) reference.getPanel().getLocation().getY() + reference.getPanel().getSize().height + 5
         );
+	}
+
+	public Set<KeyWord> getKeywords() {
+		return keywords;
+	}
+
+	protected void addKeyword(KeyWord k) {
+		keywords.add(k);
+	}
+
+	protected void removeKeyword(KeyWord k) {
+		keywords.remove(k);
 	}
 }

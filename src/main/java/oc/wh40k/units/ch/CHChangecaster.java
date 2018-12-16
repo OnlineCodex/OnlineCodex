@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -13,15 +15,14 @@ public class CHChangecaster extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHChangecaster() {
-
+        super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, HORROR, PSYKER, HERALD_OF_TZEENTCH, CHANGECASTER);
         name = "Changecaster";
         grundkosten = getPts("Changecaster");
         power = 4;
 
-        add(waffe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ritual dagger", getPts("Ritual dagger")));
-        waffe1.setSelected(true);
-
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of change", getPts("Staff of change")));
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
 
@@ -35,7 +36,7 @@ public class CHChangecaster extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", TZEENTCH);
 
         complete();
 
@@ -43,8 +44,6 @@ public class CHChangecaster extends Eintrag {
 
     @Override
     public void refreshen() {
-        if (!waffe1.isSelected()) waffe1.setSelected(true);
-        
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

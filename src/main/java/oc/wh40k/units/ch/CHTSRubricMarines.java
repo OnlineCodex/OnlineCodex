@@ -43,8 +43,8 @@ public class CHTSRubricMarines extends Eintrag {
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Sorcerer");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
         ((CHWaffenkammer) Boss.getKammer()).setSorcerer(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Inferno bolt pistol");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultNK("Force stave");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Inferno bolt pistol");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Force stave");
         Boss.initKammer(false, true, false, false);
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Aspiring Sorcerer TS"));

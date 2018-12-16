@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,9 +11,14 @@ public class CHPoxbringer extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public CHPoxbringer() {
+        super(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, PSYKER, HERALD_OF_NURGLE, POXBRINGER);
         name = "Poxbringer";
         grundkosten = getPts("Poxbringer") /*+ getPts("Balesword")*/;
         power = 4;
+
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
 
@@ -25,19 +32,8 @@ public class CHPoxbringer extends Eintrag {
         
         seperator();
         
-        addWarlordTraits("", true);
+        addWarlordTraits("", NURGLE);
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
-
-    }
-
 }

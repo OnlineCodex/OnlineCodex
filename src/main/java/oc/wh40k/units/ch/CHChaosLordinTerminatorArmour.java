@@ -27,8 +27,8 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Combi-bolter");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Power sword");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Combi-bolter");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power sword");
         ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
         ((CHWaffenkammer) waffen.getKammer()).setTerminatorArmour(true);
         waffen.initKammer(true, true, true, false);

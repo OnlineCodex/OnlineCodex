@@ -40,8 +40,8 @@ public class CHNoiseMarines extends Eintrag {
 
         Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Noise Champion");
         ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultFK("Boltgun");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultNK("Bolt pistol");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Boltgun");
+        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Bolt pistol");
         ((CHWaffenkammer) Boss.getKammer()).setNoiseMarine(true);
         Boss.initKammer(true, true, true, true);
         Boss.setGrundkosten(getPts("Noise Champion"));

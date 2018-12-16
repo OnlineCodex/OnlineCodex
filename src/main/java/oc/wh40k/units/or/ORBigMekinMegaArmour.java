@@ -27,8 +27,8 @@ public class ORBigMekinMegaArmour extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("Kustom mega-blasta"); //TODO: Durch Killasäga oder Liste der Schießeisän
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("Power klaw");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom mega-blasta"); //TODO: Durch Killasäga oder Liste der Schießeisän
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawFK(true);
         waffen.initKammer(false, true, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");

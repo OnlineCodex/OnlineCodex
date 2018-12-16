@@ -29,8 +29,8 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultFK("Combi-bolter");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultNK("Force sword");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Combi-bolter");
+        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Force sword");
         ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
         ((CHWaffenkammer) waffen.getKammer()).setTerminatorArmour(true);
         ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);

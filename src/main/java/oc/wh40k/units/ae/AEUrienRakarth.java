@@ -2,6 +2,8 @@ package oc.wh40k.units.ae;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.HAEMUNCULUS_COVEN;
+
 public class AEUrienRakarth extends Eintrag {
 
     public AEUrienRakarth() {
@@ -11,7 +13,7 @@ public class AEUrienRakarth extends Eintrag {
 
         seperator();
         
-        addWarlordTraits("Prophets of Flesh: Diabolical Soothsayer", true, "HAEMUNCULUS COVEN");
+        addWarlordTraits("Prophets of Flesh: Diabolical Soothsayer", HAEMUNCULUS_COVEN);
 
         complete();
     }

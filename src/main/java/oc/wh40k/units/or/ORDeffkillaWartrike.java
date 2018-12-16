@@ -20,8 +20,8 @@ public class ORDeffkillaWartrike extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultFK("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultNK("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("no weapon");
         waffen.initKammer(false, false, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

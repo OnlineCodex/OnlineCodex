@@ -2,6 +2,7 @@ package oc;
 
 import javax.swing.*;
 import javax.swing.border.Border;
+
 import java.awt.*;
 import java.util.HashMap;
 
@@ -152,4 +153,5 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
             put("SK", "VOLKSkitarii");
         }
     };
+    
 }

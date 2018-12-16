@@ -2,6 +2,8 @@ package oc.wh40k.units.ch;
 
 import oc.Eintrag;
 
+import static oc.KeyWord.NURGLE;
+
 public class CHCorbaxUtterblight extends Eintrag {
 
     public CHCorbaxUtterblight() {
@@ -9,6 +11,10 @@ public class CHCorbaxUtterblight extends Eintrag {
         name = "Cor'bax Utterblight";
         grundkosten = getPts("Cor'bax Utterblight");
         power = 12;
+        
+        seperator();
+
+        addWarlordTraits("", NURGLE);
 
         complete();
 
