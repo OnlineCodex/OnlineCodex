@@ -10,13 +10,13 @@ public class CHBloodthirsterofUnfetteredFury extends Eintrag {
     public CHBloodthirsterofUnfetteredFury() {
 
         name = "Bloodthirster of Unfettered Fury";
-        grundkosten = getPts("Bloodthirster Of Insensate Rage");
+        grundkosten = getPts("Bloodthirster of Unfettered Fury");
         power = 17;
         setKeywords(ImmutableSet.of(CHAOS, KHORNE, DAEMON, CHARACTER, MONSTER, BLOODTHIRSTER, FLY));
         
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(CHWaffenkammerCD.class, true);
         
         seperator();
         

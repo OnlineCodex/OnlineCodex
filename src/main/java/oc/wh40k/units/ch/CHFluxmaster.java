@@ -8,9 +8,6 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHFluxmaster extends Eintrag {
-
-    OptionsEinzelUpgrade waffe1;
-    OptionsEinzelUpgrade waffe2;
     RuestkammerStarter psychicPowers;
 
     public CHFluxmaster() {
@@ -23,11 +20,6 @@ public class CHFluxmaster extends Eintrag {
         seperator();
         
         addWeapons(CHWaffenkammerCD.class, false);
-
-        add(waffe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ritual dagger", getPts("Ritual dagger")));
-        waffe1.setSelected(true);
-
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of change", getPts("Staff of change")));
 
         seperator();
 
@@ -44,16 +36,5 @@ public class CHFluxmaster extends Eintrag {
         addWarlordTraits("", true, TZEENTCH);
 
         complete();
-
-    }
-
-    @Override
-    public void refreshen() {
-        if (!waffe1.isSelected()) waffe1.setSelected(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

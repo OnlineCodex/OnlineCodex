@@ -262,5 +262,13 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	public void setKeywords(Set<String> keywords) {
 		this.keywords = keywords;
 	}
+	
+	public void removeKeyword(String key) {
+		keywords.remove(key);
+	}
+	
+	public void addKeyword(String key) {
+		keywords.add(key);
+	}
 
 }

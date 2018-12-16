@@ -41,7 +41,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected RuestkammerStarter warlordTraits;
 	private boolean warlordError;
 	private boolean warlord = false;
-	protected RuestkammerStarter waffen;
+	protected RuestkammerStarter weapons;
 	protected Set<String> keywords;
 
 	public Eintrag() {
@@ -440,25 +440,29 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 	
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
-		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
-        waffen.getKammer().setType(name);
-        waffen.getKammer().setKeywords(keywords);
-        waffen.initKammer();
-        waffen.setButtonText("Waffen");
-        add(waffen);
-        waffen.setAbwaehlbar(!mandatoryChoice);
+		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        weapons.getKammer().setType(name);
+        weapons.getKammer().setKeywords(keywords);
+        weapons.initKammer();
+        weapons.setButtonText("Waffen");
+        add(weapons);
+        weapons.setAbwaehlbar(!mandatoryChoice);
 	}
 	
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
-		waffen = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
-        waffen.getKammer().setType(name);
-        waffen.getKammer().setKeywords(keywords);
-        waffen.getKammer().setDefaultFK(defaultFK);
-        waffen.getKammer().setDefaultNK(defaultNK);
-        waffen.initKammer();
-        waffen.setButtonText("Waffen");
-        add(waffen);
-        waffen.setAbwaehlbar(!mandatoryChoice);
+		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "");
+        weapons.getKammer().setType(name);
+        weapons.getKammer().setKeywords(keywords);
+        weapons.getKammer().setDefaultFK(defaultFK);
+        weapons.getKammer().setDefaultNK(defaultNK);
+        weapons.initKammer();
+        weapons.setButtonText("Waffen");
+        add(weapons);
+        weapons.setAbwaehlbar(!mandatoryChoice);
+	}
+	
+	public RuestkammerVater getWeapons() {
+		return weapons.getKammer();
 	}
 	
 	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){

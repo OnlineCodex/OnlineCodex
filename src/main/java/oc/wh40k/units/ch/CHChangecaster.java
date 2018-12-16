@@ -25,11 +25,6 @@ public class CHChangecaster extends Eintrag {
         
         addWeapons(CHWaffenkammerCD.class, false);
 
-        add(waffe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ritual dagger", getPts("Ritual dagger")));
-        waffe1.setSelected(true);
-
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of change", getPts("Staff of change")));
-
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -50,8 +45,6 @@ public class CHChangecaster extends Eintrag {
 
     @Override
     public void refreshen() {
-        if (!waffe1.isSelected()) waffe1.setSelected(true);
-        
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

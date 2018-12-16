@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
-import com.google.common.collect.ImmutableSet;
+import java.util.Arrays;
+import java.util.HashSet;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
@@ -11,13 +12,14 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     OptionsEinzelUpgrade waffe2;
     OptionsUpgradeGruppe mark;
     RuestkammerStarter psychicPowers;
+    int lastMark = -1;
 
     public CHDaemonPrinceofChaos() {
 
         name = "Daemon Prince of Chaos";
         grundkosten = getPts("Daemon Prince of Chaos");
         power = 10;
-        setKeywords(ImmutableSet.of(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS));
+        setKeywords(new HashSet<String>(Arrays.asList(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS)));
         
         seperator();
 
@@ -53,5 +55,32 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     @Override
     public void refreshen() {
         psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && (mark.getAnzahl() != 0));
+        
+        if(mark.getSelectedIndex() != lastMark) {
+        	lastMark = mark.getSelectedIndex();
+	        getWeapons().removeKeyword(KHORNE);
+	        getWeapons().removeKeyword(NURGLE);
+	        getWeapons().removeKeyword(TZEENTCH);
+	        getWeapons().removeKeyword(SLAANESH);
+	        getWeapons().removeKeyword(PSYKER);
+	        
+	        if(mark.isSelected("Mark of Khorne")) {
+	        	getWeapons().addKeyword(KHORNE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Nurgle")) {
+	        	getWeapons().addKeyword(NURGLE);
+	        	getWeapons().addKeyword(PSYKER);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Tzeentch")) {
+	        	getWeapons().addKeyword(TZEENTCH);
+	        	getWeapons().addKeyword(PSYKER);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Slaanesh")) {
+	        	getWeapons().addKeyword(SLAANESH);
+	        	getWeapons().addKeyword(PSYKER);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        }
+	        RefreshListener.fireRefresh();
+        }
     }
 }

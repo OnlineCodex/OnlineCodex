@@ -45,7 +45,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    			hellforgedSword = true;
 	    		} else if(ogE.get(i).getName().equals("Blade of blood")) {
 	    			bladeOfBlood = true;
-	    		} else if(ogE.get(i).getName().equals("Axe of khorne")) {
+	    		} else if(ogE.get(i).getName().equals("Axe of Khorne")) {
 	    			axeOfKhorne = true;
 	    		} else if(ogE.get(i).getName().equals("Daemonic axe")) {
 	    			daemonicAxe = true;
@@ -60,19 +60,32 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    		}
 	    	}
 	    	
-	    	if(hellforgedSword || bladeOfBlood) {
+	    	if(bladeOfBlood) {
+        		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Blade of blood")).setRelic(true));
+	    	} else if (hellforgedSword) {
         		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Hellforged sword")).setRelic(true));
 	    	}
-	    	if(axeOfKhorne || daemonicAxe) {
+	    	
+	    	
+	    	if(axeOfKhorne) {
         		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Axe of Khorne")).setRelic(true));
+	    	} else if(daemonicAxe) {
+        		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Daemonic Axe")).setRelic(true));
 	    	}
-	    	if(rodOfSorcery || staffOfChange) {
+	    	
+	    	if(rodOfSorcery) {
         		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Rod of Sorcery")).setRelic(true));
+	    	} else if(staffOfChange) {
+        		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Staff of change")).setRelic(true));
 	    	}
+	    	
 	    	if(plaguesword) {
-        		ogE.addElement(new OptionsGruppeEintrag("Corruption", getPts("Plaguesword")).setRelic(true));
+        		ogE.addElement(new OptionsGruppeEintrag("Corruption", getPts("Plaguesword (CD)")).setRelic(true));
 	    	}
-	    	if(hellforgedSword || witstealerSword) {
+	    	
+	    	if(witstealerSword) {
+        		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Witstealer sword")).setRelic(true));
+	    	} else if(hellforgedSword) {
         		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Hellforged sword")).setRelic(true));
 	    	}
     	}
@@ -100,13 +113,39 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
 	        addRelics();
 	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-	        nkwaffe.setSelected(0, true);
 	
 	        seperator();
 	
 	        ogE.addElement(new OptionsGruppeEintrag("Warp bolter", getPts("Warp bolter")));
 	        addRelics();
 	        add(fkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        } else if(keywords.contains(BLOODMASTER) || keywords.contains(SKULLMASTER) || keywords.contains(BLOOD_THRONE)) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Blade of blood", getPts("Blade of blood")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        nkwaffe.setSelected(0, true);
+        } else if(type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury")) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Axe of Khorne", getPts("Axe of Khorne")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        nkwaffe.setSelected(0, true);
+        } else if(keywords.contains(LORD_OF_CHANGE)) {
+            ogE.addElement(new OptionsGruppeEintrag("Baleful sword", getPts("Baleful sword")));
+            ogE.addElement(new OptionsGruppeEintrag("Rod of sorcery", getPts("Rod of sorcery")));
+	        addRelics();
+            add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        } else if(keywords.contains(CHANGECASTER) || keywords.contains(FATESKIMMER) || keywords.contains(FLUXMASTER)) {
+        	ogE.addElement(new OptionsGruppeEintrag("Staff of change", getPts("Staff of change")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        } else if(keywords.contains(SPOILPOX_SCRIVENER)) {
+        	ogE.addElement(new OptionsGruppeEintrag("Plaguesword", getPts("Plaguesword (CD)")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        } else if(keywords.contains(KEEPER_OF_SECRETS)) {
+        	ogE.addElement(new OptionsGruppeEintrag("Witstealer sword", getPts("Witstealer sword")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
     	
         setUeberschrift("Waffen");
@@ -115,33 +154,28 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	checkBuildaVater();
-        String army = buildaVater.getFormationType();
-    	boolean undivided = keywords.contains(ALLEGIANCE) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
-    	boolean khorne = army.equals("Khorne") || keywords.contains(KHORNE) || undivided;
-    	boolean tzeentch = army.equals("Tzeentch") || keywords.contains(TZEENTCH) || undivided;
-    	boolean nurgle = army.equals("Nurgle") || keywords.contains(NURGLE) || undivided;
-    	boolean slaanesh = army.equals("Slaanesh") || keywords.contains(SLAANESH) || undivided;
-    	
-    	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && khorne && keywords.contains(MONSTER));
-    	theCrimsonCrown.setAktiv((chosenRelic == null || theCrimsonCrown.isSelected()) && khorne);
-    	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && tzeentch && keywords.contains(PSYKER));
+    	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && keywords.contains(KHORNE) && keywords.contains(MONSTER));
+    	theCrimsonCrown.setAktiv((chosenRelic == null || theCrimsonCrown.isSelected()) && keywords.contains(KHORNE));
+    	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && keywords.contains(TZEENTCH) && keywords.contains(PSYKER));
     	soulBane.setAktiv((chosenRelic == null || soulBane.isSelected()) && keywords.contains(HERALD_OF_TZEENTCH));
-    	theImpossibleRobe.setAktiv((chosenRelic == null || theImpossibleRobe.isSelected()) && tzeentch);
-    	hornofNurglesRot.setAktiv((chosenRelic == null || hornofNurglesRot.isSelected()) && nurgle);
-    	theEntropicKnell.setAktiv((chosenRelic == null || theEntropicKnell.isSelected()) && nurgle);
-    	theForbiddenGem.setAktiv((chosenRelic == null || theForbiddenGem.isSelected()) && slaanesh);
-    	theMarkofExcess.setAktiv((chosenRelic == null || theMarkofExcess.isSelected()) && slaanesh);
+    	theImpossibleRobe.setAktiv((chosenRelic == null || theImpossibleRobe.isSelected()) && keywords.contains(TZEENTCH));
+    	hornofNurglesRot.setAktiv((chosenRelic == null || hornofNurglesRot.isSelected()) && keywords.contains(NURGLE));
+    	theEntropicKnell.setAktiv((chosenRelic == null || theEntropicKnell.isSelected()) && keywords.contains(NURGLE));
+    	theForbiddenGem.setAktiv((chosenRelic == null || theForbiddenGem.isSelected()) && keywords.contains(SLAANESH));
+    	theMarkofExcess.setAktiv((chosenRelic == null || theMarkofExcess.isSelected()) && keywords.contains(SLAANESH));
     	slothfulClaws.setAktiv((chosenRelic == null || slothfulClaws.isSelected()) && keywords.contains(HERALD_OF_SLAANESH));
     	
     	if(nkwaffe != null) {
-    		nkwaffe.setAktiv("A'rgath, the King of Blades", (chosenRelic == null || nkwaffe.isSelected("A'rgath, the King of Blades")) && khorne);
-    		nkwaffe.setAktiv("Skullreaver", (chosenRelic == null || nkwaffe.isSelected("Skullreaver")) && khorne);
-    		nkwaffe.setAktiv("The Everstave", (chosenRelic == null || nkwaffe.isSelected("The Everstave")) && tzeentch);
-    		nkwaffe.setAktiv("Corruption", (chosenRelic == null || nkwaffe.isSelected("Corruption")) && nurgle);
-    		nkwaffe.setAktiv("Soulstealer", (chosenRelic == null || nkwaffe.isSelected("Soulstealer")) && slaanesh);
+    		nkwaffe.setAktiv("A'rgath, the King of Blades", (chosenRelic == null || nkwaffe.isSelected("A'rgath, the King of Blades")) && keywords.contains(KHORNE));
+    		nkwaffe.setAktiv("Skullreaver", (chosenRelic == null || nkwaffe.isSelected("Skullreaver")) && keywords.contains(KHORNE));
+    		nkwaffe.setAktiv("The Everstave", (chosenRelic == null || nkwaffe.isSelected("The Everstave")) && keywords.contains(TZEENTCH));
+    		nkwaffe.setAktiv("Corruption", (chosenRelic == null || nkwaffe.isSelected("Corruption")) && keywords.contains(NURGLE));
+    		nkwaffe.setAktiv("Soulstealer", (chosenRelic == null || nkwaffe.isSelected("Soulstealer")) && keywords.contains(SLAANESH));
+    		
+    		if(keywords.contains(BLOODMASTER) || type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury") || keywords.contains(SPOILPOX_SCRIVENER) || keywords.contains(KEEPER_OF_SECRETS)) {
+    			nkwaffe.alwaysSelected();
+    		}
     	}
-    	
     }
 
 }
