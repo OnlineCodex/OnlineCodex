@@ -1,5 +1,7 @@
 package oc.wh40k.units.ch;
 
+import org.omg.PortableServer.POAPackage.WrongAdapterHelper;
+
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -45,7 +47,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    			hellforgedSword = true;
 	    		} else if(ogE.get(i).getName().equals("Blade of blood")) {
 	    			bladeOfBlood = true;
-	    		} else if(ogE.get(i).getName().equals("Axe of khorne")) {
+	    		} else if(ogE.get(i).getName().equals("Axe of Khorne")) {
 	    			axeOfKhorne = true;
 	    		} else if(ogE.get(i).getName().equals("Daemonic axe")) {
 	    			daemonicAxe = true;
@@ -60,19 +62,30 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    		}
 	    	}
 	    	
-	    	if(hellforgedSword || bladeOfBlood) {
+	    	if(bladeOfBlood) {
+        		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Blade of blood")).setRelic(true));
+	    	} else if (hellforgedSword) {
         		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Hellforged sword")).setRelic(true));
 	    	}
-	    	if(axeOfKhorne || daemonicAxe) {
+	    	
+	    	
+	    	if(axeOfKhorne) {
         		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Axe of Khorne")).setRelic(true));
+	    	} else if(daemonicAxe) {
+        		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Daemonic Axe")).setRelic(true));
 	    	}
+	    	
 	    	if(rodOfSorcery || staffOfChange) {
         		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Rod of Sorcery")).setRelic(true));
 	    	}
+	    	
 	    	if(plaguesword) {
         		ogE.addElement(new OptionsGruppeEintrag("Corruption", getPts("Plaguesword")).setRelic(true));
 	    	}
-	    	if(hellforgedSword || witstealerSword) {
+	    	
+	    	if(witstealerSword) {
+        		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Witstealer sword")).setRelic(true));
+	    	} else if(hellforgedSword) {
         		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Hellforged sword")).setRelic(true));
 	    	}
     	}
@@ -100,13 +113,22 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
 	        addRelics();
 	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-	        nkwaffe.setSelected(0, true);
 	
 	        seperator();
 	
 	        ogE.addElement(new OptionsGruppeEintrag("Warp bolter", getPts("Warp bolter")));
 	        addRelics();
 	        add(fkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        } else if(keywords.contains(BLOODMASTER) || keywords.contains(SKULLMASTER) || keywords.contains(BLOOD_THRONE)) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Blade of blood", getPts("Blade of blood")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        nkwaffe.setSelected(0, true);
+        } else if(type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury")) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Axe of Khorne", getPts("Axe of Khorne")));
+	        addRelics();
+	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        nkwaffe.setSelected(0, true);
         }
     	
         setUeberschrift("Waffen");
@@ -140,7 +162,13 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     		nkwaffe.setAktiv("The Everstave", (chosenRelic == null || nkwaffe.isSelected("The Everstave")) && tzeentch);
     		nkwaffe.setAktiv("Corruption", (chosenRelic == null || nkwaffe.isSelected("Corruption")) && nurgle);
     		nkwaffe.setAktiv("Soulstealer", (chosenRelic == null || nkwaffe.isSelected("Soulstealer")) && slaanesh);
+    		
+    		if(!keywords.contains(DAEMON_PRINCE_OF_CHAOS)) {
+    			nkwaffe.alwaysSelected();
+    		}
     	}
+    	
+    	
     	
     }
 
