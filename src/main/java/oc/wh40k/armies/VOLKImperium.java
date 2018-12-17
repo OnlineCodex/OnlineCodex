@@ -79,7 +79,7 @@ public class VOLKImperium extends BuildaVater {
 
     //SKITARII
     private static final String[] Standardeinträge_Skitarii = new String[]{"", "Skitarii Rangers", "Skitarii Vanguard"};
-    private static final String[] Eliteeinträge_Skitarii = new String[]{"", "Sicarian Infiltrators", "Sicarian Ruststalkers"};
+    private static final String[] Eliteeinträge_Skitarii = new String[]{"", "Sicarian Infiltrators", "Sicarian Ruststalkers", "", "Secutarii Hoplites", "Secutarii Peltasts"};
     private static final String[] Sturmeinträge_Skitarii = new String[]{"", "Ironstrider Ballistarii", "Sydonian Dragoons"};
     private static final String[] Unterstützungseinträge_Skitarii = new String[]{"", "Onager Dunecrawler"};
 
@@ -90,7 +90,8 @@ public class VOLKImperium extends BuildaVater {
             Eliteeinträge_Cult_Mechanicus, Eliteeinträge_Skitarii), new String[]{"", "Servitors"});
     private static final String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
     private static final String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
-
+    private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
+    
     //Questor Imperialis
     private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
     private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
@@ -168,7 +169,7 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
             "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
             "Land Raider Crusader", "Land Raider Redeemer"};
-    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor",};
+    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Assault Drill"};
     private static final String[] Fliegereinträge_SM = new String[]{"", "Stormhawk Interceptor", "Stormtalon Gunship", "Stormraven Gunship",};
     private static final String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
 
@@ -433,6 +434,7 @@ public class VOLKImperium extends BuildaVater {
                     Unterstützungseinträge_Adeptus_Custodes));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AA_komplett,
                     Transporteinträge_AM_komplett,
+                    Transporteinträge_Adeptus_Mechanicus,
                     Transporteinträge_Adeptus_Ministorum,
                     Transporteinträge_Adeptus_Astra_Telepathica));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AA_komplett,
@@ -685,7 +687,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});

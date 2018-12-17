@@ -27,7 +27,7 @@ public class IMSkitariiRangers extends Eintrag {
         seperator();
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Ranger Alpha");
-        rkBoss.initKammer(false, true);
+        rkBoss.initKammer(false, true, false, false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
         rkBoss.setAbwaehlbar(false);
