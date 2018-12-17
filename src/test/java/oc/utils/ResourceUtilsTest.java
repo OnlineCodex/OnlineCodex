@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 
 import static java.lang.ClassLoader.getSystemResource;
 import static java.util.stream.Collectors.toList;
-import static oc.utils.ResourceUtils.sanitzeKey;
+import static oc.utils.ResourceUtils.sanitizeKey;
 import static org.junit.Assert.*;
 
 @RunWith(JUnitParamsRunner.class)
@@ -25,17 +25,18 @@ public class ResourceUtilsTest {
     public void testLoadPointsNoCollision() {
         Map<String, Integer> points = ResourceUtils.loadPoints(
                 e -> fail(String.format("unexpected collision: %s", e)),
-                Stream.of("/oc/wh40k/indices/yn.yaml",
-                    "/oc/wh40k/indices/oa.yaml"));
+                Stream.of(
+                        "/oc/wh40k/indices/yn.yaml",
+                        "/oc/wh40k/indices/oa.yaml"));
         assertEquals(
                 ImmutableMap.<String, Integer>builder()
-                    .put(sanitzeKey("The Visarch"), 141)
-                    .put(sanitzeKey("The Yncarne"), 337)
-                    .put(sanitzeKey("Yvraine"), 132)
-                    .put(sanitzeKey("Callidus Assassin"), 70)
-                    .put(sanitzeKey("Culexus Assassin"), 85)
-                    .put(sanitzeKey("Eversor Assassin"), 70)
-                    .put(sanitzeKey("Vindicare Assassin"), 80)
+                    .put(sanitizeKey("The Visarch"), 141)
+                    .put(sanitizeKey("The Yncarne"), 337)
+                    .put(sanitizeKey("Yvraine"), 132)
+                    .put(sanitizeKey("Callidus Assassin"), 70)
+                    .put(sanitizeKey("Culexus Assassin"), 85)
+                    .put(sanitizeKey("Eversor Assassin"), 70)
+                    .put(sanitizeKey("Vindicare Assassin"), 80)
                     .build(),
                 points
         );

@@ -75,13 +75,13 @@ public final class ResourceUtils {
                 loadPointsResource(url)
                         .entrySet()
                         .stream()
-                        .forEach(e -> table.put(url, sanitzeKey(e.getKey()), e.getValue()));
+                        .forEach(e -> table.put(url, sanitizeKey(e.getKey()), e.getValue()));
             }
         }
         return table;
     }
 
-    public static String sanitzeKey(String key) {
+    public static String sanitizeKey(String key) {
         return key
                 .replaceAll("[-\\s]+", "")
                 .toLowerCase();
