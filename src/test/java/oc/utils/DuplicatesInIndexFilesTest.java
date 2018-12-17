@@ -130,7 +130,7 @@ public class DuplicatesInIndexFilesTest {
                 .collect(toList());
 
         if (!duplicates.isEmpty()) {
-            fail(duplicates.stream()
+            fail("\n" + duplicates.stream()
                     .map(e -> e.getKey() + ":\n" + e.getValue().entrySet()
                             .stream()
                             .map(e0 -> "  " + e0.getKey() + " -> " + e0.getValue())
