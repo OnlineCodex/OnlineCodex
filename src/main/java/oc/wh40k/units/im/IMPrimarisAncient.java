@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -9,9 +11,10 @@ public class IMPrimarisAncient extends Eintrag {
     boolean spacewolves = false;
     
     public IMPrimarisAncient() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, ANCIENT);
     	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");
         name = "Primaris Ancient";
-        grundkosten = getPts("Primaris Ancient") + getPts("Bolt pistol (SM)") + getPts("Bolt rifle") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
+        grundkosten = getPts("Primaris Ancient") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         
         if(spacewolves) {
         	power = 5;
@@ -22,15 +25,13 @@ public class IMPrimarisAncient extends Eintrag {
         seperator();
 
         if(spacewolves) {
-	        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-	        ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Primaris Ancient");
-	        waffenUndReliquien.initKammer();
-	        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
-	        add(waffenUndReliquien);
-	        waffenUndReliquien.setAbwaehlbar(false);
-
-	        seperator();
+        	grundkosten += getPts("Bolt pistol (SM)") + getPts("Bolt rifle");
+            addWeapons(IMSpaceWolvesRuestkammer.class, true);
+        } else {
+            addWeapons(IMSpaceMarinesRuestkammer.class, true);
         }
+        
+        seperator();
         
 		addWarlordTraits("", true);
         

@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.*;
 
 public class IMPrimarisCaptain extends Eintrag {
@@ -7,27 +9,19 @@ public class IMPrimarisCaptain extends Eintrag {
     RuestkammerStarter waffenUndReliquien;
 
     public IMPrimarisCaptain() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, CAPTAIN);
         name = "Primaris Captain";
         grundkosten = getPts("Primaris Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol");
-
-        ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", getPts("Master crafted auto bolt rifle")));
-        ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", getPts("Master crafted stalker bolt rifle")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        power = 6;
+        
         seperator();
-
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword (SM)")));
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        power = 6;
-        o1.alwaysSelected();
     }
 }

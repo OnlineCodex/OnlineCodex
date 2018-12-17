@@ -84,4 +84,27 @@ public enum  KeyWord {
     HIGH_MARSHAL_HELBRECHT,
     EMPERORS_CHAMPION,
     GRIMALDUS,
+    WHITE_SCARS,
+    KORSARRO_KHAN,
+    SALAMANDERS,
+    VULKAN_HESTAN,
+    RAVEN_GUARD,
+    JUMP_PACK,
+    KAYVAAN_SHRIKE,
+    CHAPTER, 
+    MK_X_GRAVIS, 
+    PRIMARIS,
+    BIKER,
+    TECHMARINE,
+    ANCIENT,
+    CHAPTER_ANCIENT,
+    CHAPTER_CHAMPION,
+    COMPANY_ANCIENT,
+    APOTHECARY,
+    COMPANY_CHAMPION, 
+    PRIMARCH, 
+    ROBOUTE_GUILLIMAN,
+    
+    //Special keyword, when I have no idea where the unit is actually from atm
+	TODO
 }

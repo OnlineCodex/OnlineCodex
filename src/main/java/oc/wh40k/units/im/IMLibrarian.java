@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -8,10 +9,10 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarian extends Eintrag {
     OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
     RuestkammerStarter psychicPowers;
 
     public IMLibrarian() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PSYKER, LIBRARIAN);
         name = "Librarian";
         grundkosten = getPts("Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
@@ -20,13 +21,8 @@ public class IMLibrarian extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Librarian with Jump Pack") - getPts("Librarian")));
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Librarian");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 
@@ -53,5 +49,10 @@ public class IMLibrarian extends Eintrag {
     @Override
     public void refreshen() {
         power = 6 + (jump.isSelected() ? 1 : 0);
+        
+        if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
+        }
     }
 }

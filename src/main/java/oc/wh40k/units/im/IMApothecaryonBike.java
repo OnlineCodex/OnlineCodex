@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
@@ -9,23 +10,17 @@ public class IMApothecaryonBike extends Eintrag {
     RuestkammerStarter waffenUndReliquien;
 
     public IMApothecaryonBike() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, BIKER, APOTHECARY);
         name = "Apothecary on Bike";
         grundkosten = getPts("Apothecary on Bike") +
                 getPts("Frag grenade (SM)") +
                 getPts("Krak grenade (SM)") +
-                getPts("Chainsword (SM)") +
-                getPts("Bolt pistol (SM)") +
                 getPts("Twin boltgun");
         power = 4;
         
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Apothecary on Bike");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
         
