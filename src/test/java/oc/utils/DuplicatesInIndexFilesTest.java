@@ -23,12 +23,12 @@ import static oc.utils.ResourceUtils.sanitizeKey;
 import static org.junit.Assert.fail;
 
 @RunWith(JUnitParamsRunner.class)
-public class ResourceIT {
+public class DuplicatesInIndexFilesTest {
 
     private final ObjectMapper om;
     private final MapLikeType mapType;
 
-    public ResourceIT() {
+    public DuplicatesInIndexFilesTest() {
         om = new ObjectMapper(new YAMLFactory());
         om.configure(JsonParser.Feature.STRICT_DUPLICATE_DETECTION, true);
 
@@ -54,7 +54,8 @@ public class ResourceIT {
     private void assertNoDuplicates(Table<String, String, Integer> entries) {
         List<List<Table.Cell<String, String, Integer>>> conflicts = entries.columnKeySet()
                 .stream()
-                .map(ResourceIT::simplifyKey)
+                .map(DuplicatesInIndexFilesTest::simplifyKey)
+                .distinct()
                 .map(k -> entries.cellSet()
                         .stream()
                         .filter(e -> k.equals(simplifyKey(e.getColumnKey())))
