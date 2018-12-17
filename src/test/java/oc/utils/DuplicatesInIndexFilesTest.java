@@ -83,13 +83,22 @@ public class DuplicatesInIndexFilesTest {
     }
 
     @Test
-    public void testDuplicate() throws Exception {
+    public void testWarnDuplicate() throws Exception {
         Table<String, String, Integer> t = HashBasedTable.create();
         for (String f : indexFiles()) {
             Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
         warnSimplifiedDuplicates(t);
+    }
+
+    @Test
+    public void testDuplicate() throws Exception {
+        Table<String, String, Integer> t = HashBasedTable.create();
+        for (String f : indexFiles()) {
+            Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
+            m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
+        }
         List<Map.Entry<String, Map<String, Integer>>> duplicates = t.columnMap().entrySet().stream()
                 .filter(e -> e.getValue().size() != 1)
                 .collect(toList());
