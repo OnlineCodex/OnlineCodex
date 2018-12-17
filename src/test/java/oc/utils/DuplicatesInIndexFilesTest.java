@@ -11,6 +11,8 @@ import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -24,6 +26,8 @@ import static org.junit.Assert.fail;
 
 @RunWith(JUnitParamsRunner.class)
 public class DuplicatesInIndexFilesTest {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(DuplicatesInIndexFilesTest.class);
 
     private final ObjectMapper om;
     private final MapLikeType mapType;
@@ -48,10 +52,10 @@ public class DuplicatesInIndexFilesTest {
         Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(file), mapType);
         Table<String, String, Integer> t = HashBasedTable.create();
         m.entrySet().forEach(e -> t.put(file, e.getKey(), e.getValue()));
-        assertNoDuplicates(t);
+        warnSimplifiedDuplicates(t);
     }
 
-    private void assertNoDuplicates(Table<String, String, Integer> entries) {
+    private void warnSimplifiedDuplicates(Table<String, String, Integer> entries) {
         List<List<Table.Cell<String, String, Integer>>> conflicts = entries.columnKeySet()
                 .stream()
                 .map(DuplicatesInIndexFilesTest::simplifyKey)
@@ -63,7 +67,7 @@ public class DuplicatesInIndexFilesTest {
                 .filter(ex -> ex.size() != 1)
                 .collect(toList());
         if (!conflicts.isEmpty()) {
-            fail("There are duplicate keys that resolve to the same simplified key\n\n"
+            LOGGER.error("There are duplicate keys that resolve to the same simplified key\n\n"
                     + conflicts.stream()
                          .map(c -> simplifyKey(c.get(0).getColumnKey()) + ":\n"
                                  + c.stream()
@@ -85,6 +89,18 @@ public class DuplicatesInIndexFilesTest {
             Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
-        assertNoDuplicates(t);
+        warnSimplifiedDuplicates(t);
+        List<Map.Entry<String, Map<String, Integer>>> duplicates = t.columnMap().entrySet().stream()
+                .filter(e -> e.getValue().size() != 1)
+                .collect(toList());
+
+        if (!duplicates.isEmpty()) {
+            fail(duplicates.stream()
+                    .map(e -> e.getKey() + ":\n" + e.getValue().entrySet()
+                            .stream()
+                            .map(e0 -> "  " + e0.getKey() + " -> " + e0.getValue())
+                            .collect(joining("\n")))
+                    .collect(joining("\n\n")));
+        }
     }
 }
