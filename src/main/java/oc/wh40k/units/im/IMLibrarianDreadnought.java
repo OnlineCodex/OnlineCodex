@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -12,6 +14,7 @@ public class IMLibrarianDreadnought extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public IMLibrarianDreadnought() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, VEHICLE, DREADNOUGHT, LIBRARIAN, PSYKER, LIBRARIAN_DREADNOUGHT);
         name = "Librarian Dreadnought";
         grundkosten = getPts("Librarian Dreadnought") + getPts("Furioso force halberd") + getPts("Furioso fist (single)");
         power = 10;
@@ -22,6 +25,10 @@ public class IMLibrarianDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", "Heavy flamer", getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        seperator();
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 
@@ -38,14 +45,5 @@ public class IMLibrarianDreadnought extends Eintrag {
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        o2.alwaysSelected();
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

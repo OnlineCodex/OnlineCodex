@@ -104,6 +104,22 @@ public enum  KeyWord {
     COMPANY_CHAMPION, 
     PRIMARCH, 
     ROBOUTE_GUILLIMAN,
+    BLOOD_ANGELS,
+    COMMANDER_DANTE,
+    FLESH_TEARERS,
+    GABRIEL_SETH,
+    THE_SANGUINOR, 
+    SANGUINARY_PRIEST, 
+    BROTHER_CORBULO,
+    CHIEF_LIBRARIAN_MEPHISTON, 
+    VEHICLE, 
+    DREADNOUGHT,
+    LIBRARIAN_DREADNOUGHT,
+    ASTORATH,
+    DEATH_COMPANY,
+    LEMARTES,
+    TYCHO,
+    SANGUINARY_NOVITIATE,
     
     //Special keyword, when I have no idea where the unit is actually from atm
 	TODO

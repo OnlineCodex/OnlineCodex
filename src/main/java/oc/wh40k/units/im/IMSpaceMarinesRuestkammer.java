@@ -107,8 +107,8 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        psyker = PSYKERS.contains(type);
-        character = CHARACTERS.contains(type);
+        psyker = PSYKERS.contains(type) || keywords.contains(PSYKER);
+        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         captain = type.startsWith("Captain");
         int offsetX = randAbstand;
         int oe1Offset = cnt;
@@ -369,7 +369,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Power sword", true);
-        }  else if (type.equals("Apothecary") || type.equals("Apothecary on Bike")) {
+        }  else if (type.equals("Apothecary") || type.equals("Apothecary on Bike") || type.equals("Sanguinary Novitiate")) {
         	ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -481,6 +481,12 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        } else if (type.equals("Terminator Ancient")) {
+            ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
+            ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("thunder hammer (Characters)")));
+            ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Lightning claw", true);
         }
         
         if(oe1 != null) {
@@ -515,10 +521,11 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
         if (type.equals("Librarian") || type.equals("Primaris Librarian") || type.equals("Techmarine") || type.equals("Captain in Gravis Armour") || 
         		type.equals("Primaris Captain") || type.equals("Primaris Ancient") || type.equals("Chapter Champion") || type.equals("Apothecary") || 
-        		type.equals("Apothecary on Bike") || type.equals("Company Champion") || type.equals("Company Champion on Bike") || type.equals("Company Champion with Jump Pack")) {
+        		type.equals("Apothecary on Bike") || type.equals("Company Champion") || type.equals("Company Champion on Bike") || type.equals("Company Champion with Jump Pack") || 
+        		type.equals("Sanguinary Novitiate")) {
             o1.alwaysSelected();
             o2.alwaysSelected();
-        } else if (type.equals("Chaplain") || type.equals("Librarian GK") || type.equals("Chaplain GK") || type.equals("Chapter Ancient")) {
+        } else if (type.equals("Chaplain") || type.equals("Librarian GK") || type.equals("Chaplain GK") || type.equals("Chapter Ancient") || type.equals("Terminator Ancient")) {
             o1.alwaysSelected();
         }
 

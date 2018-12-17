@@ -1,10 +1,13 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 
 public class IMTheSanguinor extends Eintrag {
 
     public IMTheSanguinor() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, JUMP_PACK, FLY, THE_SANGUINOR);
         name = "The Sanguinor";
         grundkosten = getPts("The Sanguinor");
         power = 9;

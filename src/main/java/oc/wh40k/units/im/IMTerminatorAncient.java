@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -9,25 +11,19 @@ public class IMTerminatorAncient extends Eintrag {
     OptionsUpgradeGruppe o2;
 
     public IMTerminatorAncient() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, ANCIENT, TERMINATOR);
         name = "Terminator Ancient";
         grundkosten = getPts("Terminator Ancient");
         power = 6;
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
-        ogE.addElement(new OptionsGruppeEintrag("thunder hammer", getPts("thunder hammer (Characters)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        o2.alwaysSelected();
     }
 }
