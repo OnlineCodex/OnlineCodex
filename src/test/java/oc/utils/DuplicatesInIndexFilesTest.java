@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.type.MapLikeType;
 import com.fasterxml.jackson.databind.type.TypeFactory;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Table;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
@@ -18,9 +19,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 import static oc.utils.ResourceUtils.sanitizeKey;
 import static org.junit.Assert.fail;
 
@@ -82,10 +86,31 @@ public class DuplicatesInIndexFilesTest {
                 .replaceAll("[^a-zA-Z0-9_']+.*$", "");
     }
 
+    public static Object[] indexSets() {
+        return new Object[] {
+                ImmutableSet.of(
+                        "/oc/wh40k/indices/ae.yaml",
+                        "/oc/wh40k/indices/de.yaml"),
+                ImmutableSet.of("/oc/wh40k/indices/chaos.yaml"),
+                Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
+                        .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))
+                        .collect(toSet()),
+                ImmutableSet.of(
+                        "/oc/wh40k/indices/ne.yaml",
+                        "/oc/wh40k/indices/iane.yaml"),
+                ImmutableSet.of("/oc/wh40k/indices/or.yaml"),
+                ImmutableSet.of(
+                        "/oc/wh40k/indices/ta.yaml",
+                        "/oc/wh40k/indices/taaa.yaml"),
+                ImmutableSet.of("/oc/wh40k/indices/ty.yaml"),
+        };
+    }
+
     @Test
-    public void testWarnDuplicate() throws Exception {
+    @Parameters(method = "indexSets")
+    public void testWarnDuplicate(Set<String> indexSet) throws Exception {
         Table<String, String, Integer> t = HashBasedTable.create();
-        for (String f : indexFiles()) {
+        for (String f : indexSet) {
             Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
@@ -93,9 +118,10 @@ public class DuplicatesInIndexFilesTest {
     }
 
     @Test
-    public void testDuplicate() throws Exception {
+    @Parameters(method = "indexSets")
+    public void testDuplicate(Set<String> indexSet) throws Exception {
         Table<String, String, Integer> t = HashBasedTable.create();
-        for (String f : indexFiles()) {
+        for (String f : indexSet) {
             Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
