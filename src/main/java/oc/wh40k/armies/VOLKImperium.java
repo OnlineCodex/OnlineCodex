@@ -300,6 +300,10 @@ public class VOLKImperium extends BuildaVater {
     private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
 
+    public Set<String> getSmChapters(){
+    	return SM_CHAPTERS;
+    }
+    
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")

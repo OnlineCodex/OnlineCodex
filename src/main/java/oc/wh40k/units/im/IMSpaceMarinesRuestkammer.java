@@ -5,13 +5,12 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 
 import oc.*;
+import oc.wh40k.armies.VOLKImperium;
 
 public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1, oe2;
-    OptionsUpgradeGruppe o1, o2, o3, o4;
-    OptionsZaehlerGruppe o5;
-    String type = "";
+    OptionsUpgradeGruppe o1, o2, o3;
     String default1 = "";
     String default2 = "";
     boolean character = false;
@@ -23,6 +22,11 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     OptionsEinzelUpgrade mantleoftheStormseer;
     OptionsEinzelUpgrade theSancticHalo;
     OptionsEinzelUpgrade theCrusadersHelm;
+    OptionsEinzelUpgrade theShieldEternal;
+    OptionsEinzelUpgrade theArmourIndomitus;
+    OptionsEinzelUpgrade theAngelsWing;
+    OptionsEinzelUpgrade theVeritasVitae;
+    OptionsEinzelUpgrade standardofSacrifice;
 
     Set<String> CHARACTERS = ImmutableSet.of("Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
             "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
@@ -60,10 +64,10 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 	    	boolean mcPowersword = false;
 	    	
 	    	for(int i = 0; i < ogE.size(); i++) {
-	    		boltgun = ogE.get(i).getName().equals("Boltgun");
-	    		mcBoltgun = ogE.get(i).getName().equals("Master-crafted boltgun");
-	    		powersword = ogE.get(i).getName().equals("Power sword");
-	    		mcPowersword = ogE.get(i).getName().equals("Master-crafted power sword");
+	    		boltgun = boltgun || ogE.get(i).getName().equals("Boltgun");
+	    		mcBoltgun = mcBoltgun || ogE.get(i).getName().equals("Master-crafted boltgun");
+	    		powersword = powersword || ogE.get(i).getName().equals("Power sword");
+	    		mcPowersword = mcPowersword || ogE.get(i).getName().equals("Master-crafted power sword");
 	    	
 	    		if(ogE.get(i).getName().equals("Storm shield")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Shield Eternal", getPts("Storm shield (Characters)")).setRelic(true));
@@ -75,6 +79,10 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 	        		ogE.addElement(new OptionsGruppeEintrag("The Fist of Vengeance", getPts("Power fist (SM)")).setRelic(true)); //Crimson Fists
 	    		} else if(ogE.get(i).getName().equals("Bolt pistol")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Spartean", getPts("Bolt pistol (SM)")).setRelic(true)); //Imperial Fists
+	    		} else if(ogE.get(i).getName().equals("Thunder hammer")){
+	        		ogE.addElement(new OptionsGruppeEintrag("The Hammer of Baal", getPts("Thunder Hammer (Characters)")).setRelic(true)); //Imperial Fists
+	    		} else if(ogE.get(i).getName().equals("Force Stave")){
+	        		ogE.addElement(new OptionsGruppeEintrag("Gallian's Staff", getPts("Force stave")).setRelic(true)); //Imperial Fists
 	    		}
 	    	}
     		
@@ -86,8 +94,10 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     		
     		if(powersword){
         		ogE.addElement(new OptionsGruppeEintrag("The Burning Blade", getPts("Power sword (SM)")).setRelic(true));
+        		ogE.addElement(new OptionsGruppeEintrag("Archangel's Shard", getPts("Power sword (SM)")).setRelic(true));
     		} else if(mcPowersword){
         		ogE.addElement(new OptionsGruppeEintrag("The Burning Blade", getPts("Master-crafted power sword")).setRelic(true));
+        		ogE.addElement(new OptionsGruppeEintrag("Archangel's Shard", getPts("Master-crafted power sword")).setRelic(true));
     		}
     	}
     }
@@ -98,16 +108,19 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         psyker = PSYKERS.contains(type);
         character = CHARACTERS.contains(type);
         captain = type.startsWith("Captain");
+        int offsetX = randAbstand;
         
         if(character) {
-	       	add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour Indomitus", 0).setRelic(true));
+	       	add(theArmourIndomitus = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour Indomitus", 0).setRelic(true));
 	       	if(type.equals("Company Ancient") || type.equals("Chapter Ancient") || type.equals("Primaris Ancient")) {
 	       		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Standard of the Emperor Ascendant", 0).setRelic(true));
 	       	}
+	       	
 	       	if(psyker) {
 	       		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tome of Malcador", 0).setRelic(true));
 	       		add(mantleoftheStormseer = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Mantle of the Stormseer", 0).setRelic(true)); //White Scars
 	       	}
+	       	
 	       	add(theSalamandersMantle = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Salamander's Mantle", 0).setRelic(true)); //Salamanders
 	       	
 	       	add(ravensFury = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Raven's Fury", 0).setRelic(true)); //Raven Guard
@@ -115,11 +128,22 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 	       	if(captain){
 	       		add(theSancticHalo = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Sanctic Halo", 0).setRelic(true)); //Ultramarines
 	       	}
+	       	
 	       	add(theCrusadersHelm = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Crusader's Helm", 0).setRelic(true)); //Black Templars
+	       	
 	       	if(COMBATSHIELD.contains(type)){
-	       		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Shield Eternal", 0).setRelic(true));
+	       		add(theShieldEternal = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Shield Eternal", 0).setRelic(true));
 	       	}
 	       	
+	        add(theAngelsWing = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Angel's Wing", 0).setRelic(true));
+	       	
+	       	add(theVeritasVitae = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Veritas Vitae", 0).setRelic(true));
+	       	
+	       	if(type.contains("Ancient")){
+	       		add(standardofSacrifice = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Standard of Sacrifice", 0).setRelic(true));
+	       	}
+	       	
+	       	offsetX += buttonBreite + 15;
 	       	seperator();
         }
 
@@ -352,7 +376,22 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-
+        
+        if(o1 != null) {
+        	o1.getPanel().setLocation(offsetX, 10);
+	       	offsetX += buttonBreite + 20;
+        }  
+        
+        if(o2 != null) {
+        	o2.getPanel().setLocation(offsetX, 10);
+	       	offsetX += buttonBreite + 20;
+        }  
+        
+        if(o3 != null) {
+        	o3.getPanel().setLocation(offsetX, 10);
+	       	offsetX += buttonBreite + 20;
+        }  
+        
         sizeSetzen();
 
     }
@@ -406,6 +445,20 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         }
 
         if(character){
+        	boolean sm = ((VOLKImperium)buildaVater).getSmChapters().contains(buildaVater.getFormationType()) ||
+        				 buildaVater.getFormationType().equals("IMPERIUM") ||
+        				 buildaVater.getFormationType().equals("Adeptus Astartes"); 
+        	
+        	boolean ba = buildaVater.getFormationType().equals("Blood Angels") |
+   				 buildaVater.getFormationType().equals("IMPERIUM") ||
+   				 buildaVater.getFormationType().equals("Adeptus Astartes"); 
+        	
+        	//SM Relics
+        	if(COMBATSHIELD.contains(type)){		
+        		theShieldEternal.setAktiv((chosenRelic == null || theShieldEternal.isSelected()) && sm);
+        	}
+        	
+        	theArmourIndomitus.setAktiv((chosenRelic == null || theArmourIndomitus.isSelected()) && sm);
         	theSalamandersMantle.setAktiv((chosenRelic == null || theSalamandersMantle.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Salamanders"));
         	ravensFury.setAktiv((chosenRelic == null || ravensFury.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Raven Guard") && jump);
         	theCrusadersHelm.setAktiv((chosenRelic == null || theCrusadersHelm.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Templars"));
@@ -418,18 +471,48 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         		theSancticHalo.setAktiv((chosenRelic == null || theSancticHalo.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Ultramarines"));
         	}
         	
+        	//BA Relics
+        	theAngelsWing.setAktiv((chosenRelic == null || theAngelsWing.isSelected()) && ba && jump);
+	       	
+        	theVeritasVitae.setAktiv((chosenRelic == null || theVeritasVitae.isSelected()) && ba);
+	       	
+	       	if(type.contains("Ancient")){
+	       		standardofSacrifice.setAktiv((chosenRelic == null || standardofSacrifice.isSelected()) && ba);
+	       	}
+        	
         	if(o1 != null) {
+        		//SM Relics
         		o1.setAktiv("The Axe of Medusa", (chosenRelic == null || o1.isSelected("The Axe of Medusa")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iron Hands"));
         		o1.setAktiv("The Fist of Vengeance", (chosenRelic == null || o1.isSelected("The Fist of Vengeance")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Crimson Fists"));
         		o1.setAktiv("The Spartean", (chosenRelic == null || o1.isSelected("The Spartean")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Imperial Fists"));
+        		
+        		o1.setAktiv("The Shield Eternal", (chosenRelic == null || o1.isSelected("The Shield Eternal")) && sm);
+        		o1.setAktiv("Teeth of Terra", (chosenRelic == null || o1.isSelected("Teeth of Terra")) && sm);
+        		o1.setAktiv("The Primarch's Wrath", (chosenRelic == null || o1.isSelected("The Primarch's Wrath")) && sm);
+        		o1.setAktiv("The Burning Blade", (chosenRelic == null || o1.isSelected("The Burning Blade")) && sm);
+
+        		//BA Relics
+        		o1.setAktiv("The Hammer of Baal", (chosenRelic == null || o1.isSelected("The Hammer of Baal")) && ba);
+        		o1.setAktiv("Gallian's Staff", (chosenRelic == null || o1.isSelected("Gallian's Staff")) && ba);
+        		o1.setAktiv("Archangel's Shard", (chosenRelic == null || o1.isSelected("Archangel's Shard")) && ba);
         	}
         	
         	if(o2 != null) {
+        		//SM Relics
         		o2.setAktiv("The Axe of Medusa", (chosenRelic == null || o2.isSelected("The Axe of Medusa")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iron Hands"));
         		o2.setAktiv("The Fist of Vengeance", (chosenRelic == null || o2.isSelected("The Fist of Vengeance")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Crimson Fists"));
         		o2.setAktiv("The Spartean", (chosenRelic == null || o2.isSelected("The Spartean")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Imperial Fists"));
-        	}
 
+        		o2.setAktiv("The Shield Eternal", (chosenRelic == null || o2.isSelected("The Shield Eternal")) && sm);
+        		o2.setAktiv("Teeth of Terra", (chosenRelic == null || o2.isSelected("Teeth of Terra")) && sm);
+        		o2.setAktiv("The Primarch's Wrath", (chosenRelic == null || o2.isSelected("The Primarch's Wrath")) && sm);
+        		o2.setAktiv("The Burning Blade", (chosenRelic == null || o2.isSelected("The Burning Blade")) && sm);
+
+        		//BA Relics
+        		o2.setAktiv("The Hammer of Baal", (chosenRelic == null || o2.isSelected("The Hammer of Baal")) && ba);
+        		o2.setAktiv("Gallian's Staff", (chosenRelic == null || o2.isSelected("Gallian's Staff")) && ba);
+        		o2.setAktiv("Archangel's Shard", (chosenRelic == null || o2.isSelected("Archangel's Shard")) && ba);
+        	}
         }
         
     }
