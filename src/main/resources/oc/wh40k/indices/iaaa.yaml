@@ -70,30 +70,20 @@
 "Hecaton Aiakos": 220
 "Storm bolter (IA)": 2
 "Hunter-killer missile (IA)": 6
-"Twin lascannon": 50
 "Twin heavy bolter": 17
 "Twin heavy flamer": 34
-"Twin autocannon": 30
-"Assault cannon": 22
-"Predator autocannon": 40
 "Lascannon (IA)": 25
 "Heavy bolter (IA)": 10
-"Heavy flamer": 17
+"Heavy flamer": 14
 "Multi-melta": 27
-"Twin multi-melta": 54
-"Meltagun": 17
+"Meltagun": 14
 "Kheres assault cannon": 25
-"Typhoon missile launcher": 50
 "Bolt pistol": 0
 "Frag grenade": 0
 "Krak grenade": 0
-"Twin assault cannon": 44
-"Whirlwind castellan launcher": 25
 "Castellum air defence missiles": 18
 "Castellum battle cannon": 55
-"Flamer": 9
-"Combi-flamer": 11
-"Combi-melta": 19
+"Flamer": 6
 "Icarus quad lascannon": 80
 "Demolisher cannon": 0
 "Aiolos missile launcher": 30
@@ -106,8 +96,6 @@
 "Burning Wrath": 0
 "Catechist": 0
 "C-beam cannon": 30
-"Heavy plasma cannon": 30
-"Cyclone missile launcher": 50
 "Cyclonic melta lance": 75
 "Deathstorm cannon array": 0
 "Deathstorm missile array": 0
@@ -161,9 +149,8 @@
 "Twin volcano cannon": 0
 "Vengeance launcher": 25
 "Xiphon missile battery": 30
-"Seismic hammer": 48
 "Dreadnought combat weapon": 40
-"Power fist": 12
+"Power fist": 9
 "Servo arm": 12
 "Angel's Teeth": 0
 "Blood Biter": 0
@@ -172,7 +159,6 @@
 "Cinder Edge": 0
 "Crozius Arkanos": 0
 "Dreadfire claw": 0
-"Dreadnought chainfist": 46
 "Foe Ripper": 0
 "Force tulwar": 0
 "Glaive of lamentation": 0
@@ -182,8 +168,8 @@
 "Indynabula array": 0
 "Dreadnought combat weapon (single)": 40
 "Dreadnought combat weapon (pair)": 50
-"Dreadnought chainfist (single)": 46
-"Dreadnought chainfist (pair)": 56
+"Dreadnought chainfist (single)": 38
+"Dreadnought chainfist (pair)": 48
 "Leviathan siege claw (single)": 55
 "Leviathan siege claw (pair)": 65
 "Leviathan siege drill (single)": 65
