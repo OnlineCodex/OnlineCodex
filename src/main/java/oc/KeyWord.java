@@ -1,7 +1,10 @@
 package oc;
 
+import static oc.KeyWord.PSYKER;
+
 public enum  KeyWord {
-    CHAOS,
+    //Faction Keywords
+	CHAOS,
     DAEMON,
     KHORNE,
     SLAANESH,
@@ -10,6 +13,9 @@ public enum  KeyWord {
     ALLEGIANCE,
     KABAL,
     WYCH_CULT,
+    IMPERIUM,
+    ADEPTUS_ASTARTES,
+    ULTRAMARINES,
 
     //Keywords
     CHARACTER,
@@ -58,4 +64,24 @@ public enum  KeyWord {
     FLAMER,
     EXALTED_FLAMER,
     HAEMUNCULUS_COVEN,
+    CHAPTER_MASTER, 
+    TERMINATOR, 
+    MARNEUS_CALGAR,
+    LIBRARIAN, 
+    TIGURIUS,
+    CHAPLAIN, 
+    CASSIUS, 
+    CAPTAIN, 
+    SICARIUS,
+    CHRONUS, 
+    SCOUT, 
+    TELION,
+    IMPERIAL_FISTS,
+    LYSANDER,
+    CRIMSON_FISTS,
+    PEDRO_KANTOR,
+    BLACK_TEMPLARS,
+    HIGH_MARSHAL_HELBRECHT,
+    EMPERORS_CHAMPION,
+    GRIMALDUS,
 }
