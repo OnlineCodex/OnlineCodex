@@ -26,7 +26,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"","Plague Hulk Of Nurgle [FW]"};
     private static final String[] LOWeinträge_Daemons_FW = new String[]{"","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]"};
 
-    private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Legion", "", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
+    private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
             "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
@@ -42,6 +42,30 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bastions"};
     private static final String[] LOWeinträge_Chaos_Space_Marines = new String[]{"", "Khorne Lord of Skulls"};
 
+    private static final String[] HQeinträge_Other_Legions = new String[]{"", "Cypher", "Fabius Bile",
+            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
+            "Sorcerer", "Sorcerer in Terminator Armour",
+            "Warpsmith",
+            "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
+                "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
+    
+    private static final String[] HQeinträge_Black_Legion = new String[]{"", "Abaddon the Despoiler", "Cypher", "Fabius Bile",
+            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
+            "Sorcerer", "Sorcerer in Terminator Armour",
+            "Warpsmith",
+            "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
+                "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
+    
+    private static final String[] HQeinträge_Red_Corsairs = new String[]{"", "Huron Blackheart", "Cypher", "Fabius Bile",
+            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
+            "Sorcerer", "Sorcerer in Terminator Armour",
+            "Warpsmith",
+            "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
+                "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
+    
     private static final String[] HQeinträge_World_Eaters = new String[]{"", "Kharn the Betrayer", "Chaos Lord", "Chaos Lord in Terminator Armour", "Exalted Champion",
             "Dark Apostle", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings", "Warpsmith",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]"};
@@ -138,7 +162,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstüzungseinträge_Daemons = uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods);
     private static final String[] Befestigungseinträge_Daemons = Befestigung_Daemons_Nurgle;
     
-    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "Red Corsairs", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
     
     public VOLKChaos() {
@@ -284,25 +308,6 @@ public class VOLKChaos extends BuildaVater {
                     Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
                     LOWeinträge_Chaos_Space_Marines, LOWeinträge_Death_Guard), LOWeinträge_ThousandSons), LOWeinträge_Questor_Traitoris), LOWeinträge_Chaos_Space_Marines_FW));
-        } else if (getFormationType().equals("Chaos Space Marines")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
-                    HQeinträge_Chaos_Space_Marines, HQeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
-                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
-                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
-                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
-                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
-                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
-                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
-                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
-                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
         } else if (getFormationType().equals("World Eaters")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
                     HQeinträge_World_Eaters, HQeinträge_Chaos_Space_Marines_FW));
@@ -361,6 +366,101 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Emperors_Children, Fliegereinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(new String[]{""}, Befestigungseinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LOWeinträge_Emperors_Children, LOWeinträge_Chaos_Space_Marines_FW));
+        } else if (getFormationType().equals("Chaos Space Marines")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+                    HQeinträge_Chaos_Space_Marines, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
+                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
+                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
+                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
+                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
+                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
+                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
+        } else if (getFormationType().equals("Chaos Space Marines")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+                    HQeinträge_Chaos_Space_Marines, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
+                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
+                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
+                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
+                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
+                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
+                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
+        } else if (getFormationType().equals("Red Corsairs")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+                    HQeinträge_Red_Corsairs, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
+                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
+                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
+                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
+                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
+                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
+                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
+        } else if (getFormationType().equals("Black Legion")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+                    HQeinträge_Black_Legion, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
+                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
+                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
+                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
+                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
+                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
+                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
+        } else if (LEGIONS.contains(getFormationType())) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(
+                    HQeinträge_Other_Legions, HQeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(
+                    uniteUnitList(Eliteeinträge_Chaos_Space_Marines, Eliteeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(
+                    Standardeinträge_Chaos_Space_Marines, Standardeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(
+                    Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
+                    Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
+                    Fliegereinträge_Chaos_Space_Marines, Fliegereinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(
+                    Befestigungseinträge_Chaos_Space_Marines, Befestigungseinträge_Chaos_Space_Marines_FW));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(
+                    LOWeinträge_Chaos_Space_Marines, LOWeinträge_Chaos_Space_Marines_FW));
         } else if (getFormationType().equals("Questor Traitoris")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Questor_Traitoris);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Questor_Traitoris);
