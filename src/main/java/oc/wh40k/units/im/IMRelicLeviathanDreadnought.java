@@ -1,7 +1,7 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-
+import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 
 import oc.OptionsZaehlerGruppe;
@@ -25,6 +25,8 @@ public class IMRelicLeviathanDreadnought extends Eintrag {
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
+
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Hunter-killer missile", 3, getPts("Hunter-killer missile (IA)")));
 
         complete();
     }
