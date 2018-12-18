@@ -21,40 +21,29 @@
 "DX-6 Remora Stealth Drone": 30
 "Heavy Gun Drone": 18
 "Remote Sensor Tower": 33
-"Burst cannon": 8
-"Cyclic ion blaster": 18
 "Double-barrelled burst cannon": 16
 "Double-barrelled plasma rifle": 0
 "Defensive charge": 0
 "Experimental pulse submunitions rifle": 0
 "Fletchette pod": 0
-"Fusion blaster": 18
 "Fusion cascade": 35
 "Fusion eradicator": 83
-"Heavy burst cannon": 56
+"Heavy burst cannon (IAAA)": 55
 "Heavy rail cannon": 130
 "High intensity markerlight": 7
 "High yield missile pod": 41
-"Ion cannon": 55
+"Ion cannon (IAAA)": 55
 "Ionic discharge cannon": 0
 "Long-barrelled burst cannon": 12
 "Long-barrelled ion cannon": 12
-"Markerlight": 3
 "Miniaturised fletchette pod (shooting)": 0
-"Missile pod": 15
 "Nexus meteor missile system": 147
 "Phased ion gun": 12
 "Phased plasma-flamer": 0
-"Plasma rifle": 8
-"Pulse carbine": 0
-"Pulse rifle": 0
 "Pulse submunitions cannon": 0
 "Pulse submunitions rifle": 12
 "Pulse ordnance multi-driver": 121
-"Rail rifle": 12
-"Seeker missile": 5
 "Skyspear missile rack": 0
-"Smart missile system": 20
 "Swiftstrike railgun": 101
 "Tri-axis ion cannon": 107
 "Twin fusion cannon": 54
@@ -63,8 +52,7 @@
 "Crushing feet": 0
 "Miniaturised fletchette pod (melee)": 0
 "Advanced targeting system": 8
-"Counterfire defence system": 5
-"Drone controller": 5
+"Counterfire defence system (IAAA)": 5
 "Early warning override": 8
 "Multi-tracker (Y'vahra)": 10
 "Multi-tracker (all other units)": 2
@@ -72,6 +60,4 @@
 "Shield generator (all other units)": 8
 "Stimulant injector": 5
 "Target lock (Y'vahra)": 12
-"Target lock (all other units)": 6
 "Velocity tracker (Y'vahra)": 10
-"Velocity tracker (all other units)": 2

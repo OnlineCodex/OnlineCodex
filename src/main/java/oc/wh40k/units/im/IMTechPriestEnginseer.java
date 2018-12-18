@@ -8,7 +8,7 @@ public class IMTechPriestEnginseer extends Eintrag {
 
     public IMTechPriestEnginseer() {
         name = "Tech-Priest Enginseer";
-        grundkosten = getPts("Tech-Priest Enginseer (AM)") + getPts("Omnissian axe") + getPts("Laspistol (AME)") + getPts("Servo-arm (AME)");
+        grundkosten = getPts("Tech-Priest Enginseer") + getPts("Omnissian axe") + getPts("Laspistol (AME)") + getPts("Servo-arm (AME)");
         power = 3;
         
         seperator();

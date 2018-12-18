@@ -15,7 +15,7 @@ import java.awt.event.ItemListener;
 import java.util.*;
 
 import static java.util.Objects.requireNonNull;
-import static oc.utils.ResourceUtils.sanitzeKey;
+import static oc.utils.ResourceUtils.sanitizeKey;
 
 public abstract class BuildaVater extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
@@ -696,7 +696,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     public int getPts(String key) {
-        return Optional.ofNullable(pointValues.get(sanitzeKey(key)))
+        return Optional.ofNullable(pointValues.get(sanitizeKey(key)))
                 .orElseGet(() -> {
                     LOGGER.error("could not determine points for key {}", key);
                     return 0;
