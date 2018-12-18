@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,6 +11,7 @@ public class IMChiefLibrarianTigurius extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public IMChiefLibrarianTigurius() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, ULTRAMARINES, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, TIGURIUS);
         name = "Chief Librarian Tigurius";
         grundkosten = getPts("Chief Librarian Tigurius");
         power = 7;

@@ -1,11 +1,15 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 
 public class IMCaptainSicarius extends Eintrag {
 
     public IMCaptainSicarius() {
-        name = "Captain Sicarius";
+    	super(IMPERIUM, ADEPTUS_ASTARTES, ULTRAMARINES, CHARACTER, INFANTRY, CAPTAIN, SICARIUS);
+        
+    	name = "Captain Sicarius";
         grundkosten = getPts("Captain Sicarius");
         power = 7;
         

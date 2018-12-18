@@ -1,26 +1,20 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMMasterinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter waffenUndReliquien;
-
     public IMMasterinTerminatorArmour() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, TERMINATOR, CAPTAIN, MASTER);
         name = "Master in Terminator Armour";
         grundkosten = getPts("Master in Terminator Armour");
         power = 7;
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain in Terminator Armour");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 

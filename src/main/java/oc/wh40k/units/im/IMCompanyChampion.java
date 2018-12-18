@@ -1,33 +1,26 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCompanyChampion extends Eintrag {
-	RuestkammerStarter waffenUndReliquien;
 
     public IMCompanyChampion() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, COMPANY_CHAMPION);
         name = "Company Champion";
         grundkosten = getPts("Company Champion") +
                 getPts("Frag grenade (SM)") +
-                getPts("Krak grenade (SM)") +
-                getPts("Bolt pistol (SM)") +
-                getPts("Combat shield");
+                getPts("Krak grenade (SM)");
 
         if (buildaVater.getFormationType().equals("Dark Angels")) {
-            grundkosten += getPts("Blade of Caliban");
+            grundkosten += getPts("Blade of Caliban") +
+                    getPts("Bolt pistol (SM)") +
+                    getPts("Combat shield");
         } else {
-            grundkosten += getPts("Master-crafted power sword");
-            
             seperator();
-
-            waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-            ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Company Champion");
-            waffenUndReliquien.initKammer();
-            waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-            add(waffenUndReliquien);
-            waffenUndReliquien.setAbwaehlbar(false);
+            
+            addWeapons(IMSpaceMarinesRuestkammer.class, true);
         }
 
         power = 3;

@@ -1,24 +1,19 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCompanyAncient extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCompanyAncient() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, ANCIENT, COMPANY_ANCIENT);
         name = "Company Ancient";
         grundkosten = getPts("Company Ancient") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 4;
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Company Ancient");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
@@ -27,3 +22,4 @@ public class IMCompanyAncient extends Eintrag {
         complete();
     }
 }
+

@@ -1,15 +1,15 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMSanguinaryPriest extends Eintrag {
     OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMSanguinaryPriest() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, SANGUINARY_PRIEST);
         name = "Sanguinary Priest";
         grundkosten = getPts("Sanguinary Priest") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
@@ -18,13 +18,8 @@ public class IMSanguinaryPriest extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Sanguinary Priest with Jump Pack") - getPts("Sanguinary Priest")));
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Sanguinary Priest");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
@@ -36,9 +31,10 @@ public class IMSanguinaryPriest extends Eintrag {
     @Override
     public void refreshen() {
         power = 4 + (jump.isSelected() ? 1 : 0);
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
+        
+        if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
+        }
     }
 }

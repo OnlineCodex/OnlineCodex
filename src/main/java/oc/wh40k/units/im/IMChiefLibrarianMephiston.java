@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,6 +11,7 @@ public class IMChiefLibrarianMephiston extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public IMChiefLibrarianMephiston() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, CHIEF_LIBRARIAN_MEPHISTON);
         name = "Chief Librarian Mephiston";
         grundkosten = getPts("Chief Librarian Mephiston");
         power = 8;
@@ -33,11 +36,6 @@ public class IMChiefLibrarianMephiston extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 
 }

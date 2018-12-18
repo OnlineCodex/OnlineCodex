@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -9,10 +11,14 @@ public class IMPrimarisLibrarian extends Eintrag {
     RuestkammerStarter psychicPowers;
 
     public IMPrimarisLibrarian() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, PSYKER, LIBRARIAN);
         name = "Primaris Librarian";
-        grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol") + getPts("Force sword");
+        grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 7;
+
         seperator();
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);

@@ -1,13 +1,13 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMPrimarisApothecary extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
 
     public IMPrimarisApothecary() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, APOTHECARY);
         name = "Primaris Apothecary";
         grundkosten = getPts("Primaris Apothecary") + 
         			  getPts("Frag grenade (SM)") + 
@@ -17,12 +17,7 @@ public class IMPrimarisApothecary extends Eintrag {
         
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Apothecary");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 

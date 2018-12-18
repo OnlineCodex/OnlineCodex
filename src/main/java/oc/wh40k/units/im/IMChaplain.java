@@ -1,15 +1,15 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMChaplain extends Eintrag {
     OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMChaplain() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CHAPLAIN);
         name = "Chaplain";
         grundkosten = getPts("Chaplain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Crozius arcanum");
 
@@ -18,13 +18,8 @@ public class IMChaplain extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Chaplain with Jump Pack") - getPts("Chaplain")));
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Chaplain");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
@@ -37,9 +32,10 @@ public class IMChaplain extends Eintrag {
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
         
-        if(((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump != jump.isSelected()){
-        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = jump.isSelected();
-        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).refreshen();
+        if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
         }
     }
 }
+

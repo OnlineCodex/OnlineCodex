@@ -1,7 +1,5 @@
 package oc.wh40k.armies;
 
-
-import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
@@ -10,7 +8,6 @@ import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.ImmutableSet;
 
-import java.io.InputStream;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -301,6 +298,10 @@ public class VOLKImperium extends BuildaVater {
     private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
 
+    public static Set<String> getSmChapters(){
+    	return SM_CHAPTERS;
+    }
+    
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")

@@ -1,15 +1,16 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMCaptain extends Eintrag {
     OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCaptain() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN);
+    	
         name = "Captain";
         grundkosten = getPts("Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
@@ -18,13 +19,8 @@ public class IMCaptain extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Captain with Jump Pack") - getPts("Captain")));
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Captain");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
@@ -37,9 +33,9 @@ public class IMCaptain extends Eintrag {
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
         
-        if(((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump != jump.isSelected()){
-        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = jump.isSelected();
-        	((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).refreshen();
+        if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
+        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
         }
     }
 }
