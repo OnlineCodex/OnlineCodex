@@ -120,7 +120,5 @@ public enum  KeyWord {
     LEMARTES,
     TYCHO,
     SANGUINARY_NOVITIATE,
-    
-    //Special keyword, when I have no idea where the unit is actually from atm
-	TODO
+    MASTER,
 }

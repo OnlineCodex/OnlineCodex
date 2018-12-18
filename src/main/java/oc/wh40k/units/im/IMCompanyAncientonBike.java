@@ -3,10 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCompanyAncientonBike extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCompanyAncientonBike() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, BIKER, ANCIENT, COMPANY_ANCIENT);

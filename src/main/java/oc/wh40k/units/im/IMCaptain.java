@@ -4,11 +4,9 @@ import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMCaptain extends Eintrag {
     OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN);

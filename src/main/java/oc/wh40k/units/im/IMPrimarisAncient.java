@@ -4,10 +4,8 @@ import static oc.KeyWord.*;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMPrimarisAncient extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
     boolean spacewolves = false;
     
     public IMPrimarisAncient() {

@@ -3,11 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMSanguinaryNovitiate extends Eintrag {
-
-    RuestkammerStarter waffenUndReliquien;
 
     public IMSanguinaryNovitiate() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, SANGUINARY_NOVITIATE);
@@ -26,9 +23,5 @@ public class IMSanguinaryNovitiate extends Eintrag {
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

@@ -3,11 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMApothecary extends Eintrag {
-
-    RuestkammerStarter waffenUndReliquien;
 
     public IMApothecary() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, APOTHECARY);

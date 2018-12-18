@@ -9,7 +9,7 @@ public class IMMaster extends Eintrag {
     OptionsEinzelUpgrade jump;
 
     public IMMaster() {
-    	super(TODO);
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN, MASTER);
         name = "Master";
         grundkosten = getPts("Master") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 

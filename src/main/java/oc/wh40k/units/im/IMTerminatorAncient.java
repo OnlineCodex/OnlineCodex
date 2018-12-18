@@ -3,12 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class IMTerminatorAncient extends Eintrag {
-    OptionsUpgradeGruppe o2;
 
     public IMTerminatorAncient() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, ANCIENT, TERMINATOR);

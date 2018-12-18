@@ -7,7 +7,7 @@ import oc.Eintrag;
 public class IMMasterinTerminatorArmour extends Eintrag {
 
     public IMMasterinTerminatorArmour() {
-    	super(TODO);
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, TERMINATOR, CAPTAIN, MASTER);
         name = "Master in Terminator Armour";
         grundkosten = getPts("Master in Terminator Armour");
         power = 7;

@@ -7,7 +7,6 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarianinTerminatorArmour extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
     RuestkammerStarter psychicPowers;
 
     public IMLibrarianinTerminatorArmour() {

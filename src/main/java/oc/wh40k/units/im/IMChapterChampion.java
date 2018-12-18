@@ -3,10 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class IMChapterChampion extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
 
     public IMChapterChampion() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CHAPTER_CHAMPION);

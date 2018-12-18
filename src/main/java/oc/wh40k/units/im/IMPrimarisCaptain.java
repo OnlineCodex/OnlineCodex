@@ -6,7 +6,6 @@ import oc.*;
 
 public class IMPrimarisCaptain extends Eintrag {
     OptionsUpgradeGruppe o1;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMPrimarisCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, CAPTAIN);

@@ -7,7 +7,7 @@ import oc.Eintrag;
 public class IMMasterinCataphractiiArmour extends Eintrag {
 
     public IMMasterinCataphractiiArmour() {
-    	super(TODO);
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, TERMINATOR, CAPTAIN, MASTER);
         name = "Master in Cataphractii Armour";
         grundkosten = getPts("Master in Cataphractii Armour");
         power = 8;

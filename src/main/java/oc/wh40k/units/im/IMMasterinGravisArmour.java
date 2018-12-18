@@ -7,7 +7,7 @@ import oc.Eintrag;
 public class IMMasterinGravisArmour extends Eintrag {
 
     public IMMasterinGravisArmour() {
-    	super(TODO);
+    	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, MK_X_GRAVIS, PRIMARIS, CAPTAIN, MASTER);
         name = "Master in Gravis Armour";
         grundkosten = getPts("Master in Gravis Armour") + getPts("Master-crafted power sword") + getPts("Boltstorm gauntlet");
         power = 7;

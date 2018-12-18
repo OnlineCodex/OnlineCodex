@@ -2,12 +2,9 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCaptainonBike extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCaptainonBike() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, BIKER, CHARACTER, CAPTAIN);
