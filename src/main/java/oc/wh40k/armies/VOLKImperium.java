@@ -613,33 +613,25 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM_komplett);
         } else if (getFormationType().equals("Cadian")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+            Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Catachan")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+                    Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
-        } else if (getFormationType().equals("Officio Prefectus")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Militarum Tempestus")) {
@@ -651,6 +643,27 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Militarum_Tempestus);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+        } else if (ASTRA_MILITARUM.contains(getFormationType())) {
+        	myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+                    Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
+    	} else if (getFormationType().equals("Officio Prefectus")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Officio_Prefectus));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Militarum Auxilia")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
