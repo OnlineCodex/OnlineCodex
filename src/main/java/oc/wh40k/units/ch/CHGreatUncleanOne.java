@@ -20,15 +20,15 @@ public class CHGreatUncleanOne extends Eintrag {
         grundkosten = 0;
         power = 12;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
-
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
         ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and bileblade", getPts("Great Unclean one with Doomsday bell and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and plague fail", getPts("Great Unclean one with Doomsday bell and plague fail")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+        seperator();
+        
+        addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
 
