@@ -121,5 +121,7 @@ public enum  KeyWord {
     TYCHO,
     SANGUINARY_NOVITIATE,
     MASTER,
+    ADEPTA_SORORITAS,
     CANONESS,
+    MINISTORUM_PRIEST,
 }

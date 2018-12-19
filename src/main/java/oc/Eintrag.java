@@ -1,6 +1,7 @@
 package oc;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import oc.wh40k.units.Warlordtraits;
 
@@ -421,7 +422,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
 		warlordTraits.initKammer();
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");
@@ -432,7 +433,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ");
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
 		warlordTraits.initKammer();
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");

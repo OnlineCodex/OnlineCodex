@@ -270,6 +270,19 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Hunter (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Bear (SW)", 0));
         }
+        if(keywords.contains(ADEPTA_SORORITAS)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Inspiring Orator", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Righteous Rage", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Executioner of Heretics", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Beacon of Faith", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Indomitable Belief", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Pure of Will", 0));
+        } else if(keywords.contains(MINISTORUM_PRIEST)) {
+	        ogE.addElement(new OptionsGruppeEintrag("Righteous Rage", 0));
+        }
+//        NAMED CHARACTERS
+//        Celestine - Beacon of Faith
+//        Uriah Jacobus - Righteous Rage.
         
         if(NECRONS.contains(army)) { //NECRONS
 	        ogE.addElement(new OptionsGruppeEintrag("Enduring Will", 0));
