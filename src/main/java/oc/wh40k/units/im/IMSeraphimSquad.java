@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.*;
 
 public class IMSeraphimSquad extends Eintrag {
@@ -8,6 +10,7 @@ public class IMSeraphimSquad extends Eintrag {
     OptionsZaehlerGruppe o1;
 
     public IMSeraphimSquad() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, JUMP_PACK, FLY, SERAPHIM_SQUAD);
         name = "Seraphim Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -32,11 +35,10 @@ public class IMSeraphimSquad extends Eintrag {
 
     @Override
     public void refreshen() {
-
         if (squad.getModelle() <= 5)
             power = 4;
         else if (squad.getModelle() <= 10)
-            power = 8;
+            power = 6;
     }
 
 }

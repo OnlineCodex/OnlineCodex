@@ -123,6 +123,17 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             
             ogE.addAll(getMeleeWeapons(buildaVater));
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        } else if(type.equals("Seraphim Superior")){
+        	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("chainsword (AMI)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("power sword (AMI)")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Bolt pistol", true);
+            
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
+            ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o2.setSelected("Bolt pistol", true);
         }
         
         if(oe1 != null) {
@@ -149,7 +160,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        if (type.equals("X")) {
+        if (type.equals("Seraphim Superior")) {
             o1.alwaysSelected();
             o2.alwaysSelected();
         } else if (type.equals("Canoness")) {
