@@ -2,6 +2,8 @@ package oc.wh40k.units.im;
 
 import oc.*;
 
+import static oc.KeyWord.*;
+
 public class IMDominionSquad extends Eintrag {
 
     AnzahlPanel squad;
@@ -10,6 +12,7 @@ public class IMDominionSquad extends Eintrag {
     OptionsEinzelUpgrade simulacrum;
 
     public IMDominionSquad() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, DOMINION_SQUAD);
         name = "Dominion Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;

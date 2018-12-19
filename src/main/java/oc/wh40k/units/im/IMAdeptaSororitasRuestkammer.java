@@ -107,7 +107,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             ogE.addAll(getMeleeWeapons(buildaVater));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        } else if(type.equals("Sister Superior")){
+        } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
         	ogE.addAll(getPistols(buildaVater));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
@@ -165,7 +165,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             o2.alwaysSelected();
         } else if (type.equals("Canoness")) {
             o1.alwaysSelected();
-        } else if(type.equals("Sister Superior")){
+        } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
         	o1.alwaysSelected();
         	
         	if(o3.isSelected()){
