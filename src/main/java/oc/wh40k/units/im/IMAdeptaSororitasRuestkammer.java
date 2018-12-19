@@ -2,24 +2,19 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
-import java.util.Set;
 import java.util.Vector;
 
-import com.google.common.collect.ImmutableSet;
-
 import oc.*;
-import oc.wh40k.armies.VOLKImperium;
 
 public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
-
+	
     public OptionsEinzelUpgrade oe1;
     OptionsUpgradeGruppe o1, o2, o3;
     boolean psyker = false;
     boolean character = false;
     OptionsEinzelUpgrade relic1;
     
-
-    static public Vector<OptionsGruppeEintrag> addRangedWeapons(BuildaVater bv) {
+    static public Vector<OptionsGruppeEintrag> getRangedWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", bv.getPts("Boltgun (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", bv.getPts("Combi-flamer (AMI)")));
@@ -30,7 +25,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         return ogE;
     }
     
-    static public Vector<OptionsGruppeEintrag> addSpecialWeapons(BuildaVater bv) {
+    static public Vector<OptionsGruppeEintrag> getSpecialWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", bv.getPts("Storm bolter (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Flamer", bv.getPts("Flamer (AMI)")));
@@ -38,7 +33,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         return ogE;
     }
     
-    static public Vector<OptionsGruppeEintrag> addPistols(BuildaVater bv) {
+    static public Vector<OptionsGruppeEintrag> getPistols(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", bv.getPts("Bolt pistol (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", bv.getPts("Plasma pistol (AMI)")));
@@ -46,7 +41,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         return ogE;
     }
     
-    static public Vector<OptionsGruppeEintrag> addMeleeWeapons(BuildaVater bv) {
+    static public Vector<OptionsGruppeEintrag> getMeleeWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Chainsword", bv.getPts("Chainsword (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", bv.getPts("Power maul (AMI)")));
@@ -54,7 +49,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         return ogE;
     }
     
-    static public Vector<OptionsGruppeEintrag> addHeavyWeapons(BuildaVater bv) {
+    static public Vector<OptionsGruppeEintrag> getHeavyWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", bv.getPts("Heavy bolter (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", bv.getPts("Heavy flamer (AMI)")));
@@ -101,17 +96,32 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         }
 
         if (type.equals("Canoness")) {
-        	ogE.addAll(addPistols(buildaVater));
-            ogE.addAll(addRangedWeapons(buildaVater));
+        	ogE.addAll(getPistols(buildaVater));
+            ogE.addAll(getRangedWeapons(buildaVater));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
-            ogE.addAll(addMeleeWeapons(buildaVater));
+            ogE.addAll(getMeleeWeapons(buildaVater));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        } else if(type.equals("Sister Superior")){
+        	ogE.addAll(getPistols(buildaVater));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Bolt pistol", true);
+
+            seperator();
+            
+        	ogE.addAll(getRangedWeapons(buildaVater));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o2.setSelected("Boltgun", true);
+            
+            seperator();
+            
+            ogE.addAll(getMeleeWeapons(buildaVater));
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
         
         if(oe1 != null) {
@@ -143,6 +153,15 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             o2.alwaysSelected();
         } else if (type.equals("Canoness")) {
             o1.alwaysSelected();
+        } else if(type.equals("Sister Superior")){
+        	o1.alwaysSelected();
+        	
+        	if(o3.isSelected()){
+        		o2.deactivateOthers("Boltgun");
+        		o2.setSelected("Boltgun", true);
+        	} else {
+        		o2.setAktiv(true);
+        	}
         }
 
         if(character){
@@ -157,7 +176,5 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         	}
 
         }
-        
     }
-
 }

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import oc.wh40k.units.Warlordtraits;
+import oc.wh40k.units.im.IMAdeptaSororitasRuestkammer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -485,5 +486,14 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
 	protected void removeKeyword(KeyWord k) {
 		keywords.remove(k);
+	}
+	
+	public RuestkammerStarter createTroopChampion(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String btnText, String type){
+		RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, cls, btnText, keywords);
+		rk.getKammer().setType(type);
+        rk.initKammer();
+        rk.setAbwaehlbar(!mandatoryChoice);
+        
+        return rk;
 	}
 }

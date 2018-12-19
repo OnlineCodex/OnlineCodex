@@ -254,6 +254,22 @@ public class OptionsUpgradeGruppe extends OptionsVater {
             myUpgrades.elementAt(i).setSelected(b); // muss so geloest werden, denn sonst wuerde ein auf "true" gesetzter Eintrag *immer* ausgewählt werden, auch wenn er das vorher nicht war
         myUpgrades.elementAt(i).setAktiv(b);
     }
+    
+    public void deactivateOthers(String s) {
+        for (int i = 0; i < myUpgrades.size(); ++i) {
+        	myUpgrades.elementAt(i).setSelected(false);
+            myUpgrades.elementAt(i).setAktiv(false);
+        }
+        setAktiv(s, true);
+    }
+    
+    public void deactivateOthers(int idx) {
+        for (int i = 0; i < myUpgrades.size(); ++i) {
+        	myUpgrades.elementAt(i).setSelected(false);
+            myUpgrades.elementAt(i).setAktiv(false);
+        }
+        setAktiv(idx, true);
+    }
 
     public void setPreis(String s, double preis) {
         for (int i = 0; i < this.myUpgrades.size(); ++i) {

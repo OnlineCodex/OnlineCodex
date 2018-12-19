@@ -128,5 +128,6 @@ public enum  KeyWord {
     CELESTINE,
     ORDER,
     MISSIONARY, 
-    URIAH_JACOBUS
+    URIAH_JACOBUS,
+    BATTLE_SISTERS_SQUAD
 }
