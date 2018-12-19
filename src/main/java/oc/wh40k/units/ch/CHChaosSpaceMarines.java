@@ -13,7 +13,8 @@ public class CHChaosSpaceMarines extends Eintrag {
     OptionsEinzelUpgrade pp;
     RuestkammerStarter Boss;
     OptionsUpgradeGruppe mark;
-
+    OptionsUpgradeGruppe icon;
+    
     public CHChaosSpaceMarines() {
 
         kategorie = 1;
@@ -45,9 +46,14 @@ public class CHChaosSpaceMarines extends Eintrag {
         add(marinesfk = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
-
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chaosicon", getPts("Icon of Vengeance")));
-
+        
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
+        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -86,5 +92,11 @@ public class CHChaosSpaceMarines extends Eintrag {
                 ((marines.getModelle() == 10) ? 4 : 0) +
                 ((marines.getModelle() == 15) ? 7 : 0) +
                 ((marines.getModelle() == 20) ? 10 : 0);
+        
+        icon.setAktiv("Icon of Vengeance", !mark.isSelected());
+        icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
+        icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));
+        icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
+        icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
 }

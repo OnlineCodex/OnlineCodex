@@ -7,7 +7,7 @@ public class CHChaosBikers extends Eintrag {
 
     AnzahlPanel squad;
     RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe ikone;
+    OptionsUpgradeGruppe icon;
     OptionsZaehlerGruppe bp, special, bike, combi;
     OptionsUpgradeGruppe mark;
 
@@ -19,11 +19,6 @@ public class CHChaosBikers extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosBikers.gif"));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Chaos icon", getPts("Icon of Vengeance")));
-        add(ikone = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -51,6 +46,16 @@ public class CHChaosBikers extends Eintrag {
         add(bike = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
+        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
@@ -85,6 +90,12 @@ public class CHChaosBikers extends Eintrag {
         power = 7 +
                 ((squad.getModelle() == 6) ? 5 : 0) +
                 ((squad.getModelle() == 9) ? 10 : 0);
+        
+        icon.setAktiv("Icon of Vengeance", !mark.isSelected());
+        icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
+        icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));
+        icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
+        icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
 
 }
