@@ -20,8 +20,6 @@ public class IMBattleSistersSquad extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Battle Sisters", 5, 15, getPts("Battle Sisters Squad"));
         add(squad);
 
-        add(ico = new oc.Picture("oc/wh40k/images/ASSororitastrupp.jpg"));
-
         seperator();
 
         checkBuildaVater();
@@ -38,6 +36,10 @@ public class IMBattleSistersSquad extends Eintrag {
         
         ogE.addAll(IMAdeptaSororitasRuestkammer.getHeavyWeapons(buildaVater));
         add(heavy = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis AMI")));
         
         seperator();
 

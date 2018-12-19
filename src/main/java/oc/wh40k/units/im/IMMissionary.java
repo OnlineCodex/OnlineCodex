@@ -25,6 +25,14 @@ public class IMMissionary extends Eintrag {
 
         addWarlordTraits("", true);
 
+        addToInformationVector("MINISTORUM_PRIEST", 1);
+        
         complete();
+    }
+    
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("MINISTORUM_PRIEST", -1);
+    	super.deleteYourself();
     }
 }

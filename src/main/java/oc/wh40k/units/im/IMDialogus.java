@@ -1,7 +1,8 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
@@ -11,28 +12,19 @@ public class IMDialogus extends Eintrag {
     RuestkammerStarter waffenUndRelikte;
 
     public IMDialogus() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, CHARACTER, INFANTRY, DIALOGUS);
         name = "Dialogus";
-        grundkosten = getPts("Dialogus");
-        power = 1;
-
-        add(ico = new oc.Picture("oc/wh40k/images/ASPrincipalis.jpg"));
+        grundkosten = getPts("Dialogus") + getPts("Dialogus staff");
+        power = 2;
 
         seperator();
+        
+        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
+        
+        seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Dialogus staff", getPts("Dialogus staff")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        addWarlordTraits("", true);
 
         complete();
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-    }
-
 }

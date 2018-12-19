@@ -115,6 +115,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             seperator();
             
         	ogE.addAll(getRangedWeapons(buildaVater));
+            ogE.addAll(getMeleeWeapons(buildaVater));
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Boltgun", true);
             

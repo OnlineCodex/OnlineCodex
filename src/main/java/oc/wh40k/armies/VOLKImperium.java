@@ -95,11 +95,11 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
     //Adepta Sororitas
-    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", /*TODO: Missionary*/"Missionary"};
+    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", "Missionary"};
     private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
     private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins", 
-    																				"Dialogus", /*TODO: Geminae Superia*/"Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
-    																				/*TODO: Preacher*/"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
+    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
+    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
     private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
     private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
     private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};

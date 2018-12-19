@@ -1,38 +1,38 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class IMGeminaeSuperia extends Eintrag {
-
-    OptionsUpgradeGruppe o1, o2, o3;
-    RuestkammerStarter waffenUndRelikte;
+    RuestkammerStarter gs1;
+    RuestkammerStarter gs2;
 
     public IMGeminaeSuperia() {
-        name = "Dialogus";
-        grundkosten = getPts("Dialogus");
-        power = 1;
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, CHARACTER, INFANTRY, JUMP_PACK, FLY, GEMINAE_SUPERIA);
+        name = "Geminae Superia";
+        grundkosten = 0;
+        überschriftSetzen = true;
 
-        add(ico = new oc.Picture("oc/wh40k/images/ASPrincipalis.jpg"));
-
+        add(gs1 = createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Geminae Superia", "Geminae Superia"));
+        gs1.setGrundkosten(getPts("Geminae Superia") + getPts("bolt pistol (AMI)") + getPts("power sword (AMI)"));
+        
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Dialogus staff", getPts("Dialogus staff")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        
+        add(gs2 = createTroopChampion(IMAdeptaSororitasRuestkammer.class, false, "Geminae Superia", "Geminae Superia"));
+        gs2.setGrundkosten(getPts("Geminae Superia") + getPts("bolt pistol (AMI)") + getPts("power sword (AMI)"));
+        
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
     }
 
     @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
-    @Override
     public void refreshen() {
-        o1.alwaysSelected();
+    	power = 1 + (gs2.isSelected() ? 1 : 0);
     }
-
+    
 }
