@@ -95,12 +95,13 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
     //Adepta Sororitas
-    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Canoness"};
+    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", /*TODO: Missionary*/"Missionary"};
     private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Imagifier", "Hospitaller", "Dialogus", "Celestian Squad",
-            "Mistress Of Repentance", "Repentia Squad"};
+    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins", 
+    																				"Dialogus", /*TODO: Geminae Superia*/"Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
+    																				/*TODO: Preacher*/"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
     private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
-    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist"};
+    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
     private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
 
     //Adeptus Ministorum
@@ -343,6 +344,8 @@ public class VOLKImperium extends BuildaVater {
         //Formationen
         formationen.add("IMPERIUM");
         formationen.add("");
+        formationen.add("Adepta Sororitas");
+        formationen.add("");
         formationen.add("Adeptus Custodes");
         formationen.add("");
         formationen.add("Adeptus Astartes");
@@ -389,7 +392,6 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Questor Imperialis");
         formationen.add("");
         formationen.add("Adeptus Ministorum");
-        formationen.add("Adepta Sororitas");
         formationen.add("Officio Assassinorum");
         formationen.add("Adeptus Astra Telepathica");
         formationen.add("Scholastica Psykana");
@@ -767,6 +769,8 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adepta_Sororitas);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Adeptus Ministorum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);
