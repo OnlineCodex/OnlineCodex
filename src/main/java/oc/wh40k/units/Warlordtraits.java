@@ -280,9 +280,6 @@ public class Warlordtraits extends RuestkammerVater {
         } else if(keywords.contains(MINISTORUM_PRIEST)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Righteous Rage", 0));
         }
-//        NAMED CHARACTERS
-//        Celestine - Beacon of Faith
-//        Uriah Jacobus - Righteous Rage.
         
         if(NECRONS.contains(army)) { //NECRONS
 	        ogE.addElement(new OptionsGruppeEintrag("Enduring Will", 0));

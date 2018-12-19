@@ -70,7 +70,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     	if(keywords.contains(CHARACTER)) {
 	    	for(int i = 0; i < ogE.size(); i++) {
 	    		if(ogE.get(i).getName().equals("Bolt pistol")){
-	        		ogE.addElement(new OptionsGruppeEintrag("Wrath of the Emperor", getPts("Bolt pistol (AMI)")).setRelic(true)); //Imperial Fists
+	        		ogE.addElement(new OptionsGruppeEintrag("Wrath of the Emperor", getPts("Bolt pistol (AMI)")).setRelic(true));
 	    		} else if(ogE.get(i).getName().equals("Power sword")){
 	        		ogE.addElement(new OptionsGruppeEintrag("Blade of Admonition", getPts("Power sword (AMI)")).setRelic(true));
 	    		}
@@ -100,30 +100,18 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 	       	seperator();
         }
 
-        if (type.equals("Captain") || type.equals("Captain on Bike")) {
-            ogE.addElement(new OptionsGruppeEintrag("MC boltgun", "Master-crafted boltgun", getPts("Master-crafted boltgun")));
-            ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
-            ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
-            ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
+        if (type.equals("Canoness")) {
+        	ogE.addAll(addPistols(buildaVater));
+            ogE.addAll(addRangedWeapons(buildaVater));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            o1.setSelected(0, true);
+            o1.setSelected("Bolt pistol", true);
 
             seperator();
 
-            ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Characters)")));
-            if (type.equals("Captain")) {
-                ogE.addElement(new OptionsGruppeEintrag("Relic blade", getPts("Relic blade")));
-            }
-            ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
+            ogE.addAll(addMeleeWeapons(buildaVater));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            o2.setSelected("Chainsword", true);
-
-            seperator();
-
-            ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
         }
         
         if(oe1 != null) {
@@ -145,7 +133,6 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         }
         
         sizeSetzen();
-
     }
 
     @Override
@@ -154,7 +141,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         if (type.equals("X")) {
             o1.alwaysSelected();
             o2.alwaysSelected();
-        } else if (type.equals("Y")) {
+        } else if (type.equals("Canoness")) {
             o1.alwaysSelected();
         }
 
