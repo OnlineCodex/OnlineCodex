@@ -6,9 +6,6 @@ public class IMRetributorSquad extends Eintrag {
 
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
 
     public IMRetributorSquad() {
         name = "Retributor Squad\n";
@@ -29,11 +26,7 @@ public class IMRetributorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
-        ((IMPrioris) rkBoss.getKammer()).type = "Sister Superior";
-        rkBoss.initKammer(true);
-        add(rkBoss);
-        rkBoss.setAbwaehlbar(false);
+        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
 
         complete();
     }

@@ -6,9 +6,6 @@ public class IMSeraphimSquad extends Eintrag {
 
     AnzahlPanel squad;
     OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
 
     public IMSeraphimSquad() {
         name = "Seraphim Squad\n";
@@ -28,11 +25,7 @@ public class IMSeraphimSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
-        ((IMPrioris) rkBoss.getKammer()).type = "Seraphim Superior";
-        rkBoss.initKammer(true);
-        add(rkBoss);
-        rkBoss.setAbwaehlbar(false);
+        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Seraphim Superior"));
 
         complete();
     }
