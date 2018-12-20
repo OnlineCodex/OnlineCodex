@@ -298,6 +298,7 @@ public class VOLKImperium extends BuildaVater {
     private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+    private static final Set<String> AS_ORDERS = ImmutableSet.of("Order of the Valorous Heart", "Order of Our Martyred Lady", "Order of the Ebon Chalice", "Order of the Argent Shroud", "Order of the Bloody Rose", "Order of the Sacred Rose");
 
     public static Set<String> getSmChapters(){
     	return SM_CHAPTERS;
@@ -345,6 +346,7 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("IMPERIUM");
         formationen.add("");
         formationen.add("Adepta Sororitas");
+        AS_ORDERS.forEach(order -> formationen.add(order));
         formationen.add("");
         formationen.add("Adeptus Custodes");
         formationen.add("");
@@ -762,7 +764,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
-        } else if (getFormationType().equals("Adepta Sororitas")) {
+        } else if (getFormationType().equals("Adepta Sororitas") || AS_ORDERS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
