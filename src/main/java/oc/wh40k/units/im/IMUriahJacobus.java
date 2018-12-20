@@ -17,6 +17,7 @@ public class IMUriahJacobus extends Eintrag {
         addWarlordTraits("Righteous Rage", true);
 
         addToInformationVector("MINISTORUM_PRIEST", 1);
+        addToInformationVector("MISSIONARY", 1);
         
         complete();
     }
@@ -24,11 +25,17 @@ public class IMUriahJacobus extends Eintrag {
     @Override
     public void deleteYourself() {
         addToInformationVector("MINISTORUM_PRIEST", -1);
+        addToInformationVector("MISSIONARY", -1);
     	super.deleteYourself();
     }
 
     @Override
     public void refreshen() {
         setUnikat(true);
+        if(getCountFromInformationVector("MISSIONARY") > 1) {
+    		setFehlermeldung("Max 1 MISSIONARY");
+    	} else {
+    		setFehlermeldung("");
+    	}
     }
 }
