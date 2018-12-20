@@ -6,10 +6,10 @@ import static oc.KeyWord.*;
 
 public class IMBattleSistersSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe bolters;
-    OptionsZaehlerGruppe special;
-    OptionsZaehlerGruppe heavy;
+	private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe bolters;
+    private final OptionsZaehlerGruppe special;
+    private final OptionsZaehlerGruppe heavy;
 
     public IMBattleSistersSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, BATTLE_SISTERS_SQUAD);

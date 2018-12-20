@@ -24,9 +24,4 @@ public class IMCanoness extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
 }

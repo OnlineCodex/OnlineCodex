@@ -25,15 +25,15 @@ public class IMMissionary extends Eintrag {
 
         addWarlordTraits("", true);
 
-        addToInformationVector("MINISTORUM_PRIEST", 1);
-        addToInformationVector("MISSIONARY", 1);
+        addToInformationVector(MINISTORUM_PRIEST_CNT, 1);
+        addToInformationVector(MISSIONARY_CNT, 1);
         
         complete();
     }
     
     @Override
     public void refreshen() {
-    	if(getCountFromInformationVector("MISSIONARY") > 1) {
+    	if(getCountFromInformationVector(MISSIONARY_CNT) > 1) {
     		setFehlermeldung("Max 1 MISSIONARY");
     	} else {
     		setFehlermeldung("");
@@ -42,8 +42,8 @@ public class IMMissionary extends Eintrag {
     
     @Override
     public void deleteYourself() {
-        addToInformationVector("MISSIONARY", -1);
-        addToInformationVector("MINISTORUM_PRIEST", -1);
+        addToInformationVector(MISSIONARY_CNT, -1);
+        addToInformationVector(MINISTORUM_PRIEST_CNT, -1);
     	super.deleteYourself();
     }
 }

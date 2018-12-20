@@ -6,8 +6,7 @@ import oc.*;
 
 public class IMSeraphimSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
+    private static AnzahlPanel squad;
 
     public IMSeraphimSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, JUMP_PACK, FLY, SERAPHIM_SQUAD);
@@ -24,7 +23,7 @@ public class IMSeraphimSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Hand flamers", getPts("Hand flamer (AMI)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Inferno pistols", getPts("Inferno pistol (AMI)") * 2));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 

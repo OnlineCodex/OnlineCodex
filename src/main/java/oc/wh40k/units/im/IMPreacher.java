@@ -20,14 +20,14 @@ public class IMPreacher extends Eintrag {
 
         addWarlordTraits("", true);
 
-        addToInformationVector("MINISTORUM_PRIEST", 1);
+        addToInformationVector(MINISTORUM_PRIEST_CNT, 1);
         
         complete();
     }
     
     @Override
     public void deleteYourself() {
-        addToInformationVector("MINISTORUM_PRIEST", -1);
+        addToInformationVector(MINISTORUM_PRIEST_CNT, -1);
     	super.deleteYourself();
     }
 }

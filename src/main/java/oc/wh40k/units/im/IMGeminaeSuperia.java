@@ -6,8 +6,7 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMGeminaeSuperia extends Eintrag {
-    RuestkammerStarter gs1;
-    RuestkammerStarter gs2;
+    private final RuestkammerStarter gs2;
 
     public IMGeminaeSuperia() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, CHARACTER, INFANTRY, JUMP_PACK, FLY, GEMINAE_SUPERIA);
@@ -15,7 +14,8 @@ public class IMGeminaeSuperia extends Eintrag {
         grundkosten = 0;
         überschriftSetzen = true;
 
-        add(gs1 = createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Geminae Superia", "Geminae Superia"));
+        RuestkammerStarter gs1 = createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Geminae Superia", "Geminae Superia");
+        add(gs1);
         gs1.setGrundkosten(getPts("Geminae Superia") + getPts("bolt pistol (AMI)") + getPts("power sword (AMI)"));
         
         seperator();

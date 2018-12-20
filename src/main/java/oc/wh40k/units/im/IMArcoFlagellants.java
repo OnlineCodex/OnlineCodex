@@ -24,7 +24,7 @@ public class IMArcoFlagellants extends Eintrag {
         
         seperator();
         
-        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", 1);
+        addToInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT, 1);
 
         complete();
     }
@@ -38,9 +38,9 @@ public class IMArcoFlagellants extends Eintrag {
         else if (squad.getModelle() <= 9)
             power = 6;
         
-        setEintragsCNT(getCountFromInformationVector("MINISTORUM_PRIEST") > 0 ? 0 : 1);
+        setEintragsCNT(getCountFromInformationVector(MINISTORUM_PRIEST_CNT) > 0 ? 0 : 1);
         
-        if(getCountFromInformationVector("MINISTORUM_PRIEST") < 1 && getCountFromInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE") > 1) {
+        if(getCountFromInformationVector(MINISTORUM_PRIEST_CNT) < 1 && getCountFromInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT) > 1) {
         	setFehlermeldung("MAX 1 CONCLAVE");
         } else {
         	setFehlermeldung("");
@@ -49,7 +49,7 @@ public class IMArcoFlagellants extends Eintrag {
     
     @Override
     public void deleteYourself() {
-        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", -1);
+        addToInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT, -1);
     	super.deleteYourself();
     }
 }

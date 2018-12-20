@@ -6,10 +6,10 @@ import static oc.KeyWord.*;
 
 public class IMDominionSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe bolters;
-    OptionsZaehlerGruppe special;
-    OptionsEinzelUpgrade simulacrum;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe bolters;
+	private final OptionsZaehlerGruppe special;
+	private final OptionsEinzelUpgrade simulacrum;
 
     public IMDominionSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, DOMINION_SQUAD);

@@ -3,11 +3,8 @@ package oc.wh40k.units.im;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMMistressOfRepentance extends Eintrag {
-
-    RuestkammerStarter waffenUndRelikte;
 
     public IMMistressOfRepentance() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, CHARACTER, INFANTRY, MISTRESS_OF_REPENTANCE);
@@ -28,6 +25,6 @@ public class IMMistressOfRepentance extends Eintrag {
     
     @Override
     public void refreshen() {
-    	setEintragsCNT(getCountFromInformationVector("REPENTIA_SQUAD") > 0 ? 0 : 1);
+    	setEintragsCNT(getCountFromInformationVector(REPENTIA_SQUAD_CNT) > 0 ? 0 : 1);
     }
 }

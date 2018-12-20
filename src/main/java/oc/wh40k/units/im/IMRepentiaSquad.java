@@ -15,7 +15,7 @@ public class IMRepentiaSquad extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentias", 3, 9, getPts("Repentia Squad") + getPts("Penitent eviscerator"));
         add(squad);
         
-        addToInformationVector("REPENTIA_SQUAD", 1);
+        addToInformationVector(REPENTIA_SQUAD_CNT, 1);
 
         complete();
     }
@@ -32,7 +32,7 @@ public class IMRepentiaSquad extends Eintrag {
     
     @Override
     public void deleteYourself() {
-    	addToInformationVector("REPENTIA_SQUAD", -1);
+    	addToInformationVector(REPENTIA_SQUAD_CNT, -1);
     	super.deleteYourself();
     }
 
