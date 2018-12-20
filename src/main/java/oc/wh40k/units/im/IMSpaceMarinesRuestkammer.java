@@ -563,13 +563,14 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         }
 
         if(character){
-        	boolean sm = ((VOLKImperium)buildaVater).getSmChapters().contains(buildaVater.getFormationType()) ||
+        	boolean sm = (VOLKImperium.getSmChapters().contains(buildaVater.getFormationType()) ||
         				 buildaVater.getFormationType().equals("IMPERIUM") ||
-        				 buildaVater.getFormationType().equals("Adeptus Astartes"); 
+        				 buildaVater.getFormationType().equals("Adeptus Astartes")) &&
+        				 !keywords.contains(BLOOD_ANGELS); 
         	
-        	boolean ba = buildaVater.getFormationType().equals("Blood Angels") |
-   				 buildaVater.getFormationType().equals("IMPERIUM") ||
-   				 buildaVater.getFormationType().equals("Adeptus Astartes"); 
+        	boolean ba = buildaVater.getFormationType().equals("Blood Angels") ||
+   				 (buildaVater.getFormationType().equals("IMPERIUM") && (keywords.contains(BLOOD_ANGELS) || keywords.contains(CHAPTER))) ||
+   				 (buildaVater.getFormationType().equals("Adeptus Astartes") && (keywords.contains(BLOOD_ANGELS) || keywords.contains(CHAPTER))); 
         	
         	//SM Relics
         	if(COMBATSHIELD.contains(type)){		

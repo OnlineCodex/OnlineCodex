@@ -121,4 +121,7 @@ public enum  KeyWord {
     TYCHO,
     SANGUINARY_NOVITIATE,
     MASTER,
+    DEATH_GUARD,
+    LEGION,
+    BLACK_LEGION
 }

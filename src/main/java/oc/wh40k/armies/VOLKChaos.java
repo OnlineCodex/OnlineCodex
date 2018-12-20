@@ -165,6 +165,10 @@ public class VOLKChaos extends BuildaVater {
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "Red Corsairs", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
     
+    public static Set<String> getLegions() {
+    	return LEGIONS;
+    }
+    
     public VOLKChaos() {
         super("CH", loadPoints("/oc/wh40k/indices/chaos.yaml"));
 
