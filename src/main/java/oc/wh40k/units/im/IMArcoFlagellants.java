@@ -21,6 +21,10 @@ public class IMArcoFlagellants extends Eintrag {
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Arco-flagellants", 3, 9, getPts("Arco-flagellants") + getPts("Arco-flails"));
         add(squad);
+        
+        seperator();
+        
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", 1);
 
         complete();
     }
@@ -35,6 +39,17 @@ public class IMArcoFlagellants extends Eintrag {
             power = 6;
         
         setEintragsCNT(getCountFromInformationVector("MINISTORUM_PRIEST") > 0 ? 0 : 1);
+        
+        if(getCountFromInformationVector("MINISTORUM_PRIEST") < 1 && getCountFromInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE") > 1) {
+        	setFehlermeldung("MAX 1 CONCLAVE");
+        } else {
+        	setFehlermeldung("");
+        }
     }
-
+    
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", -1);
+    	super.deleteYourself();
+    }
 }

@@ -20,7 +20,11 @@ public class IMDeathCultAssassins extends Eintrag {
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Death Cult Assassin", 2, 10, getPts("Death Cult Assassins") + getPts("Death Cult power blades"));
         add(squad);
+        
+        seperator();
 
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", 1);
+        
         complete();
     }
 
@@ -38,6 +42,17 @@ public class IMDeathCultAssassins extends Eintrag {
             power = 8;
         
         setEintragsCNT(getCountFromInformationVector("MINISTORUM_PRIEST") > 0 ? 0 : 1);
+        
+        if(getCountFromInformationVector("MINISTORUM_PRIEST") < 1 && getCountFromInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE") > 1) {
+        	setFehlermeldung("MAX 1 CONCLAVE");
+        } else {
+        	setFehlermeldung("");
+        }
     }
-
+    
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", -1);
+    	super.deleteYourself();
+    }
 }

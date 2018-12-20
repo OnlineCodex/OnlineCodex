@@ -15,6 +15,10 @@ public class IMCrusaders extends Eintrag {
         name = "Crusaders";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Crusaders", 2, 10, getPts("Crusaders") + getPts("Power sword (AMI)") + getPts("Storm shield (AMI)")));
         
+        seperator();
+        
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", 1);
+        
         complete();
     }
 
@@ -33,5 +37,17 @@ public class IMCrusaders extends Eintrag {
         }
         
         setEintragsCNT(getCountFromInformationVector("MINISTORUM_PRIEST") > 0 ? 0 : 1);
+        
+        if(getCountFromInformationVector("MINISTORUM_PRIEST") < 1 && getCountFromInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE") > 1) {
+        	setFehlermeldung("MAX 1 CONCLAVE");
+        } else {
+        	setFehlermeldung("");
+        }
+    }
+    
+    @Override
+    public void deleteYourself() {
+        addToInformationVector("ECCLESIARCHY_BATTLE_CONCLAVE", -1);
+    	super.deleteYourself();
     }
 }
