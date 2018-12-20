@@ -10,7 +10,7 @@ public class CHHavocs extends Eintrag {
     OptionsZaehlerGruppe o2;
     RuestkammerStarter rkBoss;
     OptionsZaehlerGruppe nahkampfwaffe;
-    OptionsUpgradeGruppe ikone;
+    OptionsUpgradeGruppe icon;
     OptionsUpgradeGruppe mark;
 
     public CHHavocs() {
@@ -28,10 +28,6 @@ public class CHHavocs extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
         add(nahkampfwaffe = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         nahkampfwaffe.setAnzahl(0, squad.getModelle() - 1);
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Chaos icon", getPts("Icon of Vengeance")));
-        add(ikone = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -45,7 +41,16 @@ public class CHHavocs extends Eintrag {
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
         seperator();
-
+        
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
+        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
@@ -75,6 +80,12 @@ public class CHHavocs extends Eintrag {
 
         power = 7 +
                 ((squad.getModelle() == 10) ? 3 : 0);
+        
+        icon.setAktiv("Icon of Vengeance", !mark.isSelected());
+        icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
+        icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));
+        icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
+        icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
 
 }

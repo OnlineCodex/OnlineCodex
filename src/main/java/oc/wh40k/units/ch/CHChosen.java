@@ -23,11 +23,6 @@ public class CHChosen extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Chaos icon", getPts("Icon of Vengeance")));
-        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-        seperator();
-
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
         add(pistol = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
         pistol.setAnzahl(0, squad.getModelle() - 1);
@@ -73,6 +68,15 @@ public class CHChosen extends Eintrag {
         add(claws = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
 
         seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
+        ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
+        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
@@ -110,5 +114,11 @@ public class CHChosen extends Eintrag {
 
         power = 8 +
                 ((squad.getModelle() == 10) ? 5 : 0);
+        
+        icon.setAktiv("Icon of Vengeance", !mark.isSelected());
+        icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
+        icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));
+        icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
+        icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
 }

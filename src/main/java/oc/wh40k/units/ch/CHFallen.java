@@ -7,7 +7,6 @@ public class CHFallen extends Eintrag {
     AnzahlPanel squad;
     OptionsZaehlerGruppe pistol, claws, boltgun, special;
     OptionsUpgradeGruppe heavy;
-    OptionsUpgradeGruppe icon;
     RuestkammerStarter champion;
 
     public CHFallen() {
@@ -19,11 +18,6 @@ public class CHFallen extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosSpaceMarines.jpg"));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Chaos icon", getPts("Icon of Vengeance")));
-        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
