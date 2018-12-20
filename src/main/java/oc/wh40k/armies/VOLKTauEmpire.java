@@ -30,7 +30,7 @@ public class VOLKTauEmpire extends BuildaVater {
     private static final String[] Eliteeinträge_IA_Tau = new String[]{"", "DX-4 Technical Drones"/*, "XV9 Hazard Support Team"*/};
     private static final String[] Sturmeinträge_IA_Tau = new String[]{""/*, "XV109 Y'vahra Battlesuit"*/, "Tetra Scout Speeder Team"/*, "Piranha TX-42 Light Skimmer"*/};
     private static final String[] Unterstützungeinträge_IA_Tau = new String[]{""/*, "XV107 R'varna Battlesuit"*//*, "Heavy Gun Drone Squadron"*//*, "TX7 Heavy Bombardment Hammerdead Gunship"*//*, "TX7 Fire Support Hammerdead Gunship"*/};
-    private static final String[] Fliegereinträge_IA_Tau = new String[]{""/*, "DX-6 Remora Stealth Drone Squadron"*//*, "Barracuda AX-5-2"*//*, "Tiger Shark"*//*, "Tiger Shark AX-1-0"*/, "Orca Dropship"};
+    private static final String[] Fliegereinträge_IA_Tau = new String[]{""/*, "DX-6 Remora Stealth Drone Squadron"*/, "Barracuda AX-5-2 [FW]"/*, "Tiger Shark"*//*, "Tiger Shark AX-1-0"*/, "Orca Dropship"};
     private static final String[] Befestigungseinträge_IA_Tau = new String[]{"", "Remote Sensor Tower"/*, "Drone Sentry Turret"*/};
     private static final String[] LordofWar_IA_Tau = new String[]{""/*, "KX139 Ta'unar Supremacy Armour"*/, "Manta Super-heavy Dropship"};
 
