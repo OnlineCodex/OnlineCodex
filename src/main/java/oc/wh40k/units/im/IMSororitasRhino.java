@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -10,6 +12,7 @@ public class IMSororitasRhino extends Eintrag {
     OptionsUpgradeGruppe o1;
 
     public IMSororitasRhino() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER,VEHICLE, TRANSPORT, RHINO, SORORITAS_RHINO);
         name = "Sororitas Rhino";
         grundkosten = getPts("Sororitas Rhino");
         power = 4;
@@ -21,8 +24,8 @@ public class IMSororitasRhino extends Eintrag {
 
         seperator();
 
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AMI)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AMI)")));
 
         complete();
     }

@@ -39,7 +39,7 @@ public class IMBattleSistersSquad extends Eintrag {
         
         seperator();
         
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis AMI")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis (AMI)")));
         
         seperator();
 
