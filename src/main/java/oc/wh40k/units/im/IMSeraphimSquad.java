@@ -1,16 +1,15 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.*;
 
 public class IMSeraphimSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
+    private static AnzahlPanel squad;
 
     public IMSeraphimSquad() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, JUMP_PACK, FLY, SERAPHIM_SQUAD);
         name = "Seraphim Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -24,26 +23,21 @@ public class IMSeraphimSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Hand flamers", getPts("Hand flamer (AMI)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Inferno pistols", getPts("Inferno pistol (AMI)") * 2));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
-        ((IMPrioris) rkBoss.getKammer()).type = "Seraphim Superior";
-        rkBoss.initKammer(true);
-        add(rkBoss);
-        rkBoss.setAbwaehlbar(false);
+        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Seraphim Superior"));
 
         complete();
     }
 
     @Override
     public void refreshen() {
-
         if (squad.getModelle() <= 5)
             power = 4;
         else if (squad.getModelle() <= 10)
-            power = 8;
+            power = 6;
     }
 
 }

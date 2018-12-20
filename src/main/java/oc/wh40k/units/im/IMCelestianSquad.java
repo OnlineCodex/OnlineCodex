@@ -1,16 +1,18 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.*;
 
 public class IMCelestianSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe bolters;
+	private final OptionsZaehlerGruppe special;
+	private final OptionsZaehlerGruppe heavy;
 
     public IMCelestianSquad() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, CELESTIAN_SQUAD);
         name = "Celestian Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -18,32 +20,30 @@ public class IMCelestianSquad extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Celestian Squad", 5, 10, getPts("Celestian Squad"));
         add(squad);
 
-        add(ico = new oc.Picture("oc/wh40k/images/ASSororitastrupp.jpg"));
-
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (AMI)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        checkBuildaVater();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (AMI)")));
+        add(bolters = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        ogE.addAll(IMAdeptaSororitasRuestkammer.getSpecialWeapons(buildaVater));
+        add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        ogE.addAll(IMAdeptaSororitasRuestkammer.getHeavyWeapons(buildaVater));
+        add(heavy = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis (AMI)")));
+        
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (AMI)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        seperator();
-
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
-        ((IMPrioris) rkBoss.getKammer()).type = "Sister Superior";
-        rkBoss.initKammer(true);
-        add(rkBoss);
-        rkBoss.setAbwaehlbar(false);
+        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
 
         complete();
     }
@@ -54,7 +54,12 @@ public class IMCelestianSquad extends Eintrag {
         if (squad.getModelle() <= 5)
             power = 5;
         else if (squad.getModelle() <= 10)
-            power = 10;
+            power = 7;
+        
+        bolters.setMaxAnzahl(squad.getModelle() - 1 - special.getAnzahl() - heavy.getAnzahl());
+        bolters.setAnzahl(0, bolters.getMaxAnzahl());
+        special.setMaxAnzahl(2 - heavy.getAnzahl());
+        heavy.setMaxAnzahl(Math.min(1, 2 - special.getAnzahl()));
     }
 
 }

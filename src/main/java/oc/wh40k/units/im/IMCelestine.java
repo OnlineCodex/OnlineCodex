@@ -1,48 +1,26 @@
 package oc.wh40k.units.im;
 
-
-
-import oc.AnzahlPanel;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 
-
-
 public class IMCelestine extends Eintrag {
 
-
-
-    AnzahlPanel squad;
-
-
-
     public IMCelestine() {
-
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, CHARACTER, INFANTRY, JUMP_PACK, FLY, CELESTINE);
         name = "Celestine";
-
         grundkosten = getPts("Celestine");
+        power = 8;
+        
+        seperator();
 
-
-
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Geminae Superia", 0, 2, getPts("Celestine - Geminae Superia")));
-
-
-
+        addWarlordTraits("Beacon of Faith", true);
+        
         complete();
-
     }
-
-
 
     @Override
-
     public void refreshen() {
-
         setUnikat(true);
-
-        power = 8 + squad.getModelle() * 3;
-
     }
-
 }
-

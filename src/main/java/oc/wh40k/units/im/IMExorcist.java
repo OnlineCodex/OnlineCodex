@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -10,9 +12,10 @@ public class IMExorcist extends Eintrag {
     OptionsUpgradeGruppe o1;
 
     public IMExorcist() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, VEHICLE, EXORCIST);
         name = "Exorcist";
         grundkosten = getPts("Exorcist");
-        power = 4;
+        power = 7;
 
         seperator();
 
@@ -21,8 +24,8 @@ public class IMExorcist extends Eintrag {
 
         seperator();
 
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AMI)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AMI)")));
 
         complete();
     }
