@@ -13,7 +13,7 @@ public class VOLKNecrons extends BuildaVater {
 
     //Vanilla Necrons
     private static final String[] HQeinträge_NE = new String[]{"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
-    private static final String[] Standardeinträge_NE = new String[]{"", "Necron Warriors", "Immortals",};
+    private static final String[] Standardeinträge_NE = new String[]{"", "Necrons Warriors", "Immortals",};
     private static final String[] Eliteeinträge_NE = new String[]{"", "Lychguard", "Deathmarks", "Flayed Ones",};
     private static final String[] Sturmeinträge_NE = new String[]{"", "Tomb Blades", "Destroyers",};
     private static final String[] Unterstützungeinträge_NE = new String[]{"", "Heavy Destroyers", "Monolith", "Annihilation Barge", "Doomsday Ark",};
