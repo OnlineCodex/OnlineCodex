@@ -588,15 +588,15 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Deathwatch);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Deathwatch, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Deathwatch);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Deathwatch);
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Deathwatch);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Deathwatch);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Deathwatch);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Deathwatch, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Deathwatch, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Deathwatch, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Deathwatch, Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Grey Knights")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Grey_Knights);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Grey_Knights);

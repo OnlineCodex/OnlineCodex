@@ -167,7 +167,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 					rkBikers.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Biker"));
 					((IMKillteamKammer) rkBikers.lastElement().getKammer()).setType("Biker");
 					rkBikers.lastElement().initKammer();
-					rkBikers.lastElement().setGrundkosten(getPts("Deathwatch Bikers"));
+					rkBikers.lastElement().setGrundkosten(getPts("Deathwatch Bikers") + getPts("Twin boltgun (DW)"));
 					add(rkBikers.lastElement());
 					rkBikers.lastElement().setAbwaehlbar(false);	
 				}
