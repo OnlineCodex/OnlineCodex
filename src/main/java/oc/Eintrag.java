@@ -3,7 +3,7 @@ package oc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
-import oc.wh40k.units.Warlordtraits;
+import oc.wh40k.units.*;
 import oc.wh40k.units.im.IMAdeptaSororitasRuestkammer;
 
 import org.slf4j.Logger;
@@ -18,7 +18,8 @@ import static com.google.common.collect.Sets.newHashSet;
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
 
-public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
+public abstract class Eintrag<F extends Faction, A extends AOPSlot, T extends UnitType, S extends Source>
+		extends OptionsCollection implements BuildaSTK {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
 

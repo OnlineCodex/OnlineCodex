@@ -2,16 +2,12 @@ package oc.wh40k.units.necrons;
 
 import oc.*;
 import oc.wh40k.units.AOPSlot.Assault;
-import oc.wh40k.units.MemberOf;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Immortals<D extends Necrons> extends Eintrag
-        implements Necrons, MemberOf<D>, Assault, Infantry, Necrons.Immortals {
+public class Immortals extends Eintrag<Necrons, Assault, Infantry> {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    boolean isPyrrhianer = false;
+    private final AnzahlPanel squad;
+    private final OptionsUpgradeGruppe o1;
 
     public Immortals() {
         grundkosten = 0;

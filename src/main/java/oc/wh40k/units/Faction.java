@@ -1,6 +1,5 @@
 package oc.wh40k.units;
 
-import oc.Tag;
+import oc.ShadowType;
 
-public interface Faction extends Tag {
-}
+public abstract class Faction extends ShadowType {}

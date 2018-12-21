@@ -1,11 +1,17 @@
 package oc.wh40k.units;
 
-import oc.Tag;
+import oc.ShadowType;
 
-public interface AOPSlot extends Tag {
-    interface Hq extends AOPSlot {}
-    interface Assault extends AOPSlot {}
-    interface Elite extends AOPSlot {}
-    interface FastAttack extends AOPSlot {}
-    interface HeavySupport extends  AOPSlot {}
+public abstract class AOPSlot extends ShadowType {
+    private AOPSlot() {}
+
+    public static final class Hq extends AOPSlot {}
+    public static final class Assault extends AOPSlot {}
+    public static final class Elite extends AOPSlot {}
+    public static final class FastAttack extends AOPSlot {}
+    public static final class HeavySupport extends AOPSlot {}
+    public static final class DedicatedTransport extends AOPSlot {}
+    public static final class Flier extends AOPSlot {}
+    public static final class LordOfWar extends AOPSlot {}
+    public static final class Fortification extends AOPSlot {}
 }

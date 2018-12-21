@@ -7,8 +7,7 @@ import oc.wh40k.units.Unique;
 import oc.wh40k.units.UnitType.Infantry;
 import oc.wh40k.units.necrons.Necrons.Sautekh;
 
-public class ImotekhtheStormlord extends Eintrag
-        implements Hq, CharacterModel, Infantry, Necrons.Overlord, Necrons, Sautekh, Unique<ImotekhtheStormlord> {
+public class ImotekhtheStormlord extends Eintrag<Sautekh, Hq, Infantry> implements CharacterModel, Necrons.Overlord, Unique {
 
     public ImotekhtheStormlord() {
         name = "Imotekh the Stormlord";

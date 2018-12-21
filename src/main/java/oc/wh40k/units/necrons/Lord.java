@@ -4,15 +4,13 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.wh40k.units.CharacterModel;
 import oc.wh40k.units.AOPSlot.Hq;
-import oc.wh40k.units.MemberOf;
-import oc.wh40k.units.UnitType;
+import oc.wh40k.units.CharacterModel;
+import oc.wh40k.units.UnitType.Infantry;
 
-public class Lord<D extends Necrons.Dynasty> extends Eintrag
-        implements Necrons, MemberOf<D>, Hq, CharacterModel, UnitType.Infantry, Necrons.Lord {
+public class Lord extends Eintrag<Necrons, Hq, Infantry> implements CharacterModel, Necrons.Lord {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public Lord() {
         name = "Lord";
@@ -44,5 +42,4 @@ public class Lord<D extends Necrons.Dynasty> extends Eintrag
     public void refreshen() {
         if (!o1.isSelected()) o1.setSelected(0, true);
     }
-
 }

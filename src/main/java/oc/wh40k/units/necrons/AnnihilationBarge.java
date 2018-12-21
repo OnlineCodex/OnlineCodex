@@ -3,14 +3,20 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.wh40k.units.AOPSlot;
+import oc.wh40k.units.AOPSlot.HeavySupport;
+import oc.wh40k.units.Fly;
+import oc.wh40k.units.UnitType;
+import oc.wh40k.units.UnitType.Vehicle;
 
-public class NEAnnihilationBarge extends Eintrag {
+public class AnnihilationBarge extends Eintrag<Necrons, HeavySupport, Vehicle> implements Fly {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
-    public NEAnnihilationBarge() {
+    public AnnihilationBarge() {
         name = "Annihilation Barge";
         grundkosten = getPts("Annihilation Barge") + getPts("Twin tesla destructor");
+        power = 8;
 
         add(ico = new oc.Picture("oc/wh40k/images/NEAnnihilatorGleiter.jpg"));
 
@@ -26,8 +32,5 @@ public class NEAnnihilationBarge extends Eintrag {
     @Override
     public void refreshen() {
         if (!o1.isSelected()) o1.setSelected(0, true);
-
-        power = 8;
     }
-
 }

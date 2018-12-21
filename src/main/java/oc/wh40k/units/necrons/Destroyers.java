@@ -3,15 +3,11 @@ package oc.wh40k.units.necrons;
 import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
-import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.FastAttack;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.MemberOf;
-import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Destroyers<D extends Necrons> extends Eintrag
-        implements Necrons, MemberOf<D>, FastAttack, Infantry, Fly, Necrons.Destroyer {
+public class Destroyers extends Eintrag<Necrons, FastAttack, Infantry> implements Fly {
 
     private final AnzahlPanel squad;
     private final OptionsEinzelZaehler oe1;

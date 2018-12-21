@@ -1,66 +1,36 @@
 package oc.wh40k.units.necrons;
 
-
-
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
+import oc.wh40k.units.AOPSlot;
+import oc.wh40k.units.AOPSlot.FastAttack;
+import oc.wh40k.units.Fly;
+import oc.wh40k.units.UnitType;
+import oc.wh40k.units.UnitType.Beasts;
+import oc.wh40k.units.necrons.Necrons.Canoptek;
 
+public class CanoptekAcanthrites extends Eintrag<Canoptek, FastAttack, Beasts> implements Fly {
 
+    private final AnzahlPanel squad;
 
-public class NECanoptekAcanthrites extends Eintrag {
-
-
-
-    AnzahlPanel squad;
-
-
-
-    public NECanoptekAcanthrites() {
-
+    public CanoptekAcanthrites() {
         name = "Canoptek Acanthrites";
-
         grundkosten = 0;
-
-
-
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Canoptek Acanthrites", 3, 9, getPts("Canoptek Acanthrites") + getPts("Cutting beam") + getPts("Voidblade"));
 
         add(squad);
 
-
-
-        seperator();
-
-
-
         complete();
-
     }
-
-
 
     @Override
-
     public void refreshen() {
-
-
-
         if (squad.getModelle() > 6) {
-
             power = 27;
-
         } else if (squad.getModelle() > 3) {
-
             power = 18;
-
         } else {
-
             power = 9;
-
         }
-
     }
-
 }
-

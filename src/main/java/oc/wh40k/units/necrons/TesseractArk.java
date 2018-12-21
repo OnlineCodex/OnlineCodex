@@ -1,62 +1,30 @@
 package oc.wh40k.units.necrons;
 
-
-
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
+import oc.wh40k.units.AOPSlot;
+import oc.wh40k.units.AOPSlot.HeavySupport;
+import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
+import oc.wh40k.units.Source.ImperialArmourIndexXenos;
+import oc.wh40k.units.UnitType;
+import oc.wh40k.units.UnitType.Vehicle;
 
+public class TesseractArk extends Eintrag<Necrons, HeavySupport, Vehicle, ImperialArmourIndexXenos> implements Fly {
 
-
-public class NETesseractArk extends Eintrag {
-
-
-
-    OptionsZaehlerGruppe o1;
-
-
-
-    public NETesseractArk() {
-
+    public TesseractArk() {
         name = "Tesseract Ark";
-
         grundkosten = getPts("Tesseract Ark") + getPts("Tesseract singularity chamber");
-
         power = 13;
 
-
-
         seperator();
-
-
 
         ogE.addElement(new OptionsGruppeEintrag("2 tesla cannons", 2 * getPts("Tesla cannon")));
-
         ogE.addElement(new OptionsGruppeEintrag("2 gauss cannons", 2 * getPts("Gauss cannon")));
-
         ogE.addElement(new OptionsGruppeEintrag("2 particle beamers", 2 * getPts("Particle beamer")));
-
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-
-
-        seperator();
-
-
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         complete();
-
     }
-
-
-
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }
-

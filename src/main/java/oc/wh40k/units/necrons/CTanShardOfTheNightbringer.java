@@ -4,12 +4,11 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.Elite;
 import oc.wh40k.units.CharacterModel;
-import oc.wh40k.units.Monster;
 import oc.wh40k.units.Unique;
+import oc.wh40k.units.UnitType.Monster;
 import oc.wh40k.units.necrons.Necrons.CTanShards;
 
-public class CTanShardOfTheNightbringer extends Eintrag
-        implements Necrons, CTanShards, Elite, CharacterModel, Monster, Unique<CTanShardOfTheNightbringer>, Necrons.CTanShardOfTheNightbringer {
+public class CTanShardOfTheNightbringer extends Eintrag<CTanShards, Elite, Monster> implements CharacterModel, Unique {
 
     public CTanShardOfTheNightbringer() {
         name = "C'tan Shard of the Nightbringer";

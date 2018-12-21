@@ -3,15 +3,14 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.wh40k.units.*;
 import oc.wh40k.units.AOPSlot.Hq;
+import oc.wh40k.units.CharacterModel;
+import oc.wh40k.units.Fly;
 import oc.wh40k.units.UnitType.Infantry;
-import oc.wh40k.units.necrons.Necrons.Dynasty;
 
-public class DestroyerLord<D extends Dynasty> extends Eintrag
-        implements Necrons, MemberOf<D>, Hq, CharacterModel, Infantry, Fly, Necrons.DestroyerLord {
+public class DestroyerLord extends Eintrag<Necrons, Hq, Infantry> implements CharacterModel, Fly {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public DestroyerLord() {
         name = "Destroyer Lord";

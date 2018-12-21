@@ -118,8 +118,8 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
             "Befestigungen",
             "Lords of War",
     };
-    String[] engSg = {"", "HQ", "Troop", "Elite", "Fast Attack", "Heavy Support", "Transporter", "Flyer", "Fortification", "Lord of War", "Additional Information"};
-    String[] engPl = {"", "HQ", "Troops", "Elites", "Fast Attack", "Heavy Supports", "Transporter", "Flyer", "Fortification", "Lords of War", "Additional Information"};
+    String[] engSg = {"", "HQ", "Troop", "Elite", "Fast Attack", "Heavy Support", "Transporter", "Flier", "Fortification", "Lord of War", "Additional Information"};
+    String[] engPl = {"", "HQ", "Troops", "Elites", "Fast Attack", "Heavy Supports", "Transporter", "Flier", "Fortification", "Lords of War", "Additional Information"};
     String[] gerNullText = {
             "",
             "keine",

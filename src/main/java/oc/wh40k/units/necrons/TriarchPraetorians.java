@@ -10,8 +10,7 @@ import oc.wh40k.units.Fly;
 import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class TriarchPraetorians extends Eintrag
-        implements Necrons, Elite, Infantry, Fly, Necrons.TriarchPraetorians {
+public class TriarchPraetorians extends Eintrag<Necrons, Elite, Infantry> implements Fly {
 
     private final AnzahlPanel squad;
     private final OptionsUpgradeGruppe o1;

@@ -6,11 +6,9 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.wh40k.units.AOPSlot.FastAttack;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.MemberOf;
 import oc.wh40k.units.UnitType.Biker;
 
-public class TombBlades<D extends Necrons> extends Eintrag
-        implements Necrons, MemberOf<D>, FastAttack, Biker, Fly, Necrons.TombBlades {
+public class TombBlades extends Eintrag<Necrons, FastAttack, Biker> implements Fly {
 
     private final AnzahlPanel squad;
     private final OptionsZaehlerGruppe o1x;

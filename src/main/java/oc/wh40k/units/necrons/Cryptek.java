@@ -5,11 +5,9 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Hq;
 import oc.wh40k.units.CharacterModel;
-import oc.wh40k.units.MemberOf;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Cryptek<D extends Necrons.Dynasty> extends Eintrag
-        implements Necrons, MemberOf<D>, Hq, CharacterModel, Infantry, Necrons.Cryptek {
+public class Cryptek extends Eintrag<Necrons, Hq, Infantry> implements CharacterModel, Necrons.Cryptek {
 
     private final OptionsUpgradeGruppe o1;
 

@@ -2,15 +2,11 @@ package oc.wh40k.units.necrons;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.MemberOf;
-import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class HeavyDestroyers<D extends Necrons> extends Eintrag
-        implements Necrons, MemberOf<D>, HeavySupport, Infantry, Fly, Necrons.HeavyDestroyer {
+public class HeavyDestroyers extends Eintrag<Necrons, HeavySupport, Infantry> implements Fly {
 
     private final AnzahlPanel squad;
 

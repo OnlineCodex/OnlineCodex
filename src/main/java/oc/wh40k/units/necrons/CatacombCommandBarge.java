@@ -8,10 +8,11 @@ import oc.wh40k.units.*;
 import oc.wh40k.units.AOPSlot.Hq;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class CatacombCommandBarge<D extends Necrons.Dynasty> extends Eintrag
-        implements Necrons, MemberOf<D>, Hq, CharacterModel, Vehicle, Necrons.Overlord, Fly, Unique<CatacombCommandBarge<D>> {
+public class CatacombCommandBarge extends Eintrag<Necrons, Hq, Vehicle>
+        implements CharacterModel, Necrons.Overlord, Fly, Unique {
 
-    OptionsUpgradeGruppe o1, o2;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
 
     public CatacombCommandBarge() {
         name = "Catacomb Command Barge";

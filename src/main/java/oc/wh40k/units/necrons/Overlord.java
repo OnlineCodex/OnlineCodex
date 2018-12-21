@@ -5,14 +5,11 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Hq;
-import oc.wh40k.units.CharacterModel;
-import oc.wh40k.units.MemberOf;
-import oc.wh40k.units.UnitType;
+import oc.wh40k.units.UnitType.Infantry;
 
-public class Overlord<D extends Necrons.Dynasty> extends Eintrag
-        implements Necrons, MemberOf<D>, Hq, CharacterModel, UnitType.Infantry, Necrons.Overlord {
+public class Overlord extends Eintrag<Necrons, Hq, Infantry> implements Necrons.Overlord {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public Overlord() {
         name = "Overlord";

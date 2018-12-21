@@ -3,13 +3,11 @@ package oc.wh40k.units.necrons;
 import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.Assault;
-import oc.wh40k.units.MemberOf;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class NecronWarriors<D extends Necrons> extends Eintrag
-        implements Necrons, MemberOf<D>, Assault, Infantry, Necrons.Warriors {
+public class NecronWarriors extends Eintrag<Necrons, Assault, Infantry> {
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     public NecronWarriors() {
         grundkosten = 0;

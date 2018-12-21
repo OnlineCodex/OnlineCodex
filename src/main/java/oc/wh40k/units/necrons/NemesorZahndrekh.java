@@ -4,10 +4,10 @@ import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.Hq;
 import oc.wh40k.units.CharacterModel;
 import oc.wh40k.units.Unique;
+import oc.wh40k.units.UnitType.Infantry;
+import oc.wh40k.units.necrons.Necrons.Sautekh;
 
-public class NemesorZahndrekh extends Eintrag
-        implements Necrons, Necrons.Sautekh, Hq, CharacterModel, Necrons.Overlord, Unique<NemesorZahndrekh> {
-	
+public class NemesorZahndrekh extends Eintrag<Sautekh, Hq, Infantry> implements CharacterModel, Necrons.Overlord, Unique {
 
     public NemesorZahndrekh() {
         name = "Nemesor Zahndrekh";
@@ -20,10 +20,4 @@ public class NemesorZahndrekh extends Eintrag
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-        setUnikat(true);
-    }
 }
-

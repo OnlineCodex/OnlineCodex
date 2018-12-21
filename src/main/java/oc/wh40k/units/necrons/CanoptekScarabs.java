@@ -4,11 +4,10 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.FastAttack;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.MemberOf;
 import oc.wh40k.units.UnitType.Swarm;
+import oc.wh40k.units.necrons.Necrons.Canoptek;
 
-public class CanoptekScarabs<D extends Necrons> extends Eintrag
-        implements Necrons, Necrons.Canoptek, MemberOf<D>, FastAttack, Swarm, Fly, Necrons.CanoptekScarabs {
+public class CanoptekScarabs extends Eintrag<Canoptek, FastAttack, Swarm> implements Fly {
 
     private final AnzahlPanel squad;
 

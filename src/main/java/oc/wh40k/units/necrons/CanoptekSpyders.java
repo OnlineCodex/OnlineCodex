@@ -4,16 +4,12 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
-import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.MemberOf;
-import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Monster;
 import oc.wh40k.units.necrons.Necrons.Canoptek;
 
-public class CanoptekSpyders<D extends Necrons> extends Eintrag
-        implements Necrons, Canoptek, MemberOf<D>, HeavySupport, Monster, Fly, Necrons.CanoptekSpyders {
+public class CanoptekSpyders extends Eintrag<Canoptek, HeavySupport, Monster> implements Fly {
 
     private final AnzahlPanel squad;
     private final OptionsZaehlerGruppe o1;

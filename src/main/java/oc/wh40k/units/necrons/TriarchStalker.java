@@ -3,13 +3,10 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.Elite;
-import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class TriarchStalker extends Eintrag
-        implements Necrons, Elite, Vehicle, Necrons.TriarchStalker {
+public class TriarchStalker extends Eintrag<Necrons, Elite, Vehicle> {
 
     private final OptionsUpgradeGruppe o1;
 

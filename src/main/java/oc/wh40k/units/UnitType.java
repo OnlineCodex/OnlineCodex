@@ -1,10 +1,14 @@
 package oc.wh40k.units;
 
-public interface UnitType {
-    interface Infantry extends UnitType {}
-    interface Vehicle extends UnitType {}
-    interface Beasts extends UnitType {}
-    interface Swarm extends UnitType {}
-    interface Biker extends  UnitType {}
-    interface Monster extends UnitType {}
+import oc.ShadowType;
+
+public abstract class UnitType extends ShadowType {
+    private UnitType() {}
+
+    public static final class Infantry extends UnitType {}
+    public static final class Vehicle extends UnitType {}
+    public static final class Beasts extends UnitType {}
+    public static final class Swarm extends UnitType {}
+    public static final class Biker extends  UnitType {}
+    public static final class Monster extends UnitType {}
 }
