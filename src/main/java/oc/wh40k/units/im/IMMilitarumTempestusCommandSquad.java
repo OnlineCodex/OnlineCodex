@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMMilitarumTempestusCommandSquad extends Eintrag {
 
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1, o2, o4;
-    OptionsEinzelZaehler oe2;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1, o2, o4;
+    private final OptionsEinzelZaehler oe2;
 
 
     public IMMilitarumTempestusCommandSquad() {
