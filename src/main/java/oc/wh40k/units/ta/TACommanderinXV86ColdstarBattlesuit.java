@@ -59,11 +59,6 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
                 setFehlermeldung("");
             }
         }
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
-        );
     }
 
     //@OVERRIDE
