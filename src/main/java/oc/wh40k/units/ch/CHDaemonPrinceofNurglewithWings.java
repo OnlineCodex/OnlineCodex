@@ -34,12 +34,12 @@ public class CHDaemonPrinceofNurglewithWings extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        
+        seperator();
+        
+        addWarlordTraits("", true);
 
         complete();
 
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

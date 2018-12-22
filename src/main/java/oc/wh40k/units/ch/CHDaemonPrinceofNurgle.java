@@ -41,12 +41,4 @@ public class CHDaemonPrinceofNurgle extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
-    }
 }

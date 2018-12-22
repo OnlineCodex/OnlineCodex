@@ -13,7 +13,6 @@ public class CHTyphus extends Eintrag {
         name = "Typhus";
         grundkosten = getPts("Typhus");
         power = 9;
-        complete();
 
         seperator();
 
@@ -36,9 +35,5 @@ public class CHTyphus extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }
