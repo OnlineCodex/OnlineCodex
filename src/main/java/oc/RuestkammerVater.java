@@ -17,8 +17,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerVater.class);
 
-	protected int cntX = randAbstand;
-	protected boolean legal = true;
+    protected boolean legal = true;
 	protected OptionsButtonUpgrade chosenRelic = null;
 	boolean uniqueError = false;
 	protected boolean warlord = false;
