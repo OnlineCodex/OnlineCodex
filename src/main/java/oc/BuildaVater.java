@@ -113,7 +113,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
         @Override
         public void actionPerformed(ActionEvent event) {
-            if (!((String) formationBox.getSelectedItem()).equals("")) {
+            Object selected = formationBox.getSelectedItem();
+            if (selected != null && !"".equals(selected)) {
                 if (getKontingentTyp().startsWith("Alliiertes Kontingent")) {
                     Hauptkontingent.setSelected(false);
                     Hauptkontingent.setEnabled(false);
@@ -184,9 +185,10 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         }
     }
 
-    public String getFormationType() {
-        if (!((String) formationBox.getSelectedItem()).equals("")) {
-            return ((String) formationBox.getSelectedItem());
+    public Object getFormationType() {
+        Object selected = formationBox.getSelectedItem();
+        if (selected != null && !"".equals(selected)) {
+            return selected;
         } else {
             return "";
         }
@@ -265,6 +267,14 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 }
 
                 formationBox = new JComboBox(formationen);
+                final ListCellRenderer originalRenderer = formationBox.getRenderer();
+                formationBox.setRenderer((list, value, index, isSelected, cellHasFocus) -> {
+                    if (value instanceof Class) {
+                        return originalRenderer.getListCellRendererComponent(list, ((Class) value).getSimpleName(), index, isSelected, cellHasFocus);
+                    } else {
+                        return originalRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                    }
+                });
                 formationBox.setMaximumRowCount(25);
 
                 panel.add(formationBox);

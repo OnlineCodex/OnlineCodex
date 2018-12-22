@@ -1,11 +1,14 @@
 package oc.reflection;
 
-import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.ImmutableSetMultimap;
+import com.google.common.collect.Multimap;
+import com.google.common.collect.SetMultimap;
 import oc.Eintrag;
+import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.*;
 import oc.wh40k.units.Faction;
 
-import java.util.Objects;
+import java.util.Map;
 import java.util.Set;
 
 import static java.util.Objects.requireNonNull;
@@ -13,77 +16,97 @@ import static java.util.Objects.requireNonNull;
 public final class FactionDescription<F extends Faction> {
 
     private final Class<F> type;
-    private final Set<Class<? extends Eintrag<F, Hq>>> hq;
-    private final Set<Class<? extends Eintrag<F, Troops>>> troops;
-    private final Set<Class<? extends Eintrag<F, Elite>>> elite;
-    private final Set<Class<? extends Eintrag<F, FastAttack>>> fastAttack;
-    private final Set<Class<? extends Eintrag<F, HeavySupport>>> heavySupport;
-    private final Set<Class<? extends Eintrag<F, DedicatedTransport>>> dedicatedTransport;
-    private final Set<Class<? extends Eintrag<F, Flier>>> flier;
-    private final Set<Class<? extends Eintrag<F, LordOfWar>>> lordOfWar;
-    private final Set<Class<? extends Eintrag<F, Fortification>>> fortification;
+    private final SetMultimap<Class<? extends AOPSlot>, Class<? extends Eintrag<F, ?>>> units;
 
-    public FactionDescription(
-            Class<F> type,
-            Set<Class<? extends Eintrag<F, Hq>>> hq,
-            Set<Class<? extends Eintrag<F, Troops>>> troops,
-            Set<Class<? extends Eintrag<F, Elite>>> elite,
-            Set<Class<? extends Eintrag<F, FastAttack>>> fastAttack,
-            Set<Class<? extends Eintrag<F, HeavySupport>>> heavySupport,
-            Set<Class<? extends Eintrag<F, DedicatedTransport>>> dedicatedTransport,
-            Set<Class<? extends Eintrag<F, Flier>>> flier,
-            Set<Class<? extends Eintrag<F, LordOfWar>>> lordOfWar,
-            Set<Class<? extends Eintrag<F, Fortification>>> fortification) {
+    public static <F extends Faction> FactionDescription<F> of(Class<F> type, Multimap<Class<? extends AOPSlot>, Class<? extends Eintrag<F, ?>>> units) {
+        return new FactionDescription<>(type, units);
+    }
+
+    private FactionDescription(Class<F> type, Multimap<Class<? extends AOPSlot>, Class<? extends Eintrag<F, ?>>> units) {
         this.type = requireNonNull(type, "type");
-        this.hq = ImmutableSet.copyOf(hq);
-        this.troops = ImmutableSet.copyOf(troops);
-        this.elite = ImmutableSet.copyOf(elite);
-        this.fastAttack = ImmutableSet.copyOf(fastAttack);
-        this.heavySupport = ImmutableSet.copyOf(heavySupport);
-        this.dedicatedTransport = ImmutableSet.copyOf(dedicatedTransport);
-        this.flier = ImmutableSet.copyOf(flier);
-        this.lordOfWar = ImmutableSet.copyOf(lordOfWar);
-        this.fortification = ImmutableSet.copyOf(fortification);
+        this.units = ImmutableSetMultimap.copyOf(units);
+    }
+
+    @SuppressWarnings({
+            "unchecked", "rawtypes",
+    })
+    public static <F extends Faction> FactionDescription<F> of(Class<F> faction, Map<Class<? extends AOPSlot>, Set<Class<?>>> map) {
+        ImmutableSetMultimap.Builder<Class<? extends AOPSlot>, Class<? extends Eintrag<F, ?>>> builder = ImmutableSetMultimap.builder();
+
+        map.entrySet().forEach(e -> builder.putAll(e.getKey(), (Iterable) e.getValue()));
+
+        return new FactionDescription<>(faction, builder.build());
     }
 
     public Class<F> getType() {
         return type;
     }
 
+    public SetMultimap<Class<? extends AOPSlot>, Class<? extends Eintrag<F, ?>>> getUnits() {
+        return units;
+    }
+
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, Hq>>> getHq() {
-        return hq;
+        return (Set) units.get(Hq.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, Troops>>> getTroops() {
-        return troops;
+        return (Set) units.get(Troops.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, Elite>>> getElite() {
-        return elite;
+        return (Set) units.get(Elite.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, FastAttack>>> getFastAttack() {
-        return fastAttack;
+        return (Set) units.get(FastAttack.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, HeavySupport>>> getHeavySupport() {
-        return heavySupport;
+        return (Set) units.get(HeavySupport.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, DedicatedTransport>>> getDedicatedTransport() {
-        return dedicatedTransport;
+        return (Set) units.get(DedicatedTransport.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, Flier>>> getFlier() {
-        return flier;
+        return (Set) units.get(Flier.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, LordOfWar>>> getLordOfWar() {
-        return lordOfWar;
+        return (Set) units.get(LordOfWar.class);
     }
 
+    @SuppressWarnings({
+            "unchecked", // access to heterogeneous map
+    })
     public Set<Class<? extends Eintrag<F, Fortification>>> getFortification() {
-        return fortification;
+        return (Set) units.get(Fortification.class);
     }
 
     @Override
@@ -91,37 +114,16 @@ public final class FactionDescription<F extends Faction> {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         FactionDescription that = (FactionDescription) o;
-        return Objects.equals(type, that.type) &&
-                Objects.equals(hq, that.hq) &&
-                Objects.equals(troops, that.troops) &&
-                Objects.equals(elite, that.elite) &&
-                Objects.equals(fastAttack, that.fastAttack) &&
-                Objects.equals(heavySupport, that.heavySupport) &&
-                Objects.equals(dedicatedTransport, that.dedicatedTransport) &&
-                Objects.equals(flier, that.flier) &&
-                Objects.equals(lordOfWar, that.lordOfWar) &&
-                Objects.equals(fortification, that.fortification);
+        return type.equals(that.type) && units.equals(that.units);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, hq, troops, elite, fastAttack, heavySupport, dedicatedTransport, flier, lordOfWar, fortification);
+        return type.hashCode() * 31 + units.hashCode();
     }
 
     @Override
     public String toString() {
-        return "FactionDescription{" +
-                "type=" + type +
-                ", hq=" + hq +
-                ", troops=" + troops +
-                ", elite=" + elite +
-                ", fastAttack=" + fastAttack +
-                ", heavySupport=" + heavySupport +
-                ", dedicatedTransport=" + dedicatedTransport +
-                ", flier=" + flier +
-                ", lordOfWar=" + lordOfWar +
-                ", fortification=" + fortification +
-                '}';
+        return "FactionDescription{type=" + type + ", units=" + units + '}';
     }
-
 }

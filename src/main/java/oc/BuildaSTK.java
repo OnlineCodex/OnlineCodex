@@ -1,10 +1,13 @@
 package oc;
 
+import com.google.common.collect.ImmutableMap;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Map;
 
 public interface BuildaSTK { // konstanten die überall im oC geraucht werden
 
@@ -17,7 +20,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int CHOOSER_Y = 9000;
     int CHOOSERGRUPPEN_X_ABSTAND = 420;
     int CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND = 80;
-    int KAMMER_HOEHE = 85;
     int MAXIMAL_OPTIONS_WIDTH = 260;
     int BUILDAVATER_TEXTAREA_MAXROWS = 37; // ab wievielen Zeilenumbrüchen die verticale Scrollleiste eingeblendet wird
     int auswahlBreite = 400;
@@ -58,7 +60,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     String PREFERENCES_SAVE_DIRECTORY = "saveDirectory";
     String PREFERENCES_LOAD_DIRECTORY = "loadDirectory";
     String PREFERENCES_SHOW_PICTURES = "showPictures";
-    String PREFERENCES_ENABLE_APOCALYPSE = "enableApocalpyse";
     String PREFERENCES_SCROLL_VERTICAL = "scrollVertical";
     String PREFERENCES_MOUSE_WHEEL_SPEED = "mouseWheelSpeed";
     String PREFERENCES_ARROW_KEYS_SPEED = "arrowKeysSpeed";
@@ -69,30 +70,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     String ELEMENT_NAME_COUNTER = "Counter";
 
     Border blackBorder = BorderFactory.createLineBorder(Color.black);
-
-    int[] kategorienMaxProzent = {
-            25,
-            25,
-            100,
-            50,
-            25,
-            0,
-            0,
-            0,
-            0
-    };
-
-    int[] kategorienMinProzent = {
-            0,
-            0,
-            25,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-    };
 
     String[] gerSg = {
             "Additional Info",
@@ -146,17 +123,13 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int FORTIFICATION = 8;
     int LORD_OF_WAR = 9;
 
-    HashMap<String, String> volkMap = new HashMap<String, String>() {
-        {
-            put("CU", "VOLKCultMechanicus");
-            put("IR", "VOLKImperialeRitter");
-            put("SK", "VOLKSkitarii");
-        }
-    };
+    Map<String, String> volkMap = ImmutableMap.of(
+            "CU", "VOLKCultMechanicus",
+            "IR", "VOLKImperialeRitter",
+            "SK", "VOLKSkitarii");
     
-    public final String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
-    public final String MISSIONARY_CNT = "MISSIONARY";
-    public final String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
-    public final String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
-    
+    String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
+    String MISSIONARY_CNT = "MISSIONARY";
+    String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
+    String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
 }

@@ -39,7 +39,7 @@ public class Warlordtraits extends RuestkammerVater {
 	public void initButtons(boolean... b) {
 		warlord = true;
     	checkBuildaVater();
-    	String army = buildaVater.getFormationType();
+    	Object army = buildaVater.getFormationType();
 
     	//ALL
     	ogE.addElement(new OptionsGruppeEintrag("Legendary Fighter (BRB p.186)", 0));
@@ -360,7 +360,7 @@ public class Warlordtraits extends RuestkammerVater {
 
     //@OVERRIDE
     public void refreshen() {
-        String army= buildaVater.getFormationType();
+        Object army= buildaVater.getFormationType();
         if(warlordtraits3 != null) {
         	warlordtraits.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
         	warlordtraits2.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);

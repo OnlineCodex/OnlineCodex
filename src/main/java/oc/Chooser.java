@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Vector;
 
 import static oc.RefreshListener.Priority.CHOOSER;
@@ -29,18 +30,22 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     ListCellRenderer renderer = new ListCellRenderer() {
 
         public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-            Component c = defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            String strValue
+                    = value == null ? ""
+                    : value instanceof Class ? ((Class) value).getSimpleName()
+                    : value.toString();
+            Component c = defaultRenderer.getListCellRendererComponent(list, strValue, index, isSelected, cellHasFocus);
 
 
             for (int i = 0; i < statischeEinträge.length; ++i) {
-                if (statischeEinträge[i].equals(value)) {
+                if (Objects.equals(statischeEinträge[i], value)) {
                     c.setForeground(new Color(0, 0, 0));
                     break;
                 }
             }
 
             for (int i = 0; i < spezialEinträge.size(); ++i) {
-                if (spezialEinträge.get(i).equals((String) value)) {
+                if (Objects.equals(spezialEinträge.get(i), value)) {
                     c.setForeground(new Color(30, 205, 0));
                     break;
                 }
@@ -143,91 +148,36 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     public void setAuswahlen(Vector v) {
         useActionPerformed = false;
-        String currentSelected = selectedEntry();
+        Object currentSelected = selectedEntry();
 
         myComboBox.removeAllItems();
-        for (int i = 0; i < v.size(); i++) {
-            myComboBox.addItem(v.elementAt(i));
-        }
-
+        v.forEach(myComboBox::addItem);
         myComboBox.setSelectedItem(currentSelected);
 
-        if (!selectedEntry().equals(currentSelected)) {
+        if (myEintrag != null && !Objects.equals(selectedEntry(), currentSelected)) {
             myEintrag.deleteYourself();
         }
 
         useActionPerformed = true;
     }
 
-    public void erstelleEintrag(String name) {
-        String umgeformterName = BuildaHQ.formZuKlassenName(name);
-        if (umgeformterName.equals("")) {
+    public void erstelleEintrag(Object obj) {
+        if (obj == null || "".equals(obj)) {
             erstelleLeerenEintrag();
         } else {
-            String finalClassName = "";
             try {
-                // Determine whether to use a WHFB or a Wh40k Army-Class
-                String armyPackage = OnlineCodex.ARMY_PACKAGE;
+                Class<? extends Eintrag> myClass = resolveClass(obj);
 
-                // Check if the requested class is used by multiple armies
-                if (this.multipleArmyClasses.containsKey(name)) {
-                    finalClassName = this.multipleArmyClasses.get(name);
-                } else {
-                    finalClassName = reflectionKennung + umgeformterName;
-                }
-                finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
+                aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                try {
-                    Class myClass = Class.forName(armyPackage + "units." + finalClassName);
-
-                    aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                    myEintrag = (Eintrag) (myClass.newInstance());
-                } catch (Exception e) {
-
-                    try {
-                        if (reflectionKennung == "") {
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        } else {
-                            Class myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        }
-
-                    } catch (Exception ex) {
-                        if (reflectionKennung == "") { //Fall für Einheiten in APO
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        } else {
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        }
-
-                    }
-                }
-
-                if (umgeformterName.startsWith("Requiriert")) {
-                    myEintrag.setName(name);
-                }
+                myEintrag = myClass.newInstance();
 
                 myEintrag.getPanel().setLocation(0, 30);
                 myEintrag.setKategorie(kategorie);
                 myEintrag.setBuildaVater(buildaVater);
                 panel.add(myEintrag.getPanel());
             } catch (ClassNotFoundException e) {
-                OnlineCodex.getInstance().fehler("Klasse \"" + finalClassName + "\" nicht gefunden.\nBitte melden!!");
+                OnlineCodex.getInstance().fehler("Klasse \"" + obj + "\" nicht gefunden.\nBitte melden!!");
                 erstelleLeerenEintrag();
             } catch (ClassCastException | InstantiationException | IllegalAccessException e) {
                 LOGGER.error("Error while loading class", e);
@@ -238,8 +188,59 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         cloneButton.setVisible(!(myEintrag instanceof LeererEintrag));
     }
 
-    String selectedEntry() {
-        return ((String) (myComboBox.getSelectedObjects()[0]));
+    private Class<? extends Eintrag> resolveClass(Object obj) throws ClassNotFoundException {
+        if (obj == null) {
+            return null;
+        } else if (obj instanceof Class) {
+            return (Class<? extends Eintrag>) obj;
+        } else {
+            return resolveClass((String) obj);
+        }
+    }
+
+    private Class<? extends Eintrag> resolveClass(String name) throws ClassNotFoundException {
+        String umgeformterName = BuildaHQ.formZuKlassenName(name);
+        if ("".equals(umgeformterName)) {
+            throw new ClassNotFoundException("there is no class called \"\"");
+        } else {
+            String finalClassName = "";
+
+            // Determine whether to use a WHFB or a Wh40k Army-Class
+            String armyPackage = OnlineCodex.ARMY_PACKAGE;
+
+            // Check if the requested class is used by multiple armies
+            if (this.multipleArmyClasses.containsKey(name)) {
+                finalClassName = this.multipleArmyClasses.get(name);
+            } else {
+                finalClassName = reflectionKennung + umgeformterName;
+            }
+            finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
+
+            try {
+                return (Class<? extends Eintrag>) Class.forName(armyPackage + "units." + finalClassName);
+            } catch (Exception e) {
+                try {
+                    if (reflectionKennung == "") {
+                        return (Class<? extends Eintrag>) Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
+                    } else {
+                        return (Class<? extends Eintrag>) Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                    }
+
+                } catch (Exception ex) {
+                    if (reflectionKennung == "") { //Fall für Einheiten in APO
+                        return (Class<? extends Eintrag>) Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
+                    } else {
+                        return (Class<? extends Eintrag>) Class.forName(armyPackage + "units." + umgeformterName);
+                    }
+
+                }
+            }
+        }
+    }
+
+    Object selectedEntry() {
+        Object[] selected = myComboBox.getSelectedObjects();
+        return selected.length != 0 ? selected[0] : null;
     }
 
     public void actionPerformed(ActionEvent event) {
@@ -277,7 +278,6 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public String getSaveText(String trenner) {
-        //LOGGER.info("Chooser-getSaveText");
         try {
             return myEintrag.getSaveText(trenner);
         } catch (Exception e) {
@@ -286,49 +286,39 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public Element getSaveElement() {
-        //LOGGER.info("Chooser-getSaveElement");
         if (getComboBox().getSelectedObjects()[0].toString().trim().equals("")) return null;
 
         Element root = myEintrag.getSaveElement();
         root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
 
-//    	Element root = BuildaHQ.getNewXMLElement("Eintrag");
-//    	root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
-//
-//    	root.appendChild(myEintrag.getSaveElement());
-
         return root;
     }
 
     public void load(String s, String s2) {
-        //LOGGER.info("Chooser-load");
         myEintrag.load(s, s2);
     }
 
     public void loadElement(Element e) {
-        //LOGGER.info("Chooser-loadElement");
         myEintrag.loadElement(e);
     }
 
-    public void selectEntry(String s) {//Feste Auswahl für eine Formation
+    public void selectEntry(String s) {
         myComboBox.setSelectedItem(s);
         myComboBox.setEnabled(false);
         cloneButton.setEnabled(false);
     }
 
-    public void selectEntryNotLocked(String s) {//Tauschbare Auswahl für eine Formation
+    public void selectEntryNotLocked(String s) {
         myComboBox.setSelectedItem(s);
     }
 
-    public void removeEmptyEntry() {//Entfernt den leeren Eintrag am Anfang, damit die Einheit nicht abgewählt werden kann
+    public void removeEmptyEntry() {
         myComboBox.remove(0);
     }
 
-    public void changeEntries(String[] units) { //Tauscht den Inhalt der Combobox aus
-        //LOGGER.info("Chooser-setAuswahlen");
+    public void changeEntries(String[] units) {
         useActionPerformed = false;
 
-        // leeren und neufüllen der Liste
         myComboBox.removeAllItems();
         for (int i = 0; i < units.length; i++) {
             myComboBox.addItem(units[i]);
