@@ -9,8 +9,6 @@ public class TYDeathleaper extends Eintrag {
         name = "Deathleaper(";
         grundkosten = getPts("Deathleaper");
         power = 4;
-
-        seperator();
         
 		addWarlordTraits("Mind Eater", true);
 		

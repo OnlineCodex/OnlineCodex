@@ -9,8 +9,6 @@ public class TYOldOneEye extends Eintrag {
         name = "Old One Eye";
         grundkosten = getPts("OldOneEye");
         power = 7;
-
-        seperator();
         
 		addWarlordTraits("Adaptive Biology", true);
 		

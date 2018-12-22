@@ -8,8 +8,6 @@ public class TYTheRedTerror extends Eintrag {
         name = "The Red Terror";
         grundkosten = getPts("The Red Terror");
         power = 3;
-
-        seperator();
         
 		addWarlordTraits("Heightened Senses", true);
 		
