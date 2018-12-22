@@ -204,16 +204,6 @@ public class TYLeader extends RuestkammerVater {
 
 
 
-    @Override
-
-    public Object getSpecialValue() {
-
-        return 0;
-
-    }
-
-
-
     public void setKosten(int kosten) {
 
         grundkosten = kosten;

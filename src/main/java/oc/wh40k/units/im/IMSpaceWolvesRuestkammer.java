@@ -435,11 +435,6 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
 
     }
 
-    @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-    
     public void addCombiFury(){
     	ogE.addAll(IMSpaceWolvesCombiWeapons.createRK("", "", buildaVater));
     	if(character){

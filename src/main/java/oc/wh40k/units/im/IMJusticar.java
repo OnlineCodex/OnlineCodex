@@ -41,8 +41,4 @@ public class IMJusticar extends RuestkammerVater {
         o3.alwaysSelected();
     }
 
-    @Override
-    public void switchEntry(String name, boolean aktiv) {
-    }
-
 }

@@ -113,14 +113,8 @@ public class AEExarch extends RuestkammerVater {
         grundkosten = -weaponCost;
     }
 
-    @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-
     public void setKosten(int kosten) {
         grundkosten = kosten;
     }
-
 
 }

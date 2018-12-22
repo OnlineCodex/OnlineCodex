@@ -189,14 +189,7 @@ public class IMSergeant extends RuestkammerVater {
         }
     }
 
-    @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-
     public void setKosten(int kosten) {
         grundkosten = kosten;
     }
-
-
 }

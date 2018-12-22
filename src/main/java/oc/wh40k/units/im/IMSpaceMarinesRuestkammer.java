@@ -512,11 +512,6 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     }
 
     @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-
-    @Override
     public void refreshen() {
 
         if (type.equals("Librarian") || type.equals("Primaris Librarian") || type.equals("Techmarine") || type.equals("Captain in Gravis Armour") || 

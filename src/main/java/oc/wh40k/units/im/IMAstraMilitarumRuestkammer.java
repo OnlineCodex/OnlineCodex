@@ -100,11 +100,6 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
     }
 
     @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-
-    @Override
     public void refreshen() {
 
         if (type == "Company Commander" || type == "Platoon Commander" || type == "Sergeant" || type == "Veteran Sergeant" || type == "Tempestor") {
@@ -120,5 +115,4 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         }
 
     }
-
 }

@@ -330,23 +330,6 @@ public class DeathWatchKammer extends RuestkammerVater {
     }
 
     @Override
-    public Object getSpecialValue() {
-        return 0;
-    }
-
-    @Override
-    public void switchEntry(String name, boolean aktiv) {
-        boolean entrySwitched = false;
-
-        if (entrySwitched) {
-            //Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
-            //Sonst werden dort zwar beim abwählen von Malen die Punkte korrekt berechnet,
-            //der Text aber nicht aktualisiert.
-            RefreshListener.fireRefresh();
-        }
-    }
-
-    @Override
     public void deleteYourself() {
         super.deleteYourself();
     }

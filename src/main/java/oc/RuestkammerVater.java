@@ -21,13 +21,11 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	protected boolean legal = true;
 	protected OptionsButtonUpgrade chosenRelic = null;
 	boolean uniqueError = false;
-	public boolean warlord = false;
-	public boolean warlordSelected = false;
+	protected boolean warlord = false;
+	boolean warlordSelected = false;
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
-    protected String defaultCloceCombat = "";
-    protected String defaultRanged = "";
     protected String type = "";
 	protected Set<KeyWord> keywords;
 
@@ -44,29 +42,13 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		panel.setLocation(0, 0);
 
 		frame.add(panel);
-	}
+    }
 
 	public void setVisible(boolean b) {
 		frame.setVisible(b);
 	}
 
-	public void setButtonState(boolean state) {
-		this.ok.setEnabled(state);
-	}
-
-	public void showErrorMessage(String err) {
-		this.error.setFont(new Font("arial", Font.BOLD, 12));
-		this.error.setForeground(Color.RED);
-		this.error.setAlignmentX(JLabel.RIGHT_ALIGNMENT);
-		this.error.setSize(200, 17);
-		this.error.setText(err);
-	}
-
-	public void hideErrorMessage() {
-		this.error.setText("");
-	}
-
-	public void setzteRefreshListener(int ID) {
+	void setzteRefreshListener(int ID) {
 		this.ID = ID;
 		addRefreshListener(RUESTKAMMER_VATER, ID, this::refreshRuestkammerVater);
 	}
@@ -123,25 +105,9 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		refreshen();
 	}
 
-	public void newColumn() {
-		cntX += 280;
-	}
-
 	@Override
 	public int getBreite() {
 		return this.panel.getSize().width;
-	}
-
-	public void sizeSetzen(int a, int b, int c, int d) {
-		frame.setSize(c + 10, d + 16);  // signiert +6 weglassen
-		panel.setSize(c + 10, d + 16);  // signiert +6 weglassen
-		ok.setBounds(c - 116, d - 75, 100, 20); // signiert y nur -54
-
-		if (BILDSCHIRMHÖHE <= 800 && d > 650) {
-			frame.setLocation(100, 10);
-		} else {
-			frame.setLocation(100, 100);
-		}
 	}
 
 	public void sizeSetzen(int a, int b) {
@@ -168,7 +134,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		sizeSetzen(a + 15, b);
 	}
 
-	public void setCloseListener(WindowListener wl, FocusListener fl, ActionListener al) {
+	void setCloseListener(WindowListener wl, FocusListener fl, ActionListener al) {
 		frame.addWindowListener(wl);
 		ok.addActionListener(al);
 	}
@@ -198,11 +164,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		frame.setTitle(s);
 	}
 
-	public void setHeadline(OptionsVater o, String s) {
-		o.setHeadline(s);
-		cnt += headlineAbstand;
-	}
-
 	public void refreshen(){}
 
 	public abstract void initButtons(boolean... b);
@@ -219,45 +180,13 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		frame.dispose();
 	}
 
-
-	/**
-	 * Can be overwritten to apply custom changes to Eintrag
-	 */
-	public void specialAction(boolean... action) {
-
-	}
-
-	public void switchEntry(String name, boolean aktiv) {
-
-	}
-
-	public Object getSpecialValue() {
-		return null;
-	}
-
-	public Object getSpecialValue(String name) {
-		return null;
-	}
-
 	public boolean isLegal() {
 		return legal;
 	}
 
-    public void setDefaultCloceCombat(String s) {
-        defaultCloceCombat = s;
-    }
-
-    public void setDefaultRanged(String s) {
-        defaultRanged = s;
-    }
-
     public void setType(String s) {
         type = s;
     }
-
-	public Set<KeyWord> getKeywords() {
-		return keywords;
-	}
 
 	public void setKeywords(Set<KeyWord> keywords) {
 		this.keywords = keywords;
@@ -270,5 +199,4 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	public void addKeyword(KeyWord key) {
 		keywords.add(key);
 	}
-
 }

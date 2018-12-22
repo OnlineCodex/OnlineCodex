@@ -24,11 +24,11 @@ public class CHChampionkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setDefaultCloceCombat(String s) {
+    private void setDefaultCloceCombat(String s) {
         defaultNK = s;
     }
 
-    public void setDefaultRanged(String s) {
+    private void setDefaultRanged(String s) {
         defaultFK = s;
     }
 
