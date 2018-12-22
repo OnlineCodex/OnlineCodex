@@ -17,7 +17,7 @@ public class IMDreadnoughtGK extends Eintrag {
 
         seperator();
 
-        ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+        ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Troops cannon", "Troops cannon", buildaVater));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();

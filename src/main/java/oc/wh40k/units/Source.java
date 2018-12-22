@@ -1,8 +1,19 @@
 package oc.wh40k.units;
 
-import oc.ShadowType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-public abstract class Source extends ShadowType {
-    public static final class ImperialArmourIndexXenos extends Source {}
-    public static final class CodexNecrons extends Source {}
+import static java.lang.annotation.ElementType.TYPE;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+
+@Target(TYPE)
+@Retention(RUNTIME)
+public @interface Source {
+
+    SourcePublication value();
+
+    enum SourcePublication {
+        ImperialArmourIndexXenos,
+        CodexNecrons,
+    }
 }

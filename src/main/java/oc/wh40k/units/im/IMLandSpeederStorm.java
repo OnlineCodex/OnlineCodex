@@ -22,7 +22,7 @@ public class IMLandSpeederStorm extends Eintrag {
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-	        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+	        ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
 	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
         complete();

@@ -16,9 +16,9 @@ public class CHTerraxPatternTermiteAssaultDrill extends Eintrag {
 
     public CHTerraxPatternTermiteAssaultDrill() {
 
-        name = "Terrax-Pattern Termite Assault Drill";
+        name = "Terrax-Pattern Termite Troops Drill";
 
-        grundkosten = getPts("Terrax-Pattern Termite Assault Drill") + getPts("Melta cutter") + getPts("Termite drill");
+        grundkosten = getPts("Terrax-Pattern Termite Troops Drill") + getPts("Melta cutter") + getPts("Termite drill");
 
         ogE.addElement(new OptionsGruppeEintrag("2 Storm bolter", getPts("Storm bolter")*2));
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamer", getPts("Heavy flamer")*2));

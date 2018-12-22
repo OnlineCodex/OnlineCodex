@@ -5,9 +5,13 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Elite;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Lychguard extends Eintrag<Necrons, Elite, Infantry> {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Lychguard extends Eintrag<Necrons, Elite> implements Infantry {
 
     private final AnzahlPanel squad;
     private final OptionsUpgradeGruppe o1;

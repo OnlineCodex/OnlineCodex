@@ -52,7 +52,7 @@ public class IMSergeant extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
             add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-        } else if (type == "Assault Squad") {
+        } else if (type == "Troops Squad") {
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -156,7 +156,7 @@ public class IMSergeant extends RuestkammerVater {
         } else if (type == "Devastator Squad") {
             o1.setLegal((o1.getAnzahl() + o2.getAnzahl()) == 1);
             o2.setLegal((o1.getAnzahl() + o2.getAnzahl()) == 1);
-        } else if (type == "Assault Squad") {
+        } else if (type == "Troops Squad") {
             legal = ((o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2) == 2);
 
             o1.setLegal(legal);

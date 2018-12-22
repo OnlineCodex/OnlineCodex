@@ -12,18 +12,18 @@ public class IMAssaultSquad extends Eintrag {
     OptionsEinzelUpgrade jump;
 
     public IMAssaultSquad() {
-        name = "Assault Squad\n";
+        name = "Troops Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Assault Squad") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Troops Squad") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)"));
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/SMTaktischerTrupp.jpg"));
 
         seperator();
 
-        add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump packs", getPts("Assault Squad with Jump Packs") - getPts("Assault Squad")));
+        add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump packs", getPts("Troops Squad with Jump Packs") - getPts("Troops Squad")));
 
         seperator();
 
@@ -39,7 +39,7 @@ public class IMAssaultSquad extends Eintrag {
         seperator();
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Assault Squad";
+        ((IMSergeant) rkBoss.getKammer()).type = "Troops Squad";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

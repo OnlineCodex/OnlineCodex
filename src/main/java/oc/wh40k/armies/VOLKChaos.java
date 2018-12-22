@@ -11,14 +11,14 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler [FW]", "Lord Arkos [FW]", "Chaos Hellwright [FW]", "Chaos Hellwright On Dark Abeyant [FW]"};
     private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator [FW]", "Hellforged Contemptor Dreadnought [FW]", "Hellforged Predator [FW]"};
     private static final String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
-    private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne [FW]", "Greater Blight Drone [FW]", "Hellforged Dreadclaw Drop Pod [FW]", "Hellforged Kharybdis Assault Claw [FW]"};
+    private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne [FW]", "Greater Blight Drone [FW]", "Hellforged Dreadclaw Drop Pod [FW]", "Hellforged Kharybdis Troops Claw [FW]"};
     private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus [FW]", "Hellforged Land Raider Achilles [FW]", "Hellforged Scorpius [FW]", "Hellforged Sicarian [FW]", 
     		"Hellforged Sicarian Venator [FW]","Hellforged Deredeo Dreadnought [FW]","Hellforged Rapier Battery [FW]","Hellforged Leviathan Dreadnought [FW]","Spined Chaos Beast [FW]"};
-    private static final String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{"Terrax-Pattern Termite Assault Drill"};
-    private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"","Chaos Hell Blade [FW]","Chaos Hell Talon [FW]","Chaos Storm Eagle Assault Gunship [FW]","Chaos Fire Raptor Assault Gunship [FW]","Chaos Xiphon Interceptor [FW]"};
+    private static final String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{"Terrax-Pattern Termite Troops Drill"};
+    private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"","Chaos Hell Blade [FW]","Chaos Hell Talon [FW]","Chaos Storm Eagle Troops Gunship [FW]","Chaos Fire Raptor Troops Gunship [FW]","Chaos Xiphon Interceptor [FW]"};
     private static final String[] Befestigungseinträge_Chaos_Space_Marines_FW = new String[]{""};
-    private static final String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"","Kytan Ravager [FW]","Greater Brass Scorpion Of Khorne [FW]","Hellforged Spartan Assault Tank [FW]","Hellforged Cerberus Heavy Destroyer [FW]","Hellforged Typhon Heavy Siege Tank [FW]","Hellforged Fellblade [FW]",
-            "Hellforged Falchion [FW]","Hellforged Mastodon [FW]","Chaos Thunderhawk Assault Gunship [FW]","Chaos Sokar Pattern Stormbird Gunship [FW]",
+    private static final String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"","Kytan Ravager [FW]","Greater Brass Scorpion Of Khorne [FW]","Hellforged Spartan Troops Tank [FW]","Hellforged Cerberus Heavy Destroyer [FW]","Hellforged Typhon Heavy Siege Tank [FW]","Hellforged Fellblade [FW]",
+            "Hellforged Falchion [FW]","Hellforged Mastodon [FW]","Chaos Thunderhawk Troops Gunship [FW]","Chaos Sokar Pattern Stormbird Gunship [FW]",
             "Renegade Knight Acheron [FW]","Renegade Knight Lancer [FW]","Renegade Knight Castigator [FW]","Renegade Knight Atropos [FW]","Renegade Knight Magaera [FW]","Renegade Knight Porphyrion [FW]","Renegade Knight Styrix [FW]","","Chaos Warlord Battle Titan [FW]","Chaos Reaver Battle Titan [FW]", "Chaos Warhound Scout Titan [FW]"};
 
     private static final String[] HQeinträge_Daemons_FW = new String[]{"","Uraka The Warfiend [FW]","Samus [FW]","Mamon Transfigured [FW]","Corbax Utterblight [FW]"};

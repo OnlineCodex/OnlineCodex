@@ -7,10 +7,14 @@ import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.Elite;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class TriarchPraetorians extends Eintrag<Necrons, Elite, Infantry> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class TriarchPraetorians extends Eintrag<Necrons, Elite> implements Infantry, Fly {
 
     private final AnzahlPanel squad;
     private final OptionsUpgradeGruppe o1;

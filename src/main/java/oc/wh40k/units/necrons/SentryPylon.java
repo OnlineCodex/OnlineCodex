@@ -2,11 +2,14 @@ package oc.wh40k.units.necrons;
 
 import oc.*;
 import oc.wh40k.units.AOPSlot.HeavySupport;
-import oc.wh40k.units.Artillery;
-import oc.wh40k.units.Source.ImperialArmourIndexXenos;
+import oc.wh40k.units.Source;
+import oc.wh40k.units.UnitType.Artillery;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class SentryPylon extends Eintrag<Necrons, HeavySupport, Vehicle, ImperialArmourIndexXenos> implements Artillery {
+import static oc.wh40k.units.Source.SourcePublication.ImperialArmourIndexXenos;
+
+@Source(ImperialArmourIndexXenos)
+public class SentryPylon extends Eintrag<Necrons, HeavySupport> implements Vehicle, Artillery {
 
     AnzahlPanel squad;
     OptionsUpgradeGruppe o1;

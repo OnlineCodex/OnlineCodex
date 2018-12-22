@@ -4,9 +4,13 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class HeavyDestroyers extends Eintrag<Necrons, HeavySupport, Infantry> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class HeavyDestroyers extends Eintrag<Necrons, HeavySupport> implements Infantry, Fly {
 
     private final AnzahlPanel squad;
 

@@ -3,9 +3,13 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class DoomsdayArk extends Eintrag<Necrons, HeavySupport, Vehicle> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class DoomsdayArk extends Eintrag<Necrons, HeavySupport> implements Vehicle, Fly {
 
     public DoomsdayArk() {
         name = "Doomsday Ark";

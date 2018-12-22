@@ -12,8 +12,8 @@ public class CHChaosFireRaptorAssaultGunship extends Eintrag {
     OptionsUpgradeGruppe mark;
 
     public CHChaosFireRaptorAssaultGunship() {
-        name = "Chaos Fire Raptor Assault Gunship";
-        grundkosten = getPts("Chaos Fire Raptor Assault Gunship");
+        name = "Chaos Fire Raptor Troops Gunship";
+        grundkosten = getPts("Chaos Fire Raptor Troops Gunship");
 
         add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
 

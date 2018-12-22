@@ -5,9 +5,13 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Hq;
 import oc.wh40k.units.CharacterModel;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Cryptek extends Eintrag<Necrons, Hq, Infantry> implements CharacterModel, Necrons.Cryptek {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Cryptek extends Eintrag<Necrons, Hq> implements CharacterModel, Infantry, Necrons.Cryptek {
 
     private final OptionsUpgradeGruppe o1;
 

@@ -38,7 +38,7 @@ public class IMLandSpeeders extends Eintrag {
 	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
         }
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
 

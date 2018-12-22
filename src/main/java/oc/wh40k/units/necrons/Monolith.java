@@ -3,10 +3,14 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.Titanic;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class Monolith extends Eintrag<Necrons, HeavySupport, Vehicle> implements Titanic, Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Monolith extends Eintrag<Necrons, HeavySupport> implements Vehicle, Titanic, Fly {
 
     public Monolith() {
         name = "Monolith";

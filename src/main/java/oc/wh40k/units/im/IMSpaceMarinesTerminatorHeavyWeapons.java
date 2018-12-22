@@ -15,7 +15,7 @@ public class IMSpaceMarinesTerminatorHeavyWeapons extends RuestkammerElement {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
         addElement("Heavy flamer", "Heavy flamer (SM)", defaultWeapon, ogE, bv);
-        addElement("Assault cannon", "Assault cannon", defaultWeapon, ogE, bv);
+        addElement("Troops cannon", "Troops cannon", defaultWeapon, ogE, bv);
         addElement("Cyclone ML + SB", "Cyclone Missile launcher + Storm bolter", (double) (bv.getPts("Cyclone Missile launcher") + bv.getPts("Storm bolter (SM)")), defaultWeapon, ogE, bv);
         return ogE;
     }

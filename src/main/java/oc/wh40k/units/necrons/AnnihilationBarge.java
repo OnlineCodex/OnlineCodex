@@ -6,10 +6,14 @@ import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class AnnihilationBarge extends Eintrag<Necrons, HeavySupport, Vehicle> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class AnnihilationBarge extends Eintrag<Necrons, HeavySupport> implements Vehicle, Fly {
 
     private final OptionsUpgradeGruppe o1;
 

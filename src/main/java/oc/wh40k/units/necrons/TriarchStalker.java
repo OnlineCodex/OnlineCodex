@@ -4,9 +4,13 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Elite;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class TriarchStalker extends Eintrag<Necrons, Elite, Vehicle> {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class TriarchStalker extends Eintrag<Necrons, Elite> implements Vehicle {
 
     private final OptionsUpgradeGruppe o1;
 

@@ -32,7 +32,7 @@ public class IMRavenwingLandSpeederVengeance extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
 
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
 
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

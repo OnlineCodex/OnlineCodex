@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -18,8 +20,7 @@ import static com.google.common.collect.Sets.newHashSet;
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
 
-public abstract class Eintrag<F extends Faction, A extends AOPSlot, T extends UnitType, S extends Source>
-		extends OptionsCollection implements BuildaSTK {
+public abstract class Eintrag<F extends Faction, A extends AOPSlot> extends OptionsCollection implements BuildaSTK {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
 
@@ -72,6 +73,9 @@ public abstract class Eintrag<F extends Faction, A extends AOPSlot, T extends Un
 	}
 
 	private void refreshEintrag() {
+	    if (this instanceof Unique) {
+	        setUnikat(true);
+        }
 		refreshen();
 		uniqueError = false;
 		warlordError = false;

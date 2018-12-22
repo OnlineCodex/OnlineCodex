@@ -87,7 +87,7 @@ public class VOLKImperium extends BuildaVater {
             Eliteeinträge_Cult_Mechanicus, Eliteeinträge_Skitarii), new String[]{"", "Servitors"});
     private static final String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
     private static final String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
-    private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
+    private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Troops Drill"};
     
     //Questor Imperialis
     private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
@@ -158,16 +158,16 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Eliteeinträge_SM = new String[]{"", "Servitors", "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
             "Company Ancient", "Company Ancient on Bike",
             "Primaris Ancient", "Company Champion", "Company Champion on Bike", "Company Veterans", "Company Veterans on Bikes",
-            "Imperial Space Marine", "Honour Guard", "Chapter Ancient", "Chapter Champion", "Centurion Assault Squad",
+            "Imperial Space Marine", "Honour Guard", "Chapter Ancient", "Chapter Champion", "Centurion Troops Squad",
             "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought",
-            "Redemptor Dreadnought", "Ironclad Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Cataphractii Terminator Squad",
+            "Redemptor Dreadnought", "Ironclad Dreadnought", "Terminator Squad", "Terminator Troops Squad", "Cataphractii Terminator Squad",
             "Tartaros Terminator Squad", "Aggressor Squad", "Reiver Squad"};
-    private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
+    private static final String[] Sturmeinträge_SM = new String[]{"", "Troops Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
     private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
             "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
             "Land Raider Crusader", "Land Raider Redeemer"};
-    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Assault Drill"};
+    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Troops Drill"};
     private static final String[] Fliegereinträge_SM = new String[]{"", "Stormhawk Interceptor", "Stormtalon Gunship", "Stormraven Gunship",};
     private static final String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
 
@@ -209,7 +209,7 @@ public class VOLKImperium extends BuildaVater {
             "Sanguinary Guard", "Death Company Dreadnought", "Furioso Dreadnought"};
     private static final String[] Unterstützungseinträge_Blood_Angels = new String[]{"", "Baal Predator"};
 
-    private static final String[] Sturmeinträge_Blood_Angels = new String[]{"", "Assault Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
+    private static final String[] Sturmeinträge_Blood_Angels = new String[]{"", "Troops Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
 
     //Dark Angels
@@ -261,19 +261,19 @@ public class VOLKImperium extends BuildaVater {
     //Imperial Armour Adeptus Astartes
     private static final String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought [FW]", "Damocles Command Rhino [FW]",};
     private static final String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator [FW]", "Relic Sicaran Battle Tank [FW]", "Relic Sicaran Venator Tank Destroyer [FW]",
-            "Relic Sicaran Punisher Assault Tank [FW]", "Relic Sicaran Arcus Strike Tank [FW]", "Relic Sicaran Omega Tank Destroyer [FW]", "Relic Contemptor Dreadnought [FW]",
+            "Relic Sicaran Punisher Troops Tank [FW]", "Relic Sicaran Arcus Strike Tank [FW]", "Relic Sicaran Omega Tank Destroyer [FW]", "Relic Contemptor Dreadnought [FW]",
             "Relic Deredeo Dreadnought [FW]", "Relic Javelin Attack Speeder [FW]", "Relic Whirlwind Scorpius [FW]",};
     private static final String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest [FW]", "Tarantula Sentry Gun [FW]", "Tarantula Air Defence Battery [FW]", "Deathstorm Drop Pod [FW]",};
     private static final String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer [FW]", "Relic Land Raider Proteus [FW]", "Land Raider Helios [FW]",
             "Land Raider Prometheus [FW]", "Land Raider Achilles [FW]", "Mortis Dreadnought [FW]", "Siege Dreadnought [FW]", "Contemptor Mortis Dreadnought [FW]", "Relic Leviathan Dreadnought [FW]",
             "Whirlwind Hyperios [FW]", "Rapier Carrier [FW]",};
     private static final String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback [FW]", "Lucius Pattern Dreadnought Drop Pod [FW]",};
-    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor [FW]", "Storm Eagle Assault Gunship [FW]", "Fire Raptor Assault Gunship [FW]", "Caestus Assault Ram [FW]",};
-    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank [FW]", "Relic Typhon Heavy Siege Tank [FW]", "Relic Cerberus Heavy Tank Destroyer [FW]",
+    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor [FW]", "Storm Eagle Troops Gunship [FW]", "Fire Raptor Troops Gunship [FW]", "Caestus Troops Ram [FW]",};
+    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Troops Tank [FW]", "Relic Typhon Heavy Siege Tank [FW]", "Relic Cerberus Heavy Tank Destroyer [FW]",
             "Relic Fellblade Super-heavy Tank [FW]", "Relic Falchion Super-heavy Tank Destroyer [FW]", "Relic Mastodon Super-heavy Siege Transport [FW]",
-            "Thunderhawk Assault Gunship [FW]", "Thunderhawk Transporter [FW]", "Sokar Pattern Stormbird [FW]",};
+            "Thunderhawk Troops Gunship [FW]", "Thunderhawk Transporter [FW]", "Sokar Pattern Stormbird [FW]",};
 
-    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern [FW]",};
+    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Troops Gunship - ROC Pattern [FW]",};
 
     //Adeptus Astartes
     private static final String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
@@ -543,7 +543,7 @@ public class VOLKImperium extends BuildaVater {
                             "Company Ancient", "Company Ancient with Jump Pack",
                             "Primaris Ancient", "Company Champion", "Company Champion with Jump Pack", "Company Veterans", "Company Veterans with Jump Packs",
                             "Imperial Space Marine", "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought",
-                            "Terminator Squad", "Terminator Assault Squad",
+                            "Terminator Squad", "Terminator Troops Squad",
                             "", "Primaris Apothecary", "Apothecary", "Company Ancient",
                             "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
                             "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Reiver Squad"}, Eliteeinträge_IA_AA));
@@ -566,7 +566,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Dark_Angels, new String[]{"", "Primaris Apothecary", "Apothecary", "Company Ancient", "Primaris Ancient",
                     "Company Champion", "Company Veterans", "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
                     "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Servitors", "Reiver Squad"}, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Dark_Angels, new String[]{"", "Scout Bike Squad", "Assault Squad", "Inceptor Squad"}, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Dark_Angels, new String[]{"", "Scout Bike Squad", "Troops Squad", "Inceptor Squad"}, Sturmeinträge_IA_AA));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
                     "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"}, Transporteinträge_IA_AA));

@@ -5,10 +5,13 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.wh40k.units.AOPSlot.Fortification;
 import oc.wh40k.units.Building;
-import oc.wh40k.units.Source.ImperialArmourIndexXenos;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class TombCitadel extends Eintrag<Necrons, Fortification, Vehicle, ImperialArmourIndexXenos> implements Building {
+import static oc.wh40k.units.Source.SourcePublication.ImperialArmourIndexXenos;
+
+@Source(ImperialArmourIndexXenos)
+public class TombCitadel extends Eintrag<Necrons, Fortification> implements Vehicle, Building {
 
     public TombCitadel() {
         name = "Tomb Citadel";

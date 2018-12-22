@@ -21,7 +21,7 @@ public class IMDeathstormDropPod extends Eintrag {
 
         //seperator();
 
-        //add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Drop Pod Assault SR",25));
+        //add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Drop Pod Troops SR",25));
 
         complete();
     }

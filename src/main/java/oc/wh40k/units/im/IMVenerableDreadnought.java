@@ -21,13 +21,13 @@ public class IMVenerableDreadnought extends Eintrag {
 
         seperator();
         if(spacewolves) {
-            ogE.addAll(IMSpaceWolvesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+            ogE.addAll(IMSpaceWolvesDreadnoughtHeavyWeapons.createRK("Troops cannon", "Troops cannon", buildaVater));
         }else if (deathwatch) {
-            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Heavy plasma cannon", getPts("Heavy plasma cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
         } else {
-            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Troops cannon", "Troops cannon", buildaVater));
         }
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

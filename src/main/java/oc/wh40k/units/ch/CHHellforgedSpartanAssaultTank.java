@@ -11,8 +11,8 @@ public class CHHellforgedSpartanAssaultTank extends Eintrag {
     OptionsUpgradeGruppe mark;
 
     public CHHellforgedSpartanAssaultTank() {
-        name = "Hellforged Spartan Assault Tank";
-        grundkosten = getPts("Hellforged Spartan Assault Tank");
+        name = "Hellforged Spartan Troops Tank";
+        grundkosten = getPts("Hellforged Spartan Troops Tank");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 

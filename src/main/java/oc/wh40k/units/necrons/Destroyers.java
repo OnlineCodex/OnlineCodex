@@ -5,9 +5,13 @@ import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
 import oc.wh40k.units.AOPSlot.FastAttack;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Destroyers extends Eintrag<Necrons, FastAttack, Infantry> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Destroyers extends Eintrag<Necrons, FastAttack> implements Infantry, Fly {
 
     private final AnzahlPanel squad;
     private final OptionsEinzelZaehler oe1;

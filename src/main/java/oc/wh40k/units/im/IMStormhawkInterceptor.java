@@ -10,7 +10,7 @@ public class IMStormhawkInterceptor extends Eintrag {
 
     public IMStormhawkInterceptor() {
         name = "Stormhawk Interceptor";
-        grundkosten = getPts("Stormhawk Interceptor") + getPts("Assault cannon") * 2;
+        grundkosten = getPts("Stormhawk Interceptor") + getPts("Troops cannon") * 2;
         power = 10;
 
 

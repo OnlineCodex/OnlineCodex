@@ -26,9 +26,9 @@ public class IMRelicSicaranPunisherAssaultTank extends Eintrag {
 
     public IMRelicSicaranPunisherAssaultTank() {
 
-        name = "Relic Sicaran Punisher Assault Tank";
+        name = "Relic Sicaran Punisher Troops Tank";
 
-        grundkosten = getPts("Relic Sicaran Punisher Assault Tank") + getPts("Punisher rotary cannon") + getPts("Heavy bolter (IA)");
+        grundkosten = getPts("Relic Sicaran Punisher Troops Tank") + getPts("Punisher rotary cannon") + getPts("Heavy bolter (IA)");
 
         power = 14;
 

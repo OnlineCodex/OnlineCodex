@@ -5,11 +5,15 @@ import oc.Eintrag;
 import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.FastAttack;
 import oc.wh40k.units.Fly;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Beasts;
 import oc.wh40k.units.necrons.Necrons.Canoptek;
 
-public class CanoptekAcanthrites extends Eintrag<Canoptek, FastAttack, Beasts> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class CanoptekAcanthrites extends Eintrag<Canoptek, FastAttack> implements Beasts, Fly {
 
     private final AnzahlPanel squad;
 

@@ -22,9 +22,9 @@ public class IMStormEagleAssaultGunship extends Eintrag {
 
     public IMStormEagleAssaultGunship() {
 
-        name = "Storm Eagle Assault Gunship";
+        name = "Storm Eagle Troops Gunship";
 
-        grundkosten = getPts("Storm Eagle Assault Gunship") + getPts("Vengeance launcher");
+        grundkosten = getPts("Storm Eagle Troops Gunship") + getPts("Vengeance launcher");
 
         power = 18;
 

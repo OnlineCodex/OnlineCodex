@@ -64,7 +64,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected String volk = "";
     protected Vector<String> supplements = new Vector<String>();
     protected Vector<String> kontingente = new Vector<String>();
-    protected Vector<String> formationen = new Vector<String>();
+    protected Vector<Object> formationen = new Vector<>();
     protected JComboBox supplementBox = new JComboBox();
     protected JComboBox kontingentBox = new JComboBox();
     protected JComboBox formationBox = new JComboBox();
@@ -283,7 +283,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 minAuswahlen.put("Battalion Detachment", new int[]{0, 2, 3, 0, 0, 0, 0, 0, 0, 0});
                 maxAuswahlen.put("Battalion Detachment", new int[]{3, 3, 6, 6, 3, 3, 23, 2, 0, 0});
 
-                minAuswahlen.put("Brigade Detachment", new int[]{0, 3, 6, 3, 3, 3, 0, 0, 0, 0});
+                minAuswahlen.put("BrmyBuilderigade Detachment", new int[]{0, 3, 6, 3, 3, 3, 0, 0, 0, 0});
                 maxAuswahlen.put("Brigade Detachment", new int[]{3, 5, 12, 8, 5, 5, 37, 2, 0, 0});
 
                 minAuswahlen.put("Vanguard Detachment", new int[]{0, 1, 0, 3, 0, 0, 0, 0, 0, 0});
@@ -307,7 +307,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 minAuswahlen.put("Air Wing Detachment", new int[]{0, 0, 0, 0, 0, 0, 0, 3, 0, 0});
                 maxAuswahlen.put("Air Wing Detachment", new int[]{3, 0, 0, 0, 0, 0, 0, 5, 0, 0});
 
-                minAuswahlen.put("Super-Heavy Auxiliary Detachment", new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 1});
+                minAuswahlen.put("SumyBuilderper-Heavy Auxiliary Detachment", new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 1});
                 maxAuswahlen.put("Super-Heavy Auxiliary Detachment", new int[]{3, 0, 0, 0, 0, 0, 0, 0, 0, 1});
 
                 minAuswahlen.put("Fortification Network", new int[]{0, 0, 0, 0, 0, 0, 0, 0, 1, 0});

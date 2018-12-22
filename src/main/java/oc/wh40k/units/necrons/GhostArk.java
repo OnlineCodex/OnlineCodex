@@ -4,10 +4,14 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.wh40k.units.AOPSlot.DedicatedTransport;
 import oc.wh40k.units.Fly;
-import oc.wh40k.units.Transport;
+import oc.wh40k.units.Source;
+import oc.wh40k.units.UnitType.Transport;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class GhostArk extends Eintrag<Necrons, DedicatedTransport, Vehicle> implements Transport, Fly {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class GhostArk extends Eintrag<Necrons, DedicatedTransport> implements Vehicle, Transport, Fly {
 
     public GhostArk() {
         name = "Ghost Ark";

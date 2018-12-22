@@ -10,7 +10,7 @@ public class IMLandRaiderCrusader extends Eintrag {
 
     public IMLandRaiderCrusader() {
         name = "Land Raider Crusader";
-        grundkosten = getPts("Land Raider Crusader") + getPts("Hurricane bolter") * 2 + getPts("Twin Assault cannon");
+        grundkosten = getPts("Land Raider Crusader") + getPts("Hurricane bolter") * 2 + getPts("Twin Troops cannon");
         power = 16;
 
         seperator();

@@ -5,10 +5,14 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.wh40k.units.AOPSlot.FastAttack;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Beasts;
 import oc.wh40k.units.necrons.Necrons.Canoptek;
 
-public class CanoptekWraiths extends Eintrag<Canoptek, FastAttack, Beasts> {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class CanoptekWraiths extends Eintrag<Canoptek, FastAttack> implements Beasts {
 
     private final AnzahlPanel squad;
     private final OptionsZaehlerGruppe o1;

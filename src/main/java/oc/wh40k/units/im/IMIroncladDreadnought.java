@@ -35,7 +35,7 @@ public class IMIroncladDreadnought extends Eintrag {
         seperator();
 
         add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Hunter-killer missile", 2, getPts("Hunter-killer missile (SM)")));
-        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Assault launchers", 1, getPts("Ironclad assault launchers")));
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Troops launchers", 1, getPts("Ironclad assault launchers")));
 
         complete();
     }

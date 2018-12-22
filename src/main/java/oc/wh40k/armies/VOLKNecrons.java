@@ -3,66 +3,31 @@ package oc.wh40k.armies;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.reflection.FactionDescription;
+import oc.reflection.FactionIndexer;
 import oc.utils.ResourceUtils;
+import oc.wh40k.units.necrons.Necrons;
 
 import java.io.InputStream;
+import java.util.Map;
 
+import static oc.reflection.FactionIndexer.indexFaction;
 import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKNecrons extends BuildaVater {
 
-    //Vanilla Necrons
-    private static final String[] HQeinträge_NE = new String[]{"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
-    private static final String[] Standardeinträge_NE = new String[]{"", "Necrons Warriors", "Immortals",};
-    private static final String[] Eliteeinträge_NE = new String[]{"", "Lychguard", "Deathmarks", "Flayed Ones",};
-    private static final String[] Sturmeinträge_NE = new String[]{"", "Tomb Blades", "Destroyers",};
-    private static final String[] Unterstützungeinträge_NE = new String[]{"", "Heavy Destroyers", "Monolith", "Annihilation Barge", "Doomsday Ark",};
-    private static final String[] Transporteinträge_NE = new String[]{"", "Ghost Ark",};
-    private static final String[] Fliegereinträge_NE = new String[]{"", "Doom Scythe", "Night Scythe",};
-    private static final String[] LordofWareinträge_NE = new String[]{"", "Obelisk",};
-
-    //ohne Dynasty
-    private static final String[] HQeinträge_Vanilla_only = new String[]{"", "Illuminor Szeras", "Anrakyr the Traveller",};
-    private static final String[] Eliteeinträge_Vanilla_only = new String[]{"", "Triarch Praetorians", "Triarch Stalker",};
-
-    //Sautekh Dynasty
-    private static final String[] HQeinträge_Sautekh = new String[]{"", "Imotekh the Stormlord", "Nemesor Zahndrekh", "Vargard Obyron", "Orikan the Diviner",};
-
-    //Nihilakh Dynasty
-    private static final String[] HQeinträge_Nihilakh = new String[]{"", "Trazyn the Infinite",};
-
-    //C'tan Shards
-    private static final String[] Eliteeinträge_Ctan_Shards = new String[]{"", "C'tan Shard of the Deceiver", "C'tan Shard of the Nightbringer",};
-    private static final String[] Unterstützungeinträge_Ctan_Shards = new String[]{"", "Transcendent C'tan",};
-
-    //C'tan Shards & Dynasty
-    private static final String[] LordofWareinträge_Ctan_Shards_Dynasty = new String[]{"", "Tesseract Vault",};
-
-    //Canoptek
-    private static final String[] Sturmeinträge_Canoptek = new String[]{"", "Canoptek Wraiths", "Canoptek Scarabs",};
-    private static final String[] Unterstützungeinträge_Canoptek = new String[]{"", "Canoptek Spyders",};
-
-    //Imperial Armour Xenos Vanilla
-    private static final String[] Unterstützungeinträge_IA_NE = new String[]{"", "Sentry Pylon", "Tesseract Ark",};
-    private static final String[] Fliegereinträge_IA_NE = new String[]{"", "Night Shroud",};
-    private static final String[] LordofWareinträge_IA_NE = new String[]{"", "Gauss Pylon",};
-    private static final String[] Befestigungen_IA_NE = new String[]{"", "Tomb Citadel",};
-
-    //Imperial Armour Xenos Maynarkh Dynasty
-    private static final String[] HQeinträge_IA_Maynarkh = new String[]{"", "Kutlakh the World Killer", "Toholk the Blinded",};
-
-    //Imperial Armour Xenos Canoptek
-    private static final String[] Eliteeinträge_IA_Canoptek = new String[]{"", "Canoptek Tomb Stalker",};
-    private static final String[] Sturmeinträge_IA_Canoptek = new String[]{"", "Canoptek Acanthrites", "Canoptek Tomb Sentinel",};
+    private final Map<Class<? extends Necrons>, FactionDescription<? extends Necrons>> subFactions;
 
     public VOLKNecrons() {
         super("NE", loadPoints(
                 "/oc/wh40k/indices/ne.yaml",
                 "/oc/wh40k/indices/iane.yaml"));
 
+        subFactions = indexFaction("oc.wh40k.units.necrons", Necrons.class);
+
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
+        Eliteeinträge = new String[]{""};
         Standardeinträge = new String[]{""};
         Sturmeinträge = new String[]{""};
         Unterstützungeinträge = new String[]{""};
@@ -94,6 +59,7 @@ public class VOLKNecrons extends BuildaVater {
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
 
+        
         //Formationen
         formationen.add("NECRONS");
         formationen.add("");

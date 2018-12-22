@@ -22,9 +22,9 @@ public class IMStormEagleAssaultGunshipROCPattern extends Eintrag {
 
     public IMStormEagleAssaultGunshipROCPattern() {
 
-        name = "Storm Eagle Assault Gunship - ROC Pattern";
+        name = "Storm Eagle Troops Gunship - ROC Pattern";
 
-        grundkosten = getPts("Storm Eagle Assault Gunship - ROC Pattern") + 2 * getPts("Twin lascannon") + getPts("ROC missile launcher");
+        grundkosten = getPts("Storm Eagle Troops Gunship - ROC Pattern") + 2 * getPts("Twin lascannon") + getPts("ROC missile launcher");
 
         power = 19;
 

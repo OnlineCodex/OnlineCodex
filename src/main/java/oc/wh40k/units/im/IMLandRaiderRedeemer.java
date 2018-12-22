@@ -10,7 +10,7 @@ public class IMLandRaiderRedeemer extends Eintrag {
 
     public IMLandRaiderRedeemer() {
         name = "Land Raider Redeemer";
-        grundkosten = getPts("Land Raider Redeemer") + getPts("Flamestorm cannon") * 2 + getPts("Twin Assault cannon");
+        grundkosten = getPts("Land Raider Redeemer") + getPts("Flamestorm cannon") * 2 + getPts("Twin Troops cannon");
         power = 18;
 
         seperator();

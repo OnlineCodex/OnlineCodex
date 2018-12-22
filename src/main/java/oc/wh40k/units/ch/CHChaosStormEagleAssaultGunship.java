@@ -12,8 +12,8 @@ public class CHChaosStormEagleAssaultGunship extends Eintrag {
     OptionsUpgradeGruppe mark;
 
     public CHChaosStormEagleAssaultGunship() {
-        name = "Chaos Storm Eagle Assault Gunship";
-        grundkosten = getPts("Chaos Storm Eagle Assault Gunship");
+        name = "Chaos Storm Eagle Troops Gunship";
+        grundkosten = getPts("Chaos Storm Eagle Troops Gunship");
 
         add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
 

@@ -5,9 +5,13 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.AOPSlot.Hq;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Overlord extends Eintrag<Necrons, Hq, Infantry> implements Necrons.Overlord {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Overlord extends Eintrag<Necrons, Hq> implements Infantry, Necrons.Overlord {
 
     private final OptionsUpgradeGruppe o1;
 

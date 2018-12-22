@@ -76,7 +76,7 @@ public class IMDeathwingTerminatorSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
 
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
 
         ogE.addElement(new OptionsGruppeEintrag("Cyclone ML", getPts("Cyclone Missile launcher")));
 

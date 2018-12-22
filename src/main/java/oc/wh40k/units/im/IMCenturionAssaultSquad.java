@@ -11,10 +11,10 @@ public class IMCenturionAssaultSquad extends Eintrag {
     AnzahlPanel squad;
 
     public IMCenturionAssaultSquad() {
-        name = "Centurion Assault Squad\n";
+        name = "Centurion Troops Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Centurions", 3, 6, getPts("Centurion Assault Squad"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Centurions", 3, 6, getPts("Centurion Troops Squad"));
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/SMTerminatorSturmtrupp.jpg"));

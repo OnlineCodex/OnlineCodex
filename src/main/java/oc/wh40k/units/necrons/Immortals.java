@@ -1,10 +1,14 @@
 package oc.wh40k.units.necrons;
 
 import oc.*;
-import oc.wh40k.units.AOPSlot.Assault;
+import oc.wh40k.units.AOPSlot;
+import oc.wh40k.units.Source;
 import oc.wh40k.units.UnitType.Infantry;
 
-public class Immortals extends Eintrag<Necrons, Assault, Infantry> {
+import static oc.wh40k.units.Source.SourcePublication.CodexNecrons;
+
+@Source(CodexNecrons)
+public class Immortals extends Eintrag<Necrons, AOPSlot.Troops> implements Infantry {
 
     private final AnzahlPanel squad;
     private final OptionsUpgradeGruppe o1;

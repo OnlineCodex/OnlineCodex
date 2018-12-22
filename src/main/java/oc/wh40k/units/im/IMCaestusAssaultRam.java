@@ -6,14 +6,14 @@ import oc.OptionsEinzelUpgrade;
 public class IMCaestusAssaultRam extends Eintrag {
 
     public IMCaestusAssaultRam() {
-        name = "Caestus Assault Ram";
+        name = "Caestus Troops Ram";
         grundkosten = 275;
 
         add(ico = new oc.Picture("oc/wh40k/images/SMCaestusAssaultRam.jpg"));
 
         seperator();
 
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Frag Assault Launchers", 10));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Frag Troops Launchers", 10));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Teleport Homer", 15));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Ceramite Plating", 20));
         complete();

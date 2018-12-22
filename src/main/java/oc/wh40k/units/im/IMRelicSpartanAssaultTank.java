@@ -22,9 +22,9 @@ public class IMRelicSpartanAssaultTank extends Eintrag {
 
     public IMRelicSpartanAssaultTank() {
 
-        name = "Relic Spartan Assault Tank";
+        name = "Relic Spartan Troops Tank";
 
-        grundkosten = getPts("Relic Spartan Assault Tank") + getPts("Crushing tracks");
+        grundkosten = getPts("Relic Spartan Troops Tank") + getPts("Crushing tracks");
 
         power = 23;
 

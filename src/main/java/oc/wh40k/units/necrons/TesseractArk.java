@@ -3,15 +3,15 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
-import oc.wh40k.units.AOPSlot;
 import oc.wh40k.units.AOPSlot.HeavySupport;
 import oc.wh40k.units.Fly;
 import oc.wh40k.units.Source;
-import oc.wh40k.units.Source.ImperialArmourIndexXenos;
-import oc.wh40k.units.UnitType;
 import oc.wh40k.units.UnitType.Vehicle;
 
-public class TesseractArk extends Eintrag<Necrons, HeavySupport, Vehicle, ImperialArmourIndexXenos> implements Fly {
+import static oc.wh40k.units.Source.SourcePublication.ImperialArmourIndexXenos;
+
+@Source(ImperialArmourIndexXenos)
+public class TesseractArk extends Eintrag<Necrons, HeavySupport> implements Vehicle, Fly {
 
     public TesseractArk() {
         name = "Tesseract Ark";

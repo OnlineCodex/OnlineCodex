@@ -3,11 +3,14 @@ package oc.wh40k.units.necrons;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.wh40k.units.AOPSlot.Elite;
-import oc.wh40k.units.Source.ImperialArmourIndexXenos;
-import oc.wh40k.units.UnitType;
+import oc.wh40k.units.Source;
+import oc.wh40k.units.UnitType.Monster;
 import oc.wh40k.units.necrons.Necrons.Canoptek;
 
-public class CanoptekTombStalker extends Eintrag<Canoptek, Elite, UnitType.Monster, ImperialArmourIndexXenos> {
+import static oc.wh40k.units.Source.SourcePublication.ImperialArmourIndexXenos;
+
+@Source(ImperialArmourIndexXenos)
+public class CanoptekTombStalker extends Eintrag<Canoptek, Elite> implements Monster {
 
     public CanoptekTombStalker() {
         name = "Canoptek Tomb Stalker";

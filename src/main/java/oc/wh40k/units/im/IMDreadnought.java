@@ -20,9 +20,9 @@ public class IMDreadnought extends Eintrag {
         seperator();
 
         if (!buildaVater.getFormationType().equals("Deathwatch")) {
-            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Troops cannon", "Troops cannon", buildaVater));
         } else {
-            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
             if(spacewolves) {
                 ogE.addAll(IMSpaceWolvesDreadnoughtHeavyWeapons.createRK("", "", buildaVater));
             }else {

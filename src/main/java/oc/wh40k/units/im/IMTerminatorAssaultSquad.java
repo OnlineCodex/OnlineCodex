@@ -10,11 +10,11 @@ public class IMTerminatorAssaultSquad extends Eintrag {
     boolean raiderSelected = false;
 
     public IMTerminatorAssaultSquad() {
-        name = "Terminator Assault Squad";
+        name = "Terminator Troops Squad";
 
         //5 Termis 5*31 + 2 * Lightning claws (single/pair) 9/13 + 3 * Thunder hammer (other models) 20 + 3 * Storm shield (other models) 5
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, getPts("Terminator Assault Squad")));
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Terminators", 5, 10, getPts("Terminator Troops Squad")));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));

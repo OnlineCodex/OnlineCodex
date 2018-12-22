@@ -103,7 +103,7 @@ public class IMKillteamKammer extends RuestkammerVater {
 
             seperator();
 
-            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Cyclone & Storm bolter", getPts("Cyclone missile launcher") + getPts("Storm bolter (DW)")));
             add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -169,14 +169,14 @@ public class IMKillteamKammer extends RuestkammerVater {
 
         if (type.equals("Hellblaster")) {
             ogE.addElement(new OptionsGruppeEintrag("Plasma incinerator", getPts("Plasma incinerator")));
-            ogE.addElement(new OptionsGruppeEintrag("Assault plasma incinerator", getPts("Assault plasma incinerator")));
+            ogE.addElement(new OptionsGruppeEintrag("Troops plasma incinerator", getPts("Troops plasma incinerator")));
             ogE.addElement(new OptionsGruppeEintrag("Heavy plasma incinerator", getPts("Heavy plasma incinerator")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
         }
 
         if (type.equals("Inceptor")) {
-            ogE.addElement(new OptionsGruppeEintrag("Assault bolters", getPts("Assault bolter") * 2));
+            ogE.addElement(new OptionsGruppeEintrag("Troops bolters", getPts("Troops bolter") * 2));
             ogE.addElement(new OptionsGruppeEintrag("Plasma exterminator", getPts("Plasma exterminator") * 2));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);

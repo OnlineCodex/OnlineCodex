@@ -9,7 +9,7 @@ public class IMFireRaptorAssaultGunship extends Eintrag {
     OptionsUpgradeGruppe o2;
 
     public IMFireRaptorAssaultGunship() {
-        name = "Fire Raptor Assault Gunship";
+        name = "Fire Raptor Troops Gunship";
         grundkosten = 225;
 
         add(ico = new oc.Picture("oc/wh40k/images/SMCybot.jpg"));

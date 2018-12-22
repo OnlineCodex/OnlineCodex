@@ -10,8 +10,8 @@ public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
     OptionsUpgradeGruppe mark;
 
     public CHHellforgedKharybdisAssaultClaw() {
-        name = "Hellforged Kharybdis Assault Claw";
-        grundkosten = getPts("Hellforged Kharybdis Assault Claw");
+        name = "Hellforged Kharybdis Troops Claw";
+        grundkosten = getPts("Hellforged Kharybdis Troops Claw");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 

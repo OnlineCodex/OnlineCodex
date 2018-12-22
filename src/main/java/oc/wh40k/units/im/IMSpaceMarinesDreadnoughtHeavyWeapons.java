@@ -19,7 +19,7 @@ public class IMSpaceMarinesDreadnoughtHeavyWeapons extends RuestkammerElement {
         addElement("Twin autocannon", "Twin autocannon", defaultWeapon, ogE, bv);
         addElement("Twin heavy bolter", "Twin heavy bolter (SM)", defaultWeapon, ogE, bv);
         addElement("Twin lascannon", "Twin lascannon", defaultWeapon, ogE, bv);
-        addElement("Assault cannon", "Assault cannon (SM)", defaultWeapon, ogE, bv);
+        addElement("Troops cannon", "Troops cannon (SM)", defaultWeapon, ogE, bv);
         addElement("Heavy plasma cannon", "Heavy plasma cannon", defaultWeapon, ogE, bv);
         addElement("Multi-melta", "Multi-melta (SM)", defaultWeapon, ogE, bv);
         return ogE;

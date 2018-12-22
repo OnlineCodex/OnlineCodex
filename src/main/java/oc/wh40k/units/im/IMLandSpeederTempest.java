@@ -22,7 +22,7 @@ public class IMLandSpeederTempest extends Eintrag {
 
 
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder Tempest", "Land Speeder Tempest", 1, 3, getPts("Land Speeder Tempest") + getPts("Assault cannon") + 2 * getPts("Tempest salvo launcher"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Land Speeder Tempest", "Land Speeder Tempest", 1, 3, getPts("Land Speeder Tempest") + getPts("Troops cannon") + 2 * getPts("Tempest salvo launcher"));
 
         add(squad);
 

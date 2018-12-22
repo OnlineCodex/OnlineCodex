@@ -14,7 +14,7 @@ public class IMHellblasters extends Eintrag {
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Plasma incinerator", getPts("Plasma incinerator")));
-        ogE.addElement(new OptionsGruppeEintrag("Assault plasma incinerator", getPts("Assault plasma incinerator")));
+        ogE.addElement(new OptionsGruppeEintrag("Troops plasma incinerator", getPts("Troops plasma incinerator")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy plasma incinerator", getPts("Heavy plasma incinerator")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
@@ -30,7 +30,7 @@ public class IMHellblasters extends Eintrag {
     public void refreshen() {
         sergeant.setSelected(true);
         o1.setPreis(0, (squad.getModelle() * getPts("Plasma incinerator")));
-        o1.setPreis(1, (squad.getModelle() * getPts("Assault plasma incinerator")));
+        o1.setPreis(1, (squad.getModelle() * getPts("Troops plasma incinerator")));
         o1.setPreis(2, (squad.getModelle() * getPts("Heavy plasma incinerator")));
         o1.alwaysSelected();
         o2.alwaysSelected();

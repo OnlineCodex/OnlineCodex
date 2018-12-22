@@ -4,9 +4,8 @@ import oc.ShadowType;
 
 public abstract class AOPSlot extends ShadowType {
     private AOPSlot() {}
-
     public static final class Hq extends AOPSlot {}
-    public static final class Assault extends AOPSlot {}
+    public static final class Troops extends AOPSlot {}
     public static final class Elite extends AOPSlot {}
     public static final class FastAttack extends AOPSlot {}
     public static final class HeavySupport extends AOPSlot {}

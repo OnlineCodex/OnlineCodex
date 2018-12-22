@@ -54,7 +54,7 @@ public class IMChaplainVenerableDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
 
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Troops cannon", getPts("Troops cannon")));
 
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
 
