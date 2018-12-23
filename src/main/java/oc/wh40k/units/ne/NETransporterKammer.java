@@ -4,28 +4,20 @@ import oc.*;
 
 public class NETransporterKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe typ;
-    OptionsUpgradeGruppe commandWeapons;
-    OptionsPanelSwitcher switcher;
-    OptionsEinzelUpgrade ass;
+    private final OptionsUpgradeGruppe typ;
+    private final OptionsEinzelUpgrade ass;
 
-    boolean offerGhost = false;
-    boolean offerNight = false;
+    private final boolean offerNight;
 
-    public NETransporterKammer() {
+    public NETransporterKammer(boolean offerGhost, boolean offerNight) {
+        this.offerNight = offerNight;
+
         grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-
-        this.offerGhost = defaults[0];
-        this.offerNight = defaults[1];
 
         add(ico = new oc.Picture("oc/wh40k/images/NEGhost Ark.jpg"));
 
 
-        if (this.offerGhost) {
+        if (offerGhost) {
             ogE.addElement(new OptionsGruppeEintrag("Geister-Barke", 105));
         }
         if (this.offerNight) {
@@ -36,6 +28,8 @@ public class NETransporterKammer extends RuestkammerVater {
         if (this.offerNight) {
             seperator();
             add(ass = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Fliegerass", 50));
+        } else {
+            ass = null;
         }
 
         sizeSetzen();
@@ -48,20 +42,21 @@ public class NETransporterKammer extends RuestkammerVater {
         }
 
         if (typ.isSelected("Geister-Barke")) {
+            if (this.offerNight) {
+                ass.setAktiv(false);
+            }
+
             String icon = "oc/wh40k/images/NEGhost Ark.jpg";
             ico.setIcon(icon);
             try {
                 ico.updateSize();
             } catch (Exception e) {
             }
-            if (this.offerNight) {
-                ass.setAktiv(false);
-            }
-
         } else { // Night Scythe
+            ass.setAktiv(true);
+
             String icon = "oc/wh40k/images/NENight Scythe.jpg";
             ico.setIcon(icon);
-            ass.setAktiv(true);
             try {
                 ico.updateSize();
             } catch (Exception e) {

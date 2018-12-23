@@ -4,14 +4,9 @@ import oc.*;
 
 public class IMTacticalSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-
-    boolean siegeAssaultForce;
-
-    OptionsEinzelUpgrade mantlets;
+    private final AnzahlPanel squad;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
 
     public IMTacticalSquad() {
         name = "Tactical Squad\n";
@@ -47,13 +42,11 @@ public class IMTacticalSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Tactical Squad";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Tactical Squad"), "Sergeant");
         rkBoss.setGrundkosten(getPts("Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

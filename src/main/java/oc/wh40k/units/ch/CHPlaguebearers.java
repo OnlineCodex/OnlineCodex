@@ -7,11 +7,9 @@ import oc.RuestkammerStarter;
 
 public class CHPlaguebearers extends Eintrag {
 
-    AnzahlPanel plaguebearers;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel plaguebearers;
 
     public CHPlaguebearers() {
-
         name = "Plaguebearers";
         grundkosten = 0;
         power = 5;
@@ -25,25 +23,17 @@ public class CHPlaguebearers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Plagueridden");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Plagueridden";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Plagueridden");
         rkBoss.setGrundkosten(getPts("Plagueridden"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
-
     }
-
-    public void deleteYourself() {
-    }
-
 
     @Override
     public void refreshen() {
-
         power = 5 +
                 ((plaguebearers.getModelle() == 20) ? 5 : 0) +
                 ((plaguebearers.getModelle() == 30) ? 10 : 0);

@@ -4,21 +4,17 @@ import oc.*;
 
 public class ORNobzKammer extends RuestkammerVater {
 
-    AnzahlPanel Bosse;
-    OptionsEinzelUpgrade Bossbikaz;
-    OptionsZaehlerGruppe BosseCC;
-    OptionsZaehlerGruppe BosseFK;
-    OptionsEinzelUpgrade Panzarüstung;
-    OptionsEinzelZaehler Trophäenstange;
-    OptionsEinzelUpgrade Waaaghbanner;
-    OptionsEinzelZaehler Munigrotz;
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
+    private final AnzahlPanel Bosse;
+    private final OptionsEinzelUpgrade Bossbikaz;
+    private final OptionsZaehlerGruppe BosseCC;
+    private final OptionsZaehlerGruppe BosseFK;
+    private final OptionsEinzelUpgrade Panzarüstung;
+    private final OptionsEinzelZaehler Trophäenstange;
+    private final OptionsEinzelZaehler Munigrotz;
+    private final RuestkammerStarter PikkUp;
+    private final RuestkammerStarter Kampfpanza;
 
     public ORNobzKammer() {
-    }
-
-    public void initButtons(boolean... defaults) {
         grundkosten = 0;
 
         Bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 3, 10, 18);
@@ -44,7 +40,7 @@ public class ORNobzKammer extends RuestkammerVater {
 
         seperator(5);
 
-        add(Waaaghbanner = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Waaaghbanner", 20));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Waaaghbanner", 20));
 
         seperator(5);
 
@@ -58,18 +54,16 @@ public class ORNobzKammer extends RuestkammerVater {
 
         seperator();
 
-        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, ORTrukkKammer.class, "Trukk");
-        PikkUp.initKammer();
+        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, new ORTrukkKammer(), "Trukk");
         add(PikkUp);
 
-        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, ORFahrzeugruestkammer.class, "Battlewagon");
-        Kampfpanza.initKammer();
+        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, new ORFahrzeugruestkammer(), "Battlewagon");
         add(Kampfpanza);
 
         sizeSetzen();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         Bossbikaz.setAktiv(!Panzarüstung.isSelected());
         Panzarüstung.setAktiv(!Bossbikaz.isSelected());
@@ -85,7 +79,5 @@ public class ORNobzKammer extends RuestkammerVater {
         PikkUp.setAktiv(!Kampfpanza.isSelected() && !Bossbikaz.isSelected());
         Kampfpanza.setAktiv(!PikkUp.isSelected() && !Bossbikaz.isSelected());
         Kampfpanza.getPanel().setLocation((int) Kampfpanza.getPanel().getLocation().getX(), (int) PikkUp.getPanel().getLocation().getY() + PikkUp.getPanel().getSize().height);
-
     }
-
 }

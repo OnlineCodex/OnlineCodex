@@ -28,9 +28,8 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
         seperator();
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander in XV8 Crisis Battlesuit");
+        ob = new RuestkammerStarter(ID, randAbstand, cnt, new TAKampfanzugKammer(true, false, false, false), "Commander in XV8 Crisis Battlesuit");
         ob.setGrundkosten(0);
-        ob.initKammer(true, false, false, false, false, false, false);
         ob.setButtonText("Rüstkammer");
         ob.setAbwaehlbar(false);
         add(ob);

@@ -6,15 +6,7 @@ import oc.RuestkammerVater;
 
 public class TAFahrzeugKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o3;
-
     public TAFahrzeugKammer() {
-
-        grundkosten = 0;
-    }
-
-    public void initButtons(boolean... defaults) {
-
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "Automatisches Reparatursystem", "Reparatursystem", 5)); //Automated repair system
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Fahrzeugsensorik", 5)); //Fahrzeugsensorik?
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Filteroptik", 1)); //Blacksun Filter
@@ -25,9 +17,5 @@ public class TAFahrzeugKammer extends RuestkammerVater {
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Störsystem", 15)); //Disruption pod
 
         sizeSetzen();
-    }
-
-    // @OVERRIDE
-    public void refreshen() {
     }
 }

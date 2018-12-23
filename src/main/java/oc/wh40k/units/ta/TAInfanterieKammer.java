@@ -7,23 +7,15 @@ import oc.RuestkammerVater;
 
 public class TAInfanterieKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade o1;
-    OptionsZaehlerGruppe o4;
-    boolean[] defaults;
-    boolean shasui = false;
-    boolean former = false;
-    boolean späher = false;
+    private OptionsEinzelUpgrade o1;
+    private OptionsZaehlerGruppe o4;
 
-    public void initButtons(boolean... defaults) {
-        this.defaults = defaults;
-        shasui = defaults[0];
-        former = defaults[1];
-        späher = defaults[2];
+    public TAInfanterieKammer(
+            boolean shasui,
+            boolean former,
+            boolean späher) {
 
         if (shasui) {
-            //add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zielmarker", 10));
-            //add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Zielerfassung", "Multiple Zielerfassung", 15));
-
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Markerlight", getPts("Markerlight")));
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Pulse pistol", getPts("Pulse pistol")));
             seperator();
@@ -48,10 +40,8 @@ public class TAInfanterieKammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-        if (former) {
+        if (o1 != null && o4 != null) {
             o1.setAktiv(!o4.isSelected());
         }
     }
 }
-
-

@@ -1,20 +1,28 @@
 package oc.wh40k.units.im;
 
+import static com.google.common.collect.Sets.newEnumSet;
 import static oc.KeyWord.*;
 
+import java.util.EnumSet;
+import java.util.Set;
 import java.util.Vector;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 import oc.*;
 
 public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
-	
-    public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
-    boolean psyker = false;
-    boolean character = false;
-    OptionsEinzelUpgrade relic1;
-    
-    static public Vector<OptionsGruppeEintrag> getRangedWeapons(BuildaVater bv) {
+
+    private final String type;
+    private final Set<KeyWord> keywords;
+    private final boolean character;
+
+    private OptionsEinzelUpgrade oe1;
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsUpgradeGruppe o3;
+
+    private static Vector<OptionsGruppeEintrag> getRangedWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", bv.getPts("Boltgun (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", bv.getPts("Combi-flamer (AMI)")));
@@ -57,10 +65,6 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         return ogE;
     }
     
-    public IMAdeptaSororitasRuestkammer() {
-        grundkosten = 0;
-    }
-    
     public void addRelics() {
     	if(keywords.contains(CHARACTER)) {
 	    	for(int i = 0; i < ogE.size(); i++) {
@@ -72,12 +76,16 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 	    	}
     	}
     }
-    
-    @Override
-    public void initButtons(boolean... defaults) {
+
+    public IMAdeptaSororitasRuestkammer(String type, KeyWord... rawKeywords) {
+        this(type, ImmutableList.copyOf(rawKeywords));
+    }
+
+    public IMAdeptaSororitasRuestkammer(String type, Iterable<KeyWord> rawKeywords) {
+        this.type = type;
+        this.keywords = newEnumSet(rawKeywords, KeyWord.class);
+        this.character = keywords.contains(CHARACTER);
         checkBuildaVater();
-        psyker = keywords.contains(PSYKER);
-        character = keywords.contains(CHARACTER);
         int offsetX = randAbstand;
         int oe1Offset = cnt;
         

@@ -5,7 +5,6 @@ import static oc.KeyWord.*;
 import oc.*;
 
 public class IMPrimarisCaptain extends Eintrag {
-    OptionsUpgradeGruppe o1;
 
     public IMPrimarisCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, CAPTAIN);
@@ -13,9 +12,7 @@ public class IMPrimarisCaptain extends Eintrag {
         grundkosten = getPts("Primaris Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol");
         power = 6;
         
-        seperator();
-        
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
 
         seperator();
 

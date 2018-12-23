@@ -4,11 +4,10 @@ import oc.*;
 
 public class IMTartarosTerminatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3, o4, o5;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2, o2x;
+    private final OptionsZaehlerGruppe o3, o4, o5;
 
     public IMTartarosTerminatorSquad() {
         name = "Tartaros Terminator Squad\n";
@@ -44,13 +43,11 @@ public class IMTartarosTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Tartaros Sergeant");
-        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Tartaros Sergeant");
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Tartaros Sergeant", getKeywords()), "Tartaros Sergeant");
         rkBoss.setGrundkosten(getPts("Tartaros Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

@@ -8,37 +8,30 @@ import oc.*;
 
 public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
 
-	public boolean uniqueError = false;
-    public OptionsEinzelUpgrade oe1, oe2;
-    OptionsUpgradeGruppe o1, o2, o3, o4;
-    OptionsZaehlerGruppe o5;
-    String type = "";
-    String default1 = "";
-    String default2 = "";
-    boolean character = false;
+    public OptionsEinzelUpgrade oe1;
+    public OptionsEinzelUpgrade oe2;
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsUpgradeGruppe o3;
+    private final String type;
+    private final boolean character;
     
-    Set<String> CHARACTERS = ImmutableSet.of("Primaris Battle Leader", "Iron Priest", "Primaris Ancient", "Great Company Ancient", "Great Company Champion", "Rune Priest", "Rune Priest in Terminator Armour", "Rune Priest on Bike", "Primaris Rune Priest",
+    private static final Set<String> CHARACTERS = ImmutableSet.of("Primaris Battle Leader", "Iron Priest", "Primaris Ancient", "Great Company Ancient", "Great Company Champion", "Rune Priest", "Rune Priest in Terminator Armour", "Rune Priest on Bike", "Primaris Rune Priest",
     		"Wolf Priest", "Wolf Priest in Terminator Armour", "Wolf Priest on Bike", "Primaris Wolf Priest", "Wolf Lord", "Wolf Lord in Cataphractii Armour", "Wolf Lord in Gravis Armour", "Wolf Lord in Terminator Armour", "Wolf Lord on Bike", 
     		"Wolf Lord on Thunderwolf", "Primaris Wolf Lord", "Wolf Guard Battle Leader", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Bike", "Wolf Guard Battle Leader on Thunderwolf");
     
-    public IMSpaceWolvesRuestkammer() {
-        grundkosten = 0;
-    }
-
-    public void setType(String s) {
-        type = s;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
+    public IMSpaceWolvesRuestkammer(String type) {
+        this.type = type;
         checkBuildaVater();
 
         if(CHARACTERS.contains(type)) {
-        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
-        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
-        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
-        	 character = true;
-        	 seperator();
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour of Russ", 0).setRelic(true));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Durfast", 0).setRelic(true));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Wulfen Stone", 0).setRelic(true));
+            character = true;
+            seperator();
+        } else {
+            character = false;
         }
         
         if (type.equals("Wolf Lord") || type.equals("Wolf Lord in Gravis Armour") || type.equals("Wolf Lord on Bike") || type.equals("Wolf Lord on Thunderwolf")) {
@@ -518,8 +511,9 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
             o2.setPreis("Thunder hammer", getPts("Thunder hammer (Characters)"));
             o2.setPreis("Storm shield", getPts("Storm shield (Characters)"));
         }
-
-
     }
 
+    public OptionsUpgradeGruppe getO2() {
+        return o2;
+    }
 }

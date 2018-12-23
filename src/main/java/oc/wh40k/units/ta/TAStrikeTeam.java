@@ -4,14 +4,15 @@ import oc.*;
 
 public class TAStrikeTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelZaehler o1;
-    OptionsUpgradeGruppe o4, o3;
-    OptionsZaehlerGruppe o5, o6;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelZaehler o1;
+    private final OptionsUpgradeGruppe o4;
+    private final OptionsZaehlerGruppe o5;
+    private final OptionsZaehlerGruppe o6;
+    private final RuestkammerStarter rkBoss;
 
     public TAStrikeTeam() {
-        name = "Strike Team\n";
+        name = "Strike Team";
         überschriftSetzen = true;
         grundkosten = 0;
 
@@ -38,7 +39,7 @@ public class TAStrikeTeam extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("DS8 missile pod", "DS8 Tactical Support Turret with missile pod", getPts("DS8 Tactical Support Turret") + getPts("Missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("DS8 smart missile", "DS8 Tactical Support Turret with smart missile system", getPts("DS8 Tactical Support Turret") + getPts("Smart missile system")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -49,8 +50,7 @@ public class TAStrikeTeam extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TAInfanterieKammer.class, "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
-        rkBoss.initKammer(true, false, false);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new TAInfanterieKammer(true, false, false), "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
         rkBoss.setGrundkosten(getPts("Shas'ui"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
@@ -76,5 +76,4 @@ public class TAStrikeTeam extends Eintrag {
             power++;
         }
     }
-
 }

@@ -6,41 +6,22 @@ import oc.RuestkammerStarter;
 
 public class ORFlakkTrukk extends Eintrag {
 
-    RuestkammerStarter t1;
-    RuestkammerStarter t2;
-    RuestkammerStarter t3;
-
     public ORFlakkTrukk() {
-
         name = "Flakk Trukk";
         grundkosten = 0;
 
-
         add(ico = new oc.Picture("oc/wh40k/images/GunTrukk.gif"));
 
-
-        t1 = new RuestkammerStarter(ID, randAbstand, cnt, ORFlakkTrukkKammer.class, "Flakk Trukk");
-        t1.initKammer();
-        add(t1);
+        add(new RuestkammerStarter(ID, randAbstand, cnt, new ORFlakkTrukkKammer(), "Flakk Trukk"));
 
         seperator();
 
-        t2 = new RuestkammerStarter(ID, randAbstand, cnt, ORFlakkTrukkKammer.class, "Flakk Trukk");
-        t2.initKammer();
-        add(t2);
+        add(new RuestkammerStarter(ID, randAbstand, cnt, new ORFlakkTrukkKammer(), "Flakk Trukk"));
 
         seperator();
 
-        t3 = new RuestkammerStarter(ID, randAbstand, cnt, ORFlakkTrukkKammer.class, "Flakk Trukk");
-        t3.initKammer();
-        add(t3);
+        add(new RuestkammerStarter(ID, randAbstand, cnt, new ORFlakkTrukkKammer(), "Flakk Trukk"));
 
         complete();
-
-
-    }
-
-    //@OVERRIDE
-    public void refreshen() {
     }
 }

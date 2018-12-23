@@ -7,11 +7,9 @@ import oc.RuestkammerStarter;
 
 public class CHBloodcrushers extends Eintrag {
 
-    AnzahlPanel bloodcrushers;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel bloodcrushers;
 
     public CHBloodcrushers() {
-
         name = "Bloodcrushers";
         grundkosten = 0;
         power = 5;
@@ -25,13 +23,11 @@ public class CHBloodcrushers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Bloodhunter");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Bloodhunter";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Bloodhunter");
         rkBoss.setGrundkosten(getPts("Bloodhunter"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
 

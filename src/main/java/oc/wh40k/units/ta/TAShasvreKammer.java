@@ -2,22 +2,11 @@ package oc.wh40k.units.ta;
 
 import oc.*;
 
-//Stealth Shasvre
-
 public class TAShasvreKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade fb;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o3;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o5;
+    private final OptionsUpgradeGruppe o1;
 
     public TAShasvreKammer() {
-        grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
 
         //Bewaffnung
         ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
@@ -35,7 +24,7 @@ public class TAShasvreKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (all other models)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (all other units)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (all other units)")));
-        add(o5 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -51,5 +40,4 @@ public class TAShasvreKammer extends RuestkammerVater {
             o1.setSelected(0, true);
         }
     }
-
 }

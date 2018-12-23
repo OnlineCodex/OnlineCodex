@@ -14,9 +14,8 @@ public class IMChapterChampion extends Eintrag {
                 getPts("Krak grenade (SM)") +
                 getPts("Bolt pistol (SM)");
         power = 4;
-        seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
 
         seperator();
 

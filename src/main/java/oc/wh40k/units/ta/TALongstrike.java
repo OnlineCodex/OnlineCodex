@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class TALongstrike extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
+    private final Vector<RuestkammerStarter> rk;
 
     public TALongstrike() {
         name = "Longstrike";
@@ -17,13 +17,11 @@ public class TALongstrike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
 
-
         seperator();
 
-        rk = new Vector<RuestkammerStarter>();
+        rk = new Vector<>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TATX7HammerheadKammer.class, "Longstrike"));
-            rk.lastElement().initKammer(false, false, false, false, false, false, true);
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, new TATX7HammerheadKammer(), "Longstrike"));
             rk.lastElement().setGrundkosten(getPts("Longstrike"));
             add(rk.lastElement());
         }

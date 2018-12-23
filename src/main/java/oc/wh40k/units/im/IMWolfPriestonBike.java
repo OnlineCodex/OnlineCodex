@@ -4,21 +4,17 @@ import oc.*;
 
 public class IMWolfPriestonBike extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfPriestonBike() {
         name = "Wolf Priest on Bike";
         grundkosten = getPts("Wolf Priest on Bike") + getPts("crozius arcanum");
         power = 7;
 
-        seperator();
-
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Priest");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Priest"));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         
@@ -34,5 +30,4 @@ public class IMWolfPriestonBike extends Eintrag {
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }
-
 }

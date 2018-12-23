@@ -4,26 +4,21 @@ import oc.*;
 
 public class IMVeterans extends Eintrag {
 
-    OptionsEinzelUpgrade oe4;
-    OptionsEinzelZaehler oe5;
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter kammer;
-
-    boolean harkerSelected = false;
+    private final OptionsEinzelZaehler oe5;
+    private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe o5;
 
     public IMVeterans() {
         name = "Veterans";
         grundkosten = (getPts("Veterans") + getPts("Frag grenade (AM)")) * 10;
         power = 5;
 
-        add(oe4 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
 
         seperator();
 
         ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -44,12 +39,10 @@ public class IMVeterans extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Veteran Sergeant");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Veteran Sergeant");
-        kammer.initKammer();
-        add(kammer);
+        RuestkammerStarter kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer("Veteran Sergeant"), "Veteran Sergeant");
         kammer.setUeberschriftTrotzNullKostenAusgeben(true);
         kammer.setAbwaehlbar(false);
+        add(kammer);
 
         complete();
     }

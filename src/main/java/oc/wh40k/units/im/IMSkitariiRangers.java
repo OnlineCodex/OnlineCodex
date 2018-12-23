@@ -4,20 +4,19 @@ import oc.*;
 
 public class IMSkitariiRangers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o2;
 
     public IMSkitariiRangers() {
         name = "Skitarii Rangers";
+
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skitarii Rangers", 5, 10, getPts("Skitarii Rangers")));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -26,11 +25,10 @@ public class IMSkitariiRangers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Ranger Alpha");
-        rkBoss.initKammer(false, true, false, false);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMAdeptusMechanicusRuestkammer(name, false, true, false, false), "Ranger Alpha");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -47,5 +45,4 @@ public class IMSkitariiRangers extends Eintrag {
             power = 8;
         }
     }
-
 }

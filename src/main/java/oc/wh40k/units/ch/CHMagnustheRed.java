@@ -1,31 +1,28 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.ChaosGod.TZEENTCH;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
+
 public class CHMagnustheRed extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
     public CHMagnustheRed() {
-
         name = "Magnus the Red";
         grundkosten = getPts("Magnus the Red");
         power = 21;
 
-        seperator();
-
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
-        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
-        ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, ImmutableSet.of(TZEENTCH), CHANGE, DARK_HERETICUS), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("Lord of Forbidden Lore", true);

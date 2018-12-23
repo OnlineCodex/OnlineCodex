@@ -4,11 +4,10 @@ import oc.*;
 
 public class IMMilitarumTempestusScions extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1, o4;
-    RuestkammerStarter kammer;
-
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o4;
 
     public IMMilitarumTempestusScions() {
         name = "Militarum Tempestus Scions";
@@ -36,13 +35,10 @@ public class IMMilitarumTempestusScions extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Tempestor");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Tempestor");
-        kammer.initKammer();
-        add(kammer);
+        RuestkammerStarter kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer("Tempestor"), "Tempestor");
         kammer.setUeberschriftTrotzNullKostenAusgeben(true);
         kammer.setAbwaehlbar(false);
-
+        add(kammer);
 
         complete();
     }
@@ -60,5 +56,4 @@ public class IMMilitarumTempestusScions extends Eintrag {
             power = 6;
         }
     }
-
 }

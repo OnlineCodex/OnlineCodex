@@ -4,21 +4,24 @@ import oc.*;
 
 public class IMKillteamKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2, o6, o7;
-    OptionsZaehlerGruppe o3, o4, o5;
-    OptionsEinzelUpgrade thunderhammer;
-    String type;
+    private final String type;
 
-    public IMKillteamKammer() {
-        grundkosten = 0;
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsUpgradeGruppe o6;
+    private OptionsUpgradeGruppe o7;
+    private OptionsZaehlerGruppe o3;
+    private OptionsZaehlerGruppe o4;
+    private OptionsZaehlerGruppe o5;
+
+    public OptionsZaehlerGruppe getO5() {
+        return o5;
     }
 
-    @Override
-    public void initButtons(boolean... defaults) {
+    public IMKillteamKammer(String type) {
+        this.type = type;
 
-        seperator();
-
-        if (type.equals("Veteran") || type.equals("Sergeant")) {
+        if (this.type.equals("Veteran") || this.type.equals("Sergeant")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (DW)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
@@ -38,7 +41,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
             ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (others)")));
-            if(type.equals("Sergeant")) {
+            if(this.type.equals("Sergeant")) {
                 ogE.addElement(new OptionsGruppeEintrag("Xenophase blade", getPts("Xenophase blade")));
             }
             add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -61,7 +64,7 @@ public class IMKillteamKammer extends RuestkammerVater {
 
             seperator();
             
-            if(type.equals("Veteran")){
+            if(this.type.equals("Veteran")){
 	            ogE.addElement(new OptionsGruppeEintrag("Deathwatch frag cannon", getPts("Deathwatch frag cannon")));
 	            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
 	            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
@@ -77,11 +80,11 @@ public class IMKillteamKammer extends RuestkammerVater {
 
             seperator();
 
-            if (type.equals("Sergeant"))
+            if (this.type.equals("Sergeant"))
                 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Combat shield", getPts("Combat shield")));
         }
 
-        if (type.equals("Terminator")) {
+        if (this.type.equals("Terminator")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav (DW)")));
@@ -115,7 +118,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(o7 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Biker")) {
+        if (this.type.equals("Biker")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
@@ -129,7 +132,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Deathwatch teleport homer", getPts("Deathwatch teleport homer")));
         }
 
-        if (type.equals("Intercessor")) {
+        if (this.type.equals("Intercessor")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
@@ -145,7 +148,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auxiliary grenade launcher", getPts("Auxiliary grenade launcher")));
         }
 
-        if (type.equals("Intercessor Sergeant")) {
+        if (this.type.equals("Intercessor Sergeant")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
@@ -167,7 +170,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Hellblaster")) {
+        if (this.type.equals("Hellblaster")) {
             ogE.addElement(new OptionsGruppeEintrag("Plasma incinerator", getPts("Plasma incinerator")));
             ogE.addElement(new OptionsGruppeEintrag("Assault plasma incinerator", getPts("Assault plasma incinerator")));
             ogE.addElement(new OptionsGruppeEintrag("Heavy plasma incinerator", getPts("Heavy plasma incinerator")));
@@ -175,14 +178,14 @@ public class IMKillteamKammer extends RuestkammerVater {
             o1.setSelected(0, true);
         }
 
-        if (type.equals("Inceptor")) {
+        if (this.type.equals("Inceptor")) {
             ogE.addElement(new OptionsGruppeEintrag("Assault bolters", getPts("Assault bolter") * 2));
             ogE.addElement(new OptionsGruppeEintrag("Plasma exterminator", getPts("Plasma exterminator") * 2));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
         }
 
-        if (type.equals("Reiver")) {
+        if (this.type.equals("Reiver")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combat knifes", getPts("Combat knife")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -193,7 +196,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grapnel launcher", getPts("Grapnel launcher")));
         }
 
-        if (type.equals("Aggressor")) {
+        if (this.type.equals("Aggressor")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltstorm gauntlets/Fragstorm", "Auto boltstorm gauntlets & Fragstorm grenade launcher", getPts("Auto boltstorm gauntlets") + getPts("Fragstorm grenade launcher")));
             ogE.addElement(new OptionsGruppeEintrag("Flamestorm gauntlets", getPts("Flamestorm gauntlets")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -284,14 +287,4 @@ public class IMKillteamKammer extends RuestkammerVater {
             o1.alwaysSelected();
         }
     }
-
-    public void setType(String s) {
-        type = s;
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

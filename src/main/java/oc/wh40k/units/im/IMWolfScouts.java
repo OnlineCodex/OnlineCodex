@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMWolfScouts extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe wpn1, wpn2, boltgun, plasmapistol, boltpistol;
-    OptionsZaehlerGruppe nk;
-    OptionsEinzelZaehler camo;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe wpn1, wpn2, boltgun, plasmapistol, boltpistol;
+    private final OptionsZaehlerGruppe nk;
+    private final OptionsEinzelZaehler camo;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkBoss2;
 
     public IMWolfScouts() {
         grundkosten = 0;
@@ -53,19 +53,15 @@ public class IMWolfScouts extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Scout Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Wolf Scout Pack Leader");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Scout Pack Leader"), "Wolf Scout Pack Leader");
         rkBoss.setGrundkosten(getPts("Wolf Scout Pack Leader"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader (Wolf Scouts)");
-        rkBoss2.initKammer();
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard Pack Leader (Wolf Scouts)"), "Wolf Guard Pack Leader");
         rkBoss2.setGrundkosten(getPts("Blood Claws"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss2);
@@ -82,7 +78,7 @@ public class IMWolfScouts extends Eintrag {
 
         boltgun.setMaxAnzahl(squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
         boltgun.setAnzahl(0, squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
-        
+
         wpn1.setMaxAnzahl(squad.getModelle() - 1 - wpn2.getAnzahl() - nk.getAnzahl());
         wpn2.setMaxAnzahl((wpn1.getAnzahl() + nk.getAnzahl()) < (squad.getModelle() - 1) ? 1 : 0);
 
@@ -100,5 +96,4 @@ public class IMWolfScouts extends Eintrag {
             power += 2;
         }
     }
-
 }

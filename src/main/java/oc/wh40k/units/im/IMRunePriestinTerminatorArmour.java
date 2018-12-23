@@ -3,12 +3,12 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLINE;
+
 public class IMRunePriestinTerminatorArmour extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
-    boolean fenrisSupp = false;
-	RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffenUndArtefakte;
+    private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestinTerminatorArmour() {
         name = "Rune Priest on Bike";
@@ -18,26 +18,21 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic Terminator armour", getPts("runic Terminator armour")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic Terminator armour", getPts("runic Terminator armour")));
 
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, TEMPESTAS_DISCIPLINE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
+        add(psychicPowers);
 
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Rune Priest in Terminator Armour");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Rune Priest in Terminator Armour"), "");
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         

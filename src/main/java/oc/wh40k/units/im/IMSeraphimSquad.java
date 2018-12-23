@@ -27,7 +27,7 @@ public class IMSeraphimSquad extends Eintrag {
 
         seperator();
 
-        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Seraphim Superior"));
+        add(createTroopChampion(new IMAdeptaSororitasRuestkammer("Seraphim Superior", this.getKeywords()), true, "Upgrade zur Prioris"));
 
         complete();
     }

@@ -6,22 +6,19 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+
+    private final RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchChaplaininTerminatorArmour() {
         name = "Chaplain in Terminator Armour";
         grundkosten = getPts("Chaplain in Terminator Armour") + getPts("Crozius arcanum");
         power = 6;
-        seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Chaplain in Terminator Armour");
-        waffenUndReliquien.initKammer();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new DeathWatchKammer("Chaplain in Terminator Armour"));
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
-        
+        add(waffenUndReliquien);
+
         seperator();
 
         addWarlordTraits("", true);

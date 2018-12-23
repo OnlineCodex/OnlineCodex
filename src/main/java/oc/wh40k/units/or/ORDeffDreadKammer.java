@@ -6,14 +6,10 @@ import oc.RuestkammerVater;
 
 public class ORDeffDreadKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe w1, w2, w1x, w2x;
+    private final OptionsZaehlerGruppe w1, w2, w1x, w2x;
 
     public ORDeffDreadKammer() {
         grundkosten = getPts("Deff Dreads");
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/IGLemanRuss.jpg"));
 
         ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));

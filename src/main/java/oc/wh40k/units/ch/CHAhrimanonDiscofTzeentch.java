@@ -4,9 +4,12 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
+
 public class CHAhrimanonDiscofTzeentch extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
     public CHAhrimanonDiscofTzeentch() {
         name = "Ahriman on Disc of Tzeentch";
@@ -16,15 +19,11 @@ public class CHAhrimanonDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
-        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, DARK_HERETICUS, CHANGE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("Otherworldly Prescience", true);

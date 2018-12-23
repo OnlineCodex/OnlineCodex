@@ -5,56 +5,39 @@ import oc.*;
 public class TAKampfanzugKammer extends RuestkammerVater {
 
     public boolean uniqueError = false;
-    OptionsZaehlerGruppe o1;
-    //	OptionsZaehlerGruppe o1sync;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppeUnique o2u;
-    //	OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppeUnique o3u;
-    OptionsZaehlerGruppe o4;
-    OptionsUpgradeGruppe o5, o6/*, o7*/;
-    boolean[] defaults;
-    boolean commander = false;
-    boolean breitseite = false;
-    boolean krisisshasvre = false;
-    boolean krisisshasui = false;
-    boolean geist = false;
-    boolean krisisleibwache = false;
-    boolean coldstar = false;
-    boolean ghostkeel = false;
-    boolean farsight = false;
-    boolean XV08 = false;
-    boolean XV81 = false;
-    boolean XV84 = false;
-    boolean Kommando = false;
-    boolean Multispektrum = false;
-    boolean Onager = false;
-    boolean Reinflut = false;
-    boolean Repulsor = false;
-    boolean Selbstzerstörungssystem = false;
-    boolean Waffenstörfeldemitter = false;
+    private OptionsZaehlerGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsUpgradeGruppeUnique o2u;
+    private OptionsUpgradeGruppeUnique o3u;
+    private OptionsZaehlerGruppe o4;
+    public OptionsUpgradeGruppe o5;
+    private OptionsUpgradeGruppe o6;
+    private boolean coldstar = false;
+    public boolean farsight = false;
+    private boolean XV08 = false;
+    private boolean XV81 = false;
+    private boolean XV84 = false;
+    private boolean Kommando = false;
+    private boolean Multispektrum = false;
+    private boolean Onager = false;
+    private boolean Reinflut = false;
+    private boolean Repulsor = false;
+    private boolean Selbstzerstörungssystem = false;
+    private boolean Waffenstörfeldemitter = false;
 
-    boolean seismic = false;
-    boolean mirror = false;
-    boolean earth = false;
-    boolean talisman = false;
-    boolean FusionBlades = false;
-    boolean warscaper = false;
+    private boolean seismic = false;
+    private boolean mirror = false;
+    private boolean earth = false;
+    private boolean talisman = false;
+    private boolean FusionBlades = false;
+    private boolean warscaper = false;
 
-    public TAKampfanzugKammer() {
+    public TAKampfanzugKammer(
+            boolean commander,
+            boolean breitseite,
+            boolean geist,
+            boolean ghostkeel) {
         grundkosten = 25;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-        this.defaults = defaults;
-        commander = defaults[0];
-        krisisshasvre = defaults[1];
-        krisisshasui = defaults[2];
-        breitseite = defaults[3];
-        geist = defaults[4];
-        krisisleibwache = defaults[5];
-        ghostkeel = defaults[6];
 
         // Fernkampfwaffen
         if (breitseite) {
@@ -156,30 +139,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         seperator();
 
-//		//Sonderausrüstung
-//		if(!krisisshasui && !breitseite && !geist && !ghostkeel){
-//			ogE.addElement(new OptionsGruppeEintrag("The Mirrorcodex", 50));
-//			ogE.addElement(new OptionsGruppeEintrag("Seismic Filibrator Node", 45));
-//			ogE.addElement(new OptionsGruppeEintrag("Earth Cast Pilot Array", 30));
-//			ogE.addElement(new OptionsGruppeEintrag("Talisman of Arthas Moloch", 25));
-//			if(commander){
-//				ogE.addElement(new OptionsGruppeEintrag("Fusion Blades", 30));
-//			}
-//			ogE.addElement(new OptionsGruppeEintrag("XV8-02 Krisis", "Kampfanzug XV08-02 Krisis 'Iridium'", 25));//XV8-02 Crisis 'Iridium' Battlesuit
-//			ogE.addElement(new OptionsGruppeEintrag("[IA3 2nd Ed] XV81 Krisis", "Kampfanzug XV81 Krisis", 25));//Nur 2 FK + Smart Missile System
-//			ogE.addElement(new OptionsGruppeEintrag("[IA3 2nd Ed] XV84 Krisis", "Kampfanzug XV84 Krisis", 20));//Target Lock + Networked ML
-//			ogE.addElement(new OptionsGruppeEintrag("Kommando-Kontroll-Modul", 15));//Command and Control Node
-//			ogE.addElement(new OptionsGruppeEintrag("Multispektrum-Sensorpaket", 20));//Multi-spectrum sensor suite
-//			ogE.addElement(new OptionsGruppeEintrag("Onager-Handschuh", 5));//Onager Gauntlet
-//			ogE.addElement(new OptionsGruppeEintrag("Reinflut-Neurochip", "Reinflut-Engrammneurochip", 15));//Puretide Engram Neurochip
-//			ogE.addElement(new OptionsGruppeEintrag("Repulsor-Stoßfeldemitter", 10));//Repulsor Impact Field
-//			ogE.addElement(new OptionsGruppeEintrag("Selbstzerstörungssystem", 10));//Failsafe Detonator 
-//			ogE.addElement(new OptionsGruppeEintrag("Waffenstörfeldemitter", 2)); //Neuroweb system jammer
-//			add(o3 = new OptionsUpgradeGruppe(ID, randAbstand + 280, cnt, "", ogE, 1));
-//		}
-
-        seperator();
-
         if (commander) {
             ogE.clear();
             ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
@@ -193,6 +152,9 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
+        boolean breitseite = false;
+        boolean geist = false;
+        boolean ghostkeel = false;
         if (!breitseite && !geist && !ghostkeel) {
         	
         } else if (geist) {
@@ -209,6 +171,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
         }
 
+        boolean commander = false;
         if (commander && !coldstar) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(4);
@@ -231,6 +194,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
+        boolean krisisshasui = false;
         if (krisisshasui) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
@@ -241,6 +205,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
+        boolean krisisshasvre = false;
         if (krisisshasvre) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
@@ -251,6 +216,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
+        boolean krisisleibwache = false;
         if (krisisleibwache) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
@@ -386,18 +352,10 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o1.setMaxAnzahl(0);
             entryCleared = true;
         }
-//			if (o1sync!=null && o1sync.isSelected()){
-//				o1sync.setMaxAnzahl(0);
-//				entryCleared=true;
-//			}
         if (o2u != null && o2u.isSelected()) {
             o2u.deselectAll();
             entryCleared = true;
         }
-//			if (o3!=null && o3.isSelected()){
-//				o3.deselectAll();
-//				entryCleared=true;
-//			}
         if (o3u != null && o3u.isSelected()) {
             o3u.deselectAll();
             entryCleared = true;
@@ -414,14 +372,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o6.deselectAll();
             entryCleared = true;
         }
-        //	    if (o7!=null && o7.isSelected()){
-        //	    	o7.deselectAll();
-        //	    	entryCleared=true;
-        //	    }
-
         if (entryCleared) {
             RefreshListener.fireRefresh();
         }
     }
-
 }

@@ -22,8 +22,7 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 9; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Crisis Bodyguard"));
-            rk.lastElement().initKammer(false, false, false, false, false, true, false);
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, new TAKampfanzugKammer(false, false, false, false), "Crisis Bodyguard"));
             rk.lastElement().setGrundkosten(getPts("XV8 Crisis Bodyguards"));
             add(rk.lastElement());
         }

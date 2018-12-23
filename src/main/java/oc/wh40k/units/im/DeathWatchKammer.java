@@ -4,21 +4,18 @@ import oc.*;
 
 public class DeathWatchKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsZaehlerGruppe o3, o4;
-    OptionsEinzelUpgrade thunderhammer;
-    String type;
+    private final String type;
 
-    public DeathWatchKammer() {
-        grundkosten = 0;
-    }
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsZaehlerGruppe o3;
+    private OptionsZaehlerGruppe o4;
+    private OptionsEinzelUpgrade thunderhammer;
 
-    @Override
-    public void initButtons(boolean... defaults) {
+    public DeathWatchKammer(String type) {
+        this.type = type;
 
-        seperator();
-
-        if (type.equals("Watch Captain")) {
+        if (this.type.equals("Watch Captain")) {
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Relic-blade", getPts("Relic-blade")));
             ogE.addElement(new OptionsGruppeEintrag("Xenophase blade", getPts("Xenophase blade")));
@@ -65,7 +62,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Watch Captain in Terminator Armour")) {
+        if (this.type.equals("Watch Captain in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav (DW)")));
@@ -86,7 +83,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Librarian")) {
+        if (this.type.equals("Librarian")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer")));
@@ -102,7 +99,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Librarian in Terminator Armour")) {
+        if (this.type.equals("Librarian in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav (DW)")));
@@ -118,7 +115,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Chaplain")) {
+        if (this.type.equals("Chaplain")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer")));
@@ -136,7 +133,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power fist", getPts("Power fist (SM)")));
         }
 
-        if (type.equals("Chaplain in Terminator Armour")) {
+        if (this.type.equals("Chaplain in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav (DW)")));
@@ -154,7 +151,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power fist", getPts("Power fist (SM)")));
         }
 
-        if (type.equals("Vanguard Veteran")) {
+        if (this.type.equals("Vanguard Veteran")) {
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
@@ -205,7 +202,7 @@ public class DeathWatchKammer extends RuestkammerVater {
             seperator();
         }
 
-        if (type.equals("Biker")) {
+        if (this.type.equals("Biker")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
@@ -324,14 +321,4 @@ public class DeathWatchKammer extends RuestkammerVater {
                 o4.setMaxAnzahl(1);
         }
     }
-
-    public void setType(String s) {
-        type = s;
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

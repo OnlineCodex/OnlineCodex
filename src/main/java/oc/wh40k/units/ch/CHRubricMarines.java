@@ -3,6 +3,9 @@ package oc.wh40k.units.ch;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+
 public class CHRubricMarines extends Eintrag {
 
     AnzahlPanel marines;
@@ -40,25 +43,18 @@ public class CHRubricMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Sorcerer");
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setSorcerer(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Inferno bolt pistol");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Force stave");
-        Boss.initKammer(true, true, false, false);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Inferno bolt pistol", "Force stave", true, true, false, false, CHAMPION, SORCERER), "Aspiring Sorcerer");
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Aspiring Sorcerer"));
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         RuestkammerStarter psychicPowers;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(0);
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(0), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }

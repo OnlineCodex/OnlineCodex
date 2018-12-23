@@ -1,78 +1,49 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableList;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
+import java.util.EnumSet;
+
+import static com.google.common.collect.Sets.newEnumSet;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.*;
+
 public class CHWaffenkammer extends RuestkammerVater {
 
-    public boolean uniqueError = false;
-    public boolean terminator = false;
-    public boolean sorcerer = false;
-    public boolean champion = false;
-    public boolean nurgle = false;
-    public boolean biker = false;
-    public boolean noise = false;
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
-    boolean melee = false;
-    boolean range = false;
-    boolean rangeForMelee = false;
-    boolean meleeForRange = false;
-    String defaultNK = "";
-    String defaultFK = "";
-    String type = "";
-
-    //BP/NK gg RNG/NK
-
-    public CHWaffenkammer() {
-        grundkosten = 0;
+    public enum ChaosWeaponsOption {
+        TERMINATOR,
+        SORCERER,
+        CHAMPION,
+        NURGLE,
+        BIKER,
+        NOISE,
     }
 
-    public void setDefaultCloceCombat(String s) {
-        defaultNK = s;
+
+    private final String defaultNK;
+    private final String defaultFK;
+    private final String type;
+
+    private OptionsUpgradeGruppe handwaffen;
+    private OptionsUpgradeGruppe fkwaffen;
+
+
+    public CHWaffenkammer(String type) {
+        this(type, "", "", false, false, false, false);
     }
 
-    public void setDefaultRanged(String s) {
-        defaultFK = s;
-    }
+    public CHWaffenkammer(String type, String defaultFK, String defaultNK,
+                          boolean melee, boolean range, boolean rangeForMelee, boolean meleeForRange,
+                          ChaosWeaponsOption... opts) {
+        this.type = type;
+        this.defaultFK = defaultFK;
+        this.defaultNK = defaultNK;
+        EnumSet<ChaosWeaponsOption> options = newEnumSet(ImmutableList.copyOf(opts), ChaosWeaponsOption.class);
 
-    public void setTerminatorArmour(boolean s) {
-        terminator = s;
-    }
-
-    public void setSorcerer(boolean s) {
-        sorcerer = s;
-    }
-
-    public void setChampion(boolean s) {
-        champion = s;
-    }
-
-    public void setNurgle(boolean s) {
-        nurgle = s;
-    }
-
-    public void setBiker(boolean s) {
-        biker = s;
-    }
-
-    public void setNoiseMarine(boolean s) {
-        noise = s;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-        try {
-            melee = defaults[0];
-            range = defaults[1];
-            rangeForMelee = defaults[2];
-            meleeForRange = defaults[3];
-        } catch (Exception e) {
-        }
-
-        if (type == "Scarab Occult Sorcerer") {
+        if ("Scarab Occult Sorcerer".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Inferno combi-bolter", getPts("Inferno combi-bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -88,30 +59,26 @@ public class CHWaffenkammer extends RuestkammerVater {
                 }
             }
             if (range) {
-
-                if (noise)
+                if (options.contains(NOISE))
                     ogE.addElement(new OptionsGruppeEintrag("Sonic blaster", getPts("Sonic blaster")));
-                if (!terminator && !sorcerer) {
+                if (!options.contains(TERMINATOR) && !options.contains(SORCERER)) {
                     ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
                     ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
 
-                    if (nurgle) {
+                    if (options.contains(NURGLE)) {
                         ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
                     }
                 }
-                if (champion) {
-                    if (terminator) {
+                if (options.contains(CHAMPION)) {
+                    if (options.contains(TERMINATOR)) {
                         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
                         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
                         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
                         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-                    } else if (sorcerer) {
+                    } else if (options.contains(SORCERER)) {
                         ogE.addElement(new OptionsGruppeEintrag("Warpflame pistol", getPts("Warpflame pistol")));
-                        if (type == "Aspiring Sorcerer TS") ;
                         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
-                    } else if (nurgle) {
-                        // no combi weapons
-                    } else {
+                    } else if (!options.contains(NURGLE)) {
                         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
                         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
                         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
@@ -120,7 +87,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                 }
             }
             if (rangeForMelee) {
-                if (!terminator) {
+                if (!options.contains(TERMINATOR)) {
                     ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                     ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
                 } else
@@ -152,14 +119,14 @@ public class CHWaffenkammer extends RuestkammerVater {
                 ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
             }
             if (melee) {
-                if (sorcerer) {
+                if (options.contains(SORCERER)) {
                     ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
                     ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
                 } else {
-                    if (nurgle) {
+                    if (options.contains(NURGLE)) {
                         ogE.addElement(new OptionsGruppeEintrag("Plague sword", getPts("Plague sword")));
                     } else {
-                        if (!terminator) {
+                        if (!options.contains(TERMINATOR)) {
                             ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
                         } else
@@ -182,11 +149,11 @@ public class CHWaffenkammer extends RuestkammerVater {
 
             seperator();
 
-            if (noise) {
+            if (options.contains(NOISE)) {
                 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Doom siren", getPts("Doom siren")));
             }
 
-            if (nurgle) {
+            if (options.contains(NURGLE)) {
                 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power fist", getPts("Power fist")));
             }
 
@@ -199,23 +166,24 @@ public class CHWaffenkammer extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        if (type == "Scarab Occult Sorcerer") {
+        if ("Scarab Occult Sorcerer".equals(type)) {
             handwaffen.alwaysSelected();
             fkwaffen.alwaysSelected();
         } else {
 
-            if (!defaultFK.equals("no weapon")) {
+            if (!"no weapon".equals(defaultFK)) {
                 fkwaffen.alwaysSelected();
             }
 
-            if (!defaultNK.equals("no weapon")) {
+            if (!"no weapon".equals(defaultNK)) {
                 handwaffen.alwaysSelected();
             }
 
-            if (!defaultFK.equals("no weapon") && !defaultNK.equals("no weapon")) {
+            if (!"no weapon".equals(defaultFK) && !"no weapon".equals(defaultNK)) {
                 if (fkwaffen.isSelected("Lightning claw") && handwaffen.isSelected("Lightning claw")) {
-                    fkwaffen.setPreis("Lightning claw", getPts("Lightning claw pair") / 2 + 1);
-                    handwaffen.setPreis("Lightning claw", getPts("Lightning claw pair") / 2);
+                    int clawPoints = getPts("Lightning claw pair") / 2;
+                    fkwaffen.setPreis("Lightning claw", clawPoints + 1);
+                    handwaffen.setPreis("Lightning claw", clawPoints);
                 } else {
                     fkwaffen.setPreis("Lightning claw", getPts("Lightning claw single"));
                     handwaffen.setPreis("Lightning claw", getPts("Lightning claw single"));

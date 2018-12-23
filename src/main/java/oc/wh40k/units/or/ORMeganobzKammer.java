@@ -4,16 +4,13 @@ import oc.*;
 
 public class ORMeganobzKammer extends RuestkammerVater {
 
-    AnzahlPanel Gargbosse;
-    OptionsZaehlerGruppe GargbosseFK;
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
-    OptionsEinzelZaehler Trophäenstange;
+    private final AnzahlPanel Gargbosse;
+    private final OptionsZaehlerGruppe GargbosseFK;
+    private final RuestkammerStarter PikkUp;
+    private final RuestkammerStarter Kampfpanza;
+    private final OptionsEinzelZaehler Trophäenstange;
 
     public ORMeganobzKammer() {
-    }
-
-    public void initButtons(boolean... defaults) {
         grundkosten = 0;
         name = "Meganobz";
 
@@ -34,12 +31,10 @@ public class ORMeganobzKammer extends RuestkammerVater {
 
         seperator();
 
-        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, ORTrukkKammer.class, "Trukk");
-        PikkUp.initKammer();
+        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, new ORTrukkKammer(), "Trukk");
         add(PikkUp);
 
-        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, ORFahrzeugruestkammer.class, "Battlewagon");
-        Kampfpanza.initKammer();
+        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, new ORFahrzeugruestkammer(), "Battlewagon");
         Kampfpanza.setSeperator(0);
         add(Kampfpanza);
 
@@ -47,13 +42,11 @@ public class ORMeganobzKammer extends RuestkammerVater {
 
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
-
         Trophäenstange.setMaxAnzahl(Gargbosse.getModelle());
         GargbosseFK.setMaxAnzahl(Gargbosse.getModelle());
         PikkUp.setAktiv(!Kampfpanza.isSelected());
         Kampfpanza.setAktiv(!PikkUp.isSelected());
-
     }
 }

@@ -6,20 +6,19 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMMaster extends Eintrag {
-    OptionsEinzelUpgrade jump;
+
+    private final OptionsEinzelUpgrade jump;
 
     public IMMaster() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN, MASTER);
         name = "Master";
         grundkosten = getPts("Master") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
-        seperator();
-
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Master with Jump Pack") - getPts("Master")));
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

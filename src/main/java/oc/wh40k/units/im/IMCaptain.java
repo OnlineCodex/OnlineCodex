@@ -20,7 +20,7 @@ public class IMCaptain extends Eintrag {
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(), true);
         
         seperator();
 
@@ -35,7 +35,7 @@ public class IMCaptain extends Eintrag {
         
         if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
         	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
-        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
+        	weapons.getKammer().refreshen();
         }
     }
 }

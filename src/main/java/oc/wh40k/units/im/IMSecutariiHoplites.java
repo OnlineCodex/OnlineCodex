@@ -4,10 +4,7 @@ import oc.*;
 
 public class IMSecutariiHoplites extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
 
     public IMSecutariiHoplites() {
         name = "Secutarii Hoplites";
@@ -15,11 +12,10 @@ public class IMSecutariiHoplites extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Hoplite Alpha");
-        rkBoss.initKammer(false, false, true, false);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMAdeptusMechanicusRuestkammer("Hoplite Alpha", false, false, true, false), "Hoplite Alpha");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

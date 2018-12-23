@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.LIBRARIUS;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -8,24 +9,17 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMChiefLibrarianTigurius extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public IMChiefLibrarianTigurius() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, ULTRAMARINES, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, TIGURIUS);
         name = "Chief Librarian Tigurius";
         grundkosten = getPts("Chief Librarian Tigurius");
         power = 7;
 
-        seperator();
-
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableLibrarius();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, LIBRARIUS), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("Ultramarines: Adept of the Codex", true);

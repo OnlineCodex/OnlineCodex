@@ -2,20 +2,19 @@ package oc.wh40k.units.im;
 
 import oc.*;
 
-public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
+public class IMVanguardVeteranSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-    OptionsEinzelUpgrade jump, mb;
-
-    RuestkammerStarter rkBoss;
-
-    boolean siegeForce;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1y;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o3;
+    private final OptionsEinzelUpgrade jump;
+    private final RuestkammerStarter rkBoss;
 
     public IMVanguardVeteranSquad() {
-        name = "Vanguard Veteran Squad\n";
+        name = "Vanguard Veteran Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -43,7 +42,7 @@ public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 
         seperator();
 
-        add(mb = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melta bombs", getPts("Melta bombs")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melta bombs", getPts("Melta bombs")));
 
         seperator();
 
@@ -51,9 +50,7 @@ public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Vanguard Veteran Squad";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant(name), "Sergeant");
         rkBoss.setAbwaehlbar(false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);

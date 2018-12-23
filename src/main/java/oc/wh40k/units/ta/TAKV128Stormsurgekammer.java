@@ -6,17 +6,13 @@ import oc.RuestkammerVater;
 
 public class TAKV128Stormsurgekammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
 
     public TAKV128Stormsurgekammer() {
         name = "KV128 Stormsurge";
         grundkosten = getPts("KV128 Stormsurge") + getPts("Cluster rocket system") + getPts("Destroyer missile") * 4 + getPts("Smart missile system") * 2;
-    }
 
-    @Override
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/Hammerhai.gif"));
 
         seperator();
@@ -35,7 +31,6 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
 
         seperator();
 
-        // Unterstützungssysteme
         ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
         ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));
@@ -44,7 +39,7 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(o3 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 3));
 
         sizeSetzen();
     }
@@ -53,8 +48,5 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
     public void refreshen() {
         o1.alwaysSelected();
         o2.alwaysSelected();
-
-
     }
-
 }

@@ -4,21 +4,17 @@ import oc.*;
 
 public class IMWolfLordonThunderwolf extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfLordonThunderwolf() {
         name = "Wolf Lord on Thunderwolf";
         grundkosten = getPts("Wolf Lord on Thunderwolf");
         power = 7;
 
-        seperator();
-
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Lord on Thunderwolf");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name), "");
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         

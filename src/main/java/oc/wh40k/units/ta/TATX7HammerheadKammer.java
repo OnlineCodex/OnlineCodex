@@ -4,23 +4,13 @@ import oc.*;
 
 public class TATX7HammerheadKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter o6;
-    boolean Fernschlag = false;
-    boolean uniqueError = false;
-    OptionsEinzelUpgrade filter;
-    OptionsEinzelUpgrade relais;
+    private final OptionsUpgradeGruppe o2;
+    private final OptionsUpgradeGruppe o3;
 
     public TATX7HammerheadKammer() {
         name = "Hammerhai-Gefechtspanzer";
         grundkosten = 125;
-    }
 
-    @Override
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/Hammerhai.gif"));
 
         seperator();
@@ -41,9 +31,7 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Seeker missile", getPts("Seeker missile")));
-        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-
-        seperator();
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         sizeSetzen();
     }
@@ -52,10 +40,5 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
     public void refreshen() {
         if (!o2.isSelected()) o2.setSelected(0, true);
         if (!o3.isSelected()) o3.setSelected(0, true);
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
     }
 }

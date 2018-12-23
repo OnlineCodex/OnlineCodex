@@ -4,7 +4,7 @@ import oc.*;
 
 public class IMWolfGuardBattleLeaderinTerminatorArmour extends Eintrag {
 	
-	RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfGuardBattleLeaderinTerminatorArmour() {
         name = "Wolf Guard Battle Leader in Terminator Armour";
@@ -12,12 +12,10 @@ public class IMWolfGuardBattleLeaderinTerminatorArmour extends Eintrag {
         power = 6;
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Guard Battle Leader in Terminator Armour");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         

@@ -4,10 +4,8 @@ import oc.*;
 
 public class IMSkitariiVanguard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o2;
 
     public IMSkitariiVanguard() {
         name = "Skitarii Vanguard";
@@ -17,6 +15,7 @@ public class IMSkitariiVanguard extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
+        OptionsUpgradeGruppe o1;
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -26,11 +25,10 @@ public class IMSkitariiVanguard extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Vanguard Alpha");
-        rkBoss.initKammer(true, false, false, false);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMAdeptusMechanicusRuestkammer("Vanguard Alpha", true, false, false, false), "Vanguard Alpha");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -47,6 +45,4 @@ public class IMSkitariiVanguard extends Eintrag {
             power = 8;
         }
     }
-
-
 }

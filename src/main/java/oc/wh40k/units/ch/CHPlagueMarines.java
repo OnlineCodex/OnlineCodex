@@ -47,7 +47,7 @@ public class CHPlagueMarines extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Mace and Axe", "Mace of contagion and Bubotic Axe", getPts("Mace of contagion") + getPts("Bubotic Axe")));
+        ogE.addElement(new OptionsGruppeEintrag("Mace and Axe", "Mace of CONTAGION and Bubotic Axe", getPts("Mace of CONTAGION") + getPts("Bubotic Axe")));
 //		ogE.addElement(new OptionsGruppeEintrag("Bubotic Axe", getPts("Bubotic Axe")));
         add(marinesMace = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

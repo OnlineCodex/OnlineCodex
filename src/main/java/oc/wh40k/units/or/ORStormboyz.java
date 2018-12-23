@@ -6,11 +6,10 @@ import oc.RuestkammerStarter;
 
 public class ORStormboyz extends Eintrag {
 
-    AnzahlPanel stormboyz;
-    RuestkammerStarter Boss;
+    private final AnzahlPanel stormboyz;
+    private final RuestkammerStarter Boss;
 
     public ORStormboyz() {
-
         kategorie = 4;
         grundkosten = 0;
 
@@ -20,21 +19,16 @@ public class ORStormboyz extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Boss Nob");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setBoyBoss(true);
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultCloceCombat("no weapon");
-        Boss.initKammer(false, false, false, false, false);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, false, false), "Boss Nob");
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Boss Nob"));
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
     }
 
-
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         Boss.setAbwaehlbar(true);
         if (stormboyz.getModelle() > 20) {

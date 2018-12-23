@@ -6,24 +6,22 @@ import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.RUNES_OF_FATE;
+
 public class AEEldradUlthran extends Eintrag {
-    RuestkammerStarter psychicPowers;
+
+    private final RuestkammerStarter psychicPowers;
 
     public AEEldradUlthran() {
         name = "Eldrad Ulthran";
         grundkosten = getPts("Eldrad Ulthran");
         power = 9;
-        
-        seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfFate();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, RUNES_OF_FATE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("Ulthwé: Fate Reader", true);

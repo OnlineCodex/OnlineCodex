@@ -4,17 +4,15 @@ import oc.*;
 
 public class CHTzaangorEnlightened extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe weapons;
-    OptionsEinzelUpgrade aviarch;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsUpgradeGruppe weapons;
 
     public CHTzaangorEnlightened() {
+        name = "Tzaangor Enlightened";
+        grundkosten = 0;
 
         kategorie = 1;
 
-        name = "Tzaangor Enlightened";
-        grundkosten = 0;
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Tzaangor Enlightened", 3, 9, getPts("Tzaangor Enlightened")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
@@ -27,17 +25,14 @@ public class CHTzaangorEnlightened extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Aviarch");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Aviarch";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Aviarch");
         rkBoss.setGrundkosten(getPts("Aviarch"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
-
 
     @Override
     public void refreshen() {

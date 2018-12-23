@@ -6,11 +6,7 @@ import oc.RuestkammerStarter;
 
 public class ORWarbossinMegaArmour extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
-
-    boolean megaBool = false;
-    boolean gazzBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORWarbossinMegaArmour() {
         name = "Warboss in Mega Armour";
@@ -21,14 +17,12 @@ public class ORWarbossinMegaArmour extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom shoota");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
-        waffen.initKammer(false, true, false, false, true, false, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt,
+                new ORWaffenUndGeschenke("Kustom shoota", "Power klaw", false, true, false, false, true, false, true, false), "");
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);

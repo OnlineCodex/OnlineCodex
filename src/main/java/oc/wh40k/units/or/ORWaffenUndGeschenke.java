@@ -5,101 +5,71 @@ import oc.*;
 public class ORWaffenUndGeschenke extends RuestkammerVater {
 
     public boolean uniqueError = false;
-    public boolean megaruestung = false;
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
-    OptionsZaehlerGruppe bosseCC;
-    OptionsZaehlerGruppe bosseCC2;
-    OptionsZaehlerGruppe bosseFK;
-    boolean melee = false;
-    boolean range = false;
-    boolean souped = false;
-    boolean bigmek = false;
-    boolean meleeForRange = false;
-    boolean meleeForSouped = false;
-    boolean killsawFK = false;
-    boolean killsawNK = false;
-    boolean character = false;
-    boolean psyker = false;
-    boolean spanner = false;
-    boolean kaptin = false;
-    boolean warboss = false;
-    boolean boyboss = false;
-    boolean warbikerboss = false;
-    String defaultNK = "";
-    String defaultFK = "";
-    OptionsEinzelUpgrade daLuckyStikk;
-    OptionsEinzelUpgrade morgogsFinkinCap;
-    OptionsEinzelUpgrade rezmekkasRedderArmour;
-    OptionsEinzelUpgrade daFixxerUpperz;
-    OptionsEinzelUpgrade broggsBuzzbom;
-    OptionsEinzelUpgrade daBadskullBanner;
-    OptionsEinzelUpgrade gitstoppaShells;
+    private OptionsUpgradeGruppe handwaffen;
+    private OptionsUpgradeGruppe fkwaffen;
+    private OptionsZaehlerGruppe bosseCC;
+    private OptionsZaehlerGruppe bosseCC2;
+    private OptionsZaehlerGruppe bosseFK;
+    private boolean killsawFK = false;
+    private boolean killsawNK = false;
+    private boolean character = false;
+    private boolean spanner = false;
+    private boolean kaptin = false;
+    private boolean warboss = false;
+    private boolean boyboss = false;
+    private boolean warbikerboss = false;
+    private OptionsEinzelUpgrade daLuckyStikk;
+    private OptionsEinzelUpgrade morgogsFinkinCap;
+    private OptionsEinzelUpgrade rezmekkasRedderArmour;
+    private OptionsEinzelUpgrade daFixxerUpperz;
+    private OptionsEinzelUpgrade broggsBuzzbom;
+    private OptionsEinzelUpgrade daBadskullBanner;
+    private OptionsEinzelUpgrade gitstoppaShells;
+    private final String defaultNK;
+    private final String defaultFK;
 
-    //
-    boolean bigChoppaNK = false;
-    boolean powerKlawNK = false;
-    boolean kustomShootaNK = false;
-    boolean kombiNK = false;
-
-    boolean bigChoppaFK = false;
-    boolean powerKlawFK = false;
-    boolean kustomShootaFK = false;
-    boolean kombiFK = false;
-
-    public ORWaffenUndGeschenke() {
-        grundkosten = 0;
-    }
-
-    public void setDefaultCloceCombat(String s) {
-        defaultNK = s;
-    }
-
-    public void setDefaultRanged(String s) {
-        defaultFK = s;
-    }
-
-    public void setKillsawFK(boolean b) {
+    void setKillsawFK(boolean b) {
         killsawFK = b;
     }
 
-    public void setKillsawNK(boolean b) {
+    void setKillsawNK(boolean b) {
         killsawNK = b;
     }
 
-    public void setSpanner(boolean b) {
+    void setSpanner(boolean b) {
         spanner = b;
     }
 
-    public void setKaptin(boolean b) {
+    void setKaptin(boolean b) {
         kaptin = b;
     }
 
-    public void setWarboss(boolean b) {
+    void setWarboss(boolean b) {
         warboss = b;
     }
 
-    public void setBoyBoss(boolean b) {
+    void setBoyBoss(boolean b) {
         boyboss = b;
     }
 
-    public void setWarbikerBoss(boolean b) {
+    void setWarbikerBoss(boolean b) {
         warbikerboss = b;
     }
 
-    @Override
-    public void initButtons(boolean... defaults) {
-        try {
-            melee = defaults[0];
-            range = defaults[1];
-            souped = defaults[2];
-            bigmek = defaults[3];
-            meleeForRange = defaults[4];
-            meleeForSouped = defaults[5];
-            character = defaults[6];
-            psyker = defaults[7];
-        } catch (Exception e) {
-        }
+    public ORWaffenUndGeschenke(
+            String defaultNK,
+            String defaultFK,
+            boolean melee,
+            boolean range,
+            boolean souped,
+            boolean bigmek,
+            boolean meleeForRange,
+            boolean meleeForSouped,
+            boolean character,
+            boolean psyker) {
+        this.defaultNK = defaultNK;
+        this.defaultFK = defaultFK;
+        this.character = character;
 
         if (character) {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Super Cyborg Body", 0).setRelic(true));
@@ -116,6 +86,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             seperator();
         }
 
+        boolean kustomShootaFK = false;
+        boolean kombiFK = false;
         if (!defaultFK.equals("no weapon")) {
             if (defaultFK.equals("")) {
                 ogE.addElement(new OptionsGruppeEintrag("Slugga", getPts("Slugga")));
@@ -151,6 +123,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             kombiFK = true;
             kustomShootaFK = true;
         }
+        boolean bigChoppaFK = false;
+        boolean powerKlawFK = false;
         if (meleeForRange) {
             ogE.addElement(new OptionsGruppeEintrag("Power klaw", getPts("Power klaw")));
             ogE.addElement(new OptionsGruppeEintrag("Big choppa", getPts("Big choppa")));
@@ -202,6 +176,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 
         seperator();
 
+        boolean bigChoppaNK = false;
+        boolean powerKlawNK = false;
         if (!defaultNK.equals("no weapon")) {
             if (defaultNK.equals("")) {
                 ogE.addElement(new OptionsGruppeEintrag("Choppa", getPts("Choppa")));
@@ -215,6 +191,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
                 }
             }
         }
+        boolean kombiNK = false;
         if (meleeForSouped) {
             ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit", "Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
             ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta", getPts("Kustom mega-blasta")));
@@ -241,6 +218,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 
         if (ogE.size() > 0) {
             if (character) { //Artefakte eintragen, die gegen andere Ausrüstung getauscht werden.
+                boolean kustomShootaNK = false;
                 if (kustomShootaNK) {
                     ogE.addElement(new OptionsGruppeEintrag("Da Ded Shiny Shoota", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoota
                     ogE.addElement(new OptionsGruppeEintrag("Da Gobshot Thunderbuss", getPts("Kustom shoota")).setRelic(true)); //Kustom Shoot oder kombi

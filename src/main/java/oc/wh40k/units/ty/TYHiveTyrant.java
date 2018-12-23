@@ -5,6 +5,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
+
 public class TYHiveTyrant extends Eintrag {
 
     OptionsEinzelUpgrade oe1;
@@ -29,22 +31,17 @@ public class TYHiveTyrant extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
-        ((TYRuestkammer) waffen.getKammer()).setType("Hive Tyrant");
-        waffen.initKammer();
-        add(waffen);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Hive Tyrant"));
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
         

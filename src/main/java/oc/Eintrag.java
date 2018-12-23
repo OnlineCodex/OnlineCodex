@@ -25,18 +25,18 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected int kategorie;
 	protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
 	protected boolean überschriftSetzen = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-	protected boolean neuzeile = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-	protected boolean keineÜberschrift = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
-	protected boolean unikat = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden,
-	protected String unikatName;
-	protected String auswahl = "Auswahl";
-	protected int unikatMin = 0;
-	protected int unikatMax = 1;
-	protected boolean unikatFehler;
-	protected boolean gesamtpunkteImmerAnzeigen = false; //Um bei einigen Einheiten bei der Auswahl von alle Punkte zu verhinern, dass keine Gesamtpunkte angezeigt werden.
+	private boolean neuzeile = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
+	private boolean keineÜberschrift = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
+	private boolean unikat = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden,
+	private String unikatName;
+	private String auswahl = "Auswahl";
+	private int unikatMin = 0;
+	private int unikatMax = 1;
+	private boolean unikatFehler;
+	private boolean gesamtpunkteImmerAnzeigen = false; //Um bei einigen Einheiten bei der Auswahl von alle Punkte zu verhinern, dass keine Gesamtpunkte angezeigt werden.
 	protected boolean ally = false;
 	protected int power = 0;
-	protected OptionsButtonUpgrade chosenRelic = null;
+	private OptionsButtonUpgrade chosenRelic = null;
 	protected boolean uniqueError = false;
 	private JLabel lKosten = new JLabel("");
 	private JLabel legalerEintragLabel = new JLabel();
@@ -221,12 +221,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		this.auswahl = auswahl;
 	}
 
-	public void setUnikatName(String unikatName) {
-		BuildaHQ.addToInformationVectorGlobal(unikatName, BuildaHQ.getCountFromInformationVectorGlobal(this.unikatName));
-		this.unikatName = unikatName;
-	}
-
-	public boolean isUnikat() {
+	private boolean isUnikat() {
 		return this.unikat;
 	}
 
@@ -242,16 +237,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		return this.countToMinimum;
 	}
 
-	public void setCountToMinimum(boolean state) {
-		this.countToMinimum = state;
-	}
-
-	public boolean isCountToMaximum() {
+	boolean isCountToMaximum() {
 		return this.countToMaximum;
-	}
-
-	public void setCountToMaximum(boolean state) {
-		this.countToMaximum = state;
 	}
 
 	public int getKategorie() {
@@ -267,7 +254,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		return this.panel;
 	}
 
-	public double getEintragsCNT() {
+	double getEintragsCNT() {
 		return eintragsCNT;
 	}
 
@@ -275,7 +262,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		this.eintragsCNT = eintragsCNT;
 	}
 
-	public void setKostenLabelVisible(boolean b) {
+	void setKostenLabelVisible(boolean b) {
 		lKosten.setVisible(b);
 	}
 
@@ -284,7 +271,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		this.unikatFehler = unikatFehler;
 	}
 
-	public String getFehlermeldung() {
+	private String getFehlermeldung() {
 		return legalerEintragLabel.getText();
 	}
 
@@ -406,25 +393,16 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		}
 	}
 
-	public double getProzentKosten() {
+	double getProzentKosten() {
 		return prozentKosten;
 	}
 
-	public void setProzentKosten(double prozentKosten) {
-		this.prozentKosten = prozentKosten;
-	}
-
-	public boolean hasSpecialValue(String key) {
-		return false;
-	}
-
-	public void setInformationVectorValue(String s, int value) {
+	protected void setInformationVectorValue(String s, int value) {
 		checkBuildaVater().setInformationVectorValue(s, value);
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
-		warlordTraits.initKammer();
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, new Warlordtraits(), "Warlordtrait: ", keywords);
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");
 		if(!"".equals(mandatoryChoice)) {
@@ -434,8 +412,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
-		warlordTraits.initKammer();
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, new Warlordtraits(), "Warlordtrait: ", keywords);
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");
 		if(!mandatoryChoice.equals("")) {
@@ -445,53 +422,31 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(warlordTraits);
 	}
 	
-	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
-		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
-        weapons.getKammer().setType(name);
-        weapons.initKammer();
+	public void addWeapons(RuestkammerVater rv, boolean mandatoryChoice) {
+		weapons = new RuestkammerStarter(ID, randAbstand, cnt, rv, "", keywords);
         weapons.setButtonText("Waffen");
         add(weapons);
         weapons.setAbwaehlbar(!mandatoryChoice);
 	}
-	
-	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
-		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
-        weapons.getKammer().setType(name);
-        weapons.initKammer();
-        weapons.setButtonText("Waffen");
-        add(weapons);
-        weapons.setAbwaehlbar(!mandatoryChoice);
-	}
-	
+
 	public RuestkammerVater getWeapons() {
 		return weapons.getKammer();
 	}
 	
-	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
+	private void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
 		ruestkammer.getPanel().setLocation(
                 (int) ruestkammer.getPanel().getLocation().getX(),
                 (int) reference.getPanel().getLocation().getY() + reference.getPanel().getSize().height + 5
         );
 	}
 
+	protected RuestkammerStarter createTroopChampion(RuestkammerVater kammer, boolean mandatoryChoice, String btnText){
+		RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, kammer, btnText, keywords);
+        rk.setAbwaehlbar(!mandatoryChoice);
+        return rk;
+	}
+
 	public Set<KeyWord> getKeywords() {
 		return keywords;
-	}
-
-	protected void addKeyword(KeyWord k) {
-		keywords.add(k);
-	}
-
-	protected void removeKeyword(KeyWord k) {
-		keywords.remove(k);
-	}
-	
-	public RuestkammerStarter createTroopChampion(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String btnText, String type){
-		RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, cls, btnText, keywords);
-		rk.getKammer().setType(type);
-        rk.initKammer();
-        rk.setAbwaehlbar(!mandatoryChoice);
-        
-        return rk;
 	}
 }

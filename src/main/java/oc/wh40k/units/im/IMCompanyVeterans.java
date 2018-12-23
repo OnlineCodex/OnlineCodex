@@ -4,14 +4,12 @@ import oc.*;
 
 public class IMCompanyVeterans extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o4, o5;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
-
-    boolean raiderSelected = false;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe o5;
+    private final OptionsZaehlerGruppe o3;
 
     public IMCompanyVeterans() {
         name = "Company Veterans";
@@ -54,12 +52,10 @@ public class IMCompanyVeterans extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Company Veterans";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant(name), "Sergeant");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

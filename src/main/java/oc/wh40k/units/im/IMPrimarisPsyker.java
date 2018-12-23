@@ -6,25 +6,22 @@ import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.PSYKANA;
+
 public class IMPrimarisPsyker extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
     public IMPrimarisPsyker() {
         name = "Primaris Psyker";
         grundkosten = getPts("Primaris Psyker") + getPts("Laspistol") + getPts("Force stave");
         power = 2;
 
-        seperator();
-
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enablePsykana();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, PSYKANA), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -32,7 +29,7 @@ public class IMPrimarisPsyker extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

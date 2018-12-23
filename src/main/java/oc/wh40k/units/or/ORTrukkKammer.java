@@ -7,15 +7,9 @@ import oc.RuestkammerVater;
 
 public class ORTrukkKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe fahrzeugausruestung;
-
     public ORTrukkKammer() {
         grundkosten = 30;
-    }
-
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/Pikk-Up.gif"));
-
 
         seperator();
 
@@ -30,13 +24,8 @@ public class ORTrukkKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Grothälfaz", 10));
         ogE.addElement(new OptionsGruppeEintrag("Abrizzbirnä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Entaplankä", 15));
-        add(fahrzeugausruestung = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
 
         sizeSetzen();
     }
-
-    // @OVERRIDE
-    public void refreshen() {
-    }
-
 }

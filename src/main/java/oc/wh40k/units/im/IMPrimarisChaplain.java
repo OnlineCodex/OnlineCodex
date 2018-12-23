@@ -11,10 +11,8 @@ public class IMPrimarisChaplain extends Eintrag {
         name = "Primaris Chaplain";
         grundkosten = getPts("Primaris Chaplain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Crozius arcanum") + getPts("Absolver bolt pistol");
         power = 6;
-        
-        seperator();
-        
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

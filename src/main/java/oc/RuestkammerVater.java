@@ -25,8 +25,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	private JButton ok = new JButton("OK");
 	private JLabel error = new JLabel();
 	private JFrame frame = new JFrame();
-    protected String type = "";
-	protected Set<KeyWord> keywords;
 
 	public RuestkammerVater() {
 		frame.setLayout(null);
@@ -165,8 +163,6 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
 	public void refreshen(){}
 
-	public abstract void initButtons(boolean... b);
-
 	public void deleteYourself() {
 		LOGGER.info("RuestkammerStarter-deleteyourself");
 		for (int i = 0; i < optionen.size(); i++) {
@@ -181,21 +177,5 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 
 	public boolean isLegal() {
 		return legal;
-	}
-
-    public void setType(String s) {
-        type = s;
-    }
-
-	public void setKeywords(Set<KeyWord> keywords) {
-		this.keywords = keywords;
-	}
-	
-	public void removeKeyword(KeyWord key) {
-		keywords.remove(key);
-	}
-	
-	public void addKeyword(KeyWord key) {
-		keywords.add(key);
 	}
 }

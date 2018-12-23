@@ -7,9 +7,7 @@ import oc.RuestkammerStarter;
 
 public class CHFlamers extends Eintrag {
 
-    AnzahlPanel flamers;
-    OptionsEinzelUpgrade pyro;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel flamers;
 
     public CHFlamers() {
 
@@ -21,26 +19,17 @@ public class CHFlamers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Pyrocaster");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Pyrocaster";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Pyrocaster");
         rkBoss.setGrundkosten(getPts("Pyrocaster"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
-
     }
-
-    public void deleteYourself() {
-    }
-
 
     @Override
     public void refreshen() {
-        power = flamers.getModelle();
-
         power = 5 +
                 ((flamers.getModelle() == 6) ? 4 : 0) +
                 ((flamers.getModelle() == 9) ? 8 : 0);

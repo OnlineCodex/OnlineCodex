@@ -24,9 +24,8 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
         
         seperator();
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander in XV85 Enforcer Battlesuit");
+        ob = new RuestkammerStarter(ID, randAbstand, cnt, new TAKampfanzugKammer(true, false, false, false), "Commander in XV85 Enforcer Battlesuit");
         ob.setGrundkosten(0);
-        ob.initKammer(true, false, false, false, false, false, false);
         ob.setButtonText("Rüstkammer");
         ob.setAbwaehlbar(false);
         add(ob);

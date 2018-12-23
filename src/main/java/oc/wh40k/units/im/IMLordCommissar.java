@@ -5,20 +5,18 @@ import oc.RuestkammerStarter;
 
 public class IMLordCommissar extends Eintrag {
 
-    RuestkammerStarter kammer;
+    private final RuestkammerStarter kammer;
 
     public IMLordCommissar() {
         name = "Lord Commissar";
         grundkosten = getPts("Lord Commissar");
         power = 4;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Lord Commissar");
-        kammer.initKammer();
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer("Lord Commissar"));
         kammer.setButtonText("Waffen");
-        add(kammer);
         kammer.setAbwaehlbar(false);
-        
+        add(kammer);
+
         seperator();
 
         addWarlordTraits("", true);

@@ -7,9 +7,8 @@ import oc.RuestkammerStarter;
 
 public class ORRuntherd extends Eintrag {
     
-    OptionsUpgradeGruppe o1 = null;
-    OptionsUpgradeGruppe o2 = null;
-    RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe o1;
+    private final RuestkammerStarter waffen;
 
     public ORRuntherd() {
         kategorie = 1;
@@ -30,18 +29,15 @@ public class ORRuntherd extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Grot lash", getPts("Grot lash")));
         ogE.addElement(new OptionsGruppeEintrag("Squig hound", getPts("Squig hound")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("no weapon");
-        waffen.initKammer(false, false, false, false, false, false, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, true, false));
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);

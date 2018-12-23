@@ -5,11 +5,10 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
-//[APO 2]
-
 public class TATigerShark extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter rk;
+
+    private final OptionsUpgradeGruppe o1;
+    private final RuestkammerStarter rk;
 
     public TATigerShark() {
         name = "Tiger Shark";
@@ -23,17 +22,15 @@ public class TATigerShark extends Eintrag {
 
         seperator();
 
-        rk = new RuestkammerStarter(ID, randAbstand, cnt, TAFahrzeugKammer.class, "Rüstkammer");
-        rk.initKammer(true, false);
+        rk = new RuestkammerStarter(ID, randAbstand, cnt, new TAFahrzeugKammer(), "Rüstkammer");
         rk.setButtonText("Rüstkammer");
         add(rk);
 
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         o1.alwaysSelected();
     }
-
 }

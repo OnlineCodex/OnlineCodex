@@ -24,8 +24,7 @@ public class TAXV104RiptideBattlesuits extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAXV104RiptideKammer.class, "Riptide Shas'vre"));
-            rk.lastElement().initKammer(false, false, false, false, false, false, true);
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, new TAXV104RiptideKammer(), "Riptide Shas'vre"));
             rk.lastElement().setGrundkosten(getPts("XV104 Riptide Battlesuit"));
             add(rk.lastElement());
         }

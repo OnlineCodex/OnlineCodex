@@ -4,10 +4,7 @@ import oc.*;
 
 public class IMSecutariiPeltasts extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
 
     public IMSecutariiPeltasts() {
         name = "Secutarii Peltasts";
@@ -15,11 +12,10 @@ public class IMSecutariiPeltasts extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Peltast Alpha");
-        rkBoss.initKammer(false, false, false, true);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMAdeptusMechanicusRuestkammer(name, false, false, false, true), "Peltast Alpha");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -31,5 +27,4 @@ public class IMSecutariiPeltasts extends Eintrag {
             power = 8;
         }
     }
-
 }

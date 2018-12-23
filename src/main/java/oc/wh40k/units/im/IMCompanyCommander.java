@@ -5,20 +5,18 @@ import oc.RuestkammerStarter;
 
 public class IMCompanyCommander extends Eintrag {
 
-    RuestkammerStarter kammer;
+    private final RuestkammerStarter kammer;
 
     public IMCompanyCommander() {
         name = "Company Commander";
         grundkosten = getPts("Company Commander") + getPts("Frag grenade (AM)");
         power = 3;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Company Commander");
-        kammer.initKammer();
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer(name), "");
         kammer.setButtonText("Waffen");
-        add(kammer);
         kammer.setAbwaehlbar(false);
-        
+        add(kammer);
+
         seperator();
 
         addWarlordTraits("", true);
@@ -26,7 +24,7 @@ public class IMCompanyCommander extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

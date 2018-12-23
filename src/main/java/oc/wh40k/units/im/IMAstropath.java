@@ -10,9 +10,12 @@ import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.PSYKANA;
+
 public class IMAstropath extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter psychicPowers;
+
+    private final OptionsUpgradeGruppe o1;
+    private final RuestkammerStarter psychicPowers;
 
     public IMAstropath() {
         name = "Astropath";
@@ -27,14 +30,11 @@ public class IMAstropath extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enablePsykana();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, PSYKANA), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);
@@ -43,7 +43,6 @@ public class IMAstropath extends Eintrag {
     }
 
     @Override
-
     public void refreshen() {
         o1.alwaysSelected();
         warlordTraits.getPanel().setLocation(
@@ -51,6 +50,4 @@ public class IMAstropath extends Eintrag {
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
     }
-
 }
-

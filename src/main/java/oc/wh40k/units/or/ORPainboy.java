@@ -5,10 +5,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORPainboy extends Eintrag {
-    OptionsEinzelUpgrade grotorderly;
-    RuestkammerStarter waffen;
 
-    boolean megaBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORPainboy() {
         name = "Painboy";
@@ -19,14 +17,12 @@ public class ORPainboy extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
-        waffen.initKammer(false, false, false, false, false, false, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt,
+                new ORWaffenUndGeschenke("no weapon", "Power klaw", false, false, false, false, false, false, true, false));
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -41,5 +37,4 @@ public class ORPainboy extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-    
 }

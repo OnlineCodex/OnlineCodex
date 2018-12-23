@@ -5,7 +5,6 @@ import static oc.KeyWord.*;
 import oc.Eintrag;
 
 public class IMCompanyChampionwithJumpPack extends Eintrag {
-	
 
     public IMCompanyChampionwithJumpPack() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, JUMP_PACK, COMPANY_CHAMPION);
@@ -14,10 +13,8 @@ public class IMCompanyChampionwithJumpPack extends Eintrag {
                 getPts("Frag grenade (SM)") +
                 getPts("Krak grenade (SM)");
         power = 5;
-        
-        seperator();
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

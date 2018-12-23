@@ -6,11 +6,7 @@ import oc.RuestkammerStarter;
 
 public class ORBigMekonWarbike extends Eintrag {
 
-    OptionsEinzelUpgrade grotoiler;
-    RuestkammerStarter waffen;
-
-    boolean megaBool = false;
-    boolean gazzBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORBigMekonWarbike() {
         kategorie = 1;
@@ -20,13 +16,13 @@ public class ORBigMekonWarbike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(true, false, true, true, true, true, true, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("", "", true, false, true, true, true, true, true, false);
+        kammer.setKillsawNK(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer, "");
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -41,5 +37,4 @@ public class ORBigMekonWarbike extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
 }

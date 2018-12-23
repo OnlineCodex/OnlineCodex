@@ -16,7 +16,7 @@ public class IMApothecary extends Eintrag {
         
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
         

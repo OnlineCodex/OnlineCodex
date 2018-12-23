@@ -6,11 +6,10 @@ import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class IMPrimarisAncient extends Eintrag {
-    boolean spacewolves = false;
-    
+
     public IMPrimarisAncient() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, ANCIENT);
-    	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");
+        boolean spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");
         name = "Primaris Ancient";
         grundkosten = getPts("Primaris Ancient") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         
@@ -24,9 +23,9 @@ public class IMPrimarisAncient extends Eintrag {
 
         if(spacewolves) {
         	grundkosten += getPts("Bolt pistol (SM)") + getPts("Bolt rifle");
-            addWeapons(IMSpaceWolvesRuestkammer.class, true);
+            addWeapons(new IMSpaceWolvesRuestkammer(name), true);
         } else {
-            addWeapons(IMSpaceMarinesRuestkammer.class, true);
+            addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         }
         
         seperator();

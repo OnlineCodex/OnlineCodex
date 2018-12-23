@@ -6,11 +6,7 @@ import oc.RuestkammerStarter;
 
 public class ORWarboss extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
-
-    boolean megaBool = false;
-    boolean gazzBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORWarboss() {
         name = "Warboss";
@@ -19,19 +15,17 @@ public class ORWarboss extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
 
-        add(attacksquig = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setWarboss(true);
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kombi-weapon with rokkit-launcha");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
-        waffen.initKammer(true, false, false, false, false, false, true);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("Power klaw", "Kombi-weapon with rokkit-launcha", true, false, false, false, false, false, true, false);
+        kammer.setWarboss(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer);
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);

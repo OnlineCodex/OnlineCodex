@@ -4,35 +4,33 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
+
 public class TYBroodlord extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-	private RuestkammerStarter waffen;
+    private final RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
 
     public TYBroodlord() {
         name = "Broodlord";
         grundkosten = getPts("Broodlord");
         power = 8;
+
         add(ico = new oc.Picture("oc/wh40k/images/TYBroodlord.jpg"));
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
-        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
-        waffen.initKammer();
-        add(waffen);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Broodlord"));
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
         

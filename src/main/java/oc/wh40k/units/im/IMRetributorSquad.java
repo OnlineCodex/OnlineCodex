@@ -6,14 +6,14 @@ import oc.*;
 
 public class IMRetributorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe bolters;
-    OptionsZaehlerGruppe heavy;
-    OptionsEinzelUpgrade simulacrum;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe bolters;
+    private final OptionsZaehlerGruppe heavy;
+    private final OptionsEinzelUpgrade simulacrum;
 
     public IMRetributorSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, RETRIBUTOR_SQUAD);
-        name = "Retributor Squad\n";
+        name = "Retributor Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -38,7 +38,7 @@ public class IMRetributorSquad extends Eintrag {
         
         seperator();
 
-        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Retributor Superior"));
+        add(createTroopChampion(new IMAdeptaSororitasRuestkammer("Retributor Superior", getKeywords()), true, "Upgrade zur Prioris"));
 
         complete();
     }
@@ -55,5 +55,4 @@ public class IMRetributorSquad extends Eintrag {
         bolters.setAnzahl(0, bolters.getMaxAnzahl());
         heavy.setMaxAnzahl(Math.min(4, squad.getModelle() - 1 - (simulacrum.isSelected() ? 1 : 0)));
     }
-
 }

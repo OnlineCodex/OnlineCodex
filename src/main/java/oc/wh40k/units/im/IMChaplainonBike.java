@@ -13,7 +13,7 @@ public class IMChaplainonBike extends Eintrag {
         power = 6;
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

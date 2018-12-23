@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMGreatCompanyAncient extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+
+    private final RuestkammerStarter waffenUndReliquien;
 
     public IMGreatCompanyAncient() {
         name = "Great Company Ancient";
@@ -16,12 +16,10 @@ public class IMGreatCompanyAncient extends Eintrag {
         
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndReliquien.getKammer()).setType("Great Company Ancient");
-        waffenUndReliquien.initKammer();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name));
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        add(waffenUndReliquien);
 
         seperator();
         

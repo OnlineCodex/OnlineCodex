@@ -4,13 +4,12 @@ import oc.*;
 
 public class IMDeathwatchBikers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter waffenUndReliquien;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o3;
 
     public IMDeathwatchBikers() {
-        name = "Bike Squad\n";
+        name = "Bike Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -35,13 +34,11 @@ public class IMDeathwatchBikers extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Biker Sergeant");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Biker");
-        waffenUndReliquien.initKammer();
+        RuestkammerStarter waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new DeathWatchKammer("Biker"), "Biker Sergeant");
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Biker Sergeant"));
         waffenUndReliquien.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        add(waffenUndReliquien);
 
         complete();
     }
@@ -52,4 +49,3 @@ public class IMDeathwatchBikers extends Eintrag {
         o3.setMaxAnzahl(squad.getModelle());
     }
 }
-

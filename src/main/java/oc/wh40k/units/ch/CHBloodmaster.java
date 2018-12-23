@@ -14,7 +14,7 @@ public class CHBloodmaster extends Eintrag {
 
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, true);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), true);
         
         seperator();
         

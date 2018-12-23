@@ -4,17 +4,12 @@ import oc.*;
 
 public class TAXV104RiptideKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe o3;
-    OptionsUpgradeGruppe o1, o2, o4;
-    RuestkammerStarter ob;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
 
     public TAXV104RiptideKammer() {
         name = "XV104 Sturmflut ";
         grundkosten = 180;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -38,18 +33,16 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));
         ogE.addElement(new OptionsGruppeEintrag("Early warning override", getPts("Early warning override (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-tracker", getPts("Multi-tracker")));
-        //ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (all other units)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(o4 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         sizeSetzen();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         o1.setLegal(o1.isSelected());
         o2.setLegal(o2.isSelected());
     }
-
 }

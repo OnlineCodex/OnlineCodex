@@ -14,7 +14,7 @@ public class IMCaptaininGravisArmour extends Eintrag {
         
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(), true);
         
         seperator();
 

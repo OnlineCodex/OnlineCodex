@@ -6,8 +6,8 @@ import oc.RuestkammerStarter;
 
 public class TYThornbacks extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter ob1, ob2, ob3;
+    private final RuestkammerStarter ob2;
+    private final RuestkammerStarter ob3;
 
     public TYThornbacks() {
         name = "Thornbacks";
@@ -15,26 +15,20 @@ public class TYThornbacks extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
-        ((TYRuestkammer) ob1.getKammer()).setType("Thornback");
-        ob1.initKammer();
-        add(ob1);
+        RuestkammerStarter ob1 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Thornback"), "Thornback");
         ob1.setGrundkosten(getPts("Thornbacks"));
         ob1.setAbwaehlbar(false);
+        add(ob1);
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
-        ((TYRuestkammer) ob2.getKammer()).setType("Thornback");
-        ob2.initKammer();
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Thornback"), "Thornback");
         ob2.setGrundkosten(getPts("Thornbacks"));
         add(ob2);
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Thornback");
-        ((TYRuestkammer) ob3.getKammer()).setType("Thornback");
-        ob3.initKammer();
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Thornback"), "Thornback");
         ob3.setGrundkosten(getPts("Thornbacks"));
         add(ob3);
 
@@ -49,5 +43,4 @@ public class TYThornbacks extends Eintrag {
         if (ob3.isSelected())
             power += 6;
     }
-
 }

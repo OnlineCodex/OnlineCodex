@@ -7,36 +7,31 @@ import oc.RuestkammerStarter;
 
 public class IMInfantrySquad extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter kammer;
-
     public IMInfantrySquad() {
-        checkBuildaVater();
         name = "Infantry Squad";
         grundkosten = (getPts("Infantry Squad") + getPts("Frag grenade (AM)")) * 10;
         power = 3;
+
+        checkBuildaVater();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
 
         seperator();
 
         ogE = IMAstraMilitarumSpecialWeapons.createRK("", "", buildaVater);
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Sergeant");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Sergeant");
-        kammer.initKammer();
-        add(kammer);
+        RuestkammerStarter kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer("Sergeant"), "Sergeant");
         kammer.setUeberschriftTrotzNullKostenAusgeben(true);
         kammer.setAbwaehlbar(false);
+        add(kammer);
 
         complete();
     }

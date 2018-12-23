@@ -4,17 +4,20 @@ import static oc.KeyWord.*;
 
 import java.util.Set;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 
+import com.google.common.collect.Sets;
 import oc.*;
 import oc.wh40k.armies.VOLKImperium;
 
 public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
+    private final String type;
+    private final Set<KeyWord> keywords;
+
     public OptionsEinzelUpgrade oe1;
     OptionsUpgradeGruppe o1, o2, o3;
-    String default1 = "";
-    String default2 = "";
     boolean character = false;
     boolean psyker = false;
     boolean jump = false;
@@ -40,24 +43,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             "Imperial Space Marine", "Chapter Ancient", "Chapter Champion");
     Set<String> PSYKERS = ImmutableSet.of("Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Primaris Librarian");
     Set<String> COMBATSHIELD = ImmutableSet.of("Company Champion");
-    
 
-    public IMSpaceMarinesRuestkammer() {
-        grundkosten = 0;
-    }
-
-    public void setType(String s) {
-        type = s;
-    }
-
-    public void setDefault1(String s) {
-        default1 = s;
-    }
-
-    public void setDefault2(String s) {
-        default2 = s;
-    }
-    
     public void addRelics() {
     	if(character) {
 	    	boolean boltgun = false;
@@ -103,12 +89,22 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
-    @Override
-    public void initButtons(boolean... defaults) {
+
+    public IMSpaceMarinesRuestkammer(KeyWord... keywords) {
+        this("", keywords);
+    }
+
+    public IMSpaceMarinesRuestkammer(String type, KeyWord... keywords) {
+        this(type, ImmutableList.copyOf(keywords));
+    }
+
+    public IMSpaceMarinesRuestkammer(String type, Iterable<KeyWord> keywords) {
+        this.type = type;
+        this.keywords = Sets.newEnumSet(keywords, KeyWord.class);
+
         checkBuildaVater();
-        psyker = PSYKERS.contains(type) || keywords.contains(PSYKER);
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
+        psyker = PSYKERS.contains(type) || this.keywords.contains(PSYKER);
+        character = CHARACTERS.contains(type) || this.keywords.contains(CHARACTER);
         captain = type.startsWith("Captain");
         int offsetX = randAbstand;
         int oe1Offset = cnt;
@@ -513,7 +509,6 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-
         if (type.equals("Librarian") || type.equals("Primaris Librarian") || type.equals("Techmarine") || type.equals("Captain in Gravis Armour") || 
         		type.equals("Primaris Captain") || type.equals("Primaris Ancient") || type.equals("Chapter Champion") || type.equals("Apothecary") || 
         		type.equals("Apothecary on Bike") || type.equals("Company Champion") || type.equals("Company Champion on Bike") || type.equals("Company Champion with Jump Pack") || 

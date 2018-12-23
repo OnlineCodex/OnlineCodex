@@ -2,6 +2,8 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+
 public class CHWarpsmith extends Eintrag {
 
     RuestkammerStarter waffen;
@@ -28,15 +30,11 @@ public class CHWarpsmith extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power axe");
-        ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
-        waffen.initKammer(false, true, false, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Power axe", false, true, false, false, SORCERER), "");
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
         addWarlordTraits("", true);

@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.im.ImperiumUtils.getPsychicPowerGroug;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -8,8 +9,9 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarian extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter psychicPowers;
+
+    private final OptionsEinzelUpgrade jump;
+    private final RuestkammerStarter psychicPowers;
 
     public IMLibrarian() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PSYKER, LIBRARIAN);
@@ -22,23 +24,15 @@ public class IMLibrarian extends Eintrag {
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer("Librarian", getKeywords()), true);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        if (!buildaVater.getFormationType().equals("Dark Angels") && !buildaVater.getFormationType().equals("Blood Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableLibrarius();
-        if (buildaVater.getFormationType().equals("Blood Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableSanguinary();
-        if (buildaVater.getFormationType().equals("Dark Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableInterromancy();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+        add(psychicPowers);
+
         seperator();
 
 		addWarlordTraits("", true);

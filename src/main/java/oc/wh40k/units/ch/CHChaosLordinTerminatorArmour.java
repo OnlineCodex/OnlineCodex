@@ -5,13 +5,14 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.TERMINATOR;
+
 public class CHChaosLordinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
 
     public CHChaosLordinTerminatorArmour() {
-
         name = "Chaos Lord in Terminator Armour";
         grundkosten = getPts("Chaos Lord in Terminator Armour");
         power = 7;
@@ -22,20 +23,16 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        OptionsUpgradeGruppe mark;
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Combi-bolter");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power sword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        ((CHWaffenkammer) waffen.getKammer()).setTerminatorArmour(true);
-        waffen.initKammer(true, true, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Combi-bolter", "Power sword", true, true, true, false, CHAMPION, TERMINATOR));
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
         
         addWarlordTraits("", true);

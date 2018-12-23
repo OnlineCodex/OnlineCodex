@@ -11,9 +11,8 @@ public class IMCompanyAncientonBike extends Eintrag {
         name = "Company Ancient on Bike";
         grundkosten = getPts("Company Ancient on Bike") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Twin boltgun");
         power = 5;
-        seperator();
-        
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
 
         seperator();
         

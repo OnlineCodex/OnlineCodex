@@ -43,14 +43,13 @@ public class IMCelestianSquad extends Eintrag {
         
         seperator();
 
-        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
+        add(createTroopChampion(new IMAdeptaSororitasRuestkammer("Sister Superior", getKeywords()), true, "Upgrade zur Prioris"));
 
         complete();
     }
 
     @Override
     public void refreshen() {
-
         if (squad.getModelle() <= 5)
             power = 5;
         else if (squad.getModelle() <= 10)
@@ -61,5 +60,4 @@ public class IMCelestianSquad extends Eintrag {
         special.setMaxAnzahl(2 - heavy.getAnzahl());
         heavy.setMaxAnzahl(Math.min(1, 2 - special.getAnzahl()));
     }
-
 }

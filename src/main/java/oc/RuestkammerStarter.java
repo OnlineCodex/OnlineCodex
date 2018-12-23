@@ -1,5 +1,6 @@
 package oc;
 
+import com.google.common.collect.ImmutableSet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
@@ -18,11 +19,12 @@ public class RuestkammerStarter extends OptionsVater {
     
     private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerStarter.class);
 
+    private static final Font plain = new Font("arial", Font.PLAIN, 12);
+    private static final Font bold = new Font("arial", Font.BOLD, 12);
     private static final int ruestkammerIconBreite = 20;
-    static final Font bold = new Font("arial", Font.BOLD, 12);
-    static final Font plain = new Font("arial", Font.PLAIN, 12);
-    public int einrueckIndex = -1;
-    boolean abwaehlbar = true;
+
+    private int einrueckIndex = -1;
+    private boolean abwaehlbar = true;
     private RuestkammerVater myKammer;
     private String name;
     private boolean selected;
@@ -31,101 +33,109 @@ public class RuestkammerStarter extends OptionsVater {
     private boolean ueberschriftTrotzNullKostenAusgeben = false;
     private JLabel ico;
     private JButton startButton = new JButton();
-    private int seperator = -88; // -88 wichtig um in optionscollection überprüfen zu können obs geändert wurde und das statt dem default zu benutzen
+    private int seperator = -88;
     private Vector<JLabel> textfelder = new Vector<JLabel>();
     private String texte;
-    private FocusListener closeListenerFocus = new FocusListener() {
-        @Override
-        public void focusLost(FocusEvent event) {
-            ruestkammerClosed();
-        }
-
-        @Override
-        public void focusGained(FocusEvent event) {
-        }
-    };
-    private WindowListener closeListenerWindow = new WindowListener() {
-        @Override
-        public void windowClosing(WindowEvent e) {
-            ruestkammerClosed();
-            deselectYourself();
-        }
-
-        @Override
-        public void windowClosed(WindowEvent e) {
-            ruestkammerClosed();
-        }
-
-        @Override
-        public void windowActivated(WindowEvent e) {
-        }
-
-        @Override
-        public void windowDeactivated(WindowEvent e) {/*ruestkammerClosed();*/
-
-        } // kommandozug imps...
-
-        @Override
-        public void windowDeiconified(WindowEvent e) {
-        }
-
-        @Override
-        public void windowIconified(WindowEvent e) {
-        }
-
-        @Override
-        public void windowOpened(WindowEvent e) {
-        }
-    };
-
-    public RuestkammerStarter(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name) {
-        init(ID, lX, lY, cls, name);
-    }
-
-    public RuestkammerStarter(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name, int einrueckIndex) {
-        this.einrueckIndex = einrueckIndex;
-        init(ID, lX, lY, cls, name);
-    }
 
     public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung) {
-        init(ID, lX, lY, abteilung);
+        this(ID, lX, lY, abteilung, "");
     }
 
-    public RuestkammerStarter(int id, int randAbstand, int cnt, Class<? extends RuestkammerVater> cls, String name, Set<KeyWord> keywords) {
-        this(id, randAbstand, cnt, cls, name);
-        getKammer().setKeywords(keywords);
+    public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung, String name) {
+        this(ID, lX, lY, abteilung, name, ImmutableSet.of());
     }
 
-    public static int vorkommen(String Sa, String b) {  // wie oft b in a vorkommt     Hilfsmethode
-        int vorkommen = 0;
-        String a = Sa;
-        if (a.equals("") || b.equals("")) {
-            return 0;
+    public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater cls, String name, int einrueckIndex) {
+        this(ID, lX, lY, cls, name);
+        this.einrueckIndex = einrueckIndex;
+    }
+
+    public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung, String name, Set<KeyWord> keywords) {
+
+        this.selected = false;
+        this.name = name;
+        panel.setLocation(lX - 5, lY);
+        ico = BuildaHQ.createPictureJLabel("oc/sysimages/RuestkammerIcon.jpg");
+        ico.setBounds(randAbstand - 2, 6, ruestkammerIconBreite, 12);
+        panel.add(ico);
+
+        startButton.setBounds(ruestkammerIconBreite + randAbstand, 0, buttonBreite, buttonHoehe + 4);
+        startButton.addMouseListener(this);
+        BuildaHQ.newGUIComponent(startButton);
+        startButton.setBorder(null);
+
+        fontSetzen(false);
+        panel.add(startButton);
+
+        try {
+            myKammer = (RuestkammerVater) abteilung;
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this.getPanel(), abteilung.getName() + ".class" + BuildaHQ.translate("nicht gefunden. Rüstkammer kann nicht geöffnet werden:") + " " + e.getMessage());
         }
 
-        for (; ; ) {
-            if (!a.contains(b)) {
-                break;
+        WindowListener closeListenerWindow = new WindowListener() {
+
+            @Override
+            public void windowClosing(WindowEvent e) {
+                ruestkammerClosed();
+                deselectYourself();
             }
 
-            a = a.substring(a.indexOf(b) + 1, a.length());
+            @Override
+            public void windowClosed(WindowEvent e) {
+                ruestkammerClosed();
+            }
 
-            ++vorkommen;
+            @Override
+            public void windowActivated(WindowEvent e) {
+            }
+
+            @Override
+            public void windowDeactivated(WindowEvent e) {
+            }
+
+            @Override
+            public void windowDeiconified(WindowEvent e) {
+            }
+
+            @Override
+            public void windowIconified(WindowEvent e) {
+            }
+
+            @Override
+            public void windowOpened(WindowEvent e) {
+            }
+        };
+        FocusListener closeListenerFocus = new FocusListener() {
+            @Override
+            public void focusLost(FocusEvent event) {
+                ruestkammerClosed();
+            }
+
+            @Override
+            public void focusGained(FocusEvent event) {
+            }
+        };
+        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
+        myKammer.setzteRefreshListener(ID);
+
+        if (!abteilung.getName().equals("")) {
+            myKammer.setUeberschrift(abteilung.getName() + " " + BuildaHQ.translate("Rüstkammer"));
+            myKammer.name = abteilung.getName();
         }
 
-        return vorkommen;
+        sizeSetzen();
+
+        addRefreshListener(RUESTKAMMER_STARTER, () -> {
+            if (isSelected()) {
+                textUebernehmen();
+                setLegal(legal);
+            }
+        });
     }
 
     public RuestkammerVater getKammer() {
         return this.myKammer;
-    }
-
-    public int getEinrueckIndex() {
-        return this.einrueckIndex;
-    }
-
-    public void setEinrueckIndex(int i) {
-        this.einrueckIndex = i;
     }
 
     public int getSeperator() {
@@ -149,10 +159,6 @@ public class RuestkammerStarter extends OptionsVater {
         aktivieren(selected);
     }
 
-    public void setToolTipText(String s) {
-        startButton.setToolTipText(s);
-    }
-
     public String getName() {
         return this.name;
     }
@@ -164,101 +170,6 @@ public class RuestkammerStarter extends OptionsVater {
 
     public JButton getButton() {
         return this.startButton;
-    }
-
-    public void init(int ID, int lX, int lY, Class<? extends RuestkammerVater> cls, String name) {
-        this.selected = false;
-        this.name = name;
-        panel.setLocation(lX - 5, lY);
-        ico = BuildaHQ.createPictureJLabel("oc/sysimages/RuestkammerIcon.jpg");
-        ico.setBounds(randAbstand - 2, 6, ruestkammerIconBreite, 12);
-        panel.add(ico);
-
-        startButton.setBounds(ruestkammerIconBreite + randAbstand, 0, buttonBreite, buttonHoehe + 4);
-        startButton.addMouseListener(this);
-        BuildaHQ.newGUIComponent(startButton);
-        startButton.setBorder(null);
-        startButton.setToolTipText(BuildaHQ.translate("Öffnet ein extra Fenster. Rechtsklick: Die Einstellungen bleiben im Rüstkammer-Fenster zwar bestehen, zählen aber NICHT zu den Gesamtkosten."));
-        fontSetzen(false);
-        panel.add(startButton);
-
-        myKammer = loadFaction(cls);
-
-        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
-        myKammer.setzteRefreshListener(ID);
-
-        myKammer.setName(name);
-        myKammer.setUeberschrift(name);
-
-        if (!name.equals("")) {
-            myKammer.setUeberschrift(name + " " + BuildaHQ.translate("Rüstkammer"));
-            myKammer.name = name;
-        }
-
-        sizeSetzen();
-
-        addRefreshListener(RUESTKAMMER_STARTER, () -> {
-            if (isSelected()) {
-                textUebernehmen();
-                setLegal(legal);
-            }
-        });
-    }
-
-    static RuestkammerVater loadFaction(Class<? extends RuestkammerVater> cls) {
-        try {
-            return cls.getConstructor()
-                    .newInstance();
-        } catch (Exception e) {
-            OnlineCodex.getInstance().fehler(cls.getCanonicalName() + " nicht gefunden. Rüstkammer kann nicht geöffnet werden." + ZEILENUMBRUCH + "Bitte melden!");
-            LOGGER.error("could not laod RuestkammerVater " + cls, e);
-            return null;
-        }
-    }
-
-    public void init(int ID, int lX, int lY, RuestkammerVater abteilung) {
-        this.selected = false;
-        this.name = abteilung.getName();
-        panel.setLocation(lX - 5, lY);
-        ico = BuildaHQ.createPictureJLabel("oc/sysimages/RuestkammerIcon.jpg");
-        ico.setBounds(randAbstand - 2, 6, ruestkammerIconBreite, 12);
-        panel.add(ico);
-
-        startButton.setBounds(ruestkammerIconBreite + randAbstand, 0, buttonBreite, buttonHoehe + 4);
-        startButton.addMouseListener(this);
-        BuildaHQ.newGUIComponent(startButton);
-        startButton.setBorder(null);
-
-        fontSetzen(false);
-        panel.add(startButton);
-
-        try {
-            myKammer = (RuestkammerVater) abteilung;
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this.getPanel(), abteilung.getName() + ".class" + BuildaHQ.translate("nicht gefunden. Rüstkammer kann nicht geöffnet werden:") + " " + e.getMessage());
-        }
-
-        myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
-        myKammer.setzteRefreshListener(ID);
-
-        if (!abteilung.getName().equals("")) {
-            myKammer.setUeberschrift(abteilung.getName() + " " + BuildaHQ.translate("Rüstkammer"));
-            myKammer.name = abteilung.getName();
-        }
-
-        sizeSetzen();
-
-        addRefreshListener(RUESTKAMMER_STARTER, () -> {
-            if (isSelected()) {
-                textUebernehmen();
-                setLegal(legal);
-            }
-        });
-    }
-
-    public void initKammer(boolean... b) {
-        myKammer.initButtons(b);
-        labelSetzen();
     }
 
     public void setGrundkosten(int i) {

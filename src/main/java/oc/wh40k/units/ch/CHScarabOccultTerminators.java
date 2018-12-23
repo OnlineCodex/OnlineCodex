@@ -3,6 +3,8 @@ package oc.wh40k.units.ch;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
+
 public class CHScarabOccultTerminators extends Eintrag {
 
     AnzahlPanel squad;
@@ -49,23 +51,18 @@ public class CHScarabOccultTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Sorcerer");
-        ((CHWaffenkammer) rkBoss.getKammer()).type = "Scarab Occult Sorcerer";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Scarab Occult Sorcerer"), "Sorcerer");
         rkBoss.setGrundkosten(getPts("Scarab Occult Sorcerer"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(true);
+        add(rkBoss);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, CHANGE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
+        add(psychicPowers);
 
         complete();
     }

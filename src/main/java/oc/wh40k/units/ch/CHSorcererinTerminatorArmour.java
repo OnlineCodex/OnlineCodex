@@ -6,12 +6,20 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.ChaosGod.NURGLE;
+import static oc.wh40k.units.PsychicPowers.ChaosGod.SLAANESH;
+import static oc.wh40k.units.PsychicPowers.ChaosGod.TZEENTCH;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.TERMINATOR;
+
 public class CHSorcererinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe mark;
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
     public CHSorcererinTerminatorArmour() {
 
@@ -28,27 +36,19 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Combi-bolter");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Force sword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        ((CHWaffenkammer) waffen.getKammer()).setTerminatorArmour(true);
-        ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
-        waffen.initKammer(true, true, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt,
+                new CHWaffenkammer(name, "Combi-bolter", "Force sword", true, true, true, false, CHAMPION, TERMINATOR, SORCERER));
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
         addWarlordTraits("", true);
@@ -59,10 +59,11 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
 
     @Override
     public void refreshen() {
-        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
-        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
-        ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-        
+        PsychicPowers pp = (PsychicPowers) psychicPowers.getKammer();
+        pp.setGod(NURGLE, mark.isSelected("Mark of Nurgle"));
+        pp.setGod(TZEENTCH, mark.isSelected("Mark of Tzeentch"));
+        pp.setGod(SLAANESH, mark.isSelected("Mark of Slaanesh"));
+
         psychicPowers.getPanel().setLocation(
                 (int) psychicPowers.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5

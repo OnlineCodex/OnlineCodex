@@ -2,6 +2,9 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.TERMINATOR;
+
 public class CHChaosTerminators extends Eintrag {
 
     AnzahlPanel marines;
@@ -70,16 +73,11 @@ public class CHChaosTerminators extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Terminator Champion");
-        ((CHWaffenkammer) Boss.getKammer()).setTerminatorArmour(true);
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Combi-bolter");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Power axe");
-        Boss.initKammer(true, true, true, true);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Terminator Champion", "Combi-bolter", "Power axe", true, true, true, true, TERMINATOR, CHAMPION), "Terminator Champion");
         Boss.setGrundkosten(getPts("Terminator Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
     }

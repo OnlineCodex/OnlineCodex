@@ -43,7 +43,7 @@ public class IMBattleSistersSquad extends Eintrag {
         
         seperator();
 
-        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
+        add(createTroopChampion(new IMAdeptaSororitasRuestkammer("Sister Superior", getKeywords()), true, "Upgrade zur Prioris"));
 
         complete();
     }
@@ -62,5 +62,4 @@ public class IMBattleSistersSquad extends Eintrag {
         special.setMaxAnzahl(2 - heavy.getAnzahl());
         heavy.setMaxAnzahl(Math.min(1, 2 - special.getAnzahl()));
     }
-    
 }

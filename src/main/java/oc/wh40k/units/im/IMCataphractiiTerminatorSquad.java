@@ -41,9 +41,7 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Cataphractii Sergeant");
-        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Cataphractii Sergeant");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Cataphractii Sergeant", getKeywords()), "Cataphractii Sergeant");
         rkBoss.setGrundkosten(getPts("Cataphractii Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
@@ -54,7 +52,6 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
 
     @Override
     public void refreshen() {
-
         o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl() - o1y.getAnzahl() - o3.getAnzahl());
         o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl() - o1y.getAnzahl() - o3.getAnzahl());
         o1.setMaxAnzahl(squad.getModelle() - 1 - o1y.getAnzahl() - o3.getAnzahl());

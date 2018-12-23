@@ -4,19 +4,16 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
-public class TYTheSwarmlord extends Eintrag {
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
 
-    RuestkammerStarter psychicPowers;
+public class TYTheSwarmlord extends Eintrag {
 
     public TYTheSwarmlord() {
         name = "The Swarmlord";
         grundkosten = getPts("TheSwarmlord");
         power = 15;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);

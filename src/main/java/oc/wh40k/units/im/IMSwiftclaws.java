@@ -4,14 +4,13 @@ import oc.*;
 
 public class IMSwiftclaws extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o3;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    OptionsEinzelUpgrade oe3;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o3;
+    private final OptionsEinzelUpgrade oe2;
+    private final OptionsEinzelUpgrade oe3;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkBoss2;
 
     public IMSwiftclaws() {
         checkBuildaVater();
@@ -41,19 +40,15 @@ public class IMSwiftclaws extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Swiftclaw Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Swiftclaw Pack Leader");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Swiftclaw Pack Leader"), "Swiftclaw Pack Leader");
         rkBoss.setGrundkosten(getPts("Swiftclaw Pack Leader"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Bike Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Bike Leader");
-        rkBoss2.initKammer();
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard Bike Leader"), "Wolf Guard Bike Leader");
         rkBoss2.setGrundkosten(getPts("Swiftclaws") + getPts("Twin boltgun"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss2);
@@ -66,9 +61,9 @@ public class IMSwiftclaws extends Eintrag {
         oe2.setAktiv(!oe3.isSelected());
         oe3.setAktiv(!oe2.isSelected());
 
-        int anzahl = squad.getModelle() - 1 - o1.getAnzahl() - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.getAnzahl();
+        int anzahl = squad.getModelle() - 1 - o1.getAnzahl() - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).getO2().getAnzahl();
 
-        o1.setMaxAnzahl(1 - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.getAnzahl());
+        o1.setMaxAnzahl(1 - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).getO2().getAnzahl());
 
         o3.setMaxAnzahl(anzahl);
         o3.setLegal(o3.getAnzahl() == anzahl);

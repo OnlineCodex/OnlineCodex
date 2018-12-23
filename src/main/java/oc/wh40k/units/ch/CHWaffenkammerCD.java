@@ -1,35 +1,31 @@
 package oc.wh40k.units.ch;
 
+import static com.google.common.collect.Sets.newEnumSet;
 import static oc.KeyWord.*;
 
-import oc.OptionsEinzelUpgrade;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerVater;
+import com.google.common.collect.Sets;
+import oc.*;
+
+import java.util.Set;
 
 public class CHWaffenkammerCD extends RuestkammerVater {
 
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
-    //boolean psyker = false; //Daemon Prince, if not Khorne
-    
-    OptionsEinzelUpgrade armourofScorn;
-    OptionsEinzelUpgrade theCrimsonCrown;
-    OptionsEinzelUpgrade theEndlessGrimoire;
-    OptionsEinzelUpgrade soulBane;
-    OptionsEinzelUpgrade theImpossibleRobe;
-    OptionsEinzelUpgrade hornofNurglesRot;
-    OptionsEinzelUpgrade theEntropicKnell;
-    OptionsEinzelUpgrade theForbiddenGem;
-    OptionsEinzelUpgrade theMarkofExcess;
-    OptionsEinzelUpgrade slothfulClaws;
-    
-    OptionsUpgradeGruppe nkwaffe;
-    OptionsUpgradeGruppe fkwaffe;
-    
-    public CHWaffenkammerCD() {
-        grundkosten = 0;
-    }
+    private final String type;
+    private final Set<KeyWord> keywords;
+
+    private OptionsUpgradeGruppe fkwaffen;
+    private OptionsEinzelUpgrade armourofScorn;
+    private OptionsEinzelUpgrade theCrimsonCrown;
+    private OptionsEinzelUpgrade theEndlessGrimoire;
+    private OptionsEinzelUpgrade soulBane;
+    private OptionsEinzelUpgrade theImpossibleRobe;
+    private OptionsEinzelUpgrade hornofNurglesRot;
+    private OptionsEinzelUpgrade theEntropicKnell;
+    private OptionsEinzelUpgrade theForbiddenGem;
+    private OptionsEinzelUpgrade theMarkofExcess;
+    private OptionsEinzelUpgrade slothfulClaws;
+    private OptionsUpgradeGruppe nkwaffe;
+    private OptionsUpgradeGruppe fkwaffe;
 
     public void addRelics() {
     	if(keywords.contains(CHARACTER)) {
@@ -53,7 +49,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    			daemonicAxe = true;
 	    		} else if(ogE.get(i).getName().equals("Rod of sorcery")) {
 	    			rodOfSorcery = true;
-	    		} else if(ogE.get(i).getName().equals("Staff of change")) {
+	    		} else if(ogE.get(i).getName().equals("Staff of CHANGE")) {
 	    			staffOfChange = true;
 	    		} else if(ogE.get(i).getName().equals("Plaguesword")) {
 	    			plaguesword = true;
@@ -78,7 +74,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    	if(rodOfSorcery) {
         		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Rod of Sorcery")).setRelic(true));
 	    	} else if(staffOfChange) {
-        		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Staff of change")).setRelic(true));
+        		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Staff of CHANGE")).setRelic(true));
 	    	}
 	    	
 	    	if(plaguesword) {
@@ -92,10 +88,16 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    	}
     	}
     }
-    
-    @Override
-    public void initButtons(boolean... defaults) {
-    	add(armourofScorn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armour of Scorn", 0).setRelic(true));
+
+    public Set<KeyWord> getKeywords() {
+        return keywords;
+    }
+
+    public CHWaffenkammerCD(String type, Set<KeyWord> keyWords) {
+        this.type = type;
+        this.keywords = newEnumSet(keyWords, KeyWord.class);
+
+        add(armourofScorn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armour of Scorn", 0).setRelic(true));
     	add(theCrimsonCrown = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Crimson Crown", 0).setRelic(true));
     	add(theEndlessGrimoire = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Endless Grimoire", 0).setRelic(true));
     	add(soulBane = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Soul Bane", 0).setRelic(true));
@@ -137,7 +139,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	        addRelics();
             add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(CHANGECASTER) || keywords.contains(FATESKIMMER) || keywords.contains(FLUXMASTER)) {
-        	ogE.addElement(new OptionsGruppeEintrag("Staff of change", getPts("Staff of change")));
+        	ogE.addElement(new OptionsGruppeEintrag("Staff of CHANGE", getPts("Staff of CHANGE")));
 	        addRelics();
 	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(SPOILPOX_SCRIVENER)) {

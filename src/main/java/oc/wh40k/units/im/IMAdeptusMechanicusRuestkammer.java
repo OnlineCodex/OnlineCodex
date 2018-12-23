@@ -7,27 +7,19 @@ import oc.RuestkammerVater;
 
 public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsEinzelUpgrade oe;
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsEinzelUpgrade oe;
 
-    boolean vanguard = false;
-    boolean ranger = false;
-    boolean hoplite = false;
-    boolean peltast = false;
-    String type = "";
+    private final String type;
+    private final boolean hoplite;
+    private final boolean peltast;
 
-    public IMAdeptusMechanicusRuestkammer() {
-        grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
+    public IMAdeptusMechanicusRuestkammer(String type, boolean vanguard, boolean ranger, boolean hoplite, boolean peltast) {
+        this.type = type;
+        this.hoplite = hoplite;
+        this.peltast = peltast;
         checkBuildaVater();
-        vanguard = defaults[0];
-        ranger = defaults[1];
-        hoplite = defaults[2];
-        peltast = defaults[3];
         
         //special
         if (ranger) {
@@ -46,7 +38,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 
             ogE = IMAdeptusMechanicusPistolWeapons.createRK("Radium carbine", "Radium carbine", buildaVater);
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        } else if(hoplite) {
+        } else if(this.hoplite) {
             ogE = IMAdeptusMechanicusMeleeWeapons.createRK("Mag-inverter shield", "Mag-inverter shield", buildaVater);
             ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
             ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
@@ -56,7 +48,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 
             ogE = IMAdeptusMechanicusPistolWeapons.createRK("Arc lance", "Arc lance", buildaVater);
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        } else if(peltast) {
+        } else if(this.peltast) {
             ogE = IMAdeptusMechanicusMeleeWeapons.createRK("", "", buildaVater);
             ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
             ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
@@ -68,7 +60,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
-        if (type.equals("Ruststalker Princeps")) {
+        if (this.type.equals("Ruststalker Princeps")) {
             add(oe = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chordclaw", getPts("chordclaw")));
 
             ogE.addElement(new OptionsGruppeEintrag("Transonic razor", getPts("Transonic razor")));
@@ -81,7 +73,6 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-
         if (type.equals("Ruststalker Princeps")) {
             o1.alwaysSelected();
             oe.setSelected(true);
@@ -94,9 +85,5 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
         } else{
             o2.alwaysSelected();
         }
-    }
-
-    public void setType(String s) {
-        type = s;
     }
 }

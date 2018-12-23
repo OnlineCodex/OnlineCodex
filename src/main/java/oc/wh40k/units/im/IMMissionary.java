@@ -19,7 +19,7 @@ public class IMMissionary extends Eintrag {
 
         seperator();
 
-        addWeapons(IMAdeptaSororitasRuestkammer.class, true);
+        addWeapons(new IMAdeptaSororitasRuestkammer("Missionary"), true);
         
         seperator();
 

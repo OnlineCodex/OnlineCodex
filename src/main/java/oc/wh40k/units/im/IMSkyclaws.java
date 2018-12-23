@@ -28,19 +28,15 @@ public class IMSkyclaws extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Skyclaw Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Skyclaw Pack Leader");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Skyclaw Pack Leader"), "Skyclaw Pack Leader");
         rkBoss.setGrundkosten(getPts("Skyclaw Pack Leader"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Sky Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Sky Leader");
-        rkBoss2.initKammer();
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard Sky Leader"), "Wolf Guard Sky Leader");
         rkBoss2.setGrundkosten(getPts("Wolf Guard Sky Leader"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss2);
@@ -58,7 +54,7 @@ public class IMSkyclaws extends Eintrag {
         o1x.setMaxAnzahl(squad.getModelle() - 1 - o1.getAnzahl());
         o1x.setAnzahl(0, o1x.getMaxAnzahl());
 
-        o1.setMaxAnzahl(2 - (((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.isSelected("Bolt pistol") ? 0 : 1));
+        o1.setMaxAnzahl(2 - (((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).getO2().isSelected("Bolt pistol") ? 0 : 1));
 
         power = 5;
         if (squad.getModelle() > 5) {

@@ -5,15 +5,11 @@ import oc.*;
 
 public class CHChaosCultists extends Eintrag {
 
-    AnzahlPanel kultisten;
-    RuestkammerStarter champion;
-    OptionsEinzelUpgrade schrotflinte;
-    OptionsZaehlerGruppe schwereWaffe;
-    OptionsZaehlerGruppe autogewehre, pistol;
-    OptionsUpgradeGruppe mark;
+    private final AnzahlPanel kultisten;
+    private final OptionsZaehlerGruppe schwereWaffe;
+    private final OptionsZaehlerGruppe autogewehre, pistol;
 
     public CHChaosCultists() {
-        //name = "Chaoskultisten\n";
         grundkosten = 0;
 
         kultisten = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Cultists", 10, 40, getPts("Chaos Cultists"));
@@ -42,16 +38,15 @@ public class CHChaosCultists extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        champion = new RuestkammerStarter(ID, randAbstand, cnt, CHCultistkammer.class, "Champion");
-        champion.initKammer(false);
+        RuestkammerStarter champion = new RuestkammerStarter(ID, randAbstand, cnt, new CHCultistkammer(false), "Champion");
         champion.setUeberschriftTrotzNullKostenAusgeben(true);
         champion.setGrundkosten(getPts("Cultist Champion"));
-        add(champion);
         champion.setAbwaehlbar(false);
+        add(champion);
 
         seperator(0);
 

@@ -15,7 +15,7 @@ public class CHBloodthirsterofInsensateRage extends Eintrag {
 
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
         
         seperator();
         

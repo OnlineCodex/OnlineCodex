@@ -6,24 +6,22 @@ import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.INTERROMANCY;
+
 public class IMEzekiel extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
     public IMEzekiel() {
         name = "Ezekiel";
         grundkosten = getPts("Ezekiel");
         power = 7;
-        seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableInterromancy();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, INTERROMANCY), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("Courage of the First Legion (DA)", true);

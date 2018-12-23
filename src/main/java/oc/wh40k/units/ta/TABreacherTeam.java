@@ -4,13 +4,14 @@ import oc.*;
 
 public class TABreacherTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o4, o3;
-    OptionsZaehlerGruppe o5, o6;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsUpgradeGruppe o4;
+    private final OptionsZaehlerGruppe o5;
+    private final OptionsZaehlerGruppe o6;
+    private final RuestkammerStarter rkBoss;
 
     public TABreacherTeam() {
-        name = "Breacher Team\n";
+        name = "Breacher Team";
         überschriftSetzen = true;
         grundkosten = 0;
 
@@ -33,7 +34,7 @@ public class TABreacherTeam extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("DS8 missile pod", "DS8 Tactical Support Turret with missile pod", getPts("DS8 Tactical Support Turret") + getPts("Missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("DS8 smart missile", "DS8 Tactical Support Turret with smart missile system", getPts("DS8 Tactical Support Turret") + getPts("Smart missile system")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -44,8 +45,7 @@ public class TABreacherTeam extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TAInfanterieKammer.class, "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
-        rkBoss.initKammer(true, false, false);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new TAInfanterieKammer(true, false, false), "Fire Warrior Shas'ui", getPts("Fire Warrior Shas'ui"));
         rkBoss.setGrundkosten(getPts("Shas'ui"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
@@ -71,5 +71,4 @@ public class TABreacherTeam extends Eintrag {
             power++;
         }
     }
-
 }

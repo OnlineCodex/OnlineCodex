@@ -4,16 +4,12 @@ import oc.*;
 
 public class ORBoyz extends Eintrag {
 
-    AnzahlPanel boyz;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
-
-    OptionsEinzelUpgrade wummen;
-    OptionsZaehlerGruppe boyzFK;
-    OptionsZaehlerGruppe boyzFK2;
-    OptionsEinzelUpgrade panzaboys;
-    RuestkammerStarter Boss;
+    private final AnzahlPanel boyz;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe boyzFK;
+    private final OptionsZaehlerGruppe boyzFK2;
+    private final RuestkammerStarter Boss;
 
     public ORBoyz() {
 
@@ -40,15 +36,11 @@ public class ORBoyz extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Boss Nob");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setBoyBoss(true);
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultCloceCombat("no weapon");
-        Boss.initKammer(false, false, false, false, false);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, false, false), "Boss Nob");
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Boss Nob"));
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
     }

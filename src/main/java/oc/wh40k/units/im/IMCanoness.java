@@ -16,7 +16,7 @@ public class IMCanoness extends Eintrag {
 
         seperator();
 
-        addWeapons(IMAdeptaSororitasRuestkammer.class, true);
+        addWeapons(new IMAdeptaSororitasRuestkammer(name, getKeywords()), true);
         
         seperator();
         

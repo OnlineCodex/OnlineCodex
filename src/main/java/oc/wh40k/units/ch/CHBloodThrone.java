@@ -12,9 +12,7 @@ public class CHBloodThrone extends Eintrag {
         grundkosten = getPts("Blood Throne");
         power = 6;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, true);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), true);
         
         seperator();
         
@@ -22,10 +20,4 @@ public class CHBloodThrone extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

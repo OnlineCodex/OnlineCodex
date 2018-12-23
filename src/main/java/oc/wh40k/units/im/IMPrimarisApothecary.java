@@ -14,20 +14,14 @@ public class IMPrimarisApothecary extends Eintrag {
         			  getPts("Krak grenade (SM)") + 
         			  getPts("Absolver bolt pistol") + 
         			  getPts("Reductor pistol");
-        
-        seperator();
+        power = 4;
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
 
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        power = 4;
     }
 }

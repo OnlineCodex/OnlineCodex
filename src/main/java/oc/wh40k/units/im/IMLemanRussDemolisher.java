@@ -7,23 +7,16 @@ import oc.RuestkammerVater;
 
 public class IMLemanRussDemolisher extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsEinzelUpgrade pask;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-
-    boolean paskSelected = false;
+    final OptionsUpgradeGruppe o1;
+    final OptionsUpgradeGruppe o2;
+    final OptionsUpgradeGruppe o3;
+    final OptionsEinzelUpgrade oe1;
+    final OptionsEinzelUpgrade oe2;
 
     public IMLemanRussDemolisher() {
         grundkosten = getPts("Leman RussBattle Tanks");
-    }
 
-    @Override
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/IGLemanRuss.jpg"));
-
 
         ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));

@@ -11,10 +11,8 @@ public class CHSkullmaster extends Eintrag {
         name = "Skullmaster";
         grundkosten = getPts("Skullmaster");
         power = 5;
-
-        seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
         
         seperator();
         

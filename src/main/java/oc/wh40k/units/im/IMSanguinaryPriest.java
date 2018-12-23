@@ -6,20 +6,19 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMSanguinaryPriest extends Eintrag {
-    OptionsEinzelUpgrade jump;
+
+    private final OptionsEinzelUpgrade jump;
 
     public IMSanguinaryPriest() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, SANGUINARY_PRIEST);
         name = "Sanguinary Priest";
         grundkosten = getPts("Sanguinary Priest") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
-        seperator();
-
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Sanguinary Priest with Jump Pack") - getPts("Sanguinary Priest")));
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 
@@ -34,7 +33,7 @@ public class IMSanguinaryPriest extends Eintrag {
         
         if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
         	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
-        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
+        	weapons.getKammer().refreshen();
         }
     }
 }

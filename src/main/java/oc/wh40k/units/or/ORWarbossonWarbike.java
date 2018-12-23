@@ -6,11 +6,7 @@ import oc.RuestkammerStarter;
 
 public class ORWarbossonWarbike extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
-
-    boolean megaBool = false;
-    boolean gazzBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORWarbossonWarbike() {
         name = "Warboss on Warbike";
@@ -19,18 +15,16 @@ public class ORWarbossonWarbike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
 
-        add(attacksquig = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Big choppa");
-        waffen.initKammer(true, true, false, false, true, false, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt,
+                new ORWaffenUndGeschenke("no weapon", "Big choppa", true, true, false, false, true, false, true, false));
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);

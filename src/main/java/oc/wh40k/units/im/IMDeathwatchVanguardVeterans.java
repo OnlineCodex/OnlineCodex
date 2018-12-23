@@ -4,14 +4,9 @@ import oc.*;
 
 import java.util.Vector;
 
-public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
+public class IMDeathwatchVanguardVeterans extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2x;
-    OptionsZaehlerGruppe o2, o3;
-    Vector<RuestkammerStarter> rk;
+    private final Vector<RuestkammerStarter> rk;
 
     public IMDeathwatchVanguardVeterans() {
         name = "Vanguard Veterans\n";
@@ -24,12 +19,10 @@ public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
 
         seperator();
 
-        rk = new Vector<RuestkammerStarter>();
+        rk = new Vector<>();
 
         for (int i = 0; i < 10; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Vanguard Veteran"));
-            ((DeathWatchKammer) rk.get(i).getKammer()).setType("Vanguard Veteran");
-            rk.lastElement().initKammer();
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, new DeathWatchKammer("Vanguard Veteran"), "Vanguard Veteran"));
             rk.lastElement().setGrundkosten(getPts("Vanguard Veteran Squad with Jump Packs"));
             add(rk.lastElement());
         }
@@ -44,15 +37,4 @@ public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

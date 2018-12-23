@@ -5,14 +5,10 @@ import oc.*;
 
 public class CHTzaangors extends Eintrag {
 
-    AnzahlPanel kultisten;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe o1;
-    int modelle = 0;
-    boolean isChampion = false;
+    private final AnzahlPanel kultisten;
+    private final OptionsZaehlerGruppe o1;
 
     public CHTzaangors() {
-        //name = "Chaoskultisten\n";
         grundkosten = 0;
 
         kultisten = new AnzahlPanel(ID, randAbstand, cnt, "Tzaangors", 10, 30, getPts("Tzaangors"));
@@ -24,8 +20,9 @@ public class CHTzaangors extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Tzaangor blades", "Tzaangor blades", getPts("Tzaangor blades")));
         ogE.addElement(new OptionsGruppeEintrag("Autopistol/Chainsword", "Autopistol & Chainsword", getPts("Autopistol") + getPts("Chainsword")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 10));
+        o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 10);
         o1.setAnzahl(0, kultisten.getModelle());
+        add(o1);
 
         seperator();
 
@@ -34,21 +31,17 @@ public class CHTzaangors extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Twistbray");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Twistbray";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Twistbray");
         rkBoss.setGrundkosten(getPts("Twistbray"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
-
     }
 
     @Override
     public void refreshen() {
-
         o1.setMaxAnzahl(kultisten.getModelle());
 
         power = 4 +

@@ -4,37 +4,33 @@ import oc.*;
 
 public class ORBigMekinMegaArmour extends Eintrag {
 
-    OptionsEinzelUpgrade grotoiler;
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe tech = null;
+    private final RuestkammerStarter waffen;
 
     public ORBigMekinMegaArmour() {
-        kategorie = 1;
         name = "Big Mek in Mega Armour";
         grundkosten = getPts("Big Mek in Mega Armour");
         power = 6;
+        kategorie = 1;
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
-        add(grotoiler = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot oiler", getPts("Grot oiler")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot oiler", getPts("Grot oiler")));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Tellyport blasta", getPts("Tellyport blasta")));
         ogE.addElement(new OptionsGruppeEintrag("Kustom Force field", getPts("Kustom Force field")));
-        add(tech = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom mega-blasta"); //TODO: Durch Killasäga oder Liste der Schießeisän
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawFK(true);
-        waffen.initKammer(false, true, false, false, false, false, true, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("Kustom mega-blasta", "Power klaw", false, true, false, false, false, false, true, false);
+        kammer.setKillsawNK(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer);
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -49,5 +45,4 @@ public class ORBigMekinMegaArmour extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
 }

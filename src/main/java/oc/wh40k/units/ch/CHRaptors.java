@@ -3,15 +3,16 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHRaptors extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe icon;
-    OptionsUpgradeGruppe mark;
+    private final AnzahlPanel squad;
+    private final RuestkammerStarter rkBoss;
+    private final OptionsUpgradeGruppe icon;
+    private final OptionsUpgradeGruppe mark;
 
     public CHRaptors() {
-        //name = "Chaos Space Marines Raptoren\n";
         grundkosten = 0;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Raptors", 5, 15, getPts("Raptors"), "Raptors");
@@ -46,16 +47,11 @@ public class CHRaptors extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Raptor Champion", 1);
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultCloceCombat("Chainsword");
-        ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
-        rkBoss.initKammer(true, true, true, true);
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Raptor Champion", "Bolt pistol", "Chainsword", true, true, true, true, CHAMPION), "Raptor Champion", 1);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setGrundkosten(getPts("Raptor Champion"));
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
-        seperator();
+        add(rkBoss);
 
         complete();
     }

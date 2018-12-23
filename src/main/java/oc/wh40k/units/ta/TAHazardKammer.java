@@ -5,21 +5,16 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
-//[IA3 2nd Ed]
-
 public class TAHazardKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsUpgradeGruppe o2;
-    OptionsZaehlerGruppe o3;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1def;
+    private final OptionsUpgradeGruppe o2;
+    private final OptionsZaehlerGruppe o3;
 
     public TAHazardKammer() {
         grundkosten = 75;
-    }
 
-    @Override
-    public void initButtons(boolean... defaults) {
         ogE.addElement(new OptionsGruppeEintrag("TL Burst cannon", "Twin-linked burst cannon", 0));
         add(o1def = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
         ogE.addElement(new OptionsGruppeEintrag("Phased Ion Gun", 10));
@@ -57,5 +52,4 @@ public class TAHazardKammer extends RuestkammerVater {
 
         o3.setMaxAnzahl(o2.isSelected("Drone controller") ? 2 : 0);
     }
-
 }

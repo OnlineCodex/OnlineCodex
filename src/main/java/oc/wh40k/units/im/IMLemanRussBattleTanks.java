@@ -5,9 +5,9 @@ import oc.RuestkammerStarter;
 
 public class IMLemanRussBattleTanks extends Eintrag {
 
-    RuestkammerStarter t1;
-    RuestkammerStarter t2;
-    RuestkammerStarter t3;
+    private final RuestkammerStarter t1;
+    private final RuestkammerStarter t2;
+    private final RuestkammerStarter t3;
 
     public IMLemanRussBattleTanks() {
         name = "Leman Russ Battle Tanks";
@@ -18,23 +18,20 @@ public class IMLemanRussBattleTanks extends Eintrag {
 
         seperator();
 
-        t1 = new RuestkammerStarter(ID, randAbstand, cnt, IMLemanRussBattleTank.class, "", 1);
-        t1.initKammer();
+        t1 = new RuestkammerStarter(ID, randAbstand, cnt, new IMLemanRussBattleTank(), "", 1);
         t1.setButtonText("Tank 1");
-        add(t1);
         t1.setAbwaehlbar(false);
+        add(t1);
 
         seperator();
 
-        t2 = new RuestkammerStarter(ID, randAbstand, cnt, IMLemanRussBattleTank.class, "", 1);
-        t2.initKammer();
+        t2 = new RuestkammerStarter(ID, randAbstand, cnt, new IMLemanRussBattleTank(), "", 1);
         t2.setButtonText("Tank 2");
         add(t2);
 
         seperator();
 
-        t3 = new RuestkammerStarter(ID, randAbstand, cnt, IMLemanRussBattleTank.class, "", 1);
-        t3.initKammer();
+        t3 = new RuestkammerStarter(ID, randAbstand, cnt, new IMLemanRussBattleTank(), "", 1);
         t3.setButtonText("Tank 3");
         add(t3);
 

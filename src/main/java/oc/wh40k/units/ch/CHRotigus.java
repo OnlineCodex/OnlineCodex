@@ -2,9 +2,11 @@ package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
 
+import com.google.common.collect.ImmutableSet;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
+import oc.wh40k.units.PsychicPowers.ChaosGod;
 
 public class CHRotigus extends Eintrag {
 
@@ -19,14 +21,11 @@ public class CHRotigus extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableNurgle();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, ImmutableSet.of(ChaosGod.NURGLE)), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
         addWarlordTraits("Nurgle: Pestilent Miasma", NURGLE);

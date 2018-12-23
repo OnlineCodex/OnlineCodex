@@ -2,17 +2,20 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHChosen extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe pistol, claws, boltgun, special;
-    OptionsUpgradeGruppe heavy;
-    OptionsUpgradeGruppe icon;
-    RuestkammerStarter champion;
-    OptionsUpgradeGruppe mark;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe pistol;
+    private final OptionsZaehlerGruppe claws;
+    private final OptionsZaehlerGruppe boltgun;
+    private final OptionsZaehlerGruppe special;
+    private final OptionsUpgradeGruppe heavy;
+    private final OptionsUpgradeGruppe icon;
+    private final OptionsUpgradeGruppe mark;
 
     public CHChosen() {
-        //name = "Auserkorene Chaos Space Marines\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -86,14 +89,10 @@ public class CHChosen extends Eintrag {
 
         seperator();
 
-        champion = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Chosen Champion", 1);
-        ((CHWaffenkammer) champion.getKammer()).setChampion(true);
-        ((CHWaffenkammer) champion.getKammer()).setDefaultRanged("Boltgun");
-        ((CHWaffenkammer) champion.getKammer()).setDefaultCloceCombat("Bolt pistol");
-        champion.initKammer(true, true, true, true);
+        RuestkammerStarter champion = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Chosen Champion", "Boltgun", "Bolt pistol", true, true, true, true, CHAMPION), "Chosen Champion", 1);
         champion.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(champion);
         champion.setAbwaehlbar(false);
+        add(champion);
 
         complete();
     }

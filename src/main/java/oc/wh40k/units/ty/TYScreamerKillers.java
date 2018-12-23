@@ -6,8 +6,8 @@ import oc.RuestkammerStarter;
 
 public class TYScreamerKillers extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter ob1, ob2, ob3;
+    private final RuestkammerStarter ob2;
+    private final RuestkammerStarter ob3;
 
     public TYScreamerKillers() {
         name = "Screamer-Killers";
@@ -15,26 +15,20 @@ public class TYScreamerKillers extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYCarnifex.jpg"));
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
-        ((TYRuestkammer) ob1.getKammer()).setType("Screamer-Killer");
-        ob1.initKammer();
-        add(ob1);
+        RuestkammerStarter ob1 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Screamer-Killer"), "Screamer-Killer");
         ob1.setGrundkosten(getPts("Screamer-Killers"));
         ob1.setAbwaehlbar(false);
+        add(ob1);
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
-        ((TYRuestkammer) ob2.getKammer()).setType("Screamer-Killer");
-        ob2.initKammer();
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Screamer-Killer"), "Screamer-Killer");
         ob2.setGrundkosten(getPts("Screamer-Killers"));
         add(ob2);
 
         seperator();
 
-        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Screamer-Killer");
-        ((TYRuestkammer) ob3.getKammer()).setType("Screamer-Killer");
-        ob3.initKammer();
+        ob3 = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Screamer-Killer"), "Screamer-Killer");
         ob3.setGrundkosten(getPts("Screamer-Killers"));
         add(ob3);
 
@@ -49,5 +43,4 @@ public class TYScreamerKillers extends Eintrag {
         if (ob3.isSelected())
             power += 6;
     }
-
 }

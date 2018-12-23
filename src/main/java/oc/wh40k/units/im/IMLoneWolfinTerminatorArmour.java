@@ -4,14 +4,7 @@ import oc.*;
 
 public class IMLoneWolfinTerminatorArmour extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMLoneWolfinTerminatorArmour() {
         name = "Lone Wolf in Terminator Armour";
@@ -20,12 +13,10 @@ public class IMLoneWolfinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Lone Wolf in Terminator Armour");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         
@@ -41,5 +32,4 @@ public class IMLoneWolfinTerminatorArmour extends Eintrag {
                 (int) waffenUndArtefakte.getPanel().getLocation().getY() + waffenUndArtefakte.getPanel().getSize().height + 5
         );
     }
-
 }

@@ -2,6 +2,9 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.NURGLE;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+
 public class CHPlagueMarinesCSM extends Eintrag {
 
     AnzahlPanel marines;
@@ -47,7 +50,7 @@ public class CHPlagueMarinesCSM extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Mace of contagion", getPts("Mace of contagion")));
+        ogE.addElement(new OptionsGruppeEintrag("Mace of CONTAGION", getPts("Mace of CONTAGION")));
         ogE.addElement(new OptionsGruppeEintrag("Bubotic Axe", getPts("Bubotic Axe")));
         add(marinesMace = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
@@ -63,16 +66,11 @@ public class CHPlagueMarinesCSM extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Plague Champion");
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setNurgle(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Boltpistol and Boltgun");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Plague knife");
-        Boss.initKammer(true, true, true, false);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Boltpistol and Boltgun", "Plague knife", true, true, true, false, SORCERER, NURGLE), "Plague Champion");
         Boss.setGrundkosten(getPts("Plague Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
     }

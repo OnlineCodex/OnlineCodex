@@ -6,16 +6,10 @@ import oc.RuestkammerVater;
 
 public class IMJusticar extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o3;
 
     public IMJusticar() {
-        grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
         ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
         ogE.addElement(new OptionsGruppeEintrag("Nemesis force halberd", getPts("Nemesis force halberd")));
         ogE.addElement(new OptionsGruppeEintrag("Nemesis daemon hammer", getPts("Nemesis daemon hammer")));
@@ -28,17 +22,12 @@ public class IMJusticar extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
-        seperator();
-
         sizeSetzen();
     }
 
     @Override
     public void refreshen() {
         o1.alwaysSelected();
-        //o1.setAktiv(!o2.isSelected());
-
         o3.alwaysSelected();
     }
-
 }

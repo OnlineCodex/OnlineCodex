@@ -8,52 +8,32 @@ import oc.*;
 
 public class TYRuestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    OptionsEinzelUpgrade oe1, oe2;
-    String type = "";
-    String default1 = "";
-    String default2 = "";
-    
-    boolean character = false;
-    boolean monster = false;
-    
-    Set<String> CHARACTERS = ImmutableSet.of("Broodlord", "Hive Tyrant", "Tyranid Prime", "Tervigon", "Neurothrope", "Trygon Prime");
-    Set<String> MONSTER = ImmutableSet.of("Hive Tyrant", "Tervigon", "Trygon Prime");
+    private static final Set<String> CHARACTERS = ImmutableSet.of("Broodlord", "Hive Tyrant", "Tyranid Prime", "Tervigon", "Neurothrope", "Trygon Prime");
+    private static final Set<String> MONSTER = ImmutableSet.of("Hive Tyrant", "Tervigon", "Trygon Prime");
+
+    private final String type;
+
+    private OptionsUpgradeGruppe o1;
+    private OptionsUpgradeGruppe o2;
+    private OptionsUpgradeGruppe o3;
+
+    private boolean character;
+
 	private OptionsEinzelUpgrade chamelonicMutation;
 	private OptionsEinzelUpgrade hyperadaptiveBiology;
 	private OptionsEinzelUpgrade infrasonicRoar;
 	private OptionsEinzelUpgrade theReaperofObliterax;
 	private OptionsEinzelUpgrade theMawClawsofThyrax;
 
-    public TYRuestkammer() {
-        grundkosten = 0;
-    }
-
-    public void setType(String s) {
-        type = s;
-    }
-
-    public void setDefault1(String s) {
-        default1 = s;
-    }
-
-    public void setDefault2(String s) {
-        default2 = s;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-
-    	if(MONSTER.contains(type)) {
-    		monster = true;
-    	}
+    public TYRuestkammer(String type) {
+        this.type = type;
     	
     	if(CHARACTERS.contains(type)) {
        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Ymgarl Factor", 0).setRelic(true));
        	 add(chamelonicMutation = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chameleonic Mutation", 0).setRelic(true));
        	 add(hyperadaptiveBiology = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hyper-adaptive Biology", 0).setRelic(true));
        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Norn Crown", 0).setRelic(true));
-       	 if(monster) {
+       	 if(MONSTER.contains(type)) {
        		 add(infrasonicRoar = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infrasonic Roar", 0).setRelic(true));
        	 }
        	 add(theReaperofObliterax = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Reaper of Obliterax", 0).setRelic(true));
@@ -62,7 +42,9 @@ public class TYRuestkammer extends RuestkammerVater {
        	 seperator();
        }
 
-        if (type == "Hive Tyrant" || type == "Carnifex" || type == "Screamer-Killer") {
+        if ("Hive Tyrant".equals(type) ||
+                "Carnifex".equals(type) ||
+                "Screamer-Killer".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("2 Pairs of m. scything talons", getPts("Monstrous scything talons (two pairs)(" + type + ")")));
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o3.setSelected(0, true);
@@ -70,13 +52,15 @@ public class TYRuestkammer extends RuestkammerVater {
 
         seperator();
 
-        if (type == "Hive Tyrant" || type == "Carnifex" || type == "Thornback") {
+        if ("Hive Tyrant".equals(type) ||
+                "Carnifex".equals(type) ||
+                "Thornback".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Pair of m. scything talons", "Pair of monstrous scything talons", getPts("Monstrous scything talons (" + type + ")")));
             if(character) {
             	ogE.addElement(new OptionsGruppeEintrag("Scythes of Tyran", getPts("Monstrous scything talons (" + type + ")")).setRelic(true));
             }
         }
-        if (type == "Hive Tyrant") {
+        if ("Hive Tyrant".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Monstrous rending claws", getPts("Monstrous rending claws"))); //Monstrous Bioweapons
             ogE.addElement(new OptionsGruppeEintrag("Monstrous boneswords", getPts("Monstrous boneswords"))); //Monstrous Bioweapons
             ogE.addElement(new OptionsGruppeEintrag("Lash whip and m. b.", "Lash whip and monstrous bonesword", getPts("Lash whip and monstrous bonesword"))); //Monstrous Bioweapons
@@ -84,7 +68,8 @@ public class TYRuestkammer extends RuestkammerVater {
             	ogE.addElement(new OptionsGruppeEintrag("Slayer Sabres", getPts("Monstrous boneswords")).setRelic(true));
             }
         }
-        if (type == "Hive Tyrant" || type == "Carnifex") {
+        if (type.equals("Hive Tyrant") ||
+                "Carnifex".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Two deathsp. with maggots", "Two deathspitters with slimer maggots", getPts("Deathspitter with slimer maggots") * 2)); //Monstrous Bio-Cannons
             ogE.addElement(new OptionsGruppeEintrag("Two devourers with worms", "Two devourers with brainleech worms", getPts("Devourer with brainleech worms") * 2)); //Monstrous Bio-Cannons
             ogE.addElement(new OptionsGruppeEintrag("Stranglethorn cannon", getPts("Stranglethorn cannon"))); //Monstrous Bio-Cannons
@@ -96,7 +81,7 @@ public class TYRuestkammer extends RuestkammerVater {
             }
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
-        if (type == "Thornback") {
+        if ("Thornback".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Stranglethorn cannon", getPts("Stranglethorn cannon"))); //Monstrous Bio-Cannons
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
             o1.setSelected(0, true);
@@ -104,13 +89,14 @@ public class TYRuestkammer extends RuestkammerVater {
 
         seperator();
 
-        if (type == "Hive Tyrant" || type == "Carnifex") {
+        if (type.equals("Hive Tyrant") ||
+                "Carnifex".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Pair of m. scything talons", "Pair of monstrous scything talons", getPts("Monstrous scything talons (" + type + ")")));
             if(character) {
             	ogE.addElement(new OptionsGruppeEintrag("Scythes of Tyran", getPts("Monstrous scything talons (" + type + ")")).setRelic(true));
             }
         }
-        if (type == "Hive Tyrant") {
+        if ("Hive Tyrant".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("M. rending claws", "Monstrous rending claws", getPts("Monstrous rending claws"))); //Monstrous Bioweapons
             ogE.addElement(new OptionsGruppeEintrag("Monstrous boneswords", getPts("Monstrous boneswords"))); //Monstrous Bioweapons
             ogE.addElement(new OptionsGruppeEintrag("Lash whip and m. bonesw.", "Lash whip and monstrous bonesword", getPts("Lash whip and monstrous bonesword"))); //Monstrous Bioweapons
@@ -118,30 +104,32 @@ public class TYRuestkammer extends RuestkammerVater {
             	ogE.addElement(new OptionsGruppeEintrag("Slayer Sabres", getPts("Monstrous boneswords")).setRelic(true));
             }
         }
-        if (type == "Hive Tyrant" || type == "Carnifex" || type == "Thornback") {
+        if ("Hive Tyrant".equals(type) ||
+                "Carnifex".equals(type) ||
+                "Thornback".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Two deathsp. with maggots", "Two deathspitters with slimer maggots", getPts("Deathspitter with slimer maggots") * 2)); //Monstrous Bio-Cannons
             ogE.addElement(new OptionsGruppeEintrag("Two devourers with worms", "Two devourers with brainleech worms", getPts("Devourer with brainleech worms") * 2)); //Monstrous Bio-Cannons
-            if (type == "Carnifex") {
+            if ("Carnifex".equals(type)) {
                 ogE.addElement(new OptionsGruppeEintrag("Monstrous crushing claws", getPts("Monstrous crushing claws")));
             }
             if(character) {
             	ogE.addElement(new OptionsGruppeEintrag("Slimer Maggot Infestation", getPts("Deathspitter with slimer maggots") * 2).setRelic(true));
             }
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            if (type == "Thornback") o2.setSelected(1, true);
+            if ("Thornback".equals(type)) o2.setSelected(1, true);
         }
 
         seperator();
 
-        if (type == "Carnifex") {
+        if ("Carnifex".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Thresher scythe", getPts("Thresher scythe")));
             ogE.addElement(new OptionsGruppeEintrag("Bone mace", getPts("Bone mace")));
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
 
@@ -150,42 +138,42 @@ public class TYRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Acid maw", getPts("Monstrous acid maw")));
             ogE.addElement(new OptionsGruppeEintrag("Tusks", getPts("Tusks")));
             ogE.addElement(new OptionsGruppeEintrag("Chitin thorns", getPts("Chitin thorns")));
-            add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Spine banks", getPts("Spine banks")));
             ogE.addElement(new OptionsGruppeEintrag("Spore cysts", getPts("Spore cysts")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
-        if (type == "Thornback") {
+        if ("Thornback".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Thresher scythe", getPts("Thresher scythe")));
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
 
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Enhanced Senses", getPts("Enhanced Senses")));
 
             ogE.addElement(new OptionsGruppeEintrag("Spine banks", getPts("Spine banks")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
-        if (type == "Screamer-Killer") {
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+        if ("Screamer-Killer".equals(type)) {
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
             ogE.addElement(new OptionsGruppeEintrag("Spore cysts", getPts("Spore cysts")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
-        if (type == "Tyranid Prime") {
+        if ("Tyranid Prime".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Devourer", getPts("Devourer")));
             ogE.addElement(new OptionsGruppeEintrag("Scything talons", getPts("Scything talons"))); //Basic Bio-Weapons
             ogE.addElement(new OptionsGruppeEintrag("Spinefists", getPts("Spinefists (Ravener)"))); //Basic Bio-Weapons
@@ -201,7 +189,7 @@ public class TYRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
-        if (type == "Stonecrusher Carnifex") {
+        if ("Stonecrusher Carnifex".equals(type)) {
             ogE.addElement(new OptionsGruppeEintrag("Wrecker claw", getPts("Wrecker claws (pair)")));
             ogE.addElement(new OptionsGruppeEintrag("Bio-flail", getPts("Bio-flail") + getPts("Wrecker claws (single)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -216,7 +204,7 @@ public class TYRuestkammer extends RuestkammerVater {
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bio plasma", getPts("Bio plasma")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bio plasma", getPts("Bio plasma")));
 
         }
         sizeSetzen();
@@ -226,7 +214,8 @@ public class TYRuestkammer extends RuestkammerVater {
     @Override
     public void refreshen() {
 
-        if (type == "Hive Tyrant" || type == "Carnifex") {
+        if ("Hive Tyrant".equals(type) ||
+                "Carnifex".equals(type)) {
             int cnt = (o3.isSelected() ? 2 : 0) + (o1.isSelected() ? 1 : 0) + (o2.isSelected() ? 1 : 0);
             boolean legal = cnt == 2;
             o1.setAktiv("Pair of monstrous scything talons", !o2.isSelected("Pair of monstrous scything talons"));
@@ -241,7 +230,7 @@ public class TYRuestkammer extends RuestkammerVater {
         if (character) {
         	chamelonicMutation.setAktiv((chosenRelic == null || chamelonicMutation.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Kraken"));
         	hyperadaptiveBiology.setAktiv((chosenRelic == null || hyperadaptiveBiology.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Gorgon"));
-        	if(monster) {
+        	if(MONSTER.contains(type)) {
         		infrasonicRoar.setAktiv((chosenRelic == null || infrasonicRoar.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Jormungandr"));
         	}
         	
@@ -282,12 +271,12 @@ public class TYRuestkammer extends RuestkammerVater {
             }
         }
 
-        if (type == "Tyranid Prime") {
+        if ("Tyranid Prime".equals(type)) {
             o1.alwaysSelected();
             o2.alwaysSelected();
         }
 
-        if (type == "Stonecrusher Carnifex") {
+        if ("Stonecrusher Carnifex".equals(type)) {
             o1.alwaysSelected();
             o2.alwaysSelected();
         }

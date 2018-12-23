@@ -6,15 +6,7 @@ import oc.RuestkammerVater;
 
 public class ORFahrzeugruestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe fahrzeugausruestung;
-
     public ORFahrzeugruestkammer() {
-        grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-
         ogE.addElement(new OptionsGruppeEintrag("Rote Farbä", 5));
         ogE.addElement(new OptionsGruppeEintrag("Vastärktä Rammä", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stikkbombschlueda", 5));
@@ -22,13 +14,8 @@ public class ORFahrzeugruestkammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Grothälfaz", 10));
         ogE.addElement(new OptionsGruppeEintrag("Abrizzbirnä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Entaplankä", 15));
-        add(fahrzeugausruestung = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
 
         sizeSetzen();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

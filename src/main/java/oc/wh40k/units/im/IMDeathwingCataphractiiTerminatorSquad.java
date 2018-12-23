@@ -4,14 +4,16 @@ import oc.*;
 
 public class IMDeathwingCataphractiiTerminatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1y;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o2x;
+    private final OptionsZaehlerGruppe o3;
 
     public IMDeathwingCataphractiiTerminatorSquad() {
-        name = "Cataphractii Terminator Squad\n";
+        name = "Cataphractii Terminator Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -41,13 +43,11 @@ public class IMDeathwingCataphractiiTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Cataphractii Sergeant");
-        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Cataphractii Sergeant");
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Cataphractii Sergeant"), "Cataphractii Sergeant");
         rkBoss.setGrundkosten(getPts("Cataphractii Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

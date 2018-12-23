@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_TZEENTCH;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -10,9 +11,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHKairosFateweaver extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
-    RuestkammerStarter psychicPowers;
+    private final OptionsEinzelUpgrade waffe2;
 
     public CHKairosFateweaver() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE, KAIROS_FATEWEAVER);
@@ -26,14 +25,11 @@ public class CHKairosFateweaver extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(6);
-        ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(6, DISCIPLINE_OF_TZEENTCH), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
         addWarlordTraits("Tzeentch: Tyrant of the Warp", TZEENTCH);

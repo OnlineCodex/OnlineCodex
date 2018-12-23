@@ -6,10 +6,13 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.im.ImperiumUtils.getPsychicPowerGroug;
+
 public class IMDeathwatchLibrarian extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+
+    private final OptionsEinzelUpgrade jump;
+    private final RuestkammerStarter waffenUndReliquien;
+    private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarian() {
         name = "Librarian";
@@ -21,28 +24,18 @@ public class IMDeathwatchLibrarian extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Librarian");
-        waffenUndReliquien.initKammer();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new DeathWatchKammer("Librarian"), "");
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        add(waffenUndReliquien);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        if (!buildaVater.getFormationType().equals("Dark Angels") && !buildaVater.getFormationType().equals("Blood Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableLibrarius();
-        if (buildaVater.getFormationType().equals("Blood Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableSanguinary();
-        if (buildaVater.getFormationType().equals("Dark Angels"))
-            ((PsychicPowers) psychicPowers.getKammer()).enableInterromancy();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);

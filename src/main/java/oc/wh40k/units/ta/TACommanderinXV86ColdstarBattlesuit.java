@@ -19,10 +19,9 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
         seperator();
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander");
+        ob = new RuestkammerStarter(ID, randAbstand, cnt, new TAKampfanzugKammer(true, false, false, false), "Commander");
         ob.setGrundkosten(0);
         ((TAKampfanzugKammer) ob.getKammer()).setColdstar(true);
-        ob.initKammer(true, false, false, false, false, false, false);
         ob.setButtonText("Rüstkammer");
         add(ob);
         ob.setAbwaehlbar(false);
@@ -60,10 +59,4 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
             }
         }
     }
-
-    //@OVERRIDE
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

@@ -8,10 +8,8 @@ import oc.RuestkammerStarter;
 
 public class TYTrygonPrime extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-	private RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe o1;
+    private final RuestkammerStarter waffen;
 
     public TYTrygonPrime() {
         name = "Trygon Prime";
@@ -29,17 +27,15 @@ public class TYTrygonPrime extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon Prime)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon Prime)")));
         
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
-        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
-        waffen.initKammer();
-        add(waffen);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Broodlord"), "");
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
         

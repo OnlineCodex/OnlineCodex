@@ -2,21 +2,20 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHNoiseMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe bolter;
-
-    OptionsZaehlerGruppe marinesfk;
-    OptionsZaehlerGruppe pp;
-    RuestkammerStarter Boss;
+    private final AnzahlPanel marines;
+    private final OptionsZaehlerGruppe bolter;
+    private final OptionsZaehlerGruppe marinesfk;
 
     public CHNoiseMarines() {
+        name = "Noise Marines";
+        grundkosten = 0;
 
         kategorie = 1;
 
-        name = "Noise Marines";
-        grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Noise Marines", 5, 20, getPts("Noise Marines")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
@@ -38,16 +37,11 @@ public class CHNoiseMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Noise Champion");
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Boltgun");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Bolt pistol");
-        ((CHWaffenkammer) Boss.getKammer()).setNoiseMarine(true);
-        Boss.initKammer(true, true, true, true);
-        Boss.setGrundkosten(getPts("Noise Champion"));
-        Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(Boss);
-        Boss.setAbwaehlbar(false);
+        RuestkammerStarter boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Noise Champion", "Boltgun", "Bolt pistol", true, true, true, true, CHAMPION), "Noise Champion");
+        boss.setGrundkosten(getPts("Noise Champion"));
+        boss.setUeberschriftTrotzNullKostenAusgeben(true);
+        boss.setAbwaehlbar(false);
+        add(boss);
 
         complete();
     }

@@ -7,11 +7,9 @@ import oc.RuestkammerStarter;
 
 public class CHDaemonettes extends Eintrag {
 
-    AnzahlPanel daemonettes;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel daemonettes;
 
     public CHDaemonettes() {
-
         name = "Daemonettes";
         grundkosten = 0;
         power = 5;
@@ -25,21 +23,15 @@ public class CHDaemonettes extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Alluress");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Alluress";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Alluress");
         rkBoss.setGrundkosten(getPts("Alluress"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
 
     }
-
-    public void deleteYourself() {
-    }
-
 
     @Override
     public void refreshen() {

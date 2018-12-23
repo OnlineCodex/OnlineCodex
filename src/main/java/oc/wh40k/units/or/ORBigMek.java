@@ -24,13 +24,13 @@ public class ORBigMek extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(true, false, true, true, true, true, true, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("", "", true, false, true, true, true, true, true, false);
+        kammer.setKillsawNK(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer, "");
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);

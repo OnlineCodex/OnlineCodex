@@ -4,15 +4,15 @@ import oc.*;
 
 public class IMCrusaderSquad extends Eintrag {
 
-    AnzahlPanel Initiates;
-    AnzahlPanel Neophytes;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o3x;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o4x;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel Initiates;
+    private final AnzahlPanel Neophytes;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
+    private final OptionsZaehlerGruppe o3;
+    private final OptionsZaehlerGruppe o3x;
+    private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe o4x;
+    private final RuestkammerStarter rkBoss;
 
     public IMCrusaderSquad() {
         name = "Crusader Squad\n";
@@ -59,20 +59,17 @@ public class IMCrusaderSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sword Brother");
-        ((IMSergeant) rkBoss.getKammer()).type = "Crusader Squad";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Crusader Squad"), "Sword Brother");
         rkBoss.setGrundkosten(getPts("Sword Brother"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
 
     @Override
     public void refreshen() {
-
         o3.setMaxAnzahl(Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - (o1.isSelected() ? 1 : 0) - (o2.isSelected() ? 1 : 0));
         o2.setMaxAnzahl((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o1.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
         o1.setMaxAnzahl((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o2.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
@@ -96,5 +93,4 @@ public class IMCrusaderSquad extends Eintrag {
             power += 3;
         }
     }
-
 }

@@ -6,27 +6,26 @@ import oc.RuestkammerStarter;
 
 import java.util.Vector;
 
-public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
+public class IMDeathwatchIntercessors extends Eintrag {
 
-    AnzahlPanel intercessors, inceptor, reiver, hellblaster, sergeant, aggressor;
+    private AnzahlPanel intercessors, inceptor, reiver, hellblaster, sergeant, aggressor;
 
-    Vector<RuestkammerStarter> rkIntercessor;
-    Vector<RuestkammerStarter> rkSergeant;
-    Vector<RuestkammerStarter> rkHellblaster;
-    Vector<RuestkammerStarter> rkInceptor;
-    Vector<RuestkammerStarter> rkReiver;
-    Vector<RuestkammerStarter> rkAggressor;
+    private final Vector<RuestkammerStarter> rkIntercessor;
+    private final Vector<RuestkammerStarter> rkSergeant;
+    private final Vector<RuestkammerStarter> rkHellblaster;
+    private final Vector<RuestkammerStarter> rkInceptor;
+    private final Vector<RuestkammerStarter> rkReiver;
+    private final Vector<RuestkammerStarter> rkAggressor;
 
-    int numIntercessor = 0;
-    int numSergeant = 0;
-    int numHellblaster = 0;
-    int numInceptor = 0;
-    int numReiver = 0;
-    int numAggressor = 0;
+    private int numIntercessor = 0;
+    private int numSergeant = 0;
+    private int numHellblaster = 0;
+    private int numInceptor = 0;
+    private int numReiver = 0;
+    private int numAggressor = 0;
 
     public IMDeathwatchIntercessors() {
-        name = "Veterans\n";
-        grundkosten = 0;
+        name = "Veterans";
         überschriftSetzen = true;
 
         rkIntercessor = new Vector<RuestkammerStarter>();
@@ -98,12 +97,10 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     }
                 }
 
-                rkIntercessor.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Intercessor"));
-                ((IMKillteamKammer) rkIntercessor.lastElement().getKammer()).setType("Intercessor");
-                rkIntercessor.lastElement().initKammer();
+                rkIntercessor.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Intercessor"), "Intercessor"));
                 rkIntercessor.lastElement().setGrundkosten(getPts("Intercessor Squad"));
-                add(rkIntercessor.lastElement());
                 rkIntercessor.lastElement().setAbwaehlbar(false);
+                add(rkIntercessor.lastElement());
 
                 rkIntercessor.lastElement().getPanel().setLocation(
                         (int) rkIntercessor.lastElement().getPanel().getLocation().getX(),
@@ -131,9 +128,7 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     height = rkIntercessor.lastElement().getPanel().getSize().height + 5;
                 }
 
-                rkSergeant.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Intercessor Sergeant"));
-                ((IMKillteamKammer) rkSergeant.lastElement().getKammer()).setType("Intercessor Sergeant");
-                rkSergeant.lastElement().initKammer();
+                rkSergeant.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Intercessor Sergeant"), "Intercessor Sergeant"));
                 rkSergeant.lastElement().setGrundkosten(getPts("Intercessor Squad"));
                 add(rkSergeant.lastElement());
                 rkSergeant.lastElement().setAbwaehlbar(false);
@@ -174,12 +169,10 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     height = rkHellblaster.lastElement().getPanel().getSize().height + 5;
                 }
 
-                rkHellblaster.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Hellblaster"));
-                ((IMKillteamKammer) rkHellblaster.lastElement().getKammer()).setType("Hellblaster");
-                rkHellblaster.lastElement().initKammer();
+                rkHellblaster.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Hellblaster"), "Hellblaster"));
                 rkHellblaster.lastElement().setGrundkosten(getPts("Hellblaster Squad"));
-                add(rkHellblaster.lastElement());
                 rkHellblaster.lastElement().setAbwaehlbar(false);
+                add(rkHellblaster.lastElement());
 
                 rkHellblaster.lastElement().getPanel().setLocation(
                         (int) rkHellblaster.lastElement().getPanel().getLocation().getX(),
@@ -222,12 +215,10 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     height = rkInceptor.lastElement().getPanel().getSize().height + 5;
                 }
 
-                rkInceptor.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Inceptor"));
-                ((IMKillteamKammer) rkInceptor.lastElement().getKammer()).setType("Inceptor");
-                rkInceptor.lastElement().initKammer();
+                rkInceptor.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Inceptor"), "Inceptor"));
                 rkInceptor.lastElement().setGrundkosten(getPts("Inceptor Squad"));
-                add(rkInceptor.lastElement());
                 rkInceptor.lastElement().setAbwaehlbar(false);
+                add(rkInceptor.lastElement());
 
                 rkInceptor.lastElement().getPanel().setLocation(
                         (int) rkInceptor.lastElement().getPanel().getLocation().getX(),
@@ -275,12 +266,10 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     height = rkReiver.lastElement().getPanel().getSize().height + 5;
                 }
 
-                rkReiver.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Reiver"));
-                ((IMKillteamKammer) rkReiver.lastElement().getKammer()).setType("Reiver");
-                rkReiver.lastElement().initKammer();
+                rkReiver.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Reiver"), "Reiver"));
                 rkReiver.lastElement().setGrundkosten(getPts("Reiver Squad"));
-                add(rkReiver.lastElement());
                 rkReiver.lastElement().setAbwaehlbar(false);
+                add(rkReiver.lastElement());
 
                 rkReiver.lastElement().getPanel().setLocation(
                         (int) rkReiver.lastElement().getPanel().getLocation().getX(),
@@ -333,12 +322,10 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
                     height = rkAggressor.lastElement().getPanel().getSize().height + 5;
                 }
 
-                rkAggressor.add(new RuestkammerStarter(ID, randAbstand, cnt, IMKillteamKammer.class, "Aggressor"));
-                ((IMKillteamKammer) rkAggressor.lastElement().getKammer()).setType("Aggressor");
-                rkAggressor.lastElement().initKammer();
+                rkAggressor.add(new RuestkammerStarter(ID, randAbstand, cnt, new IMKillteamKammer("Aggressor"), "Aggressor"));
                 rkAggressor.lastElement().setGrundkosten(getPts("Aggressor Squad"));
-                add(rkAggressor.lastElement());
                 rkAggressor.lastElement().setAbwaehlbar(false);
+                add(rkAggressor.lastElement());
 
                 rkAggressor.lastElement().getPanel().setLocation(
                         (int) rkAggressor.lastElement().getPanel().getLocation().getX(),
@@ -353,10 +340,4 @@ public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
 
         super.refreshAction();
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
 }

@@ -3,12 +3,13 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
+    private final RuestkammerStarter psychicPowers;
 
     public IMGrandMasterinNemesisDreadknight() {
         name = "Grand Master in Nemesis Dreadknight";
@@ -33,7 +34,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy incinerator", getPts("Heavy incinerator")));
         ogE.addElement(new OptionsGruppeEintrag("Gatling psilencer", getPts("Gatling psilencer")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy psycannon", getPts("Heavy psycannon")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -41,14 +42,11 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);
@@ -75,5 +73,4 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
     }
-
 }

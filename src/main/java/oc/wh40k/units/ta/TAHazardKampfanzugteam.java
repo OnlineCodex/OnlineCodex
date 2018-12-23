@@ -19,16 +19,13 @@ public class TAHazardKampfanzugteam extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/TAHazardKampfanzugteam.jpg"));
 
 
-        o1 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
-        o1.initKammer(false, false);
+        o1 = new RuestkammerStarter(ID, randAbstand, cnt, new TAHazardKammer(), "Hazard Shas'vre");
         add(o1);
 
-        o2 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
-        o2.initKammer(false, false);
+        o2 = new RuestkammerStarter(ID, randAbstand, cnt, new TAHazardKammer(), "Hazard Shas'vre");
         add(o2);
 
-        o3 = new RuestkammerStarter(ID, randAbstand, cnt, TAHazardKammer.class, "Hazard Shas'vre");
-        o3.initKammer(false, false);
+        o3 = new RuestkammerStarter(ID, randAbstand, cnt, new TAHazardKammer(), "Hazard Shas'vre");
         add(o3);
 
         complete();
@@ -39,5 +36,4 @@ public class TAHazardKampfanzugteam extends Eintrag {
         o2.getPanel().setLocation((int) o2.getPanel().getLocation().getX(), (int) o1.getPanel().getLocation().getY() + o1.getPanel().getSize().height);
         o3.getPanel().setLocation((int) o3.getPanel().getLocation().getX(), (int) o2.getPanel().getLocation().getY() + o2.getPanel().getSize().height);
     }
-
 }

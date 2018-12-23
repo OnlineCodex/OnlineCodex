@@ -5,10 +5,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORPainboyonWarbike extends Eintrag {
-    OptionsEinzelUpgrade grotorderly;
-    RuestkammerStarter waffen;
 
-    boolean megaBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORPainboyonWarbike() {
         name = "Painboy on Warbike";
@@ -17,15 +15,13 @@ public class ORPainboyonWarbike extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(false, false, false, false, false, false, true, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("no weapon", "Power klaw", false, false, false, false, false, false, true, false);
+        kammer.setKillsawNK(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer);
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -40,5 +36,4 @@ public class ORPainboyonWarbike extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
 }

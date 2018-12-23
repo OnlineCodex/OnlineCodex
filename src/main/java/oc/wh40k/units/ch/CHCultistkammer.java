@@ -1,25 +1,13 @@
 package oc.wh40k.units.ch;
 
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
 public class CHCultistkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsEinzelUpgrade handwaffe, maschinenpistole;
-    boolean twistbray = false;
-
-    public CHCultistkammer() {
-        grundkosten = 0;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-
-        twistbray = defaults[0];
-
+    public CHCultistkammer(boolean twistbray) {
+        OptionsUpgradeGruppe o2;
         if (twistbray) {
             ogE.addElement(new OptionsGruppeEintrag("Nahkampfwaffen", "Nahkampfwaffen", 0));
             ogE.addElement(new OptionsGruppeEintrag("Pistole & Schwert", "Autopistole & Kettenschwert", 1));
@@ -37,10 +25,4 @@ public class CHCultistkammer extends RuestkammerVater {
 
         sizeSetzen();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

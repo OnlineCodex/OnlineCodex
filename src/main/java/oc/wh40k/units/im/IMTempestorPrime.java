@@ -5,20 +5,18 @@ import oc.RuestkammerStarter;
 
 public class IMTempestorPrime extends Eintrag {
 
-    RuestkammerStarter kammer;
+    private final RuestkammerStarter kammer;
 
     public IMTempestorPrime() {
         name = "Tempestor Prime";
         grundkosten = getPts("Tempestor Prime") + getPts("Frag grenade (AM)") + getPts("Krak grenade (AM)");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Temperstor Prime");
-        kammer.initKammer();
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer(name), "");
         kammer.setButtonText("Waffen");
-        add(kammer);
         kammer.setAbwaehlbar(false);
-        
+        add(kammer);
+
         seperator();
 
         addWarlordTraits("", true);
@@ -26,7 +24,7 @@ public class IMTempestorPrime extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

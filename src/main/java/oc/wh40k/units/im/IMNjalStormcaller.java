@@ -4,9 +4,11 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLINE;
+
 public class IMNjalStormcaller extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter psychicPowers;
 
 	public IMNjalStormcaller() {
         name = "Njal Sturmbringer";
@@ -15,13 +17,10 @@ public class IMNjalStormcaller extends Eintrag {
         
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
-        ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, TEMPESTAS_DISCIPLINE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
+        add(psychicPowers);
 
         seperator();
         
@@ -39,5 +38,4 @@ public class IMNjalStormcaller extends Eintrag {
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
     }
-
 }

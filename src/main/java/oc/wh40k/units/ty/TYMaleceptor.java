@@ -6,11 +6,9 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
-public class TYMaleceptor extends Eintrag {
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter psychicPowers;
+public class TYMaleceptor extends Eintrag {
 
     public TYMaleceptor() {
         name = "Maleceptor";
@@ -21,23 +19,15 @@ public class TYMaleceptor extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

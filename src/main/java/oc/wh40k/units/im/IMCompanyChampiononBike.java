@@ -5,7 +5,6 @@ import static oc.KeyWord.*;
 import oc.Eintrag;
 
 public class IMCompanyChampiononBike extends Eintrag {
-	
 
     public IMCompanyChampiononBike() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, BIKER, COMPANY_CHAMPION);
@@ -15,10 +14,8 @@ public class IMCompanyChampiononBike extends Eintrag {
                 getPts("Krak grenade (SM)") +
                 getPts("Twin boltgun");
         power = 5;
-        
-        seperator();
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

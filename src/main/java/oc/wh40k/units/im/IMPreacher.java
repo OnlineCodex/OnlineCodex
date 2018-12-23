@@ -12,9 +12,7 @@ public class IMPreacher extends Eintrag {
         grundkosten = getPts("Preacher") + getPts("laspistol (AMI)") + getPts("chainsword (AMI)");
         power = 2;
 
-        seperator();
-        
-        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
+        addWeapons(new IMAdeptaSororitasRuestkammer(name, getKeywords()), false);
         
         seperator();
 

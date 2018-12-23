@@ -4,9 +4,9 @@ import oc.*;
 
 public class IMDevastatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe o1, o1x;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
 
     public IMDevastatorSquad() {
         name = "Devastator Squad\n";
@@ -30,14 +30,11 @@ public class IMDevastatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Devastator Squad";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Devastator Squad"), "Sergeant");
         rkBoss.setGrundkosten(getPts("Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
-
+        add(rkBoss);
 
         complete();
     }

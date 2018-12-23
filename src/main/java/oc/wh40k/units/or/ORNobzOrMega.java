@@ -4,8 +4,9 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class ORNobzOrMega extends Eintrag {
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
+
+    private final RuestkammerStarter PikkUp;
+    private final RuestkammerStarter Kampfpanza;
 
     public ORNobzOrMega() {
         kategorie = 2;
@@ -14,18 +15,16 @@ public class ORNobzOrMega extends Eintrag {
 
         seperator();
 
-        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, ORNobzKammer.class, "Nobz", 1);
-        PikkUp.initKammer();
+        PikkUp = new RuestkammerStarter(ID, randAbstand, cnt, new ORNobzKammer(), "Nobz", 1);
         add(PikkUp);
 
-        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, ORMeganobzKammer.class, "Meganobz", 1);
-        Kampfpanza.initKammer();
+        Kampfpanza = new RuestkammerStarter(ID, randAbstand, cnt, new ORMeganobzKammer(), "Meganobz", 1);
         add(Kampfpanza);
 
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         PikkUp.setAktiv(!Kampfpanza.isSelected());
         Kampfpanza.setAktiv(!PikkUp.isSelected());
@@ -34,5 +33,4 @@ public class ORNobzOrMega extends Eintrag {
         PikkUp.setLegal(PikkUp.isSelected() || Kampfpanza.isSelected());
         Kampfpanza.setLegal(PikkUp.isSelected() || Kampfpanza.isSelected());
     }
-
 }

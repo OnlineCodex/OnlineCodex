@@ -6,55 +6,29 @@ import oc.RuestkammerVater;
 
 public class CHChampionkammer extends RuestkammerVater {
 
-    public boolean uniqueError = false;
-    public boolean terminator = false;
-    public boolean sorcerer = false;
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
-    boolean melee = false;
-    boolean range = false;
-    boolean rangeForMelee = false;
-    boolean meleeForRange = false;
-    String defaultNK = "";
-    String defaultFK = "";
+    public boolean uniqueError;
+    public boolean terminator;
+    public boolean sorcerer;
+    private OptionsUpgradeGruppe handwaffen;
+    OptionsUpgradeGruppe fkwaffen;
+    private final String defaultNK;
+    private final String defaultFK;
 
-    //BP/NK gg RNG/NK
-
-    public CHChampionkammer() {
+    public CHChampionkammer(
+            boolean melee,
+            boolean range,
+            boolean rangeForMelee,
+            boolean meleeForRange, String defaultNK, String defaultFK) {
+        this.defaultNK = defaultNK;
+        this.defaultFK = defaultFK;
         grundkosten = 0;
-    }
 
-    private void setDefaultCloceCombat(String s) {
-        defaultNK = s;
-    }
 
-    private void setDefaultRanged(String s) {
-        defaultFK = s;
-    }
-
-    public void setTerminatorArmour(boolean s) {
-        terminator = s;
-    }
-
-    public void setSorcerer(boolean s) {
-        sorcerer = s;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-        try {
-            melee = defaults[0];
-            range = defaults[1];
-            rangeForMelee = defaults[2];
-            meleeForRange = defaults[3];
-        } catch (Exception e) {
-        }
-
-        if (!defaultFK.equals("no weapon")) {
-            if (defaultFK.equals("")) {
+        if (!this.defaultFK.equals("no weapon")) {
+            if (this.defaultFK.equals("")) {
                 ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             } else {
-                ogE.addElement(new OptionsGruppeEintrag(defaultFK, getPts(defaultFK)));
+                ogE.addElement(new OptionsGruppeEintrag(this.defaultFK, getPts(this.defaultFK)));
             }
         }
         if (range) {
@@ -79,18 +53,18 @@ public class CHChampionkammer extends RuestkammerVater {
         }
         if (ogE.size() > 0) {
             add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            if (!defaultFK.equals("no weapon")) {
+            if (!this.defaultFK.equals("no weapon")) {
                 fkwaffen.setSelected(0, true);
             }
         }
 
         seperator();
 
-        if (!defaultNK.equals("no weapon")) {
-            if (defaultNK.equals("")) {
+        if (!this.defaultNK.equals("no weapon")) {
+            if (this.defaultNK.equals("")) {
                 ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
             } else {
-                ogE.addElement(new OptionsGruppeEintrag(defaultNK, getPts(defaultNK)));
+                ogE.addElement(new OptionsGruppeEintrag(this.defaultNK, getPts(this.defaultNK)));
             }
         }
         if (meleeForRange) {
@@ -116,7 +90,7 @@ public class CHChampionkammer extends RuestkammerVater {
         }
         if (ogE.size() > 0) {
             add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            if (!defaultNK.equals("no weapon")) {
+            if (!this.defaultNK.equals("no weapon")) {
                 handwaffen.setSelected(0, true);
             }
         }

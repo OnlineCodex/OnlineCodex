@@ -7,21 +7,13 @@ import oc.RuestkammerVater;
 
 public class IMLemanRussBattleTank extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsEinzelUpgrade pask;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-
-    boolean paskSelected = false;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
     public IMLemanRussBattleTank() {
         grundkosten = getPts("Leman RussBattle Tanks");
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/IGLemanRuss.jpg"));
 
 
@@ -49,7 +41,7 @@ public class IMLemanRussBattleTank extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

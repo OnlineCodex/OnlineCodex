@@ -4,28 +4,24 @@ import oc.Eintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHChaosLordonDiscofTzeentch extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
 
     public CHChaosLordonDiscofTzeentch() {
-
         name = "Chaos Lord on Disc of Tzeentch";
         grundkosten = getPts("Chaos Lord on Disc of Tzeentch");
         power = 6;
 
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Chainsword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        waffen.initKammer(true, true, true, true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Chainsword", true, true, true, true, CHAMPION), "");
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
         
         addWarlordTraits("", true);
