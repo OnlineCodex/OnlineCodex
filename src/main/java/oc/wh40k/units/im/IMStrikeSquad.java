@@ -3,18 +3,20 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMStrikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1def;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o2def;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter psychicPowers;
 
     public IMStrikeSquad() {
-        name = "Angriffstrupp\n";
+        name = "Angriffstrupp";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -46,22 +48,18 @@ public class IMStrikeSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMJusticar.class, "Upgrade zum Justicar");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMJusticar(), "Upgrade zum Justicar");
         rkBoss.setButtonText("Upgrade zum Justicar", false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }

@@ -5,9 +5,8 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORMek extends Eintrag {
-    RuestkammerStarter waffen;
 
-    boolean megaBool = false;
+    private final RuestkammerStarter waffen;
 
     public ORMek() {
         name = "Mek";
@@ -22,21 +21,19 @@ public class ORMek extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom mega-slugga");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
-        waffen.initKammer(false, false, false, false, false, false, true, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("Kustom mega-slugga", "", false, false, false, false, false, false, true, false);
+        kammer.setKillsawNK(true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, kammer);
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
     }
-
 
     @Override
     public void refreshen() {
@@ -45,5 +42,4 @@ public class ORMek extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
 }

@@ -402,23 +402,17 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, new Warlordtraits(), "Warlordtrait: ", keywords);
-		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
-		warlordTraits.setButtonText("Warlord");
-		if(!"".equals(mandatoryChoice)) {
-			((Warlordtraits)warlordTraits.getKammer()).setMandatoryChoice(mandatoryChoice);
-		}
-        add(warlordTraits);
+		addWarlordTraits(mandatoryChoice, null, subfactionsAllowed);
 	}
 	
 	public void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword) {
-		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, new Warlordtraits(), "Warlordtrait: ", keywords);
+		addWarlordTraits(mandatoryChoice, exclusiveKeyword, true);
+	}
+
+	private void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword, boolean subfactionsAllowed) {
+		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, new Warlordtraits(getKeywords(), mandatoryChoice, exclusiveKeyword, subfactionsAllowed), "Warlordtrait: ", keywords);
 		warlordTraits.setUeberschriftTrotzNullKostenAusgeben(true);
 		warlordTraits.setButtonText("Warlord");
-		if(!mandatoryChoice.equals("")) {
-			((Warlordtraits)warlordTraits.getKammer()).setMandatoryChoice(mandatoryChoice);
-		}
-		((Warlordtraits)warlordTraits.getKammer()).setExclusiveKeyword(exclusiveKeyword);
         add(warlordTraits);
 	}
 	

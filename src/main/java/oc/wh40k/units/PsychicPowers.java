@@ -140,7 +140,7 @@ public class PsychicPowers extends RuestkammerVater {
                 "Trephination",
                 "Engulfing Fear",
                 "Mind Wipe"),
-        powerOfTheWaaagh(
+        POWER_OF_THE_WAAAGH(
                 "'Eadbanger",
                 "Warpath",
                 "Da Jump",

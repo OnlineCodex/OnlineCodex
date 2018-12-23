@@ -77,10 +77,6 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     	}
     }
 
-    public IMAdeptaSororitasRuestkammer(String type, KeyWord... rawKeywords) {
-        this(type, ImmutableList.copyOf(rawKeywords));
-    }
-
     public IMAdeptaSororitasRuestkammer(String type, Iterable<KeyWord> rawKeywords) {
         this.type = type;
         this.keywords = newEnumSet(rawKeywords, KeyWord.class);

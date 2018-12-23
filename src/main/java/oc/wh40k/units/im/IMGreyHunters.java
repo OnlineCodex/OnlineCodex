@@ -4,12 +4,15 @@ import oc.*;
 
 public class IMGreyHunters extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe special, boltguns, chainswords, boltpistols;
-    OptionsZaehlerGruppe plasmapistol;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
-    RuestkammerStarter rkBoss3;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe special;
+    private final OptionsZaehlerGruppe boltguns;
+    private final OptionsZaehlerGruppe chainswords;
+    private final OptionsZaehlerGruppe boltpistols;
+    private final OptionsZaehlerGruppe plasmapistol;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkBoss2;
+    private final RuestkammerStarter rkBoss3;
 
     public IMGreyHunters() {
         grundkosten = 0;
@@ -49,9 +52,7 @@ public class IMGreyHunters extends Eintrag {
 
         seperator();
         
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Grey Hunter Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).setType("Grey Hunter Pack Leader");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Grey Hunter Pack Leader"), "Grey Hunter Pack Leader");
         rkBoss.setGrundkosten(getPts("Grey Hunter Pack Leader"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
@@ -59,22 +60,17 @@ public class IMGreyHunters extends Eintrag {
 
         seperator();
 
-        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss2.getKammer()).setType("Wolf Guard Pack Leader");
-        rkBoss2.initKammer();
+        rkBoss2 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard Pack Leader"), "Wolf Guard Pack Leader");
         rkBoss2.setGrundkosten(getPts("Blood Claws"));
         rkBoss2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss2);
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Terminator Pack Leader");
-        ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard Pack Leader in Terminator Armour (Grey Hunters)");
-        rkBoss3.initKammer();
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard Pack Leader in Terminator Armour (Grey Hunters)"), "Wolf Guard Terminator Pack Leader");
         rkBoss3.setGrundkosten(getPts("Wolf Guard Terminator Pack Leader"));
         rkBoss3.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss3);
-
 
         complete();
     }
@@ -115,5 +111,4 @@ public class IMGreyHunters extends Eintrag {
                 (int) rkBoss2.getPanel().getLocation().getY() + rkBoss2.getPanel().getSize().height + 5
         );
     }
-
 }

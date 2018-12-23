@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_NURGLE;
 
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
@@ -9,9 +10,6 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHGreatUncleanOne extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter psychicPowers;
 
     public CHGreatUncleanOne() {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);
@@ -24,18 +22,15 @@ public class CHGreatUncleanOne extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
         ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and bileblade", getPts("Great Unclean one with Doomsday bell and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and plague fail", getPts("Great Unclean one with Doomsday bell and plague fail")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableNurgle();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DISCIPLINE_OF_NURGLE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);

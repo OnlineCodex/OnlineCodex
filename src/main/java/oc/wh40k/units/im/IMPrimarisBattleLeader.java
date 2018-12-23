@@ -4,20 +4,17 @@ import oc.*;
 
 public class IMPrimarisBattleLeader extends Eintrag {
 	
-    RuestkammerStarter waffenUndArtefakte;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMPrimarisBattleLeader() {
         name = "Primaris Battle Leader";
         grundkosten = getPts("Primaris Battle Leader") + getPts("bolt pistol") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 4;
-        seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Battle Leader");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Primaris Battle Leader"));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         

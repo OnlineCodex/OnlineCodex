@@ -1,14 +1,13 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_SLAANESH;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHHeraldofSlaanesh extends Eintrag {
-
-    RuestkammerStarter psychicPowers;
 
     public CHHeraldofSlaanesh() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
@@ -18,18 +17,15 @@ public class CHHeraldofSlaanesh extends Eintrag {
 
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSlaanesh();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
         addWarlordTraits("", SLAANESH);

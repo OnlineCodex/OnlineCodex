@@ -7,11 +7,9 @@ import oc.RuestkammerStarter;
 
 public class CHBloodletters extends Eintrag {
 
-    AnzahlPanel bloodletters;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel bloodletters;
 
     public CHBloodletters() {
-
         name = "Bloodletters";
         grundkosten = 0;
         power = 5;
@@ -25,26 +23,18 @@ public class CHBloodletters extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHEmptykammer.class, "Bloodreaper");
-        ((CHEmptykammer) rkBoss.getKammer()).type = "Bloodreaper";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHEmptykammer(), "Bloodreaper");
         rkBoss.setGrundkosten(getPts("Bloodreaper"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
 
     }
 
-    public void deleteYourself() {
-    }
-
-
     @Override
     public void refreshen() {
-        power = bloodletters.getModelle();
-
         power = 5 +
                 ((bloodletters.getModelle() == 20) ? 5 : 0) +
                 ((bloodletters.getModelle() == 30) ? 10 : 0);

@@ -13,9 +13,7 @@ public class IMCaptaininTerminatorArmour extends Eintrag {
         grundkosten = getPts("Captain in Terminator Armour");
         power = 8;
 
-        seperator();
-        
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

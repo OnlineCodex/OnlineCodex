@@ -8,20 +8,16 @@ public class CHExaltedFlamer extends Eintrag {
 
     public CHExaltedFlamer() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, FLAMER, FLY, EXALTED_FLAMER);
-
         name = "Exalted Flamer";
         grundkosten = getPts("Exalted Flamer");
         power = 4;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
         
         seperator();
         
         addWarlordTraits("", TZEENTCH);
 
         complete();
-
     }
 }

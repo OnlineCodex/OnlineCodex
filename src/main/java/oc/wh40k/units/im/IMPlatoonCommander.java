@@ -5,20 +5,18 @@ import oc.RuestkammerStarter;
 
 public class IMPlatoonCommander extends Eintrag {
 
-    RuestkammerStarter kammer;
+    private final RuestkammerStarter kammer;
 
     public IMPlatoonCommander() {
         name = "Platoon Commander";
         grundkosten = getPts("Platoon Commander") + getPts("Frag grenade (AM)");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Platoon Commander");
-        kammer.initKammer();
+        kammer = new RuestkammerStarter(ID, randAbstand, cnt, new IMAstraMilitarumRuestkammer("Platoon Commander"));
         kammer.setButtonText("Waffen");
-        add(kammer);
         kammer.setAbwaehlbar(false);
-        
+        add(kammer);
+
         seperator();
 
         addWarlordTraits("", true);
@@ -26,7 +24,7 @@ public class IMPlatoonCommander extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

@@ -9,23 +9,21 @@ public class IMCompanyChampion extends Eintrag {
     public IMCompanyChampion() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, COMPANY_CHAMPION);
         name = "Company Champion";
-        grundkosten = getPts("Company Champion") +
-                getPts("Frag grenade (SM)") +
-                getPts("Krak grenade (SM)");
+        power = 3;
 
-        if (buildaVater.getFormationType().equals("Dark Angels")) {
+        if (checkBuildaVater().getFormationType().equals("Dark Angels")) {
             grundkosten += getPts("Blade of Caliban") +
                     getPts("Bolt pistol (SM)") +
                     getPts("Combat shield");
         } else {
-            seperator();
-            
-            addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        }
+            grundkosten = getPts("Company Champion") +
+                    getPts("Frag grenade (SM)") +
+                    getPts("Krak grenade (SM)");
 
-        power = 3;
-        
-        seperator();
+            addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
+
+            seperator();
+        }
 
 		addWarlordTraits("", true);
 

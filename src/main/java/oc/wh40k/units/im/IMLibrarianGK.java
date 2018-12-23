@@ -2,39 +2,33 @@ package oc.wh40k.units.im;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMLibrarianGK extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+
+    private final RuestkammerStarter waffenUndReliquien;
+    private final RuestkammerStarter psychicPowers;
 
     public IMLibrarianGK() {
         name = "Librarian";
         grundkosten = getPts("Librarian GK");
         power = 9;
 
-        seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Librarian GK");
-        waffenUndReliquien.initKammer();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer(name, getKeywords()));
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        add(waffenUndReliquien);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);

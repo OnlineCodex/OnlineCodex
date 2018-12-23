@@ -1,14 +1,18 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.*;
 
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import java.util.Set;
+
 public class CHDaemonPrinceofChaos extends Eintrag {
-    OptionsUpgradeGruppe mark;
-    RuestkammerStarter psychicPowers;
-    int lastMark = -1;
+
+    private final OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter psychicPowers;
+    private int lastMark = -1;
 
     public CHDaemonPrinceofChaos() {
         super(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, DAEMON_PRINCE_OF_CHAOS);
@@ -27,20 +31,15 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableNurgle();
-        ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
-        ((PsychicPowers) psychicPowers.getKammer()).enableSlaanesh();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DISCIPLINE_OF_NURGLE, DISCIPLINE_OF_TZEENTCH, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", ALLEGIANCE);
@@ -51,30 +50,31 @@ public class CHDaemonPrinceofChaos extends Eintrag {
     @Override
     public void refreshen() {
         psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && (mark.getAnzahl() != 0));
-        
+
         if(mark.getSelectedIndex() != lastMark) {
-        	lastMark = mark.getSelectedIndex();
-	        getWeapons().removeKeyword(KHORNE);
-	        getWeapons().removeKeyword(NURGLE);
-	        getWeapons().removeKeyword(TZEENTCH);
-	        getWeapons().removeKeyword(SLAANESH);
-	        getWeapons().removeKeyword(PSYKER);
+            lastMark = mark.getSelectedIndex();
+            Set<KeyWord> keywords = ((CHWaffenkammerCD) getWeapons()).getKeywords();
+            keywords.remove(KHORNE);
+	        keywords.remove(NURGLE);
+            keywords.remove(TZEENTCH);
+            keywords.remove(SLAANESH);
+            keywords.remove(PSYKER);
 	        
 	        if(mark.isSelected("Mark of Khorne")) {
-	        	getWeapons().addKeyword(KHORNE);
-	            getWeapons().removeKeyword(ALLEGIANCE);
+                keywords.add(KHORNE);
+                keywords.remove(ALLEGIANCE);
 	        } else if(mark.isSelected("Mark of Nurgle")) {
-	        	getWeapons().addKeyword(NURGLE);
-	        	getWeapons().addKeyword(PSYKER);
-	            getWeapons().removeKeyword(ALLEGIANCE);
+                keywords.add(NURGLE);
+                keywords.add(PSYKER);
+                keywords.remove(ALLEGIANCE);
 	        } else if(mark.isSelected("Mark of Tzeentch")) {
-	        	getWeapons().addKeyword(TZEENTCH);
-	        	getWeapons().addKeyword(PSYKER);
-	            getWeapons().removeKeyword(ALLEGIANCE);
+                keywords.add(TZEENTCH);
+                keywords.add(PSYKER);
+                keywords.remove(ALLEGIANCE);
 	        } else if(mark.isSelected("Mark of Slaanesh")) {
-	        	getWeapons().addKeyword(SLAANESH);
-	        	getWeapons().addKeyword(PSYKER);
-	            getWeapons().removeKeyword(ALLEGIANCE);
+                keywords.add(SLAANESH);
+                keywords.add(PSYKER);
+                keywords.remove(ALLEGIANCE);
 	        }
 	        RefreshListener.fireRefresh();
         }

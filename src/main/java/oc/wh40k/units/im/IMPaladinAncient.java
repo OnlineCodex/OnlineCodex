@@ -3,6 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMPaladinAncient extends Eintrag {
     //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
     OptionsUpgradeGruppe o1, o1x;
@@ -31,14 +33,11 @@ public class IMPaladinAncient extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);

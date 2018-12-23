@@ -4,13 +4,12 @@ import oc.*;
 
 public class IMWolfGuardTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe wolfsklauen;
-    RuestkammerStarter rkBoss3;
-
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1, o1x;
+    private final OptionsZaehlerGruppe o2, o2x;
+    private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe wolfsklauen;
+    private final RuestkammerStarter rkBoss3;
 
     public IMWolfGuardTerminators() {
         grundkosten = 0;
@@ -49,13 +48,11 @@ public class IMWolfGuardTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "Wolf Guard Pack Leader in TA");
-        ((IMSpaceWolvesRuestkammer) rkBoss3.getKammer()).setType("Wolf Guard in Terminator Armour");
-        rkBoss3.initKammer();
+        rkBoss3 = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer("Wolf Guard in Terminator Armour"), "Wolf Guard Pack Leader in TA");
         rkBoss3.setGrundkosten(0); //Schon in Squadkosten enthalten
         rkBoss3.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss3);
         rkBoss3.setAbwaehlbar(false);
+        add(rkBoss3);
 
         complete();
     }

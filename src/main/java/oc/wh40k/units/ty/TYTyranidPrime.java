@@ -7,15 +7,11 @@ import oc.RuestkammerStarter;
 
 public class TYTyranidPrime extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-
-    RuestkammerStarter waffen;
+    private final RuestkammerStarter waffen;
 
     public TYTyranidPrime() {
         name = "Tyranid Prime";
         grundkosten = getPts("TyranidPrime");
-
         power = 5;
 
         add(ico = new oc.Picture("oc/wh40k/images/TYKrieger.jpg"));
@@ -28,11 +24,9 @@ public class TYTyranidPrime extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "Wargear");
-        ((TYRuestkammer) waffen.getKammer()).setType("Tyranid Prime");
-        waffen.initKammer();
-        add(waffen);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer(name), "Wargear");
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
         
@@ -48,5 +42,4 @@ public class TYTyranidPrime extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-
 }

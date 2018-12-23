@@ -12,9 +12,7 @@ public class CHHeraldofSlaaneshonSteed extends Eintrag {
         grundkosten = getPts("Herald of Slaanesh on Steed");
         power = 4;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
         
         seperator();
         

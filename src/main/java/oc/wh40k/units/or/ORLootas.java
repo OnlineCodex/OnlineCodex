@@ -6,55 +6,45 @@ import oc.RuestkammerStarter;
 
 public class ORLootas extends Eintrag {
 
-    AnzahlPanel Pluenderaz;
-    RuestkammerStarter Spanner1;
-    RuestkammerStarter Spanner2;
-    RuestkammerStarter Spanner3;
+    private final AnzahlPanel Pluenderaz;
+    private final RuestkammerStarter Spanner1;
+    private final RuestkammerStarter Spanner2;
+    private final RuestkammerStarter Spanner3;
 
     public ORLootas() {
-
-        //kategorie = 2;
-
         grundkosten = 0;
+
         add(Pluenderaz = new AnzahlPanel(ID, randAbstand, cnt, "Lootas", 5, 15, getPts("Lootas") + getPts("Deffgun") + getPts("Stikkbombs")));
         seperator();
 
         add(ico = new oc.Picture("oc/wh40k/images/Pluenderaz.gif"));
 
-        Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
-        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultCloceCombat("no weapon");
-        ((ORWaffenUndGeschenke) Spanner1.getKammer()).setDefaultRanged("Kustom mega-blasta");
-        Spanner1.initKammer(false, false, false, false, false, false);
+        ORWaffenUndGeschenke kammer0 = new ORWaffenUndGeschenke("no weapon", "Kustom mega-blasta", false, false, false, false, false, false, false, false);
+        kammer0.setSpanner(true);
+        Spanner1 = new RuestkammerStarter(ID, randAbstand, cnt, kammer0, "Spanner");
         Spanner1.setGrundkosten(getPts("Spanner"));
         add(Spanner1);
 
         seperator();
 
-        Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
-        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultCloceCombat("no weapon");
-        ((ORWaffenUndGeschenke) Spanner2.getKammer()).setDefaultRanged("Kustom mega-blasta");
-        Spanner2.initKammer(false, false, false, false, false, false);
+        ORWaffenUndGeschenke kammer1 = new ORWaffenUndGeschenke("no weapon", "Kustom mega-blasta", false, false, false, false, false, false, false, false);
+        kammer1.setSpanner(true);
+        Spanner2 = new RuestkammerStarter(ID, randAbstand, cnt, kammer1, "Spanner");
         Spanner2.setGrundkosten(getPts("Spanner"));
         add(Spanner2);
 
         seperator();
 
-        Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Spanner");
-        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setSpanner(true);
-        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultCloceCombat("no weapon");
-        ((ORWaffenUndGeschenke) Spanner3.getKammer()).setDefaultRanged("Kustom mega-blasta");
-        Spanner3.initKammer(false, false, false, false, false, false);
+        ORWaffenUndGeschenke kammer2 = new ORWaffenUndGeschenke("no weapon", "Kustom mega-blasta", false, false, false, false, false, false, false, false);
+        kammer2.setSpanner(true);
+        Spanner3 = new RuestkammerStarter(ID, randAbstand, cnt, kammer2, "Spanner");
         Spanner3.setGrundkosten(getPts("Spanner"));
         add(Spanner3);
 
         complete();
-
     }
 
-
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         if (Pluenderaz.getModelle() > 10) {
             power = 13;

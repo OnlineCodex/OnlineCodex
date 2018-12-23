@@ -43,7 +43,7 @@ public class IMDeathwingCataphractiiTerminatorSquad extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Cataphractii Sergeant"), "Cataphractii Sergeant");
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Cataphractii Sergeant", getKeywords()), "Cataphractii Sergeant");
         rkBoss.setGrundkosten(getPts("Cataphractii Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setAbwaehlbar(false);

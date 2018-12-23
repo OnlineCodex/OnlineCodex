@@ -11,10 +11,8 @@ public class IMMasterinCataphractiiArmour extends Eintrag {
         name = "Master in Cataphractii Armour";
         grundkosten = getPts("Master in Cataphractii Armour");
         power = 8;
-
-        seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

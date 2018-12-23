@@ -6,16 +6,13 @@ import javax.xml.ws.Action;
 
 public class ORFlashGitz extends Eintrag {
 
-    AnzahlPanel Gargbosse;
-    OptionsZaehlerGruppe GargbosseFK;
-    OptionsEinzelUpgrade captain;
-    RuestkammerStarter Boss;
+    private final AnzahlPanel Gargbosse;
+    private final OptionsZaehlerGruppe GargbosseFK;
 
     public ORFlashGitz() {
+        name = "Flash Gitz";
 
         grundkosten = 0;
-
-        name = "Flash Gitz";
 
         add(Gargbosse = new AnzahlPanel(ID, randAbstand, cnt, "Flash Gitz", 5, 10, getPts("Flash Gitz") + getPts("Snazzgun") + getPts("Stikkbombs")));
         add(ico = new oc.Picture("oc/wh40k/images/Gargbosse.gif"));
@@ -26,15 +23,13 @@ public class ORFlashGitz extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Kaptin");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setKaptin(true);
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultCloceCombat("no weapon");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultRanged("no weapon");
-        Boss.initKammer(false, false, false, false, false);
-        Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        Boss.setGrundkosten(getPts("Kaptin"));
-        add(Boss);
-        Boss.setAbwaehlbar(false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, false, false);
+        kammer.setKaptin(true);
+        RuestkammerStarter boss = new RuestkammerStarter(ID, randAbstand, cnt, kammer, "Kaptin");
+        boss.setUeberschriftTrotzNullKostenAusgeben(true);
+        boss.setGrundkosten(getPts("Kaptin"));
+        boss.setAbwaehlbar(false);
+        add(boss);
 
         complete();
     }

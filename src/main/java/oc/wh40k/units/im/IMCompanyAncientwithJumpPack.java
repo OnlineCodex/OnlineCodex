@@ -5,7 +5,6 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMCompanyAncientwithJumpPack extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
 
     public IMCompanyAncientwithJumpPack() {
         name = "Company Ancient with Jump Pack";
@@ -13,13 +12,12 @@ public class IMCompanyAncientwithJumpPack extends Eintrag {
         power = 5;
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Company Ancient");
-        waffenUndReliquien.initKammer();
+        IMSpaceMarinesRuestkammer kammer = new IMSpaceMarinesRuestkammer("Company Ancient", getKeywords());
+        kammer.jump = true;
+        RuestkammerStarter waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, kammer);
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).jump = true;
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
+        add(waffenUndReliquien);
 
         complete();
     }

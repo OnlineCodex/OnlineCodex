@@ -4,10 +4,12 @@ import oc.*;
 
 public class CHFallen extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe pistol, claws, boltgun, special;
-    OptionsUpgradeGruppe heavy;
-    RuestkammerStarter champion;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe pistol;
+    private final OptionsZaehlerGruppe claws;
+    private final OptionsZaehlerGruppe boltgun;
+    private final OptionsZaehlerGruppe special;
+    private final OptionsUpgradeGruppe heavy;
 
     public CHFallen() {
         //name = "Auserkorene Chaos Space Marines\n";
@@ -67,14 +69,10 @@ public class CHFallen extends Eintrag {
 
         seperator();
 
-        champion = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Fallen Champion", 1);
-        ((CHWaffenkammer) champion.getKammer()).setChampion(true);
-        ((CHWaffenkammer) champion.getKammer()).setDefaultRanged("Boltgun");
-        ((CHWaffenkammer) champion.getKammer()).setDefaultCloceCombat("Bolt pistol");
-        champion.initKammer(true, true, true, true);
+        RuestkammerStarter champion = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Boltgun", "Bolt pistol", true, true, true, true), "Fallen Champion", 1);
         champion.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(champion);
         champion.setAbwaehlbar(false);
+        add(champion);
 
         complete();
     }

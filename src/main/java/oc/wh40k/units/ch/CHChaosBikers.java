@@ -3,16 +3,19 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHChaosBikers extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe icon;
-    OptionsZaehlerGruppe bp, special, bike, combi;
-    OptionsUpgradeGruppe mark;
+    private final AnzahlPanel squad;
+    private final OptionsUpgradeGruppe icon;
+    private final OptionsZaehlerGruppe bp;
+    private final OptionsZaehlerGruppe special;
+    private final OptionsZaehlerGruppe bike;
+    private final OptionsZaehlerGruppe combi;
+    private final OptionsUpgradeGruppe mark;
 
     public CHChaosBikers() {
-        //name = "Chaosbiker\n";
         grundkosten = 0;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Bikers", 3, 9, getPts("Chaos Bikers"), "Chaos Bikers");
@@ -65,16 +68,11 @@ public class CHChaosBikers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Chaos Biker Champion", 1);
-        ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultCloceCombat("no weapon");
-        ((CHWaffenkammer) rkBoss.getKammer()).setBiker(true);
-        rkBoss.initKammer(false, true, true, false);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "no weapon", false, true, true, false, CHAMPION), "Chaos Biker Champion", 1);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setGrundkosten(getPts("Chaos Biker Champion") + getPts("Combi-bolter"));
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -97,5 +95,4 @@ public class CHChaosBikers extends Eintrag {
         icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
         icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
-
 }

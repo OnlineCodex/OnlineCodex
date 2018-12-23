@@ -7,8 +7,7 @@ import oc.RuestkammerStarter;
 
 public class IMScoutBikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
 
     public IMScoutBikeSquad() {
         name = "Scout Bike Squad\n";
@@ -29,12 +28,10 @@ public class IMScoutBikeSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Scout Bike Squad";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Scout Bike Squad"), "Sergeant");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -48,5 +45,4 @@ public class IMScoutBikeSquad extends Eintrag {
             power = 8;
         }
     }
-
 }

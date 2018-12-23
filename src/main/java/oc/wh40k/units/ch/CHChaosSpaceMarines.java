@@ -2,25 +2,26 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHChaosSpaceMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+    private final AnzahlPanel marines;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    OptionsUpgradeGruppe mark;
-    OptionsUpgradeGruppe icon;
+    private final OptionsZaehlerGruppe marinesfk;
+    private final OptionsEinzelUpgrade pp;
+    private final RuestkammerStarter Boss;
+    private final OptionsUpgradeGruppe mark;
+    private final OptionsUpgradeGruppe icon;
     
     public CHChaosSpaceMarines() {
+        name = "Chaos Space Marines";
+        grundkosten = 0;
 
         kategorie = 1;
 
-        name = "Chaos Space Marines";
-        grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Space Marines", 5, 20, getPts("Chaos Space Marines")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
@@ -64,13 +65,11 @@ public class CHChaosSpaceMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Champion");
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        Boss.initKammer(true, true, true, true);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "", "", true, true, true, true, CHAMPION), "Aspiring Champion");
         Boss.setGrundkosten(getPts("Aspiring Champion"));
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
     }

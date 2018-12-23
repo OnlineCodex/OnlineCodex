@@ -4,26 +4,22 @@ import oc.*;
 
 public class IMWolfGuardBattleLeader extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
+    private final OptionsEinzelUpgrade oe1;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfGuardBattleLeader() {
         name = "Wolf Guard Battle Leader";
         grundkosten = getPts("Wolf Guard Battle Leader");
 
-        seperator();
-
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Wolf Guard Battle Leader with Jump Pack") - getPts("Wolf Guard Battle Leader")));
 
         seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Wolf Guard Battle Leader");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
-        
+        add(waffenUndArtefakte);
+
         seperator();
         
 		addWarlordTraits("", true);

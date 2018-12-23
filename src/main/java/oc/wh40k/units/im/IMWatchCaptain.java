@@ -7,12 +7,8 @@ import oc.RuestkammerStarter;
 
 public class IMWatchCaptain extends Eintrag {
 
-    boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
-    OptionsEinzelUpgrade meister, sturm, termi;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter spezialAusruestung;
-    OptionsEinzelUpgrade pistol;
+    private final RuestkammerStarter waffenUndReliquien;
+    private final OptionsEinzelUpgrade pistol;
 
     public IMWatchCaptain() {
         name = "Watch Captain";
@@ -30,13 +26,11 @@ public class IMWatchCaptain extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Watch Captain");
-        waffenUndReliquien.initKammer();
+        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, new DeathWatchKammer("Watch Captain"));
         waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
         waffenUndReliquien.setAbwaehlbar(false);
-        
+        add(waffenUndReliquien);
+
         seperator();
 
         addWarlordTraits("", true);

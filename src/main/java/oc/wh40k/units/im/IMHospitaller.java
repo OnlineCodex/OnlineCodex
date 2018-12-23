@@ -12,9 +12,7 @@ public class IMHospitaller extends Eintrag {
         grundkosten = getPts("Hospitaller");
         power = 2;
 
-        seperator();
-        
-        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
+        addWeapons(new IMAdeptaSororitasRuestkammer(name, getKeywords()), false);
         
         seperator();
 

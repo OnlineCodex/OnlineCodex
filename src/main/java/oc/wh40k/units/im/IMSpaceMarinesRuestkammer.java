@@ -90,14 +90,6 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     	}
     }
 
-    public IMSpaceMarinesRuestkammer(KeyWord... keywords) {
-        this("", keywords);
-    }
-
-    public IMSpaceMarinesRuestkammer(String type, KeyWord... keywords) {
-        this(type, ImmutableList.copyOf(keywords));
-    }
-
     public IMSpaceMarinesRuestkammer(String type, Iterable<KeyWord> keywords) {
         this.type = type;
         this.keywords = Sets.newEnumSet(keywords, KeyWord.class);

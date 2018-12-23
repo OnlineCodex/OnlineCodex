@@ -6,6 +6,8 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CONTAGION;
+
 public class CHMalignantPlaguecaster extends Eintrag {
 
     OptionsUpgradeGruppe pistol, staff;
@@ -24,14 +26,11 @@ public class CHMalignantPlaguecaster extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableContagion();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, CONTAGION), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
         addWarlordTraits("", true);

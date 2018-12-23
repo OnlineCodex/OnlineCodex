@@ -12,10 +12,8 @@ public class CHBloodthirsterofUnfetteredFury extends Eintrag {
         name = "Bloodthirster of Unfettered Fury";
         grundkosten = getPts("Bloodthirster of Unfettered Fury");
         power = 17;
-
-        seperator();
         
-        addWeapons(CHWaffenkammerCD.class, true);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), true);
         
         seperator();
         

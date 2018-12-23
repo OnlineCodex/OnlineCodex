@@ -6,10 +6,12 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
+
 public class CHTzaangorShaman extends Eintrag {
 
-    OptionsUpgradeGruppe stave;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe stave;
+    private final RuestkammerStarter psychicPowers;
 
     public CHTzaangorShaman() {
 
@@ -24,14 +26,11 @@ public class CHTzaangorShaman extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, CHANGE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);

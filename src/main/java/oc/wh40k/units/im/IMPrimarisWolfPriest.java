@@ -4,20 +4,17 @@ import oc.*;
 
 public class IMPrimarisWolfPriest extends Eintrag {
 	
-    RuestkammerStarter waffenUndArtefakte;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMPrimarisWolfPriest() {
         name = "Primaris Wolf Priest";
         grundkosten = getPts("Primaris Wolf Priest") + getPts("Crozius arcanum") + getPts("Absolvor bolt pistol") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 7;
-        seperator();
 
-        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
-        ((IMSpaceWolvesRuestkammer) waffenUndArtefakte.getKammer()).setType("Primaris Wolf Priest");
-        waffenUndArtefakte.initKammer();
+        waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceWolvesRuestkammer(name));
         waffenUndArtefakte.setButtonText(BuildaHQ.translate("Waffen"));
-        add(waffenUndArtefakte);
         waffenUndArtefakte.setAbwaehlbar(false);
+        add(waffenUndArtefakte);
 
         seperator();
         

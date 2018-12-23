@@ -3,6 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMPurgationSquad extends Eintrag {
 
     AnzahlPanel squad;
@@ -45,8 +47,7 @@ public class IMPurgationSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMJusticar.class, "Upgrade zum Justicar");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMJusticar(), "Upgrade zum Justicar");
         rkBoss.setButtonText("Upgrade zum Justicar", false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
@@ -54,10 +55,7 @@ public class IMPurgationSquad extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);

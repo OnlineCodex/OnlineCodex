@@ -4,29 +4,23 @@ import oc.Eintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+
 public class CHSorcereronDiscofTzeentch extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
 
     public CHSorcereronDiscofTzeentch() {
-
         name = "Sorcerer on Disc of Tzeentch";
         grundkosten = getPts("Sorcerer on Disc of Tzeentch");
         power = 8;
 
-        seperator();
-
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Force sword");
-        ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
-        waffen.initKammer(true, true, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Force sword", true, true, true, false, SORCERER));
         waffen.setButtonText("Waffenkammer");
         waffen.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
         
         addWarlordTraits("", true);

@@ -32,8 +32,7 @@ public class TAXV25StealthBattlesuits extends Eintrag {
 
         seperator();
 
-        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, TAShasvreKammer.class, "Stealth Shas'vre");
-        ob2.initKammer(true, true);
+        ob2 = new RuestkammerStarter(ID, randAbstand, cnt, new TAShasvreKammer(), "Stealth Shas'vre");
         ob2.setGrundkosten(getPts("XV25 Stealth Battlesuit"));
         ob2.setUeberschriftTrotzNullKostenAusgeben(true);
         add(ob2);
@@ -55,7 +54,7 @@ public class TAXV25StealthBattlesuits extends Eintrag {
     public void refreshen() {
         int Select = 0;
         int blaster = 0;
-        blaster += ((TAShasvreKammer) ob2.getKammer()).o1.isSelected("Fusion blaster") ? 1 : 0;
+        blaster += ((TAShasvreKammer) ob2.getKammer()).getO1().isSelected("Fusion blaster") ? 1 : 0;
         for (int k = 0; k < geister.length; ++k) {
             Select += (geister[k].isSelected() ? 1 : 0);
             blaster += ((TAKampfanzugKammer) geister[k].getKammer()).o5.isSelected("Fusion blaster") ? 1 : 0;

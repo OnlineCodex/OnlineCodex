@@ -1,43 +1,34 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.POWER_OF_THE_WAAAGH;
+
 public class ORWeirdboy extends Eintrag {
 
-    OptionsEinzelUpgrade o1;
-    RuestkammerStarter psychicPowers;
-    RuestkammerStarter waffen;
-
     public ORWeirdboy() {
-
-        kategorie = 1;
         name = "Wyrdboy";
         grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
         power = 3;
 
+        kategorie = 1;
+
         add(ico = new oc.Picture("oc/wh40k/images/Wyrdboy.gif"));
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enablePowerOfTheWaaagh();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, POWER_OF_THE_WAAAGH), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
+        add(psychicPowers);
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("no weapon");
-        waffen.initKammer(false, false, false, false, false, false, true, true);
+        RuestkammerStarter waffen = new RuestkammerStarter(ID, randAbstand, cnt, new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, true, true));
         waffen.setButtonText("Waffen und Geschenke");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
         addWarlordTraits("", true);

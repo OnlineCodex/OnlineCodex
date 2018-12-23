@@ -4,9 +4,7 @@ import oc.*;
 
 public class AEStrikingScorpions extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
 
     public AEStrikingScorpions() {
         name = "Striking Scorpions";
@@ -17,14 +15,11 @@ public class AEStrikingScorpions extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class, "Exarch");
-        ((AEExarch) rkBoss.getKammer()).type = "Striking Scorpions";
-        ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade");
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new AEExarch(name, getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade")), "Exarch");
         rkBoss.setGrundkosten(getPts("Exarch"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(true);
+        add(rkBoss);
 
         complete();
     }

@@ -4,14 +4,16 @@ import oc.*;
 
 public class IMDeathwingTartarosTerminatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3, o4, o5;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o2x;
+    private final OptionsZaehlerGruppe o3;
+    private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe o5;
 
     public IMDeathwingTartarosTerminatorSquad() {
-        name = "Tartaros Terminator Squad\n";
+        name = "Tartaros Terminator Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -44,13 +46,11 @@ public class IMDeathwingTartarosTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Tartaros Sergeant");
-        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Tartaros Sergeant");
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSpaceMarinesRuestkammer("Tartaros Sergeant", getKeywords()), "Tartaros Sergeant");
         rkBoss.setGrundkosten(getPts("Tartaros Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

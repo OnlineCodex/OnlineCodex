@@ -3,15 +3,16 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMPurifierSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def, o2def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1def;
+    private final OptionsZaehlerGruppe o2def;
+    private final OptionsZaehlerGruppe o2;
+    private final RuestkammerStarter rkBoss;
 
     public IMPurifierSquad() {
         name = "Purificator-Trupp\n";
@@ -22,7 +23,6 @@ public class IMPurifierSquad extends Eintrag {
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/GKPurificatorTrupp.jpg"));
-
 
         seperator();
 
@@ -45,22 +45,18 @@ public class IMPurifierSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMJusticar.class, "Knight of the Flame");
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMJusticar(), "Knight of the Flame");
         rkBoss.setButtonText("Upgrade zum Knight of the Flame", false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }

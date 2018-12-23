@@ -12,9 +12,7 @@ public class IMMasterinGravisArmour extends Eintrag {
         grundkosten = getPts("Master in Gravis Armour") + getPts("Master-crafted power sword") + getPts("Boltstorm gauntlet");
         power = 7;
 
-        seperator();
-        
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
         

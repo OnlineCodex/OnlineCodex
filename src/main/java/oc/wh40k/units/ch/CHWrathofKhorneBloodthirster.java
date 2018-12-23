@@ -12,9 +12,7 @@ public class CHWrathofKhorneBloodthirster extends Eintrag {
         grundkosten = getPts("Wrath Of Khorne Bloodthirster");
         power = 17;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, true);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), true);
         
         seperator();
         

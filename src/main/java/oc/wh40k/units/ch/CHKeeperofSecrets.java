@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_SLAANESH;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -8,25 +9,17 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHKeeperofSecrets extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public CHKeeperofSecrets() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, MONSTER, PSYKER, KEEPER_OF_SECRETS);
-
         name = "Keeper of Secrets";
         grundkosten = getPts("Keeper of Secrets");
         power = 11;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSlaanesh();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
@@ -36,6 +29,5 @@ public class CHKeeperofSecrets extends Eintrag {
         addWarlordTraits("", SLAANESH);
 
         complete();
-
     }
 }

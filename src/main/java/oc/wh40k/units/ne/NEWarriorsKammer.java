@@ -5,24 +5,14 @@ import oc.RuestkammerStarter;
 import oc.RuestkammerVater;
 
 public class NEWarriorsKammer extends RuestkammerVater {
-
-    AnzahlPanel squad;
-    RuestkammerStarter rkTransport;
-
     public NEWarriorsKammer() {
-        grundkosten = 0;
-    }
-
-    public void initButtons(boolean... defaults) {
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Necron-Warriors", 5, 20, 13);
-        add(squad);
+        add(new AnzahlPanel(ID, randAbstand, cnt, "Necron-Warriors", 5, 20, 13));
 
         add(ico = new oc.Picture("oc/wh40k/images/NEWarriors.jpg"));
 
         seperator();
 
-        rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, NETransporterKammer.class, "Transporter");
-        rkTransport.initKammer(true, true);
+        RuestkammerStarter rkTransport = new RuestkammerStarter(ID, randAbstand, cnt, new NETransporterKammer(true, true), "Transporter");
         rkTransport.setButtonText("Transporter");
         add(rkTransport);
 

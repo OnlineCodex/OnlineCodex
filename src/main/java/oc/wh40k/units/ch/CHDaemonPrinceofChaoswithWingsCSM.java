@@ -3,13 +3,13 @@ package oc.wh40k.units.ch;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.ChaosGod.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
+
 public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
-
-    RuestkammerStarter psychicPowers;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe mark;
 
     public CHDaemonPrinceofChaoswithWingsCSM() {
 
@@ -20,12 +20,13 @@ public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword CSM")));
         ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe (CSM)")));
         ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
+        OptionsUpgradeGruppe waffe1;
         add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
 
         seperator();
 
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
 
         seperator();
 
@@ -37,30 +38,27 @@ public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DARK_HERETICUS), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-
     }
 
     @Override
     public void refreshen() {
         psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
 
-        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
-        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
-        ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-        
+        PsychicPowers kammer = (PsychicPowers) psychicPowers.getKammer();
+        kammer.setGod(NURGLE, mark.isSelected("Mark of Nurgle"));
+        kammer.setGod(TZEENTCH, mark.isSelected("Mark of Tzeentch"));
+        kammer.setGod(SLAANESH, mark.isSelected("Mark of Slaanesh"));
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

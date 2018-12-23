@@ -13,7 +13,7 @@ public class IMCompanyAncient extends Eintrag {
         power = 4;
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

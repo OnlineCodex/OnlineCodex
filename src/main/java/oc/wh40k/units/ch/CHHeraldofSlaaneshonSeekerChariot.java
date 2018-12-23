@@ -8,8 +8,6 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHeraldofSlaaneshonSeekerChariot extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-
     public CHHeraldofSlaaneshonSeekerChariot() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, CHARIOT, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
         name = "Herald of Slaanesh on Seeker Chariot";
@@ -18,10 +16,11 @@ public class CHHeraldofSlaaneshonSeekerChariot extends Eintrag {
 
         seperator();
         
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
 
         ogE.addElement(new OptionsGruppeEintrag("Piercing claws", getPts("Piercing claws")));
         ogE.addElement(new OptionsGruppeEintrag("Lashes of torment", getPts("Lashes of torment")));
+        OptionsUpgradeGruppe waffe1;
         add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
         

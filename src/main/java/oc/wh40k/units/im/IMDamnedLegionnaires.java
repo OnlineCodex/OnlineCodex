@@ -4,12 +4,10 @@ import oc.*;
 
 public class IMDamnedLegionnaires extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe o1;
+    private final AnzahlPanel squad;
 
     public IMDamnedLegionnaires() {
-        name = "Damned Legionnaires\n";
+        name = "Damned Legionnaires";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -30,17 +28,15 @@ public class IMDamnedLegionnaires extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM)") - getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)") - getPts("Boltgun (SM)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Legionnaire Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Damned Legionnaires";
-        rkBoss.initKammer();
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Damned Legionnaires"), "Legionnaire Sergeant");
         rkBoss.setGrundkosten(getPts("Sword Brother"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

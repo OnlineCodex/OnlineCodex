@@ -3,13 +3,14 @@ package oc.wh40k.units.im;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
+
 public class IMBrotherCaptain extends Eintrag {
+
     //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
-    OptionsUpgradeGruppe o1, o1x;
-    OptionsUpgradeGruppe o2, reliquien;
-    boolean grandmasterBool;
-    OptionsEinzelUpgrade grandmaster;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
+    private final RuestkammerStarter psychicPowers;
 
     public IMBrotherCaptain() {
         name = "Brother Captain";
@@ -35,14 +36,11 @@ public class IMBrotherCaptain extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableSanctic();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
 
         addWarlordTraits("", true);

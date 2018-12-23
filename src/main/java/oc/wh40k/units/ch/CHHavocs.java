@@ -3,15 +3,15 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHHavocs extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe nahkampfwaffe;
-    OptionsUpgradeGruppe icon;
-    OptionsUpgradeGruppe mark;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe nahkampfwaffe;
+    private final OptionsUpgradeGruppe icon;
+    private final OptionsUpgradeGruppe mark;
 
     public CHHavocs() {
         name = "Havocs";
@@ -59,13 +59,11 @@ public class CHHavocs extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Champion", 1);
-        ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
-        rkBoss.initKammer(true, true, true, true);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "", "", true, true, true, true, CHAMPION), "Aspiring Champion", 1);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setGrundkosten(getPts("Aspiring Champion"));
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
@@ -87,5 +85,4 @@ public class CHHavocs extends Eintrag {
         icon.setAktiv("Icon of Flame", mark.isSelected("Mark of Tzeentch"));
         icon.setAktiv("Icon of Excess", mark.isSelected("Mark of Slaanesh"));
     }
-
 }

@@ -7,16 +7,13 @@ import oc.RuestkammerStarter;
 
 public class CHSorcereronBike extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe mark;
 
     public CHSorcereronBike() {
-
         name = "Sorcerer on Bike";
         grundkosten = getPts("Sorcerer on Bike");
         power = 8;
-
-        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
@@ -25,16 +22,12 @@ public class CHSorcereronBike extends Eintrag {
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Force sword");
-        ((CHWaffenkammer) waffen.getKammer()).setSorcerer(true);
-        waffen.initKammer(true, true, true, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Force sword", true, true, true, false));
         waffen.setButtonText("Waffenkammer");
         waffen.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
         
         addWarlordTraits("", true);

@@ -3,24 +3,22 @@ package oc.wh40k.units.ch;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
+
 public class CHTSRubricMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
-
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel marines;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe marinesfk;
 
     public CHTSRubricMarines() {
+        name = "Rubric Marines";
+        grundkosten = 0;
 
         kategorie = 1;
 
-        name = "Rubric Marines";
-        grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Rubric Marines", 5, 20, getPts("Rubric Marines")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
@@ -40,27 +38,18 @@ public class CHTSRubricMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Sorcerer");
-        ((CHWaffenkammer) Boss.getKammer()).setChampion(true);
-        ((CHWaffenkammer) Boss.getKammer()).setSorcerer(true);
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultRanged("Inferno bolt pistol");
-        ((CHWaffenkammer) Boss.getKammer()).setDefaultCloceCombat("Force stave");
-        Boss.initKammer(false, true, false, false);
-        Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        Boss.setGrundkosten(getPts("Aspiring Sorcerer TS"));
-        ((CHWaffenkammer) Boss.getKammer()).type = "Aspiring Sorcerer TS";
-        add(Boss);
-        Boss.setAbwaehlbar(false);
+        RuestkammerStarter boss = new RuestkammerStarter(ID, randAbstand, cnt, new  CHWaffenkammer("Aspiring Sorcerer TS", "Inferno bolt pistol", "Inferno bolt pistol", false, true, false, false, CHAMPION, SORCERER), "Aspiring Sorcerer");
+        boss.setUeberschriftTrotzNullKostenAusgeben(true);
+        boss.setGrundkosten(getPts("Aspiring Sorcerer TS"));
+        boss.setAbwaehlbar(false);
+        add(boss);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableChange();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, CHANGE), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }

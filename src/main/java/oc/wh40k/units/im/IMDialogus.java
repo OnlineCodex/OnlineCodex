@@ -14,7 +14,7 @@ public class IMDialogus extends Eintrag {
 
         seperator();
         
-        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
+        addWeapons(new IMAdeptaSororitasRuestkammer(name, getKeywords()), false);
         
         seperator();
 

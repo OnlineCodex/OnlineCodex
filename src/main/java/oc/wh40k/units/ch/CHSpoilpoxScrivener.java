@@ -12,9 +12,7 @@ public class CHSpoilpoxScrivener extends Eintrag {
         grundkosten = getPts("Spoilpox Scrivener") /*+ getPts("Plaguesword") + getPts("Distended maw") + getPts("Disgusting sneezes")*/;
         power = 3;
 
-        seperator();
-        
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(new CHWaffenkammerCD(name, getKeywords()), false);
         
         seperator();
         
@@ -22,10 +20,4 @@ public class CHSpoilpoxScrivener extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-
-    }
-
 }

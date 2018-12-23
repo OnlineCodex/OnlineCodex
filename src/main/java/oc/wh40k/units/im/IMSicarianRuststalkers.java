@@ -4,12 +4,9 @@ import oc.*;
 
 public class IMSicarianRuststalkers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-
-    boolean harkerSelected = false;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
 
     public IMSicarianRuststalkers() {
         name = "Sicarian Ruststalkers";
@@ -24,12 +21,10 @@ public class IMSicarianRuststalkers extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMAdeptusMechanicusRuestkammer.class, "Ruststalker Princeps");
-        ((IMAdeptusMechanicusRuestkammer) rkBoss.getKammer()).setType("Ruststalker Princeps");
-        rkBoss.initKammer(false, false, false, false);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMAdeptusMechanicusRuestkammer("Ruststalker Princeps", false, false, false, false), "Ruststalker Princeps");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }

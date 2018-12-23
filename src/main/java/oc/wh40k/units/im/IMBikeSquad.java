@@ -4,15 +4,15 @@ import oc.*;
 
 public class IMBikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTrike;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
+    private final AnzahlPanel squad;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkTrike;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2;
 
     public IMBikeSquad() {
-        name = "Bike Squad\n";
+        name = "Bike Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -27,23 +27,19 @@ public class IMBikeSquad extends Eintrag {
 
         seperator();
 
-
         ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Bike Squad";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Bike Squad"), "Sergeant");
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         seperator();
 
-        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, IMTrikeKammer.class, "Attack Bike");
-        rkTrike.initKammer();
+        rkTrike = new RuestkammerStarter(ID, randAbstand, cnt, new IMTrikeKammer(), "Attack Bike");
         add(rkTrike);
 
         complete();

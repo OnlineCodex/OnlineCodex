@@ -6,12 +6,11 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
+
 public class TYZoanthropes extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter pod;
-    OptionsEinzelUpgrade neurotrophe;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
 
     public TYZoanthropes() {
         name = "Zoanthropes";
@@ -26,13 +25,10 @@ public class TYZoanthropes extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
+        add(psychicPowers);
 
         complete();
     }
@@ -44,5 +40,4 @@ public class TYZoanthropes extends Eintrag {
             power = 12;
         }
     }
-
 }

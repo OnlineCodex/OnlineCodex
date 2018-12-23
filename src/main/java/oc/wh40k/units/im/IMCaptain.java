@@ -6,21 +6,19 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMCaptain extends Eintrag {
-    OptionsEinzelUpgrade jump;
+
+    private final OptionsEinzelUpgrade jump;
 
     public IMCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN);
-    	
         name = "Captain";
         grundkosten = getPts("Captain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
-
-        seperator();
 
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Captain with Jump Pack") - getPts("Captain")));
 
         seperator();
         
-        addWeapons(new IMSpaceMarinesRuestkammer(), true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

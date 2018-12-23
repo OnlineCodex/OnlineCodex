@@ -12,9 +12,7 @@ public class IMMistressOfRepentance extends Eintrag {
         grundkosten = getPts("Mistress of Repentance") + getPts("Neural whips");
         power = 2;
 
-        seperator();
-        
-        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
+        addWeapons(new IMAdeptaSororitasRuestkammer(name, getKeywords()), false);
 
         seperator();
         

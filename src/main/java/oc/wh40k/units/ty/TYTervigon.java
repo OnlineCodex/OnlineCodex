@@ -3,14 +3,14 @@ package oc.wh40k.units.ty;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
+
 public class TYTervigon extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final OptionsUpgradeGruppe o1;
 
-    RuestkammerStarter waffen;
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
+    private final RuestkammerStarter psychicPowers;
 
     public TYTervigon() {
         name = "Tervigon";
@@ -24,27 +24,22 @@ public class TYTervigon extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tervigon)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tervigon)")));
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableHiveMind();
-        psychicPowers.initKammer();
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+        add(psychicPowers);
+
         seperator();
         
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
-        ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
-        waffen.initKammer();
-        add(waffen);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new TYRuestkammer("Broodlord"));
         waffen.setButtonText("Wargear");
         waffen.setAbwaehlbar(false);
+        add(waffen);
 
         seperator();
         

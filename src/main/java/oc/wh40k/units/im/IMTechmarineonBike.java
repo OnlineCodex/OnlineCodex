@@ -13,7 +13,7 @@ public class IMTechmarineonBike extends Eintrag {
 
         seperator();
         
-        addWeapons(new IMSpaceMarinesRuestkammer(), true);
+        addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
         
         seperator();
 

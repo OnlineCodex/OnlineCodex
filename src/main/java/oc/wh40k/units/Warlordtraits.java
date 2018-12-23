@@ -8,38 +8,37 @@ import com.google.common.collect.ImmutableSet;
 import oc.*;
 
 public class Warlordtraits extends RuestkammerVater {
-    OptionsUpgradeGruppe warlordtraits;
-    OptionsUpgradeGruppe warlordtraits2;
-    OptionsUpgradeGruppe warlordtraits3;
-    String mandatoryChoice = "";
-	KeyWord exclusiveKeyword = null;
-    boolean subfactionsAllowed = true;
 
-    public Warlordtraits() {
-        grundkosten = 0;
-    }
-
-    Set<String> CHAOS_GODS = ImmutableSet.of("Chaosdaemons", "Khorne", "Tzeentch", "Nurgle", "Slaanesh");
-	Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
-    Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
-    Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
-    Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
-    Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
-    Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
-    Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
-    Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
-    Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
-    Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
+    private static final Set<String> CHAOS_GODS = ImmutableSet.of("Chaosdaemons", "Khorne", "Tzeentch", "Nurgle", "Slaanesh");
+	private static final Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+	private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
+	private static final Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
+	private static final Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
+	private static final Set<String> ADEPTUS_MECHANICUS = ImmutableSet.of("Adeptus Mechanicus", "Cult Mechanicus", "Skitarii", "Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
+	private static final Set<String> NECRONS = ImmutableSet.of("NECRONS", "Sautekh", "Nihilakh", "Novokh", "Mephrit", "Nephrekh", "Maynarkh", "C'tan Shards", "Canoptek");
+	private static final Set<String> ORKS = ImmutableSet.of("ORK", "Goff", "Blood Axe", "Deathskulls", "Evil Sunz", "Snakebites", "Bad Moonz", "Freebooterz");
+	private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
+	private static final Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
+	private static final Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     
     private static final String KABAL = "KABAL";
     private static final String WYCH_CULT = "WYCH CULT";
     private static final String HAEMUNCULUS_COVEN = "HAEMUNCULUS COVEN";
-    
-	@Override
-	public void initButtons(boolean... b) {
+
+	private final OptionsUpgradeGruppe warlordtraits;
+	private OptionsUpgradeGruppe warlordtraits2;
+	private OptionsUpgradeGruppe warlordtraits3;
+	private final String mandatoryChoice;
+	private final KeyWord exclusiveKeyword;
+	private final boolean subfactionsAllowed;
+
+	public Warlordtraits(Set<KeyWord> keywords, String mandatoryChoice, KeyWord exclusiveKeyword, boolean subfactionsAllowed) {
+		this.mandatoryChoice = mandatoryChoice;
+		this.exclusiveKeyword = exclusiveKeyword;
+		this.subfactionsAllowed = subfactionsAllowed;
 		warlord = true;
-    	checkBuildaVater();
-    	String army = buildaVater.getFormationType();
+    	String army = checkBuildaVater().getFormationType();
 
     	//ALL
     	ogE.addElement(new OptionsGruppeEintrag("Legendary Fighter (BRB p.186)", 0));
@@ -559,17 +558,5 @@ public class Warlordtraits extends RuestkammerVater {
         	warlordtraits.deselectAll();
         	warlordtraits.setSelected(mandatoryChoice, true);
         }
-    }
-    
-    public void setMandatoryChoice(String s) {
-    	mandatoryChoice = s;
-    }
-    
-    public void allowSubfactions(boolean b) {
-    	subfactionsAllowed = b;
-    }
-    
-    public void setExclusiveKeyword(KeyWord s) {
-    	exclusiveKeyword = s;
     }
 }

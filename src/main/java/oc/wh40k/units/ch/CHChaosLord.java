@@ -2,10 +2,11 @@ package oc.wh40k.units.ch;
 
 import oc.*;
 
+import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.CHAMPION;
+
 public class CHChaosLord extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
 
     public CHChaosLord() {
 
@@ -15,26 +16,21 @@ public class CHChaosLord extends Eintrag {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump pack", getPts("Chaos Lord with Jump Pack") - getPts("Chaos Lord")));
 
-
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Chainsword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        waffen.initKammer(true, true, true, true);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Chainsword", true, true, true, true, CHAMPION));
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
         
         addWarlordTraits("", true);

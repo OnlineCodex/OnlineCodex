@@ -30,7 +30,6 @@ public class TAShasvreKammer extends RuestkammerVater {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Markerlight and Target Lock", "Markerlight/Target Lock", getPts("Markerlight") + getPts("Target lock (all other units)")));
 
-
         sizeSetzen();
     }
 
@@ -39,5 +38,9 @@ public class TAShasvreKammer extends RuestkammerVater {
         if (!o1.isSelected()) {
             o1.setSelected(0, true);
         }
+    }
+
+    public OptionsUpgradeGruppe getO1() {
+        return o1;
     }
 }

@@ -4,17 +4,17 @@ import oc.*;
 
 public class ORWarbikers extends Eintrag {
 
-    AnzahlPanel waaghbikaz;
-    OptionsEinzelUpgrade trophäenstange;
-    RuestkammerStarter Boss;
-    OptionsEinzelZaehler sluggas;
-    OptionsEinzelZaehler choppas;
-    OptionsEinzelZaehler stikks;
+    private final AnzahlPanel waaghbikaz;
+    private final RuestkammerStarter Boss;
+    private final OptionsEinzelZaehler sluggas;
+    private final OptionsEinzelZaehler choppas;
+    private final OptionsEinzelZaehler stikks;
 
     public ORWarbikers() {
+        grundkosten = 0;
 
         kategorie = 4;
-        grundkosten = 0;
+
         add(waaghbikaz = new AnzahlPanel(ID, randAbstand, cnt, "Warbikers", 3, 12, getPts("Warbikers")));
         add(ico = new oc.Picture("oc/wh40k/images/Waaghbike.gif"));
 
@@ -26,18 +26,15 @@ public class ORWarbikers extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "Boss Nob");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setWarbikerBoss(true);
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) Boss.getKammer()).setDefaultCloceCombat("no weapon");
-        Boss.initKammer(false, false, false, false, false);
+        ORWaffenUndGeschenke kammer = new ORWaffenUndGeschenke("no weapon", "no weapon", false, false, false, false, false, false, false, false);
+        kammer.setWarbikerBoss(true);
+        Boss = new RuestkammerStarter(ID, randAbstand, cnt, kammer, "Boss Nob");
         Boss.setUeberschriftTrotzNullKostenAusgeben(true);
         Boss.setGrundkosten(getPts("Boss Nob"));
-        add(Boss);
         Boss.setAbwaehlbar(false);
+        add(Boss);
 
         complete();
-
     }
 
     @Override
@@ -45,7 +42,6 @@ public class ORWarbikers extends Eintrag {
         sluggas.setMaxAnzahl(waaghbikaz.getModelle() - (Boss.isSelected() ? 1 : 0));
         choppas.setMaxAnzahl(waaghbikaz.getModelle() - (Boss.isSelected() ? 1 : 0));
         stikks.setMaxAnzahl(waaghbikaz.getModelle());
-
 
         Boss.setAbwaehlbar(true);
         if (waaghbikaz.getModelle() > 9) {

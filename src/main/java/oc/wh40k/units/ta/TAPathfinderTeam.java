@@ -4,11 +4,9 @@ import oc.*;
 
 public class TAPathfinderTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1, oe2, oe3;
-    OptionsZaehlerGruppe oz1;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter rkBoss;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelUpgrade oe1, oe2, oe3;
+    private final OptionsZaehlerGruppe o5;
 
     public TAPathfinderTeam() {
         name = "Pathfinder Team";
@@ -36,12 +34,11 @@ public class TAPathfinderTeam extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Ion rifle", getPts("Ion rifle") - getPts("Markerlight") - getPts("Pulse carbine")));
         ogE.addElement(new OptionsGruppeEintrag("Rail rifle", getPts("Rail rifle") - getPts("Markerlight") - getPts("Pulse carbine")));
-        add(oz1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 3));
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, TAInfanterieKammer.class, "Upgrade zum Shas'ui");
-        rkBoss.initKammer(false, false, true);
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new TAInfanterieKammer(false, false, true), "Upgrade zum Shas'ui");
         rkBoss.setGrundkosten(0);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);

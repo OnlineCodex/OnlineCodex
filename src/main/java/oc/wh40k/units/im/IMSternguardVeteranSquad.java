@@ -2,18 +2,16 @@ package oc.wh40k.units.im;
 
 import oc.*;
 
-public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
+public class IMSternguardVeteranSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-
-    boolean siegeForce;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2;
+    private final RuestkammerStarter rkBoss;
 
     public IMSternguardVeteranSquad() {
-        name = "Sternguard Veteran Squad\n";
+        name = "Sternguard Veteran Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -30,14 +28,11 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
         ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
         ogE.addAll(IMSpaceMarinesHeavyWeapons.createRK("", "", buildaVater));
-//		ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater)); Ist zwar laut Eintrag möglich, aber unnötig, da es sowieso schon oben gewählt werden kann.
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Sternguard Veteran Squad";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant("Sternguard Veteran Squad"), "Sergeant");
         rkBoss.setAbwaehlbar(false);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);

@@ -7,39 +7,31 @@ import oc.RuestkammerStarter;
 
 public class CHDarkApostle extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+    private final RuestkammerStarter waffen;
 
     public CHDarkApostle() {
-
         name = "DarkApostle";
         grundkosten = getPts("DarkApostle");
         power = 5;
-
-        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         
         seperator();
 
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power maul");
-        waffen.initKammer(false, true, false, false);
+        waffen = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Bolt pistol", "Power maul", false, true, false, false));
         waffen.setButtonText("Waffenkammer");
-        add(waffen);
         waffen.setAbwaehlbar(false);
-        
+        add(waffen);
+
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-
     }
 
     @Override

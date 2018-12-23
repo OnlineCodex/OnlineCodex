@@ -4,15 +4,14 @@ import oc.*;
 
 public class IMAssaultSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-
-    OptionsEinzelUpgrade jump;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1, o1x;
+    private final OptionsZaehlerGruppe o2;
+    private final RuestkammerStarter rkBoss;
+    private final OptionsEinzelUpgrade jump;
 
     public IMAssaultSquad() {
-        name = "Assault Squad\n";
+        name = "Assault Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -38,13 +37,11 @@ public class IMAssaultSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Sergeant");
-        ((IMSergeant) rkBoss.getKammer()).type = "Assault Squad";
-        rkBoss.initKammer();
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new IMSergeant(name), "Sergeant");
         rkBoss.setGrundkosten(getPts("Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(rkBoss);
         rkBoss.setAbwaehlbar(false);
+        add(rkBoss);
 
         complete();
     }
