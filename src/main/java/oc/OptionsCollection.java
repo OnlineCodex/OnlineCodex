@@ -119,36 +119,11 @@ public abstract class OptionsCollection extends BuildaPanel {
 
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("Collection");
-
-        for (int i = 0; i < optionen.size(); i++) {
-            root.appendChild(optionen.elementAt(i).getSaveElement());
-        }
-
-        return root;
-    }
-
     public void load(String s, String trenner) {
         String[] splittet = s.split(trenner);
 
         for (int i = 0; i < optionen.size(); ++i) {
             optionen.elementAt(i).load(splittet[i]);
-
-            if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
-                checkRuestkammerStarter(rk);
-            }
-        }
-    }
-
-    public void loadElement(Element e) {
-        NodeList children = e.getChildNodes();
-
-        for (int i = 0; i < optionen.size(); ++i) {
-            //                if(children.item(i) != null && children.item(i).getNodeType() == Node.ELEMENT_NODE) {
-            optionen.elementAt(i).loadElement((Element) children.item(i));
-            //                }
 
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
                 RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));

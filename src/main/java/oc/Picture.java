@@ -41,12 +41,7 @@ public class Picture extends OptionsVater {
     }
 
     @Override
-    public void load(String s) {
-    }
-
-    @Override
-    public void loadElement(Element e) {
-    }
+    public void load(String s) {}
 
     @Override
     public boolean isLegal() {
@@ -54,8 +49,7 @@ public class Picture extends OptionsVater {
     }
 
     @Override
-    public void setLegal(boolean b) {
-    }
+    public void setLegal(boolean b) {}
 
     @Override
     public double getKosten() {

@@ -40,8 +40,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected boolean uniqueError = false;
 	private JLabel lKosten = new JLabel("");
 	private JLabel legalerEintragLabel = new JLabel();
-	private boolean countToMinimum = true;
-	private boolean countToMaximum = true;
 	private double prozentKosten = 0.0;
 	protected RuestkammerStarter warlordTraits;
 	private boolean warlordError;
@@ -236,22 +234,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	public void setUnikat(boolean unikat) {
 		checkUnikatErrorMessageState();
 		this.unikat = unikat;
-	}
-
-	public boolean isCountToMinimum() {
-		return this.countToMinimum;
-	}
-
-	public void setCountToMinimum(boolean state) {
-		this.countToMinimum = state;
-	}
-
-	public boolean isCountToMaximum() {
-		return this.countToMaximum;
-	}
-
-	public void setCountToMaximum(boolean state) {
-		this.countToMaximum = state;
 	}
 
 	public int getKategorie() {

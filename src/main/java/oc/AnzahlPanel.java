@@ -317,16 +317,6 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     }
 
     @Override
-    public Element getSaveElement() {
-        control();
-
-        Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_COUNTER);
-        root.setAttribute("number", Integer.toString(getModelle()));
-
-        return root;
-    }
-
-    @Override
     public void load(String s) {
         try {
             modelle = Integer.parseInt(s);
@@ -335,15 +325,6 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         }
 
         tModelle.setText(String.valueOf(modelle));
-    }
-
-    @Override
-    public void loadElement(Element e) {
-        try {
-            modelle = Integer.parseInt(e.getAttribute("number"));
-        } catch (NumberFormatException ex) {
-            modelle = -88;
-        }
     }
 
     @Override

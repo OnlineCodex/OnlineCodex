@@ -8,7 +8,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Objects;
 import java.util.Vector;
 
 import static oc.RefreshListener.Priority.CHOOSER;
@@ -17,50 +20,28 @@ import static oc.RefreshListener.addRefreshListener;
 public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Chooser.class);
+    public static final Color BLACK = new Color(0, 0, 0);
+    public static final Color GREEN = new Color(30, 205, 0);
 
-    private static ListCellRenderer defaultRenderer = new JComboBox().getRenderer(); // mein eigener Renderer "überschreibt" sozusagen den default renderer, indem er seine Methode aufruft und das reurnte verändert. Dafür muss ich diesen aber einmal haben
-    BuildaVater buildaVater;
-    boolean aktualisierungIgnorieren = false;
-    private JComboBox myComboBox = new JComboBox();
+    private final JComboBox<Class<? extends Eintrag>> myComboBox;
+
+    private BuildaVater buildaVater;
     private JButton cloneButton = new JButton(BuildaHQ.translate("Clonen"));
-    private String reflectionKennung;
-    private Object[] statischeEinträge;
-    private Vector<String> spezialEinträge;
-    ListCellRenderer renderer = new ListCellRenderer() {
-
-        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-            Component c = defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-
-
-            for (int i = 0; i < statischeEinträge.length; ++i) {
-                if (statischeEinträge[i].equals(value)) {
-                    c.setForeground(new Color(0, 0, 0));
-                    break;
-                }
-            }
-
-            for (int i = 0; i < spezialEinträge.size(); ++i) {
-                if (spezialEinträge.get(i).equals((String) value)) {
-                    c.setForeground(new Color(30, 205, 0));
-                    break;
-                }
-            }
-
-            return c;
-        }
-    };
+    private List<Class<? extends Eintrag>> statischeEinträge;
+    private List<Class<? extends Eintrag>> spezialEinträge;
     private int kategorie;
     private boolean useActionPerformed = true;
-    private Eintrag myEintrag = null;// = new LeererEintrag(0,0);
-    private HashMap<String, String> multipleArmyClasses = new HashMap<String, String>();
+    private Eintrag myEintrag = null;
 
-    public Chooser(BuildaVater bv, int lX, int lY, String reflectionKennung, Object[] alleEinträge, int kategorie, ActionListener cloneListener) {  // ACHTUNG: wenn mehr oder weniger als 2 Hauptsachen zum panel geaddet werden, muss aktuellenEintragLöschen geändert werden! weil dann der index falsch ist, an dem irgendwas ins panel geaddet ist.
+    @SuppressWarnings({
+            "unchecked", "rawtypes", // fuuuuck generic arrays
+    })
+    Chooser(BuildaVater bv, int lX, int lY, List<Class<? extends Eintrag>> alleEinträge, int kategorie, ActionListener cloneListener) {
         this.buildaVater = bv;
         this.kategorie = kategorie;
         this.panel.setLocation(lX, lY);
-        this.reflectionKennung = reflectionKennung;
 
-        myComboBox = new JComboBox(alleEinträge);
+        myComboBox = new JComboBox<>(alleEinträge.stream().toArray(Class[]::new));
 
         myComboBox.setBounds(0, 0, auswahlBreite - 60, 20);
         myComboBox.addActionListener(this);
@@ -69,7 +50,24 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         myComboBox.setBackground(Color.WHITE);
         myComboBox.setMaximumRowCount((BILDSCHIRMHÖHE - 150) / 20);
         myComboBox.setEditable(false);
-        myComboBox.setRenderer(renderer);
+        ListCellRenderer<? super Class<? extends Eintrag>> defaultRenderer = myComboBox.getRenderer();
+        myComboBox.setRenderer((JList<? extends Class<? extends Eintrag>> list, Class<? extends Eintrag> value, int index, boolean isSelected, boolean cellHasFocus) -> {
+            Component c = defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+
+            if (value != null) {
+                statischeEinträge.stream()
+                        .filter(value::equals)
+                        .findFirst()
+                        .ifPresent(any -> c.setForeground(BLACK));
+
+                spezialEinträge.stream()
+                        .filter(value::equals)
+                        .findFirst()
+                        .ifPresent(any -> c.setForeground(GREEN));
+            }
+
+            return c;
+        });
         myComboBox.putClientProperty("JComboBox.isTableCellEditor", Boolean.TRUE);
 
         panel.add(myComboBox);
@@ -92,6 +90,32 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         addRefreshListener(CHOOSER, this::sizeSetzen);
     }
 
+    JButton getCloneButton() {
+        return cloneButton;
+    }
+
+    public void selectEntryNotLocked(String s) {
+        myComboBox.setSelectedItem(s);
+    }
+
+    private HashMap<String, String> multipleArmyClasses = new HashMap<String, String>();
+
+    void setAuswahlen(List<Class<? extends Eintrag>> v) {
+        useActionPerformed = false;
+        Class<? extends Eintrag> currentSelected = selectedEntry();
+
+        myComboBox.removeAllItems();
+        v.forEach(myComboBox::addItem);
+        myComboBox.setSelectedItem(currentSelected);
+
+        if (!Objects.equals(selectedEntry(), currentSelected)) {
+            myEintrag.deleteYourself();
+        }
+
+        useActionPerformed = true;
+    }
+
+
     public int getKategorie() {
         return this.kategorie;
     }
@@ -100,28 +124,20 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         return this.myEintrag;
     }
 
-    public JButton getCloneButton() {
-        return cloneButton;
-    }
-
-    public JComboBox getComboBox() {
+    JComboBox getComboBox() {
         return this.myComboBox;
     }
 
     public double getKosten() {
-        try {
-            return ((Eintrag) myEintrag).getKosten();
-        } catch (Exception e) {
-            return 0;
-        }
+        return myEintrag.getKosten();
     }
 
-    public Chooser setStatischeEinträge(Object[] sE) {
+    Chooser setStatischeEinträge(List<Class<? extends Eintrag>> sE) {
         this.statischeEinträge = sE;
         return this;
     }
 
-    public Chooser setSpezialEinträge(Vector<String> sE) {
+    Chooser setSpezialEinträge(List<Class<? extends Eintrag>> sE) {
         this.spezialEinträge = sE;
         return this;
     }
@@ -141,96 +157,24 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         panel.setSize(x, y + randAbstand);
     }
 
-    public void setAuswahlen(Vector v) {
-        useActionPerformed = false;
-        String currentSelected = selectedEntry();
-
-        myComboBox.removeAllItems();
-        for (int i = 0; i < v.size(); i++) {
-            myComboBox.addItem(v.elementAt(i));
-        }
-
-        myComboBox.setSelectedItem(currentSelected);
-
-        if (!selectedEntry().equals(currentSelected)) {
-            myEintrag.deleteYourself();
-        }
-
-        useActionPerformed = true;
-    }
-
-    public void erstelleEintrag(String name) {
-        String umgeformterName = BuildaHQ.formZuKlassenName(name);
-        if (umgeformterName.equals("")) {
+    private void erstelleEintrag(Class<? extends Eintrag> eintrag) {
+        if (eintrag == null) {
             erstelleLeerenEintrag();
         } else {
-            String finalClassName = "";
             try {
-                // Determine whether to use a WHFB or a Wh40k Army-Class
-                String armyPackage = OnlineCodex.ARMY_PACKAGE;
+                aktuellenEintragLöschen();
 
-                // Check if the requested class is used by multiple armies
-                if (this.multipleArmyClasses.containsKey(name)) {
-                    finalClassName = this.multipleArmyClasses.get(name);
-                } else {
-                    finalClassName = reflectionKennung + umgeformterName;
-                }
-                finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
-
-                try {
-                    Class myClass = Class.forName(armyPackage + "units." + finalClassName);
-
-                    aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                    myEintrag = (Eintrag) (myClass.newInstance());
-                } catch (Exception e) {
-
-                    try {
-                        if (reflectionKennung == "") {
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        } else {
-                            Class myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        }
-
-                    } catch (Exception ex) {
-                        if (reflectionKennung == "") { //Fall für Einheiten in APO
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        } else {
-                            Class myClass = Class.forName(armyPackage + "units." + umgeformterName);
-
-                            aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
-
-                            myEintrag = (Eintrag) (myClass.newInstance());
-                        }
-
-                    }
-                }
-
-                if (umgeformterName.startsWith("Requiriert")) {
-                    myEintrag.setName(name);
-                }
+                myEintrag = eintrag.getConstructor()
+                        .newInstance();
 
                 myEintrag.getPanel().setLocation(0, 30);
                 myEintrag.setKategorie(kategorie);
                 myEintrag.setBuildaVater(buildaVater);
                 panel.add(myEintrag.getPanel());
-            } catch (ClassNotFoundException e) {
-                OnlineCodex.getInstance().fehler("Klasse \"" + finalClassName + "\" nicht gefunden.\nBitte melden!!");
+            } catch (ClassCastException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
+                LOGGER.error("Error while creating instance of " + eintrag, e);
+                OnlineCodex.getInstance().fehler("Konnte den Eintrag " + eintrag.getName() + " nicht initialisiere:\n" + e.getLocalizedMessage());
                 erstelleLeerenEintrag();
-            } catch (ClassCastException | InstantiationException | IllegalAccessException e) {
-                LOGGER.error("Error while loading class", e);
             }
         }
 
@@ -238,8 +182,11 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         cloneButton.setVisible(!(myEintrag instanceof LeererEintrag));
     }
 
-    String selectedEntry() {
-        return ((String) (myComboBox.getSelectedObjects()[0]));
+    @SuppressWarnings({
+            "unchecked", // JComboBox.getSelectedObjects() hides the type.
+    })
+    Class<? extends Eintrag> selectedEntry() {
+        return (Class<? extends Eintrag>) myComboBox.getSelectedObjects()[0];
     }
 
     public void actionPerformed(ActionEvent event) {
@@ -277,7 +224,6 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     public String getSaveText(String trenner) {
-        //LOGGER.info("Chooser-getSaveText");
         try {
             return myEintrag.getSaveText(trenner);
         } catch (Exception e) {
@@ -285,62 +231,13 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         }
     }
 
-    public Element getSaveElement() {
-        //LOGGER.info("Chooser-getSaveElement");
-        if (getComboBox().getSelectedObjects()[0].toString().trim().equals("")) return null;
-
-        Element root = myEintrag.getSaveElement();
-        root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
-
-//    	Element root = BuildaHQ.getNewXMLElement("Eintrag");
-//    	root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
-//
-//    	root.appendChild(myEintrag.getSaveElement());
-
-        return root;
-    }
-
-    public void load(String s, String s2) {
-        //LOGGER.info("Chooser-load");
-        myEintrag.load(s, s2);
-    }
-
-    public void loadElement(Element e) {
-        //LOGGER.info("Chooser-loadElement");
-        myEintrag.loadElement(e);
-    }
-
-    public void selectEntry(String s) {//Feste Auswahl für eine Formation
+    void selectEntry(String s) {
         myComboBox.setSelectedItem(s);
         myComboBox.setEnabled(false);
         cloneButton.setEnabled(false);
     }
 
-    public void selectEntryNotLocked(String s) {//Tauschbare Auswahl für eine Formation
-        myComboBox.setSelectedItem(s);
+    public void load(String s, String s2) {
+        myEintrag.load(s, s2);
     }
-
-    public void removeEmptyEntry() {//Entfernt den leeren Eintrag am Anfang, damit die Einheit nicht abgewählt werden kann
-        myComboBox.remove(0);
-    }
-
-    public void changeEntries(String[] units) { //Tauscht den Inhalt der Combobox aus
-        //LOGGER.info("Chooser-setAuswahlen");
-        useActionPerformed = false;
-
-        // leeren und neufüllen der Liste
-        myComboBox.removeAllItems();
-        for (int i = 0; i < units.length; i++) {
-            myComboBox.addItem(units[i]);
-        }
-
-        useActionPerformed = true;
-
-        myComboBox.setSelectedItem(units[0]);
-    }
-
-    public void setReflectionKennung(String s) {
-        reflectionKennung = s;
-    }
-
 }

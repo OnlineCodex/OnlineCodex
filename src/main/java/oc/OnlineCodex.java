@@ -523,16 +523,6 @@ public class OnlineCodex extends BuildaPanel {
         return s;
     }
 
-    public Element getSaveElement() {
-        Element root = myBuilderz.get(tab.getSelectedIndex() - 1).getSaveElement();
-        root.setAttribute("choice", buildaChooser.getSelectedObjects()[0].toString());
-        if (budget != null && budget.isEnabled() && !budget.getText().equals("")) {
-            root.setAttribute("budget", Integer.toString(getBudget()));
-        }
-
-        return root;
-    }
-
     public BuildaVater getBuilder() {
         return myBuilderz.get(tab.getSelectedIndex() + 1);
     }

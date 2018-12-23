@@ -396,9 +396,6 @@ public class OptionsUpgradeGruppe extends OptionsVater {
                     if (!isShowKosten()) {
                         kosten = "";
                     }
-                    //					else if (o.getKosten() * modelle == 0) {
-                    //						kosten = punkteAbstandHalter + BuildaHQ.translate("kostenlos");
-                    //					}
                 }
 
                 text.append(BuildaHQ.anfang + o.getName() + kosten);
@@ -424,21 +421,6 @@ public class OptionsUpgradeGruppe extends OptionsVater {
     }
 
     @Override
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("UpgradeGroup");
-
-        for (int i = 0; i < myUpgrades.size(); i++) {
-            if (myUpgrades.get(i).isSelected()) {
-                Element e = BuildaHQ.getNewXMLElement("Upgrade");
-                e.setAttribute("selection", Integer.toString(i));
-                root.appendChild(e);
-            }
-        }
-
-        return root;
-    }
-
-    @Override
     public void load(String s) {
         String[] splittet = s.split(SAVETEXT_TRENNER1);
 
@@ -451,30 +433,16 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public void setToolTipText(int i, String s) {
-        myUpgrades.elementAt(i).getButton().setToolTipText(s);
-    }
-
-    @Override
-    public void loadElement(Element e) {
-        NodeList children = e.getChildNodes();
-        for (int i = 0; i < children.getLength(); i++) {
-            Element child = (Element) children.item(i);
-            myUpgrades.get(Integer.parseInt(child.getAttribute("selection"))).setSelected(true);
-        }
-    }
-
     public void deleteYourself() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
-            if (myUpgrades.elementAt(i).isSelected()) {
-                if (myUpgrades.elementAt(i).isUnique() || myUpgrades.elementAt(i).isRelic()) {
-                    myUpgrades.elementAt(i).switsch();
-                }
+            OptionsButtonUpgrade opt = myUpgrades.elementAt(i);
+            if (opt.isSelected() && (opt.isUnique() || opt.isRelic())) {
+                opt.switsch();
             }
         }
     }
 
-    public OptionsButtonUpgrade getChosenRelic() {
+    OptionsButtonUpgrade getChosenRelic() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isSelected() && myUpgrades.elementAt(i).isRelic()) {
                 return myUpgrades.elementAt(i);
@@ -483,7 +451,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         return null;
     }
 
-    public void enableRelics() {
+    void enableRelics() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isRelic()) {
                 myUpgrades.elementAt(i).setAktiv(true);
@@ -491,12 +459,11 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public void disableOtherRelics(OptionsButtonUpgrade obu) {
+    void disableOtherRelics(OptionsButtonUpgrade obu) {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isRelic()) {
                 myUpgrades.elementAt(i).setAktiv(obu.equals(myUpgrades.elementAt(i)));
             }
         }
     }
-
 }
