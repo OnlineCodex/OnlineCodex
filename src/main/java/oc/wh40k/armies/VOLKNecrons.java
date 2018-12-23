@@ -1,75 +1,145 @@
 package oc.wh40k.armies;
 
-import oc.BuildaHQ;
+import com.google.common.collect.ImmutableList;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
-import oc.utils.ResourceUtils;
+import oc.Eintrag;
+import oc.wh40k.units.ne.*;
 
-import java.io.InputStream;
+import java.util.List;
 
+import static oc.utils.EvenMoreCollections.concat;
 import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKNecrons extends BuildaVater {
 
     //Vanilla Necrons
-    private static final String[] HQeinträge_NE = new String[]{"", "Overlord", "Lord", "Cryptek", "Destroyer Lord", "Catacomb Command Barge",};
-    private static final String[] Standardeinträge_NE = new String[]{"", "Necron Warriors", "Immortals",};
-    private static final String[] Eliteeinträge_NE = new String[]{"", "Lychguard", "Deathmarks", "Flayed Ones",};
-    private static final String[] Sturmeinträge_NE = new String[]{"", "Tomb Blades", "Destroyers",};
-    private static final String[] Unterstützungeinträge_NE = new String[]{"", "Heavy Destroyers", "Monolith", "Annihilation Barge", "Doomsday Ark",};
-    private static final String[] Transporteinträge_NE = new String[]{"", "Ghost Ark",};
-    private static final String[] Fliegereinträge_NE = new String[]{"", "Doom Scythe", "Night Scythe",};
-    private static final String[] LordofWareinträge_NE = new String[]{"", "Obelisk",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_NE = ImmutableList.of(
+            null,
+            NEOverlord.class,
+            NELord.class,
+            NECryptek.class,
+            NEDestroyerLord.class,
+            NECatacombCommandBarge.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_NE = ImmutableList.of(
+            null,
+            NENecronWarriors.class,
+            NEImmortals.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_NE = ImmutableList.of(
+            null,
+            NELychguard.class,
+            NEDeathmarks.class,
+            NEFlayedOnes.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_NE = ImmutableList.of(
+            null,
+            NETombBlades.class,
+            NEDestroyers.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_NE = ImmutableList.of(
+            null,
+            NEHeavyDestroyers.class,
+            NEMonolith.class,
+            NEAnnihilationBarge.class,
+            NEDoomsdayArk.class);
+    private static final List<Class<? extends Eintrag>> Transporteinträge_NE = ImmutableList.of(
+            null,
+            NEGhostArk.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_NE = ImmutableList.of(
+            null,
+            NEDoomScythe.class,
+            NENightScythe.class);
+    private static final List<Class<? extends Eintrag>>LordofWareinträge_NE = ImmutableList.of(
+            null,
+            NEObelisk.class);
 
     //ohne Dynasty
-    private static final String[] HQeinträge_Vanilla_only = new String[]{"", "Illuminor Szeras", "Anrakyr the Traveller",};
-    private static final String[] Eliteeinträge_Vanilla_only = new String[]{"", "Triarch Praetorians", "Triarch Stalker",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Vanilla_only = ImmutableList.of(
+            null,
+            NEIlluminorSzeras.class,
+            NEAnrakyrtheTraveller.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Vanilla_only = ImmutableList.of(
+            null,
+            NETriarchPraetorians.class,
+            NETriarchStalker.class);
 
     //Sautekh Dynasty
-    private static final String[] HQeinträge_Sautekh = new String[]{"", "Imotekh the Stormlord", "Nemesor Zahndrekh", "Vargard Obyron", "Orikan the Diviner",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Sautekh = ImmutableList.of(
+            null,
+            NEImotekhtheStormlord.class,
+            NENemesorZahndrekh.class,
+            NEVargardObyron.class,
+            NEOrikantheDiviner.class);
 
     //Nihilakh Dynasty
-    private static final String[] HQeinträge_Nihilakh = new String[]{"", "Trazyn the Infinite",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Nihilakh = ImmutableList.of(
+            null,
+            NETrazyntheInfinite.class);
 
     //C'tan Shards
-    private static final String[] Eliteeinträge_Ctan_Shards = new String[]{"", "C'tan Shard of the Deceiver", "C'tan Shard of the Nightbringer",};
-    private static final String[] Unterstützungeinträge_Ctan_Shards = new String[]{"", "Transcendent C'tan",};
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Ctan_Shards = ImmutableList.of(
+            null,
+            NECtanShardoftheDeceiver.class,
+            NECtanShardoftheNightbringer.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_Ctan_Shards = ImmutableList.of(
+            null,
+            NETranscendentCtan.class);
 
     //C'tan Shards & Dynasty
-    private static final String[] LordofWareinträge_Ctan_Shards_Dynasty = new String[]{"", "Tesseract Vault",};
+    private static final List<Class<? extends Eintrag>>LordofWareinträge_Ctan_Shards_Dynasty = ImmutableList.of(
+            null,
+            NETesseractVault.class);
 
     //Canoptek
-    private static final String[] Sturmeinträge_Canoptek = new String[]{"", "Canoptek Wraiths", "Canoptek Scarabs",};
-    private static final String[] Unterstützungeinträge_Canoptek = new String[]{"", "Canoptek Spyders",};
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Canoptek = ImmutableList.of(
+            null,
+            NECanoptekWraiths.class,
+            NECanoptekScarabs.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_Canoptek = ImmutableList.of(
+            null,
+            NECanoptekSpyders.class);
 
     //Imperial Armour Xenos Vanilla
-    private static final String[] Unterstützungeinträge_IA_NE = new String[]{"", "Sentry Pylon", "Tesseract Ark",};
-    private static final String[] Fliegereinträge_IA_NE = new String[]{"", "Night Shroud",};
-    private static final String[] LordofWareinträge_IA_NE = new String[]{"", "Gauss Pylon",};
-    private static final String[] Befestigungen_IA_NE = new String[]{"", "Tomb Citadel",};
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_IA_NE = ImmutableList.of(
+            null,
+            NESentryPylon.class,
+            NETesseractArk.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_IA_NE = ImmutableList.of(
+            null,
+            NENightShroud.class);
+    private static final List<Class<? extends Eintrag>>LordofWareinträge_IA_NE = ImmutableList.of(
+            null,
+            NEGaussPylon.class);
+    private static final List<Class<? extends Eintrag>> Befestigungen_IA_NE = ImmutableList.of(
+            null,
+            NETombCitadel.class);
 
     //Imperial Armour Xenos Maynarkh Dynasty
-    private static final String[] HQeinträge_IA_Maynarkh = new String[]{"", "Kutlakh the World Killer", "Toholk the Blinded",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_IA_Maynarkh = ImmutableList.of(
+            null,
+            NEKutlakhtheWorldKiller.class,
+            NEToholktheBlinded.class);
 
     //Imperial Armour Xenos Canoptek
-    private static final String[] Eliteeinträge_IA_Canoptek = new String[]{"", "Canoptek Tomb Stalker",};
-    private static final String[] Sturmeinträge_IA_Canoptek = new String[]{"", "Canoptek Acanthrites", "Canoptek Tomb Sentinel",};
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_IA_Canoptek = ImmutableList.of(
+            null,
+            NECanoptekTombStalker.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_IA_Canoptek = ImmutableList.of(
+            null,
+            NECanoptekAcanthrites.class,
+            NECanoptekTombSentinel.class);
 
     public VOLKNecrons() {
-        super("NE", loadPoints(
-                "/oc/wh40k/indices/ne.yaml",
-                "/oc/wh40k/indices/iane.yaml"));
+        super("NE", loadPoints("/oc/wh40k/indices/ne.yaml", "/oc/wh40k/indices/iane.yaml"));
 
-        AdditionalInformation = new String[]{""};
-        HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
-        Standardeinträge = new String[]{""};
-        Sturmeinträge = new String[]{""};
-        Unterstützungeinträge = new String[]{""};
-        Transporteinträge = new String[]{""};
-        Fliegereinträge = new String[]{""};
-        Befestigungen = new String[]{""};
-        LordofWar = new String[]{""};
+        AdditionalInformation = ImmutableList.of(null);
+        HQeinträge = ImmutableList.of(null);
+        Eliteeinträge = ImmutableList.of(null);
+        Standardeinträge = ImmutableList.of(null);
+        Sturmeinträge = ImmutableList.of(null);
+        Unterstützungeinträge = ImmutableList.of(null);
+        Transporteinträge = ImmutableList.of(null);
+        Fliegereinträge = ImmutableList.of(null);
+        Befestigungen = ImmutableList.of(null);
+       LordofWar = ImmutableList.of(null);
 
         adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -89,21 +159,21 @@ public class VOLKNecrons extends BuildaVater {
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR,LordofWar));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
 
         //Formationen
         formationen.add("NECRONS");
-        formationen.add("");
+        formationen.add(null);
         formationen.add("Sautekh");
         formationen.add("Nihilakh");
         formationen.add("Novokh");
         formationen.add("Mephrit");
         formationen.add("Nephrekh");
         formationen.add("Maynarkh");
-        formationen.add("");
+        formationen.add(null);
         formationen.add("C'tan Shards");
         formationen.add("Canoptek");
 
@@ -112,84 +182,83 @@ public class VOLKNecrons extends BuildaVater {
 
     @Override
     public void volkRefresh() {
-
         if (getFormationType().equals("NECRONS")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Sautekh, HQeinträge_Nihilakh, HQeinträge_IA_Maynarkh));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_NE));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_NE));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Sautekh, HQeinträge_Nihilakh, HQeinträge_IA_Maynarkh));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Sautekh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Sautekh));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Sautekh));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Nihilakh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Nihilakh));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_Nihilakh));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Novokh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Mephrit")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Nephrekh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Maynarkh")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_IA_Maynarkh));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_IA_Maynarkh));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigungen_IA_NE));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWareinträge_NE, LordofWareinträge_Ctan_Shards_Dynasty, LordofWareinträge_IA_NE));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_NE, Fliegereinträge_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("C'tan Shards")) {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Ctan_Shards);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_Ctan_Shards);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWareinträge_Ctan_Shards_Dynasty);
         } else if (getFormationType().equals("Canoptek")) {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_IA_Canoptek);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_Canoptek);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
         }
