@@ -19,10 +19,7 @@ public class IMPrimarisLibrarian extends Eintrag {
         
         addWeapons(new IMSpaceMarinesRuestkammer(name, getKeywords()), true);
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, getPsychicPowerGroug(checkBuildaVater()));
 
         seperator();
 

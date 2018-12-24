@@ -10,7 +10,6 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
 
     private final OptionsUpgradeGruppe inferno;
     private final OptionsUpgradeGruppe stave;
-    private final RuestkammerStarter psychicPowers;
 
     public CHTSSorcererinTerminatorArmour() {
 
@@ -33,10 +32,7 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS, CHANGE);
 
         seperator();
 

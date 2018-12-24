@@ -15,7 +15,7 @@ public class IMInterceptorSquad extends Eintrag {
     private final RuestkammerStarter rkBoss;
 
     public IMInterceptorSquad() {
-        name = "Interceptor Squad\n";
+        name = "Interceptor Squad";
         grundkosten = 0;
         überschriftSetzen = true;
 
@@ -54,10 +54,7 @@ public class IMInterceptorSquad extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, SANCTIC);
 
         complete();
     }

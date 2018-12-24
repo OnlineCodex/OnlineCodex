@@ -9,8 +9,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHAhrimanonDiscofTzeentch extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHAhrimanonDiscofTzeentch() {
         name = "Ahriman on Disc of Tzeentch";
         grundkosten = getPts("Ahriman on Disc of Tzeentch");
@@ -19,10 +17,7 @@ public class CHAhrimanonDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, DARK_HERETICUS, CHANGE);
 
         seperator();
 

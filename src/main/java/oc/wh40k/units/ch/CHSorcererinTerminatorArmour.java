@@ -19,8 +19,6 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
     private final RuestkammerStarter waffen;
     private final OptionsUpgradeGruppe mark;
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHSorcererinTerminatorArmour() {
 
         name = "Sorcerer in Terminator Armour";
@@ -44,10 +42,7 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS);
 
         seperator();
         

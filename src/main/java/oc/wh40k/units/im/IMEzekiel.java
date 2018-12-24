@@ -10,17 +10,12 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.INTERROMANCY;
 
 public class IMEzekiel extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public IMEzekiel() {
         name = "Ezekiel";
         grundkosten = getPts("Ezekiel");
         power = 7;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, INTERROMANCY), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, INTERROMANCY);
 
         seperator();
 

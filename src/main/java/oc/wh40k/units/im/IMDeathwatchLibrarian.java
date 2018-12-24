@@ -12,7 +12,6 @@ public class IMDeathwatchLibrarian extends Eintrag {
 
     private final OptionsEinzelUpgrade jump;
     private final RuestkammerStarter waffenUndReliquien;
-    private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarian() {
         name = "Librarian";
@@ -31,10 +30,7 @@ public class IMDeathwatchLibrarian extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(2, getPsychicPowerGroug(checkBuildaVater()));
 
         seperator();
 

@@ -7,16 +7,15 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
 
 public class IMPurgationSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1def;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o2def;
+    private final RuestkammerStarter rkBoss;
 
     public IMPurgationSquad() {
-        name = "Purgatortrupp\n";
+        name = "Purgatortrupp";
         grundkosten = 10;
         überschriftSetzen = true;
 
@@ -55,10 +54,7 @@ public class IMPurgationSquad extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(true);
+        addPsychicPowers(1, SANCTIC);
 
         complete();
     }

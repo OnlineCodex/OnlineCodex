@@ -1,13 +1,11 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
-import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANGUINARY;
-
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
+
+import static oc.KeyWord.*;
+import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANGUINARY;
 
 public class IMLibrarianDreadnought extends Eintrag {
 
@@ -30,10 +28,7 @@ public class IMLibrarianDreadnought extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANGUINARY), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, SANGUINARY);
 
         seperator();
 

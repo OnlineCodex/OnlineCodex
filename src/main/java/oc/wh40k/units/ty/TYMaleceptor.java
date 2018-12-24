@@ -23,10 +23,7 @@ public class TYMaleceptor extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, HIVE_MIND);
 
         complete();
     }

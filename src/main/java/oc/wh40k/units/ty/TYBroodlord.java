@@ -8,7 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
 
 public class TYBroodlord extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
     private final RuestkammerStarter waffen;
 
     public TYBroodlord() {
@@ -20,10 +19,7 @@ public class TYBroodlord extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, HIVE_MIND);
 
         seperator();
         

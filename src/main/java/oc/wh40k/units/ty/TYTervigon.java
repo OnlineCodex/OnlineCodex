@@ -10,7 +10,6 @@ public class TYTervigon extends Eintrag {
     private final OptionsUpgradeGruppe o1;
 
     private final RuestkammerStarter waffen;
-    private final RuestkammerStarter psychicPowers;
 
     public TYTervigon() {
         name = "Tervigon";
@@ -29,10 +28,7 @@ public class TYTervigon extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, HIVE_MIND);
 
         seperator();
         

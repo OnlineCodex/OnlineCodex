@@ -13,10 +13,7 @@ public class AEHemlockWraithfighter extends Eintrag {
         grundkosten = getPts("Hemlock Wraithfighter") + 2 * getPts("Heavy D-scythe") + getPts("Spirit stones");
         power = 10;
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, RUNES_OF_BATTLE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, RUNES_OF_BATTLE);
 
         complete();
     }

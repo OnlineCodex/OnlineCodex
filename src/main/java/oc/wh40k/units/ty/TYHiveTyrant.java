@@ -9,11 +9,7 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
 
 public class TYHiveTyrant extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    OptionsEinzelUpgrade oe3;
-    RuestkammerStarter psychicPowers;
-    RuestkammerStarter waffen;
+    private final RuestkammerStarter waffen;
 
     public TYHiveTyrant() {
         name = "Hive Tyrant";
@@ -22,19 +18,16 @@ public class TYHiveTyrant extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYSchwarmtyrantFuss.jpg"));
 
-        add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Wings", "Wings", 47)); //Hier gibt es keinen Eintrag
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Wings", "Wings", 47)); //Hier gibt es keinen Eintrag
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Hive Tyrant)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Hive Tyrant)")));
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, HIVE_MIND);
 
         seperator();
 

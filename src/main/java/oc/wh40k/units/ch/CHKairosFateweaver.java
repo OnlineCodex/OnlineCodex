@@ -25,10 +25,7 @@ public class CHKairosFateweaver extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(6, DISCIPLINE_OF_TZEENTCH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(6, DISCIPLINE_OF_TZEENTCH);
 
         seperator();
         

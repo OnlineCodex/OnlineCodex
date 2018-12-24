@@ -163,10 +163,6 @@ public class PsychicPowers extends RuestkammerVater {
         }
     }
 
-    public PsychicPowers(int numPowers, PsychicPowerGroup... groups) {
-        this(numPowers, ImmutableSet.of(), groups);
-    }
-
     public PsychicPowers(int numPowers, Iterable<ChaosGod> chaosGods, PsychicPowerGroup... groups) {
 	    this.numPowers = numPowers;
 	    this.chaosGods = newEnumSet(chaosGods, ChaosGod.class);

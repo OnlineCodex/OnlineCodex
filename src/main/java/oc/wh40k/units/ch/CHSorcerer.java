@@ -13,7 +13,6 @@ public class CHSorcerer extends Eintrag {
 
     private final RuestkammerStarter waffen;
     private final OptionsUpgradeGruppe mark;
-    private final RuestkammerStarter psychicPowers;
 
     public CHSorcerer() {
         name = "Sorcerer";
@@ -38,10 +37,7 @@ public class CHSorcerer extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS);
 
         seperator();
         

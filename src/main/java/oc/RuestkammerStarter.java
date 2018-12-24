@@ -50,8 +50,8 @@ public class RuestkammerStarter extends OptionsVater {
         this.einrueckIndex = einrueckIndex;
     }
 
-    public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater abteilung, String name, Set<KeyWord> keywords) {
-
+    public RuestkammerStarter(int ID, int lX, int lY, RuestkammerVater myKammer, String name, Set<KeyWord> keywords) {
+        this.myKammer = myKammer;
         this.selected = false;
         this.name = name;
         panel.setLocation(lX - 5, lY);
@@ -66,12 +66,6 @@ public class RuestkammerStarter extends OptionsVater {
 
         fontSetzen(false);
         panel.add(startButton);
-
-        try {
-            myKammer = (RuestkammerVater) abteilung;
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(this.getPanel(), abteilung.getName() + ".class" + BuildaHQ.translate("nicht gefunden. Rüstkammer kann nicht geöffnet werden:") + " " + e.getMessage());
-        }
 
         WindowListener closeListenerWindow = new WindowListener() {
 
@@ -119,9 +113,9 @@ public class RuestkammerStarter extends OptionsVater {
         myKammer.setCloseListener(closeListenerWindow, closeListenerFocus, e -> ruestkammerClosed());
         myKammer.setzteRefreshListener(ID);
 
-        if (!abteilung.getName().equals("")) {
-            myKammer.setUeberschrift(abteilung.getName() + " " + BuildaHQ.translate("Rüstkammer"));
-            myKammer.name = abteilung.getName();
+        if (!myKammer.getName().equals("")) {
+            myKammer.setUeberschrift(myKammer.getName() + " " + BuildaHQ.translate("Rüstkammer"));
+            myKammer.name = myKammer.getName();
         }
 
         sizeSetzen();

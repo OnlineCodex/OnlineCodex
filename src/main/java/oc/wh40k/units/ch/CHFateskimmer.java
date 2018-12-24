@@ -10,10 +10,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHFateskimmer extends Eintrag {
 
-    OptionsEinzelUpgrade waffe1;
-    OptionsEinzelUpgrade waffe2;
-    RuestkammerStarter psychicPowers;
-
     public CHFateskimmer() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, CHARIOT, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FATESKIMMER);
 
@@ -23,7 +19,7 @@ public class CHFateskimmer extends Eintrag {
 
         seperator();
 
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
 
         seperator();
         
@@ -31,10 +27,7 @@ public class CHFateskimmer extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DISCIPLINE_OF_TZEENTCH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DISCIPLINE_OF_TZEENTCH);
 
         seperator();
         

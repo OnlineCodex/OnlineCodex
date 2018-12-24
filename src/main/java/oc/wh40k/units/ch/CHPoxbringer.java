@@ -1,13 +1,12 @@
 package oc.wh40k.units.ch;
 
+import com.google.common.collect.ImmutableSet;
+import oc.Eintrag;
+import oc.wh40k.units.PsychicPowers;
+
 import static oc.KeyWord.*;
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_NURGLE;
-
-import com.google.common.collect.ImmutableSet;
-import oc.Eintrag;
-import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
 
 public class CHPoxbringer extends Eintrag {
 
@@ -23,12 +22,8 @@ public class CHPoxbringer extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt,
-                new PsychicPowers(1, ImmutableSet.of(PsychicPowers.ChaosGod.NURGLE), DARK_HERETICUS, DISCIPLINE_OF_NURGLE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(true);
-        
+        addPsychicPowers(1, ImmutableSet.of(PsychicPowers.ChaosGod.NURGLE), DARK_HERETICUS, DISCIPLINE_OF_NURGLE);
+
         seperator();
         
         addWarlordTraits("", NURGLE);

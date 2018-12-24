@@ -8,8 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHDaemonPrinceofTzeentch extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHDaemonPrinceofTzeentch() {
         name = "Daemon Prince of Tzeentch";
         grundkosten = getPts("Daemon Prince of Nurgle") + getPts("Malefic talons");
@@ -24,10 +22,7 @@ public class CHDaemonPrinceofTzeentch extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS, CHANGE);
 
         seperator();
 

@@ -15,10 +15,7 @@ public class IMChiefLibrarianTigurius extends Eintrag {
         grundkosten = getPts("Chief Librarian Tigurius");
         power = 7;
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, LIBRARIUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, LIBRARIUS);
 
         seperator();
 

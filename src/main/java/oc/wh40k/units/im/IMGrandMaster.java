@@ -10,7 +10,6 @@ public class IMGrandMaster extends Eintrag {
     //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
     private final OptionsUpgradeGruppe o1;
     private final OptionsUpgradeGruppe o2;
-    private final RuestkammerStarter psychicPowers;
 
     public IMGrandMaster() {
         name = "Grand Master";
@@ -36,10 +35,7 @@ public class IMGrandMaster extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, SANCTIC);
 
         seperator();
 

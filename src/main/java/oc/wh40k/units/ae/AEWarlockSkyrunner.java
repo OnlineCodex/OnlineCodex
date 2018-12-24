@@ -1,20 +1,14 @@
 package oc.wh40k.units.ae;
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
-
-import oc.RuestkammerStarter;
-
-import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.RUNES_OF_BATTLE;
 
 public class AEWarlockSkyrunner extends Eintrag {
-    OptionsZaehlerGruppe o1;
-    RuestkammerStarter psychicPowers;
+
+    private final OptionsZaehlerGruppe o1;
 
     public AEWarlockSkyrunner() {
         name = "Warlock Skyrunner";
@@ -29,11 +23,7 @@ public class AEWarlockSkyrunner extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt,
-                new PsychicPowers(1, RUNES_OF_BATTLE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, RUNES_OF_BATTLE);
 
         seperator();
 

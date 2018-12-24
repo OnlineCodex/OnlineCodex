@@ -7,11 +7,7 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
 
 public class IMPaladinAncient extends Eintrag {
     //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
-    OptionsUpgradeGruppe o1, o1x;
-    OptionsUpgradeGruppe o2, reliquien;
-    boolean grandmasterBool;
-    OptionsEinzelUpgrade grandmaster;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe o1;
 
     public IMPaladinAncient() {
         name = "Paladin Ancient";
@@ -29,14 +25,11 @@ public class IMPaladinAncient extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Nemesis falchion", getPts("Nemesis falchion")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, SANCTIC);
 
         seperator();
 

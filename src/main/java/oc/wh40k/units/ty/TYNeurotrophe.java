@@ -8,8 +8,7 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.HIVE_MIND;
 
 public class TYNeurotrophe extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-	private final RuestkammerStarter waffen;
+    private final RuestkammerStarter waffen;
 
     public TYNeurotrophe() {
         name = "Neurotrophe";
@@ -18,10 +17,7 @@ public class TYNeurotrophe extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, HIVE_MIND);
 
         seperator();
         

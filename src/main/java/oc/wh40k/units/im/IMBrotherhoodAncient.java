@@ -8,7 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
 public class IMBrotherhoodAncient extends Eintrag {
 
     private final OptionsUpgradeGruppe o1;
-    private final RuestkammerStarter psychicPowers;
 
     public IMBrotherhoodAncient() {
         name = "Brotherhood Ancient";
@@ -27,10 +26,7 @@ public class IMBrotherhoodAncient extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, SANCTIC);
 
         seperator();
 

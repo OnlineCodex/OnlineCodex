@@ -11,17 +11,12 @@ import static oc.wh40k.units.im.ImperiumUtils.getPsychicPowerGroug;
 
 public class IMDeathwatchPrimarisLibrarian extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public IMDeathwatchPrimarisLibrarian() {
         name = "Primaris Librarian";
         grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol (DW)") + getPts("Force sword");
         power = 7;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, getPsychicPowerGroug(checkBuildaVater()));
 
         seperator();
 

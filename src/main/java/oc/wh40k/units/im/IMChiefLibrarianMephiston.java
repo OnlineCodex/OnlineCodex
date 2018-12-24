@@ -17,10 +17,7 @@ public class IMChiefLibrarianMephiston extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, SANGUINARY), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(true);
+        addPsychicPowers(3, SANGUINARY);
         
         seperator();
         

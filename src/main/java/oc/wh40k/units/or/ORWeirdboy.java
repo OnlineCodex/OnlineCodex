@@ -17,10 +17,7 @@ public class ORWeirdboy extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Wyrdboy.gif"));
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, POWER_OF_THE_WAAAGH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(2, POWER_OF_THE_WAAAGH);
 
         seperator();
 

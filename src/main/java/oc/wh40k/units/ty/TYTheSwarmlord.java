@@ -13,10 +13,7 @@ public class TYTheSwarmlord extends Eintrag {
         grundkosten = getPts("TheSwarmlord");
         power = 15;
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, HIVE_MIND), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(true);
+        addPsychicPowers(2, HIVE_MIND);
 
         seperator();
         

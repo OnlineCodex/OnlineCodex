@@ -11,7 +11,6 @@ import java.util.Set;
 public class CHDaemonPrinceofChaos extends Eintrag {
 
     private final OptionsUpgradeGruppe mark;
-    private final RuestkammerStarter psychicPowers;
     private int lastMark = -1;
 
     public CHDaemonPrinceofChaos() {
@@ -35,10 +34,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DISCIPLINE_OF_NURGLE, DISCIPLINE_OF_TZEENTCH, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, DISCIPLINE_OF_NURGLE, DISCIPLINE_OF_TZEENTCH, DISCIPLINE_OF_SLAANESH);
 
         seperator();
 

@@ -8,8 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLIN
 
 public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
 	public IMNjalStormcallerinRunicTerminatorArmour() {
         name = "Njal Sturmbringer in Runic Terminator Armour";
         grundkosten = getPts("Njal Stormcaller in Runic Terminator Armour");
@@ -17,10 +15,7 @@ public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
         
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, TEMPESTAS_DISCIPLINE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(3, TEMPESTAS_DISCIPLINE);
 
         seperator();
         

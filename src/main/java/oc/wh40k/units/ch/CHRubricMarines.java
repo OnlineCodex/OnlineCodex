@@ -49,12 +49,7 @@ public class CHRubricMarines extends Eintrag {
         Boss.setAbwaehlbar(false);
         add(Boss);
 
-        RuestkammerStarter psychicPowers;
-
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(0), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(0);
 
         complete();
     }

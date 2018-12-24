@@ -6,15 +6,9 @@ import oc.OptionsGruppeEintrag;
 
 import oc.OptionsZaehlerGruppe;
 
-import oc.RuestkammerStarter;
-
-import oc.wh40k.units.PsychicPowers;
-
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.RUNES_OF_FATE;
 
 public class AEFarseer extends Eintrag {
-    OptionsZaehlerGruppe o1;
-    RuestkammerStarter psychicPowers;
 
     public AEFarseer() {
         name = "Farseer";
@@ -25,15 +19,13 @@ public class AEFarseer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
         ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
+        OptionsZaehlerGruppe o1;
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
         o1.setAktiv(0, true);
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, RUNES_OF_FATE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, RUNES_OF_FATE);
 
         seperator();
 

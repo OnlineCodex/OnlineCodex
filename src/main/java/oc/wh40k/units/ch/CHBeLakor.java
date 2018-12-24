@@ -9,18 +9,13 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHBeLakor extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHBeLakor() {
         super(CHAOS, DAEMON, CHARACTER, MONSTER, DAEMON_PRINCE, FLY, PSYKER, BE_LAKOR);
         name = "Be'Lakor";
         grundkosten = getPts("Be'Lakor");
         power = 12;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS);
 
         seperator();
         

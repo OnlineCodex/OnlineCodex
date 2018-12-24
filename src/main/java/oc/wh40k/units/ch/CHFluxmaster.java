@@ -1,11 +1,9 @@
 package oc.wh40k.units.ch;
 
+import oc.Eintrag;
+
 import static oc.KeyWord.*;
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DISCIPLINE_OF_TZEENTCH;
-
-import oc.Eintrag;
-import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
 
 public class CHFluxmaster extends Eintrag {
 
@@ -22,10 +20,7 @@ public class CHFluxmaster extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DISCIPLINE_OF_TZEENTCH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DISCIPLINE_OF_TZEENTCH);
 
         seperator();
         

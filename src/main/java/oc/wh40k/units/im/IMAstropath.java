@@ -15,7 +15,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.PSYKANA;
 public class IMAstropath extends Eintrag {
 
     private final OptionsUpgradeGruppe o1;
-    private final RuestkammerStarter psychicPowers;
 
     public IMAstropath() {
         name = "Astropath";
@@ -30,10 +29,7 @@ public class IMAstropath extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, PSYKANA), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, PSYKANA);
 
         seperator();
 

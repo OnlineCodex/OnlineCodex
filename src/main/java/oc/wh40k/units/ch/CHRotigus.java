@@ -10,8 +10,6 @@ import oc.wh40k.units.PsychicPowers.ChaosGod;
 
 public class CHRotigus extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public CHRotigus() {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS);
 
@@ -21,10 +19,7 @@ public class CHRotigus extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, ImmutableSet.of(ChaosGod.NURGLE)), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, ImmutableSet.of(ChaosGod.NURGLE));
 
         seperator();
         

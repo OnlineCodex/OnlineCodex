@@ -1,17 +1,14 @@
 package oc.wh40k.units.ch;
 
 import oc.*;
-import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHExaltedSorcerer extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe stave;
-    OptionsUpgradeGruppe inferno;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe stave;
+    private final OptionsUpgradeGruppe inferno;
 
     public CHExaltedSorcerer() {
 
@@ -38,10 +35,7 @@ public class CHExaltedSorcerer extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS, CHANGE);
 
         seperator();
 

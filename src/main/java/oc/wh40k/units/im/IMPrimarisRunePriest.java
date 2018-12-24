@@ -8,17 +8,13 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLIN
 public class IMPrimarisRunePriest extends Eintrag {
 	
     private final RuestkammerStarter waffenUndArtefakte;
-    private final RuestkammerStarter psychicPowers;
 
     public IMPrimarisRunePriest() {
         name = "Primaris Rune Priest";
         grundkosten = getPts("Primaris Rune Priest") + getPts("Runic sword") + getPts("Bolt pistol (SM)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 7;
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, TEMPESTAS_DISCIPLINE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(2, TEMPESTAS_DISCIPLINE);
 
         seperator();
 

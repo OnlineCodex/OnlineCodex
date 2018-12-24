@@ -3,9 +3,8 @@ package oc;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
+import oc.wh40k.units.PsychicPowers;
 import oc.wh40k.units.Warlordtraits;
-import oc.wh40k.units.im.IMAdeptaSororitasRuestkammer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +13,6 @@ import java.awt.*;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import static com.google.common.collect.Sets.newHashSet;
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
 
@@ -47,6 +45,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	private boolean warlordError;
 	private boolean warlord = false;
 	protected RuestkammerStarter weapons;
+	protected RuestkammerStarter psychicPowers;
+
 	private final Set<KeyWord> keywords;
 
 	public Eintrag(KeyWord... keywords) {
@@ -421,6 +421,22 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         weapons.setButtonText("Waffen");
         add(weapons);
         weapons.setAbwaehlbar(!mandatoryChoice);
+	}
+
+
+	protected RuestkammerStarter addPsychicPowers(int num, PsychicPowers.PsychicPowerGroup... groups) {
+		return addPsychicPowers(num, ImmutableSet.of(), groups);
+	}
+
+	protected RuestkammerStarter addPsychicPowers(int num, Set<PsychicPowers.ChaosGod> gods, PsychicPowers.PsychicPowerGroup... groups) {
+        RuestkammerVater kammer = new PsychicPowers(2, gods, groups);
+        kammer.setUeberschrift("Psychic Powers");
+        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, kammer, "");
+		psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
+		psychicPowers.setAbwaehlbar(false);
+		psychicPowers.setButtonText("Psychic Powers");
+		add(psychicPowers);
+		return psychicPowers;
 	}
 
 	public RuestkammerVater getWeapons() {

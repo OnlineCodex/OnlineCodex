@@ -14,7 +14,6 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
     private final OptionsUpgradeGruppe inferno;
     private final OptionsUpgradeGruppe stave;
-    private final RuestkammerStarter psychicPowers;
 
     public CHExaltedSorcereronDiscofTzeentch() {
         name = "Exalted Sorcerer on Disc of Tzeentch";
@@ -37,10 +36,7 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, DARK_HERETICUS, CHANGE);
 
         seperator();
 

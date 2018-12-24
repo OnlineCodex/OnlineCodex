@@ -8,8 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
 
 public class IMBrotherhoodChampion extends Eintrag {
 
-	private final RuestkammerStarter psychicPowers;
-
     public IMBrotherhoodChampion() {
         name = "Brotherhood Champion";
         grundkosten = getPts("Brotherhood Champion") + getPts("Storm bolter (SM)") + getPts("Frag grenades (SM)") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
@@ -18,10 +16,7 @@ public class IMBrotherhoodChampion extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, SANCTIC);
 
         seperator();
 

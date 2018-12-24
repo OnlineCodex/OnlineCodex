@@ -9,7 +9,6 @@ public class IMRunePriestonBike extends Eintrag {
 
     private final OptionsEinzelUpgrade oe1;
     private final RuestkammerStarter waffenUndArtefakte;
-    private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestonBike() {
         name = "Rune Priest on Bike";
@@ -21,10 +20,7 @@ public class IMRunePriestonBike extends Eintrag {
 
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, TEMPESTAS_DISCIPLINE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(false);
+        addPsychicPowers(2, TEMPESTAS_DISCIPLINE);
 
         seperator();
 

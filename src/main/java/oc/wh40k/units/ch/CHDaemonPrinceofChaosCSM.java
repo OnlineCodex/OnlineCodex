@@ -1,6 +1,9 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.ChaosGod.*;
@@ -9,7 +12,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 public class CHDaemonPrinceofChaosCSM extends Eintrag {
 
     private final OptionsUpgradeGruppe mark;
-    private final RuestkammerStarter psychicPowers;
 
     public CHDaemonPrinceofChaosCSM() {
         name = "Daemon Prince of Chaos";
@@ -37,10 +39,7 @@ public class CHDaemonPrinceofChaosCSM extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, DARK_HERETICUS);
 
         seperator();
 

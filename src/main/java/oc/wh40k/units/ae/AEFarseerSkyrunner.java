@@ -4,14 +4,11 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.RUNES_OF_FATE;
 
 
 public class AEFarseerSkyrunner extends Eintrag {
-
-    private final RuestkammerStarter psychicPowers;
 
     public AEFarseerSkyrunner() {
         name = "Farseer Skyrunner";
@@ -28,10 +25,7 @@ public class AEFarseerSkyrunner extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, RUNES_OF_FATE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, RUNES_OF_FATE);
 
         seperator();
 

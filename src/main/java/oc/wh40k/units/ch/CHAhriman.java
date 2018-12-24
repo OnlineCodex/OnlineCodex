@@ -9,8 +9,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHAhriman extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHAhriman() {
         name = "Ahriman";
         grundkosten = getPts("Ahriman");
@@ -20,10 +18,7 @@ public class CHAhriman extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, DARK_HERETICUS, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, DARK_HERETICUS, CHANGE);
 
         seperator();
 

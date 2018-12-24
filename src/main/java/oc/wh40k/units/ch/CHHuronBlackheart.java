@@ -8,17 +8,12 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHHuronBlackheart extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public CHHuronBlackheart() {
         name = "Huron Blackheart";
         grundkosten = getPts("Huron Blackheart");
         power = 7;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, DARK_HERETICUS);
 
         seperator();
 

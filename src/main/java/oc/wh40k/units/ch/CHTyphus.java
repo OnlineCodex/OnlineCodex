@@ -13,12 +13,7 @@ public class CHTyphus extends Eintrag {
         grundkosten = getPts("Typhus");
         power = 9;
 
-        seperator();
-
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, CONTAGION), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, CONTAGION);
 
         seperator();
         

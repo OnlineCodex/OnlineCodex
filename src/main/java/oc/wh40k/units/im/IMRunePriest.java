@@ -1,22 +1,13 @@
 package oc.wh40k.units.im;
 
 import oc.*;
-import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLINE;
 
 public class IMRunePriest extends Eintrag {
 
-
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
-	RuestkammerStarter psychicPowers;
+    private final OptionsEinzelUpgrade oe1;
+    private final RuestkammerStarter waffenUndArtefakte;
 
     public IMRunePriest() {
         name = "Rune Priest";
@@ -24,7 +15,7 @@ public class IMRunePriest extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Rune Priest with Jump Pack") - getPts("Rune Priest")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Rune Priest with Jump Pack") - getPts("Rune Priest")));
 
         seperator();
 
@@ -33,10 +24,7 @@ public class IMRunePriest extends Eintrag {
 
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, TEMPESTAS_DISCIPLINE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(2, TEMPESTAS_DISCIPLINE);
 
         seperator();
 

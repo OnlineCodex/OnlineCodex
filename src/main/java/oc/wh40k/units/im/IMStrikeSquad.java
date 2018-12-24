@@ -13,7 +13,6 @@ public class IMStrikeSquad extends Eintrag {
     private final OptionsZaehlerGruppe o2;
     private final OptionsZaehlerGruppe o2def;
     private final RuestkammerStarter rkBoss;
-    private final RuestkammerStarter psychicPowers;
 
     public IMStrikeSquad() {
         name = "Angriffstrupp";
@@ -56,10 +55,7 @@ public class IMStrikeSquad extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, SANCTIC);
 
         complete();
     }

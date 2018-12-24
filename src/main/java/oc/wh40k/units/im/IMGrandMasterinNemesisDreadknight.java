@@ -9,7 +9,6 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
     private final OptionsUpgradeGruppe o1;
     private final OptionsUpgradeGruppe o2;
-    private final RuestkammerStarter psychicPowers;
 
     public IMGrandMasterinNemesisDreadknight() {
         name = "Grand Master in Nemesis Dreadknight";
@@ -42,10 +41,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, SANCTIC);
 
         seperator();
 

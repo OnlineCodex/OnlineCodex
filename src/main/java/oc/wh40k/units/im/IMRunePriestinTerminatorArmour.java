@@ -8,7 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.TEMPESTAS_DISCIPLIN
 public class IMRunePriestinTerminatorArmour extends Eintrag {
 
     private final RuestkammerStarter waffenUndArtefakte;
-    private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestinTerminatorArmour() {
         name = "Rune Priest on Bike";
@@ -22,10 +21,7 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
 
         seperator();
         
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, TEMPESTAS_DISCIPLINE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(false);
-        add(psychicPowers);
+        addPsychicPowers(2, TEMPESTAS_DISCIPLINE);
 
         seperator();
 

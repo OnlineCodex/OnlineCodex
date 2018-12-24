@@ -11,7 +11,6 @@ import static oc.wh40k.units.im.ImperiumUtils.getPsychicPowerGroug;
 public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
     private final RuestkammerStarter waffenUndReliquien;
-    private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarianinTerminatorArmour() {
         name = "Librarian in Terminator Armour";
@@ -25,10 +24,7 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, getPsychicPowerGroug(checkBuildaVater())), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(2, getPsychicPowerGroug(checkBuildaVater()));
 
         seperator();
 

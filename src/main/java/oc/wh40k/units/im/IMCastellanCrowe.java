@@ -8,17 +8,12 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.SANCTIC;
 
 public class IMCastellanCrowe extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
-
     public IMCastellanCrowe() {
         name = "Castellan Crowe";
         grundkosten = getPts("Castellan Crowe");
         power = 7;
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, SANCTIC), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, SANCTIC);
 
         seperator();
 

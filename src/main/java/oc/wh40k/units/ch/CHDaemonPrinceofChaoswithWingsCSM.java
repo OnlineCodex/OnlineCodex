@@ -8,7 +8,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.DARK_HERETICUS;
 
 public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
 
-    private final RuestkammerStarter psychicPowers;
     private final OptionsUpgradeGruppe mark;
 
     public CHDaemonPrinceofChaoswithWingsCSM() {
@@ -38,10 +37,7 @@ public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DARK_HERETICUS), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, DARK_HERETICUS);
 
         seperator();
 

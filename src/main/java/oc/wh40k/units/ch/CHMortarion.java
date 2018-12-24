@@ -1,14 +1,10 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
 
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CONTAGION;
 
 public class CHMortarion extends Eintrag {
-
-    private final RuestkammerStarter psychicPowers;
 
     public CHMortarion() {
 
@@ -18,10 +14,7 @@ public class CHMortarion extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(3, CONTAGION), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(3, CONTAGION);
 
         seperator();
         

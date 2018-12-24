@@ -9,9 +9,9 @@ import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofChaoswithWings extends Eintrag {
-    OptionsUpgradeGruppe mark;
-    RuestkammerStarter psychicPowers;
-    int lastMark = -1;
+
+    private final OptionsUpgradeGruppe mark;
+    private int lastMark = -1;
 
     public CHDaemonPrinceofChaoswithWings() {
         super(CHAOS, DAEMON, ALLEGIANCE, CHARACTER, MONSTER, FLY, DAEMON_PRINCE_OF_CHAOS);
@@ -34,10 +34,7 @@ public class CHDaemonPrinceofChaoswithWings extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, DISCIPLINE_OF_NURGLE, DISCIPLINE_OF_TZEENTCH, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, DISCIPLINE_OF_NURGLE, DISCIPLINE_OF_TZEENTCH, DISCIPLINE_OF_SLAANESH);
 
         seperator();
 

@@ -11,7 +11,6 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
 public class CHTzaangorShaman extends Eintrag {
 
     private final OptionsUpgradeGruppe stave;
-    private final RuestkammerStarter psychicPowers;
 
     public CHTzaangorShaman() {
 
@@ -26,10 +25,7 @@ public class CHTzaangorShaman extends Eintrag {
 
         seperator();
 
-        psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(1, CHANGE), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        psychicPowers.setAbwaehlbar(true);
-        add(psychicPowers);
+        addPsychicPowers(1, CHANGE);
 
         seperator();
 

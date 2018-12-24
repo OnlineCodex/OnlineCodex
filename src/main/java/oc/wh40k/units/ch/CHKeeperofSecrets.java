@@ -19,10 +19,7 @@ public class CHKeeperofSecrets extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, new PsychicPowers(2, DISCIPLINE_OF_SLAANESH), "Psychic Powers");
-        psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
-        add(psychicPowers);
-        psychicPowers.setAbwaehlbar(true);
+        addPsychicPowers(2, DISCIPLINE_OF_SLAANESH);
         
         seperator();
         
