@@ -19,8 +19,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BuildaTextArea.class);
 
-    public Vector<String> triedAllies = new Vector<String>();
-    public Vector<String> noAllies = new Vector<String>();
     protected boolean nurBeiLeerenBuilderTrue = false;
     protected int cnt = 0;
     protected String textAreaUeberschrift = "";
@@ -163,9 +161,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         BuildaVater bV;
         StringBuilder text = new StringBuilder(getVolksSpezifischeInfos());
         int mainCnt = 0;
-        noAllies.clear();
-        triedAllies.clear();
-        boolean allyError = false;
 
         int kosten = 0;
         int cp = 3;
@@ -238,55 +233,13 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
         }
 
-            if (BuildaHQ.zusatzInfos) {
-                boolean waffenbrueder = false;
-                boolean zweckbuendnis = false;
-                boolean verzweifelt = false;
-                boolean niemals = false;
-                if (myBuildaVaterVec.size() > 1) {
-                    for (int i = 0; i < myBuildaVaterVec.size(); i++) {
-                        BuildaVater bV1 = myBuildaVaterVec.get(i);
-                        for (int j = 0; j < myBuildaVaterVec.size(); j++) {
-                            BuildaVater bV2 = myBuildaVaterVec.get(j);
-                            if (bV1.battleBrothers.contains(bV2.getId())) {
-                                waffenbrueder = true;
-                            } else if (bV1.alliesOfConvenience.contains(bV2.getId())) {
-                                zweckbuendnis = true;
-                            } else if (bV1.desperateAllies.contains(bV2.getId())) {
-                                verzweifelt = true;
-                            } else if (bV1.comeTheApocalypse.contains(bV2.getId())) {
-                                niemals = true;
-                            }
-                        }
-                    }
-                }
-                text.append(ZEILENUMBRUCH);
-                text.append("[" + (myBuildaVaterVec.size() > 1 ? " " : "x") + "] Kein Bündnis\n");
-                text.append("[" + (waffenbrueder ? "x" : " ") + "] Waffenbrüder\n");
-                text.append("[" + (zweckbuendnis ? "x" : " ") + "] Zweckbündnis\n");
-                text.append("[" + (verzweifelt ? "x" : " ") + "] Verzweifelte Verbündete\n");
-                text.append("[" + (niemals ? "x" : " ") + "] Niemals\n");
-            }
-
-            for (int i = 0; i < noAllies.size(); i++) {
-                LOGGER.info("No Allies: " + noAllies.get(i));
-            }
-            for (int i = 0; i < triedAllies.size(); i++) {
-                LOGGER.info("Tried Ally: " + triedAllies.get(i));
-                if (noAllies.contains(triedAllies.get(i))) {
-                    allyError = true;
-                    break;
-                }
-            }
-            if (allyError == true) {
-                fehlerLabel.setText("Es wurde ein verbotenes Alliiertes Kontingent gewählt.");
-            } else if (mainCnt == 0) {
-                fehlerLabel.setText("Ein Kontingent muss als Haupt-Kontingent ausgewählt werden.");
-            } else if (mainCnt > 1) {
-                fehlerLabel.setText("Nur ein Kontingent darf als Haupt-Kontingent ausgewählt werden.");
-            } else {
-                fehlerLabel.setText("");
-            }
+        if (mainCnt == 0) {
+            fehlerLabel.setText("Ein Kontingent muss als Haupt-Kontingent ausgewählt werden.");
+        } else if (mainCnt > 1) {
+            fehlerLabel.setText("Nur ein Kontingent darf als Haupt-Kontingent ausgewählt werden.");
+        } else {
+            fehlerLabel.setText("");
+        }
 
         textArea.setText(text.toString());
 
@@ -356,15 +309,11 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 } else {
                     ordenLokal = "";
                 }
-                if (orden.equals(ordenLokal)) {
-                    triedAllies.add(bV.getId());
-                }
             }
             text.append(/*bV.volk + " " +*/ bV.getFormationType());
             text.append(": " + bV.getKontingentTyp());
             if (bV.Hauptkontingent.isSelected()) {
                 nameDerArtDerArmeeDekliniert = bV.nameDerArtDerArmeeDekliniert;
-                noAllies = (Vector<String>) bV.noAllies.clone();
 
                 text.append(" (Hauptkontingent)");
                 if (bV.getId().equals("SM")) {

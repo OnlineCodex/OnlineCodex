@@ -1,14 +1,13 @@
 package oc.wh40k.armies;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
+import oc.wh40k.units.ty.*;
 
-import java.io.InputStream;
 import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
-import oc.utils.ResourceUtils;
 
 import static oc.utils.ResourceUtils.loadPoints;
 
@@ -19,16 +18,16 @@ public class VOLKTyraniden extends BuildaVater {
     public VOLKTyraniden() {
         super("TY", loadPoints( "/oc/wh40k/indices/ty.yaml"));
 
-        AdditionalInformation = new String[]{""};
-        HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
-        Standardeinträge = new String[]{""};
-        Sturmeinträge = new String[]{""};
-        Unterstützungeinträge = new String[]{""};
-        Transporteinträge = new String[]{""};
-        Fliegereinträge = new String[]{""};
-        Befestigungen = new String[]{""};
-        LordofWar = new String[]{""};
+        AdditionalInformation = ImmutableList.of(null);
+        HQeinträge = ImmutableList.of(null);
+        Eliteeinträge = ImmutableList.of(null);
+        Standardeinträge = ImmutableList.of(null);
+        Sturmeinträge = ImmutableList.of(null);
+        Unterstützungeinträge = ImmutableList.of(null);
+        Transporteinträge = ImmutableList.of(null);
+        Fliegereinträge = ImmutableList.of(null);
+        Befestigungen = ImmutableList.of(null);
+        LordofWar = ImmutableList.of(null);
 
         adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
@@ -58,8 +57,8 @@ public class VOLKTyraniden extends BuildaVater {
         textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("Tyraniden");
 
         formationen.add("TYRANIDS");
-        HIVEFLEETS.forEach(fleet -> formationen.add(fleet));
-        formationen.add("");
+        HIVEFLEETS.forEach(formationen::add);
+        formationen.add(null);
         formationen.add("Genestealer Cults");
 
         complete();
@@ -68,72 +67,195 @@ public class VOLKTyraniden extends BuildaVater {
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("TYRANIDS")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
-                    "", "The Swarmlord", "Old One Eye",
-                    "", "Patriarch", "Magus", "Primus", "Acolyte Iconward"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyranid Warriors", "Genestealers", "Termagants", "Hormagaunts", "Ripper Swarm",
-                    "", "Acolyte Hybrids", "Neophyte Hybrids"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyrant Guard", "Hive Guard", "Lictor", "Maleceptor", "Zoanthropes", "Venomthropes",
-                    "Pyrovores", "Haruspex",
-                    "", "Deathleaper", "The Red Terror",
-                    "", "Hybrid Metamorphs", "Aberrants", "Purestrain Genestealers"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyranid Shrikes", "Raveners", "Sky-Slasher Swarm", "Gargoyles",
-                    "Mucolid Spores", "Sporenmines", "Dimachaeron", "Meiotic Spores",
-                    "", "Cult Scout Sentinels", "Cult Armoured Sentinels"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Harpy", "Hive Crone"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Carnifexes", "Screamer-Killers", "Thornbacks", "Biovores", "Trygon Prime", "Trygon", "Mawloc", "Exocrine", "Toxicrene",
-                    "Tyrannofex", "Stonecrusher Carnifex Brood",
-                    "", "Cult Leman Russ", "Goliath Rockgrinder"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyrannocyte",
-                    "", "Goliath Truck", "Cult Chimera"});
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Sporocyst"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYHiveTyrant.class,
+                    TYBroodlord.class,
+                    TYTyranidPrime.class,
+                    TYTervigon.class,
+                    TYMalanthrope.class,
+                    TYNeurotrophe.class,
+                    null,
+                    TYTheSwarmlord.class,
+                    TYOldOneEye.class,
+                    null,
+                    TYPatriarch.class,
+                    TYMagus.class,
+                    TYPrimus.class,
+                    TYAcolyteIconward.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyranidWarriors.class,
+                    TYGenestealers.class,
+                    TYTermagants.class,
+                    TYHormagaunts.class,
+                    TYRipperSwarm.class,
+                    null,
+                    TYAcolyteHybrids.class,
+                    TYNeophyteHybrids.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyrantGuard.class,
+                    TYHiveGuard.class,
+                    TYLictor.class,
+                    TYMaleceptor.class,
+                    TYZoanthropes.class,
+                    TYVenomthropes.class,
+                    TYPyrovores.class,
+                    TYHaruspex.class,
+                    null,
+                    TYDeathleaper.class,
+                    TYTheRedTerror.class,
+                    null,
+                    TYHybridMetamorphs.class,
+                    TYAberrants.class,
+                    TYPurestrainGenestealers.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyranidShrikes.class,
+                    TYRaveners.class,
+                    TYSkySlasherSwarm.class,
+                    TYGargoyles.class,
+                    TYMucolidSpores.class,
+                    TYSporenmines.class,
+                    TYDimachaeron.class,
+                    TYMeioticSpores.class,
+                    null,
+                    TYCultScoutSentinels.class,
+                    TYCultArmouredSentinels.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYHarpy.class,
+                    TYHiveCrone.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYCarnifexes.class,
+                    TYScreamerKillers.class,
+                    TYThornbacks.class,
+                    TYBiovores.class,
+                    TYTrygonPrime.class,
+                    TYTrygon.class,
+                    TYMawloc.class,
+                    TYExocrine.class,
+                    TYToxicrene.class,
+                    TYTyrannofex.class,
+                    TYStonecrusherCarnifexBrood.class,
+                    null,
+                    TYCultLemanRuss.class,
+                    TYGoliathRockgrinder.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyrannocyte.class,
+                    null,
+                    TYGoliathTruck.class,
+                    TYCultChimera.class));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(null,
+                    TYSporocyst.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYBarbedHierodule.class,
+                    TYScythedHierodule.class,
+                    TYHarridan.class,
+                    TYHierophantBiotitan.class));
         } else if (HIVEFLEETS.contains(getFormationType())) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Hive Tyrant", "Broodlord", "Tyranid Prime", "Tervigon", "Malanthrope", "Neurotrophe",
-                    "", "The Swarmlord", "Old One Eye"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyranid Warriors", "Genestealers", "Termagants", "Hormagaunts", "Ripper Swarm"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyrant Guard", "Hive Guard", "Lictor", "Maleceptor", "Zoanthropes", "Venomthropes",
-                    "Pyrovores", "Haruspex",
-                    "", "Deathleaper", "The Red Terror"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyranid Shrikes", "Raveners", "Sky-Slasher Swarm", "Gargoyles",
-                    "Mucolid Spores", "Sporenmines", "Dimachaeron", "Meiotic Spores"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Harpy", "Hive Crone"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Carnifexes", "Screamer-Killers", "Thornbacks", "Biovores", "Trygon Prime", "Trygon", "Mawloc", "Exocrine", "Toxicrene",
-                    "Tyrannofex", "Stonecrusher Carnifex Brood"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Tyrannocyte"});
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Sporocyst"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYHiveTyrant.class,
+                    TYBroodlord.class,
+                    TYTyranidPrime.class,
+                    TYTervigon.class,
+                    TYMalanthrope.class,
+                    TYNeurotrophe.class,
+                    null,
+                    TYTheSwarmlord.class,
+                    TYOldOneEye.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyranidWarriors.class,
+                    TYGenestealers.class,
+                    TYTermagants.class,
+                    TYHormagaunts.class,
+                    TYRipperSwarm.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyrantGuard.class,
+                    TYHiveGuard.class,
+                    TYLictor.class,
+                    TYMaleceptor.class,
+                    TYZoanthropes.class,
+                    TYVenomthropes.class,
+                    TYPyrovores.class,
+                    TYHaruspex.class,
+                    null,
+                    TYDeathleaper.class,
+                    TYTheRedTerror.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyranidShrikes.class,
+                    TYRaveners.class,
+                    TYSkySlasherSwarm.class,
+                    TYGargoyles.class,
+                    TYMucolidSpores.class,
+                    TYSporenmines.class,
+                    TYDimachaeron.class,
+                    TYMeioticSpores.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYHarpy.class,
+                    TYHiveCrone.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYCarnifexes.class,
+                    TYScreamerKillers.class,
+                    TYThornbacks.class,
+                    TYBiovores.class,
+                    TYTrygonPrime.class,
+                    TYTrygon.class,
+                    TYMawloc.class,
+                    TYExocrine.class,
+                    TYToxicrene.class,
+                    TYTyrannofex.class,
+                    TYStonecrusherCarnifexBrood.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYTyrannocyte.class));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(null,
+                    TYSporocyst.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYBarbedHierodule.class,
+                    TYScythedHierodule.class,
+                    TYHarridan.class,
+                    TYHierophantBiotitan.class));
         } else if (getFormationType().equals("Genestealer Cults")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Patriarch", "Magus", "Primus", "Acolyte Iconward"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Acolyte Hybrids", "Neophyte Hybrids"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Hybrid Metamorphs", "Aberrants", "Purestrain Genestealers"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Cult Scout Sentinels", "Cult Armoured Sentinels"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Cult Leman Russ", "Goliath Rockgrinder"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    ""});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Goliath Truck", "Cult Chimera"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYPatriarch.class,
+                    TYMagus.class,
+                    TYPrimus.class,
+                    TYAcolyteIconward.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYAcolyteHybrids.class,
+                    TYNeophyteHybrids.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYHybridMetamorphs.class,
+                    TYAberrants.class,
+                    TYPurestrainGenestealers.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYCultScoutSentinels.class,
+                    TYCultArmouredSentinels.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYCultLemanRuss.class,
+                    TYGoliathRockgrinder.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    TYGoliathTruck.class,
+                    TYCultChimera.class));
         }
 
         if (formation != null) {
