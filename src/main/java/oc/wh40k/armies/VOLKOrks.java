@@ -12,87 +12,11 @@ public class VOLKOrks extends BuildaVater {
     public VOLKOrks() {
         super("OR", ResourceUtils.loadPoints("/oc/wh40k/indices/or.yaml"));
 
-        AdditionalInformation = new String[]{""};
-        HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
-        Standardeinträge = new String[]{""};
-        Sturmeinträge = new String[]{""};
-        Unterstützungeinträge = new String[]{""};
-        Transporteinträge = new String[]{""};
-        Fliegereinträge = new String[]{""};
-        Befestigungen = new String[]{""};
-        LordofWar = new String[]{""};
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-
-        cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
-
         volk = "Orks";
         nameDerArtDerArmee = "Orks";
         nameDerArtDerArmeeDekliniert = "der Orks";
 
         textAreaUeberschrift = BuildaHQ.translate("Mein") + " Waaagh!";
-
-        noAllies.clear();
-        noAllies.add("OR");
-        noAllies.add("DM");
-
-        battleBrothers.add("OR");
-        battleBrothers.add("DM");
-
-        alliesOfConvenience.add("BL");
-        alliesOfConvenience.add("CM");
-        alliesOfConvenience.add("CS");
-        alliesOfConvenience.add("RH");
-
-        desperateAllies.add("CD");
-        desperateAllies.add("DE");
-        desperateAllies.add("DH");
-        desperateAllies.add("EC");
-        desperateAllies.add("ELITE");
-        desperateAllies.add("HQ");
-        desperateAllies.add("FE");
-        desperateAllies.add("NE");
-        desperateAllies.add("TA");
-
-        comeTheApocalypse.add("AB");
-        comeTheApocalypse.add("AM");
-        comeTheApocalypse.add("AS");
-        comeTheApocalypse.add("BA");
-        comeTheApocalypse.add("CR");
-        comeTheApocalypse.add("DA");
-        comeTheApocalypse.add("DK");
-        comeTheApocalypse.add("DKAB");
-        comeTheApocalypse.add("ED");
-        comeTheApocalypse.add("GK");
-        comeTheApocalypse.add("IN");
-        comeTheApocalypse.add("IR");
-        comeTheApocalypse.add("MT");
-        comeTheApocalypse.add("SF");
-        comeTheApocalypse.add("SM");
-        comeTheApocalypse.add("TL");
-        comeTheApocalypse.add("TY");
-        comeTheApocalypse.add("SY");
-        comeTheApocalypse.add("DW");
 
         formationen.add("ORK");
         formationen.add("Goff");
@@ -106,12 +30,8 @@ public class VOLKOrks extends BuildaVater {
         complete();
     }
 
-    public void changeFormations() {
-    }
-
     @Override
     public void volkRefresh() {
-
         if (getFormationType().equals("ORK")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",

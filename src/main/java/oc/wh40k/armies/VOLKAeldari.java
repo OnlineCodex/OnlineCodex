@@ -2,59 +2,23 @@ package oc.wh40k.armies;
 
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import oc.BuildaHQ;
 import oc.BuildaVater;
-import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
+import oc.wh40k.units.ae.*;
 
 import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
-import oc.wh40k.units.ae.*;
 
 
 public class VOLKAeldari extends BuildaVater {
 
 	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
-	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
+	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
 	private static final Set<String> HARLEQUINS = ImmutableSet.of("Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
 
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints("/oc/wh40k/indices/ae.yaml", "/oc/wh40k/indices/de.yaml"));
-
-        AdditionalInformation = ImmutableList.of(null);
-        HQeinträge = ImmutableList.of(null);
-        Eliteeinträge = ImmutableList.of(null);
-        Standardeinträge = ImmutableList.of(null);
-        Sturmeinträge = ImmutableList.of(null);
-        Unterstützungeinträge = ImmutableList.of(null);
-        Transporteinträge = ImmutableList.of(null);
-        Fliegereinträge = ImmutableList.of(null);
-        Befestigungen = ImmutableList.of(null);
-        LordofWar = ImmutableList.of(null);
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-
-        cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
 
         nameDerArtDerArmee = BuildaHQ.translate("AELDARI");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("AELDARI");
@@ -85,808 +49,808 @@ public class VOLKAeldari extends BuildaVater {
         if (getFormationType().equals("AELDARI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
                     null,
-AEEldrad Ulthran.class,
-AEPrince Yriel.class,
-AEIllic Nightspear.class,
-AEAsurmen.class,
-AEJain Zar.class,
-AEKarandras.class,
-AEFuegan.class,
-AEBaharroth.class,
-AEMaugan Ra.class,
-AEAvatar of Khaine.class,
+                    AEEldradUlthran.class,
+                    AEPrinceYriel.class,
+                    AEIllicNightspear.class,
+                    AEAsurmen.class,
+                    AEJainZar.class,
+                    AEKarandras.class,
+                    AEFuegan.class,
+                    AEBaharroth.class,
+                    AEMauganRa.class,
+                    AEAvatarofKhaine.class,
 
                     null,
-AEArchon.class,
-AESuccubus.class,
-AEHaemonculus.class,
+                    AEArchon.class,
+                    AESuccubus.class,
+                    AEHaemonculus.class,
                     null,
-AELelith Hesperax.class,
-AEUrien Rakarth.class,
-AEDrazhar.class,
+                    AELelithHesperax.class,
+                    AEUrienRakarth.class,
+                    AEDrazhar.class,
 
                     null,
-AETroupe Master.class,
-AEShadowseer.class,
+                    AETroupeMaster.class,
+                    AEShadowseer.class,
 
                     null,
-AEYvraine.class,
-AEThe Visarch.class,
-AEThe Yncarne.class,
+                    AEYvraine.class,
+                    AETheVisarch.class,
+                    AETheYncarne.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers.class,
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class,
                     null,
-AEKabalite Warriors.class,
-AEWyches.class,
-AEWracks.class,
+                    AEKabaliteWarriors.class,
+                    AEWyches.class,
+                    AEWracks.class,
                     null,
-AETroupe"));
+                    AETroupe.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades.class,
-AEBonesinger.class,
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class,
+                    AEBonesinger.class,
 
                     null,
-AELhamaean.class,
-AEMedusae.class,
-AESslyth.class,
-AEUr-Ghul.class,
-AEKabalite Trueborn.class,
-AEHekatrix Bloodbrides.class,
-AEIncubi.class,
-AEMandrakes.class,
-AEGrotesques.class,
-AEBeastmaster.class,
+                    AELhamaean.class,
+                    AEMedusae.class,
+                    AESslyth.class,
+                    AEUrGhul.class,
+                    AEKabaliteTrueborn.class,
+                    AEHekatrixBloodbrides.class,
+                    AEIncubi.class,
+                    AEMandrakes.class,
+                    AEGrotesques.class,
+                    AEBeastmaster.class,
 
                     null,
-AEDeath Jester.class,
-AESolitaire"));
+                    AEDeathJester.class,
+                    AESolitaire.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers.class,
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class,
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEReavers.class,
-AEHellions.class,
-AEScourges.class,
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEReavers.class,
+                    AEHellions.class,
+                    AEScourges.class,
 
                     null,
-AESkyweavers"));
+                    AESkyweavers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord.class,
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class,
 
                     null,
-AETalos.class,
-AECronos.class,
-AERavager.class,
+                    AETalos.class,
+                    AECronos.class,
+                    AERavager.class,
                     null,
-AEReaper.class,
-AETantalus.class,
+                    AEReaper.class,
+                    AETantalus.class,
                     null,
-AEVoidweavers"));
+                    AEVoidweavers.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent.class,
+                    AEWaveSerpent.class,
                     null,
-AERaider.class,
-AEVenom.class,
+                    AERaider.class,
+                    AEVenom.class,
                     null,
-AEStarweaver"));
+                    AEStarweaver.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter.class,
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class,
                     null,
-AERazorwing Jetfighter.class,
-AEVoidraven"));
+                    AERazorwingJetfighter.class,
+                    AEVoidraven.class));
         } else if (getFormationType().equals("ASURYANI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
                     null,
-AEEldrad Ulthran.class,
-AEPrince Yriel.class,
-AEIllic Nightspear.class,
-AEAsurmen.class,
-AEJain Zar.class,
-AEKarandras.class,
-AEFuegan.class,
-AEBaharroth.class,
-AEMaugan Ra.class,
-AEAvatar of Khaine.class,
+                    AEEldradUlthran.class,
+                    AEPrinceYriel.class,
+                    AEIllicNightspear.class,
+                    AEAsurmen.class,
+                    AEJainZar.class,
+                    AEKarandras.class,
+                    AEFuegan.class,
+                    AEBaharroth.class,
+                    AEMauganRa.class,
+                    AEAvatarofKhaine.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers"));
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades.class,
-AEBonesinger"));
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class,
+                    AEBonesinger.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers"));
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord"));
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent"));
+                    AEWaveSerpent.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter"));
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class));
         } else if (getFormationType().equals("Warhost")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
                     null,
-AEEldrad Ulthran.class,
-AEPrince Yriel.class,
-AEIllic Nightspear.class,
+                    AEEldradUlthran.class,
+                    AEPrinceYriel.class,
+                    AEIllicNightspear.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers"));
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AEVypers"));
+                    AEWindriders.class,
+                    AEVypers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers"));
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent"));
+                    AEWaveSerpent.class));
         } else if (getFormationType().equals("Spirit Host")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AESpiritseer"));
+                    AESpiritseer.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithguard.class,
-AEWraithblades"));
+                    AEWraithguard.class,
+                    AEWraithblades.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithlord"));
+                    AEWraithlord.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHemlock Wraithfighter"));
+                    AEHemlockWraithfighter.class));
         } else if (getFormationType().equals("Aspect Warrior")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAsurmen.class,
-AEJain Zar.class,
-AEKarandras.class,
-AEFuegan.class,
-AEBaharroth.class,
-AEMaugan Ra.class,
-AEAvatar of Khaine"));
+                    AEAsurmen.class,
+                    AEJainZar.class,
+                    AEKarandras.class,
+                    AEFuegan.class,
+                    AEBaharroth.class,
+                    AEMauganRa.class,
+                    AEAvatarofKhaine.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDire Avengers"));
+                    AEDireAvengers.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons"));
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears"));
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers"));
+                    AEDarkReapers.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch"));
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class));
         } else if (getFormationType().equals("Ulthwe")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
                     null,
-AEEldrad Ulthran.class,
-AEAvatar of Khaine.class,
+                    AEEldradUlthran.class,
+                    AEAvatarofKhaine.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers"));
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades.class,
-AEBonesinger"));
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class,
+                    AEBonesinger.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers"));
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord"));
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent"));
+                    AEWaveSerpent.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter"));
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class));
         } else if (getFormationType().equals("Iyanden")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
                     null,
-AEPrince Yriel.class,
-AEAvatar of Khaine"));
+                    AEPrinceYriel.class,
+                    AEAvatarofKhaine.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers"));
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades"));
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers"));
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord"));
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent"));
+                    AEWaveSerpent.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter"));
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class));
         } else if (getFormationType().equals("Alaitoc")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
 
                     null,
-AEIllic Nightspear.class,
-AEAvatar of Khaine.class,
+                    AEIllicNightspear.class,
+                    AEAvatarofKhaine.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers"));
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades"));
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers"));
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord"));
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent"));
+                    AEWaveSerpent.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter"));
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class));
         } else if (getFormationType().equals("DRUKHARI")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEArchon.class,
-AESuccubus.class,
-AEHaemonculus.class,
+                    AEArchon.class,
+                    AESuccubus.class,
+                    AEHaemonculus.class,
                     null,
-AELelith Hesperax.class,
-AEUrien Rakarth.class,
-AEDrazhar"));
+                    AELelithHesperax.class,
+                    AEUrienRakarth.class,
+                    AEDrazhar.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEKabalite Warriors.class,
-AEWyches.class,
-AEWracks"));
+                    AEKabaliteWarriors.class,
+                    AEWyches.class,
+                    AEWracks.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AELhamaean.class,
-AEMedusae.class,
-AESslyth.class,
-AEUr-Ghul.class,
-AEKabalite Trueborn.class,
-AEHekatrix Bloodbrides.class,
-AEIncubi.class,
-AEMandrakes.class,
-AEGrotesques.class,
-AEBeastmaster"));
+                    AELhamaean.class,
+                    AEMedusae.class,
+                    AESslyth.class,
+                    AEUrGhul.class,
+                    AEKabaliteTrueborn.class,
+                    AEHekatrixBloodbrides.class,
+                    AEIncubi.class,
+                    AEMandrakes.class,
+                    AEGrotesques.class,
+                    AEBeastmaster.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEReavers.class,
-AEHellions.class,
-AEScourges"));
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEReavers.class,
+                    AEHellions.class,
+                    AEScourges.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AETalos.class,
-AECronos.class,
-AERavager.class,
+                    AETalos.class,
+                    AECronos.class,
+                    AERavager.class,
                     null,
-AEReaper.class,
-AETantalus"));
+                    AEReaper.class,
+                    AETantalus.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERaider.class,
-AEVenom"));
+                    AERaider.class,
+                    AEVenom.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERazorwing Jetfighter.class,
-AEVoidraven"));
+                    AERazorwingJetfighter.class,
+                    AEVoidraven.class));
         } else if (getFormationType().equals("Kabal of the Black Heart")
         		|| getFormationType().equals("Flayed Skull")
         		|| getFormationType().equals("Poisoned Tongue")
         		|| getFormationType().equals("Kabal of the Obsidian Rose")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEArchon.class,
+                    AEArchon.class,
                     null,
-AEDrazhar"));
+                    AEDrazhar.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEKabalite Warriors"));
+                    AEKabaliteWarriors.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEKabalite Trueborn.class,
-AELhamaean.class,
-AEMedusae.class,
-AESslyth.class,
-AEUr-Ghul.class,
-AEIncubi.class,
-AEMandrakes"));
+                    AEKabaliteTrueborn.class,
+                    AELhamaean.class,
+                    AEMedusae.class,
+                    AESslyth.class,
+                    AEUrGhul.class,
+                    AEIncubi.class,
+                    AEMandrakes.class));
         	myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEScourges"));
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEScourges.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERavager.class,
+                    AERavager.class,
                     null,
-AEReaper.class,
-AETantalus"));
+                    AEReaper.class,
+                    AETantalus.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERaider.class,
-AEVenom"));
+                    AERaider.class,
+                    AEVenom.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERazorwing Jetfighter.class,
-AEVoidraven"));
+                    AERazorwingJetfighter.class,
+                    AEVoidraven.class));
         } else if (getFormationType().equals("Cult of Strife")
         		|| getFormationType().equals("Cult of the Cursed Blade")
         		|| getFormationType().equals("Cult of the Red Grief")) {
         	if(getFormationType().equals("Cult of Strife")) {
         		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
         				null,
-AESuccubus.class,
+                    AESuccubus.class,
         				null,
-AEDrazhar.class,
-AELelith Hesperax"));
+                    AEDrazhar.class,
+                    AELelithHesperax.class));
         	} else {
         		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                         null,
-AESuccubus.class,
+                    AESuccubus.class,
                         null,
-AEDrazhar"));
+                    AEDrazhar.class));
         	}
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWyches"));
+                    AEWyches.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHekatrix Bloodbrides.class,
-AEIncubi.class,
-AEMandrakes.class,
-AEBeastmaster"));
+                    AEHekatrixBloodbrides.class,
+                    AEIncubi.class,
+                    AEMandrakes.class,
+                    AEBeastmaster.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEReavers.class,
-AEHellions.class,
-AEScourges"));
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEReavers.class,
+                    AEHellions.class,
+                    AEScourges.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEReaper.class,
-AETantalus"));
+                    AEReaper.class,
+                    AETantalus.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERaider.class,
-AEVenom"));
+                    AERaider.class,
+                    AEVenom.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERazorwing Jetfighter.class,
-AEVoidraven"));
+                    AERazorwingJetfighter.class,
+                    AEVoidraven.class));
         } else if (getFormationType().equals("The Prophets of Flesh")
         		|| getFormationType().equals("The Dark Creed")
         		|| getFormationType().equals("Coven of Twelve")) {
         	if(getFormationType().equals("The Prophets of Flesh")){
 	            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
 	                    null,
-AEHaemonculus.class,
+                    AEHaemonculus.class,
 	                    null,
-AEUrien Rakarth.class,
-AEDrazhar"));
+                    AEUrienRakarth.class,
+                    AEDrazhar.class));
         	} else {
         		myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
 	                    null,
-AEHaemonculus.class,
+                    AEHaemonculus.class,
 	                    null,
-AEDrazhar"));
+                    AEDrazhar.class));
         	}
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWracks"));
+                    AEWracks.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEIncubi.class,
-AEMandrakes.class,
-AEGrotesques"));
+                    AEIncubi.class,
+                    AEMandrakes.class,
+                    AEGrotesques.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEScourges"));
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEScourges.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AETalos.class,
-AECronos.class,
+                    AETalos.class,
+                    AECronos.class,
                     null,
-AEReaper.class,
-AETantalus"));
+                    AEReaper.class,
+                    AETantalus.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AERaider.class,
-AEVenom"));
+                    AERaider.class,
+                    AEVenom.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Incubi")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDrazhar"));
+                    AEDrazhar.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEIncubi"));
+                    AEIncubi.class));
         } else if (getFormationType().equals("HARLEQUINS") || HARLEQUINS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AETroupe Master.class,
-AEShadowseer"));
+                    AETroupeMaster.class,
+                    AEShadowseer.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AETroupe"));
+                    AETroupe.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDeath Jester.class,
-AESolitaire"));
+                    AEDeathJester.class,
+                    AESolitaire.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AESkyweavers"));
+                    AESkyweavers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEVoidweavers"));
+                    AEVoidweavers.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEStarweaver"));
+                    AEStarweaver.class));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWebway Gate"));
+                    AEWebwayGate.class));
         } else if (getFormationType().equals("Ynnari")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEYvraine.class,
-AEThe Visarch.class,
-AEThe Yncarne.class,
+                    AEYvraine.class,
+                    AETheVisarch.class,
+                    AETheYncarne.class,
                     null,
-AEAutarch.class,
-AEAutarch with Swooping Hawk Wings.class,
-AEAutarch Skyrunner.class,
-AEFarseer.class,
-AEFarseer Skyrunner.class,
-AEWarlock.class,
-AEWarlock Conclave.class,
-AEWarlock Skyrunner.class,
-AEWarlock Skyrunner Conclave.class,
-AESpiritseer.class,
+                    AEAutarch.class,
+                    AEAutarchwithSwoopingHawkWings.class,
+                    AEAutarchSkyrunner.class,
+                    AEFarseer.class,
+                    AEFarseerSkyrunner.class,
+                    AEWarlock.class,
+                    AEWarlockConclave.class,
+                    AEWarlockSkyrunner.class,
+                    AEWarlockSkyrunnerConclave.class,
+                    AESpiritseer.class,
                     null,
-AEEldrad Ulthran.class,
-AEPrince Yriel.class,
-AEIllic Nightspear.class,
-AEAsurmen.class,
-AEJain Zar.class,
-AEKarandras.class,
-AEFuegan.class,
-AEBaharroth.class,
-AEMaugan Ra.class,
+                    AEEldradUlthran.class,
+                    AEPrinceYriel.class,
+                    AEIllicNightspear.class,
+                    AEAsurmen.class,
+                    AEJainZar.class,
+                    AEKarandras.class,
+                    AEFuegan.class,
+                    AEBaharroth.class,
+                    AEMauganRa.class,
                     null,
-AEArchon.class,
-AESuccubus.class,
+                    AEArchon.class,
+                    AESuccubus.class,
                     null,
-AELelith Hesperax.class,
+                    AELelithHesperax.class,
                     null,
-AETroupe Master.class,
-AEShadowseer.class,
+                    AETroupeMaster.class,
+                    AEShadowseer.class,
                     null,
-AEAutarch Index.class,
-AEAutarch with Swooping Hawk Wings Index.class,
-AEAutarch with Warp Jump Generator Index.class,
-AEAutarch Skyrunner Index"));
+                    AEAutarchIndex.class,
+                    AEAutarchwithSwoopingHawkWingsIndex.class,
+                    AEAutarchwithWarpJumpGeneratorIndex.class,
+                    AEAutarchSkyrunnerIndex.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEGuardian Defenders.class,
-AEStorm Guardians.class,
-AERangers.class,
-AEDire Avengers.class,
+                    AEGuardianDefenders.class,
+                    AEStormGuardians.class,
+                    AERangers.class,
+                    AEDireAvengers.class,
                     null,
-AEKabalite Warriors.class,
-AEWyches.class,
+                    AEKabaliteWarriors.class,
+                    AEWyches.class,
                     null,
-AETroupe"));
+                    AETroupe.class));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEHowling Banshees.class,
-AEStriking Scorpions.class,
-AEFire Dragons.class,
-AEWraithguard.class,
-AEWraithblades.class,
+                    AEHowlingBanshees.class,
+                    AEStrikingScorpions.class,
+                    AEFireDragons.class,
+                    AEWraithguard.class,
+                    AEWraithblades.class,
                     null,
-AELhamaean.class,
-AEMedusae.class,
-AESslyth.class,
-AEUr-Ghul.class,
-AEKabalite Trueborn.class,
-AEHekatrix Bloodbrides.class,
-AEIncubi.class,
-AEBeastmaster.class,
+                    AELhamaean.class,
+                    AEMedusae.class,
+                    AESslyth.class,
+                    AEUrGhul.class,
+                    AEKabaliteTrueborn.class,
+                    AEHekatrixBloodbrides.class,
+                    AEIncubi.class,
+                    AEBeastmaster.class,
                     null,
-AEDeath Jester.class,
-AESolitaire"));
+                    AEDeathJester.class,
+                    AESolitaire.class));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWindriders.class,
-AESwooping Hawks.class,
-AEWarp Spiders.class,
-AEShining Spears.class,
-AEVypers.class,
+                    AEWindriders.class,
+                    AESwoopingHawks.class,
+                    AEWarpSpiders.class,
+                    AEShiningSpears.class,
+                    AEVypers.class,
                     null,
-AEClawed Fiends.class,
-AEKhymerae.class,
-AERazorwing Flocks.class,
-AEReavers.class,
-AEHellions.class,
-AEScourges.class,
+                    AEClawedFiends.class,
+                    AEKhymerae.class,
+                    AERazorwingFlocks.class,
+                    AEReavers.class,
+                    AEHellions.class,
+                    AEScourges.class,
                     null,
-AESkyweavers"));
+                    AESkyweavers.class));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEDark Reapers.class,
-AEVaul's Wrath Support Battery.class,
-AEFalcon.class,
-AEFire Prism.class,
-AENight Spinner.class,
-AEWar Walkers.class,
-AEWraithlord.class,
+                    AEDarkReapers.class,
+                    AEVaulsWrathSupportBattery.class,
+                    AEFalcon.class,
+                    AEFirePrism.class,
+                    AENightSpinner.class,
+                    AEWarWalkers.class,
+                    AEWraithlord.class,
                     null,
-AERavager.class,
+                    AERavager.class,
                     null,
-AEVoidweavers"));
+                    AEVoidweavers.class));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWave Serpent.class,
+                    AEWaveSerpent.class,
                     null,
-AERaider.class,
-AEVenom.class,
+                    AERaider.class,
+                    AEVenom.class,
                     null,
-AEStarweaver"));
+                    AEStarweaver.class));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AEWraithknight"));
+                    AEWraithknight.class));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
                     null,
-AECrimson Hunter.class,
-AECrimson Hunter Exarch.class,
-AEHemlock Wraithfighter.class,
+                    AECrimsonHunter.class,
+                    AECrimsonHunterExarch.class,
+                    AEHemlockWraithfighter.class,
                     null,
-AERazorwing Jetfighter.class,
-AEVoidraven"));
+                    AERazorwingJetfighter.class,
+                    AEVoidraven.class));
         }
 
         if (formation != null) {

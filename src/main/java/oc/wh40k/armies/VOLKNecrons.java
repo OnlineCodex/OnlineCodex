@@ -130,40 +130,6 @@ public class VOLKNecrons extends BuildaVater {
     public VOLKNecrons() {
         super("NE", loadPoints("/oc/wh40k/indices/ne.yaml", "/oc/wh40k/indices/iane.yaml"));
 
-        AdditionalInformation = ImmutableList.of(null);
-        HQeinträge = ImmutableList.of(null);
-        Eliteeinträge = ImmutableList.of(null);
-        Standardeinträge = ImmutableList.of(null);
-        Sturmeinträge = ImmutableList.of(null);
-        Unterstützungeinträge = ImmutableList.of(null);
-        Transporteinträge = ImmutableList.of(null);
-        Fliegereinträge = ImmutableList.of(null);
-        Befestigungen = ImmutableList.of(null);
-       LordofWar = ImmutableList.of(null);
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR,LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-
-        cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
-
         //Formationen
         formationen.add("NECRONS");
         formationen.add(null);

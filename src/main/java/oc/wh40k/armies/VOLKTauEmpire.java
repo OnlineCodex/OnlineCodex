@@ -11,8 +11,6 @@ import java.io.InputStream;
 
 public class VOLKTauEmpire extends BuildaVater {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
-
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
     private static final String[] HQeinträge_Tau_Ethereal = new String[]{"Ethereal"};
@@ -61,40 +59,6 @@ public class VOLKTauEmpire extends BuildaVater {
         super("TA", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ta.yaml",
                 "/oc/wh40k/indices/taaa.yaml"));
-
-        AdditionalInformation = new String[]{""};
-        HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
-        Standardeinträge = new String[]{""};
-        Sturmeinträge = new String[]{""};
-        Unterstützungeinträge = new String[]{""};
-        Fliegereinträge = new String[]{""};
-        Befestigungen = new String[]{""};
-        Transporteinträge = new String[]{""};
-        LordofWar = new String[]{""};
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-
-        cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
 
         nameDerArtDerArmee = BuildaHQ.translate("T'au Empire");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("T'au Empire");

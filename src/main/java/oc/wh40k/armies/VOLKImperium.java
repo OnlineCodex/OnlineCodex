@@ -309,49 +309,16 @@ public class VOLKImperium extends BuildaVater {
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
                    .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))));
 
-        AdditionalInformation = new String[]{""};
-        HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
-        Standardeinträge = new String[]{""};
-        Sturmeinträge = new String[]{""};
-        Unterstützungeinträge = new String[]{""};
-        Fliegereinträge = new String[]{""};
-        Transporteinträge = new String[]{""};
-        LordofWar = new String[]{""};
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
-        cnt += CHOOSERGRUPPEN_X_ABSTAND;
-
-        cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
-
         //Formationen
         formationen.add("IMPERIUM");
         formationen.add("");
         formationen.add("Adepta Sororitas");
-        AS_ORDERS.forEach(order -> formationen.add(order));
+        formationen.addAll(AS_ORDERS);
         formationen.add("");
         formationen.add("Adeptus Custodes");
         formationen.add("");
         formationen.add("Adeptus Astartes");
-        SM_CHAPTERS.forEach(chapter -> formationen.add(chapter));
+        formationen.addAll(SM_CHAPTERS);
         formationen.add("");
         formationen.add("Blood Angels");
         formationen.add("Dark Angels");
@@ -380,14 +347,14 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Tiger Claws");
         formationen.add("");
         formationen.add("ASTRA MILITARUM");
-        ASTRA_MILITARUM.forEach(regiment -> formationen.add(regiment));
+        formationen.addAll(ASTRA_MILITARUM);
         formationen.add("Officio Prefectus");
         formationen.add("Militarum Auxilia");
         formationen.add("Aeronautica Imperialis");
         formationen.add("Scholastica Psykana");
         formationen.add("");
         formationen.add("Adeptus Mechanicus");
-        FORGEWORLDS.forEach(fleet -> formationen.add(fleet));
+        formationen.addAll(FORGEWORLDS);
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
         formationen.add("");
