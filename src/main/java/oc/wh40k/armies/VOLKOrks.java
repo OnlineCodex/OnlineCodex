@@ -52,7 +52,7 @@ public class VOLKOrks extends BuildaVater {
                     ORBigMek.class,
                     ORBigMekonWarbike.class,
                     null,
-                    ORZhadsnarkdaZippa.class,
+                    ORZhadsnarkdaRippa.class,
                     OROrkMekBossBuzzgob.class));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
                     null,

@@ -1,75 +1,146 @@
 package oc.wh40k.armies;
 
+import com.google.common.collect.ImmutableList;
 import oc.BuildaHQ;
 import oc.BuildaVater;
-import oc.ChooserGruppe;
+import oc.Eintrag;
 import oc.utils.ResourceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import oc.wh40k.units.ta.*;
 
-import java.io.InputStream;
+import java.util.List;
+
+import static oc.utils.EvenMoreCollections.concat;
 
 public class VOLKTauEmpire extends BuildaVater {
 
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
-    private static final String[] HQeinträge_Tau_Ethereal = new String[]{"Ethereal"};
-    private static final String[] Standardeinträge_Tau = new String[]{"", "Strike Team"/*nicht komplett*/, "Breacher Team"/*nicht komplett*/};
-    private static final String[] Eliteeinträge_Tau = new String[]{"", "XV25 Stealth Battlesuits", "XV8 Crisis Battlesuits"/*ist noch alt*/, "XV8 Crisis Bodyguards"/*ist noch alt*/, "XV95 Ghostkeel Battlesuits", "XV104 Riptide Battlesuits", "Firesight Marksman"};
-    private static final String[] Sturmeinträge_Tau = new String[]{"", "Pathfinder Team", "TX4 Piranhas", "Tactical Drones"};
-    private static final String[] Unterstützungeinträge_Tau = new String[]{"", "MV71 Sniper Drones", "TX78 Sky Ray Gunships", "TX7 Hammerhead Gunships", "XV88 Broadside Battlesuits" /*Broadside-Drohnen sind noch falsch*/};
-    private static final String[] Transporteinträge_Tau = new String[]{"", "TY7 Devilfish"};
-    private static final String[] Fliegereinträge_Tau = new String[]{"", "AX3 Razorshark Strike Fighter", "AX39 Sun Shark Bomber"};
-    private static final String[] Befestigungseinträge_Tau = new String[]{"", "Tidewall Droneport", "Tidewall Shieldline", "Tidewall Gunrig"};
-    private static final String[] LordofWar_Tau = new String[]{"", "KV128 Stormsurge"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Tau = ImmutableList.of(
+null,
+TACommanderinXV8CrisisBattlesuit.class,
+TACommanderinXV85EnforcerBattlesuit.class,
+TACommanderinXV86ColdstarBattlesuit.class,
+TACadreFireblade.class);
+    private static final List<Class<? extends Eintrag>> HQeinträge_Tau_Ethereal = ImmutableList.of(
+            TAEthereal.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Tau = ImmutableList.of(
+null,
+TAStrikeTeam.class,
+TABreacherTeam.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Tau = ImmutableList.of(
+null,
+TAXV25StealthBattlesuits.class,
+TAXV8CrisisBattlesuits.class,
+TAXV8CrisisBodyguards.class,
+TAXV95GhostkeelBattlesuits.class,
+TAXV104RiptideBattlesuits.class,
+TAFiresightMarksman.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Tau = ImmutableList.of(
+null,
+TAPathfinderTeam.class,
+TATX4Piranhas.class,
+TATacticalDrones.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_Tau = ImmutableList.of(
+null,
+TAMV71SniperDrones.class,
+TATX78SkyRayGunships.class,
+TATX7HammerheadGunships.class,
+TAXV88BroadsideBattlesuits.class);
+    private static final List<Class<? extends Eintrag>> Transporteinträge_Tau = ImmutableList.of(
+null,
+TATY7Devilfish.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Tau = ImmutableList.of(
+null,
+TAAX3RazorsharkStrikeFighter.class,
+TAAX39SunSharkBomber.class);
+    private static final List<Class<? extends Eintrag>> Befestigungseinträge_Tau = ImmutableList.of(
+null,
+TATidewallDroneport.class,
+TATidewallShieldline.class,
+TATidewallGunrig.class);
+    private static final List<Class<? extends Eintrag>> LordofWar_Tau = ImmutableList.of(
+null,
+TAKV128Stormsurge.class);
 
     //T'au Empire Vanilla (FW) /////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_IA_Tau = new String[]{"", /*"Commander in XV81 Crisis Battlesuit",*/ /*"Commander in XV84 Crisis Battlesuit"*/};
-    private static final String[] Eliteeinträge_IA_Tau = new String[]{"", "DX-4 Technical Drones"/*, "XV9 Hazard Support Team"*/};
-    private static final String[] Sturmeinträge_IA_Tau = new String[]{""/*, "XV109 Y'vahra Battlesuit"*/, "Tetra Scout Speeder Team"/*, "Piranha TX-42 Light Skimmer"*/};
-    private static final String[] Unterstützungeinträge_IA_Tau = new String[]{""/*, "XV107 R'varna Battlesuit"*//*, "Heavy Gun Drone Squadron"*//*, "TX7 Heavy Bombardment Hammerdead Gunship"*//*, "TX7 Fire Support Hammerdead Gunship"*/};
-    private static final String[] Fliegereinträge_IA_Tau = new String[]{""/*, "DX-6 Remora Stealth Drone Squadron"*/, "Barracuda AX-5-2 [FW]"/*, "Tiger Shark"*//*, "Tiger Shark AX-1-0"*/, "Orca Dropship"};
-    private static final String[] Befestigungseinträge_IA_Tau = new String[]{"", "Remote Sensor Tower"/*, "Drone Sentry Turret"*/};
-    private static final String[] LordofWar_IA_Tau = new String[]{""/*, "KX139 Ta'unar Supremacy Armour"*/, "Manta Super-heavy Dropship"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_IA_Tau = ImmutableList.of(null);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_IA_Tau = ImmutableList.of(
+null,
+TADX4TechnicalDrones.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_IA_Tau = ImmutableList.of(
+null,
+TATetraScoutSpeederTeam.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_IA_Tau = ImmutableList.of(null);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_IA_Tau = ImmutableList.of(
+null,
+TABarracudaAX52.class,
+TAOrcaDropship.class);
+    private static final List<Class<? extends Eintrag>> Befestigungseinträge_IA_Tau = ImmutableList.of(
+null,
+TARemoteSensorTower.class);
+    private static final List<Class<? extends Eintrag>> LordofWar_IA_Tau = ImmutableList.of(
+null,
+TAMantaSuperheavyDropship.class);
 
-    //T'au Sept ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_Tau_Sept = new String[]{"", "Commander Shadowsun", "Aun'va", "Darkstrider", "Longstrike"};
+    //T'auSept ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final List<Class<? extends Eintrag>> HQeinträge_Tau_Sept = ImmutableList.of(
+null,
+TACommanderShadowsun.class,
+TAAunva.class,
+TADarkstrider.class,
+TALongstrike.class);
 
     //Farsight Enclaves ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_Farsight_Enclaves = new String[]{"", "Commander Farsight"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Farsight_Enclaves = ImmutableList.of(
+null,
+TACommanderFarsight.class);
 
-    //Voir'la Sept /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_Voirla_Sept = new String[]{"", "Aun'shi"};
+    //Voir'laSept /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final List<Class<? extends Eintrag>> HQeinträge_Voirla_Sept = ImmutableList.of(
+null,
+TAAunshi.class);
 
-    //Dal'yth Sept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_IA_Dalyth_Sept = new String[]{"", "Shas'o R'myr"};
+    //Dal'ythSept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final List<Class<? extends Eintrag>> HQeinträge_IA_Dalyth_Sept = ImmutableList.of(
+null,
+TAShasoRmyr.class);
 
-    //Ke'lshan Sept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_IA_Kelshan_Sept = new String[]{"", "Shas'o R'alai"};
+    //Ke'lshanSept (FW) ////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    private static final List<Class<? extends Eintrag>> HQeinträge_IA_Kelshan_Sept = ImmutableList.of(
+null,
+TAShasoRalai.class);
 
     //Kroot ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] Standardeinträge_Kroot = new String[]{"", "Kroot Carnivores"};
-    private static final String[] Eliteeinträge_Kroot = new String[]{"", "Kroot Shaper", "Krootox Riders"};
-    private static final String[] Sturmeinträge_Kroot = new String[]{"", "Kroot Hounds"};
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Kroot = ImmutableList.of(
+null,
+TAKrootCarnivores.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Kroot = ImmutableList.of(
+null,
+TAKrootShaper.class,
+TAKrootoxRiders.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Kroot = ImmutableList.of(
+null,
+TAKrootHounds.class);
 
     //Vespid ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] Sturmeinträge_Vespid = new String[]{"", "Vespid Stingwings"};
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Vespid = ImmutableList.of(
+null,
+TAVespidStingwings.class);
 
     public VOLKTauEmpire() {
         super("TA", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ta.yaml",
                 "/oc/wh40k/indices/taaa.yaml"));
 
-        nameDerArtDerArmee = BuildaHQ.translate("T'au Empire");
+        nameDerArtDerArmee =BuildaHQ.translate("T'au Empire");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("T'au Empire");
-        textAreaUeberschrift = BuildaHQ.translate("Mein") + " " + BuildaHQ.translate("T'au Empire");
+        textAreaUeberschrift =BuildaHQ.translate("Mein") + " " +BuildaHQ.translate("T'au Empire");
 
         formationen.add("T'AU EMPIRE");
-        formationen.add("T'au Sept");
-        formationen.add("Vior'la Sept");
-        formationen.add("Dal'yth Sept");
-        formationen.add("Sa'cea Sept");
-        formationen.add("Bork'an Sept");
+        formationen.add("T'auSept");
+        formationen.add("Vior'laSept");
+        formationen.add("Dal'ythSept");
+        formationen.add("Sa'ceaSept");
+        formationen.add("Bork'anSept");
         formationen.add("Farsight Enclaves");
         formationen.add("Ke'lshan");
         formationen.add("Kroot");
@@ -82,86 +153,86 @@ public class VOLKTauEmpire extends BuildaVater {
     public void volkRefresh() {
 
         if (getFormationType().equals("T'AU EMPIRE")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau,
-                    HQeinträge_Tau_Sept, HQeinträge_Farsight_Enclaves, HQeinträge_Voirla_Sept, HQeinträge_IA_Dalyth_Sept, HQeinträge_IA_Kelshan_Sept));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau,
+                   HQeinträge_Tau_Sept,HQeinträge_Farsight_Enclaves,HQeinträge_Voirla_Sept,HQeinträge_IA_Dalyth_Sept,HQeinträge_IA_Kelshan_Sept));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
-        } else if (getFormationType().equals("T'au Sept")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau, HQeinträge_Tau_Sept));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
+        } else if (getFormationType().equals("T'auSept")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau,HQeinträge_Tau_Sept));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
-        } else if (getFormationType().equals("Vior'la Sept")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau, HQeinträge_Voirla_Sept));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
+        } else if (getFormationType().equals("Vior'laSept")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau,HQeinträge_Voirla_Sept));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
-        } else if (getFormationType().equals("Dal'yth Sept")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau, HQeinträge_IA_Dalyth_Sept));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
+        } else if (getFormationType().equals("Dal'ythSept")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau,HQeinträge_IA_Dalyth_Sept));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
-        } else if (getFormationType().equals("Sa'cea Sept")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
+        } else if (getFormationType().equals("Sa'ceaSept")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
-        } else if (getFormationType().equals("Bork'an Sept")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
+        } else if (getFormationType().equals("Bork'anSept")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
         } else if (getFormationType().equals("Farsight Enclaves")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_IA_Tau, HQeinträge_Farsight_Enclaves));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_IA_Tau,HQeinträge_Farsight_Enclaves));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
         } else if (getFormationType().equals("Ke'lshan")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Tau, HQeinträge_Tau_Ethereal, HQeinträge_IA_Tau, HQeinträge_IA_Kelshan_Sept));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Tau, Standardeinträge_Kroot));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Tau, Sturmeinträge_IA_Tau, Sturmeinträge_Kroot, Sturmeinträge_Vespid));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Tau,HQeinträge_Tau_Ethereal,HQeinträge_IA_Tau,HQeinträge_IA_Kelshan_Sept));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Tau,Standardeinträge_Kroot));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Tau, Eliteeinträge_IA_Tau, Eliteeinträge_Kroot));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Tau,Sturmeinträge_IA_Tau,Sturmeinträge_Kroot,Sturmeinträge_Vespid));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_Tau, Unterstützungeinträge_IA_Tau));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Tau);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Tau, Fliegereinträge_IA_Tau));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungseinträge_Tau, Befestigungseinträge_IA_Tau, Befestigungen));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_Tau, LordofWar_IA_Tau));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Tau,Fliegereinträge_IA_Tau));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungseinträge_Tau,Befestigungseinträge_IA_Tau,Befestigungen));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_Tau, LordofWar_IA_Tau));
         } else if (getFormationType().equals("Kroot")) {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Kroot);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Kroot);
