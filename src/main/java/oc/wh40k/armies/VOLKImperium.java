@@ -1,338 +1,757 @@
 package oc.wh40k.armies;
 
-import oc.BuildaVater;
-import oc.ChooserGruppe;
-import oc.utils.ResourceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import oc.BuildaVater;
+import oc.Eintrag;
+import oc.utils.ResourceUtils;
+import oc.wh40k.units.im.*;
 
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import static oc.utils.EvenMoreCollections.concat;
+
 public class VOLKImperium extends BuildaVater {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKImperium.class);
-
-    private static final String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
-    private static final String[] Standardeinträge_AM = new String[]{"", "Infantry Squad", "Conscripts"};
-    private static final String[] Eliteeinträge_AM = new String[]{"", "Master of Ordnance", "Platoon Commander", "Command Squad", "Special Weapons Squad", "Veterans", "Tech-Priest Enginseer", "Servitors"};
-    private static final String[] Sturmeinträge_AM = new String[]{"", "Rough Riders", "Scout Sentinels", "Armoured Sentinels", "Hellhounds"};
-    private static final String[] Unterstützungeinträge_AM = new String[]{"", "Heavy Weapons Squad", "Basilisks", "Hydras", "Wyverns", "Manticore", "Deathstrike",
-            "Leman Russ Battle Tanks"};
-    private static final String[] Transporteinträge_AM = new String[]{"", "Chimera", "Taurox"};
-    private static final String[] Fliegereinträge_AM = new String[]{"",};
-    private static final String[] LordofWar_AM = new String[]{"", "Baneblade", "Banehammer", "Banesword", "Doomhammer", "Hellhammer", "Shadowsword", "Stormlord", "Stormsword"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_AM = ImmutableList.of(null,
+                    IMCompanyCommander.class,
+                    IMTankCommander.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_AM = ImmutableList.of(null,
+                    IMInfantrySquad.class,
+                    IMConscripts.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_AM = ImmutableList.of(null,
+                    IMMasterofOrdnance.class,
+                    IMPlatoonCommander.class,
+                    IMCommandSquad.class,
+                    IMSpecialWeaponsSquad.class,
+                    IMVeterans.class,
+                    IMTechPriestEnginseer.class,
+                    IMServitors.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_AM = ImmutableList.of(null,
+                    IMRoughRiders.class,
+                    IMScoutSentinels.class,
+                    IMArmouredSentinels.class,
+                    IMHellhounds.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_AM = ImmutableList.of(null,
+                    IMHeavyWeaponsSquad.class,
+                    IMBasilisks.class,
+                    IMHydras.class,
+                    IMWyverns.class,
+                    IMManticore.class,
+                    IMDeathstrike.class,
+            IMLemanRussBattleTanks.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_AM = ImmutableList.of(null,
+                    IMChimera.class,
+                    IMTaurox.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_AM = ImmutableList.of(null);
+    private static final List<Class<? extends Eintrag>> LordofWar_AM = ImmutableList.of(null,
+                    IMBaneblade.class,
+                    IMBanehammer.class,
+                    IMBanesword.class,
+                    IMDoomhammer.class,
+                    IMHellhammer.class,
+                    IMShadowsword.class,
+                    IMStormlord.class,
+                    IMStormsword.class);
     //CADIAN
-    private static final String[] HQeinträge_Cadian = new String[]{"", "Lord Castellan Creed", "Knight Commander Pask"};
-    private static final String[] Eliteeinträge_Cadian = new String[]{"", "Colour Sergeant Kell"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Cadian = ImmutableList.of(null,
+                    IMLordCastellanCreed.class,
+                    IMKnightCommanderPask.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Cadian = ImmutableList.of(null,
+                    IMColourSergeantKell.class);
     //CATACHAN
-    private static final String[] HQeinträge_Catachan = new String[]{"", "Colonel 'Iron Hand' Straken", "Sly Marbo"};
-    private static final String[] Eliteeinträge_Catachan = new String[]{"", "Sergeant Harker"};
-    //OFFICIO PREFECTUS
-    private static final String[] HQeinträge_Officio_Prefectus = new String[]{"", "Lord Commissar", "Commissar Yarrick"};
-    private static final String[] Eliteeinträge_Officio_Prefectus = new String[]{"", "Commissar"};
-    //MILITARUM TEMPESTUS
-    private static final String[] HQeinträge_Militarum_Tempestus = new String[]{"", "Tempestor Prime"};
-    private static final String[] Eliteeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Command Squad"};
-    private static final String[] Standardeinträge_Militarum_Tempestus = new String[]{"", "Militarum Tempestus Scions"};
-    private static final String[] Transporteinträge_Militarum_Tempestus = new String[]{"", "Taurox Prime"};
-    //MILITARUM AUXILIA
-    private static final String[] Eliteeinträge_Militarum_Auxilia = new String[]{"", "Ogryns", "Ogryn Bodyguard", "Bullgryns", "Ratlings", "Nork Deddog"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Catachan = ImmutableList.of(null,
+                    IMColonelIronHandStraken.class,
+                    IMSlyMarbo.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Catachan = ImmutableList.of(null,
+                    IMSergeantHarker.class);
+    //OFFICIOPREFECTUS
+    private static final List<Class<? extends Eintrag>> HQeinträge_Officio_Prefectus = ImmutableList.of(null,
+                    IMLordCommissar.class,
+                    IMCommissarYarrick.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Officio_Prefectus = ImmutableList.of(null,
+                    IMCommissar.class);
+    //MILITARUMTEMPESTUS
+    private static final List<Class<? extends Eintrag>> HQeinträge_Militarum_Tempestus = ImmutableList.of(null,
+                    IMTempestorPrime.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Militarum_Tempestus = ImmutableList.of(null,
+                    IMMilitarumTempestusCommandSquad.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Militarum_Tempestus = ImmutableList.of(null,
+                    IMMilitarumTempestusScions.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Militarum_Tempestus = ImmutableList.of(null,
+                    IMTauroxPrime.class);
+    //MILITARUMAUXILIA
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Militarum_Auxilia = ImmutableList.of(null,
+                    IMOgryns.class,
+                    IMOgrynBodyguard.class,
+                    IMBullgryns.class,
+                    IMRatlings.class,
+                    IMNorkDeddog.class);
     //AERONAUTICA IMPERIALIS
-    private static final String[] Eliteeinträge_Aeronautica_Imperialis = new String[]{"", "Officer of the Fleet"};
-    private static final String[] Fliegereinträge_Aeronautica_Imperialis = new String[]{"", "Valkyries"};
-    //SCHOLASTICA PSYKANA
-    private static final String[] HQeinträge_Scholastica_Psykana = new String[]{"", "Primaris Psyker"};
-    private static final String[] Eliteeinträge_Scholastica_Psykana = new String[]{"", "Wyrdvane Psykers", "Astropath"};
-    //ADEPTUS MINISTORUM-PART OF ASTRA MILITARUM
-    private static final String[] Eliteeinträge_Astra_Militarum_Adeptus_Ministorum = new String[]{"", "Ministorum Priest", "Crusaders"};
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Aeronautica_Imperialis = ImmutableList.of(null,
+                    IMOfficeroftheFleet.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Aeronautica_Imperialis = ImmutableList.of(null,
+                    IMValkyries.class);
+    //SCHOLASTICAPSYKANA
+    private static final List<Class<? extends Eintrag>> HQeinträge_Scholastica_Psykana = ImmutableList.of(null,
+                    IMPrimarisPsyker.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Scholastica_Psykana = ImmutableList.of(null,
+                    IMWyrdvanePsykers.class,
+                    IMAstropath.class);
+    //ADEPTUS MINISTORUM-PART OFASTRA MILITARUM
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Astra_Militarum_Adeptus_Ministorum = ImmutableList.of(null,
+                    IMMinistorumPriest.class,
+                    IMCrusaders.class);
 
     //AM KOMPLETT
-    private static final String[] HQeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList
+    private static final List<Class<? extends Eintrag>> HQeinträge_AM_komplett = concat(concat(concat(concat(concat
                     (HQeinträge_AM, HQeinträge_Cadian), HQeinträge_Catachan),
             HQeinträge_Officio_Prefectus), HQeinträge_Militarum_Tempestus),
             HQeinträge_Scholastica_Psykana);
-    private static final String[] Standardeinträge_AM_komplett = uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus);
-    private static final String[] Eliteeinträge_AM_komplett = uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(uniteUnitList(
+    private static final List<Class<? extends Eintrag>> Standardeinträge_AM_komplett = concat(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_AM_komplett = concat(concat(concat(concat(concat(concat(concat(concat(
             Eliteeinträge_AM, Eliteeinträge_Cadian), Eliteeinträge_Catachan), Eliteeinträge_Officio_Prefectus),
             Eliteeinträge_Militarum_Tempestus), Eliteeinträge_Militarum_Auxilia), Eliteeinträge_Aeronautica_Imperialis),
             Eliteeinträge_Scholastica_Psykana), Eliteeinträge_Astra_Militarum_Adeptus_Ministorum);
-    private static final String[] Sturmeinträge_AM_komplett = Sturmeinträge_AM;
-    private static final String[] Unterstützungeinträge_AM_komplett = Unterstützungeinträge_AM;
-    private static final String[] Transporteinträge_AM_komplett = uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus);
-    private static final String[] Fliegereinträge_AM_komplett = uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis);
-    private static final String[] LordofWar_AM_komplett = LordofWar_AM;
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_AM_komplett = Sturmeinträge_AM;
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_AM_komplett = Unterstützungeinträge_AM;
+    private static final List<Class<? extends Eintrag>>Transporteinträge_AM_komplett = concat(Transporteinträge_AM,Transporteinträge_Militarum_Tempestus);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_AM_komplett = concat(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis);
+    private static final List<Class<? extends Eintrag>>LordofWar_AM_komplett =LordofWar_AM;
 
     //ADEPTUS MECHANICUS ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //CULT MECHANICUS
-    private static final String[] HQeinträge_Cult_Mechanicus = new String[]{"", "Belisarius Cawl", "Tech-Priest Dominus", "Tech-Priest Enginseer"};
-    private static final String[] Eliteeinträge_Cult_Mechanicus = new String[]{"", "Fulgurite Electro-Priests",
-            "Corpuscarii Electro-Priests", "Cybernetica Datasmith"};
-    private static final String[] Standardeinträge_Cult_Mechanicus = new String[]{"", "Kataphron Breachers", "Kataphron Destroyers"};
-    private static final String[] Unterstützungseinträge_Cult_Mechanicus = new String[]{"", "Kastelan Robots"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Cult_Mechanicus = ImmutableList.of(null,
+                    IMBelisariusCawl.class,
+                    IMTechPriestDominus.class,
+                    IMTechPriestEnginseer.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Cult_Mechanicus = ImmutableList.of(null,
+                    IMFulguriteElectroPriests.class,
+            IMCorpuscariiElectroPriests.class,
+                    IMCyberneticaDatasmith.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Cult_Mechanicus = ImmutableList.of(null,
+                    IMKataphronBreachers.class,
+                    IMKataphronDestroyers.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Cult_Mechanicus = ImmutableList.of(null,
+                    IMKastelanRobots.class);
 
     //SKITARII
-    private static final String[] Standardeinträge_Skitarii = new String[]{"", "Skitarii Rangers", "Skitarii Vanguard"};
-    private static final String[] Eliteeinträge_Skitarii = new String[]{"", "Sicarian Infiltrators", "Sicarian Ruststalkers", "", "Secutarii Hoplites", "Secutarii Peltasts"};
-    private static final String[] Sturmeinträge_Skitarii = new String[]{"", "Ironstrider Ballistarii", "Sydonian Dragoons"};
-    private static final String[] Unterstützungseinträge_Skitarii = new String[]{"", "Onager Dunecrawler"};
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Skitarii = ImmutableList.of(null,
+                    IMSkitariiRangers.class,
+                    IMSkitariiVanguard.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Skitarii = ImmutableList.of(null,
+                    IMSicarianInfiltrators.class,
+                    IMSicarianRuststalkers.class,
+            null,
+                    IMSecutariiHoplites.class,
+                    IMSecutariiPeltasts.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Skitarii = ImmutableList.of(null,
+                    IMIronstriderBallistarii.class,
+                    IMSydonianDragoons.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Skitarii = ImmutableList.of(null,
+                    IMOnagerDunecrawler.class);
 
     //ADEPTUS MECHANICUS Komplett
-    private static final String[] HQeinträge_Adeptus_Mechanicus = HQeinträge_Cult_Mechanicus;
-    private static final String[] Standardeinträge_Adeptus_Mechanicus = uniteUnitList(Standardeinträge_Cult_Mechanicus, Standardeinträge_Skitarii);
-    private static final String[] Eliteeinträge_Adeptus_Mechanicus = uniteUnitList(uniteUnitList(
-            Eliteeinträge_Cult_Mechanicus, Eliteeinträge_Skitarii), new String[]{"", "Servitors"});
-    private static final String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
-    private static final String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
-    private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Adeptus_Mechanicus = HQeinträge_Cult_Mechanicus;
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Adeptus_Mechanicus = concat(Standardeinträge_Cult_Mechanicus, Standardeinträge_Skitarii);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adeptus_Mechanicus = concat(concat(
+            Eliteeinträge_Cult_Mechanicus, Eliteeinträge_Skitarii), ImmutableList.of(null,
+                    IMServitors.class));
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Adeptus_Mechanicus = concat(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Adeptus_Mechanicus = ImmutableList.of(null,
+                    IMTerraxPatternTermiteAssaultDrill.class);
     
     //Questor Imperialis
-    private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
-    private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
-    private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
+    private static final List<Class<? extends Eintrag>>AdditionalInformation_Questor_Imperialis = ImmutableList.of(null,
+                    IMHouseholdTradition.class,
+                    IMImperialKnightWarlordtraits.class,
+                    IMImperialKnightHeirlooms.class);
+    private static final List<Class<? extends Eintrag>>LordofWar_Questor_Imperialis = ImmutableList.of(null,
+                    IMArmigerHelverin.class,
+                    IMArmigerWarglaive.class,
+                    IMKnightPreceptor.class,
+                    IMKnightPaladin.class,
+                    IMKnightErrant.class,
+                    IMKnightGallant.class,
+                    IMKnightWarden.class,
+                    IMKnightCrusader.class,
+                    IMCanisRex.class,
+                    IMKnightCastellan.class,
+                    IMKnightValiant.class);
+    private static final List<Class<? extends Eintrag>> Befestigung_Questor_Imperialis = ImmutableList.of(null);
 
     //Adepta Sororitas
-    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", "Missionary"};
-    private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins", 
-    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
-    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
-    private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
-    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
-    private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMCelestine.class,
+                    IMUriahJacobus.class,
+                    IMCanoness.class,
+                    IMMissionary.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMBattleSistersSquad.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMArcoFlagellants.class,
+                    IMCelestianSquad.class,
+                    IMCrusaders.class,
+                    IMDeathCultAssassins.class,
+                    IMDialogus.class,
+                    IMGeminaeSuperia.class,
+                    IMHospitaller.class,
+                    IMMistressOfRepentance.class,
+                    IMPreacher.class,
+                    IMRepentiaSquad.class,
+                    IMImagifier.class);        																		
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMSeraphimSquad.class,
+                    IMDominionSquad.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMRetributorSquad.class,
+                    IMExorcist.class,
+                    IMPenitentEngines.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Adepta_Sororitas = ImmutableList.of(null,
+                    IMSororitasRhino.class,
+                    IMImmolator.class);
 
     //Adeptus Ministorum
-    private static final String[] HQeinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Uriah Jacobus"}, HQeinträge_Adepta_Sororitas);
-    private static final String[] Standardeinträge_Adeptus_Ministorum = Standardeinträge_Adepta_Sororitas;
-    private static final String[] Eliteeinträge_Adeptus_Ministorum_Only = new String[]{"Death Cult Assassins", "Arco Flagellants", "Ministorum Priest Adeptus Ministorum"};
-    private static final String[] Eliteeinträge_Adeptus_Ministorum = uniteUnitList(uniteUnitList(Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Adeptus_Ministorum_Only), Eliteeinträge_Adepta_Sororitas);
-    private static final String[] Sturmeinträge_Adeptus_Ministorum = Sturmeinträge_Adepta_Sororitas;
-    private static final String[] Unterstützungseinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Penitent Engines"},
-            Unterstützungseinträge_Adepta_Sororitas);
-    private static final String[] Transporteinträge_Adeptus_Ministorum = Transporteinträge_Adepta_Sororitas;
+    private static final List<Class<? extends Eintrag>> HQeinträge_Adeptus_Ministorum = concat(ImmutableList.of(null, IMUriahJacobus.class), HQeinträge_Adepta_Sororitas);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Adeptus_Ministorum = Standardeinträge_Adepta_Sororitas;
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adeptus_Ministorum_Only = ImmutableList.of(IMDeathCultAssassins.class, IMArcoFlagellants.class, IMMinistorumPriestAdeptusMinistorum.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adeptus_Ministorum = concat(concat(Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Adeptus_Ministorum_Only), Eliteeinträge_Adepta_Sororitas);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Adeptus_Ministorum = Sturmeinträge_Adepta_Sororitas;
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Adeptus_Ministorum = concat(ImmutableList.of(null, IMPenitentEngines.class), Unterstützungseinträge_Adepta_Sororitas);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Adeptus_Ministorum =Transporteinträge_Adepta_Sororitas;
 
-    //Sisters of Silence
-    private static final String[] Eliteeinträge_Sisters_of_Silence = new String[]{"", "Prosecutors", "Vigilators", "Witchseekers"};
-    private static final String[] Transporteinträge_Sisters_of_Silence = {"", "Null-Maiden Rhino"};
+    //SistersofSilence
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Sisters_of_Silence = ImmutableList.of(null,
+                    IMProsecutors.class,
+                    IMVigilators.class,
+                    IMWitchseekers.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Sisters_of_Silence = ImmutableList.of(null, IMNullMaidenRhino.class);
 
-    //Adeptus Astra Telepathica -> Gesamtliste
-    private static final String[] HQeinträge_Adeptus_Astra_Telepathica = HQeinträge_Scholastica_Psykana;
-    private static final String[] Eliteeinträge_Adeptus_Astra_Telepathica = uniteUnitList(Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Sisters_of_Silence);
-    private static final String[] Transporteinträge_Adeptus_Astra_Telepathica = Transporteinträge_Sisters_of_Silence;
+    //AdeptusAstraTelepathica -> Gesamtliste
+    private static final List<Class<? extends Eintrag>> HQeinträge_Adeptus_Astra_Telepathica = HQeinträge_Scholastica_Psykana;
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adeptus_Astra_Telepathica = concat(Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Sisters_of_Silence);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Adeptus_Astra_Telepathica =Transporteinträge_Sisters_of_Silence;
 
-    //Officio Assassinorum
-    private static final String[] Eliteeinträge_Officio_Assassinorum = new String[]{"", "Vindicare Assassin", "Callidus Assassin", "Eversor Assassin", "Culexus Assassin"};
+    //OfficioAssassinorum
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Officio_Assassinorum = ImmutableList.of(null,
+                    IMVindicareAssassin.class,
+                    IMCallidusAssassin.class,
+                    IMEversorAssassin.class,
+                    IMCulexusAssassin.class);
 
     //Inquisition
-    public String[] Eliteeinträge_Inquisition = new String[]{"", /*TODO:"Daemonhost",*/};
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Inquisition= ImmutableList.of(null);
 
     //<Ordo>
-    public String[] HQeinträge_Ordo = new String[]{"", /*TODO:"Inquisitor",*/};
-    public String[] Eliteeinträge_Ordo = new String[]{"", /*TODO:"Acolytes", /*TODO:"Jokaero Weaponsmith",*/};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Ordo = ImmutableList.of(null);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Ordo = ImmutableList.of(null);
 
     //Ordo Hereticus
-    public String[] HQeinträge_Ordo_Hereticus = new String[]{"", /*TODO:"Inquisitor Greyfax", /*TODO:"Inquisitor Karamazov", */};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Ordo_Hereticus = ImmutableList.of(null);
 
-    //Ordo Malleus
-    public String[] HQeinträge_Ordo_Malleus = new String[]{"", /*TODO:"Ordo Malleus Inquisitor", /*TODO:"Inquisitor Coteaz", */};
+    //OrdoMalleus
+    private static final List<Class<? extends Eintrag>> HQeinträge_Ordo_Malleus = ImmutableList.of(null);
 
-    //Adeptus Custodes
-    private static final String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
-    private static final String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
-    private static final String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
-            "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought [FW]", "Contemptor-Exemplar Dreadnought [FW]"};
-    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-Tank [FW]"};
-    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-Carrier [FW]", "Telemon Heavy Dreadnought [FW]"};
+    //AdeptusCustodes
+    private static final List<Class<? extends Eintrag>> HQeinträge_Adeptus_Custodes = ImmutableList.of(null,
+                    IMCaptainGeneralTrajannValoris.class,
+                    IMShieldCaptain.class,
+                    IMShieldCaptaininAllarusTerminatorArmour.class,
+                    IMShieldCaptainonDawneagleJetbike.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Adeptus_Custodes = ImmutableList.of(null,
+                    IMCustodianGuard.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Adeptus_Custodes = ImmutableList.of(null,
+                    IMCustodianWardens.class,
+                    IMVexilusPraetorinAllarusTerminatorArmour.class,
+                    IMVexilusPraetor.class,
+                    IMAllarusCustodians.class,
+                    IMVenerableContemptorDreadnought.class,
+                    IMContemptorAchillusDreadnought.class,
+                    IMContemptorExemplarDreadnought.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Adeptus_Custodes = ImmutableList.of(null,
+                    IMVertusPraetors.class,
+                    IMCaladiusGravTank.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Adeptus_Custodes = ImmutableList.of(null,
+                    IMVenerableLandRaider.class,
+                    IMCoronusGravCarrier.class,
+                    IMTelemonHeavyDreadnought.class);
 
-    private static final String[] Befestigungen = new String[]{""};
+    private static final List<Class<? extends Eintrag>> Befestigungen = ImmutableList.of(null);
 
-    private static final String[] HQeinträge_SM = new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
-            "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
-            "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
-            "Chaplain on Bike", "Lieutenants", "", "Primaris Chaplain", "Primaris Librarian", "Primaris Lieutenants", "Primaris Master", "Primaris Captain",
-            "Rhino Primaris", "Land Raider Excelsior"};
-    private static final String[] Standardeinträge_SM = new String[]{"", "Tactical Squad", "Scout Squad", "Intercessor Squad"};
-    private static final String[] Eliteeinträge_SM = new String[]{"", "Servitors", "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
-            "Company Ancient", "Company Ancient on Bike",
-            "Primaris Ancient", "Company Champion", "Company Champion on Bike", "Company Veterans", "Company Veterans on Bikes",
-            "Imperial Space Marine", "Honour Guard", "Chapter Ancient", "Chapter Champion", "Centurion Assault Squad",
-            "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought",
-            "Redemptor Dreadnought", "Ironclad Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Cataphractii Terminator Squad",
-            "Tartaros Terminator Squad", "Aggressor Squad", "Reiver Squad"};
-    private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
-            "Attack Bike Squad", "Land Speeders"};
-    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
-            "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
-            "Land Raider Crusader", "Land Raider Redeemer"};
-    private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Assault Drill"};
-    private static final String[] Fliegereinträge_SM = new String[]{"", "Stormhawk Interceptor", "Stormtalon Gunship", "Stormraven Gunship",};
-    private static final String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_SM = ImmutableList.of(null,
+                    IMCaptain.class,
+                    IMCaptaininTerminatorArmour.class,
+                    IMCaptaininCataphractiiArmour.class,
+                    IMCaptaininGravisArmour.class,
+                    IMCaptainonBike.class,
+                    IMLibrarian.class,
+                    IMLibrarianinTerminatorArmour.class,
+                    IMLibrarianonBike.class,
+                    IMTechmarine.class,
+                    IMTechmarineonBike.class,
+                    IMChaplain.class,
+                    IMChaplaininTerminatorArmour.class,
+                    IMMaster.class,
+                    IMMasterinTerminatorArmour.class,
+                    IMMasterinCataphractiiArmour.class,
+                    IMMasterinGravisArmour.class,
+                    IMChaplainonBike.class,
+                    IMLieutenants.class,
+            null,
+                    IMPrimarisChaplain.class,
+                    IMPrimarisLibrarian.class,
+                    IMPrimarisLieutenants.class,
+                    IMPrimarisMaster.class,
+                    IMPrimarisCaptain.class,
+                    IMRhinoPrimaris.class,
+                    IMLandRaiderExcelsior.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_SM = ImmutableList.of(null,
+                    IMTacticalSquad.class,
+                    IMScoutSquad.class,
+                    IMIntercessorSquad.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_SM = ImmutableList.of(null,
+                    IMServitors.class,
+                    IMApothecary.class,
+                    IMApothecaryonBike.class,
+                    IMPrimarisApothecary.class,
+                    IMCompanyAncient.class,
+                    IMCompanyAncientonBike.class,
+                    IMPrimarisAncient.class,
+                    IMCompanyChampion.class,
+                    IMCompanyChampiononBike.class,
+                    IMCompanyVeterans.class,
+                    IMCompanyVeteransonBikes.class,
+                    IMImperialSpaceMarine.class,
+                    IMHonourGuard.class,
+                    IMChapterAncient.class,
+                    IMChapterChampion.class,
+                    IMCenturionAssaultSquad.class,
+                    IMSternguardVeteranSquad.class,
+                    IMVanguardVeteranSquad.class,
+                    IMDreadnought.class,
+                    IMVenerableDreadnought.class,
+                    IMContemptorDreadnought.class,
+                    IMRedemptorDreadnought.class,
+                    IMIroncladDreadnought.class,
+                    IMTerminatorSquad.class,
+                    IMTerminatorAssaultSquad.class,
+                    IMCataphractiiTerminatorSquad.class,
+                    IMTartarosTerminatorSquad.class,
+                    IMAggressorSquad.class,
+                    IMReiverSquad.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_SM = ImmutableList.of(null,
+                    IMAssaultSquad.class,
+                    IMInceptorSquad.class,
+                    IMScoutBikeSquad.class,
+                    IMBikeSquad.class,
+                    IMAttackBikeSquad.class,
+                    IMLandSpeeders.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_SM = ImmutableList.of(null,
+                    IMDevastatorSquad.class,
+                    IMCenturionDevastatorSquad.class,
+                    IMHellblasterSquad.class,
+                    IMThunderfireCannon.class,
+                    IMPredator.class,
+                    IMWhirlwind.class,
+                    IMVindicator.class,
+                    IMHunter.class,
+                    IMStalker.class,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_SM = ImmutableList.of(null,
+                    IMRhino.class,
+                    IMRazorback.class,
+                    IMDropPod.class,
+                    IMLandSpeederStorm.class,
+                    IMRepulsor.class,
+                    IMTerraxPatternTermiteAssaultDrill.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_SM = ImmutableList.of(null,
+                    IMStormhawkInterceptor.class,
+                    IMStormtalonGunship.class,
+                    IMStormravenGunship.class);
+    private static final List<Class<? extends Eintrag>>LordOfWar_SM = ImmutableList.of(null,
+                    IMAstraeusSuperHeavyTank.class);
 
     //Ultramarines
-    private static final String[] HQeinträge_Ultramarines = new String[]{"", "Marneus Calgar", "Marneus Calgar in Artificer Armour",
-            "Captain Sicarius", "Chief Librarian Tigurius", "Chaplain Cassius", "Sergeant Telion", "Sergeant Chronus"};
-    private static final String[] Eliteeinträge_Ultramarines = new String[]{"", "Tyrannic War Veterans",};
-    private static final String[] LordofWar_Ultramarines = new String[]{"", "Roboute Guilliman", "Terminus Ultra",};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Ultramarines = ImmutableList.of(null,
+                    IMMarneusCalgar.class,
+                    IMMarneusCalgarinArtificerArmour.class,
+                    IMCaptainSicarius.class,
+                    IMChiefLibrarianTigurius.class,
+                    IMChaplainCassius.class,
+                    IMSergeantTelion.class,
+                    IMSergeantChronus.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Ultramarines = ImmutableList.of(null,
+                    IMTyrannicWarVeterans.class);
+    private static final List<Class<? extends Eintrag>>LordofWar_Ultramarines = ImmutableList.of(null,
+                    IMRobouteGuilliman.class,
+                    IMTerminusUltra.class);
 
     //Imperial Fists
-    private static final String[] HQeinträge_Imperial_Fists = new String[]{"", "Captain Lysander"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Imperial_Fists = ImmutableList.of(null,
+                    IMCaptainLysander.class);
 
-    //Crimson Fists
-    private static final String[] HQeinträge_Crimson_Fists = new String[]{"", "Pedro Kantor"};
+    //CrimsonFists
+    private static final List<Class<? extends Eintrag>> HQeinträge_Crimson_Fists = ImmutableList.of(null,
+                    IMPedroKantor.class);
 
-    //Black Templars
-    private static final String[] HQeinträge_Black_Templars = new String[]{"", "High Marshal Helbrecht", "The Emperor's Champion", "Chaplain Grimaldus"};
-    private static final String[] Eliteeinträge_Black_Templars = new String[]{"", "Cenobyte Servitors"};
-    private static final String[] Standardeinträge_Black_Templars = new String[]{"", "Crusader Squad"};
+    //BlackTemplars
+    private static final List<Class<? extends Eintrag>> HQeinträge_Black_Templars = ImmutableList.of(null,
+                    IMHighMarshalHelbrecht.class,
+                    IMTheEmperorsChampion.class,
+                    IMChaplainGrimaldus.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Black_Templars = ImmutableList.of(null,
+                    IMCenobyteServitors.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Black_Templars = ImmutableList.of(null,
+                    IMCrusaderSquad.class);
 
     //Raven Guard
-    private static final String[] HQeinträge_Raven_Guard = new String[]{"", "Kayvaan Shrike"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Raven_Guard = ImmutableList.of(null, IMKayvaanShrike.class);
 
     //Salamanders
-    private static final String[] HQeinträge_Salamanders = new String[]{"", "Vulkan He'stan"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Salamanders = ImmutableList.of(null, IMVulkanHestan.class);
 
     //White Scars
-    private static final String[] HQeinträge_White_Scars = new String[]{"", "Kor'sarro Khan", "Kor'sarro Khan on Moondrakkan"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_White_Scars = ImmutableList.of(null, IMKorsarroKhan.class, IMKorsarroKhanonMoondrakkan.class);
 
-    //Legion of the Damned
-    private static final String[] Eliteeinträge_Legion_of_the_Damned = new String[]{"", "Damned Legionnaires"};
+    //LegionoftheDamned
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Legion_of_the_Damned = ImmutableList.of(null, IMDamnedLegionnaires.class);
 
-    //Blood Angels
-    private static final String[] HQeinträge_Blood_Angels = new String[]{"", "Commander Dante", "Gabriel Seth", "Captain Tycho", "Tycho the Lost",
-            "Librarian Dreadnought", "Chief Librarian Mephiston", "The Sanguinor",
-            "Astorath", "Sanguinary Priest", "Sanguinary Priest on Bike",
-            "Brother Corbulo", "Lemartes",};
-    private static final String[] Eliteeinträge_Blood_Angels = new String[]{"", "Sanguinary Guard Ancient", "Terminator Ancient", "Death Company",
-            "Sanguinary Guard", "Death Company Dreadnought", "Furioso Dreadnought"};
-    private static final String[] Unterstützungseinträge_Blood_Angels = new String[]{"", "Baal Predator"};
+    //BloodAngels
+    private static final List<Class<? extends Eintrag>> HQeinträge_Blood_Angels = ImmutableList.of(null,
+                    IMCommanderDante.class,
+                    IMGabrielSeth.class,
+                    IMCaptainTycho.class,
+                    IMTychotheLost.class,
+                    IMLibrarianDreadnought.class,
+                    IMChiefLibrarianMephiston.class,
+                    IMTheSanguinor.class,
+                    IMAstorath.class,
+                    IMSanguinaryPriest.class,
+                    IMSanguinaryPriestonBike.class,
+                    IMBrotherCorbulo.class,
+                    IMLemartes.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Blood_Angels = ImmutableList.of(null,
+                    IMSanguinaryGuardAncient.class,
+                    IMTerminatorAncient.class,
+                    IMDeathCompany.class,
+                    IMSanguinaryGuard.class,
+                    IMDeathCompanyDreadnought.class,
+                    IMFuriosoDreadnought.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Blood_Angels = ImmutableList.of(null,
+                    IMBaalPredator.class);
 
-    private static final String[] Sturmeinträge_Blood_Angels = new String[]{"", "Assault Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
-            "Attack Bike Squad", "Land Speeders"};
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Blood_Angels = ImmutableList.of(null,
+                    IMAssaultSquadBA.class,
+                    IMInceptorSquad.class,
+                    IMScoutBikeSquad.class,
+                    IMBikeSquad.class,
+                    IMAttackBikeSquad.class,
+                    IMLandSpeeders.class);
 
-    //Dark Angels
-    private static final String[] HQeinträge_Dark_Angels = new String[]{"", "Azrael", "Belial", "Sammael on Corvex", "Sammael in Sableclaw", "Interrogator-Chaplain", "Ravenwing Talonmaster",
-            "Interrogator-Chaplain in Terminator Armour", "Interrogator-Chaplain on Bike", "Asmodai", "Ezekiel"};
-    private static final String[] Eliteeinträge_Dark_Angels = new String[]{"", "Deathwing Apothecary", "Deathwing Ancient", "Deathwing Champion", "Deathwing Terminator Squad", "Deathwing Cataphractii Terminator Squad",
-            "Deathwing Tartaros Terminator Squad", "Deathwing Knights", "Ravenwing Apothecary", "Ravenwing Ancient", "Ravenwing Champion",};
-    private static final String[] Sturmeinträge_Dark_Angels = new String[]{"", "Ravenwing Bike Squad", "Ravenwing Attack Bike Squad", "Ravenwing Land Speeders", "Ravenwing Darkshroud",
-            "Ravenwing Black Knights", "Ravenwing Land Speeder Vengeance",};
-    private static final String[] Fliegereinträge_Dark_Angels = new String[]{"", "Nephilim Jetfighter", "Ravenwing Dark Talon", "Stormraven Gunship"};
-    private static final String[] Befestigungen_Dark_Angels = new String[]{"", "Fortress of Redemption",};
+    //DarkAngels
+    private static final List<Class<? extends Eintrag>> HQeinträge_Dark_Angels = ImmutableList.of(null,
+                    IMAzrael.class,
+                    IMBelial.class,
+                    IMSammaelonCorvex.class,
+                    IMSammaelinSableclaw.class,
+                    IMInterrogatorChaplain.class,
+                    IMRavenwingTalonmaster.class,
+                    IMInterrogatorChaplaininTerminatorArmour.class,
+                    IMInterrogatorChaplainonBike.class,
+                    IMAsmodai.class,
+                    IMEzekiel.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Dark_Angels = ImmutableList.of(null,
+                    IMDeathwingApothecary.class,
+                    IMDeathwingAncient.class,
+                    IMDeathwingChampion.class,
+                    IMDeathwingTerminatorSquad.class,
+                    IMDeathwingCataphractiiTerminatorSquad.class,
+                    IMDeathwingTartarosTerminatorSquad.class,
+                    IMDeathwingKnights.class,
+                    IMRavenwingApothecary.class,
+                    IMRavenwingAncient.class,
+                    IMRavenwingChampion.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Dark_Angels = ImmutableList.of(null,
+                    IMRavenwingBikeSquad.class,
+                    IMRavenwingAttackBikeSquad.class,
+                    IMRavenwingLandSpeeders.class,
+                    IMRavenwingDarkshroud.class,
+                    IMRavenwingBlackKnights.class,
+                    IMRavenwingLandSpeederVengeance.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Dark_Angels = ImmutableList.of(null,
+                    IMNephilimJetfighter.class,
+                    IMRavenwingDarkTalon.class,
+                    IMStormravenGunship.class);
+    private static final List<Class<? extends Eintrag>> Befestigungen_Dark_Angels = ImmutableList.of(null);
 
     //Space Wolves
-    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Arjac Rockfist", "Bjorn the Fell-Handed", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour",  
-    		"", "Rune Priest in Terminator Armour", "Primaris Rune Priest", "Rune Priest",
-    		"", "Ulrik the Slayer", "Wolf Priest in Terminator Armour", "Primaris Wolf Priest", "Wolf Priest",
-    		"", "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Wolf Lord", "Wolf Lord on Thunderwolf", "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour", "Primaris Wolf Lord", "Wolf Lord in Gravis Armour", 
-    		"", "Canis Wolfborn", "Wolf Guard Battle Leader", "Primaris Battle Leader", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
-            "", "Iron Priest",
-            "", "Rune Priest on Bike[INDEX]", "Wolf Priest on Bike[INDEX]", "Wolf Lord on Bike[INDEX]", "Wolf Guard Battle Leader on Bike[INDEX]", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]"};
-    private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
-    private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wolf Scouts", "Lukas the Trickster", "Wulfen Dreadnought", "Wolf Guard",  "Wolf Guard Terminators",
-    		 "Wolf Guard Cataphractii Terminators", "Wolf Guard Tartaros Terminators", "Wulfen", "Murderfang",  
-            "", "SW Venerable Dreadnought[INDEX]", "Wolf Guard on Bikes[INDEX]", "Lone Wolf[INDEX]", "Lone Wolf in Terminator Armour[INDEX]"};
-    private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes", "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws", "Wolf Scout Bikers"};
-    private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship", "Stormhawk Interceptor"};
-    private static final String[] Unterstützungseinträge_Space_Wolves = new String[]{"", "Long Fangs"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Space_Wolves = ImmutableList.of(null,
+                    IMLoganGrimnar.class,
+                    IMLoganGrimnaronStormrider.class,
+                    IMArjacRockfist.class,
+                    IMBjorntheFellHanded.class,
+                    IMNjalStormcaller.class,
+                    IMNjalStormcallerinRunicTerminatorArmour.class,
+    		null,
+                    IMRunePriestinTerminatorArmour.class,
+                    IMPrimarisRunePriest.class,
+                    IMRunePriest.class,
+    		null,
+                    IMUlriktheSlayer.class,
+                    IMWolfPriestinTerminatorArmour.class,
+                    IMPrimarisWolfPriest.class,
+                    IMWolfPriest.class,
+    		null,
+                    IMRagnarBlackmane.class,
+                    IMKromDragongaze.class,
+                    IMHaraldDeathwolf.class,
+                    IMWolfLord.class,
+                    IMWolfLordonThunderwolf.class,
+                    IMWolfLordinTerminatorArmour.class,
+                    IMWolfLordinCataphractiiArmour.class,
+                    IMPrimarisWolfLord.class,
+                    IMWolfLordinGravisArmour.class,
+    		null,
+                    IMCanisWolfborn.class,
+                    IMWolfGuardBattleLeader.class,
+                    IMPrimarisBattleLeader.class,
+                    IMWolfGuardBattleLeaderinTerminatorArmour.class,
+                    IMWolfGuardBattleLeaderonThunderwolf.class,
+            null,
+                    IMIronPriest.class,
+            null,
+                    IMRunePriestonBike.class,
+                    IMWolfPriestonBike.class,
+                    IMWolfLordonBike.class,
+                    IMWolfGuardBattleLeaderonBike.class,
+                    IMIronPriestonBike.class,
+                    IMIronPriestonThunderwolf.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Space_Wolves = ImmutableList.of(null,
+                    IMBloodClaws.class,
+                    IMGreyHunters.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Space_Wolves = ImmutableList.of(null,
+                    IMWolfScouts.class,
+                    IMLukastheTrickster.class,
+                    IMWulfenDreadnought.class,
+                    IMWolfGuard.class,
+                    IMWolfGuardTerminators.class,
+                    IMWolfGuardCataphractiiTerminators.class,
+                    IMWolfGuardTartarosTerminators.class,
+                    IMWulfen.class,
+                    IMMurderfang.class,
+            null,
+                    IMSWVenerableDreadnought.class,
+                    IMWolfGuardonBikes.class,
+                    IMLoneWolf.class,
+                    IMLoneWolfinTerminatorArmour.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Space_Wolves = ImmutableList.of(null,
+                    IMCyberwolves.class,
+                    IMSwiftclaws.class,
+                    IMSwiftclawAttackBikes.class,
+                    IMThunderwolfCavalry.class,
+                    IMFenrisianWolves.class,
+                    IMSkyclaws.class,
+                    IMWolfScoutBikers.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Space_Wolves = ImmutableList.of(null,
+                    IMStormwolf.class,
+                    IMStormfangGunship.class,
+                    IMStormhawkInterceptor.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Space_Wolves = ImmutableList.of(null,
+                    IMLongFangs.class);
 
     //Deathwatch
-    private static final String[] HQeinträge_Deathwatch = new String[]{"", "Watch Master", "Watch Captain Artemis", "Watch Captain", "Watch Captain in Terminator Armour", "Primaris Watch Captain", "Deathwatch Librarian", "Deathwatch Librarian in Terminator Armour", "Deathwatch Primaris Librarian", "Deathwatch Chaplain", "Deathwatch Chaplain in Terminator Armour", "Deathwatch Primaris Chaplain"};
-    private static final String[] Standardeinträge_Deathwatch = new String[]{"", "Deathwatch Veterans", "Deathwatch Intercessors"};
-    private static final String[] Eliteeinträge_Deathwatch = new String[]{"", "Deathwatch Primaris Apothecary", "Venerable Dreadnought", "Dreadnought", "Redemptor Dreadnought", "Deathwatch Terminator Squad", "Deathwatch Reiver Squad", "Aggressor Squad", "Deathwatch Vanguard Veterans"};
-    private static final String[] Sturmeinträge_Deathwatch = new String[]{"", "Deathwatch Bikers", "Inceptor Squad"};
-    private static final String[] Unterstützungseinträge_Deathwatch = new String[]{"", "Hellblaster Squad", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
-    private static final String[] Transporteinträge_Deathwatch = new String[]{"", "Razorback", "Rhino", "Drop Pod", "Repulsor"};
-    private static final String[] Fliegereinträge_Deathwatch = new String[]{"", "Corvus Blackstar"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Deathwatch = ImmutableList.of(null,
+                    IMWatchMaster.class,
+                    IMWatchCaptainArtemis.class,
+                    IMWatchCaptain.class,
+                    IMWatchCaptaininTerminatorArmour.class,
+                    IMPrimarisWatchCaptain.class,
+                    IMDeathwatchLibrarian.class,
+                    IMDeathwatchLibrarianinTerminatorArmour.class,
+                    IMDeathwatchPrimarisLibrarian.class,
+                    IMDeathwatchChaplain.class,
+                    IMDeathwatchChaplaininTerminatorArmour.class,
+                    IMDeathwatchPrimarisChaplain.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Deathwatch = ImmutableList.of(null,
+                    IMDeathwatchVeterans.class,
+                    IMDeathwatchIntercessors.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Deathwatch = ImmutableList.of(null,
+                    IMDeathwatchPrimarisApothecary.class,
+                    IMVenerableDreadnought.class,
+                    IMDreadnought.class,
+                    IMRedemptorDreadnought.class,
+                    IMDeathwatchTerminatorSquad.class,
+                    IMDeathwatchReiverSquad.class,
+                    IMAggressorSquad.class,
+                    IMDeathwatchVanguardVeterans.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Deathwatch = ImmutableList.of(null,
+                    IMDeathwatchBikers.class,
+                    IMInceptorSquad.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Deathwatch = ImmutableList.of(null,
+                    IMHellblasterSquad.class,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Deathwatch = ImmutableList.of(null,
+                    IMRazorback.class,
+                    IMRhino.class,
+                    IMDropPod.class,
+                    IMRepulsor.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Deathwatch = ImmutableList.of(null,
+                    IMCorvusBlackstar.class);
 
     //Grey Knights
-    private static final String[] HQeinträge_Grey_Knights = new String[]{"", "Lord Kaldor Draigo", "Grand Master Voldus", "Grand Master", "Grand Master in Nemesis Dreadknight",
-            "Castellan Crowe", "Brother Captain Stern", "Brother-Captain", "Librarian GK", "Techmarine GK", "Chaplain GK", "Brotherhood Champion"};
-    private static final String[] Standardeinträge_Grey_Knights = new String[]{"", "Grey Knight Terminator Squad", "Strike Squad"};
-    private static final String[] Eliteeinträge_Grey_Knights = new String[]{"", "Brotherhood Ancient", "Purifier Squad", "Paladin Squad",
-            "Paladin Ancient", "Grey Knight Apothecary", "Dreadnought GK", "Venerable Dreadnought GK", "Servitors"};
-    private static final String[] Sturmeinträge_Grey_Knights = new String[]{"", "Interceptor Squad"};
-    private static final String[] Unterstützungseinträge_Grey_Knights = new String[]{"", "Purgation Squad", "Nemesis Dreadknight", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"};
-    private static final String[] Transporteinträge_Grey_Knights = new String[]{"", "Razorback", "Rhino"};
-    private static final String[] Fliegereinträge_Grey_Knights = new String[]{"", "Stormhawk Interceptor", "Stormraven Gunship", "Stormtalon Gunship"};
+    private static final List<Class<? extends Eintrag>> HQeinträge_Grey_Knights = ImmutableList.of(null,
+                    IMLordKaldorDraigo.class,
+                    IMGrandMasterVoldus.class,
+                    IMGrandMaster.class,
+                    IMGrandMasterinNemesisDreadknight.class,
+                    IMCastellanCrowe.class,
+                    IMBrotherCaptainStern.class,
+                    IMBrotherCaptain.class,
+                    IMLibrarianGK.class,
+                    IMTechmarineGK.class,
+                    IMChaplainGK.class,
+                    IMBrotherhoodChampion.class);
+    private static final List<Class<? extends Eintrag>> Standardeinträge_Grey_Knights = ImmutableList.of(null,
+                    IMGreyKnightTerminatorSquad.class,
+                    IMStrikeSquad.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_Grey_Knights = ImmutableList.of(null,
+                    IMBrotherhoodAncient.class,
+                    IMPurifierSquad.class,
+                    IMPaladinSquad.class,
+                    IMPaladinAncient.class,
+                    IMGreyKnightApothecary.class,
+                    IMDreadnoughtGK.class,
+                    IMVenerableDreadnoughtGK.class,
+                    IMServitors.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_Grey_Knights = ImmutableList.of(null,
+                    IMInterceptorSquad.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_Grey_Knights = ImmutableList.of(null,
+                    IMPurgationSquad.class,
+                    IMNemesisDreadknight.class,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_Grey_Knights = ImmutableList.of(null,
+                    IMRazorback.class,
+                    IMRhino.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_Grey_Knights = ImmutableList.of(null,
+                    IMStormhawkInterceptor.class,
+                    IMStormravenGunship.class,
+                    IMStormtalonGunship.class);
 
-    //Imperial Armour Adeptus Astartes
-    private static final String[] HQeinträge_IA_AA = new String[]{"", "Chaplain Venerable Dreadnought [FW]", "Damocles Command Rhino [FW]",};
-    private static final String[] Eliteeinträge_IA_AA = new String[]{"", "Deimos Pattern Relic Predator [FW]", "Relic Sicaran Battle Tank [FW]", "Relic Sicaran Venator Tank Destroyer [FW]",
-            "Relic Sicaran Punisher Assault Tank [FW]", "Relic Sicaran Arcus Strike Tank [FW]", "Relic Sicaran Omega Tank Destroyer [FW]", "Relic Contemptor Dreadnought [FW]",
-            "Relic Deredeo Dreadnought [FW]", "Relic Javelin Attack Speeder [FW]", "Relic Whirlwind Scorpius [FW]",};
-    private static final String[] Sturmeinträge_IA_AA = new String[]{"", "Land Speeder Tempest [FW]", "Tarantula Sentry Gun [FW]", "Tarantula Air Defence Battery [FW]", "Deathstorm Drop Pod [FW]",};
-    private static final String[] Unterstützungseinträge_IA_AA = new String[]{"", "Deimos Pattern Vindicator Laser Destroyer [FW]", "Relic Land Raider Proteus [FW]", "Land Raider Helios [FW]",
-            "Land Raider Prometheus [FW]", "Land Raider Achilles [FW]", "Mortis Dreadnought [FW]", "Siege Dreadnought [FW]", "Contemptor Mortis Dreadnought [FW]", "Relic Leviathan Dreadnought [FW]",
-            "Whirlwind Hyperios [FW]", "Rapier Carrier [FW]",};
-    private static final String[] Transporteinträge_IA_AA = new String[]{"", "Infernum Pattern Razorback [FW]", "Lucius Pattern Dreadnought Drop Pod [FW]",};
-    private static final String[] Fliegereinträge_IA_AA = new String[]{"", "Xiphon Interceptor [FW]", "Storm Eagle Assault Gunship [FW]", "Fire Raptor Assault Gunship [FW]", "Caestus Assault Ram [FW]",};
-    private static final String[] LordofWar_IA_AA = new String[]{"", "Relic Spartan Assault Tank [FW]", "Relic Typhon Heavy Siege Tank [FW]", "Relic Cerberus Heavy Tank Destroyer [FW]",
-            "Relic Fellblade Super-heavy Tank [FW]", "Relic Falchion Super-heavy Tank Destroyer [FW]", "Relic Mastodon Super-heavy Siege Transport [FW]",
-            "Thunderhawk Assault Gunship [FW]", "Thunderhawk Transporter [FW]", "Sokar Pattern Stormbird [FW]",};
+    //ImperialArmourAdeptusAstartes
+    private static final List<Class<? extends Eintrag>> HQeinträge_IA_AA = ImmutableList.of(null,
+                    IMChaplainVenerableDreadnought.class);
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_IA_AA = ImmutableList.of(null,
+                    IMDeimosPatternRelicPredator.class,
+                    IMRelicSicaranBattleTank.class,
+                    IMRelicSicaranVenatorTankDestroyer.class,
+                    IMRelicSicaranPunisherAssaultTank.class,
+                    IMRelicSicaranArcusStrikeTank.class,
+                    IMRelicSicaranOmegaTankDestroyer.class,
+                    IMRelicContemptorDreadnought.class,
+                    IMRelicDeredeoDreadnought.class,
+                    IMRelicJavelinAttackSpeeder.class);
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_IA_AA = ImmutableList.of(null,
+                    IMLandSpeederTempest.class,
+                    IMTarantulaSentryGun.class,
+                    IMTarantulaAirDefenceBattery.class,
+                    IMDeathstormDropPod.class);
+    private static final List<Class<? extends Eintrag>> Unterstützungseinträge_IA_AA = ImmutableList.of(null,
+                    IMDeimosPatternVindicatorLaserDestroyer.class,
+                    IMRelicLandRaiderProteus.class,
+                    IMLandRaiderHelios.class,
+                    IMLandRaiderPrometheus.class,
+                    IMLandRaiderAchilles.class,
+                    IMMortisDreadnought.class,
+                    IMSiegeDreadnought.class,
+                    IMContemptorMortisDreadnought.class,
+                    IMRelicLeviathanDreadnought.class,
+                    IMRapierCarrier.class);
+    private static final List<Class<? extends Eintrag>>Transporteinträge_IA_AA = ImmutableList.of(null,
+                    IMInfernumPatternRazorback.class,
+                    IMLuciusPatternDreadnoughtDropPod.class);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_IA_AA = ImmutableList.of(null,
+                    IMXiphonInterceptor.class,
+                    IMStormEagleAssaultGunship.class,
+                    IMFireRaptorAssaultGunship.class,
+                    IMCaestusAssaultRam.class);
+    private static final List<Class<? extends Eintrag>>LordofWar_IA_AA = ImmutableList.of(null,
+                    IMRelicSpartanAssaultTank.class,
+                    IMRelicTyphonHeavySiegeTank.class,
+                    IMRelicCerberusHeavyTankDestroyer.class,
+                    IMRelicFellbladeSuperheavyTank.class,
+                    IMRelicFalchionSuperheavyTankDestroyer.class,
+                    IMRelicMastodonSuperheavySiegeTransport.class);
 
-    private static final String[] Fliegereinträge_IA_Minotaurs = new String[]{"", "Storm Eagle Assault Gunship - ROC Pattern [FW]",};
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_IA_Minotaurs = ImmutableList.of(null, IMStormEagleAssaultGunshipROCPattern.class);
 
-    //Adeptus Astartes
-    private static final String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
+    //AdeptusAstartes
+    private static final List<Class<? extends Eintrag>> HQeinträge_AA_komplett = concat(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
             HQeinträge_Crimson_Fists, HQeinträge_Black_Templars, HQeinträge_Raven_Guard, HQeinträge_Salamanders,
             HQeinträge_White_Scars, HQeinträge_Blood_Angels, HQeinträge_Dark_Angels, HQeinträge_Space_Wolves,
             HQeinträge_Deathwatch, HQeinträge_Grey_Knights, HQeinträge_IA_AA);
-    private static final String[] Standardeinträge_AA_komplett = uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars,
+    private static final List<Class<? extends Eintrag>> Standardeinträge_AA_komplett = concat(Standardeinträge_SM, Standardeinträge_Black_Templars,
             Standardeinträge_Space_Wolves, Standardeinträge_Deathwatch, Standardeinträge_Grey_Knights);
-    private static final String[] Eliteeinträge_AA_komplett = uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_Black_Templars,
+    private static final List<Class<? extends Eintrag>> Eliteeinträge_AA_komplett = concat(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_Black_Templars,
             Eliteeinträge_Legion_of_the_Damned, Eliteeinträge_Blood_Angels, Eliteeinträge_Dark_Angels, Eliteeinträge_Space_Wolves,
             Eliteeinträge_Deathwatch, Eliteeinträge_Grey_Knights, Eliteeinträge_IA_AA);
-    private static final String[] Sturmeinträge_AA_komplett = uniteUnitList(Sturmeinträge_SM, Sturmeinträge_Blood_Angels, Sturmeinträge_Dark_Angels, Sturmeinträge_Space_Wolves,
+    private static final List<Class<? extends Eintrag>> Sturmeinträge_AA_komplett = concat(Sturmeinträge_SM, Sturmeinträge_Blood_Angels, Sturmeinträge_Dark_Angels, Sturmeinträge_Space_Wolves,
             Sturmeinträge_Deathwatch, Sturmeinträge_Grey_Knights, Sturmeinträge_IA_AA);
-    private static final String[] Unterstützungeinträge_AA_komplett = uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_Blood_Angels,
+    private static final List<Class<? extends Eintrag>> Unterstützungeinträge_AA_komplett = concat(Unterstützungeinträge_SM, Unterstützungseinträge_Blood_Angels,
             Unterstützungseinträge_Space_Wolves, Unterstützungseinträge_Deathwatch, Unterstützungseinträge_Grey_Knights, Unterstützungseinträge_IA_AA);
-    private static final String[] Transporteinträge_AA_komplett = uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA);
-    private static final String[] Fliegereinträge_AA_komplett = uniteUnitList(Fliegereinträge_SM, Fliegereinträge_Dark_Angels,
+    private static final List<Class<? extends Eintrag>>Transporteinträge_AA_komplett = concat(Transporteinträge_SM,Transporteinträge_IA_AA);
+    private static final List<Class<? extends Eintrag>> Fliegereinträge_AA_komplett = concat(Fliegereinträge_SM, Fliegereinträge_Dark_Angels,
             Fliegereinträge_Space_Wolves, Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA, Fliegereinträge_IA_Minotaurs);
-    private static final String[] LordofWar_AA_komplett = uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA);
+    private static final List<Class<? extends Eintrag>>LordofWar_AA_komplett = concat(LordOfWar_SM,LordofWar_Ultramarines,LordofWar_IA_AA);
 
   //Subfactions
-    private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
-    private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
-    private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
-    private static final Set<String> AS_ORDERS = ImmutableSet.of("Order of the Valorous Heart", "Order of Our Martyred Lady", "Order of the Ebon Chalice", "Order of the Argent Shroud", "Order of the Bloody Rose", "Order of the Sacred Rose");
+    private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge WorldMars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge WorldAgripinaa", "Forge World Stygies VIII", "Forge WorldRyza");
+    private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "CrimsonFists", "BlackTemplars", "Salamanders", "Raven Guard", "IronHands");
+    private static final Set<String>ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "MilitarumTempestus", "Mordian");
+    private static final Set<String>AS_ORDERS = ImmutableSet.of("OrderoftheValorous Heart", "OrderofOurMartyred Lady", "OrderoftheEbonChalice", "OrderoftheArgent Shroud", "OrderoftheBloodyRose", "OrderoftheSacredRose");
 
     public static Set<String> getSmChapters(){
     	return SM_CHAPTERS;
     }
     
     public VOLKImperium() {
-        super("IM", ResourceUtils.loadPoints(
+        super("IM",ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
                    .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))));
 
         //Formationen
         formationen.add("IMPERIUM");
-        formationen.add("");
+        formationen.add(null);
         formationen.add("Adepta Sororitas");
         formationen.addAll(AS_ORDERS);
-        formationen.add("");
-        formationen.add("Adeptus Custodes");
-        formationen.add("");
-        formationen.add("Adeptus Astartes");
+        formationen.add(null);
+        formationen.add("AdeptusCustodes");
+        formationen.add(null);
+        formationen.add("AdeptusAstartes");
         formationen.addAll(SM_CHAPTERS);
-        formationen.add("");
-        formationen.add("Blood Angels");
-        formationen.add("Dark Angels");
+        formationen.add(null);
+        formationen.add("BloodAngels");
+        formationen.add("DarkAngels");
         formationen.add("Deathwatch");
         formationen.add("Grey Knights");
-        formationen.add("Legion of the Damned");
+        formationen.add("LegionoftheDamned");
         formationen.add("Space Wolves");
-        formationen.add("");
-        formationen.add("Astral Claws");
-        formationen.add("Blood Ravens");
+        formationen.add(null);
+        formationen.add("AstralClaws");
+        formationen.add("BloodRavens");
         formationen.add("Carcharodons");
         formationen.add("Executioners");
         formationen.add("Exorcists");
-        formationen.add("Fire Angels");
+        formationen.add("FireAngels");
         formationen.add("Fire Hawks");
         formationen.add("Howling Griffons");
         formationen.add("Lamenters");
@@ -342,29 +761,29 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Novamarines");
         formationen.add("Raptors");
         formationen.add("Red Scorpions");
-        formationen.add("Sons of Medusa");
-        formationen.add("Star Phantoms");
-        formationen.add("Tiger Claws");
-        formationen.add("");
-        formationen.add("ASTRA MILITARUM");
+        formationen.add("SonsofMedusa");
+        formationen.add("StarPhantoms");
+        formationen.add("TigerClaws");
+        formationen.add(null);
+        formationen.add("ASTRA MILITARUM.");
         formationen.addAll(ASTRA_MILITARUM);
-        formationen.add("Officio Prefectus");
-        formationen.add("Militarum Auxilia");
+        formationen.add("OfficioPrefectus");
+        formationen.add("MilitarumAuxilia");
         formationen.add("Aeronautica Imperialis");
-        formationen.add("Scholastica Psykana");
-        formationen.add("");
+        formationen.add("ScholasticaPsykana");
+        formationen.add(null);
         formationen.add("Adeptus Mechanicus");
         formationen.addAll(FORGEWORLDS);
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
-        formationen.add("");
+        formationen.add(null);
         formationen.add("Questor Imperialis");
-        formationen.add("");
+        formationen.add(null);
         formationen.add("Adeptus Ministorum");
-        formationen.add("Officio Assassinorum");
-        formationen.add("Adeptus Astra Telepathica");
-        formationen.add("Scholastica Psykana");
-        formationen.add("Sisters of Silence");
+        formationen.add("OfficioAssassinorum");
+        formationen.add("AdeptusAstraTelepathica");
+        formationen.add("ScholasticaPsykana");
+        formationen.add("SistersofSilence");
 
         complete();
     }
@@ -376,46 +795,46 @@ public class VOLKImperium extends BuildaVater {
         if (getFormationType().equals("IMPERIUM")) {
             clearCombo();
 
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AA_komplett,
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_AA_komplett,
                     HQeinträge_AM_komplett,
                     HQeinträge_Adeptus_Mechanicus,
                     HQeinträge_Adeptus_Ministorum,
                     HQeinträge_Adeptus_Astra_Telepathica,
                     HQeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AA_komplett,
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_AA_komplett,
                     Standardeinträge_AM_komplett,
                     Standardeinträge_Adeptus_Mechanicus,
                     Standardeinträge_Adeptus_Ministorum,
                     Standardeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AA_komplett,
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AA_komplett,
                     Eliteeinträge_AM_komplett,
                     Eliteeinträge_Adeptus_Mechanicus,
                     Eliteeinträge_Adeptus_Ministorum,
                     Eliteeinträge_Officio_Assassinorum,
                     Eliteeinträge_Adeptus_Astra_Telepathica,
                     Eliteeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_AA_komplett,
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_AA_komplett,
                     Sturmeinträge_AM_komplett,
                     Sturmeinträge_Adeptus_Mechanicus,
                     Sturmeinträge_Adeptus_Ministorum,
                     Sturmeinträge_Adeptus_Custodes));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_AA_komplett,
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_AA_komplett,
                     Unterstützungeinträge_AM_komplett,
                     Unterstützungseinträge_Adeptus_Mechanicus,
                     Unterstützungseinträge_Adeptus_Ministorum,
                     Unterstützungseinträge_Adeptus_Custodes));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AA_komplett,
-                    Transporteinträge_AM_komplett,
-                    Transporteinträge_Adeptus_Mechanicus,
-                    Transporteinträge_Adeptus_Ministorum,
-                    Transporteinträge_Adeptus_Astra_Telepathica));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AA_komplett,
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_AA_komplett,
+                   Transporteinträge_AM_komplett,
+                   Transporteinträge_Adeptus_Mechanicus,
+                   Transporteinträge_Adeptus_Ministorum,
+                   Transporteinträge_Adeptus_Astra_Telepathica));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_AA_komplett,
                     Fliegereinträge_AM_komplett));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_AA_komplett,
-                    LordofWar_AM_komplett,
-                    LordofWar_Questor_Imperialis));
-        } else if (getFormationType().equals("Adeptus Astartes")) {
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigung_Questor_Imperialis));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordofWar_AA_komplett,
+                   LordofWar_AM_komplett,
+                   LordofWar_Questor_Imperialis));
+        } else if (getFormationType().equals("AdeptusAstartes")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AA_komplett);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AA_komplett);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AA_komplett);
@@ -426,143 +845,279 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AA_komplett);
         } else if (getFormationType().equals("Ultramarines")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_Ultramarines,LordofWar_IA_AA));
         } else if (getFormationType().equals("Imperial Fists")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Imperial_Fists, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Imperial_Fists, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
-        } else if (getFormationType().equals("Crimson Fists")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Crimson_Fists, HQeinträge_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
+        } else if (getFormationType().equals("CrimsonFists")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Crimson_Fists, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
-        } else if (getFormationType().equals("Black Templars")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Black_Templars, HQeinträge_IA_AA));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Black_Templars, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
+        } else if (getFormationType().equals("BlackTemplars")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Black_Templars, HQeinträge_IA_AA));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_SM, Standardeinträge_Black_Templars));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_Black_Templars, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
         } else if (getFormationType().equals("Raven Guard")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Raven_Guard, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Raven_Guard, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
         } else if (getFormationType().equals("Salamanders")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Salamanders, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_Salamanders, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
         } else if (getFormationType().equals("White Scars")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_White_Scars, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_SM, HQeinträge_White_Scars, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_SM, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_SM, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_SM, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungeinträge_SM, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_SM,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
-        } else if (getFormationType().equals("Legion of the Damned")) {
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(concat(LordOfWar_SM,LordofWar_IA_AA));
+        } else if (getFormationType().equals("LegionoftheDamned")) {
             clearCombo();
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Legion_of_the_Damned);
-        } else if (getFormationType().equals("Blood Angels")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Blood_Angels,
-                    new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
-                            "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine with Jump Pack", "Techmarine on Bike", "Chaplain",
-                            "Chaplain in Terminator Armour", "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
-                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+        } else if (getFormationType().equals("BloodAngels")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Blood_Angels,
+                    ImmutableList.of(null,
+                    IMCaptain.class,
+                    IMCaptaininTerminatorArmour.class,
+                    IMCaptaininGravisArmour.class,
+                    IMLibrarian.class,
+                    IMPrimarisLibrarian.class,
+                    IMLibrarianinTerminatorArmour.class,
+                    IMLibrarianonBike.class,
+                    IMTechmarine.class,
+                    IMTechmarinewithJumpPack.class,
+                    IMTechmarineonBike.class,
+                    IMChaplain.class,
+                    IMChaplaininTerminatorArmour.class,
+                    IMChaplainonBike.class,
+                    IMPrimarisChaplain.class,
+                    IMMaster.class,
+                    IMMasterinTerminatorArmour.class,
+                    IMMasterinCataphractiiArmour.class,
+                    IMMasterinGravisArmour.class,
+                    IMPrimarisMaster.class,
+                    IMLieutenants.class,
+                    IMTechmarine.class,
+                    IMPrimarisLieutenants.class,
+                    IMRhinoPrimaris.class,
+                    IMLandRaiderExcelsior.class), HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Blood_Angels,
-                    new String[]{"", "Servitors", "Sanguinary Novitiate",
-                            "Company Ancient", "Company Ancient with Jump Pack",
-                            "Primaris Ancient", "Company Champion", "Company Champion with Jump Pack", "Company Veterans", "Company Veterans with Jump Packs",
-                            "Imperial Space Marine", "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought",
-                            "Terminator Squad", "Terminator Assault Squad",
-                            "", "Primaris Apothecary", "Apothecary", "Company Ancient",
-                            "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
-                            "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Reiver Squad"}, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Blood_Angels,
-                    new String[]{"", "Inceptor Squad"}, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Blood_Angels,
-                    new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
-                            "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"}, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_SM, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Blood_Angels,
+                    ImmutableList.of(null,
+                    IMServitors.class,
+                    IMSanguinaryNovitiate.class,
+                    IMCompanyAncient.class,
+                    IMCompanyAncientwithJumpPack.class,
+                    IMPrimarisAncient.class,
+                    IMCompanyChampion.class,
+                    IMCompanyChampionwithJumpPack.class,
+                    IMCompanyVeterans.class,
+                    IMCompanyVeteranswithJumpPacks.class,
+                    IMImperialSpaceMarine.class,
+                    IMSternguardVeteranSquad.class,
+                    IMVanguardVeteranSquad.class,
+                    IMDreadnought.class,
+                    IMTerminatorSquad.class,
+                    IMTerminatorAssaultSquad.class,
+                            null,
+                    IMPrimarisApothecary.class,
+                    IMApothecary.class,
+                    IMCompanyAncient.class,
+                    IMChapterAncient.class,
+                    IMImperialSpaceMarine.class,
+                    IMDreadnought.class,
+                    IMVenerableDreadnought.class,
+                    IMContemptorDreadnought.class,
+                    IMRedemptorDreadnought.class,
+                    IMAggressorSquad.class,
+                    IMReiverSquad.class), Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Blood_Angels,
+                    ImmutableList.of(null, IMInceptorSquad.class), Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungseinträge_Blood_Angels,
+                    ImmutableList.of(null,
+                    IMDevastatorSquad.class,
+                    IMHellblasterSquad.class,
+                    IMPredator.class,
+                    IMHunter.class,
+                    IMStalker.class,
+                    IMWhirlwind.class,
+                    IMVindicator.class,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class), Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(ImmutableList.of(null,
+                    IMRhino.class,
+                    IMRazorback.class,
+                    IMDropPod.class,
+                    IMLandSpeederStorm.class,
+                    IMRepulsor.class),Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_SM, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
-        } else if (getFormationType().equals("Dark Angels")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Dark_Angels,
-                    new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
-                            "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine on Bike", "Chaplain",
-                            "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
-                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+        } else if (getFormationType().equals("DarkAngels")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Dark_Angels,
+                    ImmutableList.of(null,
+                    IMCaptain.class,
+                    IMCaptaininTerminatorArmour.class,
+                    IMCaptaininGravisArmour.class,
+                    IMLibrarian.class,
+                    IMPrimarisLibrarian.class,
+                    IMLibrarianinTerminatorArmour.class,
+                    IMLibrarianonBike.class,
+                    IMTechmarine.class,
+                    IMTechmarineonBike.class,
+                    IMChaplain.class,
+                    IMChaplainonBike.class,
+                    IMPrimarisChaplain.class,
+                    IMMaster.class,
+                    IMMasterinTerminatorArmour.class,
+                    IMMasterinCataphractiiArmour.class,
+                    IMMasterinGravisArmour.class,
+                    IMPrimarisMaster.class,
+                    IMLieutenants.class,
+                    IMTechmarine.class,
+                    IMPrimarisLieutenants.class,
+                    IMRhinoPrimaris.class,
+                    IMLandRaiderExcelsior.class), HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Dark_Angels, new String[]{"", "Primaris Apothecary", "Apothecary", "Company Ancient", "Primaris Ancient",
-                    "Company Champion", "Company Veterans", "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
-                    "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought", "Aggressor Squad", "Servitors", "Reiver Squad"}, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Dark_Angels, new String[]{"", "Scout Bike Squad", "Assault Squad", "Inceptor Squad"}, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Devastator Squad", "Hellblaster Squad", "Predator", "Hunter", "Stalker", "Whirlwind", "Vindicator", "Land Raider",
-                    "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor"}, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Dark_Angels, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Dark_Angels, ImmutableList.of(null,
+                    IMPrimarisApothecary.class,
+                    IMApothecary.class,
+                    IMCompanyAncient.class,
+                    IMPrimarisAncient.class,
+                    IMCompanyChampion.class,
+                    IMCompanyVeterans.class,
+                    IMChapterAncient.class,
+                    IMImperialSpaceMarine.class,
+                    IMDreadnought.class,
+                    IMVenerableDreadnought.class,
+                    IMContemptorDreadnought.class,
+                    IMRedemptorDreadnought.class,
+                    IMAggressorSquad.class,
+                    IMServitors.class,
+                    IMReiverSquad.class), Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Dark_Angels, ImmutableList.of(null,
+                    IMScoutBikeSquad.class,
+                    IMAssaultSquad.class,
+                    IMInceptorSquad.class), Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(ImmutableList.of(null,
+                    IMDevastatorSquad.class,
+                    IMHellblasterSquad.class,
+                    IMPredator.class,
+                    IMHunter.class,
+                    IMStalker.class,
+                    IMWhirlwind.class,
+                    IMVindicator.class,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class), Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(ImmutableList.of(null,
+                    IMRhino.class,
+                    IMRazorback.class,
+                    IMDropPod.class,
+                    IMLandSpeederStorm.class,
+                    IMRepulsor.class),Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Dark_Angels, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
-        																										   	   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought",
-        																										   	   "", "Imperial Space Marine[INDEX]"}, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptors", "Land Speeders"}, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblasters", "Hunter", "Stalker",
-        																															"", "Predator", "Whirlwind", "Vindicator", 
-        																															"", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm","Repulsor"}, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Space_Wolves, ImmutableList.of(null,
+                    IMPrimarisLieutenants.class,
+                    IMRhinoPrimaris.class,
+                    IMLandRaiderExcelsior.class), HQeinträge_IA_AA));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_Space_Wolves, ImmutableList.of(null,
+                    IMIntercessors.class)));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Space_Wolves, ImmutableList.of(null,
+                    IMReivers.class,
+                    IMAggressors.class,
+                    IMServitors.class,
+                    IMGreatCompanyAncient.class,
+                    IMPrimarisAncient.class,
+                    IMGreatCompanyChampion.class,
+                    null,
+                    IMDreadnought.class,
+                    IMVenerableDreadnought.class,
+                    IMContemptorDreadnought.class,
+                    IMRedemptorDreadnought.class,
+                    null,
+                    IMImperialSpaceMarine.class), Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Space_Wolves, ImmutableList.of(null,
+                    IMInceptors.class,
+                    IMLandSpeeders.class), Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungseinträge_Space_Wolves, ImmutableList.of(null,
+                    IMHellblasters.class,
+                    IMHunter.class,
+                    IMStalker.class,
+                    null,
+                    IMPredator.class,
+                    IMWhirlwind.class,
+                    IMVindicator.class,
+                    null,
+                    IMLandRaider.class,
+                    IMLandRaiderCrusader.class,
+                    IMLandRaiderRedeemer.class), Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(ImmutableList.of(null,
+                    IMRhino.class,
+                    IMRazorback.class,
+                    IMDropPod.class,
+                    IMLandSpeederStorm.class,
+                    IMRepulsor.class),
+                    Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Deathwatch, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_Deathwatch, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Deathwatch, Eliteeinträge_IA_AA));
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Deathwatch, Sturmeinträge_IA_AA));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Deathwatch, Unterstützungseinträge_IA_AA));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Deathwatch, Transporteinträge_IA_AA));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_Deathwatch, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(concat(Sturmeinträge_Deathwatch, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(concat(Unterstützungseinträge_Deathwatch, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_Deathwatch,Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Grey Knights")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Grey_Knights);
@@ -573,7 +1128,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Grey_Knights);
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Grey_Knights);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("ASTRA MILITARUM")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM_komplett);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
@@ -585,61 +1140,61 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM_komplett);
         } else if (getFormationType().equals("Cadian")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_AM, HQeinträge_Cadian, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Cadian, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
             Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Catachan")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_AM, HQeinträge_Catachan, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Catachan, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
                     Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
-        } else if (getFormationType().equals("Militarum Tempestus")) {
+        } else if (getFormationType().equals("MilitarumTempestus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Militarum_Tempestus);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Militarum_Tempestus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Militarum_Tempestus);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Militarum_Tempestus);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (ASTRA_MILITARUM.contains(getFormationType())) {
-        	myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
+        	myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_AM, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
                     Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
-    	} else if (getFormationType().equals("Officio Prefectus")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus));
+    	} else if (getFormationType().equals("OfficioPrefectus")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(concat(HQeinträge_AM, HQeinträge_Officio_Prefectus));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Officio_Prefectus));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Officio_Prefectus));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_AM);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
-        } else if (getFormationType().equals("Militarum Auxilia")) {
+        } else if (getFormationType().equals("MilitarumAuxilia")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Militarum_Auxilia));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Militarum_Auxilia));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_AM);
@@ -648,24 +1203,24 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Aeronautica Imperialis")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM);
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(concat(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(concat(Eliteeinträge_AM, Eliteeinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_AM);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AM, Transporteinträge_Militarum_Tempestus));
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(concat(Transporteinträge_AM,Transporteinträge_Militarum_Tempestus));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(concat(Fliegereinträge_AM, Fliegereinträge_Aeronautica_Imperialis));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
-        } else if (getFormationType().equals("Scholastica Psykana")) {
+        } else if (getFormationType().equals("ScholasticaPsykana")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Adeptus Mechanicus") || FORGEWORLDS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
@@ -673,73 +1228,73 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Mechanicus);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Cult Mechanicus")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Cult_Mechanicus);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Cult_Mechanicus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Cult_Mechanicus);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Cult_Mechanicus);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Skitarii")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Skitarii);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Skitarii);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Skitarii);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Skitarii);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Questor Imperialis")) {
             clearCombo();
             kontingentBox.setSelectedItem("Super-Heavy Detachment");
             myChooserGruppen.get(AI).changeComboBoxAuswahlen(AdditionalInformation_Questor_Imperialis);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
-        } else if (getFormationType().equals("Officio Assassinorum")) {
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(concat(Befestigungen, Befestigung_Questor_Imperialis));
+        } else if (getFormationType().equals("OfficioAssassinorum")) {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Officio_Assassinorum);
-        } else if (getFormationType().equals("Adeptus Astra Telepathica")) {
+        } else if (getFormationType().equals("AdeptusAstraTelepathica")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Astra_Telepathica);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Scholastica Psykana")) {
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
+        } else if (getFormationType().equals("ScholasticaPsykana")) {
             clearCombo();
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Scholastica_Psykana);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Scholastica_Psykana);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-        } else if (getFormationType().equals("Sisters of Silence")) {
+        } else if (getFormationType().equals("SistersofSilence")) {
             clearCombo();
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Sisters_of_Silence);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Sisters_of_Silence);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
-        } else if (getFormationType().equals("Adeptus Custodes")) {
+        } else if (getFormationType().equals("AdeptusCustodes")) {
             clearCombo();
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Custodes);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Custodes);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
-        } else if (getFormationType().equals("Adepta Sororitas") || AS_ORDERS.contains(getFormationType())) {
+        } else if (getFormationType().equals("Adepta Sororitas") ||AS_ORDERS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adepta_Sororitas);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(null));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(null));
         } else if (getFormationType().equals("Adeptus Ministorum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);
@@ -749,7 +1304,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Ministorum);
         }
 
-        if (formation != null) {
+        if (formation!= null) {
             formation.refreshControlPanel();
         }
 
