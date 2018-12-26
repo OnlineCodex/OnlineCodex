@@ -1,11 +1,10 @@
 package oc.wh40k.armies;
 
+import com.google.common.collect.ImmutableList;
 import oc.BuildaHQ;
 import oc.BuildaVater;
-import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
-
-import java.io.InputStream;
+import oc.wh40k.units.or.*;
 
 public class VOLKOrks extends BuildaVater {
 
@@ -33,165 +32,533 @@ public class VOLKOrks extends BuildaVater {
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("ORK")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy",
-                    "", "Ghazghkull Thraka", "Kaptin Badrukk", "Boss Zagstruk", "Boss Snikrot",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
-                    "", "Zhadsnark da Rippa [FW]", "Ork Mek Boss Buzzgob [FW]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Kommandos",
-                    "", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz",
-                    "", "Mad Dok Grotsnik",
-                    "", "Painboy on Warbike [Index]"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers",
-                    "", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet",
-                    "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]",});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans",
-                    "", "Gorkanaut", "Morkanaut",
-                    "", "Battlewagon", "Gunwagon", "Bonebreaka",
-                    "", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Big Gunz [Index]",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]",
-                    "Battlewagon with Supa-Kannon [FW]",});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk",
-                    "", "'Chinork' Warkopta [FW]"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa",
-                    "", "Kill Tank [FW]", "Kustom Stompa [FW]", "Gargantuan Squiggoth [FW]",});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORGhazghkullThraka.class,
+                    ORKaptinBadrukk.class,
+                    ORBossZagstruk.class,
+                    ORBossSnikrot.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class,
+                    null,
+                    ORZhadsnarkdaZippa.class,
+                    OROrkMekBossBuzzgob.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORKommandos.class,
+                    null,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    null,
+                    ORMadDokGrotsnik.class,
+                    null,
+                    ORPainboyonWarbike.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    null,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    null,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    null,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    null,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORBigGunz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class,
+                    null,
+                    ORChinorkWarkopta.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class,
+                    null,
+                    ORKillTank.class,
+                    ORKustomStompa.class,
+                    ORGargantuanSquiggoth.class));
         } else if (getFormationType().equals("Goff")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy",
-                    "", "Kaptin Badrukk", "Ghazghkull Thraka", "Boss Zagstruk",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
-                    "", "Ork Mek Boss Buzzgob [FW]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORKaptinBadrukk.class,
+                    ORGhazghkullThraka.class,
+                    ORBossZagstruk.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class,
+                    null,
+                    OROrkMekBossBuzzgob.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORPainboyonWarbike.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    ORKommandos.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    ORBigGunz.class,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class));
         } else if (getFormationType().equals("Blood Axe")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy",
-                    "", "Kaptin Badrukk", "Boss Snikrot",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORKaptinBadrukk.class,
+                    ORBossSnikrot.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORPainboyonWarbike.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    ORKommandos.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    ORBigGunz.class,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class));
         } else if (getFormationType().equals("Deathskulls")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy", 
-                    "", "Kaptin Badrukk",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos",
-                    "", "Mad Dok Grotsnik"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORKaptinBadrukk.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORPainboyonWarbike.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    ORKommandos.class,
+                    null,
+                    ORMadDokGrotsnik.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    ORBigGunz.class,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class));
         } else if (getFormationType().equals("Evil Sunz")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-                    "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy",
-                    "", "Kaptin Badrukk",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
-                    "", "Zhadsnark da Rippa [FW]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORKaptinBadrukk.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class,
+                    null,
+                    ORZhadsnarkdaRippa.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORPainboyonWarbike.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    ORKommandos.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    ORBigGunz.class,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class));
         } else if (getFormationType().equals("Snakebites") || getFormationType().equals("Bad Moonz") || getFormationType().equals("Freebooterz")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
-            		"", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy",
-                    "", "Kaptin Badrukk",
-                    "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Boyz", "Gretchin"});
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Mek", "Painboy", "Painboy on Warbike [Index]", "Runtherd",
-                    "", "Burna Boyz", "Tankbustas", "Nobz", "Nob with Waaagh Banner", "Nobz on Warbikes", "Meganobz", "Kommandos"});
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
-                    "", "Stormboyz", "Deffkoptas", "Warbikers", "Kustom Boosta-Blastas", "Shokkjump Dragstas", "Boomdakka Snazzwagons", "Rukkatrukk Squigbuggys", "Megatrakk Scrapjet", "", "Wartrakks [Index]", "Skorchas [Index]", "Warbuggies [Index]",
-                    "", "Grot Tanks [FW]", "Grot Mega-Tank [FW]"});
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
-                    "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
-                    "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
-                    "", "Stompa"});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(
+            		null,
+                    ORWarboss.class,
+                    ORDeffkillaWartrike.class,
+                    null,
+                    ORBigMekinMegaArmour.class,
+                    ORBigMekwithShokkAttackGun.class,
+                    null,
+                    ORWeirdboy.class,
+                    null,
+                    ORKaptinBadrukk.class,
+                    null,
+                    ORWarbossinMegaArmour.class,
+                    ORWarbossonWarbike.class,
+                    ORBigMek.class,
+                    ORBigMekonWarbike.class));
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORBoyz.class,
+                    ORGretchin.class));
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORMek.class,
+                    ORPainboy.class,
+                    ORPainboyonWarbike.class,
+                    ORRuntherd.class,
+                    null,
+                    ORBurnaBoyz.class,
+                    ORTankbustas.class,
+                    ORNobz.class,
+                    ORNobwithWaaaghBanner.class,
+                    ORNobzonWarbikes.class,
+                    ORMeganobz.class,
+                    ORKommandos.class));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStormboyz.class,
+                    ORDeffkoptas.class,
+                    ORWarbikers.class,
+                    ORKustomBoostaBlastas.class,
+                    ORShokkjumpDragstas.class,
+                    ORBoomdakkaSnazzwagons.class,
+                    ORRukkatrukkSquigbuggys.class,
+                    ORMegatrakkScrapjet.class,
+                    null,
+                    ORWartrakks.class,
+                    ORSkorchas.class,
+                    ORWarbuggies.class,
+                    null,
+                    ORGrotTanks.class,
+                    ORGrotMegaTank.class));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDeffDreads.class,
+                    ORKillaKans.class,
+                    ORGorkanaut.class,
+                    ORMorkanaut.class,
+                    ORBattlewagon.class,
+                    ORGunwagon.class,
+                    ORBonebreaka.class,
+                    ORBigGunz.class,
+                    ORMekGunz.class,
+                    ORLootas.class,
+                    ORFlashGitz.class,
+                    null,
+                    ORSquiggoth.class,
+                    ORMekaDread.class,
+                    ORLiftaWagon.class,
+                    ORBigTrakk.class,
+                    ORBattlewagonwithSupaKannon.class));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORTrukk.class));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORDakkajet.class,
+                    ORBurnaBommer.class,
+                    ORBlitzaBommer.class,
+                    ORWazbomBlastajet.class));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(
+                    null,
+                    ORStompa.class));
         }
 
         if (formation != null) {
@@ -204,9 +571,9 @@ public class VOLKOrks extends BuildaVater {
     @Override
     public void refreshAction() {
         if (BuildaHQ.getCountFromInformationVectorGlobal("ORZhadsnark") > 0) {
-            myChooserGruppen.get(TROOPS).addSpezialAuswahl("Warbikers");
+            myChooserGruppen.get(TROOPS).addSpezialAuswahl(ORWarbikers.class);
         } else {
-            myChooserGruppen.get(TROOPS).removeSpezialAuswahl("Warbikers");
+            myChooserGruppen.get(TROOPS).removeSpezialAuswahl(ORWarbikers.class);
         }
         super.refreshAction();
     }
