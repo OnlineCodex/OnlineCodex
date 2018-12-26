@@ -2,17 +2,16 @@ package oc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.InvocationTargetException;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.Vector;
+import java.util.stream.Stream;
 
 import static oc.RefreshListener.Priority.CHOOSER;
 import static oc.RefreshListener.addRefreshListener;
@@ -27,21 +26,22 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     private BuildaVater buildaVater;
     private JButton cloneButton = new JButton(BuildaHQ.translate("Clonen"));
-    private List<Class<? extends Eintrag>> statischeEinträge;
+    private List<List<Class<? extends Eintrag>>> statischeEinträge;
     private List<Class<? extends Eintrag>> spezialEinträge;
     private int kategorie;
     private boolean useActionPerformed = true;
     private Eintrag myEintrag = null;
 
-    @SuppressWarnings({
-            "unchecked", "rawtypes", // fuuuuck generic arrays
-    })
-    Chooser(BuildaVater bv, int lX, int lY, List<Class<? extends Eintrag>> alleEinträge, int kategorie, ActionListener cloneListener) {
+    Chooser(
+            BuildaVater bv,
+            int lX, int lY,
+            List<List<Class<? extends Eintrag>>> alleEinträge,
+            int kategorie, ActionListener cloneListener) {
         this.buildaVater = bv;
         this.kategorie = kategorie;
         this.panel.setLocation(lX, lY);
 
-        myComboBox = new JComboBox<>(alleEinträge.stream().toArray(Class[]::new));
+        myComboBox = new JComboBox<>(toArray(alleEinträge));
 
         myComboBox.setBounds(0, 0, auswahlBreite - 60, 20);
         myComboBox.addActionListener(this);
@@ -90,22 +90,33 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         addRefreshListener(CHOOSER, this::sizeSetzen);
     }
 
+    @SuppressWarnings({
+            "unchecked", "rawtypes", // fuuuuck generic arrays
+    })
+    private Class<? extends Eintrag>[] toArray(List<List<Class<? extends Eintrag>>> alleEinträge) {
+        if (alleEinträge.isEmpty()) {
+            return new Class[1];
+        } else {
+            return alleEinträge.stream()
+                    .flatMap(grp -> Stream.concat(Stream.of(null), grp.stream()))
+                    .toArray(Class[]::new);
+        }
+    }
+
     JButton getCloneButton() {
         return cloneButton;
     }
 
-    public void selectEntryNotLocked(String s) {
+    void selectEntryNotLocked(String s) {
         myComboBox.setSelectedItem(s);
     }
 
-    private HashMap<String, String> multipleArmyClasses = new HashMap<String, String>();
-
-    void setAuswahlen(List<Class<? extends Eintrag>> v) {
+    void setAuswahlen(List<List<Class<? extends Eintrag>>> v) {
         useActionPerformed = false;
         Class<? extends Eintrag> currentSelected = selectedEntry();
 
         myComboBox.removeAllItems();
-        v.forEach(myComboBox::addItem);
+        Arrays.stream(toArray(v)).forEach(myComboBox::addItem);
         myComboBox.setSelectedItem(currentSelected);
 
         if (!Objects.equals(selectedEntry(), currentSelected)) {
@@ -132,7 +143,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         return myEintrag.getKosten();
     }
 
-    Chooser setStatischeEinträge(List<Class<? extends Eintrag>> sE) {
+    Chooser setStatischeEinträge(List<List<Class<? extends Eintrag>>> sE) {
         this.statischeEinträge = sE;
         return this;
     }

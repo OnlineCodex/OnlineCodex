@@ -33,7 +33,7 @@ public class CHDaemonettendesSlaanesh extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mächtige Belohnung", 20));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
-        BuildaHQ.getChooserGruppe(1).addSpezialAuswahl("[Forgeworld] Zarakynel");
+        BuildaHQ.getChooserGruppe(1).addSpezialAuswahl(CHZarakynel.class);
 
         complete();
 
@@ -61,6 +61,6 @@ public class CHDaemonettendesSlaanesh extends Eintrag {
     @Override
     public void deleteYourself() {
         super.deleteYourself();
-        BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl("[Forgeworld] Zarakynel");
+        BuildaHQ.getChooserGruppe(1).removeSpezialAuswahl(CHZarakynel.class);
     }
 }

@@ -96,17 +96,6 @@ public class OptionsPanelSwitcher extends OptionsVater {
         return s.toString();
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement(this.getClass().getSimpleName());
-        root.setAttribute("currentPanel", Integer.toString(currentPanel - 1));
-
-        for (int i = 0; i < panels[currentPanel].optionen.length; i++) {
-            root.appendChild(panels[currentPanel].optionen[i].getSaveElement());
-        }
-
-        return root;
-    }
-
     @Override
     public void load(String s) {
         switchPanel(Integer.parseInt(s.substring(0, s.indexOf(SAVETEXT_CURRNETPANELTRENNER))));
@@ -115,16 +104,6 @@ public class OptionsPanelSwitcher extends OptionsVater {
 
         for (int i = 0; i < panels[currentPanel].optionen.length; ++i) {
             panels[currentPanel].optionen[i].load(splittet[i]);
-        }
-    }
-
-    public void loadElement(Element e) {
-        switchPanel(Integer.parseInt(e.getAttribute("currentPanel")));
-
-        NodeList children = e.getChildNodes();
-
-        for (int i = 0; i < panels[currentPanel].optionen.length; i++) {
-            panels[currentPanel].optionen[i].loadElement((Element) children.item(i));
         }
     }
 

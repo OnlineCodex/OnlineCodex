@@ -1,5 +1,6 @@
 package oc;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,13 +8,13 @@ import org.slf4j.LoggerFactory;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
-import java.util.*;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.ToDoubleFunction;
 
-import static com.google.common.collect.Iterables.getLast;
 import static com.google.common.collect.Lists.newArrayList;
-import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.toList;
 import static oc.RefreshListener.Priority.CHOOSER_GRUPPE;
 import static oc.RefreshListener.addRefreshListener;
 
@@ -23,8 +24,8 @@ public class ChooserGruppe extends BuildaPanel {
 
     private int kategorie;
     private String reflectionKennung;
-    private List<Class<? extends Eintrag>> statischeEinträge;
-    List<Class<? extends Eintrag>> alleEinträge;
+    private List<List<Class<? extends Eintrag>>> statischeEinträge;
+    List<List<Class<? extends Eintrag>>> alleEinträge;
     private JLabel Lueberschrift = new JLabel("");
     private JPanel chooserPanel = new JPanel(null, true);
     List<Chooser> mC = new LinkedList<>();
@@ -47,7 +48,10 @@ public class ChooserGruppe extends BuildaPanel {
         }
     };
 
-    public ChooserGruppe(BuildaVater bv, String reflectionKennung, int lX, int lY, int kategorie, List<Class<? extends Eintrag>> statischeEinträge) {
+    public ChooserGruppe(
+            BuildaVater bv, String reflectionKennung,
+            int lX, int lY, int kategorie,
+            List<List<Class<? extends Eintrag>>> statischeEinträge) {
         this.buildaVater = bv;
         this.kategorie = kategorie;
         this.reflectionKennung = reflectionKennung;
@@ -139,7 +143,7 @@ public class ChooserGruppe extends BuildaPanel {
         }
     }
 
-    public void changeComboBoxAuswahlen(List<Class<? extends Eintrag>> s) {
+    public void changeComboBoxAuswahlen(List<? extends List<Class<? extends Eintrag>>> s) {
         spezialEinträge.clear();
         statischeEinträge = Lists.newArrayList(s);
         alleEinträge = statischeEinträge;
@@ -150,14 +154,17 @@ public class ChooserGruppe extends BuildaPanel {
             "unchecked", "rawtypes", // generic Arrays are stupid
     })
     private void aktualisiereComboBoxAuswahlen() {
-        List<Class<? extends Eintrag>> auswahlen = newArrayList(statischeEinträge);
+        List<Class<? extends Eintrag>> filteredSpecial = spezialEinträge.stream()
+                .filter(e -> statischeEinträge.stream()
+                        .anyMatch(grp -> grp.contains(e)))
+                .collect(toList());
 
-        spezialEinträge.stream()
-                .filter(e -> !auswahlen.contains(e))
-                .forEach(auswahlen::add);
+        List<List<Class<? extends Eintrag>>> auswahlen = ImmutableList.<List<Class<? extends Eintrag>>>builder()
+                .addAll(statischeEinträge)
+                .add(filteredSpecial)
+                .build();
 
         alleEinträge = auswahlen;
-
         mC.forEach(c -> c.setAuswahlen(auswahlen));
     }
 

@@ -2,11 +2,8 @@ package oc;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,17 +32,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     Hashtable<String, Integer> informationList = new Hashtable<String, Integer>();  // anzahl der vorkommen des Strings
     private Hashtable<String, int[]> minAuswahlen = new Hashtable<String, int[]>();  // Mindestauswahlen pro kategorie
     private Hashtable<String, int[]> maxAuswahlen = new Hashtable<String, int[]>();  // Mindestauswahlen pro kategorie
-
-    protected List<Class<? extends Eintrag>> AdditionalInformation;
-    protected List<Class<? extends Eintrag>> HQeinträge;
-    protected List<Class<? extends Eintrag>> Eliteeinträge;
-    protected List<Class<? extends Eintrag>> Standardeinträge;
-    protected List<Class<? extends Eintrag>> Sturmeinträge;
-    protected List<Class<? extends Eintrag>> Unterstützungeinträge;
-    protected List<Class<? extends Eintrag>> Transporteinträge;
-    protected List<Class<? extends Eintrag>> Fliegereinträge;
-    protected List<Class<? extends Eintrag>> Befestigungen;
-    protected List<Class<? extends Eintrag>> LordofWar;
 
     Superformation superformation;
     public Formation formation;
@@ -143,37 +129,25 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         this.pointValues = ImmutableMap.copyOf(pointValues);
         panel.setBackground(Color.WHITE);
 
-
-        AdditionalInformation = ImmutableList.of(null);
-        HQeinträge = ImmutableList.of(null);
-        Eliteeinträge = ImmutableList.of(null);
-        Standardeinträge = ImmutableList.of(null);
-        Sturmeinträge = ImmutableList.of(null);
-        Unterstützungeinträge = ImmutableList.of(null);
-        Transporteinträge = ImmutableList.of(null);
-        Fliegereinträge = ImmutableList.of(null);
-        Befestigungen = ImmutableList.of(null);
-        LordofWar = ImmutableList.of(null);
-
-        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, AdditionalInformation));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, AI, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, HQeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, HQ, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Standardeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, Eliteeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, ELITE, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, Sturmeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FAST_ATTACK, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, Befestigungen));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, FORTIFICATION, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, LordofWar));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, LORD_OF_WAR, ImmutableList.of()));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
@@ -578,7 +552,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     protected void clearCombo() {
         for (int i = 0; i < myChooserGruppen.size(); i++) {
-            myChooserGruppen.get(i).changeComboBoxAuswahlen(newArrayList((Class<? extends Eintrag>) null));
+            myChooserGruppen.get(i).changeComboBoxAuswahlen(ImmutableList.of());
         }
     }
 

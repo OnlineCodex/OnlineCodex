@@ -6,7 +6,6 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORSkalkBluetoof extends Eintrag {
 
-
     public ORSkalkBluetoof() {
 
         kategorie = 1;
@@ -19,7 +18,7 @@ public class ORSkalkBluetoof extends Eintrag {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bonemuncha", 600));
 
-        BuildaHQ.getChooserGruppe(3).addSpezialAuswahl("Lootas");
+        BuildaHQ.getChooserGruppe(3).addSpezialAuswahl(ORLootas.class);
         addToInformationVector("ORHQ", 1);
         complete();
 
@@ -27,12 +26,12 @@ public class ORSkalkBluetoof extends Eintrag {
 
     @Override
     public void deleteYourself() {
-        BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl("Lootas");
+        BuildaHQ.getChooserGruppe(3).removeSpezialAuswahl(ORLootas.class);
         addToInformationVector("ORHQ", -1);
         super.deleteYourself();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         setUnikat(true);
     }

@@ -284,25 +284,14 @@ public class OnlineCodex extends BuildaPanel {
         loadButton.setBounds(BILDSCHIRMBREITE - 305, 4, 60, 16);
         loadButton.setBorder(null);
         loadButton.setMargin(new Insets(0, 0, 0, 0));
-        loadButton.addActionListener(new ActionListener() {
+        loadButton.addActionListener(event -> {
+            loadWindow.load();
+            loadWindow.setVisible(true);
 
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                loadWindow.load();
-                loadWindow.setVisible(true);
-
-                if (loadWindow.getLoadElement() != null) {
-                    loadElement(loadWindow.getLoadElement(), true);
-                } else if (!loadWindow.getLoadText().trim().equals("")) {
-                    load(loadWindow.getLoadText(), true);
-					/*if(getGame()==WH40K){
-						//Speichern der Hauptarmee
-						aktVolk=BuildaHQ.formZuKlassenName(loadWindow.getLoadText().substring(0, loadWindow.getLoadText().indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)));
-						dokumente.put(aktVolk, getSaveText());
-					}*/
-                }
-
+            if (!loadWindow.getLoadText().trim().equals("")) {
+                load(loadWindow.getLoadText(), true);
             }
+
         });
         menuPanel.add(loadButton);
 
@@ -529,28 +518,6 @@ public class OnlineCodex extends BuildaPanel {
 
     public JComboBox getChooser() {
         return buildaChooser;
-    }
-
-    public void loadElement(Element e, boolean chooserUmstellen) {
-        try {
-            if (chooserUmstellen) {
-                loadWithDokumenteHashtable = false;
-                setSelectedItemInBuildaChooser(e.getAttribute("choice"));
-                loadWithDokumenteHashtable = true;
-            }
-
-            myBuilderz.get(tab.getSelectedIndex() - 1).loadElement(e);
-
-            if (!e.getAttribute("budget").equals("")) {
-                budget.setText(e.getAttribute("budget"));
-            }
-
-            BuildaHQ.loadWindow = false;
-            loadWindow.setVisible(false);
-        } catch (Exception ex) {
-            LOGGER.error("", ex);
-            JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden"));
-        }
     }
 
     public void load(String saveText, boolean chooserUmstellen) {
