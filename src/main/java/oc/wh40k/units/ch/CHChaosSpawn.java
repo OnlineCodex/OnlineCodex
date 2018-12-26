@@ -12,8 +12,6 @@ public class CHChaosSpawn extends Eintrag {
 
     public CHChaosSpawn() {
 
-        kategorie = 1;
-
         name = "Chaos Spawn";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Spawn", 1, 5, getPts("Chaos Spawn")));

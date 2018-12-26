@@ -12,7 +12,6 @@ public class ORGoMorkanaut extends Eintrag {
 
     public ORGoMorkanaut() {
 
-        kategorie = 5;
         //name = "GoMorkanaut";
         überschriftSetzen = false;
         grundkosten = 0;

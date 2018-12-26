@@ -9,7 +9,6 @@ public class ORBigMekinMegaArmour extends Eintrag {
     OptionsUpgradeGruppe tech = null;
 
     public ORBigMekinMegaArmour() {
-        kategorie = 1;
         name = "Big Mek in Mega Armour";
         grundkosten = getPts("Big Mek in Mega Armour");
         power = 6;

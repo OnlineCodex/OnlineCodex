@@ -12,7 +12,6 @@ public class ORRuntherd extends Eintrag {
     RuestkammerStarter waffen;
 
     public ORRuntherd() {
-        kategorie = 1;
         name = "Runtherd";
         grundkosten = getPts("Runtherd");
         power = 2;

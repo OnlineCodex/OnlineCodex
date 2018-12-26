@@ -12,8 +12,6 @@ public class CHWarpTalons extends Eintrag {
 
     public CHWarpTalons() {
 
-        kategorie = 1;
-
         name = "Warp Talons";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Warp Talons", 5, 15, getPts("Warp Talons") + getPts("Lightning claw pair")));

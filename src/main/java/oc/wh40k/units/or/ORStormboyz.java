@@ -11,7 +11,6 @@ public class ORStormboyz extends Eintrag {
 
     public ORStormboyz() {
 
-        kategorie = 4;
         grundkosten = 0;
 
         add(stormboyz = new AnzahlPanel(ID, randAbstand, cnt, "Stormboyz", 5, 30, getPts("Stormboyz")));

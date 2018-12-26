@@ -7,13 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.ToDoubleFunction;
 
-import static com.google.common.collect.Lists.newArrayList;
 import static java.util.stream.Collectors.toList;
 import static oc.RefreshListener.Priority.CHOOSER_GRUPPE;
 import static oc.RefreshListener.addRefreshListener;
@@ -23,7 +22,6 @@ public class ChooserGruppe extends BuildaPanel {
     private static final Logger LOGGER = LoggerFactory.getLogger(ChooserGruppe.class);
 
     private int kategorie;
-    private String reflectionKennung;
     private List<List<Class<? extends Eintrag>>> statischeEinträge;
     List<List<Class<? extends Eintrag>>> alleEinträge;
     private JLabel Lueberschrift = new JLabel("");
@@ -32,20 +30,12 @@ public class ChooserGruppe extends BuildaPanel {
     int maxAnzahl = 0;
     int minAnzahl = 0;
     private BuildaVater buildaVater;
-    List<Class<? extends Eintrag>> spezialEinträge = new LinkedList<>();
+    private List<Class<? extends Eintrag>> spezialEinträge = new LinkedList<>();
     // wenn 2 Waaghbosse, werden auch 2 mal "Garbgosse" hinzugefügt, und erst wenn beide waaghbosse abgewählt werden sind beide "Garbgosse" Stirngs aus dem Vector draussen.
 
-    private ActionListener cloneListener = event -> {
-        Object source = event.getSource();
-
-        for (int i = 0; i < mC.size(); ++i) {
-            Chooser chooser = mC.get(i);
-            if (chooser.getCloneButton() == source) {
-                String saveText = chooser.getComboBox().getSelectedObjects()[0] + SAVETEXT_UEBERSCHRIFTTRENNER1 + chooser.getEintrag().getSaveText(SAVETEXT_TRENNER2);
-                erstelleEintrag(saveText, i);
-                break;
-            }
-        }
+    private void cloneEntry(ActionEvent event) {
+        // TODO reimplement clone
+        throw new UnsupportedOperationException("Can't clone entry. This feature will be restored sood.");
     };
 
     public ChooserGruppe(
@@ -54,7 +44,6 @@ public class ChooserGruppe extends BuildaPanel {
             List<List<Class<? extends Eintrag>>> statischeEinträge) {
         this.buildaVater = bv;
         this.kategorie = kategorie;
-        this.reflectionKennung = reflectionKennung;
         this.statischeEinträge = statischeEinträge;
         this.alleEinträge = statischeEinträge;
         panel.setBounds(lX, lY + 25, auswahlBreite + (randAbstand * 3), CHOOSER_Y);
@@ -67,7 +56,7 @@ public class ChooserGruppe extends BuildaPanel {
         chooserPanel.setBackground(Color.WHITE);
         panel.add(chooserPanel);
 
-        Chooser c = new Chooser(buildaVater, randAbstand, randAbstand, alleEinträge, kategorie, cloneListener);
+        Chooser c = new Chooser(buildaVater, randAbstand, randAbstand, alleEinträge, this::cloneEntry);
         c.setStatischeEinträge(statischeEinträge);
         c.setSpezialEinträge(spezialEinträge);
         adden(c);
@@ -235,18 +224,18 @@ public class ChooserGruppe extends BuildaPanel {
 
     private void chooserLocationCheck() {
         for (int i = 0; i < mC.size() - 1; ++i) {
-            if (mC.get(i).getComboBox().getSelectedObjects()[0].equals("")) {
+            if (mC.get(i).selectedEntry() == null) {
                 removen(i);
                 --i;
             }
         }
         if (mC.size() == 0) {
-            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, kategorie, cloneListener);
+            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, this::cloneEntry);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
             adden(c);
-        } else if (!Objects.equals(mC.get(mC.size() - 1).getComboBox().getSelectedObjects()[0], null)) {
-            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, kategorie, cloneListener);
+        } else if (!Objects.equals(mC.get(mC.size() - 1).selectedEntry(), null)) {
+            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, this::cloneEntry);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
             adden(c);
@@ -312,7 +301,7 @@ public class ChooserGruppe extends BuildaPanel {
 
         for (int i = 0; i < mC.size(); ++i) {
             Chooser chooser = mC.get(i);
-            sammler.append(chooser.getComboBox().getSelectedObjects()[0])
+            sammler.append(chooser.selectedEntry())
                     .append(SAVETEXT_UEBERSCHRIFTTRENNER1)
                     .append(chooser.getSaveText(SAVETEXT_TRENNER2))
                     .append(SAVETEXT_TRENNER3);
@@ -330,19 +319,25 @@ public class ChooserGruppe extends BuildaPanel {
     }
 
     private void erstelleEintrag(String saveText, int index) {
+        // TODO refactore creation
         String klassenname = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1));
+        Class<? extends Eintrag> cls = resolveEintragClass(klassenname);
 
         if (mC.size() <= index + 1 || !(mC.get(index + 1).getEintrag() instanceof LeererEintrag)) { // an der Stelle index+1 wird ein neuer chooser geaddet
-            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, kategorie, cloneListener);
+            Chooser c = new Chooser(buildaVater, randAbstand, 109, alleEinträge, this::cloneEntry);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
             adden(c, index + 1);
         }
 
         Chooser c = mC.get(index + 1); // WICHTIG!!!!!!!!"!!  WENN MANS 2mal mit elementAt(index+1) geht NIX mehr!
-        c.getComboBox().setSelectedItem(klassenname);
+        c.select(cls);
         c.load(saveText.substring(saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1) + SAVETEXT_UEBERSCHRIFTTRENNER1.length(), saveText.length()), SAVETEXT_TRENNER2);
 
         RefreshListener.fireRefresh();  // für die setAktiv() dinger bei Bossen, Sergeants usw.    wichtig!
+    }
+
+    private Class<? extends Eintrag> resolveEintragClass(String klassenname) {
+        throw new UnsupportedOperationException("not yet implemented. Can't resolve class for name " + klassenname);
     }
 }

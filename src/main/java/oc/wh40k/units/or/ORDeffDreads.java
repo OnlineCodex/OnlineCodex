@@ -15,7 +15,6 @@ public class ORDeffDreads extends Eintrag {
 
     public ORDeffDreads() {
 
-        kategorie = 3;
         überschriftSetzen = true;
         grundkosten = 0;
 

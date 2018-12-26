@@ -9,7 +9,6 @@ public class ORWarbossGrahkrag extends Eintrag {
 
     public ORWarbossGrahkrag() {
 
-        kategorie = 1;
         name = "Warboss Grahkrag";
         grundkosten = 120;
 

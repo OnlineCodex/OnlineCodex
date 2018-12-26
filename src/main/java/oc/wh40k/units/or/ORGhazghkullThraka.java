@@ -7,8 +7,6 @@ public class ORGhazghkullThraka extends Eintrag {
 
 
     public ORGhazghkullThraka() {
-
-        kategorie = 1;
         name = "Ghazghkull Thraka";
         grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
@@ -20,7 +18,7 @@ public class ORGhazghkullThraka extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         setUnikat(true);
     }

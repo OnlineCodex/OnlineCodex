@@ -6,7 +6,6 @@ public class ORKrumpasKillaKanz extends Eintrag {
 
     public ORKrumpasKillaKanz() {
 
-        kategorie = 5;
         name = "Krumpa's Killa Kanz";
         grundkosten = 160;
 

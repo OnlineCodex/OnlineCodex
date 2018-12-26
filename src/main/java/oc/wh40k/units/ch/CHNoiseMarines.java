@@ -13,8 +13,6 @@ public class CHNoiseMarines extends Eintrag {
 
     public CHNoiseMarines() {
 
-        kategorie = 1;
-
         name = "Noise Marines";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Noise Marines", 5, 20, getPts("Noise Marines")));

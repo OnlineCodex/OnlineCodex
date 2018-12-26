@@ -14,8 +14,6 @@ public class CHPlagueMarinesCSM extends Eintrag {
 
     public CHPlagueMarinesCSM() {
 
-        kategorie = 1;
-
         name = "Plague Marines";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Plague Marines", 5, 20, getPts("Plague Marines")));

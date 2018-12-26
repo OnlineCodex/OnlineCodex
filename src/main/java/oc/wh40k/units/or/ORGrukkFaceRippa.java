@@ -6,7 +6,6 @@ public class ORGrukkFaceRippa extends Eintrag {
 
     public ORGrukkFaceRippa() {
 
-        kategorie = 1;
         name = "Grukk Face-Rippa";
         grundkosten = 130;
 

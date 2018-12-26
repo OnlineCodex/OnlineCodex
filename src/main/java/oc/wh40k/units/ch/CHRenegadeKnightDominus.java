@@ -10,8 +10,6 @@ public class CHRenegadeKnightDominus extends Eintrag {
 
     public CHRenegadeKnightDominus() {
 
-        kategorie = 1;
-
         name = "Renegade Knight Dominus";
         grundkosten = getPts("Renegade Knight Dominus");
 

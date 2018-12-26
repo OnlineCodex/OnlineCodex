@@ -9,7 +9,6 @@ public class ORMorkanaut extends Eintrag {
 
     public ORMorkanaut() {
 
-        kategorie = 5;
         name = "Morkanaut";
         grundkosten = getPts("Morkanaut");
         power = 15;

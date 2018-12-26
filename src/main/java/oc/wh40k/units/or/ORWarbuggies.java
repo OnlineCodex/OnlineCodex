@@ -14,7 +14,6 @@ public class ORWarbuggies extends Eintrag {
 
     public ORWarbuggies() {
 
-        kategorie = 4;
         grundkosten = 0;
 
         Buggies = new AnzahlPanel(ID, randAbstand, cnt, "Warbuggy", "Warbuggies", 1, 5, getPts("Warbuggies"));

@@ -8,7 +8,6 @@ public class ORNobzOrMega extends Eintrag {
     RuestkammerStarter Kampfpanza;
 
     public ORNobzOrMega() {
-        kategorie = 2;
         grundkosten = 0;
         überschriftSetzen = false;
 

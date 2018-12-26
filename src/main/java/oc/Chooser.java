@@ -15,12 +15,13 @@ import java.util.stream.Stream;
 
 import static oc.RefreshListener.Priority.CHOOSER;
 import static oc.RefreshListener.addRefreshListener;
+import static oc.utils.reflection.Names.name;
 
 public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Chooser.class);
-    public static final Color BLACK = new Color(0, 0, 0);
-    public static final Color GREEN = new Color(30, 205, 0);
+    private static final Color BLACK = new Color(0, 0, 0);
+    private static final Color GREEN = new Color(30, 205, 0);
 
     private final JComboBox<Class<? extends Eintrag>> myComboBox;
 
@@ -28,7 +29,6 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     private JButton cloneButton = new JButton(BuildaHQ.translate("Clonen"));
     private List<List<Class<? extends Eintrag>>> statischeEinträge;
     private List<Class<? extends Eintrag>> spezialEinträge;
-    private int kategorie;
     private boolean useActionPerformed = true;
     private Eintrag myEintrag = null;
 
@@ -36,9 +36,8 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
             BuildaVater bv,
             int lX, int lY,
             List<List<Class<? extends Eintrag>>> alleEinträge,
-            int kategorie, ActionListener cloneListener) {
+            ActionListener cloneListener) {
         this.buildaVater = bv;
-        this.kategorie = kategorie;
         this.panel.setLocation(lX, lY);
 
         myComboBox = new JComboBox<>(toArray(alleEinträge));
@@ -50,20 +49,23 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         myComboBox.setBackground(Color.WHITE);
         myComboBox.setMaximumRowCount((BILDSCHIRMHÖHE - 150) / 20);
         myComboBox.setEditable(false);
-        ListCellRenderer<? super Class<? extends Eintrag>> defaultRenderer = myComboBox.getRenderer();
-        myComboBox.setRenderer((JList<? extends Class<? extends Eintrag>> list, Class<? extends Eintrag> value, int index, boolean isSelected, boolean cellHasFocus) -> {
-            Component c = defaultRenderer.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        ListCellRenderer<Object> defaultRenderer = (ListCellRenderer<Object>) myComboBox.getRenderer();
+        myComboBox.setRenderer((list, value, index, isSelected, cellHasFocus) -> {
+            Object tmpValue = value != null
+                    ? name(value)
+                    : "";
+            Component c = defaultRenderer.getListCellRendererComponent(
+                    list, tmpValue, index, isSelected, cellHasFocus);
 
             if (value != null) {
-                statischeEinträge.stream()
-                        .filter(value::equals)
-                        .findFirst()
-                        .ifPresent(any -> c.setForeground(BLACK));
-
-                spezialEinträge.stream()
-                        .filter(value::equals)
-                        .findFirst()
-                        .ifPresent(any -> c.setForeground(GREEN));
+                if (spezialEinträge.contains(value)) {
+                    c.setForeground(GREEN);
+                } else {
+                    statischeEinträge.stream()
+                            .filter(grp -> grp.contains(value))
+                            .findFirst()
+                            .ifPresent(any -> c.setForeground(BLACK));
+                }
             }
 
             return c;
@@ -94,13 +96,18 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
             "unchecked", "rawtypes", // fuuuuck generic arrays
     })
     private Class<? extends Eintrag>[] toArray(List<List<Class<? extends Eintrag>>> alleEinträge) {
-        if (alleEinträge.isEmpty()) {
+        if (alleEinträge.isEmpty() || alleEinträge.stream().allMatch(List::isEmpty)) {
             return new Class[1];
         } else {
             return alleEinträge.stream()
-                    .flatMap(grp -> Stream.concat(Stream.of(null), grp.stream()))
+                    .filter(grp -> !grp.isEmpty())
+                    .flatMap(grp -> Stream.concat(streamOfNull(), grp.stream()))
                     .toArray(Class[]::new);
         }
+    }
+
+    private <E> Stream<E> streamOfNull() {
+        return Stream.of((E[]) new Object[] {null});
     }
 
     JButton getCloneButton() {
@@ -126,17 +133,8 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         useActionPerformed = true;
     }
 
-
-    public int getKategorie() {
-        return this.kategorie;
-    }
-
     public Eintrag getEintrag() {
         return this.myEintrag;
-    }
-
-    JComboBox getComboBox() {
-        return this.myComboBox;
     }
 
     public double getKosten() {
@@ -179,7 +177,6 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                         .newInstance();
 
                 myEintrag.getPanel().setLocation(0, 30);
-                myEintrag.setKategorie(kategorie);
                 myEintrag.setBuildaVater(buildaVater);
                 panel.add(myEintrag.getPanel());
             } catch (ClassCastException | InstantiationException | IllegalAccessException | NoSuchMethodException | InvocationTargetException e) {
@@ -197,7 +194,11 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
             "unchecked", // JComboBox.getSelectedObjects() hides the type.
     })
     Class<? extends Eintrag> selectedEntry() {
-        return (Class<? extends Eintrag>) myComboBox.getSelectedObjects()[0];
+        if (myComboBox.getSelectedObjects().length == 0) {
+            return null;
+        } else {
+            return (Class<? extends Eintrag>) myComboBox.getSelectedObjects()[0];
+        }
     }
 
     public void actionPerformed(ActionEvent event) {
@@ -250,5 +251,9 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
     public void load(String s, String s2) {
         myEintrag.load(s, s2);
+    }
+
+    public void select(Class<? extends Eintrag> cls) {
+        myComboBox.setSelectedItem(cls);
     }
 }

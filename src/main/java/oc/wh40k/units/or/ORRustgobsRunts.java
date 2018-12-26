@@ -6,7 +6,6 @@ public class ORRustgobsRunts extends Eintrag {
 
     public ORRustgobsRunts() {
 
-        kategorie = 2;
         name = "Rustgob's Runts";
         grundkosten = 45;
 

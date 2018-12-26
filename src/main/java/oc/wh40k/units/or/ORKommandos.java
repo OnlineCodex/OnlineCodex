@@ -4,12 +4,10 @@ import oc.*;
 
 public class ORKommandos extends Eintrag {
 
-    AnzahlPanel kommandoz;
-    OptionsZaehlerGruppe kommandozFK;
-    OptionsEinzelUpgrade boss;
+    private final AnzahlPanel kommandoz;
+    private final OptionsEinzelUpgrade boss;
 
     public ORKommandos() {
-        kategorie = 2;
         grundkosten = 0;
 
         kommandoz = new AnzahlPanel(ID, randAbstand, cnt, "Kommandos", 5, 15, getPts("Kommandos"));
@@ -24,7 +22,7 @@ public class ORKommandos extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
         boss.setSelected(true);
         if (kommandoz.getModelle() > 10) {

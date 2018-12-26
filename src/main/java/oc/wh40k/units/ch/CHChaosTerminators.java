@@ -17,8 +17,6 @@ public class CHChaosTerminators extends Eintrag {
 
     public CHChaosTerminators() {
 
-        kategorie = 1;
-
         name = "Chaos Terminators";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Terminators", 5, 10, getPts("Chaos Terminators")));

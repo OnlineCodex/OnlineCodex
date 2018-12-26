@@ -10,8 +10,6 @@ public class CHChaosBastions extends Eintrag {
 
     public CHChaosBastions() {
 
-        kategorie = 1;
-
         name = "Chaos Bastions";
         grundkosten = getPts("Chaos Bastions");
 

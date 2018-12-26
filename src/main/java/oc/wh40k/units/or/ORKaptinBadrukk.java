@@ -2,7 +2,6 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
-import oc.RuestkammerStarter;
 
 public class ORKaptinBadrukk extends Eintrag {
 
@@ -10,7 +9,6 @@ public class ORKaptinBadrukk extends Eintrag {
 
     public ORKaptinBadrukk() {
 
-        kategorie = 1;
         name = "Kaptin Badrukk";
         grundkosten = getPts("Kaptin Badrukk");
         power = 5;

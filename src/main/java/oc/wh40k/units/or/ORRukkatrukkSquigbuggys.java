@@ -10,7 +10,6 @@ public class ORRukkatrukkSquigbuggys extends Eintrag {
 
     public ORRukkatrukkSquigbuggys() {
 
-        kategorie = 4;
         grundkosten = 0;
 
         buggies = new AnzahlPanel(ID, randAbstand, cnt, "Rukkatrukk Squigbuggy", "Rukkatrukk Squigbuggies", 1, 3, getPts("Rukkatrukk Squigbuggies"));

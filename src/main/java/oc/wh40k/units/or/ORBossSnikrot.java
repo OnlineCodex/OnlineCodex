@@ -1,14 +1,12 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORBossSnikrot extends Eintrag {
 
 
     public ORBossSnikrot() {
 
-        kategorie = 1;
         name = "Boss Snikrot";
         grundkosten = getPts("Boss Snikrot");
         power = 4;

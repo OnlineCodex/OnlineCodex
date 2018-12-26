@@ -8,7 +8,6 @@ public class ORFlakkTrakk extends Eintrag {
 
     public ORFlakkTrakk() {
         name = "Flakk Trakk";
-        kategorie = 5;
         grundkosten = 90;
 
         add(ico = new oc.Picture("oc/wh40k/images/BigTrakk.gif"));

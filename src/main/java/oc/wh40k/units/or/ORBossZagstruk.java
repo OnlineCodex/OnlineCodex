@@ -1,14 +1,12 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORBossZagstruk extends Eintrag {
 	
 
     public ORBossZagstruk() {
 
-        kategorie = 1;
         name = "Boss Zagstruk";
         grundkosten = getPts("Boss Zagstruk");
         power = 5;

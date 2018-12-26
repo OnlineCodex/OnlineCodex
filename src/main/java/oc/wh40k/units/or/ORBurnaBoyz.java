@@ -13,8 +13,6 @@ public class ORBurnaBoyz extends Eintrag {
 
     public ORBurnaBoyz() {
 
-        kategorie = 1;
-
         name = "Boyz";
         grundkosten = 0;
         add(boyz = new AnzahlPanel(ID, randAbstand, cnt, "Burna Boyz", 5, 15, getPts("Burna Boyz") + getPts("Burna") + getPts("Stikkbombs")));

@@ -15,8 +15,6 @@ public class CHKhorneBerzerkers extends Eintrag {
 
     public CHKhorneBerzerkers() {
 
-        kategorie = 1;
-
         name = "Khorne Berzerkers";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Khorne Berzerkers", 5, 20, getPts("Khorne Berzerkers")));

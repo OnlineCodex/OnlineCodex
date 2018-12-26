@@ -1,11 +1,8 @@
 package oc;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import oc.wh40k.units.Warlordtraits;
-import oc.wh40k.units.im.IMAdeptaSororitasRuestkammer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,7 +11,6 @@ import java.awt.*;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-import static com.google.common.collect.Sets.newHashSet;
 import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
 
@@ -22,8 +18,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(Eintrag.class);
 
-	protected int kategorie;
-	protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
+    protected double eintragsCNT = 1; // Wieviel dieser Eintrag als Eintrag zählt. Fast alle haben 1 hier stehen, wenn der Eintrag nicht als Eintrag zählt steht hier 0, bei Chaosdämonen HQ'S Heralde 0.5
 	protected boolean überschriftSetzen = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
 	protected boolean neuzeile = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
 	protected boolean keineÜberschrift = false; // kann innerhalb der "extends Eintrag" Klasse verändert werden
@@ -234,14 +229,6 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	public void setUnikat(boolean unikat) {
 		checkUnikatErrorMessageState();
 		this.unikat = unikat;
-	}
-
-	public int getKategorie() {
-		return this.kategorie;
-	}
-
-	public void setKategorie(int i) {
-		kategorie = i;
 	}
 
 	@Override

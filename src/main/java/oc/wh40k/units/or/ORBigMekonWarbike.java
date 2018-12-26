@@ -13,7 +13,6 @@ public class ORBigMekonWarbike extends Eintrag {
     boolean gazzBool = false;
 
     public ORBigMekonWarbike() {
-        kategorie = 1;
         name = "Big Mek on Warbike";
         grundkosten = getPts("Big Mek on Warbike") + getPts("Stikkbombs");
         power = 6;

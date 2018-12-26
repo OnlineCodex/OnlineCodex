@@ -13,7 +13,6 @@ public class ORDeffkoptas extends Eintrag {
 
     public ORDeffkoptas() {
 
-        kategorie = 4;
         grundkosten = 0;
 
         add(killakoptaz = new AnzahlPanel(ID, randAbstand, cnt, "Deffkopta", "Deffkoptas", 1, 5, getPts("Deffkoptas") + getPts("Spinnin' blades")));

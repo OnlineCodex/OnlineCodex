@@ -2,13 +2,11 @@ package oc.wh40k.armies;
 
 import com.google.common.collect.ImmutableList;
 import oc.BuildaVater;
-import oc.ChooserGruppe;
 import oc.Eintrag;
 import oc.wh40k.units.ne.*;
 
 import java.util.List;
 
-import static oc.utils.EvenMoreCollections.ImmutableList.of;
 import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKNecrons extends BuildaVater {
@@ -182,27 +180,27 @@ public class VOLKNecrons extends BuildaVater {
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(Transporteinträge_NE));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(Befestigungen_IA_NE));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("Maynarkh")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(ImmutableList.of(HQeinträge_NE, HQeinträge_Vanilla_only, HQeinträge_IA_Maynarkh));
-            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_NE);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(ImmutableList.of(Standardeinträge_NE));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(Eliteeinträge_NE, Eliteeinträge_Vanilla_only, Eliteeinträge_Ctan_Shards, Eliteeinträge_IA_Canoptek));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(Sturmeinträge_NE, Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(Unterstützungeinträge_NE, Unterstützungeinträge_Canoptek, Unterstützungeinträge_Ctan_Shards, Unterstützungeinträge_IA_NE));
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_NE);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(ImmutableList.of(Transporteinträge_NE));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(ImmutableList.of(Fliegereinträge_NE, Fliegereinträge_IA_NE));
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(Befestigungen, Befestigungen_IA_NE));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of(Befestigungen_IA_NE));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(LordofWareinträge_NE,LordofWareinträge_Ctan_Shards_Dynasty,LordofWareinträge_IA_NE));
         } else if (getFormationType().equals("C'tan Shards")) {
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Ctan_Shards);
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_Ctan_Shards);
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWareinträge_Ctan_Shards_Dynasty);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(Eliteeinträge_Ctan_Shards));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(Unterstützungeinträge_Ctan_Shards));
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(ImmutableList.of(LordofWareinträge_Ctan_Shards_Dynasty));
         } else if (getFormationType().equals("Canoptek")) {
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_IA_Canoptek);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(ImmutableList.of(Eliteeinträge_IA_Canoptek));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(ImmutableList.of(Sturmeinträge_Canoptek, Sturmeinträge_IA_Canoptek));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungeinträge_Canoptek);
-            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(ImmutableList.of(Unterstützungeinträge_Canoptek));
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(ImmutableList.of());
         }
 
         if (formation != null) {

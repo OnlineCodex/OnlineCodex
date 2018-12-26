@@ -12,8 +12,6 @@ public class CHMutilators extends Eintrag {
 
     public CHMutilators() {
 
-        kategorie = 1;
-
         name = "Mutilators";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Mutilators", 3, 3, getPts("Mutilators")));

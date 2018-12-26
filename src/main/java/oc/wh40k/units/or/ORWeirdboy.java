@@ -13,7 +13,6 @@ public class ORWeirdboy extends Eintrag {
 
     public ORWeirdboy() {
 
-        kategorie = 1;
         name = "Wyrdboy";
         grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
         power = 3;

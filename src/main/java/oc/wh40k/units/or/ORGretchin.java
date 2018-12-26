@@ -8,7 +8,6 @@ public class ORGretchin extends Eintrag {
     AnzahlPanel squad;
 
     public ORGretchin() {
-        kategorie = 3;
         grundkosten = 0;
         
         addToInformationVector("Gretchin Infantry", 1);

@@ -11,8 +11,6 @@ public class CHChaosRhino extends Eintrag {
 
     public CHChaosRhino() {
 
-        kategorie = 1;
-
         name = "Chaos Rhino";
         grundkosten = getPts("Chaos Rhino");
 

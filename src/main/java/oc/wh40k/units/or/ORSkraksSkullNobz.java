@@ -6,7 +6,6 @@ public class ORSkraksSkullNobz extends Eintrag {
 
     public ORSkraksSkullNobz() {
 
-        kategorie = 2;
         name = "Skrak's Skull-Nobz";
         grundkosten = 190;
 

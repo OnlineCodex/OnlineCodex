@@ -15,7 +15,6 @@ public class ORTankbustas extends Eintrag {
 
     public ORTankbustas() {
 
-        kategorie = 2;
         grundkosten = 0;
         add(Panzaknakkaz = new AnzahlPanel(ID, randAbstand, cnt, "Tankbustas", 5, 15, getPts("Tankbustas") + getPts("Rokkit launcha") + getPts("Stikkbombs") + getPts("Tankbusta bombs")));
         add(ico = new oc.Picture("oc/wh40k/images/Panzaknakkaz.gif"));

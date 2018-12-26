@@ -13,7 +13,6 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
     boolean gazzBool = false;
 
     public ORBigMekwithShokkAttackGun() {
-        kategorie = 1;
         name = "Big Mek with Shokk attack gun";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs") + getPts("Shokk attack gun");
         power = 4;

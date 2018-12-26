@@ -10,8 +10,6 @@ public class CHPossessed extends Eintrag {
     
     public CHPossessed() {
 
-        kategorie = 1;
-
         name = "Possessed";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Possessed", 5, 20, getPts("Possessed")));

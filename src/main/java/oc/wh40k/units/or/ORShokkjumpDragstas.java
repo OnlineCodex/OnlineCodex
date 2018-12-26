@@ -6,11 +6,9 @@ import oc.Eintrag;
 
 public class ORShokkjumpDragstas extends Eintrag {
 
-    AnzahlPanel buggies;
+    private final AnzahlPanel buggies;
 
     public ORShokkjumpDragstas() {
-
-        kategorie = 4;
         grundkosten = 0;
 
         buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas") + getPts("Rokkit launcha"));
@@ -22,9 +20,8 @@ public class ORShokkjumpDragstas extends Eintrag {
         complete();
     }
 
-    //@OVERRIDE
+    @Override
     public void refreshen() {
-
         power = buggies.getModelle() * 6;
     }
 }

@@ -13,7 +13,6 @@ public class ORBigMek extends Eintrag {
     boolean gazzBool = false;
 
     public ORBigMek() {
-        kategorie = 1;
         name = "Big Mek";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs");
         power = 5;

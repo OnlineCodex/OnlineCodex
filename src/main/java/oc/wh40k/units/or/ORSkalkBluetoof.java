@@ -7,8 +7,6 @@ import oc.OptionsEinzelUpgrade;
 public class ORSkalkBluetoof extends Eintrag {
 
     public ORSkalkBluetoof() {
-
-        kategorie = 1;
         name = "Skalk Bluetoof";
         grundkosten = 95;
 

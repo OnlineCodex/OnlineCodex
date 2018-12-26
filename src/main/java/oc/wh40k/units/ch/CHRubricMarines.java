@@ -17,8 +17,6 @@ public class CHRubricMarines extends Eintrag {
 
     public CHRubricMarines() {
 
-        kategorie = 1;
-
         name = "Rubric Marines";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Rubric Marines", 5, 20, getPts("Rubric Marines")));

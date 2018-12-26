@@ -11,8 +11,6 @@ public class CHTzaangorEnlightened extends Eintrag {
 
     public CHTzaangorEnlightened() {
 
-        kategorie = 1;
-
         name = "Tzaangor Enlightened";
         grundkosten = 0;
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Tzaangor Enlightened", 3, 9, getPts("Tzaangor Enlightened")));

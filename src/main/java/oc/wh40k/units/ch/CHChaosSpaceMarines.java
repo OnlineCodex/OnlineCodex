@@ -17,8 +17,6 @@ public class CHChaosSpaceMarines extends Eintrag {
     
     public CHChaosSpaceMarines() {
 
-        kategorie = 1;
-
         name = "Chaos Space Marines";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Space Marines", 5, 20, getPts("Chaos Space Marines")));

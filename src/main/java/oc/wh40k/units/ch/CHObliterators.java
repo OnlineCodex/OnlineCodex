@@ -12,8 +12,6 @@ public class CHObliterators extends Eintrag {
 
     public CHObliterators() {
 
-        kategorie = 1;
-
         name = "Obliterators";
         grundkosten = 0;
         add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Obliterators", 3, 3, getPts("Obliterators")));
