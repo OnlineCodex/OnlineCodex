@@ -197,6 +197,10 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     private BuildaHQ() {
     }
 
+    public static int pts(String key) {
+        return aktBuildaVater.getPts(key);
+    }
+
     public static void addToInformationVectorGlobal(String s, int count) { // um wieviel der key s erhöht/vermindert wird
         legKeyAnGlobal(s);
         informationListGlobal.put(s, informationListGlobal.get(s) + count);

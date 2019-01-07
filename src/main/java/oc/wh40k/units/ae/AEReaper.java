@@ -1,37 +1,20 @@
 package oc.wh40k.units.ae;
 
-
-
 import oc.Eintrag;
+import oc.wh40k.units.Source;
 
+import static oc.BuildaHQ.pts;
+import static oc.wh40k.units.Publication.IMPERIAL_ARMOUR_XENOS;
 
-
+@Source(value = IMPERIAL_ARMOUR_XENOS, page = 37)
 public class AEReaper extends Eintrag {
 
-
-
     public AEReaper() {
-
-        name = "Reaper";
-
-        grundkosten = getPts("Reaper") + getPts("Storm vortex projector") + getPts("Scythevanes") + getPts("Sharpened prow blade");
-
-        power = 9;
-
-        seperator();
-
-
-
+        super("Reaper [FW]", 9,
+                pts("Reaper")
+                + pts("Storm vortex projector")
+                + pts("Scythevanes")
+                + pts("Sharpened prow blade"));
         complete();
-
     }
-
-
-
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }

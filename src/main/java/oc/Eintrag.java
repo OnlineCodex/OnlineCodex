@@ -49,6 +49,13 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected RuestkammerStarter weapons;
 	private final Set<KeyWord> keywords;
 
+	public Eintrag(String name, int power, int cost, KeyWord... keywords) {
+		this(keywords);
+		this.name = name;
+		this.power = power;
+		this.grundkosten = cost;
+	}
+
 	public Eintrag(KeyWord... keywords) {
 		this.keywords = Sets.newEnumSet(ImmutableList.copyOf(keywords), KeyWord.class);
 		lKosten.setSize(150, 17);
