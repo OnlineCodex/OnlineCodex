@@ -4,6 +4,7 @@ package oc.wh40k.units.ae;
 
 import oc.*;
 
+import static oc.wh40k.units.ae.AEExarch.ExarchType.DARK_REAPERS;
 
 
 public class AEDarkReapers extends Eintrag {
@@ -44,7 +45,7 @@ public class AEDarkReapers extends Eintrag {
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class, "Exarch");
 
-        ((AEExarch) rkBoss.getKammer()).type = "Dark Reapers";
+        ((AEExarch) rkBoss.getKammer()).type = DARK_REAPERS;
 
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Reaper launcher");
 

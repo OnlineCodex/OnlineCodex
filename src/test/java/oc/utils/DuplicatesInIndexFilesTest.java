@@ -90,7 +90,8 @@ public class DuplicatesInIndexFilesTest {
         return new Object[] {
                 ImmutableSet.of(
                         "/oc/wh40k/indices/ae.yaml",
-                        "/oc/wh40k/indices/de.yaml"),
+                        "/oc/wh40k/indices/de.yaml",
+                        "/oc/wh40k/indices/aeldari-forge-world.yaml"),
                 ImmutableSet.of("/oc/wh40k/indices/chaos.yaml"),
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
                         .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))

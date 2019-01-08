@@ -44,7 +44,7 @@ public class AEShiningSpears extends Eintrag {
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class,"Exarch");
 
-        ((AEExarch) rkBoss.getKammer()).type = "Shining Spears";
+        ((AEExarch) rkBoss.getKammer()).type = AEExarch.ExarchType.SHINING_SPEARS;
 
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Laser lance");
 

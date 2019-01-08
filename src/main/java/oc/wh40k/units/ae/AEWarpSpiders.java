@@ -46,7 +46,7 @@ public class AEWarpSpiders extends Eintrag {
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class, "Exarch");
 
-        ((AEExarch) rkBoss.getKammer()).type = "Warp Spiders";
+        ((AEExarch) rkBoss.getKammer()).type = AEExarch.ExarchType.WARP_SPIDERS;
 
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Death spinner");
 

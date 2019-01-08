@@ -46,7 +46,7 @@ public class AESwoopingHawks extends Eintrag {
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class,   "Exarch");
 
-        ((AEExarch) rkBoss.getKammer()).type = "Swooping Hawks";
+        ((AEExarch) rkBoss.getKammer()).type = AEExarch.ExarchType.SWOOPING_HAWKS;
 
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Lasblaster");
 

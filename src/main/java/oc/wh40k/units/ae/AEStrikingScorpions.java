@@ -18,7 +18,7 @@ public class AEStrikingScorpions extends Eintrag {
         seperator();
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class, "Exarch");
-        ((AEExarch) rkBoss.getKammer()).type = "Striking Scorpions";
+        ((AEExarch) rkBoss.getKammer()).type = AEExarch.ExarchType.STRIKING_SCORPIONS;
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Shuriken pistol") + getPts("Scorpion chainsword") + getPts("Sunburst grenade");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Exarch"));

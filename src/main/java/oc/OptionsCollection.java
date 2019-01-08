@@ -48,7 +48,7 @@ public abstract class OptionsCollection extends BuildaPanel {
         cnt += i;
     }
 
-    public void add(OptionsVater o) {
+    public <O extends OptionsVater> O add(O o) {
         panel.add(o.getPanel());
         if (!(o instanceof Picture)) optionen.add(o);
 
@@ -57,6 +57,7 @@ public abstract class OptionsCollection extends BuildaPanel {
         }
 
         cnt += o.getHoehe();
+        return o;
     }
 
     public void addAt(OptionsVater o, int i) {

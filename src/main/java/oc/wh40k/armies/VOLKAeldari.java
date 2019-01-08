@@ -20,7 +20,8 @@ public class VOLKAeldari extends BuildaVater {
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ae.yaml",
-                "/oc/wh40k/indices/de.yaml"));
+                "/oc/wh40k/indices/de.yaml",
+                "/oc/wh40k/indices/aeldari-forge-world.yaml"));
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
@@ -107,7 +108,8 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Lhamaean", "Medusae", "Sslyth", "Ur-Ghul", "Kabalite Trueborn", "Hekatrix Bloodbrides", "Incubi",
                     "Mandrakes", "Grotesques", "Beastmaster",
 
-                    "", "Death Jester", "Solitaire"});
+                    "", "Death Jester", "Solitaire",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges",
@@ -140,7 +142,8 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Guardian Defenders", "Storm Guardians", "Rangers", "Dire Avengers"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades", "Bonesinger"});
+                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades", "Bonesinger",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
@@ -184,7 +187,8 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Dire Avengers"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons"});
+                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Swooping Hawks", "Warp Spiders", "Shining Spears"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
@@ -199,7 +203,8 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Eldrad Ulthran", "Avatar of Khaine",
                     "", "Autarch Index", "Autarch with Swooping Hawk Wings Index", "Autarch with Warp Jump Generator Index", "Autarch Skyrunner Index"});
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
-                    "", "Guardian Defenders", "Storm Guardians", "Rangers", "Dire Avengers"});
+                    "", "Guardian Defenders", "Storm Guardians", "Rangers", "Dire Avengers",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
                     "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades", "Bonesinger"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
@@ -222,7 +227,8 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Guardian Defenders", "Storm Guardians", "Rangers", "Dire Avengers"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades"});
+                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
@@ -245,7 +251,8 @@ public class VOLKAeldari extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{
                     "", "Guardian Defenders", "Storm Guardians", "Rangers", "Dire Avengers"});
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(new String[]{
-                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades"});
+                    "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
@@ -384,7 +391,8 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades",
                     "", "Lhamaean", "Medusae", "Sslyth", "Ur-Ghul", "Kabalite Trueborn", "Hekatrix Bloodbrides", "Incubi",
                     "Beastmaster",
-                    "", "Death Jester", "Solitaire"});
+                    "", "Death Jester", "Solitaire",
+                    "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges",

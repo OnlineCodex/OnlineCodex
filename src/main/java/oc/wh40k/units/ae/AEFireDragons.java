@@ -44,7 +44,7 @@ public class AEFireDragons extends Eintrag {
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, AEExarch.class, "Exarch");
 
-        ((AEExarch) rkBoss.getKammer()).type = "Fire Dragons";
+        ((AEExarch) rkBoss.getKammer()).type = AEExarch.ExarchType.FIRE_DRAGONS;
 
         ((AEExarch) rkBoss.getKammer()).weaponCost = getPts("Fusion gun");
 
