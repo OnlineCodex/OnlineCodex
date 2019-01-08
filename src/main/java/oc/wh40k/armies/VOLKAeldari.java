@@ -10,12 +10,16 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
+import static oc.wh40k.units.ae.AEWarWalkers.WAR_WALKERS;
+import static oc.wh40k.units.ae.AEWaspAssaultWalkers.WASP_ASSAULT_WALKERS_FW;
+
 
 public class VOLKAeldari extends BuildaVater {
 
-	private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
+    private static final Set<String> CRAFTWORLDS = ImmutableSet.of("Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
 	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
 	private static final Set<String> HARLEQUINS = ImmutableSet.of("Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
+    public static final String AELDARI = "AELDARI";
 
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
@@ -25,7 +29,7 @@ public class VOLKAeldari extends BuildaVater {
 
         AdditionalInformation = new String[]{""};
         HQeinträge = new String[]{""};
-        Eliteeinträge = new String[]{"", "Custodian Guard Squad"};
+        Eliteeinträge = new String[]{""};
         Standardeinträge = new String[]{""};
         Sturmeinträge = new String[]{""};
         Unterstützungeinträge = new String[]{""};
@@ -57,24 +61,24 @@ public class VOLKAeldari extends BuildaVater {
 
         cnt += CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND;
 
-        nameDerArtDerArmee = BuildaHQ.translate("AELDARI");
-        nameDerArtDerArmeeDekliniert = BuildaHQ.translate("AELDARI");
-        textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("AELDARI");
+        nameDerArtDerArmee = BuildaHQ.translate(AELDARI);
+        nameDerArtDerArmeeDekliniert = BuildaHQ.translate(AELDARI);
+        textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate(AELDARI);
         
-        formationen.add("AELDARI");
+        formationen.add(AELDARI);
         formationen.add("");
         formationen.add("ASURYANI");
-        CRAFTWORLDS.forEach(craftworld -> formationen.add(craftworld));
+        formationen.addAll(CRAFTWORLDS);
         formationen.add("Warhost");
         formationen.add("Spirit Host");
         formationen.add("Aspect Warrior");
         formationen.add("");
         formationen.add("DRUKHARI");
-        DRUKHARI.forEach(drukhari -> formationen.add(drukhari));
+        formationen.addAll(DRUKHARI);
         formationen.add("Incubi");
         formationen.add("");
         formationen.add("HARLEQUINS");
-        HARLEQUINS.forEach(harlequins -> formationen.add(harlequins));
+        formationen.addAll(HARLEQUINS);
         formationen.add("");
         formationen.add("Ynnari");
 
@@ -83,7 +87,7 @@ public class VOLKAeldari extends BuildaVater {
 
     @Override
     public void volkRefresh() {
-        if (getFormationType().equals("AELDARI")) {
+        if (getFormationType().equals(AELDARI)) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Autarch", "Autarch with Swooping Hawk Wings", "Autarch Skyrunner",
                     "Farseer", "Farseer Skyrunner", "Warlock", "Warlock Conclave", "Warlock Skyrunner",
@@ -115,9 +119,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges",
 
                     "", "Skyweavers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord",
 
                     "", "Talos", "Cronos", "Ravager",
@@ -147,9 +151,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent"});
@@ -168,9 +172,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Guardian Defenders", "Storm Guardians", "Rangers"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers"});
+                    "", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent"});
         } else if (getFormationType().equals("Spirit Host")) {
@@ -212,9 +216,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Howling Banshees", "Striking Scorpions", "Fire Dragons", "Wraithguard", "Wraithblades", "Bonesinger"});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent"});
@@ -235,9 +239,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent"});
@@ -260,9 +264,9 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",});
+                    "", WASP_ASSAULT_WALKERS_FW,});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
                     "", "Wave Serpent"});
@@ -401,11 +405,11 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Shadow Spectres [FW]",});
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{
                     "", "Windriders", "Swooping Hawks", "Warp Spiders", "Shining Spears", "Vypers",
-                    "", "Wasp Assault Walkers [FW]",
+                    "", WASP_ASSAULT_WALKERS_FW,
                     "", "Clawed Fiends", "Khymerae", "Razorwing Flocks", "Reavers", "Hellions", "Scourges",
                     "", "Skyweavers"});
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", "War Walkers",
+                    "", "Dark Reapers", "Vaul's Wrath Support Battery", "Falcon", "Fire Prism", "Night Spinner", WAR_WALKERS,
                     "Wraithlord",
                     "", "Ravager",
                     "", "Voidweavers"});
