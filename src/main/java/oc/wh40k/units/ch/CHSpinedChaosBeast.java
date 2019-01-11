@@ -5,18 +5,13 @@ import oc.RuestkammerStarter;
 
 public class CHSpinedChaosBeast extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    public static final String SPINED_CHAOS_BEAST = "Spined Chaos Beast";
 
     public CHSpinedChaosBeast() {
-
-        name = "Spined Chaos Beast";
-        grundkosten = getPts("Spined Chaos Beast");
+        name = SPINED_CHAOS_BEAST;
+        grundkosten = getPts(SPINED_CHAOS_BEAST);
         power = 10;
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

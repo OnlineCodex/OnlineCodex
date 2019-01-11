@@ -8,23 +8,19 @@ import static oc.wh40k.units.ch.CHWaffenkammer.ChaosWeaponsOption.SORCERER;
 
 public class CHRubricMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+    public static final String RUBRIC_MARINES = "Rubric Marines";
+    private final AnzahlPanel marines;
+    private final OptionsZaehlerGruppe o1x;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    RuestkammerStarter psychicPowers;
+    private final OptionsZaehlerGruppe marinesfk;
 
     public CHRubricMarines() {
 
         kategorie = 1;
 
-        name = "Rubric Marines";
+        name = RUBRIC_MARINES;
         grundkosten = 0;
-        add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Rubric Marines", 5, 20, getPts("Rubric Marines")));
+        add(marines = new AnzahlPanel(ID, randAbstand, cnt, RUBRIC_MARINES, 5, 20, getPts(RUBRIC_MARINES)));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
         seperator();
@@ -43,11 +39,11 @@ public class CHRubricMarines extends Eintrag {
 
         seperator();
 
-        Boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Inferno bolt pistol", "Force stave", true, true, false, false, CHAMPION, SORCERER), "Aspiring Sorcerer");
-        Boss.setUeberschriftTrotzNullKostenAusgeben(true);
-        Boss.setGrundkosten(getPts("Aspiring Sorcerer"));
-        Boss.setAbwaehlbar(false);
-        add(Boss);
+        RuestkammerStarter boss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer(name, "Inferno bolt pistol", "Force stave", true, true, false, false, CHAMPION, SORCERER), "Aspiring Sorcerer");
+        boss.setUeberschriftTrotzNullKostenAusgeben(true);
+        boss.setGrundkosten(getPts("Aspiring Sorcerer"));
+        boss.setAbwaehlbar(false);
+        add(boss);
 
         addPsychicPowers(0);
 

@@ -10,8 +10,8 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CONTAGION;
 
 public class CHMalignantPlaguecaster extends Eintrag {
 
-    OptionsUpgradeGruppe pistol, staff;
-    RuestkammerStarter psychicPowers;
+    private final OptionsUpgradeGruppe pistol;
+    private final OptionsUpgradeGruppe staff;
 
     public CHMalignantPlaguecaster() {
         name = "Malignant Plaguecaster";

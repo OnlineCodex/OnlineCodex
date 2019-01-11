@@ -5,18 +5,13 @@ import oc.RuestkammerStarter;
 
 public class CHGiantChaosSpawn extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+    public static final String GIANT_CHAOS_SPAWN = "Giant Chaos Spawn";
 
     public CHGiantChaosSpawn() {
-
-        name = "Giant Chaos Spawn";
-        grundkosten = getPts("Giant Chaos Spawn");
+        name = GIANT_CHAOS_SPAWN;
+        grundkosten = getPts(GIANT_CHAOS_SPAWN);
         power = 5;
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

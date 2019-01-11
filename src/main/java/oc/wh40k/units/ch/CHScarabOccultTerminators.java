@@ -7,18 +7,12 @@ import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.CHANGE;
 
 public class CHScarabOccultTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def, swords, bolter;
-    OptionsEinzelUpgrade plasmapistole, sorcerer;
-    OptionsUpgradeGruppe ikone;
-    OptionsUpgradeGruppe sor;
-    OptionsZaehlerGruppe o7;
-    OptionsZaehlerGruppe schwereWaffe, rak;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe swords;
+    private final OptionsZaehlerGruppe bolter;
+    private final OptionsZaehlerGruppe schwereWaffe;
+    private final OptionsZaehlerGruppe rak;
+
 
     public CHScarabOccultTerminators() {
         //name = "Thousand Sons\n";
@@ -51,7 +45,7 @@ public class CHScarabOccultTerminators extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Scarab Occult Sorcerer"), "Sorcerer");
+        RuestkammerStarter rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, new CHWaffenkammer("Scarab Occult Sorcerer"), "Sorcerer");
         rkBoss.setGrundkosten(getPts("Scarab Occult Sorcerer"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setAbwaehlbar(true);
@@ -66,7 +60,6 @@ public class CHScarabOccultTerminators extends Eintrag {
 
     @Override
     public void refreshen() {
-
         swords.setMaxAnzahl(squad.getModelle() - 1);
         swords.setAnzahl(0, squad.getModelle() - 1);
 

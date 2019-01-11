@@ -13,12 +13,13 @@ import oc.wh40k.units.PsychicPowers;
 import static oc.wh40k.units.PsychicPowers.PsychicPowerGroup.RUNES_OF_BATTLE;
 
 public class AEWarlock extends Eintrag {
-    OptionsZaehlerGruppe o1;
-    RuestkammerStarter psychicPowers;
+
+    public static final String WARLOCK = "Warlock";
+    private final OptionsZaehlerGruppe o1;
 
     public AEWarlock() {
-        name = "Warlock";
-        grundkosten = getPts("Warlock") + getPts("Shuriken pistol");
+        name = WARLOCK;
+        grundkosten = getPts(WARLOCK) + getPts("Shuriken pistol");
         power = 6;
         
         seperator();
