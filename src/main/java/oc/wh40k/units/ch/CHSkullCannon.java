@@ -8,7 +8,7 @@ public class CHSkullCannon extends Eintrag {
 
         name = "Skull Cannon";
         grundkosten = getPts("Skull Cannon");
-        power = 7;
+        power = 5;
         complete();
 
     }

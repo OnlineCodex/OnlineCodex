@@ -731,7 +731,6 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Questor Imperialis")) {
             clearCombo();
-            kontingentBox.setSelectedItem("Super-Heavy Detachment");
             myChooserGruppen.get(AI).changeComboBoxAuswahlen(AdditionalInformation_Questor_Imperialis);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));

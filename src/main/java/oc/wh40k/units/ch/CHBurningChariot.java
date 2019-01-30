@@ -11,7 +11,7 @@ public class CHBurningChariot extends Eintrag {
 
         name = "Burning Chariot";
         grundkosten = getPts("Burning Chariot");
-        power = 5;
+        power = 6;
 
         add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
 

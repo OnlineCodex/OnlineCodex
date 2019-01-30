@@ -41,8 +41,8 @@ public class CHFlamers extends Eintrag {
     public void refreshen() {
         power = flamers.getModelle();
 
-        power = 5 +
-                ((flamers.getModelle() == 6) ? 4 : 0) +
-                ((flamers.getModelle() == 9) ? 8 : 0);
+        power = 4 +
+                ((flamers.getModelle() > 3) ? 4 : 0) +
+                ((flamers.getModelle() > 6) ? 4 : 0);
     }
 }

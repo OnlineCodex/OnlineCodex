@@ -13,7 +13,7 @@ public class CHSoulgrinder extends Eintrag {
 
         name = "Soulgrinder";
         grundkosten = getPts("Soulgrinder");
-        power = 11;
+        power = 12;
 
         ogE.addElement(new OptionsGruppeEintrag("Warpsword", getPts("Warpsword")));
         ogE.addElement(new OptionsGruppeEintrag("Warpclaw", getPts("Warpclaw")));

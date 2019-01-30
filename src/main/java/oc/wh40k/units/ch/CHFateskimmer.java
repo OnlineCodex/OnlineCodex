@@ -18,7 +18,7 @@ public class CHFateskimmer extends Eintrag {
 
         name = "Fateskimmer";
         grundkosten = getPts("Fateskimmer");
-        power = 7;
+        power = 8;
 
         seperator();
 

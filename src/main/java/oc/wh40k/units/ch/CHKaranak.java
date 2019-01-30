@@ -10,7 +10,7 @@ public class CHKaranak extends Eintrag {
         super(CHAOS, KHORNE, DAEMON, BEAST, CHARACTER, FLESH_HOUND, KARANAK);
         name = "Karanak";
         grundkosten = getPts("Karanak");
-        power = 6;
+        power = 4;
 
         
         seperator();

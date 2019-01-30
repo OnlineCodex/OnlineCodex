@@ -43,10 +43,8 @@ public class CHBloodletters extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = bloodletters.getModelle();
-
-        power = 5 +
-                ((bloodletters.getModelle() == 20) ? 5 : 0) +
-                ((bloodletters.getModelle() == 30) ? 10 : 0);
+        power = 4 +
+                ((bloodletters.getModelle() > 10) ? 4 : 0) +
+                ((bloodletters.getModelle() > 20) ? 4 : 0);
     }
 }

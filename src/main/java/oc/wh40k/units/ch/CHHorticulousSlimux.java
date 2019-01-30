@@ -10,7 +10,7 @@ public class CHHorticulousSlimux extends Eintrag {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, CAVALRY, HERALD_OF_NURGLE, PLAGUEBEARER, HORTICULOUS_SLIMUX);
         name = "Horticulous Slimux";
         grundkosten = getPts("Horticulous Slimux");
-        power = 4;
+        power = 9;
 
         seperator();
         

@@ -20,7 +20,7 @@ public class CHHellforgedRapierBattery extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
+        ogE.addElement(new OptionsGruppeEintrag("Quad heavy bolter", getPts("Quad heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Laser destroyer", getPts("Laser destroyer")));
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma cannon", getPts("Ectoplasma cannon")));
         ogE.addElement(new OptionsGruppeEintrag("C-beam cannon", getPts("C-beam cannon")));
