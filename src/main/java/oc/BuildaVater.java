@@ -204,7 +204,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         	} else if(getCountFromInformationVector("Armiger selected") == 0){
             	return 6;
         	} else {
-        		return 0;	
+        		return CP.get(((String) kontingentBox.getSelectedItem()));
         	}
         } else {
             if (!((String) kontingentBox.getSelectedItem()).equals("")) {
