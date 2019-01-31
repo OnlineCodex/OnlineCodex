@@ -8,8 +8,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHInfernalEnrapturess extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-
     public CHInfernalEnrapturess() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
         name = "Infernal Enrapturess";
