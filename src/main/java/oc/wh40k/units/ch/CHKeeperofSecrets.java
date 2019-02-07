@@ -15,7 +15,7 @@ public class CHKeeperofSecrets extends Eintrag {
 
         name = "Keeper of Secrets";
         grundkosten = getPts("Keeper of Secrets");
-        power = 11;
+        power = 12;
 
         seperator();
         

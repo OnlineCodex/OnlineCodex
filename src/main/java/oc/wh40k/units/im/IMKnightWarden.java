@@ -36,6 +36,8 @@ public class IMKnightWarden extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
         add(fk2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
+        
         complete();
     }
 
@@ -44,5 +46,12 @@ public class IMKnightWarden extends Eintrag {
         fk1.alwaysSelected();
         fk2.alwaysSelected();
         o2.alwaysSelected();
+    }
+    
+    //@OVERRIDE
+    public void deleteYourself() {
+        super.deleteYourself();
+
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);
     }
 }

@@ -44,8 +44,8 @@ public class CHPlaguebearers extends Eintrag {
     @Override
     public void refreshen() {
 
-        power = 5 +
-                ((plaguebearers.getModelle() == 20) ? 5 : 0) +
-                ((plaguebearers.getModelle() == 30) ? 10 : 0);
+        power = 4 +
+                ((plaguebearers.getModelle() > 10) ? 4 : 0) +
+                ((plaguebearers.getModelle() > 20) ? 4 : 0);
     }
 }

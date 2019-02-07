@@ -43,9 +43,9 @@ public class CHDaemonettes extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 5 +
-                ((daemonettes.getModelle() == 20) ? 5 : 0) +
-                ((daemonettes.getModelle() == 30) ? 10 : 0);
+        power = 4 +
+                ((daemonettes.getModelle() > 10) ? 4 : 0) +
+                ((daemonettes.getModelle() > 20) ? 4 : 0);
 
     }
 }

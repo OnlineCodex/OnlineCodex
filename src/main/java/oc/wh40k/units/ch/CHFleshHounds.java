@@ -35,10 +35,10 @@ public class CHFleshHounds extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 5 +
-                ((hounds.getModelle() == 10) ? 5 : 0) +
-                ((hounds.getModelle() == 15) ? 10 : 0) +
-                ((hounds.getModelle() == 20) ? 15 : 0);
+        power = 4 +
+                ((hounds.getModelle() > 5) ? 4 : 0) +
+                ((hounds.getModelle() > 10) ? 4 : 0) +
+                ((hounds.getModelle() > 15) ? 4 : 0);
         
         gorehounds.setMaxAnzahl(hounds.getModelle()/5);
     }

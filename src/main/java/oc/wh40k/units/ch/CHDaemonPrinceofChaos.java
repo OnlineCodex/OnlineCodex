@@ -15,7 +15,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
 
         name = "Daemon Prince of Chaos";
         grundkosten = getPts("Daemon Prince of Chaos");
-        power = 10;
+        power = 8;
 
         seperator();
 

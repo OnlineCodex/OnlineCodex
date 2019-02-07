@@ -148,7 +148,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigung_Daemons_Nurgle = new String[]{"", "Feculent Gnarlmaws"};
     
     //Slaanesh
-    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
+    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Infernal Enrapturess", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
     private static final String[] Elite_Daemons_Slaanesh = new String[]{"", "Fiends of Slaanesh"};
     private static final String[] Standard_Daemons_Slaanesh = new String[]{"", "Daemonettes"};
     private static final String[] Sturm_Daemons_Slaanesh = new String[]{"", "Seekers", "Hellflayer"};

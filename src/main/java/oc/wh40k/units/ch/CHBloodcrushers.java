@@ -40,8 +40,8 @@ public class CHBloodcrushers extends Eintrag {
     @Override
     public void refreshen() {
         power = 8 +
-                ((bloodcrushers.getModelle() == 6) ? 7 : 0) +
-                ((bloodcrushers.getModelle() == 9) ? 14 : 0) +
-                ((bloodcrushers.getModelle() == 12) ? 21 : 0);
+                ((bloodcrushers.getModelle() > 3) ? 7 : 0) +
+                ((bloodcrushers.getModelle() > 6) ? 7 : 0) +
+                ((bloodcrushers.getModelle() > 9) ? 7 : 0);
     }
 }

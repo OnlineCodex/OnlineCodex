@@ -36,8 +36,6 @@ public class CHBloodlettersCSM extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = bloodletters.getModelle();
-
         if (!reaper.isSelected()) reaper.setSelected(true);
 
         power = 5 +

@@ -46,6 +46,7 @@ public class IMKnightValiant extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Twin siegebreaker cannon", getPts("Twin siegebreaker cannon")));
         add(fk3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 
         complete();
     }
@@ -58,5 +59,12 @@ public class IMKnightValiant extends Eintrag {
         o3.alwaysSelected();
         o1.alwaysSelected();
         fk3.alwaysSelected();
+    }
+    
+    //@OVERRIDE
+    public void deleteYourself() {
+        super.deleteYourself();
+
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);
     }
 }

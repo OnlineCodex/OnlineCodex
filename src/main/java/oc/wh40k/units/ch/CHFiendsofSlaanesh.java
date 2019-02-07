@@ -14,7 +14,7 @@ public class CHFiendsofSlaanesh extends Eintrag {
 
         name = "Fiends of Slaanesh";
         grundkosten = 0;
-        power = 5;
+        power = 2;
 
         add(fiends = new AnzahlPanel(ID, randAbstand, cnt, "Fiends of Slaanesh", 1, 9, getPts("Fiends of Slaanesh")));
 

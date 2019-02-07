@@ -17,9 +17,11 @@ public class CHGreatUncleanOne extends Eintrag {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);
 
         name = "Great Unclean One";
-        grundkosten = 0;
-        power = 12;
+        grundkosten = getPts("Great Unclean One");
+        power = 17;
 
+        seperator();
+        
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and bileblade", getPts("Great Unclean one with Bilesword and bileblade")));
         ogE.addElement(new OptionsGruppeEintrag("Bilesword and plague fail", getPts("Great Unclean one with Bilesword and plague fail")));
         ogE.addElement(new OptionsGruppeEintrag("Doomsday bell and bileblade", getPts("Great Unclean one with Doomsday bell and bileblade")));
@@ -45,6 +47,10 @@ public class CHGreatUncleanOne extends Eintrag {
         addWarlordTraits("", NURGLE);
 
         complete();
-
+    }
+    
+    @Override
+    public void refreshen() {
+    	o1.alwaysSelected();
     }
 }

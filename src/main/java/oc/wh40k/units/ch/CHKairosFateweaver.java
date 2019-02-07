@@ -19,7 +19,7 @@ public class CHKairosFateweaver extends Eintrag {
 
         name = "Kairos Fateweaver";
         grundkosten = getPts("Kairos Fateweaver");
-        power = 20;
+        power = 19;
 
         add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Staff of Tomorrow", getPts("Staff of Tomorrow")));
         waffe2.setSelected(true);

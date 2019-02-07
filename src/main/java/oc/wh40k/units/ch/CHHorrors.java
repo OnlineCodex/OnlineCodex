@@ -44,8 +44,8 @@ public class CHHorrors extends Eintrag {
 
         horrors.setLegal(horrors.getAnzahl() >= 10);
 
-        power = 5 +
-                ((horrors.getAnzahl() == 20) ? 5 : 0) +
-                ((horrors.getAnzahl() == 30) ? 10 : 0);
+        power = 4 +
+                ((horrors.getAnzahl() > 10) ? 4 : 0) +
+                ((horrors.getAnzahl() > 20) ? 4 : 0);
     }
 }

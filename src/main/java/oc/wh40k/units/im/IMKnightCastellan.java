@@ -46,6 +46,7 @@ public class IMKnightCastellan extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Two shieldbreaker missiles", getPts("Shieldbreaker missile") * 2));
         add(fk3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 
         complete();
     }
@@ -58,5 +59,12 @@ public class IMKnightCastellan extends Eintrag {
         o3.alwaysSelected();
         o1.alwaysSelected();
         fk3.alwaysSelected();
+    }
+    
+    //@OVERRIDE
+    public void deleteYourself() {
+        super.deleteYourself();
+
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);
     }
 }

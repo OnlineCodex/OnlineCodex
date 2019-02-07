@@ -15,7 +15,7 @@ public class CHBeLakor extends Eintrag {
 
         name = "Be'Lakor";
         grundkosten = getPts("Be'Lakor");
-        power = 12;
+        power = 14;
 
         seperator();
 

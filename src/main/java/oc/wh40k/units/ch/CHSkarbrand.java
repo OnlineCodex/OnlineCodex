@@ -11,7 +11,7 @@ public class CHSkarbrand extends Eintrag {
 
         name = "Skarbrand";
         grundkosten = getPts("Skarbrand");
-        power = 19;
+        power = 18;
 
         seperator();
         

@@ -44,7 +44,7 @@ public class IMTartarosTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Tartaros Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Tartaros Sergeant", getKeywords());
         ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Tartaros Sergeant");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Tartaros Sergeant"));

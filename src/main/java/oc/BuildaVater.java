@@ -194,8 +194,18 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     public int getCP() {
 
-        if (((String) kontingentBox.getSelectedItem()).equals("Super-Heavy Detachment") && (getCountFromInformationVector("Armiger selected") > 0)) {
-            return 0;
+    	// Handle questor imperialis cp for super heavy detachement FAQ 
+    	//Page 106 – Knight Lances ability Change the last sentence to read: ‘The Command Benefit of each Imperial Knights Super-heavy Detachment 
+    	//is changed to ‘None’ if it does not contain at least one Imperial Knights Titanic unit, and is changed to ‘+6 Command Points’ if it contains at 
+    	//least three Imperial Knights Titanic units.’
+        if (("Super-Heavy Detachment").equals(kontingentBox.getSelectedItem())){
+        	if(getCountFromInformationVector("Knight selected") >= 3){
+        		return 6;
+        	} else if(getCountFromInformationVector("Knight selected") == 0){
+            	return 0;
+        	} else {
+        		return CP.get(((String) kontingentBox.getSelectedItem()));
+        	}
         } else {
             if (!((String) kontingentBox.getSelectedItem()).equals("")) {
                 return CP.get(((String) kontingentBox.getSelectedItem()));

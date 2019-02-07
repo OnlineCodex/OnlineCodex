@@ -37,6 +37,8 @@ public class IMKnightPreceptor extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser (QI)")));
         add(fk2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
+
         complete();
     }
 
@@ -45,5 +47,12 @@ public class IMKnightPreceptor extends Eintrag {
         fk1.alwaysSelected();
         fk2.alwaysSelected();
         o2.alwaysSelected();
+    }
+    
+    //@OVERRIDE
+    public void deleteYourself() {
+        super.deleteYourself();
+
+        setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);
     }
 }
