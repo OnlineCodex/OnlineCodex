@@ -130,11 +130,11 @@ public class TYHybridMetamorphs extends Eintrag {
 
         if (squad.getModelle() > 5)
 
-            power = 12;
+            power = 6;
 
         else
 
-            power = 6;
+            power = 3;
 
     }
 

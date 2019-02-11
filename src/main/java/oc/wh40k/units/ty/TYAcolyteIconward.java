@@ -18,8 +18,10 @@ public class TYAcolyteIconward extends Eintrag {
 
         power = 3;
 
-
-
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
 
     }

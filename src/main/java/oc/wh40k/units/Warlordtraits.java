@@ -20,7 +20,8 @@ public class Warlordtraits extends RuestkammerVater {
     }
 
     Set<String> CHAOS_GODS = ImmutableSet.of("Chaosdaemons", "Khorne", "Tzeentch", "Nurgle", "Slaanesh");
-	Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+	Set<String> LEGIONS = ImmutableSet.of("Chaos Space Marines", "Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers");
+	Set<String> ASTRA_MILITARUM = ImmutableSet.of("ASTRA MILITARUM", "Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
     Set<String> CRAFTWORLDS = ImmutableSet.of("ASURYANI", "Alaitoc", "Biel-Tan", "Iyanden", "Saim-Hann", "Ulthwe");
     Set<String> DRUKHARI = ImmutableSet.of("DRUKHARI", "Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidan Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
     Set<String> HARLEQUINS = ImmutableSet.of("HARLEQUINS", "Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
@@ -30,6 +31,7 @@ public class Warlordtraits extends RuestkammerVater {
     Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
+    Set<String> GENESTEALER = ImmutableSet.of("GENESTEALER CULTS", "Cult Of The Four-Armed Emperor", "The Hivecult", "The Bladed Cog", "The Rusted Claw", "The Pauper Princes", "The Twisted Helix");
     
     private static final String KABAL = "KABAL";
     private static final String WYCH_CULT = "WYCH CULT";
@@ -335,6 +337,19 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Jormungandr: Insidious Threat", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Hydra: Endless Regeneration", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Kronos: Soul hunger", 0));
+    	} else if(GENESTEALER.contains(army)) { //GENESTEALER
+	    	ogE.addElement(new OptionsGruppeEintrag("Focus of Adoration", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Shadow Stalker", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Biomorph Adaption", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Born Survivor", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Alien Majesty", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Preternatural Speed", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("CotfaE: Inscrutable Cunning", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Hivecult: Hivelord", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Bladed Cog: Single-Minded Obsession", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Rusted Claw: Entropic Touch", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Pauper Pinces: Beloved Grandsire", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Twisted Helix: Bio-Alchemis", 0));
     	}
         add(warlordtraits = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
 

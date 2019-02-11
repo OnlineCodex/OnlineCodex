@@ -18,8 +18,10 @@ public class TYPrimus extends Eintrag {
 
         power = 4;
 
-
-
+        seperator();
+        
+        addWarlordTraits("", true);
+        
         complete();
 
     }

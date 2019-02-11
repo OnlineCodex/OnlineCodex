@@ -15,12 +15,13 @@ import static oc.utils.ResourceUtils.loadPoints;
 public class VOLKTyraniden extends BuildaVater {
 
     private static final Set<String> HIVEFLEETS = ImmutableSet.of("Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
+    private static final Set<String> CULTS = ImmutableSet.of("Cult Of The Four-Armed Emperor", "The Hivecult", "The Bladed Cog", "The Rusted Claw", "The Pauper Princes", "The Twisted Helix");
 	
     private static final String[] HQeinträge_GenestealerCult = new String[]{"", "Patriarch", "Magus", "Primus", "Acolyte Iconward", "Abominant", "Jackal Alphus"};
     private static final String[] Eliteeinträge_GenestealerCult = new String[]{"", "Hybrid Metamorphs", "Aberrants", "Purestrain Genestealers", "Clamavus", "Locus", "Sanctus", "Kelermorph", "Nexos", "Biophagus"};
     private static final String[] Standardeinträge_GenestealerCult = new String[]{"", "Acolyte Hybrids", "Neophyte Hybrids", "Brood Brothers Infantry Squad"};
     private static final String[] Sturmeinträge_GenestealerCult = new String[]{"", "Achilles Ridgerunners", "Atalan Jackals", "Cult Armoured Sentinels", "Cult Scout Sentinels"};
-    private static final String[] Unterstützungseinträge_GenestealerCult = new String[]{"", "Cult Leman Russ", "Brood Brothes Heavy Wepaon Squad", "Goliath Rockgrinder"};
+    private static final String[] Unterstützungseinträge_GenestealerCult = new String[]{"", "Cult Leman Russ", "Brood Brothers Heavy Weapon Squad", "Goliath Rockgrinder"};
     private static final String[] Transporteinträge_GenestealerCult = new String[]{"", "Goliath Truck", "Cult Chimera"};
     private static final String[] Fliegereinträge_GenestealerCult = new String[]{"",};
     private static final String[] Befestigungseinträge_GenestealerCult = new String[]{"", "Tectonic Fragdrill"};
@@ -71,7 +72,9 @@ public class VOLKTyraniden extends BuildaVater {
         formationen.add("TYRANIDS");
         HIVEFLEETS.forEach(fleet -> formationen.add(fleet));
         formationen.add("");
-        formationen.add("Genestealer Cults");
+        formationen.add("GENESTEALER CULTS");
+        CULTS.forEach(cult -> formationen.add(cult));
+        formationen.add("");
 
         complete();
     }
@@ -130,7 +133,17 @@ public class VOLKTyraniden extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Sporocyst"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Barbed Hierodule", "Scythed Hierodule", "Harridan", "Hierophant Bio-titan"});
-        } else if (getFormationType().equals("Genestealer Cults")) {
+        } else if (getFormationType().equals("GENESTEALER CULTS")) {
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_GenestealerCult);
+            myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_GenestealerCult);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_GenestealerCult);
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_GenestealerCult);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_GenestealerCult);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_GenestealerCult);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_GenestealerCult);
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_GenestealerCult);
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_GenestealerCult);
+        } else if (CULTS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_GenestealerCult);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_GenestealerCult);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_GenestealerCult);
