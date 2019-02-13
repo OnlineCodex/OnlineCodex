@@ -3,15 +3,18 @@ package oc.wh40k.units.im;
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
 public class IMHellhounds extends Eintrag {
 
     OptionsZaehlerGruppe o1;
     OptionsZaehlerGruppe o2;
+    OptionsZaehlerGruppe o3;
     OptionsZaehlerGruppe o2x;
+    OptionsZaehlerGruppe o3x;
     OptionsEinzelZaehler oe1, oe2, oe3, oe4;
-
+    
     public IMHellhounds() {
         name = "Hellhounds";
 
@@ -37,6 +40,14 @@ public class IMHellhounds extends Eintrag {
         add(oe3 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Hunter-killer missile", 1, getPts("Hunter-killer missile (AM)")));
         add(oe4 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Track guards", 1, getPts("Track guards")));
 
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AM)")));
+        add(o3x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
+        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+
         complete();
     }
 
@@ -54,6 +65,8 @@ public class IMHellhounds extends Eintrag {
         oe2.setMaxAnzahl(o1.getAnzahl());
         oe3.setMaxAnzahl(o1.getAnzahl());
         oe4.setMaxAnzahl(o1.getAnzahl());
+
+        o3.setMaxAnzahl(o1.getAnzahl());
 
         power = o1.getAnzahl() * 6;
     }
