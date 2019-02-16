@@ -12,9 +12,6 @@ public class TYTheSwarmlord extends Eintrag {
         name = "The Swarmlord";
         grundkosten = getPts("TheSwarmlord");
         power = 15;
-        add(ico = new oc.Picture("oc/wh40k/images/TYDerSchwarmherrscher.jpg"));
-
-        seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
@@ -26,7 +23,7 @@ public class TYTheSwarmlord extends Eintrag {
 
         seperator();
         
-		addWarlordTraits("", true);
+		addWarlordTraits("Alien Cunning", true);
 
         complete();
     }
@@ -34,11 +31,6 @@ public class TYTheSwarmlord extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
-    	warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 
 }

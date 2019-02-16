@@ -90,17 +90,17 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
     
     //Questor Imperialis
-    private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
     private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
     //Adepta Sororitas
-    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Canoness"};
+    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", "Missionary"};
     private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Imagifier", "Hospitaller", "Dialogus", "Celestian Squad",
-            "Mistress Of Repentance", "Repentia Squad"};
+    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins", 
+    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
+    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
     private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
-    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist"};
+    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
     private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
 
     //Adeptus Ministorum
@@ -297,6 +297,7 @@ public class VOLKImperium extends BuildaVater {
     private static final Set<String> FORGEWORLDS = ImmutableSet.of("Forge World Mars", "Forge World Graia", "Forge World Metalica", "Forge World Lucius", "Forge World Agripinaa", "Forge World Stygies VIII", "Forge World Ryza");
     private static final Set<String> SM_CHAPTERS = ImmutableSet.of("Ultramarines", "White Scars", "Imperial Fists", "Crimson Fists", "Black Templars", "Salamanders", "Raven Guard", "Iron Hands");
     private static final Set<String> ASTRA_MILITARUM = ImmutableSet.of("Cadian", "Catachan", "Valhallan", "Vostroyan", "Armageddon", "Tallarn", "Militarum Tempestus", "Mordian");
+    private static final Set<String> AS_ORDERS = ImmutableSet.of("Order of the Valorous Heart", "Order of Our Martyred Lady", "Order of the Ebon Chalice", "Order of the Argent Shroud", "Order of the Bloody Rose", "Order of the Sacred Rose");
 
     public static Set<String> getSmChapters(){
     	return SM_CHAPTERS;
@@ -343,6 +344,9 @@ public class VOLKImperium extends BuildaVater {
         //Formationen
         formationen.add("IMPERIUM");
         formationen.add("");
+        formationen.add("Adepta Sororitas");
+        AS_ORDERS.forEach(order -> formationen.add(order));
+        formationen.add("");
         formationen.add("Adeptus Custodes");
         formationen.add("");
         formationen.add("Adeptus Astartes");
@@ -386,10 +390,18 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
         formationen.add("");
-        formationen.add("Questor Imperialis");
+        formationen.add("QUESTOR IMPERIALIS");
+        formationen.add("Terryn");
+        formationen.add("Griffith");
+        formationen.add("Hawkshroud");
+        formationen.add("Cadmus");
+        formationen.add("Mortan");
+        formationen.add("Raven");
+        formationen.add("Taranis");
+        formationen.add("Krast");
+        formationen.add("Vulker");
         formationen.add("");
         formationen.add("Adeptus Ministorum");
-        formationen.add("Adepta Sororitas");
         formationen.add("Officio Assassinorum");
         formationen.add("Adeptus Astra Telepathica");
         formationen.add("Scholastica Psykana");
@@ -584,15 +596,15 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Deathwatch);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Deathwatch, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Deathwatch);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Deathwatch);
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Deathwatch);
-            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Deathwatch);
-            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Deathwatch);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Deathwatch, Eliteeinträge_IA_AA));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Deathwatch, Sturmeinträge_IA_AA));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Deathwatch, Unterstützungseinträge_IA_AA));
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_Deathwatch, Transporteinträge_IA_AA));
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Deathwatch, Fliegereinträge_IA_AA));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
-            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Grey Knights")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Grey_Knights);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Grey_Knights);
@@ -725,10 +737,8 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Questor Imperialis")) {
+        } else if (getFormationType().equals("QUESTOR IMPERIALIS")) {
             clearCombo();
-            kontingentBox.setSelectedItem("Super-Heavy Detachment");
-            myChooserGruppen.get(AI).changeComboBoxAuswahlen(AdditionalInformation_Questor_Imperialis);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
         } else if (getFormationType().equals("Officio Assassinorum")) {
@@ -760,13 +770,15 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
-        } else if (getFormationType().equals("Adepta Sororitas")) {
+        } else if (getFormationType().equals("Adepta Sororitas") || AS_ORDERS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adepta_Sororitas);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Adeptus Ministorum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);

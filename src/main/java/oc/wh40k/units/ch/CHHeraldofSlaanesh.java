@@ -14,7 +14,7 @@ public class CHHeraldofSlaanesh extends Eintrag {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
         name = "Herald of Slaanesh";
         grundkosten = getPts("Herald of Slaanesh");
-        power = 3;
+        power = 4;
 
         seperator();
         

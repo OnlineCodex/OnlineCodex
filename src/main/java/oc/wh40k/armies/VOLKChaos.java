@@ -23,7 +23,7 @@ public class VOLKChaos extends BuildaVater {
 
     private static final String[] HQeinträge_Daemons_FW = new String[]{"","Uraka The Warfiend [FW]","Samus [FW]","Mamon Transfigured [FW]","Corbax Utterblight [FW]"};
     private static final String[] Sturmeinträge_Daemons_FW = new String[]{"","Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"};
-    private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"","Plague Hulk Of Nurgle [FW]"};
+    private static final String[] Unterstützungseinträge_Daemons_FW = new String[]{"", "Giant Chaos Spawn [FW]"};
     private static final String[] LOWeinträge_Daemons_FW = new String[]{"","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]"};
 
     private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
@@ -148,7 +148,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigung_Daemons_Nurgle = new String[]{"", "Feculent Gnarlmaws"};
     
     //Slaanesh
-    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
+    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Infernal Enrapturess", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
     private static final String[] Elite_Daemons_Slaanesh = new String[]{"", "Fiends of Slaanesh"};
     private static final String[] Standard_Daemons_Slaanesh = new String[]{"", "Daemonettes"};
     private static final String[] Sturm_Daemons_Slaanesh = new String[]{"", "Seekers", "Hellflayer"};
@@ -284,7 +284,7 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(uniteUnitList(
                     new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Tzaangors", "Poxwalkers"}, Standardeinträge_Daemons), Standardeinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Chaos_Space_Marines, Sturmeinträge_Death_Guard, Sturmeinträge_ThousandSons, Sturmeinträge_Daemons, Sturmeinträge_Chaos_Space_Marines_FW, Sturmeinträge_Daemons_FW));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard, Unterstützungseinträge_ThousandSons, Unterstüzungseinträge_Daemons, Unterstützungseinträge_Chaos_Space_Marines_FW, Unterstützungseinträge_Daemons_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Chaos_Space_Marines, Unterstützungseinträge_Death_Guard, Unterstützungseinträge_ThousandSons, Unterstüzungseinträge_Daemons, Unterstützungseinträge_Chaos_Space_Marines_FW, Unterstützungseinträge_Daemons_FW, new String[]{"", "Plague Hulk Of Nurgle [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(
                     Transporteinträge_Chaos_Space_Marines, Transporteinträge_Chaos_Space_Marines_FW));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(
@@ -480,47 +480,47 @@ public class VOLKChaos extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Daemons);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Daemons);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Daemons, Sturmeinträge_Daemons_FW));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstüzungseinträge_Daemons, Unterstützungseinträge_Daemons_FW));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstüzungseinträge_Daemons, Unterstützungseinträge_Daemons_FW, new String[]{"", "Spined Chaos Beast [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungseinträge_Daemons);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LOWeinträge_Daemons_FW);
         } else if (getFormationType().equals("Khorne")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Khorne, HQ_Daemons_All_Gods, new String[]{"","Uraka The Warfiend [FW]", "Samus [FW]"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Khorne);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Elite_Daemons_Khorne, new String[]{"", "Chaos Decimator [FW]"}));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Khorne);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Khorne, Sturm_Daemons_All_Gods));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Khorne, Sturm_Daemons_All_Gods, new String[]{"", "Blood Slaughterer of Khorne [FW]"}));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_All_Gods, new String[]{"", "Giant Chaos Spawn [FW]", "Spined Chaos Beast [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Anggrath The Unbound [FW]"});
         }  else if (getFormationType().equals("Tzeentch")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Tzeentch, HQ_Daemons_All_Gods));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Tzeentch);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Elite_Daemons_Tzeentch, new String[]{"", "Chaos Decimator [FW]"}));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Tzeentch);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Tzeentch, Sturm_Daemons_All_Gods));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_All_Gods, new String[]{"", "Giant Chaos Spawn [FW]", "Spined Chaos Beast [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Aetaos'rau'keres [FW]"});
         }  else if (getFormationType().equals("Slaanesh")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Slaanesh, HQ_Daemons_All_Gods));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Slaanesh);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Elite_Daemons_Slaanesh, new String[]{"", "Chaos Decimator [FW]"}));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Slaanesh);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Slaanesh, Sturm_Daemons_All_Gods));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods, new String[]{"", "Giant Chaos Spawn [FW]", "Spined Chaos Beast [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{"", "Zarakynel [FW]"});
         }  else if (getFormationType().equals("Nurgle")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQ_Daemons_Nurgle, HQ_Daemons_All_Gods, new String[]{"","Mamon Transfigured [FW]", "Corbax Utterblight [FW]"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Elite_Daemons_Nurgle);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Elite_Daemons_Nurgle, new String[]{"", "Chaos Decimator [FW]"}));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standard_Daemons_Nurgle);
-            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Nurgle, Sturm_Daemons_All_Gods, new String[]{"","Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"}));
-            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_All_Gods, new String[]{"","Plague Hulk Of Nurgle [FW]"}));
+            myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturm_Daemons_Nurgle, Sturm_Daemons_All_Gods, new String[]{"","Greater Blight Drone [FW]", "Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"}));
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstuezung_Daemons_All_Gods, new String[]{"", "Giant Chaos Spawn [FW]", "Spined Chaos Beast [FW]", "Plague Hulk Of Nurgle [FW]"}));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigung_Daemons_Nurgle);

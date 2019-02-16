@@ -7,32 +7,26 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHPoxRidersOfNurgle extends Eintrag {
 
-    AnzahlPanel Gnarlmaws;
-    OptionsUpgradeGruppe o1, o2;
+    public static final String POX_RIDERS_OF_NURGLE = "Pox Riders of Nurgle";
+
+    private final AnzahlPanel Gnarlmaws;
 
     public CHPoxRidersOfNurgle() {
-
-        name = "Pox Riders of Nurgle";
-        grundkosten = 0;
+        name = POX_RIDERS_OF_NURGLE;
         power = 3;
 
-        add(Gnarlmaws = new AnzahlPanel(ID, randAbstand, cnt, "Pox Riders of Nurgle", 3, 9, getPts("Plague Toads of Nurgle")));
+        add(Gnarlmaws = new AnzahlPanel(ID, randAbstand, cnt, POX_RIDERS_OF_NURGLE, 3, 9, getPts(POX_RIDERS_OF_NURGLE)));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Instrument of Chaos", getPts("Instrument of Chaos")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         ogE.addElement(new OptionsGruppeEintrag("Daemonic Icon", getPts("Daemonic Icon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
-
     }
-
-    public void deleteYourself() {
-    }
-
 
     @Override
     public void refreshen() {
@@ -41,5 +35,4 @@ public class CHPoxRidersOfNurgle extends Eintrag {
                 ((Gnarlmaws.getModelle() <= 6) ? 8 : 0) +
                 ((Gnarlmaws.getModelle() <= 9) ? 6 : 0);
     }
-
 }

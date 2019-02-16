@@ -36,9 +36,9 @@ public class CHPlagueDrones extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 7 +
-                ((drones.getModelle() == 6) ? 7 : 0) +
-                ((drones.getModelle() == 9) ? 14 : 0);
+        power = 6 +
+                ((drones.getModelle() > 3) ? 5 : 0) +
+                ((drones.getModelle() > 6) ? 5 : 0);
 
         if (!plaguebringer.isSelected()) plaguebringer.setSelected(true);
     }

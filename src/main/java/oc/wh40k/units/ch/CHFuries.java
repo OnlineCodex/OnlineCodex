@@ -37,9 +37,9 @@ public class CHFuries extends Eintrag {
     @Override
     public void refreshen() {
         power = 3 +
-                ((furies.getModelle() == 10) ? 3 : 0) +
-                ((furies.getModelle() == 15) ? 6 : 0) +
-                ((furies.getModelle() == 20) ? 9 : 0);
+                ((furies.getModelle() > 5) ? 2 : 0) +
+                ((furies.getModelle() > 10) ? 3 : 0) +
+                ((furies.getModelle() > 15) ? 2 : 0);
 
         mark.alwaysSelected();
     }

@@ -38,9 +38,9 @@ public class CHSeekers extends Eintrag {
     public void refreshen() {
         if (!heartseeker.isSelected()) heartseeker.setSelected(true);
 
-        power = 5 +
-                ((seekers.getModelle() == 10) ? 4 : 0) +
-                ((seekers.getModelle() == 15) ? 8 : 0) +
-                ((seekers.getModelle() == 20) ? 12 : 0);
+        power = 6 +
+                ((seekers.getModelle() > 5) ? 5 : 0) +
+                ((seekers.getModelle() > 10) ? 5 : 0) +
+                ((seekers.getModelle() > 15) ? 4 : 0);
     }
 }

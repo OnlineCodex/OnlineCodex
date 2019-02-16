@@ -1,38 +1,30 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class IMMistressOfRepentance extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3;
-    RuestkammerStarter waffenUndRelikte;
-
     public IMMistressOfRepentance() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, CHARACTER, INFANTRY, MISTRESS_OF_REPENTANCE);
         name = "Mistress of Repentance";
-        grundkosten = getPts("Mistress of Repentance");
+        grundkosten = getPts("Mistress of Repentance") + getPts("Neural whips");
         power = 2;
 
-        add(ico = new oc.Picture("oc/wh40k/images/ASPrincipalis.jpg"));
+        seperator();
+        
+        addWeapons(IMAdeptaSororitasRuestkammer.class, false);
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Neural whips", getPts("Neural whips")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        addWarlordTraits("", true);
 
         complete();
     }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
-    }
-
+    
     @Override
     public void refreshen() {
-        o1.alwaysSelected();
+    	setEintragsCNT(getCountFromInformationVector(REPENTIA_SQUAD_CNT) > 0 ? 0 : 1);
     }
-
 }

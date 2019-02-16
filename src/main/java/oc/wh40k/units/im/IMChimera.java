@@ -15,6 +15,7 @@ public class IMChimera extends Eintrag {
     OptionsEinzelUpgrade oe2;
 
     public IMChimera() {
+    	name = "Chimera";
         grundkosten = getPts("Chimera") + getPts("Lasgun array") * 2;
         add(ico = new oc.Picture("oc/wh40k/images/IGChimaere.jpg"));
         power = 5;

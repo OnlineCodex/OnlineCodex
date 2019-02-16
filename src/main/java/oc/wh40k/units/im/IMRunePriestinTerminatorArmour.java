@@ -11,8 +11,8 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
 	RuestkammerStarter psychicPowers;
 
     public IMRunePriestinTerminatorArmour() {
-        name = "Rune Priest on Bike";
-        grundkosten = getPts("Rune Priest on Bike");
+        name = "Rune Priest in Terminator Armour";
+        grundkosten = getPts("Rune Priest in Terminator Armour");
         power = 8;
 
         seperator();

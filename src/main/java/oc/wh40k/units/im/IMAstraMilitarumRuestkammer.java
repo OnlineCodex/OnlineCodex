@@ -54,8 +54,8 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         } else if (type == "Sergeant") {
 
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (AM)")));
-            ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (AM)")));
-            ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (AM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power axe [INDEX]", getPts("Power axe (AM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power maul [INDEX]", getPts("Power maul (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AM)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

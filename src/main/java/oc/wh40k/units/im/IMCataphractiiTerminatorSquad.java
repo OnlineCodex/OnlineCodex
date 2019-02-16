@@ -1,5 +1,12 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CAPTAIN;
+import static oc.KeyWord.CHAPTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+
 import oc.*;
 
 public class IMCataphractiiTerminatorSquad extends Eintrag {
@@ -10,7 +17,7 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
     OptionsZaehlerGruppe o3;
     RuestkammerStarter rkBoss;
 
-    public IMCataphractiiTerminatorSquad() {
+    public IMCataphractiiTerminatorSquad() {   	
         name = "Cataphractii Terminator Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -41,7 +48,7 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
 
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Cataphractii Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Cataphractii Sergeant", getKeywords());
         ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Cataphractii Sergeant");
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Cataphractii Sergeant"));

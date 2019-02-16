@@ -32,6 +32,7 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
         ob.setGrundkosten(0);
         ob.initKammer(true, false, false, false, false, false, false);
         ob.setButtonText("Rüstkammer");
+        ob.setAbwaehlbar(false);
         add(ob);
         
         seperator();
@@ -47,11 +48,6 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
         if (o5.isSelected()) {
             power++;
         }
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) ob.getPanel().getLocation().getY() + ob.getPanel().getSize().height + 5
-        );
     }
 
 }

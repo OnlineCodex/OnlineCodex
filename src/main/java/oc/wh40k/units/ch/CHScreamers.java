@@ -24,8 +24,8 @@ public class CHScreamers extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 5 +
-                ((hounds.getModelle() == 6) ? 4 : 0) +
-                ((hounds.getModelle() == 9) ? 8 : 0);
+        power = 4 +
+                ((hounds.getModelle() > 3) ? 4 : 0) +
+                ((hounds.getModelle() > 6) ? 4 : 0);
     }
 }

@@ -18,12 +18,7 @@ public class IMLibrarianGK extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "");
-        ((IMSpaceMarinesRuestkammer) waffenUndReliquien.getKammer()).setType("Librarian GK");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 
@@ -46,7 +41,7 @@ public class IMLibrarianGK extends Eintrag {
     public void refreshen() {
     	psychicPowers.getPanel().setLocation(
                 (int) psychicPowers.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
+                (int) getWeapons().getPanel().getLocation().getY() + getWeapons().getPanel().getSize().height + 5
         );
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

@@ -24,6 +24,7 @@ public class NEOverlord extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Hyperphase sword", getPts("Hyperphase sword")));
         ogE.addElement(new OptionsGruppeEintrag("Voidblade", getPts("Voidblade")));
         ogE.addElement(new OptionsGruppeEintrag("Warscythe", getPts("Warscythe")));
+        ogE.addElement(new OptionsGruppeEintrag("Voidcythe", getPts("Voidscythe")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

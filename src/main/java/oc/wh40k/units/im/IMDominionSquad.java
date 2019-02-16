@@ -2,15 +2,17 @@ package oc.wh40k.units.im;
 
 import oc.*;
 
+import static oc.KeyWord.*;
+
 public class IMDominionSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe bolters;
+	private final OptionsZaehlerGruppe special;
+	private final OptionsEinzelUpgrade simulacrum;
 
     public IMDominionSquad() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, DOMINION_SQUAD);
         name = "Dominion Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -18,22 +20,25 @@ public class IMDominionSquad extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Dominion Squad", 5, 10, getPts("Dominion Squad"));
         add(squad);
 
-        add(ico = new oc.Picture("oc/wh40k/images/ASSororitastrupp.jpg"));
-
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (AMI)")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
-
+        checkBuildaVater();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (AMI)")));
+        add(bolters = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        ogE.addAll(IMAdeptaSororitasRuestkammer.getSpecialWeapons(buildaVater));
+        add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
+        
+        add(simulacrum = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis (AMI)")));
+        
         seperator();
 
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMPrioris.class, "Upgrade zur Prioris");
-        ((IMPrioris) rkBoss.getKammer()).type = "Sister Superior";
-        rkBoss.initKammer(true);
-        add(rkBoss);
-        rkBoss.setAbwaehlbar(false);
+        add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
 
         complete();
     }
@@ -44,7 +49,11 @@ public class IMDominionSquad extends Eintrag {
         if (squad.getModelle() <= 5)
             power = 5;
         else if (squad.getModelle() <= 10)
-            power = 9;
+            power = 7;
+        
+        bolters.setMaxAnzahl(squad.getModelle() - 1 - special.getAnzahl());
+        bolters.setAnzahl(0, bolters.getMaxAnzahl());
+        special.setMaxAnzahl(Math.min(4, squad.getModelle() - 1 - (simulacrum.isSelected() ? 1 : 0)));
     }
 
 }

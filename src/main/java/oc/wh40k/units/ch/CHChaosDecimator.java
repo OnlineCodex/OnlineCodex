@@ -9,6 +9,8 @@ public class CHChaosDecimator extends Eintrag {
     OptionsUpgradeGruppe o1;
     OptionsUpgradeGruppe o2;
     AnzahlPanel squad;
+    OptionsUpgradeGruppe mark;
+
 
     public CHChaosDecimator() {
         name = "Chaos Decimator";
@@ -30,6 +32,14 @@ public class CHChaosDecimator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Decimator storm laser", getPts("Decimator storm laser")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
         complete();
     }
 

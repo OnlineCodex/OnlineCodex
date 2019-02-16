@@ -41,8 +41,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     boolean FusionBlades = false;
     boolean warscaper = false;
 
-    OptionsEinzelUpgrade burst;// missile;
-
     public TAKampfanzugKammer() {
         grundkosten = 25;
     }
@@ -97,18 +95,23 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma rifle", getPts("Plasma rifle")));
-            if (!coldstar)
+            if (coldstar) {
+                ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
+            } else {
                 ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
+            }
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
             if (commander) {
                 o1.setMaxAnzahl(4);
-            }
-
-            if (coldstar) {
-                add(burst = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "High-output burst cannon + Missile pod", "HO Burst cannon + Missile pod", getPts("High-output burst cannon") + getPts("Missile pod")));
-                burst.setSelected(true);
-                //add(missile = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Missile pod", getPts("Missile pod")));
-                //missile.setSelected(true);
+                if (coldstar) {
+                	o1.setAnzahl(4, 1);
+                	o1.setAnzahl(6, 1);
+                } else {
+                	o1.setAnzahl(1, 1);
+                	o1.setAnzahl(4, 1);
+                }
+            } else {
+            	o1.setAnzahl(1, 1);
             }
 
             seperator();
@@ -191,7 +194,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     @Override
     public void refreshen() {
         if (!breitseite && !geist && !ghostkeel) {
-
+        	
         } else if (geist) {
             if (!o5.isSelected()) {
                 o5.setSelected(0, true);
@@ -208,51 +211,54 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         if (commander && !coldstar) {
             o1.setAktiv(true);
-//				o1sync.setAktiv(true);
             o2.setMaxAnzahl(4);
-            int selected = o1.getAnzahl() +/*(o1sync.getAnzahl()*2)+*/ o2.getAnzahl() /*+ o7.getAnzahl()*/;
+            int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-//				o1sync.setMaxAnzahl(o1sync.getAnzahl()+remaining/2);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            //        	o7.setMaxAnzahl(o7.getAnzahl()+remaining);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
         if (commander && coldstar) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
-            int selected = o2.getAnzahl() + o1.getAnzahl() + (burst.isSelected() ? 2 : 0) /*+ (missile.isSelected()?1:0)*/;
+            int selected = o2.getAnzahl() + o1.getAnzahl();
             int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
         if (krisisshasui) {
-            int selected = o1.getAnzahl() + /*(o1sync.getAnzahl()*2)+*/  o2.getAnzahl() /*+ o7.getAnzahl()*/;
+            int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-//				o1sync.setMaxAnzahl(o1sync.getAnzahl()+remaining/2);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            //        	o7.setMaxAnzahl(o7.getAnzahl()+remaining);
+
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
         if (krisisshasvre) {
-            int selected = o1.getAnzahl() + /*(o1sync.getAnzahl()*2) +*/ o2.getAnzahl() /*+ o7.getAnzahl()+ o3.getAnzahl()*/;
+            int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-//				o1sync.setMaxAnzahl(o1sync.getAnzahl()+remaining/2);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            //        	o7.setMaxAnzahl(o7.getAnzahl()+remaining);
-//				o3.setMaxAnzahl(o3.getAnzahl()+remaining);
+
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
         if (krisisleibwache) {
-            int selected = o1.getAnzahl() + /*(o1sync.getAnzahl()*2) +*/ o2.getAnzahl() /*+ o7.getAnzahl()*/;
+            int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-//				o1sync.setMaxAnzahl(o1sync.getAnzahl()+remaining/2);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            //        	o7.setMaxAnzahl(o7.getAnzahl()+remaining);
+
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
         if (geist) {

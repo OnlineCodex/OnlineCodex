@@ -10,7 +10,7 @@ public class CHSpoilpoxScrivener extends Eintrag {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, HERALD_OF_NURGLE, SPOILPOX_SCRIVENER);
         name = "Spoilpox Scrivener";
         grundkosten = getPts("Spoilpox Scrivener") /*+ getPts("Plaguesword") + getPts("Distended maw") + getPts("Disgusting sneezes")*/;
-        power = 3;
+        power = 4;
 
         seperator();
         

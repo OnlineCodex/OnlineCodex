@@ -154,4 +154,9 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
         }
     };
     
+    public final String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
+    public final String MISSIONARY_CNT = "MISSIONARY";
+    public final String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
+    public final String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
+    
 }

@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMMilitarumTempestusCommandSquad extends Eintrag {
 
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1, o2, o4, o5, o6;
-    OptionsEinzelZaehler oe2;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1, o2, o4;
+    private final OptionsEinzelZaehler oe2;
 
 
     public IMMilitarumTempestusCommandSquad() {
@@ -23,19 +23,13 @@ public class IMMilitarumTempestusCommandSquad extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + HEAVY_SUPPORT laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Vox-caster + Hot-shot laspistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-        ogE.addElement(new OptionsGruppeEintrag("+ Vox-caster + HEAVY_SUPPORT lasistol", getPts("Vox-caster") + getPts("Hot-shot laspistol")));
-        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Medi-pack + HEAVY_SUPPORT laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Medi-pack + Hot-shot laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-        ogE.addElement(new OptionsGruppeEintrag("+ Medi-pack + HEAVY_SUPPORT laspistol", getPts("Medi-pack") + getPts("Hot-shot laspistol")));
-        add(o6 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
