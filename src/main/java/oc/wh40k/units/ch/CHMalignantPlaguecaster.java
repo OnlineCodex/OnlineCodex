@@ -1,26 +1,32 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.MALIGNANT_PLAGUECASTER;
+import static oc.KeyWord.DEATH_GUARD;
+import static oc.KeyWord.HERETIC_ASTARTES;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PSYKER;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHMalignantPlaguecaster extends Eintrag {
 
-    OptionsUpgradeGruppe pistol, staff;
     RuestkammerStarter psychicPowers;
 
     public CHMalignantPlaguecaster() {
+    	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, MALIGNANT_PLAGUECASTER);
+    	
         name = "Malignant Plaguecaster";
         grundkosten = getPts("Malignant Plaguecaster");
         power = 6;
 
-        ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
-        add(pistol = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-        ogE.addElement(new OptionsGruppeEintrag("Corrupted staff", getPts("Corrupted staff")));
-        add(staff = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        seperator();
+        
+        addWeapons(CHDeathGuardRuestkammer.class, true);
 
         seperator();
 
@@ -41,8 +47,6 @@ public class CHMalignantPlaguecaster extends Eintrag {
 
     @Override
     public void refreshen() {
-        pistol.setSelected(0, true);
-        staff.setSelected(0, true);
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

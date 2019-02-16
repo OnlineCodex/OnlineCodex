@@ -398,11 +398,13 @@ public class CHWaffenkammer extends RuestkammerVater {
         } else {
 
             if (!defaultFK.equals("no weapon")) {
-                fkwaffen.alwaysSelected();
+            	if(fkwaffen != null)
+            		fkwaffen.alwaysSelected();
             }
 
             if (!defaultNK.equals("no weapon")) {
-                handwaffen.alwaysSelected();
+                if(handwaffen != null)
+                	handwaffen.alwaysSelected();
             }
 
             if (!defaultFK.equals("no weapon") && !defaultNK.equals("no weapon")) {
