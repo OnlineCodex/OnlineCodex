@@ -12,7 +12,7 @@ public class TYAtalanJackals extends Eintrag {
     OptionsZaehlerGruppe o2;
 
     public TYAtalanJackals() {
-        name = "Bike Squad\n";
+        name = "Atalan Jackals\n";
         grundkosten = 0;
         überschriftSetzen = true;
 
