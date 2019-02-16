@@ -1,11 +1,14 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class CHGiantChaosSpawn extends Eintrag {
 
     RuestkammerStarter psychicPowers;
+    OptionsUpgradeGruppe mark;
 
     public CHGiantChaosSpawn() {
 
@@ -13,6 +16,12 @@ public class CHGiantChaosSpawn extends Eintrag {
         grundkosten = getPts("Giant Chaos Spawn");
         power = 5;
 
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
         complete();
     }
 

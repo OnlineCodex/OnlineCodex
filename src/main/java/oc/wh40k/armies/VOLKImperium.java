@@ -90,7 +90,6 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
     
     //Questor Imperialis
-    private static final String[] AdditionalInformation_Questor_Imperialis = new String[]{"", "Household Tradition", "Imperial Knight Warlordtraits", "Imperial Knight Heirlooms"};
     private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
@@ -391,7 +390,16 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Cult Mechanicus");
         formationen.add("Skitarii");
         formationen.add("");
-        formationen.add("Questor Imperialis");
+        formationen.add("QUESTOR IMPERIALIS");
+        formationen.add("Terryn");
+        formationen.add("Griffith");
+        formationen.add("Hawkshroud");
+        formationen.add("Cadmus");
+        formationen.add("Mortan");
+        formationen.add("Raven");
+        formationen.add("Taranis");
+        formationen.add("Krast");
+        formationen.add("Vulker");
         formationen.add("");
         formationen.add("Adeptus Ministorum");
         formationen.add("Officio Assassinorum");
@@ -729,9 +737,8 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
-        } else if (getFormationType().equals("Questor Imperialis")) {
+        } else if (getFormationType().equals("QUESTOR IMPERIALIS")) {
             clearCombo();
-            myChooserGruppen.get(AI).changeComboBoxAuswahlen(AdditionalInformation_Questor_Imperialis);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_Questor_Imperialis);
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
         } else if (getFormationType().equals("Officio Assassinorum")) {

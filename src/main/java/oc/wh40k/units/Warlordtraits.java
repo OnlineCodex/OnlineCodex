@@ -32,6 +32,7 @@ public class Warlordtraits extends RuestkammerVater {
     Set<String> TAU = ImmutableSet.of("T'AU EMPIRE", "T'au Sept", "Vior'la Sept", "Dal'yth Sept", "Sa'cea Sept", "Bork'an Sept", "Farsight Enclaves", "Ke'lshan", "Kroot", "Vespid");
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     Set<String> GENESTEALER = ImmutableSet.of("GENESTEALER CULTS", "Cult Of The Four-Armed Emperor", "The Hivecult", "The Bladed Cog", "The Rusted Claw", "The Pauper Princes", "The Twisted Helix");
+    Set<String> QUESTOR_IMPERIALIS  = ImmutableSet.of("QUESTOR IMPERIALIS", "Terryn", "Griffith", "Hawkshroud", "Cadmus", "Mortan", "Raven", "Taranis", "Krast", "Vulker");
     
     private static final String KABAL = "KABAL";
     private static final String WYCH_CULT = "WYCH CULT";
@@ -350,6 +351,22 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rusted Claw: Entropic Touch", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Pauper Pinces: Beloved Grandsire", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Twisted Helix: Bio-Alchemis", 0));
+    	} else if(QUESTOR_IMPERIALIS.contains(army)) { //Imperial Knights
+	    	ogE.addElement(new OptionsGruppeEintrag("Cunning Commander", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ion Bulwark", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Knight Seneschal", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Landstrider", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Blessed by the Sacristans", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Fearsome Reputation", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Terryn: Champion of the Household", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Grffith: Master of the Jous", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Hawkshroud: Duty of the Forsworn", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Cadmus: Veteran of Gryphonne IV", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Mortan: Legacy of the Black Pall", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Raven: Master of the Trial", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Taranis: Knight of Mars", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Krast: First Knight", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Vulker: Adamantium Knight", 0));
     	}
         add(warlordtraits = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
 
@@ -569,7 +586,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Jormungandr: Insidious Threat", army.equals("Jormungandr"));
     		warlordtraits.setAktiv("Hydra: Endless Regeneration", army.equals("Hydra"));
     		warlordtraits.setAktiv("Kronos: Soul hunger", army.equals("Kronos"));
-        }
+        } 
         if(!mandatoryChoice.equals("")) {
         	warlordtraits.deselectAll();
         	warlordtraits.setSelected(mandatoryChoice, true);
