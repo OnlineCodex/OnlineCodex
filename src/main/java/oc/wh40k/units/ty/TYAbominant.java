@@ -2,34 +2,31 @@ package oc.wh40k.units.ty;
 
 
 
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CULT;
+import static oc.KeyWord.GENESTEALER_CULTS;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.ABOMINANT;
+import static oc.KeyWord.TYRANIDS;
+import static oc.KeyWord.ABERRANT;
+
 import oc.Eintrag;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
-
-
 
 public class TYAbominant extends Eintrag {
 
-
-
-    OptionsZaehlerGruppe o1;
-
-
-
     public TYAbominant() {
-
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, ABERRANT, ABOMINANT);
+    	
         name = "Abominant";
 
-        grundkosten = getPts("Abominant") + getPts("Rending claws (GSC)" + getPts("Power sledgehammer"));
+        grundkosten = getPts("Abominant");
 
         power = 6;
 
-        ogE.addElement(new OptionsGruppeEintrag("Mindwyrm Familiar", getPts("Familiars")));
-
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
+        seperator();
+        
+        addWeapons(TYGenestealerCultRuestkammer.class, true);
+        
         seperator();
         
         addWarlordTraits("", true);
@@ -37,15 +34,5 @@ public class TYAbominant extends Eintrag {
         complete();
 
     }
-
-
-
-    @Override
-    public void refreshen() {
-    	o1.setAnzahl(0, 1);
-    }
-
-
-
 }
 

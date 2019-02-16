@@ -2,40 +2,33 @@ package oc.wh40k.units.ty;
 
 
 
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CULT;
+import static oc.KeyWord.GENESTEALER_CULTS;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.SANCTUS;
+import static oc.KeyWord.TYRANIDS;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
+
 
 public class TYSanctus extends Eintrag {
 
-	OptionsUpgradeGruppe o1, o2;
-
     public TYSanctus() {
-
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, SANCTUS);
+    	
         name = "Sanctus";
 
         grundkosten = getPts("Sanctus");
 
-        ogE.addElement(new OptionsGruppeEintrag("Soulsight familiar", getPts("Familiars")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        ogE.addElement(new OptionsGruppeEintrag("Silencer sniper rifle", getPts("Silencer sniper rifle")));
-        ogE.addElement(new OptionsGruppeEintrag("Sanctus bio-dagger", getPts("Sanctus bio-dagger")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        seperator();
+        
+        addWeapons(TYGenestealerCultRuestkammer.class, true);
         
         power = 3;
 
         complete();
 
     }
-    
-    @Override
-
-    public void refreshen() {
-    	o1.alwaysSelected();
-    	o2.alwaysSelected();
-    }
-
 }
 

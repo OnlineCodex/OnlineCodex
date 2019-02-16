@@ -16,6 +16,8 @@ public enum  KeyWord {
     IMPERIUM,
     ADEPTUS_ASTARTES,
     ULTRAMARINES,
+    TYRANIDS,
+    GENESTEALER_CULTS,
 
     //Keywords
     CHARACTER,
@@ -149,5 +151,19 @@ public enum  KeyWord {
     PENITENT_ENGINES, TRANSPORT, 
     RHINO, 
     SORORITAS_RHINO,
-    IMMOLATOR
+    IMMOLATOR,
+    ACOLYTE_ICONWARD,
+    CULT,
+    PATRIARCH,
+    MAGUS,
+    PRIMUS,
+    ABERRANT,
+    ABOMINANT,
+    JACKAL_ALPHUS,
+    CLAMAVUS,
+    LOCUS,
+    SANCTUS,
+    KELERMORPH,
+    NEXOS,
+    BIOPHAGUS
 }

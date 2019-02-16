@@ -1,38 +1,29 @@
 package oc.wh40k.units.ty;
 
-
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CULT;
+import static oc.KeyWord.GENESTEALER_CULTS;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.MAGUS;
+import static oc.KeyWord.TYRANIDS;
 
 import oc.Eintrag;
 
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
-
-
 public class TYMagus extends Eintrag {
 
-
 	RuestkammerStarter psychicPowers;
-    OptionsZaehlerGruppe o1;
-
-
 
     public TYMagus() {
-
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, MAGUS);
+    	
         name = "Magus";
 
-        grundkosten = getPts("Magus") + getPts("Autopistol") + getPts("Force stave") + getPts("Cultist knife");
+        grundkosten = getPts("Magus");
 
         power = 4;
-
-
-
-        ogE.addElement(new OptionsGruppeEintrag("Familiars", getPts("Familiars")));
-
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
@@ -44,10 +35,13 @@ public class TYMagus extends Eintrag {
 
         seperator();
         
+        addWeapons(TYGenestealerCultRuestkammer.class, true);
+        
+        seperator();
+        
         addWarlordTraits("", true);
         
         complete();
-
     }
 
 }

@@ -1,39 +1,30 @@
 package oc.wh40k.units.ty;
 
-
-
-import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.PATRIARCH;
+import static oc.KeyWord.GENESTEALER_CULTS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CULT;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.TYRANIDS;
 
 import oc.Eintrag;
 
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
-
-
 
 public class TYPatriarch extends Eintrag {
 
     RuestkammerStarter psychicPowers;
-
-    OptionsZaehlerGruppe o1;
-
-
+    RuestkammerStarter kammer;
 
     public TYPatriarch() {
-
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, PATRIARCH);
+    	
         name = "Patriarch";
 
-        grundkosten = getPts("Patriarch") + getPts("Monstrous rending claws (GSC)");
+        grundkosten = getPts("Patriarch");
 
-        power = 7;
         
-        ogE.addElement(new OptionsGruppeEintrag("Familiars", getPts("Familiars")));
-
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-
         seperator();
         
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -46,21 +37,14 @@ public class TYPatriarch extends Eintrag {
 
         seperator();
         
+        addWeapons(TYGenestealerCultRuestkammer.class, true);
+        
+        seperator();
+        
         addWarlordTraits("", true);
         
         complete();
 
     }
-
-
-
-    @Override
-
-    public void refreshen() {
-
-    }
-
-
-
 }
 
