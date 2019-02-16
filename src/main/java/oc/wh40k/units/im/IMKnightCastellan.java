@@ -48,6 +48,11 @@ public class IMKnightCastellan extends Eintrag {
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 
+        seperator();
+
+		addWarlordTraits("", true);
+
+        
         complete();
     }
 
