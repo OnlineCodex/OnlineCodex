@@ -8,12 +8,12 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMHellhounds extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o2x;
-    OptionsZaehlerGruppe o3x;
-    OptionsEinzelZaehler oe1, oe2, oe3, oe4;
+	private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o3;
+    private final OptionsZaehlerGruppe o2x;
+    private final OptionsZaehlerGruppe o3x;
+    private final OptionsEinzelZaehler oe1, oe2, oe3, oe4;
     
     public IMHellhounds() {
         name = "Hellhounds";

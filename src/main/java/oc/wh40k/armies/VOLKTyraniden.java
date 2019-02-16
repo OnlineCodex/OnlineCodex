@@ -73,7 +73,7 @@ public class VOLKTyraniden extends BuildaVater {
         HIVEFLEETS.forEach(fleet -> formationen.add(fleet));
         formationen.add("");
         formationen.add("GENESTEALER CULTS");
-        CULTS.forEach(cult -> formationen.add(cult));
+        formationen.addAll(CULTS);
         formationen.add("");
 
         complete();

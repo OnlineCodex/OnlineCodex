@@ -16,9 +16,9 @@ public class TYAberrants extends Eintrag {
 
 
 
-    AnzahlPanel squad, squad2;
+    private final AnzahlPanel squad, squad2;
 
-    OptionsZaehlerGruppe o1, o2;
+    private final OptionsZaehlerGruppe o1, o2;
 
 
 

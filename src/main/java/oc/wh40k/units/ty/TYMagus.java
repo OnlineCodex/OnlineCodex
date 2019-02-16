@@ -14,7 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYMagus extends Eintrag {
 
-	RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public TYMagus() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, MAGUS);
