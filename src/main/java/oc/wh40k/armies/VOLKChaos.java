@@ -27,7 +27,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] LOWeinträge_Daemons_FW = new String[]{"","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]"};
 
     private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
-            "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "Lucius the Eternal", "Haarken Worldclaimer", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
             "Warpsmith",
@@ -50,7 +50,7 @@ public class VOLKChaos extends BuildaVater {
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
     
-    private static final String[] HQeinträge_Black_Legion = new String[]{"", "Abaddon the Despoiler", "Cypher", "Fabius Bile",
+    private static final String[] HQeinträge_Black_Legion = new String[]{"", "Abaddon the Despoiler", "Cypher", "Fabius Bile", "Haarken Worldclaimer",
             "", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
