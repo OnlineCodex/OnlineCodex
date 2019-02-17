@@ -90,7 +90,7 @@ public class TYCultArmouredSentinels extends Eintrag {
 
 
 
-        power = 2 * squad.getModelle();
+        power = 3 * squad.getModelle();
 
     }
 

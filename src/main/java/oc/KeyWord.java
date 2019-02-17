@@ -16,6 +16,8 @@ public enum  KeyWord {
     IMPERIUM,
     ADEPTUS_ASTARTES,
     ULTRAMARINES,
+    TYRANIDS,
+    GENESTEALER_CULTS,
 
     //Keywords
     CHARACTER,
@@ -153,5 +155,19 @@ public enum  KeyWord {
     HERETIC_ASTARTES,
     THOUSAND_SONS,
     SORCERER,
-    EXALTED_SORCERER
+    EXALTED_SORCERER,
+    ACOLYTE_ICONWARD,
+    CULT,
+    PATRIARCH,
+    MAGUS,
+    PRIMUS,
+    ABERRANT,
+    ABOMINANT,
+    JACKAL_ALPHUS,
+    CLAMAVUS,
+    LOCUS,
+    SANCTUS,
+    KELERMORPH,
+    NEXOS,
+    BIOPHAGUS
 }

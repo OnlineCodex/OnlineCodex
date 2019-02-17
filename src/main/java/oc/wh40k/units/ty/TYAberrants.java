@@ -16,9 +16,9 @@ public class TYAberrants extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad, squad2;
 
-    OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1, o2;
 
 
 
@@ -30,22 +30,33 @@ public class TYAberrants extends Eintrag {
 
 
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Aberrants", 4, 8, getPts("Aberrants") + getPts("Rending claws (GSC)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Aberrants", 4, 10, getPts("Aberrants") + getPts("Rending claws (GSC)"));
 
         add(squad);
 
-
-
         seperator();
-
-
 
         ogE.addElement(new OptionsGruppeEintrag("Power pick", getPts("Power pick")));
 
-        ogE.addElement(new OptionsGruppeEintrag("Power hammer", getPts("Power hammer")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy power hammer", getPts("Heavy power hammer")));
 
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        seperator();
+        
+        squad2 = new AnzahlPanel(ID, randAbstand, cnt, "Aberrant Hypermorph", 0, 1, getPts("Aberrants") + getPts("Hypermorph tail") + getPts("Rending claws (GSC)"));
+        add(squad2);
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Heavy improvised weapon", getPts("Heavy improvised weapon")));
+
+        ogE.addElement(new OptionsGruppeEintrag("Heavy power hammer", getPts("Heavy power hammer")));
+
+        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        seperator();
+        
         complete();
 
     }
@@ -57,10 +68,17 @@ public class TYAberrants extends Eintrag {
     public void refreshen() {
 
         o1.setMaxAnzahl(squad.getModelle());
+        o2.setMaxAnzahl(squad2.getModelle());
+
+        if(squad.getModelle() >= 4) squad2.setMaxModelle(1);
+        if(squad.getModelle() >= 8) squad2.setMaxModelle(2);
+        
+        int modelle = squad.getModelle() + squad2.getModelle();
+        boolean legal = modelle >=5 && modelle <= 10;
+        squad.setLegal(legal);
 
 
-
-        if (squad.getModelle() > 4) {
+        if (modelle > 4) {
 
             power = 14;
 

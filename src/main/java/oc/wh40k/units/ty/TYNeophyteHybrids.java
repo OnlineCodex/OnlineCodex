@@ -12,7 +12,7 @@ public class TYNeophyteHybrids extends Eintrag {
 
     AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2, o3, o4;
+    private final OptionsZaehlerGruppe o1, o2, o3;
 
     RuestkammerStarter rkBoss;
 
@@ -39,8 +39,6 @@ public class TYNeophyteHybrids extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Autogun", getPts("Autogun")));
 
         ogE.addElement(new OptionsGruppeEintrag("Shotgun", getPts("Shotgun")));
-
-        ogE.addElement(new OptionsGruppeEintrag("Lasgun", getPts("Lasgun")));
 
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
@@ -73,25 +71,6 @@ public class TYNeophyteHybrids extends Eintrag {
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 
-
-        seperator();
-
-
-
-        ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
-
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
-
-        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
-
-        ogE.addElement(new OptionsGruppeEintrag("Mortar", getPts("Mortar")));
-
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
-
-        add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-
-
         seperator();
 
 
@@ -113,6 +92,7 @@ public class TYNeophyteHybrids extends Eintrag {
         add(rkBoss);
 
         rkBoss.setAbwaehlbar(false);
+        rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 
 
 
@@ -126,23 +106,15 @@ public class TYNeophyteHybrids extends Eintrag {
 
     public void refreshen() {
 
-        o1.setMaxAnzahl(squad.getModelle() - o2.getAnzahl() - o3.getAnzahl() - 2 * o4.getAnzahl() - 1);
-
-
-
-        o3.setAktiv(!o4.isSelected());
-
-        o4.setAktiv(!o3.isSelected());
-
-
+        o1.setMaxAnzahl(squad.getModelle() - o2.getAnzahl() - o3.getAnzahl() - 1);
 
         if (squad.getModelle() > 10)
 
-            power = 10;
+            power = 6;
 
         else
 
-            power = 5;
+            power = 4;
 
     }
 
