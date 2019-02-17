@@ -5,8 +5,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofNurglewithWings extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
     RuestkammerStarter psychicPowers;
 
     public CHDaemonPrinceofNurglewithWings() {
@@ -15,15 +13,9 @@ public class CHDaemonPrinceofNurglewithWings extends Eintrag {
         grundkosten = getPts("Daemon Prince of Nurgle with Wings");
         power = 10;
 
-        ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword CSM")));
-        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe (CSM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
-        add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        waffe1.setSelected(0, true);
-
         seperator();
-
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Plague spewer", getPts("Plague spewer")));
+        
+        addWeapons(CHDeathGuardRuestkammer.class, true);
 
         seperator();
 

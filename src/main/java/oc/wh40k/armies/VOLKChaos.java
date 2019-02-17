@@ -88,7 +88,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] LOWeinträge_ThousandSons = new String[]{"", "Magnus the Red"};
 
     private static final String[] HQeinträge_Death_Guard = new String[]{"", "Typhus", "Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
-            "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]"};
+            "DG Chaos Lord", "DG Chaos Lord in Terminator Armour", "DG Sorcerer", "DG Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]"};
     private static final String[] Eliteeinträge_Death_Guard = new String[]{"", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman", "Deathshroud Terminators", "Blightlord Terminators", "Helbrute", "Beasts of Nurgle", "Possessed"};
     private static final String[] Standardeinträge_Death_Guard = new String[]{"", "Plague Marines", "Poxwalkers", "Chaos Cultists", "Plaguebearers", "Nurglings"};
     private static final String[] Sturmeinträge_Death_Guard = new String[]{"", "Foetid Bloat Drone", "Myphitic Blight-Haulers", "Chaos Spawn", "Plague Drones"};
@@ -164,6 +164,10 @@ public class VOLKChaos extends BuildaVater {
     
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "Red Corsairs", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
+    
+    public static Set<String> getLegions() {
+    	return LEGIONS;
+    }
     
     public VOLKChaos() {
         super("CH", loadPoints("/oc/wh40k/indices/chaos.yaml"));

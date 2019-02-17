@@ -1,35 +1,32 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATH_GUARD;
+import static oc.KeyWord.HERETIC_ASTARTES;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.NOXIOUS_BLIGHTBRINGER;
+import static oc.KeyWord.NURGLE;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class CHNoxiousBlightbringer extends Eintrag {
 
-    OptionsUpgradeGruppe bell, pp;
-
     public CHNoxiousBlightbringer() {
-
+    	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, NOXIOUS_BLIGHTBRINGER);
+    	
         name = "Noxious Blightbringer";
         grundkosten = getPts("Noxious Blightbringer");
         power = 4;
 
-        ogE.addElement(new OptionsGruppeEintrag("Cursed plague bell", getPts("Cursed plague bell") * 2));
-        add(bell = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-
-        ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
-        add(pp = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        seperator();
         
+        addWeapons(CHDeathGuardRuestkammer.class, true);
+ 
         seperator();
         
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        bell.setSelected(0, true);
-        pp.setSelected(0, true);
     }
 }

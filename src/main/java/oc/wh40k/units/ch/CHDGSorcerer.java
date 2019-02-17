@@ -1,31 +1,30 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.SORCERER;
 import static oc.KeyWord.CHARACTER;
-import static oc.KeyWord.MALIGNANT_PLAGUECASTER;
 import static oc.KeyWord.DEATH_GUARD;
 import static oc.KeyWord.HERETIC_ASTARTES;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.NURGLE;
 import static oc.KeyWord.PSYKER;
 
-import oc.Eintrag;
-import oc.RuestkammerStarter;
+import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
-public class CHMalignantPlaguecaster extends Eintrag {
+public class CHDGSorcerer extends Eintrag {
 
     RuestkammerStarter psychicPowers;
 
-    public CHMalignantPlaguecaster() {
-    	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, MALIGNANT_PLAGUECASTER);
+    public CHDGSorcerer() {
+    	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, SORCERER);
     	
-        name = "Malignant Plaguecaster";
-        grundkosten = getPts("Malignant Plaguecaster");
-        power = 6;
+        name = "Sorcerer";
+        grundkosten = getPts("Sorcerer");
+        power = 7;
 
         seperator();
-        
+
         addWeapons(CHDeathGuardRuestkammer.class, true);
 
         seperator();
@@ -43,13 +42,6 @@ public class CHMalignantPlaguecaster extends Eintrag {
         addWarlordTraits("", true);
 
         complete();
-    }
 
-    @Override
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }
