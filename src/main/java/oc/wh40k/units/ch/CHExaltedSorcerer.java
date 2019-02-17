@@ -1,37 +1,31 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.EXALTED_SORCERER;
+import static oc.KeyWord.SORCERER;
+import static oc.KeyWord.HERETIC_ASTARTES;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.THOUSAND_SONS;
+import static oc.KeyWord.TZEENTCH;
+
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHExaltedSorcerer extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe stave;
-    OptionsUpgradeGruppe inferno;
     RuestkammerStarter psychicPowers;
 
     public CHExaltedSorcerer() {
-
+    	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, INFANTRY, SORCERER, EXALTED_SORCERER);
+    	
         name = "Exalted Sorcerer";
         grundkosten = getPts("Exalted Sorcerer");
         power = 7;
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
-        ogE.addElement(new OptionsGruppeEintrag("2 Power swords", getPts("Power sword") * 2));
-        add(stave = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Inferno bolt pistol", getPts("Inferno bolt pistol")));
-        ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
-        ogE.addElement(new OptionsGruppeEintrag("Warpflame pistol", getPts("Warpflame pistol")));
-        add(inferno = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        seperator();
-
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword")));
+        addWeapons(CHThousandSonsRuestkammer.class, true);
 
         seperator();
 
@@ -49,16 +43,5 @@ public class CHExaltedSorcerer extends Eintrag {
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        inferno.alwaysSelected();
-        stave.alwaysSelected();
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }

@@ -1,14 +1,11 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHTzaangorShaman extends Eintrag {
 
-    OptionsUpgradeGruppe stave;
     RuestkammerStarter psychicPowers;
 
     public CHTzaangorShaman() {
@@ -18,10 +15,9 @@ public class CHTzaangorShaman extends Eintrag {
         power = 5;
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
-        add(stave = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        
+        addWeapons(CHThousandSonsRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -37,15 +33,5 @@ public class CHTzaangorShaman extends Eintrag {
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        stave.alwaysSelected();
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 }
