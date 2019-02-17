@@ -449,7 +449,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
         weapons.getKammer().setType(name);
         weapons.initKammer();
-        weapons.setButtonText("Waffen");
+        weapons.setButtonText("Waffen und Relikte");
         add(weapons);
         weapons.setAbwaehlbar(!mandatoryChoice);
 	}

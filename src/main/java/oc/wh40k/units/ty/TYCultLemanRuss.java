@@ -38,7 +38,7 @@ public class TYCultLemanRuss extends Eintrag {
 
         grundkosten = getPts("Cult Leman Russ");
 
-        power = 11;
+        power = 9;
 
 
 

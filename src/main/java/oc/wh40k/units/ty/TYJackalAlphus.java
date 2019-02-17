@@ -1,6 +1,7 @@
 package oc.wh40k.units.ty;
 
-import static oc.KeyWord.PRIMUS;
+
+import static oc.KeyWord.JACKAL_ALPHUS;
 import static oc.KeyWord.CHARACTER;
 import static oc.KeyWord.CULT;
 import static oc.KeyWord.GENESTEALER_CULTS;
@@ -9,16 +10,18 @@ import static oc.KeyWord.TYRANIDS;
 
 import oc.Eintrag;
 
-public class TYPrimus extends Eintrag {
 
-    public TYPrimus() {
-    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, PRIMUS);
+
+public class TYJackalAlphus extends Eintrag {
+
+
+
+    public TYJackalAlphus() {
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, JACKAL_ALPHUS);
     	
-        name = "Primus";
+        name = "Jackal Alphus";
 
-        grundkosten = getPts("Primus") + getPts("Blasting charges");
-
-        power = 4;
+        grundkosten = getPts("Jackal Alphus") + getPts("Blasting charges");
 
         seperator();
         
@@ -28,6 +31,8 @@ public class TYPrimus extends Eintrag {
         
         addWarlordTraits("", true);
         
+        power = 4;
+
         complete();
 
     }

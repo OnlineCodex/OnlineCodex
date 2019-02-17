@@ -22,7 +22,7 @@ public class TYGoliathTruck extends Eintrag {
 
         grundkosten = getPts("Goliath Truck") + getPts("Heavy stubber") + getPts("Twin autocannon");
 
-        power = 5;
+        power = 4;
 
 
 
