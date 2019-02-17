@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORBigGunz extends Eintrag {
 
-    AnzahlPanel wummen;
-    OptionsZaehlerGruppe FK2;
-    int aktivesBild = 0;
+	private final AnzahlPanel wummen;
+	private final OptionsZaehlerGruppe FK2;
+	private final int aktivesBild = 0;
 
     public ORBigGunz() {
         grundkosten = 0;

@@ -6,10 +6,10 @@ import oc.RuestkammerStarter;
 
 public class ORLootas extends Eintrag {
 
-    AnzahlPanel Pluenderaz;
-    RuestkammerStarter Spanner1;
-    RuestkammerStarter Spanner2;
-    RuestkammerStarter Spanner3;
+	private final AnzahlPanel Pluenderaz;
+	private final RuestkammerStarter Spanner1;
+	private final RuestkammerStarter Spanner2;
+	private final RuestkammerStarter Spanner3;
 
     public ORLootas() {
 

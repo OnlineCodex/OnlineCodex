@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class NEAnnihilationBarge extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public NEAnnihilationBarge() {
         name = "Annihilation Barge";

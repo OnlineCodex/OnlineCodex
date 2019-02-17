@@ -3,12 +3,10 @@ package oc.wh40k.units.ch;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHKhorneLordofSkulls extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, fkwaffen;
-    RuestkammerStarter ausruestung;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public CHKhorneLordofSkulls() {
         name = "Khorne Lord of Skulls";

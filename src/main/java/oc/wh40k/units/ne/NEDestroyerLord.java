@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class NEDestroyerLord extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public NEDestroyerLord() {
         name = "Destroyer Lord";

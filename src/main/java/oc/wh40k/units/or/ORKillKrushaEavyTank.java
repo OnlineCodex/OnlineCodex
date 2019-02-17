@@ -32,6 +32,4 @@ public class ORKillKrushaEavyTank extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

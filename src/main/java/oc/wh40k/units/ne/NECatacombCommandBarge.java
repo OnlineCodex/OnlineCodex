@@ -8,7 +8,7 @@ import oc.RuestkammerStarter;
 
 public class NECatacombCommandBarge extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public NECatacombCommandBarge() {
         name = "Catacomb Command Barge";

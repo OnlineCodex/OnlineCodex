@@ -4,9 +4,9 @@ import oc.*;
 
 public class TATX4Piranhas extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelZaehler o5;
-    OptionsZaehlerGruppe o4;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelZaehler o5;
+	private final OptionsZaehlerGruppe o4;
 
     public TATX4Piranhas() {
         name = "TX4 Piranhas";

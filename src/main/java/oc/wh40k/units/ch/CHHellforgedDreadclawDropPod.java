@@ -6,8 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedDreadclawDropPod extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedDreadclawDropPod() {
         name = "Hellforged Dreadclaw Drop Pod";

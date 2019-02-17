@@ -4,9 +4,9 @@ import oc.*;
 
 public class ORBonebreaka extends Eintrag {
 
-    OptionsUpgradeGruppe fk;
-    OptionsZaehlerGruppe fk2;
-    OptionsEinzelUpgrade deffrolla;
+	private final OptionsUpgradeGruppe fk;
+    private final OptionsZaehlerGruppe fk2;
+    private final OptionsEinzelUpgrade deffrolla;
 
     public ORBonebreaka() {
 

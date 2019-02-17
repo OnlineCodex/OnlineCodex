@@ -4,12 +4,12 @@ import oc.*;
 
 public class ORNobz extends Eintrag {
 
-    AnzahlPanel bosse;
-    OptionsZaehlerGruppe bosseCC;
-    OptionsZaehlerGruppe bosseCC2;
-    OptionsZaehlerGruppe bosseFK;
-    OptionsEinzelZaehler munigrotz;
-    OptionsEinzelZaehler cyborg;
+	private final AnzahlPanel bosse;
+	private final OptionsZaehlerGruppe bosseCC;
+	private final OptionsZaehlerGruppe bosseCC2;
+	private final OptionsZaehlerGruppe bosseFK;
+	private final OptionsEinzelZaehler munigrotz;
+	private final OptionsEinzelZaehler cyborg;
 
     public ORNobz() {
         kategorie = 2;

@@ -7,7 +7,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class TAKX139TaunarSupremacyArmour extends Eintrag {
 
-    OptionsEinzelUpgrade o3;
+	private final OptionsEinzelUpgrade o3;
 
     public TAKX139TaunarSupremacyArmour() {
         name = "KX139 Ta'unar Supremacy Armour";

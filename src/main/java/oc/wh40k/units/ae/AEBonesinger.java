@@ -4,19 +4,8 @@ package oc.wh40k.units.ae;
 
 import oc.Eintrag;
 
-import oc.OptionsEinzelUpgrade;
-
-import oc.OptionsZaehlerGruppe;
-
-
 
 public class AEBonesinger extends Eintrag {
-
-
-
-    OptionsEinzelUpgrade oe1;
-
-    OptionsZaehlerGruppe o1, o2;
 
 
 

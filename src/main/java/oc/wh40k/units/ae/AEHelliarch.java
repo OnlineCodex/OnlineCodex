@@ -16,7 +16,7 @@ public class AEHelliarch extends RuestkammerVater {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
 
 

@@ -14,7 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHThousandSonsSorcerer extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHThousandSonsSorcerer() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, INFANTRY, SORCERER);

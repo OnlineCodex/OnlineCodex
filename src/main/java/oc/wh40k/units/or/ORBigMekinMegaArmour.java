@@ -4,9 +4,9 @@ import oc.*;
 
 public class ORBigMekinMegaArmour extends Eintrag {
 
-    OptionsEinzelUpgrade grotoiler;
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe tech = null;
+	private final OptionsEinzelUpgrade grotoiler;
+	private final RuestkammerStarter waffen;
+	private final OptionsUpgradeGruppe tech;
 
     public ORBigMekinMegaArmour() {
         kategorie = 1;

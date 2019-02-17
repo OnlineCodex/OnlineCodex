@@ -8,10 +8,10 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHSorcererinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
+	private final OptionsUpgradeGruppe mark;
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHSorcererinTerminatorArmour() {
 

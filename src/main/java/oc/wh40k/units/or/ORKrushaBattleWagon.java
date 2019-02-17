@@ -4,9 +4,9 @@ import oc.*;
 
 public class ORKrushaBattleWagon extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o2def;
 
 
     public ORKrushaBattleWagon() {

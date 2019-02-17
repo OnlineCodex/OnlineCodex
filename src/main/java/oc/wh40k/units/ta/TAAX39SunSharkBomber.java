@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TAAX39SunSharkBomber extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
+    private final OptionsUpgradeGruppe o2;
 
     public TAAX39SunSharkBomber() {
         name = "AX39 Sun Shark Bomber";

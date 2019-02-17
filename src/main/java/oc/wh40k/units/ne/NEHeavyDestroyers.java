@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class NEHeavyDestroyers extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public NEHeavyDestroyers() {
         grundkosten = 0;

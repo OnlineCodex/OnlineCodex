@@ -5,7 +5,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHBurningChariot extends Eintrag {
 
-    OptionsEinzelUpgrade waffe2;
+	private final OptionsEinzelUpgrade waffe2;
 
     public CHBurningChariot() {
 

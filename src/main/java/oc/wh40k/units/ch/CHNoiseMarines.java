@@ -4,12 +4,11 @@ import oc.*;
 
 public class CHNoiseMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe bolter;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe bolter;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsZaehlerGruppe pp;
-    RuestkammerStarter Boss;
+	private final OptionsZaehlerGruppe marinesfk;
+	private final RuestkammerStarter Boss;
 
     public CHNoiseMarines() {
 

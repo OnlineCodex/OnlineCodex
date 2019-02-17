@@ -4,9 +4,9 @@ import oc.*;
 
 public class TAXV104RiptideKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe o3;
-    OptionsUpgradeGruppe o1, o2, o4;
-    RuestkammerStarter ob;
+	private OptionsZaehlerGruppe o3;
+	private OptionsUpgradeGruppe o1, o2, o4;
+    private RuestkammerStarter ob;
 
     public TAXV104RiptideKammer() {
         name = "XV104 Sturmflut ";

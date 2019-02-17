@@ -9,8 +9,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class TAXV109YvahraBattlesuit extends Eintrag {
 
-    OptionsZaehlerGruppe o3;
-    OptionsUpgradeGruppe o4;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsUpgradeGruppe o4;
 
     public TAXV109YvahraBattlesuit() {
         name = "XV109 Y'vahra Battlesuit";

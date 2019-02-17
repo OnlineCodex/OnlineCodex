@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TATY7Devilfish extends Eintrag {
 
-    OptionsUpgradeGruppe o3;
+	private final OptionsUpgradeGruppe o3;
 
     public TATY7Devilfish() {
 

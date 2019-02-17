@@ -32,11 +32,7 @@ public class NECanoptekTombSentinel extends Eintrag {
 
 
 
-    @Override
 
-    public void refreshen() {
-
-    }
 
 }
 

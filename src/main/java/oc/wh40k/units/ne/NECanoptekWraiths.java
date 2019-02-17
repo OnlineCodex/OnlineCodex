@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class NECanoptekWraiths extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
 
     public NECanoptekWraiths() {
         grundkosten = 0;

@@ -3,16 +3,12 @@ package oc.wh40k.units.ch;
 import static oc.KeyWord.*;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHChangecaster extends Eintrag {
 
-    OptionsEinzelUpgrade waffe1;
-    OptionsEinzelUpgrade waffe2;
-
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHChangecaster() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, HORROR, PSYKER, HERALD_OF_TZEENTCH, CHANGECASTER);

@@ -7,8 +7,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHChaosReaverBattleTitan extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsZaehlerGruppe o3, o4;
+	private final OptionsZaehlerGruppe o3, o4;
 
     public CHChaosReaverBattleTitan() {
         name = "Chaos Reaver Battle Titan";

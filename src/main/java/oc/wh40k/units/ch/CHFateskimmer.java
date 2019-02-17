@@ -9,9 +9,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHFateskimmer extends Eintrag {
 
-    OptionsEinzelUpgrade waffe1;
-    OptionsEinzelUpgrade waffe2;
-    RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade waffe2;
+	private final RuestkammerStarter psychicPowers;
 
     public CHFateskimmer() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, CHARIOT, HORROR, FLY, PSYKER, HERALD_OF_TZEENTCH, FATESKIMMER);

@@ -4,7 +4,7 @@ import oc.*;
 
 public class ORSkullhammaBattleFortress extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public ORSkullhammaBattleFortress() {
         name = "Skullhamma Battle Fortress";

@@ -6,8 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3, o4;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2, o3, o4;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedKharybdisAssaultClaw() {
         name = "Hellforged Kharybdis Assault Claw";

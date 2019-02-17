@@ -15,7 +15,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHMalignantPlaguecaster extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHMalignantPlaguecaster() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, MALIGNANT_PLAGUECASTER);

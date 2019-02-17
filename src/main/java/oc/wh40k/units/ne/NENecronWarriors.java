@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class NENecronWarriors extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public NENecronWarriors() {
         grundkosten = 0;

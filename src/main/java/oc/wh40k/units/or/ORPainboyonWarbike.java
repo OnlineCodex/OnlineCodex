@@ -5,8 +5,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORPainboyonWarbike extends Eintrag {
-    OptionsEinzelUpgrade grotorderly;
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter waffen;
 
     boolean megaBool = false;
 

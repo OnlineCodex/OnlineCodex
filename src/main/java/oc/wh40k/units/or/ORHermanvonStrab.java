@@ -4,11 +4,10 @@ import oc.*;
 
 public class ORHermanvonStrab extends Eintrag {
 
-    OptionsZaehlerGruppe o7;
-    OptionsZaehlerGruppe o2;
-    OptionsUpgradeGruppe o8;
-    OptionsUpgradeGruppe o1;
-
+	private final OptionsZaehlerGruppe o7;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsUpgradeGruppe o8;
+	
     public ORHermanvonStrab() {
         name = "Herman von Strab";
         grundkosten = 0;

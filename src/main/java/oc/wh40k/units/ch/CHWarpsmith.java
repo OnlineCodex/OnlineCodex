@@ -4,9 +4,9 @@ import oc.*;
 
 public class CHWarpsmith extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsEinzelUpgrade flamer, melta, mecha;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
+	private final OptionsEinzelUpgrade flamer, melta, mecha;
+	private final OptionsUpgradeGruppe mark;
 
     public CHWarpsmith() {
 

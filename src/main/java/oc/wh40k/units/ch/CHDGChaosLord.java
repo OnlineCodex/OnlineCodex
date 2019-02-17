@@ -7,13 +7,10 @@ import static oc.KeyWord.HERETIC_ASTARTES;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.CHAOS_LORD;
 import static oc.KeyWord.NURGLE;
-import static oc.KeyWord.PSYKER;
 
 import oc.*;
 
 public class CHDGChaosLord extends Eintrag {
-
-    RuestkammerStarter waffen;
 
     public CHDGChaosLord() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, CHAOS_LORD);

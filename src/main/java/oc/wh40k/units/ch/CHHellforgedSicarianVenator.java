@@ -6,9 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedSicarianVenator extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedSicarianVenator() {
         name = "Hellforged Sicarian Venator";

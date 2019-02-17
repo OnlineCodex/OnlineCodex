@@ -16,7 +16,7 @@ public class AENightSpinner extends Eintrag {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
 

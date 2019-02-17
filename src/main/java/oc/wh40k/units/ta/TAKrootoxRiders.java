@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TAKrootoxRiders extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public TAKrootoxRiders() {
         name = "Krootox Riders";

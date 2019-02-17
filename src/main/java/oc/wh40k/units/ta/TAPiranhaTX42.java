@@ -6,18 +6,18 @@ import oc.*;
 
 public class TAPiranhaTX42 extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsEinzelZaehler oez1;
-    OptionsEinzelZaehler oez2;
-    OptionsEinzelZaehler oez3;
-    OptionsEinzelZaehler oez4;
-    OptionsEinzelZaehler oez5;
-    OptionsEinzelZaehler oez6;
-    OptionsEinzelZaehler oez7;
-    OptionsEinzelZaehler oez8;
-    OptionsEinzelZaehler oez9;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsEinzelZaehler oez1;
+	private final OptionsEinzelZaehler oez2;
+	private final OptionsEinzelZaehler oez3;
+	private final OptionsEinzelZaehler oez4;
+    private final OptionsEinzelZaehler oez5;
+    private final OptionsEinzelZaehler oez6;
+    private final OptionsEinzelZaehler oez7;
+    private final OptionsEinzelZaehler oez8;
+    private final OptionsEinzelZaehler oez9;
 
     public TAPiranhaTX42() {
         name = "Piranha TX-42 Team";

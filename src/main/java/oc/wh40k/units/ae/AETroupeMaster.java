@@ -7,7 +7,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
 public class AETroupeMaster extends Eintrag {
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
     public AETroupeMaster() {
         name = "Troupe Master";

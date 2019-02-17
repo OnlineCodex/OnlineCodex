@@ -5,7 +5,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class TATidewallShieldline extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe1;
 
     public TATidewallShieldline() {
         name = "Tidewall Shieldline";

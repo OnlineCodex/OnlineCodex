@@ -12,7 +12,7 @@ public class TADX4TechnicalDrones extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

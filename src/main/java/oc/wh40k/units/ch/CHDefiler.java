@@ -3,13 +3,11 @@ package oc.wh40k.units.ch;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHDefiler extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, fkwaffen;
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2, fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHDefiler() {
         name = "Defiler";

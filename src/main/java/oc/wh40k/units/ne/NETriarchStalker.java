@@ -1,14 +1,12 @@
 package oc.wh40k.units.ne;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class NETriarchStalker extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
 
     public NETriarchStalker() {
         name = "Triarch Stalker";

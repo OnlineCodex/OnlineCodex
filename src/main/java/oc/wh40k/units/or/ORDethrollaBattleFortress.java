@@ -7,10 +7,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORDethrollaBattleFortress extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-
+	private final OptionsZaehlerGruppe o1, o2;
 
     public ORDethrollaBattleFortress() {
 

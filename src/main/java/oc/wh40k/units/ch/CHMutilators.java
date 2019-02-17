@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHMutilators extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel marines;
+	private final OptionsUpgradeGruppe mark;
 
     public CHMutilators() {
 

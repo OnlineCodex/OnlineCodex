@@ -4,7 +4,7 @@ import oc.RuestkammerVater;
 
 public class CHEmptykammer extends RuestkammerVater {
 
-    String type = "";
+	public String type = "";
 
     public CHEmptykammer() {
         grundkosten = 0;

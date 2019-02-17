@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class ORFlakkTrukkKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
 
     public ORFlakkTrukkKammer() {

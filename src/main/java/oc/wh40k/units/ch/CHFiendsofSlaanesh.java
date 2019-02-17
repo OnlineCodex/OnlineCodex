@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHFiendsofSlaanesh extends Eintrag {
 
-    AnzahlPanel fiends;
-    OptionsZaehlerGruppe blissbringer;
+	private final AnzahlPanel fiends;
+	private final OptionsZaehlerGruppe blissbringer;
     
     public CHFiendsofSlaanesh() {
 

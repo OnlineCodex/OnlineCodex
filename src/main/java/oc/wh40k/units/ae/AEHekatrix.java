@@ -16,7 +16,7 @@ public class AEHekatrix extends RuestkammerVater {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
 
 

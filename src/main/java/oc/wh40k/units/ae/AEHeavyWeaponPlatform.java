@@ -14,7 +14,7 @@ public class AEHeavyWeaponPlatform extends RuestkammerVater {
 
 
 
-    OptionsZaehlerGruppe o1;
+	private OptionsZaehlerGruppe o1;
 
 
 

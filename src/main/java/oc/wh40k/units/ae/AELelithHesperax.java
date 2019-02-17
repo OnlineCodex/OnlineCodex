@@ -10,7 +10,7 @@ import oc.OptionsUpgradeGruppe;
 import static oc.KeyWord.WYCH_CULT;
 
 public class AELelithHesperax extends Eintrag {
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public AELelithHesperax() {
         name = "Lelith Hesperax";

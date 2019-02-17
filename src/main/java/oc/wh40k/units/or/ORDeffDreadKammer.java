@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class ORDeffDreadKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe w1, w2, w1x, w2x;
+	private OptionsZaehlerGruppe w1, w2, w1x, w2x;
 
     public ORDeffDreadKammer() {
         grundkosten = getPts("Deff Dreads");

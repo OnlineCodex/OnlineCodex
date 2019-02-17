@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class NECryptek extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public NECryptek() {
 

@@ -9,14 +9,14 @@ public class CHChampionkammer extends RuestkammerVater {
     public boolean uniqueError = false;
     public boolean terminator = false;
     public boolean sorcerer = false;
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
+    private OptionsUpgradeGruppe handwaffen = null;
+    private OptionsUpgradeGruppe fkwaffen = null;
     boolean melee = false;
     boolean range = false;
     boolean rangeForMelee = false;
     boolean meleeForRange = false;
-    String defaultNK = "";
-    String defaultFK = "";
+    private String defaultNK = "";
+    private String defaultFK = "";
 
     //BP/NK gg RNG/NK
 

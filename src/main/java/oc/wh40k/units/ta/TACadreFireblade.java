@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class TACadreFireblade extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public TACadreFireblade() {
 

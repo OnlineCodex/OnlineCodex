@@ -4,8 +4,8 @@ import oc.*;
 
 public class ORBattlewagon extends Eintrag {
 
-    OptionsUpgradeGruppe fk;
-    OptionsZaehlerGruppe fk2;
+	private final OptionsUpgradeGruppe fk;
+	private final OptionsZaehlerGruppe fk2;
 
     public ORBattlewagon() {
 

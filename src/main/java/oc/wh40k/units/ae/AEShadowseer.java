@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class AEShadowseer extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public AEShadowseer() {
         name = "Shadowseer";

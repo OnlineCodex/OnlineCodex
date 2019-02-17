@@ -5,18 +5,11 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHScarabOccultTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def, swords, bolter;
-    OptionsEinzelUpgrade plasmapistole, sorcerer;
-    OptionsUpgradeGruppe ikone;
-    OptionsUpgradeGruppe sor;
-    OptionsZaehlerGruppe o7;
-    OptionsZaehlerGruppe schwereWaffe, rak;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe swords, bolter;
+	private final OptionsZaehlerGruppe schwereWaffe, rak;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter psychicPowers;
 
     public CHScarabOccultTerminators() {
         //name = "Thousand Sons\n";

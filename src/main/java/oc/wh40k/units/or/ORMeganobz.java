@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORMeganobz extends Eintrag {
 
-    AnzahlPanel gargbosse;
-    OptionsZaehlerGruppe gargbosseFK;
+	private final AnzahlPanel gargbosse;
+	private final OptionsZaehlerGruppe gargbosseFK;
 
     public ORMeganobz() {
 

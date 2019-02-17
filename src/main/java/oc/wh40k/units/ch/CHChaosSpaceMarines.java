@@ -4,16 +4,15 @@ import oc.*;
 
 public class CHChaosSpaceMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    OptionsUpgradeGruppe mark;
-    OptionsUpgradeGruppe icon;
+	private final OptionsZaehlerGruppe marinesfk;
+	private final OptionsEinzelUpgrade pp;
+	private final RuestkammerStarter Boss;
+	private final OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe icon;
     
     public CHChaosSpaceMarines() {
 

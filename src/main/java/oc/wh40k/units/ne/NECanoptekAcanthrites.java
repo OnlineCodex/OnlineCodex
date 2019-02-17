@@ -12,7 +12,7 @@ public class NECanoptekAcanthrites extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

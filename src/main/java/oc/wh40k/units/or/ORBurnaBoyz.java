@@ -6,10 +6,10 @@ import oc.RuestkammerStarter;
 
 public class ORBurnaBoyz extends Eintrag {
 
-    AnzahlPanel boyz;
-    RuestkammerStarter Spanner1;
-    RuestkammerStarter Spanner2;
-    RuestkammerStarter Spanner3;
+	private final AnzahlPanel boyz;
+    private final RuestkammerStarter Spanner1;
+    private final RuestkammerStarter Spanner2;
+    private final RuestkammerStarter Spanner3;
 
     public ORBurnaBoyz() {
 

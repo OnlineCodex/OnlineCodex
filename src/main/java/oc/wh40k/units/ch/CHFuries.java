@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHFuries extends Eintrag {
 
-    AnzahlPanel furies;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel furies;
+	private final OptionsUpgradeGruppe mark;
 
     public CHFuries() {
 

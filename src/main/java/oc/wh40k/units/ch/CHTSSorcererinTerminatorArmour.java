@@ -5,7 +5,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHTSSorcererinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHTSSorcererinTerminatorArmour() {
 

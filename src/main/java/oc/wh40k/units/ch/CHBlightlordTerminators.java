@@ -4,17 +4,12 @@ import oc.*;
 
 public class CHBlightlordTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def, swords, bolter;
-    OptionsEinzelUpgrade plasmapistole, sorcerer;
-    OptionsUpgradeGruppe ikone;
-    OptionsUpgradeGruppe sor;
-    OptionsZaehlerGruppe o7;
-    OptionsZaehlerGruppe schwereWaffe, rak;
-    OptionsUpgradeGruppe stave;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe swords, bolter;
+	private final OptionsEinzelUpgrade sorcerer;
+	private final OptionsUpgradeGruppe sor;
+    private final OptionsZaehlerGruppe schwereWaffe, rak;
+    private final OptionsUpgradeGruppe stave;
 
     public CHBlightlordTerminators() {
         //name = "Thousand Sons\n";

@@ -6,9 +6,8 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class CHBloodSlaughtererofKhorne extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
 
     public CHBloodSlaughtererofKhorne() {
         name = "Blood Slaughterer of Khorne";

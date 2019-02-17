@@ -26,12 +26,4 @@ public class AEUrGhul extends Eintrag {
 
     }
 
-
-
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }

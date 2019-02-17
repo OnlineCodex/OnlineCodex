@@ -3,9 +3,8 @@ package oc.wh40k.units.ae;
 import oc.*;
 
 public class AEAutarchwithSwoopingHawkWingsIndex extends Eintrag {
-    OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2;
-    OptionsZaehlerGruppe o3, o4;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsZaehlerGruppe o3, o4;
 
     public AEAutarchwithSwoopingHawkWingsIndex() {
         name = "Autarch with Swooping Hawk Wings";

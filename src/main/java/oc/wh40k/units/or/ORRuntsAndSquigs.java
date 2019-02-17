@@ -7,12 +7,12 @@ import oc.RuestkammerVater;
 
 public class ORRuntsAndSquigs extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
-    boolean mek = false;
-    boolean dok = false;
-    OptionsEinzelZaehler schmiergrot;
-    OptionsEinzelUpgrade assistent;
+	private boolean mek = false;
+	private boolean dok = false;
+	private OptionsEinzelZaehler schmiergrot;
+	private OptionsEinzelUpgrade assistent;
 
     public ORRuntsAndSquigs() {
         grundkosten = 0;

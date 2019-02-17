@@ -7,10 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosHellBlade extends Eintrag {
 
-    OptionsEinzelUpgrade o1, claws;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosHellBlade() {
         name = "Chaos Hell Blade";

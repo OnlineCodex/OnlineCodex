@@ -4,8 +4,8 @@ import oc.*;
 
 public class ORKustomStompa extends Eintrag {
 
-    OptionsUpgradeGruppe oug1;
-    OptionsUpgradeGruppe oug2;
+	private final OptionsUpgradeGruppe oug1;
+	private final OptionsUpgradeGruppe oug2;
 
     public ORKustomStompa() {
 

@@ -14,8 +14,5 @@ public class NENightshroudBomber extends Eintrag {
         complete();
     }
 
-    @Override
-    public void refreshen() {
-    }
 
 }

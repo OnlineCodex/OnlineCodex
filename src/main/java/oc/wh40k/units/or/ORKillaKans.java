@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORKillaKans extends Eintrag {
 
-    AnzahlPanel killabot;
-    OptionsZaehlerGruppe killabotFK;
-    OptionsZaehlerGruppe killabotNK;
+	private final AnzahlPanel killabot;
+	private final OptionsZaehlerGruppe killabotFK;
+	private final OptionsZaehlerGruppe killabotNK;
 
     public ORKillaKans() {
 

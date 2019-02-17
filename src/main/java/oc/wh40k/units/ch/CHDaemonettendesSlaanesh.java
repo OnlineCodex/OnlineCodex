@@ -4,9 +4,9 @@ import oc.*;
 
 public class CHDaemonettendesSlaanesh extends Eintrag {
 
-    AnzahlPanel CDDaemonettendesSlaanesh;
-    OptionsEinzelUpgrade Kurtisane, Chaosikone, Standarte;
-    OptionsZaehlerGruppe o1, o2;
+	private final AnzahlPanel CDDaemonettendesSlaanesh;
+	private final OptionsEinzelUpgrade Kurtisane, Chaosikone, Standarte;
+	private final OptionsZaehlerGruppe o1, o2;
 
     public CHDaemonettendesSlaanesh() {
 

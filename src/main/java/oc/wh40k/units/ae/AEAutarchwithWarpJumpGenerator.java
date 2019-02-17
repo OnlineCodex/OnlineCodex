@@ -9,8 +9,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
 public class AEAutarchwithWarpJumpGenerator extends Eintrag {
-    OptionsEinzelUpgrade oe1;
-    OptionsZaehlerGruppe o1, o2, o3;
+    private final OptionsZaehlerGruppe o1, o2, o3;
 
     public AEAutarchwithWarpJumpGenerator() {
         name = "Autarch with Warp Jump Generator";

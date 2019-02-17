@@ -6,9 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedCerberusHeavyDestroyer extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedCerberusHeavyDestroyer() {
         name = "Hellforged Cerberus Heavy Destroyer";

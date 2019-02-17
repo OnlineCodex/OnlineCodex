@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class TAKV128Stormsurge extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
+	private final Vector<RuestkammerStarter> rk;
 
     public TAKV128Stormsurge() {
         name = "KV128 Stormsurges";

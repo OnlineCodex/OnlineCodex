@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class TAFahrzeugKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o3;
+	private OptionsUpgradeGruppe o3;
 
     public TAFahrzeugKammer() {
 

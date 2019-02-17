@@ -6,8 +6,7 @@ import oc.RuestkammerStarter;
 
 public class CHChaosLordonSteedofSlaanesh extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
 
     public CHChaosLordonSteedofSlaanesh() {
 

@@ -5,12 +5,11 @@ import oc.*;
 
 public class CHChaosCultists extends Eintrag {
 
-    AnzahlPanel kultisten;
-    RuestkammerStarter champion;
-    OptionsEinzelUpgrade schrotflinte;
-    OptionsZaehlerGruppe schwereWaffe;
-    OptionsZaehlerGruppe autogewehre, pistol;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel kultisten;
+	private final RuestkammerStarter champion;
+	private final OptionsZaehlerGruppe schwereWaffe;
+	private final OptionsZaehlerGruppe autogewehre, pistol;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosCultists() {
         //name = "Chaoskultisten\n";

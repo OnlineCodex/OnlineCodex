@@ -6,8 +6,8 @@ import oc.RuestkammerStarter;
 
 public class ORStormboyz extends Eintrag {
 
-    AnzahlPanel stormboyz;
-    RuestkammerStarter Boss;
+	private final AnzahlPanel stormboyz;
+	private final RuestkammerStarter Boss;
 
     public ORStormboyz() {
 

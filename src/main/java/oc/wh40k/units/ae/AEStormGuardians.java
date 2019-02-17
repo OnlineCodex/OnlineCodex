@@ -16,9 +16,9 @@ public class AEStormGuardians extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2, o3, o4, o5;
+	private final OptionsZaehlerGruppe o1, o2, o3, o4, o5;
 
 
 

@@ -5,11 +5,11 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofChaoswithWingsCSM extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
+	private final OptionsUpgradeGruppe waffe1;
+	private final OptionsEinzelUpgrade waffe2;
 
-    RuestkammerStarter psychicPowers;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe mark;
 
     public CHDaemonPrinceofChaoswithWingsCSM() {
 

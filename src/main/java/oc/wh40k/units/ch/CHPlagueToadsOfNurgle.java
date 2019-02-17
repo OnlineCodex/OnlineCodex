@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class CHPlagueToadsOfNurgle extends Eintrag {
 
-    AnzahlPanel Gnarlmaws;
+	private final AnzahlPanel Gnarlmaws;
 
     public CHPlagueToadsOfNurgle() {
 

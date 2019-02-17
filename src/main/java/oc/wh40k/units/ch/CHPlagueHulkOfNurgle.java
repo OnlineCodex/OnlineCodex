@@ -1,15 +1,13 @@
 package oc.wh40k.units.ch;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class CHPlagueHulkOfNurgle extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o3;
 
     public CHPlagueHulkOfNurgle() {
         name = "Plague Hulk of Nurgle";

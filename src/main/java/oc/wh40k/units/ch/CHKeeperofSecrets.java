@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHKeeperofSecrets extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHKeeperofSecrets() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, MONSTER, PSYKER, KEEPER_OF_SECRETS);

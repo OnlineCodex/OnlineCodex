@@ -16,9 +16,9 @@ public class AETalos extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2, o3;
+	private final OptionsZaehlerGruppe o1, o2, o3;
 
 
 

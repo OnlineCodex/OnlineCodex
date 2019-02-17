@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHChaosWarhoundScoutTitan extends Eintrag {
 
-    OptionsZaehlerGruppe o4;
+	private final OptionsZaehlerGruppe o4;
 
     public CHChaosWarhoundScoutTitan() {
         name = "Chaos Warhound Scout Titan";

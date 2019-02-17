@@ -5,10 +5,10 @@ import oc.*;
 
 public class CHRaptors extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe icon;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsUpgradeGruppe icon;
+	private final OptionsUpgradeGruppe mark;
 
     public CHRaptors() {
         //name = "Chaos Space Marines Raptoren\n";

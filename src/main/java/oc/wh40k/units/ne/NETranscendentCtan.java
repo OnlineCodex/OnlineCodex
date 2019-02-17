@@ -20,8 +20,5 @@ public class NETranscendentCtan extends Eintrag {
         complete();
     }
 
-    @Override
-    public void refreshen() {
-    }
 
 }

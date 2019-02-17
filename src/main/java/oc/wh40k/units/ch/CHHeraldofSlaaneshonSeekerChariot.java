@@ -8,7 +8,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHeraldofSlaaneshonSeekerChariot extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
+	private final OptionsUpgradeGruppe waffe1;
 
     public CHHeraldofSlaaneshonSeekerChariot() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, CHARIOT, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);

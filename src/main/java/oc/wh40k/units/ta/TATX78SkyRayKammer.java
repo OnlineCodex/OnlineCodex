@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class TATX78SkyRayKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o3;
+	private OptionsUpgradeGruppe o3;
 
     public TATX78SkyRayKammer() {
         grundkosten = 115;

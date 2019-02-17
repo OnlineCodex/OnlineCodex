@@ -6,7 +6,7 @@ import oc.Eintrag;
 
 public class ORKustomBoostaBlastas extends Eintrag {
 
-    AnzahlPanel buggies;
+	private final AnzahlPanel buggies;
 
     public ORKustomBoostaBlastas() {
 

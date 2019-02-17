@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class TATX78SkyRayGunships extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
+	private final Vector<RuestkammerStarter> rk;
 
     public TATX78SkyRayGunships() {
         name = "TX78 Sky Ray Gunship";

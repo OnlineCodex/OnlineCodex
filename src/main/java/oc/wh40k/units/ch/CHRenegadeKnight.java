@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHRenegadeKnight extends Eintrag {
 
-    OptionsUpgradeGruppe fkwaffen, thunder, reaper, stubber;
+	private final OptionsUpgradeGruppe fkwaffen, thunder, reaper, stubber;
 
     public CHRenegadeKnight() {
 

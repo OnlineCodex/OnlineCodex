@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class NEDeathmarks extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public NEDeathmarks() {
         grundkosten = 0;

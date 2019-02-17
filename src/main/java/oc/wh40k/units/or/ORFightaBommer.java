@@ -7,10 +7,10 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORFightaBommer extends Eintrag {
 
-    OptionsZaehlerGruppe rokkits;
-    OptionsZaehlerGruppe wpns;
+	private final OptionsZaehlerGruppe rokkits;
+	private final OptionsZaehlerGruppe wpns;
 
-    OptionsUpgradeGruppe apo;
+	private final OptionsUpgradeGruppe apo;
 
     public ORFightaBommer() {
         name = "Fighta-Bommer";

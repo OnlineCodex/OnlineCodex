@@ -1,13 +1,11 @@
 package oc.wh40k.units.ta;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter ob;
+	private final RuestkammerStarter ob;
 
     public TACommanderinXV86ColdstarBattlesuit() {
         name = "Commander";

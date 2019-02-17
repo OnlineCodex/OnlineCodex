@@ -13,15 +13,15 @@ import oc.*;
 public class CHDeathGuardRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    String default1 = "";
-    String default2 = "";
-    boolean character = false;
-    OptionsEinzelUpgrade theSuppuratingPlate;
-    OptionsEinzelUpgrade thePandemicStaff;
-    OptionsEinzelUpgrade dolorousKnell;
-    OptionsEinzelUpgrade fugarisHelm;
-    OptionsEinzelUpgrade thePlagueSkullOfGlothila;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private String default1 = "";
+    private String default2 = "";
+    private boolean character = false;
+    private OptionsEinzelUpgrade theSuppuratingPlate;
+    private OptionsEinzelUpgrade thePandemicStaff;
+    private OptionsEinzelUpgrade dolorousKnell;
+    private OptionsEinzelUpgrade fugarisHelm;
+    private OptionsEinzelUpgrade thePlagueSkullOfGlothila;
     
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");

@@ -6,9 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedDeredeoDreadnought extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedDeredeoDreadnought() {
         name = "Hellforged Deredeo Dreadnought";

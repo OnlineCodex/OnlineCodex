@@ -4,13 +4,12 @@ import oc.*;
 
 public class CHPlagueMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe bolter;
-    OptionsZaehlerGruppe knife;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe bolter;
+	private final OptionsZaehlerGruppe knife;
 
-    OptionsZaehlerGruppe marinesfk, marinesAxe, marinesMace, marinesCleaver;
-    OptionsZaehlerGruppe pp;
-    RuestkammerStarter Boss;
+	private final OptionsZaehlerGruppe marinesfk, marinesAxe, marinesMace, marinesCleaver;
+	private final RuestkammerStarter Boss;
 
     public CHPlagueMarines() {
 

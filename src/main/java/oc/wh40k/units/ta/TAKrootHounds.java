@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TAKrootHounds extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public TAKrootHounds() {
         name = "Kroot Hounds";

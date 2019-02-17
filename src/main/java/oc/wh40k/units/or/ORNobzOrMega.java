@@ -4,8 +4,8 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class ORNobzOrMega extends Eintrag {
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
+	private final RuestkammerStarter PikkUp;
+	private final RuestkammerStarter Kampfpanza;
 
     public ORNobzOrMega() {
         kategorie = 2;

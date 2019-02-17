@@ -7,9 +7,9 @@ import oc.RuestkammerStarter;
 
 public class TAHazardKampfanzugteam extends Eintrag {
 
-    RuestkammerStarter o1;
-    RuestkammerStarter o2;
-    RuestkammerStarter o3;
+	private final RuestkammerStarter o1;
+	private final RuestkammerStarter o2;
+	private final RuestkammerStarter o3;
 
     public TAHazardKampfanzugteam() {
         name = "Hazard Kampfanzugteam";

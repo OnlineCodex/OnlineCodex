@@ -6,7 +6,7 @@ import oc.RuestkammerStarter;
 
 public class ORKaptinBadrukk extends Eintrag {
 
-    OptionsEinzelZaehler Munigrot;
+	private final OptionsEinzelZaehler Munigrot;
 
     public ORKaptinBadrukk() {
 

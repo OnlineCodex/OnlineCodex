@@ -27,8 +27,4 @@ public class ORLiftaWagon extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", getPts("Wreckin' ball")));
     }
 
-    @Override
-    public void refreshen() {
-
-    }
 }

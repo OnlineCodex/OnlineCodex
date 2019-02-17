@@ -4,9 +4,8 @@ import oc.*;
 
 public class CHHellforgedLandRaiderProteus extends Eintrag {
 
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe fkwaffen, fkwaffen2;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe fkwaffen, fkwaffen2;
+	private final OptionsUpgradeGruppe mark;
 
 
     public CHHellforgedLandRaiderProteus() {

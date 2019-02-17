@@ -16,13 +16,13 @@ public class AEVypers extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
-    OptionsZaehlerGruppe o7;
+	private final OptionsZaehlerGruppe o7;
 
-    OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o1x;
 
 
 

@@ -5,7 +5,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORMek extends Eintrag {
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter waffen;
 
     boolean megaBool = false;
 

@@ -9,8 +9,8 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class AEAutarchwithSwoopingHawkWings extends Eintrag {
-    OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
+
+	private final OptionsUpgradeGruppe o1, o2;
 
     public AEAutarchwithSwoopingHawkWings() {
         name = "Autarch with Swooping Hawk Wings";

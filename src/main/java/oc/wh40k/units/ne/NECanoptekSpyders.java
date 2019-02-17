@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class NECanoptekSpyders extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o2, o3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o2, o3;
 
     public NECanoptekSpyders() {
         grundkosten = 0;

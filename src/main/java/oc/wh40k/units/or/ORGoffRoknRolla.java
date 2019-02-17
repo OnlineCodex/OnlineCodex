@@ -16,6 +16,4 @@ public class ORGoffRoknRolla extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

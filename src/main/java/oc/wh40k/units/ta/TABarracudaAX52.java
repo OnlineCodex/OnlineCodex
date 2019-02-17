@@ -9,8 +9,8 @@ import oc.RuestkammerStarter;
 
 public class TABarracudaAX52 extends Eintrag {
 
-	OptionsUpgradeGruppe o1, o2, o3;
-	OptionsZaehlerGruppe o4;
+	private final OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsZaehlerGruppe o4;
 	
     public TABarracudaAX52() {
         name = "Barracuda AX-5-2";

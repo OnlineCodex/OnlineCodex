@@ -1,13 +1,11 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class CHSorcereronDiscofTzeentch extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
 
     public CHSorcereronDiscofTzeentch() {
 

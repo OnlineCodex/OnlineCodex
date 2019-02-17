@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class NETriarchPraetorians extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
 
     public NETriarchPraetorians() {
         grundkosten = 0;

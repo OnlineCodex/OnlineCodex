@@ -4,10 +4,10 @@ import oc.*;
 
 public class CHFallen extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe pistol, claws, boltgun, special;
-    OptionsUpgradeGruppe heavy;
-    RuestkammerStarter champion;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe pistol, claws, boltgun, special;
+	private final OptionsUpgradeGruppe heavy;
+	private final RuestkammerStarter champion;
 
     public CHFallen() {
         //name = "Auserkorene Chaos Space Marines\n";

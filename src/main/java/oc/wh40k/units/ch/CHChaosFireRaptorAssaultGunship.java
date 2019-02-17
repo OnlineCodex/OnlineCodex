@@ -6,10 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosFireRaptorAssaultGunship extends Eintrag {
 
-    OptionsUpgradeGruppe o1, claws;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o3;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosFireRaptorAssaultGunship() {
         name = "Chaos Fire Raptor Assault Gunship";

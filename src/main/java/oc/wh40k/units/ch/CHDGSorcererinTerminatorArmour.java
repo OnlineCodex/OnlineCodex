@@ -16,7 +16,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDGSorcererinTerminatorArmour extends Eintrag {
 
-	RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHDGSorcererinTerminatorArmour() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, TERMINATOR, PSYKER, SORCERER);

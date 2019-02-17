@@ -4,9 +4,7 @@ import oc.*;
 
 public class ORBattlewagonwithSupaKannon extends Eintrag {
 
-    OptionsEinzelUpgrade Panzakanonä;
-    OptionsUpgradeGruppe FK2;
-    OptionsZaehlerGruppe KampfpanzaFK;
+	private final OptionsZaehlerGruppe KampfpanzaFK;
 
     public ORBattlewagonwithSupaKannon() {
 

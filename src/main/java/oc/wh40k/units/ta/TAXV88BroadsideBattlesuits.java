@@ -7,11 +7,11 @@ import oc.RuestkammerStarter;
 
 public class TAXV88BroadsideBattlesuits extends Eintrag {
 
-    RuestkammerStarter ob1;
-    RuestkammerStarter o1;
-    RuestkammerStarter o2;
-    RuestkammerStarter o3;
-    OptionsZaehlerGruppe o4;
+	private final RuestkammerStarter ob1;
+	private final RuestkammerStarter o1;
+	private final RuestkammerStarter o2;
+	private final RuestkammerStarter o3;
+	private final OptionsZaehlerGruppe o4;
 
     public TAXV88BroadsideBattlesuits() {
         name = "XV88 Broadside Battlesuits";

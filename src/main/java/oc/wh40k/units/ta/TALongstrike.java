@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class TALongstrike extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
+	private final Vector<RuestkammerStarter> rk;
 
     public TALongstrike() {
         name = "Longstrike";

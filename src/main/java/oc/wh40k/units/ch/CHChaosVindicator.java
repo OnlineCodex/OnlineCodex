@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosVindicator extends Eintrag {
 
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosVindicator() {
         name = "Chaos Vindicator";

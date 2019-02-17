@@ -7,7 +7,7 @@ import oc.Eintrag;
 
 public class TADX6RemoraDroneFighter extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public TADX6RemoraDroneFighter() {
         name = "DX-6 \'Remora\' Drone Fighter";

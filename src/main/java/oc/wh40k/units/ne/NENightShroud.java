@@ -28,10 +28,4 @@ public class NENightShroud extends Eintrag {
 
 
 
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }

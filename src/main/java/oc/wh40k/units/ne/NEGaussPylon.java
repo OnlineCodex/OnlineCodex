@@ -28,10 +28,5 @@ public class NEGaussPylon extends Eintrag {
 
 
 
-    @Override
-
-    public void refreshen() {
-
-    }
 
 }

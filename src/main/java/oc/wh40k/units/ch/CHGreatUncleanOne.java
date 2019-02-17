@@ -10,8 +10,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHGreatUncleanOne extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o1;
+	private final RuestkammerStarter psychicPowers;
 
     public CHGreatUncleanOne() {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);

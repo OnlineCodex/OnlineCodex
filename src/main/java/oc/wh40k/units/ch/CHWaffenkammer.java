@@ -14,15 +14,15 @@ public class CHWaffenkammer extends RuestkammerVater {
     public boolean nurgle = false;
     public boolean biker = false;
     public boolean noise = false;
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
-    boolean melee = false;
-    boolean range = false;
-    boolean rangeForMelee = false;
-    boolean meleeForRange = false;
-    String defaultNK = "";
-    String defaultFK = "";
-    String type = "";
+    private OptionsUpgradeGruppe handwaffen = null;
+    private OptionsUpgradeGruppe fkwaffen = null;
+    private boolean melee = false;
+    private boolean range = false;
+    private boolean rangeForMelee = false;
+    private boolean meleeForRange = false;
+    private String defaultNK = "";
+    private String defaultFK = "";
+    public String type = "";
 
     //BP/NK gg RNG/NK
 

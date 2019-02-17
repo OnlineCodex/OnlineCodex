@@ -4,16 +4,13 @@ import oc.*;
 
 public class ORBoyz extends Eintrag {
 
-    AnzahlPanel boyz;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+	private final AnzahlPanel boyz;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
-    OptionsEinzelUpgrade wummen;
-    OptionsZaehlerGruppe boyzFK;
-    OptionsZaehlerGruppe boyzFK2;
-    OptionsEinzelUpgrade panzaboys;
-    RuestkammerStarter Boss;
+	private final OptionsZaehlerGruppe boyzFK;
+	private final OptionsZaehlerGruppe boyzFK2;
+	private final RuestkammerStarter Boss;
 
     public ORBoyz() {
 

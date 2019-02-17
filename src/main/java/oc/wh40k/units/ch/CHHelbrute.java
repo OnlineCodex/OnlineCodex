@@ -7,10 +7,10 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHHelbrute extends Eintrag {
 
-    OptionsUpgradeGruppe oe1;
-    OptionsZaehlerGruppe oe2;
-    OptionsUpgradeGruppe oe3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe oe1;
+	private final OptionsZaehlerGruppe oe2;
+	private final OptionsUpgradeGruppe oe3;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHelbrute() {
         name = "Helbrute";

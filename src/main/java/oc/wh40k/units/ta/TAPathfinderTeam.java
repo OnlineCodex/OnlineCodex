@@ -4,11 +4,11 @@ import oc.*;
 
 public class TAPathfinderTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1, oe2, oe3;
-    OptionsZaehlerGruppe oz1;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelUpgrade oe1, oe2, oe3;
+	private final OptionsZaehlerGruppe oz1;
+	private final OptionsZaehlerGruppe o5;
+	private final RuestkammerStarter rkBoss;
 
     public TAPathfinderTeam() {
         name = "Pathfinder Team";

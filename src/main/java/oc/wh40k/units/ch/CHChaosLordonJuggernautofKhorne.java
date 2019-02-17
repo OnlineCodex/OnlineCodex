@@ -6,9 +6,8 @@ import oc.RuestkammerStarter;
 
 public class CHChaosLordonJuggernautofKhorne extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
-
+	private final RuestkammerStarter waffen;
+	
     public CHChaosLordonJuggernautofKhorne() {
 
         name = "Chaos Lord on Juggernaut of Khorne";

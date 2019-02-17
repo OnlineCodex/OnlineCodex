@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TAAX3RazorsharkStrikeFighter extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o2;
 
     public TAAX3RazorsharkStrikeFighter() {
         name = "AX3 Razorshark Strike Fighter";

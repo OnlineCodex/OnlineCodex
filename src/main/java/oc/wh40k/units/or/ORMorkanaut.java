@@ -5,7 +5,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class ORMorkanaut extends Eintrag {
 
-    OptionsEinzelUpgrade o1, o2, o3, o4, o5;
+	private final OptionsEinzelUpgrade o1, o2, o3, o4, o5;
 
     public ORMorkanaut() {
 

@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORLootedRhino extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
     public ORLootedRhino() {

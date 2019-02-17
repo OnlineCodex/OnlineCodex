@@ -34,6 +34,4 @@ public class ORKillBursta extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

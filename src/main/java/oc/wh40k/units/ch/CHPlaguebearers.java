@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHPlaguebearers extends Eintrag {
 
-    AnzahlPanel plaguebearers;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel plaguebearers;
+	private final RuestkammerStarter rkBoss;
 
     public CHPlaguebearers() {
 

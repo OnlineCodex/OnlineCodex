@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHPoxbringer extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHPoxbringer() {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, INFANTRY, PLAGUEBEARER, PSYKER, HERALD_OF_NURGLE, POXBRINGER);

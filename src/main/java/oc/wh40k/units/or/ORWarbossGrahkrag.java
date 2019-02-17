@@ -1,11 +1,9 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 
 public class ORWarbossGrahkrag extends Eintrag {
 
-    OptionsEinzelUpgrade Munigrot;
 
     public ORWarbossGrahkrag() {
 

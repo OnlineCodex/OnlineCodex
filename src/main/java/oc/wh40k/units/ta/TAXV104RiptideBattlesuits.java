@@ -9,8 +9,8 @@ import java.util.Vector;
 
 public class TAXV104RiptideBattlesuits extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
-    OptionsZaehlerGruppe o5;
+	private final Vector<RuestkammerStarter> rk;
+	private final OptionsZaehlerGruppe o5;
 
     public TAXV104RiptideBattlesuits() {
         name = "XV104 Riptide Battlesuits";

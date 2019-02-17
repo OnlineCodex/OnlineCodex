@@ -8,8 +8,8 @@ import oc.RuestkammerStarter;
 
 public class TACommanderShadowsun extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade oe1;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsEinzelUpgrade oe1;
 
     public TACommanderShadowsun() {
         name = "Commander Shadowsun";

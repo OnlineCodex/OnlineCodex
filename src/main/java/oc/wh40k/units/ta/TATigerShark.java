@@ -8,8 +8,8 @@ import oc.RuestkammerStarter;
 //[APO 2]
 
 public class TATigerShark extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter rk;
+	private final OptionsUpgradeGruppe o1;
+	private final RuestkammerStarter rk;
 
     public TATigerShark() {
         name = "Tiger Shark";

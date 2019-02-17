@@ -4,9 +4,8 @@ import oc.*;
 
 public class CHChaosLandRaider extends Eintrag {
 
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosLandRaider() {
         name = "Chaos Land Raider";

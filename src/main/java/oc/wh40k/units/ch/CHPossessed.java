@@ -4,9 +4,9 @@ import oc.*;
 
 public class CHPossessed extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsUpgradeGruppe mark;
-    OptionsUpgradeGruppe icon;
+	private final AnzahlPanel marines;
+	private final OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe icon;
     
     public CHPossessed() {
 

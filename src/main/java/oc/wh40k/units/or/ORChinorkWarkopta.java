@@ -7,9 +7,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORChinorkWarkopta extends Eintrag {
 
-    OptionsEinzelUpgrade ball;
-    OptionsUpgradeGruppe tech;
-    OptionsUpgradeGruppe tech2;
+	private final OptionsEinzelUpgrade ball;
+	private final OptionsUpgradeGruppe tech;
+	private final OptionsUpgradeGruppe tech2;
 
     public ORChinorkWarkopta() {
         grundkosten = getPts("'Chinork' Warkopta");

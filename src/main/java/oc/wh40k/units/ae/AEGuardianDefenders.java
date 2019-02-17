@@ -16,11 +16,9 @@ public class AEGuardianDefenders extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
-
-    RuestkammerStarter weaponPlatform1, weaponPlatform2;
+	private final RuestkammerStarter weaponPlatform1, weaponPlatform2;
 
 
 

@@ -7,9 +7,9 @@ import oc.RuestkammerVater;
 
 public class CHCultistkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsEinzelUpgrade handwaffe, maschinenpistole;
-    boolean twistbray = false;
+	private OptionsUpgradeGruppe o1, o2;
+	private OptionsEinzelUpgrade handwaffe, maschinenpistole;
+    private boolean twistbray = false;
 
     public CHCultistkammer() {
         grundkosten = 0;

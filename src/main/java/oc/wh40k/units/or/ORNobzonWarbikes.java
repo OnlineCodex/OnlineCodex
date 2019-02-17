@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORNobzonWarbikes extends Eintrag {
 
-    AnzahlPanel bosse;
-    OptionsZaehlerGruppe bosseCC;
-    OptionsZaehlerGruppe bosseCC2;
+	private final AnzahlPanel bosse;
+	private final OptionsZaehlerGruppe bosseCC;
+	private final OptionsZaehlerGruppe bosseCC2;
 
     public ORNobzonWarbikes() {
         kategorie = 2;

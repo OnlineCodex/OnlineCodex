@@ -11,8 +11,8 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class AEFarseer extends Eintrag {
-    OptionsZaehlerGruppe o1;
-    RuestkammerStarter psychicPowers;
+	private final OptionsZaehlerGruppe o1;
+	private final RuestkammerStarter psychicPowers;
 
     public AEFarseer() {
         name = "Farseer";

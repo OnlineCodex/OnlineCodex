@@ -7,10 +7,10 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHChaosThunderhawkAssaultGunship extends Eintrag {
 
-    OptionsUpgradeGruppe o1, claws;
-    OptionsZaehlerGruppe o2;
-    OptionsUpgradeGruppe o3, o4;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsUpgradeGruppe o3, o4;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosThunderhawkAssaultGunship() {
         name = "Chaos Thunderhawk Assault Gunship";

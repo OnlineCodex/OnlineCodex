@@ -14,7 +14,7 @@ public class AEHemlockWraithfighter extends Eintrag {
 
 
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
 
 

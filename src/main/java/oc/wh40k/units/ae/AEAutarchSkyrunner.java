@@ -10,8 +10,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class AEAutarchSkyrunner extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public AEAutarchSkyrunner() {
         name = "Autarch Skyrunner";

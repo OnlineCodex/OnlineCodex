@@ -16,6 +16,4 @@ public class ORKampfbomba extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

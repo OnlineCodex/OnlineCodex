@@ -6,11 +6,11 @@ import oc.RuestkammerStarter;
 
 public class ORGunTrukk extends Eintrag {
 
-    RuestkammerStarter t1;
-    RuestkammerStarter t2;
-    RuestkammerStarter t3;
-    RuestkammerStarter t4;
-    RuestkammerStarter t5;
+	private final RuestkammerStarter t1;
+	private final RuestkammerStarter t2;
+	private final RuestkammerStarter t3;
+	private final RuestkammerStarter t4;
+	private final RuestkammerStarter t5;
 
     public ORGunTrukk() {
 

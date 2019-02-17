@@ -6,8 +6,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHPoxwalkers extends Eintrag {
 
-    AnzahlPanel walkers;
-    OptionsEinzelUpgrade reaper;
+	private final AnzahlPanel walkers;
 
     public CHPoxwalkers() {
 

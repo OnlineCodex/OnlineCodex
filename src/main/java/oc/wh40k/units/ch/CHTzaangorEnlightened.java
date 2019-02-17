@@ -4,10 +4,9 @@ import oc.*;
 
 public class CHTzaangorEnlightened extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe weapons;
-    OptionsEinzelUpgrade aviarch;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe weapons;
+	private final RuestkammerStarter rkBoss;
 
     public CHTzaangorEnlightened() {
 

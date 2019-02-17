@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHHellforgedRapierBattery extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe crew, weapon;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe crew, weapon;
 
     public CHHellforgedRapierBattery() {
         //name = "Thousand Sons\n";

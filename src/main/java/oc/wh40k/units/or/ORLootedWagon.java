@@ -6,9 +6,9 @@ import oc.*;
 public class ORLootedWagon extends Eintrag {
 
 
-    OptionsUpgradeGruppe FK2;
-    OptionsZaehlerGruppe BeutepanzaFK;
-    OptionsUpgradeGruppe RammGruppe;
+	private final OptionsUpgradeGruppe FK2;
+	private final OptionsZaehlerGruppe BeutepanzaFK;
+	private final OptionsUpgradeGruppe RammGruppe;
 
     public ORLootedWagon() {
 

@@ -4,11 +4,11 @@ import oc.*;
 
 public class ORMeganobzKammer extends RuestkammerVater {
 
-    AnzahlPanel Gargbosse;
-    OptionsZaehlerGruppe GargbosseFK;
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
-    OptionsEinzelZaehler Trophäenstange;
+	private AnzahlPanel Gargbosse;
+	private OptionsZaehlerGruppe GargbosseFK;
+	private RuestkammerStarter PikkUp;
+	private RuestkammerStarter Kampfpanza;
+	private OptionsEinzelZaehler Trophäenstange;
 
     public ORMeganobzKammer() {
     }
