@@ -7,9 +7,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYTrygon extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
     public TYTrygon() {
         name = "Trygon";

@@ -12,7 +12,7 @@ public class TYGoliathTruck extends Eintrag {
 
 
 
-    OptionsEinzelZaehler oe1;
+    private final OptionsEinzelZaehler oe1;
 
 
 

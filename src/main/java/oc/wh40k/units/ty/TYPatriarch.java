@@ -14,8 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYPatriarch extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-    RuestkammerStarter kammer;
+    private final RuestkammerStarter psychicPowers;
 
     public TYPatriarch() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, PATRIARCH);

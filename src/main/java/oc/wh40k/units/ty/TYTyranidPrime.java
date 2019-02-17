@@ -2,13 +2,9 @@ package oc.wh40k.units.ty;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class TYTyranidPrime extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
 
     RuestkammerStarter waffen;
 

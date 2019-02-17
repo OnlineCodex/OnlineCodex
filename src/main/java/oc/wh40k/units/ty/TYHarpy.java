@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYHarpy extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public TYHarpy() {
         name = "Harpy";

@@ -1,12 +1,9 @@
 //IA Xenos + FAQ 1.0
 package oc.wh40k.units.ty;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 
 public class TYHarridan extends Eintrag {
-
-    AnzahlPanel o1;
 
     public TYHarridan() {
 

@@ -3,12 +3,10 @@ package oc.wh40k.units.ty;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class TYTyrannofex extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe o1;
 
     public TYTyrannofex() {
         name = "Tyrannofex";

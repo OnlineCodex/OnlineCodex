@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TYPyrovores extends Eintrag {
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     public TYPyrovores() {
         name = "Pyrovores";

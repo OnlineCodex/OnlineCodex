@@ -16,8 +16,4 @@ public class TYHierophantBiotitan extends Eintrag {
         complete();
 
     }
-
-    //@OVERRIDE
-    public void refreshen() {
-    }
 }

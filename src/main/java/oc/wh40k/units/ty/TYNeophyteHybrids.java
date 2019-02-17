@@ -10,11 +10,11 @@ public class TYNeophyteHybrids extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     private final OptionsZaehlerGruppe o1, o2, o3;
 
-    RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkBoss;
 
 
 

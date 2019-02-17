@@ -16,11 +16,9 @@ public class TYGoliathRockgrinder extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1;
 
-    OptionsEinzelZaehler oe1;
-
-
+    private final OptionsEinzelZaehler oe1;
 
     public TYGoliathRockgrinder() {
 

@@ -10,11 +10,11 @@ public class TYAchillesRidgerunners extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2;
+    private final OptionsZaehlerGruppe o1, o2;
 
-    OptionsZaehlerGruppe o1x, o2x;
+    private final OptionsZaehlerGruppe o1x, o2x;
 
 
 

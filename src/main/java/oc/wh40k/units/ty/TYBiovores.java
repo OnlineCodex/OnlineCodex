@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TYBiovores extends Eintrag {
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     public TYBiovores() {
         name = "Biovores";

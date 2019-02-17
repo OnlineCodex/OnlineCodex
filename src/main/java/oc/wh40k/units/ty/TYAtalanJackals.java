@@ -4,12 +4,11 @@ import oc.*;
 
 public class TYAtalanJackals extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTrike, rkTrike2, rkTrike3;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
+    private final AnzahlPanel squad;
+    private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkTrike, rkTrike2, rkTrike3;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o2;
 
     public TYAtalanJackals() {
         name = "Atalan Jackals\n";

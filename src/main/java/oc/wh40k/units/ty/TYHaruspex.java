@@ -15,9 +15,4 @@ public class TYHaruspex extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

@@ -2,16 +2,13 @@ package oc.wh40k.units.ty;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class TYZoanthropes extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter pod;
-    OptionsEinzelUpgrade neurotrophe;
-    RuestkammerStarter psychicPowers;
+    private final AnzahlPanel squad;
+    private final RuestkammerStarter psychicPowers;
 
     public TYZoanthropes() {
         name = "Zoanthropes";

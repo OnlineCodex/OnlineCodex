@@ -2,12 +2,10 @@ package oc.wh40k.units.ty;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class TYVenomthropes extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter pod;
+    private final AnzahlPanel squad;
 
     public TYVenomthropes() {
         name = "Venomthropes";

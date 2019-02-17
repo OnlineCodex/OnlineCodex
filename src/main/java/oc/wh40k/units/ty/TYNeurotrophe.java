@@ -5,8 +5,8 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 public class TYNeurotrophe extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-	private RuestkammerStarter waffen;
+    private final RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
 
     public TYNeurotrophe() {
         name = "Neurotrophe";
