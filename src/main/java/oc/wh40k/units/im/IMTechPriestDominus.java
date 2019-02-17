@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class IMTechPriestDominus extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
 
     public IMTechPriestDominus() {
         name = "Tech-Priest Dominus";

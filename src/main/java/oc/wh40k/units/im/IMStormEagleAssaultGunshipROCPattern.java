@@ -16,7 +16,7 @@ public class IMStormEagleAssaultGunshipROCPattern extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
 
 

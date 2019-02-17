@@ -4,15 +4,15 @@ import oc.*;
 
 public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-    OptionsEinzelUpgrade jump, mb;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x, o1y;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsEinzelUpgrade jump, mb;
 
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
-    boolean siegeForce;
+	private boolean siegeForce;
 
     public IMVanguardVeteranSquad() {
         name = "Vanguard Veteran Squad\n";

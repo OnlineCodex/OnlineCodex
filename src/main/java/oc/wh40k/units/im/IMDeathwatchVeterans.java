@@ -8,21 +8,21 @@ import java.util.Vector;
 
 public class IMDeathwatchVeterans extends Eintrag {
 
-	AnzahlPanel veterans, terminator, biker, blackshield, sergeant, vanguard;
+	private final AnzahlPanel veterans, terminator, biker, blackshield, sergeant, vanguard;
 
-	Vector<RuestkammerStarter> rkVeterans;
-	Vector<RuestkammerStarter> rkSergeant;
-	Vector<RuestkammerStarter> rkBlackshield;
-	Vector<RuestkammerStarter> rkTerminators;
-	Vector<RuestkammerStarter> rkBikers;
-	Vector<RuestkammerStarter> rkVanguards;
+	private final Vector<RuestkammerStarter> rkVeterans;
+	private final Vector<RuestkammerStarter> rkSergeant;
+	private final Vector<RuestkammerStarter> rkBlackshield;
+	private final Vector<RuestkammerStarter> rkTerminators;
+	private final Vector<RuestkammerStarter> rkBikers;
+	private final Vector<RuestkammerStarter> rkVanguards;
 
-	int numVeterans = 0;
-	int numSergeant = 0;
-	int numBlackShield = 0;
-	int numTerminators = 0;
-	int numBikers = 0;
-	int numVanguards = 0;
+	private int numVeterans = 0;
+	private int numSergeant = 0;
+	private int numBlackShield = 0;
+	private int numTerminators = 0;
+	private int numBikers = 0;
+	private int numVanguards = 0;
 
 	public IMDeathwatchVeterans() {
 		name = "Veterans\n";

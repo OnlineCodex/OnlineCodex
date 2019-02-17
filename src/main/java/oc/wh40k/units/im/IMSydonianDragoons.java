@@ -4,17 +4,10 @@ import oc.*;
 
 public class IMSydonianDragoons extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsEinzelZaehler oe1;
-    OptionsEinzelZaehler oe2;
-    OptionsEinzelZaehler oe3;
-    OptionsEinzelZaehler oe4;
-    OptionsEinzelZaehler oe5;
-    OptionsEinzelZaehler oe6;
-    OptionsEinzelZaehler oe7;
-    OptionsEinzelZaehler oe8;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsEinzelZaehler oe1;
 
     public IMSydonianDragoons() {
         name = "Sydonian Dragoons";

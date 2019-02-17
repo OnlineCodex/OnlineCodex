@@ -7,7 +7,7 @@ import oc.Eintrag;
 
 public class IMPenitentEngines extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public IMPenitentEngines() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, VEHICLE, PENITENT_ENGINES);

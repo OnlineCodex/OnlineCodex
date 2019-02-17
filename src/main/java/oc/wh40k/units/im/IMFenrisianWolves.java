@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class IMFenrisianWolves extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade cyber;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelUpgrade cyber;
 
     public IMFenrisianWolves() {
         grundkosten = 0;

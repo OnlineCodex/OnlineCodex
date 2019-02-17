@@ -5,7 +5,7 @@ import oc.RuestkammerStarter;
 
 public class IMLordCommissar extends Eintrag {
 
-    RuestkammerStarter kammer;
+	private final RuestkammerStarter kammer;
 
     public IMLordCommissar() {
         name = "Lord Commissar";

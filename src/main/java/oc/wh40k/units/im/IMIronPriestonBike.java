@@ -4,8 +4,7 @@ import oc.*;
 
 public class IMIronPriestonBike extends Eintrag {
 
-    AnzahlPanel servitors;
-    OptionsUpgradeGruppe o1, o5;
+	private final OptionsUpgradeGruppe o1, o5;
 
     public IMIronPriestonBike() {
         name = "Iron Priest on Bike";

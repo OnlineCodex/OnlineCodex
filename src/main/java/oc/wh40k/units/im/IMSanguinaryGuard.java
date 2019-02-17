@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMSanguinaryGuard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2def;
-    OptionsEinzelUpgrade masken;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o1def;
+	private final OptionsZaehlerGruppe o2def;
+	private final OptionsEinzelUpgrade masken;
 
     public IMSanguinaryGuard() {
         name = "Sanguinary Guard\n";

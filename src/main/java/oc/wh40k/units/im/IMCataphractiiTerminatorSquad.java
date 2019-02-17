@@ -11,11 +11,11 @@ import oc.*;
 
 public class IMCataphractiiTerminatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x, o1y;
+	private final OptionsZaehlerGruppe o2, o2x;
+	private final OptionsZaehlerGruppe o3;
+	private final RuestkammerStarter rkBoss;
 
     public IMCataphractiiTerminatorSquad() {   	
         name = "Cataphractii Terminator Squad\n";

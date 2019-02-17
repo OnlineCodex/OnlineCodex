@@ -7,9 +7,9 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMDeathwatchLibrarian extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade jump;
+	private final RuestkammerStarter waffenUndReliquien;
+	private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarian() {
         name = "Librarian";

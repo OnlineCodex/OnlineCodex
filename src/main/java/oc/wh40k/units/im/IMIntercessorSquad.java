@@ -3,11 +3,10 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMIntercessorSquad extends Eintrag {
-    OptionsEinzelUpgrade sergeant;
-    OptionsZaehlerGruppe grenade;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1;
-    AnzahlPanel squad;
+	private final OptionsEinzelUpgrade sergeant;
+	private final OptionsZaehlerGruppe grenade;
+	private final OptionsUpgradeGruppe o1;
+    private final AnzahlPanel squad;
 
     public IMIntercessorSquad() {
         name = "Intercessor Squad";

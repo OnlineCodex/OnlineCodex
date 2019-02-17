@@ -3,10 +3,9 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMDeathwatchReiverSquad extends Eintrag {
-    OptionsEinzelUpgrade sergeant, grav, grapnel;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1, o2;
-    AnzahlPanel squad;
+	private final OptionsEinzelUpgrade sergeant, grav, grapnel;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final AnzahlPanel squad;
 
     public IMDeathwatchReiverSquad() {
         name = "Reiver Squad";

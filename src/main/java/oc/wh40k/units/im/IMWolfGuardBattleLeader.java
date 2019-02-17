@@ -4,8 +4,8 @@ import oc.*;
 
 public class IMWolfGuardBattleLeader extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
+	private final OptionsEinzelUpgrade oe1;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfGuardBattleLeader() {
         name = "Wolf Guard Battle Leader";

@@ -10,8 +10,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMInterrogatorChaplain extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade jp;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsEinzelUpgrade jp;
 
     public IMInterrogatorChaplain() {
         name = "Interrogator-Chaplain";

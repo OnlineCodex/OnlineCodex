@@ -4,9 +4,8 @@ import oc.*;
 
 public class IMOnagerDunecrawler extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1, o2;
-    OptionsEinzelUpgrade oe1;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsEinzelUpgrade oe1;
 
     public IMOnagerDunecrawler() {
         name = "Onager Dunecrawlers";

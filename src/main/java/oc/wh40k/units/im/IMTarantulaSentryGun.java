@@ -3,9 +3,9 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMTarantulaSentryGun extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o3;
-    AnzahlPanel squad;
+
+	private final OptionsZaehlerGruppe o3;
+    private final AnzahlPanel squad;
 
     public IMTarantulaSentryGun() {
         name = "Tarantula Sentry Gun";

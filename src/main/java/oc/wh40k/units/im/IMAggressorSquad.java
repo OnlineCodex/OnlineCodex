@@ -3,10 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMAggressorSquad extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
 
     public IMAggressorSquad() {
         name = "Aggressor Squad";

@@ -4,8 +4,8 @@ import oc.*;
 
 public class IMWolfPriest extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
+	private final OptionsEinzelUpgrade oe1;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfPriest() {
         name = "Wolf Priest";

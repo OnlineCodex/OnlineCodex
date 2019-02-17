@@ -6,7 +6,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMMaster extends Eintrag {
-    OptionsEinzelUpgrade jump;
+	private final OptionsEinzelUpgrade jump;
 
     public IMMaster() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CAPTAIN, MASTER);

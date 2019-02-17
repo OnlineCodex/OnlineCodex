@@ -5,8 +5,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class IMTaurox extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+	private final OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe2;
 
     public IMTaurox() {
         name = "Taurox";

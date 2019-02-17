@@ -7,11 +7,8 @@ import oc.RuestkammerStarter;
 
 public class IMWatchCaptaininTerminatorArmour extends Eintrag {
 
-    boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
-    OptionsEinzelUpgrade meister, sturm, termi;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter spezialAusruestung;
+	private boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMWatchCaptaininTerminatorArmour() {
         name = "Watch Captain";

@@ -9,7 +9,7 @@ import oc.RuestkammerStarter;
 
 public class IMVexilusPraetorinAllarusTerminatorArmour extends Eintrag {
 	
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMVexilusPraetorinAllarusTerminatorArmour() {
         name = "Vexilus Praetor in Allarus Terminator Armour";

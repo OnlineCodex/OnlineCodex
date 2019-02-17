@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMWhirlwind extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMWhirlwind() {
         name = "Whirlwind";

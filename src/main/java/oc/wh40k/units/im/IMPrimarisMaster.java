@@ -3,10 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMPrimarisMaster extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
-
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1, oe2;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsEinzelUpgrade oe1, oe2;
 
     public IMPrimarisMaster() {
         name = "Primaris Master";

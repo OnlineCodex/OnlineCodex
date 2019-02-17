@@ -11,22 +11,22 @@ import oc.*;
 public class IMImperialKnightRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    String default1 = "";
-    String default2 = "";
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private String default1 = "";
+    private String default2 = "";
     boolean character = false;
-    OptionsEinzelUpgrade sanctuary;
-    OptionsEinzelUpgrade armourOfTheSaintedIon;
-    OptionsEinzelUpgrade helmOfTheNamelessWarrior;
-    OptionsEinzelUpgrade bannerOfMachariusTriumphant;
-    OptionsEinzelUpgrade markOfTheOmnissiah;
-    OptionsEinzelUpgrade theHelmDominatus;
-    OptionsEinzelUpgrade markOfTheLance;
-    OptionsEinzelUpgrade angelsGrace;
-    OptionsEinzelUpgrade theHuntersEye;
-    OptionsEinzelUpgrade theBannerInviolate;
-    OptionsEinzelUpgrade theHeadsmansMark;
-    OptionsEinzelUpgrade theAuricMask;
+    private OptionsEinzelUpgrade sanctuary;
+    private OptionsEinzelUpgrade armourOfTheSaintedIon;
+    private OptionsEinzelUpgrade helmOfTheNamelessWarrior;
+    private OptionsEinzelUpgrade bannerOfMachariusTriumphant;
+    private OptionsEinzelUpgrade markOfTheOmnissiah;
+    private OptionsEinzelUpgrade theHelmDominatus;
+    private OptionsEinzelUpgrade markOfTheLance;
+    private OptionsEinzelUpgrade angelsGrace;
+    private OptionsEinzelUpgrade theHuntersEye;
+    private OptionsEinzelUpgrade theBannerInviolate;
+    private OptionsEinzelUpgrade theHeadsmansMark;
+    private OptionsEinzelUpgrade theAuricMask;
     
     Set<String> CHARACTERS = ImmutableSet.of("Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant");
 

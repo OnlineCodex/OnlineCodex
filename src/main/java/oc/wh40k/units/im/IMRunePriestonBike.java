@@ -5,9 +5,9 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriestonBike extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
-	RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade oe1;
+	private final RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestonBike() {
         name = "Rune Priest on Bike";

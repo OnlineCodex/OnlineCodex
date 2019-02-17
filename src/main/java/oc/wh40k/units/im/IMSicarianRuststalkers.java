@@ -4,12 +4,11 @@ import oc.*;
 
 public class IMSicarianRuststalkers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x;
+	private final RuestkammerStarter rkBoss;
 
-    boolean harkerSelected = false;
+	private boolean harkerSelected = false;
 
     public IMSicarianRuststalkers() {
         name = "Sicarian Ruststalkers";

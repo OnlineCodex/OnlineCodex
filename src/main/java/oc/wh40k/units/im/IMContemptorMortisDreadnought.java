@@ -18,9 +18,9 @@ public class IMContemptorMortisDreadnought extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
-    OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe1;
 
 
 

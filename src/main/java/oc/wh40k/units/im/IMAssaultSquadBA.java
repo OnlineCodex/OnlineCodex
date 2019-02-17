@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMAssaultSquadBA extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x;
+	private final OptionsZaehlerGruppe o2;
+	private final RuestkammerStarter rkBoss;
 
-    OptionsEinzelUpgrade jump;
+	private final OptionsEinzelUpgrade jump;
 
     public IMAssaultSquadBA() {
         name = "Assault Squad\n";

@@ -4,7 +4,7 @@ import oc.*;
 
 public class IMIronPriest extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
     
     public IMIronPriest() {
         name = "Iron Priest";

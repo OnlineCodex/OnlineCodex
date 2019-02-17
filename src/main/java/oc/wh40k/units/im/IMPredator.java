@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMPredator extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMPredator() {
         name = "Predator";

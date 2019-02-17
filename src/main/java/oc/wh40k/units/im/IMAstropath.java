@@ -11,8 +11,8 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMAstropath extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o1;
+    private final RuestkammerStarter psychicPowers;
 
     public IMAstropath() {
         name = "Astropath";

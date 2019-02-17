@@ -4,14 +4,14 @@ import oc.*;
 
 public class IMVeterans extends Eintrag {
 
-    OptionsEinzelUpgrade oe4;
-    OptionsEinzelZaehler oe5;
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter kammer;
+	private final OptionsEinzelUpgrade oe4;
+	private final OptionsEinzelZaehler oe5;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsZaehlerGruppe o4;
+	private final OptionsZaehlerGruppe o5;
+	private final RuestkammerStarter kammer;
 
-    boolean harkerSelected = false;
+	private boolean harkerSelected = false;
 
     public IMVeterans() {
         name = "Veterans";

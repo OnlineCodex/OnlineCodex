@@ -5,11 +5,9 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMPaladinAncient extends Eintrag {
     //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
-    OptionsUpgradeGruppe o1, o1x;
-    OptionsUpgradeGruppe o2, reliquien;
-    boolean grandmasterBool;
-    OptionsEinzelUpgrade grandmaster;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final RuestkammerStarter psychicPowers;
 
     public IMPaladinAncient() {
         name = "Paladin Ancient";

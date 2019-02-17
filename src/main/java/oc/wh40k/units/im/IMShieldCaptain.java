@@ -10,7 +10,7 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 public class IMShieldCaptain extends Eintrag {
 	
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMShieldCaptain() {
         name = "Shield Captain";

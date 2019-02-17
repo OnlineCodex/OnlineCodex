@@ -6,10 +6,10 @@ import oc.*;
 
 public class IMRetributorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe bolters;
-    OptionsZaehlerGruppe heavy;
-    OptionsEinzelUpgrade simulacrum;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe bolters;
+	private final OptionsZaehlerGruppe heavy;
+	private final OptionsEinzelUpgrade simulacrum;
 
     public IMRetributorSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, RETRIBUTOR_SQUAD);

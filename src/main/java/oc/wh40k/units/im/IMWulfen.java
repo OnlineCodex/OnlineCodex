@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMWulfen extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsEinzelUpgrade oe1;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o2, o2x;
+	private final OptionsEinzelUpgrade oe1;
 
     public IMWulfen() {
         grundkosten = 0;

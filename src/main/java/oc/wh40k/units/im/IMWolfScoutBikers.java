@@ -8,9 +8,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMWolfScoutBikers extends Eintrag {
 
-    AnzahlPanel squad;
-	OptionsZaehlerGruppe o1x;
-	OptionsZaehlerGruppe o1;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o1;
 
     public IMWolfScoutBikers() {
         grundkosten = 0;

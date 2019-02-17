@@ -8,7 +8,7 @@ import oc.Eintrag;
 
 public class IMCrusaders extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public IMCrusaders() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ASTRA_MILITARUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, CRUSADERS);

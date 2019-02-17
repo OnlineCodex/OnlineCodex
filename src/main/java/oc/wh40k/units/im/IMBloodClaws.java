@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMBloodClaws extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o1y;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
-    RuestkammerStarter rkBoss3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x, o1y;
+	private final OptionsZaehlerGruppe o2;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss2;
+	private final RuestkammerStarter rkBoss3;
 
     public IMBloodClaws() {
         name = "Blood Claws\n";

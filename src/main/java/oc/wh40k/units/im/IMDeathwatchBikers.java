@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMDeathwatchBikers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter waffenUndReliquien;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o3;
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchBikers() {
         name = "Bike Squad\n";

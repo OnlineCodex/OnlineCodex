@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMScoutSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsEinzelZaehler o2;
-    OptionsUpgradeGruppe o3;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsEinzelZaehler o2;
+    private final OptionsUpgradeGruppe o3;
+    private final RuestkammerStarter rkBoss;
 
 
     public IMScoutSquad() {

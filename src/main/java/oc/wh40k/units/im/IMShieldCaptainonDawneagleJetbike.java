@@ -11,7 +11,7 @@ import oc.RuestkammerStarter;
 
 public class IMShieldCaptainonDawneagleJetbike extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
     
     public IMShieldCaptainonDawneagleJetbike() {
         name = "Shield Captain on Dawneagle Jetbike";

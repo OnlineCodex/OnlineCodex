@@ -5,7 +5,7 @@ import static oc.KeyWord.*;
 import oc.*;
 
 public class IMRepentiaSquad extends Eintrag {
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public IMRepentiaSquad() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, REPENTIA_SQUAD);

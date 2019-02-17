@@ -2,11 +2,9 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 
 public class IMVindicator extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
 
     public IMVindicator() {
         name = "Vindicator";

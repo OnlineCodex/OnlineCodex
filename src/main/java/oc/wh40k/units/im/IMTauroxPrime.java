@@ -7,10 +7,10 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMTauroxPrime extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+	private final OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe2;
 
     public IMTauroxPrime() {
         name = "Taurox Prime";

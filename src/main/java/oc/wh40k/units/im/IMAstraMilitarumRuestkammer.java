@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2, o3, o4;
-    OptionsEinzelUpgrade oe1, oe2;
-    OptionsZaehlerGruppe o5;
-    String type = "";
-    String default1 = "";
-    String default2 = "";
+	private OptionsUpgradeGruppe o1, o2, o3, o4;
+	private OptionsEinzelUpgrade oe1, oe2;
+	private OptionsZaehlerGruppe o5;
+	private String type = "";
+	private String default1 = "";
+	private String default2 = "";
 
 
     public IMAstraMilitarumRuestkammer() {

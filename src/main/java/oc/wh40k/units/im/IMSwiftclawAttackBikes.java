@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMSwiftclawAttackBikes extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
     public IMSwiftclawAttackBikes() {
         grundkosten = 0;

@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class IMSanguinaryGuardAncient extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMSanguinaryGuardAncient() {
         name = "Sanguinary Guard Ancient";

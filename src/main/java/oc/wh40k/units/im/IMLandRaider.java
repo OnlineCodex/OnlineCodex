@@ -2,11 +2,8 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 
 public class IMLandRaider extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
 
     public IMLandRaider() {
         name = "Land Raider";

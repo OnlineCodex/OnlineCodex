@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class IMCorpuscariiElectroPriests extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public IMCorpuscariiElectroPriests() {
         name = "Corpuscarii Electro-Priests";

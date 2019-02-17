@@ -7,12 +7,12 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMChimera extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o1x;
-    OptionsUpgradeGruppe o2x;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o1x;
+	private final OptionsUpgradeGruppe o2x;
+	private final OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe2;
 
     public IMChimera() {
     	name = "Chimera";

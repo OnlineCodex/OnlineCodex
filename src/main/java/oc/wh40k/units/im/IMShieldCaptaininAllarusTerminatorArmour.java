@@ -11,7 +11,7 @@ import oc.RuestkammerStarter;
 
 public class IMShieldCaptaininAllarusTerminatorArmour extends Eintrag {
 	
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMShieldCaptaininAllarusTerminatorArmour() {
         name = "Shield Captain in Allarus Terminator Armour";

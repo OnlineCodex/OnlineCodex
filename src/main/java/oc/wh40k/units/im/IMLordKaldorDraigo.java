@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMLordKaldorDraigo extends Eintrag {
 
-	RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 	
     public IMLordKaldorDraigo() {
         name = "Lord Kaldor Draigo";

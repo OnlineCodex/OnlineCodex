@@ -5,13 +5,13 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMGreyKnightTerminatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2def;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter psychicPowers;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1def;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o2def;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter psychicPowers;
 
     boolean thawnSelected = false;
 

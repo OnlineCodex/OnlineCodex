@@ -4,11 +4,11 @@ import oc.*;
 
 public class IMCenturionAssaultSquad extends Eintrag {
 
-    protected OptionsEinzelZaehler o1;
-    protected OptionsEinzelZaehler o1x;
-    protected OptionsZaehlerGruppe o2;
-    protected OptionsZaehlerGruppe o2x;
-    AnzahlPanel squad;
+	private final  OptionsEinzelZaehler o1;
+	private final  OptionsEinzelZaehler o1x;
+	private final  OptionsZaehlerGruppe o2;
+    private final  OptionsZaehlerGruppe o2x;
+    private final AnzahlPanel squad;
 
     public IMCenturionAssaultSquad() {
         name = "Centurion Assault Squad\n";

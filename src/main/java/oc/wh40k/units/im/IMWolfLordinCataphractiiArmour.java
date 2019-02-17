@@ -6,7 +6,7 @@ import oc.RuestkammerStarter;
 
 public class IMWolfLordinCataphractiiArmour extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfLordinCataphractiiArmour() {
         name = "Wolf Lord in Cataphractii Armour";

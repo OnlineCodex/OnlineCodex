@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMContemptorAchillusDreadnought extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMContemptorAchillusDreadnought() {
         name = "Contemptor-Achillus Dreadnought";

@@ -4,10 +4,9 @@ import oc.*;
 
 public class IMStormlord extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2, o3;
-    OptionsEinzelUpgrade oe2;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsUpgradeGruppe o2, o3;
+	private final OptionsEinzelUpgrade oe2;
 
     public IMStormlord() {
         name = "Stormlord";

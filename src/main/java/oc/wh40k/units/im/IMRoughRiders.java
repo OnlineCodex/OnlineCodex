@@ -4,13 +4,13 @@ import oc.*;
 
 public class IMRoughRiders extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o5;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o3;
+	private final OptionsUpgradeGruppe o5;
 
-    boolean kamirSelected = false;
+	private boolean kamirSelected = false;
 
     public IMRoughRiders() {
         checkBuildaVater();

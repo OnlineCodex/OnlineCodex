@@ -16,7 +16,7 @@ public class IMRapierCarrier extends Eintrag {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
 

@@ -4,11 +4,11 @@ import oc.*;
 
 public class IMWolfGuardTartarosTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3, o4, o5;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o2, o2x;
+	private final OptionsZaehlerGruppe o3, o4, o5;
+	private final RuestkammerStarter rkBoss;
 
     public IMWolfGuardTartarosTerminators() {
         grundkosten = 0;

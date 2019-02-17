@@ -4,13 +4,13 @@ import oc.*;
 
 public class IMDeathCompany extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe boltpistole;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe kettenschwert;
-    OptionsZaehlerGruppe nk;
-    OptionsZaehlerGruppe hammer;
-    OptionsEinzelUpgrade jet;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe boltpistole;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe kettenschwert;
+	private final OptionsZaehlerGruppe nk;
+	private final OptionsZaehlerGruppe hammer;
+	private final OptionsEinzelUpgrade jet;
 
     boolean added = false;
 

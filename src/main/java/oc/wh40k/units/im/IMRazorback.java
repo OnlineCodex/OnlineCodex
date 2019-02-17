@@ -8,7 +8,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMRazorback extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMRazorback() {
         name = "Razorback";

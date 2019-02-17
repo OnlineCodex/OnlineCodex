@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMInterrogatorChaplaininTerminatorArmour extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public IMInterrogatorChaplaininTerminatorArmour() {
         name = "Interrogator-Chaplain in Terminator Armour";

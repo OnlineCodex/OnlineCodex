@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMWolfScouts extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe wpn1, wpn2, boltgun, plasmapistol, boltpistol;
-    OptionsZaehlerGruppe nk;
-    OptionsEinzelZaehler camo;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe wpn1, wpn2, boltgun, plasmapistol, boltpistol;
+	private final OptionsZaehlerGruppe nk;
+	private final OptionsEinzelZaehler camo;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss2;
 
     public IMWolfScouts() {
         grundkosten = 0;

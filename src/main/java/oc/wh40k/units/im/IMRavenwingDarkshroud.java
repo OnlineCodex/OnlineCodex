@@ -14,7 +14,7 @@ public class IMRavenwingDarkshroud extends Eintrag {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
 

@@ -6,7 +6,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMSanguinaryPriest extends Eintrag {
-    OptionsEinzelUpgrade jump;
+	private final OptionsEinzelUpgrade jump;
 
     public IMSanguinaryPriest() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, SANGUINARY_PRIEST);

@@ -16,7 +16,7 @@ public class IMStormEagleAssaultGunship extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
 
 

@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMBullgryns extends Eintrag {
 
-    OptionsZaehlerGruppe o1, o2;
-    AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o2;
+	private final AnzahlPanel squad;
 
     public IMBullgryns() {
         name = "Bullgryns";

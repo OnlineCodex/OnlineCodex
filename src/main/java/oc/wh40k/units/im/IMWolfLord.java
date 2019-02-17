@@ -4,8 +4,8 @@ import oc.*;
 
 public class IMWolfLord extends Eintrag {
 
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+	private final OptionsEinzelUpgrade jump;
+	private final RuestkammerStarter waffenUndReliquien;
     
     public IMWolfLord() {
         name = "Wolf Lord";

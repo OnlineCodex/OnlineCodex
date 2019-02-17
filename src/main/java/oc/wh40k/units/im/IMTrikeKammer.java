@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class IMTrikeKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
     public IMTrikeKammer() {
         grundkosten = getPts("Attack Bike Squad") + getPts("Twin boltgun");

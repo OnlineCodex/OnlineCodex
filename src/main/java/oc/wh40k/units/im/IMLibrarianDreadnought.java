@@ -10,8 +10,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarianDreadnought extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o2;
+	private final RuestkammerStarter psychicPowers;
 
     public IMLibrarianDreadnought() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, VEHICLE, DREADNOUGHT, LIBRARIAN, PSYKER, LIBRARIAN_DREADNOUGHT);

@@ -12,7 +12,7 @@ public class IMLandSpeederTempest extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

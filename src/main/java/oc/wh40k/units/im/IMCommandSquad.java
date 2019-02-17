@@ -7,13 +7,13 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMCommandSquad extends Eintrag {
 
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o5;
-    OptionsEinzelZaehler oe1;
-    OptionsEinzelZaehler oe2;
-    OptionsEinzelZaehler oe3;
-    OptionsEinzelZaehler oe4;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsZaehlerGruppe o4;
+	private final OptionsZaehlerGruppe o5;
+	private final OptionsEinzelZaehler oe1;
+	private final OptionsEinzelZaehler oe2;
+	private final OptionsEinzelZaehler oe3;
+	private final OptionsEinzelZaehler oe4;
 
 
     public IMCommandSquad() {

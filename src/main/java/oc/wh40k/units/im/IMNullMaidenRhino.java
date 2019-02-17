@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMNullMaidenRhino extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
     public IMNullMaidenRhino() {

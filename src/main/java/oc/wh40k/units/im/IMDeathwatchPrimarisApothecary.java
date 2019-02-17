@@ -1,12 +1,8 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMDeathwatchPrimarisApothecary extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchPrimarisApothecary() {
         name = "Primaris Apothecary";

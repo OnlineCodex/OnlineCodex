@@ -4,7 +4,7 @@ import oc.*;
 
 public class IMPrimarisBattleLeader extends Eintrag {
 	
-    RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMPrimarisBattleLeader() {
         name = "Primaris Battle Leader";

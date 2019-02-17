@@ -8,7 +8,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMRelicLeviathanDreadnought extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public IMRelicLeviathanDreadnought() {
         name = "Relic Leviathan Dreadnought";

@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class IMRatlings extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     boolean lastState = false;
 

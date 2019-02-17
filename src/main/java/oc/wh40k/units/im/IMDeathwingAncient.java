@@ -8,7 +8,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMDeathwingAncient extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMDeathwingAncient() {
         name = "Deathwing Ancient";

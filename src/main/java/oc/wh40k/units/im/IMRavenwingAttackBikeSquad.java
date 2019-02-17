@@ -16,11 +16,11 @@ public class IMRavenwingAttackBikeSquad extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

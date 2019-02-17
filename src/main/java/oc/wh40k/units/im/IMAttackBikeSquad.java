@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMAttackBikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o;
 
     public IMAttackBikeSquad() {
         name = "Attack Bike Squad";

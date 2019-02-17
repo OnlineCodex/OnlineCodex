@@ -10,12 +10,9 @@ public class IMCustodianGuard extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2;
-
-    OptionsEinzelUpgrade o3;
-
+	private final OptionsZaehlerGruppe o1, o2;
 
 
     public IMCustodianGuard() {

@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMDeathstormDropPod extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMDeathstormDropPod() {
         name = "Deathstorm Drop Pod";

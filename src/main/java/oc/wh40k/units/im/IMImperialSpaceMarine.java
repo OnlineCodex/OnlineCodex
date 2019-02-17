@@ -1,11 +1,8 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMImperialSpaceMarine extends Eintrag {
-
-    RuestkammerStarter waffenUndReliquien;
 
     public IMImperialSpaceMarine() {
         name = "Imperial Space Marine";

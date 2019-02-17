@@ -6,8 +6,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMGreatCompanyAncient extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMGreatCompanyAncient() {
         name = "Great Company Ancient";

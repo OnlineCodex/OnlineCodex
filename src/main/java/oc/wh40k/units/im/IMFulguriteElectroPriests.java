@@ -7,9 +7,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMFulguriteElectroPriests extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
+	private final AnzahlPanel squad;
 
     boolean harkerSelected = false;
 

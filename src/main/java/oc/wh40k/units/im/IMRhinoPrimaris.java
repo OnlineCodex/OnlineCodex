@@ -2,11 +2,8 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 
 public class IMRhinoPrimaris extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
 
     public IMRhinoPrimaris() {
         name = "Rhino Primaris";
@@ -18,9 +15,5 @@ public class IMRhinoPrimaris extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 }

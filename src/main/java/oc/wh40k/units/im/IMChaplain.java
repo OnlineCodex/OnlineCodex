@@ -6,7 +6,7 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
 public class IMChaplain extends Eintrag {
-    OptionsEinzelUpgrade jump;
+	private final OptionsEinzelUpgrade jump;
 
     public IMChaplain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, CHAPLAIN);

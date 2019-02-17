@@ -14,7 +14,7 @@ public class IMDeathwingKnights extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

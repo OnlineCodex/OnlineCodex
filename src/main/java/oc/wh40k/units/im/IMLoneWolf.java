@@ -4,14 +4,8 @@ import oc.*;
 
 public class IMLoneWolf extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
+	private final RuestkammerStarter waffenUndArtefakte;
+
 
     public IMLoneWolf() {
         name = "Lone Wolf";

@@ -18,9 +18,9 @@ public class IMRelicSicaranBattleTank extends Eintrag {
 
 
 
-    OptionsEinzelUpgrade oe1, oe2;
+	private final OptionsEinzelUpgrade oe1, oe2;
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
 
 
