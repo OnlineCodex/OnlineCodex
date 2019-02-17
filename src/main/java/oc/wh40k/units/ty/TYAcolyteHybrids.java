@@ -26,7 +26,7 @@ public class TYAcolyteHybrids extends Eintrag {
 
 
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Acolyte Hybrids", 5, 20, getPts("Acolyte Hybrids"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Acolyte Hybrids", 5, 20, getPts("Acolyte Hybrids") + getPts("Blasting charge"));
 
         add(squad);
 
@@ -114,19 +114,19 @@ public class TYAcolyteHybrids extends Eintrag {
 
         if (squad.getModelle() > 15)
 
-            power = 20;
+            power = 11;
 
         else if (squad.getModelle() > 10)
 
-            power = 15;
+            power = 9;
 
         else if (squad.getModelle() > 5)
 
-            power = 10;
+            power = 6;
 
         else
 
-            power = 5;
+            power = 3;
 
     }
 

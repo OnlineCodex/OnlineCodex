@@ -171,9 +171,9 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] LordOfWar_SM = new String[]{"", "AstraeusSuperHeavyTank"};
 
     //Ultramarines
-    private static final String[] HQeinträge_Ultramarines = new String[]{"", "Marneus Calgar", "Marneus Calgar in Artificer Armour",
+    private static final String[] HQeinträge_Ultramarines = new String[]{"", "Marneus Calgar", "Marneus Calgar in Artificer Armour", "Marneus Calgar in Armour of Heraclus",
             "Captain Sicarius", "Chief Librarian Tigurius", "Chaplain Cassius", "Sergeant Telion", "Sergeant Chronus"};
-    private static final String[] Eliteeinträge_Ultramarines = new String[]{"", "Tyrannic War Veterans",};
+    private static final String[] Eliteeinträge_Ultramarines = new String[]{"", "Tyrannic War Veterans", "Victrix Honour Guard",};
     private static final String[] LordofWar_Ultramarines = new String[]{"", "Roboute Guilliman", "Terminus Ultra",};
 
     //Imperial Fists

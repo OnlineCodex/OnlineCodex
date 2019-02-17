@@ -26,6 +26,7 @@ public class PsychicPowers extends RuestkammerVater {
     boolean interromancy = false;
     boolean powerOfTheWaaagh = false;
     boolean tempestasDiscipline = false;
+    boolean broodmind = false;
 
     boolean nurgle = false;
     boolean tzeentch = false;
@@ -210,6 +211,16 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
             add(o17 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
+        
+        if (broodmind) {
+            ogE.addElement(new OptionsGruppeEintrag("Mass Hypnosis", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mind Control", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Psionic Blast", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mental Onslaught", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Psychis Stimulus", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Migth From Beyond", 0));
+            add(o11 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
 
         sizeSetzen();
     }
@@ -257,6 +268,11 @@ public class PsychicPowers extends RuestkammerVater {
     public void enableHiveMind() {
         hiveMind = true;
     }
+    
+    public void enableBroodMind() {
+        broodmind = true;
+    }
+
 
     public void enableLibrarius() {
         librarius = true;

@@ -1,24 +1,27 @@
 package oc.wh40k.units.ty;
 
-import static oc.KeyWord.PRIMUS;
+
+
 import static oc.KeyWord.CHARACTER;
 import static oc.KeyWord.CULT;
 import static oc.KeyWord.GENESTEALER_CULTS;
 import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.ABOMINANT;
 import static oc.KeyWord.TYRANIDS;
+import static oc.KeyWord.ABERRANT;
 
 import oc.Eintrag;
 
-public class TYPrimus extends Eintrag {
+public class TYAbominant extends Eintrag {
 
-    public TYPrimus() {
-    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, PRIMUS);
+    public TYAbominant() {
+    	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, ABERRANT, ABOMINANT);
     	
-        name = "Primus";
+        name = "Abominant";
 
-        grundkosten = getPts("Primus") + getPts("Blasting charges");
+        grundkosten = getPts("Abominant");
 
-        power = 4;
+        power = 6;
 
         seperator();
         
@@ -27,7 +30,7 @@ public class TYPrimus extends Eintrag {
         seperator();
         
         addWarlordTraits("", true);
-        
+
         complete();
 
     }
