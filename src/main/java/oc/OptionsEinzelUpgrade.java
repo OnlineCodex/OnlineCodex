@@ -153,7 +153,6 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     }
 
     public void load(String s) {
-//		this.setSelected(s.equals("y"));		
         if (s.equals("y")) {
             myUpgrade.switsch();
         }
