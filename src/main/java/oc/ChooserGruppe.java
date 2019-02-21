@@ -112,7 +112,6 @@ public class ChooserGruppe extends BuildaPanel {
     }
 
     public double getAnzahl() {
-        //LOGGER.info("ChooserGruppe-getAnzahl");
         return getAnzahl(true, true);
     }
 
