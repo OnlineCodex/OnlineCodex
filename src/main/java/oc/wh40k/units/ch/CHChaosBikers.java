@@ -5,11 +5,11 @@ import oc.*;
 
 public class CHChaosBikers extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe icon;
-    OptionsZaehlerGruppe bp, special, bike, combi;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsUpgradeGruppe icon;
+	private final OptionsZaehlerGruppe bp, special, bike, combi;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosBikers() {
         //name = "Chaosbiker\n";

@@ -10,12 +10,13 @@ public class IMSpaceWolvesRuestkammer extends RuestkammerVater {
 
 	public boolean uniqueError = false;
     public OptionsEinzelUpgrade oe1, oe2;
-    OptionsUpgradeGruppe o1, o2, o3, o4;
-    OptionsZaehlerGruppe o5;
-    String type = "";
-    String default1 = "";
-    String default2 = "";
-    boolean character = false;
+    private OptionsUpgradeGruppe o1, o3, o4;
+    public OptionsUpgradeGruppe o2;
+    private OptionsZaehlerGruppe o5;
+    public String type = "";
+    private String default1 = "";
+    private String default2 = "";
+    private boolean character = false;
     
     Set<String> CHARACTERS = ImmutableSet.of("Primaris Battle Leader", "Iron Priest", "Primaris Ancient", "Great Company Ancient", "Great Company Champion", "Rune Priest", "Rune Priest in Terminator Armour", "Rune Priest on Bike", "Primaris Rune Priest",
     		"Wolf Priest", "Wolf Priest in Terminator Armour", "Wolf Priest on Bike", "Primaris Wolf Priest", "Wolf Lord", "Wolf Lord in Cataphractii Armour", "Wolf Lord in Gravis Armour", "Wolf Lord in Terminator Armour", "Wolf Lord on Bike", 

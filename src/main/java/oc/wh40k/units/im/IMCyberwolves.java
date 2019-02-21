@@ -6,9 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMCyberwolves extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
+	private final AnzahlPanel squad;
 
     public IMCyberwolves() {
         grundkosten = 0;

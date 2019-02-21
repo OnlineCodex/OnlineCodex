@@ -16,6 +16,4 @@ public class ORGrotBommLauncha extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

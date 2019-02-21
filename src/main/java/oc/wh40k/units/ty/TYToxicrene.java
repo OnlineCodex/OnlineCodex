@@ -5,8 +5,6 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYToxicrene extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-
     public TYToxicrene() {
         name = "Toxicrene";
         grundkosten = getPts("Toxicrene") + getPts("Choking spores") + getPts("Massive toxic lashes (NK)") + getPts("Massive toxic lashes (FK)");

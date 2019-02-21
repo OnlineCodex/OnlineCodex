@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class IMScoutBikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
 
     public IMScoutBikeSquad() {
         name = "Scout Bike Squad\n";

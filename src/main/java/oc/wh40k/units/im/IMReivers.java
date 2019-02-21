@@ -3,10 +3,9 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMReivers extends Eintrag {
-    OptionsEinzelUpgrade sergeant, grav, grapnel;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1, o2;
-    AnzahlPanel squad;
+	private final OptionsEinzelUpgrade sergeant, grav, grapnel;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final AnzahlPanel squad;
 
     public IMReivers() {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Reivers", 5, 10, getPts("Reivers") + getPts("Heavy bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Shock grenades"));

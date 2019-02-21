@@ -10,15 +10,9 @@ public class AESwoopingHawks extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsEinzelUpgrade boss;
-
-    OptionsUpgradeGruppe o1;
-
-    OptionsEinzelUpgrade oe1;
-
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
 
 

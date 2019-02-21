@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMHouseholdTradition extends Eintrag {
-    OptionsUpgradeGruppe fk1;
+	private final OptionsUpgradeGruppe fk1;
 
     public IMHouseholdTradition() {
         name = "Household Tradition";

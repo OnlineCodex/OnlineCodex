@@ -4,14 +4,12 @@ import oc.*;
 
 public class IMTacticalSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final RuestkammerStarter rkBoss;
 
-    boolean siegeAssaultForce;
-
-    OptionsEinzelUpgrade mantlets;
+	private boolean siegeAssaultForce;
 
     public IMTacticalSquad() {
         name = "Tactical Squad\n";

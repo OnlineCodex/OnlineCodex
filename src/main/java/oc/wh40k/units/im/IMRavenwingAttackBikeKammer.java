@@ -12,11 +12,7 @@ import oc.RuestkammerVater;
 
 public class IMRavenwingAttackBikeKammer extends RuestkammerVater {
 
-
-
-    OptionsUpgradeGruppe o1;
-
-
+	private OptionsUpgradeGruppe o1;
 
     public IMRavenwingAttackBikeKammer() {
 

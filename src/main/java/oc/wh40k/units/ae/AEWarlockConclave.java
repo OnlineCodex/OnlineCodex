@@ -12,11 +12,11 @@ public class AEWarlockConclave extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
 
 

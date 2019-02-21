@@ -13,9 +13,4 @@ public class TYHiveCrone extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

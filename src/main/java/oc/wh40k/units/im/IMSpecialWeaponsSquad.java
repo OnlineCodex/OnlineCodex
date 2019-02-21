@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMSpecialWeaponsSquad extends Eintrag {
 
-    OptionsZaehlerGruppe o1x, o1, o2;
+	private final OptionsZaehlerGruppe o1x, o1, o2;
 
     public IMSpecialWeaponsSquad() {
         name = "Special Weapon Squad";

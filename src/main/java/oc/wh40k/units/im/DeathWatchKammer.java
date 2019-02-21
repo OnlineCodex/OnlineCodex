@@ -4,10 +4,10 @@ import oc.*;
 
 public class DeathWatchKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsZaehlerGruppe o3, o4;
-    OptionsEinzelUpgrade thunderhammer;
-    String type;
+    private OptionsUpgradeGruppe o1, o2;
+    private OptionsZaehlerGruppe o3, o4;
+    private OptionsEinzelUpgrade thunderhammer;
+    private String type;
 
     public DeathWatchKammer() {
         grundkosten = 0;

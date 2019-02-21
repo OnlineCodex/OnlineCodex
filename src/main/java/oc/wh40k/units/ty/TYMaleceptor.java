@@ -2,15 +2,13 @@ package oc.wh40k.units.ty;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class TYMaleceptor extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter psychicPowers;
+    private final OptionsEinzelUpgrade oe1;
+    private final RuestkammerStarter psychicPowers;
 
     public TYMaleceptor() {
         name = "Maleceptor";
@@ -35,9 +33,4 @@ public class TYMaleceptor extends Eintrag {
 
         complete();
     }
-
-    @Override
-    public void refreshen() {
-    }
-
 }

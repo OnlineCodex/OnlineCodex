@@ -11,8 +11,8 @@ import oc.RuestkammerStarter;
 
 public class IMVexilusPraetor extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsEinzelUpgrade misericordia;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsEinzelUpgrade misericordia;
 
     public IMVexilusPraetor() {
         name = "Vexilus Praetor";

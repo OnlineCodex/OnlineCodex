@@ -12,7 +12,7 @@ public class AEKhymerae extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

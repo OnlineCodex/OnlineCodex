@@ -5,9 +5,9 @@ import oc.RuestkammerStarter;
 
 public class IMLemanRussBattleTanks extends Eintrag {
 
-    RuestkammerStarter t1;
-    RuestkammerStarter t2;
-    RuestkammerStarter t3;
+	private final RuestkammerStarter t1;
+	private final RuestkammerStarter t2;
+	private final RuestkammerStarter t3;
 
     public IMLemanRussBattleTanks() {
         name = "Leman Russ Battle Tanks";

@@ -4,12 +4,11 @@ import oc.*;
 
 public class ORWarbikers extends Eintrag {
 
-    AnzahlPanel waaghbikaz;
-    OptionsEinzelUpgrade trophäenstange;
-    RuestkammerStarter Boss;
-    OptionsEinzelZaehler sluggas;
-    OptionsEinzelZaehler choppas;
-    OptionsEinzelZaehler stikks;
+	private final AnzahlPanel waaghbikaz;
+	private final RuestkammerStarter Boss;
+	private final OptionsEinzelZaehler sluggas;
+	private final OptionsEinzelZaehler choppas;
+	private final OptionsEinzelZaehler stikks;
 
     public ORWarbikers() {
 

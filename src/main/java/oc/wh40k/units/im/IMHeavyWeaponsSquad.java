@@ -6,10 +6,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMHeavyWeaponsSquad extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe flak;
-    OptionsZaehlerGruppe o1x;
-    AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final AnzahlPanel squad;
 
     public IMHeavyWeaponsSquad() {
         grundkosten = 0;

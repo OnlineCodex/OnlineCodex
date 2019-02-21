@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHSeekers extends Eintrag {
 
-    AnzahlPanel seekers;
-    OptionsEinzelUpgrade heartseeker;
+	private final AnzahlPanel seekers;
+	private final OptionsEinzelUpgrade heartseeker;
 
     public CHSeekers() {
 

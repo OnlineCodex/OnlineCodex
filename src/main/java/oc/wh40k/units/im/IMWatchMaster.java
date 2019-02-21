@@ -10,9 +10,7 @@ import oc.RuestkammerStarter;
 
 public class IMWatchMaster extends Eintrag {
 
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter spezialAusruestung;
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public IMWatchMaster() {
         name = "Watch Master";

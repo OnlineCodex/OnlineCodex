@@ -4,14 +4,12 @@ import oc.*;
 
 public class TYTermagants extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2x;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    boolean reached30 = false;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o2x;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
     public TYTermagants() {
         name = "Termagants";

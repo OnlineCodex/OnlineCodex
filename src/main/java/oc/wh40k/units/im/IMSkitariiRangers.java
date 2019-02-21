@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMSkitariiRangers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+	private final RuestkammerStarter rkBoss;
 
     public IMSkitariiRangers() {
         name = "Skitarii Rangers";

@@ -5,10 +5,10 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriestinTerminatorArmour extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    RuestkammerStarter waffenUndArtefakte;
-    boolean fenrisSupp = false;
-	RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade oe1;
+	private final RuestkammerStarter waffenUndArtefakte;
+	private boolean fenrisSupp = false;
+	private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestinTerminatorArmour() {
         name = "Rune Priest in Terminator Armour";

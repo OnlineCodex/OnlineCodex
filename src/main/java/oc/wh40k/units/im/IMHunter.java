@@ -2,11 +2,8 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 
 public class IMHunter extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
 
     public IMHunter() {
         name = "Hunter";

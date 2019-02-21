@@ -8,9 +8,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORWartrakks extends Eintrag {
 
-    AnzahlPanel Buggies;
-    OptionsZaehlerGruppe BuggiesFK;
-    OptionsZaehlerGruppe BuggiesFKx;
+	private final AnzahlPanel Buggies;
+	private final OptionsZaehlerGruppe BuggiesFK;
+	private final OptionsZaehlerGruppe BuggiesFKx;
 
     public ORWartrakks() {
 

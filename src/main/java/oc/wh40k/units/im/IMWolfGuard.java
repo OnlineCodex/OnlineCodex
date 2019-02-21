@@ -4,13 +4,13 @@ import oc.*;
 
 public class IMWolfGuard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3, o3x;
-    OptionsEinzelUpgrade jump;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o3, o3x;
+	private final OptionsEinzelUpgrade jump;
 
-    OptionsZaehlerGruppe wolfsklauen;
+	private final OptionsZaehlerGruppe wolfsklauen;
 
 
     public IMWolfGuard() {

@@ -10,13 +10,13 @@ public class IMDeathwingTerminatorSquad extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2, o3, stormbolter, fist;
+	private final OptionsZaehlerGruppe o1, o3, stormbolter, fist;
 
-    OptionsUpgradeGruppe oe1;
+	private final OptionsUpgradeGruppe oe1;
 
-    OptionsEinzelUpgrade sergeant;
+	private final OptionsEinzelUpgrade sergeant;
 
 
 

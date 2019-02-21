@@ -4,13 +4,12 @@ import oc.*;
 
 public class ORGrotTanks extends Eintrag {
 
-    AnzahlPanel GrotTank;
-    OptionsEinzelUpgrade Kommanda;
-    OptionsZaehlerGruppe KommandaFK;
-    OptionsEinzelUpgrade KommandaShoota;
-    OptionsZaehlerGruppe GrotTankFK;
-    OptionsEinzelZaehler Shoota;
-    OptionsEinzelUpgrade RPJ;
+	private final AnzahlPanel GrotTank;
+	private final OptionsEinzelUpgrade Kommanda;
+	private final OptionsZaehlerGruppe KommandaFK;
+    private final OptionsEinzelUpgrade KommandaShoota;
+    private final OptionsZaehlerGruppe GrotTankFK;
+    private final OptionsEinzelZaehler Shoota;
 
     public ORGrotTanks() {
 

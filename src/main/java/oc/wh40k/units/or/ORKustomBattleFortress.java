@@ -4,9 +4,9 @@ import oc.*;
 
 public class ORKustomBattleFortress extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelZaehler grotbomm;
-    OptionsEinzelZaehler suparokkit;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsEinzelZaehler grotbomm;
+	private final OptionsEinzelZaehler suparokkit;
 
     public ORKustomBattleFortress() {
         name = "\'Kustom\' Battle Fortress";

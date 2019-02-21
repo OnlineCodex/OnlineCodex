@@ -6,9 +6,9 @@ import oc.OptionsEinzelUpgrade;
 
 public class TYHormagaunts extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
     public TYHormagaunts() {
         name = "Hormagaunts";

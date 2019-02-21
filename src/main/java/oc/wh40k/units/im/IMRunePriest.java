@@ -6,15 +6,11 @@ import oc.wh40k.units.PsychicPowers;
 public class IMRunePriest extends Eintrag {
 
 
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe o4;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    RuestkammerStarter termiWaffen;
-    RuestkammerStarter waffenUndArtefakte;
-    RuestkammerStarter spezialAusruestung;
-    boolean fenrisSupp = false;
-	RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
+    private final RuestkammerStarter waffenUndArtefakte;
+    private boolean fenrisSupp = false;
+    private final RuestkammerStarter psychicPowers;
 
     public IMRunePriest() {
         name = "Rune Priest";
@@ -27,7 +23,7 @@ public class IMRunePriest extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
 
         seperator();
         

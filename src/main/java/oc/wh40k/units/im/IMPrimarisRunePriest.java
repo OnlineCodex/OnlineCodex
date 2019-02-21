@@ -5,8 +5,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMPrimarisRunePriest extends Eintrag {
 	
-    RuestkammerStarter waffenUndArtefakte;
-	RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter psychicPowers;
 
     public IMPrimarisRunePriest() {
         name = "Primaris Rune Priest";

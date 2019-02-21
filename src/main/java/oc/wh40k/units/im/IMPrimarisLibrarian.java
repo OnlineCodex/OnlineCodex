@@ -7,8 +7,7 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMPrimarisLibrarian extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMPrimarisLibrarian() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, PSYKER, LIBRARIAN);

@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMBrotherCaptainStern extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMBrotherCaptainStern() {
         name = "Brother-Captain Stern";

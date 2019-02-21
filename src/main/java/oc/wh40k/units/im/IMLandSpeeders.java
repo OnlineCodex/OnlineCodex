@@ -8,11 +8,11 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMLandSpeeders extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    boolean spacewolves = false;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2;
+    private boolean spacewolves = false;
 
     public IMLandSpeeders() {
     	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");

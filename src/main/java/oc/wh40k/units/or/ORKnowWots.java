@@ -7,7 +7,7 @@ public class ORKnowWots extends RuestkammerVater {
 
     public boolean megaruestung = false;
     public boolean greentide = false;
-    OptionsEinzelUpgrade warbike;
+    private OptionsEinzelUpgrade warbike;
 
     public ORKnowWots() {
         grundkosten = 0;

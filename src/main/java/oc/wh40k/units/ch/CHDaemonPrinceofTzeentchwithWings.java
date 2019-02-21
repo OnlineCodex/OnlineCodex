@@ -14,7 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofTzeentchwithWings extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHDaemonPrinceofTzeentchwithWings() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, DAEMON, TZEENTCH, CHARACTER, MONSTER, DAEMON_PRINCE);

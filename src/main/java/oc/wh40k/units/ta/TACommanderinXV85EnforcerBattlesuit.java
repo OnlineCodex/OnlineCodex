@@ -4,9 +4,8 @@ import oc.*;
 
 public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter ob;
-    OptionsZaehlerGruppe o5;
+    private final RuestkammerStarter ob;
+    private final OptionsZaehlerGruppe o5;
 
     public TACommanderinXV85EnforcerBattlesuit() {
         name = "Commander in XV85 Enforcer Battlesuit";

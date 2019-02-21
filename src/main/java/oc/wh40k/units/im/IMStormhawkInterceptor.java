@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMStormhawkInterceptor extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMStormhawkInterceptor() {
         name = "Stormhawk Interceptor";

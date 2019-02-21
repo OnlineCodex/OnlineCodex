@@ -7,7 +7,7 @@ import oc.RuestkammerVater;
 
 public class ORGunTrukkKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
 
     public ORGunTrukkKammer() {

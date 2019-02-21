@@ -6,12 +6,7 @@ import java.util.Vector;
 
 public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2x;
-    OptionsZaehlerGruppe o2, o3;
-    Vector<RuestkammerStarter> rk;
+	private final Vector<RuestkammerStarter> rk;
 
     public IMDeathwatchVanguardVeterans() {
         name = "Vanguard Veterans\n";

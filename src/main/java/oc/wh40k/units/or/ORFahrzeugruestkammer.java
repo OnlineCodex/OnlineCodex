@@ -6,7 +6,7 @@ import oc.RuestkammerVater;
 
 public class ORFahrzeugruestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe fahrzeugausruestung;
+	private OptionsUpgradeGruppe fahrzeugausruestung;
 
     public ORFahrzeugruestkammer() {
         grundkosten = 0;

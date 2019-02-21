@@ -3,10 +3,7 @@ package oc.wh40k.units.or;
 import oc.*;
 
 public class ORArtefacts extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fk1;
-    OptionsZaehlerGruppe fk2;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe fk1;
 
     public ORArtefacts() {
         name = "Armiger Helverin";

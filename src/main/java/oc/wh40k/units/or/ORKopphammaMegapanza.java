@@ -5,9 +5,9 @@ import oc.OptionsEinzelZaehler;
 
 public class ORKopphammaMegapanza extends Eintrag {
 
-    OptionsEinzelZaehler o1;
-    OptionsEinzelZaehler o2;
-    OptionsEinzelZaehler o3;
+	private final OptionsEinzelZaehler o1;
+	private final OptionsEinzelZaehler o2;
+	private final OptionsEinzelZaehler o3;
 
     public ORKopphammaMegapanza() {
         name = "Kopphamma-Megapanza";

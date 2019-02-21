@@ -16,12 +16,9 @@ public class AEWarWalkers extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
-
-    OptionsZaehlerGruppe o1x;
-
+	private final OptionsZaehlerGruppe o1;
 
 
     public AEWarWalkers() {

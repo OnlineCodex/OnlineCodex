@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHBloodlettersCSM extends Eintrag {
 
-    AnzahlPanel bloodletters;
-    OptionsEinzelUpgrade reaper;
+	private final AnzahlPanel bloodletters;
+	private final OptionsEinzelUpgrade reaper;
 
     public CHBloodlettersCSM() {
 

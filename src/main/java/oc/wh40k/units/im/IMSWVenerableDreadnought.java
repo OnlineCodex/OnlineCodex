@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMSWVenerableDreadnought extends Eintrag {
-    OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsUpgradeGruppe o1, o2, o3;
 
     public IMSWVenerableDreadnought() {
         name = "Venerable Dreadnought";

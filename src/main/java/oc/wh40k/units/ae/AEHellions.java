@@ -14,9 +14,9 @@ public class AEHellions extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
 
 

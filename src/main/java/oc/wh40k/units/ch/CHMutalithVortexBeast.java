@@ -7,9 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHMutalithVortexBeast extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe stave;
-    OptionsUpgradeGruppe inferno;
+	private final OptionsUpgradeGruppe stave;
+	private final OptionsUpgradeGruppe inferno;
 
     public CHMutalithVortexBeast() {
 

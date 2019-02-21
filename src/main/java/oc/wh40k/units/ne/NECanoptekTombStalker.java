@@ -32,11 +32,5 @@ public class NECanoptekTombStalker extends Eintrag {
 
 
 
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }
 

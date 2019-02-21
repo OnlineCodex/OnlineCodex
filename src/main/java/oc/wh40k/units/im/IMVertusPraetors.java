@@ -16,11 +16,11 @@ public class IMVertusPraetors extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
-    OptionsZaehlerGruppe o3;
+	private final OptionsZaehlerGruppe o3;
 
 
 

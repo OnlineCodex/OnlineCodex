@@ -12,7 +12,7 @@ public class IMCenobyteServitors extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

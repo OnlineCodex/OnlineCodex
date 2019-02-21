@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHTzaangorShaman extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHTzaangorShaman() {
 

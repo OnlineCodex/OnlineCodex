@@ -7,12 +7,12 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMWolfGuardonBikes extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3, o3x;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o2, o2x;
+	private final OptionsZaehlerGruppe o3, o3x;
 
-    OptionsZaehlerGruppe wolfsklauen;
+	private final OptionsZaehlerGruppe wolfsklauen;
 
 
     public IMWolfGuardonBikes() {

@@ -4,9 +4,9 @@ import oc.*;
 
 public class IMVigilators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade superior;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsEinzelUpgrade superior;
 
     public IMVigilators() {
         name = "Vigilators\n";

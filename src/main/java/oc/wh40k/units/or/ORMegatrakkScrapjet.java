@@ -7,11 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORMegatrakkScrapjet extends Eintrag {
 
-    AnzahlPanel buggies;
-    OptionsZaehlerGruppe BuggiesFK;
-    OptionsZaehlerGruppe BuggiesFKx;
+	private final AnzahlPanel buggies;
 
-    public ORMegatrakkScrapjet() {
+	public ORMegatrakkScrapjet() {
 
         kategorie = 4;
         grundkosten = 0;

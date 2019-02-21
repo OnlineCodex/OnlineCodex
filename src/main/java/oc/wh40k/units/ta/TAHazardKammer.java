@@ -9,10 +9,10 @@ import oc.RuestkammerVater;
 
 public class TAHazardKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1def;
-    OptionsUpgradeGruppe o2;
-    OptionsZaehlerGruppe o3;
+	private OptionsZaehlerGruppe o1;
+	private OptionsZaehlerGruppe o1def;
+	private OptionsUpgradeGruppe o2;
+	private OptionsZaehlerGruppe o3;
 
     public TAHazardKammer() {
         grundkosten = 75;

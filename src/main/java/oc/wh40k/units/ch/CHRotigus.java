@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHRotigus extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHRotigus() {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE, ROTIGUS);

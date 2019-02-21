@@ -6,10 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosXiphonInterceptor extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosXiphonInterceptor() {
         name = "Chaos Xiphon Interceptor";

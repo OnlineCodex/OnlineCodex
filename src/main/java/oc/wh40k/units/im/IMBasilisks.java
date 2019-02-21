@@ -4,11 +4,11 @@ import oc.*;
 
 public class IMBasilisks extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    OptionsEinzelZaehler oe1, oe2, oe3, oe4;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsEinzelZaehler oe1, oe2, oe3, oe4;
 
     public IMBasilisks() {
         name = "Basilisks";

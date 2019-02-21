@@ -1,11 +1,8 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMThunderfireCannon extends Eintrag {
-
-    RuestkammerStarter waffenUndReliquien;
 
     public IMThunderfireCannon() {
         name = "Thunderfire Cannon";

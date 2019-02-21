@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMStormwolf extends Eintrag {
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o2;
 
     public IMStormwolf() {
         name = "Stormwolf";

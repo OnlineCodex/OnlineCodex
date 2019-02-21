@@ -3,9 +3,9 @@ package oc.wh40k.units.ch;
 import oc.*;
 
 public class CHRenegadeArmiger extends Eintrag {
-    OptionsZaehlerGruppe fk1;
-    OptionsZaehlerGruppe fk2;
-    AnzahlPanel squad;
+	private final OptionsZaehlerGruppe fk1;
+	private final OptionsZaehlerGruppe fk2;
+	private final AnzahlPanel squad;
 
     public CHRenegadeArmiger() {
         name = "Renegade Armiger";

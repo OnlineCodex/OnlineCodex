@@ -14,7 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHExaltedSorcerer extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHExaltedSorcerer() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, INFANTRY, SORCERER, EXALTED_SORCERER);

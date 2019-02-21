@@ -12,23 +12,23 @@ import oc.wh40k.armies.VOLKImperium;
 public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
-    String default1 = "";
-    String default2 = "";
-    boolean character = false;
-    boolean psyker = false;
-    boolean jump = false;
-    boolean captain = false;
-    OptionsEinzelUpgrade theSalamandersMantle;
-    OptionsEinzelUpgrade ravensFury;
-    OptionsEinzelUpgrade mantleoftheStormseer;
-    OptionsEinzelUpgrade theSancticHalo;
-    OptionsEinzelUpgrade theCrusadersHelm;
-    OptionsEinzelUpgrade theShieldEternal;
-    OptionsEinzelUpgrade theArmourIndomitus;
-    OptionsEinzelUpgrade theAngelsWing;
-    OptionsEinzelUpgrade theVeritasVitae;
-    OptionsEinzelUpgrade standardofSacrifice;
+    private OptionsUpgradeGruppe o1, o2, o3;
+    private String default1 = "";
+    private String default2 = "";
+    private boolean character = false;
+    private boolean psyker = false;
+    public boolean jump = false;
+    private boolean captain = false;
+    private OptionsEinzelUpgrade theSalamandersMantle;
+    private OptionsEinzelUpgrade ravensFury;
+    private OptionsEinzelUpgrade mantleoftheStormseer;
+    private OptionsEinzelUpgrade theSancticHalo;
+    private OptionsEinzelUpgrade theCrusadersHelm;
+    private OptionsEinzelUpgrade theShieldEternal;
+    private OptionsEinzelUpgrade theArmourIndomitus;
+    private OptionsEinzelUpgrade theAngelsWing;
+    private OptionsEinzelUpgrade theVeritasVitae;
+    private OptionsEinzelUpgrade standardofSacrifice;
 
     Set<String> CHARACTERS = ImmutableSet.of("Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
             "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",

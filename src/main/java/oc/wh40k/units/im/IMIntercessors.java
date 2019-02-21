@@ -3,11 +3,10 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMIntercessors extends Eintrag {
-    OptionsEinzelUpgrade sergeant;
-    OptionsZaehlerGruppe grenade;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1;
-    AnzahlPanel squad;
+	private final OptionsEinzelUpgrade sergeant;
+	private final OptionsZaehlerGruppe grenade;
+	private final OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
 
     public IMIntercessors() {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Intercessors", 5, 10, getPts("Intercessors") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));

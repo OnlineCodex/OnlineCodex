@@ -10,13 +10,10 @@ public class AEShiningSpears extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsEinzelUpgrade boss;
 
-    OptionsUpgradeGruppe o1;
-
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
 
 

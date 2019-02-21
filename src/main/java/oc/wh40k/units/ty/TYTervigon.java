@@ -5,12 +5,12 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYTervigon extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
-    RuestkammerStarter waffen;
-    RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
+    private final RuestkammerStarter psychicPowers;
 
     public TYTervigon() {
         name = "Tervigon";

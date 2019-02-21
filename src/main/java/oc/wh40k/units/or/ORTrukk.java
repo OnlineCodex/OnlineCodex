@@ -7,8 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORTrukk extends Eintrag {
 
-    OptionsUpgradeGruppe ball;
-    OptionsUpgradeGruppe tech;
+	private final OptionsUpgradeGruppe ball;
 
     public ORTrukk() {
         grundkosten = getPts("Trukk") + getPts("Big shoota");

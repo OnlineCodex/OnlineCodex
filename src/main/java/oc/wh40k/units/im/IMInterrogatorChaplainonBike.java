@@ -10,7 +10,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMInterrogatorChaplainonBike extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public IMInterrogatorChaplainonBike() {
         name = "Interrogator-Chaplain on Bike";

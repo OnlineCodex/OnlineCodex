@@ -17,8 +17,4 @@ public class ORBurnaBommer extends Eintrag {
         complete();
 
     }
-
-    public void refreshen() {
-
-    }
 }

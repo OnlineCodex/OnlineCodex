@@ -7,9 +7,7 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarianGK extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMLibrarianGK() {
         name = "Librarian";

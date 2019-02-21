@@ -8,21 +8,21 @@ import java.util.Vector;
 
 public class IMDeathwatchIntercessors extends Eintrag {//Sternguard
 
-    AnzahlPanel intercessors, inceptor, reiver, hellblaster, sergeant, aggressor;
+	private final AnzahlPanel intercessors, inceptor, reiver, hellblaster, sergeant, aggressor;
 
-    Vector<RuestkammerStarter> rkIntercessor;
-    Vector<RuestkammerStarter> rkSergeant;
-    Vector<RuestkammerStarter> rkHellblaster;
-    Vector<RuestkammerStarter> rkInceptor;
-    Vector<RuestkammerStarter> rkReiver;
-    Vector<RuestkammerStarter> rkAggressor;
+	private final Vector<RuestkammerStarter> rkIntercessor;
+	private final Vector<RuestkammerStarter> rkSergeant;
+	private final Vector<RuestkammerStarter> rkHellblaster;
+	private final Vector<RuestkammerStarter> rkInceptor;
+	private final Vector<RuestkammerStarter> rkReiver;
+    private final Vector<RuestkammerStarter> rkAggressor;
 
-    int numIntercessor = 0;
-    int numSergeant = 0;
-    int numHellblaster = 0;
-    int numInceptor = 0;
-    int numReiver = 0;
-    int numAggressor = 0;
+    private int numIntercessor = 0;
+    private int numSergeant = 0;
+    private int numHellblaster = 0;
+    private int numInceptor = 0;
+    private int numReiver = 0;
+    private int numAggressor = 0;
 
     public IMDeathwatchIntercessors() {
         name = "Veterans\n";

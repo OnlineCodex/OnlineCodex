@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class NELychguard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
 
     public NELychguard() {
         grundkosten = 0;

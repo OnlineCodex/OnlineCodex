@@ -8,8 +8,8 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarian extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade jump;
+	private final RuestkammerStarter psychicPowers;
 
     public IMLibrarian() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PSYKER, LIBRARIAN);

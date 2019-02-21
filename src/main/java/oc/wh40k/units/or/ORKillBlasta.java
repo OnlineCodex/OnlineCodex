@@ -30,6 +30,4 @@ public class ORKillBlasta extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

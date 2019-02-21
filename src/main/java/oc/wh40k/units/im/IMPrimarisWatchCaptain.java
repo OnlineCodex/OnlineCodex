@@ -3,9 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMPrimarisWatchCaptain extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsEinzelUpgrade fist;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsEinzelUpgrade fist;
 
     public IMPrimarisWatchCaptain() {
         name = "Primaris Watch Captain";

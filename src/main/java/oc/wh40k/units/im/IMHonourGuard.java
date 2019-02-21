@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMHonourGuard extends Eintrag {
 
-    OptionsZaehlerGruppe o1, o1x;
+	private final OptionsZaehlerGruppe o1, o1x;
 
     public IMHonourGuard() {
         name = "Honour Guard";

@@ -7,9 +7,9 @@ import oc.RuestkammerStarter;
 
 public class IMInfantrySquad extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter kammer;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final RuestkammerStarter kammer;
 
     public IMInfantrySquad() {
         checkBuildaVater();

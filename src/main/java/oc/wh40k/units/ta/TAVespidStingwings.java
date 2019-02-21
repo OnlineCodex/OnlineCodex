@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class TAVespidStingwings extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade boss;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelUpgrade boss;
 
     public TAVespidStingwings() {
         name = "Vespid Stingwings";

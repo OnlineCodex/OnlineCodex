@@ -5,13 +5,12 @@ import oc.*;
 
 public class CHHavocs extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe nahkampfwaffe;
-    OptionsUpgradeGruppe icon;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o2;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsZaehlerGruppe nahkampfwaffe;
+	private final OptionsUpgradeGruppe icon;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHavocs() {
         name = "Havocs";

@@ -3,13 +3,11 @@ package oc.wh40k.units.ch;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHHellforgedLandRaiderAchilles extends Eintrag {
 
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe fkwaffen, fkwaffen2, fkwaffen3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe fkwaffen, fkwaffen2, fkwaffen3;
+	private final OptionsUpgradeGruppe mark;
 
 
     public CHHellforgedLandRaiderAchilles() {

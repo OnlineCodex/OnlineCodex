@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TYMucolidSpores extends Eintrag {
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     public TYMucolidSpores() {
         name = "Mucolid Spores";

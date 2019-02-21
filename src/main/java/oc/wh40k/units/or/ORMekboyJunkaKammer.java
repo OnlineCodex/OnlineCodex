@@ -4,11 +4,10 @@ import oc.*;
 
 public class ORMekboyJunkaKammer extends RuestkammerVater {
 
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o4;
-    OptionsUpgradeGruppe o5;
-    OptionsEinzelZaehler o6;
-
+	private OptionsZaehlerGruppe o1;
+	private OptionsUpgradeGruppe o4;
+	private OptionsUpgradeGruppe o5;
+	
     public ORMekboyJunkaKammer() {
         grundkosten = 65;
     }

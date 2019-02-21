@@ -4,15 +4,15 @@ import oc.*;
 
 public class IMCrusaderSquad extends Eintrag {
 
-    AnzahlPanel Initiates;
-    AnzahlPanel Neophytes;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o3x;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o4x;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel Initiates;
+	private final AnzahlPanel Neophytes;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsZaehlerGruppe o3x;
+	private final OptionsZaehlerGruppe o4;
+    private final OptionsZaehlerGruppe o4x;
+    private final RuestkammerStarter rkBoss;
 
     public IMCrusaderSquad() {
         name = "Crusader Squad\n";

@@ -4,9 +4,9 @@ import oc.*;
 
 public class IMSkyclaws extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x, o2;
-    RuestkammerStarter rkBoss, rkBoss2;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x, o2;
+	private final RuestkammerStarter rkBoss, rkBoss2;
 
     public IMSkyclaws() {
         checkBuildaVater();

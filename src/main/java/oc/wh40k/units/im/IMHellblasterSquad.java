@@ -3,11 +3,9 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMHellblasterSquad extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    OptionsUpgradeGruppe o1, o2;
-    OptionsEinzelUpgrade sergeant;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsEinzelUpgrade sergeant;
+	private final AnzahlPanel squad;
 
     public IMHellblasterSquad() {
         name = "Hellblaster Squad";

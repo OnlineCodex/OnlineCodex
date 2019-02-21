@@ -8,12 +8,12 @@ import com.google.common.collect.ImmutableSet;
 import oc.*;
 
 public class Warlordtraits extends RuestkammerVater {
-    OptionsUpgradeGruppe warlordtraits;
-    OptionsUpgradeGruppe warlordtraits2;
-    OptionsUpgradeGruppe warlordtraits3;
-    String mandatoryChoice = "";
-	KeyWord exclusiveKeyword = null;
-    boolean subfactionsAllowed = true;
+	private OptionsUpgradeGruppe warlordtraits;
+	private OptionsUpgradeGruppe warlordtraits2;
+	private OptionsUpgradeGruppe warlordtraits3;
+	private String mandatoryChoice = "";
+	private KeyWord exclusiveKeyword = null;
+	private boolean subfactionsAllowed = true;
 
     public Warlordtraits() {
         grundkosten = 0;

@@ -7,11 +7,11 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYHiveTyrant extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    OptionsEinzelUpgrade oe3;
-    RuestkammerStarter psychicPowers;
-    RuestkammerStarter waffen;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
+    private final OptionsEinzelUpgrade oe3;
+    private final RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
 
     public TYHiveTyrant() {
         name = "Hive Tyrant";

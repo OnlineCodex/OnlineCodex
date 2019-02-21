@@ -4,9 +4,9 @@ import oc.*;
 
 public class IMDevastatorSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe o1, o1x;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsZaehlerGruppe o1, o1x;
 
     public IMDevastatorSquad() {
         name = "Devastator Squad\n";

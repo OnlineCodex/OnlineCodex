@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMServitors extends Eintrag {
 
-    OptionsZaehlerGruppe o3, o3x;
+	private final OptionsZaehlerGruppe o3, o3x;
 
 
     public IMServitors() {

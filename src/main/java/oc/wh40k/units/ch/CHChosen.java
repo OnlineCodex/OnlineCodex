@@ -4,12 +4,12 @@ import oc.*;
 
 public class CHChosen extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe pistol, claws, boltgun, special;
-    OptionsUpgradeGruppe heavy;
-    OptionsUpgradeGruppe icon;
-    RuestkammerStarter champion;
-    OptionsUpgradeGruppe mark;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe pistol, claws, boltgun, special;
+	private final OptionsUpgradeGruppe heavy;
+	private final OptionsUpgradeGruppe icon;
+	private final RuestkammerStarter champion;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChosen() {
         //name = "Auserkorene Chaos Space Marines\n";

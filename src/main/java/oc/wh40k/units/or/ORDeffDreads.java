@@ -4,14 +4,9 @@ import oc.*;
 
 public class ORDeffDreads extends Eintrag {
 
-    AnzahlPanel Gargbot;
-    OptionsZaehlerGruppe GargbotFK;
-    OptionsEinzelZaehler Grothälfaz;
-    OptionsEinzelZaehler Panzaplattenz;
-
-    RuestkammerStarter d1;
-    RuestkammerStarter d2;
-    RuestkammerStarter d3;
+	private final RuestkammerStarter d1;
+	private final RuestkammerStarter d2;
+	private final RuestkammerStarter d3;
 
     public ORDeffDreads() {
 

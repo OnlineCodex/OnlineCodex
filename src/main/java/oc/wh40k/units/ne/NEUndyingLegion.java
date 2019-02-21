@@ -9,8 +9,8 @@ import java.util.Vector;
 public class NEUndyingLegion extends Eintrag {
 
 
-    OptionsEinzelUpgrade pylon;
-    Vector<RuestkammerStarter> Warriors = new Vector<RuestkammerStarter>();//4+
+	private final OptionsEinzelUpgrade pylon;
+    private final Vector<RuestkammerStarter> Warriors = new Vector<RuestkammerStarter>();//4+
 
     public NEUndyingLegion() {
         name = "Undying Legion";

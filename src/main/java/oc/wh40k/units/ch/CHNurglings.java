@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class CHNurglings extends Eintrag {
 
-    AnzahlPanel Nurglings;
+	private final AnzahlPanel Nurglings;
 
     public CHNurglings() {
 

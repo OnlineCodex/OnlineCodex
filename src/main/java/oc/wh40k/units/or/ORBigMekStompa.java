@@ -4,7 +4,7 @@ import oc.*;
 
 public class ORBigMekStompa extends Eintrag {
 
-    OptionsUpgradeGruppe main;
+	private final OptionsUpgradeGruppe main;
 
     public ORBigMekStompa() {
         name = "Big Mek Stompa";

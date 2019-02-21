@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHPlagueDrones extends Eintrag {
 
-    AnzahlPanel drones;
-    OptionsEinzelUpgrade plaguebringer;
+	private final AnzahlPanel drones;
+	private final OptionsEinzelUpgrade plaguebringer;
 
     public CHPlagueDrones() {
 

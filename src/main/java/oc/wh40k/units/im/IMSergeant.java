@@ -8,9 +8,9 @@ import oc.RuestkammerVater;
 public class IMSergeant extends RuestkammerVater {
 
     public OptionsZaehlerGruppe o3;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-    String type = "";
+    private OptionsZaehlerGruppe o1;
+    private OptionsZaehlerGruppe o2;
+    public String type = "";
 
     public IMSergeant() {
         grundkosten = 0;

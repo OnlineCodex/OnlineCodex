@@ -4,13 +4,10 @@ import static oc.KeyWord.*;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMDeathCultAssassins extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
+	private final AnzahlPanel squad;
 
     public IMDeathCultAssassins() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, DEATH_CULT_ASSASSINS);

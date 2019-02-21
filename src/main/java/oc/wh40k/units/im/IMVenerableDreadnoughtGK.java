@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMVenerableDreadnoughtGK extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final RuestkammerStarter psychicPowers;
 
     public IMVenerableDreadnoughtGK() {
         name = "Venerable Dreadnought";

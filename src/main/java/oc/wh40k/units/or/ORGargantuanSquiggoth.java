@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORGargantuanSquiggoth extends Eintrag {
 
-    OptionsZaehlerGruppe ozg;
-    OptionsZaehlerGruppe ozgX;
+	private final OptionsZaehlerGruppe ozg;
+	private final OptionsZaehlerGruppe ozgX;
 
     public ORGargantuanSquiggoth() {
         name = "Gargantuan Squiggoth";

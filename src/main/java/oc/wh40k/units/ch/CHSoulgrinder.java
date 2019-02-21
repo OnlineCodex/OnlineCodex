@@ -6,8 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHSoulgrinder extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe waffe1;
+	private final OptionsUpgradeGruppe mark;
 
     public CHSoulgrinder() {
 

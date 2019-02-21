@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORFighta extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public ORFighta() {
         name = "Fighta";

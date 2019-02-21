@@ -14,7 +14,7 @@ public class AESolarite extends RuestkammerVater {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
 
 

@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHAhriman extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHAhriman() {
         name = "Ahriman";

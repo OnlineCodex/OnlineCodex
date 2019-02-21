@@ -7,9 +7,9 @@ import oc.RuestkammerStarter;
 
 public class ORRuntherd extends Eintrag {
     
-    OptionsUpgradeGruppe o1 = null;
-    OptionsUpgradeGruppe o2 = null;
-    RuestkammerStarter waffen;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final RuestkammerStarter waffen;
 
     public ORRuntherd() {
         kategorie = 1;

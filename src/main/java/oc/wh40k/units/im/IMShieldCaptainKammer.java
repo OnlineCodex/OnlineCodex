@@ -14,11 +14,7 @@ import oc.RuestkammerVater;
 
 public class IMShieldCaptainKammer extends RuestkammerVater {
 
-
-
-    OptionsUpgradeGruppe o1;
-
-
+	private OptionsUpgradeGruppe o1;
 
     public IMShieldCaptainKammer() {
 

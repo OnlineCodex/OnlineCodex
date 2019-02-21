@@ -4,7 +4,7 @@ import oc.*;
 
 public class ORBigTrakk extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public ORBigTrakk() {
 

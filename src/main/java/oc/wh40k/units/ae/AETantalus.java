@@ -26,12 +26,4 @@ public class AETantalus extends Eintrag {
 
     }
 
-
-
-    @Override
-
-    public void refreshen() {
-
-    }
-
 }

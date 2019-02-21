@@ -7,11 +7,11 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMSicarianInfiltrators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
-    boolean harkerSelected = false;
+	private boolean harkerSelected = false;
 
     public IMSicarianInfiltrators() {
         name = "Sicarian Infiltrators";

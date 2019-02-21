@@ -10,13 +10,9 @@ public class AEWraithlord extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o3;
+	private final OptionsZaehlerGruppe o1, o3;
 
-    OptionsZaehlerGruppe o3x;
-
-    OptionsZaehlerGruppe o1;
-
-    OptionsUpgradeGruppe o2;
+	private final OptionsZaehlerGruppe o3x;
 
 
 

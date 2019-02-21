@@ -4,10 +4,10 @@ import oc.*;
 
 public class TABreacherTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o4, o3;
-    OptionsZaehlerGruppe o5, o6;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o4, o3;
+	private final OptionsZaehlerGruppe o5, o6;
+	private final RuestkammerStarter rkBoss;
 
     public TABreacherTeam() {
         name = "Breacher Team\n";

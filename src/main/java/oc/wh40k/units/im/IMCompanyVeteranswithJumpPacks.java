@@ -4,11 +4,11 @@ import oc.*;
 
 public class IMCompanyVeteranswithJumpPacks extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+    private final OptionsZaehlerGruppe o3;
+    private final RuestkammerStarter rkBoss;
 
     boolean raiderSelected = false;
 

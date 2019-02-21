@@ -8,8 +8,8 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class AEArchon extends Eintrag {
-    OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsEinzelUpgrade oe1;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public AEArchon() {
         name = "Archon";

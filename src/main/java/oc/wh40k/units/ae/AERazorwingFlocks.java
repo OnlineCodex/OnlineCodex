@@ -12,7 +12,7 @@ public class AERazorwingFlocks extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

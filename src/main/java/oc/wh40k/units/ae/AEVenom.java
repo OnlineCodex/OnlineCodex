@@ -16,7 +16,7 @@ public class AEVenom extends Eintrag {
 
 
 
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
 
 

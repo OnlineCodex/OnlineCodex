@@ -6,9 +6,8 @@ import oc.RuestkammerVater;
 
 public class IMJusticar extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
+	private OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o3;
 
     public IMJusticar() {
         grundkosten = 0;

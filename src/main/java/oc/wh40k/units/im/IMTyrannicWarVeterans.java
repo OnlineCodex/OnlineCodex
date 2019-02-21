@@ -4,14 +4,7 @@ import oc.*;
 
 public class IMTyrannicWarVeterans extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    RuestkammerStarter rkBoss;
-
-    boolean siegeAssaultForce;
-
-    OptionsEinzelUpgrade mantlets;
+	private final AnzahlPanel squad;
 
     public IMTyrannicWarVeterans() {
         name = "Tyrannic War Veterans\n";

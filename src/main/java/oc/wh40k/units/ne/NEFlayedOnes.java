@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class NEFlayedOnes extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public NEFlayedOnes() {
         grundkosten = 0;

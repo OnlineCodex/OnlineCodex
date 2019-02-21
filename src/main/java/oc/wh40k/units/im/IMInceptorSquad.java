@@ -3,10 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMInceptorSquad extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1, o2;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
 
     public IMInceptorSquad() {
         name = "Inceptor Squad";

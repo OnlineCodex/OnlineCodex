@@ -3,9 +3,8 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMTarantulaAirDefenceBattery extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o3;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
 
     public IMTarantulaAirDefenceBattery() {
         name = "Tarantula Air Defence Battery";

@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosBastions extends Eintrag {
 
-    OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe fkwaffen;
 
     public CHChaosBastions() {
 

@@ -8,10 +8,10 @@ import oc.RuestkammerStarter;
 
 public class TYTrygonPrime extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-	private RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
+    private final RuestkammerStarter waffen;
 
     public TYTrygonPrime() {
         name = "Trygon Prime";

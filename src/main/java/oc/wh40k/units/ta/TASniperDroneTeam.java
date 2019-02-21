@@ -8,7 +8,7 @@ import oc.OptionsEinzelZaehler;
 
 public class TASniperDroneTeam extends Eintrag {
 
-    OptionsEinzelZaehler drohnen;
+	private final OptionsEinzelZaehler drohnen;
 
     public TASniperDroneTeam() {
 

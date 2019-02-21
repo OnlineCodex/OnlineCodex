@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMAstraeusSuperHeavyTank extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+	private final OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
 
     public IMAstraeusSuperHeavyTank() {
         name = "Astraeus Super-Heavy Tank";

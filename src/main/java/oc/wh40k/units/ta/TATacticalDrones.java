@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class TATacticalDrones extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
     public TATacticalDrones() {
         name = "Tactical Drones";

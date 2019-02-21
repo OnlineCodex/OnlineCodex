@@ -7,12 +7,12 @@ import oc.RuestkammerVater;
 
 public class AEExarch extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsEinzelUpgrade oe1;
-    String type = "";
-    int weaponCost = 0;
+	private OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o2;
+	private OptionsUpgradeGruppe o3;
+	private OptionsEinzelUpgrade oe1;
+	public String type = "";
+	public int weaponCost = 0;
 
     public AEExarch() {
         grundkosten = 0;

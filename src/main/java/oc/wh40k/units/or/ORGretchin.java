@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class ORGretchin extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public ORGretchin() {
         kategorie = 3;

@@ -4,9 +4,8 @@ import oc.*;
 
 public class AEStrikingScorpions extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
 
     public AEStrikingScorpions() {
         name = "Striking Scorpions";

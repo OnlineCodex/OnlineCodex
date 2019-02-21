@@ -6,8 +6,8 @@ import oc.RuestkammerVater;
 
 public class NEWarriorsKammer extends RuestkammerVater {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkTransport;
+	private AnzahlPanel squad;
+	private RuestkammerStarter rkTransport;
 
     public NEWarriorsKammer() {
         grundkosten = 0;

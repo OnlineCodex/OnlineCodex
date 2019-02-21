@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMWolfGuardTerminators extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2, o2x;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe wolfsklauen;
-    RuestkammerStarter rkBoss3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x;
+	private final OptionsZaehlerGruppe o2, o2x;
+	private final OptionsZaehlerGruppe o4;
+	private final OptionsZaehlerGruppe wolfsklauen;
+	private final RuestkammerStarter rkBoss3;
 
 
     public IMWolfGuardTerminators() {

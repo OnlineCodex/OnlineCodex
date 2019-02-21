@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class CHScreamers extends Eintrag {
 
-    AnzahlPanel hounds;
+	private final AnzahlPanel hounds;
 
     public CHScreamers() {
 

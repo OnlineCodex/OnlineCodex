@@ -4,8 +4,8 @@ import oc.*;
 
 public class CHChaosLord extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosLord() {
 

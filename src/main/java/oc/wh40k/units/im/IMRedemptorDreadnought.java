@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMRedemptorDreadnought extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3;
-    OptionsEinzelUpgrade oe1;
+	private final OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsEinzelUpgrade oe1;
 
     public IMRedemptorDreadnought() {
         name = "Redemptor Dreadnought";

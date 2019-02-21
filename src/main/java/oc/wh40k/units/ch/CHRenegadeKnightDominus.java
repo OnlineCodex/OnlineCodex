@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHRenegadeKnightDominus extends Eintrag {
 
-    OptionsUpgradeGruppe shieldbreaker, decimator, melta, siegebreaker, siegebreaker2;
+	private final OptionsUpgradeGruppe shieldbreaker, decimator, melta, siegebreaker, siegebreaker2;
 
     public CHRenegadeKnightDominus() {
 

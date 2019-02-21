@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORDakkajet extends Eintrag {
 
-    OptionsUpgradeGruppe ss;
+	private final OptionsUpgradeGruppe ss;
 
     public ORDakkajet() {
         name = "Dakkajet";

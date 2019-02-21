@@ -10,15 +10,15 @@ public class IMRavenwingBikeSquad extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
-    RuestkammerStarter rkTrike;
+	private final RuestkammerStarter rkTrike;
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

@@ -7,10 +7,10 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMThunderwolfCavalry extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-	OptionsZaehlerGruppe wolfsklauen;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe wolfsklauen;
 
     public IMThunderwolfCavalry() {
         name = "Thunderwolf Cavalry\n";

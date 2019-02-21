@@ -7,9 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHFlamers extends Eintrag {
 
-    AnzahlPanel flamers;
-    OptionsEinzelUpgrade pyro;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel flamers;
+	private final RuestkammerStarter rkBoss;
 
     public CHFlamers() {
 

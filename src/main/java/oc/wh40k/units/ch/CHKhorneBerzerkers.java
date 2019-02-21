@@ -4,14 +4,12 @@ import oc.*;
 
 public class CHKhorneBerzerkers extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
+	private final OptionsZaehlerGruppe marinesfk;
+	private final RuestkammerStarter Boss;
 
     public CHKhorneBerzerkers() {
 

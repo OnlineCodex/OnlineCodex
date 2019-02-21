@@ -4,7 +4,7 @@ import oc.*;
 
 public class IMWolfPriestinTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfPriestinTerminatorArmour() {
         name = "Wolf Priest in Terminator Armour";

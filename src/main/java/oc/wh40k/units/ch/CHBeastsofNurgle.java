@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class CHBeastsofNurgle extends Eintrag {
 
-    AnzahlPanel Nurglings;
+	private final AnzahlPanel Nurglings;
 
     public CHBeastsofNurgle() {
 

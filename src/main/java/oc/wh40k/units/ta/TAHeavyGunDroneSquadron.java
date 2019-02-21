@@ -8,9 +8,9 @@ import oc.OptionsEinzelZaehler;
 
 public class TAHeavyGunDroneSquadron extends Eintrag {
 
-    AnzahlPanel HeavyGunDroneTeam;
-    OptionsEinzelZaehler o1;
-    OptionsEinzelZaehler o2;
+	private final AnzahlPanel HeavyGunDroneTeam;
+	private final OptionsEinzelZaehler o1;
+	private final OptionsEinzelZaehler o2;
 
     public TAHeavyGunDroneSquadron() {
         name = "Heavy Gun-Drone Team";

@@ -5,7 +5,7 @@ import oc.RuestkammerStarter;
 
 public class IMPlatoonCommander extends Eintrag {
 
-    RuestkammerStarter kammer;
+	private final RuestkammerStarter kammer;
 
     public IMPlatoonCommander() {
         name = "Platoon Commander";

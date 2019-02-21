@@ -18,8 +18,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
-    OptionsUpgradeGruppe inferno, stave;
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHExaltedSorcereronDiscofTzeentch() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, CAVALRY, SORCERER, EXALTED_SORCERER, DAEMON, FLY);

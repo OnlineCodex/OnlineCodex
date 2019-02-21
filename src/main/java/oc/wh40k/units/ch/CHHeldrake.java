@@ -7,10 +7,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHeldrake extends Eintrag {
 
-    OptionsEinzelUpgrade o1, claws;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsEinzelUpgrade claws;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHeldrake() {
         name = "Heldrake";

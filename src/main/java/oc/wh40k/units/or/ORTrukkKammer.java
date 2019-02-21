@@ -7,7 +7,7 @@ import oc.RuestkammerVater;
 
 public class ORTrukkKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe fahrzeugausruestung;
+	private OptionsUpgradeGruppe fahrzeugausruestung;
 
     public ORTrukkKammer() {
         grundkosten = 30;

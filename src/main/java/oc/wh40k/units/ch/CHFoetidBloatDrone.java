@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHFoetidBloatDrone extends Eintrag {
 
-    OptionsUpgradeGruppe spitter, probe;
+	private final OptionsUpgradeGruppe spitter, probe;
 
     public CHFoetidBloatDrone() {
 

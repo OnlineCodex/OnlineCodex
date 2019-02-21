@@ -10,11 +10,11 @@ public class NESentryPylon extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
-    OptionsEinzelUpgrade oe;
+	private final OptionsEinzelUpgrade oe;
 
 
 

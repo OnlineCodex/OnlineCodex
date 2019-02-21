@@ -4,9 +4,9 @@ import oc.*;
 
 public class TAEthereal extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade hd;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsEinzelUpgrade hd;
 
     public TAEthereal() {
         name = "Ethereal";

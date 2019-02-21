@@ -8,17 +8,9 @@ import oc.*;
 
 public class AEFireDragons extends Eintrag {
 
+	private final RuestkammerStarter rkBoss;
 
-
-    AnzahlPanel squad;
-
-    OptionsEinzelUpgrade boss;
-
-    OptionsUpgradeGruppe o1;
-
-    RuestkammerStarter rkBoss;
-
-
+	private final AnzahlPanel squad;
 
     public AEFireDragons() {
 

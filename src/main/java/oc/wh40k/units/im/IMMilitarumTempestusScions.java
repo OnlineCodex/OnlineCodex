@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMMilitarumTempestusScions extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1, o4;
-    RuestkammerStarter kammer;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o1, o4;
+	private final RuestkammerStarter kammer;
 
 
     public IMMilitarumTempestusScions() {

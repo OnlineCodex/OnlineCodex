@@ -16,7 +16,7 @@ public class AESyren extends RuestkammerVater {
 
 
 
-    OptionsUpgradeGruppe o1, o2;
+	private OptionsUpgradeGruppe o1, o2;
 
 
 

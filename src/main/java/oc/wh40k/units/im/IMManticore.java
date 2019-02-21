@@ -4,10 +4,8 @@ import oc.*;
 
 public class IMManticore extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o1x;
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
 
     public IMManticore() {
         name = "Manticore";

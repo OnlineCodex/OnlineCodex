@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMValkyries extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o2x;
-    OptionsEinzelZaehler oe1;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
+	private final OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o2x;
+	private final OptionsEinzelZaehler oe1;
 
     public IMValkyries() {
         add(ico = new oc.Picture("oc/wh40k/images/IGChimaere.jpg"));

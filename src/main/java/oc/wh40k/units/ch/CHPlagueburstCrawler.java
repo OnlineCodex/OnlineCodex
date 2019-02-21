@@ -6,9 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHPlagueburstCrawler extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public CHPlagueburstCrawler() {
         name = "Plagueburst Crawler";

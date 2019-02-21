@@ -1,15 +1,13 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class ORWeirdboy extends Eintrag {
 
-    OptionsEinzelUpgrade o1;
-    RuestkammerStarter psychicPowers;
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter waffen;
 
     public ORWeirdboy() {
 

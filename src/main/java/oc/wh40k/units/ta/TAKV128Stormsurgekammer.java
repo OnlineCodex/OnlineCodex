@@ -6,9 +6,9 @@ import oc.RuestkammerVater;
 
 public class TAKV128Stormsurgekammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
+	private OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o2;
+	private OptionsUpgradeGruppe o3;
 
     public TAKV128Stormsurgekammer() {
         name = "KV128 Stormsurge";

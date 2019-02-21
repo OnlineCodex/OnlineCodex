@@ -3,13 +3,10 @@ package oc.wh40k.units.or;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsZaehlerGruppe;
 
 public class ORSkorchas extends Eintrag {
 
-    AnzahlPanel Buggies;
-    OptionsZaehlerGruppe BuggiesFK;
-    OptionsZaehlerGruppe BuggiesFKx;
+	private final AnzahlPanel Buggies;
 
     public ORSkorchas() {
 

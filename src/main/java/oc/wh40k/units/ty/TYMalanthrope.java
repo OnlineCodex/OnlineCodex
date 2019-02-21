@@ -6,7 +6,7 @@ import oc.AnzahlPanel;
 import oc.Eintrag;
 
 public class TYMalanthrope extends Eintrag {
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
     public TYMalanthrope() {
         name = "Malanthrope";

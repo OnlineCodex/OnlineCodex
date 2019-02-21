@@ -10,9 +10,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHKairosFateweaver extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
-    RuestkammerStarter psychicPowers;
+	private final OptionsEinzelUpgrade waffe2;
+	private final RuestkammerStarter psychicPowers;
 
     public CHKairosFateweaver() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE, KAIROS_FATEWEAVER);

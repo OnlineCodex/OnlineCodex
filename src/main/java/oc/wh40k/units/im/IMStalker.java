@@ -2,13 +2,10 @@ package oc.wh40k.units.im;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 
 public class IMStalker extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-
-    public IMStalker() {
+	public IMStalker() {
         name = "Stalker";
         grundkosten = getPts("Stalker") + getPts("Icarus stormcannon") * 2;
         power = 6;

@@ -6,8 +6,8 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYBroodlord extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-	private RuestkammerStarter waffen;
+    private final RuestkammerStarter psychicPowers;
+    private final RuestkammerStarter waffen;
 
     public TYBroodlord() {
         name = "Broodlord";

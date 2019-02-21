@@ -3,11 +3,10 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMBaneblade extends Eintrag {
-
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o2, o3;
-    OptionsEinzelUpgrade oe2;
+	
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsUpgradeGruppe o2, o3;
+	private final OptionsEinzelUpgrade oe2;
 
     public IMBaneblade() {
         name = "Baneblade";

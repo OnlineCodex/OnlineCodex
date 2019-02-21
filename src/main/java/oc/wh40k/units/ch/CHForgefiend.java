@@ -7,9 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHForgefiend extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2;
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe mark;
 
     public CHForgefiend() {
         name = "Forgefiend";

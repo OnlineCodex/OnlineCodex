@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYTyrannocyte extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public TYTyrannocyte() {
         grundkosten = getPts("Tyrannocyte");

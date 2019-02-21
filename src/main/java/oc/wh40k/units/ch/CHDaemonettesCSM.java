@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHDaemonettesCSM extends Eintrag {
 
-    AnzahlPanel daemonettes;
-    OptionsEinzelUpgrade alluress;
+	private final AnzahlPanel daemonettes;
+	private final OptionsEinzelUpgrade alluress;
 
     public CHDaemonettesCSM() {
 

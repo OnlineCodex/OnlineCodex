@@ -6,8 +6,7 @@ import oc.RuestkammerStarter;
 
 public class TYScreamerKillers extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter ob1, ob2, ob3;
+    private final RuestkammerStarter ob1, ob2, ob3;
 
     public TYScreamerKillers() {
         name = "Screamer-Killers";

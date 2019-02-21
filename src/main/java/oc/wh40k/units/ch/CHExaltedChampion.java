@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHExaltedChampion extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
+    private final OptionsUpgradeGruppe mark;
 
     public CHExaltedChampion() {
 

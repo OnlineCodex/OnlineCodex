@@ -1,11 +1,8 @@
 package oc.wh40k.units.ty;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class TYExocrine extends Eintrag {
-
-    OptionsUpgradeGruppe o1;
 
     public TYExocrine() {
         name = "Exocrine";

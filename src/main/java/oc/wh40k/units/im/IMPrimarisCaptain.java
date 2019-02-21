@@ -5,7 +5,6 @@ import static oc.KeyWord.*;
 import oc.*;
 
 public class IMPrimarisCaptain extends Eintrag {
-    OptionsUpgradeGruppe o1;
 
     public IMPrimarisCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, CAPTAIN);

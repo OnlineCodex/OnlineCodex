@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 
 public class TAKrootShaper extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public TAKrootShaper() {
         name = "Kroot Shaper";

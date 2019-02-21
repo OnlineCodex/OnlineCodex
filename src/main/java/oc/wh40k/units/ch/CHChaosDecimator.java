@@ -6,10 +6,9 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class CHChaosDecimator extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe mark;
+    private final OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o2;
+    private final OptionsUpgradeGruppe mark;
 
 
     public CHChaosDecimator() {

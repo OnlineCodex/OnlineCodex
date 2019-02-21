@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMBikeSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTrike;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o2;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkTrike;
+	private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o2;
 
     public IMBikeSquad() {
         name = "Bike Squad\n";

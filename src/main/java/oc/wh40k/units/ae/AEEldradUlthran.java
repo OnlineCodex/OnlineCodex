@@ -7,7 +7,7 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class AEEldradUlthran extends Eintrag {
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public AEEldradUlthran() {
         name = "Eldrad Ulthran";

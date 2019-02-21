@@ -4,14 +4,9 @@ import oc.*;
 
 public class TYRaveners extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o2;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    OptionsEinzelUpgrade oe3;
-    boolean uniqueError = false;
-    boolean roterSchrecken = false;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o2;
 
     public TYRaveners() {
         name = "Raveners";

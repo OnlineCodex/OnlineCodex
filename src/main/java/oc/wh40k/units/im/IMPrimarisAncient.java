@@ -6,7 +6,7 @@ import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class IMPrimarisAncient extends Eintrag {
-    boolean spacewolves = false;
+	private boolean spacewolves = false;
     
     public IMPrimarisAncient() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PRIMARIS, ANCIENT);

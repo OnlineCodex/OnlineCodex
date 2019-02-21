@@ -6,7 +6,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMIroncladDreadnought extends Eintrag {
-    OptionsUpgradeGruppe o2, o1, o3;
+	private final OptionsUpgradeGruppe o2, o1, o3;
 
     public IMIroncladDreadnought() {
         name = "Ironclad Dreadnought";

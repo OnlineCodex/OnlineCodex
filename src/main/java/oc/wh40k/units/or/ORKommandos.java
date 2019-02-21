@@ -4,9 +4,8 @@ import oc.*;
 
 public class ORKommandos extends Eintrag {
 
-    AnzahlPanel kommandoz;
-    OptionsZaehlerGruppe kommandozFK;
-    OptionsEinzelUpgrade boss;
+	private final AnzahlPanel kommandoz;
+	private final OptionsEinzelUpgrade boss;
 
     public ORKommandos() {
         kategorie = 2;

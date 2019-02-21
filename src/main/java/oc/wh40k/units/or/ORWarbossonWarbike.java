@@ -6,11 +6,11 @@ import oc.RuestkammerStarter;
 
 public class ORWarbossonWarbike extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
+	private final OptionsEinzelUpgrade attacksquig;
+	private final RuestkammerStarter waffen;
 
-    boolean megaBool = false;
-    boolean gazzBool = false;
+	private boolean megaBool = false;
+	private boolean gazzBool = false;
 
     public ORWarbossonWarbike() {
         name = "Warboss on Warbike";

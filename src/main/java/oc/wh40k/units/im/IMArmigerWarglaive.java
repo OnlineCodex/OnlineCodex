@@ -3,10 +3,9 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMArmigerWarglaive extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fk1;
-    OptionsZaehlerGruppe fk2;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe fk1;
+	private final OptionsZaehlerGruppe fk2;
+	private final AnzahlPanel squad;
 
     public IMArmigerWarglaive() {
         name = "Armiger Warglaive";

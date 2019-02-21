@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHHeraldofSlaanesh extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHHeraldofSlaanesh() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);

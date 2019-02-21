@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMKillteamKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2, o6, o7;
-    OptionsZaehlerGruppe o3, o4, o5;
-    OptionsEinzelUpgrade thunderhammer;
-    String type;
+	private OptionsUpgradeGruppe o1, o2, o6, o7;
+	private OptionsZaehlerGruppe o3, o4;
+	public OptionsZaehlerGruppe o5;
+	private String type;
 
     public IMKillteamKammer() {
         grundkosten = 0;

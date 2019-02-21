@@ -12,7 +12,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHTerraxPatternTermiteAssaultDrill extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
+	private final OptionsUpgradeGruppe waffe1;
 
     public CHTerraxPatternTermiteAssaultDrill() {
 

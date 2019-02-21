@@ -12,7 +12,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMVenerableContemptorDreadnought extends Eintrag {
 
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o2;
 
 
 

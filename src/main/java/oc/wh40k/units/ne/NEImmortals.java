@@ -4,10 +4,8 @@ import oc.*;
 
 public class NEImmortals extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    boolean isPyrrhianer = false;
+	private final AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
 
     public NEImmortals() {
         grundkosten = 0;

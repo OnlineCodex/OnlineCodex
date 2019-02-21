@@ -10,11 +10,11 @@ public class IMRavenwingBlackKnights extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
 
 

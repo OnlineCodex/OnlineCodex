@@ -7,8 +7,7 @@ import oc.RuestkammerStarter;
 
 public class CHGiantChaosSpawn extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe mark;
 
     public CHGiantChaosSpawn() {
 

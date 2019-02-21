@@ -7,9 +7,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHLordofChange extends Eintrag {
 
-    OptionsUpgradeGruppe waffe1;
-    OptionsEinzelUpgrade waffe2;
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHLordofChange() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, MONSTER, FLY, PSYKER, LORD_OF_CHANGE);

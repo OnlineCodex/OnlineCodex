@@ -7,12 +7,11 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMKnightCommanderPask extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsEinzelUpgrade pask;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o3;
+	private final OptionsEinzelUpgrade oe1;
+	private final OptionsEinzelUpgrade oe2;
 
     boolean paskSelected = false;
 

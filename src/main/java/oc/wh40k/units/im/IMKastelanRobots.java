@@ -4,10 +4,10 @@ import oc.*;
 
 public class IMKastelanRobots extends Eintrag {
 
-    AnzahlPanel robots, datasmith;
-    OptionsZaehlerGruppe o1, o2;
-    OptionsZaehlerGruppe o1x, o2x;
-    RuestkammerStarter[] rat = new RuestkammerStarter[10];
+	private final AnzahlPanel robots;
+	private final OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1x, o2x;
+	private final RuestkammerStarter[] rat = new RuestkammerStarter[10];
 
     public IMKastelanRobots() {
 

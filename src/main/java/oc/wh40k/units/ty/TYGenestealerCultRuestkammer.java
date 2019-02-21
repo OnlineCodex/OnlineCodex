@@ -10,19 +10,18 @@ import oc.*;
 
 public class TYGenestealerCultRuestkammer extends RuestkammerVater {
 
-    public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
-    String default1 = "";
-    String default2 = "";
-    boolean character = false;
-    OptionsEinzelUpgrade amuletOfTheVoidwyrm;
-    OptionsEinzelUpgrade scourgeOfDistantStars;
-    OptionsEinzelUpgrade vockorsTalisman;
-    OptionsEinzelUpgrade markOfTheClawedOmnissiah;
-    OptionsEinzelUpgrade reliquaryOfSaintTenndarc;
-    OptionsEinzelUpgrade elixirOfThePrimeSpecimen;
-    OptionsEinzelUpgrade theCrouchling;
-    OptionsZaehlerGruppe familiars;
+    private OptionsUpgradeGruppe o1, o2, o3;
+    private String default1 = "";
+    private String default2 = "";
+    private boolean character = false;
+    private OptionsEinzelUpgrade amuletOfTheVoidwyrm;
+    private OptionsEinzelUpgrade scourgeOfDistantStars;
+    private OptionsEinzelUpgrade vockorsTalisman;
+    private OptionsEinzelUpgrade markOfTheClawedOmnissiah;
+    private OptionsEinzelUpgrade reliquaryOfSaintTenndarc;
+    private OptionsEinzelUpgrade elixirOfThePrimeSpecimen;
+    private OptionsEinzelUpgrade theCrouchling;
+    private OptionsZaehlerGruppe familiars;
     
     Set<String> CHARACTERS = ImmutableSet.of("Patriarch", "Magus", "Primus", "Acolyte Iconward", "Abominant", "Jackal Alphus", "Clamavus", "Locus", "Sanctus", "Kelermorph", "Nexos", "Biophagus");
     Set<String> PSYKERS = ImmutableSet.of("Magus");
@@ -96,7 +95,6 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
         checkBuildaVater();
         character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
                 
         if(character) {
 	       	if(type.equals("Acolyte Iconward")) {
@@ -112,7 +110,6 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
 	       	add(elixirOfThePrimeSpecimen = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Elixir of the Prime Specimen", 0).setRelic(true));  
 	       	
 	       	offsetX += buttonBreite + 15;
-	       	oe1Offset = cnt;
 	       	seperator();
         }
 

@@ -4,9 +4,9 @@ import oc.*;
 
 public class IMDamnedLegionnaires extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    OptionsUpgradeGruppe o1;
+	private final AnzahlPanel squad;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsUpgradeGruppe o1;
 
     public IMDamnedLegionnaires() {
         name = "Damned Legionnaires\n";

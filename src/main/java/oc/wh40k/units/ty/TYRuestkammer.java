@@ -8,17 +8,17 @@ import oc.*;
 
 public class TYRuestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    OptionsEinzelUpgrade oe1, oe2;
-    String type = "";
-    String default1 = "";
-    String default2 = "";
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private OptionsEinzelUpgrade oe1, oe2;
+    private String type = "";
+    private String default1 = "";
+    private String default2 = "";
     
     boolean character = false;
     boolean monster = false;
     
-    Set<String> CHARACTERS = ImmutableSet.of("Broodlord", "Hive Tyrant", "Tyranid Prime", "Tervigon", "Neurothrope", "Trygon Prime");
-    Set<String> MONSTER = ImmutableSet.of("Hive Tyrant", "Tervigon", "Trygon Prime");
+    private final Set<String> CHARACTERS = ImmutableSet.of("Broodlord", "Hive Tyrant", "Tyranid Prime", "Tervigon", "Neurothrope", "Trygon Prime");
+    private final Set<String> MONSTER = ImmutableSet.of("Hive Tyrant", "Tervigon", "Trygon Prime");
 	private OptionsEinzelUpgrade chamelonicMutation;
 	private OptionsEinzelUpgrade hyperadaptiveBiology;
 	private OptionsEinzelUpgrade infrasonicRoar;

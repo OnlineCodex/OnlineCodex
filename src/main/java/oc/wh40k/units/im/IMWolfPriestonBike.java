@@ -4,7 +4,7 @@ import oc.*;
 
 public class IMWolfPriestonBike extends Eintrag {
 
-    RuestkammerStarter waffenUndArtefakte;
+	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMWolfPriestonBike() {
         name = "Wolf Priest on Bike";

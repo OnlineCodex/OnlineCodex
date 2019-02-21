@@ -4,13 +4,11 @@ import oc.*;
 
 public class IMLongFangs extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
-    OptionsZaehlerGruppe o2;
-    OptionsZaehlerGruppe o3;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
-    RuestkammerStarter rkBoss3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss2;
+	private final RuestkammerStarter rkBoss3;
 
     public IMLongFangs() {
         grundkosten = 0;

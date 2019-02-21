@@ -6,11 +6,10 @@ import oc.RuestkammerStarter;
 
 public class ORDeffkillaWartrike extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter waffen;
 
-    boolean megaBool = false;
-    boolean gazzBool = false;
+	private final boolean megaBool = false;
+	private final boolean gazzBool = false;
 
     public ORDeffkillaWartrike() {
         name = "Deffkilla Wartrike";

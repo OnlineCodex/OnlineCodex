@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class TAMV71SniperDrones extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public TAMV71SniperDrones() {
         name = "MV71 Sniper Drones";

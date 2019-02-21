@@ -4,10 +4,9 @@ import oc.*;
 
 public class IMIronstriderBallistarii extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsEinzelZaehler oe1;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1x;
 
     public IMIronstriderBallistarii() {
         name = "Ironstrider Ballistarii";

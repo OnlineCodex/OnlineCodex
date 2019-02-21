@@ -7,9 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHMaulerfiend extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    RuestkammerStarter ausruestung;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe mark;
 
     public CHMaulerfiend() {
         name = "Maulerfiend";

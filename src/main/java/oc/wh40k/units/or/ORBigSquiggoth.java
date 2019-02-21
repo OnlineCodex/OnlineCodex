@@ -6,7 +6,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class ORBigSquiggoth extends Eintrag {
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public ORBigSquiggoth() {
         name = "Big Squiggoth";

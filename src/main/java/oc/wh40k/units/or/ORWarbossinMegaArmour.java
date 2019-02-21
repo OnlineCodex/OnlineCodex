@@ -1,16 +1,14 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORWarbossinMegaArmour extends Eintrag {
 
-    OptionsEinzelUpgrade attacksquig;
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter waffen;
 
-    boolean megaBool = false;
-    boolean gazzBool = false;
+	private boolean megaBool = false;
+	private boolean gazzBool = false;
 
     public ORWarbossinMegaArmour() {
         name = "Warboss in Mega Armour";

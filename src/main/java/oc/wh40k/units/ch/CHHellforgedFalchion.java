@@ -6,9 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedFalchion extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o3, o4;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1, o3, o4;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedFalchion() {
         name = "Hellforged Falchion";

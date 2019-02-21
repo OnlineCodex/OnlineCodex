@@ -6,8 +6,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMGreatCompanyChampion extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMGreatCompanyChampion() {
         name = "Great Company Champion";

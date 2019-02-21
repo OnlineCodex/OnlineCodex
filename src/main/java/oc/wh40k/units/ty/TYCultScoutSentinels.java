@@ -10,15 +10,15 @@ public class TYCultScoutSentinels extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+    private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
+    private final OptionsZaehlerGruppe o1;
 
-    OptionsZaehlerGruppe o1x;
+    private final OptionsZaehlerGruppe o1x;
 
-    OptionsEinzelZaehler oe1;
+    private final OptionsEinzelZaehler oe1;
 
-    OptionsEinzelZaehler oe2;
+    private final OptionsEinzelZaehler oe2;
 
 
 

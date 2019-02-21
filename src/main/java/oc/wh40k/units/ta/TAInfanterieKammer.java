@@ -7,12 +7,12 @@ import oc.RuestkammerVater;
 
 public class TAInfanterieKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade o1;
-    OptionsZaehlerGruppe o4;
-    boolean[] defaults;
-    boolean shasui = false;
-    boolean former = false;
-    boolean späher = false;
+	private OptionsEinzelUpgrade o1;
+	private OptionsZaehlerGruppe o4;
+	private boolean[] defaults;
+	private boolean shasui = false;
+	private boolean former = false;
+	private boolean späher = false;
 
     public void initButtons(boolean... defaults) {
         this.defaults = defaults;

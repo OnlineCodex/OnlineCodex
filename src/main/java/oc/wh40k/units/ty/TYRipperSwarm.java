@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class TYRipperSwarm extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelUpgrade oe1;
 
     public TYRipperSwarm() {
         name = "Ripper Swarm";

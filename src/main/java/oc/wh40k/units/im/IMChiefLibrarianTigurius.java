@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMChiefLibrarianTigurius extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMChiefLibrarianTigurius() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, ULTRAMARINES, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, TIGURIUS);

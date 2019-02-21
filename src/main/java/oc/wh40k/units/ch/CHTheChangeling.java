@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHTheChangeling extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHTheChangeling() {
         super(CHAOS, TZEENTCH, DAEMON, CHARACTER, INFANTRY, PSYKER, HERALD_OF_TZEENTCH, HORROR, THE_CHANGELING);

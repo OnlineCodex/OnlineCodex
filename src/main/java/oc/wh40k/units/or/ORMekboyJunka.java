@@ -4,10 +4,9 @@ import oc.*;
 
 public class ORMekboyJunka extends Eintrag {
 
-    OptionsZaehlerGruppe o1;
-    OptionsUpgradeGruppe o4;
-    OptionsUpgradeGruppe o5;
-    OptionsEinzelZaehler o6;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsUpgradeGruppe o4;
+	private final OptionsUpgradeGruppe o5;
 
     public ORMekboyJunka() {
         name = "Mekboy Junka";

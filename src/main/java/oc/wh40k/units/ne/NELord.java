@@ -8,7 +8,7 @@ import oc.RuestkammerStarter;
 
 public class NELord extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public NELord() {
         name = "Lord";

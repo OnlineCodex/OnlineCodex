@@ -7,7 +7,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORGrotMegaTank extends Eintrag {
 
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
     public ORGrotMegaTank() {
         name = "Grot Mega Tank";

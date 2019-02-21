@@ -3,12 +3,10 @@ package oc.wh40k.units.ch;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHSpinedChaosBeast extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe mark;
 
     public CHSpinedChaosBeast() {
 

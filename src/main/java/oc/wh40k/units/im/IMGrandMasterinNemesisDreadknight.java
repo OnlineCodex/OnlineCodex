@@ -5,10 +5,10 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    RuestkammerStarter psychicPowers;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o3;
+	private final RuestkammerStarter psychicPowers;
 
     public IMGrandMasterinNemesisDreadknight() {
         name = "Grand Master in Nemesis Dreadknight";

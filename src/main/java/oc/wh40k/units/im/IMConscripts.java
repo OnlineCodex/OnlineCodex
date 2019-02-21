@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class IMConscripts extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
     public IMConscripts() {
         grundkosten = 0;

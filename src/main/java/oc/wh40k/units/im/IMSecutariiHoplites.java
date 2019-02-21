@@ -4,10 +4,8 @@ import oc.*;
 
 public class IMSecutariiHoplites extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
-    OptionsZaehlerGruppe o2;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+    private final RuestkammerStarter rkBoss;
 
     public IMSecutariiHoplites() {
         name = "Secutarii Hoplites";

@@ -5,7 +5,7 @@ import oc.Eintrag;
 
 public class CHMyphiticBlightHaulers extends Eintrag {
 
-    AnzahlPanel Nurglings;
+	private final AnzahlPanel Nurglings;
 
     public CHMyphiticBlightHaulers() {
 

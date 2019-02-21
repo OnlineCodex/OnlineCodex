@@ -7,15 +7,15 @@ import oc.RuestkammerVater;
 
 public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    OptionsEinzelUpgrade oe;
+	private OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o2;
+	private OptionsEinzelUpgrade oe;
 
-    boolean vanguard = false;
-    boolean ranger = false;
-    boolean hoplite = false;
-    boolean peltast = false;
-    String type = "";
+	private boolean vanguard = false;
+	private boolean ranger = false;
+	private boolean hoplite = false;
+	private boolean peltast = false;
+	private String type = "";
 
     public IMAdeptusMechanicusRuestkammer() {
         grundkosten = 0;

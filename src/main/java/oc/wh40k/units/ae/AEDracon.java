@@ -16,9 +16,9 @@ public class AEDracon extends RuestkammerVater {
 
 
 
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
-    OptionsUpgradeGruppe o2;
+	private OptionsUpgradeGruppe o2;
 
 
 

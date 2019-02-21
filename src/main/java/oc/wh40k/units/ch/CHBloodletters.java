@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHBloodletters extends Eintrag {
 
-    AnzahlPanel bloodletters;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel bloodletters;
+	private final RuestkammerStarter rkBoss;
 
     public CHBloodletters() {
 

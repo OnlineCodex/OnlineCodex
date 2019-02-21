@@ -4,8 +4,8 @@ import oc.*;
 
 public class IMTerminatorAssaultSquad extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, o1x;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1, o1x;
 
     boolean raiderSelected = false;
 

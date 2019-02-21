@@ -9,10 +9,10 @@ import oc.*;
 public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 	
     public OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
-    boolean psyker = false;
-    boolean character = false;
-    OptionsEinzelUpgrade relic1;
+    private OptionsUpgradeGruppe o1, o2, o3;
+    private boolean psyker = false;
+    private boolean character = false;
+    private OptionsEinzelUpgrade relic1;
     
     static public Vector<OptionsGruppeEintrag> getRangedWeapons(BuildaVater bv) {
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();

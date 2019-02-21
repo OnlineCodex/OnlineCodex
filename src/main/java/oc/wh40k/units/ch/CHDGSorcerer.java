@@ -14,7 +14,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDGSorcerer extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHDGSorcerer() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, SORCERER);

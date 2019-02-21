@@ -4,10 +4,10 @@ import oc.*;
 
 public class TYHiveGuard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsEinzelUpgrade oe1;
+    private final OptionsEinzelUpgrade oe2;
 
     public TYHiveGuard() {
         name = "Hive Guard";

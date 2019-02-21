@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHFleshHounds extends Eintrag {
 
-    AnzahlPanel hounds;
-    OptionsZaehlerGruppe gorehounds;
+	private final AnzahlPanel hounds;
+	private final OptionsZaehlerGruppe gorehounds;
 
     public CHFleshHounds() {
 

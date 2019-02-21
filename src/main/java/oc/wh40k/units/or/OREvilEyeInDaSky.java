@@ -16,6 +16,4 @@ public class OREvilEyeInDaSky extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

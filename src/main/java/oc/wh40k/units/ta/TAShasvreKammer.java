@@ -6,11 +6,11 @@ import oc.*;
 
 public class TAShasvreKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade fb;
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o3;
-    OptionsZaehlerGruppe o4;
-    OptionsZaehlerGruppe o5;
+	private OptionsEinzelUpgrade fb;
+	public OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o3;
+	private OptionsZaehlerGruppe o4;
+	private OptionsZaehlerGruppe o5;
 
     public TAShasvreKammer() {
         grundkosten = 0;

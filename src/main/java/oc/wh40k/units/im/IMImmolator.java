@@ -9,7 +9,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMImmolator extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMImmolator() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, VEHICLE, TRANSPORT, IMMOLATOR);

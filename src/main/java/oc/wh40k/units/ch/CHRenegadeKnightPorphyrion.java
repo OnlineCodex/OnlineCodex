@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHRenegadeKnightPorphyrion extends Eintrag {
 
-    OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsUpgradeGruppe o1, o2, o3;
 
     public CHRenegadeKnightPorphyrion() {
         name = "Renegade Knight Porphyrion";

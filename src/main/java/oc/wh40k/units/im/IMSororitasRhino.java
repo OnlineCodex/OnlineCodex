@@ -9,7 +9,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMSororitasRhino extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMSororitasRhino() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER,VEHICLE, TRANSPORT, RHINO, SORORITAS_RHINO);

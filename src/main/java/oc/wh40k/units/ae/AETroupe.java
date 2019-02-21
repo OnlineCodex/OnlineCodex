@@ -16,9 +16,9 @@ public class AETroupe extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1, o2;
 
 
 

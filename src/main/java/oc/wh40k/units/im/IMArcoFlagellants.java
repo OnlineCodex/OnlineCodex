@@ -8,11 +8,9 @@ import oc.RuestkammerStarter;
 
 public class IMArcoFlagellants extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkTransport;
+	private final AnzahlPanel squad;
 
-    public IMArcoFlagellants() {
+	public IMArcoFlagellants() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, ARCO_FLAGELLANTS);
         name = "Arco-flagellants\n";
         grundkosten = 0;

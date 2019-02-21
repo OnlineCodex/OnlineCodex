@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMStormfangGunship extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMStormfangGunship() {
         name = "Stormfang Gunship";

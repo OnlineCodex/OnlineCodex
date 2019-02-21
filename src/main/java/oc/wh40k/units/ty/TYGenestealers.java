@@ -4,9 +4,9 @@ import oc.*;
 
 public class TYGenestealers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1, oe3, oe5, oe6;
-    OptionsEinzelUpgrade oe2, oe4;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe oe3, oe5, oe6;
+    private final OptionsEinzelUpgrade oe2, oe4;
 
     public TYGenestealers() {
         name = "Genestealers";

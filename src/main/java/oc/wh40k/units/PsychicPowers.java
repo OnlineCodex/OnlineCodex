@@ -6,31 +6,31 @@ import oc.RuestkammerVater;
 
 public class PsychicPowers extends RuestkammerVater {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16;
-    String type = "";
-    int numPowers = 0;
-    boolean darkHereticus = false;
-    boolean contagion = false;
-    boolean change = false;
-    boolean disciplineOfTzeentch = false;
-    boolean disciplineOfNurgle = false;
-    boolean disciplineOfSlaanesh = false;
-    boolean runesOfFate = false;
-    boolean runesOfBattle = false;
-    boolean sanctic = false;
-    boolean hiveMind = false;
-    boolean librarius = false;
-    boolean psykana = false;
-    boolean sanguinary = false;
-    boolean interromancy = false;
-    boolean powerOfTheWaaagh = false;
-    boolean tempestasDiscipline = false;
-    boolean broodmind = false;
+	private OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16;
+	private String type = "";
+	private int numPowers = 0;
+	private boolean darkHereticus = false;
+	private boolean contagion = false;
+	private boolean change = false;
+	private boolean disciplineOfTzeentch = false;
+	private boolean disciplineOfNurgle = false;
+	private boolean disciplineOfSlaanesh = false;
+	private boolean runesOfFate = false;
+	private boolean runesOfBattle = false;
+	private boolean sanctic = false;
+	private boolean hiveMind = false;
+	private boolean librarius = false;
+	private boolean psykana = false;
+	private boolean sanguinary = false;
+	private boolean interromancy = false;
+    private boolean powerOfTheWaaagh = false;
+    private boolean tempestasDiscipline = false;
+    private boolean broodmind = false;
 
-    boolean nurgle = false;
-    boolean tzeentch = false;
-    boolean slaanesh = false;
+    private boolean nurgle = false;
+    private boolean tzeentch = false;
+    private boolean slaanesh = false;
 	private OptionsUpgradeGruppe o17;
 
     public PsychicPowers() {

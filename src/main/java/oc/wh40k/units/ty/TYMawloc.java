@@ -1,11 +1,9 @@
 package oc.wh40k.units.ty;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class TYMawloc extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
 
     public TYMawloc() {
         name = "Mawloc";
@@ -14,10 +12,6 @@ public class TYMawloc extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/TYMorgon.jpg"));
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
     }
 
 }

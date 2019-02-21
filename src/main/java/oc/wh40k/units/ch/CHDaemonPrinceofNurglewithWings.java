@@ -5,7 +5,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofNurglewithWings extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHDaemonPrinceofNurglewithWings() {
 

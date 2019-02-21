@@ -2,14 +2,11 @@ package oc.wh40k.units.or;
 
 import oc.*;
 
-import javax.xml.ws.Action;
-
 public class ORFlashGitz extends Eintrag {
 
-    AnzahlPanel Gargbosse;
-    OptionsZaehlerGruppe GargbosseFK;
-    OptionsEinzelUpgrade captain;
-    RuestkammerStarter Boss;
+	private final AnzahlPanel Gargbosse;
+	private final OptionsZaehlerGruppe GargbosseFK;
+	private final RuestkammerStarter Boss;
 
     public ORFlashGitz() {
 

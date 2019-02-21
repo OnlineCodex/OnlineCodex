@@ -7,11 +7,10 @@ import oc.OptionsEinzelZaehler;
 
 public class ORTankbustas extends Eintrag {
 
-    AnzahlPanel Panzaknakkaz;
-    OptionsEinzelZaehler Sprengsquiks;
-    OptionsEinzelZaehler Panzakloppa;
-    OptionsEinzelZaehler Pistolen;
-    OptionsEinzelUpgrade Boss;
+	private final AnzahlPanel Panzaknakkaz;
+	private final OptionsEinzelZaehler Sprengsquiks;
+	private final OptionsEinzelZaehler Panzakloppa;
+	private final OptionsEinzelZaehler Pistolen;
 
     public ORTankbustas() {
 

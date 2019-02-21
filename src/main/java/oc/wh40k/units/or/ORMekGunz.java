@@ -7,9 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORMekGunz extends Eintrag {
 
-    AnzahlPanel wummen;
-    OptionsZaehlerGruppe fk2;
-    int aktivesBild = 0;
+	private final AnzahlPanel wummen;
+    private final OptionsZaehlerGruppe fk2;
 
     public ORMekGunz() {
         grundkosten = 0;

@@ -1,16 +1,14 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORBigMekonWarbike extends Eintrag {
 
-    OptionsEinzelUpgrade grotoiler;
-    RuestkammerStarter waffen;
+	private final RuestkammerStarter waffen;
 
-    boolean megaBool = false;
-    boolean gazzBool = false;
+	private final boolean megaBool = false;
+	private final boolean gazzBool = false;
 
     public ORBigMekonWarbike() {
         kategorie = 1;

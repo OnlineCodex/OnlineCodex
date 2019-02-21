@@ -6,9 +6,9 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedTyphonHeavySiegeTank extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedTyphonHeavySiegeTank() {
         name = "Hellforged Typhon Heavy Siege Tank";

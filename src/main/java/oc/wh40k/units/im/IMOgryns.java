@@ -5,9 +5,9 @@ import oc.Eintrag;
 
 public class IMOgryns extends Eintrag {
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    boolean lastState = false;
+	private boolean lastState = false;
 
     public IMOgryns() {
         name = "Ogryns";

@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class TATidewallDroneport extends Eintrag {
 
-    OptionsZaehlerGruppe ozg1;
+	private final OptionsZaehlerGruppe ozg1;
 
     public TATidewallDroneport() {
         name = "Tidewall Droneport";

@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMPrimarisPsyker extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMPrimarisPsyker() {
         name = "Primaris Psyker";

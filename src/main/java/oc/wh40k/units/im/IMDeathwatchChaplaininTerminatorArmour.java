@@ -6,8 +6,7 @@ import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
-    OptionsEinzelUpgrade jump;
-    RuestkammerStarter waffenUndReliquien;
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchChaplaininTerminatorArmour() {
         name = "Chaplain in Terminator Armour";

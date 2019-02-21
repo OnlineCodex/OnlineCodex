@@ -9,10 +9,10 @@ import java.util.Vector;
 
 public class TAXV8CrisisBodyguards extends Eintrag {
 
-    RuestkammerStarter ob2;
-    Vector<RuestkammerStarter> rk;
-    OptionsZaehlerGruppe o4;
-    boolean warscaper = false;
+	private RuestkammerStarter ob2;
+	private Vector<RuestkammerStarter> rk;
+	private OptionsZaehlerGruppe o4;
+	private boolean warscaper = false;
 
     public TAXV8CrisisBodyguards() {
         name = "XV8 Crisis Bodyguards";

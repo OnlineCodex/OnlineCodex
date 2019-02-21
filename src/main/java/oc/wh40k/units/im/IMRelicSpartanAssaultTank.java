@@ -16,7 +16,7 @@ public class IMRelicSpartanAssaultTank extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1, o2, o3;
+	private final OptionsZaehlerGruppe o1, o2, o3;
 
 
 

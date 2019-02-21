@@ -9,23 +9,23 @@ import oc.RuestkammerVater;
 
 public class CHWaffenkammerCD extends RuestkammerVater {
 
-    OptionsUpgradeGruppe handwaffen = null;
-    OptionsUpgradeGruppe fkwaffen = null;
+	private OptionsUpgradeGruppe handwaffen = null;
+	private OptionsUpgradeGruppe fkwaffen = null;
     //boolean psyker = false; //Daemon Prince, if not Khorne
     
-    OptionsEinzelUpgrade armourofScorn;
-    OptionsEinzelUpgrade theCrimsonCrown;
-    OptionsEinzelUpgrade theEndlessGrimoire;
-    OptionsEinzelUpgrade soulBane;
-    OptionsEinzelUpgrade theImpossibleRobe;
-    OptionsEinzelUpgrade hornofNurglesRot;
-    OptionsEinzelUpgrade theEntropicKnell;
-    OptionsEinzelUpgrade theForbiddenGem;
-    OptionsEinzelUpgrade theMarkofExcess;
-    OptionsEinzelUpgrade slothfulClaws;
+	private OptionsEinzelUpgrade armourofScorn;
+	private OptionsEinzelUpgrade theCrimsonCrown;
+	private OptionsEinzelUpgrade theEndlessGrimoire;
+	private OptionsEinzelUpgrade soulBane;
+	private OptionsEinzelUpgrade theImpossibleRobe;
+	private OptionsEinzelUpgrade hornofNurglesRot;
+	private OptionsEinzelUpgrade theEntropicKnell;
+	private OptionsEinzelUpgrade theForbiddenGem;
+	private OptionsEinzelUpgrade theMarkofExcess;
+	private OptionsEinzelUpgrade slothfulClaws;
     
-    OptionsUpgradeGruppe nkwaffe;
-    OptionsUpgradeGruppe fkwaffe;
+	private OptionsUpgradeGruppe nkwaffe;
+	private OptionsUpgradeGruppe fkwaffe;
     
     public CHWaffenkammerCD() {
         grundkosten = 0;

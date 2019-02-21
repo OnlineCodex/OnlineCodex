@@ -7,8 +7,8 @@ import oc.RuestkammerStarter;
 
 public class CHDaemonettes extends Eintrag {
 
-    AnzahlPanel daemonettes;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel daemonettes;
+	private final RuestkammerStarter rkBoss;
 
     public CHDaemonettes() {
 

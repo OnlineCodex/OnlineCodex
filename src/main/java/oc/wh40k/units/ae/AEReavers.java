@@ -10,13 +10,13 @@ public class AEReavers extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
-    OptionsZaehlerGruppe o2;
+	private final OptionsZaehlerGruppe o2;
 
-    RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss;
 
 
 

@@ -4,10 +4,9 @@ import oc.*;
 
 public class CHChaosRhino extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsUpgradeGruppe fkwaffen;
-    OptionsEinzelUpgrade combi;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe fkwaffen;
+	private final OptionsEinzelUpgrade combi;
+	private final OptionsUpgradeGruppe mark;
 
     public CHChaosRhino() {
 

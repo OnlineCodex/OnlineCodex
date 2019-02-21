@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class TYSkySlasherSwarm extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelUpgrade oe1;
 
     public TYSkySlasherSwarm() {
         name = "Sky-Slasher Swarm";

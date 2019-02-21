@@ -16,6 +16,4 @@ public class ORGoffKlaunstampfa extends Eintrag {
 
     }
 
-    public void refreshen() {
-    }
 }

@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMStormtalonGunship extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMStormtalonGunship() {
         name = "Stormtalon Gunship";

@@ -4,11 +4,11 @@ import oc.*;
 
 public class TAStrikeTeam extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelZaehler o1;
-    OptionsUpgradeGruppe o4, o3;
-    OptionsZaehlerGruppe o5, o6;
-    RuestkammerStarter rkBoss;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelZaehler o1;
+	private final OptionsUpgradeGruppe o4, o3;
+	private final OptionsZaehlerGruppe o5, o6;
+	private final RuestkammerStarter rkBoss;
 
     public TAStrikeTeam() {
         name = "Strike Team\n";

@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class IMKataphronBreachers extends Eintrag {
 
-    AnzahlPanel Kampflaeuferschwadron;
-    OptionsZaehlerGruppe o1, o2;
-    OptionsZaehlerGruppe o1x, o2x;
+	private final AnzahlPanel Kampflaeuferschwadron;
+	private final OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1x, o2x;
 
     public IMKataphronBreachers() {
 

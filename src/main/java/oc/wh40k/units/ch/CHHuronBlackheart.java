@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHHuronBlackheart extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHHuronBlackheart() {
 

@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMCoronusGravCarrier extends Eintrag {
-    OptionsUpgradeGruppe o1, o2, o3, o4, o5;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMCoronusGravCarrier() {
         name = "Coronus Grav-carrier";

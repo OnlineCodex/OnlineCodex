@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
 	public IMNjalStormcallerinRunicTerminatorArmour() {
         name = "Njal Sturmbringer in Runic Terminator Armour";

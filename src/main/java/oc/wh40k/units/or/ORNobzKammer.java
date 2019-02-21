@@ -4,16 +4,16 @@ import oc.*;
 
 public class ORNobzKammer extends RuestkammerVater {
 
-    AnzahlPanel Bosse;
-    OptionsEinzelUpgrade Bossbikaz;
-    OptionsZaehlerGruppe BosseCC;
-    OptionsZaehlerGruppe BosseFK;
-    OptionsEinzelUpgrade Panzarüstung;
-    OptionsEinzelZaehler Trophäenstange;
-    OptionsEinzelUpgrade Waaaghbanner;
-    OptionsEinzelZaehler Munigrotz;
-    RuestkammerStarter PikkUp;
-    RuestkammerStarter Kampfpanza;
+	private AnzahlPanel Bosse;
+	private OptionsEinzelUpgrade Bossbikaz;
+	private OptionsZaehlerGruppe BosseCC;
+	private OptionsZaehlerGruppe BosseFK;
+	private OptionsEinzelUpgrade Panzarüstung;
+	private OptionsEinzelZaehler Trophäenstange;
+	private OptionsEinzelUpgrade Waaaghbanner;
+	private OptionsEinzelZaehler Munigrotz;
+	private RuestkammerStarter PikkUp;
+    private RuestkammerStarter Kampfpanza;
 
     public ORNobzKammer() {
     }

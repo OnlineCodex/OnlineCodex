@@ -6,8 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class CHPlaguebearersCSM extends Eintrag {
 
-    AnzahlPanel plaguebearers;
-    OptionsEinzelUpgrade ridden;
+	private final AnzahlPanel plaguebearers;
+	private final OptionsEinzelUpgrade ridden;
 
     public CHPlaguebearersCSM() {
 

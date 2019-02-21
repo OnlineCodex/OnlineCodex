@@ -3,10 +3,7 @@ package oc.wh40k.units.im;
 import oc.*;
 
 public class IMImperialKnightHeirlooms extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe fk1;
-    OptionsZaehlerGruppe fk2;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe fk1;
 
     public IMImperialKnightHeirlooms() {
         name = "Armiger Helverin";

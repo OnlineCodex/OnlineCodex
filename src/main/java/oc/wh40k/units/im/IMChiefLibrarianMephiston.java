@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMChiefLibrarianMephiston extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMChiefLibrarianMephiston() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, BLOOD_ANGELS, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, CHIEF_LIBRARIAN_MEPHISTON);

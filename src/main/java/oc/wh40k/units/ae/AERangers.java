@@ -12,7 +12,7 @@ public class AERangers extends Eintrag {
 
 
 
-    AnzahlPanel squad;
+	private final AnzahlPanel squad;
 
 
 

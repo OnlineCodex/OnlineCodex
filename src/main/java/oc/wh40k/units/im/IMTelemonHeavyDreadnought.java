@@ -5,7 +5,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMTelemonHeavyDreadnought extends Eintrag {
-    OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsUpgradeGruppe o1, o2, o3;
 
     public IMTelemonHeavyDreadnought() {
         name = "Telemon Heavy Dreadnought";

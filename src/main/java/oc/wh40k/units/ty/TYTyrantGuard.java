@@ -4,9 +4,9 @@ import oc.*;
 
 public class TYTyrantGuard extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsEinzelUpgrade o3, o4;
+    private final AnzahlPanel squad;
+    private final OptionsZaehlerGruppe o1;
+    private final OptionsEinzelUpgrade o3, o4;
 
     public TYTyrantGuard() {
         name = "Tyrant Guard";

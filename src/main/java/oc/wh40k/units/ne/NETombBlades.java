@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class NETombBlades extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1x, o1, o2, o3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1x, o1, o2, o3;
 
     public NETombBlades() {
         grundkosten = 0;

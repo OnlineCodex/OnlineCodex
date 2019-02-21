@@ -6,8 +6,7 @@ import oc.RuestkammerStarter;
 
 public class CHChaosLordonDiscofTzeentch extends Eintrag {
 
-    RuestkammerStarter waffen;
-    OptionsUpgradeGruppe mark;
+	private final RuestkammerStarter waffen;
 
     public CHChaosLordonDiscofTzeentch() {
 

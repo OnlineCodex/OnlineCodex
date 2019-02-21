@@ -4,14 +4,13 @@ import oc.*;
 
 public class IMSwiftclaws extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o3;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
-    OptionsEinzelUpgrade oe3;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o3;
+	private final OptionsEinzelUpgrade oe2;
+	private final OptionsEinzelUpgrade oe3;
+	private final RuestkammerStarter rkBoss;
+    private final RuestkammerStarter rkBoss2;
 
     public IMSwiftclaws() {
         checkBuildaVater();

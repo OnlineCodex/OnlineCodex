@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMDropPod extends Eintrag {
 
-    OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
     public IMDropPod() {
         name = "Drop Pod";

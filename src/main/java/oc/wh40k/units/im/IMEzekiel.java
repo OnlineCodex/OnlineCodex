@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMEzekiel extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMEzekiel() {
         name = "Ezekiel";

@@ -6,7 +6,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHHorrorsCSM extends Eintrag {
 
-    OptionsZaehlerGruppe horrors, instrument, icon;
+	private final OptionsZaehlerGruppe horrors, instrument, icon;
 
     public CHHorrorsCSM() {
 

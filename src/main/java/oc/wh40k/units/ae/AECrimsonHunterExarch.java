@@ -4,8 +4,6 @@ package oc.wh40k.units.ae;
 
 import oc.Eintrag;
 
-import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
 
 import oc.OptionsUpgradeGruppe;
@@ -16,13 +14,11 @@ public class AECrimsonHunterExarch extends Eintrag {
 
 
 
-    boolean exarch = false;
+	private boolean exarch = false;
 
-    boolean uniqueError = false;
+	private boolean uniqueError = false;
 
-    OptionsUpgradeGruppe o1;
-
-    OptionsEinzelUpgrade boss;
+    private final OptionsUpgradeGruppe o1;
 
 
 

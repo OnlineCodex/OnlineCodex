@@ -5,7 +5,7 @@ import oc.RuestkammerStarter;
 
 public class IMCompanyCommander extends Eintrag {
 
-    RuestkammerStarter kammer;
+	private final RuestkammerStarter kammer;
 
     public IMCompanyCommander() {
         name = "Company Commander";

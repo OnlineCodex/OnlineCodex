@@ -1,6 +1,5 @@
 package oc.wh40k.units.im;
 
-import oc.AnzahlPanel;
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
@@ -8,8 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMLandSpeederStorm extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsUpgradeGruppe o1;
+	private OptionsUpgradeGruppe o1;
 
     public IMLandSpeederStorm() {
         name = "Land Speeder Storm";

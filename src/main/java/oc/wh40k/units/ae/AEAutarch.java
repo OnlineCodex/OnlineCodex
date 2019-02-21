@@ -10,8 +10,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class AEAutarch extends Eintrag {
 
-    OptionsEinzelUpgrade oe1;
-    OptionsUpgradeGruppe o1, o2, o3;
+	private final OptionsUpgradeGruppe o1;
 
     public AEAutarch() {
         name = "Autarch";

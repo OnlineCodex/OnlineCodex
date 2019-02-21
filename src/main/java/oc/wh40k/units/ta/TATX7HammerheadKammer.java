@@ -4,15 +4,15 @@ import oc.*;
 
 public class TATX7HammerheadKammer extends RuestkammerVater {
 
-    OptionsEinzelUpgrade o1;
-    OptionsUpgradeGruppe o2;
-    OptionsUpgradeGruppe o3;
-    OptionsZaehlerGruppe o5;
-    RuestkammerStarter o6;
-    boolean Fernschlag = false;
-    boolean uniqueError = false;
-    OptionsEinzelUpgrade filter;
-    OptionsEinzelUpgrade relais;
+	private OptionsEinzelUpgrade o1;
+	private OptionsUpgradeGruppe o2;
+	private OptionsUpgradeGruppe o3;
+	private OptionsZaehlerGruppe o5;
+	private RuestkammerStarter o6;
+	private boolean Fernschlag = false;
+	private boolean uniqueError = false;
+	private OptionsEinzelUpgrade filter;
+	private OptionsEinzelUpgrade relais;
 
     public TATX7HammerheadKammer() {
         name = "Hammerhai-Gefechtspanzer";

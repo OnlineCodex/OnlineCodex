@@ -1,14 +1,12 @@
 package oc.wh40k.units.ch;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class CHKytanRavager extends Eintrag {
-    OptionsUpgradeGruppe o1;
-    OptionsUpgradeGruppe o2;
-    AnzahlPanel squad;
+	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o2;
 
     public CHKytanRavager() {
         name = "Kytan Ravager";

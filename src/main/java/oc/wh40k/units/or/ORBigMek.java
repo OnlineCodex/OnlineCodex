@@ -6,11 +6,11 @@ import oc.RuestkammerStarter;
 
 public class ORBigMek extends Eintrag {
 
-    OptionsEinzelUpgrade grotoiler;
-    RuestkammerStarter waffen;
+	private final OptionsEinzelUpgrade grotoiler;
+	private final RuestkammerStarter waffen;
 
-    boolean megaBool = false;
-    boolean gazzBool = false;
+	private final boolean megaBool = false;
+	private final boolean gazzBool = false;
 
     public ORBigMek() {
         kategorie = 1;

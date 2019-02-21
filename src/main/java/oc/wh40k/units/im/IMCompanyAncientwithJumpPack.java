@@ -5,7 +5,7 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMCompanyAncientwithJumpPack extends Eintrag {
-    RuestkammerStarter waffenUndReliquien;
+	private final RuestkammerStarter waffenUndReliquien;
 
     public IMCompanyAncientwithJumpPack() {
         name = "Company Ancient with Jump Pack";

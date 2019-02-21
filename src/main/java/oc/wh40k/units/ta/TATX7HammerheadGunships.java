@@ -7,7 +7,7 @@ import java.util.Vector;
 
 public class TATX7HammerheadGunships extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
+	private final Vector<RuestkammerStarter> rk;
 
     public TATX7HammerheadGunships() {
         name = "TX7 Hammerhead Gunships";

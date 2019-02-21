@@ -5,7 +5,7 @@ import oc.RuestkammerStarter;
 
 public class IMTempestorPrime extends Eintrag {
 
-    RuestkammerStarter kammer;
+	private final RuestkammerStarter kammer;
 
     public IMTempestorPrime() {
         name = "Tempestor Prime";

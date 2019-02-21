@@ -7,9 +7,9 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORDeffkoptas extends Eintrag {
 
-    AnzahlPanel killakoptaz;
-    OptionsZaehlerGruppe killakoptazFKx;
-    OptionsZaehlerGruppe killakoptazFK;
+	private final AnzahlPanel killakoptaz;
+	private final OptionsZaehlerGruppe killakoptazFKx;
+	private final OptionsZaehlerGruppe killakoptazFK;
 
     public ORDeffkoptas() {
 

@@ -4,16 +4,15 @@ import oc.*;
 
 public class CHChaosTerminators extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe combi;
-    OptionsZaehlerGruppe melee;
-    OptionsZaehlerGruppe claws;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe combi;
+	private final OptionsZaehlerGruppe melee;
+	private final OptionsZaehlerGruppe claws;
 
-    OptionsZaehlerGruppe heavy;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    OptionsUpgradeGruppe mark;
-    OptionsUpgradeGruppe icon;
+	private final OptionsZaehlerGruppe heavy;
+	private final RuestkammerStarter Boss;
+	private final OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe icon;
 
     public CHChaosTerminators() {
 

@@ -8,8 +8,8 @@ import java.util.Vector;
 
 public class TAXV95GhostkeelBattlesuits extends Eintrag {
 
-    Vector<RuestkammerStarter> rk;
-    OptionsEinzelUpgrade o5;
+	private final Vector<RuestkammerStarter> rk;
+	private final OptionsEinzelUpgrade o5;
 
     public TAXV95GhostkeelBattlesuits() {
         name = "XV95 Ghostkeel Battlesuits";

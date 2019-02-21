@@ -16,8 +16,7 @@ import java.util.Vector;
 
 public class TYBroodBrothersHeavyWeapons extends RuestkammerElement {
 
-
-
+	
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, String defaultWeaponCost, BuildaVater bv) {
 
         Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();

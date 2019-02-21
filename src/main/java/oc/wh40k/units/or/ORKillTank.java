@@ -7,8 +7,8 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORKillTank extends Eintrag {
 
-    OptionsUpgradeGruppe tech, o1;
-    OptionsZaehlerGruppe KillTankFK;
+	private final OptionsUpgradeGruppe tech, o1;
+	private final OptionsZaehlerGruppe KillTankFK;
 
     public ORKillTank() {
         grundkosten = getPts("Kill Tank");

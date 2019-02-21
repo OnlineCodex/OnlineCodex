@@ -5,15 +5,11 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHRubricMarines extends Eintrag {
 
-    AnzahlPanel marines;
-    OptionsZaehlerGruppe o1;
-    OptionsZaehlerGruppe o1x;
-    OptionsZaehlerGruppe o1xx;
+	private final AnzahlPanel marines;
+	private final OptionsZaehlerGruppe o1x;
 
-    OptionsZaehlerGruppe marinesfk;
-    OptionsEinzelUpgrade pp;
-    RuestkammerStarter Boss;
-    RuestkammerStarter psychicPowers;
+	private final OptionsZaehlerGruppe marinesfk;
+	private final RuestkammerStarter Boss;
 
     public CHRubricMarines() {
 

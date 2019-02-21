@@ -6,7 +6,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHMagnustheRed extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHMagnustheRed() {
 

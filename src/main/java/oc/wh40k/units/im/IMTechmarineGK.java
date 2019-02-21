@@ -7,8 +7,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMTechmarineGK extends Eintrag {
 
-    RuestkammerStarter waffenUndReliquien;
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public IMTechmarineGK() {
         name = "Techmarine";

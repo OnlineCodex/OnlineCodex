@@ -16,9 +16,9 @@ public class AEWraithknight extends Eintrag {
 
 
 
-    OptionsZaehlerGruppe o1;
+	private final OptionsZaehlerGruppe o1;
 
-    OptionsUpgradeGruppe o2;
+	private final OptionsUpgradeGruppe o2;
 
 
 

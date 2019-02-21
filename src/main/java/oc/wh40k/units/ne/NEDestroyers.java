@@ -6,8 +6,8 @@ import oc.OptionsEinzelZaehler;
 
 public class NEDestroyers extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelZaehler oe1;
+	private final AnzahlPanel squad;
+	private final OptionsEinzelZaehler oe1;
 
     public NEDestroyers() {
         grundkosten = 0;

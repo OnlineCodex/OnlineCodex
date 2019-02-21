@@ -5,11 +5,11 @@ import oc.*;
 
 public class CHTzaangors extends Eintrag {
 
-    AnzahlPanel kultisten;
-    RuestkammerStarter rkBoss;
-    OptionsZaehlerGruppe o1;
-    int modelle = 0;
-    boolean isChampion = false;
+	private final AnzahlPanel kultisten;
+	private final RuestkammerStarter rkBoss;
+	private final OptionsZaehlerGruppe o1;
+	private final int modelle = 0;
+	private final boolean isChampion = false;
 
     public CHTzaangors() {
         //name = "Chaoskultisten\n";

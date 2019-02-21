@@ -4,12 +4,12 @@ import oc.*;
 
 public class IMGreyHunters extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsZaehlerGruppe special, boltguns, chainswords, boltpistols;
-    OptionsZaehlerGruppe plasmapistol;
-    RuestkammerStarter rkBoss;
-    RuestkammerStarter rkBoss2;
-    RuestkammerStarter rkBoss3;
+	private final AnzahlPanel squad;
+	private final OptionsZaehlerGruppe special, boltguns, chainswords, boltpistols;
+	private final OptionsZaehlerGruppe plasmapistol;
+	private final RuestkammerStarter rkBoss;
+	private final RuestkammerStarter rkBoss2;
+	private final RuestkammerStarter rkBoss3;
 
     public IMGreyHunters() {
         grundkosten = 0;

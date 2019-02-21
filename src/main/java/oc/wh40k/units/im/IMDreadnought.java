@@ -6,9 +6,9 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class IMDreadnought extends Eintrag {
-    OptionsUpgradeGruppe o1, o2;
-    boolean spacewolves = false;
-    boolean deathwatch = false;
+	private final OptionsUpgradeGruppe o1, o2;
+	private boolean spacewolves = false;
+	private boolean deathwatch = false;
 
     public IMDreadnought() {
     	spacewolves = BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves");

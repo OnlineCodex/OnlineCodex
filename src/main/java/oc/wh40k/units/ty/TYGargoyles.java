@@ -6,9 +6,8 @@ import oc.OptionsEinzelUpgrade;
 
 public class TYGargoyles extends Eintrag {
 
-    AnzahlPanel squad;
-    OptionsEinzelUpgrade oe1;
-    OptionsEinzelUpgrade oe2;
+    private final AnzahlPanel squad;
+    private final OptionsEinzelUpgrade oe1, oe2;
 
     public TYGargoyles() {
         name = "Gargoyles";

@@ -4,13 +4,13 @@ import oc.*;
 
 public class NETransporterKammer extends RuestkammerVater {
 
-    OptionsUpgradeGruppe typ;
-    OptionsUpgradeGruppe commandWeapons;
-    OptionsPanelSwitcher switcher;
-    OptionsEinzelUpgrade ass;
+	private OptionsUpgradeGruppe typ;
+	private OptionsUpgradeGruppe commandWeapons;
+	private OptionsPanelSwitcher switcher;
+    private OptionsEinzelUpgrade ass;
 
-    boolean offerGhost = false;
-    boolean offerNight = false;
+    private boolean offerGhost = false;
+    private boolean offerNight = false;
 
     public NETransporterKammer() {
         grundkosten = 0;

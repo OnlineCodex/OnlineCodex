@@ -7,8 +7,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORGoMorkanaut extends Eintrag {
 
-    OptionsUpgradeGruppe typ;
-    OptionsEinzelUpgrade kff;
+	private final OptionsUpgradeGruppe typ;
+	private final OptionsEinzelUpgrade kff;
 
     public ORGoMorkanaut() {
 

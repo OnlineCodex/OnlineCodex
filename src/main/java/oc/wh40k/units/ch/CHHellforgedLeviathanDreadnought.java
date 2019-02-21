@@ -7,10 +7,10 @@ import oc.OptionsZaehlerGruppe;
 
 public class CHHellforgedLeviathanDreadnought extends Eintrag {
 
-    OptionsUpgradeGruppe oe1, oe4;
-    OptionsZaehlerGruppe oe2;
-    OptionsUpgradeGruppe oe3;
-    OptionsUpgradeGruppe mark;
+	private final OptionsUpgradeGruppe oe1, oe4;
+	private final OptionsZaehlerGruppe oe2;
+	private final OptionsUpgradeGruppe oe3;
+	private final OptionsUpgradeGruppe mark;
 
     public CHHellforgedLeviathanDreadnought() {
         name = "Hellforged Leviathan Dreadnought";

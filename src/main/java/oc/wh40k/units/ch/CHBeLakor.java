@@ -8,7 +8,7 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHBeLakor extends Eintrag {
 
-    RuestkammerStarter psychicPowers;
+	private final RuestkammerStarter psychicPowers;
 
     public CHBeLakor() {
         super(CHAOS, DAEMON, CHARACTER, MONSTER, DAEMON_PRINCE, FLY, PSYKER, BE_LAKOR);

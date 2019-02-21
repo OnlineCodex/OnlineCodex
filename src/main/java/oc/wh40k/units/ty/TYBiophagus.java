@@ -8,7 +8,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYBiophagus extends Eintrag {
 
-	OptionsUpgradeGruppe o1;
+    private final OptionsUpgradeGruppe o1;
 
     public TYBiophagus() {
 

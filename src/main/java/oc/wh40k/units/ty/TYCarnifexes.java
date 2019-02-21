@@ -1,13 +1,11 @@
 package oc.wh40k.units.ty;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class TYCarnifexes extends Eintrag {
 
-    AnzahlPanel squad;
-    RuestkammerStarter ob1, ob2, ob3;
+    private final RuestkammerStarter ob1, ob2, ob3;
 
     public TYCarnifexes() {
         name = "Carnifex-Rotte";
