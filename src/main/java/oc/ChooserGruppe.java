@@ -391,7 +391,6 @@ public class ChooserGruppe extends BuildaPanel {
     }
 
     public String getText() {
-        //LOGGER.info("ChooserGruppe-getText");
         StringBuilder text;
         String sterne = BuildaHQ.sterneAnzeigen ? "***************  " : "";
 
