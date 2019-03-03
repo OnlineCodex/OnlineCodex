@@ -12,6 +12,8 @@ public class IMReiverSquad extends Eintrag {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Reiver", 5, 10, getPts("Reiver Squad") + getPts("Heavy bolt pistol") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Shock grenades"));
         add(squad);
 
+        seperator();
+        
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));
         ogE.addElement(new OptionsGruppeEintrag("Combat knifes", getPts("Combat knife")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

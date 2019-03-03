@@ -1,6 +1,7 @@
 "Captain": 74
 "Captain in Cataphractii Armour": 95
 "Captain in Gravis Armour": 95
+"Captain in Phobos Armour": 95
 "Captain in Terminator Armour": 95
 "Captain on Bike": 88
 "Captain with Jump Pack": 93
@@ -10,6 +11,7 @@
 "Chaplain with Jump Pack": 90
 "Land Raider Excelsior": 300
 "Librarian": 88
+"Librarian in Phobos Armour": 88
 "Librarian in Terminator Armour": 102
 "Librarian on Bike": 119
 "Librarian with Jump Pack": 112
@@ -64,6 +66,7 @@
 "Reiver Squad": 18
 "Servitors": 5
 "Sternguard Veteran Squad": 14
+"Suppressor Squad": 0
 "Tartaros Terminator Squad": 23
 "Terminator Assault Squad": 23
 "Terminator Squad": 23
@@ -119,12 +122,14 @@
 "Sergeant Telion": 65
 "Vulkan He'stan": 135
 "Terminus Ultra": 250
+"Accelerator autocannon": 0
 "Assault bolter": 10
 "Assault cannon": 22
 "Astartes grenade launcher": 6
 "Astartes shotgun": 0
 "Bolt pistol (SM)": 0
 "Bolt rifle": 0
+"Bolt sniper rifle": 0
 "Boltgun (SM)": 0
 "Auto boltstorm gauntlets": 12
 "Boltstorm gauntlet": 22
@@ -172,6 +177,7 @@
 "Master crafted auto bolt rifle": 4
 "Master crafted boltgun": 3
 "Master crafted stalker bolt rifle": 5
+"Master-crafted occulus bolt carbine": 0
 "Melta bombs": 5
 "Meltagun (SM)": 14
 "Missile launcher (SM)": 20
@@ -245,6 +251,7 @@
 "Teleport homer": 0
 "Absolver bolt pistol": 0
 "Assault plasma incinerator": 17
+"Master-crafted instigator bolt carbine": 0;
 "Bolt carbine": 0
 "Auto launchers": 0
 "Auxiliary grenade launcher": 0
