@@ -5,18 +5,18 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHObliterators extends Eintrag {
+public class CHGreaterPossessed extends Eintrag {
 
 	private final AnzahlPanel marines;
 	private final OptionsUpgradeGruppe mark;
 
-    public CHObliterators() {
+    public CHGreaterPossessed() {
 
         kategorie = 1;
 
-        name = "Obliterators";
+        name = "Greater Possessed";
         grundkosten = 0;
-        add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Obliterators", 3, 3, getPts("Obliterators") + getPts("Fleshmetal guns") + getPts("Crushing fists")));
+        add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Greater Possessed", 1, 2, getPts("Greater Possessed") + getPts("Daemonic mutations")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
         seperator();
@@ -34,6 +34,7 @@ public class CHObliterators extends Eintrag {
     @Override
     public void refreshen() {
 
-        power = 6 * marines.getModelle();
+        power = 4 +
+                ((marines.getModelle() == 2) ? 4 : 0);
     }
 }

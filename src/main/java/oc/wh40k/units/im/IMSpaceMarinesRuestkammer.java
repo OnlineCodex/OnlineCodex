@@ -13,8 +13,6 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
     private OptionsUpgradeGruppe o1, o2, o3;
-    private String default1 = "";
-    private String default2 = "";
     private boolean character = false;
     private boolean psyker = false;
     public boolean jump = false;
@@ -31,14 +29,14 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade standardofSacrifice;
 
     Set<String> CHARACTERS = ImmutableSet.of("Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
-            "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
+            "Captain in Gravis Armour", "Captain in Phobos Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
             "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
             "Chaplain on Bike", "Lieutenants", "Primaris Chaplain", "Primaris Librarian", "Primaris Lieutenants", "Primaris Master", "Primaris Captain", 
             "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
             "Company Ancient", "Company Ancient on Bike",
             "Primaris Ancient", "Company Champion", "Company Champion on Bike",
             "Imperial Space Marine", "Chapter Ancient", "Chapter Champion");
-    Set<String> PSYKERS = ImmutableSet.of("Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Primaris Librarian");
+    Set<String> PSYKERS = ImmutableSet.of("Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Primaris Librarian", "Librarian in Phobos Armour");
     Set<String> COMBATSHIELD = ImmutableSet.of("Company Champion");
     
 
@@ -48,14 +46,6 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
     public void setType(String s) {
         type = s;
-    }
-
-    public void setDefault1(String s) {
-        default1 = s;
-    }
-
-    public void setDefault2(String s) {
-        default2 = s;
     }
     
     public void addRelics() {
@@ -239,6 +229,18 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Power sword", true);
+        } else if (type.equals("Captain in Phobos Armour")) {
+        	ogE.addElement(new OptionsGruppeEintrag("Master-crafted instigator bolt carbine", getPts("Master-crafted instigator bolt carbine")));
+            addRelics();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected(0, true);
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
+            addRelics();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o2.setSelected(0, true);
         } else if (type.equals("Primaris Captain")) {
         	ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", "Master-cafted auto bolt rifle", getPts("Master crafted auto bolt rifle")));
         	ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", "Master-cafted stalker bolt rifle", getPts("Master crafted stalker bolt rifle")));
@@ -287,7 +289,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        } else if (type.equals("Primaris Librarian")) {
+        } else if (type.equals("Primaris Librarian") || type.equals("Librarian in Phobos Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -522,7 +524,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         if (type.equals("Librarian") || type.equals("Primaris Librarian") || type.equals("Techmarine") || type.equals("Captain in Gravis Armour") || 
         		type.equals("Primaris Captain") || type.equals("Primaris Ancient") || type.equals("Chapter Champion") || type.equals("Apothecary") || 
         		type.equals("Apothecary on Bike") || type.equals("Company Champion") || type.equals("Company Champion on Bike") || type.equals("Company Champion with Jump Pack") || 
-        		type.equals("Sanguinary Novitiate")) {
+        		type.equals("Sanguinary Novitiate") || type.equals("Captain in Phobos Armour") || type.equals("Librarian in Phobos Armour")) {
             o1.alwaysSelected();
             o2.alwaysSelected();
         } else if (type.equals("Chaplain") || type.equals("Librarian GK") || type.equals("Chaplain GK") || type.equals("Chapter Ancient") || type.equals("Terminator Ancient")) {
@@ -541,7 +543,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             o3.alwaysSelected();
         }
 
-        if (type.equals("Tartaros Sergeant") || type.equals("Cataphractii Sergeant") || (type.contains("Captain") && !type.equals("Captain in Gravis Armour") && !type.equals("Primaris Captain")) || type.contains("Sanguinary Priest")) {
+        if (type.equals("Tartaros Sergeant") || type.equals("Cataphractii Sergeant") || (type.contains("Captain") && !type.equals("Captain in Gravis Armour") && !type.equals("Captain in Phobos Armour") && !type.equals("Primaris Captain")) || type.contains("Sanguinary Priest")) {
             legal = o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2 == 2;
             o1.setLegal(legal);
             o2.setLegal(legal);
