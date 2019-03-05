@@ -19,6 +19,7 @@ public enum  KeyWord {
     HERETIC_ASTARTES,
     TYRANIDS,
     GENESTEALER_CULTS,
+    ADEPTUS_CUSTODES,
 
     //Keywords
     CHARACTER,
@@ -180,5 +181,6 @@ public enum  KeyWord {
     SANCTUS,
     KELERMORPH,
     NEXOS,
-    BIOPHAGUS
+    BIOPHAGUS,
+    SHIELD_CAPTAIN,
 }
