@@ -1,24 +1,22 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMGreyKnightApothecary extends Eintrag {
-    //TODO Ausrüstung in eine Kammer verlegen. Artefakte richtig handhaben
-	private final OptionsUpgradeGruppe o2;
 	private final RuestkammerStarter psychicPowers;
 
     public IMGreyKnightApothecary() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, APOTHECARY, TERMINATOR);
+    	
         name = "Apothecary";
         grundkosten = getPts("Apothecary (GK)");
 
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis falchion", getPts("Nemesis falchion")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis force halberd", getPts("Nemesis force halberd")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis daemon hammer", getPts("Nemesis daemon hammer")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis warding stave", getPts("Nemesis warding stave")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        seperator();
+        
+        addWeapons(IMGreyKnightsRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -39,7 +37,6 @@ public class IMGreyKnightApothecary extends Eintrag {
     @Override
     public void refreshen() {
         power = 5;
-        if (!o2.isSelected()) o2.setSelected(0, true);
         
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

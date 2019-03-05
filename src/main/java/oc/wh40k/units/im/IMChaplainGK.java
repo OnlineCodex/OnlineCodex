@@ -1,8 +1,8 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -10,12 +10,14 @@ public class IMChaplainGK extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public IMChaplainGK() {
-        name = "Chaplain in Terminator Armour";
+    	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, CHAPLAIN, TERMINATOR);
+    	
+        name = "Chaplain GK";
         grundkosten = getPts("Chaplain GK");
         power = 8;
         seperator();
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(IMGreyKnightsRuestkammer.class, true);
 
         seperator();
 
