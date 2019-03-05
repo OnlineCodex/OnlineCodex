@@ -1,5 +1,6 @@
 package oc.wh40k.units.im;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class IMDeathwatchPrimarisApothecary extends Eintrag {
@@ -10,6 +11,13 @@ public class IMDeathwatchPrimarisApothecary extends Eintrag {
         
         seperator();
 
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+        	addWeapons(IMDarkAngelsRuestkammer.class, true);
+        else
+        	addWeapons(IMSpaceMarinesRuestkammer.class, true);
+
+        seperator();
+        
         addWarlordTraits("", true);
 
         complete();

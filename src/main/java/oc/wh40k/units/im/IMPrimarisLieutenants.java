@@ -23,6 +23,13 @@ public class IMPrimarisLieutenants extends Eintrag {
         
         seperator();
 
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+        	addWeapons(IMDarkAngelsRuestkammer.class, true);
+        else
+        	addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        
+        seperator();
+        
 		addWarlordTraits("", true);
 
         complete();

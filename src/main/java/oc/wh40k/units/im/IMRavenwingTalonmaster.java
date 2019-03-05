@@ -6,8 +6,12 @@ public class IMRavenwingTalonmaster extends Eintrag {
 
     public IMRavenwingTalonmaster() {
         name = "Ravenwing Talonmaster";
-        grundkosten = getPts("Ravenwing Talonmaster") + getPts("Twin assault cannon") + getPts("Twin heavy bolter") + getPts("Power sword (SM)");
+        grundkosten = getPts("Ravenwing Talonmaster") + getPts("Twin assault cannon") + getPts("Twin heavy bolter");
         power = 9;
+        
+        seperator();
+
+        addWeapons(IMDarkAngelsRuestkammer.class, true);
         
         seperator();
         

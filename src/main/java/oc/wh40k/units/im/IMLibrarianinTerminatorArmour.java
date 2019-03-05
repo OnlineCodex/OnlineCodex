@@ -2,6 +2,7 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -17,7 +18,10 @@ public class IMLibrarianinTerminatorArmour extends Eintrag {
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+        	addWeapons(IMDarkAngelsRuestkammer.class, true);
+        else
+        	addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
 

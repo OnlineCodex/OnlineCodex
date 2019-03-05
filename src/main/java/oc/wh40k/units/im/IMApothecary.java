@@ -2,6 +2,7 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class IMApothecary extends Eintrag {
@@ -16,8 +17,10 @@ public class IMApothecary extends Eintrag {
         
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+        	addWeapons(IMDarkAngelsRuestkammer.class, true);
+        else
+        	addWeapons(IMSpaceMarinesRuestkammer.class, true);   
         seperator();
         
         addWarlordTraits("", true);
