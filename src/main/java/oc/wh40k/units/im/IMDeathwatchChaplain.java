@@ -1,15 +1,21 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.CHAPLAIN;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMDeathwatchChaplain extends Eintrag {
 	private final OptionsEinzelUpgrade jump;
-	private final RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchChaplain() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, CHAPLAIN);
+        
         name = "Chaplain";
         grundkosten = getPts("Chaplain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Crozius arcanum");
 
@@ -18,14 +24,9 @@ public class IMDeathwatchChaplain extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Chaplain with Jump Pack") - getPts("Chaplain")));
 
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Chaplain");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
         
+        addWeapons(IMDeathwatchRuestkammer.class, true);
+                
         seperator();
 
         addWarlordTraits("", true);
@@ -36,10 +37,5 @@ public class IMDeathwatchChaplain extends Eintrag {
     @Override
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
-        
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
     }
 }

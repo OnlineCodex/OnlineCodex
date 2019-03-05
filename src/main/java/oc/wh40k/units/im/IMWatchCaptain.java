@@ -1,17 +1,20 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.WATCH_CAPTAIN;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMWatchCaptain extends Eintrag {
 
-	private boolean addedSpezialAuswahl = false; // spezialauswahl ist abhängig von "Space Marine bike"
-	private final RuestkammerStarter waffenUndReliquien;
-	private final OptionsEinzelUpgrade pistol;
-
     public IMWatchCaptain() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, WATCH_CAPTAIN);
+    	
         name = "Watch Captain";
         grundkosten = getPts("Watch Captain");
 
@@ -23,31 +26,13 @@ public class IMWatchCaptain extends Eintrag {
 
         seperator();
 
-        add(pistol = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bolt pistol", getPts("Bolt pistol (DW)")));
-
-        seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Watch Captain");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        addWeapons(IMDeathwatchRuestkammer.class, true);
         
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        pistol.setSelected(true);
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
     }
 
 }

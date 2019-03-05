@@ -1,5 +1,13 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.LIBRARIAN;
+
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -8,10 +16,11 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMDeathwatchLibrarian extends Eintrag {
 	private final OptionsEinzelUpgrade jump;
-	private final RuestkammerStarter waffenUndReliquien;
 	private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarian() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, LIBRARIAN, PSYKER);
+    	
         name = "Librarian";
         grundkosten = getPts("Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
@@ -21,13 +30,8 @@ public class IMDeathwatchLibrarian extends Eintrag {
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Librarian");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
-
+        addWeapons(IMDeathwatchRuestkammer.class, true);
+       
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -53,11 +57,6 @@ public class IMDeathwatchLibrarian extends Eintrag {
     @Override
     public void refreshen() {
         power = 6 + (jump.isSelected() ? 1 : 0);
-
-        psychicPowers.getPanel().setLocation(
-                (int) psychicPowers.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
         
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

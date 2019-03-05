@@ -1,5 +1,14 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.PRIMARIS;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
@@ -9,9 +18,15 @@ public class IMDeathwatchPrimarisLibrarian extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchPrimarisLibrarian() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, PRIMARIS);
+        
         name = "Primaris Librarian";
-        grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Bolt pistol (DW)") + getPts("Force sword");
+        grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
+        seperator();
+        
+        addWeapons(IMDeathwatchRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");

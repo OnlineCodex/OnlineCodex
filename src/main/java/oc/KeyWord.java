@@ -22,6 +22,7 @@ public enum  KeyWord {
     ADEPTUS_CUSTODES,
     ADEPTUS_MECHANICUS,
     CULT_MECHANICUS,
+    DEATHWATCH,
 
     //Keywords
     CHARACTER,
@@ -188,5 +189,7 @@ public enum  KeyWord {
     TECH_PRIEST,
     DOMINUS,
     ENGINSEER,
-    CYBERNETICA_DATASMITH
+    CYBERNETICA_DATASMITH,
+    WATCH_MASTER,
+    WATCH_CAPTAIN
 }
