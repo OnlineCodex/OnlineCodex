@@ -1,44 +1,37 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GRAND_MASTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.NEMESIS_DREADKNIGHT;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.VEHICLE;
+
 import oc.*;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
-	private final OptionsUpgradeGruppe o3;
 	private final RuestkammerStarter psychicPowers;
 
     public IMGrandMasterinNemesisDreadknight() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, VEHICLE, NEMESIS_DREADKNIGHT, PSYKER, GRAND_MASTER);
+    	
         name = "Grand Master in Nemesis Dreadknight";
         grundkosten = getPts("Grand Master in Nemesis Dreadknight");
 
         add(ico = new oc.Picture("oc/wh40k/images/GKNemesisRitter.jpg"));
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Dreadfist", getPts("Dreadfist (single)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Dreadfist", getPts("Dreadfist (single)")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis Daemon greathammer", getPts("Nemesis Daemon greathammer")));
-        ogE.addElement(new OptionsGruppeEintrag("Nemesis greatsword", getPts("Nemesis greatsword")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Heavy incinerator", getPts("Heavy incinerator")));
-        ogE.addElement(new OptionsGruppeEintrag("Gatling psilencer", getPts("Gatling psilencer")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy psycannon", getPts("Heavy psycannon")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 2));
-
-        seperator();
-
+        
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dreadknight teleporter", getPts("Dreadknight teleporter")));
 
+        seperator();
+        
+        addWeapons(IMGreyKnightsRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -58,17 +51,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
     @Override
     public void refreshen() {
-        o1.alwaysSelected();
-        o2.alwaysSelected();
         power = 14;
-
-        if (o1.isSelected("Dreadfist") && o2.isSelected("Dreadfist")) {
-            o1.setPreis("Dreadfist", 0);
-            o2.setPreis("Dreadfist", getPts("Dreadfist (pair)"));
-        } else {
-            o1.setPreis("Dreadfist", getPts("Dreadfist (single)"));
-            o2.setPreis("Dreadfist", getPts("Dreadfist (single)"));
-        }
         
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

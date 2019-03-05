@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -10,13 +12,15 @@ public class IMLibrarianGK extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public IMLibrarianGK() {
-        name = "Librarian";
+    	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, LIBRARIAN, TERMINATOR);
+    	
+        name = "Librarian GK";
         grundkosten = getPts("Librarian GK");
         power = 9;
 
         seperator();
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(IMGreyKnightsRuestkammer.class, true);
 
         seperator();
 

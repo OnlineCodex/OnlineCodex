@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -10,12 +11,14 @@ public class IMTechmarineGK extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public IMTechmarineGK() {
-        name = "Techmarine";
+    	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, TECHMARINE);
+    	
+        name = "Techmarine GK";
         grundkosten = getPts("Techmarine (GK)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
         seperator();
 
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        addWeapons(IMGreyKnightsRuestkammer.class, true);
 
         seperator();
 
@@ -36,7 +39,7 @@ public class IMTechmarineGK extends Eintrag {
 
     @Override
     public void refreshen() {
-        power = 5 + (((IMSpaceMarinesRuestkammer) getWeapons()).oe1.isSelected() ? 1 : 0);
+        power = 5;
         
     	psychicPowers.getPanel().setLocation(
                 (int) psychicPowers.getPanel().getLocation().getX(),
