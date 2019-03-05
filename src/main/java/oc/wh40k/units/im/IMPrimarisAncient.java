@@ -26,7 +26,10 @@ public class IMPrimarisAncient extends Eintrag {
         	grundkosten += getPts("Bolt pistol (SM)") + getPts("Bolt rifle");
             addWeapons(IMSpaceWolvesRuestkammer.class, true);
         } else {
-            addWeapons(IMSpaceMarinesRuestkammer.class, true);
+            if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+            	addWeapons(IMDarkAngelsRuestkammer.class, true);
+            else
+            	addWeapons(IMSpaceMarinesRuestkammer.class, true); 
         }
         
         seperator();

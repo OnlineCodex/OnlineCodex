@@ -2,6 +2,7 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
@@ -19,7 +20,10 @@ public class IMChaplain extends Eintrag {
 
         seperator();
         
-        addWeapons(IMSpaceMarinesRuestkammer.class, true);
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
+        	addWeapons(IMDarkAngelsRuestkammer.class, true);
+        else
+        	addWeapons(IMSpaceMarinesRuestkammer.class, true);
         
         seperator();
 
@@ -31,11 +35,6 @@ public class IMChaplain extends Eintrag {
     @Override
     public void refreshen() {
         power = 5 + (jump.isSelected() ? 1 : 0);
-        
-        if(((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump != jump.isSelected()){
-        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).jump = jump.isSelected();
-        	((IMSpaceMarinesRuestkammer) weapons.getKammer()).refreshen();
-        }
     }
 }
 
