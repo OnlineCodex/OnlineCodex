@@ -1,37 +1,33 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_CUSTODES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.SHIELD_CAPTAIN;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.BIKER;
+
 import oc.Eintrag;
 
 import oc.OptionsEinzelUpgrade;
 
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
-
 public class IMShieldCaptainonDawneagleJetbike extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
-    
     public IMShieldCaptainonDawneagleJetbike() {
+    	super(IMPERIUM, ADEPTUS_CUSTODES, CHARACTER, INFANTRY, SHIELD_CAPTAIN, BIKER, FLY);
+    	
         name = "Shield Captain on Dawneagle Jetbike";
         grundkosten = getPts("Shield-Captain on Dawneagle Jetbike");
         power = 9;
 
-        ogE.addElement(new OptionsGruppeEintrag("Interceptor lance", getPts("Interceptor lance")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        o1.setSelected(0, true);
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Hurricane bolter", getPts("Hurrican bolter (AC)")));
-        ogE.addElement(new OptionsGruppeEintrag("Salvo launcher", getPts("Salvo launcher")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        o2.setSelected(0, true);
-
         seperator();
         
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Misericordia", getPts("Misericordia")));
+        
+        seperator();
+        
+        addWeapons(IMAdeptusCustodesRuestkammer.class, true);
         
         seperator();
 
@@ -39,15 +35,5 @@ public class IMShieldCaptainonDawneagleJetbike extends Eintrag {
 
         complete();
     }
-
-
-
-    @Override
-
-    public void refreshen() {
-        o1.alwaysSelected();
-        o2.alwaysSelected();
-    }
-
 }
 
