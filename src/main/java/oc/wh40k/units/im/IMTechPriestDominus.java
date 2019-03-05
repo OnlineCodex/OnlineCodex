@@ -1,5 +1,13 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_MECHANICUS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.CULT_MECHANICUS;
+import static oc.KeyWord.TECH_PRIEST;
+import static oc.KeyWord.DOMINUS;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -7,37 +15,21 @@ import oc.RuestkammerStarter;
 
 public class IMTechPriestDominus extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
-
     public IMTechPriestDominus() {
+    	super(IMPERIUM, ADEPTUS_MECHANICUS, CULT_MECHANICUS, INFANTRY, CHARACTER, TECH_PRIEST, DOMINUS);
+    	
         name = "Tech-Priest Dominus";
-        grundkosten = getPts("Tech-Priest Dominus") + getPts("Omnissian axe");
+        grundkosten = getPts("Tech-Priest Dominus");
         power = 7;
+        
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Volkite blaster", getPts("Volkite blaster")));
-        ogE.addElement(new OptionsGruppeEintrag("Eradication ray", getPts("Eradication ray")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-        o1.setSelected(0, true);
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Macrostubber", getPts("Macrostubber")));
-        ogE.addElement(new OptionsGruppeEintrag("Phosphor serpenta", getPts("Phosphor serpenta")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-        o2.setSelected(0, true);
+        
+        addWeapons(IMTechPriestRuestkammer.class, true);
         
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-        o2.alwaysSelected();
     }
 }

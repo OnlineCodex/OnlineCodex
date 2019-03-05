@@ -2,29 +2,17 @@ package oc.wh40k.units.im;
 
 import static oc.KeyWord.*;
 
-import java.util.Set;
-
-import javax.sound.sampled.FloatControl.Type;
-
-import com.google.common.collect.ImmutableSet;
-
 import oc.*;
 
 public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
     private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
     private OptionsEinzelUpgrade raimentOfSorrows;
     private OptionsEinzelUpgrade eaglesEye;
     private OptionsEinzelUpgrade auricAquilas;
     private OptionsEinzelUpgrade thePraetorianPlate;
     
-    static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
-            "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
-
     public IMAdeptusCustodesRuestkammer() {
         grundkosten = 0;
     }
@@ -33,14 +21,6 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
         type = s;
     }
 
-    public void setDefault1(String s) {
-        default1 = s;
-    }
-
-    public void setDefault2(String s) {
-        default2 = s;
-    }
-    
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -57,7 +37,6 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
                 
        	add(raimentOfSorrows = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Raiment of Sorrows", 0).setRelic(true));

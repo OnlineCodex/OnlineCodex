@@ -20,6 +20,8 @@ public enum  KeyWord {
     TYRANIDS,
     GENESTEALER_CULTS,
     ADEPTUS_CUSTODES,
+    ADEPTUS_MECHANICUS,
+    CULT_MECHANICUS,
 
     //Keywords
     CHARACTER,
@@ -183,4 +185,8 @@ public enum  KeyWord {
     NEXOS,
     BIOPHAGUS,
     SHIELD_CAPTAIN,
+    TECH_PRIEST,
+    DOMINUS,
+    ENGINSEER,
+    CYBERNETICA_DATASMITH
 }
