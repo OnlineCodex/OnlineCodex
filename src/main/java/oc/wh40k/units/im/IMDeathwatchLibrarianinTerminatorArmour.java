@@ -1,5 +1,14 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
+
 import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -7,22 +16,18 @@ import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
-	private final RuestkammerStarter waffenUndReliquien;
 	private final RuestkammerStarter psychicPowers;
 
     public IMDeathwatchLibrarianinTerminatorArmour() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, TERMINATOR);
+    	
         name = "Librarian in Terminator Armour";
         grundkosten = getPts("Librarian in Terminator Armour");
         power = 8;
 
         seperator();
 
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Librarian in Terminator Armour");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        addWeapons(IMDeathwatchRuestkammer.class, true);
 
         seperator();
 
@@ -48,11 +53,6 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
     @Override
     public void refreshen() {
-
-        psychicPowers.getPanel().setLocation(
-                (int) psychicPowers.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
         
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

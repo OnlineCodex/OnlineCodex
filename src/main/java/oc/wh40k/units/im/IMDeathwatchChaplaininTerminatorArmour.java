@@ -1,38 +1,32 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaHQ;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHAPLAIN;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.TERMINATOR;
+
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
-import oc.RuestkammerStarter;
 
 public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
-	private final RuestkammerStarter waffenUndReliquien;
 
     public IMDeathwatchChaplaininTerminatorArmour() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, CHAPLAIN, TERMINATOR);
+        
         name = "Chaplain in Terminator Armour";
-        grundkosten = getPts("Chaplain in Terminator Armour") + getPts("Crozius arcanum");
+        grundkosten = getPts("Chaplain in Terminator Armour");
         power = 6;
+        
         seperator();
-
-        waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "");
-        ((DeathWatchKammer) waffenUndReliquien.getKammer()).setType("Chaplain in Terminator Armour");
-        waffenUndReliquien.initKammer();
-        waffenUndReliquien.setButtonText(BuildaHQ.translate("Waffen & Reliquien"));
-        add(waffenUndReliquien);
-        waffenUndReliquien.setAbwaehlbar(false);
+        
+        addWeapons(IMDeathwatchRuestkammer.class, true);
         
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffenUndReliquien.getPanel().getLocation().getY() + waffenUndReliquien.getPanel().getSize().height + 5
-        );
     }
 }

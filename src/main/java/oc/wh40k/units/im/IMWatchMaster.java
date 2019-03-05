@@ -1,27 +1,27 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.DEATHWATCH;
+import static oc.KeyWord.WATCH_MASTER;
+
 import oc.Eintrag;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsUpgradeGruppe;
-
-import oc.RuestkammerStarter;
 
 public class IMWatchMaster extends Eintrag {
 
-    private final OptionsUpgradeGruppe o1;
-
     public IMWatchMaster() {
+    	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, WATCH_MASTER);
+    	
         name = "Watch Master";
         grundkosten = getPts("Watch Master");
 
         add(ico = new oc.Picture("oc/wh40k/images/Kommandant.gif"));
 
         seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
+        addWeapons(IMDeathwatchRuestkammer.class, true);
         
         seperator();
 
@@ -30,11 +30,5 @@ public class IMWatchMaster extends Eintrag {
         complete();
 
     }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-    }
-
 }
 
