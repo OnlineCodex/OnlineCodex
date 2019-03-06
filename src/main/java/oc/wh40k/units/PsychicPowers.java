@@ -224,22 +224,22 @@ public class PsychicPowers extends RuestkammerVater {
         }
         
         if (obscuration) {
-            ogE.addElement(new OptionsGruppeEintrag("Living Lightning", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Tempest's Wrath", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Murderous Hurricane", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Fury of the Wolf Spirits", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Storm Caller", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Shrouding", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Scryer's Gaze", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Temporal Corridor", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Hallucination", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Tenebrous Curse", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mind Raid", 0));
             add(o19 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
         
         if (malefic) {
-            ogE.addElement(new OptionsGruppeEintrag("Living Lightning", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Tempest's Wrath", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Murderous Hurricane", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Fury of the Wolf Spirits", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Storm Caller", 0));
-            ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Incursion", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Sacrifice", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mutade Invigoration", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Posession", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Cursed Earth", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Infernal Power", 0));
             add(o20 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
