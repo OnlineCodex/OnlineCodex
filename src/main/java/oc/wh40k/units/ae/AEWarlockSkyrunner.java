@@ -1,29 +1,25 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
 
 import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
 public class AEWarlockSkyrunner extends Eintrag {
-	private final OptionsZaehlerGruppe o1;
 	private final RuestkammerStarter psychicPowers;
 
     public AEWarlockSkyrunner() {
+       	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, WARLOCK, WARLOCK_SKYRUNNER, BIKER);
+       	
         name = "Warlock Skyrunner";
-        grundkosten = getPts("Warlock Skyrunner") + getPts("Shuriken pistol") + getPts("Twin shuriken catapult");
+        grundkosten = getPts("Warlock Skyrunner") + getPts("Twin shuriken catapult");
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
-        ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        o1.setAktiv(0, true);
+        addWeapons(AECraftworldRuestkammer.class, true);
 
         seperator();
 

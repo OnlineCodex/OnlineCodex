@@ -1,5 +1,7 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 
 import oc.RuestkammerStarter;
@@ -10,10 +12,16 @@ public class AESpiritseer extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public AESpiritseer() {
+    	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, AUTARCH, PSYKER, SPIRITSEER);
+    	 
         name = "Spiritseer";
-        grundkosten = getPts("Spiritseer") + getPts("Shuriken pistol") + getPts("Witch staff");
+        grundkosten = getPts("Spiritseer");
         power = 4;
 
+        seperator();
+        
+        addWeapons(AECraftworldRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");

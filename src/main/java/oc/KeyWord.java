@@ -1,7 +1,5 @@
 package oc;
 
-import static oc.KeyWord.PSYKER;
-
 public enum  KeyWord {
     //Faction Keywords
 	CHAOS,
@@ -24,6 +22,8 @@ public enum  KeyWord {
     CULT_MECHANICUS,
     DEATHWATCH,
     GREY_KNIGHTS,
+    AELDARI,
+    ASURYANI,
 
     //Keywords
     CHARACTER,
@@ -198,5 +198,12 @@ public enum  KeyWord {
     GRAND_MASTER,
     NEMESIS_DREADKNIGHT,
     BROTHER_CAPTAIN,
-    BROTHERHOOD_CHAMPION
+    BROTHERHOOD_CHAMPION,
+    FARSEER,
+    AUTARCH,
+    FARSEER_SKYRUNNER,
+    WARLOCK,
+    WARLOCK_SKYRUNNER,
+    AUTARCH_SKYRUNNER,
+    SPIRITSEER
 }
