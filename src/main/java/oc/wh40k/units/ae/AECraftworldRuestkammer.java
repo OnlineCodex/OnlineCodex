@@ -200,10 +200,10 @@ public class AECraftworldRuestkammer extends RuestkammerVater {
     	thePhoenixGem.setAktiv((chosenRelic == null || thePhoenixGem.isSelected()));   
     	falchusWing.setAktiv(((chosenRelic == null || falchusWing.isSelected()) && keywords.contains(INFANTRY)));
     	theSpiritStoneOfAnathlan.setAktiv(((chosenRelic == null || theSpiritStoneOfAnathlan.isSelected()) && keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Biel-Tan")));
-    	shiftshroudOfAlanssair.setAktiv((chosenRelic == null || shiftshroudOfAlanssair.isSelected() && keywords.contains(INFANTRY) && BuildaHQ.aktBuildaVater.getFormationType().equals("Alaitoc")));
-    	psytronomeOfIyanden.setAktiv((chosenRelic == null || psytronomeOfIyanden.isSelected() && keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iyanden")));
-    	ghosthelmOfAlishazier.setAktiv((chosenRelic == null || ghosthelmOfAlishazier.isSelected()&& keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Ulthwe")));
-    	shimmerplumeOfAchillrial.setAktiv((chosenRelic == null || shimmerplumeOfAchillrial.isSelected() && keywords.contains(AUTARCH)));
+    	shiftshroudOfAlanssair.setAktiv((chosenRelic == null || shiftshroudOfAlanssair.isSelected()) && keywords.contains(INFANTRY) && BuildaHQ.aktBuildaVater.getFormationType().equals("Alaitoc"));
+    	psytronomeOfIyanden.setAktiv((chosenRelic == null || psytronomeOfIyanden.isSelected()) && keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iyanden"));
+    	ghosthelmOfAlishazier.setAktiv((chosenRelic == null || ghosthelmOfAlishazier.isSelected()) && keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Ulthwe"));
+    	shimmerplumeOfAchillrial.setAktiv((chosenRelic == null || shimmerplumeOfAchillrial.isSelected()) && keywords.contains(AUTARCH));
     }
 
 }

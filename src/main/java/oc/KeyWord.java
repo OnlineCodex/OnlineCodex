@@ -24,6 +24,7 @@ public enum  KeyWord {
     GREY_KNIGHTS,
     AELDARI,
     ASURYANI,
+    DRUKHARI,
 
     //Keywords
     CHARACTER,
@@ -205,5 +206,9 @@ public enum  KeyWord {
     WARLOCK,
     WARLOCK_SKYRUNNER,
     AUTARCH_SKYRUNNER,
-    SPIRITSEER
+    SPIRITSEER,
+    SUCCUBUS,
+    ARCHON,
+    HAEMONCULUS,
+    BEASTMASTER
 }
