@@ -1,36 +1,28 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-
-import oc.OptionsEinzelUpgrade;
-
-import oc.OptionsGruppeEintrag;
 
 import oc.OptionsUpgradeGruppe;
 
 public class AEAutarch extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
-
     public AEAutarch() {
+       	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, AUTARCH);
+        
         name = "Autarch";
         grundkosten = getPts("Autarch") + getPts("Plasma grenades") + getPts("Forceshield");
         power = 4;
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Star glaive", getPts("Star glaive")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+        addWeapons(AECraftworldRuestkammer.class, true);
+
         seperator();
 
         addWarlordTraits("", true);
         
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
     }
 }

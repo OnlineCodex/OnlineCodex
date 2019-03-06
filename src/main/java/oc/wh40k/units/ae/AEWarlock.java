@@ -1,30 +1,26 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
 
 import oc.RuestkammerStarter;
 
 import oc.wh40k.units.PsychicPowers;
 
 public class AEWarlock extends Eintrag {
-	private final OptionsZaehlerGruppe o1;
 	private final RuestkammerStarter psychicPowers;
 
     public AEWarlock() {
+    	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, WARLOCK);
+        
         name = "Warlock";
-        grundkosten = getPts("Warlock") + getPts("Shuriken pistol");
+        grundkosten = getPts("Warlock");
         power = 6;
         
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
-        ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        o1.setAktiv(0, true);
+        addWeapons(AECraftworldRuestkammer.class, true);
 
         seperator();
 
