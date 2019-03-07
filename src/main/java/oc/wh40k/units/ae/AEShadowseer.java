@@ -1,24 +1,22 @@
 package oc.wh40k.units.ae;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
 
 public class AEShadowseer extends Eintrag {
 
-	private final OptionsZaehlerGruppe o1;
-
     public AEShadowseer() {
+    	super(AELDARI, CHARACTER, HARLEQUINS, INFANTRY, PSYKER, SHADOWSEER);
+    	
         name = "Shadowseer";
         grundkosten = getPts("Shadowseer");
         power = 7;
 
-        ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol (Harlequins)")));
-        ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+        seperator();
+
+        addWeapons(AEHarlequinsRuestkammer.class, true);
+
         seperator();
 
         addWarlordTraits("", true);
