@@ -25,6 +25,7 @@ public enum  KeyWord {
     AELDARI,
     ASURYANI,
     DRUKHARI,
+    HARLEQUINS,
 
     //Keywords
     CHARACTER,
@@ -210,5 +211,9 @@ public enum  KeyWord {
     SUCCUBUS,
     ARCHON,
     HAEMONCULUS,
-    BEASTMASTER
+    BEASTMASTER,
+    TROUPE_MASTER,
+    SHADOWSEER,
+    DEATHJESTER,
+    SOLITAIRE
 }
