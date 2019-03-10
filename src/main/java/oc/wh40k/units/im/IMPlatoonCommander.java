@@ -1,36 +1,27 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class IMPlatoonCommander extends Eintrag {
 
-	private final RuestkammerStarter kammer;
-
     public IMPlatoonCommander() {
+    	super(CHARACTER, INFANTRY, OFFICER, PLATOON_COMMANDER);
+    	
         name = "Platoon Commander";
         grundkosten = getPts("Platoon Commander") + getPts("Frag grenade (AM)");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Platoon Commander");
-        kammer.initKammer();
-        kammer.setButtonText("Waffen");
-        add(kammer);
-        kammer.setAbwaehlbar(false);
+        seperator();
+        
+        addWeapons(IMAstraMilitarumRuestkammer.class, true);
         
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    //@OVERRIDE
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) kammer.getPanel().getLocation().getY() + kammer.getPanel().getSize().height + 5
-        );
     }
 }

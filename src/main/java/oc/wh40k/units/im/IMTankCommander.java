@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -13,9 +15,11 @@ public class IMTankCommander extends Eintrag {
 	private final OptionsEinzelUpgrade oe1;
 	private final OptionsEinzelUpgrade oe2;
 
-	private boolean paskSelected = false;
+	private final boolean paskSelected = false;
 
     public IMTankCommander() {
+    	super(CHARACTER, VEHICLE, LEMAN_RUSS, OFFICER, TANK_COMMANDER);
+    	
         grundkosten = getPts("Tank Commander");
         name = "Tank Commander";
         power = 13;
@@ -57,6 +61,10 @@ public class IMTankCommander extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", getPts("Dozer blade")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Track guards", getPts("Track guards")));
+        
+        seperator();
+        
+        addWeapons(IMAstraMilitarumRuestkammer.class, true);
         
         seperator();
 

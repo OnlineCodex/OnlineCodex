@@ -31,12 +31,8 @@ public class IMInfantrySquad extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Sergeant");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Sergeant");
-        kammer.initKammer();
+        kammer = createTroopChampion(IMAstraMilitarumRuestkammer.class, true, "Sergeant", "Sergeant");
         add(kammer);
-        kammer.setUeberschriftTrotzNullKostenAusgeben(true);
-        kammer.setAbwaehlbar(false);
 
         complete();
     }

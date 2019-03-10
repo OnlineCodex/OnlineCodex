@@ -1,36 +1,26 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMCommissar extends Eintrag {
 
-	private final RuestkammerStarter kammer;
-
     public IMCommissar() {
+    	super(IMPERIUM, ASTRA_MILITARUM, INFANTRY, CHARACTER, COMMISSAR);
+    	
         name = "Commissar";
         grundkosten = getPts("Commissar");
         power = 2;
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Commissar");
-        kammer.initKammer();
-        kammer.setButtonText("Waffen");
-        add(kammer);
-        kammer.setAbwaehlbar(false);
+        seperator();
         
+        addWeapons(IMAstraMilitarumRuestkammer.class, true);
+                
         seperator();
 
         addWarlordTraits("", true);
 
         complete();
-    }
-
-    @Override
-    public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) kammer.getPanel().getLocation().getY() + kammer.getPanel().getSize().height + 5
-        );
     }
 }
