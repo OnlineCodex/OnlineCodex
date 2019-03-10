@@ -1,5 +1,7 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 
 import oc.OptionsGruppeEintrag;
@@ -15,6 +17,8 @@ public class IMAstropath extends Eintrag {
     private final RuestkammerStarter psychicPowers;
 
     public IMAstropath() {
+    	super(IMPERIUM, ASTRA_MILITARUM, INFANTRY, CHARACTER, PSYKER, ASTROPATH);
+    	
         name = "Astropath";
         grundkosten = getPts("Astropath");
         power = 1;
@@ -25,6 +29,10 @@ public class IMAstropath extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Laspistol", getPts("Laspistol")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 
+        seperator();
+        
+        addWeapons(IMAstraMilitarumRuestkammer.class, true);
+                
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -46,10 +54,6 @@ public class IMAstropath extends Eintrag {
 
     public void refreshen() {
         o1.alwaysSelected();
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
-        );
     }
 
 }

@@ -44,12 +44,9 @@ public class IMVeterans extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Veteran Sergeant");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Veteran Sergeant");
-        kammer.initKammer();
+
+        kammer = createTroopChampion(IMAstraMilitarumRuestkammer.class, true, "Veteran Sergeant", "Veteran Sergeant");
         add(kammer);
-        kammer.setUeberschriftTrotzNullKostenAusgeben(true);
-        kammer.setAbwaehlbar(false);
 
         complete();
     }

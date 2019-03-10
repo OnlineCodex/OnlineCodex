@@ -36,13 +36,8 @@ public class IMMilitarumTempestusScions extends Eintrag {
 
         seperator();
 
-        kammer = new RuestkammerStarter(ID, randAbstand, cnt, IMAstraMilitarumRuestkammer.class, "Tempestor");
-        ((IMAstraMilitarumRuestkammer) kammer.getKammer()).setType("Tempestor");
-        kammer.initKammer();
+        kammer = createTroopChampion(IMAstraMilitarumRuestkammer.class, true, "Tempestor", "Tempestor");
         add(kammer);
-        kammer.setUeberschriftTrotzNullKostenAusgeben(true);
-        kammer.setAbwaehlbar(false);
-
 
         complete();
     }

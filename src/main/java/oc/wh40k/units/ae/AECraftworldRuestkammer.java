@@ -196,7 +196,6 @@ public class AECraftworldRuestkammer extends RuestkammerVater {
     		o1.alwaysSelected();
     	}
 
-
     	thePhoenixGem.setAktiv((chosenRelic == null || thePhoenixGem.isSelected()));   
     	falchusWing.setAktiv(((chosenRelic == null || falchusWing.isSelected()) && keywords.contains(INFANTRY)));
     	theSpiritStoneOfAnathlan.setAktiv(((chosenRelic == null || theSpiritStoneOfAnathlan.isSelected()) && keywords.contains(PSYKER) && BuildaHQ.aktBuildaVater.getFormationType().equals("Biel-Tan")));
