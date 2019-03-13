@@ -163,7 +163,7 @@ public class VOLKImperium extends BuildaVater {
             "Tartaros Terminator Squad", "Aggressor Squad", "Reiver Squad"};
     private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Suppressor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
-    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
+    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad", "Eliminator Squad",
             "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
             "Land Raider Crusader", "Land Raider Redeemer"};
     private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Assault Drill"};

@@ -1,7 +1,7 @@
 "Captain": 74
 "Captain in Cataphractii Armour": 95
 "Captain in Gravis Armour": 95
-"Captain in Phobos Armour": 95
+"Captain in Phobos Armour": 116
 "Captain in Terminator Armour": 95
 "Captain on Bike": 88
 "Captain with Jump Pack": 93
@@ -11,12 +11,13 @@
 "Chaplain with Jump Pack": 90
 "Land Raider Excelsior": 300
 "Librarian": 88
-"Librarian in Phobos Armour": 88
+"Librarian in Phobos Armour": 111
 "Librarian in Terminator Armour": 102
 "Librarian on Bike": 119
 "Librarian with Jump Pack": 112
 "Lieutenants": 60
 "Lieutenants with Jump Pack": 78
+"Lieutenant in Phobos Armour": 86
 "Master": 74
 "Master in Terminator Armour": 95
 "Master in Cataphractii Armour": 95
@@ -57,16 +58,18 @@
 "Contemptor Dreadnought": 88
 "Damned Legionnaires": 25
 "Dreadnought": 60
+"Eliminator Squad": 24
 "Honour Guard": 21
 "Imperial Space Marine": 60
 "Ironclad Dreadnought": 70
 "Ironclad assault launchers": 5
+"Infiltrator Squad": 22
 "Primaris Ancient": 69
 "Redemptor Dreadnought": 105
 "Reiver Squad": 18
 "Servitors": 5
 "Sternguard Veteran Squad": 14
-"Suppressor Squad": 0
+"Suppressor Squad": 35
 "Tartaros Terminator Squad": 23
 "Terminator Assault Squad": 23
 "Terminator Squad": 23

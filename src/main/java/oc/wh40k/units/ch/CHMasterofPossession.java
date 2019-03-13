@@ -16,8 +16,6 @@ public class CHMasterofPossession extends Eintrag {
         grundkosten = getPts("Master of Possession");
         power = 5;
 
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump pack", getPts("Sorcerer with Jump Pack") - getPts("Sorcerer")));
-
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
