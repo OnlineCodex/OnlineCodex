@@ -44,7 +44,7 @@ public class CHBlightlordTerminators extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Flail of curruption", getPts("Flail of curruption")));
+        ogE.addElement(new OptionsGruppeEintrag("Flail of corruption", getPts("Flail of corruption")));
         add(rak = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();
@@ -81,7 +81,7 @@ public class CHBlightlordTerminators extends Eintrag {
             rak.setMaxAnzahl(modelle / 5);
         }
 
-        power = 13 +
-                ((squad.getModelle() == 10) ? 11 : 0);
+        power = 14 +
+                ((squad.getModelle() > 5) ? 13 : 0);
     }
 }

@@ -6,8 +6,8 @@ import oc.RuestkammerVater;
 
 public class PsychicPowers extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1;
-	private OptionsUpgradeGruppe o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16;
+	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
+	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
 	private String type = "";
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
@@ -27,11 +27,12 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean powerOfTheWaaagh = false;
     private boolean tempestasDiscipline = false;
     private boolean broodmind = false;
-
+    private boolean obscuration = false;
+    private boolean malefic = false;
+    
     private boolean nurgle = false;
     private boolean tzeentch = false;
     private boolean slaanesh = false;
-	private OptionsUpgradeGruppe o17;
 
     public PsychicPowers() {
         grundkosten = 0;
@@ -219,8 +220,29 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Mental Onslaught", 0));
             ogE.addElement(new OptionsGruppeEintrag("Psychis Stimulus", 0));
             ogE.addElement(new OptionsGruppeEintrag("Migth From Beyond", 0));
-            add(o11 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o18 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
+        
+        if (obscuration) {
+            ogE.addElement(new OptionsGruppeEintrag("Shrouding", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Scryer's Gaze", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Temporal Corridor", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Hallucination", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Tenebrous Curse", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mind Raid", 0));
+            add(o19 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
+        
+        if (malefic) {
+            ogE.addElement(new OptionsGruppeEintrag("Incursion", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Sacrifice", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mutade Invigoration", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Posession", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Cursed Earth", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Infernal Power", 0));
+            add(o20 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
+
 
         sizeSetzen();
     }
@@ -289,7 +311,11 @@ public class PsychicPowers extends RuestkammerVater {
     public void enableInterromancy() {
         interromancy = true;
     }
-
+    
+    public void enableObscuration() {
+        obscuration = true;
+    }
+    
     public void setNurgle(boolean n) {
         nurgle = n;
     }
@@ -308,6 +334,10 @@ public class PsychicPowers extends RuestkammerVater {
     
     public void enableTempestasDiscipline() {
     	tempestasDiscipline = true;
+    }
+    
+    public void enableMalefic() {
+    	malefic = true;
     }
 
     @Override
@@ -376,8 +406,24 @@ public class PsychicPowers extends RuestkammerVater {
             o15.setMaxAnzahl(numPowers);
         }
         
+        if(powerOfTheWaaagh) {
+        	o16.setMaxAnzahl(numPowers);
+        }
+        
         if(tempestasDiscipline) {
         	o17.setMaxAnzahl(numPowers);
+        }
+        
+        if(broodmind) {
+        	o18.setMaxAnzahl(numPowers);
+        }
+        
+        if(obscuration) {
+        	o19.setMaxAnzahl(numPowers);
+        }
+        
+        if(malefic) {
+        	o20.setMaxAnzahl(numPowers);
         }
     }
 

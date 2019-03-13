@@ -149,11 +149,11 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigungen = new String[]{""};
 
     private static final String[] HQeinträge_SM = new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
-            "Captain in Gravis Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
+            "Captain in Gravis Armour", "Captain in Phobos Armour", "Captain on Bike", "Librarian", "Librarian in Phobos Armour", "Librarian in Terminator Armour", "Librarian on Bike",
             "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
-            "Chaplain on Bike", "Lieutenants", "", "Primaris Chaplain", "Primaris Librarian", "Primaris Lieutenants", "Primaris Master", "Primaris Captain",
+            "Chaplain on Bike", "Lieutenants", "", "Primaris Chaplain", "Primaris Librarian", "Primaris Lieutenants", "Lieutenant in Phobos Armour", "Primaris Master", "Primaris Captain",
             "Rhino Primaris", "Land Raider Excelsior"};
-    private static final String[] Standardeinträge_SM = new String[]{"", "Tactical Squad", "Scout Squad", "Intercessor Squad"};
+    private static final String[] Standardeinträge_SM = new String[]{"", "Tactical Squad", "Scout Squad", "Intercessor Squad", "Infiltrator Squad"};
     private static final String[] Eliteeinträge_SM = new String[]{"", "Servitors", "Apothecary", "Apothecary on Bike", "Primaris Apothecary",
             "Company Ancient", "Company Ancient on Bike",
             "Primaris Ancient", "Company Champion", "Company Champion on Bike", "Company Veterans", "Company Veterans on Bikes",
@@ -161,9 +161,9 @@ public class VOLKImperium extends BuildaVater {
             "Sternguard Veteran Squad", "Vanguard Veteran Squad", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought",
             "Redemptor Dreadnought", "Ironclad Dreadnought", "Terminator Squad", "Terminator Assault Squad", "Cataphractii Terminator Squad",
             "Tartaros Terminator Squad", "Aggressor Squad", "Reiver Squad"};
-    private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
+    private static final String[] Sturmeinträge_SM = new String[]{"", "Assault Squad", "Inceptor Squad", "Suppressor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
-    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad",
+    private static final String[] Unterstützungeinträge_SM = new String[]{"", "Devastator Squad", "Centurion Devastator Squad", "Hellblaster Squad", "Eliminator Squad",
             "Thunderfire Cannon", "Predator", "Whirlwind", "Vindicator", "Hunter", "Stalker", "Land Raider",
             "Land Raider Crusader", "Land Raider Redeemer"};
     private static final String[] Transporteinträge_SM = new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm", "Repulsor", "Terrax-Pattern Termite Assault Drill"};

@@ -137,19 +137,21 @@
 "Fallen": 14
 "Foetid Bloat-drone": 99
 "Forgefiend": 100
+"Greater Possessed": 90
 "Havocs": 13
 "Helbrute": 60
 "Heldrake": 120
 "Khorne Berzerkers": 16
 "Khorne Lord of Skulls": 380
 "Lord of Contagion": 95
+"Master of Possession": 82
 "Malignant Plaguecaster": 110
 "Maulerfiend": 120
 "Mutalith Vortex Beast": 125
 "Mutilators": 35
 "Noise Marines": 15
 "Noxious Blightbringer": 50
-"Obliterators": 65
+"Obliterators": 115
 "Plague Marines": 16
 "Possessed": 20
 "Poxwalkers": 6
@@ -265,11 +267,13 @@
 "Cursed plgue bell": 0
 "Daemon jaws": 8
 "Daemonic axe (CSM)": 10
+"Daemonic mutations": 0
 "Defiler claws": 0
 "Defiler scourge": 12
 "Divining spear": 1
 "Flail of corruption": 10
 "Disc of Tzeentch's blades": 2
+"Excruciator cannon": 0
 "Fleshmetal weapons": 0
 "Force axe": 10
 "Force stave": 8
@@ -303,6 +307,7 @@
 "Power maul": 4
 "Power scourge": 35
 "Power sword": 4
+"Soulflayer tendrils": 0
 "Steed of Slaanesh's lashing tongue": 4
 "Tzaangor blades": 0
 
@@ -380,7 +385,7 @@
 "Hellforged Kharybdis Assault Claw": 375
 "Hellforged Rapier": 20
 "Chaos Space Marine Crew": 10
-"Butcher cannon array": 60
+"Butcher cannon array": 40
 "Soulburner ribaudkin": 70
 "Grav-flux bombard": 65
 "Quad lascannon": 80
