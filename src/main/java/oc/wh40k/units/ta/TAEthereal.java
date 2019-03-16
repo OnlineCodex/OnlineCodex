@@ -1,5 +1,6 @@
 package oc.wh40k.units.ta;
 
+import static oc.KeyWord.*;
 import oc.*;
 
 public class TAEthereal extends Eintrag {
@@ -9,6 +10,8 @@ public class TAEthereal extends Eintrag {
 	private final OptionsEinzelUpgrade hd;
 
     public TAEthereal() {
+    	super(TAU_EMPIRE, CHARACTER, INFANTRY, ETHEREAL);
+    	
         name = "Ethereal";
         grundkosten = getPts("Ethereal");
 
@@ -31,6 +34,10 @@ public class TAEthereal extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
+
+        addWeapons(TAKampfanzugKammer.class, true);
         
         seperator();
 

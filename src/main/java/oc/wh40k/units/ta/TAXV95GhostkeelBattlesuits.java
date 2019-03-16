@@ -22,7 +22,7 @@ public class TAXV95GhostkeelBattlesuits extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 1; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Ghostkeel Shas'vre"));
+            rk.add(createTroopChampion(TAKampfanzugKammer.class, true, "Ghostkeel Shas'vre", "Ghostkeel Shas'vre"));
             rk.lastElement().initKammer(false, false, false, false, false, false, true);
             rk.lastElement().setGrundkosten(getPts("XV95 Ghostkeel Battlesuit"));
             add(rk.lastElement());

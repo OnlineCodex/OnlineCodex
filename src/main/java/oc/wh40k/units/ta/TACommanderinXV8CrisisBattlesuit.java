@@ -1,13 +1,15 @@
 package oc.wh40k.units.ta;
 
+import static oc.KeyWord.*;
 import oc.*;
 
 public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
 	private final OptionsZaehlerGruppe o5;
-	private final RuestkammerStarter ob;
 
     public TACommanderinXV8CrisisBattlesuit() {
+    	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV8_CRISIS, JET_PACK, COMMANDER);
+    	
         name = "Commander";
         grundkosten = getPts("Commander in XV8 Crisis Battlesuit");
         überschriftSetzen = true;
@@ -27,12 +29,7 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
         seperator();
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander in XV8 Crisis Battlesuit");
-        ob.setGrundkosten(0);
-        ob.initKammer(true, false, false, false, false, false, false);
-        ob.setButtonText("Rüstkammer");
-        ob.setAbwaehlbar(false);
-        add(ob);
+        addWeapons(TAKampfanzugKammer.class, true);
         
         seperator();
 

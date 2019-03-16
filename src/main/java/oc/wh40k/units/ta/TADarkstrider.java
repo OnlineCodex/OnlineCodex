@@ -13,6 +13,10 @@ public class TADarkstrider extends Eintrag {
         
         seperator();
 
+        addWeapons(TAKampfanzugKammer.class, true);
+        
+        seperator();
+
         addWarlordTraits("", true);
 
         complete();
