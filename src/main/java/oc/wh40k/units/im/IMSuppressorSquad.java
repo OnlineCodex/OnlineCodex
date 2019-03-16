@@ -10,7 +10,7 @@ public class IMSuppressorSquad extends Eintrag {
     public IMSuppressorSquad() {
         name = "Suppressor Squad";
         
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Suppressors", 3, 3, getPts("Suppressor Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Suppressors", 3, 3, getPts("Suppressor Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Grav-chute"));
         add(squad);
         
         seperator();

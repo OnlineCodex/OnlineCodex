@@ -13,7 +13,7 @@ public class IMLibrarianinPhobosArmour extends Eintrag {
     public IMLibrarianinPhobosArmour() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, INFANTRY, PSYKER, LIBRARIAN);
         name = "Librarian in Phobos Armour";
-        grundkosten = getPts("Librarian in Phobos Armour") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)" + getPts("Camo cloak"));
+        grundkosten = getPts("Librarian in Phobos Armour") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Camo cloak");
 
         seperator();
         

@@ -20,7 +20,7 @@ public class IMInfiltratorSquad extends Eintrag {
 
         seperator();
         
-        add(helixAdept = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Helix Adept", getPts("Infiltrator Squad")));
+        add(helixAdept = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Helix Adept", getPts("Infiltrator Helix Adept")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Bolt pistol", getPts("Bolt carbine") + getPts("Bolt pistol (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         

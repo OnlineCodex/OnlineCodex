@@ -1,15 +1,23 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.TZEENTCH;
+
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
 import oc.RuestkammerStarter;
 
 public class CHChaosLordinTerminatorArmour extends Eintrag {
 
-	private final RuestkammerStarter waffen;
 	private final OptionsUpgradeGruppe mark;
-
+	private int lastMark = -1;
+	
     public CHChaosLordinTerminatorArmour() {
 
         name = "Chaos Lord in Terminator Armour";
@@ -25,16 +33,8 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Combi-bolter");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power sword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        ((CHWaffenkammer) waffen.getKammer()).setTerminatorArmour(true);
-        waffen.initKammer(true, true, true, false);
-        waffen.setButtonText("Waffenkammer");
-        add(waffen);
-        waffen.setAbwaehlbar(false);
+        
+        addWeapons(CHCSMRuestkammer.class, true);
         
         seperator();
         
@@ -45,9 +45,28 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
 
     @Override
     public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
-        );
+
+        if(mark.getSelectedIndex() != lastMark) {
+        	lastMark = mark.getSelectedIndex();
+	        getWeapons().removeKeyword(KHORNE);
+	        getWeapons().removeKeyword(NURGLE);
+	        getWeapons().removeKeyword(TZEENTCH);
+	        getWeapons().removeKeyword(SLAANESH);
+	        
+	        if(mark.isSelected("Mark of Khorne")) {
+	        	getWeapons().addKeyword(KHORNE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Nurgle")) {
+	        	getWeapons().addKeyword(NURGLE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Tzeentch")) {
+	        	getWeapons().addKeyword(TZEENTCH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Slaanesh")) {
+	        	getWeapons().addKeyword(SLAANESH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        }
+	        RefreshListener.fireRefresh();
+        }
     }
 }
