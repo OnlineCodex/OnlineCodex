@@ -28,6 +28,7 @@ public enum  KeyWord {
     HARLEQUINS,
     ARMAGEDDON,
     MILITARUM_TEMPESTUS,
+    TAU_EMPIRE,
 
     //Keywords
     CHARACTER,
@@ -229,5 +230,12 @@ public enum  KeyWord {
     MASTER_OF_ORDNANCE,
     PLATOON_COMMANDER,
     OFFICER_OF_THE_FLEET,
-    ASTROPATH
+    ASTROPATH,
+    BATTLESUIT,
+    XV8_CRISIS,
+    JET_PACK,
+    COMMANDER,
+    XV85_ENFORCER,
+    XV86_COLDSTAR,
+    ETHEREAL
 }

@@ -1,13 +1,15 @@
 package oc.wh40k.units.ta;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
-	private final RuestkammerStarter ob;
-
     public TACommanderinXV86ColdstarBattlesuit() {
+    	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV86_COLDSTAR, JET_PACK, COMMANDER);
+    	
         name = "Commander";
         grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
 
@@ -17,13 +19,7 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
         seperator();
 
-        ob = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Commander");
-        ob.setGrundkosten(0);
-        ((TAKampfanzugKammer) ob.getKammer()).setColdstar(true);
-        ob.initKammer(true, false, false, false, false, false, false);
-        ob.setButtonText("Rüstkammer");
-        add(ob);
-        ob.setAbwaehlbar(false);
+        addWeapons(TAKampfanzugKammer.class, true);
         
         seperator();
 
@@ -36,27 +32,11 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
     @Override
     public void refreshen() {
-        if (!ob.isSelected()) {
-            ((TAKampfanzugKammer) ob.getKammer()).clearEntries();
-        }
-
-        ((TAKampfanzugKammer) ob.getKammer()).farsight = getCountFromInformationVector("Farsight Enclave") > 0;
-
         if (getCountFromInformationVector("Contingent Headquarters") > 0) {
             if (getCountFromInformationVector("Commander") > 1) {
                 setFehlermeldung("Max 1 Commander");
-            } else if (((TAKampfanzugKammer) ob.getKammer()).uniqueError) {
-                setFehlermeldung("Ausrüstung doppelt!");
-            } else {
-                setFehlermeldung("");
-            }
-        } else {
-            if (((TAKampfanzugKammer) ob.getKammer()).uniqueError) {
-                setFehlermeldung("Ausrüstung doppelt!");
-            } else {
-                setFehlermeldung("");
-            }
-        }
+            } 
+        } 
     }
 
     //@OVERRIDE

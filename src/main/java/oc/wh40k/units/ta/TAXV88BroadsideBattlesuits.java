@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.im.IMAstraMilitarumRuestkammer;
 
 public class TAXV88BroadsideBattlesuits extends Eintrag {
 
@@ -19,29 +20,25 @@ public class TAXV88BroadsideBattlesuits extends Eintrag {
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/KolossKampfanzugteam.gif"));
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Broadside Shas'vre");
+        ob1 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'vre", "Broadside");
         ob1.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
-        ob1.initKammer(false, false, false, true, false, false, false);
         add(ob1);
 
         seperator();
 
-        o1 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Broadside Shas'ui");
-        o1.initKammer(false, false, false, true, false, false, false);
+        o1 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
         o1.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o1);
 
         seperator();
 
-        o2 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Broadside Shas'ui");
-        o2.initKammer(false, false, false, true, false, false, false);
+        o2 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
         o2.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o2);
 
         seperator();
 
-        o3 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Broadside Shas'ui");
-        o3.initKammer(false, false, false, true, false, false, false);
+        o3 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
         o3.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o3);
 

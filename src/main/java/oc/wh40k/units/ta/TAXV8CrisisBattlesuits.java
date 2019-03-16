@@ -4,6 +4,7 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.im.IMAstraMilitarumRuestkammer;
 
 import java.util.Vector;
 
@@ -32,20 +33,17 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 
         seperator();
 
-        ob1 = new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Crisis Shas'vre");
+        ob1 = createTroopChampion(TAKampfanzugKammer.class, true, "Crisis Shas'vre", "Crisis Shas'vre");
         ob1.setGrundkosten(getPts("XV8 Crisis Battlesuits"));
-        ob1.initKammer(false, true, false, false, false, false, false);
         add(ob1);
 
         seperator();
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 9; i++) {
-            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAKampfanzugKammer.class, "Crisis Shas'ui"));
-            rk.lastElement().initKammer(false, false, true, false, false, false, false);
+            rk.add(createTroopChampion(TAKampfanzugKammer.class, true, "Crisis Shas'ui", "Crisis Shas'ui"));
             rk.lastElement().setGrundkosten(getPts("XV8 Crisis Battlesuits"));
             add(rk.lastElement());
-
         }
 
         complete();

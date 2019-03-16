@@ -20,6 +20,10 @@ public class TAKrootShaper extends Eintrag {
         
         seperator();
 
+        addWeapons(TAKampfanzugKammer.class, true);
+        
+        seperator();
+
 		addWarlordTraits("", true);
 
         complete();

@@ -22,6 +22,10 @@ public class TACadreFireblade extends Eintrag {
         
         seperator();
 
+        addWeapons(TAKampfanzugKammer.class, true);
+        
+        seperator();
+        
 		addWarlordTraits("", true);
 
         complete();

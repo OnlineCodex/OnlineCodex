@@ -1,63 +1,91 @@
 package oc.wh40k.units.ta;
 
+import static oc.KeyWord.*;
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
+
 import oc.*;
 
 public class TAKampfanzugKammer extends RuestkammerVater {
 
     public boolean uniqueError = false;
     private OptionsZaehlerGruppe o1;
-    //	OptionsZaehlerGruppe o1sync;
     private OptionsUpgradeGruppe o2;
-    private OptionsUpgradeGruppeUnique o2u;
-    //	OptionsUpgradeGruppe o3;
-    private OptionsUpgradeGruppeUnique o3u;
     private OptionsZaehlerGruppe o4;
     public OptionsUpgradeGruppe o5, o6/*, o7*/;
     private boolean[] defaults;
-    private boolean commander = false;
-    private boolean breitseite = false;
-    private boolean krisisshasvre = false;
-    private boolean krisisshasui = false;
-    private boolean geist = false;
-    private boolean krisisleibwache = false;
-    private boolean coldstar = false;
-    private boolean ghostkeel = false;
-    public boolean farsight = false;
     private boolean XV08 = false;
     private boolean XV81 = false;
     private boolean XV84 = false;
-    private boolean Kommando = false;
-    private boolean Multispektrum = false;
-    private boolean Onager = false;
-    private boolean Reinflut = false;
-    private boolean Repulsor = false;
-    private boolean Selbstzerstörungssystem = false;
-    private boolean Waffenstörfeldemitter = false;
-
-    private boolean seismic = false;
-    private boolean mirror = false;
-    private boolean earth = false;
-    private boolean talisman = false;
-    private boolean FusionBlades = false;
-    private boolean warscaper = false;
-
+    public boolean farsight = false;
+    private boolean character = false;
+    
+    private OptionsEinzelUpgrade puretideEngramNeurochip;
+    private OptionsEinzelUpgrade onagerGauntlet;
+    private OptionsEinzelUpgrade multiSensoryDiscouragementArray;
+    private OptionsEinzelUpgrade solidImageProjectionUnit;
+    private OptionsEinzelUpgrade seismicDestabiliser;
+    private OptionsEinzelUpgrade vectoredManoeuvringThrusters;
+    private OptionsEinzelUpgrade dynamicMirrorField;
+    private OptionsEinzelUpgrade gravInhibitorField;
+    
     public TAKampfanzugKammer() {
         grundkosten = 25;
+    }
+    
+    static final Set<String> CHARACTERS = ImmutableSet.of("");
+    
+    public void addRelics() {
+
+    	for(int i = 0; i < ogE.size(); i++) {
+
+    		if(ogE.get(i).getName().equals("Airbursting fragmentation projector")){
+    			ogE.addElement(new OptionsGruppeEintrag("Supernova Launcher", getPts("Airbursting fragmentation projector")).setRelic(true));
+    		}
+    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Vior'la Sept"))
+    		{
+	    		if(ogE.get(i).getName().equals("Flamer")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Thermoneutronic Projector", getPts("Flamer")).setRelic(true));
+	    		}
+    		}
+    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Bork'an Sept"))
+    		{
+	    		if(ogE.get(i).getName().equals("Plasma rifle")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Plasma Accelerator Rifle", getPts("Plasma rifle")).setRelic(true));
+	    		}
+    		}
+    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Farsight Enclaves"))
+    		{
+	    		if(ogE.get(i).getName().equals("Fusion blaster")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Fusion Blades", getPts("Fusion blaster")).setRelic(true));
+	    		}
+    		}
+    	}
     }
 
     @Override
     public void initButtons(boolean... defaults) {
-        this.defaults = defaults;
-        commander = defaults[0];
-        krisisshasvre = defaults[1];
-        krisisshasui = defaults[2];
-        breitseite = defaults[3];
-        geist = defaults[4];
-        krisisleibwache = defaults[5];
-        ghostkeel = defaults[6];
-
+        checkBuildaVater();
+        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
+        int offsetX = randAbstand;
+        int oe1Offset = cnt;
+                
+       	add(puretideEngramNeurochip = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Puretide Engram Neurochip", 0).setRelic(true));
+       	add(onagerGauntlet = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Onager Gauntlet", 0).setRelic(true));
+       	add(multiSensoryDiscouragementArray = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-Sensory Discouragement Array", 0).setRelic(true));
+       	add(solidImageProjectionUnit = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Solid-Image Projection Unit", 0).setRelic(true));
+       	add(seismicDestabiliser = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Seismic Destabilisier", 0).setRelic(true));
+       	add(vectoredManoeuvringThrusters = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vectored Manoeuvring Thrusters", 0).setRelic(true));
+       	add(dynamicMirrorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dynamic Mirror Field", 0).setRelic(true));
+       	add(gravInhibitorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grav-Inhibitor Field", 0).setRelic(true));
+        
+       	offsetX += buttonBreite + 15;
+       	oe1Offset = cnt;
+       	seperator();
+        
         // Fernkampfwaffen
-        if (breitseite) {
+        if (type.equals("Broadside")) {
             ogE.addElement(new OptionsGruppeEintrag("Heavy rail rifle", getPts("Heavy rail rifle")));
             ogE.addElement(new OptionsGruppeEintrag("2 High-yield missile pods", getPts("High-yield missile pod") * 2));
             add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -73,11 +101,11 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             seperator();
 
             add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Seeker missile", getPts("Seeker missile")));
-        } else if (geist) {
+        } else if (type.equals("Stealth Shas'ui")) {
             ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
             add(o5 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
-        } else if (ghostkeel) {
+        } else if (type.equals("Ghostkeel Shas'vre")) {
             ogE.addElement(new OptionsGruppeEintrag("Fusion collider", getPts("Fusion collider")));
             ogE.addElement(new OptionsGruppeEintrag("Cyclic ion raker", getPts("Cyclic ion raker")));
             add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -88,22 +116,22 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("2 Fusion blaster", getPts("Fusion blaster") * 2));
             add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o6.setSelected(0, true);
-        } else {
+        } else if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade")){
             ogE.addElement(new OptionsGruppeEintrag("Airbursting fragmentation projector", getPts("Airbursting fragmentation projector")));
             ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma rifle", getPts("Plasma rifle")));
-            if (coldstar) {
+            if (keywords.contains("XV86_COLDSTAR")) {
                 ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
             } else {
                 ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
             }
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
-            if (commander) {
+            if (type.equals("Commander")) {
                 o1.setMaxAnzahl(4);
-                if (coldstar) {
+                if (keywords.contains("XV86_COLDSTAR")) {
                 	o1.setAnzahl(4, 1);
                 	o1.setAnzahl(6, 1);
                 } else {
@@ -120,7 +148,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         seperator();
 
         // Unterstützungssysteme
-        if (ghostkeel) {
+        if (type.equals("Ghostkeel Shas'vre")) {
             ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Ghostkeel Riptide and Stormsurge)")));
             ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
             ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));
@@ -140,14 +168,17 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (all other units)")));
         }
 
-        add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade"))
+        {
+        	add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
 
-        if (commander) {
-            o2.setMaxAnzahl(4);
-        }
-
-        if (ghostkeel) {
-            o2.setMaxAnzahl(2);
+	        if (type.equals("Commander")) {
+	            o2.setMaxAnzahl(4);
+	        }
+	
+	        if (type.equals("Ghostkeel Shas'vre")) {
+	            o2.setMaxAnzahl(2);
+	        }
         }
 
         seperator();
@@ -156,36 +187,31 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         seperator();
 
-//		//Sonderausrüstung
-//		if(!krisisshasui && !breitseite && !geist && !ghostkeel){
-//			ogE.addElement(new OptionsGruppeEintrag("The Mirrorcodex", 50));
-//			ogE.addElement(new OptionsGruppeEintrag("Seismic Filibrator Node", 45));
-//			ogE.addElement(new OptionsGruppeEintrag("Earth Cast Pilot Array", 30));
-//			ogE.addElement(new OptionsGruppeEintrag("Talisman of Arthas Moloch", 25));
-//			if(commander){
-//				ogE.addElement(new OptionsGruppeEintrag("Fusion Blades", 30));
-//			}
-//			ogE.addElement(new OptionsGruppeEintrag("XV8-02 Krisis", "Kampfanzug XV08-02 Krisis 'Iridium'", 25));//XV8-02 Crisis 'Iridium' Battlesuit
-//			ogE.addElement(new OptionsGruppeEintrag("[IA3 2nd Ed] XV81 Krisis", "Kampfanzug XV81 Krisis", 25));//Nur 2 FK + Smart Missile System
-//			ogE.addElement(new OptionsGruppeEintrag("[IA3 2nd Ed] XV84 Krisis", "Kampfanzug XV84 Krisis", 20));//Target Lock + Networked ML
-//			ogE.addElement(new OptionsGruppeEintrag("Kommando-Kontroll-Modul", 15));//Command and Control Node
-//			ogE.addElement(new OptionsGruppeEintrag("Multispektrum-Sensorpaket", 20));//Multi-spectrum sensor suite
-//			ogE.addElement(new OptionsGruppeEintrag("Onager-Handschuh", 5));//Onager Gauntlet
-//			ogE.addElement(new OptionsGruppeEintrag("Reinflut-Neurochip", "Reinflut-Engrammneurochip", 15));//Puretide Engram Neurochip
-//			ogE.addElement(new OptionsGruppeEintrag("Repulsor-Stoßfeldemitter", 10));//Repulsor Impact Field
-//			ogE.addElement(new OptionsGruppeEintrag("Selbstzerstörungssystem", 10));//Failsafe Detonator 
-//			ogE.addElement(new OptionsGruppeEintrag("Waffenstörfeldemitter", 2)); //Neuroweb system jammer
-//			add(o3 = new OptionsUpgradeGruppe(ID, randAbstand + 280, cnt, "", ogE, 1));
-//		}
-
-        seperator();
-
-        if (commander) {
+        if (type.equals("Commander")) {
             ogE.clear();
             ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
             ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
             ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
             add(o4 = new OptionsZaehlerGruppe(0, randAbstand + 280, cnt, "", ogE, 2));
+        }
+        
+        if(o1 != null) {
+        	o1.getPanel().setLocation(offsetX, 10);
+	       	offsetX += buttonBreite + 20;
+        }  
+  
+        if(o2 != null) {
+        	o2.getPanel().setLocation(offsetX, 10);
+	       	offsetX += buttonBreite + 20;
+        }  
+               
+        if(o4 != null) {
+        	o4.getPanel().setLocation(offsetX, 10);
+        	offsetX += buttonBreite + 20;
+        }
+        
+        if(o5 != null) {
+        	o5.getPanel().setLocation(offsetX, 10);
         }
 
         sizeSetzen();
@@ -193,13 +219,13 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-        if (!breitseite && !geist && !ghostkeel) {
+        if (!type.equals("Broadside") && !type.equals("Stealth Shas'ui") && !type.equals("Ghostkeel Shas'vre")) {
         	
-        } else if (geist) {
+        } else if (type.equals("Stealth Shas'ui")) {
             if (!o5.isSelected()) {
                 o5.setSelected(0, true);
             }
-        } else if (breitseite || ghostkeel) {
+        } else if (type.equals("Broadside") || type.equals("Ghostkeel Shas'vre")) {
 
             if (!o5.isSelected()) {
                 o5.setSelected(0, true);
@@ -209,7 +235,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
         }
 
-        if (commander && !coldstar) {
+        if (type.equals("Commander") && !keywords.contains("XV86_COLDSTAR")) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(4);
             int selected = o1.getAnzahl() + o2.getAnzahl();
@@ -220,7 +246,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
-        if (commander && coldstar) {
+        if (type.equals("Commander") && keywords.contains("XV86_COLDSTAR")) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             int selected = o2.getAnzahl() + o1.getAnzahl();
@@ -231,7 +257,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
-        if (krisisshasui) {
+        if (type.equals("Crisis Shas'ui")) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
@@ -241,7 +267,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
-        if (krisisshasvre) {
+        if (type.equals("Crisis Shas'vre")) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
@@ -251,7 +277,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
-        if (krisisleibwache) {
+        if (type.equals("Crisis Bodyguard")) {
             int selected = o1.getAnzahl() + o2.getAnzahl();
             int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
@@ -261,32 +287,20 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
-        if (geist) {
+        if (type.equals("Stealth Shas'ui")) {
             o2.setMaxAnzahl(1);
         }
 
-        if ((BuildaHQ.getCountFromInformationVectorGlobal("TAXV08") > 1 && XV08) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAXV81") > 1 && XV81) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAXV84") > 1 && XV84) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAKommando") > 1 && Kommando) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAMultispektrum") > 1 && Multispektrum) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAOnager") > 1 && Onager) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAReinflut") > 1 && Reinflut) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TARepulsor") > 1 && Repulsor) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TASelbstzerstörungssystem") > 1 && Selbstzerstörungssystem) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("TAWaffenstörfeldemitter") > 1 && Waffenstörfeldemitter) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("FESeismic") > 1 && seismic) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("FEEarth") > 1 && earth) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("FETalisman") > 1 && talisman) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("FEFusion") > 1 && FusionBlades) ||
-                (BuildaHQ.getCountFromInformationVectorGlobal("FEWarscaper") > 1 && warscaper)) {
-            uniqueError = true;
-        } else {
-            uniqueError = false;
-        }
-
-
+        puretideEngramNeurochip.setAktiv((chosenRelic == null || puretideEngramNeurochip.isSelected()));   
+        onagerGauntlet.setAktiv(((chosenRelic == null || onagerGauntlet.isSelected()) && keywords.contains(BATTLESUIT) && keywords.contains(COMMANDER)));
+        multiSensoryDiscouragementArray.setAktiv(chosenRelic == null || multiSensoryDiscouragementArray.isSelected());
+        solidImageProjectionUnit.setAktiv((chosenRelic == null || solidImageProjectionUnit.isSelected()) && keywords.contains(ETHEREAL) && keywords.contains(FLY));
+        seismicDestabiliser.setAktiv(chosenRelic == null || seismicDestabiliser.isSelected());
+        vectoredManoeuvringThrusters.setAktiv((chosenRelic == null || vectoredManoeuvringThrusters.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("T'au Sept"));
+        dynamicMirrorField.setAktiv((chosenRelic == null || dynamicMirrorField.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Dal'yth Sept"));
+        gravInhibitorField.setAktiv((chosenRelic == null || gravInhibitorField.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Sa'cea Sept"));
     }
+    
 
     @Override
     public void deleteYourself() {
@@ -306,77 +320,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             BuildaHQ.addToInformationVectorGlobal("TAXV84", -1);
         }
 
-        if (Kommando == true) {
-            Kommando = false;
-            BuildaHQ.addToInformationVectorGlobal("TAKommando", -1);
-        }
-
-        if (Multispektrum == true) {
-            Multispektrum = false;
-            BuildaHQ.addToInformationVectorGlobal("TAMultispektrum", -1);
-        }
-
-        if (Onager == true) {
-            Onager = false;
-            BuildaHQ.addToInformationVectorGlobal("TAOnager", -1);
-        }
-
-        if (Reinflut == true) {
-            Reinflut = false;
-            BuildaHQ.addToInformationVectorGlobal("TAReinflut", -1);
-        }
-
-        if (Repulsor == true) {
-            Repulsor = false;
-            BuildaHQ.addToInformationVectorGlobal("TARepulsor", -1);
-        }
-
-        if (Selbstzerstörungssystem == true) {
-            Selbstzerstörungssystem = false;
-            BuildaHQ.addToInformationVectorGlobal("TASelbstzerstörungssystem", -1);
-        }
-
-        if (Waffenstörfeldemitter == true) {
-            Waffenstörfeldemitter = false;
-            BuildaHQ.addToInformationVectorGlobal("TAWaffenstörfeldemitter", -1);
-        }
-
-        if (mirror == true) {
-            mirror = false;
-            BuildaHQ.addToInformationVectorGlobal("FEMirror", -1);
-        }
-
-        if (seismic == true) {
-            seismic = false;
-            BuildaHQ.addToInformationVectorGlobal("FESeismic", -1);
-        }
-
-        if (earth == true) {
-            earth = false;
-            BuildaHQ.addToInformationVectorGlobal("FEEarth", -1);
-        }
-
-        if (talisman == true) {
-            talisman = false;
-            BuildaHQ.addToInformationVectorGlobal("FETalisman", -1);
-        }
-
-        if (FusionBlades == true) {
-            FusionBlades = false;
-            BuildaHQ.addToInformationVectorGlobal("FEFusion", -1);
-        }
-
-        if (warscaper == true) {
-            warscaper = false;
-            BuildaHQ.addToInformationVectorGlobal("FEWarscaper", -1);
-        }
-
-
         super.deleteYourself();
-    }
-
-    public void setColdstar(boolean cs) {
-        coldstar = cs;
     }
 
     public void clearEntries() {
@@ -384,22 +328,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         if (o1 != null && o1.isSelected()) {
             o1.setMaxAnzahl(0);
-            entryCleared = true;
-        }
-//			if (o1sync!=null && o1sync.isSelected()){
-//				o1sync.setMaxAnzahl(0);
-//				entryCleared=true;
-//			}
-        if (o2u != null && o2u.isSelected()) {
-            o2u.deselectAll();
-            entryCleared = true;
-        }
-//			if (o3!=null && o3.isSelected()){
-//				o3.deselectAll();
-//				entryCleared=true;
-//			}
-        if (o3u != null && o3u.isSelected()) {
-            o3u.deselectAll();
             entryCleared = true;
         }
         if (o4 != null && o4.isSelected()) {
@@ -414,11 +342,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o6.deselectAll();
             entryCleared = true;
         }
-        //	    if (o7!=null && o7.isSelected()){
-        //	    	o7.deselectAll();
-        //	    	entryCleared=true;
-        //	    }
-
+        
         if (entryCleared) {
             RefreshListener.fireRefresh();
         }
