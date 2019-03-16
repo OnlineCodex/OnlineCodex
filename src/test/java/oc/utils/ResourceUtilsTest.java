@@ -33,10 +33,10 @@ public class ResourceUtilsTest {
                     .put(sanitizeKey("The Visarch"), 141)
                     .put(sanitizeKey("The Yncarne"), 337)
                     .put(sanitizeKey("Yvraine"), 132)
-                    .put(sanitizeKey("Callidus Assassin"), 70)
+                    .put(sanitizeKey("Callidus Assassin"), 85)
                     .put(sanitizeKey("Culexus Assassin"), 85)
-                    .put(sanitizeKey("Eversor Assassin"), 70)
-                    .put(sanitizeKey("Vindicare Assassin"), 80)
+                    .put(sanitizeKey("Eversor Assassin"), 85)
+                    .put(sanitizeKey("Vindicare Assassin"), 85)
                     .build(),
                 points
         );
