@@ -128,6 +128,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             } else {
                 ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
             }
+            addRelics();
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
             if (type.equals("Commander")) {
                 o1.setMaxAnzahl(4);
@@ -170,6 +171,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade"))
         {
+        	addRelics();
         	add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
 
 	        if (type.equals("Commander")) {

@@ -10,7 +10,7 @@ public class IMEliminatorSquad extends Eintrag {
     public IMEliminatorSquad() {
         name = "Eliminator Squad";
         
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Eliminators", 3, 3, getPts("Eliminator Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Eliminators", 3, 3, getPts("Eliminator Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Camo-cloak"));
         add(squad);
         
         seperator();

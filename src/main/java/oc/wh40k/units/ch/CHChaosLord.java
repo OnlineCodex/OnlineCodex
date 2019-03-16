@@ -1,12 +1,13 @@
 package oc.wh40k.units.ch;
 
 import oc.*;
+import static oc.KeyWord.*;
 
 public class CHChaosLord extends Eintrag {
 
-	private final RuestkammerStarter waffen;
 	private final OptionsUpgradeGruppe mark;
-
+	private int lastMark = -1;
+	
     public CHChaosLord() {
 
         name = "Chaos Lord";
@@ -24,15 +25,8 @@ public class CHChaosLord extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Chainsword");
-        ((CHWaffenkammer) waffen.getKammer()).setChampion(true);
-        waffen.initKammer(true, true, true, true);
-        waffen.setButtonText("Waffenkammer");
-        add(waffen);
-        waffen.setAbwaehlbar(false);
+        
+        addWeapons(CHCSMRuestkammer.class, true);
         
         seperator();
         
@@ -43,9 +37,28 @@ public class CHChaosLord extends Eintrag {
 
     @Override
     public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
-        );
+
+        if(mark.getSelectedIndex() != lastMark) {
+        	lastMark = mark.getSelectedIndex();
+	        getWeapons().removeKeyword(KHORNE);
+	        getWeapons().removeKeyword(NURGLE);
+	        getWeapons().removeKeyword(TZEENTCH);
+	        getWeapons().removeKeyword(SLAANESH);
+	        
+	        if(mark.isSelected("Mark of Khorne")) {
+	        	getWeapons().addKeyword(KHORNE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Nurgle")) {
+	        	getWeapons().addKeyword(NURGLE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Tzeentch")) {
+	        	getWeapons().addKeyword(TZEENTCH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Slaanesh")) {
+	        	getWeapons().addKeyword(SLAANESH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        }
+	        RefreshListener.fireRefresh();
+        }
     }
 }

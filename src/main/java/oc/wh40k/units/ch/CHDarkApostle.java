@@ -1,18 +1,27 @@
 package oc.wh40k.units.ch;
 
+import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.TZEENTCH;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.PsychicPowers;
 
 public class CHDarkApostle extends Eintrag {
 
-	private final RuestkammerStarter waffen;
 	private final OptionsUpgradeGruppe mark;
-
+	private int lastMark = -1;
+	
     public CHDarkApostle() {
 
-        name = "DarkApostle";
+        name = "Dark Apostle";
         grundkosten = getPts("DarkApostle");
         power = 5;
 
@@ -25,14 +34,8 @@ public class CHDarkApostle extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         
         seperator();
-
-        waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
-        ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Power maul");
-        waffen.initKammer(false, true, false, false);
-        waffen.setButtonText("Waffenkammer");
-        add(waffen);
-        waffen.setAbwaehlbar(false);
+        
+        addWeapons(CHCSMRuestkammer.class, true);
         
         seperator();
 
@@ -44,9 +47,28 @@ public class CHDarkApostle extends Eintrag {
 
     @Override
     public void refreshen() {
-        warlordTraits.getPanel().setLocation(
-                (int) warlordTraits.getPanel().getLocation().getX(),
-                (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
-        );
+        if(mark.getSelectedIndex() != lastMark) {
+        	lastMark = mark.getSelectedIndex();
+	        getWeapons().removeKeyword(KHORNE);
+	        getWeapons().removeKeyword(NURGLE);
+	        getWeapons().removeKeyword(TZEENTCH);
+	        getWeapons().removeKeyword(SLAANESH);
+	        getWeapons().removeKeyword(PSYKER);
+	        
+	        if(mark.isSelected("Mark of Khorne")) {
+	        	getWeapons().addKeyword(KHORNE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Nurgle")) {
+	        	getWeapons().addKeyword(NURGLE);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Tzeentch")) {
+	        	getWeapons().addKeyword(TZEENTCH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        } else if(mark.isSelected("Mark of Slaanesh")) {
+	        	getWeapons().addKeyword(SLAANESH);
+	            getWeapons().removeKeyword(ALLEGIANCE);
+	        }
+	        RefreshListener.fireRefresh();
+        }
     }
 }
