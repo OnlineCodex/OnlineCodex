@@ -257,6 +257,14 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+    	} else if(type.equals("Master of Possession")){
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
+            addRelics();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+            ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
+            addRelics();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
     	}
     	
         if(o1 != null) {
@@ -297,7 +305,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     	
     	if(type.equals("Daemon Prince of Chaos") || type.equals("Daemon Prince of Chaos with Wings") || type.equals("Chaos Lord") || type.equals("Chaos Lord in Terminator Armour") ||
     			type.equals("Sorcerer") || type.equals("Sorcerer in Terminator Armour") || type.equals("Dark Apostle") ||
-    			type.equals("Exalted Champion") || type.equals("Warpsmith")){
+    			type.equals("Exalted Champion") || type.equals("Warpsmith") || type.equals("Master of Possession")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     		
