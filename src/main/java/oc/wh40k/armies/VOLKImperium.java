@@ -142,9 +142,11 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
     private static final String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
     private static final String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
-            "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought [FW]", "Contemptor-Exemplar Dreadnought [FW]"};
-    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Caladius Grav-Tank [FW]"};
-    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Coronus Grav-Carrier [FW]", "Telemon Heavy Dreadnought [FW]"};
+            "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought [FW]", "Contemptor-Exemplar Dreadnought [FW]", "Contemptor-Galatus Dreadnought [FW]", "Aquilon Custodians [FW]", "Custodian Guard with Adrasite and Pyrthite Spears [FW]"};
+    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Pallas Grav-Tank [FW]", "Caladius Grav-Tank [FW]", "Agamatus Custodians [FW]", "Venatari Custodians [FW]"};
+    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Sagittarum Custodians [FW]", "Coronus Grav-Carrier [FW]", "Telemon Heavy Dreadnought [FW]"};
+    private static final String[] Transporteinträge_Adeptus_Custodes = new String[]{"", "Coronus Grav-Carrier [FW]"};
+    private static final String[] Fliegereinträge_Adeptus_Custodes = new String[]{"", "Orion Assault Dropship [FW]"};
 
     private static final String[] Befestigungen = new String[]{""};
 

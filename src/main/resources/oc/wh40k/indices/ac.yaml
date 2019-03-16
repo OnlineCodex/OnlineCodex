@@ -1,25 +1,35 @@
 "Allarus Custodians": 65
+"Agamatus Custodians": 80
+"Aquilon Custodians": 60
 "Custodian Guard": 40
 "Custodian Wardens": 43
 "Shield Captain": 100
 "Shield-Captain in Allarus Terminator Armour": 110
 "Shield-Captain on Dawneagle Jetbike": 150
 "Venerable Contemptor Dreadnought": 90
-"Contemptor-Achillus": 160
+"Contemptor-Achillus": 130
 "Contemptor-Exemplar": 150
-"Caladius Grav-tank": 220
+"Contemptor-Galatus": 155
+"Caladius Grav-tank": 100
 "Coronus Grav-carrier": 285
+"Custodian Guard with Adrasite and Pyrthite Spears": 40
 "Venerable Land Raider": 217
 "Vertus Praetors": 80
 "Vexilus Praetor": 80
 "Vexilus Praetor in Allarus Terminator Armour": 100
 "Captain-General Trajann Valoris": 185
-"Telemon Heavy Dreadnought": 220
+"Telemon Heavy Dreadnought": 180
+"Orion Assault Dropship": 280
+"Pallas Grav-attack": 75
+"Sagittarum Custodians": 40
+"Venatari Custodians": 48
 
 "Balistus grenade launcher": 0
 "Castellan axe": 14
 "Combi-bolter (AC)": 2
 "Guardian spear (AC)": 12
+"Galatus shield": 0
+"Galatus warblade": 0
 "Hunter-killer missile (AC)": 6
 "Hurrican bolter (AC)": 10
 "Kheres pattern assault cannon (AC)": 25
@@ -29,29 +39,47 @@
 "Storm bolter (AC)": 2
 "Twin heavy bolter (AC)": 17
 "Twin lascannon (AC)": 50
-"Achillus dreadspear": 75
+"Achillus dreadspear": 0
+"Adrasite spear": 13
+"Adrastus bolt caliver": 15
+"Adrathic devastator": 15
+"Arachnus heavy blaze cannon": 50
+"Arachnus storm cannon": 40
 "Dreadnought combat weapon (AC)": 40
 "Dreadnought combat weapon pair (AC)": 50
 "Interceptor lance": 0
+"Iliastus accelerator culverin": 25
+"Infernus firepike": 15
+"Infernus incinerator": 16
+"Kinetic destroyer": 10
+"Lastrum bolt cannon": 12
+"Lastrum storm bolter": 5
+"Pyrithite spear": 20
 "Misericordia": 4
 "Twin Arachnus las-blaze": 60
-"Twin Iliastus accelerator cannon": 70
-"Twin las-pulsar": 60
-"Lastrum storm bolter": 5
-"Twin Lastrum bolt cannon": 25
+"Twin Arachnus blaze cannon": 25
+"Twin Arachnus heavy blaze cannon": 100
+"Twin Adrathic destructor": 20
+"Twin Iliastus accelerator cannon": 90
+"Twin las-pulsar": 40
+"Twin Lastrum bolt cannon": 20
+"Twin plasma projector": 15
 "Plasma ejector": 30
 "Storm shield (AC Characters)": 10
 "Storm shield (AC)": 10
+"Solerite power gauntlet": 13
+"Solerite power talon": 9
+"Spiculus bolt launcher": 12
+"Spiculus heavy bolt launcher": 14
+"Venatari lance": 14
 "Vexilla Defensor": 20
 "Vexilla Imperius": 50
 "Vexilla Magnifica": 30
-"Contemptor-Achillus Dreadnought": 160
-"Contemptor-Exemplar Dreadnought": 150
 "Dreadnought combat weapon (AC pair)": 50
 "Heavy flamer (AC)": 17
-"Telemon Caestus (single)": 60
-"Telemon Caestus (pair)": 65
-"Twin plasma ejector": 60
+"Tarsus buckler": 8
+"Telemon Caestus (single)": 30
+"Telemon Caestus (pair)": 40
 "Spiculus bolt launcher": 0
 "Arachnus las-storm": 60
 "Iliastus accelerator culverin": 45

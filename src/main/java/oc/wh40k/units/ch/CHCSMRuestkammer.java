@@ -114,13 +114,6 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             o1.setSelected(0, true);
 
             seperator();
-
-            ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
-            addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            o2.setSelected(0, true);
-
-            seperator();
             
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
     	} else if(type.equals("Chaos Lord")) {
@@ -303,7 +296,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     @Override
     public void refreshen() {
     	
-    	if(type.equals("Daemon Prince of Chaos") || type.equals("Daemon Prince of Chaos with Wings") || type.equals("Chaos Lord") || type.equals("Chaos Lord in Terminator Armour") ||
+    	if(type.equals("Chaos Lord") || type.equals("Chaos Lord in Terminator Armour") ||
     			type.equals("Sorcerer") || type.equals("Sorcerer in Terminator Armour") || type.equals("Dark Apostle") ||
     			type.equals("Exalted Champion") || type.equals("Warpsmith") || type.equals("Master of Possession")){
     		o1.alwaysSelected();
@@ -313,6 +306,10 @@ public class CHCSMRuestkammer extends RuestkammerVater {
            	o2.setAktiv("Axe of Blind Fury", keywords.contains(KHORNE));
         	o1.setAktiv("Puscleaver", keywords.contains(NURGLE));
            	o2.setAktiv("Puscleaver", keywords.contains(NURGLE));
+    	}
+    	
+    	if(type.equals("Daemon Prince of Chaos") || type.equals("Daemon Prince of Chaos with Wings")) {
+    		o1.alwaysSelected();
     	}
     	
     	talismanOfBurningBlood.setAktiv((chosenRelic == null || talismanOfBurningBlood.isSelected()) && keywords.contains(KHORNE));   
