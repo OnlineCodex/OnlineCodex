@@ -143,8 +143,8 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Standardeinträge_Adeptus_Custodes = new String[]{"", "Custodian Guard"};
     private static final String[] Eliteeinträge_Adeptus_Custodes = new String[]{"", "Custodian Wardens", "Vexilus Praetor in Allarus Terminator Armour", "Vexilus Praetor", "Allarus Custodians",
             "Venerable Contemptor Dreadnought", "Contemptor-Achillus Dreadnought [FW]", "Contemptor-Exemplar Dreadnought [FW]", "Contemptor-Galatus Dreadnought [FW]", "Aquilon Custodians [FW]", "Custodian Guard with Adrasite and Pyrthite Spears [FW]"};
-    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Pallas Grav-Tank [FW]", "Caladius Grav-Tank [FW]", "Agamatus Custodians [FW]", "Venatari Custodians [FW]"};
-    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Sagittarum Custodians [FW]", "Coronus Grav-Carrier [FW]", "Telemon Heavy Dreadnought [FW]"};
+    private static final String[] Sturmeinträge_Adeptus_Custodes = new String[]{"", "Vertus Praetors", "Pallas Grav-Tank [FW]", "Caladius Grav-Tank [FW]", "Agamatus Custodians [FW]", "Venatari Custodians [FW]", "Pallas Grav-Attack [FW]"};
+    private static final String[] Unterstützungseinträge_Adeptus_Custodes = new String[]{"", "Venerable Land Raider", "Sagittarum Custodians [FW]", "Telemon Heavy Dreadnought [FW]"};
     private static final String[] Transporteinträge_Adeptus_Custodes = new String[]{"", "Coronus Grav-Carrier [FW]"};
     private static final String[] Fliegereinträge_Adeptus_Custodes = new String[]{"", "Orion Assault Dropship [FW]"};
 
@@ -451,9 +451,11 @@ public class VOLKImperium extends BuildaVater {
                     Transporteinträge_AM_komplett,
                     Transporteinträge_Adeptus_Mechanicus,
                     Transporteinträge_Adeptus_Ministorum,
+                    Transporteinträge_Adeptus_Custodes,
                     Transporteinträge_Adeptus_Astra_Telepathica));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_AA_komplett,
-                    Fliegereinträge_AM_komplett));
+                    Fliegereinträge_AM_komplett,
+                    Fliegereinträge_Adeptus_Custodes));
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(uniteUnitList(Befestigungen, Befestigung_Questor_Imperialis));
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordofWar_AA_komplett,
                     LordofWar_AM_komplett,
@@ -772,6 +774,8 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Custodes);
+            myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Custodes);
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Adeptus_Custodes);
         } else if (getFormationType().equals("Adepta Sororitas") || AS_ORDERS.contains(getFormationType())) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
