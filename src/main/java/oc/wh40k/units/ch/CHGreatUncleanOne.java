@@ -17,7 +17,7 @@ public class CHGreatUncleanOne extends Eintrag {
         super(CHAOS, NURGLE, DAEMON, CHARACTER, MONSTER, PSYKER, GREAT_UNCLEAN_ONE);
 
         name = "Great Unclean One";
-        grundkosten = getPts("Great Unclean One");
+        grundkosten = 0;
         power = 17;
 
         seperator();
