@@ -163,6 +163,13 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Soulforged Pack: Master of the Soulforges", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Host Raptoral: The tip of the Claw", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Legion of Skulls: Bloodblessed", 0));
+	    	
+	    	ogE.addElement(new OptionsGruppeEintrag("Red Corsairs: Reaver Lord", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Crimson Slaughter: Maelstrom of Torment", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("The Purge: Blessed Mission", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("The Scourged: Shattering Truth", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Brazen Beasts: Carve the Runes", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Flawless Host: Ultimate Confidence", 0));
 	    }
         if(army.equals("CHAOS") || army.equals("Death Guard")){
         	ogE.addElement(new OptionsGruppeEintrag("Revoltingly Resilient", 0));
@@ -493,6 +500,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Night Lords: Night Haunter's Curse", army.equals("Night Lords"));
     		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
     		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
+    		
     		warlordtraits.setAktiv("Bringers of Despair: Chosen of the Warmaster", army.equals("Bringers of Despair"));
     		warlordtraits.setAktiv("Devastation Battery: Armour Bane", army.equals("Devastation Battery"));
     		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", army.equals("Cult of the Damned"));
@@ -500,6 +508,13 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", army.equals("Soulforged Pack"));
     		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", army.equals("Host Raptoral"));
     		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", army.equals("Legion of Skulls"));
+    		
+    		warlordtraits.setAktiv("Red Corsairs: Reaver Lord", army.equals("Red Corsairs"));
+    		warlordtraits.setAktiv("Crimson Slaughter: Maelstrom of Torment", army.equals("Crimson Slaughter"));
+    		warlordtraits.setAktiv("The Purge: Blessed Mission", army.equals("The Purge"));
+    		warlordtraits.setAktiv("The Scourged: Shattering Truth", army.equals("The Scourged"));
+    		warlordtraits.setAktiv("Brazen Beasts: Carve the Runes", army.equals("Brazen Beasts"));
+    		warlordtraits.setAktiv("Flawless Host: Ultimate Confidence", army.equals("Flawless Host"));
         } else if(ASTRA_MILITARUM.contains(army)) {
         	if(warlordtraits3 != null) {
         		warlordtraits3.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));

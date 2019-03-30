@@ -30,6 +30,11 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade trophiesOfSlaughter;
     private OptionsEinzelUpgrade sightlessHelm;
     private OptionsEinzelUpgrade cloakOfConquest;
+    private OptionsEinzelUpgrade orbOfUnlife;
+    private OptionsEinzelUpgrade bookOfUntruth;
+    private OptionsEinzelUpgrade daemonfleshPlate;
+    private OptionsEinzelUpgrade flawlessCloak;
+    
     
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
@@ -132,6 +137,18 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	    			ogE.addElement(new OptionsGruppeEintrag("Spineshiver Blade", getPts("Power sword")).setRelic(true));
 	    		}
     		}
+    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Red Corsairs"))
+    		{
+	    		if(ogE.get(i).getName().equals("Combi-melta")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Maelstrom's Bite", getPts("Combi-melta")).setRelic(true));
+	    		}
+    		}
+    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Crimson Slaughter"))
+    		{
+	    		if(ogE.get(i).getName().equals("Power sword")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Blade of the Relentless", getPts("Power sword")).setRelic(true));
+	    		}
+    		}
     	}
     }
     
@@ -155,7 +172,11 @@ public class CHCSMRuestkammer extends RuestkammerVater {
        	add(trophiesOfSlaughter = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Trophies of Slaughter", 0).setRelic(true));
        	add(sightlessHelm = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sightless Helm", 0).setRelic(true));
        	add(cloakOfConquest = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cloak of Conquest", 0).setRelic(true));
-        
+       	add(orbOfUnlife = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Orb of Unlife", 0).setRelic(true));
+       	add(bookOfUntruth = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Book of Untruth", 0).setRelic(true));
+       	add(daemonfleshPlate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonflesh Plate", 0).setRelic(true));
+       	add(flawlessCloak = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flawless Cloak", 0).setRelic(true));
+       
        	offsetX += buttonBreite + 15;
        	oe1Offset = cnt;
        	seperator();
@@ -412,6 +433,11 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     	trophiesOfSlaughter.setAktiv((chosenRelic == null || trophiesOfSlaughter.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	sightlessHelm.setAktiv((chosenRelic == null || sightlessHelm.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	cloakOfConquest.setAktiv((chosenRelic == null || cloakOfConquest.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
+    	orbOfUnlife.setAktiv((chosenRelic == null || orbOfUnlife.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Purge"));
+    	bookOfUntruth.setAktiv((chosenRelic == null || bookOfUntruth.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Scourged"));
+    	daemonfleshPlate.setAktiv((chosenRelic == null || daemonfleshPlate.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Brazen Beasts"));
+    	flawlessCloak.setAktiv((chosenRelic == null || flawlessCloak.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Flawless Host"));
+       	
     }
 
 }

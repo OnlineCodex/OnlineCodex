@@ -60,6 +60,7 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
         add(heavy = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

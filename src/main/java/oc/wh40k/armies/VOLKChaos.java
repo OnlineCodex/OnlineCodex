@@ -163,7 +163,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstüzungseinträge_Daemons = uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods);
     private static final String[] Befestigungseinträge_Daemons =  uniteUnitList(Befestigung_Daemons_Nurgle, Befestigung_Daemons_Khorne);
     
-    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "Red Corsairs", "Renegade Chapters");
+    private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "", "Red Corsairs", "Crimons Slaughter", "The Purge", "The Scourged", "Brazen Beasts", "Flawless Host", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
     public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptoral", "Fallen Angels", "Legion of Skulls");
     
