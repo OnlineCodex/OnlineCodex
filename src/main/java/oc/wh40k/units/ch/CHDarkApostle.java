@@ -57,6 +57,8 @@ public class CHDarkApostle extends Eintrag {
 
         addWarlordTraits("", true);
 
+        setInformationVectorValue("Dark Apostle", getCountFromInformationVector("Dark Apostle") + 1);
+        
         complete();
 
     }
@@ -91,5 +93,10 @@ public class CHDarkApostle extends Eintrag {
 	        }
 	        RefreshListener.fireRefresh();
         }
+    }
+    
+    @Override
+    public void deleteYourself() {
+    	setInformationVectorValue("Dark Apostle", getCountFromInformationVector("Dark Apostle") - 1);
     }
 }

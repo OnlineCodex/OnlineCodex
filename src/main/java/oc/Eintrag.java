@@ -158,6 +158,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		if(warlordChange == true) {
 			RefreshListener.fireRefresh();
 		}
+		
+		
 	}
 
 	public void setBuildaVater(BuildaVater buildaVater) {
