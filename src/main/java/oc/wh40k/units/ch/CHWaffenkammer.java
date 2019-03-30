@@ -14,6 +14,7 @@ public class CHWaffenkammer extends RuestkammerVater {
     public boolean nurgle = false;
     public boolean biker = false;
     public boolean noise = false;
+    public boolean havoc = false;
     private OptionsUpgradeGruppe handwaffen = null;
     private OptionsUpgradeGruppe fkwaffen = null;
     private boolean melee = false;
@@ -61,6 +62,10 @@ public class CHWaffenkammer extends RuestkammerVater {
     public void setNoiseMarine(boolean s) {
         noise = s;
     }
+    
+    public void setHavoc(boolean s) {
+        havoc = s;
+    }
 
     @Override
     public void initButtons(boolean... defaults) {
@@ -91,6 +96,11 @@ public class CHWaffenkammer extends RuestkammerVater {
 
                 if (noise)
                     ogE.addElement(new OptionsGruppeEintrag("Sonic blaster", getPts("Sonic blaster")));
+                if(havoc) {
+                	ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
+                	ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
+                	ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
+                }
                 if (!terminator && !sorcerer) {
                     ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
                     ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -120,8 +130,8 @@ public class CHWaffenkammer extends RuestkammerVater {
                 }
             }
             if (rangeForMelee) {
+            	ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                 if (!terminator) {
-                    ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                     ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
                 } else
                     ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
@@ -130,6 +140,8 @@ public class CHWaffenkammer extends RuestkammerVater {
                 ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist")));
                 ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
                 ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
+                if (!terminator)
+                	ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer")));
             }
             if (ogE.size() > 0) {
                 add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -159,8 +171,8 @@ public class CHWaffenkammer extends RuestkammerVater {
                     if (nurgle) {
                         ogE.addElement(new OptionsGruppeEintrag("Plague sword", getPts("Plague sword")));
                     } else {
+                    	ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                         if (!terminator) {
-                            ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
                             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
                         } else
                             ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
@@ -170,6 +182,8 @@ public class CHWaffenkammer extends RuestkammerVater {
                         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist")));
                         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
                         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
+                        if (!terminator)
+                        	ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer")));
                     }
                 }
             }

@@ -42,6 +42,7 @@ public class CHChaosSpaceMarines extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
         add(marinesfk = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

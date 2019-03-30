@@ -24,7 +24,7 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, CAVALRY, SORCERER, EXALTED_SORCERER, DAEMON, FLY);
     	
         name = "Exalted Sorcerer on Disk";
-        grundkosten = getPts("Exalted Sorcerer on Disk");
+        grundkosten = getPts("Exalted Sorcerer on Disc of Tzeentch");
         power = 7;
 
         seperator();

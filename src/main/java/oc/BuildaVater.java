@@ -1,6 +1,9 @@
 package oc;
 
 import com.google.common.collect.ImmutableMap;
+
+import oc.wh40k.armies.VOLKChaos;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
@@ -194,6 +197,12 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     public int getCP() {
 
+    	int substractor = 0;
+    	
+        if(VOLKChaos.CHAOS_SPECIAL_DETACHEMENTS.contains(getFormationType())){
+        	substractor = 1;
+        }
+    	
     	// Handle questor imperialis cp for super heavy detachement FAQ 
     	//Page 106 – Knight Lances ability Change the last sentence to read: ‘The Command Benefit of each Imperial Knights Super-heavy Detachment 
     	//is changed to ‘None’ if it does not contain at least one Imperial Knights Titanic unit, and is changed to ‘+6 Command Points’ if it contains at 
@@ -208,9 +217,9 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         	}
         } else {
             if (!((String) kontingentBox.getSelectedItem()).equals("")) {
-                return CP.get(((String) kontingentBox.getSelectedItem()));
+                return CP.get(((String) kontingentBox.getSelectedItem())) - substractor;
             } else if (!((String) formationBox.getSelectedItem()).equals("")) {
-                return CP.get(((String) formationBox.getSelectedItem()));
+                return CP.get(((String) formationBox.getSelectedItem())) - substractor;
             } else {
                 return 0;
             }

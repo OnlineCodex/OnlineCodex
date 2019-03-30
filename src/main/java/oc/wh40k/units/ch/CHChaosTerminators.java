@@ -34,6 +34,8 @@ public class CHChaosTerminators extends Eintrag {
 
         seperator();
 
+        ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
+        ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe")));
         ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe")));
         ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
         ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("Lightning claw single")));
@@ -90,8 +92,8 @@ public class CHChaosTerminators extends Eintrag {
         melee.setMaxAnzahl(marines.getModelle() - 1 - claws.getAnzahl());
         heavy.setMaxAnzahl(marines.getModelle() / 5);
 
-        power = 14 +
-                ((marines.getModelle() == 10) ? 13 : 0);
+        power = 10 +
+                ((marines.getModelle() == 10) ? 14 : 0);
         
         icon.setAktiv("Icon of Vengeance", !mark.isSelected());
         icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));

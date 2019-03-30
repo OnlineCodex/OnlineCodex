@@ -144,12 +144,25 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Exalted Champion", 0));
 	        
 	    	ogE.addElement(new OptionsGruppeEintrag("Alpha Legion: I am Alpharius", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Veteran Raider", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Indomitable", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Black-Clad Brute", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Soul-Eater", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Trusted War-Leader", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: First Amongst Traitors", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Emperor's Children: Stimulated by Pain", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Iron Warriors: Cold and Bitter", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Night Lords: Night Haunter's Curse", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("World Eaters: Slaughterborn", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Word Bearers: The Voice of Lorgar", 0));
+	    	
+	    	ogE.addElement(new OptionsGruppeEintrag("Bringers of Despair: Chosen of the Warmaster", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Devastation Battery: Armour Bane", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Cult of the Damned: Exultant Preacher", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Daemonkin Ritualists: Shepherd of the true Faith", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Soulforged Pack: Master of the Soulforges", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Host Raptoral: The tip of the Claw", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Legion of Skulls: Bloodblessed", 0));
 	    }
         if(army.equals("CHAOS") || army.equals("Death Guard")){
         	ogE.addElement(new OptionsGruppeEintrag("Revoltingly Resilient", 0));
@@ -469,12 +482,24 @@ public class Warlordtraits extends RuestkammerVater {
         	}
 	    } else if(LEGIONS.contains(army)) {
     		warlordtraits.setAktiv("Alpha Legion: I am Alpharius", army.equals("Alpha Legion"));
+    		warlordtraits.setAktiv("Black Legion: Veteran Raider", army.equals("Black Legion"));
+    		warlordtraits.setAktiv("Black Legion: Indomitable", army.equals("Black Legion"));
+    		warlordtraits.setAktiv("Black Legion: Black-Clad Brute", army.equals("Black Legion"));
+    		warlordtraits.setAktiv("Black Legion: Soul-Eater", army.equals("Black Legion"));
+    		warlordtraits.setAktiv("Black Legion: Trusted War-Leader", army.equals("Black Legion"));
     		warlordtraits.setAktiv("Black Legion: First Amongst Traitors", army.equals("Black Legion"));
     		warlordtraits.setAktiv("Emperor's Children: Stimulated by Pain", army.equals("Emperor's Children"));
     		warlordtraits.setAktiv("Iron Warriors: Cold and Bitter", army.equals("Iron Warriors"));
     		warlordtraits.setAktiv("Night Lords: Night Haunter's Curse", army.equals("Night Lords"));
     		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
     		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
+    		warlordtraits.setAktiv("Bringers of Despair: Chosen of the Warmaster", army.equals("Bringers of Despair"));
+    		warlordtraits.setAktiv("Devastation Battery: Armour Bane", army.equals("Devastation Battery"));
+    		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", army.equals("Cult of the Damned"));
+    		warlordtraits.setAktiv("Daemonkin Ritualists: Shepherd of the true Faith", army.equals("Daemonkin Ritualists"));
+    		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", army.equals("Soulforged Pack"));
+    		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", army.equals("Host Raptoral"));
+    		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", army.equals("Legion of Skulls"));
         } else if(ASTRA_MILITARUM.contains(army)) {
         	if(warlordtraits3 != null) {
         		warlordtraits3.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
