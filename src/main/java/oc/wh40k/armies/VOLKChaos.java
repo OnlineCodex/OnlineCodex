@@ -27,49 +27,49 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] LOWeinträge_Daemons_FW = new String[]{"","Anggrath The Unbound [FW]","Zarakynel [FW]","Aetaos'rau'keres [FW]","Scabeiathrax The Bloated [FW]"};
 
     private static final String[] HQeinträge_Chaos_Space_Marines = new String[]{"", "Abaddon the Despoiler", "Huron Blackheart", "Cypher", "Fabius Bile", "Kharn the Betrayer",
-            "Lucius the Eternal", "Haarken Worldclaimer", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "Lucius the Eternal", "Haarken Worldclaimer", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
-            "Sorcerer", "Sorcerer in Terminator Armour", "Master of Possession",
+            "Sorcerer", "Sorcerer in Terminator Armour", "Master of Possession", "Master of Executions",
             "Warpsmith",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
-    private static final String[] Eliteeinträge_Chaos_Space_Marines = new String[]{"", "Fallen", "Chaos Terminators", "Khorne Berzerkers", "Rubric Marines", "Plague Marines CSM", "Noise Marines", "Chosen", "Greater Possessed", "Possessed", "Helbrute", "Mutilators"};
+    private static final String[] Eliteeinträge_Chaos_Space_Marines = new String[]{"", "Fallen", "Chaos Terminators", "Khorne Berzerkers", "Rubric Marines", "Plague Marines CSM", "Noise Marines", "Chosen", "Greater Possessed", "Possessed", "Helbrute", "Mutilators", "Dark Disciples"};
     private static final String[] Standardeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Space Marines", "Chaos Cultists", "Bloodletters", "Horrors", "Plaguebearers", "Daemonettes"};
     private static final String[] Sturmeinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
     private static final String[] Unterstützungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler", "Venomcrawler"};
     private static final String[] Transporteinträge_Chaos_Space_Marines = new String[]{"", "Chaos Rhino"};
     private static final String[] Fliegereinträge_Chaos_Space_Marines = new String[]{"", "Heldrake"};
-    private static final String[] Befestigungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bastions"};
+    private static final String[] Befestigungseinträge_Chaos_Space_Marines = new String[]{"", "Chaos Bastions", "Noctilith Crown", "Skull Altar"};
     private static final String[] LOWeinträge_Chaos_Space_Marines = new String[]{"", "Khorne Lord of Skulls"};
 
     private static final String[] HQeinträge_Other_Legions = new String[]{"", "Cypher", "Fabius Bile",
-            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
-            "Warpsmith",
+            "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
     
     private static final String[] HQeinträge_Black_Legion = new String[]{"", "Abaddon the Despoiler", "Cypher", "Fabius Bile", "Haarken Worldclaimer",
-            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
-            "Warpsmith",
+            "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
     
     private static final String[] HQeinträge_Red_Corsairs = new String[]{"", "Huron Blackheart", "Cypher", "Fabius Bile",
-            "", "Chaos Lord", "Chaos Lord in Terminator Armour",
+            "", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Exalted Champion", "Daemon Prince of Chaos CSM", "Daemon Prince of Chaos with Wings CSM",
             "Sorcerer", "Sorcerer in Terminator Armour",
-            "Warpsmith",
+            "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
     
-    private static final String[] HQeinträge_World_Eaters = new String[]{"", "Kharn the Betrayer", "Chaos Lord", "Chaos Lord in Terminator Armour", "Exalted Champion",
-            "Dark Apostle", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings", "Warpsmith",
+    private static final String[] HQeinträge_World_Eaters = new String[]{"", "Kharn the Betrayer", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour", "Exalted Champion",
+            "Dark Apostle", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings", "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]"};
-    private static final String[] Eliteeinträge_World_Eaters = new String[]{"", "Fallen", "Plague Marines", "Noise Marines", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators"};
+    private static final String[] Eliteeinträge_World_Eaters = new String[]{"", "Fallen", "Plague Marines", "Noise Marines", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators", "Dark Disciples"};
     private static final String[] Standardeinträge_World_Eaters = new String[]{"", "Khorne Berzerkers", "Chaos Space Marines", "Chaos Cultists"};
     private static final String[] Sturmeinträge_World_Eaters = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
     private static final String[] Unterstützungseinträge_World_Eaters = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler"};
@@ -97,13 +97,13 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Fliegereinträge_Death_Guard = new String[]{""};
     private static final String[] LOWeinträge_Death_Guard = new String[]{"", "Mortarion"};
 
-    private static final String[] HQeinträge_Emperors_Children = new String[]{"", "Lucius the Eternal", "Chaos Lord", "Chaos Lord in Terminator Armour",
+    private static final String[] HQeinträge_Emperors_Children = new String[]{"", "Lucius the Eternal", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour",
             "Dark Apostle", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings",
             "Sorcerer", "Sorcerer in Terminator Armour",
-            "Warpsmith",
+            "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]", "Chaos Lord on Disc of Tzeentch [INDEX]", "Chaos Lord on Palanquin of Nurgle [INDEX]", "Chaos Lord on Steed of Slaanesh [INDEX]", 
                 "Sorcerer on Bike [INDEX]", "Sorcerer on Disc of Tzeentch [INDEX]", "Sorcerer on Palanquin of Nurgle [INDEX]"};
-    private static final String[] Eliteeinträge_Emperors_Children = new String[]{"", "Fallen", "Plague Marines", "Khorne Berzerkers", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators"};
+    private static final String[] Eliteeinträge_Emperors_Children = new String[]{"", "Fallen", "Plague Marines", "Khorne Berzerkers", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators", "Dark Disciples"};
     private static final String[] Standardeinträge_Emperors_Children = new String[]{"", "Noise Marines", "Chaos Space Marines", "Chaos Cultists"};
     private static final String[] Sturmeinträge_Emperors_Children = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
     private static final String[] Unterstützungseinträge_Emperors_Children = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler"};
@@ -132,6 +132,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Standard_Daemons_Khorne = new String[]{"", "Bloodletters"};
     private static final String[] Sturm_Daemons_Khorne = new String[]{"", "Flesh Hounds"};
     private static final String[] Unterstuezung_Daemons_Khorne = new String[]{"", "Skull Cannon",};
+    private static final String[] Befestigung_Daemons_Khorne = new String[]{"", "Skull Altar"};
     
     //Tzeentch
     private static final String[] HQ_Daemons_Tzeentch = new String[]{"", "", "Kairos Fateweaver", "Lord of Change", "The Changeling", "The Blue Scribes", "Changecaster", "Fateskimmer", "Fluxmaster"};
@@ -160,10 +161,11 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Eliteeinträge_Daemons = uniteUnitList(Elite_Daemons_Khorne, Elite_Daemons_Tzeentch, Elite_Daemons_Nurgle, Elite_Daemons_Slaanesh);
     private static final String[] Sturmeinträge_Daemons = uniteUnitList(Sturm_Daemons_Khorne, Sturm_Daemons_Tzeentch, Sturm_Daemons_Nurgle, Sturm_Daemons_Slaanesh, Sturm_Daemons_All_Gods);
     private static final String[] Unterstüzungseinträge_Daemons = uniteUnitList(Unterstuezung_Daemons_Khorne, Unterstuezung_Daemons_Tzeentch, Unterstuezung_Daemons_Slaanesh, Unterstuezung_Daemons_All_Gods);
-    private static final String[] Befestigungseinträge_Daemons = Befestigung_Daemons_Nurgle;
+    private static final String[] Befestigungseinträge_Daemons =  uniteUnitList(Befestigung_Daemons_Nurgle, Befestigung_Daemons_Khorne);
     
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "Red Corsairs", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
+    public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptoral", "Fallen Angels", "Legion of Skulls");
     
     public static Set<String> getLegions() {
     	return LEGIONS;
@@ -263,6 +265,8 @@ public class VOLKChaos extends BuildaVater {
         LEGIONS.forEach(legion -> formationen.add(legion));
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
+        formationen.add("");
+        CHAOS_SPECIAL_DETACHEMENTS.forEach(legion -> formationen.add(legion));
         formationen.add("");
         formationen.add("Chaosdaemons");
         CHAOS_GODS.forEach(god -> formationen.add(god));

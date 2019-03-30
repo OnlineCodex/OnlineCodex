@@ -58,6 +58,7 @@
 "Seeker Chariot": 50
 "Seeker": 15
 "Skarbrand": 330
+"Skull Altar": 100
 "Skull Cannon": 90
 "Skulltaker": 84
 "Skullmaster": 90
@@ -124,12 +125,13 @@
 "Chaos Rhino": 70
 "Chaos Space Marines": 13
 "Chaos Spawn": 25
-"Chaos Terminators": 28
+"Chaos Terminators": 26
 "Chaos Vindicator": 125
 "Chosen": 14
 "Daemon Prince": 146
 "Daemon Prince with Wings": 170
-"Dark Apostle": 72
+"Dark Apostle": 100
+"Dark Disciples": 5
 "Defiler": 120
 "Exalted Champion": 70
 "Exalted Sorcerer": 112
@@ -138,17 +140,20 @@
 "Foetid Bloat-drone": 99
 "Forgefiend": 100
 "Greater Possessed": 70
-"Havocs": 13
+"Havocs": 14
 "Helbrute": 60
 "Heldrake": 120
 "Khorne Berzerkers": 16
 "Khorne Lord of Skulls": 380
 "Lord of Contagion": 95
+"Lord Discordant on Helstalker": 150
 "Master of Possession": 82
+"Master of Executions": 70
 "Malignant Plaguecaster": 110
 "Maulerfiend": 120
 "Mutalith Vortex Beast": 125
 "Mutilators": 35
+"Noctilith Crown": 100
 "Noise Marines": 15
 "Noxious Blightbringer": 50
 "Obliterators": 115
@@ -235,6 +240,7 @@
 "Plasma pistol": 5
 "Predator autocannon": 40
 "Reaper autocannon": 10
+"Reaper chaincannon": 20
 "Shotgun": 0
 "Skullhurler": 98
 "Sonic blaster": 4
@@ -311,7 +317,8 @@
 "Soulflayer tendrils": 0
 "Steed of Slaanesh's lashing tongue": 4
 "Tzaangor blades": 0
-
+"Thunder hammer (Character)": 21
+"Thunder hammer": 16
 "Brayhorn": 10
 "Familiar": 9
 

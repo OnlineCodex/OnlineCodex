@@ -8,6 +8,7 @@ public class PsychicPowers extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
+	private OptionsUpgradeGruppe o21;
 	private String type = "";
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
@@ -29,7 +30,9 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean broodmind = false;
     private boolean obscuration = false;
     private boolean malefic = false;
+    private boolean prayers = false;
     
+    private boolean khorne = false;
     private boolean nurgle = false;
     private boolean tzeentch = false;
     private boolean slaanesh = false;
@@ -43,7 +46,10 @@ public class PsychicPowers extends RuestkammerVater {
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
 
-        ogE.addElement(new OptionsGruppeEintrag("Smite", 0));
+        if(prayers)
+        	ogE.addElement(new OptionsGruppeEintrag("Dark Zealotry", 0));
+        else
+        	ogE.addElement(new OptionsGruppeEintrag("Smite", 0));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         if (darkHereticus) {
@@ -242,6 +248,20 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Infernal Power", 0));
             add(o20 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
+        
+        if (prayers) {
+            ogE.addElement(new OptionsGruppeEintrag("Benediction of Darkness", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Litany of Despair", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Omen of Potency", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Warp-Sight Plea", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Soultearer Portent", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Illusory Suppligation", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Wraithful Entreaty", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mutating Invocation", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Feculent Beseechment", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Blissfull Devotion", 0));
+            add(o21 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
 
 
         sizeSetzen();
@@ -316,6 +336,10 @@ public class PsychicPowers extends RuestkammerVater {
         obscuration = true;
     }
     
+    public void setKhorne(boolean n) {
+        khorne = n;
+    }
+    
     public void setNurgle(boolean n) {
         nurgle = n;
     }
@@ -339,6 +363,10 @@ public class PsychicPowers extends RuestkammerVater {
     public void enableMalefic() {
     	malefic = true;
     }
+    
+    public void enablePrayers() {
+    	prayers = true;
+    }
 
     @Override
     public void refreshen() {
@@ -346,12 +374,9 @@ public class PsychicPowers extends RuestkammerVater {
 
         if (darkHereticus) {
             o2.setMaxAnzahl(numPowers);
-            if (nurgle)
-                o2.setAktiv("Miasma of Pestilence", nurgle);
-            if (tzeentch)
-                o2.setAktiv("Weaver of Fates", tzeentch);
-            if (slaanesh)
-                o2.setAktiv("Deligthful Agonies", slaanesh);
+            o2.setAktiv("Miasma of Pestilence", nurgle);
+            o2.setAktiv("Weaver of Fates", tzeentch);
+            o2.setAktiv("Deligthful Agonies", slaanesh);
         }
 
         if (contagion) {
@@ -424,6 +449,14 @@ public class PsychicPowers extends RuestkammerVater {
         
         if(malefic) {
         	o20.setMaxAnzahl(numPowers);
+        }
+        
+        if(prayers) {
+        	o21.setMaxAnzahl(numPowers);
+            o21.setAktiv("Wraithful Entreaty", khorne);
+            o21.setAktiv("Mutating Invocation", tzeentch);
+            o21.setAktiv("Feculent Beseechment", nurgle);
+            o21.setAktiv("Blissfull Devotion", slaanesh);
         }
     }
 
