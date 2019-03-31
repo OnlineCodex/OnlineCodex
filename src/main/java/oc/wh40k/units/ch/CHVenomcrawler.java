@@ -4,11 +4,11 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHVenomCrawler extends Eintrag {
+public class CHVenomcrawler extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 
-    public CHVenomCrawler() {
+    public CHVenomcrawler() {
         name = "Venom Crawler";
         grundkosten = getPts("Venom Crawler") + getPts("Soulflayer tendrils") + getPts("Eviscerating claws");
 
