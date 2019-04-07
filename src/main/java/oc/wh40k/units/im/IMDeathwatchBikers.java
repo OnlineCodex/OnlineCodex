@@ -14,7 +14,7 @@ public class IMDeathwatchBikers extends Eintrag {
         grundkosten = 0;
         überschriftSetzen = true;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Bikers", 3, 6, getPts("Deathwatch Bikers"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Bikers", 3, 6, getPts("Deathwatch Bikers") + getPts("Twin boltgun (DW)"));
         add(squad);
 
         add(ico = new oc.Picture("oc/wh40k/images/Bikeschwadron.gif"));
@@ -49,7 +49,7 @@ public class IMDeathwatchBikers extends Eintrag {
     @Override
     public void refreshen() {
         o1.setMaxAnzahl(squad.getModelle());
-        o3.setMaxAnzahl(squad.getModelle());
+        o3.setMaxAnzahl(1);
     }
 }
 
