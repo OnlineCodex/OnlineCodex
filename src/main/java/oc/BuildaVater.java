@@ -77,9 +77,9 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected Vector<String> supplements = new Vector<String>();
     protected Vector<String> kontingente = new Vector<String>();
     protected Vector<String> formationen = new Vector<String>();
-    protected JComboBox supplementBox = new JComboBox();
-    protected JComboBox kontingentBox = new JComboBox();
-    protected JComboBox formationBox = new JComboBox();
+    protected JComboBox<String> supplementBox = new JComboBox<String>();
+    protected JComboBox<String> kontingentBox = new JComboBox<String>();
+    protected JComboBox<String> formationBox = new JComboBox<String>();
     private Sonstige[] sonstige;
     private final ActionListener refreshActionListenerKon = new ActionListener() {
 
@@ -275,10 +275,10 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 CP.put("Battalion Detachment", 5); //+5CP
                 CP.put("Patrol Detachment", 0); //+0CP
 
-                kontingentBox = new JComboBox(kontingente);
+                kontingentBox = new JComboBox<String>(kontingente);
                 kontingentBox.setMaximumRowCount(25);
 
-                supplementBox = new JComboBox(supplements);
+                supplementBox = new JComboBox<String>(supplements);
                 supplementBox.setMaximumRowCount(25);
 
                 if (id.equals("CM") || id.equals("IA")) {
@@ -293,7 +293,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                     kontingentBox.setBackground(Color.WHITE);
                 }
 
-                formationBox = new JComboBox(formationen);
+                formationBox = new JComboBox<String>(formationen);
                 formationBox.setMaximumRowCount(25);
 
                 panel.add(formationBox);

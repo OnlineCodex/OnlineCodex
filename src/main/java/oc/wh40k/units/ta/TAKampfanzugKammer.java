@@ -10,6 +10,7 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 
 import oc.BuildaHQ;
+import oc.KeyWord;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
@@ -128,7 +129,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma rifle", getPts("Plasma rifle")));
-            if (keywords.contains("XV86_COLDSTAR")) {
+            if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
                 ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
             } else {
                 ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
@@ -137,7 +138,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
             if (type.equals("Commander")) {
                 o1.setMaxAnzahl(4);
-                if (keywords.contains("XV86_COLDSTAR")) {
+                if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
                 	o1.setAnzahl(4, 1);
                 	o1.setAnzahl(6, 1);
                 } else {
@@ -242,7 +243,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
         }
 
-        if (type.equals("Commander") && !keywords.contains("XV86_COLDSTAR")) {
+        if (type.equals("Commander") && !keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(4);
             final int selected = o1.getAnzahl() + o2.getAnzahl();
@@ -253,7 +254,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
-        if (type.equals("Commander") && keywords.contains("XV86_COLDSTAR")) {
+        if (type.equals("Commander") && keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             final int selected = o2.getAnzahl() + o1.getAnzahl();

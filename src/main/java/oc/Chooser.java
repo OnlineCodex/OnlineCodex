@@ -8,6 +8,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -149,7 +150,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         panel.setSize(x, y + randAbstand);
     }
 
-    public void setAuswahlen(Vector v) {
+    public void setAuswahlen(Vector<?> v) {
         useActionPerformed = false;
         final String currentSelected = selectedEntry();
 
@@ -167,7 +168,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         useActionPerformed = true;
     }
 
-    public void erstelleEintrag(String name) {
+    public void erstelleEintrag(String name) throws IllegalArgumentException, InvocationTargetException, NoSuchMethodException, SecurityException {
         final String umgeformterName = BuildaHQ.formZuKlassenName(name);
         if (umgeformterName.equals("")) {
             erstelleLeerenEintrag();
@@ -186,41 +187,41 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                 finalClassName = finalClassName.replaceAll("\\[[\\w ]{1,}\\]", ""); // Remove "Forgeworld" label from class name
 
                 try {
-                    final Class myClass = Class.forName(armyPackage + "units." + finalClassName);
+                    final Class<?> myClass = Class.forName(armyPackage + "units." + finalClassName);
 
                     aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                    myEintrag = (Eintrag) (myClass.newInstance());
+                    myEintrag = (Eintrag) (myClass.getDeclaredConstructor().newInstance());
                 } catch (final Exception e) {
 
                     try {
                         if (reflectionKennung == "") {
-                            final Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
+                            final Class<?> myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 2).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                            myEintrag = (Eintrag) (myClass.newInstance());
+                            myEintrag = (Eintrag) (myClass.getDeclaredConstructor().newInstance());
                         } else {
-                            final Class myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
+                            final Class<?> myClass = Class.forName(armyPackage + "units." + reflectionKennung.toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                            myEintrag = (Eintrag) (myClass.newInstance());
+                            myEintrag = (Eintrag) (myClass.getDeclaredConstructor().newInstance());
                         }
 
                     } catch (final Exception ex) {
                         if (reflectionKennung == "") { //Fall für Einheiten in APO
-                            final Class myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
+                            final Class<?> myClass = Class.forName(armyPackage + "units." + umgeformterName.substring(0, 3).toLowerCase() + "." + finalClassName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                            myEintrag = (Eintrag) (myClass.newInstance());
+                            myEintrag = (Eintrag) (myClass.getDeclaredConstructor().newInstance());
                         } else {
-                            final Class myClass = Class.forName(armyPackage + "units." + umgeformterName);
+                            final Class<?> myClass = Class.forName(armyPackage + "units." + umgeformterName);
 
                             aktuellenEintragLöschen(); // wird auch in erstelleLeerenEintrag() aufgerufen...
 
-                            myEintrag = (Eintrag) (myClass.newInstance());
+                            myEintrag = (Eintrag) (myClass.getDeclaredConstructor().newInstance());
                         }
 
                     }
@@ -253,7 +254,13 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     @Override
 	public void actionPerformed(ActionEvent event) {
         if (useActionPerformed) {
-            erstelleEintrag(selectedEntry());
+            try {
+				erstelleEintrag(selectedEntry());
+			} catch (IllegalArgumentException | InvocationTargetException | NoSuchMethodException
+					| SecurityException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
     }
 

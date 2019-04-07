@@ -149,7 +149,7 @@ public class OnlineCodex extends BuildaPanel {
                 if (name.equals("")) {
                     return;//Es soll kein Leerer Tab eingefügt werden
                 } else {
-                    myBuilder = (BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + name).newInstance());
+                    myBuilder = (BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + name).getDeclaredConstructor().newInstance());
                 }
 
                 if (event.getSource() == buildaChooser) {
@@ -608,7 +608,7 @@ public class OnlineCodex extends BuildaPanel {
                 final String armies[] = saveText.split(SAVETEXT_DETACHMENTTRENNER);
                 for (int i = 0; i < armies.length; i++) {
                     LOGGER.info(armies[i]);
-                    myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
+                    myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).getDeclaredConstructor().newInstance()));
                     final JPanel buildaPanel = myBuilderz.get(i).getPanel();
                     buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                     buildaPanel.setSize(3500, 8000);
@@ -673,7 +673,7 @@ public class OnlineCodex extends BuildaPanel {
                 }
             } else {
                 LOGGER.info(saveText);
-                myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).newInstance()));
+                myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).getDeclaredConstructor().newInstance()));
                 final JPanel buildaPanel = myBuilderz.get(0).getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                 buildaPanel.setSize(3500, 8000);

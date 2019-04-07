@@ -72,7 +72,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
             popup.add(kopieren);
 
-            kopieren.setAccelerator(KeyStroke.getKeyStroke('C', InputEvent.CTRL_MASK));
+            kopieren.setAccelerator(KeyStroke.getKeyStroke('C', InputEvent.CTRL_DOWN_MASK ));
 
             kopieren.addActionListener(menuActionListener);
 
@@ -93,7 +93,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
             popup.add(einfügen);
 
-            einfügen.setAccelerator(KeyStroke.getKeyStroke('V', InputEvent.CTRL_MASK));
+            einfügen.setAccelerator(KeyStroke.getKeyStroke('V', InputEvent.CTRL_DOWN_MASK ));
 
             einfügen.addActionListener(menuActionListener);
         }
@@ -103,7 +103,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
         popup.add(allesMarkieren);
 
-        allesMarkieren.setAccelerator(KeyStroke.getKeyStroke('A', InputEvent.CTRL_MASK));
+        allesMarkieren.setAccelerator(KeyStroke.getKeyStroke('A', InputEvent.CTRL_DOWN_MASK ));
 
         allesMarkieren.addActionListener(menuActionListener);
 

@@ -271,7 +271,8 @@ public class ChooserGruppe extends BuildaPanel {
                 return engNullText[kategorie];
             }
         } else { // returnt die anzahl ohne .0   aber mit .5
-            final int letzteGanzzahl = new Double(Math.floor(anzahl)).intValue();
+        	Double double1 = Math.floor(anzahl);
+            final int letzteGanzzahl = double1.intValue();
             final double diff = anzahl - letzteGanzzahl;
 
             // Floating point Ungenauigkeit umgehen - aber nur fuer Werte die sehr

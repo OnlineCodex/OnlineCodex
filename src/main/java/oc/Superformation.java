@@ -42,14 +42,14 @@ public class Superformation implements BuildaSTK {
     public boolean multiplyerCoreByCommand = false;
     public boolean multiplyerSupportByCore = false;
     public boolean showSupport = false;
-    public JComboBox comboCore, comboAuxiliary, comboCommand, comboSupport;
+    public JComboBox<String> comboCore, comboAuxiliary, comboCommand, comboSupport;
     public BuildaVater buildaVater;
 
 
     public Vector<Vector<String>> namenDynamisch;// = new Vector<Vector<String>>();
     public Vector<Integer> minDynamisch;
     public Vector<Integer> maxDynamisch;
-    public Vector<JComboBox> comboDynamisch;
+    public Vector<JComboBox<String>> comboDynamisch;
     public ChangeListener tabChangeListener = new ChangeListener() {
         @Override
 		public void stateChanged(ChangeEvent changeEvent) {
@@ -83,7 +83,8 @@ public class Superformation implements BuildaSTK {
     JLabel infoSupport = new JLabel("Support: " + minSupport + " - " + maxSupport + " Ausgewählt: " + 0);
     private final ActionListener formChangeListener = new ActionListener() {
 
-        @Override
+        @SuppressWarnings("unchecked")
+		@Override
         public void actionPerformed(ActionEvent event) {
             String name = "";
             try {
@@ -102,13 +103,13 @@ public class Superformation implements BuildaSTK {
                         return;//Es soll kein Leerer Tab eingefügt werden
                     } else {
                         LOGGER.info(name);
-                        myBuilder = (BuildaVater) (Class.forName(name).newInstance());
+                        myBuilder = (BuildaVater) (Class.forName(name).getDeclaredConstructor().newInstance());
                     }
                 } else if (type == 1) {
-                    if (((JComboBox) event.getSource()).getSelectedItem().equals("")) {
+                    if (((JComboBox<String>) event.getSource()).getSelectedItem().equals("")) {
                         return;//Es soll kein Leerer Tab eingefügt werden
                     } else {
-                        final String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
+                        final String txt = ((String) ((JComboBox<String>) event.getSource()).getSelectedItem());
                         if (txt.contains(": ")) {
                             final String split[] = txt.split(": ");
                             name = "oc.wh40k.armies." + BuildaSTK.volkMap.get(split[0]);
@@ -116,7 +117,7 @@ public class Superformation implements BuildaSTK {
                             name = volkFile;
                         }
                         LOGGER.info(name);
-                        myBuilder = (BuildaVater) (Class.forName(name).newInstance());
+                        myBuilder = (BuildaVater) (Class.forName(name).getDeclaredConstructor().newInstance());
                     }
                 }
 
@@ -157,7 +158,7 @@ public class Superformation implements BuildaSTK {
                         myBuilder.formationBox.setSelectedItem(comboSupport.getSelectedItem());
                     }
                 } else if (type == 1) {
-                    final String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
+                    final String txt = ((String) ((JComboBox<String>) event.getSource()).getSelectedItem());
                     if (txt.contains(": ")) {
                         final String split[] = txt.split(": ");
                         tab.addTab(split[1], null, sp);
@@ -211,7 +212,7 @@ public class Superformation implements BuildaSTK {
             namenDynamisch = new Vector<Vector<String>>();
             minDynamisch = new Vector<Integer>();
             maxDynamisch = new Vector<Integer>();
-            comboDynamisch = new Vector<JComboBox>();
+            comboDynamisch = new Vector<JComboBox<String>>();
         }
     }
 
@@ -223,13 +224,13 @@ public class Superformation implements BuildaSTK {
         controlPanel.setBackground(Color.white);
 
         if (type == 0) {
-            comboCore = new JComboBox(namenCore);
-            comboAuxiliary = new JComboBox(namenAuxiliary);
-            comboCommand = new JComboBox(namenCommand);
-            comboSupport = new JComboBox(namenSupport);
+            comboCore = new JComboBox<String>(namenCore);
+            comboAuxiliary = new JComboBox<String>(namenAuxiliary);
+            comboCommand = new JComboBox<String>(namenCommand);
+            comboSupport = new JComboBox<String>(namenSupport);
         } else {
             for (int i = 0; i < namenDynamisch.size(); i++) {
-                comboDynamisch.add(new JComboBox(namenDynamisch.get(i)));
+                comboDynamisch.add(new JComboBox<String>(namenDynamisch.get(i)));
             }
         }
 
@@ -391,7 +392,8 @@ public class Superformation implements BuildaSTK {
         return s;
     }
 
-    public void load(String saveText) {
+    @SuppressWarnings("unchecked")
+	public void load(String saveText) {
         final String armies[] = saveText.split(SAVETEXT_SUBDETACHMENTTRENNER);
         for (int i = 0; i < armies.length; i++) {
             try {
@@ -406,7 +408,7 @@ public class Superformation implements BuildaSTK {
                     }
                 }
 
-                myBuilder = (BuildaVater) (Class.forName(name).newInstance());
+                myBuilder = (BuildaVater) (Class.forName(name).getDeclaredConstructor().newInstance());
                 formationen.add(myBuilder);
 
                 final JPanel buildaPanel = formationen.get(i).getPanel();

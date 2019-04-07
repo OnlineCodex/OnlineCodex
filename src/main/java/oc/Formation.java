@@ -33,7 +33,8 @@ public class Formation implements BuildaSTK {
 
         public void actionPerformed(ActionEvent event) {
 
-            final String entry = (String) ((JComboBox) event.getSource()).getSelectedItem();
+            @SuppressWarnings("unchecked")
+			final String entry = (String) ((JComboBox<String>) event.getSource()).getSelectedItem();
 
             for (int i = 0; i < buildaVater.myChooserGruppen.size(); i++) {
 

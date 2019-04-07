@@ -9,10 +9,10 @@ import javax.swing.JComboBox;
 import org.w3c.dom.Element;
 
 public class RuestkammerChooser extends OptionsVater {
-    JComboBox box;
+    JComboBox<String> box;
 
     public RuestkammerChooser(int x, int y, int width, int height, Vector<String> items) {
-        box = new JComboBox(items);
+        box = new JComboBox<String>(items);
         box.setBounds(x, y, width, height);
         BuildaHQ.newGUIComponent(box);
         box.setBackground(Color.WHITE);
