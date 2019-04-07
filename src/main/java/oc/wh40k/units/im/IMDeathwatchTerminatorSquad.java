@@ -5,7 +5,8 @@ import oc.*;
 public class IMDeathwatchTerminatorSquad extends Eintrag {
 
 	private final AnzahlPanel squad;
-    private final OptionsZaehlerGruppe o1, o2, o1x, o2x;
+    private final OptionsZaehlerGruppe o1, o2, o3;
+    private final RuestkammerStarter rkBoss;
 
     boolean raiderSelected = false;
 
@@ -17,35 +18,51 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter(DW)")));
-        add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addAll(IMSpaceMarinesTerminatorHeavyWeapons.createRK("", "", buildaVater));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
-
+        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+        o1.setAnzahl(0, squad.getModelle()-1);
+        
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
-        add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
+        ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Power fist & melta", getPts("Power fist (SM)") + getPts("Meltagun")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-
+        o2.setAnzahl(0, squad.getModelle()-1);
+        
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));
+        ogE.addElement(new OptionsGruppeEintrag("Thunderhammer & Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
+        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
+        
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Teleport homer", getPts("Teleport homer")));
+        
+        seperator();
 
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Terminator Sergeant", getKeywords());
+        ((DeathWatchKammer) rkBoss.getKammer()).setType("Terminator Sergeant");
+        rkBoss.initKammer();
+        rkBoss.setGrundkosten(0);
+        rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(rkBoss);
+        rkBoss.setAbwaehlbar(false);
+        
         complete();
     }
 
     @Override
     public void refreshen() {
 
-        o1x.setMaxAnzahl(squad.getModelle() - o1.getAnzahl());
-        o1x.setAnzahl(0, squad.getModelle() - o1.getAnzahl());
-        //o1.setMaxAnzahl(squad.getModelle() / 5);
-
-        o2x.setMaxAnzahl(squad.getModelle() - 1 - o2.getAnzahl());
-        o2x.setAnzahl(0, squad.getModelle() - 1 - o2.getAnzahl());
-        o2.setMaxAnzahl(squad.getModelle() - 1);
-
+        o1.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
+        o2.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
+        o3.setMaxAnzahl(squad.getModelle() - 1);
+        
         power = 13;
         if (squad.getModelle() > 5) {
             power = 26;

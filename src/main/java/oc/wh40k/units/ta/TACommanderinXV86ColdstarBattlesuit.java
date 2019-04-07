@@ -4,6 +4,7 @@ import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
+import oc.wh40k.units.PsychicPowers;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
@@ -26,6 +27,8 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 		addWarlordTraits("", true);
 
         addToInformationVector("Commander", 1);
+        
+        power = 8;
 
         complete();
     }
@@ -37,6 +40,12 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
                 setFehlermeldung("Max 1 Commander");
             } 
         } 
+        
+        if(((TAKampfanzugKammer) getWeapons()).dronesSelected()) {
+        	power = 9;
+        } else {
+        	power = 8;
+        }
     }
 
     //@OVERRIDE

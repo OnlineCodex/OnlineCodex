@@ -12,12 +12,33 @@ public class CHDarkDisciples extends Eintrag {
         grundkosten = 0;
         power = 1;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Dark Disciples", 2, 2, getPts("Dark Disciples"), "");
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Dark Disciples", 2, 2, getPts("Dark Disciples"), "Dark Disciples");
         add(squad);
 
         seperator();
-
+        
+        setInformationVectorValue("Dark Disciples", getCountFromInformationVector("Dark Disciples") + 1);
+        
+        seperator(5);
+        
         complete();
+    }
+    
+    @Override
+    public void refreshen() {
+    	
+    	eintragsCNT = 0;
+    			
+    	if(getCountFromInformationVector("Dark Disciples") > getCountFromInformationVector("Dark Apostle")) {
+    		setFehlermeldung("\n" + getCountFromInformationVector("Dark Apostle") + " Dark Apostle");
+    	} else {
+    		setFehlermeldung("");
+    	}
+    }
+    
+    @Override
+    public void deleteYourself() {
+    	setInformationVectorValue("Dark Disciples", getCountFromInformationVector("Dark Disciples") - 1);
     }
 
 }

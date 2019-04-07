@@ -4,7 +4,7 @@ import oc.*;
 
 public class DeathWatchKammer extends RuestkammerVater {
 
-    private OptionsUpgradeGruppe o1, o2;
+    private OptionsUpgradeGruppe o1, o2, o5;
     private OptionsZaehlerGruppe o3, o4;
     private OptionsEinzelUpgrade thunderhammer;
     private String type;
@@ -103,6 +103,29 @@ public class DeathWatchKammer extends RuestkammerVater {
 
             seperator();
         }
+        
+        if (type.equals("Terminator Sergeant")) {
+            ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter(DW)")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
+            ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power fist & melta", getPts("Power fist (SM)") + getPts("Meltagun")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
+            seperator();
+            
+            ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));
+            ogE.addElement(new OptionsGruppeEintrag("Thunderhammer & Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
+            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            
+            seperator();
+        }
 
         cnt = randAbstand;
 
@@ -155,6 +178,15 @@ public class DeathWatchKammer extends RuestkammerVater {
                 o4.setMaxAnzahl(o4.getAnzahl());
             else
                 o4.setMaxAnzahl(1);
+        }
+        
+        if(type.equals("Terminator Sergeant")) {
+        	
+        	o1.alwaysSelected();
+        	o2.alwaysSelected();
+        	
+        	o1.setAktiv(!o5.isSelected());
+        	o2.setAktiv(!o5.isSelected());
         }
     }
 

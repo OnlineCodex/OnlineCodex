@@ -16,7 +16,7 @@ public class CHObliterators extends Eintrag {
 
         name = "Obliterators";
         grundkosten = 0;
-        add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Obliterators", 3, 3, getPts("Obliterators") + getPts("Fleshmetal guns") + getPts("Crushing fists")));
+        add(marines = new AnzahlPanel(ID, randAbstand, cnt, "Obliterators", 1, 3, getPts("Obliterators") + getPts("Fleshmetal guns") + getPts("Crushing fists")));
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
         seperator();

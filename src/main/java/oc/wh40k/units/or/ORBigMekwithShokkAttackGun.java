@@ -32,6 +32,10 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
         add(waffen);
         waffen.setAbwaehlbar(false);
 
+        seperator();
+        
+		addWarlordTraits("", true);
+
         complete();
     }
 

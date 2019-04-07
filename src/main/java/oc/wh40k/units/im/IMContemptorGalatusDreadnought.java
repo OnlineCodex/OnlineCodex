@@ -4,10 +4,10 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class IMContemptorGalatusDreadnough extends Eintrag {
+public class IMContemptorGalatusDreadnought extends Eintrag {
 	private final OptionsUpgradeGruppe o1, o2;
 
-    public IMContemptorGalatusDreadnough() {
+    public IMContemptorGalatusDreadnought() {
         name = "Contemptor-Galatus Dreadnought";
         grundkosten = getPts("Contemptor-Galatus");
         power = 13;

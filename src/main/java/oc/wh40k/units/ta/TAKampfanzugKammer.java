@@ -20,6 +20,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private boolean XV84 = false;
     public boolean farsight = false;
     private boolean character = false;
+    private boolean droneSelected = false;
     
     private OptionsEinzelUpgrade puretideEngramNeurochip;
     private OptionsEinzelUpgrade onagerGauntlet;
@@ -292,6 +293,10 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Stealth Shas'ui")) {
             o2.setMaxAnzahl(1);
         }
+        
+        if(o4 != null) {
+        	droneSelected = o4.isSelected();
+        }
 
         puretideEngramNeurochip.setAktiv((chosenRelic == null || puretideEngramNeurochip.isSelected()));   
         onagerGauntlet.setAktiv(((chosenRelic == null || onagerGauntlet.isSelected()) && keywords.contains(BATTLESUIT) && keywords.contains(COMMANDER)));
@@ -348,6 +353,10 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (entryCleared) {
             RefreshListener.fireRefresh();
         }
+    }
+    
+    public boolean dronesSelected() {
+    	return droneSelected;
     }
 
 }
