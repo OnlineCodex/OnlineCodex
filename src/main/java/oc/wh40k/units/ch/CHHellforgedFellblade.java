@@ -7,10 +7,7 @@ import oc.OptionsUpgradeGruppe;
 public class CHHellforgedFellblade extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2, o3, o4;
-	private final OptionsUpgradeGruppe fkwaffen;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedFellblade() {
+	public CHHellforgedFellblade() {
         name = "Hellforged Fellblade";
         grundkosten = getPts("Hellforged Fellblade");
 
@@ -51,7 +48,7 @@ public class CHHellforgedFellblade extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
         seperator();
@@ -60,7 +57,7 @@ public class CHHellforgedFellblade extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

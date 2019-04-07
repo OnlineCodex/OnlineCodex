@@ -1,6 +1,12 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHChaosSpaceMarines extends Eintrag {
 
@@ -13,7 +19,7 @@ public class CHChaosSpaceMarines extends Eintrag {
 	private final RuestkammerStarter Boss;
 	private final OptionsUpgradeGruppe mark;
 	private final OptionsUpgradeGruppe icon;
-    
+
     public CHChaosSpaceMarines() {
 
         kategorie = 1;
@@ -46,14 +52,14 @@ public class CHChaosSpaceMarines extends Eintrag {
         add(marinesfk = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
         add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -80,7 +86,7 @@ public class CHChaosSpaceMarines extends Eintrag {
     public void refreshen() {
         o1x.setMaxAnzahl(marines.getModelle() - (Boss.isSelected() ? 1 : 0) - marinesfk.getAnzahl());
 
-        int numberOfPistoles = marines.getModelle() - (Boss.isSelected() ? 1 : 0) - ((pp.isSelected()) ? 1 : 0);
+        final int numberOfPistoles = marines.getModelle() - (Boss.isSelected() ? 1 : 0) - ((pp.isSelected()) ? 1 : 0);
         o1.setMaxAnzahl(numberOfPistoles);
         o1.setAnzahl(0, numberOfPistoles);
 
@@ -92,7 +98,7 @@ public class CHChaosSpaceMarines extends Eintrag {
                 ((marines.getModelle() == 10) ? 4 : 0) +
                 ((marines.getModelle() == 15) ? 7 : 0) +
                 ((marines.getModelle() == 20) ? 10 : 0);
-        
+
         icon.setAktiv("Icon of Vengeance", !mark.isSelected());
         icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
         icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));

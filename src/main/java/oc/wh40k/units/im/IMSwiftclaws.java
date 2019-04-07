@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMSwiftclaws extends Eintrag {
 
@@ -65,7 +70,7 @@ public class IMSwiftclaws extends Eintrag {
         oe2.setAktiv(!oe3.isSelected());
         oe3.setAktiv(!oe2.isSelected());
 
-        int anzahl = squad.getModelle() - 1 - o1.getAnzahl() - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.getAnzahl();
+        final int anzahl = squad.getModelle() - 1 - o1.getAnzahl() - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.getAnzahl();
 
         o1.setMaxAnzahl(1 - ((IMSpaceWolvesRuestkammer) rkBoss.getKammer()).o2.getAnzahl());
 

@@ -1,11 +1,16 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.ASURYANI;
+import static oc.KeyWord.BIKER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.WARLOCK;
+import static oc.KeyWord.WARLOCK_SKYRUNNER;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class AEWarlockSkyrunner extends Eintrag {
@@ -13,7 +18,7 @@ public class AEWarlockSkyrunner extends Eintrag {
 
     public AEWarlockSkyrunner() {
        	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, WARLOCK, WARLOCK_SKYRUNNER, BIKER);
-       	
+
         name = "Warlock Skyrunner";
         grundkosten = getPts("Warlock Skyrunner") + getPts("Twin shuriken catapult");
 
@@ -30,7 +35,7 @@ public class AEWarlockSkyrunner extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

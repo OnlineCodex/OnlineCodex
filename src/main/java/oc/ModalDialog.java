@@ -1,11 +1,22 @@
 package oc;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.text.MutableAttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
-import java.awt.*;
 
 @SuppressWarnings("serial")
 public class ModalDialog extends JDialog {
@@ -34,7 +45,8 @@ public class ModalDialog extends JDialog {
         setModal(true);
     }
 
-    public void setEnabled(boolean e) {
+    @Override
+	public void setEnabled(boolean e) {
         okButton.setEnabled(e);
     }
 
@@ -60,9 +72,9 @@ public class ModalDialog extends JDialog {
 
         pack();
 
-        Dimension screenSize =
+        final Dimension screenSize =
                 Toolkit.getDefaultToolkit().getScreenSize();
-        Dimension labelSize = jScrollPane.getPreferredSize();
+        final Dimension labelSize = jScrollPane.getPreferredSize();
         setLocation(screenSize.width / 2 - (labelSize.width / 2),
                 screenSize.height / 2 - (labelSize.height / 2));
     }
@@ -74,11 +86,11 @@ public class ModalDialog extends JDialog {
      */
     private JPanel getJPanel(String s) {
         if (jPanel == null) {
-            GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
+            final GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
             gridBagConstraints1.gridx = 0;  // Generated
             gridBagConstraints1.fill = java.awt.GridBagConstraints.BOTH;  // Generated
             gridBagConstraints1.gridy = 1;  // Generated
-            GridBagConstraints gridBagConstraints = new GridBagConstraints();
+            final GridBagConstraints gridBagConstraints = new GridBagConstraints();
             gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;  // Generated
             gridBagConstraints.gridy = 0;  // Generated
             gridBagConstraints.weightx = 1.0;  // Generated
@@ -117,13 +129,13 @@ public class ModalDialog extends JDialog {
 
             jTextPane = new JTextPane();
 
-            StyledDocument doc = jTextPane.getStyledDocument();
+            final StyledDocument doc = jTextPane.getStyledDocument();
             //  Set alignment to be centered for all paragraphs
-            MutableAttributeSet standard = new SimpleAttributeSet();
+            final MutableAttributeSet standard = new SimpleAttributeSet();
             StyleConstants.setAlignment(standard, StyleConstants.ALIGN_CENTER);
             doc.setParagraphAttributes(0, 0, standard, true);
 
-            MutableAttributeSet keyWord = new SimpleAttributeSet();
+            final MutableAttributeSet keyWord = new SimpleAttributeSet();
             StyleConstants.setForeground(keyWord, Color.red);
             StyleConstants.setFontFamily(keyWord, "arial");
             StyleConstants.setFontSize(keyWord, 12);
@@ -155,7 +167,8 @@ public class ModalDialog extends JDialog {
             okButton = new JButton();
             okButton.setText("OK");
             okButton.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent e) {
+                @Override
+				public void actionPerformed(java.awt.event.ActionEvent e) {
                     doOk();
                 }
             });

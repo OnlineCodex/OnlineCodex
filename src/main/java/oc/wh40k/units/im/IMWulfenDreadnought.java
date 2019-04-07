@@ -25,7 +25,7 @@ public class IMWulfenDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Shield + Storm bolter", "Blizzard shield + Storm bolter", getPts("Blizzard shield") + getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Shield + Heavy flamer", "Blizzard shield + Heavy flamer", getPts("Blizzard shield") + getPts("Heavy flamer (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         complete();
     }
 

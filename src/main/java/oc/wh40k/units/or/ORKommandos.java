@@ -1,6 +1,8 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
 
 public class ORKommandos extends Eintrag {
 
@@ -24,7 +26,8 @@ public class ORKommandos extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         boss.setSelected(true);
         if (kommandoz.getModelle() > 10) {
             power = 6;

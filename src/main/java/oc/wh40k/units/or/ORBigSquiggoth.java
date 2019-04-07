@@ -6,9 +6,7 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
 public class ORBigSquiggoth extends Eintrag {
-	private final OptionsUpgradeGruppe o1;
-
-    public ORBigSquiggoth() {
+	public ORBigSquiggoth() {
         name = "Big Squiggoth";
         grundkosten = 180;
 
@@ -18,7 +16,7 @@ public class ORBigSquiggoth extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kannon", 20));
         ogE.addElement(new OptionsGruppeEintrag("Lobba", 25));
         ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", 20));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -28,7 +26,8 @@ public class ORBigSquiggoth extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

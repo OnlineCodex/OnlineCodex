@@ -8,9 +8,9 @@ public class IMSammaelonCorvex extends Eintrag {
         name = "Sammael on Corvex";
         grundkosten = getPts("Sammael on Corvex");
         power = 10;
-        
+
         seperator();
-        
+
         addWarlordTraits("Master of Manoeuvre (DA)", true);
 
         complete();

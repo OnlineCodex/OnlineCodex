@@ -1,11 +1,16 @@
 package oc.wh40k.units.ta;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class TABreacherTeam extends Eintrag {
 
 	private final AnzahlPanel squad;
-	private final OptionsUpgradeGruppe o4, o3;
+	private final OptionsUpgradeGruppe o4;
 	private final OptionsZaehlerGruppe o5, o6;
 	private final RuestkammerStarter rkBoss;
 
@@ -33,7 +38,7 @@ public class TABreacherTeam extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("DS8 missile pod", "DS8 Tactical Support Turret with missile pod", getPts("DS8 Tactical Support Turret") + getPts("Missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("DS8 smart missile", "DS8 Tactical Support Turret with smart missile system", getPts("DS8 Tactical Support Turret") + getPts("Smart missile system")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

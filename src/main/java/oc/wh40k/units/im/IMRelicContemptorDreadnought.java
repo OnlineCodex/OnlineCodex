@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -84,7 +82,7 @@ public class IMRelicContemptorDreadnought extends Eintrag {
 
 
 
-        int dcw = (o1.getAnzahl("Dreadnought combat weapon & storm bolter") +
+        final int dcw = (o1.getAnzahl("Dreadnought combat weapon & storm bolter") +
 
                 o1.getAnzahl("Dreadnought combat weapon & heavy flamer") +
 
@@ -118,7 +116,7 @@ public class IMRelicContemptorDreadnought extends Eintrag {
 
 
 
-        int cf = (o1.getAnzahl("Dreadnought combat weapon & storm bolter") +
+        final int cf = (o1.getAnzahl("Dreadnought combat weapon & storm bolter") +
 
                 o1.getAnzahl("Dreadnought combat weapon & heavy flamer") +
 

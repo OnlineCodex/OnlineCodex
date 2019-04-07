@@ -7,9 +7,7 @@ public class IMOgryns extends Eintrag {
 
 	private final AnzahlPanel squad;
 
-	private boolean lastState = false;
-
-    public IMOgryns() {
+	public IMOgryns() {
         name = "Ogryns";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Ogryns", 3, 9, getPts("Ogryns") + getPts("Ripper gun") + getPts("Frag bomb")));
         complete();

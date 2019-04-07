@@ -23,7 +23,8 @@ public class ORKustomBoostaBlastas extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         power = buggies.getModelle() * 5;
     }

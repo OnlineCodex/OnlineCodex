@@ -1,15 +1,16 @@
 package oc.wh40k.units.ch;
 
 import static oc.KeyWord.CHAOS;
-import static oc.KeyWord.SORCERER;
 import static oc.KeyWord.CHARACTER;
 import static oc.KeyWord.DEATH_GUARD;
 import static oc.KeyWord.HERETIC_ASTARTES;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.NURGLE;
 import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SORCERER;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDGSorcerer extends Eintrag {
@@ -18,7 +19,7 @@ public class CHDGSorcerer extends Eintrag {
 
     public CHDGSorcerer() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, SORCERER);
-    	
+
         name = "Sorcerer";
         grundkosten = getPts("Sorcerer");
         power = 7;
@@ -36,9 +37,9 @@ public class CHDGSorcerer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

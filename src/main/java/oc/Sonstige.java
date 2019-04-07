@@ -1,9 +1,9 @@
 package oc;
 
-import javax.swing.*;
-
-import static oc.RefreshListener.Priority.EINTRAG;
 import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.EINTRAG;
+
+import javax.swing.JPanel;
 
 
 public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
@@ -26,8 +26,9 @@ public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
         return this.panel;
     }
 
-    public String getText() {
-        StringBuilder text = new StringBuilder();
+    @Override
+	public String getText() {
+        final StringBuilder text = new StringBuilder();
 
         text.append(titel);
 
@@ -47,7 +48,8 @@ public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
 
     public abstract void refreshen();
 
-    public int getBreite() {
+    @Override
+	public int getBreite() {
         return auswahlBreite + randAbstand;
     }
 

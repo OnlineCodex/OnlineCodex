@@ -1,10 +1,17 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.KAIROS_FATEWEAVER;
+import static oc.KeyWord.LORD_OF_CHANGE;
+import static oc.KeyWord.MONSTER;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TZEENTCH;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -32,9 +39,9 @@ public class CHKairosFateweaver extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("Tzeentch: Tyrant of the Warp", TZEENTCH);
 
         complete();

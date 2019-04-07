@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTA_SORORITAS;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.HOSPITALLER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
 
 import oc.Eintrag;
 
@@ -13,9 +18,9 @@ public class IMHospitaller extends Eintrag {
         power = 2;
 
         seperator();
-        
+
         addWeapons(IMAdeptaSororitasRuestkammer.class, false);
-        
+
         seperator();
 
         addWarlordTraits("", true);

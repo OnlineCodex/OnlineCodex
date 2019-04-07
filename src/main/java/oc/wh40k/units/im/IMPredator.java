@@ -7,7 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMPredator extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1;
 
     public IMPredator() {
         name = "Predator";
@@ -24,7 +24,7 @@ public class IMPredator extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("heavy bolter (SM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 lascannons", getPts("Lascannon (SM)") * 2));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

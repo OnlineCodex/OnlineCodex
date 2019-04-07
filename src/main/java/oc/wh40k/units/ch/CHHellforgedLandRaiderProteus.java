@@ -1,14 +1,14 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedLandRaiderProteus extends Eintrag {
 
-	private final OptionsUpgradeGruppe fkwaffen, fkwaffen2;
-	private final OptionsUpgradeGruppe mark;
-
-
-    public CHHellforgedLandRaiderProteus() {
+	private final OptionsUpgradeGruppe fkwaffen2;
+	public CHHellforgedLandRaiderProteus() {
         name = "Hellforged Land Raider Proteus";
         grundkosten = getPts("Hellforged Land Raider Proteus") + getPts("Twin Lascannon") * 2;
 
@@ -32,7 +32,7 @@ public class CHHellforgedLandRaiderProteus extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -40,7 +40,7 @@ public class CHHellforgedLandRaiderProteus extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

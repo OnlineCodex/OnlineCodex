@@ -1,22 +1,22 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.SHADOWSEER;
+import static oc.KeyWord.TROUPE_MASTER;
 
 import java.util.Set;
 
-import javax.sound.sampled.FloatControl.Type;
-
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class AEHarlequinsRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade theMaskOfSecrets;
     private OptionsEinzelUpgrade suitOfHiddenKnives;
     private OptionsEinzelUpgrade starmistRaiment;
@@ -25,7 +25,7 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade theGhoulMask;
     private OptionsEinzelUpgrade faolchusTalon;
     private OptionsEinzelUpgrade scintillantVeil;
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -33,18 +33,17 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -72,15 +71,12 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(theMaskOfSecrets = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Mask Of Secrets", 0).setRelic(true));
+        add(theMaskOfSecrets = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Mask Of Secrets", 0).setRelic(true));
        	add(suitOfHiddenKnives = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suit Of Hidden Knives", 0).setRelic(true));
        	add(starmistRaiment = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Starmist Raiment", 0).setRelic(true));
        	add(theLaughingGodsEye = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Laughing God's Eye", 0).setRelic(true));
@@ -88,9 +84,8 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
        	add(theGhoulMask = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Ghoul Mask", 0).setRelic(true));
        	add(faolchusTalon = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Faolchus Talon", 0).setRelic(true));
        	add(scintillantVeil = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Scintillant Veil", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -99,7 +94,7 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
     	} else if(type.equals("Troupe Master")) {
             ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol (Harlequins)")));
             ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
@@ -116,8 +111,8 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Harlequin's caress", getPts("Harlequin's caress")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
-            seperator();  
+
+            seperator();
     	} else if(type.equals("Death Jester")) {
             ogE.addElement(new OptionsGruppeEintrag("Shrieker cannon", getPts("Shrieker cannon")));
             addRelics();
@@ -132,34 +127,34 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Harlequin's kiss", getPts("Harlequin's kiss")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
-            seperator();  
+
+            seperator();
     	}
-    	    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -171,7 +166,7 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Troupe Master") ||
     			type.equals("Solitaire")){
     		o1.alwaysSelected();
@@ -183,7 +178,7 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
     	}
 
 
-    	theMaskOfSecrets.setAktiv((chosenRelic == null || theMaskOfSecrets.isSelected()));   
+    	theMaskOfSecrets.setAktiv((chosenRelic == null || theMaskOfSecrets.isSelected()));
     	suitOfHiddenKnives.setAktiv((chosenRelic == null || suitOfHiddenKnives.isSelected()));
     	starmistRaiment.setAktiv((chosenRelic == null || starmistRaiment.isSelected()));
     	theLaughingGodsEye.setAktiv((chosenRelic == null || theLaughingGodsEye.isSelected()));

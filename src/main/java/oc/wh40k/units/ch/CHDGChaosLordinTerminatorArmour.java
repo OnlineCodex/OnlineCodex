@@ -22,9 +22,9 @@ public class CHDGChaosLordinTerminatorArmour extends Eintrag {
         seperator();
 
         addWeapons(CHDeathGuardRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

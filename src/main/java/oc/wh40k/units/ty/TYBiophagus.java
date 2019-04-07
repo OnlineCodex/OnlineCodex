@@ -24,7 +24,7 @@ public class TYBiophagus extends Eintrag {
         complete();
 
     }
-    
+
     @Override
 
     public void refreshen() {

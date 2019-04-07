@@ -1,13 +1,16 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class CHPossessed extends Eintrag {
 
 	private final AnzahlPanel marines;
 	private final OptionsUpgradeGruppe mark;
 	private final OptionsUpgradeGruppe icon;
-    
+
     public CHPossessed() {
 
         kategorie = 1;
@@ -18,14 +21,14 @@ public class CHPossessed extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/Moschaboy.gif"));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
         add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -45,7 +48,7 @@ public class CHPossessed extends Eintrag {
                 ((marines.getModelle() == 10) ? 5 : 0) +
                 ((marines.getModelle() == 15) ? 10 : 0) +
                 ((marines.getModelle() == 20) ? 15 : 0);
-        
+
         icon.setAktiv("Icon of Vengeance", !mark.isSelected());
         icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
         icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));

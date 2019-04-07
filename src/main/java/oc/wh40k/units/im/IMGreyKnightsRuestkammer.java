@@ -1,22 +1,28 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BROTHERHOOD_ANCIENT;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PALADIN_ANCIENT;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMGreyKnightsRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade bannerOfRefiningFlame;
     private OptionsEinzelUpgrade dominaLiberDaemonica;
     private OptionsEinzelUpgrade cuirassOfSacrifice;
-    
+
     public IMGreyKnightsRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -35,12 +41,12 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         int offsetX = randAbstand;
-                
+
        	add(bannerOfRefiningFlame = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Banner of Refining Flame", 0).setRelic(true));
        	add(dominaLiberDaemonica = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Domina Liber Daemonica", 0).setRelic(true));
        	add(cuirassOfSacrifice = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cuirass of Sacrifice", 0).setRelic(true));
@@ -129,7 +135,7 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         } else if (type.equals("Techmarine GK")) {
-        	
+
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
@@ -155,7 +161,7 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -163,7 +169,7 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -205,31 +211,31 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
 
             seperator();
         }
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -241,7 +247,7 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Grand Master") ||
     			type.equals("Grand Master in Nemesis Dreadknight") ||
     			type.equals("Brother Captain") ||
@@ -263,7 +269,7 @@ public class IMGreyKnightsRuestkammer extends RuestkammerVater {
     		o4.alwaysSelected();
     	}
 
-    	bannerOfRefiningFlame.setAktiv((chosenRelic == null || bannerOfRefiningFlame.isSelected()) && (keywords.contains(PALADIN_ANCIENT) || keywords.contains(BROTHERHOOD_ANCIENT)));   
+    	bannerOfRefiningFlame.setAktiv((chosenRelic == null || bannerOfRefiningFlame.isSelected()) && (keywords.contains(PALADIN_ANCIENT) || keywords.contains(BROTHERHOOD_ANCIENT)));
     	dominaLiberDaemonica.setAktiv(((chosenRelic == null || dominaLiberDaemonica.isSelected())));
     	cuirassOfSacrifice.setAktiv(((chosenRelic == null || cuirassOfSacrifice.isSelected()) && keywords.contains(INFANTRY)));
     }

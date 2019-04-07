@@ -1,9 +1,32 @@
 package oc;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.google.common.collect.ImmutableMap;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.FontMetrics;
+import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Vector;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.Border;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -11,19 +34,6 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import javax.swing.*;
-import javax.swing.border.Border;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Vector;
 
 public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Methoden und globalen Variablen bereit.   Komplett static
 
@@ -46,8 +56,9 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     public static String IMAGEPFAD = "oc/images/";
     private static boolean strg = false; // siehe den keyListener hier
     static MouseWheelListener defaultMouseWheelListener = new MouseWheelListener() {
-        public void mouseWheelMoved(MouseWheelEvent event) {
-            JPanel p = OnlineCodex.getInstance().getBuildaPanel();
+        @Override
+		public void mouseWheelMoved(MouseWheelEvent event) {
+            final JPanel p = OnlineCodex.getInstance().getBuildaPanel();
 
             if (strg != OnlineCodex.getInstance().getMenu().isVertikalScrolling()) {
                 int newX = (int) p.getLocation().getX() + (event.getWheelRotation() * OnlineCodex.getInstance().getMenu().getMausradSpeed() * -1);
@@ -73,25 +84,31 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     private static Document XMLDocument;
     private static MouseListener pictureRefreshMouseListener = new MouseListener() {
 
-        public void mouseReleased(MouseEvent event) { // nur um das bildmachen hier machen zu können und hier den listener adden zu können. Siehe bildMachen
+        @Override
+		public void mouseReleased(MouseEvent event) { // nur um das bildmachen hier machen zu können und hier den listener adden zu können. Siehe bildMachen
             RefreshListener.fireRefresh();
         }
 
-        public void mouseExited(MouseEvent event) {
+        @Override
+		public void mouseExited(MouseEvent event) {
         }
 
-        public void mouseEntered(MouseEvent event) {
+        @Override
+		public void mouseEntered(MouseEvent event) {
         }
 
-        public void mouseClicked(MouseEvent event) {
+        @Override
+		public void mouseClicked(MouseEvent event) {
         }
 
-        public void mousePressed(MouseEvent event) {
+        @Override
+		public void mousePressed(MouseEvent event) {
         }
     };
     private static KeyListener defaultKeyListener = new KeyListener() {
-        public void keyPressed(KeyEvent event) {
-            JPanel p = OnlineCodex.getInstance().getBuildaPanel();
+        @Override
+		public void keyPressed(KeyEvent event) {
+            final JPanel p = OnlineCodex.getInstance().getBuildaPanel();
 
             if (event.getKeyCode() == KeyEvent.VK_CONTROL) {
                 strg = true;
@@ -122,10 +139,12 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
             }
         }
 
-        public void keyTyped(KeyEvent event) {
+        @Override
+		public void keyTyped(KeyEvent event) {
         }
 
-        public void keyReleased(KeyEvent event) {
+        @Override
+		public void keyReleased(KeyEvent event) {
             if (event.getKeyCode() == KeyEvent.VK_CONTROL) {
                 strg = false;
             }
@@ -135,7 +154,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     static {
         try {
             oCLogo = new ImageIcon(OnlineCodex.getInstance().getClass().getClassLoader().getResource("oc/sysimages/oCLogo.png")).getImage();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             LOGGER.error("", e);
         }
 
@@ -217,8 +236,8 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
      * um einzelne Zahlen per initKammer(boolean) zu übergeben
      */
     public static boolean[] zahlZuBool(int z) {
-        String s = Integer.toBinaryString(z);
-        boolean[] b = new boolean[s.length()];
+        final String s = Integer.toBinaryString(z);
+        final boolean[] b = new boolean[s.length()];
         for (int i = 0; i < s.length(); i++) {
             b[i] = s.charAt(i) == '1' ? true : false;
         }
@@ -226,7 +245,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     }
 
     public static int boolZuZahl(boolean[] b) {
-        StringBuilder s = new StringBuilder();
+        final StringBuilder s = new StringBuilder();
         for (int i = 0; i < b.length; i++) {
             s.append(b[i] == true ? '1' : '0');
         }
@@ -236,7 +255,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
 
     public static int maxStringWidth(JComponent myComp, String[] s) {
         int cnt = 0;
-        FontMetrics fm = myComp.getFontMetrics(myComp.getFont());
+        final FontMetrics fm = myComp.getFontMetrics(myComp.getFont());
         for (int i = 0; i < s.length; i++) {
             if (fm.stringWidth(s[i]) > cnt) {
                 cnt = fm.stringWidth(s[i]);
@@ -289,13 +308,13 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     }
 
     public static JLabel createPictureJLabel(String path) {  // EIG. überflüssig und alt (da er einen JButton return...), is nurnoch drinnen weil ich sonst 80 codes ändern müsste
-        ImageIcon icon = getImageIcon(path);
-        JLabel ico = new JLabel(icon);
+        final ImageIcon icon = getImageIcon(path);
+        final JLabel ico = new JLabel(icon);
         ico.setBorder(null);
         BuildaHQ.newGUIComponent(ico);
         try {
             ico.setSize(icon.getIconWidth(), icon.getIconHeight());
-        } catch (Exception e) {
+        } catch (final Exception e) {
         }
 
         ico.addMouseListener(pictureRefreshMouseListener);
@@ -315,7 +334,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
                 try {                                                            // jpg werden trotzdem geladen, weil alle jpgs vor Buttons gemalt werden als einrück oder gruppenmarkierung...
                     icon = new ImageIcon(OnlineCodex.getInstance().getClass().getClassLoader().getResource(path));
                     bilda.put(path, icon);
-                } catch (Exception e) {
+                } catch (final Exception e) {
                     //LOGGER.info("Bild nicht vorhanden. Datei sollte unter : " + path + " abgespeichert sein");
                     //JOptionPane.showConfirmDialog(null, e, "gudden tag", JOptionPane.YES_NO_OPTION); zur fehlerausgabe!
                 }
@@ -334,7 +353,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         if (sprache == Sprache.German) {
             return s;
         } else if (sprache == Sprache.English) {
-            String result = germanEnglishHashMap.get(s);
+            final String result = germanEnglishHashMap.get(s);
             if (result != null) {
                 return result;
             }
@@ -439,7 +458,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     }
 
     public static String formatDouble(double a, int stellen) {
-        String s = String.valueOf(a);
+        final String s = String.valueOf(a);
         if (s.contains(".")) {
             return s.substring(0, s.indexOf(".") + 1 + stellen);
         } else {
@@ -453,7 +472,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     }
 
     public static String getStringXMal(String s, int x) {
-        StringBuilder sb = new StringBuilder();
+        final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < x; ++i) {
             sb.append(s);
         }
@@ -462,13 +481,13 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
 
     public static void writeTextdatei(String path, String text) {
         try {
-            FileOutputStream out = new FileOutputStream(path);
+            final FileOutputStream out = new FileOutputStream(path);
             for (int i = 0; i < text.length(); i++) {
                 out.write((byte) text.charAt(i));
             }
             out.close();
             out.flush();
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOGGER.info("Konnte nicht geschrieben werden: " + text + " wegen: ");
             LOGGER.error("", e);
         }
@@ -478,7 +497,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         if (XMLDocument == null) {
             try {
                 XMLDocument = DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument();
-            } catch (ParserConfigurationException ex) {
+            } catch (final ParserConfigurationException ex) {
                 LOGGER.error("", ex);
             }
         }
@@ -510,13 +529,13 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
         Document doc = null;
 
         try {
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            final DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            final DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             doc = dBuilder.parse(path);
             doc.getDocumentElement().normalize();
-        } catch (ParserConfigurationException ex) {
-        } catch (SAXException ex) {
-        } catch (IOException ex) {
+        } catch (final ParserConfigurationException ex) {
+        } catch (final SAXException ex) {
+        } catch (final IOException ex) {
         }
 
         if (bereinigen) bereinigeXML(doc);
@@ -530,7 +549,7 @@ public abstract class BuildaHQ implements BuildaSTK { // stellt die ganzen Metho
     }
 
     public static void bereinigeElement(Element e) {
-        NodeList children = e.getChildNodes();
+        final NodeList children = e.getChildNodes();
 
         for (int i = 0; i < children.getLength(); i++) {
             if (children.item(i).getNodeType() == Node.ELEMENT_NODE) {

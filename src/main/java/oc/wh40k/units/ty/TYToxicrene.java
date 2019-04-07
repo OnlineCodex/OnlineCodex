@@ -1,7 +1,6 @@
 package oc.wh40k.units.ty;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class TYToxicrene extends Eintrag {
 

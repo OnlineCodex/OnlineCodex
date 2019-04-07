@@ -2,8 +2,6 @@ package oc.wh40k.units.im;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 
 public class IMFulguriteElectroPriests extends Eintrag {
 

@@ -1,16 +1,18 @@
 package oc;
 
+import java.awt.Color;
+import java.awt.LayoutManager;
+import java.awt.event.MouseEvent;
+
+import javax.swing.JPanel;
+
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
-
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseEvent;
 
 public class OptionsPanelSwitcher extends OptionsVater {
 
     private static final int NO_PANEL = -1;
-    private SwitcherJPanel[] panels;
+    private final SwitcherJPanel[] panels;
     private int currentPanel = 0;
 
     public OptionsPanelSwitcher(int lX, int lY, OptionsVater[]... options) { // das options-Array wird genau in ein Panel-Array umgesetzt, BEIM PANEL ARRAY WIRD ABER EIN leeres Panel an Stelle [0] hinzugefügt ! (für NO_PANEL ...)
@@ -74,7 +76,7 @@ public class OptionsPanelSwitcher extends OptionsVater {
 
     @Override
     public String getText() {
-        StringBuilder text = new StringBuilder();
+        final StringBuilder text = new StringBuilder();
 
         for (int i = 0; i < panels[currentPanel].optionen.length; ++i) {
             if (panels[currentPanel].optionen[i].isSelected()) {
@@ -87,7 +89,7 @@ public class OptionsPanelSwitcher extends OptionsVater {
 
     @Override
     public String getSaveText() {
-        StringBuilder s = new StringBuilder((currentPanel - 1) + SAVETEXT_CURRNETPANELTRENNER); // currentPanel-1 is wichtig! der Parameter bei switchPanel(), den man übergibt, wird nämlich +1 genommen, bevor er benutzt wird
+        final StringBuilder s = new StringBuilder((currentPanel - 1) + SAVETEXT_CURRNETPANELTRENNER); // currentPanel-1 is wichtig! der Parameter bei switchPanel(), den man übergibt, wird nämlich +1 genommen, bevor er benutzt wird
 
         for (int i = 0; i < panels[currentPanel].optionen.length; ++i) {
             s.append(panels[currentPanel].optionen[i].getSaveText() + SAVETEXT_PANELSWITCHERTRENNER);
@@ -96,8 +98,9 @@ public class OptionsPanelSwitcher extends OptionsVater {
         return s.toString();
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement(this.getClass().getSimpleName());
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement(this.getClass().getSimpleName());
         root.setAttribute("currentPanel", Integer.toString(currentPanel - 1));
 
         for (int i = 0; i < panels[currentPanel].optionen.length; i++) {
@@ -111,17 +114,18 @@ public class OptionsPanelSwitcher extends OptionsVater {
     public void load(String s) {
         switchPanel(Integer.parseInt(s.substring(0, s.indexOf(SAVETEXT_CURRNETPANELTRENNER))));
         s = s.substring(s.indexOf(SAVETEXT_CURRNETPANELTRENNER) + SAVETEXT_CURRNETPANELTRENNER.length(), s.length());
-        String[] splittet = s.split(SAVETEXT_PANELSWITCHERTRENNER);
+        final String[] splittet = s.split(SAVETEXT_PANELSWITCHERTRENNER);
 
         for (int i = 0; i < panels[currentPanel].optionen.length; ++i) {
             panels[currentPanel].optionen[i].load(splittet[i]);
         }
     }
 
-    public void loadElement(Element e) {
+    @Override
+	public void loadElement(Element e) {
         switchPanel(Integer.parseInt(e.getAttribute("currentPanel")));
 
-        NodeList children = e.getChildNodes();
+        final NodeList children = e.getChildNodes();
 
         for (int i = 0; i < panels[currentPanel].optionen.length; i++) {
             panels[currentPanel].optionen[i].loadElement((Element) children.item(i));

@@ -2,7 +2,6 @@ package oc.wh40k.units.or;
 
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
-import oc.RuestkammerStarter;
 
 public class ORKaptinBadrukk extends Eintrag {
 
@@ -23,14 +22,15 @@ public class ORKaptinBadrukk extends Eintrag {
         add(Munigrot);
 
         seperator();
-        
+
         addWarlordTraits("Freebooterz: Killa Reputation", true);
 
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

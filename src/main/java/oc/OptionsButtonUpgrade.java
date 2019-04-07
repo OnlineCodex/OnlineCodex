@@ -1,15 +1,18 @@
 package oc;
 
+import java.awt.FontMetrics;
+
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class OptionsButtonUpgrade extends OptionsButton {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OptionsButtonUpgrade.class);
-    
+
     boolean showKosten = true;
     boolean unique = false;
     boolean relic = false;
@@ -53,7 +56,8 @@ public class OptionsButtonUpgrade extends OptionsButton {
         this.showKosten = showKosten;
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         if (!aktiv || preis == -88) {
             return 0;
         }
@@ -72,7 +76,7 @@ public class OptionsButtonUpgrade extends OptionsButton {
             }
         }
     }
-    
+
     public void switsch(String txt) {
         if (aktiv) {
             selected = !selected;  // umdrehen
@@ -82,11 +86,11 @@ public class OptionsButtonUpgrade extends OptionsButton {
                 BuildaHQ.addToInformationVectorGlobal(txt, 1);
                 LOGGER.info(txt + ": " + BuildaHQ.getCountFromInformationVectorGlobal(txt));
                 if (BuildaHQ.getCountFromInformationVectorGlobal(txt) > 1) {
-                    JOptionPane op = new JOptionPane(txt + " " + BuildaHQ.translate("darf nur einmal enthalten sein."), JOptionPane.ERROR_MESSAGE);
-                    JDialog dialog = op.createDialog(BuildaHQ.translate("Fehler"));
+                    final JOptionPane op = new JOptionPane(txt + " " + BuildaHQ.translate("darf nur einmal enthalten sein."), JOptionPane.ERROR_MESSAGE);
+                    final JDialog dialog = op.createDialog(BuildaHQ.translate("Fehler"));
                     dialog.setAlwaysOnTop(true); //<-- this line
                     dialog.setModal(true);
-                    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                    dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                     dialog.setVisible(true);
 
                     if (isLegal()) {
@@ -130,8 +134,8 @@ public class OptionsButtonUpgrade extends OptionsButton {
 
     @Override
     public void labelSetzen() {
-        FontMetrics fm = button.getFontMetrics(button.getFont());
-        StringBuilder abstandshalter = new StringBuilder("");
+        final FontMetrics fm = button.getFontMetrics(button.getFont());
+        final StringBuilder abstandshalter = new StringBuilder("");
         String punkteString = "";
 
         if (isShowKosten()) {
@@ -141,7 +145,7 @@ public class OptionsButtonUpgrade extends OptionsButton {
                 punkteString = entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.");
             }
 
-            int cnt = (buttonBreite - (fm.stringWidth((kurzerName != null ? kurzerName : name) + punkteString) + 30)) / fm.stringWidth(" .");
+            final int cnt = (buttonBreite - (fm.stringWidth((kurzerName != null ? kurzerName : name) + punkteString) + 30)) / fm.stringWidth(" .");
 
             for (int i = 0; i < cnt; ++i) {
                 abstandshalter.append(" .");
@@ -154,7 +158,7 @@ public class OptionsButtonUpgrade extends OptionsButton {
     public boolean hasUniqueError() {
     	return BuildaHQ.getCountFromInformationVectorGlobal(this.name) > 1;
     }
-    	
+
     public boolean isUnique() {
         return unique;
     }

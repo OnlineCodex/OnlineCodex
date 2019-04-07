@@ -23,7 +23,8 @@ public class ORShokkjumpDragstas extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         power = buggies.getModelle() * 6;
     }

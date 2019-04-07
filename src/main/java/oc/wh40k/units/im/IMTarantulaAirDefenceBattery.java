@@ -1,6 +1,9 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMTarantulaAirDefenceBattery extends Eintrag {
 	private final OptionsUpgradeGruppe o1;

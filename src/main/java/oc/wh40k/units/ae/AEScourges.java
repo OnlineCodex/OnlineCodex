@@ -2,7 +2,11 @@ package oc.wh40k.units.ae;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 
 
@@ -11,8 +15,6 @@ public class AEScourges extends Eintrag {
 
 
 	private final AnzahlPanel squad;
-
-	private final OptionsZaehlerGruppe o1;
 
 	private final RuestkammerStarter rkBoss;
 
@@ -46,7 +48,7 @@ public class AEScourges extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Blaster", getPts("Blaster")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
 
 

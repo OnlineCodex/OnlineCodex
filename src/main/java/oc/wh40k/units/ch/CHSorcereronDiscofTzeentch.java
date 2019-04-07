@@ -24,9 +24,9 @@ public class CHSorcereronDiscofTzeentch extends Eintrag {
         waffen.setUeberschriftTrotzNullKostenAusgeben(true);
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

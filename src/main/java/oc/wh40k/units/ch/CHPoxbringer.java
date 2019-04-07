@@ -1,6 +1,14 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.HERALD_OF_NURGLE;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PLAGUEBEARER;
+import static oc.KeyWord.POXBRINGER;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -17,7 +25,7 @@ public class CHPoxbringer extends Eintrag {
         power = 4;
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
@@ -29,9 +37,9 @@ public class CHPoxbringer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", NURGLE);
 
         complete();

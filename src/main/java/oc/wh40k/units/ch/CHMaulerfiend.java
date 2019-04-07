@@ -3,14 +3,11 @@ package oc.wh40k.units.ch;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class CHMaulerfiend extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHMaulerfiend() {
+	public CHMaulerfiend() {
         name = "Maulerfiend";
         grundkosten = getPts("Maulerfiend");
 
@@ -29,7 +26,7 @@ public class CHMaulerfiend extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

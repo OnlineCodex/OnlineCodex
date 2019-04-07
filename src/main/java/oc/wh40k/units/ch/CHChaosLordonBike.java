@@ -8,9 +8,7 @@ import oc.RuestkammerStarter;
 public class CHChaosLordonBike extends Eintrag {
 
 	private final RuestkammerStarter waffen;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosLordonBike() {
+	public CHChaosLordonBike() {
 
         name = "Chaos Lord on Bike";
         grundkosten = getPts("Chaos Lord on Bike");
@@ -22,7 +20,7 @@ public class CHChaosLordonBike extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -34,9 +32,9 @@ public class CHChaosLordonBike extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

@@ -1,12 +1,15 @@
 package oc;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class OptionsZaehlerGruppe extends OptionsVater {
 
@@ -45,14 +48,14 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         this.maxAnzahl = maxAnzahl;
         for (int i = 0; i < e.size(); i++) {
             myZaehlers.addElement(new OptionsButtonZaehler(ID, 0, i * 20, (new StringBuilder(String.valueOf(verzierung))).append(" gruppe").toString(), (OptionsGruppeEintrag) e.elementAt(i), maxAnzahl));
-            panel.add(((OptionsButtonZaehler) myZaehlers.lastElement()).getPanel());
-            ((OptionsButtonZaehler) myZaehlers.lastElement()).getButton().addMouseListener(this);
+            panel.add(myZaehlers.lastElement().getPanel());
+            myZaehlers.lastElement().getButton().addMouseListener(this);
             if (((OptionsGruppeEintrag) e.elementAt(i)).getKurzerName() != null) {
-                ((OptionsButtonZaehler) myZaehlers.lastElement()).setKurzerName(((OptionsGruppeEintrag) e.elementAt(i)).getKurzerName());
+                myZaehlers.lastElement().setKurzerName(((OptionsGruppeEintrag) e.elementAt(i)).getKurzerName());
             }
         }
 
-        panel.setSize(((OptionsButtonZaehler) myZaehlers.elementAt(0)).getBreite(), myZaehlers.size() * ((OptionsButtonZaehler) myZaehlers.elementAt(0)).getHoehe());
+        panel.setSize(myZaehlers.elementAt(0).getBreite(), myZaehlers.size() * myZaehlers.elementAt(0).getHoehe());
     }
 
     public void setMaxKosten(int maxKosten) {
@@ -123,7 +126,8 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         myZaehlers.get(index).setAnzahl(count);
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         int kosten = 0;
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
@@ -158,22 +162,24 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         }
     }
 
-    public void setHeadline(String s) {  // genauso wie in upgradeGruppe....
-        JLabel label = new JLabel(s);
+    @Override
+	public void setHeadline(String s) {  // genauso wie in upgradeGruppe....
+        final JLabel label = new JLabel(s);
         label.setBounds(20, 0, buttonBreite + 30, 20);
         label.setFont(new Font("Lucida Blackletter", Font.BOLD, 16));
         panel.add(label);
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
-            JPanel p = myZaehlers.elementAt(i).panel;
+            final JPanel p = myZaehlers.elementAt(i).panel;
             p.setLocation((int) p.getLocation().getX(), (int) p.getLocation().getY() + headlineAbstand);
         }
 
         this.panel.setSize(this.panel.getSize().width, this.panel.getSize().height + headlineAbstand);
     }
 
-    public String getLabel() {
-        StringBuilder b = new StringBuilder();
+    @Override
+	public String getLabel() {
+        final StringBuilder b = new StringBuilder();
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
             if (myZaehlers.elementAt(i).getAnzahl() > 0) {
@@ -192,11 +198,13 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         }
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return myZaehlers.elementAt(0).isLegal();
     }  // MIT ÄNDERN WENN LEGAL GEÄNDERT WIRD!!
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
         for (int i = 0; i < myZaehlers.size(); ++i) {
             myZaehlers.elementAt(i).setLegal(b);
         }
@@ -221,7 +229,8 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         myZaehlers.elementAt(i).setAktiv(b);
     }
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
         if (!aktiv) return;
 
         OptionsButtonZaehler button = null;
@@ -244,8 +253,8 @@ public class OptionsZaehlerGruppe extends OptionsVater {
             if (button.getAnzahl() == button.getMaxAnzahl() || this.maxAnzahl == this.getAnzahl() && maxAnzahl != -88) {
                 button.feuerLeermachen();
             } else if (erhoehbar && maxAnzahl != -88) {
-                int thisDifferenz = this.maxAnzahl - this.getAnzahl();
-                int buttonDifferenz = button.getMaxAnzahl() - button.getAnzahl();
+                final int thisDifferenz = this.maxAnzahl - this.getAnzahl();
+                final int buttonDifferenz = button.getMaxAnzahl() - button.getAnzahl();
                 if (thisDifferenz < buttonDifferenz) {
                     button.feuerVollmachen(thisDifferenz);
                 } else {
@@ -282,17 +291,19 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         }
     }
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
         return getAnzahl() > 0;
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         if (!aktiv) return "";
 
-        StringBuilder text = new StringBuilder();
+        final StringBuilder text = new StringBuilder();
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
-            OptionsButtonZaehler o = myZaehlers.elementAt(i);
+            final OptionsButtonZaehler o = myZaehlers.elementAt(i);
             if (o.getAnzahl() > 0) {
                 text.append(BuildaHQ.abstand);
                 String kosten = "";
@@ -311,8 +322,9 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         return text.toString();
     }
 
-    public String getSaveText() {
-        StringBuilder s = new StringBuilder();
+    @Override
+	public String getSaveText() {
+        final StringBuilder s = new StringBuilder();
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
             s.append(String.valueOf(myZaehlers.elementAt(i).getRealAnzahl())); // realAnzahl wird nicht von aktiv behindert
@@ -322,12 +334,13 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         return s.toString();
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("CounterGroup");
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement("CounterGroup");
 
         for (int i = 0; i < myZaehlers.size(); i++) {
             if (myZaehlers.get(i).getAnzahl() > 0) {
-                Element e = BuildaHQ.getNewXMLElement("Counter");
+                final Element e = BuildaHQ.getNewXMLElement("Counter");
                 e.setAttribute("selection", Integer.toString(i));
                 e.setAttribute("number", Integer.toString(myZaehlers.elementAt(i).getRealAnzahl()));
 
@@ -338,8 +351,9 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         return root;
     }
 
-    public void load(String s) {
-        String[] splittet = s.split(SAVETEXT_TRENNER1);
+    @Override
+	public void load(String s) {
+        final String[] splittet = s.split(SAVETEXT_TRENNER1);
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
             myZaehlers.elementAt(i).setAnzahl(Integer.parseInt(splittet[i]));
@@ -348,11 +362,12 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         fontKontrolle();
     }
 
-    public void loadElement(Element e) {
-        NodeList children = e.getChildNodes();
+    @Override
+	public void loadElement(Element e) {
+        final NodeList children = e.getChildNodes();
 
         for (int i = 0; i < children.getLength(); ++i) {
-            Element child = (Element) children.item(i);
+            final Element child = (Element) children.item(i);
 
             myZaehlers.get(Integer.parseInt(e.getAttribute("selection"))).setAnzahl(Integer.parseInt(child.getAttribute("number")));
         }

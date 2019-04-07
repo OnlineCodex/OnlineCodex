@@ -10,7 +10,6 @@ public class AEExarch extends RuestkammerVater {
 	private OptionsUpgradeGruppe o1;
 	private OptionsUpgradeGruppe o2;
 	private OptionsUpgradeGruppe o3;
-	private OptionsEinzelUpgrade oe1;
 	public String type = "";
 	public int weaponCost = 0;
 
@@ -81,7 +80,7 @@ public class AEExarch extends RuestkammerVater {
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword")));
         } else if (type == "Warp Spiders") {
             ogE.addElement(new OptionsGruppeEintrag("Death spinner", getPts("Death spinner")));
             ogE.addElement(new OptionsGruppeEintrag("2 Death spinners", 2 * getPts("Death spinner")));
@@ -91,7 +90,7 @@ public class AEExarch extends RuestkammerVater {
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Powerblade", getPts("Powerblades")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Powerblade", getPts("Powerblades")));
         }
 
         sizeSetzen();

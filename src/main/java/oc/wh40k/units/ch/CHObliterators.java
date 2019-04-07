@@ -8,9 +8,7 @@ import oc.OptionsUpgradeGruppe;
 public class CHObliterators extends Eintrag {
 
 	private final AnzahlPanel marines;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHObliterators() {
+	public CHObliterators() {
 
         kategorie = 1;
 
@@ -25,7 +23,7 @@ public class CHObliterators extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

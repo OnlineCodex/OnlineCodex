@@ -1,6 +1,10 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class ORNobz extends Eintrag {
 
@@ -35,7 +39,7 @@ public class ORNobz extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Killsaws", getPts("Two killsaws")));
         add(bosseCC2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator(5);
 
         ogE.addElement(new OptionsGruppeEintrag("Kombi-rokkit", "Kombi-weapon with rokkit-launcha", getPts("Kombi-weapon with rokkit-launcha")));
@@ -56,11 +60,12 @@ public class ORNobz extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         bosseCC.setMaxAnzahl(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2 - bosseFK.getAnzahl());
         bosseCC2.setMaxAnzahl(bosse.getModelle()- (bosseCC.getAnzahl() + bosseFK.getAnzahl()) / 2 - (bosseCC.getAnzahl() + bosseFK.getAnzahl()) % 2);
         bosseFK.setMaxAnzahl(Math.min(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2 - bosseCC.getAnzahl(), bosse.getModelle()));
-        
+
         munigrotz.setMaxAnzahl(bosse.getModelle() / 5);
 
         cyborg.setMaxAnzahl(bosse.getModelle() / 5);

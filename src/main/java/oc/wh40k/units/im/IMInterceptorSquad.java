@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMInterceptorSquad extends Eintrag {
@@ -69,7 +73,7 @@ public class IMInterceptorSquad extends Eintrag {
     public void refreshen() {
         if (!rkBoss.isSelected()) rkBoss.setSelected(true);
 
-        int subtractor = 1; // last one is the boss
+        final int subtractor = 1; // last one is the boss
 
         o1.setMaxAnzahl(squad.getModelle() - subtractor - o2.getAnzahl()); // heavy weapon
         o1def.setMaxAnzahl(squad.getModelle() - o1.getAnzahl() - o2.getAnzahl() - subtractor);

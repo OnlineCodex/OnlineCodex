@@ -1,6 +1,14 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BLOOD_ANGELS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DREADNOUGHT;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.LIBRARIAN_DREADNOUGHT;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.VEHICLE;
 
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
@@ -10,7 +18,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class IMLibrarianDreadnought extends Eintrag {
 
-	private final OptionsUpgradeGruppe o2;
 	private final RuestkammerStarter psychicPowers;
 
     public IMLibrarianDreadnought() {
@@ -24,10 +31,10 @@ public class IMLibrarianDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", "Storm bolter", getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", "Heavy flamer", getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
@@ -39,7 +46,7 @@ public class IMLibrarianDreadnought extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

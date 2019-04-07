@@ -1,14 +1,16 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class IMShadowsword extends Eintrag {
 
 	private final OptionsZaehlerGruppe o1;
-	private final OptionsUpgradeGruppe o2, o3;
-	private final OptionsEinzelUpgrade oe2;
-
-    public IMShadowsword() {
+	private final OptionsUpgradeGruppe o3;
+	public IMShadowsword() {
         name = "Shadowsword";
         grundkosten = getPts("Shadowsword") + getPts("Volcano cannon") + getPts("Twin heavy bolter (AM)") + getPts("Adamantium tracks");
         power = 27;
@@ -17,11 +19,11 @@ public class IMShadowsword extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
 
         seperator();
 

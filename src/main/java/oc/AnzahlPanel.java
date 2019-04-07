@@ -1,15 +1,21 @@
 package oc;
 
-import org.w3c.dom.Element;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.ANZAHL_PANEL;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Insets;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 
-import static oc.RefreshListener.Priority.ANZAHL_PANEL;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import org.w3c.dom.Element;
 
 public class AnzahlPanel extends OptionsVater implements KeyListener {
 
@@ -32,8 +38,8 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     private JTextField tModelle;
     private JLabel lName;
     private int gesamtBreiteButtons;
-    private Font unControlledFont = new Font("arial", Font.ITALIC, 12);
-    private Font controlledFont = new Font("arial", Font.PLAIN, 12);
+    private final Font unControlledFont = new Font("arial", Font.ITALIC, 12);
+    private final Font controlledFont = new Font("arial", Font.PLAIN, 12);
 
 
     public AnzahlPanel(int ID, int lX, int lY, String name, int minModelle, int maxModelle, double preis) {
@@ -192,9 +198,9 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
             n = singularName;
         }
 
-        FontMetrics fm = lName.getFontMetrics(lName.getFont());
-        StringBuilder abstandshalter = new StringBuilder("");
-        int cnt = (panel.getSize().width - 130 - (fm.stringWidth(n + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.")))) / fm.stringWidth(" .");
+        final FontMetrics fm = lName.getFontMetrics(lName.getFont());
+        final StringBuilder abstandshalter = new StringBuilder("");
+        final int cnt = (panel.getSize().width - 130 - (fm.stringWidth(n + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.")))) / fm.stringWidth(" .");
 
         for (int i = 0; i < cnt; ++i) {
             abstandshalter.append(" .");
@@ -203,7 +209,8 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         lName.setText(n + abstandshalter.toString() + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt."));
     }
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
         if (((JButton) event.getSource()).getText().equals("<")) {
             if (event.getButton() == MouseEvent.BUTTON2) {
                 if (abschaltbar) {
@@ -255,18 +262,21 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         }
     }
 
-    public void keyPressed(KeyEvent e) {
+    @Override
+	public void keyPressed(KeyEvent e) {
     }
 
-    public void keyTyped(KeyEvent e) {
+    @Override
+	public void keyTyped(KeyEvent e) {
     }
 
-    public void keyReleased(KeyEvent e) {
+    @Override
+	public void keyReleased(KeyEvent e) {
         int anzahl = minModelle;
 
         try {
             anzahl = Integer.parseInt(tModelle.getText());
-        } catch (Exception blubb) {
+        } catch (final Exception blubb) {
         }
 
         setModelle(anzahl);
@@ -320,7 +330,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     public Element getSaveElement() {
         control();
 
-        Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_COUNTER);
+        final Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_COUNTER);
         root.setAttribute("number", Integer.toString(getModelle()));
 
         return root;
@@ -330,7 +340,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     public void load(String s) {
         try {
             modelle = Integer.parseInt(s);
-        } catch (NumberFormatException e) {
+        } catch (final NumberFormatException e) {
             modelle = -88;
         }
 
@@ -341,7 +351,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     public void loadElement(Element e) {
         try {
             modelle = Integer.parseInt(e.getAttribute("number"));
-        } catch (NumberFormatException ex) {
+        } catch (final NumberFormatException ex) {
             modelle = -88;
         }
     }

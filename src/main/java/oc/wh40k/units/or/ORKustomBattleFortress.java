@@ -1,6 +1,11 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORKustomBattleFortress extends Eintrag {
 
@@ -57,7 +62,8 @@ public class ORKustomBattleFortress extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
 
         if (grotbomm.isSelected()) {

@@ -1,9 +1,9 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class TAKV128Stormsurge extends Eintrag {
 

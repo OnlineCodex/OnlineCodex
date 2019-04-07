@@ -1,17 +1,19 @@
 package oc.wh40k.units.ch;
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHTzaangors extends Eintrag {
 
 	private final AnzahlPanel kultisten;
 	private final RuestkammerStarter rkBoss;
 	private final OptionsZaehlerGruppe o1;
-	private final int modelle = 0;
-	private final boolean isChampion = false;
-
-    public CHTzaangors() {
+	public CHTzaangors() {
         //name = "Chaoskultisten\n";
         grundkosten = 0;
 

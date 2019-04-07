@@ -1,6 +1,10 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class CHTzaangorEnlightened extends Eintrag {
 

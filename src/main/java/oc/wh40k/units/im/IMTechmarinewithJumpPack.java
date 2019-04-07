@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHAPTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.JUMP_PACK;
+import static oc.KeyWord.TECHMARINE;
 
 import oc.Eintrag;
 
@@ -12,9 +17,9 @@ public class IMTechmarinewithJumpPack extends Eintrag {
         grundkosten = getPts("Techmarine with Jump Pack") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
         seperator();
-        
+
         addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

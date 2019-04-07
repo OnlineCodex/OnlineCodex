@@ -1,22 +1,21 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.DOMINUS;
 
 import java.util.Set;
 
-import javax.sound.sampled.FloatControl.Type;
-
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMTechPriestRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade anzionsPseudogenetor;
     private OptionsEinzelUpgrade autocaduceusOfArkhanLand;
     private OptionsEinzelUpgrade raimentOfTheTechnomartyr;
@@ -27,7 +26,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade theAdamantineArm;
     private OptionsEinzelUpgrade theOmnissiahsHand;
     private OptionsEinzelUpgrade theEyeOfXILexum;
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -35,18 +34,17 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -74,13 +72,12 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-                
+
        	add(anzionsPseudogenetor = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Anzion's Pseudogenetor", 0).setRelic(true));
        	add(autocaduceusOfArkhanLand = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Autocaduceus of Arkhan Land", 0).setRelic(true));
        	add(raimentOfTheTechnomartyr = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Raiment of the Technomartyr", 0).setRelic(true));
@@ -91,7 +88,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
        	add(theAdamantineArm = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Adamantine Arm", 0).setRelic(true));
        	add(theOmnissiahsHand = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Omnissiah's Hand", 0).setRelic(true));
        	add(theEyeOfXILexum = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Eye of XI-Lexum", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
        	seperator();
 
@@ -102,7 +99,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Omnissian axe", getPts("Omnissian axe")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-            
+
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Volkite blaster", getPts("Volkite blaster")));
@@ -116,7 +113,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Phosphor serpenta", getPts("Phosphor serpenta")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-            
+
             seperator();
     	} else if(type.equals("Tech-Priest Enginseer")){
             seperator();
@@ -124,7 +121,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Omnissian axe", getPts("Omnissian axe")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-            
+
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Laspistol", getPts("Laspistol (AME)")));
@@ -136,7 +133,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Servo-arm", getPts("Servo-arm (AME)")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-            
+
             seperator();
     	} else if(type.equals("Cybernetica Datasmith")){
             seperator();
@@ -144,7 +141,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (AME)")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-            
+
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Gamma pistol", getPts("Gamma pistol")));
@@ -152,32 +149,32 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
             seperator();
-    	} 
-    	
+    	}
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -189,7 +186,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Tech-Priest Dominus") ||
     			type.equals("Tech-Priest Enginseer")){
     		o1.alwaysSelected();
@@ -200,7 +197,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     		o2.alwaysSelected();
     	}
 
-    	anzionsPseudogenetor.setAktiv((chosenRelic == null || anzionsPseudogenetor.isSelected()));   
+    	anzionsPseudogenetor.setAktiv((chosenRelic == null || anzionsPseudogenetor.isSelected()));
     	autocaduceusOfArkhanLand.setAktiv(((chosenRelic == null || autocaduceusOfArkhanLand.isSelected())));
     	raimentOfTheTechnomartyr.setAktiv(((chosenRelic == null || raimentOfTheTechnomartyr.isSelected())));
     	theSkullOfElderNikola.setAktiv((chosenRelic == null || theSkullOfElderNikola.isSelected()));

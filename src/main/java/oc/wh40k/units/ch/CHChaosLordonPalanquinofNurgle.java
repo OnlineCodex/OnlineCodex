@@ -1,7 +1,6 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class CHChaosLordonPalanquinofNurgle extends Eintrag {
@@ -24,9 +23,9 @@ public class CHChaosLordonPalanquinofNurgle extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

@@ -1,13 +1,15 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORGunwagon extends Eintrag {
 
 	private final OptionsUpgradeGruppe fk;
-	private final OptionsZaehlerGruppe fk2;
-
-    public ORGunwagon() {
+	public ORGunwagon() {
 
         name = "Gunwagon";
         grundkosten = getPts("Gunwagon");
@@ -25,13 +27,13 @@ public class ORGunwagon extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
-        add(fk2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Deff rolla", getPts("Deff rolla")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "'Ard Case", getPts("'Ard Case")));
-        
+
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grabbin' klaw", getPts("Grabbin' klaw")));
@@ -44,7 +46,8 @@ public class ORGunwagon extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk.alwaysSelected();
     }
 }

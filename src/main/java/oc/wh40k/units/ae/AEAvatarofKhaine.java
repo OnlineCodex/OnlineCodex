@@ -8,7 +8,7 @@ public class AEAvatarofKhaine extends Eintrag {
         name = "Avatar of Khaine";
         grundkosten = getPts("Avatar of Khaine");
         power = 13;
-        
+
         seperator();
 
         addWarlordTraits("", true);

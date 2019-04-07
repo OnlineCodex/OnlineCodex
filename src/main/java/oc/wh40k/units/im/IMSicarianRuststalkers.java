@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMSicarianRuststalkers extends Eintrag {
 
@@ -8,9 +12,7 @@ public class IMSicarianRuststalkers extends Eintrag {
 	private final OptionsZaehlerGruppe o1, o1x;
 	private final RuestkammerStarter rkBoss;
 
-	private boolean harkerSelected = false;
-
-    public IMSicarianRuststalkers() {
+	public IMSicarianRuststalkers() {
         name = "Sicarian Ruststalkers";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Sicarian Ruststalkers", 5, 10, getPts("Sicarian Ruststalkers")));
 
@@ -35,7 +37,7 @@ public class IMSicarianRuststalkers extends Eintrag {
 
     @Override
     public void refreshen() {
-        int princeps = 1;
+        final int princeps = 1;
         o1x.setMaxAnzahl(squad.getModelle() - o1.getAnzahl() - princeps);
         o1x.setAnzahl(0, squad.getModelle() - o1.getAnzahl() - princeps);
         o1.setMaxAnzahl(squad.getModelle() - princeps);

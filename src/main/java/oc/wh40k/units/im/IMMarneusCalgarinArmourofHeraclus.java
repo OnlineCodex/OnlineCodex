@@ -8,7 +8,7 @@ public class IMMarneusCalgarinArmourofHeraclus extends Eintrag {
         name = "Marneus Calgar in Armour of Heraclus";
         grundkosten = getPts("Marneus Calgar in Armour of Heraclus");
         power = 11;
-        
+
         seperator();
 
         addWarlordTraits("Ultramarines: Adept of the Codex", true);

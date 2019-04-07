@@ -11,23 +11,23 @@ import static oc.KeyWord.TECH_PRIEST;
 import oc.Eintrag;
 
 public class IMTechPriestEnginseer extends Eintrag {
-	
+
 
     public IMTechPriestEnginseer() {
     	super(IMPERIUM, ADEPTUS_MECHANICUS, CULT_MECHANICUS, INFANTRY, CHARACTER, TECH_PRIEST, ENGINSEER);
-    	
+
     	name = "Tech-Priest Enginseer";
         grundkosten = getPts("Tech-Priest Enginseer");
         power = 3;
-        
+
         seperator();
-        
+
         addWeapons(IMTechPriestRuestkammer.class, true);
-                
+
         seperator();
 
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 }

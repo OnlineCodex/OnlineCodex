@@ -1,13 +1,12 @@
 package oc.wh40k.armies;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.InputStream;
 
 public class VOLKTauEmpire extends BuildaVater {
 

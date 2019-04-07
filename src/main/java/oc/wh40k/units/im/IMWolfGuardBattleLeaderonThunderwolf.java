@@ -1,6 +1,8 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMWolfGuardBattleLeaderonThunderwolf extends Eintrag {
 
@@ -20,7 +22,7 @@ public class IMWolfGuardBattleLeaderonThunderwolf extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

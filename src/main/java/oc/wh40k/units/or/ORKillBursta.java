@@ -1,6 +1,10 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class ORKillBursta extends Eintrag {
 

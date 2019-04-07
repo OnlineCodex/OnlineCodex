@@ -1,6 +1,10 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORSkullhammaBattleFortress extends Eintrag {
 
@@ -30,7 +34,8 @@ public class ORSkullhammaBattleFortress extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         if (!o1.isSelected()) {
             o1.setSelected(0, true);

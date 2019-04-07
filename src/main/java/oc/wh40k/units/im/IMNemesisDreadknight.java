@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMNemesisDreadknight extends Eintrag {

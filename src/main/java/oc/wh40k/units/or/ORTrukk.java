@@ -7,9 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORTrukk extends Eintrag {
 
-	private final OptionsUpgradeGruppe ball;
-
-    public ORTrukk() {
+	public ORTrukk() {
         grundkosten = getPts("Trukk") + getPts("Big shoota");
         power = 3;
         name = "Trukk";
@@ -19,7 +17,7 @@ public class ORTrukk extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Wreckin' ball", getPts("Wreckin' ball")));
         ogE.addElement(new OptionsGruppeEintrag("Grabbin' klaw", getPts("Grabbin' klaw")));
-        add(ball = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -29,7 +27,8 @@ public class ORTrukk extends Eintrag {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

@@ -4,7 +4,6 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class NEOverlord extends Eintrag {
 
@@ -30,7 +29,7 @@ public class NEOverlord extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Resurrection orb", getPts("Resurrection orb")));
-        
+
         seperator();
 
 		addWarlordTraits("", true);

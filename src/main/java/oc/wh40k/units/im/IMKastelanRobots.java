@@ -1,15 +1,16 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class IMKastelanRobots extends Eintrag {
 
 	private final AnzahlPanel robots;
 	private final OptionsZaehlerGruppe o1, o2;
 	private final OptionsZaehlerGruppe o1x, o2x;
-	private final RuestkammerStarter[] rat = new RuestkammerStarter[10];
-
-    public IMKastelanRobots() {
+	public IMKastelanRobots() {
 
         name = "Kastelan Robots";
         add(robots = new AnzahlPanel(ID, randAbstand, cnt, "Kastelan Robots", 2, 6, getPts("Kastelan Robots")));

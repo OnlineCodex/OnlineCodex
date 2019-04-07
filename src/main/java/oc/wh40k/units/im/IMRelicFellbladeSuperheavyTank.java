@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMRelicFellbladeSuperheavyTank extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2, o3;
-
-
-
-    public IMRelicFellbladeSuperheavyTank() {
+	public IMRelicFellbladeSuperheavyTank() {
 
         name = "Relic Fellblade Super-heavy Tank";
 
@@ -38,7 +32,7 @@ public class IMRelicFellbladeSuperheavyTank extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 laser destroyers", 2 * getPts("Laser destroyer")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -50,7 +44,7 @@ public class IMRelicFellbladeSuperheavyTank extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", 2 * getPts("Twin heavy flamer")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -66,7 +60,7 @@ public class IMRelicFellbladeSuperheavyTank extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", 2 * getPts("Storm bolter (IA)")));
 
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

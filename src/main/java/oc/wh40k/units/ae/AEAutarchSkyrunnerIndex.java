@@ -1,6 +1,9 @@
 package oc.wh40k.units.ae;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class AEAutarchSkyrunnerIndex extends Eintrag {
 
@@ -29,7 +32,7 @@ public class AEAutarchSkyrunnerIndex extends Eintrag {
 
         ogE.addAll(AEAutarchWeaponsDouble.createRK("", "", buildaVater));
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-        
+
         seperator();
 
         ogE.addAll(AEAutarchWeaponsSingle.createRK("", "", buildaVater));
@@ -39,7 +42,7 @@ public class AEAutarchSkyrunnerIndex extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Laser lance", getPts("Laser lance")));
         add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -51,14 +54,14 @@ public class AEAutarchSkyrunnerIndex extends Eintrag {
     public void refreshen() {
         o1.alwaysSelected();
         o2.alwaysSelected();
-        
+
         if (o4.isSelected() || o5.isSelected()) {
             o3.setMaxAnzahl(1);
         } else {
             o3.setMaxAnzahl(2);
         }
 
-        boolean legal = (o3.getAnzahl() + o4.getAnzahl() + o5.getAnzahl()) <= 2;
+        final boolean legal = (o3.getAnzahl() + o4.getAnzahl() + o5.getAnzahl()) <= 2;
         o3.setLegal(legal);
         o4.setLegal(legal);
         o5.setLegal(legal);

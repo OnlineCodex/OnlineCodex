@@ -1,18 +1,21 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerVater;
 
 public class ORMekboyJunkaKammer extends RuestkammerVater {
 
 	private OptionsZaehlerGruppe o1;
 	private OptionsUpgradeGruppe o4;
-	private OptionsUpgradeGruppe o5;
-	
-    public ORMekboyJunkaKammer() {
+	public ORMekboyJunkaKammer() {
         grundkosten = 65;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/OrkMekboyJunka.gif"));
 
 
@@ -45,14 +48,15 @@ public class ORMekboyJunkaKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Force Field Generator", "Junka Force Field Generator", 75));
         ogE.addElement(new OptionsGruppeEintrag("Shokk Attack Gun", "Junka Shokk Attack Gun", 100));
         ogE.addElement(new OptionsGruppeEintrag("Boom Gun", 70));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
         sizeSetzen();
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o4.alwaysSelected();
         o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
     }

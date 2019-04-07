@@ -30,7 +30,8 @@ public class CHDaemonettesCSM extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

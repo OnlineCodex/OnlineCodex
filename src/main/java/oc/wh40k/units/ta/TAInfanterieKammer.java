@@ -9,13 +9,12 @@ public class TAInfanterieKammer extends RuestkammerVater {
 
 	private OptionsEinzelUpgrade o1;
 	private OptionsZaehlerGruppe o4;
-	private boolean[] defaults;
 	private boolean shasui = false;
 	private boolean former = false;
 	private boolean späher = false;
 
-    public void initButtons(boolean... defaults) {
-        this.defaults = defaults;
+    @Override
+	public void initButtons(boolean... defaults) {
         shasui = defaults[0];
         former = defaults[1];
         späher = defaults[2];

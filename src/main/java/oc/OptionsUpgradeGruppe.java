@@ -1,17 +1,20 @@
 package oc;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Font;
 import java.awt.event.MouseEvent;
 import java.util.Vector;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class OptionsUpgradeGruppe extends OptionsVater {
 
     boolean showKosten = true;
-    private Vector<OptionsButtonUpgrade> myUpgrades = new Vector<OptionsButtonUpgrade>();
+    private final Vector<OptionsButtonUpgrade> myUpgrades = new Vector<OptionsButtonUpgrade>();
     private boolean aktiv = true;
     private boolean erhoehbar = true;
     private int maxAnzahl = 1;
@@ -103,7 +106,8 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         this.erhoehbar = b;
     }
 
-    public void setModelle(int i) {
+    @Override
+	public void setModelle(int i) {
         this.modelle = i;
     }
 
@@ -122,7 +126,8 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         return myUpgrades.size() + 1;
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         double kosten = 0;
         for (int i = 0; i < myUpgrades.size(); ++i) {
             kosten += myUpgrades.elementAt(i).getKosten();
@@ -147,7 +152,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
      */
     public boolean contains(String name) {
         for (int i = 0; i < myUpgrades.size(); i++) {
-            String foundName = myUpgrades.elementAt(i).getName();
+            final String foundName = myUpgrades.elementAt(i).getName();
             if (name.equals(foundName)) return true;
         }
         return false;
@@ -212,25 +217,28 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public void setHeadline(String s) {
-        JLabel label = new JLabel(s);
+    @Override
+	public void setHeadline(String s) {
+        final JLabel label = new JLabel(s);
         label.setBounds(20, 0, buttonBreite + 30, 20);
         label.setFont(new Font("Lucida Blackletter", Font.BOLD, 16));
         panel.add(label);
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
-            JPanel p = myUpgrades.elementAt(i).panel;
+            final JPanel p = myUpgrades.elementAt(i).panel;
             p.setLocation((int) p.getLocation().getX(), (int) p.getLocation().getY() + headlineAbstand);
         }
 
         this.panel.setSize(this.panel.getSize().width, this.panel.getSize().height + headlineAbstand);
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return myUpgrades.elementAt(0).isLegal();
     }  // MIT ÄNDERN WENN LEGAL GEÄNDERT WIRD!!
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             myUpgrades.elementAt(i).setLegal(b);
         }
@@ -254,7 +262,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
             myUpgrades.elementAt(i).setSelected(b); // muss so geloest werden, denn sonst wuerde ein auf "true" gesetzter Eintrag *immer* ausgewählt werden, auch wenn er das vorher nicht war
         myUpgrades.elementAt(i).setAktiv(b);
     }
-    
+
     public void deactivateOthers(String s) {
         for (int i = 0; i < myUpgrades.size(); ++i) {
         	myUpgrades.elementAt(i).setSelected(false);
@@ -262,7 +270,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
         setAktiv(s, true);
     }
-    
+
     public void deactivateOthers(int idx) {
         for (int i = 0; i < myUpgrades.size(); ++i) {
         	myUpgrades.elementAt(i).setSelected(false);
@@ -309,8 +317,9 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public String getLabel() {
-        StringBuilder b = new StringBuilder();
+    @Override
+	public String getLabel() {
+        final StringBuilder b = new StringBuilder();
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isSelected()) {
@@ -331,7 +340,8 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         return cnt;
     }
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
         if (!aktiv) {
             return;
         }
@@ -374,19 +384,21 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         RefreshListener.fireRefresh();
     }
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
         return getAnzahl() > 0;
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         if (!aktiv) {
             return "";
         }
 
-        StringBuilder text = new StringBuilder();
+        final StringBuilder text = new StringBuilder();
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
-            OptionsButtonUpgrade o = myUpgrades.elementAt(i);
+            final OptionsButtonUpgrade o = myUpgrades.elementAt(i);
             if (o.isSelected()) {
                 text.append(BuildaHQ.abstand);
                 String kosten = "";
@@ -412,8 +424,9 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         this.maxAnzahl = value;
     }
 
-    public String getSaveText() {
-        StringBuilder s = new StringBuilder();
+    @Override
+	public String getSaveText() {
+        final StringBuilder s = new StringBuilder();
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
             s.append((myUpgrades.elementAt(i).isSelected() ? "y" : "n"));
@@ -425,11 +438,11 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     @Override
     public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("UpgradeGroup");
+        final Element root = BuildaHQ.getNewXMLElement("UpgradeGroup");
 
         for (int i = 0; i < myUpgrades.size(); i++) {
             if (myUpgrades.get(i).isSelected()) {
-                Element e = BuildaHQ.getNewXMLElement("Upgrade");
+                final Element e = BuildaHQ.getNewXMLElement("Upgrade");
                 e.setAttribute("selection", Integer.toString(i));
                 root.appendChild(e);
             }
@@ -440,7 +453,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     @Override
     public void load(String s) {
-        String[] splittet = s.split(SAVETEXT_TRENNER1);
+        final String[] splittet = s.split(SAVETEXT_TRENNER1);
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (splittet[i].equals("y")) {
@@ -457,9 +470,9 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     @Override
     public void loadElement(Element e) {
-        NodeList children = e.getChildNodes();
+        final NodeList children = e.getChildNodes();
         for (int i = 0; i < children.getLength(); i++) {
-            Element child = (Element) children.item(i);
+            final Element child = (Element) children.item(i);
             myUpgrades.get(Integer.parseInt(child.getAttribute("selection"))).setSelected(true);
         }
     }

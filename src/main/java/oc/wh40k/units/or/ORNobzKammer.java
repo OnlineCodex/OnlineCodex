@@ -1,6 +1,12 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
+import oc.RuestkammerVater;
 
 public class ORNobzKammer extends RuestkammerVater {
 
@@ -10,7 +16,6 @@ public class ORNobzKammer extends RuestkammerVater {
 	private OptionsZaehlerGruppe BosseFK;
 	private OptionsEinzelUpgrade Panzarüstung;
 	private OptionsEinzelZaehler Trophäenstange;
-	private OptionsEinzelUpgrade Waaaghbanner;
 	private OptionsEinzelZaehler Munigrotz;
 	private RuestkammerStarter PikkUp;
     private RuestkammerStarter Kampfpanza;
@@ -18,7 +23,8 @@ public class ORNobzKammer extends RuestkammerVater {
     public ORNobzKammer() {
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         grundkosten = 0;
 
         Bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 3, 10, 18);
@@ -44,7 +50,7 @@ public class ORNobzKammer extends RuestkammerVater {
 
         seperator(5);
 
-        add(Waaaghbanner = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Waaaghbanner", 20));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Waaaghbanner", 20));
 
         seperator(5);
 
@@ -70,7 +76,8 @@ public class ORNobzKammer extends RuestkammerVater {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         Bossbikaz.setAktiv(!Panzarüstung.isSelected());
         Panzarüstung.setAktiv(!Bossbikaz.isSelected());
 

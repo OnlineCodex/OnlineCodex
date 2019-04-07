@@ -1,7 +1,6 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class CHChaosLordonDiscofTzeentch extends Eintrag {
@@ -15,7 +14,7 @@ public class CHChaosLordonDiscofTzeentch extends Eintrag {
         power = 6;
 
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultRanged("Bolt pistol");
         ((CHWaffenkammer) waffen.getKammer()).setDefaultCloceCombat("Chainsword");
@@ -24,9 +23,9 @@ public class CHChaosLordonDiscofTzeentch extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

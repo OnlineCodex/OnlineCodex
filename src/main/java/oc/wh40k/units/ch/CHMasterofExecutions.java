@@ -1,13 +1,21 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
-import static oc.KeyWord.*;
+import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.TZEENTCH;
+
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
 
 public class CHMasterofExecutions extends Eintrag {
 
 	private final OptionsUpgradeGruppe mark;
 	private int lastMark = -1;
-	
+
     public CHMasterofExecutions() {
 
         name = "Master of Executions";
@@ -23,11 +31,11 @@ public class CHMasterofExecutions extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();
@@ -42,7 +50,7 @@ public class CHMasterofExecutions extends Eintrag {
 	        getWeapons().removeKeyword(NURGLE);
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

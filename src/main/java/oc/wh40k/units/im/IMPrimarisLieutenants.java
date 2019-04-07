@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class IMPrimarisLieutenants extends Eintrag {
 
@@ -20,16 +24,16 @@ public class IMPrimarisLieutenants extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MC stalker bolt rifle", "Master-crafted stalker bolt rifle", getPts("Master-crafted stalker bolt rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
         	addWeapons(IMDarkAngelsRuestkammer.class, true);
         else
         	addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        
+
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

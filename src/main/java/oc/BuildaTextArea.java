@@ -1,19 +1,27 @@
 package oc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.BUILDA_VATER;
 
-import javax.swing.*;
-import javax.swing.border.TitledBorder;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.Vector;
 
-import static oc.RefreshListener.Priority.BUILDA_VATER;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.border.TitledBorder;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
@@ -29,18 +37,18 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     protected String anfangDerTextarea = ""; // s. ImperialeArmee
     String orden = "";
     int mainCnt = 0;
-    private Vector<BuildaVater> myBuildaVaterVec = new Vector<BuildaVater>();
+    private final Vector<BuildaVater> myBuildaVaterVec = new Vector<BuildaVater>();
     private JScrollPane textAreaScrollPane;
-    private JTextAreaWithPopup textArea = new JTextAreaWithPopup(true, false);
+    private final JTextAreaWithPopup textArea = new JTextAreaWithPopup(true, false);
     private Sonstige[] sonstige;
-    private JButton markieren = new JButton(BuildaHQ.translate("Alles markieren"));
-    private JCheckBox htmlStyleCheckBox = new JCheckBox(BuildaHQ.translate("Easy-HTML Formatierung"), BuildaHQ.formatierung == 1);
-    private JCheckBox alleKostenCheckBox = new JCheckBox(BuildaHQ.translate("Alle Punktkosten"), BuildaHQ.allePunktkosten);
-    private JCheckBox kurzerTextCheckBox = new JCheckBox(BuildaHQ.translate("Kurze Armeeliste"), BuildaHQ.kurzerText);
-    private JCheckBox sterneAnzeigenCheckBox = new JCheckBox(BuildaHQ.translate("Sterne anzeigen"), BuildaHQ.sterneAnzeigen);
-    private JCheckBox zusatzInfosCheckBox = new JCheckBox(BuildaHQ.translate("Zusätzliche Informationen"), BuildaHQ.zusatzInfos);
-    private JCheckBox excelModeCheckBox = new JCheckBox(BuildaHQ.translate("Führende Leerzeichen"), BuildaHQ.excelMode);
-    private JLabel fehlerLabel = new JLabel();
+    private final JButton markieren = new JButton(BuildaHQ.translate("Alles markieren"));
+    private final JCheckBox htmlStyleCheckBox = new JCheckBox(BuildaHQ.translate("Easy-HTML Formatierung"), BuildaHQ.formatierung == 1);
+    private final JCheckBox alleKostenCheckBox = new JCheckBox(BuildaHQ.translate("Alle Punktkosten"), BuildaHQ.allePunktkosten);
+    private final JCheckBox kurzerTextCheckBox = new JCheckBox(BuildaHQ.translate("Kurze Armeeliste"), BuildaHQ.kurzerText);
+    private final JCheckBox sterneAnzeigenCheckBox = new JCheckBox(BuildaHQ.translate("Sterne anzeigen"), BuildaHQ.sterneAnzeigen);
+    private final JCheckBox zusatzInfosCheckBox = new JCheckBox(BuildaHQ.translate("Zusätzliche Informationen"), BuildaHQ.zusatzInfos);
+    private final JCheckBox excelModeCheckBox = new JCheckBox(BuildaHQ.translate("Führende Leerzeichen"), BuildaHQ.excelMode);
+    private final JLabel fehlerLabel = new JLabel();
     private boolean geaddet = false;
     public BuildaTextArea() {
         panel.setBackground(Color.WHITE);
@@ -62,7 +70,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         }
     }
 
-    public JPanel getPanel() {
+    @Override
+	public JPanel getPanel() {
         return this.panel;
     }
 
@@ -157,11 +166,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         return anfangDerTextarea; // kann in einer Sohnklasse overridet werden.
     }
 
-    @SuppressWarnings("unchecked")
     public void textAreaRefresh() {
-        ChooserGruppe cg;
         BuildaVater bV;
-        StringBuilder text = new StringBuilder(getVolksSpezifischeInfos());
+        final StringBuilder text = new StringBuilder(getVolksSpezifischeInfos());
         int mainCnt = 0;
         noAllies.clear();
         triedAllies.clear();
@@ -176,7 +183,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             power += myBuildaVaterVec.get(i).getPower();
         }
 
-        int relics = BuildaHQ.getCountFromInformationVectorGlobal("Relic");
+        final int relics = BuildaHQ.getCountFromInformationVectorGlobal("Relic");
         int relicdiff = 0;
         if (relics == 2) {
             relicdiff = 1;
@@ -245,9 +252,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 boolean niemals = false;
                 if (myBuildaVaterVec.size() > 1) {
                     for (int i = 0; i < myBuildaVaterVec.size(); i++) {
-                        BuildaVater bV1 = myBuildaVaterVec.get(i);
+                        final BuildaVater bV1 = myBuildaVaterVec.get(i);
                         for (int j = 0; j < myBuildaVaterVec.size(); j++) {
-                            BuildaVater bV2 = myBuildaVaterVec.get(j);
+                            final BuildaVater bV2 = myBuildaVaterVec.get(j);
                             if (bV1.battleBrothers.contains(bV2.getId())) {
                                 waffenbrueder = true;
                             } else if (bV1.alliesOfConvenience.contains(bV2.getId())) {
@@ -291,7 +298,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         textArea.setText(text.toString());
 
 
-        boolean vielText = textArea.getText().split(ZEILENUMBRUCH).length > BUILDAVATER_TEXTAREA_MAXROWS;
+        final boolean vielText = textArea.getText().split(ZEILENUMBRUCH).length > BUILDAVATER_TEXTAREA_MAXROWS;
 
         if (geaddet && vielText) {
             textArea.removeMouseWheelListener(BuildaHQ.defaultMouseWheelListener);
@@ -303,14 +310,14 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
         try {
             textArea.select(0, 0);
-        } catch (Exception e) {
+        } catch (final Exception e) {
         }
     }
 
 
     public StringBuilder getBuildaVaterText(BuildaVater bV) {
         ChooserGruppe cg;
-        StringBuilder text = new StringBuilder();
+        final StringBuilder text = new StringBuilder();
             if (bV.getKontingentTyp().startsWith("Alliiertes Kontingent")) {
                 String ordenLokal = "";
                 if (bV.getId().equals("SM")) {
@@ -434,8 +441,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                         + BuildaHQ.translate("Pkt.")
                         + "   "
                         + BuildaHQ.formatDouble(
-                        ((double) cg.getKosten())
-                                / ((double) getKosten())
+                        (cg.getKosten())
+                                / (getKosten())
                                 * 100, 1) + "%"
                         + ZEILENUMBRUCH : ZEILENUMBRUCH));
             }
@@ -454,11 +461,11 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             if (BuildaHQ.excelMode && !str.equals("")) {
                 // das ist eine Programmierkruecke, da sonst Zeilen, die nur aus Leerzeichen bestehen, ignoriert werden.
                 str = str.replaceAll(ZEILENUMBRUCH, lzpzu);
-                String[] tokens = str.split(ZEILENUMBRUCH);
+                final String[] tokens = str.split(ZEILENUMBRUCH);
 
                 for (int j = 0; j < tokens.length; ++j) {
                     String token = tokens[j];
-                    String trimtok = token.trim();
+                    final String trimtok = token.trim();
                     if (trimtok.startsWith("-")) {
                         token = token.replaceFirst("-", " -");
                     } else if (trimtok.startsWith("+")) {
@@ -479,7 +486,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         return text;
     }
 
-    public void itemStateChanged(ItemEvent event) {
+    @Override
+	public void itemStateChanged(ItemEvent event) {
 
         armeelistenFormatAnpassen((JCheckBox) event.getSource() == kurzerTextCheckBox);
 
@@ -506,7 +514,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
     }
 
-    public void actionPerformed(ActionEvent event) {
+    @Override
+	public void actionPerformed(ActionEvent event) {
 
         textArea.selectAll();
 
@@ -514,7 +523,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         double kosten = 0.0;
         for (int i = 0; i < myBuildaVaterVec.size(); i++) {
             kosten += myBuildaVaterVec.get(i).getKosten();
@@ -526,9 +536,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     protected String getTextSonstige() {
         StringBuilder text = new StringBuilder("");
 
-        String sterne = BuildaHQ.sterneAnzeigen ? "***************  " : "";
+        final String sterne = BuildaHQ.sterneAnzeigen ? "***************  " : "";
 
-        String überschrift = (BuildaHQ.kurzerText ? "" : ZEILENUMBRUCH)
+        final String überschrift = (BuildaHQ.kurzerText ? "" : ZEILENUMBRUCH)
                 + ZEILENUMBRUCH + sterne + "Sonstiges" + sterne + ZEILENUMBRUCH;
 
         text.append(überschrift);

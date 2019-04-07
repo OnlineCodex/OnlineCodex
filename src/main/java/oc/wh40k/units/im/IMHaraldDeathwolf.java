@@ -1,10 +1,9 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMHaraldDeathwolf extends Eintrag {
-	
+
 
     public IMHaraldDeathwolf() {
         name = "Harald Deathwolf";
@@ -12,9 +11,9 @@ public class IMHaraldDeathwolf extends Eintrag {
         power = 10;
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

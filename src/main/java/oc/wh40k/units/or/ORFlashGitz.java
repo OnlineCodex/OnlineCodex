@@ -1,6 +1,10 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class ORFlashGitz extends Eintrag {
 

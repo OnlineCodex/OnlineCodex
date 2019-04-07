@@ -1,10 +1,9 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMKromDragongaze extends Eintrag {
-	
+
 
     public IMKromDragongaze() {
         name = "Krom Dragongaze";
@@ -12,9 +11,9 @@ public class IMKromDragongaze extends Eintrag {
         power = 6;
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

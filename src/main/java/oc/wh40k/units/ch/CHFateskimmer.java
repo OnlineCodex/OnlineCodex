@@ -1,6 +1,15 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CHARIOT;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.FATESKIMMER;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.HERALD_OF_TZEENTCH;
+import static oc.KeyWord.HORROR;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TZEENTCH;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -9,7 +18,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class CHFateskimmer extends Eintrag {
 
-	private final OptionsEinzelUpgrade waffe2;
 	private final RuestkammerStarter psychicPowers;
 
     public CHFateskimmer() {
@@ -21,10 +29,10 @@ public class CHFateskimmer extends Eintrag {
 
         seperator();
 
-        add(waffe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chanting Horrors", getPts("Chanting Horrors")));
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
@@ -36,9 +44,9 @@ public class CHFateskimmer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", TZEENTCH);
 
         complete();

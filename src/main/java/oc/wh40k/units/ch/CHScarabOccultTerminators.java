@@ -1,6 +1,10 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHScarabOccultTerminators extends Eintrag {
@@ -72,7 +76,7 @@ public class CHScarabOccultTerminators extends Eintrag {
         bolter.setMaxAnzahl(squad.getModelle() - schwereWaffe.getAnzahl() - 1);
         bolter.setAnzahl(0, squad.getModelle() - schwereWaffe.getAnzahl() - 1);
 
-        int modelle = squad.getModelle();
+        final int modelle = squad.getModelle();
 
         if (modelle >= 5) {
             schwereWaffe.setMaxAnzahl(modelle / 5);

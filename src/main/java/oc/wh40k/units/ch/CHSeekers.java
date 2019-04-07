@@ -30,7 +30,8 @@ public class CHSeekers extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

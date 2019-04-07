@@ -1,6 +1,8 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMSecutariiPeltasts extends Eintrag {
 

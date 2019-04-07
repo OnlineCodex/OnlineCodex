@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMDeathwingTartarosTerminatorSquad extends Eintrag {
 
@@ -73,7 +77,7 @@ public class IMDeathwingTartarosTerminatorSquad extends Eintrag {
         o2.setMaxAnzahl(squad.getModelle() - 1 - o4.getAnzahl());
 
         x = squad.getModelle() - 1 - o3.getAnzahl();
-        int y = squad.getModelle() - 1 - o2.getAnzahl();
+        final int y = squad.getModelle() - 1 - o2.getAnzahl();
         o4.setMaxAnzahl(x > y ? y : x);
 
         o5.setMaxAnzahl(squad.getModelle() / 5);

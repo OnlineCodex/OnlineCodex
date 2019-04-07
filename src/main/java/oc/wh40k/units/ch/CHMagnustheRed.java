@@ -25,7 +25,7 @@ public class CHMagnustheRed extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Lord of Forbidden Lore", true);

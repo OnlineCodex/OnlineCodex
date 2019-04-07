@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTA_SORORITAS;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.EXORCIST;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.ORDER;
+import static oc.KeyWord.VEHICLE;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;

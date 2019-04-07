@@ -8,9 +8,7 @@ public class CHChaosFireRaptorAssaultGunship extends Eintrag {
 
 	private final OptionsUpgradeGruppe o2;
 	private final OptionsUpgradeGruppe o3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosFireRaptorAssaultGunship() {
+	public CHChaosFireRaptorAssaultGunship() {
         name = "Chaos Fire Raptor Assault Gunship";
         grundkosten = getPts("Chaos Fire Raptor Assault Gunship");
 
@@ -33,7 +31,7 @@ public class CHChaosFireRaptorAssaultGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

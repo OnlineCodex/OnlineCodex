@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerVater;
 
 public class IMKillteamKammer extends RuestkammerVater {
 
@@ -60,7 +65,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
-            
+
             if(type.equals("Veteran")){
 	            ogE.addElement(new OptionsGruppeEintrag("Deathwatch frag cannon", getPts("Deathwatch frag cannon")));
 	            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
@@ -218,7 +223,7 @@ public class IMKillteamKammer extends RuestkammerVater {
             if (o1.isSelected() || o2.isSelected()) {
             	maxWeapons = maxWeapons - 2;
             }
-            
+
             if (type.equals("Veteran")) {
             	if(o5.isSelected()) {
             		maxWeapons = maxWeapons - 2;
@@ -229,7 +234,7 @@ public class IMKillteamKammer extends RuestkammerVater {
                 o2.setAktiv(!o1.isSelected() && !o3.isSelected() && !o4.isSelected());
                 o1.setAktiv(!o2.isSelected() && !o3.isSelected() && !o4.isSelected());
             }
-            
+
             maxWeapons = maxWeapons - o3.getAnzahl() - o4.getAnzahl();
 
             if (maxWeapons == 0){
@@ -285,7 +290,8 @@ public class IMKillteamKammer extends RuestkammerVater {
         }
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -296,7 +302,7 @@ public class IMKillteamKammer extends RuestkammerVater {
 
     @Override
     public void switchEntry(String name, boolean aktiv) {
-        boolean entrySwitched = false;
+        final boolean entrySwitched = false;
 
         if (entrySwitched) {
             //Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.

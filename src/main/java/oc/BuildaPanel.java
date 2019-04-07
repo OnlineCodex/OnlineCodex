@@ -1,11 +1,14 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.ONLINE_CODEX;
+
+import java.awt.Color;
 import java.util.Vector;
 
-import static oc.RefreshListener.Priority.ONLINE_CODEX;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 
 public abstract class BuildaPanel implements BuildaSTK {

@@ -1,10 +1,10 @@
 package oc.utils;
 
+import java.awt.Desktop;
+import java.net.URI;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.awt.*;
-import java.net.URI;
 
 /**
  * Utilities for interacting with real desktop environments.
@@ -24,7 +24,7 @@ public final class DesktopUtils {
                         .exec(toOpenURLCmd(uri))
                         .waitFor();
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
             LOGGER.error("", e);
         }
     }
@@ -43,7 +43,7 @@ public final class DesktopUtils {
     }
 
     public static OS getOs() {
-        String osName = System.getProperty("os.name");
+        final String osName = System.getProperty("os.name");
         if (osName.contains("win")) {
             return OS.WIN;
         } else if (osName.contains("mac") || osName.contains("darwin")) {

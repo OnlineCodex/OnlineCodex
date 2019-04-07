@@ -1,9 +1,14 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHAPTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -16,7 +21,7 @@ public class IMLibrarianinPhobosArmour extends Eintrag {
         grundkosten = getPts("Librarian in Phobos Armour") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Camo cloak");
 
         seperator();
-        
+
         addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
@@ -28,7 +33,7 @@ public class IMLibrarianinPhobosArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

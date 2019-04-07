@@ -28,6 +28,7 @@ public class ORBommer extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

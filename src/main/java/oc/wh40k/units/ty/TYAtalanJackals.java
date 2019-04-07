@@ -1,6 +1,10 @@
 package oc.wh40k.units.ty;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class TYAtalanJackals extends Eintrag {
 
@@ -51,16 +55,16 @@ public class TYAtalanJackals extends Eintrag {
         rkTrike.initKammer();
         rkTrike.setGrundkosten(getPts("Atalan Wolfquads"));
         add(rkTrike);
-        
+
         seperator();
-        
+
         rkTrike2 = new RuestkammerStarter(ID, randAbstand, cnt, TYWolfquad.class, "Wolfquad");
         rkTrike2.initKammer();
         rkTrike2.setGrundkosten(getPts("Atalan Wolfquads"));
         add(rkTrike2);
 
         seperator();
-        
+
         rkTrike3 = new RuestkammerStarter(ID, randAbstand, cnt, TYWolfquad.class, "Wolfquad");
         rkTrike3.initKammer();
         rkTrike3.setGrundkosten(getPts("Atalan Wolfquads"));
@@ -75,18 +79,18 @@ public class TYAtalanJackals extends Eintrag {
     	rkTrike.setAktiv(squad.getModelle()>=3);
     	rkTrike2.setAktiv(squad.getModelle()>=7);
     	rkTrike3.setAktiv(squad.getModelle()>=11);
-    	
+
     	o2.setMaxAnzahl((squad.getModelle()+1)/4);
-    	
+
     	int powerWolfquad = 0;
     	if(rkTrike.isSelected()) powerWolfquad+=2;
     	if(rkTrike2.isSelected()) powerWolfquad+=2;
     	if(rkTrike3.isSelected()) powerWolfquad+=2;
-    	
-    	int powerJackals = ((squad.getModelle() + 1)/4) * 3;
+
+    	final int powerJackals = ((squad.getModelle() + 1)/4) * 3;
     	power = powerJackals + powerWolfquad;
-    	
-    	boolean legal = ((o1.getAnzahl() == squad.getModelle()*2) || (o1.getAnzahl() + o2.getAnzahl() == squad.getModelle()*2));
+
+    	final boolean legal = ((o1.getAnzahl() == squad.getModelle()*2) || (o1.getAnzahl() + o2.getAnzahl() == squad.getModelle()*2));
     	o1.setLegal(legal);
     }
 

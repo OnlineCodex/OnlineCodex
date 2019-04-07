@@ -8,9 +8,9 @@ public class IMDeathwingChampion extends Eintrag {
         name = "Deathwing Champion";
         grundkosten = getPts("Deathwing Champion") + getPts("Halberd of Caliban");
         power = 6;
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

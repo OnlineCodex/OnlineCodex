@@ -1,6 +1,13 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BROTHERHOOD_CHAMPION;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -12,7 +19,7 @@ public class IMBrotherhoodChampion extends Eintrag {
 
     public IMBrotherhoodChampion() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, BROTHERHOOD_CHAMPION, TERMINATOR);
-    	
+
         name = "Brotherhood Champion";
         grundkosten = getPts("Brotherhood Champion") + getPts("Frag grenades (SM)") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
 
@@ -31,7 +38,7 @@ public class IMBrotherhoodChampion extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -42,7 +49,7 @@ public class IMBrotherhoodChampion extends Eintrag {
     @Override
     public void refreshen() {
         power = 6;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

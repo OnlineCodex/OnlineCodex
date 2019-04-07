@@ -83,7 +83,8 @@ public class OptionsGruppeEintrag implements Comparable<OptionsGruppeEintrag> {
         return this;
     }
 
-    public int compareTo(OptionsGruppeEintrag a) {
+    @Override
+	public int compareTo(OptionsGruppeEintrag a) {
         return (int) (a.getPreis() - this.getPreis());
 
     }

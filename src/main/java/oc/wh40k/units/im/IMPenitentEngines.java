@@ -1,6 +1,9 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.PENITENT_ENGINES;
+import static oc.KeyWord.VEHICLE;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;

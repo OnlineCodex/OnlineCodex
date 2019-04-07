@@ -9,8 +9,6 @@ public class IMLemanRussDemolisher extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1;
 	private OptionsUpgradeGruppe o2;
-	private OptionsUpgradeGruppe o3;
-	private OptionsEinzelUpgrade pask;
 	private OptionsEinzelUpgrade oe1;
 	private OptionsEinzelUpgrade oe2;
 
@@ -45,7 +43,7 @@ public class IMLemanRussDemolisher extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

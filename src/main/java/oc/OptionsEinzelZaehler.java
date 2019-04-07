@@ -1,8 +1,8 @@
 package oc;
 
-import org.w3c.dom.Element;
-
 import java.awt.event.MouseEvent;
+
+import org.w3c.dom.Element;
 
 
 public class OptionsEinzelZaehler extends OptionsVater {
@@ -11,7 +11,7 @@ public class OptionsEinzelZaehler extends OptionsVater {
     protected String unikatName;
     protected boolean unikat;
     protected boolean selectedPuffer;
-    private OptionsButtonZaehler myZaehler;
+    private final OptionsButtonZaehler myZaehler;
     private boolean aktiv = true;
     private boolean erhoehbar = true;
     private boolean mitMausradVeraenderbar = true;
@@ -51,7 +51,8 @@ public class OptionsEinzelZaehler extends OptionsVater {
         oc.BuildaHQ.addToInformationVectorGlobal(unikatName, 1);
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         return myZaehler.getKosten() * this.modelle;
     }
 
@@ -90,7 +91,8 @@ public class OptionsEinzelZaehler extends OptionsVater {
         myZaehler.setAktiv(b);
     }
 
-    public String getLabel() {
+    @Override
+	public String getLabel() {
 
         if (myZaehler.getAnzahl() > 0) {
             return myZaehler.getButton().getText() + ZEILENUMBRUCH;
@@ -102,7 +104,8 @@ public class OptionsEinzelZaehler extends OptionsVater {
 
     //@OVERRIDE
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
 
         if (!aktiv) {
             return;
@@ -132,21 +135,25 @@ public class OptionsEinzelZaehler extends OptionsVater {
     }
 
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
 
         return myZaehler.getAnzahl() > 0;
 
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return myZaehler.isLegal();
     }
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
         myZaehler.setLegal(b);
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
 
         if (!aktiv) {
             return "";
@@ -176,33 +183,37 @@ public class OptionsEinzelZaehler extends OptionsVater {
     }
 
 
-    public String getSaveText() {
+    @Override
+	public String getSaveText() {
 
         return String.valueOf(this.getAnzahl());
 
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("Counter");
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement("Counter");
         root.setAttribute("number", Integer.toString(getAnzahl()));
 
         return root;
     }
 
-    public void load(String s) {
+    @Override
+	public void load(String s) {
 
         try {
             setAnzahl(Integer.parseInt(s));
-        } catch (NumberFormatException e) {
+        } catch (final NumberFormatException e) {
             setAnzahl(-88);
         }
 
     }
 
-    public void loadElement(Element e) {
+    @Override
+	public void loadElement(Element e) {
         try {
             setAnzahl(Integer.parseInt(e.getAttribute("number")));
-        } catch (NumberFormatException ex) {
+        } catch (final NumberFormatException ex) {
             setAnzahl(-88);
         }
     }

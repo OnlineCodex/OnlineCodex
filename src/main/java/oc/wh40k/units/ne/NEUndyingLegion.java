@@ -1,10 +1,10 @@
 package oc.wh40k.units.ne;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class NEUndyingLegion extends Eintrag {
 
@@ -36,7 +36,8 @@ public class NEUndyingLegion extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         pylon.setSelected(true);
 
         adjustOptions(Warriors, 4, NEWarriorsKammer.class, "Warriors", 1, 1);
@@ -70,7 +71,7 @@ public class NEUndyingLegion extends Eintrag {
         }
 
         if (starter.lastElement().isSelected()) {
-            RuestkammerStarter ruest = new RuestkammerStarter(ID, randAbstand, cnt, unit, unitName, einrueck);
+            final RuestkammerStarter ruest = new RuestkammerStarter(ID, randAbstand, cnt, unit, unitName, einrueck);
             starter.add(ruest);
             ruest.initKammer();
             addAt(ruest, offset + starter.size() - 1);

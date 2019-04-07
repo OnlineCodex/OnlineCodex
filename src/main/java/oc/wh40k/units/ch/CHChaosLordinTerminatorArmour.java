@@ -6,18 +6,16 @@ import static oc.KeyWord.NURGLE;
 import static oc.KeyWord.SLAANESH;
 import static oc.KeyWord.TZEENTCH;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RefreshListener;
-import oc.RuestkammerStarter;
 
 public class CHChaosLordinTerminatorArmour extends Eintrag {
 
 	private final OptionsUpgradeGruppe mark;
 	private int lastMark = -1;
-	
+
     public CHChaosLordinTerminatorArmour() {
 
         name = "Chaos Lord in Terminator Armour";
@@ -33,11 +31,11 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();
@@ -52,7 +50,7 @@ public class CHChaosLordinTerminatorArmour extends Eintrag {
 	        getWeapons().removeKeyword(NURGLE);
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

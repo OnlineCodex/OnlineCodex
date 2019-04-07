@@ -25,7 +25,7 @@ public class IMTerraxPatternTermiteAssaultDrill extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Twin volkite charger", getPts("Twin volkite charger")*2));
         add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
-        
+
         power = 8;
 
 

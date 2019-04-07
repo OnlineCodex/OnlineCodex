@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMCrusaderSquad extends Eintrag {
 

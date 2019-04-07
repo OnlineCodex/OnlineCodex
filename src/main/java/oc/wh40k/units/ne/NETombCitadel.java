@@ -3,9 +3,7 @@ package oc.wh40k.units.ne;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -14,11 +12,7 @@ public class NETombCitadel extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1;
-
-
-
-    public NETombCitadel() {
+	public NETombCitadel() {
 
         name = "Tomb Citadel";
 
@@ -36,7 +30,7 @@ public class NETombCitadel extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Gauss exterminator", getPts("Gauss exterminator")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 
 

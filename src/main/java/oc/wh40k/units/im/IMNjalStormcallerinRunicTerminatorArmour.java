@@ -12,9 +12,9 @@ public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
         name = "Njal Sturmbringer in Runic Terminator Armour";
         grundkosten = getPts("Njal Stormcaller in Runic Terminator Armour");
         power = 9;
-        
+
         seperator();
-        
+
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(3);
         ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
@@ -24,7 +24,7 @@ public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
         psychicPowers.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -33,7 +33,7 @@ public class IMNjalStormcallerinRunicTerminatorArmour extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

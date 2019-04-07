@@ -23,7 +23,7 @@ public class NELychguard extends Eintrag {
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        ;
+        
 
         complete();
     }

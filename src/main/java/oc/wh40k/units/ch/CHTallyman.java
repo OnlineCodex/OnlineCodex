@@ -14,17 +14,17 @@ public class CHTallyman extends Eintrag {
 
     public CHTallyman() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, TALLYMAN);
-    	
+
         name = "Tallyman";
         grundkosten = getPts("Tallyman") + getPts("Blight grenades") + getPts("Krak grenades");
-        power = 4; 
-        
+        power = 4;
+
         seperator();
-        
+
         addWeapons(CHDeathGuardRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

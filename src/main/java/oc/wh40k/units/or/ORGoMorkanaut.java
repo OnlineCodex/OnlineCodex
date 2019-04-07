@@ -36,7 +36,8 @@ public class ORGoMorkanaut extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         if (!typ.isSelected()) {
             typ.setSelected(0, true);
         }

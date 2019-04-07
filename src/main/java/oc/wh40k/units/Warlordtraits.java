@@ -1,11 +1,21 @@
 package oc.wh40k.units;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTA_SORORITAS;
+import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.MINISTORUM_PRIEST;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.TZEENTCH;
+
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.KeyWord;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class Warlordtraits extends RuestkammerVater {
 	private OptionsUpgradeGruppe warlordtraits;
@@ -33,23 +43,23 @@ public class Warlordtraits extends RuestkammerVater {
     Set<String> TYRANIDS = ImmutableSet.of("TYRANIDS", "Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     Set<String> GENESTEALER = ImmutableSet.of("GENESTEALER CULTS", "Cult Of The Four-Armed Emperor", "The Hivecult", "The Bladed Cog", "The Rusted Claw", "The Pauper Princes", "The Twisted Helix");
     Set<String> QUESTOR_IMPERIALIS  = ImmutableSet.of("QUESTOR IMPERIALIS", "Terryn", "Griffith", "Hawkshroud", "Cadmus", "Mortan", "Raven", "Taranis", "Krast", "Vulker");
-    
+
     private static final String KABAL = "KABAL";
     private static final String WYCH_CULT = "WYCH CULT";
     private static final String HAEMUNCULUS_COVEN = "HAEMUNCULUS COVEN";
-    
+
 	@Override
 	public void initButtons(boolean... b) {
 		warlord = true;
     	checkBuildaVater();
-    	String army = buildaVater.getFormationType();
+    	final String army = buildaVater.getFormationType();
 
     	//ALL
     	ogE.addElement(new OptionsGruppeEintrag("Legendary Fighter (BRB p.186)", 0));
         ogE.addElement(new OptionsGruppeEintrag("Inspiring Leader (BRB p.186)", 0));
         ogE.addElement(new OptionsGruppeEintrag("Tenacious Survivor (BRB p.186)", 0));
         ogE.addElement(new OptionsGruppeEintrag("Insane Bravado (BRB p.253)", 0));
-    	
+
         if(army.equals("AELDARI") || CRAFTWORLDS.contains(army)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Ambush of Blades", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("An Eye on Distant Events", 0));
@@ -74,7 +84,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Master Regenesist", 0));//Coven
 	        ogE.addElement(new OptionsGruppeEintrag("Master Nemesine", 0));//Coven
 	        ogE.addElement(new OptionsGruppeEintrag("Master Artisan", 0));//Coven
-	        
+
 	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Black Heart: Labyrinthine Cunning", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Poisoned Tongue: Towering Arrogance", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Kabal of the Obsidian Rose: Deathly Perfectionist", 0));
@@ -101,7 +111,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Soaring Spite: Skystrider", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Silent Shroud: The Final Joke", 0));
         }
-        
+
         //CHAOS
         if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
 	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Aspect of Death", 0));
@@ -110,21 +120,21 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Immense Power", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Devastating Blow", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Khorne: Rage Incarnate", 0));
-	    	
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Born of Sorcery", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Incorporeal Form", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Warp Tehter", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Lorekeeper of Tzeentch", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Tyrant of the Warp", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Tzeentch: Daemonspark", 0));
-	    	
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Blessed with Corpulence", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Acidic Ichor", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Plaguefly Hive", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Virulent Touch", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Impenetrable Hide", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Nurgle: Pestilent Miasma", 0));
-	    	
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Celerity of Slaanesh", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Quicksilver Duelist", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: The Murderdance", 0));
@@ -142,7 +152,7 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Hatred Incarnate", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Lord of Terror", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Exalted Champion", 0));
-	        
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Alpha Legion: I am Alpharius", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Veteran Raider", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Black Legion: Indomitable", 0));
@@ -155,7 +165,7 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Night Lords: Night Haunter's Curse", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("World Eaters: Slaughterborn", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Word Bearers: The Voice of Lorgar", 0));
-	    	
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Bringers of Despair: Chosen of the Warmaster", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Devastation Battery: Armour Bane", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Cult of the Damned: Exultant Preacher", 0));
@@ -163,7 +173,7 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Soulforged Pack: Master of the Soulforges", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Host Raptoral: The tip of the Claw", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Legion of Skulls: Bloodblessed", 0));
-	    	
+
 	    	ogE.addElement(new OptionsGruppeEintrag("Red Corsairs: Reaver Lord", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Crimson Slaughter: Maelstrom of Torment", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("The Purge: Blessed Mission", 0));
@@ -195,7 +205,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Draconian Disciplinarian", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Bellowing Voice", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Master of Command", 0));
-	        
+
 	        ogE.addElement(new OptionsGruppeEintrag("Cadian: Superior Tactical Training", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Catachan: Lead From the Front", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Valhallan: Tenacious", 0));
@@ -204,8 +214,8 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Tallarn: Swift Attacker", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Militarum Tempestus: Faithful Servant of the Throne", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Mordian: Iron Discipline", 0));
-        }  
- 
+        }
+
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Champion of the Imperium (AC)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Peerless Warrior (AC)", 0));
@@ -303,7 +313,7 @@ public class Warlordtraits extends RuestkammerVater {
         } else if(keywords.contains(MINISTORUM_PRIEST)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Righteous Rage", 0));
         }
-        
+
         if(NECRONS.contains(army)) { //NECRONS
 	        ogE.addElement(new OptionsGruppeEintrag("Enduring Will", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Eternal Madness", 0));
@@ -337,7 +347,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Through Boldness, Victory", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Exemplar of the Kauyon", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Exemplar of the Mont'ka", 0));
-	        
+
 	        ogE.addElement(new OptionsGruppeEintrag("T'au: Strength of Belief", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Vior'la: Academy Luminary", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Dal'yth: Gunship Diplomat", 0));
@@ -395,24 +405,25 @@ public class Warlordtraits extends RuestkammerVater {
                     (int) warlordtraits3.getPanel().getLocation().getX() + warlordtraits3.getPanel().getSize().width + 5 ,
                     (int) warlordtraits3.getPanel().getLocation().getY()
             );
-        } 
-        
+        }
+
         if(warlordtraits2 != null) {
         	warlordtraits.getPanel().setLocation(
                     (int) warlordtraits2.getPanel().getLocation().getX() + warlordtraits2.getPanel().getSize().width + 5 ,
                     (int) warlordtraits2.getPanel().getLocation().getY()
             );
         }
-        
-        
-        
+
+
+
         setUeberschrift("Warlord Traits");
         sizeSetzen();
     }
 
     //@OVERRIDE
-    public void refreshen() {
-        String army= buildaVater.getFormationType();
+    @Override
+	public void refreshen() {
+        final String army= buildaVater.getFormationType();
         if(warlordtraits3 != null) {
         	warlordtraits.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
         	warlordtraits2.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
@@ -425,11 +436,11 @@ public class Warlordtraits extends RuestkammerVater {
         }
         //CHAOS
         if(army.equals("CHAOS") || CHAOS_GODS.contains(army)){
-        	boolean undivided = ALLEGIANCE.equals(exclusiveKeyword) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
-        	boolean khorne = army.equals("Khorne") || KHORNE.equals(exclusiveKeyword) || undivided;
-        	boolean tzeentch = army.equals("Tzeentch") || TZEENTCH.equals(exclusiveKeyword) || undivided;
-        	boolean nurgle = army.equals("Nurgle") || NURGLE.equals(exclusiveKeyword) || undivided;
-        	boolean slaanesh = army.equals("Slaanesh") || SLAANESH.equals(exclusiveKeyword) || undivided;
+        	final boolean undivided = ALLEGIANCE.equals(exclusiveKeyword) && (army.equals("CHAOS") || army.equals("Chaosdaemons"));
+        	final boolean khorne = army.equals("Khorne") || KHORNE.equals(exclusiveKeyword) || undivided;
+        	final boolean tzeentch = army.equals("Tzeentch") || TZEENTCH.equals(exclusiveKeyword) || undivided;
+        	final boolean nurgle = army.equals("Nurgle") || NURGLE.equals(exclusiveKeyword) || undivided;
+        	final boolean slaanesh = army.equals("Slaanesh") || SLAANESH.equals(exclusiveKeyword) || undivided;
         	if(warlordtraits2 != null) {
 	        	warlordtraits2.setAktiv("Khorne: Aspect of Death", khorne);
 	        	warlordtraits2.setAktiv("Khorne: Glory of Battle", khorne);
@@ -437,21 +448,21 @@ public class Warlordtraits extends RuestkammerVater {
 	        	warlordtraits2.setAktiv("Khorne: Immense Power", khorne);
 	        	warlordtraits2.setAktiv("Khorne: Devastating Blow", khorne);
 	        	warlordtraits2.setAktiv("Khorne: Rage Incarnate", khorne);
-	
+
 	        	warlordtraits2.setAktiv("Tzeentch: Born of Sorcery", tzeentch);
 	        	warlordtraits2.setAktiv("Tzeentch: Incorporeal Form", tzeentch);
 	        	warlordtraits2.setAktiv("Tzeentch: Warp Tehter", tzeentch);
 	        	warlordtraits2.setAktiv("Tzeentch: Lorekeeper of Tzeentch", tzeentch);
 	        	warlordtraits2.setAktiv("Tzeentch: Tyrant of the Warp", tzeentch);
 	        	warlordtraits2.setAktiv("Tzeentch: Daemonspark", tzeentch);
-	
+
 	        	warlordtraits2.setAktiv("Nurgle: Blessed with Corpulence", nurgle);
 	        	warlordtraits2.setAktiv("Nurgle: Acidic Ichor", nurgle);
 	        	warlordtraits2.setAktiv("Nurgle: Plaguefly Hive", nurgle);
 	        	warlordtraits2.setAktiv("Nurgle: Virulent Touch", nurgle);
 	        	warlordtraits2.setAktiv("Nurgle: Impenetrable Hide", nurgle);
 	        	warlordtraits2.setAktiv("Nurgle: Pestilent Miasma", nurgle);
-	
+
 	        	warlordtraits2.setAktiv("Slaanesh: Celerity of Slaanesh", slaanesh);
 	        	warlordtraits2.setAktiv("Slaanesh: Quicksilver Duelist", slaanesh);
 	        	warlordtraits2.setAktiv("Slaanesh: The Murderdance", slaanesh);
@@ -465,21 +476,21 @@ public class Warlordtraits extends RuestkammerVater {
 	        	warlordtraits.setAktiv("Khorne: Immense Power", khorne);
 	        	warlordtraits.setAktiv("Khorne: Devastating Blow", khorne);
 	        	warlordtraits.setAktiv("Khorne: Rage Incarnate", khorne);
-	
+
 	        	warlordtraits.setAktiv("Tzeentch: Born of Sorcery", tzeentch);
 	        	warlordtraits.setAktiv("Tzeentch: Incorporeal Form", tzeentch);
 	        	warlordtraits.setAktiv("Tzeentch: Warp Tehter", tzeentch);
 	        	warlordtraits.setAktiv("Tzeentch: Lorekeeper of Tzeentch", tzeentch);
 	        	warlordtraits.setAktiv("Tzeentch: Tyrant of the Warp", tzeentch);
 	        	warlordtraits.setAktiv("Tzeentch: Daemonspark", tzeentch);
-	
+
 	        	warlordtraits.setAktiv("Nurgle: Blessed with Corpulence", nurgle);
 	        	warlordtraits.setAktiv("Nurgle: Acidic Ichor", nurgle);
 	        	warlordtraits.setAktiv("Nurgle: Plaguefly Hive", nurgle);
 	        	warlordtraits.setAktiv("Nurgle: Virulent Touch", nurgle);
 	        	warlordtraits.setAktiv("Nurgle: Impenetrable Hide", nurgle);
 	        	warlordtraits.setAktiv("Nurgle: Pestilent Miasma", nurgle);
-	
+
 	        	warlordtraits.setAktiv("Slaanesh: Celerity of Slaanesh", slaanesh);
 	        	warlordtraits.setAktiv("Slaanesh: Quicksilver Duelist", slaanesh);
 	        	warlordtraits.setAktiv("Slaanesh: The Murderdance", slaanesh);
@@ -500,7 +511,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Night Lords: Night Haunter's Curse", army.equals("Night Lords"));
     		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
     		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
-    		
+
     		warlordtraits.setAktiv("Bringers of Despair: Chosen of the Warmaster", army.equals("Bringers of Despair"));
     		warlordtraits.setAktiv("Devastation Battery: Armour Bane", army.equals("Devastation Battery"));
     		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", army.equals("Cult of the Damned"));
@@ -508,7 +519,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", army.equals("Soulforged Pack"));
     		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", army.equals("Host Raptoral"));
     		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", army.equals("Legion of Skulls"));
-    		
+
     		warlordtraits.setAktiv("Red Corsairs: Reaver Lord", army.equals("Red Corsairs"));
     		warlordtraits.setAktiv("Crimson Slaughter: Maelstrom of Torment", army.equals("Crimson Slaughter"));
     		warlordtraits.setAktiv("The Purge: Blessed Mission", army.equals("The Purge"));
@@ -553,7 +564,7 @@ public class Warlordtraits extends RuestkammerVater {
         		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
         		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
         	}
-        } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) && 
+        } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) &&
         		(KABAL.equals(exclusiveKeyword) || WYCH_CULT.equals(exclusiveKeyword) || HAEMUNCULUS_COVEN.equals(exclusiveKeyword))) {
         	warlordtraits.setAktiv("Hatred Eternal", KABAL.equals(exclusiveKeyword));
         	warlordtraits.setAktiv("Soul Thirst", KABAL.equals(exclusiveKeyword));
@@ -626,21 +637,21 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Jormungandr: Insidious Threat", army.equals("Jormungandr"));
     		warlordtraits.setAktiv("Hydra: Endless Regeneration", army.equals("Hydra"));
     		warlordtraits.setAktiv("Kronos: Soul hunger", army.equals("Kronos"));
-        } 
+        }
         if(!mandatoryChoice.equals("")) {
         	warlordtraits.deselectAll();
         	warlordtraits.setSelected(mandatoryChoice, true);
         }
     }
-    
+
     public void setMandatoryChoice(String s) {
     	mandatoryChoice = s;
     }
-    
+
     public void allowSubfactions(boolean b) {
     	subfactionsAllowed = b;
     }
-    
+
     public void setExclusiveKeyword(KeyWord s) {
     	exclusiveKeyword = s;
     }

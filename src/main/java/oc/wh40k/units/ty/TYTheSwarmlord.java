@@ -22,7 +22,7 @@ public class TYTheSwarmlord extends Eintrag {
         psychicPowers.setAbwaehlbar(true);
 
         seperator();
-        
+
 		addWarlordTraits("Alien Cunning", true);
 
         complete();

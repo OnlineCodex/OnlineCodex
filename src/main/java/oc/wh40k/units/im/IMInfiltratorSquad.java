@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMInfiltratorSquad extends Eintrag {
 	private final OptionsEinzelUpgrade sergeant, helixAdept;
@@ -14,16 +18,16 @@ public class IMInfiltratorSquad extends Eintrag {
         add(squad);
 
         seperator();
-                
+
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         add(helixAdept = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Helix Adept", getPts("Infiltrator Helix Adept")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Bolt pistol", getPts("Bolt carbine") + getPts("Bolt pistol (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Sergeant", getPts("Infiltrator Sergeant")));
@@ -38,7 +42,7 @@ public class IMInfiltratorSquad extends Eintrag {
         o2.setSelected(0, helixAdept.isSelected());
         o3.alwaysSelected();
         sergeant.setSelected(true);
-        
+
         if (squad.getModelle() <= 5)
             power = 5;
         else

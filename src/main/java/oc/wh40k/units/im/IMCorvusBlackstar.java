@@ -9,8 +9,6 @@ public class IMCorvusBlackstar extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
     private final OptionsUpgradeGruppe o2;
-    private final OptionsUpgradeGruppe o3;
-
     public IMCorvusBlackstar() {
         name = "Corvus Blackstar";
         grundkosten = getPts("Corvus Blackstar");
@@ -35,13 +33,14 @@ public class IMCorvusBlackstar extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Infernum halo-launcher", getPts("Infernum halo-launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Auspex array", getPts("Auspex array")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
 
         complete();
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.alwaysSelected();
         o2.alwaysSelected();
     }

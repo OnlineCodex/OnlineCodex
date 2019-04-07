@@ -29,7 +29,8 @@ public class IMStormhawkInterceptor extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.alwaysSelected();
         o2.alwaysSelected();
     }

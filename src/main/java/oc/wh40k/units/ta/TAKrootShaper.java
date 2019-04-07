@@ -3,7 +3,6 @@ package oc.wh40k.units.ta;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class TAKrootShaper extends Eintrag {
 
@@ -17,11 +16,11 @@ public class TAKrootShaper extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Pulse rifle", getPts("Pulse rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Pulse carbine", getPts("Pulse carbine")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
 
         addWeapons(TAKampfanzugKammer.class, true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

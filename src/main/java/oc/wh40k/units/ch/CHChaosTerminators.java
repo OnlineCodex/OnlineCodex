@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHChaosTerminators extends Eintrag {
 
@@ -53,14 +58,14 @@ public class CHChaosTerminators extends Eintrag {
         add(heavy = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
         add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -94,7 +99,7 @@ public class CHChaosTerminators extends Eintrag {
 
         power = 10 +
                 ((marines.getModelle() == 10) ? 14 : 0);
-        
+
         icon.setAktiv("Icon of Vengeance", !mark.isSelected());
         icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
         icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));

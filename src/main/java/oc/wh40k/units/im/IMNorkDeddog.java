@@ -8,7 +8,7 @@ public class IMNorkDeddog extends Eintrag {
         name = "Nork Deddog";
         grundkosten = getPts("Nork Deddog");
         power = 4;
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -17,7 +17,8 @@ public class IMNorkDeddog extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

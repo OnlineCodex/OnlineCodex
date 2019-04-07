@@ -1,13 +1,14 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMDeathstrike extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
-
-    public IMDeathstrike() {
+	public IMDeathstrike() {
         name = "Deathstrike";
         grundkosten = getPts("Deathstrike") + getPts("Deathstrike missile");
         power = 7;
@@ -22,7 +23,7 @@ public class IMDeathstrike extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

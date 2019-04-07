@@ -8,9 +8,7 @@ import oc.OptionsZaehlerGruppe;
 public class ORKillTank extends Eintrag {
 
 	private final OptionsUpgradeGruppe tech, o1;
-	private final OptionsZaehlerGruppe KillTankFK;
-
-    public ORKillTank() {
+	public ORKillTank() {
         grundkosten = getPts("Kill Tank");
         power = 15;
         name = "Kill Tank";
@@ -34,13 +32,14 @@ public class ORKillTank extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
         ogE.addElement(new OptionsGruppeEintrag("Twin big shoota", getPts("Twin big shoota")));
         ogE.addElement(new OptionsGruppeEintrag("Rack of rokkits", getPts("Rack of rokkits")));
-        add(KillTankFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         complete();
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         tech.alwaysSelected();
         o1.alwaysSelected();
     }

@@ -1,6 +1,13 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.ASURYANI;
+import static oc.KeyWord.BIKER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.FARSEER;
+import static oc.KeyWord.FARSEER_SKYRUNNER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -13,7 +20,7 @@ public class AEFarseerSkyrunner extends Eintrag {
 
     public AEFarseerSkyrunner() {
     	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, FARSEER, FARSEER_SKYRUNNER, BIKER);
-    	
+
         name = "Farseer Skyrunner";
         grundkosten = getPts("Farseer Skyrunner") + getPts("Twin shuriken catapult");
         power = 9;
@@ -23,7 +30,7 @@ public class AEFarseerSkyrunner extends Eintrag {
         addWeapons(AECraftworldRuestkammer.class, true);
 
         seperator();
-        
+
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfFate();
@@ -31,7 +38,7 @@ public class AEFarseerSkyrunner extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

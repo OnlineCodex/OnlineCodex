@@ -8,7 +8,7 @@ public class AEIllicNightspear extends Eintrag {
         name = "Illic Nightspear";
         grundkosten = getPts("Illic Nightspear");
         power = 4;
-        
+
         seperator();
 
         addWarlordTraits("Alaitoc: Puritanical Leader", true);

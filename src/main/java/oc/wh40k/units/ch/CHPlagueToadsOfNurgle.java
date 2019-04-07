@@ -19,7 +19,8 @@ public class CHPlagueToadsOfNurgle extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

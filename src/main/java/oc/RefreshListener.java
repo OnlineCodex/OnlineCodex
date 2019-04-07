@@ -1,15 +1,16 @@
 package oc;
 
-import com.google.common.collect.ImmutableList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static java.util.Comparator.comparing;
+import static java.util.Objects.requireNonNull;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static java.util.Comparator.comparing;
-import static java.util.Objects.requireNonNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.google.common.collect.ImmutableList;
 
 
 public final class RefreshListener implements Runnable {
@@ -48,7 +49,8 @@ public final class RefreshListener implements Runnable {
         return id;
     }
 
-    public void run() {
+    @Override
+	public void run() {
         action.run();
     }
 
@@ -60,7 +62,7 @@ public final class RefreshListener implements Runnable {
     }
 
     public static RefreshListener addRefreshListener(Priority priority, int id, Runnable action) {
-        RefreshListener listener = new RefreshListener(priority, id, action);
+        final RefreshListener listener = new RefreshListener(priority, id, action);
         synchronized (LISTENERS) {
             LISTENERS.add(listener);
         }
@@ -92,7 +94,7 @@ public final class RefreshListener implements Runnable {
     }
 
     public static void fireRefresh() {
-        List<RefreshListener> refreshListeners = copyListeners();
+        final List<RefreshListener> refreshListeners = copyListeners();
         if (LOGGER.isDebugEnabled()) {
             LOGGER.debug("firefing {} refreshlisteners", refreshListeners.size());
         }

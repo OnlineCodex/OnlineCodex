@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMRelicJavelinAttackSpeeder extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2, o3;
-
-
-
-    public IMRelicJavelinAttackSpeeder() {
+	public IMRelicJavelinAttackSpeeder() {
 
         name = "Relic Javelin Attack Speeder";
 
@@ -38,7 +32,7 @@ public class IMRelicJavelinAttackSpeeder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -50,7 +44,7 @@ public class IMRelicJavelinAttackSpeeder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -60,7 +54,7 @@ public class IMRelicJavelinAttackSpeeder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Hunter-killer missile", getPts("Hunter-killer missile  (IA)")));
 
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 
 

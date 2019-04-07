@@ -3,12 +3,9 @@ package oc.wh40k.units.ty;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelZaehler;
-
 import oc.OptionsGruppeEintrag;
-
-import oc.OptionsZaehlerGruppe;
+import oc.OptionsUpgradeGruppe;
 
 
 
@@ -16,9 +13,7 @@ public class TYGoliathRockgrinder extends Eintrag {
 
 
 
-    private final OptionsZaehlerGruppe o1;
-
-    private final OptionsEinzelZaehler oe1;
+    private final OptionsUpgradeGruppe o1;
 
     public TYGoliathRockgrinder() {
 
@@ -36,7 +31,7 @@ public class TYGoliathRockgrinder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy seismic cannon", getPts("Heavy seismic cannon")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -44,7 +39,7 @@ public class TYGoliathRockgrinder extends Eintrag {
 
 
 
-        add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cache of demolition charges", 1, getPts("Cache of demolition charges")));
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Cache of demolition charges", 1, getPts("Cache of demolition charges")));
 
 
 
@@ -57,7 +52,7 @@ public class TYGoliathRockgrinder extends Eintrag {
     @Override
 
     public void refreshen() {
-
+    	o1.alwaysSelected();
     }
 
 }

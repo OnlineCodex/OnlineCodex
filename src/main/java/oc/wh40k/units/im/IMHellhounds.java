@@ -3,7 +3,6 @@ package oc.wh40k.units.im;
 import oc.Eintrag;
 import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
 public class IMHellhounds extends Eintrag {
@@ -12,9 +11,8 @@ public class IMHellhounds extends Eintrag {
     private final OptionsZaehlerGruppe o2;
     private final OptionsZaehlerGruppe o3;
     private final OptionsZaehlerGruppe o2x;
-    private final OptionsZaehlerGruppe o3x;
     private final OptionsEinzelZaehler oe1, oe2, oe3, oe4;
-    
+
     public IMHellhounds() {
         name = "Hellhounds";
 
@@ -43,7 +41,7 @@ public class IMHellhounds extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AM)")));
-        add(o3x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

@@ -1,17 +1,25 @@
 package oc;
 
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Hashtable;
 import java.util.Vector;
+
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 public class Superformation implements BuildaSTK {
@@ -43,20 +51,21 @@ public class Superformation implements BuildaSTK {
     public Vector<Integer> maxDynamisch;
     public Vector<JComboBox> comboDynamisch;
     public ChangeListener tabChangeListener = new ChangeListener() {
-        public void stateChanged(ChangeEvent changeEvent) {
-            JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
-            int index = sourceTabbedPane.getSelectedIndex();
+        @Override
+		public void stateChanged(ChangeEvent changeEvent) {
+            final JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
+            final int index = sourceTabbedPane.getSelectedIndex();
 
             LOGGER.info("Tab changed to: " + index + ":" + sourceTabbedPane.getTitleAt(index));
             if (index == 0) {
-                BuildaVater bV = buildaVater;
+                final BuildaVater bV = buildaVater;
                 for (int i = 0; i < bV.getChooserAnzahl(); i++) {
                     BuildaHQ.registerNewChooserGruppe(bV.getChooserGruppe(i), i + 1);
                 }
                 BuildaHQ.aktBuildaVater = bV;
             }
             if (index != 0) {
-                BuildaVater bV = formationen.get(index - 1);
+                final BuildaVater bV = formationen.get(index - 1);
                 for (int i = 0; i < bV.getChooserAnzahl(); i++) {
                     BuildaHQ.registerNewChooserGruppe(bV.getChooserGruppe(i), i + 1);
                 }
@@ -72,7 +81,7 @@ public class Superformation implements BuildaSTK {
     JLabel infoCore = new JLabel("Core: " + minCore + " - " + maxCore + " Ausgewählt: " + 0);
     JLabel infoAuxiliary = new JLabel("Auxiliary: " + minAuxiliary + " - " + maxAuxiliary + " Ausgewählt: " + 0);
     JLabel infoSupport = new JLabel("Support: " + minSupport + " - " + maxSupport + " Ausgewählt: " + 0);
-    private ActionListener formChangeListener = new ActionListener() {
+    private final ActionListener formChangeListener = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent event) {
@@ -99,9 +108,9 @@ public class Superformation implements BuildaSTK {
                     if (((JComboBox) event.getSource()).getSelectedItem().equals("")) {
                         return;//Es soll kein Leerer Tab eingefügt werden
                     } else {
-                        String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
+                        final String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
                         if (txt.contains(": ")) {
-                            String split[] = txt.split(": ");
+                            final String split[] = txt.split(": ");
                             name = "oc.wh40k.armies." + BuildaSTK.volkMap.get(split[0]);
                         } else {
                             name = volkFile;
@@ -111,17 +120,19 @@ public class Superformation implements BuildaSTK {
                     }
                 }
 
-                JPanel buildaPanel = myBuilder.getPanel();
+                final JPanel buildaPanel = myBuilder.getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3450, 7950));
                 buildaPanel.setSize(3450, 7950);
                 formationen.add(myBuilder);
                 myBuilder.setTextArea(tA);
 
-                JScrollPane sp = new JScrollPane(buildaPanel);
+                final JScrollPane sp = new JScrollPane(buildaPanel);
                 sp.addMouseMotionListener(OnlineCodex.getInstance().getDragAndDropMouseMotionListener());
                 sp.addMouseListener(OnlineCodex.getInstance().getDragAndDropMouseListener());
-                sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.getInstance().menuHöhe - 53));
-                sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.getInstance().menuHöhe - 53));
+                OnlineCodex.getInstance();
+				sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.menuHöhe - 53));
+                OnlineCodex.getInstance();
+				sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.menuHöhe - 53));
 
                 myBuilder.informationList = (Hashtable<String, Integer>) buildaVater.informationList.clone();
 
@@ -146,9 +157,9 @@ public class Superformation implements BuildaSTK {
                         myBuilder.formationBox.setSelectedItem(comboSupport.getSelectedItem());
                     }
                 } else if (type == 1) {
-                    String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
+                    final String txt = ((String) ((JComboBox) event.getSource()).getSelectedItem());
                     if (txt.contains(": ")) {
-                        String split[] = txt.split(": ");
+                        final String split[] = txt.split(": ");
                         tab.addTab(split[1], null, sp);
                         tab.setSelectedIndex(tab.getTabCount() - 1);
                         myBuilder.formationBox.setSelectedItem(split[1]);
@@ -176,7 +187,7 @@ public class Superformation implements BuildaSTK {
                 tab.setSelectedIndex(0);
                 LOGGER.info("Formationen1:" + superformation.formationen.size());
                 LOGGER.info("Formationen2:" + formationen.size());
-            } catch (Exception e) {
+            } catch (final Exception e) {
 //				fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
                 LOGGER.error("", e);
             }
@@ -226,7 +237,7 @@ public class Superformation implements BuildaSTK {
         tab.addChangeListener(tabChangeListener);
 
         if (type == 0) {
-            JLabel labelCore = new JLabel("Core:");
+            final JLabel labelCore = new JLabel("Core:");
             controlPanel.add(labelCore);
             labelCore.setBounds(5, 5, 100, 20);
             controlPanel.add(comboCore);
@@ -234,7 +245,7 @@ public class Superformation implements BuildaSTK {
             comboCore.setBounds(110, 5, 280, 20);
             comboCore.setBackground(Color.WHITE);
 
-            JLabel labelAuxiliary = new JLabel("Auxiliary:");
+            final JLabel labelAuxiliary = new JLabel("Auxiliary:");
             controlPanel.add(labelAuxiliary);
             labelAuxiliary.setBounds(5, 30, 100, 20);
             controlPanel.add(comboAuxiliary);
@@ -242,7 +253,7 @@ public class Superformation implements BuildaSTK {
             comboAuxiliary.setBounds(110, 30, 280, 20);
             comboAuxiliary.setBackground(Color.WHITE);
 
-            JLabel labelCommand = new JLabel("Command:");
+            final JLabel labelCommand = new JLabel("Command:");
             controlPanel.add(labelCommand);
             labelCommand.setBounds(5, 55, 100, 20);
             controlPanel.add(comboCommand);
@@ -251,7 +262,7 @@ public class Superformation implements BuildaSTK {
             comboCommand.setBackground(Color.WHITE);
 
             if (showSupport) {
-                JLabel labelSupport = new JLabel("Support:");
+                final JLabel labelSupport = new JLabel("Support:");
                 controlPanel.add(labelSupport);
                 labelSupport.setBounds(5, 80, 100, 20);
                 controlPanel.add(comboSupport);
@@ -261,7 +272,7 @@ public class Superformation implements BuildaSTK {
             }
         } else if (type == 1) {
             for (int i = 0; i < comboDynamisch.size(); i++) {
-                JLabel labelDyn = new JLabel();
+                final JLabel labelDyn = new JLabel();
                 if (minDynamisch.get(i) == maxDynamisch.get(i)) {
                     labelDyn.setText("" + minDynamisch.get(i));
                 } else {
@@ -381,7 +392,7 @@ public class Superformation implements BuildaSTK {
     }
 
     public void load(String saveText) {
-        String armies[] = saveText.split(SAVETEXT_SUBDETACHMENTTRENNER);
+        final String armies[] = saveText.split(SAVETEXT_SUBDETACHMENTTRENNER);
         for (int i = 0; i < armies.length; i++) {
             try {
                 LOGGER.info(armies[i]);
@@ -389,7 +400,7 @@ public class Superformation implements BuildaSTK {
                 String name = volkFile;
 
                 if (type == 1) {
-                    String txt = armies[i].split(SAVETEXT_UEBERSCHRIFTTRENNER2)[0];
+                    final String txt = armies[i].split(SAVETEXT_UEBERSCHRIFTTRENNER2)[0];
                     if (txt.contains(": ")) {
                         name = "oc.wh40k.armies." + BuildaSTK.volkMap.get(txt.split(": ")[0]);
                     }
@@ -398,17 +409,19 @@ public class Superformation implements BuildaSTK {
                 myBuilder = (BuildaVater) (Class.forName(name).newInstance());
                 formationen.add(myBuilder);
 
-                JPanel buildaPanel = formationen.get(i).getPanel();
+                final JPanel buildaPanel = formationen.get(i).getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3450, 7950));
                 buildaPanel.setSize(3450, 7950);
 
                 formationen.get(i).setTextArea(tA);
 
-                JScrollPane sp = new JScrollPane(buildaPanel);
+                final JScrollPane sp = new JScrollPane(buildaPanel);
                 sp.addMouseMotionListener(OnlineCodex.getInstance().getDragAndDropMouseMotionListener());
                 sp.addMouseListener(OnlineCodex.getInstance().getDragAndDropMouseListener());
-                sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.getInstance().menuHöhe - 53));
-                sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.getInstance().menuHöhe - 53));
+                OnlineCodex.getInstance();
+				sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.menuHöhe - 53));
+                OnlineCodex.getInstance();
+				sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - OnlineCodex.menuHöhe - 53));
 
                 tab.addTab(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)), null, sp);
                 tab.setTabComponentAt(i + 1, new ButtonTabComponent(tab, superformation));
@@ -424,9 +437,9 @@ public class Superformation implements BuildaSTK {
 
                 BuildaHQ.aktBuildaVater = formationen.get(i);
 
-                String kontingent = armies[i].substring(armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2) + SAVETEXT_UEBERSCHRIFTTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1));
-                String formation = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1) + SAVETEXT_DETACHMENTTYPTRENNER1.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2));
-                String haupt = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2) + SAVETEXT_DETACHMENTTYPTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3));
+                final String kontingent = armies[i].substring(armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2) + SAVETEXT_UEBERSCHRIFTTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1));
+                final String formation = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1) + SAVETEXT_DETACHMENTTYPTRENNER1.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2));
+                final String haupt = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2) + SAVETEXT_DETACHMENTTYPTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3));
                 if (!kontingent.equals("")) {
                     formationen.get(i).kontingentBox.setSelectedItem(kontingent);
                 }
@@ -439,7 +452,7 @@ public class Superformation implements BuildaSTK {
 
                 formationen.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].length()));
                 formationen.get(i).isLoading = false;
-            } catch (Exception e) {
+            } catch (final Exception e) {
                 LOGGER.error("", e);
             }
         }

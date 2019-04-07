@@ -28,7 +28,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
         ranger = defaults[1];
         hoplite = defaults[2];
         peltast = defaults[3];
-        
+
         //special
         if (ranger) {
             ogE = IMAdeptusMechanicusMeleeWeapons.createRK("", "", buildaVater);
@@ -96,7 +96,8 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
         }
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 }

@@ -1,6 +1,14 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.HERALD_OF_TZEENTCH;
+import static oc.KeyWord.HORROR;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.THE_CHANGELING;
+import static oc.KeyWord.TZEENTCH;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -26,9 +34,9 @@ public class CHTheChangeling extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("Tzeentch: Incorporeal Form", TZEENTCH);
 
         complete();

@@ -2,9 +2,10 @@ package oc;
 
 
 
-import javax.swing.*;
+import java.awt.Color;
 
-import java.awt.*;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 
 
 
@@ -64,15 +65,15 @@ public class FormationEntry {
 
         for (int i = 0; i < buildaVater.myChooserGruppen.size(); i++) {
 
-            int maxJ = buildaVater.myChooserGruppen.get(i).getmC().size();
+            final int maxJ = buildaVater.myChooserGruppen.get(i).getmC().size();
 
             for (int j = 0; j < maxJ; j++) {
 
                 for (int k = 0; k < entries.length; k++) {
 
-                    String entry = entries[k];
+                    final String entry = entries[k];
 
-                    if (((String) buildaVater.myChooserGruppen.get(i).getmC().get(j).selectedEntry()).equals(entry)) {
+                    if (buildaVater.myChooserGruppen.get(i).getmC().get(j).selectedEntry().equals(entry)) {
 
                         sel++;
 

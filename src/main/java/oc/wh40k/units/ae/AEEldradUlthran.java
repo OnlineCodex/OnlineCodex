@@ -1,9 +1,7 @@
 package oc.wh40k.units.ae;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class AEEldradUlthran extends Eintrag {
@@ -13,7 +11,7 @@ public class AEEldradUlthran extends Eintrag {
         name = "Eldrad Ulthran";
         grundkosten = getPts("Eldrad Ulthran");
         power = 9;
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -23,7 +21,7 @@ public class AEEldradUlthran extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Ulthwé: Fate Reader", true);

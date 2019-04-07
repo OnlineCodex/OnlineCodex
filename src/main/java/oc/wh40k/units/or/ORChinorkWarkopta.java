@@ -7,7 +7,6 @@ import oc.OptionsUpgradeGruppe;
 
 public class ORChinorkWarkopta extends Eintrag {
 
-	private final OptionsEinzelUpgrade ball;
 	private final OptionsUpgradeGruppe tech;
 	private final OptionsUpgradeGruppe tech2;
 
@@ -34,13 +33,14 @@ public class ORChinorkWarkopta extends Eintrag {
 
         seperator();
 
-        add(ball = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "2 Bigbomms", getPts("Bigbomm") * 2));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "2 Bigbomms", getPts("Bigbomm") * 2));
 
         complete();
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         tech.alwaysSelected();
         tech2.alwaysSelected();
     }

@@ -1,20 +1,15 @@
 package oc.wh40k.units.ta;
 
-import oc.*;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerVater;
 
 public class TATX7HammerheadKammer extends RuestkammerVater {
 
-	private OptionsEinzelUpgrade o1;
 	private OptionsUpgradeGruppe o2;
 	private OptionsUpgradeGruppe o3;
-	private OptionsZaehlerGruppe o5;
-	private RuestkammerStarter o6;
-	private boolean Fernschlag = false;
-	private boolean uniqueError = false;
-	private OptionsEinzelUpgrade filter;
-	private OptionsEinzelUpgrade relais;
-
-    public TATX7HammerheadKammer() {
+	public TATX7HammerheadKammer() {
         name = "Hammerhai-Gefechtspanzer";
         grundkosten = 125;
     }
@@ -41,7 +36,7 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Seeker missile", getPts("Seeker missile")));
-        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 

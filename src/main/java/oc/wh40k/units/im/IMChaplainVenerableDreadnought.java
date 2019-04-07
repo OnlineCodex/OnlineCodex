@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMChaplainVenerableDreadnought extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2;
-
-
-
-    public IMChaplainVenerableDreadnought() {
+	public IMChaplainVenerableDreadnought() {
 
         name = "Chaplain Venerable Dreadnought";
 
@@ -38,7 +32,7 @@ public class IMChaplainVenerableDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -58,7 +52,7 @@ public class IMChaplainVenerableDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

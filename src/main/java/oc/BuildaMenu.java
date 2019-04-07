@@ -1,9 +1,17 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.prefs.Preferences;
+
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 public class BuildaMenu extends JFrame implements BuildaSTK {
 
@@ -22,18 +30,18 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         this.setResizable(false);
         this.setIconImage(BuildaHQ.oCLogo);
 
-        int XX = 15;
+        final int XX = 15;
         int cnt = 10;
 
-        JLabel lMausradSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit des Mausrads:"));
+        final JLabel lMausradSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit des Mausrads:"));
         lMausradSpeed.setBounds(XX, cnt, 190, 18);
         tMausradSpeed.setBounds(XX + 195, cnt + 2, 35, 18);
         cnt += 22;
-        JLabel lVertikalScrollen = new JLabel(BuildaHQ.translate("Scrollrichtung umdrehen"));
+        final JLabel lVertikalScrollen = new JLabel(BuildaHQ.translate("Scrollrichtung umdrehen"));
         lVertikalScrollen.setBounds(XX, cnt, 180, 18);
         vertikalScrollen.setBounds(XX + 195 - 3, cnt, 30, 18);
         cnt += 25;
-        JLabel lPfeiltastenSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit der Pfeiltasten:"));
+        final JLabel lPfeiltastenSpeed = new JLabel(BuildaHQ.translate("Geschwindigkeit der Pfeiltasten:"));
         lPfeiltastenSpeed.setBounds(XX, cnt, 190, 18);
         tPfeiltastenSpeed.setBounds(XX + 195, cnt + 2, 35, 18);
 
@@ -52,17 +60,20 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
 
         tMausradSpeed.setFont(ARIAL);
         tPfeiltastenSpeed.setFont(ARIAL);
-        KeyListener closeKeyListener = new KeyListener() {
-            public void keyPressed(KeyEvent event) {
+        final KeyListener closeKeyListener = new KeyListener() {
+            @Override
+			public void keyPressed(KeyEvent event) {
                 if (event.getKeyCode() == KeyEvent.VK_ENTER || event.getKeyCode() == KeyEvent.VK_ESCAPE) {
                     closeBuildaMenu();
                 }
             }
 
-            public void keyReleased(KeyEvent event) {
+            @Override
+			public void keyReleased(KeyEvent event) {
             }
 
-            public void keyTyped(KeyEvent event) {
+            @Override
+			public void keyTyped(KeyEvent event) {
             }
         };
         tMausradSpeed.addKeyListener(closeKeyListener);
@@ -78,7 +89,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         h1 = BuildaHQ.translate("Hier kann man einstellen, ob Apokalypse-Einheiten ausgewählt werden können oder nicht.");
 
         cnt += 25;
-        JLabel lBildaz = new JLabel(BuildaHQ.translate("Bilder"));
+        final JLabel lBildaz = new JLabel(BuildaHQ.translate("Bilder"));
         lBildaz.setBounds(XX, cnt, 180, 18);
         bildaz.setBounds(XX + 195 - 3, cnt, 30, 18);
         bildaz.setBackground(Color.WHITE);
@@ -97,16 +108,16 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
         this.add(bildaz);
         this.add(lBildaz);
 
-        JButton ok = new JButton(BuildaHQ.translate("OK"));
+        final JButton ok = new JButton(BuildaHQ.translate("OK"));
         ok.setBounds(this.getSize().width - 90, this.getSize().height - 77, 76, 17);
         ok.setBorder(null);
         this.add(ok);
         this.getRootPane().setDefaultButton(ok);
         ok.addKeyListener(closeKeyListener);
-        ActionListener closeActionListener = event -> closeBuildaMenu();
+        final ActionListener closeActionListener = event -> closeBuildaMenu();
         ok.addActionListener(closeActionListener);
 
-        JLabel ico = BuildaHQ.createPictureJLabel("oc/sysimages/smArtwork.gif"); // ACHTUNG BEI ÄNDERUNGEN AUCH IN BUILDAPANEL ANPASSEN!!!
+        final JLabel ico = BuildaHQ.createPictureJLabel("oc/sysimages/smArtwork.gif"); // ACHTUNG BEI ÄNDERUNGEN AUCH IN BUILDAPANEL ANPASSEN!!!
         ico.setLocation(260, 12);
         this.add(ico);
 
@@ -121,7 +132,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
     public int getMausradSpeed() {
         try {
             return Integer.parseInt(tMausradSpeed.getText());
-        } catch (NumberFormatException e) {
+        } catch (final NumberFormatException e) {
             tMausradSpeed.setText(String.valueOf(DEFAULT_MAUSWHEELLSPEED));
             return DEFAULT_MAUSWHEELLSPEED;
         }
@@ -131,7 +142,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
     public int getPfeiltastenSpeed() {
         try {
             return Integer.parseInt(tPfeiltastenSpeed.getText());
-        } catch (NumberFormatException e) {
+        } catch (final NumberFormatException e) {
             tPfeiltastenSpeed.setText(String.valueOf(DEFAULT_PFEILTASTENSPEED));
             return DEFAULT_PFEILTASTENSPEED;
         }
@@ -153,7 +164,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
     }
 
     public void savePrefs() {
-        Preferences prefs = OnlineCodex.getInstance().getPrefs();
+        final Preferences prefs = OnlineCodex.getInstance().getPrefs();
 
         prefs.putBoolean(PREFERENCES_SHOW_PICTURES, isBildaz());
         prefs.putBoolean(PREFERENCES_SCROLL_VERTICAL, isVertikalScrolling());
@@ -162,7 +173,7 @@ public class BuildaMenu extends JFrame implements BuildaSTK {
     }
 
     public void loadPrefs() {
-        Preferences prefs = OnlineCodex.getInstance().getPrefs();
+        final Preferences prefs = OnlineCodex.getInstance().getPrefs();
         bildaz.setSelected(prefs.getBoolean(PREFERENCES_SHOW_PICTURES, isBildaz()));
         vertikalScrollen.setSelected(prefs.getBoolean(PREFERENCES_SCROLL_VERTICAL, isVertikalScrolling()));
         tMausradSpeed.setText(Integer.toString(prefs.getInt(PREFERENCES_MOUSE_WHEEL_SPEED, getMausradSpeed())));

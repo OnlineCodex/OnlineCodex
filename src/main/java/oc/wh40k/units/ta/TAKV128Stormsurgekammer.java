@@ -8,9 +8,7 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1;
 	private OptionsUpgradeGruppe o2;
-	private OptionsUpgradeGruppe o3;
-
-    public TAKV128Stormsurgekammer() {
+	public TAKV128Stormsurgekammer() {
         name = "KV128 Stormsurge";
         grundkosten = getPts("KV128 Stormsurge") + getPts("Cluster rocket system") + getPts("Destroyer missile") * 4 + getPts("Smart missile system") * 2;
     }
@@ -44,7 +42,7 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(o3 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 3));
 
         sizeSetzen();
     }

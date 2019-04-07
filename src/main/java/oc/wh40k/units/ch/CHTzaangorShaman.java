@@ -15,9 +15,9 @@ public class CHTzaangorShaman extends Eintrag {
         power = 5;
 
         seperator();
-        
+
         addWeapons(CHThousandSonsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -27,7 +27,7 @@ public class CHTzaangorShaman extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

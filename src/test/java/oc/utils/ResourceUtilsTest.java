@@ -1,10 +1,11 @@
 package oc.utils;
 
-import com.google.common.collect.ImmutableMap;
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import static java.lang.ClassLoader.getSystemResource;
+import static java.util.stream.Collectors.toList;
+import static oc.utils.ResourceUtils.sanitizeKey;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,17 +14,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import static java.lang.ClassLoader.getSystemResource;
-import static java.util.stream.Collectors.toList;
-import static oc.utils.ResourceUtils.sanitizeKey;
-import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import com.google.common.collect.ImmutableMap;
+
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class ResourceUtilsTest {
 
     @Test
     public void testLoadPointsNoCollision() {
-        Map<String, Integer> points = ResourceUtils.loadPoints(
+        final Map<String, Integer> points = ResourceUtils.loadPoints(
                 e -> fail(String.format("unexpected collision: %s", e)),
                 Stream.of(
                         "/oc/wh40k/indices/yn.yaml",
@@ -44,7 +48,7 @@ public class ResourceUtilsTest {
 
 
     public static List<String> indexFiles() throws Exception {
-        Path indices = Paths.get(getSystemResource("oc/wh40k/indices/").toURI());
+        final Path indices = Paths.get(getSystemResource("oc/wh40k/indices/").toURI());
         try (Stream<Path> dir = Files.list(indices)) {
             return dir.map(Path::getFileName)
                     .map(n -> "/oc/wh40k/indices/" + n)
@@ -55,7 +59,7 @@ public class ResourceUtilsTest {
     @Test
     @Parameters(method = "indexFiles")
     public void testLoadPointsAllFilesLoadable(String file) {
-        Map<String, Integer> points = ResourceUtils.loadPoints(file);
+        final Map<String, Integer> points = ResourceUtils.loadPoints(file);
         assertFalse("points are not empty", points.isEmpty());
     }
 }

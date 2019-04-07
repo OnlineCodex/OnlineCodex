@@ -1,15 +1,17 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class CHHellforgedContemptorDreadnought extends Eintrag {
 
 	private final OptionsUpgradeGruppe oe1;
 	private final OptionsZaehlerGruppe oe2;
 	private final OptionsUpgradeGruppe oe3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedContemptorDreadnought() {
+	public CHHellforgedContemptorDreadnought() {
         name = "Hellforged Contemptor Dreadnought";
         grundkosten = getPts("Helbrute");
 
@@ -58,7 +60,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }
@@ -71,7 +73,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
 
         oe2.setMaxAnzahl((oe3.isSelected("Hellforged chainclaw") || (oe3.isSelected("Hellforged deathclaw")) ? 1 : 0) + (oe1.isSelected("Hellforged chainclaw") || (oe1.isSelected("Hellforged deathclaw")) ? 1 : 0));
 		oe2.setLegal(oe2.getAnzahl() == oe2.getMaxAnzahl());
-        
+
         if (oe1.isSelected("Hellforged chainclaw") && oe3.isSelected("Hellforged chainclaw")) {
             oe1.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (pair)") / 2);
             oe3.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (pair)") / 2);

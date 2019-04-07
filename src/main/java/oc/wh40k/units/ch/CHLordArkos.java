@@ -7,10 +7,10 @@ public class CHLordArkos extends Eintrag {
     public CHLordArkos() {
 
         name = "Lord Arkos";
-        grundkosten = getPts("Lord Arkos") + 
+        grundkosten = getPts("Lord Arkos") +
         			  getPts("The Black Blade of Venom") +
-        			  getPts("combi-melta") + 
-        			  getPts("frag grenades") + 
+        			  getPts("combi-melta") +
+        			  getPts("frag grenades") +
         			  getPts("krak grenades");
         power = 7;
 

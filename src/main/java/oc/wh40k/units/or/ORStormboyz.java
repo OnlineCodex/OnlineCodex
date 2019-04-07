@@ -35,7 +35,8 @@ public class ORStormboyz extends Eintrag {
 
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         Boss.setAbwaehlbar(true);
         if (stormboyz.getModelle() > 20) {
             power = 14;

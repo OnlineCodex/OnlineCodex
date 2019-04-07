@@ -1,6 +1,9 @@
 package oc.wh40k.units.ae;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class AEAutarchIndex extends Eintrag {
 	private final OptionsUpgradeGruppe o1, o2;
@@ -32,7 +35,7 @@ public class AEAutarchIndex extends Eintrag {
 
         ogE.addAll(AEAutarchWeaponsSingle.createRK("", "", buildaVater));
         add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
 
         addWarlordTraits("", true);

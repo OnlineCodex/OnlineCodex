@@ -2,7 +2,10 @@ package oc.wh40k.units.im;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 
 
@@ -34,7 +37,7 @@ public class IMAgamatusCustodians extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Adrathic devastator", getPts("Adrathic devastator")));
 
         ogE.addElement(new OptionsGruppeEintrag("Twin las-pulser", getPts("Twin las-pulser")));
-        
+
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         o1.setAnzahl(0, squad.getModelle());
@@ -46,7 +49,7 @@ public class IMAgamatusCustodians extends Eintrag {
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         o3.setAnzahl(0, squad.getModelle());
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Misericordia", getPts("Misericordia")));
@@ -70,7 +73,7 @@ public class IMAgamatusCustodians extends Eintrag {
         o2.setMaxAnzahl(squad.getModelle());
 
         o3.setMaxAnzahl(squad.getModelle());
-        
+
         o1.setLegal(squad.getModelle() == o1.getAnzahl());
         o3.setLegal(squad.getModelle() == o3.getAnzahl());
 

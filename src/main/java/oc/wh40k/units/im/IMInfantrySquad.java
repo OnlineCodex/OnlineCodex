@@ -7,8 +7,6 @@ import oc.RuestkammerStarter;
 
 public class IMInfantrySquad extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
 	private final RuestkammerStarter kammer;
 
     public IMInfantrySquad() {
@@ -22,12 +20,12 @@ public class IMInfantrySquad extends Eintrag {
         seperator();
 
         ogE = IMAstraMilitarumSpecialWeapons.createRK("", "", buildaVater);
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

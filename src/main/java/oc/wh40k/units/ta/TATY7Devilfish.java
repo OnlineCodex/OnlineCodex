@@ -32,7 +32,8 @@ public class TATY7Devilfish extends Eintrag {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o3.setLegal(o3.isSelected());
         power = 6;
     }

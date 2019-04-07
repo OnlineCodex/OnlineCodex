@@ -13,10 +13,10 @@ public class IMLandSpeederStorm extends Eintrag {
         name = "Land Speeder Storm";
         grundkosten = getPts("Land Speeder Storm");
         power = 5;
-        
+
         if(!BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves")) {
 	        seperator();
-	
+
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));

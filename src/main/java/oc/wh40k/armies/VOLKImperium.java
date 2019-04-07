@@ -1,15 +1,16 @@
 package oc.wh40k.armies;
 
-import oc.BuildaVater;
-import oc.ChooserGruppe;
-import oc.utils.ResourceUtils;
+import java.util.Set;
+import java.util.stream.Stream;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.google.common.collect.ImmutableSet;
 
-import java.util.Set;
-import java.util.stream.Stream;
+import oc.BuildaVater;
+import oc.ChooserGruppe;
+import oc.utils.ResourceUtils;
 
 public class VOLKImperium extends BuildaVater {
 
@@ -88,7 +89,7 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Sturmeinträge_Adeptus_Mechanicus = Sturmeinträge_Skitarii;
     private static final String[] Unterstützungseinträge_Adeptus_Mechanicus = uniteUnitList(Unterstützungseinträge_Cult_Mechanicus, Unterstützungseinträge_Skitarii);
     private static final String[] Transporteinträge_Adeptus_Mechanicus = new String[]{"", "Terrax-Pattern Termite Assault Drill"};
-    
+
     //Questor Imperialis
     private static final String[] LordofWar_Questor_Imperialis = new String[]{"", "Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant"};
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
@@ -96,9 +97,9 @@ public class VOLKImperium extends BuildaVater {
     //Adepta Sororitas
     private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", "Missionary"};
     private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins", 
-    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance", 
-    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};        																		
+    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins",
+    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance",
+    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};
     private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
     private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
     private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
@@ -224,16 +225,16 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigungen_Dark_Angels = new String[]{"", "Fortress of Redemption",};
 
     //Space Wolves
-    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Arjac Rockfist", "Bjorn the Fell-Handed", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour",  
+    private static final String[] HQeinträge_Space_Wolves = new String[]{"", "Logan Grimnar", "Logan Grimnar on Stormrider", "Arjac Rockfist", "Bjorn the Fell-Handed", "Njal Stormcaller", "Njal Stormcaller in Runic Terminator Armour",
     		"", "Rune Priest in Terminator Armour", "Primaris Rune Priest", "Rune Priest",
     		"", "Ulrik the Slayer", "Wolf Priest in Terminator Armour", "Primaris Wolf Priest", "Wolf Priest",
-    		"", "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Wolf Lord", "Wolf Lord on Thunderwolf", "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour", "Primaris Wolf Lord", "Wolf Lord in Gravis Armour", 
+    		"", "Ragnar Blackmane", "Krom Dragongaze", "Harald Deathwolf", "Wolf Lord", "Wolf Lord on Thunderwolf", "Wolf Lord in Terminator Armour", "Wolf Lord in Cataphractii Armour", "Primaris Wolf Lord", "Wolf Lord in Gravis Armour",
     		"", "Canis Wolfborn", "Wolf Guard Battle Leader", "Primaris Battle Leader", "Wolf Guard Battle Leader in Terminator Armour", "Wolf Guard Battle Leader on Thunderwolf",
             "", "Iron Priest",
             "", "Rune Priest on Bike[INDEX]", "Wolf Priest on Bike[INDEX]", "Wolf Lord on Bike[INDEX]", "Wolf Guard Battle Leader on Bike[INDEX]", "Iron Priest on Bike[INDEX]", "Iron Priest on Thunderwolf[INDEX]"};
     private static final String[] Standardeinträge_Space_Wolves = new String[]{"", "Blood Claws", "Grey Hunters"};
     private static final String[] Eliteeinträge_Space_Wolves = new String[]{"", "Wolf Scouts", "Lukas the Trickster", "Wulfen Dreadnought", "Wolf Guard",  "Wolf Guard Terminators",
-    		 "Wolf Guard Cataphractii Terminators", "Wolf Guard Tartaros Terminators", "Wulfen", "Murderfang",  
+    		 "Wolf Guard Cataphractii Terminators", "Wolf Guard Tartaros Terminators", "Wulfen", "Murderfang",
             "", "SW Venerable Dreadnought[INDEX]", "Wolf Guard on Bikes[INDEX]", "Lone Wolf[INDEX]", "Lone Wolf in Terminator Armour[INDEX]"};
     private static final String[] Sturmeinträge_Space_Wolves = new String[]{"", "Cyberwolves", "Swiftclaws", "Swiftclaw Attack Bikes", "Thunderwolf Cavalry", "Fenrisian Wolves", "Skyclaws", "Wolf Scout Bikers"};
     private static final String[] Fliegereinträge_Space_Wolves = new String[]{"", "Stormwolf", "Stormfang Gunship", "Stormhawk Interceptor"};
@@ -304,7 +305,7 @@ public class VOLKImperium extends BuildaVater {
     public static Set<String> getSmChapters(){
     	return SM_CHAPTERS;
     }
-    
+
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
@@ -588,12 +589,12 @@ public class VOLKImperium extends BuildaVater {
         } else if (getFormationType().equals("Space Wolves")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
-            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion", 
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion",
         																										   	   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought",
         																										   	   "", "Imperial Space Marine[INDEX]"}, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Space_Wolves, new String[]{"", "Inceptors", "Land Speeders"}, Sturmeinträge_IA_AA));
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(uniteUnitList(Unterstützungseinträge_Space_Wolves, new String[]{"", "Hellblasters", "Hunter", "Stalker",
-        																															"", "Predator", "Whirlwind", "Vindicator", 
+        																															"", "Predator", "Whirlwind", "Vindicator",
         																															"", "Land Raider", "Land Raider Crusader", "Land Raider Redeemer"}, Unterstützungseinträge_IA_AA));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(new String[]{"", "Rhino", "Razorback", "Drop Pod", "Land Speeder Storm","Repulsor"}, Transporteinträge_IA_AA));
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(uniteUnitList(Fliegereinträge_Space_Wolves, Fliegereinträge_IA_AA));

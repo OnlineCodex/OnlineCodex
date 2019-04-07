@@ -5,10 +5,9 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class IMVexilusPraetorinAllarusTerminatorArmour extends Eintrag {
-	
+
 	private final OptionsUpgradeGruppe o1, o2;
 
     public IMVexilusPraetorinAllarusTerminatorArmour() {
@@ -31,7 +30,7 @@ public class IMVexilusPraetorinAllarusTerminatorArmour extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Misericordia", getPts("Misericordia")));
-        
+
         seperator();
 
 		addWarlordTraits("", true);

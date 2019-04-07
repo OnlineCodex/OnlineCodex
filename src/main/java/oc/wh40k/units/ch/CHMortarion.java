@@ -23,9 +23,9 @@ public class CHMortarion extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("Arch-Contaminator", true);
 
         complete();

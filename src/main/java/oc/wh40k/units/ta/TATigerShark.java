@@ -32,7 +32,8 @@ public class TATigerShark extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.alwaysSelected();
     }
 

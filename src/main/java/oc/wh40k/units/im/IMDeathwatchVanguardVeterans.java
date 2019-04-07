@@ -1,8 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
-
 import java.util.Vector;
+
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerStarter;
 
 public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
 

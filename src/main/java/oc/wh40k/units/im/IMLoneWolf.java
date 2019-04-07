@@ -1,6 +1,8 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMLoneWolf extends Eintrag {
 
@@ -22,7 +24,7 @@ public class IMLoneWolf extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

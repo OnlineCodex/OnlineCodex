@@ -54,7 +54,7 @@ public class IMContemptorExemplarDreadnought extends Eintrag {
         if (o1.isSelected() && !o3.isSelected()) o3.setSelected(0, true);
         if (o2.isSelected() && !o4.isSelected()) o3.setSelected(0, true);
 
-        int selected = ((o1.isSelected()) ? 1 : 0) + ((o2.isSelected()) ? 1 : 0) + ((o5.isSelected()) ? 1 : 0);
+        final int selected = ((o1.isSelected()) ? 1 : 0) + ((o2.isSelected()) ? 1 : 0) + ((o5.isSelected()) ? 1 : 0);
         o1.setLegal(selected == 2);
         o2.setLegal(selected == 2);
         o5.setLegal(selected == 2);

@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHTSRubricMarines extends Eintrag {

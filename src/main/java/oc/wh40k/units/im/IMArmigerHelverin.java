@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class IMArmigerHelverin extends Eintrag {
 	private final OptionsUpgradeGruppe fk1;
@@ -33,7 +37,8 @@ public class IMArmigerHelverin extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk1.alwaysSelected();
         fk2.setMaxAnzahl(squad.getModelle());
         fk2.setLegal(fk2.getAnzahl() == squad.getModelle());
@@ -42,7 +47,8 @@ public class IMArmigerHelverin extends Eintrag {
     }
 
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
         setInformationVectorValue("Armiger selected", getCountFromInformationVector("Armiger selected") - 1);

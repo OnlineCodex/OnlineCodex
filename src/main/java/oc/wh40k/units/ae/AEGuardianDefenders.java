@@ -3,11 +3,7 @@ package oc.wh40k.units.ae;
 
 
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
-
-import oc.OptionsZaehlerGruppe;
-
 import oc.RuestkammerStarter;
 
 
@@ -64,7 +60,8 @@ public class AEGuardianDefenders extends Eintrag {
 
     //@OVERRIDE
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         if (squad.getModelle() == 20) {
 

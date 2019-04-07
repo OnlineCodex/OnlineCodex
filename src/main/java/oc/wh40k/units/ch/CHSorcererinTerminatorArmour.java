@@ -20,7 +20,7 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
 
 	private final RuestkammerStarter psychicPowers;
 	private int lastMark = -1;
-	
+
     public CHSorcererinTerminatorArmour() {
 
         name = "Sorcerer in Terminator Armour";
@@ -35,9 +35,9 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -47,9 +47,9 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();
@@ -63,7 +63,7 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
         ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
         ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
         ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-                
+
         if(mark.getSelectedIndex() != lastMark) {
         	lastMark = mark.getSelectedIndex();
 	        getWeapons().removeKeyword(KHORNE);
@@ -71,7 +71,7 @@ public class CHSorcererinTerminatorArmour extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

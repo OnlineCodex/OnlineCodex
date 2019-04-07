@@ -11,9 +11,9 @@ public class ORNobwithWaaaghBanner extends Eintrag {
         power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
-        
+
         seperator();
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power klaw", getPts("power klaw")));
 
         complete();

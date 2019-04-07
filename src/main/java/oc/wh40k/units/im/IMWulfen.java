@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class IMWulfen extends Eintrag {
 
@@ -44,8 +48,8 @@ public class IMWulfen extends Eintrag {
     public void refreshen() {
         oe1.setSelected(true);
 
-        int nahkampfwaffen = squad.getModelle() - 1;
-        int fernkampfwaffen = squad.getModelle() - 1;
+        final int nahkampfwaffen = squad.getModelle() - 1;
+        final int fernkampfwaffen = squad.getModelle() - 1;
 
         o1.setMaxAnzahl(nahkampfwaffen);
         o2.setMaxAnzahl(fernkampfwaffen);

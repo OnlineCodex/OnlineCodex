@@ -22,7 +22,8 @@ public class ORDakkajet extends Eintrag {
         complete();
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         ss.alwaysSelected();
     }
 }

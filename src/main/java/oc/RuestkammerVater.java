@@ -1,17 +1,23 @@
 package oc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.RUESTKAMMER_VATER;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowListener;
 import java.util.Set;
 
-import static oc.RefreshListener.Priority.RUESTKAMMER_VATER;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class RuestkammerVater extends OptionsCollection implements BuildaSTK {
 
@@ -23,9 +29,9 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	boolean uniqueError = false;
 	public boolean warlord = false;
 	public boolean warlordSelected = false;
-	private JButton ok = new JButton("OK");
-	private JLabel error = new JLabel();
-	private JFrame frame = new JFrame();
+	private final JButton ok = new JButton("OK");
+	private final JLabel error = new JLabel();
+	private final JFrame frame = new JFrame();
     protected String defaultCloceCombat = "";
     protected String defaultRanged = "";
     protected String type = "";
@@ -57,7 +63,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	public void showErrorMessage(String err) {
 		this.error.setFont(new Font("arial", Font.BOLD, 12));
 		this.error.setForeground(Color.RED);
-		this.error.setAlignmentX(JLabel.RIGHT_ALIGNMENT);
+		this.error.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		this.error.setSize(200, 17);
 		this.error.setText(err);
 	}
@@ -75,7 +81,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		LOGGER.info("RuestkammerVater refresh");
 		refreshen();
 		uniqueError = false;
-		Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
+		final Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
 		if (!frame.getSize().equals(size)) {
 			panel.setSize(size);
 			frame.setSize(size);
@@ -160,8 +166,8 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		int a = 0;
 		int b = 0;
 		for (int i = 0; i < optionen.size(); i++) {
-			int x = optionen.elementAt(i).getPanel().getX() + optionen.elementAt(i).getPanel().getWidth();
-			int y = optionen.elementAt(i).getPanel().getY() + optionen.elementAt(i).getPanel().getHeight();
+			final int x = optionen.elementAt(i).getPanel().getX() + optionen.elementAt(i).getPanel().getWidth();
+			final int y = optionen.elementAt(i).getPanel().getY() + optionen.elementAt(i).getPanel().getHeight();
 			a = x > a ? x : a;
 			b = y > b ? y : b;
 		}
@@ -173,8 +179,9 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		ok.addActionListener(al);
 	}
 
+	@Override
 	public String getText() {
-		StringBuilder sb = new StringBuilder();
+		final StringBuilder sb = new StringBuilder();
 
 		for (int i = 0; i < optionen.size(); ++i) {
 			if (optionen.elementAt(i).isSelected()) {
@@ -262,11 +269,11 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 	public void setKeywords(Set<KeyWord> keywords) {
 		this.keywords = keywords;
 	}
-	
+
 	public void removeKeyword(KeyWord key) {
 		keywords.remove(key);
 	}
-	
+
 	public void addKeyword(KeyWord key) {
 		keywords.add(key);
 	}

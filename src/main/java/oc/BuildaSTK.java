@@ -1,10 +1,11 @@
 package oc;
 
-import javax.swing.*;
-import javax.swing.border.Border;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Toolkit;
 import java.util.HashMap;
+
+import javax.swing.BorderFactory;
+import javax.swing.border.Border;
 
 public interface BuildaSTK { // konstanten die überall im oC geraucht werden
 
@@ -153,10 +154,10 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
             put("SK", "VOLKSkitarii");
         }
     };
-    
+
     public final String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
     public final String MISSIONARY_CNT = "MISSIONARY";
     public final String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
     public final String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
-    
+
 }

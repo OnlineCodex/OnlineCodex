@@ -28,7 +28,8 @@ public class IMSpecialWeaponsSquad extends Eintrag {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         o1x.setAnzahl(0, 6 - o1.getAnzahl());
         o1.setLegal(o1.getAnzahl() + o2.getAnzahl() == 3);

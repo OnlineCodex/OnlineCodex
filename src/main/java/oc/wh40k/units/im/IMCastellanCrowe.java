@@ -22,7 +22,7 @@ public class IMCastellanCrowe extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Hammer of Righteousness (GK)", true);

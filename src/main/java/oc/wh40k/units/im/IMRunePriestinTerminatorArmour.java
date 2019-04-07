@@ -1,13 +1,14 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriestinTerminatorArmour extends Eintrag {
 
-	private final OptionsEinzelUpgrade oe1;
 	private final RuestkammerStarter waffenUndArtefakte;
-	private boolean fenrisSupp = false;
 	private final RuestkammerStarter psychicPowers;
 
     public IMRunePriestinTerminatorArmour() {
@@ -18,10 +19,10 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic Terminator armour", getPts("runic Terminator armour")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic Terminator armour", getPts("runic Terminator armour")));
 
         seperator();
-        
+
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
@@ -40,7 +41,7 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

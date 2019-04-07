@@ -1,28 +1,27 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.NOXIOUS_BLIGHTBRINGER;
+import static oc.KeyWord.PSYKER;
 
 import java.util.Set;
 
-import javax.sound.sampled.FloatControl.Type;
-
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class CHDeathGuardRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade theSuppuratingPlate;
     private OptionsEinzelUpgrade thePandemicStaff;
     private OptionsEinzelUpgrade dolorousKnell;
     private OptionsEinzelUpgrade fugarisHelm;
     private OptionsEinzelUpgrade thePlagueSkullOfGlothila;
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -30,18 +29,17 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -57,22 +55,18 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(theSuppuratingPlate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Suppurating Plate", 0).setRelic(true));
+        add(theSuppuratingPlate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Suppurating Plate", 0).setRelic(true));
        	add(thePandemicStaff = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Pandemic Staff", 0).setRelic(true));
        	add(dolorousKnell = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dolorous Knell", 0).setRelic(true));
        	add(fugarisHelm = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Fugaris' Helm", 0).setRelic(true));
        	add(thePlagueSkullOfGlothila = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Plague Skull of Glothila", 0).setRelic(true));
 
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -123,7 +117,7 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Plague Surgeon")){
-    		
+
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -218,31 +212,31 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
     	}
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -254,7 +248,7 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Lord of Contagion") || type.equals("Daemon Prince of Nurgle") || type.equals("Daemon Prince of Nurgle with Wings")
     			|| type.equals("Foul Blightspawn") || type.equals("Tallyman")){
     		o1.alwaysSelected();
@@ -266,7 +260,7 @@ public class CHDeathGuardRuestkammer extends RuestkammerVater {
     		o2.alwaysSelected();
     	}
 
-    	theSuppuratingPlate.setAktiv((chosenRelic == null || theSuppuratingPlate.isSelected()));   
+    	theSuppuratingPlate.setAktiv((chosenRelic == null || theSuppuratingPlate.isSelected()));
     	thePandemicStaff.setAktiv(((chosenRelic == null || thePandemicStaff.isSelected()) && keywords.contains(PSYKER)));
     	dolorousKnell.setAktiv(((chosenRelic == null || dolorousKnell.isSelected()) && keywords.contains(NOXIOUS_BLIGHTBRINGER)));
     	fugarisHelm.setAktiv((chosenRelic == null || fugarisHelm.isSelected()));

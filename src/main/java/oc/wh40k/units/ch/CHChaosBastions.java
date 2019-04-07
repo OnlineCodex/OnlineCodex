@@ -6,9 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosBastions extends Eintrag {
 
-	private final OptionsUpgradeGruppe fkwaffen;
-
-    public CHChaosBastions() {
+	public CHChaosBastions() {
 
         kategorie = 1;
 
@@ -17,7 +15,7 @@ public class CHChaosBastions extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Icarus lascannon", getPts("Icarus lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Quad-gun", getPts("Quad-gun")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         power = 10;
 

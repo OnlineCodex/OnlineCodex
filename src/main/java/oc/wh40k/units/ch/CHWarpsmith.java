@@ -7,14 +7,18 @@ import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.SLAANESH;
 import static oc.KeyWord.TZEENTCH;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
 
 public class CHWarpsmith extends Eintrag {
 
 	private final OptionsEinzelUpgrade flamer, melta, mecha;
 	private final OptionsUpgradeGruppe mark;
 	private int lastMark = -1;
-	
+
     public CHWarpsmith() {
 
         name = "Warpsmith";
@@ -34,9 +38,9 @@ public class CHWarpsmith extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -58,7 +62,7 @@ public class CHWarpsmith extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

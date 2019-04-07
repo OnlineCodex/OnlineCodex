@@ -1,6 +1,10 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORKrushaBattleWagon extends Eintrag {
 
@@ -55,7 +59,8 @@ public class ORKrushaBattleWagon extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o2.setMaxAnzahl(o1.isSelected() ? 2 : 3);
         o2def.setMaxAnzahl(o1.isSelected() ? 2 : 3);
         o2def.setAnzahl(0, o2def.getMaxAnzahl() - o2.getAnzahl());

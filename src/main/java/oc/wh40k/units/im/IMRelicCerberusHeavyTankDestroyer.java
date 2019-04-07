@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMRelicCerberusHeavyTankDestroyer extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2;
-
-
-
-    public IMRelicCerberusHeavyTankDestroyer() {
+	public IMRelicCerberusHeavyTankDestroyer() {
 
         name = "Relic Cerberus Heavy Tank Destroyer";
 
@@ -38,7 +32,7 @@ public class IMRelicCerberusHeavyTankDestroyer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", 2 * getPts("Heavy bolter (IA)")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -54,7 +48,7 @@ public class IMRelicCerberusHeavyTankDestroyer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", 2 * getPts("Storm bolter (IA)")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

@@ -1,10 +1,9 @@
 package oc.wh40k.units.ta;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class TAFiresightMarksman extends Eintrag {
-	
+
 
     public TAFiresightMarksman() {
         name = "Firesight Marksman";
@@ -19,6 +18,7 @@ public class TAFiresightMarksman extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

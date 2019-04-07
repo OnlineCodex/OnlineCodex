@@ -5,11 +5,8 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -18,13 +15,7 @@ public class IMContemptorMortisDreadnought extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1;
-
-	private final OptionsEinzelUpgrade oe1;
-
-
-
-    public IMContemptorMortisDreadnought() {
+	public IMContemptorMortisDreadnought() {
 
         name = "Contemptor Mortis Dreadnought";
 
@@ -52,7 +43,7 @@ public class IMContemptorMortisDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 heavy plasma cannon", 2 * getPts("Heavy plasma cannon")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -60,7 +51,7 @@ public class IMContemptorMortisDreadnought extends Eintrag {
 
 
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cyclone missile launcher", getPts("Cyclone missile launcher")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cyclone missile launcher", getPts("Cyclone missile launcher")));
 
 
 

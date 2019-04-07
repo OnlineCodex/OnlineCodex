@@ -1,6 +1,10 @@
 package oc.wh40k.units.ta;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 //[IA3 2nd Ed]
 
@@ -60,7 +64,7 @@ public class TAPiranhaTX42 extends Eintrag {
 
     @Override
     public void refreshen() {
-        int count = squad.getModelle();
+        final int count = squad.getModelle();
         o1.setMaxAnzahl(count);
         o1x.setMaxAnzahl(count);
         o1x.setAnzahl(0, count - o1.getAnzahl());

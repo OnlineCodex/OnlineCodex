@@ -1,19 +1,16 @@
 package oc.wh40k.units.or;
 
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
 public class ORFlakkTrukkKammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1;
-
-
-    public ORFlakkTrukkKammer() {
+	public ORFlakkTrukkKammer() {
         grundkosten = 75;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/ORFlakkTrukk.gif"));
 
 
@@ -31,7 +28,8 @@ public class ORFlakkTrukkKammer extends RuestkammerVater {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
     }
 

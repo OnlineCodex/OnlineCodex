@@ -1,6 +1,12 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BIKER;
+import static oc.KeyWord.CHAPTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -16,7 +22,7 @@ public class IMLibrarianonBike extends Eintrag {
         power = 8;
 
         seperator();
-        
+
         addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
@@ -33,7 +39,7 @@ public class IMLibrarianonBike extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

@@ -37,7 +37,8 @@ public class CHBloodletters extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

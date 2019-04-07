@@ -2,7 +2,10 @@ package oc.wh40k.units.ae;
 
 
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 
 
@@ -10,7 +13,7 @@ public class AEWraithlord extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o3;
+	private final OptionsZaehlerGruppe o3;
 
 	private final OptionsZaehlerGruppe o3x;
 
@@ -58,7 +61,7 @@ public class AEWraithlord extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Starcannon", getPts("Starcannon")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 
 

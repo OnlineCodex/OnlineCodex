@@ -1,9 +1,13 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.ASTRA_MILITARUM;
+import static oc.KeyWord.CRUSADERS;
+import static oc.KeyWord.ECCLESIARCHY_BATTLE_CONCLAVE;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
 
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
 
 public class IMCrusaders extends Eintrag {
@@ -14,11 +18,11 @@ public class IMCrusaders extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ASTRA_MILITARUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, CRUSADERS);
         name = "Crusaders";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Crusaders", 2, 10, getPts("Crusaders") + getPts("Power sword (AMI)") + getPts("Storm shield (AMI)")));
-        
+
         seperator();
-        
+
         addToInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT, 1);
-        
+
         complete();
     }
 
@@ -35,16 +39,16 @@ public class IMCrusaders extends Eintrag {
         } else {
             power = 1;
         }
-        
+
         setEintragsCNT(getCountFromInformationVector(MINISTORUM_PRIEST_CNT) > 0 ? 0 : 1);
-        
+
         if(getCountFromInformationVector(MINISTORUM_PRIEST_CNT) < 1 && getCountFromInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT) > 1) {
         	setFehlermeldung("MAX 1 CONCLAVE");
         } else {
         	setFehlermeldung("");
         }
     }
-    
+
     @Override
     public void deleteYourself() {
         addToInformationVector(ECCLESIARCHY_BATTLE_CONCLAVE_CNT, -1);

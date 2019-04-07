@@ -1,9 +1,11 @@
 package oc;
 
-import org.w3c.dom.Element;
+import java.awt.Dimension;
+import java.awt.Point;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JLabel;
+
+import org.w3c.dom.Element;
 
 public class Picture extends OptionsVater {
 
@@ -36,7 +38,8 @@ public class Picture extends OptionsVater {
         return "";
     }
 
-    public Element getSaveElement() {
+    @Override
+	public Element getSaveElement() {
         return null;
     }
 

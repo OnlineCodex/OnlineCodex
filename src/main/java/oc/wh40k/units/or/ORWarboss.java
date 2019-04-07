@@ -6,20 +6,16 @@ import oc.RuestkammerStarter;
 
 public class ORWarboss extends Eintrag {
 
-	private final OptionsEinzelUpgrade attacksquig;
 	private final RuestkammerStarter waffen;
 
-	private boolean megaBool = false;
-	private boolean gazzBool = false;
-
-    public ORWarboss() {
+	public ORWarboss() {
         name = "Warboss";
         grundkosten = getPts("Warboss") + getPts("Slugga") * 2 + getPts("Stikkbombs");
         power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Waaghboss.gif"));
 
-        add(attacksquig = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Attack squig", getPts("Attack squig")));
 
         seperator();
 
@@ -31,7 +27,7 @@ public class ORWarboss extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

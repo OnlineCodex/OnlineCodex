@@ -8,7 +8,7 @@ public class AEPrinceYriel extends Eintrag {
         name = "Prince Yriel";
         grundkosten = getPts("Prince Yriel");
         power = 5;
-        
+
         seperator();
 
         addWarlordTraits("Iyanden: Enduring Resolve", true);

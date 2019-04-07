@@ -43,7 +43,7 @@ public class ORDeffDreadKammer extends RuestkammerVater {
     public void refreshen() {
     	w2x.setMaxAnzahl(2-w2.getAnzahl());
     	w2x.setAnzahl(0,2-w2.getAnzahl());
-    	
+
     	w1x.setMaxAnzahl(2-w1.getAnzahl());
     	w1x.setAnzahl(0,2-w1.getAnzahl());
     }

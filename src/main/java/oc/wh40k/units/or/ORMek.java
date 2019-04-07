@@ -29,7 +29,7 @@ public class ORMek extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

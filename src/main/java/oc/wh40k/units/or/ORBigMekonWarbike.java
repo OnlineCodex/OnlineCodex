@@ -7,10 +7,7 @@ public class ORBigMekonWarbike extends Eintrag {
 
 	private final RuestkammerStarter waffen;
 
-	private final boolean megaBool = false;
-	private final boolean gazzBool = false;
-
-    public ORBigMekonWarbike() {
+	public ORBigMekonWarbike() {
         kategorie = 1;
         name = "Big Mek on Warbike";
         grundkosten = getPts("Big Mek on Warbike") + getPts("Stikkbombs");
@@ -24,7 +21,7 @@ public class ORBigMekonWarbike extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

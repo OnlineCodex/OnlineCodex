@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHKhorneBerzerkers extends Eintrag {
 
@@ -63,7 +68,7 @@ public class CHKhorneBerzerkers extends Eintrag {
     public void refreshen() {
         o1x.setMaxAnzahl(marines.getModelle() - (Boss.isSelected() ? 1 : 0) - marinesfk.getAnzahl());
 
-        int numberOfPistoles = marines.getModelle() - (Boss.isSelected() ? 1 : 0) - marinesfk.getAnzahl();
+        final int numberOfPistoles = marines.getModelle() - (Boss.isSelected() ? 1 : 0) - marinesfk.getAnzahl();
         o1.setMaxAnzahl(numberOfPistoles);
 
         marinesfk.setMaxAnzahl(2);

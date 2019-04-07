@@ -16,17 +16,17 @@ public class TYNexos extends Eintrag {
 
     public TYNexos() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, NEXOS);
-    	
+
         name = "Nexos";
 
         grundkosten = getPts("Nexos");
 
         power = 3;
-        
+
         seperator();
-        
+
         addWeapons(TYGenestealerCultRuestkammer.class, true);
-        
+
         complete();
 
     }

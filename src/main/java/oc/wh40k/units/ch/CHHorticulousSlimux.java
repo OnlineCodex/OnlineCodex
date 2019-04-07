@@ -1,6 +1,13 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CAVALRY;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.HERALD_OF_NURGLE;
+import static oc.KeyWord.HORTICULOUS_SLIMUX;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PLAGUEBEARER;
 
 import oc.Eintrag;
 
@@ -13,7 +20,7 @@ public class CHHorticulousSlimux extends Eintrag {
         power = 9;
 
         seperator();
-        
+
         addWarlordTraits("Nurgle: Acidic Ichor", true);
 
         complete();

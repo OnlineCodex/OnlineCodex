@@ -1,6 +1,12 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BLOODTHIRSTER;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.MONSTER;
 
 import oc.Eintrag;
 
@@ -14,13 +20,13 @@ public class CHBloodthirsterofUnfetteredFury extends Eintrag {
         power = 17;
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", KHORNE);
-        
+
         complete();
     }
 }

@@ -1,13 +1,9 @@
 package oc.wh40k.armies;
 
-import oc.BuildaHQ;
+import static oc.utils.ResourceUtils.loadPoints;
+
 import oc.BuildaVater;
 import oc.ChooserGruppe;
-import oc.utils.ResourceUtils;
-
-import java.io.InputStream;
-
-import static oc.utils.ResourceUtils.loadPoints;
 
 public class VOLKNecrons extends BuildaVater {
 

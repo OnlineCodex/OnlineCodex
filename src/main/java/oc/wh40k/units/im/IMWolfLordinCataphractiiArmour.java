@@ -12,7 +12,7 @@ public class IMWolfLordinCataphractiiArmour extends Eintrag {
         name = "Wolf Lord in Cataphractii Armour";
         grundkosten = getPts("Wolf Lord in Cataphractii Armour");
         power = 8;
-        
+
         seperator();
 
         waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
@@ -23,7 +23,7 @@ public class IMWolfLordinCataphractiiArmour extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

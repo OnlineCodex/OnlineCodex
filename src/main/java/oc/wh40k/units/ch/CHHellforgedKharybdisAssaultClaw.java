@@ -7,9 +7,7 @@ import oc.OptionsUpgradeGruppe;
 public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2, o3, o4;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedKharybdisAssaultClaw() {
+	public CHHellforgedKharybdisAssaultClaw() {
         name = "Hellforged Kharybdis Assault Claw";
         grundkosten = getPts("Hellforged Kharybdis Assault Claw");
 
@@ -42,7 +40,7 @@ public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

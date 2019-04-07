@@ -1,13 +1,12 @@
 package oc.wh40k.units.ta;
 
-import oc.*;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class TAXV104RiptideKammer extends RuestkammerVater {
 
-	private OptionsZaehlerGruppe o3;
-	private OptionsUpgradeGruppe o1, o2, o4;
-    private RuestkammerStarter ob;
-
+	private OptionsUpgradeGruppe o1, o2;
     public TAXV104RiptideKammer() {
         name = "XV104 Sturmflut ";
         grundkosten = 180;
@@ -41,13 +40,14 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
         //ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (all other units)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(o4 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         sizeSetzen();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.setLegal(o1.isSelected());
         o2.setLegal(o2.isSelected());
     }

@@ -7,9 +7,7 @@ import oc.OptionsUpgradeGruppe;
 public class CHHellforgedDreadclawDropPod extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedDreadclawDropPod() {
+	public CHHellforgedDreadclawDropPod() {
         name = "Hellforged Dreadclaw Drop Pod";
         grundkosten = getPts("Hellforged Dreadclaw Drop Pod");
 
@@ -33,7 +31,7 @@ public class CHHellforgedDreadclawDropPod extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

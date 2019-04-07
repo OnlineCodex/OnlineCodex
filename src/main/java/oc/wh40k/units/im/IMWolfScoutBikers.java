@@ -25,7 +25,7 @@ public class IMWolfScoutBikers extends Eintrag {
                 getPts("Twin boltgun")));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
@@ -34,7 +34,7 @@ public class IMWolfScoutBikers extends Eintrag {
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 0));
 
         seperator();
-        
+
         add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Astartes grenade launcher", 3, getPts("Astartes grenade launcher") - getPts("twin boltgun")));
 
 
@@ -46,7 +46,7 @@ public class IMWolfScoutBikers extends Eintrag {
     	o1x.setMaxAnzahl(squad.getModelle()-o1.getAnzahl());
     	o1x.setAnzahl(0,squad.getModelle()-o1.getAnzahl());
     	o1.setMaxAnzahl(squad.getModelle());
-    	
+
         power = 4;
         if (squad.getModelle() > 6) {
             power = 12;

@@ -1,10 +1,10 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class TAXV95GhostkeelBattlesuits extends Eintrag {
 

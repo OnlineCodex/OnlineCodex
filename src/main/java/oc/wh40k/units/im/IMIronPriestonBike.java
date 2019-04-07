@@ -1,6 +1,9 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMIronPriestonBike extends Eintrag {
 

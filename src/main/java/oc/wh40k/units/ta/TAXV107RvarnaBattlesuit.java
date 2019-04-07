@@ -9,10 +9,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class TAXV107RvarnaBattlesuit extends Eintrag {
 
-	private final OptionsZaehlerGruppe o3;
-	private final OptionsUpgradeGruppe o4;
-
-    public TAXV107RvarnaBattlesuit() {
+	public TAXV107RvarnaBattlesuit() {
         name = "XV107 R'varna Battlesuit";
         grundkosten = 260;
 
@@ -23,20 +20,21 @@ public class TAXV107RvarnaBattlesuit extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Schild-Raketendrohnen", 25));
-        add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Positionssender", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stimulanzinjektor", 35));
-        add(o4 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
         //Positional Relay, Stimulant injectors
 
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

@@ -2,15 +2,11 @@ package oc.wh40k.units.ae;
 
 
 
-import oc.BuildaVater;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.RuestkammerElement;
-
-
-
 import java.util.Vector;
+
+import oc.BuildaVater;
+import oc.OptionsGruppeEintrag;
+import oc.RuestkammerElement;
 
 
 
@@ -20,7 +16,7 @@ public class AEHeavyWeapons extends RuestkammerElement {
 
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, String defaultWeaponCost, BuildaVater bv) {
 
-        Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
+        final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
 
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
 

@@ -29,7 +29,7 @@ public class IMOrionAssaultDropship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Spiculus heavy bolt launchers", 2*getPts("Spiculus heavy bolt launcher")));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o3.setSelected(0, true);
-        
+
         complete();
     }
 

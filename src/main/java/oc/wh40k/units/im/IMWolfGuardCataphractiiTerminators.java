@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMWolfGuardCataphractiiTerminators extends Eintrag {
 
@@ -58,7 +62,7 @@ public class IMWolfGuardCataphractiiTerminators extends Eintrag {
         o1x.setAnzahl(0, squad.getModelle() - 1 - o1.getAnzahl() - o1y.getAnzahl() - o3.getAnzahl());
         o1.setMaxAnzahl(squad.getModelle() - 1 - o1y.getAnzahl() - o3.getAnzahl());
 
-        int o1verb = o1.getAnzahl() + o3.getAnzahl() + 1;
+        final int o1verb = o1.getAnzahl() + o3.getAnzahl() + 1;
 
         if (squad.getModelle() == 10) {
             o1y.setMaxAnzahl(squad.getModelle() - o1verb > 2 ? 2 : squad.getModelle() - o1verb);
@@ -70,8 +74,8 @@ public class IMWolfGuardCataphractiiTerminators extends Eintrag {
         o2x.setAnzahl(0, squad.getModelle() - 1 - o2.getAnzahl() - o3.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
 
-        int o1opt = o1.getAnzahl() + o1y.getAnzahl();
-        int o2opt = o2.getAnzahl();
+        final int o1opt = o1.getAnzahl() + o1y.getAnzahl();
+        final int o2opt = o2.getAnzahl();
         o3.setMaxAnzahl(squad.getModelle() - 1 - (o1opt > o2opt ? o1opt : o2opt));
 
         power = 12;

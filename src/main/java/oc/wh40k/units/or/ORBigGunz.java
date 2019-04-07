@@ -9,9 +9,7 @@ public class ORBigGunz extends Eintrag {
 
 	private final AnzahlPanel wummen;
 	private final OptionsZaehlerGruppe FK2;
-	private final int aktivesBild = 0;
-
-    public ORBigGunz() {
+	public ORBigGunz() {
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/MegawummeKanonae.gif"));
@@ -30,7 +28,8 @@ public class ORBigGunz extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         FK2.setMaxAnzahl(wummen.getModelle());
         FK2.setLegal(FK2.getAnzahl() == wummen.getModelle());
 

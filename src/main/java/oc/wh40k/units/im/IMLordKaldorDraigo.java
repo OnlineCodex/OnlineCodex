@@ -7,7 +7,7 @@ import oc.wh40k.units.PsychicPowers;
 public class IMLordKaldorDraigo extends Eintrag {
 
 	private final RuestkammerStarter psychicPowers;
-	
+
     public IMLordKaldorDraigo() {
         name = "Lord Kaldor Draigo";
         grundkosten = getPts("Lord Kaldor Draigo");
@@ -22,7 +22,7 @@ public class IMLordKaldorDraigo extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Daemon-Slayer (GK)", true);

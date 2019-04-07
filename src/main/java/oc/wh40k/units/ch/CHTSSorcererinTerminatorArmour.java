@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHTSSorcererinTerminatorArmour extends Eintrag {
@@ -12,11 +13,11 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
         name = "Sorcerer in Terminator Armour";
         grundkosten = getPts("Sorcerer in Terminator Armour");
         power = 8;
-        
+
         seperator();
-        
+
         addWeapons(CHThousandSonsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -27,7 +28,7 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

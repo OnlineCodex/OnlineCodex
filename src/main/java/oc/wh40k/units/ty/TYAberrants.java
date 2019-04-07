@@ -3,11 +3,8 @@ package oc.wh40k.units.ty;
 
 
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -41,22 +38,22 @@ public class TYAberrants extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy power hammer", getPts("Heavy power hammer")));
 
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
-        
+
         squad2 = new AnzahlPanel(ID, randAbstand, cnt, "Aberrant Hypermorph", 0, 1, getPts("Aberrants") + getPts("Hypermorph tail") + getPts("Rending claws (GSC)"));
         add(squad2);
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Heavy improvised weapon", getPts("Heavy improvised weapon")));
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy power hammer", getPts("Heavy power hammer")));
 
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
-        
+
         complete();
 
     }
@@ -72,9 +69,9 @@ public class TYAberrants extends Eintrag {
 
         if(squad.getModelle() >= 4) squad2.setMaxModelle(1);
         if(squad.getModelle() >= 8) squad2.setMaxModelle(2);
-        
-        int modelle = squad.getModelle() + squad2.getModelle();
-        boolean legal = modelle >=5 && modelle <= 10;
+
+        final int modelle = squad.getModelle() + squad2.getModelle();
+        final boolean legal = modelle >=5 && modelle <= 10;
         squad.setLegal(legal);
 
 

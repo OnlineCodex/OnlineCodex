@@ -1,19 +1,15 @@
 package oc.wh40k.units.im;
 
-import oc.BuildaVater;
-
-import oc.OptionsGruppeEintrag;
-
-import oc.RuestkammerElement;
-
-
-
 import java.util.Vector;
+
+import oc.BuildaVater;
+import oc.OptionsGruppeEintrag;
+import oc.RuestkammerElement;
 
 public class IMSpaceMarinesCombiWeapons extends RuestkammerElement {
 
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, String defaultWeaponCost, BuildaVater bv) {
-        Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
+        final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
         addElement("Combi-flamer", "Combi-flamer", defaultWeapon, ogE, bv);
         addElement("Combi-grav", "Combi-grav", defaultWeapon, ogE, bv);

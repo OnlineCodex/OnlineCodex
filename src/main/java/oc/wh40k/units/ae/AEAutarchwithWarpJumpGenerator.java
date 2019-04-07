@@ -1,15 +1,11 @@
 package oc.wh40k.units.ae;
 
 import oc.Eintrag;
-
-import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 public class AEAutarchwithWarpJumpGenerator extends Eintrag {
-    private final OptionsZaehlerGruppe o1, o2, o3;
+    private final OptionsZaehlerGruppe o2;
 
     public AEAutarchwithWarpJumpGenerator() {
         name = "Autarch with Warp Jump Generator";
@@ -20,7 +16,7 @@ public class AEAutarchwithWarpJumpGenerator extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Banshee mask", getPts("Banshee mask")));
         ogE.addElement(new OptionsGruppeEintrag("Mandiblasters", getPts("Mandiblaster")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -32,8 +28,8 @@ public class AEAutarchwithWarpJumpGenerator extends Eintrag {
         seperator();
 
         ogE.addAll(AEAutarchWeapons.createRK("", "", buildaVater));
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
         seperator();
 
         addWarlordTraits("", true);

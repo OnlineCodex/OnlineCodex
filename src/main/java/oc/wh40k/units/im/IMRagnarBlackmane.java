@@ -1,10 +1,9 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMRagnarBlackmane extends Eintrag {
-	
+
 
     public IMRagnarBlackmane() {
         name = "Ragnar Blackmane";
@@ -12,9 +11,9 @@ public class IMRagnarBlackmane extends Eintrag {
         power = 7;
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

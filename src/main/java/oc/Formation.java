@@ -2,15 +2,14 @@ package oc;
 
 
 
-import javax.swing.*;
-
-import java.awt.*;
-
+import java.awt.Color;
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
-
 import java.util.Vector;
+
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 
 
@@ -26,7 +25,7 @@ public class Formation implements BuildaSTK {
 
     public JLabel infoLabel = new JLabel();
 
-    private ActionListener formChangeListener = new ActionListener() {
+    private final ActionListener formChangeListener = new ActionListener() {
 
 
 
@@ -34,11 +33,11 @@ public class Formation implements BuildaSTK {
 
         public void actionPerformed(ActionEvent event) {
 
-            String entry = (String) ((JComboBox) event.getSource()).getSelectedItem();
+            final String entry = (String) ((JComboBox) event.getSource()).getSelectedItem();
 
             for (int i = 0; i < buildaVater.myChooserGruppen.size(); i++) {
 
-                int maxJ = buildaVater.myChooserGruppen.get(i).alleEinträge.length;
+                final int maxJ = buildaVater.myChooserGruppen.get(i).alleEinträge.length;
 
                 for (int j = 0; j < maxJ; j++) {
 
@@ -100,7 +99,7 @@ public class Formation implements BuildaSTK {
 
 
 
-        JLabel head = new JLabel("Formations-Check");
+        final JLabel head = new JLabel("Formations-Check");
 
         head.setBounds(5, 5, 245, 20);
 

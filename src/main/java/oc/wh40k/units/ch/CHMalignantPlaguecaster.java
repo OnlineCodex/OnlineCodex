@@ -2,10 +2,10 @@ package oc.wh40k.units.ch;
 
 import static oc.KeyWord.CHAOS;
 import static oc.KeyWord.CHARACTER;
-import static oc.KeyWord.MALIGNANT_PLAGUECASTER;
 import static oc.KeyWord.DEATH_GUARD;
 import static oc.KeyWord.HERETIC_ASTARTES;
 import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.MALIGNANT_PLAGUECASTER;
 import static oc.KeyWord.NURGLE;
 import static oc.KeyWord.PSYKER;
 
@@ -19,13 +19,13 @@ public class CHMalignantPlaguecaster extends Eintrag {
 
     public CHMalignantPlaguecaster() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, PSYKER, MALIGNANT_PLAGUECASTER);
-    	
+
         name = "Malignant Plaguecaster";
         grundkosten = getPts("Malignant Plaguecaster");
         power = 6;
 
         seperator();
-        
+
         addWeapons(CHDeathGuardRuestkammer.class, true);
 
         seperator();
@@ -37,9 +37,9 @@ public class CHMalignantPlaguecaster extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

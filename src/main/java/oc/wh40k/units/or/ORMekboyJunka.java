@@ -1,14 +1,16 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORMekboyJunka extends Eintrag {
 
 	private final OptionsZaehlerGruppe o1;
 	private final OptionsUpgradeGruppe o4;
-	private final OptionsUpgradeGruppe o5;
-
-    public ORMekboyJunka() {
+	public ORMekboyJunka() {
         name = "Mekboy Junka";
         grundkosten = 65;
 
@@ -45,13 +47,14 @@ public class ORMekboyJunka extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Force Field Generator", "Junka Force Field Generator", 75));
         ogE.addElement(new OptionsGruppeEintrag("Shokk Attack Gun", "Junka Shokk Attack Gun", 100));
         ogE.addElement(new OptionsGruppeEintrag("Boom Gun", 70));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o4.alwaysSelected();
         o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
     }

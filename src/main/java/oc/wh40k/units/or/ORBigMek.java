@@ -6,13 +6,9 @@ import oc.RuestkammerStarter;
 
 public class ORBigMek extends Eintrag {
 
-	private final OptionsEinzelUpgrade grotoiler;
 	private final RuestkammerStarter waffen;
 
-	private final boolean megaBool = false;
-	private final boolean gazzBool = false;
-
-    public ORBigMek() {
+	public ORBigMek() {
         kategorie = 1;
         name = "Big Mek";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs");
@@ -20,7 +16,7 @@ public class ORBigMek extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
 
-        add(grotoiler = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot oiler", getPts("Grot oiler")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot oiler", getPts("Grot oiler")));
 
         seperator();
 
@@ -30,7 +26,7 @@ public class ORBigMek extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

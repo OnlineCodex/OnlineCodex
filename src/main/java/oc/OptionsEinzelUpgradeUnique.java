@@ -1,8 +1,8 @@
 package oc;
 
-import org.w3c.dom.Element;
-
 import java.awt.event.MouseEvent;
+
+import org.w3c.dom.Element;
 
 public class OptionsEinzelUpgradeUnique extends OptionsVater {
 
@@ -31,7 +31,8 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
         myUpgrade.setKurzerName(kurzerName);
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         return myUpgrade.getKosten() * this.modelle;
     }
 
@@ -59,7 +60,8 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
         panel.setLocation(lX, lY);
     }
 
-    public String getLabel() {
+    @Override
+	public String getLabel() {
         if (myUpgrade.isSelected()) {
             return myUpgrade.getButton().getText() + ZEILENUMBRUCH;
         }
@@ -67,7 +69,8 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
     }
 
     //@OVERRIDE
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
         if (!aktiv) {
             return;
         }
@@ -75,7 +78,8 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
         RefreshListener.fireRefresh();
     }
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
         return myUpgrade.isSelected();
     }
 
@@ -86,19 +90,22 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
         myUpgrade.setSelected(b);
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return myUpgrade.isLegal();
     }
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
         myUpgrade.setLegal(b);
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         if (!aktiv) {
             return "";
         }
-        StringBuilder text = new StringBuilder(BuildaHQ.abstand);
+        final StringBuilder text = new StringBuilder(BuildaHQ.abstand);
         String kosten = "";
         if (BuildaHQ.allePunktkosten) {
             kosten = punkteAbstandHalter + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Pkt.");   // NET myUpgrade.getKosten() !!! das is was anderes!
@@ -108,21 +115,25 @@ public class OptionsEinzelUpgradeUnique extends OptionsVater {
         return text.toString();
     }
 
-    public String getSaveText() {
+    @Override
+	public String getSaveText() {
         return (this.isSelected() ? "y" : "n");
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("UpgradeUnique");
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement("UpgradeUnique");
         root.setAttribute("selected", Boolean.toString(isSelected()));
         return root;
     }
 
-    public void load(String s) {
+    @Override
+	public void load(String s) {
         this.setSelected(s.equals("y"));
     }
 
-    public void loadElement(Element e) {
+    @Override
+	public void loadElement(Element e) {
         this.setSelected(Boolean.parseBoolean(e.getAttribute("selected")));
     }
 

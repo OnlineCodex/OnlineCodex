@@ -3,11 +3,8 @@ package oc.wh40k.units.ae;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -16,7 +13,7 @@ public class AEVoidraven extends Eintrag {
 
 
 
-	private OptionsUpgradeGruppe o1, o2;
+	private OptionsUpgradeGruppe o1;
 
 
 

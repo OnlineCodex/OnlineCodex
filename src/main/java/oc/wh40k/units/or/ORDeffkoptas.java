@@ -32,7 +32,8 @@ public class ORDeffkoptas extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         killakoptazFKx.setMaxAnzahl(killakoptaz.getModelle() - killakoptazFK.getAnzahl());
         killakoptazFKx.setAnzahl(0, killakoptaz.getModelle() - killakoptazFK.getAnzahl());
         killakoptazFK.setMaxAnzahl(killakoptaz.getModelle());

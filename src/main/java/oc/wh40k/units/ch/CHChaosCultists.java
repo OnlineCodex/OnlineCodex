@@ -1,7 +1,12 @@
 package oc.wh40k.units.ch;
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHChaosCultists extends Eintrag {
 
@@ -9,9 +14,7 @@ public class CHChaosCultists extends Eintrag {
 	private final RuestkammerStarter champion;
 	private final OptionsZaehlerGruppe schwereWaffe;
 	private final OptionsZaehlerGruppe autogewehre, pistol;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosCultists() {
+	public CHChaosCultists() {
         //name = "Chaoskultisten\n";
         grundkosten = 0;
 
@@ -41,7 +44,7 @@ public class CHChaosCultists extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -59,11 +62,11 @@ public class CHChaosCultists extends Eintrag {
 
     @Override
     public void refreshen() {
-        int count = kultisten.getModelle();
+        final int count = kultisten.getModelle();
 
         schwereWaffe.setMaxAnzahl(count / 10);
 
-        int subtractor = schwereWaffe.getAnzahl() + 1; // last one is the boss
+        final int subtractor = schwereWaffe.getAnzahl() + 1; // last one is the boss
 
         autogewehre.setMaxAnzahl(kultisten.getModelle() - subtractor);
         pistol.setMaxAnzahl(kultisten.getModelle() - subtractor);

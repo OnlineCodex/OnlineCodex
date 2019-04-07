@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMWolfScouts extends Eintrag {
 
@@ -38,9 +43,9 @@ public class IMWolfScouts extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Sniper rifle", getPts("sniper rifle (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Astartes shotgun", getPts("Astartes shotgun")));
         add(wpn1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
         ogE.addAll(IMSpaceWolvesSpecialWeapons.createRK("", "", buildaVater));
@@ -82,7 +87,7 @@ public class IMWolfScouts extends Eintrag {
 
         boltgun.setMaxAnzahl(squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
         boltgun.setAnzahl(0, squad.getModelle() - 1 - wpn1.getAnzahl() - wpn2.getAnzahl() - nk.getAnzahl());
-        
+
         wpn1.setMaxAnzahl(squad.getModelle() - 1 - wpn2.getAnzahl() - nk.getAnzahl());
         wpn2.setMaxAnzahl((wpn1.getAnzahl() + nk.getAnzahl()) < (squad.getModelle() - 1) ? 1 : 0);
 

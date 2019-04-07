@@ -7,10 +7,7 @@ public class ORWarbossinMegaArmour extends Eintrag {
 
 	private final RuestkammerStarter waffen;
 
-	private boolean megaBool = false;
-	private boolean gazzBool = false;
-
-    public ORWarbossinMegaArmour() {
+	public ORWarbossinMegaArmour() {
         name = "Warboss in Mega Armour";
         grundkosten = getPts("Warboss in Mega Armour");
         power = 7;
@@ -26,7 +23,7 @@ public class ORWarbossinMegaArmour extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

@@ -7,9 +7,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYHiveTyrant extends Eintrag {
 
-    private final OptionsEinzelUpgrade oe1;
-    private final OptionsEinzelUpgrade oe2;
-    private final OptionsEinzelUpgrade oe3;
     private final RuestkammerStarter psychicPowers;
     private final RuestkammerStarter waffen;
 
@@ -20,12 +17,12 @@ public class TYHiveTyrant extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/TYSchwarmtyrantFuss.jpg"));
 
-        add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Wings", "Wings", 47)); //Hier gibt es keinen Eintrag
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "Wings", "Wings", 47)); //Hier gibt es keinen Eintrag
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Hive Tyrant)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Hive Tyrant)")));
 
         seperator();
 
@@ -47,9 +44,9 @@ public class TYHiveTyrant extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 
@@ -59,7 +56,7 @@ public class TYHiveTyrant extends Eintrag {
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
-    	
+
     	warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5

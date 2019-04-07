@@ -35,7 +35,8 @@ public class ORGargantuanSquiggoth extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         ozgX.setMaxAnzahl(2 - ozg.getAnzahl());
         ozgX.setAnzahl(0, 2 - ozg.getAnzahl());
         ozg.setMaxAnzahl(2);

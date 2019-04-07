@@ -3,11 +3,10 @@ package oc.wh40k.units.ne;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class NECryptek extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1;
 
     public NECryptek() {
 
@@ -26,8 +25,8 @@ public class NECryptek extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Chronometron", getPts("Chronometron")));
         ogE.addElement(new OptionsGruppeEintrag("Canoptek cloak", getPts("Canoptek cloak")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
         seperator();
 
 		addWarlordTraits("", true);

@@ -1,21 +1,32 @@
 package oc;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.RUESTKAMMER_STARTER;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import static oc.RefreshListener.Priority.RUESTKAMMER_STARTER;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Element;
 
 public class RuestkammerStarter extends OptionsVater {
-    
+
     private static final Logger LOGGER = LoggerFactory.getLogger(RuestkammerStarter.class);
 
     private static final int ruestkammerIconBreite = 20;
@@ -30,11 +41,11 @@ public class RuestkammerStarter extends OptionsVater {
     private boolean legal = true;
     private boolean ueberschriftTrotzNullKostenAusgeben = false;
     private JLabel ico;
-    private JButton startButton = new JButton();
+    private final JButton startButton = new JButton();
     private int seperator = -88; // -88 wichtig um in optionscollection überprüfen zu können obs geändert wurde und das statt dem default zu benutzen
-    private Vector<JLabel> textfelder = new Vector<JLabel>();
+    private final Vector<JLabel> textfelder = new Vector<JLabel>();
     private String texte;
-    private FocusListener closeListenerFocus = new FocusListener() {
+    private final FocusListener closeListenerFocus = new FocusListener() {
         @Override
         public void focusLost(FocusEvent event) {
             ruestkammerClosed();
@@ -44,7 +55,7 @@ public class RuestkammerStarter extends OptionsVater {
         public void focusGained(FocusEvent event) {
         }
     };
-    private WindowListener closeListenerWindow = new WindowListener() {
+    private final WindowListener closeListenerWindow = new WindowListener() {
         @Override
         public void windowClosing(WindowEvent e) {
             ruestkammerClosed();
@@ -209,7 +220,7 @@ public class RuestkammerStarter extends OptionsVater {
         try {
             return cls.getConstructor()
                     .newInstance();
-        } catch (Exception e) {
+        } catch (final Exception e) {
             OnlineCodex.getInstance().fehler(cls.getCanonicalName() + " nicht gefunden. Rüstkammer kann nicht geöffnet werden." + ZEILENUMBRUCH + "Bitte melden!");
             LOGGER.error("could not laod RuestkammerVater " + cls, e);
             return null;
@@ -233,8 +244,8 @@ public class RuestkammerStarter extends OptionsVater {
         panel.add(startButton);
 
         try {
-            myKammer = (RuestkammerVater) abteilung;
-        } catch (Exception e) {
+            myKammer = abteilung;
+        } catch (final Exception e) {
             JOptionPane.showMessageDialog(this.getPanel(), abteilung.getName() + ".class" + BuildaHQ.translate("nicht gefunden. Rüstkammer kann nicht geöffnet werden:") + " " + e.getMessage());
         }
 
@@ -267,13 +278,13 @@ public class RuestkammerStarter extends OptionsVater {
     }
 
     private void labelSetzen() {
-        FontMetrics fm = startButton.getFontMetrics(startButton.getFont());
-        StringBuilder abstandshalter = new StringBuilder("");
+        final FontMetrics fm = startButton.getFontMetrics(startButton.getFont());
+        final StringBuilder abstandshalter = new StringBuilder("");
 
         String punkteString = "";
         punkteString = entferneNullNachkomma(myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.");
 
-        int cnt = (buttonBreite - (fm.stringWidth(name + punkteString) + 30)) / fm.stringWidth(" .");
+        final int cnt = (buttonBreite - (fm.stringWidth(name + punkteString) + 30)) / fm.stringWidth(" .");
 
         for (int i = 0; i < cnt; ++i) {
             abstandshalter.append(" .");
@@ -312,7 +323,7 @@ public class RuestkammerStarter extends OptionsVater {
     }
 
     public void setAktiv(boolean b) {
-        boolean pufferAktiv = aktiv;
+        final boolean pufferAktiv = aktiv;
         aktiv = b;
         startButton.setEnabled(b);
         ico.setEnabled(b);
@@ -329,7 +340,7 @@ public class RuestkammerStarter extends OptionsVater {
         if (aktiv && selected) {
             try {
                 return myKammer.getKosten();
-            } catch (Exception e) {
+            } catch (final Exception e) {
             }
         }
 
@@ -339,14 +350,14 @@ public class RuestkammerStarter extends OptionsVater {
     private void sizeSetzen() {
         int textAreaHoehe = 0;
 
-        String arr[] = texte.split(ZEILENUMBRUCH);
+        final String arr[] = texte.split(ZEILENUMBRUCH);
         while (textfelder.size() > 0) {
             panel.remove(textfelder.get(0));
             textfelder.remove(textfelder.get(0));
         }
         for (int i = 0; i < arr.length; i++) {
             if (!arr[i].equals("")) {
-                JLabel ta = new JLabel(arr[i]);
+                final JLabel ta = new JLabel(arr[i]);
                 ta.setLocation(randAbstand + einrueckAbstand + 1, buttonHoehe + 6 + buttonHoehe * i);
                 ta.setForeground(Color.GRAY);
                 ta.setFocusable(false);
@@ -404,18 +415,18 @@ public class RuestkammerStarter extends OptionsVater {
 
     private void setSelected(boolean select, boolean visible) {
         if (select) {
-            boolean wasSelected = selected;
+            final boolean wasSelected = selected;
             aktivieren(visible);
             if (!wasSelected && !BuildaHQ.loadWindow) addSelection();
         } else if (abwaehlbar) {
 
             if (!(myKammer.toString().indexOf("Abteilung") == -1)) {
                 if (myKammer.getKosten() > 0) {
-                    JOptionPane op = new JOptionPane("Bitte die Anzahl der Modelle auf '0' setzen.", JOptionPane.WARNING_MESSAGE);
-                    JDialog dialog = op.createDialog("Hinweis");
+                    final JOptionPane op = new JOptionPane("Bitte die Anzahl der Modelle auf '0' setzen.", JOptionPane.WARNING_MESSAGE);
+                    final JDialog dialog = op.createDialog("Hinweis");
                     dialog.setAlwaysOnTop(true); //<-- this line
                     dialog.setModal(true);
-                    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                    dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                     dialog.setVisible(true);
                     return;
                 }
@@ -436,9 +447,9 @@ public class RuestkammerStarter extends OptionsVater {
         if (!(myKammer.toString().indexOf("MagicItems") == -1) || !(myKammer.toString().indexOf("Banner") == -1) || !(myKammer.toString().indexOf("Gabe") == -1)
                 || !(myKammer.toString().indexOf("GiftsOf") == -1) || !(myKammer.toString().indexOf("Spites") == -1) || !(myKammer.toString().indexOf("Assassin") == -1)) {
 
-            StringTokenizer tokenizer = new StringTokenizer(myKammer.getText(), ",");
+            final StringTokenizer tokenizer = new StringTokenizer(myKammer.getText(), ",");
             while (tokenizer.hasMoreElements()) {
-                String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
+                final String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
 
                 if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
                     BuildaHQ.Items.remove(tok);
@@ -452,16 +463,16 @@ public class RuestkammerStarter extends OptionsVater {
         if (!(myKammer.toString().indexOf("MagicItems") == -1) || !(myKammer.toString().indexOf("Banner") == -1) || !(myKammer.toString().indexOf("Gabe") == -1)
                 || !(myKammer.toString().indexOf("GiftsOf") == -1) || !(myKammer.toString().indexOf("Spites") == -1) || !(myKammer.toString().indexOf("Assassin") == -1)) {
 
-            StringTokenizer tokenizer = new StringTokenizer(myKammer.getText(), ",");
+            final StringTokenizer tokenizer = new StringTokenizer(myKammer.getText(), ",");
             while (tokenizer.hasMoreElements()) {
-                String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
+                final String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
 
                 if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
-                    JOptionPane op = new JOptionPane(tok + " " + BuildaHQ.translate("darf nur einmal enthalten sein."), JOptionPane.ERROR_MESSAGE);
-                    JDialog dialog = op.createDialog(BuildaHQ.translate("Fehler"));
+                    final JOptionPane op = new JOptionPane(tok + " " + BuildaHQ.translate("darf nur einmal enthalten sein."), JOptionPane.ERROR_MESSAGE);
+                    final JDialog dialog = op.createDialog(BuildaHQ.translate("Fehler"));
                     dialog.setAlwaysOnTop(true); //<-- this line
                     dialog.setModal(true);
-                    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                    dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                     dialog.setVisible(true);
                 }
                 if (BuildaHQ.Items != null) BuildaHQ.Items.add(tok);
@@ -497,11 +508,12 @@ public class RuestkammerStarter extends OptionsVater {
         uebernehmen();
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         String result;
 
         if (aktiv && selected) {
-            StringBuilder textPuffer = new StringBuilder();
+            final StringBuilder textPuffer = new StringBuilder();
             if (myKammer.grundkosten != 0 || ueberschriftTrotzNullKostenAusgeben) {
                 if (BuildaHQ.allePunktkosten && myKammer.grundkosten != 0) {
                     textPuffer.append(BuildaHQ.formatierFett(name + punkteAbstandHalter + entferneNullNachkomma(myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.")));
@@ -522,7 +534,7 @@ public class RuestkammerStarter extends OptionsVater {
             }
 
             final String einrueckString = BuildaHQ.getEinrueckString();
-            String randabstand = BuildaHQ.getStringXMal(einrueckString, einrueckIndex);
+            final String randabstand = BuildaHQ.getStringXMal(einrueckString, einrueckIndex);
             return "\n" + randabstand + "+ " + result.replace("\n", "\n" + randabstand + einrueckString);  // wenn einrückIndex == 0  dann änderts nix
         } else {
             return "";
@@ -536,7 +548,7 @@ public class RuestkammerStarter extends OptionsVater {
 
     @Override
     public Element getSaveElement() {
-        Element root = myKammer.getSaveElement();
+        final Element root = myKammer.getSaveElement();
         root.setAttribute("selected", Boolean.toString(isSelected()));
         return root;
     }

@@ -10,9 +10,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
 	private final OptionsUpgradeGruppe oe1, oe4;
 	private final OptionsZaehlerGruppe oe2;
 	private final OptionsUpgradeGruppe oe3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedLeviathanDreadnought() {
+	public CHHellforgedLeviathanDreadnought() {
         name = "Hellforged Leviathan Dreadnought";
         grundkosten = getPts("Hellforged Leviathan Dreadnought");
 
@@ -51,7 +49,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }
@@ -66,8 +64,8 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         oe2.setAnzahl(0, oe2.getMaxAnzahl());
         oe4.alwaysSelected();
 
-        
-        
+
+
         if (oe1.isSelected("Hellforged siege claw") && oe3.isSelected("Hellforged siege claw")) {
             oe1.setPreis("Hellforged siege claw", getPts("Hellforged siege claw (pair)"));
             oe3.setPreis("Hellforged siege claw", 0);

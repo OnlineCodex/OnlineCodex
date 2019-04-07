@@ -1,6 +1,11 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class ORGrotTanks extends Eintrag {
 
@@ -53,7 +58,8 @@ public class ORGrotTanks extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
 
         if (!Kommanda.isSelected()) {

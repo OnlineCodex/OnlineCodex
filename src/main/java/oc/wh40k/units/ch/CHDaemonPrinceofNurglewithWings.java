@@ -1,6 +1,7 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofNurglewithWings extends Eintrag {
@@ -14,7 +15,7 @@ public class CHDaemonPrinceofNurglewithWings extends Eintrag {
         power = 10;
 
         seperator();
-        
+
         addWeapons(CHDeathGuardRuestkammer.class, true);
 
         seperator();
@@ -26,9 +27,9 @@ public class CHDaemonPrinceofNurglewithWings extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

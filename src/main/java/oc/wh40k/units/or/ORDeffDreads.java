@@ -1,6 +1,7 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class ORDeffDreads extends Eintrag {
 
@@ -43,8 +44,9 @@ public class ORDeffDreads extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
-        int selected = (d1.isSelected() ? 1 : 0) + (d2.isSelected() ? 1 : 0) + (d3.isSelected() ? 1 : 0);
+    @Override
+	public void refreshen() {
+        final int selected = (d1.isSelected() ? 1 : 0) + (d2.isSelected() ? 1 : 0) + (d3.isSelected() ? 1 : 0);
         if (selected == 1) power = 5;
         if (selected == 2) power = 10;
         if (selected == 3) power = 16;

@@ -32,7 +32,7 @@ public class CHHorrorsCSM extends Eintrag {
     @Override
     public void refreshen() {
 
-        int anzahl = horrors.getAnzahl(0);
+        final int anzahl = horrors.getAnzahl(0);
         instrument.setAktiv(anzahl - icon.getAnzahl() > 0);
         icon.setAktiv(anzahl - instrument.getAnzahl() > 0);
 

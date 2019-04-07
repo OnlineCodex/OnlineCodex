@@ -4,14 +4,14 @@ import oc.Eintrag;
 
 public class TYDeathleaper extends Eintrag {
 
-    
+
     public TYDeathleaper() {
         name = "Deathleaper(";
         grundkosten = getPts("Deathleaper");
         power = 4;
-        
+
 		addWarlordTraits("Mind Eater", true);
-		
+
         complete();
     }
 

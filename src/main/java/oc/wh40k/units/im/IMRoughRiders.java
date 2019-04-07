@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class IMRoughRiders extends Eintrag {
 
@@ -10,9 +14,7 @@ public class IMRoughRiders extends Eintrag {
 	private final OptionsUpgradeGruppe o3;
 	private final OptionsUpgradeGruppe o5;
 
-	private boolean kamirSelected = false;
-
-    public IMRoughRiders() {
+	public IMRoughRiders() {
         checkBuildaVater();
         name = "Rough Riders";
         grundkosten = 0;

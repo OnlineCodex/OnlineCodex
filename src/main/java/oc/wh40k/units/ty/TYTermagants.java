@@ -1,6 +1,10 @@
 package oc.wh40k.units.ty;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class TYTermagants extends Eintrag {
 

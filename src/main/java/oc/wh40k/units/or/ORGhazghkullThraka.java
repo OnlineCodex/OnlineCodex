@@ -1,7 +1,6 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORGhazghkullThraka extends Eintrag {
 
@@ -12,7 +11,7 @@ public class ORGhazghkullThraka extends Eintrag {
         name = "Ghazghkull Thraka";
         grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
-        
+
         seperator();
 
         addWarlordTraits("Goffs: Proper Killy", true);
@@ -21,7 +20,8 @@ public class ORGhazghkullThraka extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

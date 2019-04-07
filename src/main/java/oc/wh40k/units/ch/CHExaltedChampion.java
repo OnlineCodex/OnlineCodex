@@ -11,13 +11,12 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RefreshListener;
-import oc.RuestkammerStarter;
 
 public class CHExaltedChampion extends Eintrag {
 
     private final OptionsUpgradeGruppe mark;
 	private int lastMark = -1;
-	
+
     public CHExaltedChampion() {
 
         name = "Exalted Champion";
@@ -33,9 +32,9 @@ public class CHExaltedChampion extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -53,7 +52,7 @@ public class CHExaltedChampion extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

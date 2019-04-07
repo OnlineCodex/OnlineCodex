@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.COMPANY_COMMANDER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.OFFICER;
+
 import oc.Eintrag;
 
 public class IMCompanyCommander extends Eintrag {
@@ -12,7 +16,7 @@ public class IMCompanyCommander extends Eintrag {
         power = 3;
 
         seperator();
-        
+
         addWeapons(IMAstraMilitarumRuestkammer.class, true);
 
         seperator();

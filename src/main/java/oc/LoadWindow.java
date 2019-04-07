@@ -1,16 +1,19 @@
 package oc;
 
-import org.w3c.dom.Element;
-
-import javax.swing.*;
-import javax.swing.filechooser.FileFilter;
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Locale;
 import java.util.StringTokenizer;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
+
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileFilter;
+
+import org.w3c.dom.Element;
 
 public class LoadWindow extends JPanel {
 
@@ -29,9 +32,8 @@ public class LoadWindow extends JPanel {
         }
     };
 
-    private JFileChooser fc;
+    private final JFileChooser fc;
     private String loadText = "";
-    private String loadTextAllies = "";
     private Element loadElement;
 
     public LoadWindow(String currentDir) {
@@ -62,9 +64,9 @@ public class LoadWindow extends JPanel {
     }
 
     public void load() {
-        int returnVal = fc.showOpenDialog(LoadWindow.this);
+        final int returnVal = fc.showOpenDialog(LoadWindow.this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            File file = fc.getSelectedFile();
+            final File file = fc.getSelectedFile();
             loadFile(file);
         }
     }
@@ -75,22 +77,22 @@ public class LoadWindow extends JPanel {
             loadText = "";
 
             for (; ; ) {
-                int gelesenInt = leser.read();
+                final int gelesenInt = leser.read();
                 if (gelesenInt == -1) {
                     break;
                 }
-                char gelesenChar = (char) gelesenInt;
+                final char gelesenChar = (char) gelesenInt;
                 text = text + gelesenChar;
             }
 
             leser.close();
 
             BuildaHQ.loadWindow = true;
-            StringTokenizer tokenizer = new StringTokenizer(text, ";");
+            final StringTokenizer tokenizer = new StringTokenizer(text, ";");
 
             loadText = tokenizer.nextToken();
             loadText = loadText.substring(0, loadText.indexOf(SaveTextWindow.TOKEN));
-        } catch (Exception e) {
+        } catch (final Exception e) {
             JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden."));
             OnlineCodex.getInstance().dokumentLeeren();
         }

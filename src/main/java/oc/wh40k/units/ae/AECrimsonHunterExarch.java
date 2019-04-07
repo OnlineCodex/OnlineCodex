@@ -3,9 +3,7 @@ package oc.wh40k.units.ae;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -14,11 +12,7 @@ public class AECrimsonHunterExarch extends Eintrag {
 
 
 
-	private boolean exarch = false;
-
-	private boolean uniqueError = false;
-
-    private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1;
 
 
 
@@ -54,7 +48,8 @@ public class AECrimsonHunterExarch extends Eintrag {
 
     //@OVERRIDE
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         o1.alwaysSelected();
 

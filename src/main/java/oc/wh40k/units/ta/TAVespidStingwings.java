@@ -7,9 +7,7 @@ import oc.OptionsEinzelUpgrade;
 public class TAVespidStingwings extends Eintrag {
 
 	private final AnzahlPanel squad;
-	private final OptionsEinzelUpgrade boss;
-
-    public TAVespidStingwings() {
+	public TAVespidStingwings() {
         name = "Vespid Stingwings";
         grundkosten = 0;
 
@@ -20,7 +18,7 @@ public class TAVespidStingwings extends Eintrag {
 
         seperator();
 
-        add(boss = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vespid Strain Leader", getPts("Vespid Strain Leader")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vespid Strain Leader", getPts("Vespid Strain Leader")));
 
         complete();
     }

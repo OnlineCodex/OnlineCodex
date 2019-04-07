@@ -1,17 +1,20 @@
 package oc;
 
-import org.w3c.dom.Element;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
+import org.w3c.dom.Element;
+
 public class NamePanel extends OptionsVater implements KeyListener {
 
-    private boolean legal = true;
-    private String wert;
+    private final boolean legal = true;
+    private final String wert;
     private String name = "Name";
     private JTextField tName;
     private JLabel lName;
@@ -57,7 +60,7 @@ public class NamePanel extends OptionsVater implements KeyListener {
     public double getKosten() {
         try {
             return Integer.parseInt(tName.getText());
-        } catch (Exception e) {
+        } catch (final Exception e) {
             return 0.0;
         }
     }
@@ -81,13 +84,16 @@ public class NamePanel extends OptionsVater implements KeyListener {
         panel.add(lName);
     }
 
-    public void keyPressed(KeyEvent e) {
+    @Override
+	public void keyPressed(KeyEvent e) {
     }
 
-    public void keyTyped(KeyEvent e) {
+    @Override
+	public void keyTyped(KeyEvent e) {
     }
 
-    public void keyReleased(KeyEvent e) {
+    @Override
+	public void keyReleased(KeyEvent e) {
     }
 
     @Override
@@ -101,8 +107,9 @@ public class NamePanel extends OptionsVater implements KeyListener {
         return tName.getText();
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("NamePanel");
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement("NamePanel");
         root.setAttribute("name", tName.getText());
 
         return root;
@@ -123,6 +130,7 @@ public class NamePanel extends OptionsVater implements KeyListener {
         return "";
     }
 
-    public void mouseReleased(MouseEvent e) {
+    @Override
+	public void mouseReleased(MouseEvent e) {
     }
 }

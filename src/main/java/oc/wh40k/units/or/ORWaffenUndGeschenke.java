@@ -1,6 +1,11 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerVater;
 
 public class ORWaffenUndGeschenke extends RuestkammerVater {
 
@@ -51,11 +56,13 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setDefaultCloceCombat(String s) {
+    @Override
+	public void setDefaultCloceCombat(String s) {
         defaultNK = s;
     }
 
-    public void setDefaultRanged(String s) {
+    @Override
+	public void setDefaultRanged(String s) {
         defaultFK = s;
     }
 
@@ -98,7 +105,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             meleeForSouped = defaults[5];
             character = defaults[6];
             psyker = defaults[7];
-        } catch (Exception e) {
+        } catch (final Exception e) {
         }
 
         if (character) {
@@ -277,10 +284,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             bosseCC.setAnzahl(5, 1);
 
             seperator(5);
-            
+
             ogE.addElement(new OptionsGruppeEintrag("2 Killsaws", getPts("Two killsaws")));
             add(bosseCC2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator(5);
 
             if (!warbikerboss) {
@@ -307,7 +314,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	        if (!defaultNK.equals("no weapon") && !handwaffen.isSelected()) {
 	            handwaffen.alwaysSelected();
 	        }
-	
+
 	        if (character) {
 	            daLuckyStikk.setAktiv((chosenRelic == null || daLuckyStikk.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Goff"));
 	            morgogsFinkinCap.setAktiv((chosenRelic == null || morgogsFinkinCap.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Blood Axe"));
@@ -321,13 +328,13 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 	            if (handwaffen != null) {
 	                handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
 	            }
-	            
-	            boolean nkGitstoppa = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
-	            boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
-	            
+
+	            final boolean nkGitstoppa = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
+	            final boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
+
 	            gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
 	        }
-	        
+
 	        if (boyboss) {
 	            bosseCC2.setMaxAnzahl(bosseFK.isSelected() || bosseCC.isSelected() ? 0 : 1);
 	            bosseCC.setMaxAnzahl(2 - bosseFK.getAnzahl() - bosseCC2.getAnzahl() * 2);

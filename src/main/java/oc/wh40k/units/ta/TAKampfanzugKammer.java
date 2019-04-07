@@ -1,11 +1,21 @@
 package oc.wh40k.units.ta;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BATTLESUIT;
+import static oc.KeyWord.COMMANDER;
+import static oc.KeyWord.ETHEREAL;
+import static oc.KeyWord.FLY;
+
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerVater;
 
 public class TAKampfanzugKammer extends RuestkammerVater {
 
@@ -14,14 +24,12 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private OptionsUpgradeGruppe o2;
     private OptionsZaehlerGruppe o4;
     public OptionsUpgradeGruppe o5, o6/*, o7*/;
-    private boolean[] defaults;
     private boolean XV08 = false;
     private boolean XV81 = false;
     private boolean XV84 = false;
     public boolean farsight = false;
-    private boolean character = false;
     private boolean droneSelected = false;
-    
+
     private OptionsEinzelUpgrade puretideEngramNeurochip;
     private OptionsEinzelUpgrade onagerGauntlet;
     private OptionsEinzelUpgrade multiSensoryDiscouragementArray;
@@ -30,13 +38,13 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private OptionsEinzelUpgrade vectoredManoeuvringThrusters;
     private OptionsEinzelUpgrade dynamicMirrorField;
     private OptionsEinzelUpgrade gravInhibitorField;
-    
+
     public TAKampfanzugKammer() {
         grundkosten = 25;
     }
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("");
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -68,11 +76,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(puretideEngramNeurochip = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Puretide Engram Neurochip", 0).setRelic(true));
+        add(puretideEngramNeurochip = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Puretide Engram Neurochip", 0).setRelic(true));
        	add(onagerGauntlet = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Onager Gauntlet", 0).setRelic(true));
        	add(multiSensoryDiscouragementArray = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-Sensory Discouragement Array", 0).setRelic(true));
        	add(solidImageProjectionUnit = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Solid-Image Projection Unit", 0).setRelic(true));
@@ -80,11 +85,10 @@ public class TAKampfanzugKammer extends RuestkammerVater {
        	add(vectoredManoeuvringThrusters = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vectored Manoeuvring Thrusters", 0).setRelic(true));
        	add(dynamicMirrorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dynamic Mirror Field", 0).setRelic(true));
        	add(gravInhibitorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grav-Inhibitor Field", 0).setRelic(true));
-        
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
-        
+
         // Fernkampfwaffen
         if (type.equals("Broadside")) {
             ogE.addElement(new OptionsGruppeEintrag("Heavy rail rifle", getPts("Heavy rail rifle")));
@@ -178,7 +182,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 	        if (type.equals("Commander")) {
 	            o2.setMaxAnzahl(4);
 	        }
-	
+
 	        if (type.equals("Ghostkeel Shas'vre")) {
 	            o2.setMaxAnzahl(2);
 	        }
@@ -197,22 +201,22 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
             add(o4 = new OptionsZaehlerGruppe(0, randAbstand + 280, cnt, "", ogE, 2));
         }
-        
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-               
+        }
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
@@ -223,7 +227,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     @Override
     public void refreshen() {
         if (!type.equals("Broadside") && !type.equals("Stealth Shas'ui") && !type.equals("Ghostkeel Shas'vre")) {
-        	
+
         } else if (type.equals("Stealth Shas'ui")) {
             if (!o5.isSelected()) {
                 o5.setSelected(0, true);
@@ -241,8 +245,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Commander") && !keywords.contains("XV86_COLDSTAR")) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(4);
-            int selected = o1.getAnzahl() + o2.getAnzahl();
-            int remaining = 4 - selected;
+            final int selected = o1.getAnzahl() + o2.getAnzahl();
+            final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
@@ -252,8 +256,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Commander") && keywords.contains("XV86_COLDSTAR")) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
-            int selected = o2.getAnzahl() + o1.getAnzahl();
-            int remaining = 4 - selected;
+            final int selected = o2.getAnzahl() + o1.getAnzahl();
+            final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
@@ -261,8 +265,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         }
 
         if (type.equals("Crisis Shas'ui")) {
-            int selected = o1.getAnzahl() + o2.getAnzahl();
-            int remaining = 3 - selected;
+            final int selected = o1.getAnzahl() + o2.getAnzahl();
+            final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
 
@@ -271,8 +275,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         }
 
         if (type.equals("Crisis Shas'vre")) {
-            int selected = o1.getAnzahl() + o2.getAnzahl();
-            int remaining = 3 - selected;
+            final int selected = o1.getAnzahl() + o2.getAnzahl();
+            final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
 
@@ -281,8 +285,8 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         }
 
         if (type.equals("Crisis Bodyguard")) {
-            int selected = o1.getAnzahl() + o2.getAnzahl();
-            int remaining = 3 - selected;
+            final int selected = o1.getAnzahl() + o2.getAnzahl();
+            final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
 
@@ -293,12 +297,12 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Stealth Shas'ui")) {
             o2.setMaxAnzahl(1);
         }
-        
+
         if(o4 != null) {
         	droneSelected = o4.isSelected();
         }
 
-        puretideEngramNeurochip.setAktiv((chosenRelic == null || puretideEngramNeurochip.isSelected()));   
+        puretideEngramNeurochip.setAktiv((chosenRelic == null || puretideEngramNeurochip.isSelected()));
         onagerGauntlet.setAktiv(((chosenRelic == null || onagerGauntlet.isSelected()) && keywords.contains(BATTLESUIT) && keywords.contains(COMMANDER)));
         multiSensoryDiscouragementArray.setAktiv(chosenRelic == null || multiSensoryDiscouragementArray.isSelected());
         solidImageProjectionUnit.setAktiv((chosenRelic == null || solidImageProjectionUnit.isSelected()) && keywords.contains(ETHEREAL) && keywords.contains(FLY));
@@ -307,7 +311,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         dynamicMirrorField.setAktiv((chosenRelic == null || dynamicMirrorField.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Dal'yth Sept"));
         gravInhibitorField.setAktiv((chosenRelic == null || gravInhibitorField.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Sa'cea Sept"));
     }
-    
+
 
     @Override
     public void deleteYourself() {
@@ -349,12 +353,12 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o6.deselectAll();
             entryCleared = true;
         }
-        
+
         if (entryCleared) {
             RefreshListener.fireRefresh();
         }
     }
-    
+
     public boolean dronesSelected() {
     	return droneSelected;
     }

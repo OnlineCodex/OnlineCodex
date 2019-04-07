@@ -1,15 +1,19 @@
 package oc.wh40k.units.ae;
 
-import oc.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DRUKHARI;
+import static oc.KeyWord.HAEMONCULUS;
+import static oc.KeyWord.HAEMUNCULUS_COVEN;
+import static oc.KeyWord.INFANTRY;
 
-import static oc.KeyWord.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
 
 public class AEHaemonculus extends Eintrag {
-    private static OptionsEinzelUpgrade oe1;
-
     public AEHaemonculus() {
     	super(AELDARI, DRUKHARI, INFANTRY, CHARACTER, HAEMONCULUS);
-    	
+
         name = "Haemonculus";
         grundkosten = getPts("Haemonculus");
         power = 5;
@@ -22,14 +26,14 @@ public class AEHaemonculus extends Eintrag {
 
         //Punkte für Crucible of malediction fehlen im Index und im FAQ
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Crucible of malediction", getPts("Crucible of malediction")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Crucible of malediction", getPts("Crucible of malediction")));
 
         seperator();
 
         addWeapons(AEDrukhariRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", HAEMUNCULUS_COVEN);
 
         complete();

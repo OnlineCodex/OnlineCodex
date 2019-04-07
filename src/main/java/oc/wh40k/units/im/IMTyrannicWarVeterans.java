@@ -1,6 +1,7 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
 
 public class IMTyrannicWarVeterans extends Eintrag {
 

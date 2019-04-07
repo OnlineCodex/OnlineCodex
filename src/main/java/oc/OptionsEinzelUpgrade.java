@@ -1,8 +1,8 @@
 package oc;
 
-import org.w3c.dom.Element;
-
 import java.awt.event.MouseEvent;
+
+import org.w3c.dom.Element;
 
 public class OptionsEinzelUpgrade extends OptionsVater {
 
@@ -27,7 +27,7 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     }
 
     public OptionsEinzelUpgrade(int ID, int lX, int lY, String verzierung, String name) {
-        konstruktorDerFuerAlleGilt(lX, lY, verzierung, name, (double) -88);
+        konstruktorDerFuerAlleGilt(lX, lY, verzierung, name, -88);
     }
 
     public OptionsEinzelUpgrade(int ID, int lX, int lY, String verzierung, String kurzerName, String name, double preis) {
@@ -50,7 +50,8 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         this.showKosten = showKosten;
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         return myUpgrade.getKosten() * this.modelle;
     }
 
@@ -86,7 +87,8 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         this.showKosten = showKosten;
     }
 
-    public String getLabel() {
+    @Override
+	public String getLabel() {
         if (myUpgrade.isSelected()) {
             return myUpgrade.getButton().getText() + ZEILENUMBRUCH;
         }
@@ -94,7 +96,8 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     }
 
     //@OVERRIDE
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
         if (!aktiv) {
             return;
         }
@@ -102,7 +105,8 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         RefreshListener.fireRefresh();
     }
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
         return myUpgrade.isSelected();
     }
 
@@ -110,20 +114,23 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         myUpgrade.setSelected(b);
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return myUpgrade.isLegal();
     }
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
         myUpgrade.setLegal(b);
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         if (!aktiv) {
             return "";
         }
 
-        StringBuilder text = new StringBuilder(BuildaHQ.abstand);
+        final StringBuilder text = new StringBuilder(BuildaHQ.abstand);
         String kosten = "";
 
         if (BuildaHQ.allePunktkosten) {
@@ -141,24 +148,28 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         myUpgrade.getButton().setToolTipText(s);
     }
 
-    public String getSaveText() {
+    @Override
+	public String getSaveText() {
         return (this.isSelected() ? "y" : "n");
     }
 
-    public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("Upgrade");
+    @Override
+	public Element getSaveElement() {
+        final Element root = BuildaHQ.getNewXMLElement("Upgrade");
         root.setAttribute("selected", Boolean.toString(isSelected()));
 
         return root;
     }
 
-    public void load(String s) {
+    @Override
+	public void load(String s) {
         if (s.equals("y")) {
             myUpgrade.switsch();
         }
     }
 
-    public void loadElement(Element e) {
+    @Override
+	public void loadElement(Element e) {
         this.setSelected(Boolean.parseBoolean(e.getAttribute("selected")));
     }
 

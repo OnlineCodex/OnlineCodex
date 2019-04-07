@@ -1,22 +1,24 @@
 package oc;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
-import oc.wh40k.units.Warlordtraits;
-import oc.wh40k.units.im.IMAdeptaSororitasRuestkammer;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.EINTRAG;
+
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.util.Set;
+import java.util.StringTokenizer;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.Set;
-import java.util.StringTokenizer;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Sets;
 
-import static com.google.common.collect.Sets.newHashSet;
-import static oc.RefreshListener.Priority.EINTRAG;
-import static oc.RefreshListener.addRefreshListener;
+import oc.wh40k.units.Warlordtraits;
 
 public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
@@ -38,8 +40,8 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected int power = 0;
 	protected OptionsButtonUpgrade chosenRelic = null;
 	protected boolean uniqueError = false;
-	private JLabel lKosten = new JLabel("");
-	private JLabel legalerEintragLabel = new JLabel();
+	private final JLabel lKosten = new JLabel("");
+	private final JLabel legalerEintragLabel = new JLabel();
 	private boolean countToMinimum = true;
 	private boolean countToMaximum = true;
 	private double prozentKosten = 0.0;
@@ -56,7 +58,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		kostenLabelAktualisieren();
 
 		legalerEintragLabel.setFont(new Font("arial", Font.BOLD, 12));
-		legalerEintragLabel.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+		legalerEintragLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		legalerEintragLabel.setForeground(Color.RED);
 		legalerEintragLabel.setSize(150, 17);
 
@@ -112,7 +114,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 				if(previousRuestKammer != null) {
 					correctRuestkammerPosition((RuestkammerStarter) optionen.elementAt(i), previousRuestKammer);
 				}
-				previousRuestKammer = (RuestkammerStarter) optionen.elementAt(i);	
+				previousRuestKammer = (RuestkammerStarter) optionen.elementAt(i);
 			}
 		}
 		if (chosenRelic == null) {
@@ -154,12 +156,12 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		panel.setSize(getBreite(), getHöhe());
 		lKosten.setLocation(278, getHöhe() - 20);
 		legalerEintragLabel.setLocation(278, getHöhe() - 40);
-		
+
 		if(warlordChange == true) {
 			RefreshListener.fireRefresh();
 		}
-		
-		
+
+
 	}
 
 	public void setBuildaVater(BuildaVater buildaVater) {
@@ -168,7 +170,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 
 	private void checkUnikatErrorMessageState() {
-		String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
+		final String fehlerBuffer = unikatFehler ? "" : getFehlermeldung();
 
 		if (isUnikat()) {
 			if (unikat && oc.BuildaHQ.getCountFromInformationVectorGlobal(unikatName) > unikatMax) {
@@ -316,7 +318,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 			titel += " [WARLORD]";
 		}
 
-		StringBuilder text = new StringBuilder(titel);
+		final StringBuilder text = new StringBuilder(titel);
 
 		for (int i = 0; i < optionen.size(); ++i) {
 			if (optionen.elementAt(i).isSelected()) {
@@ -372,7 +374,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 
 		for (int i = 0; i < optionen.size(); ++i) {
 			if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-				RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
+				final RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
 
 				if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
 						|| !(rk.getKammer().toString().indexOf("GiftsOf") == -1) || !(rk.getKammer().toString().indexOf("Spites") == -1) || !(rk.getKammer().toString().indexOf("Assassin") == -1)) {
@@ -382,21 +384,21 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 						text = rk.getKammer().getText().substring(1, rk.getKammer().getText().length());
 					}
 					text = text.replaceAll("\n- ", "-");
-					StringTokenizer tokenizer = new StringTokenizer(text, ",");
+					final StringTokenizer tokenizer = new StringTokenizer(text, ",");
 					while (tokenizer.hasMoreElements()) {
-						String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
+						final String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
 
 						if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
 							BuildaHQ.Items.remove(tok);
 						}
 					}
 				}
-				
+
 				if(optionen.elementAt(i).isSelected() && ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == true) {
 					((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = false;
 					BuildaHQ.addToInformationVectorGlobal("Warlord", -1);
 				}
-				
+
 				BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
 				LOGGER.info("RuestkammerStarter-rk-deleteyourself");
 				rk.deleteYourself();
@@ -423,7 +425,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	public void setInformationVectorValue(String s, int value) {
 		checkBuildaVater().setInformationVectorValue(s, value);
 	}
-	
+
 	public void addWarlordTraits(String mandatoryChoice, boolean subfactionsAllowed) {
 		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
 		warlordTraits.initKammer();
@@ -434,7 +436,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		}
         add(warlordTraits);
 	}
-	
+
 	public void addWarlordTraits(String mandatoryChoice, KeyWord exclusiveKeyword) {
 		warlordTraits = new RuestkammerStarter(ID, randAbstand, cnt, Warlordtraits.class, "Warlordtrait: ", keywords);
 		warlordTraits.initKammer();
@@ -446,7 +448,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		((Warlordtraits)warlordTraits.getKammer()).setExclusiveKeyword(exclusiveKeyword);
         add(warlordTraits);
 	}
-	
+
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice) {
 		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
         weapons.getKammer().setType(name);
@@ -455,7 +457,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(weapons);
         weapons.setAbwaehlbar(!mandatoryChoice);
 	}
-	
+
 	public void addWeapons(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String defaultFK, String defaultNK) {
 		weapons = new RuestkammerStarter(ID, randAbstand, cnt, cls, "", keywords);
         weapons.getKammer().setType(name);
@@ -466,11 +468,11 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
         add(weapons);
         weapons.setAbwaehlbar(!mandatoryChoice);
 	}
-	
+
 	public RuestkammerVater getWeapons() {
 		return weapons.getKammer();
 	}
-	
+
 	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
 		ruestkammer.getPanel().setLocation(
                 (int) ruestkammer.getPanel().getLocation().getX(),
@@ -489,13 +491,13 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	protected void removeKeyword(KeyWord k) {
 		keywords.remove(k);
 	}
-	
+
 	public RuestkammerStarter createTroopChampion(Class<? extends RuestkammerVater> cls, boolean mandatoryChoice, String btnText, String type){
-		RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, cls, btnText, keywords);
+		final RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, cls, btnText, keywords);
 		rk.getKammer().setType(type);
         rk.initKammer();
         rk.setAbwaehlbar(!mandatoryChoice);
-        
+
         return rk;
 	}
 }

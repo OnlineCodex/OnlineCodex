@@ -8,9 +8,7 @@ import oc.OptionsUpgradeGruppe;
 public class IMRedemptorDreadnought extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2, o3;
-	private final OptionsEinzelUpgrade oe1;
-
-    public IMRedemptorDreadnought() {
+	public IMRedemptorDreadnought() {
         name = "Redemptor Dreadnought";
         grundkosten = getPts("Redemptor Dreadnought");
         power = 10;
@@ -35,7 +33,7 @@ public class IMRedemptorDreadnought extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Icarus rocket pod", getPts("Icarus rocket pod")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Icarus rocket pod", getPts("Icarus rocket pod")));
 
         complete();
     }
