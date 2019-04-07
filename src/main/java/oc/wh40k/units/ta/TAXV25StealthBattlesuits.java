@@ -39,7 +39,7 @@ public class TAXV25StealthBattlesuits extends Eintrag {
         add(ob2);
 
         for (int i = 0; i < geister.length; ++i) {
-        	geister[i] = createTroopChampion(TAKampfanzugKammer.class, true, "Stealth Shas'ui", "Stealth Shas'ui");
+        	geister[i] = createTroopChampion(TAKampfanzugKammer.class, false, "Stealth Shas'ui", "Stealth Shas'ui");
             geister[i].setGrundkosten(getPts("XV25 Stealth Battlesuit"));
 
             add(geister[i]);

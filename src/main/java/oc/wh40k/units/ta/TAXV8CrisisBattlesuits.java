@@ -41,7 +41,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 
         rk = new Vector<RuestkammerStarter>();
         for (int i = 0; i < 9; i++) {
-            rk.add(createTroopChampion(TAKampfanzugKammer.class, true, "Crisis Shas'ui", "Crisis Shas'ui"));
+            rk.add(createTroopChampion(TAKampfanzugKammer.class, false, "Crisis Shas'ui", "Crisis Shas'ui"));
             rk.lastElement().setGrundkosten(getPts("XV8 Crisis Battlesuits"));
             add(rk.lastElement());
         }

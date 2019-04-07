@@ -20,25 +20,25 @@ public class TAXV88BroadsideBattlesuits extends Eintrag {
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/KolossKampfanzugteam.gif"));
-        ob1 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'vre", "Broadside");
+        ob1 = createTroopChampion(TAKampfanzugKammer.class, false, "Broadside Shas'vre", "Broadside");
         ob1.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(ob1);
 
         seperator();
 
-        o1 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
+        o1 = createTroopChampion(TAKampfanzugKammer.class, false, "Broadside Shas'ui", "Broadside");
         o1.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o1);
 
         seperator();
 
-        o2 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
+        o2 = createTroopChampion(TAKampfanzugKammer.class, false, "Broadside Shas'ui", "Broadside");
         o2.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o2);
 
         seperator();
 
-        o3 = createTroopChampion(TAKampfanzugKammer.class, true, "Broadside Shas'ui", "Broadside");
+        o3 = createTroopChampion(TAKampfanzugKammer.class, false, "Broadside Shas'ui", "Broadside");
         o3.setGrundkosten(getPts("XV88 Broadside Battlesuit"));
         add(o3);
 

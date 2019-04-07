@@ -28,6 +28,7 @@ public class TAXV104RiptideBattlesuits extends Eintrag {
             rk.lastElement().initKammer(false, false, false, false, false, false, true);
             rk.lastElement().setGrundkosten(getPts("XV104 Riptide Battlesuit"));
             add(rk.lastElement());
+            rk.lastElement().setAbwaehlbar(false);
         }
 
         seperator();
