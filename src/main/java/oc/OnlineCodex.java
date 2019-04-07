@@ -12,8 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -202,21 +200,21 @@ public class OnlineCodex extends BuildaPanel {
         }
     }
 
-    private final KeyListener budgetChangeListener = new KeyListener() {
-
-        @Override
-        public void keyTyped(KeyEvent e) {
-        }
-
-        @Override
-        public void keyPressed(KeyEvent e) {
-        }
-
-        @Override
-        public void keyReleased(KeyEvent e) {
-            refreshListener.run();
-        }
-    };
+//    private final KeyListener budgetChangeListener = new KeyListener() {
+//
+//        @Override
+//        public void keyTyped(KeyEvent e) {
+//        }
+//
+//        @Override
+//        public void keyPressed(KeyEvent e) {
+//        }
+//
+//        @Override
+//        public void keyReleased(KeyEvent e) {
+//            refreshListener.run();
+//        }
+//    };
 
     public OnlineCodex(Optional<Version> version, String[] args) {
         final String windowTitle = "powered by OnlineCodex.de" + version

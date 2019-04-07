@@ -1,8 +1,5 @@
 package oc.wh40k.armies;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
@@ -10,7 +7,7 @@ import oc.utils.ResourceUtils;
 
 public class VOLKTauEmpire extends BuildaVater {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
 
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
     private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};

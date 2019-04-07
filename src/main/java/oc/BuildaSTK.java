@@ -148,7 +148,12 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int LORD_OF_WAR = 9;
 
     HashMap<String, String> volkMap = new HashMap<String, String>() {
-        {
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+
+		{
             put("CU", "VOLKCultMechanicus");
             put("IR", "VOLKImperialeRitter");
             put("SK", "VOLKSkitarii");

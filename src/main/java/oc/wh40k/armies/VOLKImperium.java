@@ -3,9 +3,6 @@ package oc.wh40k.armies;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.google.common.collect.ImmutableSet;
 
 import oc.BuildaVater;
@@ -14,7 +11,7 @@ import oc.utils.ResourceUtils;
 
 public class VOLKImperium extends BuildaVater {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(VOLKImperium.class);
+    //private static final Logger LOGGER = LoggerFactory.getLogger(VOLKImperium.class);
 
     private static final String[] HQeinträge_AM = new String[]{"", "Company Commander", "Tank Commander"};
     private static final String[] Standardeinträge_AM = new String[]{"", "Infantry Squad", "Conscripts"};
