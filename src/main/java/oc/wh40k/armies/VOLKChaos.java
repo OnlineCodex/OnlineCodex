@@ -168,7 +168,7 @@ public class VOLKChaos extends BuildaVater {
 
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "", "Red Corsairs", "Crimons Slaughter", "The Purge", "The Scourged", "Brazen Beasts", "Flawless Host", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
-    public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptoral", "Fallen Angels", "Legion of Skulls");
+    public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptoral", "Fallen Angels", "Legion of Skulls");
 
     public static Set<String> getLegions() {
     	return LEGIONS;
@@ -269,8 +269,6 @@ public class VOLKChaos extends BuildaVater {
         formationen.add("Death Guard");
         formationen.add("Thousand Sons");
         formationen.add("");
-        CHAOS_SPECIAL_DETACHEMENTS.forEach(legion -> formationen.add(legion));
-        formationen.add("");
         formationen.add("Chaosdaemons");
         CHAOS_GODS.forEach(god -> formationen.add(god));
         formationen.add("");
@@ -278,6 +276,7 @@ public class VOLKChaos extends BuildaVater {
         formationen.add("");
         formationen.add("The Tainted");
 
+        CHAOS_SPECIAL_DETACHEMENTS.forEach(legion -> specialDetachments.add(legion));
 
         complete();
     }

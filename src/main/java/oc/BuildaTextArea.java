@@ -218,11 +218,11 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             if (bV.superformation != null) {
                 if (bV.getId().equals("SM")) {
                 } else if (bV.getId().equals("AM")) {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
+                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
                 } else if (bV.getId().equals("TA")) {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
+                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
                 } else {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": START");
+                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
                 }
                 text.append(" - ");
                 text.append((int) bV.getKosten());
@@ -236,7 +236,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 for (int i = 0; i < bV.superformation.formationen.size(); i++) {
                     text.append(getBuildaVaterText(bV.superformation.formationen.get(i)));
                 }
-                text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + ": ENDE");
+                text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": ENDE");
                 text.append(ZEILENUMBRUCH);
                 text.append(ZEILENUMBRUCH);
             } else {
@@ -367,8 +367,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                     triedAllies.add(bV.getId());
                 }
             }
-            text.append(/*bV.volk + " " +*/ bV.getFormationType());
-            text.append(": " + bV.getKontingentTyp());
+            text.append(/*bV.volk + " " +*/ bV.getKontingentTyp());
+            text.append(": \n" + bV.getFormationType());
+            text.append(": \n" + bV.getSpecialDetachmentType());
             if (bV.Hauptkontingent.isSelected()) {
                 nameDerArtDerArmeeDekliniert = bV.nameDerArtDerArmeeDekliniert;
                 noAllies = (Vector<String>) bV.noAllies.clone();

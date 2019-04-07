@@ -77,9 +77,11 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected Vector<String> supplements = new Vector<String>();
     protected Vector<String> kontingente = new Vector<String>();
     protected Vector<String> formationen = new Vector<String>();
+    protected Vector<String> specialDetachments = new Vector<String>();
     protected JComboBox<String> supplementBox = new JComboBox<String>();
     protected JComboBox<String> kontingentBox = new JComboBox<String>();
     protected JComboBox<String> formationBox = new JComboBox<String>();
+    protected JComboBox<String> specialDetachmentBox = new JComboBox<String>();
     private Sonstige[] sonstige;
     private final ActionListener refreshActionListenerKon = new ActionListener() {
 
@@ -203,12 +205,20 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
             return "";
         }
     }
+    
+    public String getSpecialDetachmentType() {
+        if (!((String) specialDetachmentBox.getSelectedItem()).equals("")) {
+            return ((String) specialDetachmentBox.getSelectedItem());
+        } else {
+            return "";
+        }
+    }
 
     public int getCP() {
 
     	int substractor = 0;
 
-        if(VOLKChaos.CHAOS_SPECIAL_DETACHEMENTS.contains(getFormationType())){
+        if(!getSpecialDetachmentType().equals("")){
         	substractor = 1;
         }
 
@@ -301,9 +311,17 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 formationBox.setBounds(290, 5, 280, 20);
                 formationBox.setBackground(Color.WHITE);
 
+                specialDetachmentBox = new JComboBox<String>(specialDetachments);
+                specialDetachmentBox.setMaximumRowCount(25);
+
+                panel.add(specialDetachmentBox);
+                specialDetachmentBox.addActionListener(refreshActionListenerForm);
+                specialDetachmentBox.setBounds(575, 5, 280, 20);
+                specialDetachmentBox.setBackground(Color.WHITE);
+                
                 panel.add(Hauptkontingent);
                 Hauptkontingent.addActionListener(cbActionListener);
-                Hauptkontingent.setBounds(575, 5, 130, 20);
+                Hauptkontingent.setBounds(855, 5, 130, 20);
                 Hauptkontingent.setBackground(Color.WHITE);
 
                 minAuswahlen.put("Patrol Detachment", new int[]{0, 1, 1, 0, 0, 0, 0, 0, 0, 0});
