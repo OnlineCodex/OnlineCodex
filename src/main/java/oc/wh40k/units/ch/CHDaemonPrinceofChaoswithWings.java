@@ -65,7 +65,12 @@ public class CHDaemonPrinceofChaoswithWings extends Eintrag {
 
     @Override
     public void refreshen() {
-        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && (mark.getAnzahl() != 0));
+        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
+
+        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
+        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
+        ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
+
 
         if(mark.getSelectedIndex() != lastMark) {
         	lastMark = mark.getSelectedIndex();

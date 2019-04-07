@@ -388,14 +388,17 @@ public class PsychicPowers extends RuestkammerVater {
 
         if (disciplineOfTzeentch) {
             o5.setMaxAnzahl(numPowers);
+            o5.setAktiv(tzeentch);
         }
 
         if (disciplineOfNurgle) {
             o6.setMaxAnzahl(numPowers);
+            o6.setAktiv(nurgle);
         }
 
         if (disciplineOfSlaanesh) {
             o7.setMaxAnzahl(numPowers);
+            o7.setAktiv(slaanesh);
         }
 
         if (runesOfFate) {

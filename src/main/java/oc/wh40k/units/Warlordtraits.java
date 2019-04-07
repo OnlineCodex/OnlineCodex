@@ -424,6 +424,7 @@ public class Warlordtraits extends RuestkammerVater {
     @Override
 	public void refreshen() {
         final String army= buildaVater.getFormationType();
+        final String specialDetachement= buildaVater.getSpecialDetachmentType();
         if(warlordtraits3 != null) {
         	warlordtraits.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
         	warlordtraits2.setLegal(warlordtraits.getAnzahl() + warlordtraits2.getAnzahl() + warlordtraits3.getAnzahl() == 1);
@@ -512,13 +513,13 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("World Eaters: Slaughterborn", army.equals("World Eaters"));
     		warlordtraits.setAktiv("Word Bearers: The Voice of Lorgar", army.equals("Word Bearers"));
 
-    		warlordtraits.setAktiv("Bringers of Despair: Chosen of the Warmaster", army.equals("Bringers of Despair"));
-    		warlordtraits.setAktiv("Devastation Battery: Armour Bane", army.equals("Devastation Battery"));
-    		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", army.equals("Cult of the Damned"));
-    		warlordtraits.setAktiv("Daemonkin Ritualists: Shepherd of the true Faith", army.equals("Daemonkin Ritualists"));
-    		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", army.equals("Soulforged Pack"));
-    		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", army.equals("Host Raptoral"));
-    		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", army.equals("Legion of Skulls"));
+    		warlordtraits.setAktiv("Bringers of Despair: Chosen of the Warmaster", specialDetachement.equals("Bringers of Despair"));
+    		warlordtraits.setAktiv("Devastation Battery: Armour Bane", specialDetachement.equals("Devastation Battery"));
+    		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", specialDetachement.equals("Cult of the Damned"));
+    		warlordtraits.setAktiv("Daemonkin Ritualists: Shepherd of the true Faith", specialDetachement.equals("Daemonkin Ritualists"));
+    		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", specialDetachement.equals("Soulforged Pack"));
+    		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", specialDetachement.equals("Host Raptoral"));
+    		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", specialDetachement.equals("Legion of Skulls"));
 
     		warlordtraits.setAktiv("Red Corsairs: Reaver Lord", army.equals("Red Corsairs"));
     		warlordtraits.setAktiv("Crimson Slaughter: Maelstrom of Torment", army.equals("Crimson Slaughter"));

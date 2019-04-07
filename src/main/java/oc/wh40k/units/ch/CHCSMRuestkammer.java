@@ -1,8 +1,6 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.KHORNE;
-import static oc.KeyWord.NURGLE;
-import static oc.KeyWord.TZEENTCH;
+import static oc.KeyWord.*;
 
 import java.util.Set;
 
@@ -95,25 +93,25 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	    			ogE.addElement(new OptionsGruppeEintrag("Blissgiver", getPts("Bolt pistol")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Bringers of Despair"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Bringers of Despair"))
     		{
 	    		if(ogE.get(i).getName().equals("Power axe")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Foecleaver", getPts("Power axe")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Daemonkin Ritualists"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Daemonkin Ritualists"))
     		{
 	    		if(ogE.get(i).getName().equals("Force stave")){
 	    			ogE.addElement(new OptionsGruppeEintrag("The Burning Rod", getPts("Force stave")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Soulforged Pack"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Soulforged Pack"))
     		{
 	    		if(ogE.get(i).getName().equals("Mechatendrils")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Mecha-Serpents", getPts("Mechatendrils")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Fallen Angels"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Fallen Angels"))
     		{
 	    		if(ogE.get(i).getName().equals("Force sword")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Caliban Steel Blade", getPts("Force sword")).setRelic(true));
@@ -418,21 +416,21 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 
     	talismanOfBurningBlood.setAktiv((chosenRelic == null || talismanOfBurningBlood.isSelected()) && keywords.contains(KHORNE));
     	eyeOfTzeentch.setAktiv(((chosenRelic == null || eyeOfTzeentch.isSelected()) && keywords.contains(TZEENTCH)));
-    	intoxicatingElixir.setAktiv(((chosenRelic == null || intoxicatingElixir.isSelected()) && keywords.contains(NURGLE)));
+    	intoxicatingElixir.setAktiv(((chosenRelic == null || intoxicatingElixir.isSelected()) && keywords.contains(SLAANESH)));
     	theEyeOfNight.setAktiv((chosenRelic == null || theEyeOfNight.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	fleshmetalExoskeleton.setAktiv((chosenRelic == null || fleshmetalExoskeleton.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iron Warriors"));
     	brassCollarOfBhorghaster.setAktiv((chosenRelic == null || brassCollarOfBhorghaster.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("World Eaters"));
-    	theDaemonsEye.setAktiv((chosenRelic == null || theDaemonsEye.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Devastation Battery"));
-    	theInfernoTome.setAktiv((chosenRelic == null || theInfernoTome.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Cult of the Damned"));
-    	chiropteranWings.setAktiv((chosenRelic == null || chiropteranWings.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Host Raptorial"));
+    	theDaemonsEye.setAktiv((chosenRelic == null || theDaemonsEye.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Devastation Battery"));
+    	theInfernoTome.setAktiv((chosenRelic == null || theInfernoTome.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Cult of the Damned"));
+    	chiropteranWings.setAktiv((chosenRelic == null || chiropteranWings.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Host Raptorial"));
     	theGorePlate.setAktiv((chosenRelic == null || theGorePlate.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Legion of Skulls"));
     	trophiesOfSlaughter.setAktiv((chosenRelic == null || trophiesOfSlaughter.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	sightlessHelm.setAktiv((chosenRelic == null || sightlessHelm.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	cloakOfConquest.setAktiv((chosenRelic == null || cloakOfConquest.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
-    	orbOfUnlife.setAktiv((chosenRelic == null || orbOfUnlife.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Purge"));
-    	bookOfUntruth.setAktiv((chosenRelic == null || bookOfUntruth.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Scourged"));
-    	daemonfleshPlate.setAktiv((chosenRelic == null || daemonfleshPlate.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Brazen Beasts"));
-    	flawlessCloak.setAktiv((chosenRelic == null || flawlessCloak.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Flawless Host"));
+    	orbOfUnlife.setAktiv((chosenRelic == null || orbOfUnlife.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("The Purge"));
+    	bookOfUntruth.setAktiv((chosenRelic == null || bookOfUntruth.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("The Scourged"));
+    	daemonfleshPlate.setAktiv((chosenRelic == null || daemonfleshPlate.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Brazen Beasts"));
+    	flawlessCloak.setAktiv((chosenRelic == null || flawlessCloak.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Flawless Host"));
 
     }
 

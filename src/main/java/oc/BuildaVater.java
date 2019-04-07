@@ -207,7 +207,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
     
     public String getSpecialDetachmentType() {
-        if (!((String) specialDetachmentBox.getSelectedItem()).equals("")) {
+        if (specialDetachments.size() > 0 && !((String) specialDetachmentBox.getSelectedItem()).equals("")) {
             return ((String) specialDetachmentBox.getSelectedItem());
         } else {
             return "";
