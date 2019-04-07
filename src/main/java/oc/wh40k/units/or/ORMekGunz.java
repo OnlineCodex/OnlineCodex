@@ -31,7 +31,8 @@ public class ORMekGunz extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk2.setMaxAnzahl(wummen.getModelle());
         fk2.setLegal(fk2.getAnzahl() == wummen.getModelle());
 

@@ -2,8 +2,12 @@ package oc.wh40k.units.ty;
 
 
 
-import oc.*;
-import oc.wh40k.units.im.IMAstraMilitarumHeavyWeapons;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 
 
@@ -16,7 +20,7 @@ public class TYBroodBrothersInfantrySquad extends Eintrag {
     private final OptionsZaehlerGruppe o1, o2;
 
     private final OptionsZaehlerGruppe o3;
-    
+
     private final RuestkammerStarter rkBoss;
 
 

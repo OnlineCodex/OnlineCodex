@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class IMLieutenants extends Eintrag {
 
@@ -49,15 +53,15 @@ public class IMLieutenants extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Jump pack", getPts("Lieutenants with Jump Pack") - getPts("Lieutenants")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-        
+
         seperator();
-        
+
         if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
         	addWeapons(IMDarkAngelsRuestkammer.class, true);
         else
         	addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        
-        seperator();        
+
+        seperator();
 
 		addWarlordTraits("", true);
 

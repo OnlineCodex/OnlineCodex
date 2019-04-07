@@ -3,9 +3,7 @@ package oc.wh40k.units.ae;
 
 
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
-
 import oc.RuestkammerVater;
 
 
@@ -14,11 +12,7 @@ public class AEArenaChampion extends RuestkammerVater {
 
 
 
-	private OptionsUpgradeGruppe o1;
-
-
-
-    public AEArenaChampion() {
+	public AEArenaChampion() {
 
     }
 
@@ -32,7 +26,7 @@ public class AEArenaChampion extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

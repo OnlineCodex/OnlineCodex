@@ -14,13 +14,15 @@ public class ORKrumpasKillaKanz extends Eintrag {
         complete();
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

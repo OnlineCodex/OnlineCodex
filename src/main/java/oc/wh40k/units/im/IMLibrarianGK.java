@@ -1,10 +1,15 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -13,7 +18,7 @@ public class IMLibrarianGK extends Eintrag {
 
     public IMLibrarianGK() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, LIBRARIAN, TERMINATOR);
-    	
+
         name = "Librarian GK";
         grundkosten = getPts("Librarian GK");
         power = 9;
@@ -31,7 +36,7 @@ public class IMLibrarianGK extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

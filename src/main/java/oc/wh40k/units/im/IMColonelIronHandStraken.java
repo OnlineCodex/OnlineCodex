@@ -8,7 +8,7 @@ public class IMColonelIronHandStraken extends Eintrag {
         name = "Colonel 'Iron Hand' Straken";
         grundkosten = getPts("Colonel 'Iron Hand' Straken");
         power = 5;
-        
+
         seperator();
 
         addWarlordTraits("Catachan: Lead From the Front", true);
@@ -17,7 +17,8 @@ public class IMColonelIronHandStraken extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

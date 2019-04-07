@@ -8,9 +8,7 @@ public class CHChaosXiphonInterceptor extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 	private final OptionsUpgradeGruppe o2;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosXiphonInterceptor() {
+	public CHChaosXiphonInterceptor() {
         name = "Chaos Xiphon Interceptor";
         grundkosten = getPts("Chaos Xiphon Interceptor");
 
@@ -32,7 +30,7 @@ public class CHChaosXiphonInterceptor extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

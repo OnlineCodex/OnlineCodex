@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMSiegeDreadnought extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2;
-
-
-
-    public IMSiegeDreadnought() {
+	public IMSiegeDreadnought() {
 
         name = "Siege Dreadnought";
 
@@ -42,7 +36,7 @@ public class IMSiegeDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -54,7 +48,7 @@ public class IMSiegeDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Dreadnought inferno cannon", getPts("Dreadnought inferno cannon")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

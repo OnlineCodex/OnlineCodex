@@ -1,11 +1,8 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 public class IMOgrynBodyguard extends Eintrag {
@@ -33,7 +30,7 @@ public class IMOgrynBodyguard extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bullgryn plate", getPts("Bullgryn plate")));
-        
+
         seperator();
 
         addWarlordTraits("", true);

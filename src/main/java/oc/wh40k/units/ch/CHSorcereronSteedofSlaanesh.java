@@ -23,9 +23,9 @@ public class CHSorcereronSteedofSlaanesh extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

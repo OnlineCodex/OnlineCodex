@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMRelicDeredeoDreadnought extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2, o3;
-
-
-
-    public IMRelicDeredeoDreadnought() {
+	public IMRelicDeredeoDreadnought() {
 
         name = "Relic Deredeo Dreadnought";
 
@@ -38,7 +32,7 @@ public class IMRelicDeredeoDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -50,7 +44,7 @@ public class IMRelicDeredeoDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Atomantic pavaise", getPts("Atomantic pavaise")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -64,7 +58,7 @@ public class IMRelicDeredeoDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Arachnus heavy lascannon battery", getPts("Arachnus heavy lascannon battery")));
 
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

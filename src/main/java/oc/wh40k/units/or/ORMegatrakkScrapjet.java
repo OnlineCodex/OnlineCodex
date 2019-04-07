@@ -3,7 +3,6 @@ package oc.wh40k.units.or;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsZaehlerGruppe;
 
 public class ORMegatrakkScrapjet extends Eintrag {
 
@@ -21,7 +20,8 @@ public class ORMegatrakkScrapjet extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         power = buggies.getModelle() * 5;
     }
 }

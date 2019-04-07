@@ -25,7 +25,8 @@ public class TAShasoRmyr extends Eintrag {
     }
 
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         addToInformationVector("TACommander", -1);
 
         super.deleteYourself();

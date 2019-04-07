@@ -3,7 +3,6 @@ package oc.wh40k.units.ta;
 
 
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
 
 

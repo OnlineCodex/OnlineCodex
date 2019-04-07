@@ -1,7 +1,8 @@
 package oc.wh40k.units.ch;
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
 
 public class CHDarkDisciples extends Eintrag {
 
@@ -16,26 +17,26 @@ public class CHDarkDisciples extends Eintrag {
         add(squad);
 
         seperator();
-        
+
         setInformationVectorValue("Dark Disciples", getCountFromInformationVector("Dark Disciples") + 1);
-        
+
         seperator(5);
-        
+
         complete();
     }
-    
+
     @Override
     public void refreshen() {
-    	
+
     	eintragsCNT = 0;
-    			
+
     	if(getCountFromInformationVector("Dark Disciples") > getCountFromInformationVector("Dark Apostle")) {
     		setFehlermeldung("\n" + getCountFromInformationVector("Dark Apostle") + " Dark Apostle");
     	} else {
     		setFehlermeldung("");
     	}
     }
-    
+
     @Override
     public void deleteYourself() {
     	setInformationVectorValue("Dark Disciples", getCountFromInformationVector("Dark Disciples") - 1);

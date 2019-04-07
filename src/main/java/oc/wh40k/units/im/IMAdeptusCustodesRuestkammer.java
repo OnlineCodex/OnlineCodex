@@ -1,23 +1,28 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BIKER;
+import static oc.KeyWord.TERMINATOR;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade raimentOfSorrows;
     private OptionsEinzelUpgrade eaglesEye;
     private OptionsEinzelUpgrade auricAquilas;
     private OptionsEinzelUpgrade thePraetorianPlate;
-    
+
     public IMAdeptusCustodesRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -33,12 +38,12 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         int offsetX = randAbstand;
-                
+
        	add(raimentOfSorrows = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Raiment of Sorrows", 0).setRelic(true));
        	add(eaglesEye = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Eagle's Eye", 0).setRelic(true));
        	add(auricAquilas = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Auric Aquilas", 0).setRelic(true));
@@ -56,7 +61,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
-            
+
             seperator();
     	} else if(type.equals("Shield Captain in Allarus Terminator Armour")){
             ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear (AC)")));
@@ -64,7 +69,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
-            
+
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Balistus grenade launcher", getPts("Balistus grenade launcher")));
@@ -89,31 +94,31 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
 
             seperator();
     	}
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -125,7 +130,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Shield Captain")){
     		o1.alwaysSelected();
     	}
@@ -135,7 +140,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
     		o2.alwaysSelected();
     	}
 
-    	raimentOfSorrows.setAktiv((chosenRelic == null || raimentOfSorrows.isSelected()));   
+    	raimentOfSorrows.setAktiv((chosenRelic == null || raimentOfSorrows.isSelected()));
     	eaglesEye.setAktiv(((chosenRelic == null || eaglesEye.isSelected())));
     	auricAquilas.setAktiv(((chosenRelic == null || auricAquilas.isSelected()) && keywords.contains(BIKER)));
     	thePraetorianPlate.setAktiv((chosenRelic == null || thePraetorianPlate.isSelected()) && keywords.contains(TERMINATOR));

@@ -25,7 +25,8 @@ public class IMStormtalonGunship extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.alwaysSelected();
     }
 }

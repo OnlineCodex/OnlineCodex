@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMWolfGuardTartarosTerminators extends Eintrag {
 
@@ -60,7 +64,7 @@ public class IMWolfGuardTartarosTerminators extends Eintrag {
         o1x.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl() - o4.getAnzahl());
         o1x.setAnzahl(0, squad.getModelle() - 1 - o3.getAnzahl() - o4.getAnzahl());
 
-        int x = squad.getModelle() - 1 - o4.getAnzahl();
+        final int x = squad.getModelle() - 1 - o4.getAnzahl();
         if (squad.getModelle() == 10) {
             o3.setMaxAnzahl(Math.min(x, 2));
         } else {

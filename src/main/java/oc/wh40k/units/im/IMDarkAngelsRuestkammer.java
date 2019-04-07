@@ -1,21 +1,23 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
-
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMDarkAngelsRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade shroudOfHeroes;
     private OptionsEinzelUpgrade theEyeOfTheUnseen;
-    
+
     public IMDarkAngelsRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -40,12 +42,12 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         int offsetX = randAbstand;
-                
+
        	add(shroudOfHeroes = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Shroud of Heroes", 0).setRelic(true));
        	add(theEyeOfTheUnseen = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Eye of the Unseen", 0).setRelic(true));
 
@@ -66,20 +68,20 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator();
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator();
     	} else if(type.equals("Ravenwing Talonmaster")){
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
-            
+
             seperator();
     	} else if(type.equals("Interrogator-Chaplain in Terminator Armour")){
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
@@ -89,7 +91,7 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesTerminatorMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator();
     	} else if (type.equals("Chaplain")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt gun", getPts("Bolt gun (SM)")));
@@ -208,39 +210,39 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
-            
+
             seperator();
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt rifle", true);
         }
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -252,9 +254,9 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
-    	if(type.equals("Interrogator-Chaplain") || 
-    			type.equals("Librarian") || 
+
+    	if(type.equals("Interrogator-Chaplain") ||
+    			type.equals("Librarian") ||
 				type.equals("Librarian on Bike") ||
 				type.equals("Primaris Librarian") ||
 				type.equals("Librarian in Terminator Armour") ||
@@ -275,7 +277,7 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
     		o1.setAktiv(!o3.isSelected());
     		o2.setAktiv(!o3.isSelected());
     	}
-    	
+
         if (type.contains("Techmarine")) {
             if (oe1.isSelected()) {
                 o3.setSelected(0, true);
@@ -284,7 +286,7 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             o3.alwaysSelected();
         }
 
-    	shroudOfHeroes.setAktiv((chosenRelic == null || shroudOfHeroes.isSelected()));   
+    	shroudOfHeroes.setAktiv((chosenRelic == null || shroudOfHeroes.isSelected()));
     	theEyeOfTheUnseen.setAktiv(((chosenRelic == null || theEyeOfTheUnseen.isSelected())));
     }
 

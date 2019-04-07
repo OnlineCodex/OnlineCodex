@@ -7,10 +7,6 @@ import oc.OptionsUpgradeGruppe;
 
 public class TYTrygon extends Eintrag {
 
-    private final OptionsUpgradeGruppe o1;
-    private final OptionsEinzelUpgrade oe1;
-    private final OptionsEinzelUpgrade oe2;
-
     public TYTrygon() {
         name = "Trygon";
         grundkosten = getPts("Trygon") + getPts("Bio-electric pulse") + getPts("Massive Scything Talons (Trygon)");
@@ -22,12 +18,12 @@ public class TYTrygon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Toxinspike", getPts("Toxinspike")));
         ogE.addElement(new OptionsGruppeEintrag("Prehensile Pincer", getPts("Prehensile Pincer tail")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon)")));
 
         complete();
     }

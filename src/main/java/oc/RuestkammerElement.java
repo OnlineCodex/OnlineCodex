@@ -5,7 +5,7 @@ import java.util.Vector;
 public class RuestkammerElement {
 
     static public Vector<OptionsGruppeEintrag> createRK(String defaultWeapon, BuildaVater bv) {
-        Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
+        final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         return ogE;
     }
 

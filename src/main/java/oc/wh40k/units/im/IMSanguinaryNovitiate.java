@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BLOOD_ANGELS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.SANGUINARY_NOVITIATE;
 
 import oc.Eintrag;
 
@@ -15,9 +20,9 @@ public class IMSanguinaryNovitiate extends Eintrag {
         power = 3;
 
         seperator();
-        
+
         addWeapons(IMSpaceMarinesRuestkammer.class, true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

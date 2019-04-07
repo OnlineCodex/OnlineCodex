@@ -1,24 +1,24 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.PSYKER;
 
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class CHThousandSonsRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade darkMatterCrystal;
     private OptionsEinzelUpgrade helmOfTheThirdEye;
     private OptionsEinzelUpgrade athenaenScrolls;
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -26,18 +26,17 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -56,20 +55,16 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(darkMatterCrystal = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dark Matter Crystal", 0).setRelic(true));
+        add(darkMatterCrystal = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dark Matter Crystal", 0).setRelic(true));
        	add(helmOfTheThirdEye = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of the third Eye", 0).setRelic(true));
        	add(athenaenScrolls = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Athenaean Scrolls", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -137,31 +132,31 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
     	}
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -173,7 +168,7 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Daemon Prince of Tzeentch") || type.equals("Daemon Prince of Tzeentch with Wings") ||
     			type.equals("Tzaangor Shaman")){
     		o1.alwaysSelected();
@@ -184,7 +179,7 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
     		o2.alwaysSelected();
     	}
 
-    	darkMatterCrystal.setAktiv((chosenRelic == null || darkMatterCrystal.isSelected()));   
+    	darkMatterCrystal.setAktiv((chosenRelic == null || darkMatterCrystal.isSelected()));
     	helmOfTheThirdEye.setAktiv(((chosenRelic == null || helmOfTheThirdEye.isSelected()) && keywords.contains(PSYKER)));
     	athenaenScrolls.setAktiv((chosenRelic == null || athenaenScrolls.isSelected()));
     }

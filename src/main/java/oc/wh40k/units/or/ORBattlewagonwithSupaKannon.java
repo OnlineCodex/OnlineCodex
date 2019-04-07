@@ -1,12 +1,13 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class ORBattlewagonwithSupaKannon extends Eintrag {
 
-	private final OptionsZaehlerGruppe KampfpanzaFK;
-
-    public ORBattlewagonwithSupaKannon() {
+	public ORBattlewagonwithSupaKannon() {
 
         name = "Battlewagon with Supa-Kannon";
         grundkosten = getPts("Battlewagon with Supa-Kannon") + getPts("Supa-Kannon");
@@ -16,7 +17,7 @@ public class ORBattlewagonwithSupaKannon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Big shoota", getPts("Big shoota")));
         ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
-        add(KampfpanzaFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
         seperator();
 
@@ -29,6 +30,7 @@ public class ORBattlewagonwithSupaKannon extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

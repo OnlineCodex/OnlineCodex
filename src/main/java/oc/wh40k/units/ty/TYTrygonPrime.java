@@ -9,8 +9,6 @@ import oc.RuestkammerStarter;
 public class TYTrygonPrime extends Eintrag {
 
     private final OptionsUpgradeGruppe o1;
-    private final OptionsEinzelUpgrade oe1;
-    private final OptionsEinzelUpgrade oe2;
     private final RuestkammerStarter waffen;
 
     public TYTrygonPrime() {
@@ -29,11 +27,11 @@ public class TYTrygonPrime extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon Prime)")));
-        
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Trygon Prime)")));
+
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
@@ -42,7 +40,7 @@ public class TYTrygonPrime extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -51,7 +49,7 @@ public class TYTrygonPrime extends Eintrag {
     @Override
     public void refreshen() {
         o1.alwaysSelected();
-    	
+
     	warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5

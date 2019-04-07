@@ -1,24 +1,33 @@
 package oc;
 
-import com.google.common.collect.ImmutableMap;
+import static java.util.Objects.requireNonNull;
+import static oc.utils.ResourceUtils.sanitizeKey;
 
-import oc.wh40k.armies.VOLKChaos;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.util.HashMap;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Vector;
+
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.util.*;
+import com.google.common.collect.ImmutableMap;
 
-import static java.util.Objects.requireNonNull;
-import static oc.utils.ResourceUtils.sanitizeKey;
+import oc.wh40k.armies.VOLKChaos;
 
 public abstract class BuildaVater extends BuildaPanel implements ActionListener, ItemListener, BuildaSTK {
 
@@ -68,11 +77,13 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected Vector<String> supplements = new Vector<String>();
     protected Vector<String> kontingente = new Vector<String>();
     protected Vector<String> formationen = new Vector<String>();
-    protected JComboBox supplementBox = new JComboBox();
-    protected JComboBox kontingentBox = new JComboBox();
-    protected JComboBox formationBox = new JComboBox();
+    protected Vector<String> specialDetachments = new Vector<String>();
+    protected JComboBox<String> supplementBox = new JComboBox<String>();
+    protected JComboBox<String> kontingentBox = new JComboBox<String>();
+    protected JComboBox<String> formationBox = new JComboBox<String>();
+    protected JComboBox<String> specialDetachmentBox = new JComboBox<String>();
     private Sonstige[] sonstige;
-    private ActionListener refreshActionListenerKon = new ActionListener() {
+    private final ActionListener refreshActionListenerKon = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent event) {
@@ -96,7 +107,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         }
 
     };
-    private ActionListener refreshActionListenerSupplements = new ActionListener() {
+    private final ActionListener refreshActionListenerSupplements = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent event) {
@@ -112,7 +123,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         }
 
     };
-    private ActionListener refreshActionListenerForm = new ActionListener() {
+    private final ActionListener refreshActionListenerForm = new ActionListener() {
 
         @Override
         public void actionPerformed(ActionEvent event) {
@@ -128,8 +139,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
                 volkRefresh();
 
-                int[] min = minAuswahlen.get(getKontingentTyp());
-                int[] max = maxAuswahlen.get(getKontingentTyp());
+                final int[] min = minAuswahlen.get(getKontingentTyp());
+                final int[] max = maxAuswahlen.get(getKontingentTyp());
 
                 for (int i = 0; i < myChooserGruppen.size(); i++) {
                     myChooserGruppen.get(i).minAnzahl = min[i];
@@ -142,7 +153,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         }
 
     };
-    private ActionListener cbActionListener = new ActionListener() {
+    private final ActionListener cbActionListener = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent event) {
             if (Hauptkontingent.isSelected()) {
@@ -194,18 +205,26 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
             return "";
         }
     }
+    
+    public String getSpecialDetachmentType() {
+        if (specialDetachments.size() > 0 && !((String) specialDetachmentBox.getSelectedItem()).equals("")) {
+            return ((String) specialDetachmentBox.getSelectedItem());
+        } else {
+            return "";
+        }
+    }
 
     public int getCP() {
 
     	int substractor = 0;
-    	
-        if(VOLKChaos.CHAOS_SPECIAL_DETACHEMENTS.contains(getFormationType())){
+
+        if(!getSpecialDetachmentType().equals("")){
         	substractor = 1;
         }
-    	
-    	// Handle questor imperialis cp for super heavy detachement FAQ 
-    	//Page 106 – Knight Lances ability Change the last sentence to read: ‘The Command Benefit of each Imperial Knights Super-heavy Detachment 
-    	//is changed to ‘None’ if it does not contain at least one Imperial Knights Titanic unit, and is changed to ‘+6 Command Points’ if it contains at 
+
+    	// Handle questor imperialis cp for super heavy detachement FAQ
+    	//Page 106 – Knight Lances ability Change the last sentence to read: ‘The Command Benefit of each Imperial Knights Super-heavy Detachment
+    	//is changed to ‘None’ if it does not contain at least one Imperial Knights Titanic unit, and is changed to ‘+6 Command Points’ if it contains at
     	//least three Imperial Knights Titanic units.’
         if (("Super-Heavy Detachment").equals(kontingentBox.getSelectedItem())){
         	if(getCountFromInformationVector("Knight selected") >= 3){
@@ -213,13 +232,13 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         	} else if(getCountFromInformationVector("Knight selected") == 0){
             	return 0;
         	} else {
-        		return CP.get(((String) kontingentBox.getSelectedItem()));
+        		return CP.get((kontingentBox.getSelectedItem()));
         	}
         } else {
             if (!((String) kontingentBox.getSelectedItem()).equals("")) {
-                return CP.get(((String) kontingentBox.getSelectedItem())) - substractor;
+                return CP.get((kontingentBox.getSelectedItem())) - substractor;
             } else if (!((String) formationBox.getSelectedItem()).equals("")) {
-                return CP.get(((String) formationBox.getSelectedItem())) - substractor;
+                return CP.get((formationBox.getSelectedItem())) - substractor;
             } else {
                 return 0;
             }
@@ -230,7 +249,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         return ((String) supplementBox.getSelectedItem());
     }
 
-    public JPanel getPanel() {
+    @Override
+	public JPanel getPanel() {
         return this.panel;
     }
 
@@ -265,10 +285,10 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 CP.put("Battalion Detachment", 5); //+5CP
                 CP.put("Patrol Detachment", 0); //+0CP
 
-                kontingentBox = new JComboBox(kontingente);
+                kontingentBox = new JComboBox<String>(kontingente);
                 kontingentBox.setMaximumRowCount(25);
 
-                supplementBox = new JComboBox(supplements);
+                supplementBox = new JComboBox<String>(supplements);
                 supplementBox.setMaximumRowCount(25);
 
                 if (id.equals("CM") || id.equals("IA")) {
@@ -283,7 +303,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                     kontingentBox.setBackground(Color.WHITE);
                 }
 
-                formationBox = new JComboBox(formationen);
+                formationBox = new JComboBox<String>(formationen);
                 formationBox.setMaximumRowCount(25);
 
                 panel.add(formationBox);
@@ -291,9 +311,17 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 formationBox.setBounds(290, 5, 280, 20);
                 formationBox.setBackground(Color.WHITE);
 
+                specialDetachmentBox = new JComboBox<String>(specialDetachments);
+                specialDetachmentBox.setMaximumRowCount(25);
+
+                panel.add(specialDetachmentBox);
+                specialDetachmentBox.addActionListener(refreshActionListenerForm);
+                specialDetachmentBox.setBounds(575, 5, 280, 20);
+                specialDetachmentBox.setBackground(Color.WHITE);
+                
                 panel.add(Hauptkontingent);
                 Hauptkontingent.addActionListener(cbActionListener);
-                Hauptkontingent.setBounds(575, 5, 130, 20);
+                Hauptkontingent.setBounds(855, 5, 130, 20);
                 Hauptkontingent.setBackground(Color.WHITE);
 
                 minAuswahlen.put("Patrol Detachment", new int[]{0, 1, 1, 0, 0, 0, 0, 0, 0, 0});
@@ -341,8 +369,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     public void setMinMaxSupplement() {
-        int[] min = minAuswahlen.get(getSupplementTyp());
-        int[] max = maxAuswahlen.get(getSupplementTyp());
+        final int[] min = minAuswahlen.get(getSupplementTyp());
+        final int[] max = maxAuswahlen.get(getSupplementTyp());
 
         for (int i = 0; i < myChooserGruppen.size(); i++) {
             myChooserGruppen.get(i).minAnzahl = min[i];
@@ -352,8 +380,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     public void setMinMax() {
-        int[] min = minAuswahlen.get(getKontingentTyp());
-        int[] max = maxAuswahlen.get(getKontingentTyp());
+        final int[] min = minAuswahlen.get(getKontingentTyp());
+        final int[] max = maxAuswahlen.get(getKontingentTyp());
 
         LOGGER.info("BUildvater" + getKontingentTyp());
 
@@ -379,7 +407,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         double kosten = 0.0;
         for (int i = 0; i < myChooserGruppen.size(); ++i) {
             kosten += myChooserGruppen.elementAt(i).getKosten();
@@ -424,13 +453,15 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     }
 
-    public void itemStateChanged(ItemEvent event) {
+    @Override
+	public void itemStateChanged(ItemEvent event) {
         LOGGER.info("itemStateChanged");
         buildatextArea.itemStateChanged(event);
 
     }
 
-    public void actionPerformed(ActionEvent event) {
+    @Override
+	public void actionPerformed(ActionEvent event) {
         LOGGER.info("actionPerformed");
         buildatextArea.actionPerformed(event);
     }
@@ -438,7 +469,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     public String getSaveText() {
 
         if (superformation == null) {
-            StringBuilder sammler = new StringBuilder();
+            final StringBuilder sammler = new StringBuilder();
 
             for (int i = 0; i < myChooserGruppen.size(); ++i) {
                 sammler.append(myChooserGruppen.elementAt(i).getSaveText());
@@ -454,7 +485,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
 
     public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_ONLINECODEX);
+        final Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_ONLINECODEX);
 
         //            ArrayList<Element> chooserGruppen = new ArrayList<Element>();
 
@@ -466,7 +497,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         //            if(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA) root.appendChild(getSaveElementSonstige());
 
         if (sonstige != null) {
-            Element sonstigeRoot = BuildaHQ.getNewXMLElement(ELEMENT_NAME_SONSTIGESGRUPPE);
+            final Element sonstigeRoot = BuildaHQ.getNewXMLElement(ELEMENT_NAME_SONSTIGESGRUPPE);
 
             for (int i = 0; i < sonstige.length; i++) {
                 sonstigeRoot.appendChild(sonstige[i].getSaveElement());
@@ -483,9 +514,9 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         if (saveText.contains(SAVETEXT_SUBDETACHMENTTRENNER)) {
             superformation.load(saveText);
         } else {
-            String[] teile = {saveText};
+            final String[] teile = {saveText};
 
-            String[] splittet = teile[0].split(SAVETEXT_TRENNER4);
+            final String[] splittet = teile[0].split(SAVETEXT_TRENNER4);
 
             for (int i = 0; i < myChooserGruppen.size(); ++i) {
 
@@ -511,18 +542,18 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     public void loadElement(Element e) {
-        NodeList childrenChooserGruppe = e.getElementsByTagName(ELEMENT_NAME_CATEGORY);
+        final NodeList childrenChooserGruppe = e.getElementsByTagName(ELEMENT_NAME_CATEGORY);
 
-        int childrenMax = myChooserGruppen.size() > childrenChooserGruppe.getLength() ? childrenChooserGruppe.getLength() : myChooserGruppen.size();
+        final int childrenMax = myChooserGruppen.size() > childrenChooserGruppe.getLength() ? childrenChooserGruppe.getLength() : myChooserGruppen.size();
 
         for (int i = 0; i < myChooserGruppen.size(); ++i) {
 
-            ChooserGruppe c = myChooserGruppen.elementAt(i);
+            final ChooserGruppe c = myChooserGruppen.elementAt(i);
             if (!(c.getKategorie() == 1 || c.getKategorie() == 7)) continue;
 
             for (int j = 0; j < childrenMax; j++) {
-                Element child = (Element) childrenChooserGruppe.item(j);
-                int id = Integer.parseInt(child.getAttribute("id"));
+                final Element child = (Element) childrenChooserGruppe.item(j);
+                final int id = Integer.parseInt(child.getAttribute("id"));
 
                 if (!(id == 1 || id == 7)) continue;
 
@@ -534,12 +565,12 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
         for (int i = 0; i < myChooserGruppen.size(); ++i) {
 
-            ChooserGruppe c = myChooserGruppen.elementAt(i);
+            final ChooserGruppe c = myChooserGruppen.elementAt(i);
             if ((c.getKategorie() == 1 || c.getKategorie() == 7)) continue;
 
             for (int j = 0; j < childrenMax; j++) {
-                Element child = (Element) childrenChooserGruppe.item(j);
-                int id = Integer.parseInt(child.getAttribute("id"));
+                final Element child = (Element) childrenChooserGruppe.item(j);
+                final int id = Integer.parseInt(child.getAttribute("id"));
 
                 if (id == 1 || id == 7) continue;
 
@@ -551,36 +582,11 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
 
-    private String getSaveTextSonstige() {
-        StringBuilder text = new StringBuilder("");
-        if (sonstige != null) {
-            for (int i = 0; i < sonstige.length; i++) {
-                text.append(SAVETEXT_TRENNER5);
-                text.append(sonstige[i].getSaveText(SAVETEXT_TRENNER6));
-            }
-        }
-        return text.toString();
-    }
-
-    private Element getSaveElementSonstige() {
-        Element root = BuildaHQ.getNewXMLElement("Sonstige");
-
-        if (sonstige != null) {
-            for (int i = 0; i < sonstige.length; i++) {
-                root.appendChild(sonstige[i].getSaveElement());
-            }
-        } else {
-            return null;
-        }
-
-        return null;
-    }
-
-
     protected void showModalDialog(String s) {
         final ModalDialog md = new ModalDialog(s, true);
         SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
+            @Override
+			public void run() {
                 md.setVisible(true);
             }
         });
@@ -664,7 +670,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         for (int i = 0; i < list.length; i++) {
             length += list[i].length;
         }
-        String[] sRet = new String[length];
+        final String[] sRet = new String[length];
 
         int cnt = 0;
         for (int i = 0; i < list.length; i++) {
@@ -677,7 +683,7 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     public static String[] uniteUnitList(String[] sAr1, String[] sAr2) {
-        String[] sRet = new String[sAr1.length + sAr2.length];
+        final String[] sRet = new String[sAr1.length + sAr2.length];
 
         for (int i = 0; i < sAr1.length; i++) {
             sRet[i] = sAr1[i];
@@ -722,7 +728,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
                 });
     }
 
-    public void refreshAction() {
+    @Override
+	public void refreshAction() {
         super.refreshAction();
         if (formation != null) {
             formation.refresh();

@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 
@@ -8,13 +13,11 @@ public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 	private final OptionsZaehlerGruppe o1, o1x, o1y;
 	private final OptionsZaehlerGruppe o2;
 	private final OptionsZaehlerGruppe o3;
-	private final OptionsEinzelUpgrade jump, mb;
+	private final OptionsEinzelUpgrade jump;
 
 	private final RuestkammerStarter rkBoss;
 
-	private boolean siegeForce;
-
-    public IMVanguardVeteranSquad() {
+	public IMVanguardVeteranSquad() {
         name = "Vanguard Veteran Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -43,7 +46,7 @@ public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
 
         seperator();
 
-        add(mb = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melta bombs", getPts("Melta bombs")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melta bombs", getPts("Melta bombs")));
 
         seperator();
 
@@ -92,7 +95,6 @@ public class IMVanguardVeteranSquad extends Eintrag {//Sternguard
         if (squad.getModelle() == 10 && jump.isSelected()) {
             power += 1;
         }
-        ;
 
     }
 

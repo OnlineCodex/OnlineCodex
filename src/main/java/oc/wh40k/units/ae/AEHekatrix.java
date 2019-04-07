@@ -3,11 +3,8 @@ package oc.wh40k.units.ae;
 
 
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
-
 import oc.RuestkammerVater;
 
 
@@ -16,11 +13,7 @@ public class AEHekatrix extends RuestkammerVater {
 
 
 
-	private OptionsUpgradeGruppe o1;
-
-
-
-    public AEHekatrix() {
+	public AEHekatrix() {
 
     }
 
@@ -36,7 +29,7 @@ public class AEHekatrix extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 
@@ -48,7 +41,7 @@ public class AEHekatrix extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

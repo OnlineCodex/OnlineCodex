@@ -10,9 +10,7 @@ public class CHChaosSokarPatternStormbirdGunship extends Eintrag {
 	private final OptionsUpgradeGruppe o1;
 	private final OptionsZaehlerGruppe o2;
 	private final OptionsUpgradeGruppe o3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosSokarPatternStormbirdGunship() {
+	public CHChaosSokarPatternStormbirdGunship() {
         name = "Chaos Sokar Pattern Stormbird Gunship";
         grundkosten = getPts("Chaos Sokar Pattern Stormbird Gunship");
 
@@ -39,7 +37,7 @@ public class CHChaosSokarPatternStormbirdGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -8,7 +8,7 @@ public class IMCommissarYarrick extends Eintrag {
         name = "Commissar Yarrick";
         grundkosten = getPts("Commissar Yarrick");
         power = 9;
-        
+
         seperator();
 
         addWarlordTraits("", true);

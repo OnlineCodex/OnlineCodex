@@ -1,15 +1,16 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMRunePriest extends Eintrag {
 
 
 	private final OptionsEinzelUpgrade oe1;
-    private final OptionsEinzelUpgrade oe2;
     private final RuestkammerStarter waffenUndArtefakte;
-    private boolean fenrisSupp = false;
     private final RuestkammerStarter psychicPowers;
 
     public IMRunePriest() {
@@ -23,10 +24,10 @@ public class IMRunePriest extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Psychic hood", getPts("psychic hood")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Runic armour", getPts("runic armour")));
 
         seperator();
-        
+
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableTempestasDiscipline();
@@ -45,7 +46,7 @@ public class IMRunePriest extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -57,7 +58,7 @@ public class IMRunePriest extends Eintrag {
         if (oe1.isSelected()) {
             power += 1;
         }
-        
+
         waffenUndArtefakte.getPanel().setLocation(
                 (int) waffenUndArtefakte.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

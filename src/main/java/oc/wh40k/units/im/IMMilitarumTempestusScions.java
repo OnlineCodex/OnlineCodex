@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMMilitarumTempestusScions extends Eintrag {
 
@@ -44,7 +48,7 @@ public class IMMilitarumTempestusScions extends Eintrag {
 
     @Override
     public void refreshen() {
-        int scions = squad.getModelle() - 1;
+        final int scions = squad.getModelle() - 1;
         o1x.setMaxAnzahl(scions - o1.getAnzahl() - o4.getAnzahl());
         o1x.setAnzahl(0, scions - o1.getAnzahl() - o4.getAnzahl());
 

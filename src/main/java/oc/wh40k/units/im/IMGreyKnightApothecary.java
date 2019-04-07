@@ -1,7 +1,16 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
-import oc.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.APOTHECARY;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
+
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMGreyKnightApothecary extends Eintrag {
@@ -9,14 +18,14 @@ public class IMGreyKnightApothecary extends Eintrag {
 
     public IMGreyKnightApothecary() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, APOTHECARY, TERMINATOR);
-    	
+
         name = "Apothecary";
         grundkosten = getPts("Apothecary (GK)");
 
         seperator();
-        
+
         addWeapons(IMGreyKnightsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -26,7 +35,7 @@ public class IMGreyKnightApothecary extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -37,7 +46,7 @@ public class IMGreyKnightApothecary extends Eintrag {
     @Override
     public void refreshen() {
         power = 5;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

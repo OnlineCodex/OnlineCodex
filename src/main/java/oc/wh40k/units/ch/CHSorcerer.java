@@ -7,7 +7,12 @@ import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.SLAANESH;
 import static oc.KeyWord.TZEENTCH;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHSorcerer extends Eintrag {
@@ -32,9 +37,9 @@ public class CHSorcerer extends Eintrag {
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -44,9 +49,9 @@ public class CHSorcerer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();
@@ -60,7 +65,7 @@ public class CHSorcerer extends Eintrag {
         ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
         ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
         ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-                
+
         if(mark.getSelectedIndex() != lastMark) {
         	lastMark = mark.getSelectedIndex();
 	        getWeapons().removeKeyword(KHORNE);
@@ -68,7 +73,7 @@ public class CHSorcerer extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

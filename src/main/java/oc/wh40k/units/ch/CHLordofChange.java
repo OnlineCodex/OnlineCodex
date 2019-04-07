@@ -1,8 +1,16 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.LORD_OF_CHANGE;
+import static oc.KeyWord.MONSTER;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TZEENTCH;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHLordofChange extends Eintrag {
@@ -17,7 +25,7 @@ public class CHLordofChange extends Eintrag {
         power = 17;
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
@@ -29,9 +37,9 @@ public class CHLordofChange extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", TZEENTCH);
 
         complete();

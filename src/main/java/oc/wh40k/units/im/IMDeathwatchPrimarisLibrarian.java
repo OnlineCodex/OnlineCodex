@@ -6,11 +6,10 @@ import static oc.KeyWord.DEATHWATCH;
 import static oc.KeyWord.IMPERIUM;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.LIBRARIAN;
-import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.PRIMARIS;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -19,14 +18,14 @@ public class IMDeathwatchPrimarisLibrarian extends Eintrag {
 
     public IMDeathwatchPrimarisLibrarian() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, PRIMARIS);
-        
+
         name = "Primaris Librarian";
         grundkosten = getPts("Primaris Librarian") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
 
         seperator();
-        
+
         addWeapons(IMDeathwatchRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -42,7 +41,7 @@ public class IMDeathwatchPrimarisLibrarian extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -53,7 +52,7 @@ public class IMDeathwatchPrimarisLibrarian extends Eintrag {
     @Override
     public void refreshen() {
         power = 7;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

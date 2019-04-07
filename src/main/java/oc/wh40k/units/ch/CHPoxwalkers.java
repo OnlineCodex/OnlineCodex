@@ -2,7 +2,6 @@ package oc.wh40k.units.ch;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 
 public class CHPoxwalkers extends Eintrag {
 
@@ -20,7 +19,8 @@ public class CHPoxwalkers extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

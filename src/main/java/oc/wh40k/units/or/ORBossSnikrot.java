@@ -1,7 +1,6 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORBossSnikrot extends Eintrag {
 
@@ -16,9 +15,9 @@ public class ORBossSnikrot extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
 
         seperator();
-        
+
         addWarlordTraits("Blood Axes: I've got a plan, Ladz", true);
-        
+
         complete();
     }
 
@@ -28,7 +27,8 @@ public class ORBossSnikrot extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

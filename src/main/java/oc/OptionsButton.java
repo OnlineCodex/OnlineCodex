@@ -1,8 +1,13 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
 import java.util.Vector;
+
+import javax.swing.Icon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
 
@@ -52,7 +57,8 @@ public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
         return (int) (panel.getLocation().getY());
     }
 
-    public JPanel getPanel() {
+    @Override
+	public JPanel getPanel() {
         return this.panel;
     }
 
@@ -139,7 +145,8 @@ public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
         return panel.getSize().width;
     }
 
-    public int getHoehe() {
+    @Override
+	public int getHoehe() {
         return panel.getSize().height;
     }
 

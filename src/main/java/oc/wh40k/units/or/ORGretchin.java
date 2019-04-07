@@ -10,7 +10,7 @@ public class ORGretchin extends Eintrag {
     public ORGretchin() {
         kategorie = 3;
         grundkosten = 0;
-        
+
         addToInformationVector("Gretchin Infantry", 1);
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Gretchin", 10, 30, getPts("Gretchin")));
@@ -31,7 +31,7 @@ public class ORGretchin extends Eintrag {
             power = 1;
         }
     }
-    
+
     @Override
     public void deleteYourself(){
         addToInformationVector("Gretchin Infantry", -1);

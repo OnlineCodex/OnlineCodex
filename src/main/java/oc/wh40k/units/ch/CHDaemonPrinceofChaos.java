@@ -1,8 +1,22 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ALLEGIANCE;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.DAEMON_PRINCE_OF_CHAOS;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.MONSTER;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.TZEENTCH;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofChaos extends Eintrag {
@@ -24,9 +38,9 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
 
         seperator();
@@ -40,7 +54,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", ALLEGIANCE);
@@ -50,8 +64,12 @@ public class CHDaemonPrinceofChaos extends Eintrag {
 
     @Override
     public void refreshen() {
-        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && (mark.getAnzahl() != 0));
-        
+        psychicPowers.setAktiv(!mark.isSelected("Mark of Khorne") && !(mark.getAnzahl() == 0));
+
+        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
+        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
+        ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
+
         if(mark.getSelectedIndex() != lastMark) {
         	lastMark = mark.getSelectedIndex();
 	        getWeapons().removeKeyword(KHORNE);
@@ -59,7 +77,7 @@ public class CHDaemonPrinceofChaos extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);

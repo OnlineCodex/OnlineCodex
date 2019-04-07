@@ -1,6 +1,9 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class CHRenegadeArmiger extends Eintrag {
 	private final OptionsZaehlerGruppe fk1;
@@ -35,7 +38,8 @@ public class CHRenegadeArmiger extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk1.setMaxAnzahl(squad.getModelle());
         fk1.setLegal(fk1.getAnzahl() == squad.getModelle());
         fk2.setMaxAnzahl(squad.getModelle());
@@ -45,7 +49,8 @@ public class CHRenegadeArmiger extends Eintrag {
     }
 
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
         setInformationVectorValue("Armiger selected", getCountFromInformationVector("Armiger selected") - 1);

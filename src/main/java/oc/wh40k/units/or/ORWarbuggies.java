@@ -32,7 +32,8 @@ public class ORWarbuggies extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
         BuggiesFKx.setMaxAnzahl(Buggies.getModelle() - BuggiesFK.getAnzahl());
         BuggiesFKx.setAnzahl(0, Buggies.getModelle() - BuggiesFK.getAnzahl());

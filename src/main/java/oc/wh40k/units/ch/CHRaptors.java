@@ -1,7 +1,12 @@
 package oc.wh40k.units.ch;
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHRaptors extends Eintrag {
 
@@ -28,14 +33,14 @@ public class CHRaptors extends Eintrag {
         add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Icon of Vengeance", getPts("Icon of Vengeance")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Wrath", getPts("Icon of Wrath")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
         add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
@@ -65,7 +70,7 @@ public class CHRaptors extends Eintrag {
         power = 7 +
                 ((squad.getModelle() == 10) ? 5 : 0) +
                 ((squad.getModelle() == 15) ? 10 : 0);
-        
+
         icon.setAktiv("Icon of Vengeance", !mark.isSelected());
         icon.setAktiv("Icon of Wrath", mark.isSelected("Mark of Khorne"));
         icon.setAktiv("Icon of Despair", mark.isSelected("Mark of Nurgle"));

@@ -1,8 +1,8 @@
 package oc;
 
-import org.w3c.dom.Element;
-
 import java.awt.event.MouseEvent;
+
+import org.w3c.dom.Element;
 
 
 public class OptionsSeperator extends OptionsVater {
@@ -15,44 +15,55 @@ public class OptionsSeperator extends OptionsVater {
         this.höhe = höhe;
     }
 
-    public String getText() {
+    @Override
+	public String getText() {
         return "";
     }
 
-    public String getSaveText() {
+    @Override
+	public String getSaveText() {
         return "";
     }
 
-    public Element getSaveElement() {
+    @Override
+	public Element getSaveElement() {
         return null;
     }
 
-    public void load(String s) {
+    @Override
+	public void load(String s) {
     }
 
-    public void loadElement(Element e) {
+    @Override
+	public void loadElement(Element e) {
     }
 
-    public boolean isLegal() {
+    @Override
+	public boolean isLegal() {
         return true;
     }
 
-    public void setLegal(boolean b) {
+    @Override
+	public void setLegal(boolean b) {
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         return 0;
     }
 
-    public boolean isSelected() {
+    @Override
+	public boolean isSelected() {
         return false;
     }
 
-    public String getLabel() {
+    @Override
+	public String getLabel() {
         return "";
     }
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
     }
 
     @Override

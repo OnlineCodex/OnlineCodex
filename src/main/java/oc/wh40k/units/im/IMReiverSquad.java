@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMReiverSquad extends Eintrag {
 	private final OptionsEinzelUpgrade sergeant, grav, grapnel;
@@ -13,7 +17,7 @@ public class IMReiverSquad extends Eintrag {
         add(squad);
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));
         ogE.addElement(new OptionsGruppeEintrag("Combat knifes", getPts("Combat knife")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

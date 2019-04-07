@@ -10,9 +10,7 @@ public class CHHelbrute extends Eintrag {
 	private final OptionsUpgradeGruppe oe1;
 	private final OptionsZaehlerGruppe oe2;
 	private final OptionsUpgradeGruppe oe3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHelbrute() {
+	public CHHelbrute() {
         name = "Helbrute";
         grundkosten = getPts("Helbrute");
 
@@ -49,7 +47,7 @@ public class CHHelbrute extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

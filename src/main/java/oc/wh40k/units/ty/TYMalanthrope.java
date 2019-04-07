@@ -2,7 +2,6 @@
 package oc.wh40k.units.ty;
 
 import oc.AnzahlPanel;
-
 import oc.Eintrag;
 
 public class TYMalanthrope extends Eintrag {
@@ -19,7 +18,7 @@ public class TYMalanthrope extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/TYMalanthrope.jpg"));
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

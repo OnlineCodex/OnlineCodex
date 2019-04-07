@@ -12,9 +12,9 @@ public class IMInterrogatorChaplaininTerminatorArmour extends Eintrag {
         seperator();
 
         addWeapons(IMDarkAngelsRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

@@ -33,7 +33,8 @@ public class ORMorkanaut extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.setSelected(true);
         o2.setSelected(true);
         o3.setSelected(true);

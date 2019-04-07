@@ -1,10 +1,9 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORBossZagstruk extends Eintrag {
-	
+
 
     public ORBossZagstruk() {
 
@@ -16,14 +15,15 @@ public class ORBossZagstruk extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/GhazghkullThraka.gif"));
 
         seperator();
-        
+
         addWarlordTraits("Goffs: Proper Killy", true);
-        
+
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

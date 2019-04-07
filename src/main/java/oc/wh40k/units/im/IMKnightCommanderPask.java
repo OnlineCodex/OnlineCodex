@@ -9,7 +9,6 @@ public class IMKnightCommanderPask extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 	private final OptionsUpgradeGruppe o2;
-	private final OptionsUpgradeGruppe o3;
 	private final OptionsEinzelUpgrade oe1;
 	private final OptionsEinzelUpgrade oe2;
 
@@ -44,7 +43,7 @@ public class IMKnightCommanderPask extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -57,7 +56,7 @@ public class IMKnightCommanderPask extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", getPts("Dozer blade")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Track guards", getPts("Track guards")));
-        
+
         seperator();
 
         addWarlordTraits("Cadian: Superior Tactical Training", true);

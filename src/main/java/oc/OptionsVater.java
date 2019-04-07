@@ -1,10 +1,11 @@
 package oc;
 
-import org.w3c.dom.Element;
-
-import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
+import javax.swing.JPanel;
+
+import org.w3c.dom.Element;
 
 
 public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, MouseListener {
@@ -32,7 +33,8 @@ public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, Mou
 
     public abstract void setLegal(boolean b);
 
-    public abstract double getKosten();
+    @Override
+	public abstract double getKosten();
 
     public abstract boolean isSelected();
 
@@ -50,7 +52,8 @@ public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, Mou
     }
 
 
-    public int getHoehe() {
+    @Override
+	public int getHoehe() {
         return panel.getSize().height;
     }
 
@@ -62,24 +65,30 @@ public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, Mou
     }
 
 
-    public JPanel getPanel() {
+    @Override
+	public JPanel getPanel() {
         return this.panel;
     }
 
 
-    public void mouseExited(MouseEvent event) {
+    @Override
+	public void mouseExited(MouseEvent event) {
     }
 
-    public void mouseEntered(MouseEvent event) {
+    @Override
+	public void mouseEntered(MouseEvent event) {
     }
 
-    public void mouseClicked(MouseEvent event) {
+    @Override
+	public void mouseClicked(MouseEvent event) {
     }
 
-    public void mousePressed(MouseEvent event) {
+    @Override
+	public void mousePressed(MouseEvent event) {
     }
 
-    public void mouseReleased(MouseEvent event) {
+    @Override
+	public void mouseReleased(MouseEvent event) {
     }
 
 

@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class IMTacticalSquad extends Eintrag {
 
@@ -9,9 +13,7 @@ public class IMTacticalSquad extends Eintrag {
 	private final OptionsUpgradeGruppe o2;
 	private final RuestkammerStarter rkBoss;
 
-	private boolean siegeAssaultForce;
-
-    public IMTacticalSquad() {
+	public IMTacticalSquad() {
         name = "Tactical Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;

@@ -1,6 +1,13 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BLOOD_ANGELS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.CHIEF_LIBRARIAN_MEPHISTON;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -25,9 +32,9 @@ public class IMChiefLibrarianMephiston extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("Selfless Valour (BA)", true);
 
         complete();

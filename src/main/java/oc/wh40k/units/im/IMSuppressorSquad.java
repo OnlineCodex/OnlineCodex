@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMSuppressorSquad extends Eintrag {
 	private final OptionsEinzelUpgrade sergeant;
@@ -9,12 +13,12 @@ public class IMSuppressorSquad extends Eintrag {
 
     public IMSuppressorSquad() {
         name = "Suppressor Squad";
-        
+
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Suppressors", 3, 3, getPts("Suppressor Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Grav-chute"));
         add(squad);
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Accelerator autocannons", getPts("Accelerator autocannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

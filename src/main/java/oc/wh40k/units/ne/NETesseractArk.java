@@ -3,9 +3,7 @@ package oc.wh40k.units.ne;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -14,11 +12,7 @@ public class NETesseractArk extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1;
-
-
-
-    public NETesseractArk() {
+	public NETesseractArk() {
 
         name = "Tesseract Ark";
 
@@ -38,7 +32,7 @@ public class NETesseractArk extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 particle beamers", 2 * getPts("Particle beamer")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

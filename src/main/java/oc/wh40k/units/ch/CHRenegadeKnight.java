@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHRenegadeKnight extends Eintrag {
 
-	private final OptionsUpgradeGruppe fkwaffen, thunder, reaper, stubber;
+	private final OptionsUpgradeGruppe thunder, reaper, stubber;
 
     public CHRenegadeKnight() {
 
@@ -18,7 +18,7 @@ public class CHRenegadeKnight extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Ironstorm missile pod", getPts("Ironstorm missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("Stormspear rocket pod", getPts("Stormspear rocket pod")));
         ogE.addElement(new OptionsGruppeEintrag("Twin Icarus autocannon", getPts("Twin Icarus autocannon")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

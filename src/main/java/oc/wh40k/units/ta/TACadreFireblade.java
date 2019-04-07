@@ -3,7 +3,6 @@ package oc.wh40k.units.ta;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerStarter;
 
 public class TACadreFireblade extends Eintrag {
 
@@ -19,13 +18,13 @@ public class TACadreFireblade extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
-        
+
         seperator();
 
         addWeapons(TAKampfanzugKammer.class, true);
-        
+
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -33,7 +32,8 @@ public class TACadreFireblade extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         power = 2;
         if (o1.getAnzahl() > 0) {
             power++;

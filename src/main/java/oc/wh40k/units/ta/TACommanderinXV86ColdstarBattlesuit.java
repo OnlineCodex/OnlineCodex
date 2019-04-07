@@ -1,16 +1,19 @@
 package oc.wh40k.units.ta;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BATTLESUIT;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.COMMANDER;
+import static oc.KeyWord.JET_PACK;
+import static oc.KeyWord.TAU_EMPIRE;
+import static oc.KeyWord.XV86_COLDSTAR;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
-import oc.wh40k.units.PsychicPowers;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
     public TACommanderinXV86ColdstarBattlesuit() {
     	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV86_COLDSTAR, JET_PACK, COMMANDER);
-    	
+
         name = "Commander";
         grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
 
@@ -21,13 +24,13 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         seperator();
 
         addWeapons(TAKampfanzugKammer.class, true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);
 
         addToInformationVector("Commander", 1);
-        
+
         power = 8;
 
         complete();
@@ -38,9 +41,9 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         if (getCountFromInformationVector("Contingent Headquarters") > 0) {
             if (getCountFromInformationVector("Commander") > 1) {
                 setFehlermeldung("Max 1 Commander");
-            } 
-        } 
-        
+            }
+        }
+
         if(((TAKampfanzugKammer) getWeapons()).dronesSelected()) {
         	power = 9;
         } else {
@@ -49,7 +52,8 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
     }
 
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
     }
 

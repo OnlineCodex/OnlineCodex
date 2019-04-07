@@ -41,6 +41,7 @@ public class ORFlakkTrukk extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

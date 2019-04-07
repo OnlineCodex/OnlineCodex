@@ -1,17 +1,13 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class ORDeffkillaWartrike extends Eintrag {
 
 	private final RuestkammerStarter waffen;
 
-	private final boolean megaBool = false;
-	private final boolean gazzBool = false;
-
-    public ORDeffkillaWartrike() {
+	public ORDeffkillaWartrike() {
         name = "Deffkilla Wartrike";
         grundkosten = getPts("Deffkilla Wartrike");
         power = 6;
@@ -25,14 +21,14 @@ public class ORDeffkillaWartrike extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);
 
         complete();
     }
-    
+
     @Override
     public void refreshen() {
     	warlordTraits.getPanel().setLocation(

@@ -48,7 +48,8 @@ public class TAShasoRalai extends Eintrag {
 
     //@OVERRIDE
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
 
         addToInformationVector("TACommander", -1);
 

@@ -4,19 +4,20 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerVater;
 
 public class TYRuestkammer extends RuestkammerVater {
 
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private OptionsEinzelUpgrade oe1, oe2;
+    private OptionsUpgradeGruppe o1, o2, o3;
     private String type = "";
-    private String default1 = "";
-    private String default2 = "";
-    
     boolean character = false;
     boolean monster = false;
-    
+
     private final Set<String> CHARACTERS = ImmutableSet.of("Broodlord", "Hive Tyrant", "Tyranid Prime", "Tervigon", "Neurothrope", "Trygon Prime");
     private final Set<String> MONSTER = ImmutableSet.of("Hive Tyrant", "Tervigon", "Trygon Prime");
 	private OptionsEinzelUpgrade chamelonicMutation;
@@ -29,16 +30,15 @@ public class TYRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
 
     @Override
@@ -47,7 +47,7 @@ public class TYRuestkammer extends RuestkammerVater {
     	if(MONSTER.contains(type)) {
     		monster = true;
     	}
-    	
+
     	if(CHARACTERS.contains(type)) {
        	 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Ymgarl Factor", 0).setRelic(true));
        	 add(chamelonicMutation = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Chameleonic Mutation", 0).setRelic(true));
@@ -136,12 +136,12 @@ public class TYRuestkammer extends RuestkammerVater {
         if (type == "Carnifex") {
             ogE.addElement(new OptionsGruppeEintrag("Thresher scythe", getPts("Thresher scythe")));
             ogE.addElement(new OptionsGruppeEintrag("Bone mace", getPts("Bone mace")));
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
 
@@ -150,39 +150,39 @@ public class TYRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Acid maw", getPts("Monstrous acid maw")));
             ogE.addElement(new OptionsGruppeEintrag("Tusks", getPts("Tusks")));
             ogE.addElement(new OptionsGruppeEintrag("Chitin thorns", getPts("Chitin thorns")));
-            add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Spine banks", getPts("Spine banks")));
             ogE.addElement(new OptionsGruppeEintrag("Spore cysts", getPts("Spore cysts")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
         if (type == "Thornback") {
             ogE.addElement(new OptionsGruppeEintrag("Thresher scythe", getPts("Thresher scythe")));
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
 
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Enhanced Senses", getPts("Enhanced Senses")));
 
             ogE.addElement(new OptionsGruppeEintrag("Spine banks", getPts("Spine banks")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
         if (type == "Screamer-Killer") {
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-            add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Carnifex)")));
 
             seperator();
             ogE.addElement(new OptionsGruppeEintrag("Spore cysts", getPts("Spore cysts")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
 
         if (type == "Tyranid Prime") {
@@ -216,7 +216,7 @@ public class TYRuestkammer extends RuestkammerVater {
 
             seperator();
 
-            add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bio plasma", getPts("Bio plasma")));
+            add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Bio plasma", getPts("Bio plasma")));
 
         }
         sizeSetzen();
@@ -230,7 +230,7 @@ public class TYRuestkammer extends RuestkammerVater {
 
     @Override
     public void switchEntry(String name, boolean aktiv) {
-        boolean entrySwitched = false;
+        final boolean entrySwitched = false;
 
         if (entrySwitched) {
             //Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.
@@ -242,8 +242,8 @@ public class TYRuestkammer extends RuestkammerVater {
     public void refreshen() {
 
         if (type == "Hive Tyrant" || type == "Carnifex") {
-            int cnt = (o3.isSelected() ? 2 : 0) + (o1.isSelected() ? 1 : 0) + (o2.isSelected() ? 1 : 0);
-            boolean legal = cnt == 2;
+            final int cnt = (o3.isSelected() ? 2 : 0) + (o1.isSelected() ? 1 : 0) + (o2.isSelected() ? 1 : 0);
+            final boolean legal = cnt == 2;
             o1.setAktiv("Pair of monstrous scything talons", !o2.isSelected("Pair of monstrous scything talons"));
             o2.setAktiv("Pair of monstrous scything talons", !o1.isSelected("Pair of monstrous scything talons"));
             o3.setAktiv(!o1.isSelected() && !o2.isSelected());
@@ -259,36 +259,36 @@ public class TYRuestkammer extends RuestkammerVater {
         	if(monster) {
         		infrasonicRoar.setAktiv((chosenRelic == null || infrasonicRoar.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Jormungandr"));
         	}
-        	
-        	theReaperofObliterax.setAktiv((chosenRelic == null || theReaperofObliterax.isSelected()) && 
+
+        	theReaperofObliterax.setAktiv((chosenRelic == null || theReaperofObliterax.isSelected()) &&
         			((o1 != null && (o1.isSelected("Lash whip and monstrous bonesword") || o1.isSelected("Lash whip and bonesword"))) ||
         					(o2!= null && ( o2.isSelected("Lash whip and monstrous bonesword") || o2.isSelected("Lash whip and bonesword")))));
-        	
-        	theMawClawsofThyrax.setAktiv((chosenRelic == null || theMawClawsofThyrax.isSelected()) && 
+
+        	theMawClawsofThyrax.setAktiv((chosenRelic == null || theMawClawsofThyrax.isSelected()) &&
         			((o1 != null && (o1.isSelected("Monstrous rending claws") || o1.isSelected("Rending claws"))) ||
         					(o2!= null && ( o2.isSelected("Monstrous rending claws") || o2.isSelected("Rending claws")))));
-        	
-        	
+
+
             if (o1 != null) {
                 o1.setAktiv("Scythes of Tyran", (chosenRelic == null || o1.isSelected("Scythes of Tyran")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Behemoth"));
                 o1.setAktiv("Slayer Sabres", (chosenRelic == null || o1.isSelected("Slayer Sabres")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Leviathan"));
                 o1.setAktiv("Slimer Maggot Infestation", (chosenRelic == null || o1.isSelected("Slimer Maggot Infestation")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Hydra"));
                 o1.setAktiv("Balethorn Cannon", (chosenRelic == null || o1.isSelected("Balethorn Cannon")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Kronos"));
             }
-            
+
             if (o2 != null) {
                 o2.setAktiv("Scythes of Tyran", (chosenRelic == null || o2.isSelected("Scythes of Tyran")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Behemoth"));
                 o2.setAktiv("Slayer Sabres", (chosenRelic == null || o2.isSelected("Slayer Sabres")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Leviathan"));
                 o2.setAktiv("Slimer Maggot Infestation", (chosenRelic == null || o2.isSelected("Slimer Maggot Infestation")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Hydra"));
             }
-            
+
             if(o1 != null && o2 != null){
             	if(o1.isSelected("Pair of monstrous scything talons")){
             		o2.setPreis("Scythes of Tyran", getPts("Monstrous scything talons (two pairs)(" + type + ")") - getPts("Monstrous scything talons (" + type + ")"));
             	} else {
             		o2.setPreis("Scythes of Tyran", getPts("Monstrous scything talons (" + type + ")"));
                 }
-            	
+
             	if(o2.isSelected("Pair of monstrous scything talons")){
             		o1.setPreis("Scythes of Tyran", getPts("Monstrous scything talons (two pairs)(" + type + ")") - getPts("Monstrous scything talons (" + type + ")"));
             	} else {

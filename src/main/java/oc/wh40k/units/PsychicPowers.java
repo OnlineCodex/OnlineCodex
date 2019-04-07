@@ -9,7 +9,6 @@ public class PsychicPowers extends RuestkammerVater {
 	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
 	private OptionsUpgradeGruppe o21;
-	private String type = "";
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
 	private boolean contagion = false;
@@ -31,7 +30,7 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean obscuration = false;
     private boolean malefic = false;
     private boolean prayers = false;
-    
+
     private boolean khorne = false;
     private boolean nurgle = false;
     private boolean tzeentch = false;
@@ -208,7 +207,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Roar of Mork", 0));
             add(o16 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if (tempestasDiscipline) {
             ogE.addElement(new OptionsGruppeEintrag("Living Lightning", 0));
             ogE.addElement(new OptionsGruppeEintrag("Tempest's Wrath", 0));
@@ -218,7 +217,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
             add(o17 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if (broodmind) {
             ogE.addElement(new OptionsGruppeEintrag("Mass Hypnosis", 0));
             ogE.addElement(new OptionsGruppeEintrag("Mind Control", 0));
@@ -228,7 +227,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Migth From Beyond", 0));
             add(o18 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if (obscuration) {
             ogE.addElement(new OptionsGruppeEintrag("Shrouding", 0));
             ogE.addElement(new OptionsGruppeEintrag("Scryer's Gaze", 0));
@@ -238,7 +237,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Mind Raid", 0));
             add(o19 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if (malefic) {
             ogE.addElement(new OptionsGruppeEintrag("Incursion", 0));
             ogE.addElement(new OptionsGruppeEintrag("Sacrifice", 0));
@@ -248,7 +247,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Infernal Power", 0));
             add(o20 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if (prayers) {
             ogE.addElement(new OptionsGruppeEintrag("Benediction of Darkness", 0));
             ogE.addElement(new OptionsGruppeEintrag("Litany of Despair", 0));
@@ -310,7 +309,7 @@ public class PsychicPowers extends RuestkammerVater {
     public void enableHiveMind() {
         hiveMind = true;
     }
-    
+
     public void enableBroodMind() {
         broodmind = true;
     }
@@ -331,15 +330,15 @@ public class PsychicPowers extends RuestkammerVater {
     public void enableInterromancy() {
         interromancy = true;
     }
-    
+
     public void enableObscuration() {
         obscuration = true;
     }
-    
+
     public void setKhorne(boolean n) {
         khorne = n;
     }
-    
+
     public void setNurgle(boolean n) {
         nurgle = n;
     }
@@ -355,15 +354,15 @@ public class PsychicPowers extends RuestkammerVater {
     public void enablePowerOfTheWaaagh() {
         powerOfTheWaaagh = true;
     }
-    
+
     public void enableTempestasDiscipline() {
     	tempestasDiscipline = true;
     }
-    
+
     public void enableMalefic() {
     	malefic = true;
     }
-    
+
     public void enablePrayers() {
     	prayers = true;
     }
@@ -389,14 +388,17 @@ public class PsychicPowers extends RuestkammerVater {
 
         if (disciplineOfTzeentch) {
             o5.setMaxAnzahl(numPowers);
+            o5.setAktiv(tzeentch);
         }
 
         if (disciplineOfNurgle) {
             o6.setMaxAnzahl(numPowers);
+            o6.setAktiv(nurgle);
         }
 
         if (disciplineOfSlaanesh) {
             o7.setMaxAnzahl(numPowers);
+            o7.setAktiv(slaanesh);
         }
 
         if (runesOfFate) {
@@ -430,27 +432,27 @@ public class PsychicPowers extends RuestkammerVater {
         if (interromancy) {
             o15.setMaxAnzahl(numPowers);
         }
-        
+
         if(powerOfTheWaaagh) {
         	o16.setMaxAnzahl(numPowers);
         }
-        
+
         if(tempestasDiscipline) {
         	o17.setMaxAnzahl(numPowers);
         }
-        
+
         if(broodmind) {
         	o18.setMaxAnzahl(numPowers);
         }
-        
+
         if(obscuration) {
         	o19.setMaxAnzahl(numPowers);
         }
-        
+
         if(malefic) {
         	o20.setMaxAnzahl(numPowers);
         }
-        
+
         if(prayers) {
         	o21.setMaxAnzahl(numPowers);
             o21.setAktiv("Wraithful Entreaty", khorne);

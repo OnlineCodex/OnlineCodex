@@ -1,12 +1,9 @@
 package oc.utils;
 
-import com.fasterxml.jackson.databind.JavaType;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.google.common.collect.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.toSet;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,7 +14,17 @@ import java.util.Map.Entry;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Table;
 
 public final class ResourceUtils {
 
@@ -26,7 +33,7 @@ public final class ResourceUtils {
     private static final JavaType MAP_STRING_INTEGER_TYPE_REF = mapStringIntegerTypeRef();
 
     private static JavaType mapStringIntegerTypeRef() {
-        TypeFactory TF = OM.getTypeFactory();
+        final TypeFactory TF = OM.getTypeFactory();
         return TF.constructMapLikeType(HashMap.class,
                 TF.constructType(String.class),
                 TF.constructType(Integer.class));
@@ -44,7 +51,7 @@ public final class ResourceUtils {
 
     private static void logDuplicateKeys(Entry<String, List<Table.Cell<URL, String, Integer>>> e) {
         if (LOGGER.isWarnEnabled()) {
-            String uriToValue = e.getValue()
+            final String uriToValue = e.getValue()
                     .stream()
                     .map(c -> String.format("%s -> %d", c.getRowKey(), c.getValue()))
                     .collect(joining(", "));
@@ -66,9 +73,9 @@ public final class ResourceUtils {
     }
 
     private static Table<URL, String, Integer> loadPointsAsTable(Stream<String> uris) {
-        Table<URL, String, Integer> table = HashBasedTable.create();
-        for (String uri : uris.collect(toSet())) {
-            URL url = ResourceUtils.class.getResource(uri);
+        final Table<URL, String, Integer> table = HashBasedTable.create();
+        for (final String uri : uris.collect(toSet())) {
+            final URL url = ResourceUtils.class.getResource(uri);
             if (url == null) {
                 LOGGER.error("Could not find resource {}", uri);
             } else {
@@ -99,7 +106,7 @@ public final class ResourceUtils {
     private static Map<String, Integer> loadPointsResource(URL uri) {
         try {
             return OM.readValue(uri, MAP_STRING_INTEGER_TYPE_REF);
-        } catch (IOException e) {
+        } catch (final IOException e) {
             LOGGER.error("could not load points resource " + uri, e);
             return ImmutableMap.of();
         }

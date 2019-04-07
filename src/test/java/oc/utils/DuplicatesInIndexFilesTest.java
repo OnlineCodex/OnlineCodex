@@ -1,19 +1,10 @@
 package oc.utils;
 
-import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.MapLikeType;
-import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import com.google.common.collect.HashBasedTable;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Table;
-import junitparams.JUnitParamsRunner;
-import junitparams.Parameters;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+import static oc.utils.ResourceUtils.sanitizeKey;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -22,11 +13,22 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
-import static oc.utils.ResourceUtils.sanitizeKey;
-import static org.junit.Assert.fail;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.MapLikeType;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Table;
+
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 
 @RunWith(JUnitParamsRunner.class)
 public class DuplicatesInIndexFilesTest {
@@ -40,7 +42,7 @@ public class DuplicatesInIndexFilesTest {
         om = new ObjectMapper(new YAMLFactory());
         om.configure(JsonParser.Feature.STRICT_DUPLICATE_DETECTION, true);
 
-        TypeFactory TF = om.getTypeFactory();
+        final TypeFactory TF = om.getTypeFactory();
         mapType = TF.constructMapLikeType(HashMap.class,
                 TF.constructType(String.class),
                 TF.constructType(Integer.class));
@@ -53,14 +55,14 @@ public class DuplicatesInIndexFilesTest {
     @Test
     @Parameters(method = "indexFiles")
     public void testDuplicatesInFile(String file) throws IOException {
-        Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(file), mapType);
-        Table<String, String, Integer> t = HashBasedTable.create();
+        final Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(file), mapType);
+        final Table<String, String, Integer> t = HashBasedTable.create();
         m.entrySet().forEach(e -> t.put(file, e.getKey(), e.getValue()));
         warnSimplifiedDuplicates(t);
     }
 
     private void warnSimplifiedDuplicates(Table<String, String, Integer> entries) {
-        List<List<Table.Cell<String, String, Integer>>> conflicts = entries.columnKeySet()
+        final List<List<Table.Cell<String, String, Integer>>> conflicts = entries.columnKeySet()
                 .stream()
                 .map(DuplicatesInIndexFilesTest::simplifyKey)
                 .distinct()
@@ -109,9 +111,9 @@ public class DuplicatesInIndexFilesTest {
     @Test
     @Parameters(method = "indexSets")
     public void testWarnDuplicate(Set<String> indexSet) throws Exception {
-        Table<String, String, Integer> t = HashBasedTable.create();
-        for (String f : indexSet) {
-            Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
+        final Table<String, String, Integer> t = HashBasedTable.create();
+        for (final String f : indexSet) {
+            final Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
         warnSimplifiedDuplicates(t);
@@ -120,12 +122,12 @@ public class DuplicatesInIndexFilesTest {
     @Test
     @Parameters(method = "indexSets")
     public void testDuplicate(Set<String> indexSet) throws Exception {
-        Table<String, String, Integer> t = HashBasedTable.create();
-        for (String f : indexSet) {
-            Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
+        final Table<String, String, Integer> t = HashBasedTable.create();
+        for (final String f : indexSet) {
+            final Map<String, Integer> m = om.readValue(ResourceUtils.class.getResource(f), mapType);
             m.entrySet().forEach(e -> t.put(f, e.getKey(), e.getValue()));
         }
-        List<Map.Entry<String, Map<String, Integer>>> duplicates = t.columnMap().entrySet().stream()
+        final List<Map.Entry<String, Map<String, Integer>>> duplicates = t.columnMap().entrySet().stream()
                 .filter(e -> e.getValue().size() != 1)
                 .collect(toList());
 

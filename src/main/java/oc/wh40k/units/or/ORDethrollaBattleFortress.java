@@ -7,7 +7,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class ORDethrollaBattleFortress extends Eintrag {
 
-	private final OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1;
 
     public ORDethrollaBattleFortress() {
 
@@ -25,7 +25,7 @@ public class ORDethrollaBattleFortress extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("twin Rokkit Launcha", 0));
         ogE.addElement(new OptionsGruppeEintrag("Skorcha", 0));
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -49,7 +49,8 @@ public class ORDethrollaBattleFortress extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.setLegal(o1.getAnzahl() == o1.getMaxAnzahl());
     }
 }

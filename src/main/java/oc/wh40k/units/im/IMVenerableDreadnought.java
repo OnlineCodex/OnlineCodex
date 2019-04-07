@@ -46,10 +46,10 @@ public class IMVenerableDreadnought extends Eintrag {
 
         if(spacewolves) {
             seperator();
-            
+
 			add(greatAxe = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Great axe + Blizzard shield", "Fenrisian great axe + Blizzard shield", getPts("Fenrisian great axe") + getPts("Blizzard shield")));
         }
-        
+
         complete();
     }
 

@@ -6,9 +6,8 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class ORRuntherd extends Eintrag {
-    
+
 	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
 	private final RuestkammerStarter waffen;
 
     public ORRuntherd() {
@@ -19,7 +18,7 @@ public class ORRuntherd extends Eintrag {
         setEintragsCNT(0.0);
 
         addToInformationVector("Runtherd", 1);
-        
+
         add(ico = new oc.Picture("oc/wh40k/images/Runtherd.gif"));
 
         ogE.addElement(new OptionsGruppeEintrag("Grabba Stikk", getPts("Grabba Stikk")));
@@ -30,7 +29,7 @@ public class ORRuntherd extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Grot lash", getPts("Grot lash")));
         ogE.addElement(new OptionsGruppeEintrag("Squig hound", getPts("Squig hound")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -41,7 +40,7 @@ public class ORRuntherd extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -57,13 +56,13 @@ public class ORRuntherd extends Eintrag {
         } else {
         	setFehlermeldung("");
         }
-        
+
     	warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-    
+
     @Override
     public void deleteYourself(){
         addToInformationVector("Runtherd", -1);

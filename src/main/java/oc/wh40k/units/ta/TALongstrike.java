@@ -1,9 +1,9 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class TALongstrike extends Eintrag {
 
@@ -29,7 +29,7 @@ public class TALongstrike extends Eintrag {
         }
 
         rk.firstElement().setAbwaehlbar(false);
-        
+
         seperator();
 
         addWarlordTraits("T'au: Strength of Belief", true);
@@ -40,7 +40,7 @@ public class TALongstrike extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) rk.lastElement().getPanel().getLocation().getY() + rk.lastElement().getPanel().getSize().height + 5

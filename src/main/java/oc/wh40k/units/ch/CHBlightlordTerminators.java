@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class CHBlightlordTerminators extends Eintrag {
 
@@ -74,7 +79,7 @@ public class CHBlightlordTerminators extends Eintrag {
 
         sorcerer.setSelected(true);
 
-        int modelle = squad.getModelle() + 1;
+        final int modelle = squad.getModelle() + 1;
 
         if (modelle >= 5) {
             schwereWaffe.setMaxAnzahl(modelle / 5);

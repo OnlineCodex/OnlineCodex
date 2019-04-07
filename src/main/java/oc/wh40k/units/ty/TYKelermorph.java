@@ -16,15 +16,15 @@ public class TYKelermorph extends Eintrag {
 
     public TYKelermorph() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, KELERMORPH);
-    	
+
         name = "Kelermorph";
 
         grundkosten = getPts("Kelermorph") + 2 * getPts("Liberator autostub");
 
         power = 3;
-        
+
         seperator();
-        
+
         addWeapons(TYGenestealerCultRuestkammer.class, true);
 
         complete();

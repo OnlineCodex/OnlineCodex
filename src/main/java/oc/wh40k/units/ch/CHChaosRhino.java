@@ -1,14 +1,15 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class CHChaosRhino extends Eintrag {
 
 	private final OptionsUpgradeGruppe fkwaffen;
 	private final OptionsEinzelUpgrade combi;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosRhino() {
+	public CHChaosRhino() {
 
         kategorie = 1;
 
@@ -36,7 +37,7 @@ public class CHChaosRhino extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

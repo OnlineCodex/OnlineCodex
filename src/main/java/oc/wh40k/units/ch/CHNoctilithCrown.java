@@ -1,8 +1,6 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class CHNoctilithCrown extends Eintrag {
 

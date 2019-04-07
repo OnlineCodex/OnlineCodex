@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMWolfGuardTerminators extends Eintrag {
 
@@ -72,7 +76,7 @@ public class IMWolfGuardTerminators extends Eintrag {
         o2x.setAnzahl(0, squad.getModelle() - 1 - o2.getAnzahl() - wolfsklauen.getAnzahl() - o4.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - 1 - wolfsklauen.getAnzahl() - o4.getAnzahl());
 
-        int fkfree = squad.getModelle() - 1 - o2.getAnzahl() + wolfsklauen.getAnzahl();
+        final int fkfree = squad.getModelle() - 1 - o2.getAnzahl() + wolfsklauen.getAnzahl();
 
         o4.setMaxAnzahl((squad.getModelle() / 5) < fkfree ? (squad.getModelle() / 5) : fkfree);
 

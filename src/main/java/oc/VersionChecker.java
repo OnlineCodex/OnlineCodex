@@ -1,18 +1,27 @@
 package oc;
 
-import com.github.zafarkhaja.semver.Version;
-import com.google.common.collect.ImmutableTable;
-import com.google.common.collect.Table;
-import oc.utils.DesktopUtils;
-import oc.utils.GitHubUtils;
+import java.awt.Frame;
+import java.text.MessageFormat;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JEditorPane;
+import javax.swing.JPanel;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.text.html.HTMLEditorKit;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.swing.*;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.text.html.HTMLEditorKit;
-import java.awt.*;
-import java.text.MessageFormat;
+import com.github.zafarkhaja.semver.Version;
+import com.google.common.collect.ImmutableTable;
+import com.google.common.collect.Table;
+
+import oc.utils.DesktopUtils;
+import oc.utils.GitHubUtils;
 
 public final class VersionChecker {
 
@@ -51,9 +60,9 @@ public final class VersionChecker {
     }
 
     private static JDialog createVersionMessageBox(Sprache lang, Version currentVersion, Version releaseVersion) {
-        JDialog d = new JDialog((Frame) null, translate(lang, "version.dialog.title"), true);
+        final JDialog d = new JDialog((Frame) null, translate(lang, "version.dialog.title"), true);
         d.setLocationRelativeTo(null);
-        JPanel p = new JPanel();
+        final JPanel p = new JPanel();
         p.setLayout(new BoxLayout(p, BoxLayout.Y_AXIS));
         d.setContentPane(p);
         p.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
@@ -67,13 +76,13 @@ public final class VersionChecker {
     }
 
     private static JButton createOKButton(Sprache lang, Runnable callback) {
-        JButton b = new JButton(translate(lang, "version.dialog.ok"));
+        final JButton b = new JButton(translate(lang, "version.dialog.ok"));
         b.addActionListener(event -> callback.run());
         return b;
     }
 
     private static JEditorPane createHTMLPane(String text, Runnable callback) {
-        JEditorPane content = new JEditorPane();
+        final JEditorPane content = new JEditorPane();
         content.setEditable(false);
         content.setEditorKit(new HTMLEditorKit());
         content.setText(text);

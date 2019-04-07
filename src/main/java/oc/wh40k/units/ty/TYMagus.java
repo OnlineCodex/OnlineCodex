@@ -8,7 +8,6 @@ import static oc.KeyWord.MAGUS;
 import static oc.KeyWord.TYRANIDS;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -18,7 +17,7 @@ public class TYMagus extends Eintrag {
 
     public TYMagus() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, MAGUS);
-    	
+
         name = "Magus";
 
         grundkosten = getPts("Magus");
@@ -34,13 +33,13 @@ public class TYMagus extends Eintrag {
         psychicPowers.setAbwaehlbar(true);
 
         seperator();
-        
+
         addWeapons(TYGenestealerCultRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
-        
+
         complete();
     }
 

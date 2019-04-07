@@ -1,11 +1,14 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.ASURYANI;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.WARLOCK;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class AEWarlock extends Eintrag {
@@ -13,11 +16,11 @@ public class AEWarlock extends Eintrag {
 
     public AEWarlock() {
     	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, WARLOCK);
-        
+
         name = "Warlock";
         grundkosten = getPts("Warlock");
         power = 6;
-        
+
         seperator();
 
         addWeapons(AECraftworldRuestkammer.class, true);
@@ -31,7 +34,7 @@ public class AEWarlock extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

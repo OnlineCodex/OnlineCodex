@@ -1,6 +1,9 @@
 package oc.wh40k.units.ne;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class NEImmortals extends Eintrag {
 
@@ -22,7 +25,7 @@ public class NEImmortals extends Eintrag {
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        ;
+        
 
 
         complete();

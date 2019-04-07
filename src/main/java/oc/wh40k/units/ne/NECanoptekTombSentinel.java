@@ -3,7 +3,6 @@ package oc.wh40k.units.ne;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
 
 

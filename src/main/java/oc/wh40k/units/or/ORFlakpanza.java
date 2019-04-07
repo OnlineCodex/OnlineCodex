@@ -24,6 +24,7 @@ public class ORFlakpanza extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

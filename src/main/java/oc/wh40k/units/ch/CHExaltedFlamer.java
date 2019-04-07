@@ -1,6 +1,13 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.EXALTED_FLAMER;
+import static oc.KeyWord.FLAMER;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.TZEENTCH;
 
 import oc.Eintrag;
 
@@ -14,11 +21,11 @@ public class CHExaltedFlamer extends Eintrag {
         power = 5;
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", TZEENTCH);
 
         complete();

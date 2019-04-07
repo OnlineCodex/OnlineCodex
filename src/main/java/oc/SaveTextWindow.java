@@ -1,17 +1,25 @@
 package oc;
 
-import javax.swing.*;
-import java.io.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.Locale;
+
+import javax.swing.JDialog;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class SaveTextWindow extends JDialog implements BuildaSTK {
 
     public static final String TOKEN = "###"; // Trennzeichen fuer Armeelistze in Maschinenformat und lesbares Format
     private static final long serialVersionUID = 1L;
     private String saveText = "";
-    private String saveTextAllies = "";
+    private final String saveTextAllies = "";
     private String armyList; // enthaelt die Armeeliste in Menschenlesbarer form.
-    private JFileChooser fc;
+    private final JFileChooser fc;
 
     public SaveTextWindow(JFrame owner, String currentDir) {
         super(owner, BuildaHQ.translate("Speichern"), true);
@@ -29,7 +37,7 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
 
         fc.setSelectedFile(BuildaHQ.getLastLoaded() == null ? new File(".oc") : new File(BuildaHQ.getLastLoaded()));
 
-        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         fc.addPropertyChangeListener(e -> {
             if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(e.getPropertyName())) {
@@ -68,14 +76,14 @@ public class SaveTextWindow extends JDialog implements BuildaSTK {
                         .append(getSaveText())
                         .append(TOKEN)
                         .append(armyList);
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gespeichert werden."));
             }
         }
     }
 
     private File ensureFileExtension(File file, String extension) {
-        String fileName = file.getName();
+        final String fileName = file.getName();
         if (!fileName.endsWith("." + extension)) {
             return new File(file.getParentFile(), fileName + "." + extension);
         } else {

@@ -16,14 +16,15 @@ public class IMKnightCrusader extends Eintrag {
         seperator();
 
 		addWarlordTraits("", true);
-        
+
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 
         complete();
     }
-    
+
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);

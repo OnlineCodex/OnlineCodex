@@ -1,11 +1,13 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMIronPriest extends Eintrag {
 
 	private final RuestkammerStarter waffenUndArtefakte;
-    
+
     public IMIronPriest() {
         name = "Iron Priest";
         grundkosten = getPts("Iron Priest") + getPts("Servo-arm") + getPts("Tempest hammer") + getPts("Helfrost pistol");
@@ -21,9 +23,9 @@ public class IMIronPriest extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

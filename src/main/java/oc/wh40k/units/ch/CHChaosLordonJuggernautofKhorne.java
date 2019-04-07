@@ -1,13 +1,12 @@
 package oc.wh40k.units.ch;
 
 import oc.Eintrag;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class CHChaosLordonJuggernautofKhorne extends Eintrag {
 
 	private final RuestkammerStarter waffen;
-	
+
     public CHChaosLordonJuggernautofKhorne() {
 
         name = "Chaos Lord on Juggernaut of Khorne";
@@ -24,9 +23,9 @@ public class CHChaosLordonJuggernautofKhorne extends Eintrag {
         waffen.setButtonText("Waffenkammer");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

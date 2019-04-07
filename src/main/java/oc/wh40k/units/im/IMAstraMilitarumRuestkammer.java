@@ -1,18 +1,22 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.COMMISSAR;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LORD_COMMISSAR;
+import static oc.KeyWord.MILITARUM_TEMPESTUS;
+import static oc.KeyWord.OFFICER;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1, o2, o3, o4;
-	private OptionsEinzelUpgrade oe1, oe2;
-	private OptionsZaehlerGruppe o5;
+	private OptionsUpgradeGruppe o1, o2;
 	private String type = "";
-	private String default1 = "";
-	private String default2 = "";
-    private OptionsEinzelUpgrade theLaurelsOfCommand;
+	private OptionsEinzelUpgrade theLaurelsOfCommand;
     private OptionsEinzelUpgrade theDeathmaskOfOllanius;
     private OptionsEinzelUpgrade theDaggerOfTusakh;
     private OptionsEinzelUpgrade kurvosAquila;
@@ -21,21 +25,20 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade skullMaskOfAcheron;
     private OptionsEinzelUpgrade theTacticalAutoReliquaryOfTyberius;
     private OptionsEinzelUpgrade orderOrTheIronStarOfMordian;
-    
+
     public IMAstraMilitarumRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
 
     public void addRelics() {
@@ -71,14 +74,12 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-        
-       	add(theLaurelsOfCommand = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Laurels Of Command", 0).setRelic(true));
+        add(theLaurelsOfCommand = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Laurels Of Command", 0).setRelic(true));
        	add(theDeathmaskOfOllanius = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Deathmask Of Ollanius", 0).setRelic(true));
        	add(theDaggerOfTusakh = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Dagger Of Tu'sakh", 0).setRelic(true));
        	add(kurvosAquila = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Kurvo's Aquila", 0).setRelic(true));
@@ -87,11 +88,10 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
        	add(skullMaskOfAcheron = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Skull Mask Of Acheron", 0).setRelic(true));
        	add(theTacticalAutoReliquaryOfTyberius = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Tactical Auto-Reliquary Of Tyberius", 0).setRelic(true));
        	add(orderOrTheIronStarOfMordian = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Order Or The Iron Star Of Mordian", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
-       	
+
         if (type == "Company Commander" || type == "Platoon Commander") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
             addRelics();
@@ -162,12 +162,12 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
+        }
 
         sizeSetzen();
 
@@ -187,18 +187,18 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         } else if (type == "Lord Commissar" || type == "Commissar") {
         	o1.alwaysSelected();
             o2.alwaysSelected();
-            
+
             if(type == "Lord Commissar"){
             	o1.setMaxAnzahl(2);
             } else{
             	o1.setMaxAnzahl(1);
             }
-            
+
         } else if (type == "Temperstor Prime") {
             o2.alwaysSelected();
         }
 
-        theLaurelsOfCommand.setAktiv((chosenRelic == null || theLaurelsOfCommand.isSelected()) && keywords.contains(OFFICER));   
+        theLaurelsOfCommand.setAktiv((chosenRelic == null || theLaurelsOfCommand.isSelected()) && keywords.contains(OFFICER));
         theDeathmaskOfOllanius.setAktiv((chosenRelic == null || theDeathmaskOfOllanius.isSelected()) && keywords.contains(INFANTRY));
         theDaggerOfTusakh.setAktiv((chosenRelic == null || theDaggerOfTusakh.isSelected()) && keywords.contains(INFANTRY));
         kurvosAquila.setAktiv((chosenRelic == null || kurvosAquila.isSelected()) && keywords.contains(OFFICER));
@@ -207,7 +207,7 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         skullMaskOfAcheron.setAktiv((chosenRelic == null || skullMaskOfAcheron.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Armageddon"));
         theTacticalAutoReliquaryOfTyberius.setAktiv((chosenRelic == null || theTacticalAutoReliquaryOfTyberius.isSelected()) && keywords.contains(MILITARUM_TEMPESTUS));
         orderOrTheIronStarOfMordian.setAktiv((chosenRelic == null || orderOrTheIronStarOfMordian.isSelected()) && keywords.contains(INFANTRY) && BuildaHQ.aktBuildaVater.getFormationType().equals("Mordian"));
-    	
+
     }
 
 }

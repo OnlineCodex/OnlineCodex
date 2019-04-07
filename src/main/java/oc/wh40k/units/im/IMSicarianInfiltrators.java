@@ -11,9 +11,7 @@ public class IMSicarianInfiltrators extends Eintrag {
 	private final OptionsZaehlerGruppe o1;
 	private final OptionsZaehlerGruppe o1x;
 
-	private boolean harkerSelected = false;
-
-    public IMSicarianInfiltrators() {
+	public IMSicarianInfiltrators() {
         name = "Sicarian Infiltrators";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Sicarian Infiltrators", 5, 10, getPts("Sicarian Infiltrators")));
 

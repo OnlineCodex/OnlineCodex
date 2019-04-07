@@ -6,7 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMBaalPredator extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1;
 
     public IMBaalPredator() {
         name = "Baal Predator";
@@ -23,7 +23,7 @@ public class IMBaalPredator extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("heavy bolter (SM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 heavy flamers", getPts("heavy flamer (SM)") * 2));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

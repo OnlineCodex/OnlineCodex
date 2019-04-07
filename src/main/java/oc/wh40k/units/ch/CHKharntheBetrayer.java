@@ -9,7 +9,7 @@ public class CHKharntheBetrayer extends Eintrag {
         name = "Kharn the Betrayer";
         grundkosten = getPts("Kharn the Betrayer");
         power = 9;
-        
+
         seperator();
 
         addWarlordTraits("World Eaters: Slaughterborn", true);

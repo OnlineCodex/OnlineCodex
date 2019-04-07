@@ -7,7 +7,7 @@ import oc.wh40k.units.PsychicPowers;
 public class IMGrandMasterVoldus extends Eintrag {
 
 	private final RuestkammerStarter psychicPowers;
-	
+
     public IMGrandMasterVoldus() {
         name = "Grand Master Voldus";
         grundkosten = getPts("Grand Master Voldus");
@@ -22,7 +22,7 @@ public class IMGrandMasterVoldus extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Lore Master (GK)", true);

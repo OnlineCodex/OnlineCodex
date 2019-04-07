@@ -7,10 +7,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHChaosVindicator extends Eintrag {
 
-	private final OptionsUpgradeGruppe fkwaffen;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosVindicator() {
+	public CHChaosVindicator() {
         name = "Chaos Vindicator";
         grundkosten = getPts("Chaos Vindicator");
 
@@ -26,7 +23,7 @@ public class CHChaosVindicator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -34,7 +31,7 @@ public class CHChaosVindicator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

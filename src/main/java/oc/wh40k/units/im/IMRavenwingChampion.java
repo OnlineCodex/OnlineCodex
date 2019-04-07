@@ -8,9 +8,9 @@ public class IMRavenwingChampion extends Eintrag {
         name = "Ravenwing Champion";
         grundkosten = getPts("Ravenwing Champion") + getPts("Blade of Caliban") + getPts("Bolt pistol (SM)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Plasma talon");
         power = 6;
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

@@ -23,7 +23,8 @@ public class ORSkorchas extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         if (Buggies.getModelle() > 3) {
             power = 16;
         } else if (Buggies.getModelle() > 1) {

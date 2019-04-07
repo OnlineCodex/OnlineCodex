@@ -1,8 +1,16 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PALADIN_ANCIENT;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMPaladinAncient extends Eintrag {
@@ -10,15 +18,15 @@ public class IMPaladinAncient extends Eintrag {
 
     public IMPaladinAncient() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, PALADIN_ANCIENT, TERMINATOR);
-    	
+
         name = "Paladin Ancient";
         grundkosten = getPts("Paladin Ancient") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
 
         add(ico = new oc.Picture("oc/wh40k/images/GKBruderCaptainderGreyKnights.jpg"));
         seperator();
-        
+
         addWeapons(IMGreyKnightsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -28,7 +36,7 @@ public class IMPaladinAncient extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -39,7 +47,7 @@ public class IMPaladinAncient extends Eintrag {
     @Override
     public void refreshen() {
         power = 7;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

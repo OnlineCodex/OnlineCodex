@@ -1,16 +1,16 @@
 package oc.wh40k.units.or;
 
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORLootedWagon extends Eintrag {
 
 
-	private final OptionsUpgradeGruppe FK2;
-	private final OptionsZaehlerGruppe BeutepanzaFK;
-	private final OptionsUpgradeGruppe RammGruppe;
-
-    public ORLootedWagon() {
+	public ORLootedWagon() {
 
         name = "Looted Wagon";
         grundkosten = 37;
@@ -19,20 +19,20 @@ public class ORLootedWagon extends Eintrag {
 
 
         ogE.addElement(new OptionsGruppeEintrag("Panzakanonä", 30));
-        add(FK2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Fette Wumme", 5));
         ogE.addElement(new OptionsGruppeEintrag("Bazzukka", 5));
         ogE.addElement(new OptionsGruppeEintrag("Gitbrenna", 5));
-        add(BeutepanzaFK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Todeswalzä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Vastärktä Rammä", 5));
-        add(RammGruppe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zugetakkat", 15));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Megagreifa", 5));
@@ -48,6 +48,7 @@ public class ORLootedWagon extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

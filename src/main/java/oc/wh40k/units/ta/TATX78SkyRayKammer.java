@@ -12,7 +12,8 @@ public class TATX78SkyRayKammer extends RuestkammerVater {
         grundkosten = 115;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/DornenhaiGross.gif"));
 
         seperator();
@@ -29,7 +30,8 @@ public class TATX78SkyRayKammer extends RuestkammerVater {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         if (!o3.isSelected()) o3.setSelected(0, true);
     }
 

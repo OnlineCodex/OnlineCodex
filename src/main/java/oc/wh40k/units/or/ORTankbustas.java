@@ -9,7 +9,6 @@ public class ORTankbustas extends Eintrag {
 
 	private final AnzahlPanel Panzaknakkaz;
 	private final OptionsEinzelZaehler Sprengsquiks;
-	private final OptionsEinzelZaehler Panzakloppa;
 	private final OptionsEinzelZaehler Pistolen;
 
     public ORTankbustas() {
@@ -22,7 +21,7 @@ public class ORTankbustas extends Eintrag {
         seperator();
 
         add(Sprengsquiks = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Bomb Squigs", 2, getPts("Bomb Squig")));
-        add(Panzakloppa = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Tankhammer", 2, getPts("Tankhammer") - getPts("Rokkit launcha")));
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Tankhammer", 2, getPts("Tankhammer") - getPts("Rokkit launcha")));
         add(Pistolen = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Pair of rokkit pistols", 1, getPts("Pair of rokkit pistols") - getPts("Rokkit launcha")));
 
         seperator();
@@ -35,7 +34,8 @@ public class ORTankbustas extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         Sprengsquiks.setMaxAnzahl(Panzaknakkaz.getModelle() / 5 * 2);
         Pistolen.setMaxAnzahl(Panzaknakkaz.getModelle() / 5);
         if (Panzaknakkaz.getModelle() > 10) {

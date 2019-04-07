@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMStormEagleAssaultGunship extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2;
-
-
-
-    public IMStormEagleAssaultGunship() {
+	public IMStormEagleAssaultGunship() {
 
         name = "Storm Eagle Assault Gunship";
 
@@ -40,7 +34,7 @@ public class IMStormEagleAssaultGunship extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -52,7 +46,7 @@ public class IMStormEagleAssaultGunship extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 twin lascannon", 2 * getPts("Twin lascannon")));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

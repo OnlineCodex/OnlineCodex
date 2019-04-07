@@ -25,12 +25,12 @@ public class ProfilPanel /*extends OptionsVater*/ {
     AnzahlPanel[] ap = new AnzahlPanel[NAMEN.length];
 
     public ProfilPanel(Eintrag eintrag, int kat) {
-        eintrag.add(new NamePanel(eintrag.ID, Eintrag.randAbstand, eintrag.cnt, ""));
+        eintrag.add(new NamePanel(eintrag.ID, BuildaSTK.randAbstand, eintrag.cnt, ""));
         eintrag.seperator();
-        eintrag.add(new NamePanel(eintrag.ID, Eintrag.randAbstand, eintrag.cnt, xpStart[kat] + "", "Erfahrung"));
+        eintrag.add(new NamePanel(eintrag.ID, BuildaSTK.randAbstand, eintrag.cnt, xpStart[kat] + "", "Erfahrung"));
         eintrag.seperator(15);
         for (int i = 0; i < NAMEN.length; i++) {
-            eintrag.add(ap[i] = new AnzahlPanel(eintrag.ID, Eintrag.randAbstand, eintrag.cnt, NAMEN_LANG[i], 0, MAX[i], NAMEN_KURZ[i], NAMEN[i], START[kat][i]));
+            eintrag.add(ap[i] = new AnzahlPanel(eintrag.ID, BuildaSTK.randAbstand, eintrag.cnt, NAMEN_LANG[i], 0, MAX[i], NAMEN_KURZ[i], NAMEN[i], START[kat][i]));
             ap[i].setNichtDieErsteOption(true);
 
         }

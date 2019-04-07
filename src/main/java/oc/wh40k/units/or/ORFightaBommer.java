@@ -35,7 +35,8 @@ public class ORFightaBommer extends Eintrag {
         complete();
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         rokkits.setAktiv(!apo.isSelected());
         wpns.setAktiv(!apo.isSelected());
 

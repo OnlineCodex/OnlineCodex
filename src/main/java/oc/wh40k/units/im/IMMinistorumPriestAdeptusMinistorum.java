@@ -1,13 +1,11 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 public class IMMinistorumPriestAdeptusMinistorum extends Eintrag {
-	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1;
 
     public IMMinistorumPriestAdeptusMinistorum() {
         name = "Ministorum Priest";
@@ -36,8 +34,8 @@ public class IMMinistorumPriestAdeptusMinistorum extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AMI)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
-        
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
         seperator();
 
         addWarlordTraits("", true);

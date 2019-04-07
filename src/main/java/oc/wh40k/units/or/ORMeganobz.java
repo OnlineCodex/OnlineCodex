@@ -33,7 +33,8 @@ public class ORMeganobz extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         gargbosseFK.setMaxAnzahl(gargbosse.getModelle());
         gargbosseFK.setLegal(gargbosseFK.getAnzahl() == gargbosse.getModelle());
         power = gargbosse.getModelle() * 2;

@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMMortisDreadnought extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1;
-
-
-
-    public IMMortisDreadnought() {
+	public IMMortisDreadnought() {
 
         name = "Mortis Dreadnought";
 
@@ -48,7 +42,7 @@ public class IMMortisDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 heavy plasma cannon", 2 * getPts("Heavy plasma cannon")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

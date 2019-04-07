@@ -30,7 +30,8 @@ public class TASniperDroneTeam extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         if (drohnen.getAnzahl() < 1) {
             drohnen.setAnzahl(1);
         }

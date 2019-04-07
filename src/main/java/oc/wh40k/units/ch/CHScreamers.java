@@ -18,7 +18,8 @@ public class CHScreamers extends Eintrag {
         complete();
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

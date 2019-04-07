@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMCompanyVeteransonBikes extends Eintrag {
 
@@ -62,7 +66,7 @@ public class IMCompanyVeteransonBikes extends Eintrag {
         o2.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
         o3.setMaxAnzahl(squad.getModelle() - 1 - (o1.getAnzahl() > o2.getAnzahl() ? o1.getAnzahl() : o2.getAnzahl()));
 
-        boolean legal = (o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2) == (squad.getModelle() - 1) * 2;
+        final boolean legal = (o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() * 2) == (squad.getModelle() - 1) * 2;
         o1.setLegal(legal);
         o2.setLegal(legal);
         o3.setLegal(legal);

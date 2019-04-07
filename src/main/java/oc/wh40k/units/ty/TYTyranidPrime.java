@@ -31,7 +31,7 @@ public class TYTyranidPrime extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

@@ -1,13 +1,14 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMOnagerDunecrawler extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
-	private final OptionsEinzelUpgrade oe1;
-
-    public IMOnagerDunecrawler() {
+	private final OptionsUpgradeGruppe o1;
+	public IMOnagerDunecrawler() {
         name = "Onager Dunecrawlers";
         grundkosten = getPts("Onager Dunecrawler");
         power = 6;
@@ -23,13 +24,13 @@ public class IMOnagerDunecrawler extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cognis heavy stubber", getPts("Cognis heavy stubber")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cognis heavy stubber", getPts("Cognis heavy stubber")));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Data-tether", "Broad spectrum data-tehter", getPts("Broad spectrum data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Smoke launchers", getPts("Smoke launcher")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         complete();
     }

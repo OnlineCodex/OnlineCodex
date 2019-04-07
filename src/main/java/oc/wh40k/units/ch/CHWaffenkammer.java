@@ -31,11 +31,13 @@ public class CHWaffenkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setDefaultCloceCombat(String s) {
+    @Override
+	public void setDefaultCloceCombat(String s) {
         defaultNK = s;
     }
 
-    public void setDefaultRanged(String s) {
+    @Override
+	public void setDefaultRanged(String s) {
         defaultFK = s;
     }
 
@@ -62,7 +64,7 @@ public class CHWaffenkammer extends RuestkammerVater {
     public void setNoiseMarine(boolean s) {
         noise = s;
     }
-    
+
     public void setHavoc(boolean s) {
         havoc = s;
     }
@@ -74,7 +76,7 @@ public class CHWaffenkammer extends RuestkammerVater {
             range = defaults[1];
             rangeForMelee = defaults[2];
             meleeForRange = defaults[3];
-        } catch (Exception e) {
+        } catch (final Exception e) {
         }
 
         if (type == "Scarab Occult Sorcerer") {

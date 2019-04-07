@@ -3,11 +3,8 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -16,7 +13,7 @@ public class IMDeimosPatternRelicPredator extends Eintrag {
 
 
 
-	private final OptionsUpgradeGruppe o1, o2;
+	private final OptionsUpgradeGruppe o1;
 
 
 
@@ -60,7 +57,7 @@ public class IMDeimosPatternRelicPredator extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer") * 2));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

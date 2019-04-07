@@ -37,7 +37,8 @@ public class CHDaemonettes extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

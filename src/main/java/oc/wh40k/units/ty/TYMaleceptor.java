@@ -7,7 +7,6 @@ import oc.wh40k.units.PsychicPowers;
 
 public class TYMaleceptor extends Eintrag {
 
-    private final OptionsEinzelUpgrade oe1;
     private final RuestkammerStarter psychicPowers;
 
     public TYMaleceptor() {
@@ -19,7 +18,7 @@ public class TYMaleceptor extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
 
         seperator();
 

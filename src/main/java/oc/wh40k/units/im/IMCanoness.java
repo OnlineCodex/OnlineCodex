@@ -1,6 +1,12 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTA_SORORITAS;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.CANONESS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.ORDER;
 
 import oc.Eintrag;
 
@@ -17,9 +23,9 @@ public class IMCanoness extends Eintrag {
         seperator();
 
         addWeapons(IMAdeptaSororitasRuestkammer.class, true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

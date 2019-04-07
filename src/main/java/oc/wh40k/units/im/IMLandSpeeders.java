@@ -32,7 +32,7 @@ public class IMLandSpeeders extends Eintrag {
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
 
         seperator();
-        
+
         if(!spacewolves) {
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));

@@ -9,7 +9,9 @@ import static oc.KeyWord.NEMESIS_DREADKNIGHT;
 import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.VEHICLE;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMGrandMasterinNemesisDreadknight extends Eintrag {
@@ -18,20 +20,20 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
     public IMGrandMasterinNemesisDreadknight() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, VEHICLE, NEMESIS_DREADKNIGHT, PSYKER, GRAND_MASTER);
-    	
+
         name = "Grand Master in Nemesis Dreadknight";
         grundkosten = getPts("Grand Master in Nemesis Dreadknight");
 
         add(ico = new oc.Picture("oc/wh40k/images/GKNemesisRitter.jpg"));
 
         seperator();
-        
+
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Dreadknight teleporter", getPts("Dreadknight teleporter")));
 
         seperator();
-        
+
         addWeapons(IMGreyKnightsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -41,7 +43,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -52,7 +54,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
     @Override
     public void refreshen() {
         power = 14;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

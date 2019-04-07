@@ -1,11 +1,11 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class TAXV104RiptideBattlesuits extends Eintrag {
 

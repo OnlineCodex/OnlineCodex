@@ -7,14 +7,12 @@ import oc.RuestkammerVater;
 
 public class ORGunTrukkKammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1;
-
-
-    public ORGunTrukkKammer() {
+	public ORGunTrukkKammer() {
         grundkosten = 45;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         add(ico = new oc.Picture("oc/wh40k/images/GunWagon.gif"));
 
 
@@ -37,13 +35,14 @@ public class ORGunTrukkKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Big lobba", 10));
         ogE.addElement(new OptionsGruppeEintrag("Big-zzappa", 20));
         ogE.addElement(new OptionsGruppeEintrag("Flakka-gunz", 30));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         sizeSetzen();
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
     }
 

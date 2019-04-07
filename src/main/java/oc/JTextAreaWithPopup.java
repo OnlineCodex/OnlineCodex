@@ -1,9 +1,19 @@
 package oc;
 
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+import javax.swing.JTextArea;
+import javax.swing.KeyStroke;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
-import java.awt.event.*;
 
 
 @SuppressWarnings("serial")
@@ -11,16 +21,17 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
     boolean kopierOption;
     boolean einfügOption;
-    private JPopupMenu popup;
+    private final JPopupMenu popup;
     private JMenuItem kopieren;
     private JMenuItem allesKopieren;
     private JMenuItem einfügen;
-    private JMenuItem allesMarkieren;
+    private final JMenuItem allesMarkieren;
     ActionListener menuActionListener = new ActionListener() {
 
-        public void actionPerformed(ActionEvent event) {
+        @Override
+		public void actionPerformed(ActionEvent event) {
 
-            Object source = event.getSource();
+            final Object source = event.getSource();
 
 
             if (source == kopieren) {
@@ -61,7 +72,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
             popup.add(kopieren);
 
-            kopieren.setAccelerator(KeyStroke.getKeyStroke('C', InputEvent.CTRL_MASK));
+            kopieren.setAccelerator(KeyStroke.getKeyStroke('C', InputEvent.CTRL_DOWN_MASK ));
 
             kopieren.addActionListener(menuActionListener);
 
@@ -82,7 +93,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
             popup.add(einfügen);
 
-            einfügen.setAccelerator(KeyStroke.getKeyStroke('V', InputEvent.CTRL_MASK));
+            einfügen.setAccelerator(KeyStroke.getKeyStroke('V', InputEvent.CTRL_DOWN_MASK ));
 
             einfügen.addActionListener(menuActionListener);
         }
@@ -92,7 +103,7 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
         popup.add(allesMarkieren);
 
-        allesMarkieren.setAccelerator(KeyStroke.getKeyStroke('A', InputEvent.CTRL_MASK));
+        allesMarkieren.setAccelerator(KeyStroke.getKeyStroke('A', InputEvent.CTRL_DOWN_MASK ));
 
         allesMarkieren.addActionListener(menuActionListener);
 
@@ -105,20 +116,25 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
 
     }
 
-    public void mouseClicked(MouseEvent e) {
+    @Override
+	public void mouseClicked(MouseEvent e) {
     }
 
-    public void mousePressed(MouseEvent e) {
+    @Override
+	public void mousePressed(MouseEvent e) {
     }
 
-    public void mouseEntered(MouseEvent e) {
+    @Override
+	public void mouseEntered(MouseEvent e) {
     }
 
-    public void mouseExited(MouseEvent e) {
+    @Override
+	public void mouseExited(MouseEvent e) {
     }
 
 
-    public void mouseReleased(MouseEvent e) {
+    @Override
+	public void mouseReleased(MouseEvent e) {
 
         //if(e.isPopupTrigger()){
 
@@ -127,7 +143,8 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
     }
 
 
-    public void caretUpdate(CaretEvent e) {
+    @Override
+	public void caretUpdate(CaretEvent e) {
 
         if (kopierOption) {
 
@@ -137,13 +154,16 @@ public class JTextAreaWithPopup extends JTextArea implements MouseListener, Care
     }
 
 
-    public void keyTyped(KeyEvent e) {
+    @Override
+	public void keyTyped(KeyEvent e) {
     }
 
-    public void keyPressed(KeyEvent e) {
+    @Override
+	public void keyPressed(KeyEvent e) {
     }
 
-    public void keyReleased(KeyEvent e) {
+    @Override
+	public void keyReleased(KeyEvent e) {
     }
 
 

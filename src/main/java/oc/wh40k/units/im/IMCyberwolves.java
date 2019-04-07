@@ -2,7 +2,6 @@ package oc.wh40k.units.im;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsZaehlerGruppe;
 
 public class IMCyberwolves extends Eintrag {
 

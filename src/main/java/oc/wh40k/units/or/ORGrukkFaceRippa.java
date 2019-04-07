@@ -16,14 +16,16 @@ public class ORGrukkFaceRippa extends Eintrag {
         complete();
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         addToInformationVector("ORHQ", -1);
         super.deleteYourself();
 
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

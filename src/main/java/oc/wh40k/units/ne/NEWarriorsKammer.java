@@ -13,7 +13,8 @@ public class NEWarriorsKammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Necron-Warriors", 5, 20, 13);
         add(squad);
 

@@ -8,7 +8,7 @@ public class IMAsmodai extends Eintrag {
         name = "Asmodai";
         grundkosten = getPts("Asmodai");
         power = 7;
-        
+
         seperator();
 
         addWarlordTraits("Fury of the Lion (DA)", true);

@@ -1,7 +1,9 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.JLabel;
 
 public class ComingSoon extends Eintrag {
 
@@ -12,7 +14,7 @@ public class ComingSoon extends Eintrag {
         add(new Picture("oc/images/ComingSoon.gif"));
 
         this.setEintragsCNT(0);
-        JLabel l = new JLabel("C o m i n g   s o o n  . . .");
+        final JLabel l = new JLabel("C o m i n g   s o o n  . . .");
         l.setFont(new Font("arial", Font.BOLD, 16));
         l.setBounds(60, 75, 200, 18);
         l.setForeground(Color.BLACK);

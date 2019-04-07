@@ -1,6 +1,13 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BE_LAKOR;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.DAEMON_PRINCE;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.MONSTER;
+import static oc.KeyWord.PSYKER;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -26,9 +33,9 @@ public class CHBeLakor extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();
@@ -37,7 +44,7 @@ public class CHBeLakor extends Eintrag {
     @Override
     public void refreshen() {
         setUnikat(true);
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

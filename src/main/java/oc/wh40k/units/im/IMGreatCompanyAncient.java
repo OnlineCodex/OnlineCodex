@@ -2,7 +2,6 @@ package oc.wh40k.units.im;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class IMGreatCompanyAncient extends Eintrag {
@@ -12,7 +11,7 @@ public class IMGreatCompanyAncient extends Eintrag {
         name = "Great Company Ancient";
         grundkosten = getPts("Great Company Ancient") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
         power = 4;
-        
+
         seperator();
 
         waffenUndReliquien = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
@@ -23,9 +22,9 @@ public class IMGreatCompanyAncient extends Eintrag {
         waffenUndReliquien.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

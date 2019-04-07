@@ -8,7 +8,7 @@ public class IMSergeantHarker extends Eintrag {
         name = "Sergeant Harker";
         grundkosten = getPts("Sergeant Harker");
         power = 3;
-        
+
         seperator();
 
         addWarlordTraits("Catachan: Lead From the Front", true);
@@ -17,7 +17,8 @@ public class IMSergeantHarker extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

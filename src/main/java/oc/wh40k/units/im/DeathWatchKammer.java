@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RefreshListener;
+import oc.RuestkammerVater;
 
 public class DeathWatchKammer extends RuestkammerVater {
 
@@ -103,7 +108,7 @@ public class DeathWatchKammer extends RuestkammerVater {
 
             seperator();
         }
-        
+
         if (type.equals("Terminator Sergeant")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter(DW)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -119,11 +124,11 @@ public class DeathWatchKammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
             seperator();
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));
             ogE.addElement(new OptionsGruppeEintrag("Thunderhammer & Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
             add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator();
         }
 
@@ -179,18 +184,19 @@ public class DeathWatchKammer extends RuestkammerVater {
             else
                 o4.setMaxAnzahl(1);
         }
-        
+
         if(type.equals("Terminator Sergeant")) {
-        	
+
         	o1.alwaysSelected();
         	o2.alwaysSelected();
-        	
+
         	o1.setAktiv(!o5.isSelected());
         	o2.setAktiv(!o5.isSelected());
         }
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -201,7 +207,7 @@ public class DeathWatchKammer extends RuestkammerVater {
 
     @Override
     public void switchEntry(String name, boolean aktiv) {
-        boolean entrySwitched = false;
+        final boolean entrySwitched = false;
 
         if (entrySwitched) {
             //Aktualisisert alle Einträge, auch die, welche diese Rüstkammer enthält.

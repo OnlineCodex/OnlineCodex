@@ -8,7 +8,7 @@ public class IMDeathwatchPrimarisApothecary extends Eintrag {
     public IMDeathwatchPrimarisApothecary() {
         name = "Primaris Apothecary";
         grundkosten = getPts("Primaris Apothecary") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Absolver bolt pistol (DW)") + getPts("Reductor pistol");
-        
+
         seperator();
 
         if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
@@ -17,7 +17,7 @@ public class IMDeathwatchPrimarisApothecary extends Eintrag {
         	addWeapons(IMSpaceMarinesRuestkammer.class, true);
 
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

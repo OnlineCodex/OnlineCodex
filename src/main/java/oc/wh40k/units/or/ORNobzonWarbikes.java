@@ -33,16 +33,17 @@ public class ORNobzonWarbikes extends Eintrag {
         bosseCC.setAnzahl(5, bosse.getModelle());
 
         seperator(5);
-        
+
         ogE.addElement(new OptionsGruppeEintrag("2 Killsaws", getPts("Two killsaws")));
         add(bosseCC2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
 
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     	bosseCC.setMaxAnzahl(bosse.getModelle() * 2 - bosseCC2.getAnzahl() * 2);
         bosseCC2.setMaxAnzahl(bosse.getModelle()- bosseCC.getAnzahl() / 2 - bosseCC.getAnzahl() % 2);
 

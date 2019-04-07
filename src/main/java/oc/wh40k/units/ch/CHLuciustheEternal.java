@@ -9,7 +9,7 @@ public class CHLuciustheEternal extends Eintrag {
         name = "Lucius the Eternal";
         grundkosten = getPts("Lucius the Eternal");
         power = 6;
-        
+
         seperator();
 
         addWarlordTraits("Emperor's Children: Stimulated by Pain", true);

@@ -1,6 +1,24 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BLOODMASTER;
+import static oc.KeyWord.BLOOD_THRONE;
+import static oc.KeyWord.CHANGECASTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON_PRINCE_OF_CHAOS;
+import static oc.KeyWord.FATESKIMMER;
+import static oc.KeyWord.FLUXMASTER;
+import static oc.KeyWord.HERALD_OF_SLAANESH;
+import static oc.KeyWord.HERALD_OF_TZEENTCH;
+import static oc.KeyWord.KEEPER_OF_SECRETS;
+import static oc.KeyWord.KHORNE;
+import static oc.KeyWord.LORD_OF_CHANGE;
+import static oc.KeyWord.MONSTER;
+import static oc.KeyWord.NURGLE;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SKULLMASTER;
+import static oc.KeyWord.SLAANESH;
+import static oc.KeyWord.SPOILPOX_SCRIVENER;
+import static oc.KeyWord.TZEENTCH;
 
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -9,10 +27,6 @@ import oc.RuestkammerVater;
 
 public class CHWaffenkammerCD extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe handwaffen = null;
-	private OptionsUpgradeGruppe fkwaffen = null;
-    //boolean psyker = false; //Daemon Prince, if not Khorne
-    
 	private OptionsEinzelUpgrade armourofScorn;
 	private OptionsEinzelUpgrade theCrimsonCrown;
 	private OptionsEinzelUpgrade theEndlessGrimoire;
@@ -23,11 +37,9 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	private OptionsEinzelUpgrade theForbiddenGem;
 	private OptionsEinzelUpgrade theMarkofExcess;
 	private OptionsEinzelUpgrade slothfulClaws;
-    
+
 	private OptionsUpgradeGruppe nkwaffe;
-	private OptionsUpgradeGruppe fkwaffe;
-    
-    public CHWaffenkammerCD() {
+	public CHWaffenkammerCD() {
         grundkosten = 0;
     }
 
@@ -41,7 +53,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
         	boolean staffOfChange = false;
         	boolean plaguesword = false;
         	boolean witstealerSword = false;
-	    	
+
 	    	for(int i = 0; i < ogE.size(); i++) {
 	    		if(ogE.get(i).getName().equals("Hellforged sword")) {
 	    			hellforgedSword = true;
@@ -61,30 +73,30 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    			witstealerSword = true;
 	    		}
 	    	}
-	    	
+
 	    	if(bladeOfBlood) {
         		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Blade of blood")).setRelic(true));
 	    	} else if (hellforgedSword) {
         		ogE.addElement(new OptionsGruppeEintrag("A'rgath, the King of Blades", getPts("Hellforged sword")).setRelic(true));
 	    	}
-	    	
-	    	
+
+
 	    	if(axeOfKhorne) {
         		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Axe of Khorne")).setRelic(true));
 	    	} else if(daemonicAxe) {
         		ogE.addElement(new OptionsGruppeEintrag("Skullreaver", getPts("Daemonic Axe")).setRelic(true));
 	    	}
-	    	
+
 	    	if(rodOfSorcery) {
         		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Rod of Sorcery")).setRelic(true));
 	    	} else if(staffOfChange) {
         		ogE.addElement(new OptionsGruppeEintrag("The Everstave", getPts("Staff of change")).setRelic(true));
 	    	}
-	    	
+
 	    	if(plaguesword) {
         		ogE.addElement(new OptionsGruppeEintrag("Corruption", getPts("Plaguesword (CD)")).setRelic(true));
 	    	}
-	    	
+
 	    	if(witstealerSword) {
         		ogE.addElement(new OptionsGruppeEintrag("Soulstealer", getPts("Witstealer sword")).setRelic(true));
 	    	} else if(hellforgedSword) {
@@ -92,7 +104,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	    	}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
     	add(armourofScorn = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armour of Scorn", 0).setRelic(true));
@@ -105,22 +117,22 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     	add(theForbiddenGem = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Forbidden Gem", 0).setRelic(true));
     	add(theMarkofExcess = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Mark of Excess", 0).setRelic(true));
     	add(slothfulClaws = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Slothful Claws", 0).setRelic(true));
-    	
+
 
         seperator();
-    	
+
         if(keywords.contains(DAEMON_PRINCE_OF_CHAOS)) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Hellforged sword", getPts("Hellforged sword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
 	        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
 	        addRelics();
 	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-	
+
 	        seperator();
-	
+
 	        ogE.addElement(new OptionsGruppeEintrag("Warp bolter", getPts("Warp bolter")));
 	        addRelics();
-	        add(fkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(BLOODMASTER) || keywords.contains(SKULLMASTER) || keywords.contains(BLOOD_THRONE)) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Blade of blood", getPts("Blade of blood")));
 	        addRelics();
@@ -149,7 +161,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	        addRelics();
 	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         }
-    	
+
         setUeberschrift("Waffen");
         sizeSetzen();
     }
@@ -166,14 +178,14 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     	theForbiddenGem.setAktiv((chosenRelic == null || theForbiddenGem.isSelected()) && keywords.contains(SLAANESH));
     	theMarkofExcess.setAktiv((chosenRelic == null || theMarkofExcess.isSelected()) && keywords.contains(SLAANESH));
     	slothfulClaws.setAktiv((chosenRelic == null || slothfulClaws.isSelected()) && keywords.contains(HERALD_OF_SLAANESH));
-    	
+
     	if(nkwaffe != null) {
     		nkwaffe.setAktiv("A'rgath, the King of Blades", (chosenRelic == null || nkwaffe.isSelected("A'rgath, the King of Blades")) && keywords.contains(KHORNE));
     		nkwaffe.setAktiv("Skullreaver", (chosenRelic == null || nkwaffe.isSelected("Skullreaver")) && keywords.contains(KHORNE));
     		nkwaffe.setAktiv("The Everstave", (chosenRelic == null || nkwaffe.isSelected("The Everstave")) && keywords.contains(TZEENTCH));
     		nkwaffe.setAktiv("Corruption", (chosenRelic == null || nkwaffe.isSelected("Corruption")) && keywords.contains(NURGLE));
     		nkwaffe.setAktiv("Soulstealer", (chosenRelic == null || nkwaffe.isSelected("Soulstealer")) && keywords.contains(SLAANESH));
-    		
+
     		if(keywords.contains(BLOODMASTER) || type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury") || keywords.contains(SPOILPOX_SCRIVENER) || keywords.contains(KEEPER_OF_SECRETS)) {
     			nkwaffe.alwaysSelected();
     		}

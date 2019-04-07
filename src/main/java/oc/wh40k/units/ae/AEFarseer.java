@@ -1,10 +1,14 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.ASURYANI;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.FARSEER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class AEFarseer extends Eintrag {
@@ -12,7 +16,7 @@ public class AEFarseer extends Eintrag {
 
     public AEFarseer() {
     	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, PSYKER, FARSEER);
-    	
+
         name = "Farseer";
         grundkosten = getPts("Farseer");
         power = 6;
@@ -30,7 +34,7 @@ public class AEFarseer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

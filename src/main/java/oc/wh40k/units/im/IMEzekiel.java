@@ -1,9 +1,7 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class IMEzekiel extends Eintrag {
@@ -23,7 +21,7 @@ public class IMEzekiel extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Courage of the First Legion (DA)", true);

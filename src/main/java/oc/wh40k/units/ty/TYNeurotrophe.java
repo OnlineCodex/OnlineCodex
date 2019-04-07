@@ -22,9 +22,9 @@ public class TYNeurotrophe extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
@@ -33,7 +33,7 @@ public class TYNeurotrophe extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -45,7 +45,7 @@ public class TYNeurotrophe extends Eintrag {
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
-    	
+
     	warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5

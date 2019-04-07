@@ -7,9 +7,7 @@ import oc.OptionsEinzelUpgrade;
 
 public class TAKX139TaunarSupremacyArmour extends Eintrag {
 
-	private final OptionsEinzelUpgrade o3;
-
-    public TAKX139TaunarSupremacyArmour() {
+	public TAKX139TaunarSupremacyArmour() {
         name = "KX139 Ta'unar Supremacy Armour";
         grundkosten = 600;
 
@@ -19,13 +17,14 @@ public class TAKX139TaunarSupremacyArmour extends Eintrag {
 
         seperator();
 
-        add(o3 = new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Fusion Eradicator", 0));
+        add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Fusion Eradicator", 0));
 
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

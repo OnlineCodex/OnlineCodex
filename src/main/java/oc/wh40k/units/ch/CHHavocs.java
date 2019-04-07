@@ -1,16 +1,19 @@
 package oc.wh40k.units.ch;
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHHavocs extends Eintrag {
 
 	private final AnzahlPanel squad;
 	private final OptionsZaehlerGruppe o2;
 	private final RuestkammerStarter rkBoss;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHavocs() {
+	public CHHavocs() {
         name = "Havocs";
         grundkosten = 0;
 
@@ -31,14 +34,14 @@ public class CHHavocs extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         o2.setAnzahl(0, 4);
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

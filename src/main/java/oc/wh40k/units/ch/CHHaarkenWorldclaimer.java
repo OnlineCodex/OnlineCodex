@@ -9,7 +9,7 @@ public class CHHaarkenWorldclaimer extends Eintrag {
         name = "Haarken Worldclaimer";
         grundkosten = getPts("Haarken Worldclaimer");
         power = 6;
-        
+
         seperator();
 
         addWarlordTraits("Lord of Terror", true);

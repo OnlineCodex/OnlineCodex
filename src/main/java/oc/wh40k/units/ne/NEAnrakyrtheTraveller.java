@@ -1,7 +1,6 @@
 package oc.wh40k.units.ne;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class NEAnrakyrtheTraveller extends Eintrag {
 
@@ -10,7 +9,7 @@ public class NEAnrakyrtheTraveller extends Eintrag {
         name = "Anrakyr the Traveller";
         grundkosten = getPts("Anrakyr the Traveller");
         power = 9;
-        
+
         seperator();
 
 		addWarlordTraits("", true);

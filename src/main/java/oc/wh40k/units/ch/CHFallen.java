@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHFallen extends Eintrag {
 
@@ -82,10 +87,10 @@ public class CHFallen extends Eintrag {
     @Override
     public void refreshen() {
 
-        int boltguns = squad.getModelle() - 1 - special.getAnzahl() - claws.getAnzahl() - ((heavy.isSelected()) ? 1 : 0);
+        final int boltguns = squad.getModelle() - 1 - special.getAnzahl() - claws.getAnzahl() - ((heavy.isSelected()) ? 1 : 0);
         boltgun.setMaxAnzahl(boltguns);
 
-        int pistols = squad.getModelle() - 1 - claws.getAnzahl() - special.getAnzahl("Plasma pistol");
+        final int pistols = squad.getModelle() - 1 - claws.getAnzahl() - special.getAnzahl("Plasma pistol");
         pistol.setMaxAnzahl(pistols);
 
         heavy.setAktiv((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);

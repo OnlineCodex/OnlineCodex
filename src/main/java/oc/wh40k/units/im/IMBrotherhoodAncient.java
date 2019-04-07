@@ -1,8 +1,16 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.BROTHERHOOD_ANCIENT;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class IMBrotherhoodAncient extends Eintrag {
@@ -11,7 +19,7 @@ public class IMBrotherhoodAncient extends Eintrag {
 
     public IMBrotherhoodAncient() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, PSYKER, BROTHERHOOD_ANCIENT, TERMINATOR);
-    	
+
         name = "Brotherhood Ancient";
         grundkosten = getPts("Brotherhood Ancient") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
 
@@ -19,7 +27,7 @@ public class IMBrotherhoodAncient extends Eintrag {
         seperator();
 
         addWeapons(IMGreyKnightsRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -29,7 +37,7 @@ public class IMBrotherhoodAncient extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -40,7 +48,7 @@ public class IMBrotherhoodAncient extends Eintrag {
     @Override
     public void refreshen() {
         power = 7;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

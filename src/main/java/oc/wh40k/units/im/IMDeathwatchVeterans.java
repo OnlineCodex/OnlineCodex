@@ -1,10 +1,10 @@
 package oc.wh40k.units.im;
 
+import java.util.Vector;
+
 import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
-
-import java.util.Vector;
 
 public class IMDeathwatchVeterans extends Eintrag {
 
@@ -63,20 +63,20 @@ public class IMDeathwatchVeterans extends Eintrag {
 	@Override
 	public void refreshen() {
 
-		boolean veteransChanged = numVeterans != veterans.getModelle();
-		boolean sergeantChanged = numSergeant != sergeant.getModelle();
-		boolean blackshieldChanged = numBlackShield != blackshield.getModelle();
-		boolean termisChanged = numTerminators != terminator.getModelle();
-		boolean bikerChanged = numBikers != biker.getModelle();
-		boolean vanguardChanged = numVanguards != vanguard.getModelle();
+		final boolean veteransChanged = numVeterans != veterans.getModelle();
+		final boolean sergeantChanged = numSergeant != sergeant.getModelle();
+		final boolean blackshieldChanged = numBlackShield != blackshield.getModelle();
+		final boolean termisChanged = numTerminators != terminator.getModelle();
+		final boolean bikerChanged = numBikers != biker.getModelle();
+		final boolean vanguardChanged = numVanguards != vanguard.getModelle();
 
-		boolean somethingChanged = veteransChanged || sergeantChanged || blackshieldChanged || termisChanged
+		final boolean somethingChanged = veteransChanged || sergeantChanged || blackshieldChanged || termisChanged
 				|| bikerChanged || vanguardChanged;
 
-		double x = randAbstand;
+		final double x = randAbstand;
 		double y = 0.0;
 		double height = 0.0;
-		
+
 		int heavyWeapons = 0;
 
 		//------------Veterans
@@ -93,12 +93,12 @@ public class IMDeathwatchVeterans extends Eintrag {
 					rkVeterans.lastElement().initKammer();
 					rkVeterans.lastElement().setGrundkosten(getPts("Deathwatch Veterans"));
 					add(rkVeterans.lastElement());
-					rkVeterans.lastElement().setAbwaehlbar(false);	
+					rkVeterans.lastElement().setAbwaehlbar(false);
 				}
 			}
 			numVeterans = veterans.getModelle();
 			//------------Veterans
-			
+
 			//------------Sergeant
 			if(numSergeant > sergeant.getModelle()) {
 				remove(rkSergeant.lastElement());
@@ -148,7 +148,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 					rkTerminators.lastElement().initKammer();
 					rkTerminators.lastElement().setGrundkosten(getPts("Deathwatch Terminators"));
 					add(rkTerminators.lastElement());
-					rkTerminators.lastElement().setAbwaehlbar(false);	
+					rkTerminators.lastElement().setAbwaehlbar(false);
 				}
 			}
 
@@ -169,7 +169,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 					rkBikers.lastElement().initKammer();
 					rkBikers.lastElement().setGrundkosten(getPts("Deathwatch Bikers") + getPts("Twin boltgun (DW)"));
 					add(rkBikers.lastElement());
-					rkBikers.lastElement().setAbwaehlbar(false);	
+					rkBikers.lastElement().setAbwaehlbar(false);
 				}
 			}
 
@@ -188,7 +188,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 					rkVanguards.lastElement().initKammer();
 					rkVanguards.lastElement().setGrundkosten(getPts("Deathwatch Vanguard Veterans"));
 					add(rkVanguards.lastElement());
-					rkVanguards.lastElement().setAbwaehlbar(false);	
+					rkVanguards.lastElement().setAbwaehlbar(false);
 				}
 			}
 
@@ -251,9 +251,9 @@ public class IMDeathwatchVeterans extends Eintrag {
 		for (int i = 0; i < numVeterans; i++) {
 			heavyWeapons+= ((IMKillteamKammer) rkVeterans.get(i).getKammer()).o5.getAnzahl();
 		}
-		
-		int numTotal = numBikers + numBlackShield + numSergeant + numTerminators + numVanguards + numVeterans;
-		
+
+		final int numTotal = numBikers + numBlackShield + numSergeant + numTerminators + numVanguards + numVeterans;
+
 		if(numTotal < 5) {
 			setFehlermeldung("Min. 5");
 		} else if(numTotal > 10) {
@@ -263,7 +263,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 		} else {
 			setFehlermeldung("");
 		}
-		
+
 		super.refreshAction();
 	}
 

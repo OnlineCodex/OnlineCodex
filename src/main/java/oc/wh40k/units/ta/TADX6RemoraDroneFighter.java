@@ -7,13 +7,11 @@ import oc.Eintrag;
 
 public class TADX6RemoraDroneFighter extends Eintrag {
 
-	private final AnzahlPanel squad;
-
-    public TADX6RemoraDroneFighter() {
+	public TADX6RemoraDroneFighter() {
         name = "DX-6 \'Remora\' Drone Fighter";
         grundkosten = 0;
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "DX-6 \'Remora\' Drone Fighter", 1, 5, 90));
+        add(new AnzahlPanel(ID, randAbstand, cnt, "DX-6 \'Remora\' Drone Fighter", 1, 5, 90));
 
         add(ico = new oc.Picture("oc/wh40k/images/DX6RemoraDroneFighter.jpg"));
 

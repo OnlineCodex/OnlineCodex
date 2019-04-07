@@ -14,14 +14,14 @@ public class IMDeathwatchPrimarisChaplain extends Eintrag {
 
     public IMDeathwatchPrimarisChaplain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, CHAPLAIN, PRIMARIS);
-        
+
         name = "Primaris Chaplain";
         grundkosten = getPts("Primaris Chaplain") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)");
-        
+
         seperator();
-        
+
         addWeapons(IMDeathwatchRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

@@ -4,7 +4,6 @@ import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class IMSanguinaryGuardAncient extends Eintrag {
 	private final OptionsUpgradeGruppe o1, o2;
@@ -31,7 +30,7 @@ public class IMSanguinaryGuardAncient extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Encarmine axe", getPts("encarmine axe")));
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("power fist (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
 
 		addWarlordTraits("", true);

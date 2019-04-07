@@ -9,9 +9,7 @@ import static oc.KeyWord.LIBRARIAN;
 import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.TERMINATOR;
 
-import oc.BuildaHQ;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
@@ -20,7 +18,7 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
     public IMDeathwatchLibrarianinTerminatorArmour() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, LIBRARIAN, PSYKER, TERMINATOR);
-    	
+
         name = "Librarian in Terminator Armour";
         grundkosten = getPts("Librarian in Terminator Armour");
         power = 8;
@@ -43,7 +41,7 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -53,7 +51,7 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
     @Override
     public void refreshen() {
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

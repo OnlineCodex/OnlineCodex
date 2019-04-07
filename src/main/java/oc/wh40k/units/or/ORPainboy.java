@@ -24,7 +24,7 @@ public class ORPainboy extends Eintrag {
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);
         waffen.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);
@@ -39,5 +39,5 @@ public class ORPainboy extends Eintrag {
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5
         );
     }
-    
+
 }

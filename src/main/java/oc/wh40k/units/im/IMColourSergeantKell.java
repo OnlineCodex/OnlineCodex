@@ -8,7 +8,7 @@ public class IMColourSergeantKell extends Eintrag {
         name = "Colour Sergeant Kell";
         grundkosten = getPts("Colour Sergeant Kell");
         power = 3;
-        
+
         seperator();
 
         addWarlordTraits("Cadian: Superior Tactical Training", true);
@@ -17,7 +17,8 @@ public class IMColourSergeantKell extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

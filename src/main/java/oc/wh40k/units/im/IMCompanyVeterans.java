@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMCompanyVeterans extends Eintrag {
 
@@ -74,7 +78,7 @@ public class IMCompanyVeterans extends Eintrag {
         o5.setMaxAnzahl(1);
         o4.setMaxAnzahl(squad.getModelle());
 
-        boolean legal = (o1.getAnzahl() + o2.getAnzahl() + o5.getAnzahl() + o3.getAnzahl() * 2) == (squad.getModelle() - 1) * 2;
+        final boolean legal = (o1.getAnzahl() + o2.getAnzahl() + o5.getAnzahl() + o3.getAnzahl() * 2) == (squad.getModelle() - 1) * 2;
         o1.setLegal(legal);
         o2.setLegal(legal);
         o3.setLegal(legal);

@@ -2,7 +2,10 @@ package oc.wh40k.units.ty;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 
 

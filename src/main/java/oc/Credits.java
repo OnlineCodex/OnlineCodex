@@ -1,7 +1,16 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 
 public class Credits extends JFrame {
 
@@ -17,19 +26,19 @@ public class Credits extends JFrame {
         this.setIconImage(BuildaHQ.oCLogo);
         setLocationRelativeTo(OnlineCodex.getInstance().getBuildaPanel());
 
-        JLabel title = new JLabel("OnlineCodex - Powered by OnlineCodex.de", JLabel.CENTER);
-        JLabel footer = new JLabel("www.onlinecodex.de", JLabel.CENTER);
+        final JLabel title = new JLabel("OnlineCodex - Powered by OnlineCodex.de", SwingConstants.CENTER);
+        final JLabel footer = new JLabel("www.onlinecodex.de", SwingConstants.CENTER);
 
-        JPanel north = new JPanel(new FlowLayout());
+        final JPanel north = new JPanel(new FlowLayout());
         north.add(title);
-        JPanel south = new JPanel(new FlowLayout());
+        final JPanel south = new JPanel(new FlowLayout());
         south.add(footer);
-        JPanel east = new JPanel(new FlowLayout());
+        final JPanel east = new JPanel(new FlowLayout());
         east.add(new JLabel("     "));
-        JPanel west = new JPanel(new FlowLayout());
+        final JPanel west = new JPanel(new FlowLayout());
         west.add(new JLabel("     "));
 
-        JTextArea txaInfo = new JTextArea(10, 40);
+        final JTextArea txaInfo = new JTextArea(10, 40);
         txaInfo.setText(
                 "OnlineCodex ist ein Open Source Projekt - Copyright (c) 2009-2017 OnlineCodex.de\n" +
                         "Die Projektzentrale ist unsere Webseite: www.onlinecodex.de\n\n" +
@@ -77,8 +86,8 @@ public class Credits extends JFrame {
         txaInfo.setLineWrap(true);
         txaInfo.setWrapStyleWord(true);
 
-        JScrollPane sp = new JScrollPane(txaInfo);
-        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        final JScrollPane sp = new JScrollPane(txaInfo);
+        sp.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 
         add(BorderLayout.CENTER, sp);
         add(BorderLayout.NORTH, north);

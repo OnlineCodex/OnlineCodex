@@ -1,6 +1,8 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMImperialKnightWarlordtraits extends Eintrag {
 	private final OptionsUpgradeGruppe fk1;
@@ -33,7 +35,8 @@ public class IMImperialKnightWarlordtraits extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk1.alwaysSelected();
     }
 }

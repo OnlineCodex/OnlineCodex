@@ -1,14 +1,18 @@
 package oc;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
+import static oc.RefreshListener.addRefreshListener;
+import static oc.RefreshListener.Priority.OPTIONS_COLLECTION;
 
-import javax.swing.*;
 import java.util.StringTokenizer;
 import java.util.Vector;
 
-import static oc.RefreshListener.Priority.OPTIONS_COLLECTION;
-import static oc.RefreshListener.addRefreshListener;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public abstract class OptionsCollection extends BuildaPanel {
 
@@ -80,25 +84,26 @@ public abstract class OptionsCollection extends BuildaPanel {
         int höhe = 0;
 
         for (int i = 0; i < optionen.size(); ++i) {
-            int nächsteHöhe = (int) (optionen.elementAt(i).getPanel().getLocation().getY() + (int) (optionen.elementAt(i).getHoehe()));
+            final int nächsteHöhe = (int) (optionen.elementAt(i).getPanel().getLocation().getY() + (optionen.elementAt(i).getHoehe()));
             if (höhe < nächsteHöhe) {
                 höhe = nächsteHöhe;
             }
         }
 
         try {
-            int bildHöhe = (int) ico.getLocation().getY() + ico.getSize().height;
+            final int bildHöhe = (int) ico.getLocation().getY() + ico.getSize().height;
 
             if (bildHöhe + 20 > höhe) { // bei imageIcon höhe zählt noch +20 wegen dem Label unterdrunter dazu, da das Label das Bild blockiert die Buttons aber nicht
                 höhe = bildHöhe + 22;
             }
-        } catch (Exception e) {
+        } catch (final Exception e) {
         }
 
         return höhe + randAbstand;
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         double kosten = 0;
 
         for (int i = 0; i < optionen.size(); ++i) {
@@ -109,7 +114,7 @@ public abstract class OptionsCollection extends BuildaPanel {
     }
 
     public String getSaveText(String trenner) {
-        StringBuilder s = new StringBuilder();
+        final StringBuilder s = new StringBuilder();
 
         for (int i = 0; i < optionen.size(); ++i) {
             s.append(optionen.elementAt(i).getSaveText() + trenner);
@@ -120,7 +125,7 @@ public abstract class OptionsCollection extends BuildaPanel {
     }
 
     public Element getSaveElement() {
-        Element root = BuildaHQ.getNewXMLElement("Collection");
+        final Element root = BuildaHQ.getNewXMLElement("Collection");
 
         for (int i = 0; i < optionen.size(); i++) {
             root.appendChild(optionen.elementAt(i).getSaveElement());
@@ -130,20 +135,20 @@ public abstract class OptionsCollection extends BuildaPanel {
     }
 
     public void load(String s, String trenner) {
-        String[] splittet = s.split(trenner);
+        final String[] splittet = s.split(trenner);
 
         for (int i = 0; i < optionen.size(); ++i) {
             optionen.elementAt(i).load(splittet[i]);
 
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
+                final RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
                 checkRuestkammerStarter(rk);
             }
         }
     }
 
     public void loadElement(Element e) {
-        NodeList children = e.getChildNodes();
+        final NodeList children = e.getChildNodes();
 
         for (int i = 0; i < optionen.size(); ++i) {
             //                if(children.item(i) != null && children.item(i).getNodeType() == Node.ELEMENT_NODE) {
@@ -151,7 +156,7 @@ public abstract class OptionsCollection extends BuildaPanel {
             //                }
 
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
+                final RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
                 checkRuestkammerStarter(rk);
             }
         }
@@ -161,7 +166,7 @@ public abstract class OptionsCollection extends BuildaPanel {
         boolean ersterStarter = true;
         for (int i = 0; i < optionen.size(); ++i) {
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
-                RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
+                final RuestkammerStarter rk = ((RuestkammerStarter) optionen.elementAt(i));
 
                 if (rk.isSelected()) {
                     rk.textUebernehmen();
@@ -170,8 +175,8 @@ public abstract class OptionsCollection extends BuildaPanel {
                 if (ersterStarter) {
                     ersterStarter = false;
                 } else {
-                    JPanel p = rk.getPanel();
-                    JPanel pMinus1 = optionen.elementAt(i - 1).getPanel(); // index-1 geht hier immer, weil es ja nich der erste Starter sein kann
+                    final JPanel p = rk.getPanel();
+                    final JPanel pMinus1 = optionen.elementAt(i - 1).getPanel(); // index-1 geht hier immer, weil es ja nich der erste Starter sein kann
 
                     if (p.getLocation().getX() != pMinus1.getLocation().getX()) {
                         continue;
@@ -198,16 +203,16 @@ public abstract class OptionsCollection extends BuildaPanel {
                 text = BuildaHQ.translate(rk.getKammer().getText().substring(1, rk.getKammer().getText().length()));
             }
             text = text.replaceAll("\n- ", "-");
-            StringTokenizer tokenizer = new StringTokenizer(text, ",");
+            final StringTokenizer tokenizer = new StringTokenizer(text, ",");
             while (tokenizer.hasMoreElements()) {
-                String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
+                final String tok = BuildaHQ.translate(tokenizer.nextToken().trim());
 
                 if (BuildaHQ.Items != null && BuildaHQ.Items.contains(tok)) {
-                    JOptionPane op = new JOptionPane(tok + " darf nur einmal enthalten sein.", JOptionPane.ERROR_MESSAGE);
-                    JDialog dialog = op.createDialog("Validierungs Fehler");
+                    final JOptionPane op = new JOptionPane(tok + " darf nur einmal enthalten sein.", JOptionPane.ERROR_MESSAGE);
+                    final JDialog dialog = op.createDialog("Validierungs Fehler");
                     dialog.setAlwaysOnTop(true); //<-- this line
                     dialog.setModal(true);
-                    dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+                    dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                     dialog.setVisible(true);
 
                 }

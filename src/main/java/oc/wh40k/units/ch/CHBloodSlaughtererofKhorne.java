@@ -1,6 +1,5 @@
 package oc.wh40k.units.ch;
 
-import oc.AnzahlPanel;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;

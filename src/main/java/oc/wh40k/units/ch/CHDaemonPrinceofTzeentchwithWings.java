@@ -9,7 +9,8 @@ import static oc.KeyWord.MONSTER;
 import static oc.KeyWord.THOUSAND_SONS;
 import static oc.KeyWord.TZEENTCH;
 
-import oc.*;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class CHDaemonPrinceofTzeentchwithWings extends Eintrag {
@@ -18,13 +19,13 @@ public class CHDaemonPrinceofTzeentchwithWings extends Eintrag {
 
     public CHDaemonPrinceofTzeentchwithWings() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, DAEMON, TZEENTCH, CHARACTER, MONSTER, DAEMON_PRINCE);
-    	
+
         name = "Daemon Prince of Tzeentch with Wings";
         grundkosten = getPts("Daemon Prince of Nurgle with Wings");
         power = 10;
 
         seperator();
-        
+
         addWeapons(CHThousandSonsRuestkammer.class, true);
 
         seperator();
@@ -37,7 +38,7 @@ public class CHDaemonPrinceofTzeentchwithWings extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

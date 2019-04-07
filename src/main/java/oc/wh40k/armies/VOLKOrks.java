@@ -5,8 +5,6 @@ import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
-import java.io.InputStream;
-
 public class VOLKOrks extends BuildaVater {
 
     public VOLKOrks() {
@@ -106,7 +104,8 @@ public class VOLKOrks extends BuildaVater {
         complete();
     }
 
-    public void changeFormations() {
+    @Override
+	public void changeFormations() {
     }
 
     @Override
@@ -202,7 +201,7 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
                     "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
-                    "", "Weirdboy", 
+                    "", "Weirdboy",
                     "", "Kaptin Badrukk",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(new String[]{

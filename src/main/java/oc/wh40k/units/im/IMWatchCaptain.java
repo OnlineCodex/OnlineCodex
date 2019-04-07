@@ -14,7 +14,7 @@ public class IMWatchCaptain extends Eintrag {
 
     public IMWatchCaptain() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, WATCH_CAPTAIN);
-    	
+
         name = "Watch Captain";
         grundkosten = getPts("Watch Captain");
 
@@ -27,7 +27,7 @@ public class IMWatchCaptain extends Eintrag {
         seperator();
 
         addWeapons(IMDeathwatchRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

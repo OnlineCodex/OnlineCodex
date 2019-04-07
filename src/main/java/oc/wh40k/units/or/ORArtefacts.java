@@ -1,6 +1,8 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class ORArtefacts extends Eintrag {
 	private final OptionsUpgradeGruppe fk1;
@@ -19,7 +21,8 @@ public class ORArtefacts extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk1.alwaysSelected();
     }
 }

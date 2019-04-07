@@ -19,7 +19,7 @@ public class CHDarkApostle extends Eintrag {
 	private final OptionsUpgradeGruppe mark;
 	private int lastMark = -1;
 	private final RuestkammerStarter psychicPowers;
-	
+
     public CHDarkApostle() {
 
         name = "Dark Apostle";
@@ -33,13 +33,13 @@ public class CHDarkApostle extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
         add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         seperator();
-        
+
         addWeapons(CHCSMRuestkammer.class, true);
-        
+
         seperator();
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -50,15 +50,15 @@ public class CHDarkApostle extends Eintrag {
         psychicPowers.setButtonText("Prayers");
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+
         seperator();
-        
+
         seperator();
 
         addWarlordTraits("", true);
 
         setInformationVectorValue("Dark Apostle", getCountFromInformationVector("Dark Apostle") + 1);
-        
+
         complete();
 
     }
@@ -69,7 +69,7 @@ public class CHDarkApostle extends Eintrag {
         ((PsychicPowers) psychicPowers.getKammer()).setNurgle(mark.isSelected("Mark of Nurgle"));
         ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(mark.isSelected("Mark of Tzeentch"));
         ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(mark.isSelected("Mark of Slaanesh"));
-    	
+
         if(mark.getSelectedIndex() != lastMark) {
         	lastMark = mark.getSelectedIndex();
 	        getWeapons().removeKeyword(KHORNE);
@@ -77,7 +77,7 @@ public class CHDarkApostle extends Eintrag {
 	        getWeapons().removeKeyword(TZEENTCH);
 	        getWeapons().removeKeyword(SLAANESH);
 	        getWeapons().removeKeyword(PSYKER);
-	        
+
 	        if(mark.isSelected("Mark of Khorne")) {
 	        	getWeapons().addKeyword(KHORNE);
 	            getWeapons().removeKeyword(ALLEGIANCE);
@@ -94,7 +94,7 @@ public class CHDarkApostle extends Eintrag {
 	        RefreshListener.fireRefresh();
         }
     }
-    
+
     @Override
     public void deleteYourself() {
     	setInformationVectorValue("Dark Apostle", getCountFromInformationVector("Dark Apostle") - 1);

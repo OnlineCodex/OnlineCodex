@@ -1,8 +1,10 @@
 package oc;
 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
 import java.util.Vector;
+
+import javax.swing.JCheckBox;
+import javax.swing.JDialog;
 
 
 public abstract class ModifierDialog extends JDialog implements BuildaSTK {

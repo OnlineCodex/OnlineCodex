@@ -6,11 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedLandRaiderAchilles extends Eintrag {
 
-	private final OptionsUpgradeGruppe fkwaffen, fkwaffen2, fkwaffen3;
-	private final OptionsUpgradeGruppe mark;
-
-
-    public CHHellforgedLandRaiderAchilles() {
+	private final OptionsUpgradeGruppe fkwaffen2;
+	public CHHellforgedLandRaiderAchilles() {
         name = "Hellforged Land Raider Achilles";
         grundkosten = getPts("Hellforged Land Raider Achilles");
 
@@ -24,7 +21,7 @@ public class CHHellforgedLandRaiderAchilles extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Soulburner bombard", getPts("Soulburner bombard")));
-        add(fkwaffen3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -33,7 +30,7 @@ public class CHHellforgedLandRaiderAchilles extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -41,7 +38,7 @@ public class CHHellforgedLandRaiderAchilles extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

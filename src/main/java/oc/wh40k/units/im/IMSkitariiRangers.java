@@ -1,11 +1,15 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMSkitariiRangers extends Eintrag {
 
 	private final AnzahlPanel squad;
-	private final OptionsUpgradeGruppe o1;
 	private final OptionsZaehlerGruppe o2;
 	private final RuestkammerStarter rkBoss;
 
@@ -17,7 +21,7 @@ public class IMSkitariiRangers extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

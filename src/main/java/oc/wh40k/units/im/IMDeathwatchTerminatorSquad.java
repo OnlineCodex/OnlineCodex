@@ -1,6 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMDeathwatchTerminatorSquad extends Eintrag {
 
@@ -21,7 +26,7 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
         ogE.addAll(IMSpaceMarinesTerminatorHeavyWeapons.createRK("", "", buildaVater));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         o1.setAnzahl(0, squad.getModelle()-1);
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
@@ -32,17 +37,17 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power fist & melta", getPts("Power fist (SM)") + getPts("Meltagun")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         o2.setAnzahl(0, squad.getModelle()-1);
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));
         ogE.addElement(new OptionsGruppeEintrag("Thunderhammer & Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        
+
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Teleport homer", getPts("Teleport homer")));
-        
+
         seperator();
 
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, DeathWatchKammer.class, "Terminator Sergeant", getKeywords());
@@ -52,7 +57,7 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         add(rkBoss);
         rkBoss.setAbwaehlbar(false);
-        
+
         complete();
     }
 
@@ -62,7 +67,7 @@ public class IMDeathwatchTerminatorSquad extends Eintrag {
         o1.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
         o2.setMaxAnzahl(squad.getModelle() - 1 - o3.getAnzahl());
         o3.setMaxAnzahl(squad.getModelle() - 1);
-        
+
         power = 13;
         if (squad.getModelle() > 5) {
             power = 26;

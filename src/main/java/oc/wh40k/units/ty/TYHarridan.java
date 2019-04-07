@@ -18,6 +18,7 @@ public class TYHarridan extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

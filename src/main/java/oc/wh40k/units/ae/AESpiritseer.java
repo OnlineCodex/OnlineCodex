@@ -1,11 +1,15 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.AELDARI;
+import static oc.KeyWord.ASURYANI;
+import static oc.KeyWord.AUTARCH;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SPIRITSEER;
 
 import oc.Eintrag;
-
 import oc.RuestkammerStarter;
-
 import oc.wh40k.units.PsychicPowers;
 
 public class AESpiritseer extends Eintrag {
@@ -13,15 +17,15 @@ public class AESpiritseer extends Eintrag {
 
     public AESpiritseer() {
     	super(AELDARI, ASURYANI, CHARACTER, INFANTRY, AUTARCH, PSYKER, SPIRITSEER);
-    	 
+
         name = "Spiritseer";
         grundkosten = getPts("Spiritseer");
         power = 4;
 
         seperator();
-        
+
         addWeapons(AECraftworldRuestkammer.class, true);
-        
+
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -31,7 +35,7 @@ public class AESpiritseer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

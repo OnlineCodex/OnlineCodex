@@ -28,6 +28,7 @@ public class ORStompa extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

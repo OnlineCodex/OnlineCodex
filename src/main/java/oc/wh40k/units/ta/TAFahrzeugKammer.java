@@ -1,19 +1,17 @@
 package oc.wh40k.units.ta;
 
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
 public class TAFahrzeugKammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o3;
-
-    public TAFahrzeugKammer() {
+	public TAFahrzeugKammer() {
 
         grundkosten = 0;
     }
 
-    public void initButtons(boolean... defaults) {
+    @Override
+	public void initButtons(boolean... defaults) {
 
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "Automatisches Reparatursystem", "Reparatursystem", 5)); //Automated repair system
         add(new OptionsEinzelUpgrade(0, randAbstand, cnt, "", "Fahrzeugsensorik", 5)); //Fahrzeugsensorik?
@@ -28,6 +26,7 @@ public class TAFahrzeugKammer extends RuestkammerVater {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 }

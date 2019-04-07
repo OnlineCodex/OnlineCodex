@@ -19,12 +19,13 @@ public class IMKnightCastellan extends Eintrag {
 
 		addWarlordTraits("", true);
 
-        
+
         complete();
     }
-    
+
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);

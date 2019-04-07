@@ -3,9 +3,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -14,11 +12,7 @@ public class IMRavenwingDarkshroud extends Eintrag {
 
 
 
-	private final OptionsUpgradeGruppe o1;
-
-
-
-    public IMRavenwingDarkshroud() {
+	public IMRavenwingDarkshroud() {
 
         name = "Ravenwing Darkshroud";
 
@@ -34,7 +28,7 @@ public class IMRavenwingDarkshroud extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

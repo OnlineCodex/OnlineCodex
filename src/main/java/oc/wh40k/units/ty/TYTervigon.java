@@ -1,14 +1,15 @@
 package oc.wh40k.units.ty;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
 public class TYTervigon extends Eintrag {
 
     private final OptionsUpgradeGruppe o1;
-    private final OptionsEinzelUpgrade oe1;
-    private final OptionsEinzelUpgrade oe2;
-
     private final RuestkammerStarter waffen;
     private final RuestkammerStarter psychicPowers;
 
@@ -24,8 +25,8 @@ public class TYTervigon extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tervigon)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Adrenal glands", getPts("Adrenal glands (Monsters)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Toxin sacs", getPts("Toxin sacs (Tervigon)")));
 
         seperator();
 
@@ -36,9 +37,9 @@ public class TYTervigon extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, TYRuestkammer.class, "");
         ((TYRuestkammer) waffen.getKammer()).setType("Broodlord");
         waffen.initKammer();
@@ -47,7 +48,7 @@ public class TYTervigon extends Eintrag {
         waffen.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();
@@ -56,12 +57,12 @@ public class TYTervigon extends Eintrag {
     @Override
     public void refreshen() {
         o1.alwaysSelected();
-        
+
         waffen.getPanel().setLocation(
                 (int) waffen.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5
         );
-    	
+
     	warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) waffen.getPanel().getLocation().getY() + waffen.getPanel().getSize().height + 5

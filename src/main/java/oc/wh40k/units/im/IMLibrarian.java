@@ -1,6 +1,12 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHAPTER;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.LIBRARIAN;
+import static oc.KeyWord.PSYKER;
 
 import oc.BuildaHQ;
 import oc.Eintrag;
@@ -22,7 +28,7 @@ public class IMLibrarian extends Eintrag {
         add(jump = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Jump Pack", getPts("Librarian with Jump Pack") - getPts("Librarian")));
 
         seperator();
-        
+
         if(BuildaHQ.aktBuildaVater.getFormationType().equals("Dark Angels"))
         	addWeapons(IMDarkAngelsRuestkammer.class, true);
         else
@@ -42,7 +48,7 @@ public class IMLibrarian extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(false);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

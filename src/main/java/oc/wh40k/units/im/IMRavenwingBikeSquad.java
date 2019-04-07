@@ -2,7 +2,11 @@ package oc.wh40k.units.im;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 
 
@@ -10,7 +14,7 @@ public class IMRavenwingBikeSquad extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1, o2;
+	private final OptionsZaehlerGruppe o1;
 
 	private final RuestkammerStarter rkBoss;
 
@@ -52,7 +56,7 @@ public class IMRavenwingBikeSquad extends Eintrag {
 
         ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
 
-        add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
 
 

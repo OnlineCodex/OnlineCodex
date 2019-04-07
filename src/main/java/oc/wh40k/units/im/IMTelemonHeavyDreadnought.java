@@ -29,13 +29,13 @@ public class IMTelemonHeavyDreadnought extends Eintrag {
         o2.setSelected(0, true);
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Spiculus bolt launcher", getPts("Spiculus bolt launcher")));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o3.setSelected(0, true);
-        
+
         complete();
-        
+
         setUnikat(true);
     }
 
@@ -44,13 +44,13 @@ public class IMTelemonHeavyDreadnought extends Eintrag {
         o1.alwaysSelected();
         o2.alwaysSelected();
         o3.alwaysSelected();
-        
+
         if(o1.isSelected("Telemon Caestus and twin plasma ejectors") && o2.isSelected("Telemon Caestus and twin plasma ejectors")){
         	o1.setPreis("Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (pair)") + getPts("Twin plasma ejector"));
         	o2.setPreis("Telemon Caestus and twin plasma ejectors", getPts("Twin plasma ejector"));
         } else {
         	o1.setPreis("Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (single)") + getPts("Twin plasma ejector"));
-        	o2.setPreis("Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (single)") + getPts("Twin plasma ejector"));	
+        	o2.setPreis("Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (single)") + getPts("Twin plasma ejector"));
         }
     }
 }

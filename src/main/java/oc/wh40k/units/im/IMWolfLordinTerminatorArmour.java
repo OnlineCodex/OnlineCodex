@@ -12,7 +12,7 @@ public class IMWolfLordinTerminatorArmour extends Eintrag {
         name = "Wolf Lord in Terminator Armour";
         grundkosten = getPts("Wolf Lord in Terminator Armour");
         power = 7;
-        
+
         seperator();
 
         waffenUndArtefakte = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceWolvesRuestkammer.class, "");
@@ -23,7 +23,7 @@ public class IMWolfLordinTerminatorArmour extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
 
         complete();

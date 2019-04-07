@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMEliminatorSquad extends Eintrag {
 	private final OptionsEinzelUpgrade sergeant;
@@ -9,12 +13,12 @@ public class IMEliminatorSquad extends Eintrag {
 
     public IMEliminatorSquad() {
         name = "Eliminator Squad";
-        
+
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Eliminators", 3, 3, getPts("Eliminator Squad") + getPts("Bolt pistol (SM)") + getPts("Krak grenade (SM)") + getPts("Frag grenade (SM)") + getPts("Camo-cloak"));
         add(squad);
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Bolt sniper rifles", getPts("Bolt sniper rifle")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

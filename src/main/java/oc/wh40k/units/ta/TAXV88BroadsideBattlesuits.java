@@ -4,7 +4,6 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.im.IMAstraMilitarumRuestkammer;
 
 public class TAXV88BroadsideBattlesuits extends Eintrag {
 

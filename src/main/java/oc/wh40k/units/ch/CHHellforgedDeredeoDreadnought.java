@@ -6,10 +6,8 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHHellforgedDeredeoDreadnought extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2, o3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHellforgedDeredeoDreadnought() {
+	private final OptionsUpgradeGruppe o1, o2;
+	public CHHellforgedDeredeoDreadnought() {
         name = "Hellforged Deredeo Dreadnought";
         grundkosten = getPts("Hellforged Deredeo Dreadnought");
 
@@ -33,7 +31,7 @@ public class CHHellforgedDeredeoDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Greater havoc launcher", getPts("Greater havoc launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Hellfire veil", getPts("Hellfire veil")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -41,7 +39,7 @@ public class CHHellforgedDeredeoDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

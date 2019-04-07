@@ -16,15 +16,15 @@ public class TYSanctus extends Eintrag {
 
     public TYSanctus() {
     	super(TYRANIDS, GENESTEALER_CULTS, CULT, CHARACTER, INFANTRY, SANCTUS);
-    	
+
         name = "Sanctus";
 
         grundkosten = getPts("Sanctus");
 
         seperator();
-        
+
         addWeapons(TYGenestealerCultRuestkammer.class, true);
-        
+
         power = 3;
 
         complete();

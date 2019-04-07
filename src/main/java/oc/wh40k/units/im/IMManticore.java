@@ -1,13 +1,14 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMManticore extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
-	private final OptionsUpgradeGruppe o2;
-
-    public IMManticore() {
+	public IMManticore() {
         name = "Manticore";
         grundkosten = getPts("Manticore") + getPts("Storm eagle rockets") * 4;
         power = 7;
@@ -22,7 +23,7 @@ public class IMManticore extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

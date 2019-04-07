@@ -7,8 +7,8 @@ public class CHNecrosiustheUndying extends Eintrag {
     public CHNecrosiustheUndying() {
 
         name = "Necrosius the Undying";
-        grundkosten = getPts("Necrosius the Undying") + 
-        			  getPts("tainted force blade") + 
+        grundkosten = getPts("Necrosius the Undying") +
+        			  getPts("tainted force blade") +
         			  getPts("pox pistol") +
         			  getPts("blight grenades") +
         			  getPts("krak grenades");

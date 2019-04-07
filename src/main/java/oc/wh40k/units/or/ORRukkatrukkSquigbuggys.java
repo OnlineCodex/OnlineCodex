@@ -20,7 +20,8 @@ public class ORRukkatrukkSquigbuggys extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         power = buggies.getModelle() * 7;
     }
 }

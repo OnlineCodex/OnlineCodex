@@ -50,7 +50,7 @@ public class IMCommandSquad extends Eintrag {
 
     @Override
     public void refreshen() {
-        int selectedVeterans = oe1.getAnzahl() + oe2.getAnzahl() + oe3.getAnzahl() + oe4.getAnzahl() + (o3.isSelected() ? 2 : 0);
+        final int selectedVeterans = oe1.getAnzahl() + oe2.getAnzahl() + oe3.getAnzahl() + oe4.getAnzahl() + (o3.isSelected() ? 2 : 0);
         o4.setMaxAnzahl(4 - selectedVeterans);
 
         o3.setMaxAnzahl((oe1.getAnzahl() + oe2.getAnzahl() + oe3.getAnzahl() + oe4.getAnzahl() + o4.getAnzahl()) < 3 ? 1 : 0);

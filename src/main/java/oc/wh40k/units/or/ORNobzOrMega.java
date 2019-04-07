@@ -26,7 +26,8 @@ public class ORNobzOrMega extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         PikkUp.setAktiv(!Kampfpanza.isSelected());
         Kampfpanza.setAktiv(!PikkUp.isSelected());
         Kampfpanza.getPanel().setLocation((int) Kampfpanza.getPanel().getLocation().getX(), (int) PikkUp.getPanel().getLocation().getY() + PikkUp.getPanel().getSize().height);

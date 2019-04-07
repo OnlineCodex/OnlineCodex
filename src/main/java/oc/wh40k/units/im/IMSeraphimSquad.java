@@ -1,8 +1,18 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ADEPTA_SORORITAS;
+import static oc.KeyWord.ADEPTUS_MINISTORUM;
+import static oc.KeyWord.FLY;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.JUMP_PACK;
+import static oc.KeyWord.ORDER;
+import static oc.KeyWord.SERAPHIM_SQUAD;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class IMSeraphimSquad extends Eintrag {
 

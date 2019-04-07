@@ -22,7 +22,7 @@ public class IMBrotherCaptainStern extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("Unyielding Anvil (GK)", true);

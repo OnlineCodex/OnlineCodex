@@ -6,9 +6,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class CHSpinedChaosBeast extends Eintrag {
 
-	private final OptionsUpgradeGruppe mark;
-
-    public CHSpinedChaosBeast() {
+	public CHSpinedChaosBeast() {
 
         name = "Spined Chaos Beast";
         grundkosten = getPts("Spined Chaos Beast");
@@ -18,8 +16,8 @@ public class CHSpinedChaosBeast extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
         complete();
     }
 

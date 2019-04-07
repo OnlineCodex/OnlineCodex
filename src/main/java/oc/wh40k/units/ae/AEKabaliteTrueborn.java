@@ -2,7 +2,11 @@ package oc.wh40k.units.ae;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 
 
@@ -90,13 +94,13 @@ public class AEKabaliteTrueborn extends Eintrag {
 
 
 
-        int o1max = squad.getModelle() - 1 - o2.getAnzahl();
+        final int o1max = squad.getModelle() - 1 - o2.getAnzahl();
 
         o1.setMaxAnzahl(o1max > 4 ? 4 : o1max);
 
 
 
-        int o2max = squad.getModelle() - 1 - o1.getAnzahl();
+        final int o2max = squad.getModelle() - 1 - o1.getAnzahl();
 
         o2.setMaxAnzahl(o2max > 2 ? 2 : o2max);
 

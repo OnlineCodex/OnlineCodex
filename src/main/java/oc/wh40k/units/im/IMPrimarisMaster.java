@@ -1,6 +1,9 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class IMPrimarisMaster extends Eintrag {
     private final OptionsUpgradeGruppe o1;
@@ -20,11 +23,11 @@ public class IMPrimarisMaster extends Eintrag {
         add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword (SM)")));
 
         add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power fist und Plasma pisotl", getPts("Power fist (SM)") + getPts("Plasma pistol (SM)")));
-        
+
         seperator();
 
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

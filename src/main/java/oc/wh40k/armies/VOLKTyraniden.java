@@ -1,22 +1,20 @@
 package oc.wh40k.armies;
 
-import oc.BuildaHQ;
-import oc.BuildaVater;
-import oc.ChooserGruppe;
+import static oc.utils.ResourceUtils.loadPoints;
 
-import java.io.InputStream;
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
-import oc.utils.ResourceUtils;
 
-import static oc.utils.ResourceUtils.loadPoints;
+import oc.BuildaHQ;
+import oc.BuildaVater;
+import oc.ChooserGruppe;
 
 public class VOLKTyraniden extends BuildaVater {
 
     private static final Set<String> HIVEFLEETS = ImmutableSet.of("Behemoth", "Kraken", "Leviathan", "Gorgon", "Jormungandr", "Hydra", "Kronos");
     private static final Set<String> CULTS = ImmutableSet.of("Cult Of The Four-Armed Emperor", "The Hivecult", "The Bladed Cog", "The Rusted Claw", "The Pauper Princes", "The Twisted Helix");
-	
+
     private static final String[] HQeinträge_GenestealerCult = new String[]{"", "Patriarch", "Magus", "Primus", "Acolyte Iconward", "Abominant", "Jackal Alphus"};
     private static final String[] Eliteeinträge_GenestealerCult = new String[]{"", "Hybrid Metamorphs", "Aberrants", "Purestrain Genestealers", "Clamavus", "Locus", "Sanctus", "Kelermorph", "Nexos", "Biophagus"};
     private static final String[] Standardeinträge_GenestealerCult = new String[]{"", "Acolyte Hybrids", "Neophyte Hybrids", "Brood Brothers Infantry Squad"};
@@ -27,7 +25,7 @@ public class VOLKTyraniden extends BuildaVater {
     private static final String[] Befestigungseinträge_GenestealerCult = new String[]{"", "Tectonic Fragdrill"};
     private static final String[] LOWeinträge_GenestealerCult = new String[]{""};
 
-    
+
     public VOLKTyraniden() {
         super("TY", loadPoints( "/oc/wh40k/indices/ty.yaml"));
 
@@ -78,7 +76,7 @@ public class VOLKTyraniden extends BuildaVater {
 
         complete();
     }
-    
+
     @Override
     public void volkRefresh() {
         if (getFormationType().equals("TYRANIDS")) {

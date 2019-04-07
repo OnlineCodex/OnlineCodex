@@ -1,10 +1,9 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMUlriktheSlayer extends Eintrag {
-	
+
 
     public IMUlriktheSlayer() {
         name = "Ulrik the Slayer";
@@ -12,9 +11,9 @@ public class IMUlriktheSlayer extends Eintrag {
         power = 7;
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

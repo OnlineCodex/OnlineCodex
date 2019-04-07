@@ -1,14 +1,16 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerStarter;
 
 public class IMDamnedLegionnaires extends Eintrag {
 
 	private final AnzahlPanel squad;
 	private final RuestkammerStarter rkBoss;
-	private final OptionsUpgradeGruppe o1;
-
-    public IMDamnedLegionnaires() {
+	public IMDamnedLegionnaires() {
         name = "Damned Legionnaires\n";
         grundkosten = 0;
         überschriftSetzen = true;
@@ -30,7 +32,7 @@ public class IMDamnedLegionnaires extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM)") - getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)") - getPts("Boltgun (SM)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 

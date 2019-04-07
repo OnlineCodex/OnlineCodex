@@ -3,11 +3,8 @@ package oc.wh40k.units.ty;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -19,8 +16,6 @@ public class TYCultLemanRuss extends Eintrag {
     private final OptionsUpgradeGruppe o1;
 
     private final OptionsUpgradeGruppe o2;
-
-    private final OptionsUpgradeGruppe o3;
 
     private final OptionsEinzelUpgrade oe1;
 
@@ -82,7 +77,7 @@ public class TYCultLemanRuss extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon") * 2));
 
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

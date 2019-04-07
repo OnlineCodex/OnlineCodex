@@ -5,9 +5,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -16,11 +14,7 @@ public class IMStormEagleAssaultGunshipROCPattern extends Eintrag {
 
 
 
-	private final OptionsZaehlerGruppe o1;
-
-
-
-    public IMStormEagleAssaultGunshipROCPattern() {
+	public IMStormEagleAssaultGunshipROCPattern() {
 
         name = "Storm Eagle Assault Gunship - ROC Pattern";
 
@@ -40,7 +34,7 @@ public class IMStormEagleAssaultGunshipROCPattern extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 

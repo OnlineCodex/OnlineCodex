@@ -1,14 +1,16 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORHermanvonStrab extends Eintrag {
 
 	private final OptionsZaehlerGruppe o7;
 	private final OptionsZaehlerGruppe o2;
-	private final OptionsUpgradeGruppe o8;
-	
-    public ORHermanvonStrab() {
+	public ORHermanvonStrab() {
         name = "Herman von Strab";
         grundkosten = 0;
 
@@ -41,7 +43,7 @@ public class ORHermanvonStrab extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Klinge der Eroberung", "Die Klinge der Eroberung", 25));
         ogE.addElement(new OptionsGruppeEintrag("Todesmaske", "Die Todesmaske des Ollanius", 30));
         ogE.addElement(new OptionsGruppeEintrag("Kurovs Aquila", 60));
-        add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 5));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 5));
 
         seperator();
 
@@ -54,7 +56,8 @@ public class ORHermanvonStrab extends Eintrag {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
     }
 

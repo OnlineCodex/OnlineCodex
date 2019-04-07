@@ -14,15 +14,15 @@ public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
 
     public IMDeathwatchChaplaininTerminatorArmour() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, DEATHWATCH, CHARACTER, INFANTRY, CHAPLAIN, TERMINATOR);
-        
+
         name = "Chaplain in Terminator Armour";
         grundkosten = getPts("Chaplain in Terminator Armour");
         power = 6;
-        
+
         seperator();
-        
+
         addWeapons(IMDeathwatchRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

@@ -9,9 +9,7 @@ public class CHHeldrake extends Eintrag {
 
 	private final OptionsEinzelUpgrade claws;
 	private final OptionsUpgradeGruppe o2;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHHeldrake() {
+	public CHHeldrake() {
         name = "Heldrake";
         grundkosten = getPts("Heldrake");
 
@@ -34,7 +32,7 @@ public class CHHeldrake extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

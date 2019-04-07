@@ -33,7 +33,8 @@ public class TAHeavyGunDroneSquadron extends Eintrag {
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o1.setMaxAnzahl(HeavyGunDroneTeam.getModelle() - o2.getAnzahl());
         o1.setAnzahl(o1.getMaxAnzahl());
         o2.setMaxAnzahl(HeavyGunDroneTeam.getModelle());

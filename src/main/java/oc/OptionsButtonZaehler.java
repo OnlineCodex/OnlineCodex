@@ -1,6 +1,7 @@
 package oc;
 
-import java.awt.*;
+import java.awt.Font;
+import java.awt.FontMetrics;
 
 public class OptionsButtonZaehler extends OptionsButton {
 
@@ -31,7 +32,8 @@ public class OptionsButtonZaehler extends OptionsButton {
         panel.setLocation(lX, lY);
     }
 
-    public double getKosten() {
+    @Override
+	public double getKosten() {
         if (!aktiv || preis == -88) {
             return 0;
         }
@@ -144,7 +146,7 @@ public class OptionsButtonZaehler extends OptionsButton {
 
     public void fontKontrolle() {
         if (maxAnzahl != -88) {
-            int bold = (anzahl > 0 ? Font.BOLD : Font.PLAIN);
+            final int bold = (anzahl > 0 ? Font.BOLD : Font.PLAIN);
 
             if (anzahl == maxAnzahl && maxAnzahl != 0) {
                 fontSetzen(bold + Font.ITALIC);
@@ -158,13 +160,13 @@ public class OptionsButtonZaehler extends OptionsButton {
 
     @Override
     public void labelSetzen() {
-        FontMetrics fm = button.getFontMetrics(button.getFont());
-        StringBuilder abstandshalter = new StringBuilder("");
+        final FontMetrics fm = button.getFontMetrics(button.getFont());
+        final StringBuilder abstandshalter = new StringBuilder("");
         String punkteString = "";
 
 //		if (preis == 0) {
 //			punkteString = "kostenlos";
-//		} else 
+//		} else
         if (preis == -88) {
             punkteString = "";
         } else if (jeweils) {

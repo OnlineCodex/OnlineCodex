@@ -1,23 +1,27 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.WATCH_MASTER;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMDeathwatchRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade baneboltsOfEryxia;
     private OptionsEinzelUpgrade theBeaconAngelis;
     private OptionsEinzelUpgrade theOsseusKey;
     private OptionsEinzelUpgrade theTomeOfEctoclades;
-    
+
     public IMDeathwatchRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
@@ -33,17 +37,17 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         int offsetX = randAbstand;
-                
+
        	add(baneboltsOfEryxia = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Banebolts of Eryxia", 0).setRelic(true));
        	add(theBeaconAngelis = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Beacon Angelis", 0).setRelic(true));
        	add(theOsseusKey = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Osseus Key", 0).setRelic(true));
        	add(theTomeOfEctoclades = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Tome of Ectoclades", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
        	seperator();
 
@@ -52,9 +56,9 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             seperator();
-    	} else if(type.equals("Watch Captain")){   			
+    	} else if(type.equals("Watch Captain")){
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Relic-blade", getPts("Relic-blade")));
             ogE.addElement(new OptionsGruppeEintrag("Xenophase blade", getPts("Xenophase blade")));
@@ -255,31 +259,31 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-        
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -291,12 +295,12 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
-    	if(type.equals("Watch Master") || 
+
+    	if(type.equals("Watch Master") ||
     			type.equals("Librarian in Terminator Armour")) {
     		o1.alwaysSelected();
     	}
-    	if(type.equals("Watch Captain") || 
+    	if(type.equals("Watch Captain") ||
     			type.equals("Watch Captain in Terminator Armour") ||
     			type.equals("Librarian") ||
                 type.equals("Chaplain") ||
@@ -306,7 +310,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     	}
-        
+
     	if(type.equals("Primaris Watch Captain")){
 	        o1.alwaysSelected();
 	        o2.alwaysSelected();
@@ -314,7 +318,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
 	        o2.setAktiv(!o4.isSelected());
     	}
 
-    	baneboltsOfEryxia.setAktiv((chosenRelic == null || baneboltsOfEryxia.isSelected()));   
+    	baneboltsOfEryxia.setAktiv((chosenRelic == null || baneboltsOfEryxia.isSelected()));
     	theBeaconAngelis.setAktiv(((chosenRelic == null || theBeaconAngelis.isSelected())));
     	theOsseusKey.setAktiv(((chosenRelic == null || theOsseusKey.isSelected()) && keywords.contains(WATCH_MASTER)));
     	theTomeOfEctoclades.setAktiv((chosenRelic == null || theTomeOfEctoclades.isSelected()));

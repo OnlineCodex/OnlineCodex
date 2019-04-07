@@ -5,11 +5,8 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsZaehlerGruppe;
 
 
@@ -18,13 +15,7 @@ public class IMRelicSicaranOmegaTankDestroyer extends Eintrag {
 
 
 
-	private final OptionsEinzelUpgrade oe1, oe2;
-
-	private final OptionsZaehlerGruppe o1;
-
-
-
-    public IMRelicSicaranOmegaTankDestroyer() {
+	public IMRelicSicaranOmegaTankDestroyer() {
 
         name = "Relic Sicaran Omega Tank Destroyer";
 
@@ -42,7 +33,7 @@ public class IMRelicSicaranOmegaTankDestroyer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", 2 * getPts("Lascannon (IA)")));
 
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -50,7 +41,7 @@ public class IMRelicSicaranOmegaTankDestroyer extends Eintrag {
 
 
 
-        add(oe1 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (IA)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (IA)")));
 
 
 
@@ -58,7 +49,7 @@ public class IMRelicSicaranOmegaTankDestroyer extends Eintrag {
 
 
 
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (IA)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (IA)")));
 
 
 

@@ -1,22 +1,23 @@
 package oc.wh40k.units.ae;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.ARCHON;
+import static oc.KeyWord.HAEMONCULUS;
+import static oc.KeyWord.SUCCUBUS;
 
 import java.util.Set;
 
-import javax.sound.sampled.FloatControl.Type;
-
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class AEDrukhariRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade animusVitae;
     private OptionsEinzelUpgrade helmOfSpite;
     private OptionsEinzelUpgrade nightmareDoll;
@@ -26,7 +27,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade phialBouquet;
     private OptionsEinzelUpgrade traitorsEmbrace;
     private OptionsEinzelUpgrade vexatorMask;
-    
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -34,18 +35,17 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -87,15 +87,12 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(animusVitae = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Animus Vitae", 0).setRelic(true));
+        add(animusVitae = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Animus Vitae", 0).setRelic(true));
        	add(helmOfSpite = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of Spite", 0).setRelic(true));
        	add(nightmareDoll = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Nightmare Doll", 0).setRelic(true));
        	add(theArmourOfMisery = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Armour Of Misery", 0).setRelic(true));
@@ -104,9 +101,8 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
        	add(phialBouquet = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Phial Bouquet", 0).setRelic(true));
        	add(traitorsEmbrace = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Traitors Embrace", 0).setRelic(true));
        	add(vexatorMask = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vexator Mask", 0).setRelic(true));
-       	
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -143,7 +139,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Shardnet and impaler", getPts("Shardnet and impaler")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            
+
             seperator();
     	} else if(type.equals("Haemonculus")){
             ogE.addElement(new OptionsGruppeEintrag("Stinger pistol", getPts("Stinger pistol")));
@@ -172,31 +168,31 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
     	}
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -208,7 +204,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Archon") ||
     			type.equals("Succubus") ||
     			type.equals("Haemonculus")){
@@ -219,7 +215,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
     		o1.alwaysSelected();
     	}
 
-    	animusVitae.setAktiv((chosenRelic == null || animusVitae.isSelected()));   
+    	animusVitae.setAktiv((chosenRelic == null || animusVitae.isSelected()));
     	helmOfSpite.setAktiv(((chosenRelic == null || helmOfSpite.isSelected())));
     	nightmareDoll.setAktiv(((chosenRelic == null || nightmareDoll.isSelected())) && keywords.contains(HAEMONCULUS));
     	theArmourOfMisery.setAktiv((chosenRelic == null || theArmourOfMisery.isSelected()) && keywords.contains(ARCHON) && BuildaHQ.aktBuildaVater.getFormationType().equals("Kabal of the Obsidian Rose"));

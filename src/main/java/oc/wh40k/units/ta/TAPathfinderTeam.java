@@ -1,12 +1,16 @@
 package oc.wh40k.units.ta;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class TAPathfinderTeam extends Eintrag {
 
 	private final AnzahlPanel squad;
 	private final OptionsEinzelUpgrade oe1, oe2, oe3;
-	private final OptionsZaehlerGruppe oz1;
 	private final OptionsZaehlerGruppe o5;
 	private final RuestkammerStarter rkBoss;
 
@@ -36,7 +40,7 @@ public class TAPathfinderTeam extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Ion rifle", getPts("Ion rifle") - getPts("Markerlight") - getPts("Pulse carbine")));
         ogE.addElement(new OptionsGruppeEintrag("Rail rifle", getPts("Rail rifle") - getPts("Markerlight") - getPts("Pulse carbine")));
-        add(oz1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 3));
 
         seperator();
 

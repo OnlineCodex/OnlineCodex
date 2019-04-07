@@ -3,7 +3,6 @@ package oc.wh40k.units.ne;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.RuestkammerStarter;
 
 public class NEDestroyerLord extends Eintrag {
 
@@ -29,7 +28,7 @@ public class NEDestroyerLord extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Resurrection orb", getPts("Resurrection orb")));
         ogE.addElement(new OptionsGruppeEintrag("Phylactery", getPts("Phylactery")));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        
+
         seperator();
 
 		addWarlordTraits("", true);

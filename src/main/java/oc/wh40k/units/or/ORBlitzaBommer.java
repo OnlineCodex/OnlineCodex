@@ -12,7 +12,8 @@ public class ORBlitzaBommer extends Eintrag {
         complete();
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
 
     }
 }

@@ -2,10 +2,9 @@ package oc.wh40k.units.ne;
 
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class NECtanShardoftheNightbringer extends Eintrag {
-	
+
 
     public NECtanShardoftheNightbringer() {
         name = "C'tan Shard of the Nightbringer";
@@ -13,7 +12,7 @@ public class NECtanShardoftheNightbringer extends Eintrag {
         power = 12;
 
         add(ico = new oc.Picture("oc/wh40k/images/NECtanFragment.jpg"));
-        
+
         seperator();
 
         addWarlordTraits("", false);

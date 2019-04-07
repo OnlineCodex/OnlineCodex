@@ -1,15 +1,13 @@
 package oc.wh40k.units.ch;
 
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
 public class CHCultistkammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1, o2;
-	private OptionsEinzelUpgrade handwaffe, maschinenpistole;
-    private boolean twistbray = false;
+	private OptionsUpgradeGruppe o2;
+	private boolean twistbray = false;
 
     public CHCultistkammer() {
         grundkosten = 0;

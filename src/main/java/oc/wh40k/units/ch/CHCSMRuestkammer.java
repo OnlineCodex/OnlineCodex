@@ -4,19 +4,18 @@ import static oc.KeyWord.*;
 
 import java.util.Set;
 
-import javax.sound.sampled.FloatControl.Type;
-
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class CHCSMRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
-    private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
-    private boolean character = false;
+    private OptionsUpgradeGruppe o1, o2, o3, o4, o5;
     private OptionsEinzelUpgrade talismanOfBurningBlood;
     private OptionsEinzelUpgrade eyeOfTzeentch;
     private OptionsEinzelUpgrade intoxicatingElixir;
@@ -34,8 +33,8 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade bookOfUntruth;
     private OptionsEinzelUpgrade daemonfleshPlate;
     private OptionsEinzelUpgrade flawlessCloak;
-    
-    
+
+
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -43,18 +42,17 @@ public class CHCSMRuestkammer extends RuestkammerVater {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -95,25 +93,25 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	    			ogE.addElement(new OptionsGruppeEintrag("Blissgiver", getPts("Bolt pistol")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Bringers of Despair"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Bringers of Despair"))
     		{
 	    		if(ogE.get(i).getName().equals("Power axe")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Foecleaver", getPts("Power axe")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Daemonkin Ritualists"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Daemonkin Ritualists"))
     		{
 	    		if(ogE.get(i).getName().equals("Force stave")){
 	    			ogE.addElement(new OptionsGruppeEintrag("The Burning Rod", getPts("Force stave")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Soulforged Pack"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Soulforged Pack"))
     		{
 	    		if(ogE.get(i).getName().equals("Mechatendrils")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Mecha-Serpents", getPts("Mechatendrils")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Fallen Angels"))
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Fallen Angels"))
     		{
 	    		if(ogE.get(i).getName().equals("Force sword")){
 	    			ogE.addElement(new OptionsGruppeEintrag("Caliban Steel Blade", getPts("Force sword")).setRelic(true));
@@ -151,15 +149,12 @@ public class CHCSMRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
-        character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(talismanOfBurningBlood = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Talisman of Burning Blood", 0).setRelic(true));
+        add(talismanOfBurningBlood = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Talisman of Burning Blood", 0).setRelic(true));
        	add(eyeOfTzeentch = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Eye of Tzeentch", 0).setRelic(true));
        	add(intoxicatingElixir = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Inoxicating Elixir", 0).setRelic(true));
        	add(theEyeOfNight = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Eye of Night", 0).setRelic(true));
@@ -176,9 +171,8 @@ public class CHCSMRuestkammer extends RuestkammerVater {
        	add(bookOfUntruth = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Book of Untruth", 0).setRelic(true));
        	add(daemonfleshPlate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Daemonflesh Plate", 0).setRelic(true));
        	add(flawlessCloak = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Flawless Cloak", 0).setRelic(true));
-       
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -191,7 +185,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             o1.setSelected(0, true);
 
             seperator();
-            
+
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Warp bolter", getPts("Warp bolter")));
     	} else if(type.equals("Chaos Lord")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
@@ -348,7 +342,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Impaler chainglaive", getPts("Impaler chainglaive")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
@@ -361,31 +355,31 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
     	}
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -397,47 +391,47 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Chaos Lord") || type.equals("Chaos Lord in Terminator Armour") ||
     			type.equals("Sorcerer") || type.equals("Sorcerer in Terminator Armour") || type.equals("Dark Apostle") ||
     			type.equals("Exalted Champion") || type.equals("Warpsmith") || type.equals("Master of Possession") || type.equals("Master of Executions")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
-    		
+
         	o1.setAktiv("Axe of Blind Fury", keywords.contains(KHORNE));
            	o2.setAktiv("Axe of Blind Fury", keywords.contains(KHORNE));
         	o1.setAktiv("Puscleaver", keywords.contains(NURGLE));
            	o2.setAktiv("Puscleaver", keywords.contains(NURGLE));
     	}
-    	
+
     	if(type.equals("Daemon Prince of Chaos") || type.equals("Daemon Prince of Chaos with Wings")) {
     		o1.alwaysSelected();
     	}
-    	
+
     	if(type.equals("Lord Discordant on Helstalker")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     		o3.alwaysSelected();
     	}
-    	
-    	talismanOfBurningBlood.setAktiv((chosenRelic == null || talismanOfBurningBlood.isSelected()) && keywords.contains(KHORNE));   
+
+    	talismanOfBurningBlood.setAktiv((chosenRelic == null || talismanOfBurningBlood.isSelected()) && keywords.contains(KHORNE));
     	eyeOfTzeentch.setAktiv(((chosenRelic == null || eyeOfTzeentch.isSelected()) && keywords.contains(TZEENTCH)));
-    	intoxicatingElixir.setAktiv(((chosenRelic == null || intoxicatingElixir.isSelected()) && keywords.contains(NURGLE)));
+    	intoxicatingElixir.setAktiv(((chosenRelic == null || intoxicatingElixir.isSelected()) && keywords.contains(SLAANESH)));
     	theEyeOfNight.setAktiv((chosenRelic == null || theEyeOfNight.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	fleshmetalExoskeleton.setAktiv((chosenRelic == null || fleshmetalExoskeleton.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iron Warriors"));
     	brassCollarOfBhorghaster.setAktiv((chosenRelic == null || brassCollarOfBhorghaster.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("World Eaters"));
-    	theDaemonsEye.setAktiv((chosenRelic == null || theDaemonsEye.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Devastation Battery"));
-    	theInfernoTome.setAktiv((chosenRelic == null || theInfernoTome.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Cult of the Damned"));
-    	chiropteranWings.setAktiv((chosenRelic == null || chiropteranWings.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Host Raptorial"));
+    	theDaemonsEye.setAktiv((chosenRelic == null || theDaemonsEye.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Devastation Battery"));
+    	theInfernoTome.setAktiv((chosenRelic == null || theInfernoTome.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Cult of the Damned"));
+    	chiropteranWings.setAktiv((chosenRelic == null || chiropteranWings.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Host Raptorial"));
     	theGorePlate.setAktiv((chosenRelic == null || theGorePlate.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Legion of Skulls"));
     	trophiesOfSlaughter.setAktiv((chosenRelic == null || trophiesOfSlaughter.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	sightlessHelm.setAktiv((chosenRelic == null || sightlessHelm.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
     	cloakOfConquest.setAktiv((chosenRelic == null || cloakOfConquest.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Black Legion"));
-    	orbOfUnlife.setAktiv((chosenRelic == null || orbOfUnlife.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Purge"));
-    	bookOfUntruth.setAktiv((chosenRelic == null || bookOfUntruth.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Scourged"));
-    	daemonfleshPlate.setAktiv((chosenRelic == null || daemonfleshPlate.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Brazen Beasts"));
-    	flawlessCloak.setAktiv((chosenRelic == null || flawlessCloak.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Flawless Host"));
-       	
+    	orbOfUnlife.setAktiv((chosenRelic == null || orbOfUnlife.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("The Purge"));
+    	bookOfUntruth.setAktiv((chosenRelic == null || bookOfUntruth.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("The Scourged"));
+    	daemonfleshPlate.setAktiv((chosenRelic == null || daemonfleshPlate.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Brazen Beasts"));
+    	flawlessCloak.setAktiv((chosenRelic == null || flawlessCloak.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Flawless Host"));
+
     }
 
 }

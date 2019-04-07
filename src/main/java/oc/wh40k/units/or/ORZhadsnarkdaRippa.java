@@ -1,10 +1,9 @@
 package oc.wh40k.units.or;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class ORZhadsnarkdaRippa extends Eintrag {
-	
+
 
     public ORZhadsnarkdaRippa() {
 
@@ -14,11 +13,12 @@ public class ORZhadsnarkdaRippa extends Eintrag {
         power = 7;
 
         addWarlordTraits("Evil Sunz: Speed Freak", true);
-        
+
         complete();
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         setUnikat(true);
     }
 }

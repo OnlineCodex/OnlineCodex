@@ -8,7 +8,7 @@ public class IMSammaelinSableclaw extends Eintrag {
         name = "Sammael in Sableclaw";
         grundkosten = getPts("Sammael in Sableclaw");
         power = 11;
-        
+
         seperator();
 
         addWarlordTraits("Master of Manoeuvre (DA)", true);

@@ -1,13 +1,14 @@
 package oc.wh40k.units.ne;
 
-import oc.*;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class NETransporterKammer extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe typ;
-	private OptionsUpgradeGruppe commandWeapons;
-	private OptionsPanelSwitcher switcher;
-    private OptionsEinzelUpgrade ass;
+	private OptionsEinzelUpgrade ass;
 
     private boolean offerGhost = false;
     private boolean offerNight = false;
@@ -48,23 +49,23 @@ public class NETransporterKammer extends RuestkammerVater {
         }
 
         if (typ.isSelected("Geister-Barke")) {
-            String icon = "oc/wh40k/images/NEGhost Ark.jpg";
+            final String icon = "oc/wh40k/images/NEGhost Ark.jpg";
             ico.setIcon(icon);
             try {
                 ico.updateSize();
-            } catch (Exception e) {
+            } catch (final Exception e) {
             }
             if (this.offerNight) {
                 ass.setAktiv(false);
             }
 
         } else { // Night Scythe
-            String icon = "oc/wh40k/images/NENight Scythe.jpg";
+            final String icon = "oc/wh40k/images/NENight Scythe.jpg";
             ico.setIcon(icon);
             ass.setAktiv(true);
             try {
                 ico.updateSize();
-            } catch (Exception e) {
+            } catch (final Exception e) {
             }
         }
     }

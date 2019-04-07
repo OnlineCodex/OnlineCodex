@@ -1,8 +1,8 @@
 package oc.wh40k.units.ch;
 
-import oc.Eintrag;
-
 import static oc.KeyWord.KHORNE;
+
+import oc.Eintrag;
 
 public class CHUrakaTheWarfiend extends Eintrag {
 
@@ -11,7 +11,7 @@ public class CHUrakaTheWarfiend extends Eintrag {
         name = "Uraka the Warfiend";
         grundkosten = getPts("Uraka the Warfiend");
         power = 9;
-        
+
         seperator();
 
         addWarlordTraits("", KHORNE);

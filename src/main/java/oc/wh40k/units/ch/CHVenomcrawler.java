@@ -26,7 +26,7 @@ public class CHVenomcrawler extends Eintrag {
     @Override
     public void refreshen() {
         power = 7;
-        
+
         o1.alwaysSelected();
     }
 

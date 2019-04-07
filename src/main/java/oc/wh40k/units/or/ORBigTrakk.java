@@ -1,12 +1,14 @@
 package oc.wh40k.units.or;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.OptionsZaehlerGruppe;
 
 public class ORBigTrakk extends Eintrag {
 
-	private final OptionsZaehlerGruppe o1;
-
-    public ORBigTrakk() {
+	public ORBigTrakk() {
 
         name = "Big Trakk (FW)";
         grundkosten = getPts("Big Trakk") + getPts("Big Shoota") * 2;
@@ -15,7 +17,7 @@ public class ORBigTrakk extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Big Shoota", getPts("Big Shoota")));
         ogE.addElement(new OptionsGruppeEintrag("Skorcha", getPts("Skorcha")));
         ogE.addElement(new OptionsGruppeEintrag("Rokkit Launcha", getPts("Rokkit Launcha")));
-        add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -39,7 +41,8 @@ public class ORBigTrakk extends Eintrag {
     }
 
     // @OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

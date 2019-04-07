@@ -5,7 +5,6 @@ import oc.OptionsEinzelZaehler;
 
 public class ORKopphammaMegapanza extends Eintrag {
 
-	private final OptionsEinzelZaehler o1;
 	private final OptionsEinzelZaehler o2;
 	private final OptionsEinzelZaehler o3;
 
@@ -17,7 +16,7 @@ public class ORKopphammaMegapanza extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/KopphammaMegapanza.gif"));
 
 
-        add(o1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "Supa-Grotraketänz", 3, 15));
+        add(new OptionsEinzelZaehler(ID, randAbstand, cnt, "option", "Supa-Grotraketänz", 3, 15));
 
         seperator();
 
@@ -28,7 +27,8 @@ public class ORKopphammaMegapanza extends Eintrag {
 
     }
 
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         o2.setAnzahl(2 - o3.getAnzahl());
     }
 }

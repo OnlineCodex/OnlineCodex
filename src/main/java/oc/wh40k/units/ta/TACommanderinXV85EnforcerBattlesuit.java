@@ -1,8 +1,15 @@
 package oc.wh40k.units.ta;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.BATTLESUIT;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.COMMANDER;
+import static oc.KeyWord.JET_PACK;
+import static oc.KeyWord.TAU_EMPIRE;
+import static oc.KeyWord.XV85_ENFORCER;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
@@ -10,7 +17,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
     public TACommanderinXV85EnforcerBattlesuit() {
     	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV85_ENFORCER, JET_PACK, COMMANDER);
-    	
+
         name = "Commander in XV85 Enforcer Battlesuit";
         grundkosten = getPts("Commander in XV85 Enforcer Battlesuit");
         überschriftSetzen = true;
@@ -23,11 +30,11 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-        
+
         seperator();
 
         addWeapons(TAKampfanzugKammer.class, true);
-        
+
         seperator();
 
 		addWarlordTraits("", true);

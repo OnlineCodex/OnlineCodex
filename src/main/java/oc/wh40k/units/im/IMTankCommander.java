@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.LEMAN_RUSS;
+import static oc.KeyWord.OFFICER;
+import static oc.KeyWord.TANK_COMMANDER;
+import static oc.KeyWord.VEHICLE;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
@@ -11,15 +15,12 @@ public class IMTankCommander extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 	private final OptionsUpgradeGruppe o2;
-	private final OptionsUpgradeGruppe o3;
 	private final OptionsEinzelUpgrade oe1;
 	private final OptionsEinzelUpgrade oe2;
 
-	private final boolean paskSelected = false;
-
-    public IMTankCommander() {
+	public IMTankCommander() {
     	super(CHARACTER, VEHICLE, LEMAN_RUSS, OFFICER, TANK_COMMANDER);
-    	
+
         grundkosten = getPts("Tank Commander");
         name = "Tank Commander";
         power = 13;
@@ -48,7 +49,7 @@ public class IMTankCommander extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -61,11 +62,11 @@ public class IMTankCommander extends Eintrag {
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dozer blade", getPts("Dozer blade")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AM)")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Track guards", getPts("Track guards")));
-        
+
         seperator();
-        
+
         addWeapons(IMAstraMilitarumRuestkammer.class, true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

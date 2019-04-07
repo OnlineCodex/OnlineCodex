@@ -1,6 +1,11 @@
 package oc.wh40k.units.ch;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class CHPlagueMarines extends Eintrag {
 
@@ -83,7 +88,7 @@ public class CHPlagueMarines extends Eintrag {
         knife.setMaxAnzahl(marines.getModelle() - 1);
         knife.setAnzahl(0, marines.getModelle() - 1);
 
-        int bolterAnzahl = marines.getModelle() - 1 - marinesfk.getAnzahl() - marinesAxe.getAnzahl() - marinesMace.getAnzahl() - marinesCleaver.getAnzahl();
+        final int bolterAnzahl = marines.getModelle() - 1 - marinesfk.getAnzahl() - marinesAxe.getAnzahl() - marinesMace.getAnzahl() - marinesCleaver.getAnzahl();
 
         bolter.setMaxAnzahl(bolterAnzahl);
         bolter.setAnzahl(0, bolterAnzahl);

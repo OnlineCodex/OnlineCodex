@@ -2,7 +2,10 @@ package oc.wh40k.units.im;
 
 
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 
 
@@ -30,7 +33,7 @@ public class IMVenatariCustodians extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Kinetic destroyer", getPts("Kinetic destroyer")));
-        
+
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         o1.setAnzahl(0, squad.getModelle());
@@ -42,15 +45,15 @@ public class IMVenatariCustodians extends Eintrag {
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         o3.setAnzahl(0, squad.getModelle());
-        
+
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Venatari lance", getPts("Venatari lance")));
 
         add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         o3.setAnzahl(0, squad.getModelle());
-        
+
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Misericordia", getPts("Misericordia")));
@@ -74,13 +77,13 @@ public class IMVenatariCustodians extends Eintrag {
         o2.setMaxAnzahl(squad.getModelle());
 
         o3.setMaxAnzahl(squad.getModelle() - o4.getAnzahl());
-        
+
         o4.setMaxAnzahl(squad.getModelle());
-        
+
         o1.setLegal(squad.getModelle() == o1.getAnzahl() + o4.getAnzahl());
         o3.setLegal(squad.getModelle() == o3.getAnzahl() + o4.getAnzahl());
-        
-        
+
+
 
         if(squad.getModelle() == 3) power = 10;
         if(squad.getModelle() == 4) power = 13;

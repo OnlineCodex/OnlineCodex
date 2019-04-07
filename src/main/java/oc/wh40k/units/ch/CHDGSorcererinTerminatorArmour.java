@@ -20,7 +20,7 @@ public class CHDGSorcererinTerminatorArmour extends Eintrag {
 
     public CHDGSorcererinTerminatorArmour() {
     	super(CHAOS, NURGLE, HERETIC_ASTARTES, DEATH_GUARD, CHARACTER, INFANTRY, TERMINATOR, PSYKER, SORCERER);
-    	
+
         name = "Sorcerer in Terminator Armour";
         grundkosten = getPts("Sorcerer in Terminator Armour");
         power = 8;
@@ -34,14 +34,14 @@ public class CHDGSorcererinTerminatorArmour extends Eintrag {
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableContagion();
-        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(true);;
+        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(true);
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
-        
+
         addWarlordTraits("", true);
 
         complete();

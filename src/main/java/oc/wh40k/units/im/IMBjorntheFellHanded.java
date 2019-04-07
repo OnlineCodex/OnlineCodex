@@ -1,7 +1,6 @@
 package oc.wh40k.units.im;
 
 import oc.Eintrag;
-import oc.RuestkammerStarter;
 
 public class IMBjorntheFellHanded extends Eintrag {
 
@@ -12,9 +11,9 @@ public class IMBjorntheFellHanded extends Eintrag {
         power = 14;
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

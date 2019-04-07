@@ -1,6 +1,10 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.AnzahlPanel;
+import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMBloodClaws extends Eintrag {
 
@@ -97,17 +101,17 @@ public class IMBloodClaws extends Eintrag {
         if (rkBoss3.isSelected()) {
             power += 3;
         }
-        
+
         rkBoss2.getPanel().setLocation(
                 (int) rkBoss2.getPanel().getLocation().getX(),
                 (int) rkBoss.getPanel().getLocation().getY() + rkBoss.getPanel().getSize().height + 5
         );
-        
+
         rkBoss3.getPanel().setLocation(
                 (int) rkBoss3.getPanel().getLocation().getX(),
                 (int) rkBoss2.getPanel().getLocation().getY() + rkBoss2.getPanel().getSize().height + 5
         );
-        
+
     }
 
 }

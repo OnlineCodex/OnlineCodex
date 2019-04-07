@@ -9,9 +9,7 @@ public class CHChaosHellTalon extends Eintrag {
 	private final OptionsUpgradeGruppe o1;
 	private final OptionsUpgradeGruppe o2;
 	private final OptionsUpgradeGruppe o3;
-	private final OptionsUpgradeGruppe mark;
-
-    public CHChaosHellTalon() {
+	public CHChaosHellTalon() {
         name = "Chaos Hell Talon";
         grundkosten = getPts("Chaos Hell Talon");
 
@@ -39,7 +37,7 @@ public class CHChaosHellTalon extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();
     }

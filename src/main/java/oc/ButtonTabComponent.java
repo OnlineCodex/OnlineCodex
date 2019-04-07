@@ -2,13 +2,26 @@ package oc;
 
 
 
-import javax.swing.*;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
+import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.plaf.basic.BasicButtonUI;
-
-import java.awt.*;
-
-import java.awt.event.*;
 
 
 
@@ -34,13 +47,14 @@ public class ButtonTabComponent extends JPanel {
 
     private final static MouseListener buttonMouseListener = new MouseAdapter() {
 
-        public void mouseEntered(MouseEvent e) {
+        @Override
+		public void mouseEntered(MouseEvent e) {
 
-            Component component = e.getComponent();
+            final Component component = e.getComponent();
 
             if (component instanceof AbstractButton) {
 
-                AbstractButton button = (AbstractButton) component;
+                final AbstractButton button = (AbstractButton) component;
 
                 button.setBorderPainted(true);
 
@@ -50,13 +64,14 @@ public class ButtonTabComponent extends JPanel {
 
 
 
-        public void mouseExited(MouseEvent e) {
+        @Override
+		public void mouseExited(MouseEvent e) {
 
-            Component component = e.getComponent();
+            final Component component = e.getComponent();
 
             if (component instanceof AbstractButton) {
 
-                AbstractButton button = (AbstractButton) component;
+                final AbstractButton button = (AbstractButton) component;
 
                 button.setBorderPainted(false);
 
@@ -126,7 +141,7 @@ public class ButtonTabComponent extends JPanel {
 
         //make JLabel read titles from JTabbedPane
 
-        JLabel label = new JLabel() {
+        final JLabel label = new JLabel() {
 
             /**
 
@@ -138,9 +153,10 @@ public class ButtonTabComponent extends JPanel {
 
 
 
-            public String getText() {
+            @Override
+			public String getText() {
 
-                int i = pane.indexOfTabComponent(ButtonTabComponent.this);
+                final int i = pane.indexOfTabComponent(ButtonTabComponent.this);
 
                 if (i != -1) {
 
@@ -164,7 +180,7 @@ public class ButtonTabComponent extends JPanel {
 
         //tab button
 
-        JButton button = new TabButton();
+        final JButton button = new TabButton();
 
         add(button);
 
@@ -190,7 +206,7 @@ public class ButtonTabComponent extends JPanel {
 
         public TabButton() {
 
-            int size = 17;
+            final int size = 17;
 
             setPreferredSize(new Dimension(size, size));
 
@@ -228,9 +244,10 @@ public class ButtonTabComponent extends JPanel {
 
 
 
-        public void actionPerformed(ActionEvent e) {
+        @Override
+		public void actionPerformed(ActionEvent e) {
 
-            int i = pane.indexOfTabComponent(ButtonTabComponent.this);
+            final int i = pane.indexOfTabComponent(ButtonTabComponent.this);
 
             if (i != -1) {
 
@@ -262,7 +279,8 @@ public class ButtonTabComponent extends JPanel {
 
         //we don't want to update UI for this button
 
-        public void updateUI() {
+        @Override
+		public void updateUI() {
 
         }
 
@@ -270,11 +288,12 @@ public class ButtonTabComponent extends JPanel {
 
         //paint the cross
 
-        protected void paintComponent(Graphics g) {
+        @Override
+		protected void paintComponent(Graphics g) {
 
             super.paintComponent(g);
 
-            Graphics2D g2 = (Graphics2D) g.create();
+            final Graphics2D g2 = (Graphics2D) g.create();
 
             //shift the image for pressed buttons
 
@@ -294,7 +313,7 @@ public class ButtonTabComponent extends JPanel {
 
             }
 
-            int delta = 6;
+            final int delta = 6;
 
             g2.drawLine(delta, delta, getWidth() - delta - 1, getHeight() - delta - 1);
 

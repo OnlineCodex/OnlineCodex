@@ -30,19 +30,21 @@ public class IMCanisRex extends Eintrag {
         add(fk2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
-        
+
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         fk1.alwaysSelected();
         fk2.alwaysSelected();
         o2.alwaysSelected();
     }
-    
+
     //@OVERRIDE
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
         super.deleteYourself();
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") - 1);

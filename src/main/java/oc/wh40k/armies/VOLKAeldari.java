@@ -1,14 +1,14 @@
 package oc.wh40k.armies;
 
 
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
+
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
-
-import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
 
 
 public class VOLKAeldari extends BuildaVater {
@@ -59,7 +59,7 @@ public class VOLKAeldari extends BuildaVater {
         nameDerArtDerArmee = BuildaHQ.translate("AELDARI");
         nameDerArtDerArmeeDekliniert = BuildaHQ.translate("AELDARI");
         textAreaUeberschrift = BuildaHQ.translate("Meine") + " " + BuildaHQ.translate("AELDARI");
-        
+
         formationen.add("AELDARI");
         formationen.add("");
         formationen.add("ASURYANI");

@@ -55,7 +55,8 @@ public class ORLootas extends Eintrag {
 
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
         if (Pluenderaz.getModelle() > 10) {
             power = 13;
         } else if (Pluenderaz.getModelle() > 5) {

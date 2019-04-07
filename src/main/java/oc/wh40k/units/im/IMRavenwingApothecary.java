@@ -3,9 +3,7 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -14,11 +12,7 @@ public class IMRavenwingApothecary extends Eintrag {
 
 
 
-	private final OptionsUpgradeGruppe o1;
-
-
-
-    public IMRavenwingApothecary() {
+	public IMRavenwingApothecary() {
 
         name = "Ravenwing Apothecary";
 
@@ -34,7 +28,7 @@ public class IMRavenwingApothecary extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Ravenwing grenade launcher", getPts("Ravenwing grenade launcher")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

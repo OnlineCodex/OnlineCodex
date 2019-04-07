@@ -3,11 +3,8 @@ package oc.wh40k.units.im;
 
 
 import oc.Eintrag;
-
 import oc.OptionsEinzelUpgrade;
-
 import oc.OptionsGruppeEintrag;
-
 import oc.OptionsUpgradeGruppe;
 
 
@@ -16,11 +13,7 @@ public class IMRelicLandRaiderProteus extends Eintrag {
 
 
 
-	private final OptionsUpgradeGruppe o1;
-
-
-
-    public IMRelicLandRaiderProteus() {
+	public IMRelicLandRaiderProteus() {
 
         name = "Relic Land Raider Proteus";
 
@@ -50,7 +43,7 @@ public class IMRelicLandRaiderProteus extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
 

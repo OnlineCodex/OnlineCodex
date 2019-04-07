@@ -18,7 +18,7 @@ public class CHThousandSonsSorcerer extends Eintrag {
 
     public CHThousandSonsSorcerer() {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, TZEENTCH, CHARACTER, INFANTRY, SORCERER);
-    	
+
         name = "Thousand Sons Sorcerer";
         grundkosten = getPts("Sorcerer (TS)");
         power = 6;
@@ -37,7 +37,7 @@ public class CHThousandSonsSorcerer extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);

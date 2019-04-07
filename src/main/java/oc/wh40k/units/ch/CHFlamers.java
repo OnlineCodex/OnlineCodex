@@ -2,7 +2,6 @@ package oc.wh40k.units.ch;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.RuestkammerStarter;
 
 public class CHFlamers extends Eintrag {
@@ -32,7 +31,8 @@ public class CHFlamers extends Eintrag {
 
     }
 
-    public void deleteYourself() {
+    @Override
+	public void deleteYourself() {
     }
 
 

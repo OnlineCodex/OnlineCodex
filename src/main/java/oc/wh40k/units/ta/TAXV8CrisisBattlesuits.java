@@ -1,22 +1,18 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.im.IMAstraMilitarumRuestkammer;
-
-import java.util.Vector;
 
 public class TAXV8CrisisBattlesuits extends Eintrag {
 
-	private RuestkammerStarter ob1;
-	private RuestkammerStarter ob2;
-	private Vector<RuestkammerStarter> rk;
+	private final RuestkammerStarter ob1;
+	private final Vector<RuestkammerStarter> rk;
 	private OptionsZaehlerGruppe o4, o5;
-	private boolean warscaper = false;
-
-    public TAXV8CrisisBattlesuits() {
+	public TAXV8CrisisBattlesuits() {
         name = "XV8 Crisis Battlesuits";
         überschriftSetzen = true;
         grundkosten = 0;

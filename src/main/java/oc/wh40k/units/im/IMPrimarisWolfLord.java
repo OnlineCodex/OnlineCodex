@@ -1,9 +1,11 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 
 public class IMPrimarisWolfLord extends Eintrag {
-	
+
 	private final RuestkammerStarter waffenUndArtefakte;
 
     public IMPrimarisWolfLord() {
@@ -20,9 +22,9 @@ public class IMPrimarisWolfLord extends Eintrag {
         waffenUndArtefakte.setAbwaehlbar(false);
 
         seperator();
-        
+
 		addWarlordTraits("", true);
-        
+
         complete();
     }
 

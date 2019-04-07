@@ -16,7 +16,7 @@ public class TATigerSharkAX10 extends Eintrag {
 
         seperator();
 
-        RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, TAFahrzeugKammer.class, "Rüstkammer");
+        final RuestkammerStarter rk = new RuestkammerStarter(ID, randAbstand, cnt, TAFahrzeugKammer.class, "Rüstkammer");
         rk.initKammer(true, false);
         rk.setButtonText("Rüstkammer");
         add(rk);

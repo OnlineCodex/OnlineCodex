@@ -9,10 +9,7 @@ import oc.OptionsZaehlerGruppe;
 
 public class TAXV109YvahraBattlesuit extends Eintrag {
 
-	private final OptionsZaehlerGruppe o3;
-	private final OptionsUpgradeGruppe o4;
-
-    public TAXV109YvahraBattlesuit() {
+	public TAXV109YvahraBattlesuit() {
         name = "XV109 Y'vahra Battlesuit";
         grundkosten = 230;
 
@@ -24,7 +21,7 @@ public class TAXV109YvahraBattlesuit extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Schild-Raketendrohnen", 25));
         ogE.addElement(new OptionsGruppeEintrag("Schilddrohnen", 12));
-        add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -36,13 +33,14 @@ public class TAXV109YvahraBattlesuit extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Multiple Zielerfassung", 5));
         ogE.addElement(new OptionsGruppeEintrag("Positionssender", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stimulanzinjektor", 35));
-        add(o4 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         complete();
     }
 
     //@OVERRIDE
-    public void refreshen() {
+    @Override
+	public void refreshen() {
     }
 
 }

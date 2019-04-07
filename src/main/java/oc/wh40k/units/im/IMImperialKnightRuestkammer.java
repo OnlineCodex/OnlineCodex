@@ -1,19 +1,21 @@
 package oc.wh40k.units.im;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CHARACTER;
 
 import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-import oc.*;
+import oc.BuildaHQ;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
+import oc.RuestkammerVater;
 
 public class IMImperialKnightRuestkammer extends RuestkammerVater {
 
     public OptionsEinzelUpgrade oe1;
     private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6;
-    private String default1 = "";
-    private String default2 = "";
     boolean character = false;
     private OptionsEinzelUpgrade sanctuary;
     private OptionsEinzelUpgrade armourOfTheSaintedIon;
@@ -27,25 +29,24 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade theBannerInviolate;
     private OptionsEinzelUpgrade theHeadsmansMark;
     private OptionsEinzelUpgrade theAuricMask;
-    
+
     Set<String> CHARACTERS = ImmutableSet.of("Armiger Helverin", "Armiger Warglaive", "Knight Preceptor", "Knight Paladin", "Knight Errant", "Knight Gallant", "Knight Warden", "Knight Crusader", "Canis Rex", "Knight Castellan", "Knight Valiant");
 
     public IMImperialKnightRuestkammer() {
         grundkosten = 0;
     }
 
-    public void setType(String s) {
+    @Override
+	public void setType(String s) {
         type = s;
     }
 
     public void setDefault1(String s) {
-        default1 = s;
     }
 
     public void setDefault2(String s) {
-        default2 = s;
     }
-    
+
     public void addRelics() {
 
     	for(int i = 0; i < ogE.size(); i++) {
@@ -83,15 +84,13 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
     		}
     	}
     }
-    
+
     @Override
     public void initButtons(boolean... defaults) {
         checkBuildaVater();
         character = CHARACTERS.contains(type) || keywords.contains(CHARACTER);
         int offsetX = randAbstand;
-        int oe1Offset = cnt;
-                
-       	add(sanctuary = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sanctuary", 0).setRelic(true));
+        add(sanctuary = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Sanctuary", 0).setRelic(true));
        	add(armourOfTheSaintedIon = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Armour of the Sainted Ion", 0).setRelic(true));
        	add(helmOfTheNamelessWarrior = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Helm of the Nameless Warrior", 0).setRelic(true));
        	add(bannerOfMachariusTriumphant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Banner of Macharius Triumphant", 0).setRelic(true));
@@ -103,9 +102,8 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
     	add(theBannerInviolate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Banner Inviolate", 0).setRelic(true));
     	add(theHeadsmansMark = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Headman's Mark", 0).setRelic(true));
     	add(theAuricMask = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Auric Mask", 0).setRelic(true));
-    	
+
        	offsetX += buttonBreite + 15;
-       	oe1Offset = cnt;
        	seperator();
 
 
@@ -119,9 +117,9 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
             ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            
+
             seperator();
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -146,7 +144,7 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
             seperator();
-            
+
             ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (QI)")));
             addRelics();
             add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -168,27 +166,27 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
             addRelics();
 	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-	
+
 	        seperator();
-	
+
 	        ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
 	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-	
+
 	        seperator();
-	
+
 	        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper Chainsword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
 	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-	
+
 	        seperator();
-	
+
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
             addRelics();
 	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-	
+
 	        seperator();
 	    } else if(type.equals("Knight Paladin")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Rapid-fire battle cannon", getPts("Rapid-fire battle cannon")));
@@ -336,31 +334,31 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
 	        addRelics();
 	        add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 	    }
-    	
+
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-  
+        }
+
         if(o2 != null) {
         	o2.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
-        }  
-        
+        }
+
         if(o3 != null) {
         	o3.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o4 != null) {
         	o4.getPanel().setLocation(offsetX, 10);
         	offsetX += buttonBreite + 20;
         }
-        
+
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
         }
-        
+
         sizeSetzen();
 
     }
@@ -372,7 +370,7 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	
+
     	if(type.equals("Knight Gallant") || type.equals("Knight Errant") || type.equals("Knight Paladin") || type.equals("Knight Preceptor") || type.equals("Knight Warden")){
     		o1.alwaysSelected();
     		o3.alwaysSelected();
@@ -391,13 +389,13 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
     		o6.alwaysSelected();
     	}
 
-        sanctuary.setAktiv((chosenRelic == null || sanctuary.isSelected()));   
+        sanctuary.setAktiv((chosenRelic == null || sanctuary.isSelected()));
         armourOfTheSaintedIon.setAktiv((chosenRelic == null || armourOfTheSaintedIon.isSelected()));
         helmOfTheNamelessWarrior.setAktiv((chosenRelic == null || helmOfTheNamelessWarrior.isSelected()));
         bannerOfMachariusTriumphant.setAktiv((chosenRelic == null || bannerOfMachariusTriumphant.isSelected()));
         markOfTheOmnissiah.setAktiv((chosenRelic == null || markOfTheOmnissiah.isSelected()));
         theHelmDominatus.setAktiv((chosenRelic == null || theHelmDominatus.isSelected()));
-        
+
         markOfTheLance.setAktiv((chosenRelic == null || markOfTheLance.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Griffith"));
         angelsGrace.setAktiv((chosenRelic == null || angelsGrace.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Hawkshroud"));
         theHuntersEye.setAktiv((chosenRelic == null || theHuntersEye.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Cadmus"));

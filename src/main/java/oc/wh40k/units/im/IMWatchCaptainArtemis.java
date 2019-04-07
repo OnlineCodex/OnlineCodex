@@ -8,11 +8,11 @@ public class IMWatchCaptainArtemis extends Eintrag {
         name = "Watch Captain Artemis";
         grundkosten = getPts("Watch Captain Artemis");
         power = 7;
-        
+
         seperator();
 
         addWarlordTraits("Vigilance Incarnate (DW)", true);
-        
+
         complete();
     }
 

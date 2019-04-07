@@ -1,6 +1,13 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.*;
+import static oc.KeyWord.CAVALRY;
+import static oc.KeyWord.CHAOS;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.DAEMON;
+import static oc.KeyWord.DAEMONETTE;
+import static oc.KeyWord.HERALD_OF_SLAANESH;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.SLAANESH;
 
 import oc.Eintrag;
 
@@ -13,11 +20,11 @@ public class CHHeraldofSlaaneshonSteed extends Eintrag {
         power = 4;
 
         seperator();
-        
+
         addWeapons(CHWaffenkammerCD.class, false);
-        
+
         seperator();
-        
+
         addWarlordTraits("", SLAANESH);
 
         complete();

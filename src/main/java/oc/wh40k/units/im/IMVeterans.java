@@ -1,29 +1,30 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import oc.Eintrag;
+import oc.OptionsEinzelUpgrade;
+import oc.OptionsEinzelZaehler;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMVeterans extends Eintrag {
 
-	private final OptionsEinzelUpgrade oe4;
 	private final OptionsEinzelZaehler oe5;
-	private final OptionsZaehlerGruppe o3;
 	private final OptionsZaehlerGruppe o4;
 	private final OptionsZaehlerGruppe o5;
 	private final RuestkammerStarter kammer;
 
-	private boolean harkerSelected = false;
-
-    public IMVeterans() {
+	public IMVeterans() {
         name = "Veterans";
         grundkosten = (getPts("Veterans") + getPts("Frag grenade (AM)")) * 10;
         power = 5;
 
-        add(oe4 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vox-caster", getPts("Vox-caster")));
 
         seperator();
 
         ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-        add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

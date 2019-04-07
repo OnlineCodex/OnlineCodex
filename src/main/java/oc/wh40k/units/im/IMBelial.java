@@ -8,7 +8,7 @@ public class IMBelial extends Eintrag {
         name = "Belial";
         grundkosten = getPts("Belial");
         power = 8;
-        
+
         seperator();
 
         addWarlordTraits("Huntsman (DA)", true);

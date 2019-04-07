@@ -13,7 +13,7 @@ public class IMFuriosoDreadnought extends Eintrag {
         power = 10;
 
 //		A Furioso Dreadnought is a single model equipped with two Furioso fists, a storm bolter and a meltagun.
-//		WARGEAR OPTIONS 
+//		WARGEAR OPTIONS
 //		This model may replace one Furioso fist and either its storm bolter or its meltagun with a frag cannon.
 //		This model may replace its two Furioso fists with blood talons.
 //		This model may replace its storm bolter with a heavy flamer.

@@ -8,7 +8,7 @@ public class IMAzrael extends Eintrag {
         name = "Azrael";
         grundkosten = getPts("Azrael");
         power = 9;
-        
+
         seperator();
 
         addWarlordTraits("Brilliant Strategist (DA)", true);

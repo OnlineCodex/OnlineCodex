@@ -1,15 +1,24 @@
 package oc.wh40k.units.im;
 
-import oc.*;
+import static oc.KeyWord.ADEPTUS_ASTARTES;
+import static oc.KeyWord.CHARACTER;
+import static oc.KeyWord.GRAND_MASTER;
+import static oc.KeyWord.GREY_KNIGHTS;
+import static oc.KeyWord.IMPERIUM;
+import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.PSYKER;
+import static oc.KeyWord.TERMINATOR;
+
+import oc.Eintrag;
+import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
-import static oc.KeyWord.*;
 
 public class IMGrandMaster extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public IMGrandMaster() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, GREY_KNIGHTS, CHARACTER, INFANTRY, TERMINATOR, PSYKER, GRAND_MASTER);
-    	
+
         name = "Grand Master";
         grundkosten = getPts("Grand Master") + getPts("Frag grenades (SM)") + getPts("Krak grenades (SM)") + getPts("Psyk-out grenades (SM)");
 
@@ -27,7 +36,7 @@ public class IMGrandMaster extends Eintrag {
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
         psychicPowers.setAbwaehlbar(true);
-        
+
         seperator();
 
         addWarlordTraits("", true);
@@ -38,7 +47,7 @@ public class IMGrandMaster extends Eintrag {
     @Override
     public void refreshen() {
         power = 10;
-        
+
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

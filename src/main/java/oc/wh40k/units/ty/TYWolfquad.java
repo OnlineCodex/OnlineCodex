@@ -20,13 +20,13 @@ public class TYWolfquad extends RuestkammerVater {
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-        
+
         ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
         ogE.addElement(new OptionsGruppeEintrag("Shotgun", getPts("Shotgun")));
         ogE.addElement(new OptionsGruppeEintrag("Improvised weapon", getPts("Improvised weapon")));
         ogE.addElement(new OptionsGruppeEintrag("Power pick", getPts("Power pick")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        
+
         sizeSetzen();
     }
 
