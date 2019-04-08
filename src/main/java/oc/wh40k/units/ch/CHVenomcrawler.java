@@ -15,6 +15,14 @@ public class CHVenomcrawler extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
         seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Khorne", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
+        ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
+        seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Excruciator cannons", getPts("Excruciator cannon") * 2));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

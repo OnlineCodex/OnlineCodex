@@ -26,13 +26,14 @@ public class CHPoxbringer extends Eintrag {
 
         seperator();
 
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(CHWaffenkammerCD.class, true);
 
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
         ((PsychicPowers) psychicPowers.getKammer()).enableNurgle();
+        ((PsychicPowers) psychicPowers.getKammer()).setNurgle(true);
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);

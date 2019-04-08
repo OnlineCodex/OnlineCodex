@@ -168,6 +168,7 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 
     @Override
     public void refreshen() {
+    	    	
     	armourofScorn.setAktiv((chosenRelic == null || armourofScorn.isSelected()) && keywords.contains(KHORNE) && keywords.contains(MONSTER));
     	theCrimsonCrown.setAktiv((chosenRelic == null || theCrimsonCrown.isSelected()) && keywords.contains(KHORNE));
     	theEndlessGrimoire.setAktiv((chosenRelic == null || theEndlessGrimoire.isSelected()) && keywords.contains(TZEENTCH) && keywords.contains(PSYKER));
@@ -189,6 +190,8 @@ public class CHWaffenkammerCD extends RuestkammerVater {
     		if(keywords.contains(BLOODMASTER) || type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury") || keywords.contains(SPOILPOX_SCRIVENER) || keywords.contains(KEEPER_OF_SECRETS)) {
     			nkwaffe.alwaysSelected();
     		}
+    		
+    		nkwaffe.alwaysSelected();
     	}
     }
 }

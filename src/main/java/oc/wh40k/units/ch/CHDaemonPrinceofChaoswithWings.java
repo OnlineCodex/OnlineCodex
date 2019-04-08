@@ -42,7 +42,7 @@ public class CHDaemonPrinceofChaoswithWings extends Eintrag {
 
         seperator();
 
-        addWeapons(CHWaffenkammerCD.class, false);
+        addWeapons(CHWaffenkammerCD.class, true);
 
         seperator();
 
