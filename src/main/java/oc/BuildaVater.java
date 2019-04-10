@@ -216,11 +216,13 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     public int getCP() {
 
-    	int substractor = 0;
+    	int additionalCP = 0;
 
         if(!getSpecialDetachmentType().equals("")){
-        	substractor = 1;
+        	additionalCP -= 1;
         }
+        
+        additionalCP += getCountFromInformationVector("AdditionalCPAbaddon");
 
     	// Handle questor imperialis cp for super heavy detachement FAQ
     	//Page 106 – Knight Lances ability Change the last sentence to read: ‘The Command Benefit of each Imperial Knights Super-heavy Detachment
@@ -236,9 +238,9 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
         	}
         } else {
             if (!((String) kontingentBox.getSelectedItem()).equals("")) {
-                return CP.get((kontingentBox.getSelectedItem())) - substractor;
+                return CP.get((kontingentBox.getSelectedItem())) + additionalCP;
             } else if (!((String) formationBox.getSelectedItem()).equals("")) {
-                return CP.get((formationBox.getSelectedItem())) - substractor;
+                return CP.get((formationBox.getSelectedItem())) + additionalCP;
             } else {
                 return 0;
             }

@@ -473,6 +473,10 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		return weapons.getKammer();
 	}
 
+	public RuestkammerVater getWarlordtraits() {
+		return warlordTraits.getKammer();
+	}
+	
 	public void correctRuestkammerPosition(RuestkammerStarter ruestkammer, RuestkammerStarter reference){
 		ruestkammer.getPanel().setLocation(
                 (int) ruestkammer.getPanel().getLocation().getX(),
