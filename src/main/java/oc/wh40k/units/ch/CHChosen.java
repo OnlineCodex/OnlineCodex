@@ -54,6 +54,7 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
+        ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer")));
         add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
 
         seperator();

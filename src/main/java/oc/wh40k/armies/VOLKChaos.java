@@ -200,7 +200,7 @@ public class VOLKChaos extends BuildaVater {
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this, getId(), cnt, 0, HEAVY_SUPPORT, Unterstützungeinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
-        adden(new ChooserGruppe(this, getId(), cnt, 0, TROOPS, Transporteinträge));
+        adden(new ChooserGruppe(this, getId(), cnt, 0, DEDICATED_TRANSPORT, Transporteinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
         adden(new ChooserGruppe(this, getId(), cnt, 0, FLIER, Fliegereinträge));
         cnt += CHOOSERGRUPPEN_X_ABSTAND;
