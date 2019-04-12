@@ -27,20 +27,17 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
     private static final Logger LOGGER = LoggerFactory.getLogger(BuildaTextArea.class);
 
-    public Vector<String> triedAllies = new Vector<String>();
-    public Vector<String> noAllies = new Vector<String>();
-    protected boolean nurBeiLeerenBuilderTrue = false;
+    private Vector<String> triedAllies = new Vector<>();
+    private Vector<String> noAllies = new Vector<>();
     protected int cnt = 0;
-    protected String textAreaUeberschrift = "";
-    protected String nameDerArtDerArmee = "";
-    protected String nameDerArtDerArmeeDekliniert = "";
-    protected String anfangDerTextarea = ""; // s. ImperialeArmee
-    String orden = "";
-    int mainCnt = 0;
-    private final Vector<BuildaVater> myBuildaVaterVec = new Vector<BuildaVater>();
+    String textAreaUeberschrift = "";
+    String nameDerArtDerArmee = "";
+    String nameDerArtDerArmeeDekliniert = "";
+    String anfangDerTextarea = ""; // s. ImperialeArmee
+    private String orden = "";
+    private final Vector<BuildaVater> myBuildaVaterVec = new Vector<>();
     private JScrollPane textAreaScrollPane;
     private final JTextAreaWithPopup textArea = new JTextAreaWithPopup(true, false);
-    private Sonstige[] sonstige;
     private final JButton markieren = new JButton(BuildaHQ.translate("Alles markieren"));
     private final JCheckBox htmlStyleCheckBox = new JCheckBox(BuildaHQ.translate("Easy-HTML Formatierung"), BuildaHQ.formatierung == 1);
     private final JCheckBox alleKostenCheckBox = new JCheckBox(BuildaHQ.translate("Alle Punktkosten"), BuildaHQ.allePunktkosten);
@@ -50,7 +47,8 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     private final JCheckBox excelModeCheckBox = new JCheckBox(BuildaHQ.translate("Führende Leerzeichen"), BuildaHQ.excelMode);
     private final JLabel fehlerLabel = new JLabel();
     private boolean geaddet = false;
-    public BuildaTextArea() {
+
+    BuildaTextArea() {
         panel.setBackground(Color.WHITE);
         panel.setBounds(0, 0, 1000, CHOOSER_Y + 100);
         complete();
@@ -60,14 +58,12 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         return textArea.getText();
     }
 
-    public void addBuildaVater(BuildaVater bV) {
+    void addBuildaVater(BuildaVater bV) {
         myBuildaVaterVec.add(bV);
     }
 
-    public void removeBuildaVater(BuildaVater bV) {
-        if (myBuildaVaterVec.contains(bV)) {
-            myBuildaVaterVec.remove(bV);
-        }
+    void removeBuildaVater(BuildaVater bV) {
+        myBuildaVaterVec.remove(bV);
     }
 
     @Override
@@ -75,99 +71,92 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         return this.panel;
     }
 
-    public JTextAreaWithPopup getTextArea() {
-        return this.textArea;
-    }
-
     public void complete() {
         cnt = 10;
-        if (!nurBeiLeerenBuilderTrue) {
-            textArea.setLineWrap(true);
-            textArea.setWrapStyleWord(true);
-            textArea.setToolTipText(BuildaHQ
-                    .translate("Zum rauskopieren Strg+C benutzen")); // oder
-            // Rechtsklick
-            // ->
-            // Kopieren
-            BuildaHQ.newGUIComponent(textArea);
-            textArea.removeMouseWheelListener(BuildaHQ.defaultMouseWheelListener);
-            textAreaScrollPane = new JScrollPane(textArea);
-            textAreaScrollPane.setBounds(cnt, 90, 690, 390);
-            textAreaScrollPane.setBorder(BorderFactory.createTitledBorder(null,
-                    textAreaUeberschrift.replace("Meine",
-                            BuildaHQ.translate("Meine")), TitledBorder.CENTER,
-                    TitledBorder.BELOW_TOP, new Font("Viner Hand ITC",
-                            Font.BOLD, 16)));
-            textAreaScrollPane.setBackground(Color.WHITE);
-            panel.add(textAreaScrollPane);
-            markieren.setBounds(cnt, 12, 135, 20);
-            markieren.addActionListener(this);
-            BuildaHQ.newGUIComponent(markieren);
-            markieren.setToolTipText(BuildaHQ
-                    .translate("Zum rauskopieren Strg+C benutzen"));
-            panel.add(markieren);
-            htmlStyleCheckBox.setBounds(cnt + 160, 10, 185, 20);
-            htmlStyleCheckBox.setBackground(Color.WHITE);
-            htmlStyleCheckBox.addItemListener(this);
-            BuildaHQ.newGUIComponent(htmlStyleCheckBox);
-            htmlStyleCheckBox
-                    .setToolTipText(BuildaHQ
-                            .translate("Unbedingt anhaken, wenn die Armeeliste in ein Forum kopiert werden soll"));
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setToolTipText(BuildaHQ
+                .translate("Zum rauskopieren Strg+C benutzen")); // oder
+        // Rechtsklick
+        // ->
+        // Kopieren
+        BuildaHQ.newGUIComponent(textArea);
+        textArea.removeMouseWheelListener(BuildaHQ.defaultMouseWheelListener);
+        textAreaScrollPane = new JScrollPane(textArea);
+        textAreaScrollPane.setBounds(cnt, 90, 690, 390);
+        textAreaScrollPane.setBorder(BorderFactory.createTitledBorder(null,
+                textAreaUeberschrift.replace("Meine",
+                        BuildaHQ.translate("Meine")), TitledBorder.CENTER,
+                TitledBorder.BELOW_TOP, new Font("Viner Hand ITC",
+                        Font.BOLD, 16)));
+        textAreaScrollPane.setBackground(Color.WHITE);
+        panel.add(textAreaScrollPane);
+        markieren.setBounds(cnt, 12, 135, 20);
+        markieren.addActionListener(this);
+        BuildaHQ.newGUIComponent(markieren);
+        markieren.setToolTipText(BuildaHQ
+                .translate("Zum rauskopieren Strg+C benutzen"));
+        panel.add(markieren);
+        htmlStyleCheckBox.setBounds(cnt + 160, 10, 185, 20);
+        htmlStyleCheckBox.setBackground(Color.WHITE);
+        htmlStyleCheckBox.addItemListener(this);
+        BuildaHQ.newGUIComponent(htmlStyleCheckBox);
+        htmlStyleCheckBox
+                .setToolTipText(BuildaHQ
+                        .translate("Unbedingt anhaken, wenn die Armeeliste in ein Forum kopiert werden soll"));
 
-            panel.add(htmlStyleCheckBox);
-            alleKostenCheckBox.setBounds(cnt + 160, 40, 185, 20);
-            alleKostenCheckBox.setBackground(Color.WHITE);
-            alleKostenCheckBox.addItemListener(this);
-            BuildaHQ.newGUIComponent(alleKostenCheckBox);
-            alleKostenCheckBox.setVisible(false);
-            panel.add(alleKostenCheckBox);
+        panel.add(htmlStyleCheckBox);
+        alleKostenCheckBox.setBounds(cnt + 160, 40, 185, 20);
+        alleKostenCheckBox.setBackground(Color.WHITE);
+        alleKostenCheckBox.addItemListener(this);
+        BuildaHQ.newGUIComponent(alleKostenCheckBox);
+        alleKostenCheckBox.setVisible(false);
+        panel.add(alleKostenCheckBox);
 
-            kurzerTextCheckBox.setBounds(cnt + 350, 10, 120, 20);
-            kurzerTextCheckBox.setBackground(Color.WHITE);
-            kurzerTextCheckBox.addItemListener(this);
-            kurzerTextCheckBox.setMargin(new Insets(0, 0, 0, 0));
-            kurzerTextCheckBox.setSelected(true);
-            BuildaHQ.newGUIComponent(kurzerTextCheckBox);
-            panel.add(kurzerTextCheckBox);
+        kurzerTextCheckBox.setBounds(cnt + 350, 10, 120, 20);
+        kurzerTextCheckBox.setBackground(Color.WHITE);
+        kurzerTextCheckBox.addItemListener(this);
+        kurzerTextCheckBox.setMargin(new Insets(0, 0, 0, 0));
+        kurzerTextCheckBox.setSelected(true);
+        BuildaHQ.newGUIComponent(kurzerTextCheckBox);
+        panel.add(kurzerTextCheckBox);
 
-            sterneAnzeigenCheckBox.setBounds(cnt + 350, 40, 120, 20);
-            sterneAnzeigenCheckBox.setBackground(Color.WHITE);
-            sterneAnzeigenCheckBox.addItemListener(this);
-            BuildaHQ.newGUIComponent(sterneAnzeigenCheckBox);
-            panel.add(sterneAnzeigenCheckBox);
+        sterneAnzeigenCheckBox.setBounds(cnt + 350, 40, 120, 20);
+        sterneAnzeigenCheckBox.setBackground(Color.WHITE);
+        sterneAnzeigenCheckBox.addItemListener(this);
+        BuildaHQ.newGUIComponent(sterneAnzeigenCheckBox);
+        panel.add(sterneAnzeigenCheckBox);
 
-            zusatzInfosCheckBox.setBounds(cnt + 510, 10, 185, 20);
-            zusatzInfosCheckBox.setBackground(Color.WHITE);
-            zusatzInfosCheckBox.addItemListener(this);
-            BuildaHQ.newGUIComponent(zusatzInfosCheckBox);
-            panel.add(zusatzInfosCheckBox);
+        zusatzInfosCheckBox.setBounds(cnt + 510, 10, 185, 20);
+        zusatzInfosCheckBox.setBackground(Color.WHITE);
+        zusatzInfosCheckBox.addItemListener(this);
+        BuildaHQ.newGUIComponent(zusatzInfosCheckBox);
+        panel.add(zusatzInfosCheckBox);
 
-            excelModeCheckBox.setBounds(cnt + 510, 40, 185, 20);
-            excelModeCheckBox.setBackground(Color.WHITE);
-            excelModeCheckBox.addItemListener(this);
-            BuildaHQ.newGUIComponent(excelModeCheckBox);
-            panel.add(excelModeCheckBox);
+        excelModeCheckBox.setBounds(cnt + 510, 40, 185, 20);
+        excelModeCheckBox.setBackground(Color.WHITE);
+        excelModeCheckBox.addItemListener(this);
+        BuildaHQ.newGUIComponent(excelModeCheckBox);
+        panel.add(excelModeCheckBox);
 
-            fehlerLabel.setBounds(cnt, 70, 600, 20);
-            fehlerLabel.setBackground(Color.WHITE);
-            fehlerLabel.setForeground(Color.RED);
-            panel.add(fehlerLabel);
+        fehlerLabel.setBounds(cnt, 70, 600, 20);
+        fehlerLabel.setBackground(Color.WHITE);
+        fehlerLabel.setForeground(Color.RED);
+        panel.add(fehlerLabel);
 
-            armeelistenFormatAnpassen(true);
-            addRefreshListener(BUILDA_VATER, this::textAreaRefresh);
-        }
+        armeelistenFormatAnpassen(true);
+        addRefreshListener(BUILDA_VATER, this::textAreaRefresh);
     }
 
-    public void setTextAreaBound(int height) {
+    void setTextAreaBound(int height) {
         textAreaScrollPane.setBounds(cnt, 90, 690, height - 210);
     }
 
-    protected String getVolksSpezifischeInfos() {
+    private String getVolksSpezifischeInfos() {
         return anfangDerTextarea; // kann in einer Sohnklasse overridet werden.
     }
 
-    public void textAreaRefresh() {
-        BuildaVater bV;
+    void textAreaRefresh() {
         final StringBuilder text = new StringBuilder(getVolksSpezifischeInfos());
         int mainCnt = 0;
         noAllies.clear();
@@ -177,10 +166,10 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         int kosten = 0;
         int cp = 3;
         int power = 0;
-        for (int i = 0; i < myBuildaVaterVec.size(); i++) {
-            kosten += myBuildaVaterVec.get(i).getKosten();
-            cp += myBuildaVaterVec.get(i).getCP();
-            power += myBuildaVaterVec.get(i).getPower();
+        for (BuildaVater buildaVater : myBuildaVaterVec) {
+            kosten += buildaVater.getKosten();
+            cp += buildaVater.getCP();
+            power += buildaVater.getPower();
         }
 
         final int relics = BuildaHQ.getCountFromInformationVectorGlobal("Relic");
@@ -194,7 +183,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         }
 
         text.append(BuildaHQ.formatierFettItalicUnderline(BuildaHQ.translate("Gesamtpunkte") + " "
-//				+ nameDerArtDerArmeeDekliniert + " : "
                 + BuildaHQ.translate("der Armee : ")
                 + entferneNullNachkomma(kosten)));
 
@@ -212,88 +200,58 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 + BuildaHQ.translate("der Armee : ")
                 + entferneNullNachkomma(cp) + ZEILENUMBRUCH + ZEILENUMBRUCH));
 
-        for (int k = 0; k < myBuildaVaterVec.size(); k++) {
-            bV = myBuildaVaterVec.get(k);
+        for (BuildaVater bV : myBuildaVaterVec) {
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
-            if (bV.superformation != null) {
-                if (bV.getId().equals("SM")) {
-                } else if (bV.getId().equals("AM")) {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
-                } else if (bV.getId().equals("TA")) {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
-                } else {
-                    text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": START");
-                }
-                text.append(" - ");
-                text.append((int) bV.getKosten());
-                text.append(" Punkte");
-                text.append(ZEILENUMBRUCH);
-                if (bV.Hauptkontingent.isSelected()) {
-                    text.append("(Hauptkontingent)");
-                    text.append(ZEILENUMBRUCH);
-                }
-                text.append(ZEILENUMBRUCH);
-                for (int i = 0; i < bV.superformation.formationen.size(); i++) {
-                    text.append(getBuildaVaterText(bV.superformation.formationen.get(i)));
-                }
-                text.append(bV.nameDerArtDerArmee + ": " + ((String) bV.kontingentBox.getSelectedItem()).toUpperCase() + " " + ((String) bV.specialDetachmentBox.getSelectedItem()).toUpperCase() + ": ENDE");
-                text.append(ZEILENUMBRUCH);
-                text.append(ZEILENUMBRUCH);
-            } else {
-                text.append(getBuildaVaterText(bV));
-            }
-
+            text.append(getBuildaVaterText(bV));
         }
 
-            if (BuildaHQ.zusatzInfos) {
-                boolean waffenbrueder = false;
-                boolean zweckbuendnis = false;
-                boolean verzweifelt = false;
-                boolean niemals = false;
-                if (myBuildaVaterVec.size() > 1) {
-                    for (int i = 0; i < myBuildaVaterVec.size(); i++) {
-                        final BuildaVater bV1 = myBuildaVaterVec.get(i);
-                        for (int j = 0; j < myBuildaVaterVec.size(); j++) {
-                            final BuildaVater bV2 = myBuildaVaterVec.get(j);
-                            if (bV1.battleBrothers.contains(bV2.getId())) {
-                                waffenbrueder = true;
-                            } else if (bV1.alliesOfConvenience.contains(bV2.getId())) {
-                                zweckbuendnis = true;
-                            } else if (bV1.desperateAllies.contains(bV2.getId())) {
-                                verzweifelt = true;
-                            } else if (bV1.comeTheApocalypse.contains(bV2.getId())) {
-                                niemals = true;
-                            }
+        if (BuildaHQ.zusatzInfos) {
+            boolean waffenbrueder = false;
+            boolean zweckbuendnis = false;
+            boolean verzweifelt = false;
+            boolean niemals = false;
+            if (myBuildaVaterVec.size() > 1) {
+                for (int i = 0; i < myBuildaVaterVec.size(); i++) {
+                    final BuildaVater bV1 = myBuildaVaterVec.get(i);
+                    for (final BuildaVater bV2 : myBuildaVaterVec)
+                        if (bV1.battleBrothers.contains(bV2.getId())) {
+                            waffenbrueder = true;
+                        } else if (bV1.alliesOfConvenience.contains(bV2.getId())) {
+                            zweckbuendnis = true;
+                        } else if (bV1.desperateAllies.contains(bV2.getId())) {
+                            verzweifelt = true;
+                        } else if (bV1.comeTheApocalypse.contains(bV2.getId())) {
+                            niemals = true;
                         }
-                    }
                 }
-                text.append(ZEILENUMBRUCH);
-                text.append("[" + (myBuildaVaterVec.size() > 1 ? " " : "x") + "] Kein Bündnis\n");
-                text.append("[" + (waffenbrueder ? "x" : " ") + "] Waffenbrüder\n");
-                text.append("[" + (zweckbuendnis ? "x" : " ") + "] Zweckbündnis\n");
-                text.append("[" + (verzweifelt ? "x" : " ") + "] Verzweifelte Verbündete\n");
-                text.append("[" + (niemals ? "x" : " ") + "] Niemals\n");
             }
+            text.append(ZEILENUMBRUCH)
+                .append("[").append(myBuildaVaterVec.size() > 1 ? " " : "x").append("] Kein Bündnis\n")
+                .append("[").append(waffenbrueder ? "x" : " ").append("] Waffenbrüder\n")
+                .append("[").append(zweckbuendnis ? "x" : " ").append("] Zweckbündnis\n")
+                .append("[").append(verzweifelt ? "x" : " ").append("] Verzweifelte Verbündete\n")
+                .append("[").append(niemals ? "x" : " ").append("] Niemals\n");
+        }
 
-            for (int i = 0; i < noAllies.size(); i++) {
-                LOGGER.info("No Allies: " + noAllies.get(i));
+        for (String noAlly : noAllies) {
+            LOGGER.info("No Allies: " + noAlly);
+        }
+        for (String triedAlly : triedAllies) {
+            LOGGER.info("Tried Ally: " + triedAlly);
+            if (noAllies.contains(triedAlly)) {
+                allyError = true;
+                break;
             }
-            for (int i = 0; i < triedAllies.size(); i++) {
-                LOGGER.info("Tried Ally: " + triedAllies.get(i));
-                if (noAllies.contains(triedAllies.get(i))) {
-                    allyError = true;
-                    break;
-                }
-            }
-            if (allyError == true) {
-                fehlerLabel.setText("Es wurde ein verbotenes Alliiertes Kontingent gewählt.");
-            } else if (mainCnt == 0) {
-                fehlerLabel.setText("Ein Kontingent muss als Haupt-Kontingent ausgewählt werden.");
-            } else if (mainCnt > 1) {
-                fehlerLabel.setText("Nur ein Kontingent darf als Haupt-Kontingent ausgewählt werden.");
-            } else {
-                fehlerLabel.setText("");
-            }
+        }
+        if (allyError) {
+            fehlerLabel.setText("Es wurde ein verbotenes Alliiertes Kontingent gewählt.");
+        } else if (mainCnt == 0) {
+            fehlerLabel.setText("Ein Kontingent muss als Haupt-Kontingent ausgewählt werden.");
+        } else if (mainCnt > 1) {
+            fehlerLabel.setText("Nur ein Kontingent darf als Haupt-Kontingent ausgewählt werden.");
+        } else {
+            fehlerLabel.setText("");
+        }
 
         textArea.setText(text.toString());
 
@@ -315,7 +273,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
     }
 
 
-    public StringBuilder getBuildaVaterText(BuildaVater bV) {
+    private StringBuilder getBuildaVaterText(BuildaVater bV) {
         ChooserGruppe cg;
         final StringBuilder text = new StringBuilder();
             if (bV.getKontingentTyp().startsWith("Alliiertes Kontingent")) {
@@ -367,9 +325,9 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                     triedAllies.add(bV.getId());
                 }
             }
-            text.append(/*bV.volk + " " +*/ bV.getKontingentTyp());
-            text.append(": \n" + bV.getFormationType());
-            text.append(": \n" + bV.getSpecialDetachmentType());
+            text.append(bV.getKontingentTyp())
+                .append(": \n").append(bV.getFormationType())
+                .append(": \n").append(bV.getSpecialDetachmentType());
             if (bV.Hauptkontingent.isSelected()) {
                 nameDerArtDerArmeeDekliniert = bV.nameDerArtDerArmeeDekliniert;
                 noAllies = (Vector<String>) bV.noAllies.clone();
@@ -419,11 +377,11 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                     orden = "";
                 }
             }
-            text.append(" - ");
-            text.append((int) bV.getKosten());
-            text.append(" Punkte");
-            text.append(" (PL " + (int) bV.getPower() + ")");
-            text.append(ZEILENUMBRUCH);
+            text.append(" - ")
+                .append((int) bV.getKosten())
+                .append(" Punkte")
+                .append(" (PL ").append((int) bV.getPower()).append(")")
+                .append(ZEILENUMBRUCH);
         if (BuildaHQ.zusatzInfos) {
             if (text.toString().length() != 0) {
                 text.append(ZEILENUMBRUCH);
@@ -433,19 +391,20 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 cg = bV.getChooserGruppe(i);
                 LOGGER.info("cg.getKosten()" + cg.getKosten());
                 LOGGER.info("getKosten()" + getKosten());
-                text.append(cg.getAnzahlText(false)
-                        + " "
-                        + cg.kategorieText()
-                        + ((cg.getAnzahl()) > 0 ? ": "
-                        + entferneNullNachkomma(cg.getKosten())
-                        + " "
-                        + BuildaHQ.translate("Pkt.")
-                        + "   "
-                        + BuildaHQ.formatDouble(
-                        (cg.getKosten())
-                                / (getKosten())
-                                * 100, 1) + "%"
-                        + ZEILENUMBRUCH : ZEILENUMBRUCH));
+                text.append(cg.getAnzahlText(false)).append(" ")
+                        .append(cg.kategorieText());
+                if (cg.getAnzahl() > 0) {
+                    text.append(": ")
+                            .append(entferneNullNachkomma(cg.getKosten()))
+                            .append(" ")
+                            .append(BuildaHQ.translate("Pkt."))
+                            .append("   ")
+                            .append(BuildaHQ.formatDouble(
+                            (cg.getKosten())
+                                    / (getKosten())
+                                    * 100, 1)).append("%");
+                }
+                text.append(ZEILENUMBRUCH);
             }
 
             if (BuildaHQ.kurzerText) {
@@ -489,12 +448,10 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
     @Override
 	public void itemStateChanged(ItemEvent event) {
-
-        armeelistenFormatAnpassen((JCheckBox) event.getSource() == kurzerTextCheckBox);
-
+        armeelistenFormatAnpassen(event.getSource() == kurzerTextCheckBox);
     }
 
-    public void armeelistenFormatAnpassen(boolean kurzeTextAnpassen) {
+    private void armeelistenFormatAnpassen(boolean kurzeTextAnpassen) {
 
         if (htmlStyleCheckBox.isSelected()) {
             BuildaHQ.formatierung = 1;
@@ -510,55 +467,21 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         if (kurzeTextAnpassen) {
             BuildaHQ.machTextStrings(kurzerTextCheckBox.isSelected());
         } // machTextStrings() verändert auch den boolean
-
         textAreaRefresh();
-
     }
 
     @Override
 	public void actionPerformed(ActionEvent event) {
-
         textArea.selectAll();
-
         textArea.requestFocusInWindow();
-
     }
-
     @Override
 	public double getKosten() {
         double kosten = 0.0;
-        for (int i = 0; i < myBuildaVaterVec.size(); i++) {
-            kosten += myBuildaVaterVec.get(i).getKosten();
+        for (BuildaVater buildaVater : myBuildaVaterVec) {
+            kosten += buildaVater.getKosten();
         }
         LOGGER.info("TextArea-Kosten: " + kosten);
         return kosten;
     }
-
-    protected String getTextSonstige() {
-        StringBuilder text = new StringBuilder("");
-
-        final String sterne = BuildaHQ.sterneAnzeigen ? "***************  " : "";
-
-        final String überschrift = (BuildaHQ.kurzerText ? "" : ZEILENUMBRUCH)
-                + ZEILENUMBRUCH + sterne + "Sonstiges" + sterne + ZEILENUMBRUCH;
-
-        text.append(überschrift);
-
-        for (int i = 0; i < sonstige.length; i++) {
-
-            text.append(sonstige[i].getText());
-
-        }
-
-        if (text.toString().endsWith(", ")) {
-
-            text = text.deleteCharAt(text.lastIndexOf(","));
-
-        }
-
-        text.append((BuildaHQ.kurzerText ? ZEILENUMBRUCH : "") + ZEILENUMBRUCH);
-
-        return text.toString();
-    }
-
 }

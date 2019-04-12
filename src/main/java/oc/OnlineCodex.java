@@ -1,6 +1,7 @@
 package oc;
 
 import com.github.zafarkhaja.semver.Version;
+import oc.persistence.oc.OCWriter;
 import oc.utils.ManifestUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -83,12 +84,7 @@ public class OnlineCodex extends BuildaPanel {
 
         @Override
         public void mouseDragged(MouseEvent event) {
-            JScrollPane sp;
-            if (myBuilderz.get(tab.getSelectedIndex() - 1).superformation != null) {
-                sp = (JScrollPane) myBuilderz.get(tab.getSelectedIndex() - 1).superformation.tab.getSelectedComponent();
-            } else {
-                sp = (JScrollPane) tab.getSelectedComponent();
-            }
+            JScrollPane sp = (JScrollPane) tab.getSelectedComponent();
             sp.getVerticalScrollBar().setValue(sp.getVerticalScrollBar().getValue() + (clickYWindow - event.getY()));
             sp.getHorizontalScrollBar().setValue(sp.getHorizontalScrollBar().getValue() + (clickXWindow - event.getX()));
             clickYWindow = event.getY();
@@ -238,7 +234,7 @@ public class OnlineCodex extends BuildaPanel {
             @Override
             public void actionPerformed(ActionEvent event) {
                 saveTextWindow = new SaveTextWindow(myWindow, prefs.get(PREFERENCES_SAVE_DIRECTORY, null));
-                saveTextWindow.setSaveText(getSaveText());
+                saveTextWindow.setSaveText(new OCWriter().getSaveText(myBuilderz, tab));
                 final String armyListHumanReadable = myBuilderTextArea.getText(); //neuGerri
                 saveTextWindow.setArmyList(armyListHumanReadable.replaceAll("\n", System.getProperty("line.separator")));//neuGerri
                 saveTextWindow.save();
@@ -341,11 +337,6 @@ public class OnlineCodex extends BuildaPanel {
                 saveButton.setLocation(BILDSCHIRMBREITE - 240, 4);
                 loadButton.setLocation(BILDSCHIRMBREITE - 305, 4);
                 tab.setSize(myWindow.getSize().width - 25, myWindow.getSize().height - 75);
-                for (BuildaVater buildaVater : myBuilderz) {
-                    if (buildaVater.superformation != null) {
-                        buildaVater.superformation.tab.setSize(myWindow.getSize().width - 38, myWindow.getSize().height - 129);
-                    }
-                }
                 myBuilderTextArea.setTextAreaBound(myWindow.getSize().height);
             }
 
@@ -448,14 +439,6 @@ public class OnlineCodex extends BuildaPanel {
             kostenD += buildaVater.getCP();
         }
         return kostenD;
-    }
-
-    public String getSaveText() {
-        StringBuilder s = new StringBuilder();
-        for (int i = 0; i < myBuilderz.size(); i++) {
-            s.append(tab.getTitleAt(i + 1)).append(SAVETEXT_UEBERSCHRIFTTRENNER2).append(myBuilderz.get(i).getId().equals("CM") ? myBuilderz.get(i).supplementBox.getSelectedItem() : myBuilderz.get(i).kontingentBox.getSelectedItem()).append(SAVETEXT_DETACHMENTTYPTRENNER1).append(myBuilderz.get(i).formationBox.getSelectedItem()).append(SAVETEXT_DETACHMENTTYPTRENNER2).append(myBuilderz.get(i).Hauptkontingent.isSelected() ? "y" : "n").append(SAVETEXT_DETACHMENTTYPTRENNER3).append(myBuilderz.get(i).getSaveText()).append(SAVETEXT_DETACHMENTTRENNER);
-        }
-        return s.toString();
     }
 
     public void load(String saveText) {
