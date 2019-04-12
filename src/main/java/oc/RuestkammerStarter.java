@@ -547,27 +547,11 @@ public class RuestkammerStarter extends OptionsVater {
     }
 
     @Override
-    public Element getSaveElement() {
-        final Element root = myKammer.getSaveElement();
-        root.setAttribute("selected", Boolean.toString(isSelected()));
-        return root;
-    }
-
-    @Override
     public void load(String s) {
         myKammer.load(s.substring(s.indexOf(SAVETEXT_SELECTEDTRENNER) + SAVETEXT_SELECTEDTRENNER.length(), s.length()), einrueckIndex > 0 ? SAVETEXT_TRENNER1_6 : SAVETEXT_TRENNER1_5);
         texte = myKammer.getText().replace(", ", "\n- ").trim();
         sizeSetzen();
         this.setSelected(s.substring(0, 1).equals("Y"), false);
-        myKammer.setVisible(false);
-    }
-
-    @Override
-    public void loadElement(Element e) {
-        myKammer.loadElement(e);
-        texte = myKammer.getText().replace(", ", "\n- ").trim();
-        sizeSetzen();
-        this.setSelected(Boolean.parseBoolean(e.getAttribute("selected")), false);
         myKammer.setVisible(false);
     }
 

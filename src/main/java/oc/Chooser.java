@@ -301,29 +301,8 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         }
     }
 
-    public Element getSaveElement() {
-        //LOGGER.info("Chooser-getSaveElement");
-        if (getComboBox().getSelectedObjects()[0].toString().trim().equals("")) return null;
-
-        final Element root = myEintrag.getSaveElement();
-        root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
-
-//    	Element root = BuildaHQ.getNewXMLElement("Eintrag");
-//    	root.setAttribute("selection", getComboBox().getSelectedObjects()[0].toString());
-//
-//    	root.appendChild(myEintrag.getSaveElement());
-
-        return root;
-    }
-
     public void load(String s, String s2) {
-        //LOGGER.info("Chooser-load");
         myEintrag.load(s, s2);
-    }
-
-    public void loadElement(Element e) {
-        //LOGGER.info("Chooser-loadElement");
-        myEintrag.loadElement(e);
     }
 
     public void selectEntry(String s) {//Feste Auswahl für eine Formation
@@ -332,22 +311,21 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         cloneButton.setEnabled(false);
     }
 
-    public void selectEntryNotLocked(String s) {//Tauschbare Auswahl für eine Formation
+    void selectEntryNotLocked(String s) {//Tauschbare Auswahl für eine Formation
         myComboBox.setSelectedItem(s);
     }
 
-    public void removeEmptyEntry() {//Entfernt den leeren Eintrag am Anfang, damit die Einheit nicht abgewählt werden kann
+    void removeEmptyEntry() {//Entfernt den leeren Eintrag am Anfang, damit die Einheit nicht abgewählt werden kann
         myComboBox.remove(0);
     }
 
-    public void changeEntries(String[] units) { //Tauscht den Inhalt der Combobox aus
-        //LOGGER.info("Chooser-setAuswahlen");
+    void changeEntries(String[] units) { //Tauscht den Inhalt der Combobox aus
         useActionPerformed = false;
 
         // leeren und neufüllen der Liste
         myComboBox.removeAllItems();
-        for (int i = 0; i < units.length; i++) {
-            myComboBox.addItem(units[i]);
+        for (String unit : units) {
+            myComboBox.addItem(unit);
         }
 
         useActionPerformed = true;
@@ -355,7 +333,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         myComboBox.setSelectedItem(units[0]);
     }
 
-    public void setReflectionKennung(String s) {
+    void setReflectionKennung(String s) {
         reflectionKennung = s;
     }
 

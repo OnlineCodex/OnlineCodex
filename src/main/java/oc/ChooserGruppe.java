@@ -438,42 +438,12 @@ public class ChooserGruppe extends BuildaPanel {
         return sammler.toString();
     }
 
-    public Element getSaveElement() {
-        //LOGGER.info("ChooserGruppe-getSaveElement");
-        final Element root = BuildaHQ.getNewXMLElement("Category");
-        root.setAttribute("id", Integer.toString(kategorie));
-
-        for (int i = 0; i < mC.size(); i++) {
-            final Element e = mC.elementAt(i).getSaveElement();
-            if (e != null) {
-                root.appendChild(e);
-            }
-        }
-
-        return root;
-    }
-
     public void load(String saveText) {
         //LOGGER.info("ChooserGruppe-load");
         final String[] splittet = saveText.split(SAVETEXT_TRENNER3);
 
         for (int i = 0; i < BuildaHQ.countStringsInString(saveText, SAVETEXT_TRENNER3); ++i) {
             erstelleEintrag(splittet[i], i);
-        }
-    }
-
-    public void loadElement(Element e) {
-        //LOGGER.info("ChooserGruppe-loadElement");
-        final NodeList children = e.getChildNodes();
-
-        int index = 0;
-
-        for (int i = 0; i < children.getLength(); i++) {
-            if (children.item(i).getNodeType() == Node.ELEMENT_NODE) {
-                //                        LOGGER.info(children.item(i).getNodeName());
-                erstelleEintrag((Element) children.item(i), index);
-                index++;
-            }
         }
     }
 
@@ -493,42 +463,6 @@ public class ChooserGruppe extends BuildaPanel {
         c.load(saveText.substring(saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1) + SAVETEXT_UEBERSCHRIFTTRENNER1.length(), saveText.length()), SAVETEXT_TRENNER2);
 
         RefreshListener.fireRefresh();  // für die setAktiv() dinger bei Bossen, Sergeants usw.    wichtig!
-    }
-
-    public void erstelleEintrag(Element e, int index) {
-        //LOGGER.info("ChooserGruppe-erstelleEintrag");
-        final String klassenname = e.getAttribute("selection");
-
-        if (mC.size() <= index + 1 || !(mC.elementAt(index + 1).getEintrag() instanceof LeererEintrag)) { // an der Stelle index+1 wird ein neuer chooser geaddet
-            final Chooser c = new Chooser(buildaVater, randAbstand, 109, reflectionKennung, alleEinträge, kategorie, cloneListener);
-            c.setStatischeEinträge(statischeEinträge);
-            c.setSpezialEinträge(spezialEinträge);
-            adden(c, index + 1);
-        }
-
-        final Chooser c = mC.elementAt(index + 1); // WICHTIG!!!!!!!!"!!  WENN MANS 2mal mit elementAt(index+1) geht NIX mehr!
-        c.getComboBox().setSelectedItem(klassenname);
-        c.loadElement(e);
-
-        RefreshListener.fireRefresh();  // für die setAktiv() dinger bei Bossen, Sergeants usw.    wichtig!
-    }
-
-    public double getProzentKosten() {
-        //LOGGER.info("ChooserGruppe-getProzentKosten");
-        double kosten = 0;
-        if (reflectionKennung.equals("BT") && this.kategorie == 1) {
-            kosten = kosten - BuildaHQ.getCountFromInformationVectorGlobal("Grail");
-        }
-        for (int i = 0; i < mC.size(); ++i) {
-            if (mC.elementAt(i).getEintrag() != null && mC.elementAt(i).getEintrag().getEintragsCNT() != 0 && mC.elementAt(i).getEintrag().isCountToMinimum())
-                kosten += mC.elementAt(i).getKosten();
-
-            if (reflectionKennung.equals("IM") && mC.elementAt(i).getEintrag() != null) {
-                kosten = kosten - mC.elementAt(i).getEintrag().getProzentKosten();
-            }
-        }
-
-        return kosten;
     }
 
     public void addUnit(String s) {

@@ -108,21 +108,8 @@ public class NamePanel extends OptionsVater implements KeyListener {
     }
 
     @Override
-	public Element getSaveElement() {
-        final Element root = BuildaHQ.getNewXMLElement("NamePanel");
-        root.setAttribute("name", tName.getText());
-
-        return root;
-    }
-
-    @Override
     public void load(String s) {
         tName.setText(s);
-    }
-
-    @Override
-    public void loadElement(Element e) {
-        tName.setText(e.getAttribute("name"));
     }
 
     @Override

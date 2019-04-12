@@ -437,21 +437,6 @@ public class OptionsUpgradeGruppe extends OptionsVater {
     }
 
     @Override
-    public Element getSaveElement() {
-        final Element root = BuildaHQ.getNewXMLElement("UpgradeGroup");
-
-        for (int i = 0; i < myUpgrades.size(); i++) {
-            if (myUpgrades.get(i).isSelected()) {
-                final Element e = BuildaHQ.getNewXMLElement("Upgrade");
-                e.setAttribute("selection", Integer.toString(i));
-                root.appendChild(e);
-            }
-        }
-
-        return root;
-    }
-
-    @Override
     public void load(String s) {
         final String[] splittet = s.split(SAVETEXT_TRENNER1);
 
@@ -466,15 +451,6 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     public void setToolTipText(int i, String s) {
         myUpgrades.elementAt(i).getButton().setToolTipText(s);
-    }
-
-    @Override
-    public void loadElement(Element e) {
-        final NodeList children = e.getChildNodes();
-        for (int i = 0; i < children.getLength(); i++) {
-            final Element child = (Element) children.item(i);
-            myUpgrades.get(Integer.parseInt(child.getAttribute("selection"))).setSelected(true);
-        }
     }
 
     public void deleteYourself() {

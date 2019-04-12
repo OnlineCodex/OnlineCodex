@@ -23,11 +23,7 @@ public abstract class OptionsVater extends BuildaPanel implements BuildaSTK, Mou
 
     public abstract String getSaveText();
 
-    public abstract Element getSaveElement();
-
     public abstract void load(String s);
-
-    public abstract void loadElement(Element e);
 
     public abstract boolean isLegal();
 

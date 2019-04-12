@@ -485,32 +485,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 
     }
 
-
-    public Element getSaveElement() {
-        final Element root = BuildaHQ.getNewXMLElement(ELEMENT_NAME_ONLINECODEX);
-
-        //            ArrayList<Element> chooserGruppen = new ArrayList<Element>();
-
-        for (int i = 0; i < myChooserGruppen.size(); ++i) {
-            if (myChooserGruppen.elementAt(i).getmC().size() <= 1) continue;
-            root.appendChild(myChooserGruppen.elementAt(i).getSaveElement());
-        }
-
-        //            if(OnlineCodex.getGame() == OnlineCodex.NECROMUNDA) root.appendChild(getSaveElementSonstige());
-
-        if (sonstige != null) {
-            final Element sonstigeRoot = BuildaHQ.getNewXMLElement(ELEMENT_NAME_SONSTIGESGRUPPE);
-
-            for (int i = 0; i < sonstige.length; i++) {
-                sonstigeRoot.appendChild(sonstige[i].getSaveElement());
-            }
-
-            root.appendChild(sonstigeRoot);
-        }
-
-        return root;
-    }
-
     public void load(String saveText) {
 
         if (saveText.contains(SAVETEXT_SUBDETACHMENTTRENNER)) {
@@ -541,61 +515,6 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
             }
         }
 
-    }
-
-    public void loadElement(Element e) {
-        final NodeList childrenChooserGruppe = e.getElementsByTagName(ELEMENT_NAME_CATEGORY);
-
-        final int childrenMax = myChooserGruppen.size() > childrenChooserGruppe.getLength() ? childrenChooserGruppe.getLength() : myChooserGruppen.size();
-
-        for (int i = 0; i < myChooserGruppen.size(); ++i) {
-
-            final ChooserGruppe c = myChooserGruppen.elementAt(i);
-            if (!(c.getKategorie() == 1 || c.getKategorie() == 7)) continue;
-
-            for (int j = 0; j < childrenMax; j++) {
-                final Element child = (Element) childrenChooserGruppe.item(j);
-                final int id = Integer.parseInt(child.getAttribute("id"));
-
-                if (!(id == 1 || id == 7)) continue;
-
-                if (id == c.getKategorie()) {
-                    c.loadElement(child);
-                }
-            }
-        }
-
-        for (int i = 0; i < myChooserGruppen.size(); ++i) {
-
-            final ChooserGruppe c = myChooserGruppen.elementAt(i);
-            if ((c.getKategorie() == 1 || c.getKategorie() == 7)) continue;
-
-            for (int j = 0; j < childrenMax; j++) {
-                final Element child = (Element) childrenChooserGruppe.item(j);
-                final int id = Integer.parseInt(child.getAttribute("id"));
-
-                if (id == 1 || id == 7) continue;
-
-                if (id == c.getKategorie()) {
-                    c.loadElement(child);
-                }
-            }
-        }
-    }
-
-
-    protected void showModalDialog(String s) {
-        final ModalDialog md = new ModalDialog(s, true);
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-			public void run() {
-                md.setVisible(true);
-            }
-        });
-    }
-
-    public ChooserGruppe getChooserGruppeForChange(int i) {
-        return myChooserGruppen.elementAt(i - 1);
     }
 
     protected ChooserGruppe getChooserGruppe(int i) {

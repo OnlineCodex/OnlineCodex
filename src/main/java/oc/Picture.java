@@ -39,16 +39,7 @@ public class Picture extends OptionsVater {
     }
 
     @Override
-	public Element getSaveElement() {
-        return null;
-    }
-
-    @Override
     public void load(String s) {
-    }
-
-    @Override
-    public void loadElement(Element e) {
     }
 
     @Override

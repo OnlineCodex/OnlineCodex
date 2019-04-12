@@ -46,10 +46,6 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         return showKosten;
     }
 
-    public void setShowKosten(boolean showKosten) {
-        this.showKosten = showKosten;
-    }
-
     @Override
 	public double getKosten() {
         return myUpgrade.getKosten() * this.modelle;
@@ -144,21 +140,9 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         return text.toString();
     }
 
-    public void setToolTipText(String s) {
-        myUpgrade.getButton().setToolTipText(s);
-    }
-
     @Override
 	public String getSaveText() {
         return (this.isSelected() ? "y" : "n");
-    }
-
-    @Override
-	public Element getSaveElement() {
-        final Element root = BuildaHQ.getNewXMLElement("Upgrade");
-        root.setAttribute("selected", Boolean.toString(isSelected()));
-
-        return root;
     }
 
     @Override
@@ -166,16 +150,6 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         if (s.equals("y")) {
             myUpgrade.switsch();
         }
-    }
-
-    @Override
-	public void loadElement(Element e) {
-        this.setSelected(Boolean.parseBoolean(e.getAttribute("selected")));
-    }
-
-    public OptionsEinzelUpgrade setUnique(boolean unique) {
-        myUpgrade.unique = unique;
-        return this;
     }
 
     public OptionsEinzelUpgrade setRelic(boolean relic) {

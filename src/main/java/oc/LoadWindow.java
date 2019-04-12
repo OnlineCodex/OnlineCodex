@@ -1,6 +1,8 @@
 package oc;
 
-import java.awt.BorderLayout;
+import javax.swing.*;
+import javax.swing.filechooser.FileFilter;
+import java.awt.*;
 import java.io.File;
 import java.io.FileReader;
 import java.util.Locale;
@@ -8,18 +10,11 @@ import java.util.StringTokenizer;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.filechooser.FileFilter;
-
-import org.w3c.dom.Element;
-
 public class LoadWindow extends JPanel {
 
     private static final long serialVersionUID = 4239397313985019958L;
     private static final Predicate<String> FILE_NAME_REGEX = Pattern.compile("^.*\\.oc[a-z]*$").asPredicate();
-    public static final FileFilter OC_FILEFILER = new FileFilter() {
+    static final FileFilter OC_FILEFILER = new FileFilter() {
 
         @Override
         public boolean accept(File f) {
@@ -34,9 +29,8 @@ public class LoadWindow extends JPanel {
 
     private final JFileChooser fc;
     private String loadText = "";
-    private Element loadElement;
 
-    public LoadWindow(String currentDir) {
+    LoadWindow(String currentDir) {
         super(new BorderLayout());
 
         if (BuildaHQ.getSprache() == Sprache.English) {
@@ -51,15 +45,11 @@ public class LoadWindow extends JPanel {
         fc.setFileFilter(OC_FILEFILER);
     }
 
-    public String getLoadText() {
+    String getLoadText() {
         return loadText;
     }
 
-    public Element getLoadElement() {
-        return loadElement;
-    }
-
-    public String getCurrentDir() {
+    String getCurrentDir() {
         return fc.getCurrentDirectory().getAbsolutePath();
     }
 
@@ -71,9 +61,9 @@ public class LoadWindow extends JPanel {
         }
     }
 
-    public void loadFile(File file) {
+    void loadFile(File file) {
         try (FileReader leser = new FileReader(file)) {
-            String text = "";
+            StringBuilder text = new StringBuilder();
             loadText = "";
 
             for (; ; ) {
@@ -82,13 +72,13 @@ public class LoadWindow extends JPanel {
                     break;
                 }
                 final char gelesenChar = (char) gelesenInt;
-                text = text + gelesenChar;
+                text.append(gelesenChar);
             }
 
             leser.close();
 
             BuildaHQ.loadWindow = true;
-            final StringTokenizer tokenizer = new StringTokenizer(text, ";");
+            final StringTokenizer tokenizer = new StringTokenizer(text.toString(), ";");
 
             loadText = tokenizer.nextToken();
             loadText = loadText.substring(0, loadText.indexOf(SaveTextWindow.TOKEN));

@@ -1,48 +1,19 @@
 package oc;
 
-import static oc.RefreshListener.addRefreshListener;
+import com.github.zafarkhaja.semver.Version;
+import oc.utils.ManifestUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Frame;
-import java.awt.Insets;
-import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
-import java.util.Hashtable;
+import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import java.awt.*;
+import java.awt.event.*;
 import java.util.Optional;
 import java.util.Vector;
 import java.util.prefs.Preferences;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTextPane;
-import javax.swing.ToolTipManager;
-import javax.swing.event.ChangeEvent;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
-
-import com.github.zafarkhaja.semver.Version;
-
-import oc.utils.ManifestUtils;
+import static oc.RefreshListener.addRefreshListener;
 
 
 public class OnlineCodex extends BuildaPanel {
@@ -57,30 +28,27 @@ public class OnlineCodex extends BuildaPanel {
     private final JButton openCredits = new JButton();
     private final JButton saveButton = new JButton();
     private final JButton loadButton = new JButton();
-    private final Hashtable<String, String> dokumente = new Hashtable<String, String>();
     private final JFrame myWindow = new JFrame("OnlineCodex powered by OnlineCodex.de");
-    public SaveTextWindow saveTextWindow;
+    private SaveTextWindow saveTextWindow;
     private final Object[] buildazWh40k = new Object[]{
             "",
-            new IconedText("Aeldari", "oc/images/VSOrks.gif"),
-            new IconedText("Chaos", "oc/images/VSOrks.gif"),
-            new IconedText("Imperium", "oc/images/VSOrks.gif"),
-            new IconedText("Necrons", "oc/images/VSOrks.gif"),
-            new IconedText("Orks", "oc/images/VSOrks.gif"),
-            new IconedText("Tyraniden", "oc/images/VSOrks.gif"),
-            new IconedText("Tau Empire", "oc/images/VSOrks.gif"),
+            new IconedText("Aeldari"),
+            new IconedText("Chaos"),
+            new IconedText("Imperium"),
+            new IconedText("Necrons"),
+            new IconedText("Orks"),
+            new IconedText("Tyraniden"),
+            new IconedText("Tau Empire"),
     };
     JTabbedPane tab = new JTabbedPane();
-    private final JComboBox buildaChooser;
-    private final JPanel textPanel;
-    private final Vector<BuildaVater> myBuilderz = new Vector<BuildaVater>();
+    private final JComboBox<Object> buildaChooser;
+    private final Vector<BuildaVater> myBuilderz = new Vector<>();
 
-    private final Vector<JPanel> buildaPanelz = new Vector<JPanel>();
+    private final Vector<JPanel> buildaPanelz = new Vector<>();
     private final BuildaTextArea myBuilderTextArea;
     private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
     private int clickXWindow = 0;
     private int clickYWindow = 0;
-    private String aktVolk = "";
     private final LoadWindow loadWindow;
     private final BuildaMenu menu;
     private final Credits credits;
@@ -131,51 +99,6 @@ public class OnlineCodex extends BuildaPanel {
         public void mouseMoved(MouseEvent event) {
         }
     };
-    private final ActionListener volkChangeListener = new ActionListener() {
-
-        @Override
-        public void actionPerformed(ActionEvent event) {
-            String name = "";
-            try {
-                BuildaVater myBuilder = new LeererBuilder();
-
-                budget.setEnabled(true);
-                name = BuildaHQ.formZuKlassenName((buildaChooser.getSelectedObjects()[0]).toString());
-
-                aktVolk = name; // switch to new active army
-
-                if (name.equals("")) {
-                    return;//Es soll kein Leerer Tab eingefügt werden
-                } else {
-                    myBuilder = (BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + name).getDeclaredConstructor().newInstance());
-                }
-
-                if (event.getSource() == buildaChooser) {
-                    final JPanel buildaPanel = myBuilder.getPanel();
-                    buildaPanel.setPreferredSize(new Dimension(3500, 8000));
-                    buildaPanel.setSize(3500, 8000);
-                    buildaPanelz.add(buildaPanel);
-                    myBuilder.setTextArea(myBuilderTextArea);
-                    myBuilder.volk = (buildaChooser.getSelectedObjects()[0]).toString();
-                    myBuilderTextArea.addBuildaVater(myBuilder);
-                    myBuilderz.add(myBuilder);
-                    final JScrollPane sp = new JScrollPane(buildaPanel);
-                    sp.addMouseMotionListener(dragAndDropMouseMotionListener);
-                    sp.addMouseListener(dragAndDropMouseListener);
-                    sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
-                    sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
-                    tab.addTab(name, null, sp);
-                    tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab, onlineCodex));
-                    myBuilderTextArea.textAreaRefresh();
-                }
-                myWindow.repaint();
-            } catch (final Exception e) {
-                fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
-                LOGGER.error("", e);
-            }
-        }
-    };
-    private final RefreshListener refreshListener = addRefreshListener(RefreshListener.Priority.ONLINE_CODEX, this::refresh);
 
     private void refresh() {
         final double kosten = getKosten();
@@ -200,23 +123,9 @@ public class OnlineCodex extends BuildaPanel {
         }
     }
 
-//    private final KeyListener budgetChangeListener = new KeyListener() {
-//
-//        @Override
-//        public void keyTyped(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyPressed(KeyEvent e) {
-//        }
-//
-//        @Override
-//        public void keyReleased(KeyEvent e) {
-//            refreshListener.run();
-//        }
-//    };
-
     public OnlineCodex(Optional<Version> version, String[] args) {
+        addRefreshListener(RefreshListener.Priority.ONLINE_CODEX, this::refresh);
+
         final String windowTitle = "powered by OnlineCodex.de" + version
                 .map(v -> " – Version " + v)
                 .orElse("");
@@ -234,11 +143,55 @@ public class OnlineCodex extends BuildaPanel {
         myWindow.setIconImage(BuildaHQ.oCLogo);
 
         myWindow.setTitle("OnlineCodex Wh40k - " + windowTitle);
-        buildaChooser = new JComboBox(buildazWh40k);
+        buildaChooser = new JComboBox<>(buildazWh40k);
 
 
         buildaChooser.setBounds(5, 3, 290, 18);
         buildaChooser.setFocusable(false); // sie hat nie den Focus und wird deshalb nie durch die Pfeil-Unten-Taste geöffnet
+        // switch to new active army
+        //Es soll kein Leerer Tab eingefügt werden
+        ActionListener volkChangeListener = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent event) {
+                String name = "";
+                try {
+                    BuildaVater myBuilder;
+
+                    budget.setEnabled(true);
+                    name = BuildaHQ.formZuKlassenName((buildaChooser.getSelectedObjects()[0]).toString());
+
+                    if (name.equals("")) {
+                        return;//Es soll kein Leerer Tab eingefügt werden
+                    } else {
+                        myBuilder = (BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + name).getDeclaredConstructor().newInstance());
+                    }
+
+                    if (event.getSource() == buildaChooser) {
+                        final JPanel buildaPanel = myBuilder.getPanel();
+                        buildaPanel.setPreferredSize(new Dimension(3500, 8000));
+                        buildaPanel.setSize(3500, 8000);
+                        buildaPanelz.add(buildaPanel);
+                        myBuilder.setTextArea(myBuilderTextArea);
+                        myBuilder.volk = (buildaChooser.getSelectedObjects()[0]).toString();
+                        myBuilderTextArea.addBuildaVater(myBuilder);
+                        myBuilderz.add(myBuilder);
+                        final JScrollPane sp = new JScrollPane(buildaPanel);
+                        sp.addMouseMotionListener(dragAndDropMouseMotionListener);
+                        sp.addMouseListener(dragAndDropMouseListener);
+                        sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
+                        sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
+                        tab.addTab(name, null, sp);
+                        tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab, onlineCodex));
+                        myBuilderTextArea.textAreaRefresh();
+                    }
+                    myWindow.repaint();
+                } catch (final Exception e) {
+                    fehler("VOLK" + name + ".class nicht gefunden.\nBitte melden!!");
+                    LOGGER.error("", e);
+                }
+            }
+        };
         buildaChooser.addActionListener(volkChangeListener);
         BuildaHQ.newGUIComponent(buildaChooser);
         buildaChooser.setMaximumRowCount(30);
@@ -263,25 +216,13 @@ public class OnlineCodex extends BuildaPanel {
         openMenu.setText(BuildaHQ.translate("Menü"));
         openMenu.setBounds(BILDSCHIRMBREITE - 75, 4, 65, 16);
         BuildaHQ.newGUIComponent(openMenu);
-        openMenu.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                menu.setVisible(true);
-            }
-        });
+        openMenu.addActionListener(event -> menu.setVisible(true));
         menuPanel.add(openMenu);
 
         openCredits.setText(BuildaHQ.translate("Credits"));
         openCredits.setBounds(BILDSCHIRMBREITE - 155, 4, 75, 16);
         BuildaHQ.newGUIComponent(openCredits);
-        openCredits.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                credits.setVisible(true);
-            }
-        });
+        openCredits.addActionListener(event -> credits.setVisible(true));
         menuPanel.add(openCredits);
 
         saveTextWindow = new SaveTextWindow(myWindow, prefs.get(PREFERENCES_SAVE_DIRECTORY, null));
@@ -309,24 +250,12 @@ public class OnlineCodex extends BuildaPanel {
         loadButton.setBounds(BILDSCHIRMBREITE - 305, 4, 60, 16);
         loadButton.setBorder(null);
         loadButton.setMargin(new Insets(0, 0, 0, 0));
-        loadButton.addActionListener(new ActionListener() {
+        loadButton.addActionListener(event -> {
+            loadWindow.load();
+            loadWindow.setVisible(true);
 
-            @Override
-            public void actionPerformed(ActionEvent event) {
-                loadWindow.load();
-                loadWindow.setVisible(true);
-
-                if (loadWindow.getLoadElement() != null) {
-                    loadElement(loadWindow.getLoadElement(), true);
-                } else if (!loadWindow.getLoadText().trim().equals("")) {
-                    load(loadWindow.getLoadText(), true);
-					/*if(getGame()==WH40K){
-						//Speichern der Hauptarmee
-						aktVolk=BuildaHQ.formZuKlassenName(loadWindow.getLoadText().substring(0, loadWindow.getLoadText().indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)));
-						dokumente.put(aktVolk, getSaveText());
-					}*/
-                }
-
+            if (!loadWindow.getLoadText().trim().equals("")) {
+                load(loadWindow.getLoadText());
             }
         });
         menuPanel.add(loadButton);
@@ -340,7 +269,7 @@ public class OnlineCodex extends BuildaPanel {
 
 
         myBuilderTextArea = new BuildaTextArea();
-        textPanel = myBuilderTextArea.getPanel();
+        JPanel textPanel = myBuilderTextArea.getPanel();
         tab.addTab("Liste", null, textPanel);
         tab.setLocation(5, menuHöhe + 5);
         tab.setSize((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 25, (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 55);
@@ -412,9 +341,9 @@ public class OnlineCodex extends BuildaPanel {
                 saveButton.setLocation(BILDSCHIRMBREITE - 240, 4);
                 loadButton.setLocation(BILDSCHIRMBREITE - 305, 4);
                 tab.setSize(myWindow.getSize().width - 25, myWindow.getSize().height - 75);
-                for (int i = 0; i < myBuilderz.size(); i++) {
-                    if (myBuilderz.get(i).superformation != null) {
-                        myBuilderz.get(i).superformation.tab.setSize(myWindow.getSize().width - 38, myWindow.getSize().height - 129);
+                for (BuildaVater buildaVater : myBuilderz) {
+                    if (buildaVater.superformation != null) {
+                        buildaVater.superformation.tab.setSize(myWindow.getSize().width - 38, myWindow.getSize().height - 129);
                     }
                 }
                 myBuilderTextArea.setTextAreaBound(myWindow.getSize().height);
@@ -441,7 +370,7 @@ public class OnlineCodex extends BuildaPanel {
         if (args.length > 0) {
             loadWindow.loadFile(new java.io.File(args[0]));
             if (!loadWindow.getLoadText().trim().equals("")) {
-                load(loadWindow.getLoadText(), true);
+                load(loadWindow.getLoadText());
             }
         }
 
@@ -457,32 +386,23 @@ public class OnlineCodex extends BuildaPanel {
         return onlineCodex;
     }
 
-    public BuildaMenu getMenu() {
+    BuildaMenu getMenu() {
         return this.menu;
     }
 
-    public int getBudget() {
-        return Integer.parseInt(budget.getText());
-    }
-
-    public JPanel getBuildaPanel() {
+    JPanel getBuildaPanel() {
         return panel;
     }
 
-    public MouseListener getDragAndDropMouseListener() {
+    MouseListener getDragAndDropMouseListener() {
         return dragAndDropMouseListener;
     }
 
-    public MouseMotionListener getDragAndDropMouseMotionListener() {
+    MouseMotionListener getDragAndDropMouseMotionListener() {
         return dragAndDropMouseMotionListener;
     }
 
-    public boolean dokumenteContains(String s) {
-        s = BuildaHQ.formZuKlassenName(s);
-        return dokumente.get(s) != null;
-    }
-
-    public final void fehler(String s) {
+    final void fehler(String s) {
         myDialog = new JDialog(myWindow, "Fehler", true);
         final JTextPane myTextPane = new JTextPane();
 
@@ -495,13 +415,7 @@ public class OnlineCodex extends BuildaPanel {
 
         final JButton myButton = new JButton("OK");
 
-        final ActionListener listener = new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                myDialog.setVisible(false);
-            }
-        };
+        final ActionListener listener = e -> myDialog.setVisible(false);
 
         myButton.addActionListener(listener);
         myButton.setBounds(myTextPane.getWidth() / 2 - 75 / 2, myTextPane.getHeight() + 15, 75, 25);
@@ -522,71 +436,29 @@ public class OnlineCodex extends BuildaPanel {
     @Override
     public double getKosten() {
         double kostenD = 0.0;
-        for (int i = 0; i < myBuilderz.size(); i++) {
-            kostenD += myBuilderz.get(i).getKosten();
+        for (BuildaVater buildaVater : myBuilderz) {
+            kostenD += buildaVater.getKosten();
         }
         return kostenD;
     }
 
-    public double getCP() {
+    private double getCP() {
         double kostenD = 0.0;
-        for (int i = 0; i < myBuilderz.size(); i++) {
-            kostenD += myBuilderz.get(i).getCP();
+        for (BuildaVater buildaVater : myBuilderz) {
+            kostenD += buildaVater.getCP();
         }
         return kostenD;
     }
 
     public String getSaveText() {
-        String s = "";
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i < myBuilderz.size(); i++) {
-            s += tab.getTitleAt(i + 1) + SAVETEXT_UEBERSCHRIFTTRENNER2 +
-                    (myBuilderz.get(i).getId().equals("CM") ? myBuilderz.get(i).supplementBox.getSelectedItem() : myBuilderz.get(i).kontingentBox.getSelectedItem()) + SAVETEXT_DETACHMENTTYPTRENNER1 +
-                    myBuilderz.get(i).formationBox.getSelectedItem() + SAVETEXT_DETACHMENTTYPTRENNER2 +
-                    (myBuilderz.get(i).Hauptkontingent.isSelected() ? "y" : "n") + SAVETEXT_DETACHMENTTYPTRENNER3 +
-                    myBuilderz.get(i).getSaveText() + SAVETEXT_DETACHMENTTRENNER;
+            s.append(tab.getTitleAt(i + 1)).append(SAVETEXT_UEBERSCHRIFTTRENNER2).append(myBuilderz.get(i).getId().equals("CM") ? myBuilderz.get(i).supplementBox.getSelectedItem() : myBuilderz.get(i).kontingentBox.getSelectedItem()).append(SAVETEXT_DETACHMENTTYPTRENNER1).append(myBuilderz.get(i).formationBox.getSelectedItem()).append(SAVETEXT_DETACHMENTTYPTRENNER2).append(myBuilderz.get(i).Hauptkontingent.isSelected() ? "y" : "n").append(SAVETEXT_DETACHMENTTYPTRENNER3).append(myBuilderz.get(i).getSaveText()).append(SAVETEXT_DETACHMENTTRENNER);
         }
-        return s;
+        return s.toString();
     }
 
-    public Element getSaveElement() {
-        final Element root = myBuilderz.get(tab.getSelectedIndex() - 1).getSaveElement();
-        root.setAttribute("choice", buildaChooser.getSelectedObjects()[0].toString());
-        if (budget != null && budget.isEnabled() && !budget.getText().equals("")) {
-            root.setAttribute("budget", Integer.toString(getBudget()));
-        }
-
-        return root;
-    }
-
-    public BuildaVater getBuilder() {
-        return myBuilderz.get(tab.getSelectedIndex() + 1);
-    }
-
-    public JComboBox getChooser() {
-        return buildaChooser;
-    }
-
-    public void loadElement(Element e, boolean chooserUmstellen) {
-        try {
-            if (chooserUmstellen) {
-                setSelectedItemInBuildaChooser(e.getAttribute("choice"));
-            }
-
-            myBuilderz.get(tab.getSelectedIndex() - 1).loadElement(e);
-
-            if (!e.getAttribute("budget").equals("")) {
-                budget.setText(e.getAttribute("budget"));
-            }
-
-            BuildaHQ.loadWindow = false;
-            loadWindow.setVisible(false);
-        } catch (final Exception ex) {
-            LOGGER.error("", ex);
-            JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden"));
-        }
-    }
-
-    public void load(String saveText, boolean chooserUmstellen) {
+    public void load(String saveText) {
         if (saveText.trim().equals("")) {
             return;
         }
@@ -603,7 +475,7 @@ public class OnlineCodex extends BuildaPanel {
             }
 
             if (saveText.contains(SAVETEXT_DETACHMENTTRENNER)) {
-                final String armies[] = saveText.split(SAVETEXT_DETACHMENTTRENNER);
+                final String[] armies = saveText.split(SAVETEXT_DETACHMENTTRENNER);
                 for (int i = 0; i < armies.length; i++) {
                     LOGGER.info(armies[i]);
                     myBuilderz.add((BuildaVater) (Class.forName(ARMY_PACKAGE + "armies.VOLK" + BuildaHQ.formZuKlassenName(armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2)))).getDeclaredConstructor().newInstance()));
@@ -657,15 +529,15 @@ public class OnlineCodex extends BuildaPanel {
                         myBuilderz.get(i).Hauptkontingent.doClick();
                     }
                     if (armies[i].contains(SAVETEXT_FARSIGHT)) {
-                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_FARSIGHT) + SAVETEXT_FARSIGHT.length(), armies[i].length()));
+                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_FARSIGHT) + SAVETEXT_FARSIGHT.length()));
                     } else if (armies[i].contains(SAVETEXT_CADIANS)) {
-                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_CADIANS) + SAVETEXT_CADIANS.length(), armies[i].length()));
+                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_CADIANS) + SAVETEXT_CADIANS.length()));
                     } else if (armies[i].contains(SAVETEXT_SOT) && armies[i].contains(SAVETEXT_RAUKAAN)) {
-                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_SOT) + SAVETEXT_SOT.length(), armies[i].length()));
+                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_SOT) + SAVETEXT_SOT.length()));
                     } else if (armies[i].contains(SAVETEXT_RAUKAAN)) {
-                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_RAUKAAN) + SAVETEXT_RAUKAAN.length(), armies[i].length()));
+                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_RAUKAAN) + SAVETEXT_RAUKAAN.length()));
                     } else {
-                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].length()));
+                        myBuilderz.get(i).load(armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length()));
                     }
                     myBuilderz.get(i).isLoading = false;
                 }
@@ -718,25 +590,20 @@ public class OnlineCodex extends BuildaPanel {
                     myBuilderz.get(0).Hauptkontingent.doClick();
                 }
                 if (saveText.contains(SAVETEXT_FARSIGHT)) {
-                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_FARSIGHT) + SAVETEXT_FARSIGHT.length(), saveText.length()));
+                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_FARSIGHT) + SAVETEXT_FARSIGHT.length()));
                 } else if (saveText.contains(SAVETEXT_CADIANS)) {
-                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_CADIANS) + SAVETEXT_CADIANS.length(), saveText.length()));
+                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_CADIANS) + SAVETEXT_CADIANS.length()));
                 } else if (saveText.contains(SAVETEXT_SOT) && saveText.contains(SAVETEXT_RAUKAAN)) {
-                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_SOT) + SAVETEXT_SOT.length(), saveText.length()));
+                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_SOT) + SAVETEXT_SOT.length()));
                 } else if (saveText.contains(SAVETEXT_RAUKAAN)) {
-                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_RAUKAAN) + SAVETEXT_RAUKAAN.length(), saveText.length()));
+                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_RAUKAAN) + SAVETEXT_RAUKAAN.length()));
                 } else {
-                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.length()));
+                    myBuilderz.get(0).load(saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length()));
                 }
                 myBuilderz.get(0).isLoading = false;
             }
-
-
-            //BuildaHQ.aktBuildaVater=null;
             BuildaHQ.loadWindow = false;
             loadWindow.setVisible(false);
-
-
         } catch (final Exception e) {
             LOGGER.error("", e);
             JOptionPane.showMessageDialog(null, BuildaHQ.translate("Datei konnte nicht gelesen werden."));
@@ -758,36 +625,31 @@ public class OnlineCodex extends BuildaPanel {
     }
 
 
-    public void dokumentLeeren() {
+    void dokumentLeeren() {
         setSelectedItemInBuildaChooser(buildaChooser.getSelectedItem()); // ruft actionPerformed(ActionEvent event) auf
-
     }
 
-    public void setSelectedItemInBuildaChooser(Object s) {
+    private void setSelectedItemInBuildaChooser(Object s) {
         final Object[] buildaz = buildazWh40k;
-        for (int i = 0; i < buildaz.length; ++i) {
-            if (buildaz[i].toString().equals(s.toString())) {
-                buildaChooser.setSelectedItem(buildaz[i]);
+        for (Object o : buildaz) {
+            if (o.toString().equals(s.toString())) {
+                buildaChooser.setSelectedItem(o);
             }
         }
     }
 
-    public String getCurrentArmy() {
-        return this.aktVolk;
-    }
-
-    public Preferences getPrefs() {
+    Preferences getPrefs() {
         return prefs;
     }
 
-    public void savePreferences() {
+    private void savePreferences() {
         prefs.put(PREFERENCES_SAVE_DIRECTORY, saveTextWindow.getCurrentDir());
         prefs.put(PREFERENCES_LOAD_DIRECTORY, loadWindow.getCurrentDir());
 
         menu.savePrefs();
     }
 
-    public void removeBuilda(int i) {
+    void removeBuilda(int i) {
         final BuildaVater bV = myBuilderz.get(i);
         for (int j = 0; j < bV.getChooserAnzahl(); j++) {
             final ChooserGruppe cg = bV.getChooserGruppe(j);
@@ -808,10 +670,9 @@ public class OnlineCodex extends BuildaPanel {
 
     static class IconedText {
 
-        ImageIcon icon;
         String text;
 
-        public IconedText(String t, String path) {
+        IconedText(String t) {
             this.text = t;
         }
 

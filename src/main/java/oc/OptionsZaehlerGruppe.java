@@ -335,23 +335,6 @@ public class OptionsZaehlerGruppe extends OptionsVater {
     }
 
     @Override
-	public Element getSaveElement() {
-        final Element root = BuildaHQ.getNewXMLElement("CounterGroup");
-
-        for (int i = 0; i < myZaehlers.size(); i++) {
-            if (myZaehlers.get(i).getAnzahl() > 0) {
-                final Element e = BuildaHQ.getNewXMLElement("Counter");
-                e.setAttribute("selection", Integer.toString(i));
-                e.setAttribute("number", Integer.toString(myZaehlers.elementAt(i).getRealAnzahl()));
-
-                root.appendChild(e);
-            }
-        }
-
-        return root;
-    }
-
-    @Override
 	public void load(String s) {
         final String[] splittet = s.split(SAVETEXT_TRENNER1);
 
@@ -361,16 +344,4 @@ public class OptionsZaehlerGruppe extends OptionsVater {
 
         fontKontrolle();
     }
-
-    @Override
-	public void loadElement(Element e) {
-        final NodeList children = e.getChildNodes();
-
-        for (int i = 0; i < children.getLength(); ++i) {
-            final Element child = (Element) children.item(i);
-
-            myZaehlers.get(Integer.parseInt(e.getAttribute("selection"))).setAnzahl(Integer.parseInt(child.getAttribute("number")));
-        }
-    }
-
 }

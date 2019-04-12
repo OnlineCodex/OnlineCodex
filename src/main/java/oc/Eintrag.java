@@ -297,6 +297,11 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 	}
 
 	@Override
+	public String getSaveText(String trenner) {
+		return super.getSaveText(trenner);
+	}
+
+	@Override
 	public String getText() {  // der Text, der in der Textarea als Armeeliste angezeigt wird, wird immer in  getText()  Methoden generiert.
 		if (this instanceof LeererEintrag) return "";
 
