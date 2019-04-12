@@ -17,10 +17,10 @@ public class CHFoetidBloatDrone extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Two plaguespitters", getPts("Plaguespitter") + getPts("Plaguespitter")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy blight-launcher", getPts("Heavy blight-launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Fleshmower", getPts("Fleshmower")));
-        add(spitter = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(spitter = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         ogE.addElement(new OptionsGruppeEintrag("Plague probe", getPts("Plague probe")));
-        add(probe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(probe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         complete();
 

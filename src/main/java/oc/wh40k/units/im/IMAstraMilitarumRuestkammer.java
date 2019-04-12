@@ -95,47 +95,47 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         if (type == "Company Commander" || type == "Platoon Commander") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE = IMAstraMilitarumRangedWeapons.createRK("Laspistol", "Laspistol", buildaVater);
             ogE.addElement(new OptionsGruppeEintrag("Shotgun", getPts("Shotgun")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type == "Lord Commissar" || type == "Commissar") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Power sword", "Power sword (AM)", buildaVater);
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             seperator();
 
             ogE = IMAstraMilitarumRangedWeapons.createRK("Bolt pistol", "Bolt pistol (AM)", buildaVater);
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type == "Sergeant") {
 
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power axe [INDEX]", getPts("Power axe (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power maul [INDEX]", getPts("Power maul (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AM)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE = IMAstraMilitarumRangedWeapons.createRK("Laspistol", "Laspistol", buildaVater);
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type == "Veteran Sergeant") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE = IMAstraMilitarumRangedWeapons.createRK("Laspistol", "Laspistol", buildaVater);
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type == "Temperstor Prime") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -144,11 +144,11 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type == "Tempestor") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -156,7 +156,7 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AM)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if(o1 != null) {
@@ -189,9 +189,9 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
             o2.alwaysSelected();
 
             if(type == "Lord Commissar"){
-            	o1.setMaxAnzahl(2);
+            	o1.setMaxAmount(2);
             } else{
-            	o1.setMaxAnzahl(1);
+            	o1.setMaxAmount(1);
             }
 
         } else if (type == "Temperstor Prime") {

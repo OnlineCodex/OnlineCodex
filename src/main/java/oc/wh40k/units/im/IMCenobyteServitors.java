@@ -35,7 +35,7 @@ public class IMCenobyteServitors extends Eintrag {
 
     public void refreshen() {
 
-        setUnikat(true);
+        setUnique(true);
 
     }
 

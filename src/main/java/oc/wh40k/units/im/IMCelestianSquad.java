@@ -24,7 +24,7 @@ public class IMCelestianSquad extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, CELESTIAN_SQUAD);
         name = "Celestian Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Celestian Squad", 5, 10, getPts("Celestian Squad"));
         add(squad);

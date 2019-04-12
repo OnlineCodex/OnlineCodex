@@ -26,7 +26,7 @@ public class CHChaosLordonDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

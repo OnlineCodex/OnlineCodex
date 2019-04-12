@@ -46,7 +46,7 @@ public class IMGrandMasterinNemesisDreadknight extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

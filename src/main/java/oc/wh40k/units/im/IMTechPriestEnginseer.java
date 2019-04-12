@@ -26,7 +26,7 @@ public class IMTechPriestEnginseer extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

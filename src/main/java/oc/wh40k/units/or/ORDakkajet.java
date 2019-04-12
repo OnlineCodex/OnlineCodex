@@ -17,7 +17,7 @@ public class ORDakkajet extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("4 supa shootas", getPts("supa shoota") * 4));
         ogE.addElement(new OptionsGruppeEintrag("6 supa shootas", getPts("supa shoota") * 6));
-        add(ss = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(ss = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         complete();
     }

@@ -31,7 +31,7 @@ public class IMShieldCaptainKammer extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Sentinel blade & Storm shield", getPts("Sentinel blade") + getPts("Storm shield (AC Characters)")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 

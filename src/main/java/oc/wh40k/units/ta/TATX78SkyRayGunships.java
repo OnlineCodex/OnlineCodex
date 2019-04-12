@@ -11,7 +11,7 @@ public class TATX78SkyRayGunships extends Eintrag {
 
     public TATX78SkyRayGunships() {
         name = "TX78 Sky Ray Gunship";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         seperator();

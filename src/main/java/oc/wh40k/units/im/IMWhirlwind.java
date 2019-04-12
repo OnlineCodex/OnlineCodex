@@ -18,7 +18,7 @@ public class IMWhirlwind extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Vengeance launcher", getPts("Whirlwind Vengeance launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Castellan launcher", getPts("Whirlwind Castellan launcher")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

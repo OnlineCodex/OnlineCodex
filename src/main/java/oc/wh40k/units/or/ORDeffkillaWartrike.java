@@ -24,7 +24,7 @@ public class ORDeffkillaWartrike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

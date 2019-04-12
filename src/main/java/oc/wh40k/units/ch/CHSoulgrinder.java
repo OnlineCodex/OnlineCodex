@@ -17,7 +17,7 @@ public class CHSoulgrinder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Warpsword", getPts("Warpsword")));
         ogE.addElement(new OptionsGruppeEintrag("Warpclaw", getPts("Warpclaw")));
-        add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(waffe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
 
         seperator();
@@ -26,7 +26,7 @@ public class CHSoulgrinder extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(mark = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
 

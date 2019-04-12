@@ -17,22 +17,22 @@ public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Blade struts", getPts("Blade struts")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Thermal jet array", getPts("Thermal jet array")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Melta cutters", getPts("Melta cutters")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("5 Kharybdis storm launchers", getPts("Kharybdis storm launchers") * 5));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -40,7 +40,7 @@ public class CHHellforgedKharybdisAssaultClaw extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

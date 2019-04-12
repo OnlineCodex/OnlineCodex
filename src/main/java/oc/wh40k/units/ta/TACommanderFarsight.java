@@ -14,14 +14,14 @@ public class TACommanderFarsight extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Farsight Enclaves: Hero of the Enclaves", true);
+        addWarlordTraits("Farsight Enclaves: Hero of the Enclaves");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

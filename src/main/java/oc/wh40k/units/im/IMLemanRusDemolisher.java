@@ -27,7 +27,7 @@ public class IMLemanRusDemolisher extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Eradicator nova cannon", getPts("Eradicator nova cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Leman Russ Conqueror [IA1 2nd Ed]", 150));
         ogE.addElement(new OptionsGruppeEintrag("Leman Russ Annihilator [IA1 2nd Ed]", 130));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
@@ -35,7 +35,7 @@ public class IMLemanRusDemolisher extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         seperator();
@@ -44,7 +44,7 @@ public class IMLemanRusDemolisher extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Multi-meltas", getPts("Multi-melta (AM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma cannons", getPts("Plasma cannon (AM)") * 2));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

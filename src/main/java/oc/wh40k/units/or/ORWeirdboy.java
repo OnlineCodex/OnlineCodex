@@ -11,7 +11,7 @@ public class ORWeirdboy extends Eintrag {
 
     public ORWeirdboy() {
 
-        kategorie = 1;
+        category = 1;
         name = "Wyrdboy";
         grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
         power = 3;
@@ -38,7 +38,7 @@ public class ORWeirdboy extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

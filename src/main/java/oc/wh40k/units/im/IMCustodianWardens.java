@@ -25,7 +25,7 @@ public class IMCustodianWardens extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
 
 

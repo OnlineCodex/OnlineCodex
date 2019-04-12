@@ -16,7 +16,7 @@ public class IMTacticalSquad extends Eintrag {
 	public IMTacticalSquad() {
         name = "Tactical Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Tactical Squad"));
         add(squad);
@@ -30,7 +30,7 @@ public class IMTacticalSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Grav-gun", getPts("Grav-gun")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -43,7 +43,7 @@ public class IMTacticalSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Gravcannon and grav-amp", getPts("Gravcannon and grav-amp")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", getPts("Plasma cannon (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -61,8 +61,8 @@ public class IMTacticalSquad extends Eintrag {
     @Override
     public void refreshen() {
 
-        o1.setAktiv(!o2.isSelected() || squad.getModelle() == 10);
-        o2.setAktiv(!o1.isSelected() || squad.getModelle() == 10);
+        o1.setActive(!o2.isSelected() || squad.getModelle() == 10);
+        o2.setActive(!o1.isSelected() || squad.getModelle() == 10);
 
         if (squad.getModelle() < 10 && o1.isSelected() && o2.isSelected()) {
             o2.setSelected(0, false);

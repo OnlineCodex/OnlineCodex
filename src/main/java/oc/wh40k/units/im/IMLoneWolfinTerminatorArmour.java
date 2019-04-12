@@ -24,7 +24,7 @@ public class IMLoneWolfinTerminatorArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

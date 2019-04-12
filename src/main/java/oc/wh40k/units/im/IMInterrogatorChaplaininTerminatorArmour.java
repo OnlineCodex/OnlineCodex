@@ -15,7 +15,7 @@ public class IMInterrogatorChaplaininTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

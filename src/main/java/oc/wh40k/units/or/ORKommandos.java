@@ -10,7 +10,7 @@ public class ORKommandos extends Eintrag {
 	private final OptionsEinzelUpgrade boss;
 
     public ORKommandos() {
-        kategorie = 2;
+        category = 2;
         grundkosten = 0;
 
         kommandoz = new AnzahlPanel(ID, randAbstand, cnt, "Kommandos", 5, 15, getPts("Kommandos"));

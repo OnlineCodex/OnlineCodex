@@ -19,7 +19,7 @@ public class TYTyrannofex extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Acid spray", getPts("Acid spray")));
         ogE.addElement(new OptionsGruppeEintrag("Fleshborer hive", getPts("Fleshborer hive")));
         ogE.addElement(new OptionsGruppeEintrag("Rupture cannon", getPts("Rupture cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         complete();

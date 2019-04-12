@@ -45,7 +45,7 @@ public class TYHiveTyrant extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -18,7 +18,7 @@ public class CHRubricMarines extends Eintrag {
 
     public CHRubricMarines() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Rubric Marines";
         grundkosten = 0;

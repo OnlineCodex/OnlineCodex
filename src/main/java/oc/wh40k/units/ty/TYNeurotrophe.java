@@ -34,7 +34,7 @@ public class TYNeurotrophe extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -33,7 +33,7 @@ public class AERaider extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Disintegrator cannon", getPts("Disintegrator cannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 

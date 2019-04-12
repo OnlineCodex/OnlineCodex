@@ -27,14 +27,14 @@ public class CHAhrimanonDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Otherworldly Prescience", true);
+        addWarlordTraits("Otherworldly Prescience");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
 
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

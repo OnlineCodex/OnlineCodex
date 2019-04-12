@@ -19,7 +19,7 @@ public class OROrkMekBossBuzzgob extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Goffs: Proper Killy", true);
+        addWarlordTraits("Goffs: Proper Killy");
 
         complete();
     }
@@ -27,6 +27,6 @@ public class OROrkMekBossBuzzgob extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

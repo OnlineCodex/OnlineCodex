@@ -17,12 +17,12 @@ public class CHHellforgedDreadclawDropPod extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Blade struts", getPts("Blade struts")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Thermal jets", getPts("Thermal jets")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         seperator();
@@ -31,7 +31,7 @@ public class CHHellforgedDreadclawDropPod extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

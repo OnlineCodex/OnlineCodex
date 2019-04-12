@@ -24,7 +24,7 @@ public class IMWolfLordinCataphractiiArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

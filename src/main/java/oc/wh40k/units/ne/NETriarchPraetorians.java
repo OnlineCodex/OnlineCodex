@@ -22,7 +22,7 @@ public class NETriarchPraetorians extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Rod of covenant", getPts("Rod of covenant")));
         ogE.addElement(new OptionsGruppeEintrag("Voidblade & caster", "Voidblade and Particle casters", getPts("Voidblade") + getPts("Particle caster")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -22,13 +22,13 @@ public class IMCaptainLysander extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Imperial Fists: Architect of War", true);
+        addWarlordTraits("Imperial Fists: Architect of War");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

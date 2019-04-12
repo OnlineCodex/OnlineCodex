@@ -21,7 +21,7 @@ public class ORBommer extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("6 Bomms", 60));
         ogE.addElement(new OptionsGruppeEintrag("4 Bomms, 2 Grotbomms", 60));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         complete();

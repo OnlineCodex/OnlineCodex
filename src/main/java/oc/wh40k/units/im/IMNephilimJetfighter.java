@@ -28,7 +28,7 @@ public class IMNephilimJetfighter extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

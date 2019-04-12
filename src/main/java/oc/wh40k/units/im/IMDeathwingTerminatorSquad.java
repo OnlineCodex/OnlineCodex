@@ -103,7 +103,7 @@ public class IMDeathwingTerminatorSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Hammer and Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
 
-        add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(oe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         oe1.setSelected(0, true);
 

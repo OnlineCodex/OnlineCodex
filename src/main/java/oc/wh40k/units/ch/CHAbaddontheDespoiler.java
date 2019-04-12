@@ -12,7 +12,7 @@ public class CHAbaddontheDespoiler extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Black Legion: First Amongst Traitors", false);
+        addWarlordTraits("Black Legion: First Amongst Traitors");
 
         complete();
 
@@ -20,7 +20,7 @@ public class CHAbaddontheDespoiler extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         
         if(getWarlordtraits().warlordSelected) {
         	setInformationVectorValue("AdditionalCPAbaddon", 2);

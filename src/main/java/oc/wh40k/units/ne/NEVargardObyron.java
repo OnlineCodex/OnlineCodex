@@ -12,13 +12,13 @@ public class NEVargardObyron extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Sautekh: Hyperlogical Strategist", true);
+        addWarlordTraits("Sautekh: Hyperlogical Strategist");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

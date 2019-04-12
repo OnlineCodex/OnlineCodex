@@ -9,7 +9,7 @@ public class ORMogrok extends ORBigMek {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         super.refreshen();
     }
 

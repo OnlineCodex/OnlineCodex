@@ -11,13 +11,13 @@ public class IMDeathstormDropPod extends Eintrag {
     public IMDeathstormDropPod() {
         name = "Deathstorm Drop Pod";
         grundkosten = getPts("Deathstorm Drop Pod");
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/SMDeathwindDropPod.jpg"));
 
         ogE.addElement(new OptionsGruppeEintrag("Deathstorm missile array", getPts("Deathstorm missile array")));
         ogE.addElement(new OptionsGruppeEintrag("Deathstorm cannon array", getPts("Deathstorm cannon array")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         //seperator();
 

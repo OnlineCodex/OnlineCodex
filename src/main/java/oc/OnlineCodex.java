@@ -21,9 +21,10 @@ public class OnlineCodex extends BuildaPanel {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OnlineCodex.class);
 
-    static final int menuHöhe = 23;
+    private static final int MENU_HEIGHT = 23;
     private final static int FRAME_MIN_WIDTH = 750;
     static final String ARMY_PACKAGE = "oc.wh40k.";
+
     private static OnlineCodex onlineCodex;
     private final JButton openMenu = new JButton();
     private final JButton openCredits = new JButton();
@@ -41,11 +42,10 @@ public class OnlineCodex extends BuildaPanel {
             new IconedText("Tyraniden"),
             new IconedText("Tau Empire"),
     };
-    JTabbedPane tab = new JTabbedPane();
+    private JTabbedPane tab = new JTabbedPane();
     private final JComboBox<Object> buildaChooser;
     private final Vector<BuildaVater> myBuilderz = new Vector<>();
 
-    private final Vector<JPanel> buildaPanelz = new Vector<>();
     private final BuildaTextArea myBuilderTextArea;
     private JDialog myDialog = new JDialog(myWindow, "Fehler", true);
     private int clickXWindow = 0;
@@ -97,7 +97,7 @@ public class OnlineCodex extends BuildaPanel {
     };
 
     private void refresh() {
-        final double kosten = getKosten();
+        final double kosten = getCost();
         double cp = 3 + getCP();
 
         switch (BuildaHQ.getCountFromInformationVectorGlobal("Relic")) {
@@ -112,7 +112,7 @@ public class OnlineCodex extends BuildaPanel {
         }
 
         if (kosten != 0) {
-            kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
+            kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + ((int) kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + ((int) cp) + " CP");
             kostenLabel.setForeground(Color.BLACK);
         } else {
             kostenLabel.setText("");
@@ -167,7 +167,6 @@ public class OnlineCodex extends BuildaPanel {
                         final JPanel buildaPanel = myBuilder.getPanel();
                         buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                         buildaPanel.setSize(3500, 8000);
-                        buildaPanelz.add(buildaPanel);
                         myBuilder.setTextArea(myBuilderTextArea);
                         myBuilder.volk = (buildaChooser.getSelectedObjects()[0]).toString();
                         myBuilderTextArea.addBuildaVater(myBuilder);
@@ -175,8 +174,8 @@ public class OnlineCodex extends BuildaPanel {
                         final JScrollPane sp = new JScrollPane(buildaPanel);
                         sp.addMouseMotionListener(dragAndDropMouseMotionListener);
                         sp.addMouseListener(dragAndDropMouseListener);
-                        sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
-                        sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
+                        sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
+                        sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
                         tab.addTab(name, null, sp);
                         tab.setTabComponentAt(myBuilderz.size(), new ButtonTabComponent(tab, onlineCodex));
                         myBuilderTextArea.textAreaRefresh();
@@ -205,7 +204,7 @@ public class OnlineCodex extends BuildaPanel {
 
         menuPanel.add(kostenLabel);
         menuPanel.setLayout(null);
-        menuPanel.setBounds(-1, -1, 2500 + 1, menuHöhe + 1); // -1 damit border oben net sichtbar ist    soll nur den unterens schwarzen Trennstrich machen
+        menuPanel.setBounds(-1, -1, 2500 + 1, MENU_HEIGHT + 1); // -1 damit border oben net sichtbar ist    soll nur den unterens schwarzen Trennstrich machen
         menuPanel.setBackground(Color.WHITE);
         menuPanel.setBorder(BorderFactory.createLineBorder(new Color(10, 40, 160)));
 
@@ -267,7 +266,7 @@ public class OnlineCodex extends BuildaPanel {
         myBuilderTextArea = new BuildaTextArea();
         JPanel textPanel = myBuilderTextArea.getPanel();
         tab.addTab("Liste", null, textPanel);
-        tab.setLocation(5, menuHöhe + 5);
+        tab.setLocation(5, MENU_HEIGHT + 5);
         tab.setSize((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth() - 25, (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - 55);
         tab.addChangeListener(this::onTabChange);
         myWindow.add(tab);
@@ -373,7 +372,7 @@ public class OnlineCodex extends BuildaPanel {
         new OnlineCodex(version, args); // neuGerrig
     }
 
-    public static OnlineCodex getInstance() {
+    static OnlineCodex getInstance() {
         return onlineCodex;
     }
 
@@ -425,10 +424,10 @@ public class OnlineCodex extends BuildaPanel {
     }
 
     @Override
-    public double getKosten() {
+    public double getCost() {
         double kostenD = 0.0;
         for (BuildaVater buildaVater : myBuilderz) {
-            kostenD += buildaVater.getKosten();
+            kostenD += buildaVater.getCost();
         }
         return kostenD;
     }
@@ -452,7 +451,6 @@ public class OnlineCodex extends BuildaPanel {
             BuildaHQ.leereStatischeInformationen();
             while (myBuilderz.size() > 0) {
                 myBuilderTextArea.removeBuildaVater(myBuilderz.get(0));
-                buildaPanelz.remove(0);
                 myBuilderz.remove(0);
                 tab.remove(1);
             }
@@ -465,15 +463,14 @@ public class OnlineCodex extends BuildaPanel {
                     final JPanel buildaPanel = myBuilderz.get(i).getPanel();
                     buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                     buildaPanel.setSize(3500, 8000);
-                    buildaPanelz.add(buildaPanel);
                     myBuilderz.get(i).setTextArea(myBuilderTextArea);
                     myBuilderz.get(i).volk = armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                     myBuilderTextArea.addBuildaVater(myBuilderz.get(i));
                     final JScrollPane sp = new JScrollPane(buildaPanel);
                     sp.addMouseMotionListener(dragAndDropMouseMotionListener);
                     sp.addMouseListener(dragAndDropMouseListener);
-                    sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
-                    sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
+                    sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
+                    sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
                     final String name = armies[i].substring(0, armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                     tab.addTab(name, null, sp);
                     tab.setTabComponentAt(i + 1, new ButtonTabComponent(tab, onlineCodex));
@@ -488,16 +485,6 @@ public class OnlineCodex extends BuildaPanel {
                     final String kontingent = armies[i].substring(armies[i].indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2) + SAVETEXT_UEBERSCHRIFTTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1));
                     final String formation = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER1) + SAVETEXT_DETACHMENTTYPTRENNER1.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2));
                     final String haupt = armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER2) + SAVETEXT_DETACHMENTTYPTRENNER2.length(), armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3));
-                    if (armies[i].contains(SAVETEXT_FARSIGHT)) {
-                        armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_FARSIGHT));
-                    } else if (armies[i].contains(SAVETEXT_CADIANS)) {
-                        armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_CADIANS));
-                    } else if (armies[i].contains(SAVETEXT_SOT) && armies[i].contains(SAVETEXT_RAUKAAN)) {
-                        armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_SOT));
-                        armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_RAUKAAN));
-                    } else if (armies[i].contains(SAVETEXT_RAUKAAN)) {
-                        armies[i].substring(armies[i].indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), armies[i].indexOf(SAVETEXT_RAUKAAN));
-                    }
                     if (!kontingent.equals("")) {
                         if (myBuilderz.get(i).getId().equals("CM")) {
                             myBuilderz.get(i).supplementBox.setSelectedItem(kontingent);
@@ -530,15 +517,14 @@ public class OnlineCodex extends BuildaPanel {
                 final JPanel buildaPanel = myBuilderz.get(0).getPanel();
                 buildaPanel.setPreferredSize(new Dimension(3500, 8000));
                 buildaPanel.setSize(3500, 8000);
-                buildaPanelz.add(buildaPanel);
                 myBuilderz.get(0).setTextArea(myBuilderTextArea);
                 myBuilderz.get(0).volk = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                 myBuilderTextArea.addBuildaVater(myBuilderz.get(0));
                 final JScrollPane sp = new JScrollPane(buildaPanel);
                 sp.addMouseMotionListener(dragAndDropMouseMotionListener);
                 sp.addMouseListener(dragAndDropMouseListener);
-                sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
-                sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - menuHöhe - 28));
+                sp.setMaximumSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
+                sp.setPreferredSize(new Dimension((int) Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight() - MENU_HEIGHT - 28));
                 final String name = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2));
                 tab.addTab(name, null, sp);
                 tab.setTabComponentAt(1, new ButtonTabComponent(tab, onlineCodex));
@@ -553,16 +539,6 @@ public class OnlineCodex extends BuildaPanel {
                 final String kontingent = saveText.substring(saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER2) + SAVETEXT_UEBERSCHRIFTTRENNER2.length(), saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER1));
                 final String formation = saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER1) + SAVETEXT_DETACHMENTTYPTRENNER1.length(), saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER2));
                 final String haupt = saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER2) + SAVETEXT_DETACHMENTTYPTRENNER2.length(), saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3));
-                if (saveText.contains(SAVETEXT_FARSIGHT)) {
-                    saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.indexOf(SAVETEXT_FARSIGHT));
-                } else if (saveText.contains(SAVETEXT_CADIANS)) {
-                    saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.indexOf(SAVETEXT_CADIANS));
-                } else if (saveText.contains(SAVETEXT_SOT) && saveText.contains(SAVETEXT_RAUKAAN)) {
-                    saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.indexOf(SAVETEXT_SOT));
-                    saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.indexOf(SAVETEXT_RAUKAAN));
-                } else if (saveText.contains(SAVETEXT_RAUKAAN)) {
-                    saveText.substring(saveText.indexOf(SAVETEXT_DETACHMENTTYPTRENNER3) + SAVETEXT_DETACHMENTTYPTRENNER3.length(), saveText.indexOf(SAVETEXT_RAUKAAN));
-                }
                 if (!kontingent.equals("")) {
                     myBuilderz.get(0).kontingentBox.setSelectedItem(kontingent);
                 }
@@ -613,8 +589,7 @@ public class OnlineCodex extends BuildaPanel {
     }
 
     private void setSelectedItemInBuildaChooser(Object s) {
-        final Object[] buildaz = buildazWh40k;
-        for (Object o : buildaz) {
+        for (Object o : buildazWh40k) {
             if (o.toString().equals(s.toString())) {
                 buildaChooser.setSelectedItem(o);
             }
@@ -646,7 +621,6 @@ public class OnlineCodex extends BuildaPanel {
             }
         }
         myBuilderTextArea.removeBuildaVater(myBuilderz.get(i));
-        buildaPanelz.remove(i);
         myBuilderz.remove(i);
         RefreshListener.fireRefresh();
     }

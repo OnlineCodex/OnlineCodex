@@ -18,7 +18,7 @@ public class ORSkullhammaBattleFortress extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Kannon", 0));
         ogE.addElement(new OptionsGruppeEintrag("Lobba", 0));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

@@ -8,7 +8,7 @@ public class ORBigMekonWarbike extends Eintrag {
 	private final RuestkammerStarter waffen;
 
 	public ORBigMekonWarbike() {
-        kategorie = 1;
+        category = 1;
         name = "Big Mek on Warbike";
         grundkosten = getPts("Big Mek on Warbike") + getPts("Stikkbombs");
         power = 6;
@@ -24,7 +24,7 @@ public class ORBigMekonWarbike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

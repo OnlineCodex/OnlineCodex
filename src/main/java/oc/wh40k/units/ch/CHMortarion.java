@@ -26,14 +26,14 @@ public class CHMortarion extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Arch-Contaminator", true);
+        addWarlordTraits("Arch-Contaminator");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

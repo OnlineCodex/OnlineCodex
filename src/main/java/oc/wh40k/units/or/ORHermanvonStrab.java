@@ -43,7 +43,7 @@ public class ORHermanvonStrab extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Klinge der Eroberung", "Die Klinge der Eroberung", 25));
         ogE.addElement(new OptionsGruppeEintrag("Todesmaske", "Die Todesmaske des Ollanius", 30));
         ogE.addElement(new OptionsGruppeEintrag("Kurovs Aquila", 60));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 5));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 5));
 
         seperator();
 

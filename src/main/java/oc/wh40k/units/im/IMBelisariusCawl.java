@@ -12,13 +12,13 @@ public class IMBelisariusCawl extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Mars: Static Psalm-code (AdMech)", true);
+        addWarlordTraits("Mars: Static Psalm-code (AdMech)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

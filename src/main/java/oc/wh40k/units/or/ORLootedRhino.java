@@ -20,7 +20,7 @@ public class ORLootedRhino extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("synchr. Fette Wumme", "synchronisierte Fette Wumme", 0));
         ogE.addElement(new OptionsGruppeEintrag("synchr. Bazzukka", "synchronisierte Bazzukka", 0));
         ogE.addElement(new OptionsGruppeEintrag("Gitbrenna", 0));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

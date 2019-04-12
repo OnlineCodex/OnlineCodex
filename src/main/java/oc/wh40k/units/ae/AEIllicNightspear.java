@@ -11,13 +11,13 @@ public class AEIllicNightspear extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Alaitoc: Puritanical Leader", true);
+        addWarlordTraits("Alaitoc: Puritanical Leader");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

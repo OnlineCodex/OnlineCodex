@@ -7,7 +7,7 @@ public class ORBossSnikrot extends Eintrag {
 
     public ORBossSnikrot() {
 
-        kategorie = 1;
+        category = 1;
         name = "Boss Snikrot";
         grundkosten = getPts("Boss Snikrot");
         power = 4;
@@ -16,7 +16,7 @@ public class ORBossSnikrot extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Blood Axes: I've got a plan, Ladz", true);
+        addWarlordTraits("Blood Axes: I've got a plan, Ladz");
 
         complete();
     }
@@ -29,6 +29,6 @@ public class ORBossSnikrot extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

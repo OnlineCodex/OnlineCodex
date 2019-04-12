@@ -18,7 +18,7 @@ public class TATY7Devilfish extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 MV1 Gun Drones", getPts("MV1 Gun Drone") * 2 + getPts("Pulse carbine") * 4));
         ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
-        o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(o3);
         o3.setSelected(0, true);
 

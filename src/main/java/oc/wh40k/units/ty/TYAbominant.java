@@ -29,7 +29,7 @@ public class TYAbominant extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

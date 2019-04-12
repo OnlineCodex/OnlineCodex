@@ -22,7 +22,7 @@ public class IMChaplainonBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -19,14 +19,14 @@ public class IMBrotherCorbulo extends Eintrag {
         power = 5;
         seperator();
 
-        addWarlordTraits("Gift of Foresight (BA)", true);
+        addWarlordTraits("Gift of Foresight (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

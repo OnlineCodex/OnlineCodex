@@ -31,7 +31,7 @@ public class ORKrushaBattleWagon extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kanonä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Schleuda", 15));
         ogE.addElement(new OptionsGruppeEintrag("Zzapwumme", 20));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

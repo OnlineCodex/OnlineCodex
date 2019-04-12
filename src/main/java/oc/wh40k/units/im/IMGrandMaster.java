@@ -39,7 +39,7 @@ public class IMGrandMaster extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

@@ -10,7 +10,7 @@ public class IMTyrannicWarVeterans extends Eintrag {
     public IMTyrannicWarVeterans() {
         name = "Tyrannic War Veterans\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Tyrannic War Veterans", 4, 10, getPts("Tyrannic War Veterans") +
                 getPts("Special issue boltgun") +

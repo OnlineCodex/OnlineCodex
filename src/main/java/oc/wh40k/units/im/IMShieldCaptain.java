@@ -29,7 +29,7 @@ public class IMShieldCaptain extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

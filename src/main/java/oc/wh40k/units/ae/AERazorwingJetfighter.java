@@ -32,7 +32,7 @@ public class AERazorwingJetfighter extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Dark lances", 2 * getPts("Dark lance")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -44,7 +44,7 @@ public class AERazorwingJetfighter extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 3));
 
 
 

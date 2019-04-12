@@ -17,13 +17,13 @@ public class IMStormhawkInterceptor extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolters", getPts("Heavy bolter (SM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Skyhammer missile launcher", getPts("Skyhammer missile launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Icarus stormcannon", getPts("Icarus stormcannon")));
         ogE.addElement(new OptionsGruppeEintrag("Las-talon", getPts("Las-talon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
 

@@ -25,7 +25,7 @@ public class IMCaptaininCataphractiiArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

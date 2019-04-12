@@ -30,7 +30,7 @@ public class IMShieldCaptainonDawneagleJetbike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

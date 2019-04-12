@@ -26,7 +26,7 @@ public class CHSorcereronPalanquinofNurgle extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

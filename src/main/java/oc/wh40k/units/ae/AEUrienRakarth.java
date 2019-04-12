@@ -20,6 +20,6 @@ public class AEUrienRakarth extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

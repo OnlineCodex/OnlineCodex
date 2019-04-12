@@ -16,7 +16,7 @@ public class IMWulfenDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Fenrisian great axe", getPts("Fenrisian great axe")));
         ogE.addElement(new OptionsGruppeEintrag("Shield + Storm bolter", "Blizzard shield + Storm bolter", getPts("Blizzard shield") + getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Shield + Heavy flamer", "Blizzard shield + Heavy flamer", getPts("Blizzard shield") + getPts("Heavy flamer (SM)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -24,7 +24,7 @@ public class IMWulfenDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Claw + Heavy flamer", "Great wolf claw + Heavy flamer", getPts("Great wolf claw") + getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Shield + Storm bolter", "Blizzard shield + Storm bolter", getPts("Blizzard shield") + getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Shield + Heavy flamer", "Blizzard shield + Heavy flamer", getPts("Blizzard shield") + getPts("Heavy flamer (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -6,7 +6,7 @@ public class CHNoctilithCrown extends Eintrag {
 
     public CHNoctilithCrown() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Noctilith Crown";
         grundkosten = getPts("Noctilith Crown");

@@ -24,7 +24,7 @@ public class IMSagittarumCustodians extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Sagittarum Custodians", 3, 5, getPts("Sagittarum Custodians"));
 

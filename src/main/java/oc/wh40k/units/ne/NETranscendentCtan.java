@@ -14,7 +14,7 @@ public class NETranscendentCtan extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", false);
+        addWarlordTraits("");
 
         complete();
     }

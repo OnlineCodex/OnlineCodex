@@ -17,7 +17,7 @@ public class CHFallen extends Eintrag {
     public CHFallen() {
         //name = "Auserkorene Chaos Space Marines\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Fallen", 5, 10, getPts("Fallen"));
         add(squad);
@@ -63,7 +63,7 @@ public class CHFallen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
-        add(heavy = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(heavy = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -93,7 +93,7 @@ public class CHFallen extends Eintrag {
         final int pistols = squad.getModelle() - 1 - claws.getAnzahl() - special.getAnzahl("Plasma pistol");
         pistol.setMaxAnzahl(pistols);
 
-        heavy.setAktiv((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);
+        heavy.setActive((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);
 
         special.setMaxAnzahl(4 - claws.getAnzahl() - ((heavy.isSelected()) ? 1 : 0));
         claws.setMaxAnzahl(4 - special.getAnzahl() - ((heavy.isSelected()) ? 1 : 0));

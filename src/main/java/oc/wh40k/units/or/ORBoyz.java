@@ -18,7 +18,7 @@ public class ORBoyz extends Eintrag {
 
     public ORBoyz() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Boyz";
         grundkosten = 0;

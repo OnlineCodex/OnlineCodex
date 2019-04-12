@@ -18,17 +18,17 @@ public class CHRenegadeKnightMagaera extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Lightning cannon", getPts("Lightning cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma fusil", getPts("Ectoplasma fusil")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper chainswords")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         complete();

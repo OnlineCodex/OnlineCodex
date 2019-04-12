@@ -6,7 +6,7 @@ public class ORRustgobsRunts extends Eintrag {
 
     public ORRustgobsRunts() {
 
-        kategorie = 2;
+        category = 2;
         name = "Rustgob's Runts";
         grundkosten = 45;
 
@@ -23,6 +23,6 @@ public class ORRustgobsRunts extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

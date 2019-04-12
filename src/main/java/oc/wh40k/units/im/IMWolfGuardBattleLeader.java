@@ -29,7 +29,7 @@ public class IMWolfGuardBattleLeader extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -13,7 +13,7 @@ public class IMDeathwatchVanguardVeterans extends Eintrag {//Sternguard
     public IMDeathwatchVanguardVeterans() {
         name = "Vanguard Veterans\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         seperator();
 

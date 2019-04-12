@@ -21,7 +21,7 @@ public class IMInterrogatorChaplain extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

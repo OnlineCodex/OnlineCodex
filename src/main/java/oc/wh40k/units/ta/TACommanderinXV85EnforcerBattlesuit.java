@@ -20,7 +20,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
         name = "Commander in XV85 Enforcer Battlesuit";
         grundkosten = getPts("Commander in XV85 Enforcer Battlesuit");
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -37,7 +37,7 @@ public class TACommanderinXV85EnforcerBattlesuit extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
 

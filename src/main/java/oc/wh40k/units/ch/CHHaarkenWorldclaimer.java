@@ -12,7 +12,7 @@ public class CHHaarkenWorldclaimer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Lord of Terror", true);
+        addWarlordTraits("Lord of Terror");
 
         complete();
 
@@ -20,6 +20,6 @@ public class CHHaarkenWorldclaimer extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

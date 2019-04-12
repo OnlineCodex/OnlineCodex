@@ -21,7 +21,7 @@ public class IMDeathCompany extends Eintrag {
     public IMDeathCompany() {
         name = "Death Company\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Death Company Marines", 5, 15, getPts("Death Company")));
 
         seperator();

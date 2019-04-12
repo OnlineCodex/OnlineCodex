@@ -18,7 +18,7 @@ public class IMBloodClaws extends Eintrag {
     public IMBloodClaws() {
         name = "Blood Claws\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Blood Claws", 5, 15, getPts("Blood Claws"));
         add(squad);

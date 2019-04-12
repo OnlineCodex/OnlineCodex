@@ -6,7 +6,7 @@ public class CHSkullAltar extends Eintrag {
 
     public CHSkullAltar() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Skull Altar";
         grundkosten = getPts("Skull Altar");

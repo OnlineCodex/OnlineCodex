@@ -19,7 +19,7 @@ public class CHChosen extends Eintrag {
     public CHChosen() {
         //name = "Auserkorene Chaos Space Marines\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Chosen", 5, 10, getPts("Chosen"));
         add(squad);
@@ -67,7 +67,7 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
-        add(heavy = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(heavy = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -81,7 +81,7 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
-        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(icon = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -89,7 +89,7 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(mark = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -114,7 +114,7 @@ public class CHChosen extends Eintrag {
         final int pistols = squad.getModelle() - 1 - claws.getAnzahl() - special.getAnzahl("Plasma pistol");
         pistol.setMaxAnzahl(pistols);
 
-        heavy.setAktiv((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);
+        heavy.setActive((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);
 
         special.setMaxAnzahl(4 - claws.getAnzahl());
         claws.setMaxAnzahl(4 - special.getAnzahl() - ((heavy.isSelected()) ? 1 : 0));

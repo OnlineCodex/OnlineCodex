@@ -10,7 +10,7 @@ public class ORShokkjumpDragstas extends Eintrag {
 
     public ORShokkjumpDragstas() {
 
-        kategorie = 4;
+        category = 4;
         grundkosten = 0;
 
         buggies = new AnzahlPanel(ID, randAbstand, cnt, "Shokkjump Dragsta", "Shokkjump Dragstas", 1, 3, getPts("Shokkjump Dragstas") + getPts("Rokkit launcha"));

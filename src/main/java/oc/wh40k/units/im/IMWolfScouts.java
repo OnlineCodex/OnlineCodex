@@ -18,7 +18,7 @@ public class IMWolfScouts extends Eintrag {
 
     public IMWolfScouts() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Wolf Scouts", 5, 10, getPts("Wolf Scouts"));
         add(squad);

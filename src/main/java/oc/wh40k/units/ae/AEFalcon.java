@@ -37,7 +37,7 @@ public class AEFalcon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Starcannon", getPts("Starcannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -49,7 +49,7 @@ public class AEFalcon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Shuriken cannon", getPts("Shuriken cannon")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 

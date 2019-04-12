@@ -26,14 +26,14 @@ public class ORKustomStompa extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Deff kanon + Supa-gatler", getPts("deff kannon") + getPts("supa-gatler")));
         ogE.addElement(new OptionsGruppeEintrag("Lifta-droppa", getPts("Lifta-droppa")));
         ogE.addElement(new OptionsGruppeEintrag("Mega klaw", getPts("mega klaw")));
-        oug1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        oug1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(oug1);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Mega klaw", getPts("mega klaw")));
         ogE.addElement(new OptionsGruppeEintrag("Lifta-droppa", getPts("Lifta-droppa")));
-        oug2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        oug2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(oug2);
 
         seperator();

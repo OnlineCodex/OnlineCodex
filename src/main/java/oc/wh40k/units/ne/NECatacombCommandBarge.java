@@ -19,7 +19,7 @@ public class NECatacombCommandBarge extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Hyperphase sword", getPts("Hyperphase sword")));
         ogE.addElement(new OptionsGruppeEintrag("Voidblade", getPts("Voidblade")));
         ogE.addElement(new OptionsGruppeEintrag("Warscythe", getPts("Warscythe")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -29,11 +29,11 @@ public class NECatacombCommandBarge extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Tesla cannon", getPts("Tesla cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

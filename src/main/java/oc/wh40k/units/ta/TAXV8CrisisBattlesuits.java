@@ -14,7 +14,7 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
 	private OptionsZaehlerGruppe o4, o5;
 	public TAXV8CrisisBattlesuits() {
         name = "XV8 Crisis Battlesuits";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));

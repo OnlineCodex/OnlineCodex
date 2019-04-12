@@ -19,7 +19,7 @@ public class IMGeminaeSuperia extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, CHARACTER, INFANTRY, JUMP_PACK, FLY, GEMINAE_SUPERIA);
         name = "Geminae Superia";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         final RuestkammerStarter gs1 = createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Geminae Superia", "Geminae Superia");
         add(gs1);
@@ -32,7 +32,7 @@ public class IMGeminaeSuperia extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

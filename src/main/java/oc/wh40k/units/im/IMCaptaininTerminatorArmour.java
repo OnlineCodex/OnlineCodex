@@ -25,7 +25,7 @@ public class IMCaptaininTerminatorArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

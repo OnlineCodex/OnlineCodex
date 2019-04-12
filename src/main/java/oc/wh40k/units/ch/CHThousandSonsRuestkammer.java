@@ -73,7 +73,7 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
             ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected(0, true);
 
             seperator();
@@ -82,21 +82,21 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Warpflame pistol", getPts("Warpflame pistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
     	} else if(type.equals("Exalted Sorcerer") ||
     			type.equals("Exalted Sorcerer on Disk")){
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             ogE.addElement(new OptionsGruppeEintrag("2 Power swords", getPts("Power sword") * 2));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -104,7 +104,7 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Warpflame pistol", getPts("Warpflame pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -113,14 +113,14 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
     	} else if(type.equals("Sorcerer in Terminator Armour")){
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Inferno combi-bolter", getPts("Inferno combi-bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -130,7 +130,7 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
     	} else if(type.equals("Tzaangor Shaman")) {
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     	}
 
         if(o1 != null) {

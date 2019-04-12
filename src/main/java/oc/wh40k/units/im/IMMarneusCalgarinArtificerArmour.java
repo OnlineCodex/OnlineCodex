@@ -11,13 +11,13 @@ public class IMMarneusCalgarinArtificerArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Ultramarines: Adept of the Codex", true);
+        addWarlordTraits("Ultramarines: Adept of the Codex");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

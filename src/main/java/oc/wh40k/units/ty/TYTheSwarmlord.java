@@ -23,14 +23,14 @@ public class TYTheSwarmlord extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("Alien Cunning", true);
+		addWarlordTraits("Alien Cunning");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

@@ -18,13 +18,13 @@ public class AEAutarchIndex extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Banshee mask", getPts("Banshee mask")));
         ogE.addElement(new OptionsGruppeEintrag("Mandiblasters", getPts("Mandiblaster")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol")));
         ogE.addElement(new OptionsGruppeEintrag("Fusion pistol", getPts("Fusion pistol")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -38,7 +38,7 @@ public class AEAutarchIndex extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

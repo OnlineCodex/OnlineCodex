@@ -44,7 +44,7 @@ public class AESolarite extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol & agoniser", getPts("Blast pistol") + getPts("Agoniser")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 

@@ -17,7 +17,7 @@ public class CHNoiseMarines extends Eintrag {
 
     public CHNoiseMarines() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Noise Marines";
         grundkosten = 0;

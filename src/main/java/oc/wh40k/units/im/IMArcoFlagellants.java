@@ -17,7 +17,7 @@ public class IMArcoFlagellants extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, ARCO_FLAGELLANTS);
         name = "Arco-flagellants\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
         power = 2;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Arco-flagellants", 3, 9, getPts("Arco-flagellants") + getPts("Arco-flails"));

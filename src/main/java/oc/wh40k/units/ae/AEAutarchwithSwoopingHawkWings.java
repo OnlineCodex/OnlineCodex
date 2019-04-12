@@ -25,7 +25,7 @@ public class AEAutarchwithSwoopingHawkWings extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

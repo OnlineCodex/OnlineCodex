@@ -118,7 +118,7 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
         if (type.equals("Patriarch")) {
             ogE.addElement(new OptionsGruppeEintrag("Monstrous rending claws", getPts("Monstrous rending claws (GSC)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Familiar", getPts("Familiars")));
@@ -129,22 +129,22 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
         } else if (type.equals("Acolyte Iconward")) {
             ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
         } else if (type.equals("Magus")) {
             ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Cultist knife", getPts("Cultist knife")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o3.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Familiar", getPts("Familiars")));
@@ -153,97 +153,97 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
         } else if (type.equals("Primus")) {
             ogE.addElement(new OptionsGruppeEintrag("Needle pistol", getPts("Needle pistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Bonesword", getPts("Bonesword (GSC)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Injector claw", getPts("Injector claw")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o3.setSelected(0, true);
         } else if (type.equals("Abominant")) {
             ogE.addElement(new OptionsGruppeEintrag("Rending claw", getPts("Rending claws (GSC)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Power sledgehammer", getPts("Power sledgehammer")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Mindwyrm Familiar", getPts("Familiars")));
             ogE.addElement(new OptionsGruppeEintrag("The Crouchling", getPts("Familiars")).setRelic(true));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o3.setSelected(0, true);
         } else if (type.equals("Jackal Alphus")) {
             ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Jackal sniper rifle", getPts("Jackal sniper rifle")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
         } else if (type.equals("Clamavus")) {
             ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
         } else if (type.equals("Locus")) {
             ogE.addElement(new OptionsGruppeEintrag("Locus blades", getPts("Locus blades")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Hypermorph tail", getPts("Hypermorph tail")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
         } else if (type.equals("Sanctus")) {
             ogE.addElement(new OptionsGruppeEintrag("Silencer sniper rifle", getPts("Silencer sniper rifle")));
             ogE.addElement(new OptionsGruppeEintrag("Sanctus bio-dagger", getPts("Sanctus bio-dagger")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Soulsight Familiar", getPts("Familiars")));
             ogE.addElement(new OptionsGruppeEintrag("The Crouchling", getPts("Familiars")).setRelic(true));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
         } else if (type.equals("Kelermorph")) {
             ogE.addElement(new OptionsGruppeEintrag("Liberator autostub", getPts("Liberator autostub")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Cultist knife", getPts("Cultist knife")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
         } else if (type.equals("Nexos")) {
             ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
         }  else if (type.equals("Biophagus")) {
         	ogE.addElement(new OptionsGruppeEintrag("Autopistol", getPts("Autopistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Injector goad", getPts("Injector goad")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("Alchemicus Familiar", getPts("Familiars")));
             ogE.addElement(new OptionsGruppeEintrag("The Crouchling", getPts("Familiars")).setRelic(true));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o3.setSelected(0, true);
         }
 

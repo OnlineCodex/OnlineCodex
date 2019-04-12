@@ -44,7 +44,7 @@ public class IMDeathwatchLibrarianinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

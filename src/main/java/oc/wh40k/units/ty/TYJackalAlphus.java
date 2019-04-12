@@ -29,7 +29,7 @@ public class TYJackalAlphus extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         power = 4;
 

@@ -22,14 +22,14 @@ public class IMCommanderDante extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Heroic Bearing (BA)", true);
+        addWarlordTraits("Heroic Bearing (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

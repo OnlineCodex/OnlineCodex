@@ -25,14 +25,14 @@ public class IMBrotherCaptainStern extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Unyielding Anvil (GK)", true);
+        addWarlordTraits("Unyielding Anvil (GK)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

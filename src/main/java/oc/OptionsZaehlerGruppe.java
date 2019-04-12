@@ -8,9 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 public class OptionsZaehlerGruppe extends OptionsVater {
 
     private Vector<OptionsButtonZaehler> myZaehlers = new Vector<OptionsButtonZaehler>();
@@ -35,7 +32,7 @@ public class OptionsZaehlerGruppe extends OptionsVater {
             }
         }
 
-        panel.setSize(myZaehlers.elementAt(0).getBreite(), myZaehlers.size() * (myZaehlers.elementAt(0).getHoehe()));
+        panel.setSize(myZaehlers.elementAt(0).getBreite(), myZaehlers.size() * (myZaehlers.elementAt(0).getHeight()));
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -55,7 +52,7 @@ public class OptionsZaehlerGruppe extends OptionsVater {
             }
         }
 
-        panel.setSize(myZaehlers.elementAt(0).getBreite(), myZaehlers.size() * myZaehlers.elementAt(0).getHoehe());
+        panel.setSize(myZaehlers.elementAt(0).getBreite(), myZaehlers.size() * myZaehlers.elementAt(0).getHeight());
     }
 
     public void setMaxKosten(int maxKosten) {
@@ -127,11 +124,11 @@ public class OptionsZaehlerGruppe extends OptionsVater {
     }
 
     @Override
-	public double getKosten() {
+	public double getCost() {
         int kosten = 0;
 
         for (int i = 0; i < myZaehlers.size(); ++i) {
-            kosten += myZaehlers.elementAt(i).getKosten();
+            kosten += myZaehlers.elementAt(i).getCost();
         }
 
         return kosten * modelle;
@@ -157,7 +154,7 @@ public class OptionsZaehlerGruppe extends OptionsVater {
     public void setPreis(String name, double preis) {
         for (int i = 0; i < myZaehlers.size(); ++i) {
             if (myZaehlers.elementAt(i).getName().equals(name)) {
-                myZaehlers.elementAt(i).setPreis(preis);
+                myZaehlers.elementAt(i).setCost(preis);
             }
         }
     }
@@ -175,19 +172,6 @@ public class OptionsZaehlerGruppe extends OptionsVater {
         }
 
         this.panel.setSize(this.panel.getSize().width, this.panel.getSize().height + headlineAbstand);
-    }
-
-    @Override
-	public String getLabel() {
-        final StringBuilder b = new StringBuilder();
-
-        for (int i = 0; i < myZaehlers.size(); ++i) {
-            if (myZaehlers.elementAt(i).getAnzahl() > 0) {
-                b.append(myZaehlers.elementAt(i).getButton().getText() + ZEILENUMBRUCH);
-            }
-        }
-
-        return b.toString();
     }
 
     public void setLegal(String name, boolean b) {
@@ -244,7 +228,7 @@ public class OptionsZaehlerGruppe extends OptionsVater {
 
         if (event.getButton() == MouseEvent.BUTTON1) {
             if (erhoehbar && getAnzahl() < maxAnzahl && button.getAnzahl() < button.getMaxAnzahl() || maxAnzahl == -88) {
-                if (!maxPunkteGruppe || (button.getPreisAuchOhneSelected() + getKosten() <= maxKosten)) {
+                if (!maxPunkteGruppe || (button.getPreisAuchOhneSelected() + getCost() <= maxKosten)) {
                     button.erhoeheAnzahl();
                     fontKontrolle();
                 }
@@ -309,13 +293,10 @@ public class OptionsZaehlerGruppe extends OptionsVater {
                 String kosten = "";
 
                 if (BuildaHQ.allePunktkosten) {
-                    kosten = punkteAbstandHalter + entferneNullNachkomma((o.getKosten() * modelle)) + " " + BuildaHQ.translate("Pkt.");
-//					if (o.getKosten() * modelle == 0) {
-//						kosten = punkteAbstandHalter + BuildaHQ.translate("kostenlos");
-//					}
+                    kosten = punkteAbstandHalter + ((int) (o.getCost() * modelle)) + " " + BuildaHQ.translate("Pkt.");
                 }
 
-                text.append(BuildaHQ.anfang + o.getAnzahl() + " x " + o.getName() + kosten);
+                text.append(BuildaHQ.anfang).append(o.getAnzahl()).append(" x ").append(o.getName()).append(kosten);
             }
         }
 

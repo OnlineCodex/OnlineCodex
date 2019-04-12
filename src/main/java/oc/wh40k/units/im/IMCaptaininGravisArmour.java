@@ -25,7 +25,7 @@ public class IMCaptaininGravisArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

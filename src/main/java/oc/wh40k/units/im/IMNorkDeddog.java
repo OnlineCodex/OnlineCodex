@@ -11,7 +11,7 @@ public class IMNorkDeddog extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }
@@ -19,6 +19,6 @@ public class IMNorkDeddog extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

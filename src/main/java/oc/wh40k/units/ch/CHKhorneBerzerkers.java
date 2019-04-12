@@ -18,7 +18,7 @@ public class CHKhorneBerzerkers extends Eintrag {
 
     public CHKhorneBerzerkers() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Khorne Berzerkers";
         grundkosten = 0;

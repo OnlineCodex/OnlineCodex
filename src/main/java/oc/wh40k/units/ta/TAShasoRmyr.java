@@ -19,7 +19,7 @@ public class TAShasoRmyr extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
 
         power = 7;
     }

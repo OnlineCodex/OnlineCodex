@@ -14,10 +14,10 @@ public class IMLieutenantinPhobosArmour extends Eintrag {
 
         //Special Weapons
         ogE.addElement(new OptionsGruppeEintrag("MC occulus bolt carbine", "Master-crafted occulus bolt carbine", getPts("Master-crafted occulus bolt carbine")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

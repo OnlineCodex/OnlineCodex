@@ -8,24 +8,31 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 public class OptionsUpgradeGruppe extends OptionsVater {
 
-    boolean showKosten = true;
-    private final Vector<OptionsButtonUpgrade> myUpgrades = new Vector<OptionsButtonUpgrade>();
-    private boolean aktiv = true;
-    private boolean erhoehbar = true;
-    private int maxAnzahl = 1;
-    private boolean punkteLimitGruppe = false;
+    private boolean showCost;
+    private final Vector<OptionsButtonUpgrade> myUpgrades = new Vector<>();
+    private boolean active = true;
+    private int maxAmount;
 
-    public OptionsUpgradeGruppe(int ID, int lX, int lY, String verzierung, Vector<OptionsGruppeEintrag> e) {
+    public OptionsUpgradeGruppe(int lX, int lY, String decoration, Vector<OptionsGruppeEintrag> e) {
+        this(lX, lY, decoration, e, 1, true);
+    }
+
+    public OptionsUpgradeGruppe(int lX, int lY, String decoration, Vector<OptionsGruppeEintrag> e, boolean showCost) {
+        this(lX, lY, decoration, e, 1, showCost);
+    }
+
+    public OptionsUpgradeGruppe(int lX, int lY, String decoration, Vector<OptionsGruppeEintrag> e, int maxAmount) {
+        this(lX, lY, decoration, e, maxAmount, true);
+    }
+
+    public OptionsUpgradeGruppe(int lX, int lY, String decoration, Vector<OptionsGruppeEintrag> e, int maxAmount, boolean showCost) {
+        this.maxAmount = maxAmount;
+        this.showCost = showCost;
         panel.setLocation(lX, lY);
-        this.showKosten = true;
-        // ID wegwerfen!!!
         for (int i = 0; i < e.size(); ++i) {
-            myUpgrades.addElement(new OptionsButtonUpgrade(ID, 0, i * (buttonAbstandY + buttonHoehe), verzierung + " gruppe", e.elementAt(i).getName(), false, e.elementAt(i).getPreis()));
+            myUpgrades.addElement(new OptionsButtonUpgrade(0, i * (buttonAbstandY + buttonHoehe), decoration + " gruppe", e.elementAt(i).getName(), false, e.elementAt(i).getPreis(), showCost));
             panel.add(myUpgrades.lastElement().getPanel());
             myUpgrades.lastElement().getButton().addMouseListener(this);
             if (e.elementAt(i).getKurzerName() != null) {
@@ -34,76 +41,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
             myUpgrades.lastElement().setUnique(e.elementAt(i).isUnique());
             myUpgrades.lastElement().setRelic(e.elementAt(i).isRelic());
         }
-        panel.setSize(myUpgrades.elementAt(0).getBreite(), myUpgrades.size() * (myUpgrades.elementAt(0).getHoehe()));
-    }
-
-    public OptionsUpgradeGruppe(int ID, int lX, int lY, String verzierung, Vector<OptionsGruppeEintrag> e, boolean showKosten) {
-        panel.setLocation(lX, lY);
-        this.showKosten = showKosten;
-        // ID wegwerfen!!!
-        for (int i = 0; i < e.size(); ++i) {
-            myUpgrades.addElement(new OptionsButtonUpgrade(ID, 0, i * (buttonAbstandY + buttonHoehe), verzierung + " gruppe", e.elementAt(i).getName(), false, e.elementAt(i).getPreis(), showKosten));
-            panel.add(myUpgrades.lastElement().getPanel());
-            myUpgrades.lastElement().getButton().addMouseListener(this);
-            if (e.elementAt(i).getKurzerName() != null) {
-                myUpgrades.lastElement().setKurzerName(e.elementAt(i).getKurzerName());
-            }
-            myUpgrades.lastElement().setUnique(e.elementAt(i).isUnique());
-            myUpgrades.lastElement().setRelic(e.elementAt(i).isRelic());
-        }
-        panel.setSize(myUpgrades.elementAt(0).getBreite(), myUpgrades.size() * (myUpgrades.elementAt(0).getHoehe()));
-    }
-
-    public OptionsUpgradeGruppe(int ID, int lX, int lY, String verzierung, Vector<OptionsGruppeEintrag> e, int maxAnzahl) {
-        this.maxAnzahl = maxAnzahl;
-        this.showKosten = true;
-        // ID wegwerfen!!!
-        panel.setLocation(lX, lY);
-        for (int i = 0; i < e.size(); ++i) {
-            myUpgrades.addElement(new OptionsButtonUpgrade(ID, 0, i * (buttonAbstandY + buttonHoehe), verzierung + " gruppe", e.elementAt(i).getName(), false, e.elementAt(i).getPreis()));
-            panel.add(myUpgrades.lastElement().getPanel());
-            myUpgrades.lastElement().getButton().addMouseListener(this);
-            if (e.elementAt(i).getKurzerName() != null) {
-                myUpgrades.lastElement().setKurzerName(e.elementAt(i).getKurzerName());
-            }
-            myUpgrades.lastElement().setUnique(e.elementAt(i).isUnique());
-            myUpgrades.lastElement().setRelic(e.elementAt(i).isRelic());
-        }
-        panel.setSize(myUpgrades.elementAt(0).getBreite(), myUpgrades.size() * (myUpgrades.elementAt(0).getHoehe()));
-    }
-
-    public OptionsUpgradeGruppe(int ID, int lX, int lY, String verzierung, Vector<OptionsGruppeEintrag> e, int maxAnzahl, boolean showKosten) {
-        this.maxAnzahl = maxAnzahl;
-        this.showKosten = showKosten;
-        // ID wegwerfen!!!
-        panel.setLocation(lX, lY);
-        for (int i = 0; i < e.size(); ++i) {
-            myUpgrades.addElement(new OptionsButtonUpgrade(ID, 0, i * (buttonAbstandY + buttonHoehe), verzierung + " gruppe", e.elementAt(i).getName(), false, e.elementAt(i).getPreis(), showKosten));
-            panel.add(myUpgrades.lastElement().getPanel());
-            myUpgrades.lastElement().getButton().addMouseListener(this);
-            if (e.elementAt(i).getKurzerName() != null) {
-                myUpgrades.lastElement().setKurzerName(e.elementAt(i).getKurzerName());
-            }
-            myUpgrades.lastElement().setUnique(e.elementAt(i).isUnique());
-            myUpgrades.lastElement().setRelic(e.elementAt(i).isRelic());
-        }
-        panel.setSize(myUpgrades.elementAt(0).getBreite(), myUpgrades.size() * (myUpgrades.elementAt(0).getHoehe()));
-    }
-
-    public boolean isShowKosten() {
-        return showKosten;
-    }
-
-    public void setShowKosten(boolean showKosten) {
-        this.showKosten = showKosten;
-    }
-
-    public void setPunkteLimitGruppe(boolean b) {
-        this.punkteLimitGruppe = b;
-    }
-
-    public void setErhoehbar(boolean b) {
-        this.erhoehbar = b;
+        panel.setSize(myUpgrades.elementAt(0).getBreite(), myUpgrades.size() * (myUpgrades.elementAt(0).getHeight()));
     }
 
     @Override
@@ -122,15 +60,15 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public int getNumberOfOptions() {
+    private int getNumberOfOptions() {
         return myUpgrades.size() + 1;
     }
 
     @Override
-	public double getKosten() {
+	public double getCost() {
         double kosten = 0;
         for (int i = 0; i < myUpgrades.size(); ++i) {
-            kosten += myUpgrades.elementAt(i).getKosten();
+            kosten += myUpgrades.elementAt(i).getCost();
         }
         return kosten * modelle;
     }
@@ -198,15 +136,15 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         return myUpgrades.elementAt(index).isAktiv();
     }
 
-    public boolean isAktiv() {
-        return this.aktiv;
+    public boolean isActive() {
+        return this.active;
     }
 
-    public void setAktiv(boolean b) {
+    public void setActive(boolean b) {
         for (int i = 0; i < this.myUpgrades.size(); ++i) {
             this.myUpgrades.elementAt(i).setAktiv(b);
         }
-        aktiv = b;
+        active = b;
     }
 
     public void setLegal(String s, boolean b) {
@@ -248,7 +186,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         for (int i = 0; i < this.myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).getName().equals(s)) {
                 if (!b && isSelected(s)) { //selected options that become inactive should be deselected
-                    myUpgrades.elementAt(i).switsch();
+                    myUpgrades.elementAt(i).toggle();
                 }
                 if (b == false)
                     myUpgrades.elementAt(i).setSelected(b); // muss so geloest werden, denn sonst wuerde ein auf "true" gesetzter Eintrag *immer* ausgewählt werden, auch wenn er das vorher nicht war
@@ -282,13 +220,13 @@ public class OptionsUpgradeGruppe extends OptionsVater {
     public void setPreis(String s, double preis) {
         for (int i = 0; i < this.myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).getName().equals(s)) {
-                myUpgrades.elementAt(i).setPreis(preis);
+                myUpgrades.elementAt(i).setCost(preis);
             }
         }
     }
 
     public void setPreis(int index, double preis) {
-        myUpgrades.elementAt(index).setPreis(preis);
+        myUpgrades.elementAt(index).setCost(preis);
     }
 
     public void deselectAll() {
@@ -312,22 +250,9 @@ public class OptionsUpgradeGruppe extends OptionsVater {
     public void clear() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isSelected()) {
-                myUpgrades.elementAt(i).switsch();
+                myUpgrades.elementAt(i).toggle();
             }
         }
-    }
-
-    @Override
-	public String getLabel() {
-        final StringBuilder b = new StringBuilder();
-
-        for (int i = 0; i < myUpgrades.size(); ++i) {
-            if (myUpgrades.elementAt(i).isSelected()) {
-                b.append(myUpgrades.elementAt(i).getButton().getText() + ZEILENUMBRUCH);
-            }
-        }
-
-        return b.toString();
     }
 
     public int getAnzahl() {
@@ -342,7 +267,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     @Override
 	public void mouseReleased(MouseEvent event) {
-        if (!aktiv) {
+        if (!active) {
             return;
         }
 
@@ -354,29 +279,31 @@ public class OptionsUpgradeGruppe extends OptionsVater {
             }
         }
 
+        boolean punkteLimitGruppe = false;
         if (punkteLimitGruppe) {
             if (button.isSelected()) {
-                button.switsch();
-            } else if (button.getPreisAuchOhneSelected() + getKosten() <= maxAnzahl) {  // der angeklickte button ist ja noch net bei getKosten() dabei
-                button.switsch();
+                button.toggle();
+            } else if (button.getPreisAuchOhneSelected() + getCost() <= maxAmount) {  // der angeklickte button ist ja noch net bei getKosten() dabei
+                button.toggle();
             } else {
                 return;
             }
         } else {
+            boolean erhoehbar = true;
             if (button.isSelected()) {
-                button.switsch();
+                button.toggle();
                 if (getAnzahl() == 0) {
                 }
-            } else if (maxAnzahl == 1 && erhoehbar) {
+            } else if (maxAmount == 1 && erhoehbar) {
                 for (int i = 0; i < myUpgrades.size(); ++i) {
                     if (myUpgrades.elementAt(i).isSelected()) {
-                        myUpgrades.elementAt(i).switsch();
+                        myUpgrades.elementAt(i).toggle();
                     }
                 }
-                button.switsch();
+                button.toggle();
             } else {
-                if (getAnzahl() < maxAnzahl && erhoehbar) {
-                    button.switsch();
+                if (getAnzahl() < maxAmount && erhoehbar) {
+                    button.toggle();
                 }
             }
         }
@@ -391,7 +318,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
     @Override
 	public String getText() {
-        if (!aktiv) {
+        if (!active) {
             return "";
         }
 
@@ -404,24 +331,21 @@ public class OptionsUpgradeGruppe extends OptionsVater {
                 String kosten = "";
 
                 if (BuildaHQ.allePunktkosten) {
-                    kosten = punkteAbstandHalter + (entferneNullNachkomma(o.getKosten() * modelle)) + " " + BuildaHQ.translate("Pkt.");
-                    if (!isShowKosten()) {
+                    kosten = punkteAbstandHalter + ((int) (o.getCost() * modelle)) + " " + BuildaHQ.translate("Pkt.");
+                    if (!showCost) {
                         kosten = "";
                     }
-                    //					else if (o.getKosten() * modelle == 0) {
-                    //						kosten = punkteAbstandHalter + BuildaHQ.translate("kostenlos");
-                    //					}
                 }
 
-                text.append(BuildaHQ.anfang + o.getName() + kosten);
+                text.append(BuildaHQ.anfang).append(o.getName()).append(kosten);
             }
         }
 
         return text.toString();
     }
 
-    public void setMaxAnzahl(int value) {
-        this.maxAnzahl = value;
+    public void setMaxAmount(int value) {
+        this.maxAmount = value;
     }
 
     @Override
@@ -442,22 +366,18 @@ public class OptionsUpgradeGruppe extends OptionsVater {
 
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (splittet[i].equals("y")) {
-                myUpgrades.elementAt(i).switsch();
+                myUpgrades.elementAt(i).toggle();
             } else {
             	myUpgrades.elementAt(i).setSelected(false);
             }
         }
     }
 
-    public void setToolTipText(int i, String s) {
-        myUpgrades.elementAt(i).getButton().setToolTipText(s);
-    }
-
     public void deleteYourself() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isSelected()) {
                 if (myUpgrades.elementAt(i).isUnique() || myUpgrades.elementAt(i).isRelic()) {
-                    myUpgrades.elementAt(i).switsch();
+                    myUpgrades.elementAt(i).toggle();
                 }
             }
         }
@@ -472,7 +392,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         return null;
     }
 
-    public void enableRelics() {
+    void enableRelics() {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isRelic()) {
                 myUpgrades.elementAt(i).setAktiv(true);
@@ -480,7 +400,7 @@ public class OptionsUpgradeGruppe extends OptionsVater {
         }
     }
 
-    public void disableOtherRelics(OptionsButtonUpgrade obu) {
+    void disableOtherRelics(OptionsButtonUpgrade obu) {
         for (int i = 0; i < myUpgrades.size(); ++i) {
             if (myUpgrades.elementAt(i).isRelic()) {
                 myUpgrades.elementAt(i).setAktiv(obu.equals(myUpgrades.elementAt(i)));

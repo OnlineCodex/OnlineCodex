@@ -28,7 +28,7 @@ public class IMAstropath extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Telepathica stave", getPts("Telepathica stave")));
         ogE.addElement(new OptionsGruppeEintrag("Laspistol", getPts("Laspistol")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         seperator();
 
@@ -46,7 +46,7 @@ public class IMAstropath extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

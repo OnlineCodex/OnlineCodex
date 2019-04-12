@@ -110,125 +110,125 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
     	if(type.equals("Knight Gallant")) {
             ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper Chainsword")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
             ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
             addRelics();
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
     	} else if(type.equals("Knight Crusader")) {
             ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon", getPts("Avenger gatling cannon")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (QI)")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Battle cannon + stubber", "Rapid-fire battle cannon + Heavy stubber", getPts("Rapid-fire battle cannon") + getPts("Heavy stubber (QI)")));
             addRelics();
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
             ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
             addRelics();
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     	} else if(type.equals("Knight Errant")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
             addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper Chainsword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
             addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 	    } else if(type.equals("Knight Paladin")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Rapid-fire battle cannon", getPts("Rapid-fire battle cannon")));
             addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Reaper Chainsword", getPts("Reaper Chainsword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunderstrike Gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
             addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 	    } else if(type.equals("Knight Preceptor")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Las-impulsor", getPts("Las-impulsor")));
             addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
             addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper Chainsword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
             addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
@@ -236,103 +236,103 @@ public class IMImperialKnightRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser (QI)")));
             addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 	    } else if(type.equals("Knight Valiant")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Thundercoil harpoon", getPts("Thundercoil harpoon")));
 	        addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Conflagration cannon", getPts("Conflagration cannon")));
 	        addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Two shieldbreaker missiles", getPts("Shieldbreaker missile") * 2));
 	        addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Two twin meltaguns", getPts("Twin meltaguns") * 2));
 	        addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Twin siegebreaker cannon", getPts("Twin siegebreaker cannon")));
 	        addRelics();
-	        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Two shieldbreaker missiles", getPts("Shieldbreaker missile") * 2));
 	        ogE.addElement(new OptionsGruppeEintrag("Twin siegebreaker cannon", getPts("Twin siegebreaker cannon")));
 	        addRelics();
-	        add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o6 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 	    } else if(type.equals("Knight Warden")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon", getPts("Avenger gatling cannon")));
 	        addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE = IMQuestorImperialisCarapaceWeapons.createRK("", "", buildaVater);
 	        addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper Chainsword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike Gauntlet")));
 	        addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber (QI)")));
 	        ogE.addElement(new OptionsGruppeEintrag("Melta gun", getPts("Melta gun (QI)")));
 	        addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 	    } else if(type.equals("Knight Castellan")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Plasma decimator", getPts("Plasma decimator")));
 	        addRelics();
-	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Volcano lance", getPts("Volcano lance")));
 	        addRelics();
-	        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Two shieldbreaker missiles", getPts("Shieldbreaker missile") * 2));
 	        addRelics();
-	        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Two twin meltaguns", getPts("Twin meltaguns") * 2));
 	        addRelics();
-	        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Twin siegebreaker cannon", getPts("Twin siegebreaker cannon")));
 	        addRelics();
-	        add(o5= new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o5= new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Twin siegebreaker cannon", getPts("Twin siegebreaker cannon")));
 	        ogE.addElement(new OptionsGruppeEintrag("Two shieldbreaker missiles", getPts("Shieldbreaker missile") * 2));
 	        addRelics();
-	        add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+	        add(o6 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 	    }
 
         if(o1 != null) {

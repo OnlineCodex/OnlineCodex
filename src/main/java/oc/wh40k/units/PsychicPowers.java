@@ -49,7 +49,7 @@ public class PsychicPowers extends RuestkammerVater {
         	ogE.addElement(new OptionsGruppeEintrag("Dark Zealotry", 0));
         else
         	ogE.addElement(new OptionsGruppeEintrag("Smite", 0));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         if (darkHereticus) {
             ogE.addElement(new OptionsGruppeEintrag("Infernal Gaze", 0));
@@ -61,7 +61,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Weaver of Fates", 0));
             ogE.addElement(new OptionsGruppeEintrag("Miasma of Pestilence", 0));
             ogE.addElement(new OptionsGruppeEintrag("Deligthful Agonies", 0));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             o2.setAktiv("Weaver of Fates", false);
             o2.setAktiv("Miasma of Pestilence", false);
@@ -75,7 +75,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Blades of Putrefaction", 0));
             ogE.addElement(new OptionsGruppeEintrag("Putrescent Vitality", 0));
             ogE.addElement(new OptionsGruppeEintrag("Curse of the Leper", 0));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (change) {
@@ -85,7 +85,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Doombolt", 0));
             ogE.addElement(new OptionsGruppeEintrag("Temporal Manipulation", 0));
             ogE.addElement(new OptionsGruppeEintrag("Weaver of Fates", 0));
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (disciplineOfTzeentch) {
@@ -95,7 +95,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Treason of Tzeentch", 0));
             ogE.addElement(new OptionsGruppeEintrag("Flickering Flames", 0));
             ogE.addElement(new OptionsGruppeEintrag("Infernal Gateway", 0));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (disciplineOfNurgle) {
@@ -105,7 +105,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Shrivelling Pox", 0));
             ogE.addElement(new OptionsGruppeEintrag("Virulent Blessing", 0));
             ogE.addElement(new OptionsGruppeEintrag("Miasma of Pestilence", 0));
-            add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o6 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (disciplineOfSlaanesh) {
@@ -115,7 +115,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Delightful Agonies", 0));
             ogE.addElement(new OptionsGruppeEintrag("Pavane of Slaanesh", 0));
             ogE.addElement(new OptionsGruppeEintrag("Phantasmagoria", 0));
-            add(o7 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o7 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (runesOfFate) {
@@ -125,7 +125,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Executioner", 0));
             ogE.addElement(new OptionsGruppeEintrag("Will of Asuryan", 0));
             ogE.addElement(new OptionsGruppeEintrag("Mind War", 0));
-            add(o8 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o8 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (runesOfBattle) {
@@ -135,7 +135,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Protect/Jinx", 0));
             ogE.addElement(new OptionsGruppeEintrag("Quicken/Restrain", 0));
             ogE.addElement(new OptionsGruppeEintrag("Empower/Enervate", 0));
-            add(o9 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o9 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (sanctic) {
@@ -145,7 +145,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Sanctuary", 0));
             ogE.addElement(new OptionsGruppeEintrag("Astral Aim", 0));
             ogE.addElement(new OptionsGruppeEintrag("Vortex of Doom", 0));
-            add(o10 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o10 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (hiveMind) {
@@ -155,7 +155,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Onslaught", 0));
             ogE.addElement(new OptionsGruppeEintrag("Paroxysm", 0));
             ogE.addElement(new OptionsGruppeEintrag("Psychic Scream", 0));
-            add(o11 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o11 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (librarius) {
@@ -165,7 +165,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fury of the Ancients", 0));
             ogE.addElement(new OptionsGruppeEintrag("Psychic Fortress", 0));
             ogE.addElement(new OptionsGruppeEintrag("Null Zone", 0));
-            add(o12 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o12 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (psykana) {
@@ -175,7 +175,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Nightshroud", 0));
             ogE.addElement(new OptionsGruppeEintrag("Mental Fortitude", 0));
             ogE.addElement(new OptionsGruppeEintrag("Psychic Maelstrom", 0));
-            add(o13 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o13 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (sanguinary) {
@@ -185,7 +185,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Blood Boil", 0));
             ogE.addElement(new OptionsGruppeEintrag("The Blood Lance", 0));
             ogE.addElement(new OptionsGruppeEintrag("Wings of Sanguinius", 0));
-            add(o14 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o14 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (interromancy) {
@@ -195,7 +195,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Trephination", 0));
             ogE.addElement(new OptionsGruppeEintrag("Engulfing Fear", 0));
             ogE.addElement(new OptionsGruppeEintrag("Mind Wipe", 0));
-            add(o15 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o15 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (powerOfTheWaaagh) {
@@ -205,7 +205,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fists of Gork", 0));
             ogE.addElement(new OptionsGruppeEintrag("Da Krunch", 0));
             ogE.addElement(new OptionsGruppeEintrag("Roar of Mork", 0));
-            add(o16 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o16 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (tempestasDiscipline) {
@@ -215,7 +215,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fury of the Wolf Spirits", 0));
             ogE.addElement(new OptionsGruppeEintrag("Storm Caller", 0));
             ogE.addElement(new OptionsGruppeEintrag("Jaws of the World Wolf", 0));
-            add(o17 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o17 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (broodmind) {
@@ -225,7 +225,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Mental Onslaught", 0));
             ogE.addElement(new OptionsGruppeEintrag("Psychis Stimulus", 0));
             ogE.addElement(new OptionsGruppeEintrag("Migth From Beyond", 0));
-            add(o18 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o18 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (obscuration) {
@@ -235,7 +235,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Hallucination", 0));
             ogE.addElement(new OptionsGruppeEintrag("Tenebrous Curse", 0));
             ogE.addElement(new OptionsGruppeEintrag("Mind Raid", 0));
-            add(o19 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o19 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (malefic) {
@@ -245,7 +245,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Posession", 0));
             ogE.addElement(new OptionsGruppeEintrag("Cursed Earth", 0));
             ogE.addElement(new OptionsGruppeEintrag("Infernal Power", 0));
-            add(o20 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o20 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (prayers) {
@@ -259,7 +259,7 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Mutating Invocation", 0));
             ogE.addElement(new OptionsGruppeEintrag("Feculent Beseechment", 0));
             ogE.addElement(new OptionsGruppeEintrag("Blissfull Devotion", 0));
-            add(o21 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o21 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
 
@@ -372,89 +372,89 @@ public class PsychicPowers extends RuestkammerVater {
         o1.alwaysSelected();
 
         if (darkHereticus) {
-            o2.setMaxAnzahl(numPowers);
+            o2.setMaxAmount(numPowers);
             o2.setAktiv("Miasma of Pestilence", nurgle);
             o2.setAktiv("Weaver of Fates", tzeentch);
             o2.setAktiv("Deligthful Agonies", slaanesh);
         }
 
         if (contagion) {
-            o3.setMaxAnzahl(numPowers);
+            o3.setMaxAmount(numPowers);
         }
 
         if (change) {
-            o4.setMaxAnzahl(numPowers);
+            o4.setMaxAmount(numPowers);
         }
 
         if (disciplineOfTzeentch) {
-            o5.setMaxAnzahl(numPowers);
-            o5.setAktiv(tzeentch);
+            o5.setMaxAmount(numPowers);
+            o5.setActive(tzeentch);
         }
 
         if (disciplineOfNurgle) {
-            o6.setMaxAnzahl(numPowers);
-            o6.setAktiv(nurgle);
+            o6.setMaxAmount(numPowers);
+            o6.setActive(nurgle);
         }
 
         if (disciplineOfSlaanesh) {
-            o7.setMaxAnzahl(numPowers);
-            o7.setAktiv(slaanesh);
+            o7.setMaxAmount(numPowers);
+            o7.setActive(slaanesh);
         }
 
         if (runesOfFate) {
-            o8.setMaxAnzahl(numPowers);
+            o8.setMaxAmount(numPowers);
         }
 
         if (runesOfBattle) {
-            o9.setMaxAnzahl(numPowers);
+            o9.setMaxAmount(numPowers);
         }
 
         if (sanctic) {
-            o10.setMaxAnzahl(numPowers);
+            o10.setMaxAmount(numPowers);
         }
 
         if (hiveMind) {
-            o11.setMaxAnzahl(numPowers);
+            o11.setMaxAmount(numPowers);
         }
 
         if (librarius) {
-            o12.setMaxAnzahl(numPowers);
+            o12.setMaxAmount(numPowers);
         }
 
         if (psykana) {
-            o13.setMaxAnzahl(numPowers);
+            o13.setMaxAmount(numPowers);
         }
 
         if (sanguinary) {
-            o14.setMaxAnzahl(numPowers);
+            o14.setMaxAmount(numPowers);
         }
 
         if (interromancy) {
-            o15.setMaxAnzahl(numPowers);
+            o15.setMaxAmount(numPowers);
         }
 
         if(powerOfTheWaaagh) {
-        	o16.setMaxAnzahl(numPowers);
+        	o16.setMaxAmount(numPowers);
         }
 
         if(tempestasDiscipline) {
-        	o17.setMaxAnzahl(numPowers);
+        	o17.setMaxAmount(numPowers);
         }
 
         if(broodmind) {
-        	o18.setMaxAnzahl(numPowers);
+        	o18.setMaxAmount(numPowers);
         }
 
         if(obscuration) {
-        	o19.setMaxAnzahl(numPowers);
+        	o19.setMaxAmount(numPowers);
         }
 
         if(malefic) {
-        	o20.setMaxAnzahl(numPowers);
+        	o20.setMaxAmount(numPowers);
         }
 
         if(prayers) {
-        	o21.setMaxAnzahl(numPowers);
+        	o21.setMaxAmount(numPowers);
             o21.setAktiv("Wraithful Entreaty", khorne);
             o21.setAktiv("Mutating Invocation", tzeentch);
             o21.setAktiv("Feculent Beseechment", nurgle);

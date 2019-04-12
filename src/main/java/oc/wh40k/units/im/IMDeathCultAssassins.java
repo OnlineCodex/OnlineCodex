@@ -17,7 +17,7 @@ public class IMDeathCultAssassins extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, INFANTRY, ECCLESIARCHY_BATTLE_CONCLAVE, DEATH_CULT_ASSASSINS);
         name = "Death Cult Assassins\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Death Cult Assassin", 2, 10, getPts("Death Cult Assassins") + getPts("Death Cult power blades"));
         add(squad);

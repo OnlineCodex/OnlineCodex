@@ -19,7 +19,7 @@ public class ORWazbomBlastajet extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Wazbom mega-kannons", getPts("Wazbom mega-kannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Tellyport mega-blastas", getPts("Tellyport mega-blasta") * 2));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -29,7 +29,7 @@ public class ORWazbomBlastajet extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Stikkbomb flinga", getPts("Stikkbomb flinga")));
         ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         complete();
     }

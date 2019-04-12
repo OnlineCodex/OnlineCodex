@@ -13,7 +13,7 @@ public class IMDamnedLegionnaires extends Eintrag {
 	public IMDamnedLegionnaires() {
         name = "Damned Legionnaires\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Legionnaires", 5, 10, getPts("Damned Legionnaires") + getPts("Boltgun (SM)") + getPts("Bolt pistol (SM)"));
         add(squad);
@@ -26,13 +26,13 @@ public class IMDamnedLegionnaires extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer (SM)") - getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)") - getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun (SM)") - getPts("Boltgun (SM)")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM)") - getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)") - getPts("Boltgun (SM)")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

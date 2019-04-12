@@ -27,7 +27,7 @@ public class IMDeathwatchVeterans extends Eintrag {
 	public IMDeathwatchVeterans() {
 		name = "Veterans\n";
 		grundkosten = 0;
-		überschriftSetzen = true;
+		applyTitle = true;
 
 		rkVeterans = new Vector<RuestkammerStarter>();
 		rkSergeant = new Vector<RuestkammerStarter>();

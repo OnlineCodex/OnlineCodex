@@ -17,11 +17,11 @@ public class IMDeathwingAncient extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
         ogE.addElement(new OptionsGruppeEintrag("Thunder hammer and storm shield", getPts("Thunder hammer (Characters)") + getPts("Storm shield (Characters)")));
         ogE.addElement(new OptionsGruppeEintrag("Chainfist and storm bolter", getPts("Chainfist") + getPts("Storm bolter (SM)")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

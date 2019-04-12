@@ -101,45 +101,45 @@ public class AECraftworldRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Witchblade", getPts("Witchblade")));
             ogE.addElement(new OptionsGruppeEintrag("Singing spear", getPts("Singing spear")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
     	} else if(type.equals("Autarch")) {
             ogE.addElement(new OptionsGruppeEintrag("Star glaive", getPts("Star glaive")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Autarch with Swooping Hawk Wings")) {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Fusion pistol", getPts("Fusion pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Autarch Skyrunner")) {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             ogE.addElement(new OptionsGruppeEintrag("Laser lance", getPts("Laser lance")));
             ogE.addElement(new OptionsGruppeEintrag("Fusion gun", getPts("Fusion gun")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Spiritseer")) {
             ogE.addElement(new OptionsGruppeEintrag("Witch staff", getPts("Witch staff")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	}
 
         if(o1 != null) {

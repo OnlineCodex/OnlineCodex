@@ -181,7 +181,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
             ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected(0, true);
 
             seperator();
@@ -203,7 +203,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Character)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
             ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
@@ -214,7 +214,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Character)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Chaos Lord in Terminator Armour")){
     		ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
@@ -227,7 +227,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             ogE.addElement(new OptionsGruppeEintrag("Balesword", getPts("Balesword")));
@@ -238,7 +238,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Sorcerer")){
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -247,13 +247,13 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Sorcerer in Terminator Armour")){
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -262,17 +262,17 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Dark Apostle")){
             ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -281,7 +281,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Exalted Champion")){
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
@@ -294,7 +294,7 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Character)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -311,11 +311,11 @@ public class CHCSMRuestkammer extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
 	        ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Character)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Warpsmith")){
             ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
@@ -324,36 +324,36 @@ public class CHCSMRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Master of Possession")){
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Lord Discordant on Helstalker")) {
             ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
             ogE.addElement(new OptionsGruppeEintrag("Baleflamer", getPts("Baleflamer")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Impaler chainglaive", getPts("Impaler chainglaive")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	} else if(type.equals("Master of Executions")){
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Axe of dismemberment", getPts("Axe of dismemberment")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	}
 
         if(o1 != null) {

@@ -59,7 +59,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Castellan axe", getPts("Castellan axe")));
             ogE.addElement(new OptionsGruppeEintrag("Sentinel blade & Storm shield", getPts("Sentinel blade") + getPts("Storm shield (AC Characters)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
@@ -67,20 +67,20 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear (AC)")));
             ogE.addElement(new OptionsGruppeEintrag("Castellan axe", getPts("Castellan axe")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Balistus grenade launcher", getPts("Balistus grenade launcher")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             addRelics();
             o2.setSelected(0, true);
 
             seperator();
     	} else if(type.equals("Shield Captain on Dawneagle Jetbike")){
             ogE.addElement(new OptionsGruppeEintrag("Interceptor lance", getPts("Interceptor lance")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             addRelics();
             o1.setSelected(0, true);
 
@@ -88,7 +88,7 @@ public class IMAdeptusCustodesRuestkammer extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("Hurricane bolter", getPts("Hurrican bolter (AC)")));
             ogE.addElement(new OptionsGruppeEintrag("Salvo launcher", getPts("Salvo launcher")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             addRelics();
             o2.setSelected(0, true);
 

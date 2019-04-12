@@ -9,7 +9,7 @@ public class ORSkalkBluetoof extends Eintrag {
 
     public ORSkalkBluetoof() {
 
-        kategorie = 1;
+        category = 1;
         name = "Skalk Bluetoof";
         grundkosten = 95;
 
@@ -35,6 +35,6 @@ public class ORSkalkBluetoof extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

@@ -27,7 +27,7 @@ public class IMInterrogatorChaplainonBike extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

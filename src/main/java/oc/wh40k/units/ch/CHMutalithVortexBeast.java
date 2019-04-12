@@ -18,12 +18,12 @@ public class CHMutalithVortexBeast extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Betentacled maw", getPts("Betentacled maw")));
-        add(stave = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(stave = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Enormous claws", getPts("Enormous claws")));
-        add(inferno = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(inferno = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

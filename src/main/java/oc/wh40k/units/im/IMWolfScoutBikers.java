@@ -14,7 +14,7 @@ public class IMWolfScoutBikers extends Eintrag {
 
     public IMWolfScoutBikers() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Wolf Scout Bikers", 3, 10, getPts("Wolf Scout Bikers") +
                 getPts("bolt pistol (SM)") +

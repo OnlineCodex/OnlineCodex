@@ -18,7 +18,7 @@ public class CHRenegadeKnightLancer extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Cerastus shock lance", getPts("Cerastus shock lance")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -26,7 +26,7 @@ public class CHSorcereronSteedofSlaanesh extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

@@ -10,13 +10,13 @@ public class TYDeathleaper extends Eintrag {
         grundkosten = getPts("Deathleaper");
         power = 4;
 
-		addWarlordTraits("Mind Eater", true);
+		addWarlordTraits("Mind Eater");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

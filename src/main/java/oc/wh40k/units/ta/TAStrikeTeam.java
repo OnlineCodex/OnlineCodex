@@ -18,7 +18,7 @@ public class TAStrikeTeam extends Eintrag {
 
     public TAStrikeTeam() {
         name = "Strike Team\n";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Fire warrior", 5, 12, getPts("Strike Team") + getPts("Photon grenades"));
@@ -38,13 +38,13 @@ public class TAStrikeTeam extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("MV36 Guardian Drone", getPts("MV36 Guardian Drone")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("DS8 missile pod", "DS8 Tactical Support Turret with missile pod", getPts("DS8 Tactical Support Turret") + getPts("Missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("DS8 smart missile", "DS8 Tactical Support Turret with smart missile system", getPts("DS8 Tactical Support Turret") + getPts("Smart missile system")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

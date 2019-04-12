@@ -43,7 +43,7 @@ public class CHExaltedSorcereronDiscofTzeentch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

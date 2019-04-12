@@ -29,7 +29,7 @@ public class IMWolfLord extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

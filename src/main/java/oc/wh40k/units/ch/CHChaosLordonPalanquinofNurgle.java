@@ -26,7 +26,7 @@ public class CHChaosLordonPalanquinofNurgle extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

@@ -46,7 +46,7 @@ public class NESentryPylon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Focussed death ray", getPts("Focussed death ray")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 

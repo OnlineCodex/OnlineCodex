@@ -11,7 +11,7 @@ public class IMDeathwingApothecary extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

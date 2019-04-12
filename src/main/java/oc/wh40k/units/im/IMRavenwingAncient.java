@@ -15,11 +15,11 @@ public class IMRavenwingAncient extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Plasma talon", getPts("Plasma talon")));
         ogE.addElement(new OptionsGruppeEintrag("Ravenwing grenade launcher", getPts("Ravenwing grenade launcher")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

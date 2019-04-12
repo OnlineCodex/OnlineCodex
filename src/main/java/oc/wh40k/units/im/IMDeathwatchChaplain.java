@@ -29,7 +29,7 @@ public class IMDeathwatchChaplain extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

@@ -20,7 +20,7 @@ public class IMStrikeSquad extends Eintrag {
     public IMStrikeSquad() {
         name = "Angriffstrupp\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Grey Knights", 5, 10, getPts("Strike Squad"));
         squad.setGrundkosten(0);

@@ -13,7 +13,7 @@ public class TAHazardKampfanzugteam extends Eintrag {
 
     public TAHazardKampfanzugteam() {
         name = "Hazard Kampfanzugteam";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/TAHazardKampfanzugteam.jpg"));

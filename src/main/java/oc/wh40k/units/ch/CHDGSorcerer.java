@@ -40,7 +40,7 @@ public class CHDGSorcerer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

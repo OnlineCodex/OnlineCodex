@@ -19,14 +19,14 @@ public class IMTychotheLost extends Eintrag {
         power = 4;
         seperator();
 
-        addWarlordTraits("Selfless Valour (BA)", true);
+        addWarlordTraits("Selfless Valour (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

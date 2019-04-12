@@ -23,7 +23,7 @@ public class IMSanguinaryPriestonBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

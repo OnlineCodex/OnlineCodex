@@ -17,7 +17,7 @@ public class IMTelemonHeavyDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Casestus & Plasma", "Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (single)") + getPts("Twin plasma ejector")));
         ogE.addElement(new OptionsGruppeEintrag("Arachnus las-storm", getPts("Arachnus las-storm")));
         ogE.addElement(new OptionsGruppeEintrag("Iliastus accelerator culverin", getPts("Iliastus accelerator culverin")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
@@ -25,18 +25,18 @@ public class IMTelemonHeavyDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Casestus & Plasma", "Telemon Caestus and twin plasma ejectors", getPts("Telemon Caestus (single)") + getPts("Twin plasma ejector")));
         ogE.addElement(new OptionsGruppeEintrag("Arachnus las-storm", getPts("Arachnus las-storm")));
         ogE.addElement(new OptionsGruppeEintrag("Iliastus accelerator culverin", getPts("Iliastus accelerator culverin")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Spiculus bolt launcher", getPts("Spiculus bolt launcher")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o3.setSelected(0, true);
 
         complete();
 
-        setUnikat(true);
+        setUnique(true);
     }
 
     @Override

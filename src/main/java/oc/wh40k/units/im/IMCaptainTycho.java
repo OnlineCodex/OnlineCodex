@@ -19,14 +19,14 @@ public class IMCaptainTycho extends Eintrag {
         power = 5;
         seperator();
 
-        addWarlordTraits("Selfless Valour (BA)", true);
+        addWarlordTraits("Selfless Valour (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

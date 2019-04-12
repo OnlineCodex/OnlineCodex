@@ -20,7 +20,7 @@ public class NELychguard extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Warscythe", getPts("Warscythe")));
         ogE.addElement(new OptionsGruppeEintrag("Sword & Shield", "Hyperphase sword and dispersion shields", getPts("Hyperphase sword") + getPts("Dispersion shield")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
         

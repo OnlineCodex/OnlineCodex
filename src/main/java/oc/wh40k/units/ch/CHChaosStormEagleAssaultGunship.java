@@ -18,14 +18,14 @@ public class CHChaosStormEagleAssaultGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Twin multi-melta", getPts("Twin multi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", getPts("Reaper autocannon")));
         ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", getPts("Havoc launcher")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hellstrike missiles", getPts("Hellstrike missiles")));
         ogE.addElement(new OptionsGruppeEintrag("Balefire missiles", getPts("Balefire missiles")));
         ogE.addElement(new OptionsGruppeEintrag("2 twin lascannon", getPts("Twin lascannon") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -33,7 +33,7 @@ public class CHChaosStormEagleAssaultGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

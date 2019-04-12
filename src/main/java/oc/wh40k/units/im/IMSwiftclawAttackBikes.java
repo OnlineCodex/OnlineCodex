@@ -13,7 +13,7 @@ public class IMSwiftclawAttackBikes extends Eintrag {
 
     public IMSwiftclawAttackBikes() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Swiftclaw Attack Bike", "Swiftclaw Attack Bikes", 1, 3, getPts("Swiftclaw Attack Bike") + getPts("Twin boltgun")));
 

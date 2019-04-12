@@ -2,8 +2,6 @@ package oc;
 
 import java.awt.event.MouseEvent;
 
-import org.w3c.dom.Element;
-
 public class OptionsEinzelUpgrade extends OptionsVater {
 
     private OptionsButtonUpgrade myUpgrade;
@@ -47,12 +45,12 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     }
 
     @Override
-	public double getKosten() {
-        return myUpgrade.getKosten() * this.modelle;
+	public double getCost() {
+        return myUpgrade.getCost() * this.modelle;
     }
 
     public void setPreis(double i) {
-        myUpgrade.setPreis(i);
+        myUpgrade.setCost(i);
     }
 
     public boolean isAktiv() {
@@ -62,33 +60,25 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     public void setAktiv(boolean b) {
         aktiv = b;
         if (!aktiv && isSelected()) { //selected options that become inactive should be deselected
-            myUpgrade.switsch();
+            myUpgrade.toggle();
         }
         myUpgrade.setAktiv(b);
 
     }
 
     public void konstruktorDerFuerAlleGilt(int lX, int lY, String verzierung, String name, double preis) {
-        myUpgrade = new OptionsButtonUpgrade(-88, 0, 0, verzierung, name, false, preis);
+        myUpgrade = new OptionsButtonUpgrade(0, 0, verzierung, name, false, preis);
         myUpgrade.getButton().addMouseListener(this);
         panel = myUpgrade.getPanel();
         panel.setLocation(lX, lY);
     }
 
     public void konstruktorDerFuerAlleGilt(int lX, int lY, String verzierung, String name, double preis, boolean showKosten) {
-        myUpgrade = new OptionsButtonUpgrade(-88, 0, 0, verzierung, name, false, preis, showKosten);
+        myUpgrade = new OptionsButtonUpgrade(0, 0, verzierung, name, false, preis, showKosten);
         myUpgrade.getButton().addMouseListener(this);
         panel = myUpgrade.getPanel();
         panel.setLocation(lX, lY);
         this.showKosten = showKosten;
-    }
-
-    @Override
-	public String getLabel() {
-        if (myUpgrade.isSelected()) {
-            return myUpgrade.getButton().getText() + ZEILENUMBRUCH;
-        }
-        return "";
     }
 
     //@OVERRIDE
@@ -97,7 +87,7 @@ public class OptionsEinzelUpgrade extends OptionsVater {
         if (!aktiv) {
             return;
         }
-        myUpgrade.switsch();
+        myUpgrade.toggle();
         RefreshListener.fireRefresh();
     }
 
@@ -131,7 +121,7 @@ public class OptionsEinzelUpgrade extends OptionsVater {
 
         if (BuildaHQ.allePunktkosten) {
             if (!isShowKosten()) {
-                kosten = punkteAbstandHalter + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Pkt.");   // NET myUpgrade.getKosten() !!! das is was anderes!
+                kosten = punkteAbstandHalter + ((int) getCost()) + " " + BuildaHQ.translate("Pkt.");   // NET myUpgrade.getKosten() !!! das is was anderes!
             }
         }
 
@@ -148,7 +138,7 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     @Override
 	public void load(String s) {
         if (s.equals("y")) {
-            myUpgrade.switsch();
+            myUpgrade.toggle();
         }
     }
 
@@ -161,7 +151,7 @@ public class OptionsEinzelUpgrade extends OptionsVater {
     public void deleteYourself() {
         if (myUpgrade.isSelected()) {
             if (myUpgrade.isUnique() || myUpgrade.isRelic()) {
-                myUpgrade.switsch(myUpgrade.getName());
+                myUpgrade.toggle(myUpgrade.getName());
             }
         }
     }

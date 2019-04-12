@@ -18,7 +18,7 @@ public class TAXV25StealthBattlesuits extends Eintrag {
 
     public TAXV25StealthBattlesuits() {
         name = "XV25 Stealth Battlesuits";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         addToInformationVector("TA2006GeistKampfanzugteam", 1);

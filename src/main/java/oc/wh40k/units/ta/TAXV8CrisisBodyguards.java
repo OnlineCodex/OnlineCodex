@@ -13,7 +13,7 @@ public class TAXV8CrisisBodyguards extends Eintrag {
 	private OptionsZaehlerGruppe o4;
 	public TAXV8CrisisBodyguards() {
         name = "XV8 Crisis Bodyguards";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));

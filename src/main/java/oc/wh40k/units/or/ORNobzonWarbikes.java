@@ -12,7 +12,7 @@ public class ORNobzonWarbikes extends Eintrag {
 	private final OptionsZaehlerGruppe bosseCC2;
 
     public ORNobzonWarbikes() {
-        kategorie = 2;
+        category = 2;
         grundkosten = 0;
 
         bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 3, 9, getPts("Nobz on Warbikes") + getPts("Stikkbombs"));

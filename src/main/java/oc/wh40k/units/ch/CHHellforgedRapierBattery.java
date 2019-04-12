@@ -13,7 +13,7 @@ public class CHHellforgedRapierBattery extends Eintrag {
     public CHHellforgedRapierBattery() {
         //name = "Thousand Sons\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Hellforged Rapier", 1, 3, getPts("Hellforged Rapier"));
         add(squad);

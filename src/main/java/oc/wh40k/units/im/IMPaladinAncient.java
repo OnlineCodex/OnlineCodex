@@ -39,7 +39,7 @@ public class IMPaladinAncient extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

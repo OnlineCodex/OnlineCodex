@@ -30,7 +30,7 @@ public class ORFightaBommer extends Eintrag {
         seperator();
         ogE.addElement(new OptionsGruppeEintrag("[APO] Burna Bomms", 25));
         ogE.addElement(new OptionsGruppeEintrag("[APO] Apokalypse Bomms", 25));
-        add(apo = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(apo = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

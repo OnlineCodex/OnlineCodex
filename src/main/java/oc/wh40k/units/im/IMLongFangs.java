@@ -16,7 +16,7 @@ public class IMLongFangs extends Eintrag {
 
     public IMLongFangs() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Long Fangs", 5, 6, getPts("Long Fangs"));
         add(squad);

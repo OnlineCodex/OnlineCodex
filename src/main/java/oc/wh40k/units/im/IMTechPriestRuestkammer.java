@@ -98,21 +98,21 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("Omnissian axe", getPts("Omnissian axe")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Volkite blaster", getPts("Volkite blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Eradication ray", getPts("Eradication ray")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Macrostubber", getPts("Macrostubber")));
             ogE.addElement(new OptionsGruppeEintrag("Phosphor serpenta", getPts("Phosphor serpenta")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
     	} else if(type.equals("Tech-Priest Enginseer")){
@@ -120,19 +120,19 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("Omnissian axe", getPts("Omnissian axe")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Laspistol", getPts("Laspistol (AME)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Servo-arm", getPts("Servo-arm (AME)")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
     	} else if(type.equals("Cybernetica Datasmith")){
@@ -140,13 +140,13 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (AME)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Gamma pistol", getPts("Gamma pistol")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
             seperator();
     	}

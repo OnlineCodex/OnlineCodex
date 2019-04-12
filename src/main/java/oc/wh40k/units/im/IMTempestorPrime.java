@@ -23,7 +23,7 @@ public class IMTempestorPrime extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

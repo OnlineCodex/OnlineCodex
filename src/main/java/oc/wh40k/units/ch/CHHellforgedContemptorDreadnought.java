@@ -28,7 +28,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", getPts("Kheres assault cannon")));
         ogE.addElement(new OptionsGruppeEintrag("C-beam cannon", getPts("C-beam cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon", getPts("Butcher cannon")));
-        add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(oe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw")));
@@ -40,7 +40,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", getPts("Kheres assault cannon")));
         ogE.addElement(new OptionsGruppeEintrag("C-beam cannon", getPts("C-beam cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon", getPts("Butcher cannon")));
-        add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(oe3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
@@ -60,7 +60,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

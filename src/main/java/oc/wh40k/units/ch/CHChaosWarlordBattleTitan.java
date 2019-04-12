@@ -20,12 +20,12 @@ public class CHChaosWarlordBattleTitan extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Ardex-defensor mauler bolter", getPts("Ardex-defensor mauler")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Ardex-defensor Twin lascannon", getPts("Reaper chainfist")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

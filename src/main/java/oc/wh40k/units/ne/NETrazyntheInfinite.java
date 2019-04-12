@@ -12,14 +12,14 @@ public class NETrazyntheInfinite extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Nihilakh: Precognitive Strike", true);
+        addWarlordTraits("Nihilakh: Precognitive Strike");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

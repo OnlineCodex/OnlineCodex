@@ -23,13 +23,13 @@ public class IMLemartes extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Soulwarden (BA)", true);
+        addWarlordTraits("Soulwarden (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        this.setUnikat(true);
+        this.setUnique(true);
     }
 }

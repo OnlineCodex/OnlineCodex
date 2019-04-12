@@ -42,7 +42,7 @@ public class IMRunePriestinTerminatorArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

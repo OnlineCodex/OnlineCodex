@@ -17,12 +17,12 @@ public class CHForgefiend extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Hades autocannon", getPts("Hades autocannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Ectoplasma cannon", getPts("Ecotplasma cannon") * 2));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         ogE.addElement(new OptionsGruppeEintrag("Daemon jaws", getPts("Daemon jaws")));
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma cannon", getPts("Ecotplasma cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         seperator();
@@ -31,7 +31,7 @@ public class CHForgefiend extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

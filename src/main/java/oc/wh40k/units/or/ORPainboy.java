@@ -27,7 +27,7 @@ public class ORPainboy extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

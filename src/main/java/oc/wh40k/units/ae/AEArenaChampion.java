@@ -26,7 +26,7 @@ public class AEArenaChampion extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

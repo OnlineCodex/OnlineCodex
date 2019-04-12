@@ -126,40 +126,40 @@ public class CHWaffenkammerCD extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Daemonic axe", getPts("Daemonic axe")));
 	        ogE.addElement(new OptionsGruppeEintrag("Malefic talons", getPts("Malefic talons")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 	        seperator();
 
 	        ogE.addElement(new OptionsGruppeEintrag("Warp bolter", getPts("Warp bolter")));
 	        addRelics();
-	        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(BLOODMASTER) || keywords.contains(SKULLMASTER) || keywords.contains(BLOOD_THRONE)) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Blade of blood", getPts("Blade of blood")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 	        nkwaffe.setSelected(0, true);
         } else if(type.equals("Wrath Of Khorne Bloodthirster") || type.equals("Bloodthirster of Unfettered Fury")) {
 	    	ogE.addElement(new OptionsGruppeEintrag("Axe of Khorne", getPts("Axe of Khorne")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 	        nkwaffe.setSelected(0, true);
         } else if(keywords.contains(LORD_OF_CHANGE)) {
             ogE.addElement(new OptionsGruppeEintrag("Baleful sword", getPts("Baleful sword")));
             ogE.addElement(new OptionsGruppeEintrag("Rod of sorcery", getPts("Rod of sorcery")));
 	        addRelics();
-            add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(CHANGECASTER) || keywords.contains(FATESKIMMER) || keywords.contains(FLUXMASTER)) {
         	ogE.addElement(new OptionsGruppeEintrag("Staff of change", getPts("Staff of change")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(SPOILPOX_SCRIVENER)) {
         	ogE.addElement(new OptionsGruppeEintrag("Plaguesword", getPts("Plaguesword (CD)")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if(keywords.contains(KEEPER_OF_SECRETS)) {
         	ogE.addElement(new OptionsGruppeEintrag("Witstealer sword", getPts("Witstealer sword")));
 	        addRelics();
-	        add(nkwaffe = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+	        add(nkwaffe = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         }
 
         setUeberschrift("Waffen");

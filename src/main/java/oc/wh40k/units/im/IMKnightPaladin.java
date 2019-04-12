@@ -15,7 +15,7 @@ public class IMKnightPaladin extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 

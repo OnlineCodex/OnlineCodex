@@ -15,12 +15,12 @@ public class IMContemptorGalatusDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Galatus warblade", getPts("Galatus warblade") * 2));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Galatus shield", getPts("Galatus shield")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

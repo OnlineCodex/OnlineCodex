@@ -17,7 +17,7 @@ public class IMTarantulaAirDefenceBattery extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Air defense missiles", getPts("Air defense missiles")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

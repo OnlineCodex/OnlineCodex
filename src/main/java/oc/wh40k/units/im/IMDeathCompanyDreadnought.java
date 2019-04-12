@@ -16,25 +16,25 @@ public class IMDeathCompanyDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Furioso fists", getPts("Furioso fist (pair)")));
         ogE.addElement(new OptionsGruppeEintrag("Blood talons", getPts("blood talons")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Smoke launchers", getPts("smoke launchers")));
         ogE.addElement(new OptionsGruppeEintrag("Magna-grapple", getPts("magna-grapple")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

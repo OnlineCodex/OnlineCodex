@@ -11,7 +11,7 @@ public class TALongstrike extends Eintrag {
 
     public TALongstrike() {
         name = "Longstrike";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
         power = 10;
 
@@ -32,14 +32,14 @@ public class TALongstrike extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("T'au: Strength of Belief", true);
+        addWarlordTraits("T'au: Strength of Belief");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
 
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

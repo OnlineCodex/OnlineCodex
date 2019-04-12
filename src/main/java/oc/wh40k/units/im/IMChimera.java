@@ -21,17 +21,17 @@ public class IMChimera extends Eintrag {
         power = 5;
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser")));
-        add(o1x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1x = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy Flamer (AM)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
-        add(o2x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2x = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy Flamer (AM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

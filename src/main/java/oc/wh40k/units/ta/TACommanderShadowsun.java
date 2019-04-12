@@ -23,7 +23,7 @@ public class TACommanderShadowsun extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Exemplar of the Kauyon", true);
+        addWarlordTraits("Exemplar of the Kauyon");
 
         complete();
     }
@@ -31,7 +31,7 @@ public class TACommanderShadowsun extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         power = 9 + o1.getAnzahl();
         if (oe1.isSelected()) {
             power++;

@@ -11,8 +11,8 @@ public class ORDeffDreads extends Eintrag {
 
     public ORDeffDreads() {
 
-        kategorie = 3;
-        überschriftSetzen = true;
+        category = 3;
+        applyTitle = true;
         grundkosten = 0;
 
         name = "Deff Dreads";

@@ -16,7 +16,7 @@ public class TADarkstrider extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 
@@ -25,6 +25,6 @@ public class TADarkstrider extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

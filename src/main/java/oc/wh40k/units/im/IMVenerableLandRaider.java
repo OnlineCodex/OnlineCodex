@@ -33,7 +33,7 @@ public class IMVenerableLandRaider extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (AC)")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 
@@ -41,7 +41,7 @@ public class IMVenerableLandRaider extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Two twin lascannon", 2 * getPts("Twin lascannon (AC)")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

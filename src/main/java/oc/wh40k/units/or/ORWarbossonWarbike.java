@@ -29,7 +29,7 @@ public class ORWarbossonWarbike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

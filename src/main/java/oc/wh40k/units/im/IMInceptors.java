@@ -16,7 +16,7 @@ public class IMInceptors extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Assault bolters", getPts("Assault bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma exterminator", getPts("Plasma exterminator")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

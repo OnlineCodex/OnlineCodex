@@ -19,14 +19,14 @@ public class IMHellblasterSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Plasma incinerator", getPts("Plasma incinerator")));
         ogE.addElement(new OptionsGruppeEintrag("Assault plasma incinerator", getPts("Assault plasma incinerator")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy plasma incinerator", getPts("Heavy plasma incinerator")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hellblaster Sergeant", getPts("Hellblaster Sergeant")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

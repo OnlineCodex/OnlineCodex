@@ -55,7 +55,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
     	if(type.equals("Watch Master")) {
             ogE.addElement(new OptionsGruppeEintrag("Guardian spear", getPts("Guardian spear")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
     	} else if(type.equals("Watch Captain")){
@@ -88,7 +88,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Stalker pattern boltgun", getPts("Stalker pattern boltgun")));
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
@@ -120,7 +120,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Stalker pattern boltgun", getPts("Stalker pattern boltgun")));
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             seperator();
@@ -131,7 +131,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma (DW)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -144,30 +144,30 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power fist & meltagun", getPts("Power fist (SM)") + getPts("Meltagun (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     	} else if(type.equals("Primaris Watch Captain")){
             ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", getPts("Master crafted auto bolt rifle (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", getPts("Master crafted stalker bolt rifle (DW)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Power fist & plasma pistol", getPts("Power fist (SM)") + getPts("Plasma pistol (SM)")));
             addRelics();
-            add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     	} else if(type.equals("Librarian")){
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
@@ -175,7 +175,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -183,7 +183,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     	} else if (type.equals("Librarian in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer (DW)")));
@@ -191,7 +191,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma (DW)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -199,7 +199,7 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if (type.equals("Chaplain")) {
@@ -209,13 +209,13 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("rozius arcanum")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -227,13 +227,13 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta (DW)")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma (DW)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("rozius arcanum")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -241,23 +241,23 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
         } else if (type.equals("Primaris Librarian")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type.equals("Primaris Chaplain")) {
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Absolver bolt pistol", getPts("Absolver bolt pistol (DW)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }
 
         if(o1 != null) {
@@ -314,8 +314,8 @@ public class IMDeathwatchRuestkammer extends RuestkammerVater {
     	if(type.equals("Primaris Watch Captain")){
 	        o1.alwaysSelected();
 	        o2.alwaysSelected();
-	        o1.setAktiv(!o4.isSelected());
-	        o2.setAktiv(!o4.isSelected());
+	        o1.setActive(!o4.isSelected());
+	        o2.setActive(!o4.isSelected());
     	}
 
     	baneboltsOfEryxia.setAktiv((chosenRelic == null || baneboltsOfEryxia.isSelected()));

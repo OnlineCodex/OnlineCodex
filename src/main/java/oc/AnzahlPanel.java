@@ -1,21 +1,13 @@
 package oc;
 
-import static oc.RefreshListener.addRefreshListener;
-import static oc.RefreshListener.Priority.ANZAHL_PANEL;
-
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Insets;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-
-import org.w3c.dom.Element;
+import static oc.RefreshListener.Priority.ANZAHL_PANEL;
+import static oc.RefreshListener.addRefreshListener;
 
 public class AnzahlPanel extends OptionsVater implements KeyListener {
 
@@ -119,7 +111,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
     }
 
     @Override
-    public double getKosten() {
+    public double getCost() {
         if (preis == -88) return 0;
         return grundkosten + (this.preis * this.modelle);
     }
@@ -200,13 +192,13 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
 
         final FontMetrics fm = lName.getFontMetrics(lName.getFont());
         final StringBuilder abstandshalter = new StringBuilder("");
-        final int cnt = (panel.getSize().width - 130 - (fm.stringWidth(n + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.")))) / fm.stringWidth(" .");
+        final int cnt = (panel.getSize().width - 130 - (fm.stringWidth(n + BuildaHQ.translate("jeweils") + " " + ((int) preis) + " " + BuildaHQ.translate("Pkt.")))) / fm.stringWidth(" .");
 
         for (int i = 0; i < cnt; ++i) {
             abstandshalter.append(" .");
         }
 
-        lName.setText(n + abstandshalter.toString() + BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt."));
+        lName.setText(n + abstandshalter.toString() + BuildaHQ.translate("jeweils") + " " + ((int) preis) + " " + BuildaHQ.translate("Pkt."));
     }
 
     @Override
@@ -297,7 +289,7 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         String kosten = "";
 
         if (BuildaHQ.allePunktkosten) {
-            kosten = punkteAbstandHalter + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Pkt.");
+            kosten = punkteAbstandHalter + ((int) getCost()) + " " + BuildaHQ.translate("Pkt.");
         }
 
         String n = name;
@@ -337,8 +329,4 @@ public class AnzahlPanel extends OptionsVater implements KeyListener {
         tModelle.setText(String.valueOf(modelle));
     }
 
-    @Override
-    public String getLabel() {
-        return "";
-    }
 }

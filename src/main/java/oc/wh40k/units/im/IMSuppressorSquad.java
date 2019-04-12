@@ -20,13 +20,13 @@ public class IMSuppressorSquad extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Accelerator autocannons", getPts("Accelerator autocannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Suppressor Sergeant", getPts("Suppressor Sergeant")));
         ogE.addElement(new OptionsGruppeEintrag("Accelerator autocannon", getPts("Accelerator autocannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

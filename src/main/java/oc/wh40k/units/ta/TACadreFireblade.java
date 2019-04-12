@@ -25,7 +25,7 @@ public class TACadreFireblade extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
 

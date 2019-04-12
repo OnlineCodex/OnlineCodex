@@ -15,17 +15,17 @@ public class CHPlagueHulkOfNurgle extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Iron claw", getPts("Iron claw")));
         ogE.addElement(new OptionsGruppeEintrag("Warpsword", getPts("Warpsword")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Rot cannon", getPts("Rot cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Rancid vomit", getPts("Rancid vomit")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

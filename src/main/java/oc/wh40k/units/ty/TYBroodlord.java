@@ -36,7 +36,7 @@ public class TYBroodlord extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

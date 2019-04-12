@@ -167,7 +167,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         int cp = 3;
         int power = 0;
         for (BuildaVater buildaVater : myBuildaVaterVec) {
-            kosten += buildaVater.getKosten();
+            kosten += buildaVater.getCost();
             cp += buildaVater.getCP();
             power += buildaVater.getPower();
         }
@@ -184,12 +184,12 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
         text.append(BuildaHQ.formatierFettItalicUnderline(BuildaHQ.translate("Gesamtpunkte") + " "
                 + BuildaHQ.translate("der Armee : ")
-                + entferneNullNachkomma(kosten)));
+                + kosten));
 
         text.append(BuildaHQ.formatierFettItalicUnderline(ZEILENUMBRUCH
                 + BuildaHQ.translate("Powerlevel") + " "
                 + BuildaHQ.translate("der Armee : ")
-                + entferneNullNachkomma(power)));
+                + power));
 
         text.append(BuildaHQ.formatierFettItalicUnderline(ZEILENUMBRUCH
                 + BuildaHQ.translate("Relikte") + " " + relics + " "
@@ -198,7 +198,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         text.append(BuildaHQ.formatierFettItalicUnderline(ZEILENUMBRUCH
                 + BuildaHQ.translate("Kommandopunkte") + " "
                 + BuildaHQ.translate("der Armee : ")
-                + entferneNullNachkomma(cp) + ZEILENUMBRUCH + ZEILENUMBRUCH));
+                + cp + ZEILENUMBRUCH + ZEILENUMBRUCH));
 
         for (BuildaVater bV : myBuildaVaterVec) {
             mainCnt += bV.Hauptkontingent.isSelected() ? 1 : 0;
@@ -378,7 +378,7 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
                 }
             }
             text.append(" - ")
-                .append((int) bV.getKosten())
+                .append((int) bV.getCost())
                 .append(" Punkte")
                 .append(" (PL ").append((int) bV.getPower()).append(")")
                 .append(ZEILENUMBRUCH);
@@ -389,19 +389,19 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
 
             for (int i = 0; i < bV.getChooserAnzahl(); ++i) {
                 cg = bV.getChooserGruppe(i);
-                LOGGER.info("cg.getKosten()" + cg.getKosten());
-                LOGGER.info("getKosten()" + getKosten());
+                LOGGER.info("cg.getKosten()" + cg.getCost());
+                LOGGER.info("getKosten()" + getCost());
                 text.append(cg.getAnzahlText(false)).append(" ")
                         .append(cg.kategorieText());
                 if (cg.getAnzahl() > 0) {
                     text.append(": ")
-                            .append(entferneNullNachkomma(cg.getKosten()))
+                            .append((int) cg.getCost())
                             .append(" ")
                             .append(BuildaHQ.translate("Pkt."))
                             .append("   ")
                             .append(BuildaHQ.formatDouble(
-                            (cg.getKosten())
-                                    / (getKosten())
+                            (cg.getCost())
+                                    / (getCost())
                                     * 100, 1)).append("%");
                 }
                 text.append(ZEILENUMBRUCH);
@@ -476,10 +476,10 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         textArea.requestFocusInWindow();
     }
     @Override
-	public double getKosten() {
+	public double getCost() {
         double kosten = 0.0;
         for (BuildaVater buildaVater : myBuildaVaterVec) {
-            kosten += buildaVater.getKosten();
+            kosten += buildaVater.getCost();
         }
         LOGGER.info("TextArea-Kosten: " + kosten);
         return kosten;

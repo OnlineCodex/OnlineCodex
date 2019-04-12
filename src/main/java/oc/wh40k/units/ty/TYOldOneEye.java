@@ -10,14 +10,14 @@ public class TYOldOneEye extends Eintrag {
         grundkosten = getPts("OldOneEye");
         power = 7;
 
-		addWarlordTraits("Adaptive Biology", true);
+		addWarlordTraits("Adaptive Biology");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

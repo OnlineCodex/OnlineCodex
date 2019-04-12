@@ -10,7 +10,7 @@ public class ORBoomdakkaSnazzwagons extends Eintrag {
 
     public ORBoomdakkaSnazzwagons() {
 
-        kategorie = 4;
+        category = 4;
         grundkosten = 0;
 
         buggies = new AnzahlPanel(ID, randAbstand, cnt, "Boomdakka Snazzwagon", "Boomdakka Snazzwagons", 1, 3, getPts("Boomdakka Snazzwagons") + getPts("Big shoota"));

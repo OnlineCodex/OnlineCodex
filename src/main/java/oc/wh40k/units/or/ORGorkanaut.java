@@ -9,7 +9,7 @@ public class ORGorkanaut extends Eintrag {
 
     public ORGorkanaut() {
 
-        kategorie = 5;
+        category = 5;
         name = "Gorkanaut";
         grundkosten = getPts("Gorkanaut");
         power = 15;

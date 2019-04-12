@@ -24,14 +24,14 @@ public class IMEzekiel extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Courage of the First Legion (DA)", true);
+        addWarlordTraits("Courage of the First Legion (DA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

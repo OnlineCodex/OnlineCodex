@@ -7,7 +7,7 @@ public class ORBossZagstruk extends Eintrag {
 
     public ORBossZagstruk() {
 
-        kategorie = 1;
+        category = 1;
         name = "Boss Zagstruk";
         grundkosten = getPts("Boss Zagstruk");
         power = 5;
@@ -16,7 +16,7 @@ public class ORBossZagstruk extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Goffs: Proper Killy", true);
+        addWarlordTraits("Goffs: Proper Killy");
 
         complete();
     }
@@ -24,6 +24,6 @@ public class ORBossZagstruk extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

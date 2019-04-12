@@ -20,14 +20,14 @@ public class IMGabrielSeth extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Selfless Valour (BA)", true);
+        addWarlordTraits("Selfless Valour (BA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }
 

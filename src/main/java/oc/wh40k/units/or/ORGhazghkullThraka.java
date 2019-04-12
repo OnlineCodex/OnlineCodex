@@ -7,14 +7,14 @@ public class ORGhazghkullThraka extends Eintrag {
 
     public ORGhazghkullThraka() {
 
-        kategorie = 1;
+        category = 1;
         name = "Ghazghkull Thraka";
         grundkosten = getPts("Ghazghkull Thraka");
         power = 12;
 
         seperator();
 
-        addWarlordTraits("Goffs: Proper Killy", true);
+        addWarlordTraits("Goffs: Proper Killy");
 
         complete();
     }
@@ -22,6 +22,6 @@ public class ORGhazghkullThraka extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

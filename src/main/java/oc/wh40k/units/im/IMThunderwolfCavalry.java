@@ -15,7 +15,7 @@ public class IMThunderwolfCavalry extends Eintrag {
     public IMThunderwolfCavalry() {
         name = "Thunderwolf Cavalry\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Thunderwolf Cavalry", 3, 6, getPts("Thunderwolf Cavalry"));
         add(squad);

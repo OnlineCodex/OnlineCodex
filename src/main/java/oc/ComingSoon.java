@@ -24,7 +24,7 @@ public class ComingSoon extends Eintrag {
 
         this.add(new OptionsEinzelUpgrade(ID, -888, cnt, "", "bla", 11));
 
-        setKostenLabelVisible(false);
+        setKostenLabelVisible();
 
         complete();
 

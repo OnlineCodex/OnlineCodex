@@ -21,7 +21,7 @@ public class IMIntercessorSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Auto bolt rifle", getPts("Auto bolt rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", getPts("Stalker bolt rifle")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

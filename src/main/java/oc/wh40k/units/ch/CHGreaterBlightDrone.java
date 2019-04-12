@@ -14,17 +14,17 @@ public class CHGreaterBlightDrone extends Eintrag {
         grundkosten = getPts("Greater Blight Drone");
 
         ogE.addElement(new OptionsGruppeEintrag("Bile maw", getPts("Bile maw")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Blightreaper cannon", getPts("Blightreaper cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Plague probe", getPts("Plague probe")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

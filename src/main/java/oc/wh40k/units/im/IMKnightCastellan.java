@@ -17,7 +17,7 @@ public class IMKnightCastellan extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
 
         complete();

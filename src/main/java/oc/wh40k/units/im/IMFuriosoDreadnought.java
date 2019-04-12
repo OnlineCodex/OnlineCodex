@@ -23,33 +23,33 @@ public class IMFuriosoDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Furioso fists", getPts("Furioso fist (single)")));
-        add(o1x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1x = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Furioso fists", getPts("Furioso fist (pair)")));
         ogE.addElement(new OptionsGruppeEintrag("Blood talons", getPts("blood talons")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Frag cannon", getPts("Frag cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Frag cannon", getPts("Frag cannon")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Smoke launchers", getPts("smoke launchers")));
         ogE.addElement(new OptionsGruppeEintrag("Magna-grapple", getPts("magna-grapple")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }
@@ -58,18 +58,18 @@ public class IMFuriosoDreadnought extends Eintrag {
     public void refreshen() {
 
         if (o2.isSelected("Frag cannon")) {
-            o1.setAktiv(false);
-            o1x.setAktiv(true);
+            o1.setActive(false);
+            o1x.setActive(true);
             o1x.alwaysSelected();
             o3.setAktiv("Frag cannon", false);
         } else if (o3.isSelected("Frag cannon")) {
-            o1.setAktiv(false);
-            o1x.setAktiv(true);
+            o1.setActive(false);
+            o1x.setActive(true);
             o1x.alwaysSelected();
             o2.setAktiv("Frag cannon", false);
         } else {
-            o1x.setAktiv(false);
-            o1.setAktiv(true);
+            o1x.setActive(false);
+            o1.setActive(true);
             o1.alwaysSelected();
             o2.setAktiv("Frag cannon", true);
             o3.setAktiv("Frag cannon", true);

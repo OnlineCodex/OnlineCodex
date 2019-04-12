@@ -18,7 +18,7 @@ public class CHPlagueMarines extends Eintrag {
 
     public CHPlagueMarines() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Plague Marines";
         grundkosten = 0;

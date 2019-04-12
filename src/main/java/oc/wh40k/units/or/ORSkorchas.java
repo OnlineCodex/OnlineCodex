@@ -10,7 +10,7 @@ public class ORSkorchas extends Eintrag {
 
     public ORSkorchas() {
 
-        kategorie = 4;
+        category = 4;
         grundkosten = 0;
 
         Buggies = new AnzahlPanel(ID, randAbstand, cnt, "Skorcha", "Skorchas", 1, 5, getPts("Skorchas") + getPts("Skorcha"));

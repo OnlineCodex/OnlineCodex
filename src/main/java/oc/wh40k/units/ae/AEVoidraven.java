@@ -33,7 +33,7 @@ public class AEVoidraven extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Dark scythes", 2 * getPts("Dark scythe")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 

@@ -8,14 +8,14 @@ public class CHChaosBastions extends Eintrag {
 
 	public CHChaosBastions() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Chaos Bastions";
         grundkosten = getPts("Chaos Bastions");
 
         ogE.addElement(new OptionsGruppeEintrag("Icarus lascannon", getPts("Icarus lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Quad-gun", getPts("Quad-gun")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         power = 10;
 

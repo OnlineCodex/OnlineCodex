@@ -31,7 +31,7 @@ public class AEDracon extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 
@@ -45,7 +45,7 @@ public class AEDracon extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o2.setSelected(0, true);
 

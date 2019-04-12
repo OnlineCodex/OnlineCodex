@@ -24,7 +24,7 @@ public class IMCustodianGuard extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
 
 

@@ -31,7 +31,7 @@ public class CHTSSorcererinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

@@ -19,7 +19,7 @@ public class TATigerShark extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("14 Gun drones", 0));
         ogE.addElement(new OptionsGruppeEintrag("6 Seeker missiles", 0));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

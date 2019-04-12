@@ -13,7 +13,7 @@ public class ORArtefacts extends Eintrag {
         power = 0;
 
         ogE.addElement(new OptionsGruppeEintrag("Headwoppa's Killchoppa", getPts("")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         this.eintragsCNT = 0;
 

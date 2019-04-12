@@ -16,7 +16,7 @@ public class ORNobz extends Eintrag {
 	private final OptionsEinzelZaehler cyborg;
 
     public ORNobz() {
-        kategorie = 2;
+        category = 2;
         grundkosten = 0;
 
         bosse = new AnzahlPanel(ID, randAbstand, cnt, "Nobz", 5, 10, getPts("Nobz") + getPts("Stikkbombs"));

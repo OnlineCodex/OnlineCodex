@@ -32,7 +32,7 @@ public class AEMauganRa extends Eintrag {
 
     public void refreshen() {
 
-        setUnikat(true);
+        setUnique(true);
 
     }
 

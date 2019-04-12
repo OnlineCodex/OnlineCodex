@@ -38,7 +38,7 @@ public class IMGreyKnightApothecary extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

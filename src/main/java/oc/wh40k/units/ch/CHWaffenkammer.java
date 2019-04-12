@@ -82,10 +82,10 @@ public class CHWaffenkammer extends RuestkammerVater {
         if (type == "Scarab Occult Sorcerer") {
             ogE.addElement(new OptionsGruppeEintrag("Inferno combi-bolter", getPts("Inferno combi-bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
-            add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(fkwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             ogE.addElement(new OptionsGruppeEintrag("Force stave", getPts("Force stave")));
-            add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(handwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else {
             if (!defaultFK.equals("no weapon")) {
                 if (defaultFK.equals("")) {
@@ -146,7 +146,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                 	ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer")));
             }
             if (ogE.size() > 0) {
-                add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+                add(fkwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
                 if (!defaultFK.equals("no weapon")) {
                     fkwaffen.setSelected(0, true);
                 }
@@ -190,7 +190,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                 }
             }
             if (ogE.size() > 0) {
-                add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+                add(handwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
                 if (!defaultNK.equals("no weapon")) {
                     handwaffen.setSelected(0, true);
                 }

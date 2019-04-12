@@ -18,12 +18,12 @@ public class CHRenegadeKnightAtropos extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Atropos lascutter", getPts("Atropos lascutter")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Graviton singularity", getPts("Graviton singularity")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         complete();

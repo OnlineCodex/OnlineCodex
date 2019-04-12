@@ -17,20 +17,20 @@ public class TABarracudaAX52 extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heavy burst cannon", getPts("Heavy burst cannon FW")));
         ogE.addElement(new OptionsGruppeEintrag("Ion cannon", getPts("Ion cannon FW")));
         ogE.addElement(new OptionsGruppeEintrag("Swiftstrike railgun", getPts("Swiftstrike railgun")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Two long-barrelled burst cannon", getPts("Long-barrelled burst cannon")*2));
         ogE.addElement(new OptionsGruppeEintrag("Two cyclic ion blasters", getPts("Cyclic ion blaster")*2));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Two missile pods", getPts("Missile pod")*2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o3.setSelected(0, true);
 
         seperator();

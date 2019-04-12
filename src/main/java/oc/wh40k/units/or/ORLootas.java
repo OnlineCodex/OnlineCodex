@@ -13,7 +13,7 @@ public class ORLootas extends Eintrag {
 
     public ORLootas() {
 
-        //kategorie = 2;
+        //category = 2;
 
         grundkosten = 0;
         add(Pluenderaz = new AnzahlPanel(ID, randAbstand, cnt, "Lootas", 5, 15, getPts("Lootas") + getPts("Deffgun") + getPts("Stikkbombs")));

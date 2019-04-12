@@ -19,7 +19,7 @@ public class ORLootedWagon extends Eintrag {
 
 
         ogE.addElement(new OptionsGruppeEintrag("Panzakanonä", 30));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -32,7 +32,7 @@ public class ORLootedWagon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Todeswalzä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Vastärktä Rammä", 5));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Zugetakkat", 15));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Megagreifa", 5));

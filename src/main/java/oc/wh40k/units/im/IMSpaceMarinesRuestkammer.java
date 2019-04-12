@@ -160,7 +160,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
@@ -171,18 +171,18 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             }
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Chainsword", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
         } else if (type.equals("Captain in Terminator Armour")) {
             ogE.addAll(IMSpaceMarinesTerminatorCombiWeapons.createRK("Stormbolter", "Stormbolter (SM)", buildaVater));
             ogE.addAll(IMSpaceMarinesTerminatorMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Stormbolter", true);
 
             seperator();
@@ -191,7 +191,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Relic blade", getPts("Relic blade")));
             ogE.addElement(new OptionsGruppeEintrag("Chain fist", getPts("Chain fist")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setPreis("Storm shield", getPts("Storm shield (Characters)"));
             o2.setPreis("Thunder hammer", getPts("Thunder hammer (Characters)"));
             o2.setSelected("Power sword", true);
@@ -199,7 +199,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
 
             seperator();
 
@@ -208,7 +208,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("Combi-bolter", "Combi-bolter", buildaVater));
             ogE.addAll(IMSpaceMarinesTerminatorMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Combi-bolter", true);
 
             seperator();
@@ -217,7 +217,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Relic blade", getPts("Relic blade")));
             ogE.addElement(new OptionsGruppeEintrag("Chain fist", getPts("Chain fist")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setPreis("Storm shield", getPts("Storm shield (Characters)"));
             o2.setPreis("Thunder hammer", getPts("Thunder hammer (Characters)"));
             o2.setSelected("Power sword", true);
@@ -225,43 +225,43 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
         } else if (type.equals("Captain in Gravis Armour")) {
         	ogE.addElement(new OptionsGruppeEintrag("Boltstorm gauntlet", getPts("Boltstorm gauntlet")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("MC Auto bolt rifle", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Master-crafted power sword", getPts("Master-crafted power sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Power sword", true);
         } else if (type.equals("Captain in Phobos Armour")) {
         	ogE.addElement(new OptionsGruppeEintrag("Master-crafted instigator bolt carbine", getPts("Master-crafted instigator bolt carbine")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
         } else if (type.equals("Primaris Captain")) {
         	ogE.addElement(new OptionsGruppeEintrag("MC Auto bolt rifle", "Master-cafted auto bolt rifle", getPts("Master crafted auto bolt rifle")));
         	ogE.addElement(new OptionsGruppeEintrag("MC Stalker bolt rifle", "Master-cafted stalker bolt rifle", getPts("Master crafted stalker bolt rifle")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("MC Auto bolt rifle", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Power sword", true);
         } else if (type.equals("Sanguinary Priest") || type.equals("Sanguinary Priest on Bike")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
@@ -269,26 +269,26 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
 
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
         } else if (type.equals("Librarian") || type.equals("Librarian on Bike")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("Bolt pistol", "Bolt pistol (SM)", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
@@ -297,24 +297,24 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type.equals("Primaris Librarian") || type.equals("Librarian in Phobos Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Force sword", true);
         } else if (type.equals("Librarian in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Characters)")));
             ogE.addAll(IMSpaceMarinesTerminatorCombiWeapons.createRK("Storm bolter", "Storm bolter (SM)", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
@@ -323,19 +323,19 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type.equals("Chaplain")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt gun", getPts("Bolt gun (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(2, true);
         } else if (type.equals("Chaplain in Terminator Armour")) {
             ogE.addAll(IMSpaceMarinesTerminatorCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(3, true);
         } else if (type.equals("Company Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt gun", getPts("Bolt gun (SM)")));
@@ -343,30 +343,30 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
         } else if (type.equals("Chapter Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Power sword", true);
         } else if (type.equals("Primaris Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt rifle", true);
         }  else if (type.equals("Chapter Champion")) {
         	ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Champion's blade", getPts("Champion's blade")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Champion's blade", true);
 
             seperator();
@@ -378,37 +378,37 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Characters)")));
             ogE.addElement(new OptionsGruppeEintrag("Relic blade", getPts("relic blade")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Power sword", true);
         }  else if (type.equals("Apothecary") || type.equals("Apothecary on Bike") || type.equals("Sanguinary Novitiate")) {
         	ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Chainsword", true);
 
             seperator();
 
         	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Bolt pistol", true);
         } else if (type.equals("Company Champion") || type.equals("Company Champion on Bike") || type.equals("Company Champion with Jump Pack")) {
         	ogE.addElement(new OptionsGruppeEintrag("Master-crafted power sword", getPts("Master-crafted power sword")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Master-crafted power sword", true);
 
             seperator();
 
         	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Bolt pistol", true);
     	} else if (type.equals("Cataphractii Sergeant")) {
 
             ogE.addElement(new OptionsGruppeEintrag("Combi-Bolter", getPts("Combi-Bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("Lightning claw (single)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
             o1.setSelected(0, true);
 
             seperator();
@@ -417,13 +417,13 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("Lightning claw (single)")));
             ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
             o2.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
 
             seperator();
 
@@ -432,7 +432,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
             o1.setSelected(0, true);
 
             seperator();
@@ -440,33 +440,33 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-Bolter", getPts("Combi-Bolter")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma blaster", getPts("plasma blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Volkite charger", getPts("volkite charger")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
             o2.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 0));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 0));
         } else if (type.contains("Techmarine")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
 
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(2, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Servo-arm", getPts("Servo-arm")));
             ogE.addElement(new OptionsGruppeEintrag("Conversion beamer", getPts("conversion beamer")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -478,7 +478,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Nemesis force sword", getPts("Nemesis force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Two nemesis falchions", getPts("Nemesis falchions")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -487,16 +487,16 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
             ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type.equals("Chaplain GK")) {
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if (type.equals("Terminator Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("lightning claw (single)")));
             ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("thunder hammer (Characters)")));
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Lightning claw", true);
         }
 
@@ -558,9 +558,9 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             o2.setLegal(legal);
             o3.setLegal(legal);
 
-            o1.setMaxAnzahl(o3.isSelected() ? 0 : 1);
-            o2.setMaxAnzahl(o3.isSelected() ? 0 : 1);
-            o3.setMaxAnzahl(o1.isSelected() || o2.isSelected() ? 0 : 1);
+            o1.setMaxAmount(o3.isSelected() ? 0 : 1);
+            o2.setMaxAmount(o3.isSelected() ? 0 : 1);
+            o3.setMaxAmount(o1.isSelected() || o2.isSelected() ? 0 : 1);
         }
 
         if (o1 != null) {

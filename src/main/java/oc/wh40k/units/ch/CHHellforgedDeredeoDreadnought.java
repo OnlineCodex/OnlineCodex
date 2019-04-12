@@ -19,19 +19,19 @@ public class CHHellforgedDeredeoDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon array", getPts("Butcher cannon array")));
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma battery", getPts("Ectoplasma battery")));
         ogE.addElement(new OptionsGruppeEintrag("Dual Malignatas saker", getPts("Dual Malignatas saker")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamers", getPts("Twin heavy flamer")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Greater havoc launcher", getPts("Greater havoc launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Hellfire veil", getPts("Hellfire veil")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -39,7 +39,7 @@ public class CHHellforgedDeredeoDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

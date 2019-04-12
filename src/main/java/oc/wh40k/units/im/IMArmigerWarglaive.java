@@ -22,7 +22,7 @@ public class IMArmigerWarglaive extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Thermal Spear", getPts("Thermal Spear")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

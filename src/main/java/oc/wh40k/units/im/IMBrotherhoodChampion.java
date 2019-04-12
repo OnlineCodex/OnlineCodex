@@ -41,7 +41,7 @@ public class IMBrotherhoodChampion extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

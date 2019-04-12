@@ -32,7 +32,7 @@ public class TYTyranidPrime extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

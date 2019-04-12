@@ -15,7 +15,7 @@ public class IMDevastatorSquad extends Eintrag {
 
     public IMDevastatorSquad() {
         name = "Devastator Squad\n";
-        überschriftSetzen = true;
+        applyTitle = true;
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Space Marines", 5, 10, getPts("Devastator Squad")));
 
         add(ico = new oc.Picture("oc/wh40k/images/SMDevastatorTrupp.jpg"));

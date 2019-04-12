@@ -22,7 +22,7 @@ public class IMCrusaderSquad extends Eintrag {
     public IMCrusaderSquad() {
         name = "Crusader Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         Initiates = new AnzahlPanel(ID, randAbstand, cnt, "Initiates", 5, 10, getPts("Crusader Squad"));
         add(Initiates);
@@ -37,7 +37,7 @@ public class IMCrusaderSquad extends Eintrag {
         seperator();
 
         ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -46,7 +46,7 @@ public class IMCrusaderSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -79,8 +79,8 @@ public class IMCrusaderSquad extends Eintrag {
     public void refreshen() {
 
         o3.setMaxAnzahl(Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - (o1.isSelected() ? 1 : 0) - (o2.isSelected() ? 1 : 0));
-        o2.setMaxAnzahl((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o1.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
-        o1.setMaxAnzahl((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o2.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
+        o2.setMaxAmount((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o1.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
+        o1.setMaxAmount((Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o2.isSelected() ? 1 : 0)) > 0 ? 1 : 0);
 
         o3x.setMaxAnzahl(Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o1.isSelected() ? 1 : 0) - (o2.isSelected() ? 1 : 0));
         o3x.setAnzahl(0, Initiates.getModelle() - (rkBoss.isSelected() ? 1 : 0) - o3.getAnzahl() - (o1.isSelected() ? 1 : 0) - (o2.isSelected() ? 1 : 0));

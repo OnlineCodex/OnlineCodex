@@ -16,7 +16,7 @@ public class ORBigSquiggoth extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kannon", 20));
         ogE.addElement(new OptionsGruppeEintrag("Lobba", 25));
         ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", 20));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

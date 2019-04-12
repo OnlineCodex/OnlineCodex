@@ -18,6 +18,6 @@ public class IMImperialSpaceMarine extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

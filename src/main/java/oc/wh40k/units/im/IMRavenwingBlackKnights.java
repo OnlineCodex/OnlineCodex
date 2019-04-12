@@ -40,7 +40,7 @@ public class IMRavenwingBlackKnights extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Ravenwing grenade launcher", getPts("Ravenwing grenade launcher")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         o1.setSelected(0, true);
 
@@ -88,7 +88,7 @@ public class IMRavenwingBlackKnights extends Eintrag {
 
 
 
-        o1.setMaxAnzahl(squad.getModelle() / 3);
+        o1.setMaxAmount(squad.getModelle() / 3);
 
     }
 

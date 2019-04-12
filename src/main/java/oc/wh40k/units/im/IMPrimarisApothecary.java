@@ -27,7 +27,7 @@ public class IMPrimarisApothecary extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

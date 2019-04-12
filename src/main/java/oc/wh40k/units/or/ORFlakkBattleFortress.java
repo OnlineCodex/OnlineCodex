@@ -17,7 +17,7 @@ public class ORFlakkBattleFortress extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Dethrolla"));
         ogE.addElement(new OptionsGruppeEintrag("Reinforced Ram"));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -30,7 +30,7 @@ public class ORFlakkBattleFortress extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Grabbin\' Klaw", 15));
         ogE.addElement(new OptionsGruppeEintrag("Wreckin\' Ball", 15));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

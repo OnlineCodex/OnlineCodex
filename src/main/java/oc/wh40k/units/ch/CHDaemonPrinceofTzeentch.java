@@ -41,7 +41,7 @@ public class CHDaemonPrinceofTzeentch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

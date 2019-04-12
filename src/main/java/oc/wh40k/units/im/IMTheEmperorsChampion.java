@@ -20,13 +20,13 @@ public class IMTheEmperorsChampion extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Black Templars: Oathkeeper", true);
+        addWarlordTraits("Black Templars: Oathkeeper");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

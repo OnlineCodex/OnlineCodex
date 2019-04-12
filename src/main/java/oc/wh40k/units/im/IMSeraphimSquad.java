@@ -22,7 +22,7 @@ public class IMSeraphimSquad extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, JUMP_PACK, FLY, SERAPHIM_SQUAD);
         name = "Seraphim Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Seraphim Squad", 5, 10, getPts("Seraphim Squad"));
         add(squad);

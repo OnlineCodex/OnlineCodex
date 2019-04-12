@@ -27,7 +27,7 @@ public class IMCompanyChampiononBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

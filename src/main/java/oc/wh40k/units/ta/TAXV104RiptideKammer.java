@@ -20,14 +20,14 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Plasma rifles", getPts("Plasma rifle") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Fusion blaster", getPts("Fusion blaster") * 2));
-        add(o1 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Burst cannon", "Heavy burst cannon", getPts("Heavy burst cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Ion accelerator", getPts("Ion accelerator")));
-        add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         o2.setSelected(0, true);
 
         seperator();
@@ -40,7 +40,7 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
         //ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (all other units)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 2));
 
         sizeSetzen();
     }

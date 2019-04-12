@@ -40,7 +40,7 @@ public class IMBrotherhoodAncient extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

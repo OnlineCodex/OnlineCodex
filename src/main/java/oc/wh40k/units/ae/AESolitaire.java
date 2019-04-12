@@ -23,7 +23,7 @@ public class AESolitaire extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 
@@ -31,7 +31,7 @@ public class AESolitaire extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

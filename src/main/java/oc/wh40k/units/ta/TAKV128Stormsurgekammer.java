@@ -22,13 +22,13 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 Flamer", getPts("Flamer") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Burst cannons", getPts("Burst cannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Air. Frag. projectors", "2 Airbursting fragmentation projectors", getPts("Airbursting fragmentation projector") * 2));
-        add(o1 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Pulse blastcannon", getPts("Pulse blastcannon")));
         ogE.addElement(new OptionsGruppeEintrag("Pulse driver cannon", getPts("Pulse driver cannon")));
-        add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         seperator();
@@ -42,7 +42,7 @@ public class TAKV128Stormsurgekammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
-        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 3));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 3));
 
         sizeSetzen();
     }

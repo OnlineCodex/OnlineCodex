@@ -15,22 +15,22 @@ public class CHGreaterBrassScorpionOfKhorne extends Eintrag {
         grundkosten = getPts("Greater Brass Scorpion of Khorne");
 
         ogE.addElement(new OptionsGruppeEintrag("Hellcrusher claws", getPts("Hellcrusher claws")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Scorpion cannon", getPts("Scorpion cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Soulshatter bombard", getPts("Soulshatter bombard")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin hellmaw blasters", getPts("Twin hellmaw blasters")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

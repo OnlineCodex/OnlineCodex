@@ -36,7 +36,7 @@ public class TAShasoRalai extends Eintrag {
 
     public void refreshen() {
 
-        setUnikat(true);
+        setUnique(true);
 
 
 

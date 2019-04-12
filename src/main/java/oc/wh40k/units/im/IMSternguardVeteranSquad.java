@@ -19,7 +19,7 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
     public IMSternguardVeteranSquad() {
         name = "Sternguard Veteran Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Veterans", 5, 10, getPts("Sternguard Veteran Squad")));
 

@@ -11,7 +11,7 @@ public class TAKV128Stormsurge extends Eintrag {
 
     public TAKV128Stormsurge() {
         name = "KV128 Stormsurges";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));

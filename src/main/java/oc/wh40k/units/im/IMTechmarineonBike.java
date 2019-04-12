@@ -22,7 +22,7 @@ public class IMTechmarineonBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

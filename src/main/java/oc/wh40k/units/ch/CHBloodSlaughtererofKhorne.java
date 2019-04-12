@@ -13,13 +13,13 @@ public class CHBloodSlaughtererofKhorne extends Eintrag {
         grundkosten = getPts("Blood Slaughterer of Khorne");
 
         ogE.addElement(new OptionsGruppeEintrag("Slaughter blade", getPts("Slaughter blade")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Impaler harpoon", getPts("Impaler harpoon")));
         ogE.addElement(new OptionsGruppeEintrag("Slaughter blade", getPts("Slaughter blade")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

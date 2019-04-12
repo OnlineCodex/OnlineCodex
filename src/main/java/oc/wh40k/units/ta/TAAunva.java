@@ -13,7 +13,7 @@ public class TAAunva extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Through Unity, Devastation", true);
+        addWarlordTraits("Through Unity, Devastation");
 
         complete();
 
@@ -22,6 +22,6 @@ public class TAAunva extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

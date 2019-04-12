@@ -10,7 +10,7 @@ public class CHWarpTalons extends Eintrag {
 	private final AnzahlPanel marines;
 	public CHWarpTalons() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Warp Talons";
         grundkosten = 0;
@@ -23,7 +23,7 @@ public class CHWarpTalons extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
 

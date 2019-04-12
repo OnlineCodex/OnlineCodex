@@ -13,7 +13,7 @@ public class ORBurnaBoyz extends Eintrag {
 
     public ORBurnaBoyz() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Boyz";
         grundkosten = 0;

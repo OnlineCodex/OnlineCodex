@@ -33,8 +33,8 @@ public class OptionsEinzelZaehler extends OptionsVater {
     }
 
     @Override
-	public double getKosten() {
-        return myZaehler.getKosten() * this.modelle;
+	public double getCost() {
+        return myZaehler.getCost() * this.modelle;
     }
 
     public int getAnzahl() {
@@ -56,14 +56,6 @@ public class OptionsEinzelZaehler extends OptionsVater {
     public void setAktiv(boolean b) {
         aktiv = b;
         myZaehler.setAktiv(b);
-    }
-
-    @Override
-	public String getLabel() {
-        if (myZaehler.getAnzahl() > 0) {
-            return myZaehler.getButton().getText() + ZEILENUMBRUCH;
-        }
-        return "";
     }
 
     @Override
@@ -111,7 +103,7 @@ public class OptionsEinzelZaehler extends OptionsVater {
         String text = BuildaHQ.abstand;
         String kosten = "";
         if (BuildaHQ.allePunktkosten) {
-            kosten = punkteAbstandHalter + entferneNullNachkomma(getKosten()) + " " + "Pkt.";   // NET myUpgrade.getKosten() !!! das is was anderes!
+            kosten = punkteAbstandHalter + ((int) getCost()) + " " + "Pkt.";
         }
         text += BuildaHQ.anfang + getAnzahl() + " x " + myZaehler.getName() + kosten;
         return text;

@@ -23,7 +23,7 @@ public class TYTrygonPrime extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Biostatic rattle", getPts("Biostatic rattle")));
         ogE.addElement(new OptionsGruppeEintrag("Prehensile Pincer", getPts("Prehensile Pincer tail")));
         ogE.addElement(new OptionsGruppeEintrag("Toxinspike", getPts("Toxinspike")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -41,7 +41,7 @@ public class TYTrygonPrime extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

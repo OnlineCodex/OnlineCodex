@@ -15,40 +15,40 @@ public class IMContemptorExemplarDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Dreadnought combat weapon", getPts("Dreadnought combat weapon (AC)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         ogE.addElement(new OptionsGruppeEintrag("Lastrum storm bolter", getPts("Lastrum storm bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma ejector", getPts("Plasma ejector")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o3.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Dreadnought combat weapon", getPts("Dreadnought combat weapon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         ogE.addElement(new OptionsGruppeEintrag("Lastrum storm bolter", getPts("Lastrum storm bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma ejector", getPts("Plasma ejector")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o4.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin las-pulsar", getPts("Twin las-pulsar")));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        o2.setAktiv(!o5.isSelected());
+        o2.setActive(!o5.isSelected());
         o2.setSelected(0, (!o5.isSelected()));
-        o4.setAktiv(!o5.isSelected());
+        o4.setActive(!o5.isSelected());
         o4.setSelected(0, (!o5.isSelected()));
 
         if (o1.isSelected() && !o3.isSelected()) o3.setSelected(0, true);

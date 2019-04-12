@@ -29,7 +29,7 @@ public class IMMasterinCataphractiiArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

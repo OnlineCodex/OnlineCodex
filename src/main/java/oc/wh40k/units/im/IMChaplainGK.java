@@ -38,7 +38,7 @@ public class IMChaplainGK extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

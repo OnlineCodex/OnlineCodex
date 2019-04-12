@@ -34,7 +34,7 @@ public class IMPrimarisLieutenants extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

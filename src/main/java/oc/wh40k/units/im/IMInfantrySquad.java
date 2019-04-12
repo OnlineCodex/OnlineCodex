@@ -20,12 +20,12 @@ public class IMInfantrySquad extends Eintrag {
         seperator();
 
         ogE = IMAstraMilitarumSpecialWeapons.createRK("", "", buildaVater);
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE = IMAstraMilitarumHeavyWeapons.createRK("", "", buildaVater);
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

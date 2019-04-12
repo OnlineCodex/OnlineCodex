@@ -22,7 +22,7 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Railgun", getPts("Railgun")));
         ogE.addElement(new OptionsGruppeEintrag("Ion cannon", getPts("Ion cannon")));
-        o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(o2);
 
         seperator();
@@ -30,7 +30,7 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 MV1 Gun Drones", getPts("MV1 Gun Drone") * 2 + getPts("Pulse carbine") * 4));
         ogE.addElement(new OptionsGruppeEintrag("2 Burst cannons", getPts("Burst cannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
-        o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(o3);
 
         seperator();

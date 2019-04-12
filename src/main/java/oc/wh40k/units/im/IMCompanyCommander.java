@@ -21,7 +21,7 @@ public class IMCompanyCommander extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

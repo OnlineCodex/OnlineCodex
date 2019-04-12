@@ -6,7 +6,7 @@ public class ORKrumpasKillaKanz extends Eintrag {
 
     public ORKrumpasKillaKanz() {
 
-        kategorie = 5;
+        category = 5;
         name = "Krumpa's Killa Kanz";
         grundkosten = 160;
 
@@ -23,6 +23,6 @@ public class ORKrumpasKillaKanz extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

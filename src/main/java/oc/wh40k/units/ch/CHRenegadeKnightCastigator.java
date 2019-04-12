@@ -18,12 +18,12 @@ public class CHRenegadeKnightCastigator extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Castigator bolt cannon", getPts("Castigator bolt cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Tempest warblade", getPts("Tempest warblade")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

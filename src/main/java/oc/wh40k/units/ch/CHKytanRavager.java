@@ -14,12 +14,12 @@ public class CHKytanRavager extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Greater cleaver of Khorne", getPts("Greater cleaver of Khorne")));
         ogE.addElement(new OptionsGruppeEintrag("Warpsword", getPts("Warpsword")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Kytan gatling cannon", getPts("Kytan gatling cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

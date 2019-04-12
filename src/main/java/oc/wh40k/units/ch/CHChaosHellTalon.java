@@ -16,20 +16,20 @@ public class CHChaosHellTalon extends Eintrag {
         add(ico = new oc.Picture("oc/wh40k/images/Höllendrache.gif"));
 
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Helstorm cannon", getPts("Helstorm cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Havoc launcher", getPts("Havoc launcher")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Pyrax incendiary bombs", getPts("Pyrax incendiary bombs")));
         ogE.addElement(new OptionsGruppeEintrag("Warp-pulse bombs", getPts("Warp-pulse bombs")));
         ogE.addElement(new OptionsGruppeEintrag("Baletalon shatter charges", getPts("Baletalon shatter charges")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -37,7 +37,7 @@ public class CHChaosHellTalon extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

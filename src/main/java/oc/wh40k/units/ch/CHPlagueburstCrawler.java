@@ -19,14 +19,14 @@ public class CHPlagueburstCrawler extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy slugger", getPts("Heavy slugger")));
         ogE.addElement(new OptionsGruppeEintrag("Rothail volley gun", getPts("Rothail volley gun")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Plaguespitter", getPts("Plaguespitter") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Entropy cannon", getPts("Entropy cannon") * 2));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         complete();

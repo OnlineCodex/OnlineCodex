@@ -17,7 +17,7 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         name = "Commander";
         grundkosten = getPts("Commander in XV86 Coldstar Battlesuit");
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -27,7 +27,7 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         addToInformationVector("Commander", 1);
 

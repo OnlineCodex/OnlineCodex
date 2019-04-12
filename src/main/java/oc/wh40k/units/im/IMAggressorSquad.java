@@ -18,7 +18,7 @@ public class IMAggressorSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Boltstorm gauntlets/Fragstorm", "Auto boltstorm gauntlets & Fragstorm grenade launcher", getPts("Auto boltstorm gauntlets") + getPts("Fragstorm grenade launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Flamestorm gauntlets", getPts("Flamestorm gauntlets")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
     }
 

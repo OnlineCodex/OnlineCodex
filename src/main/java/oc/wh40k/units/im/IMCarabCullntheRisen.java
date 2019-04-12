@@ -28,7 +28,7 @@ public class IMCarabCullntheRisen extends Eintrag {
 
     public void refreshen() {
 
-        setUnikat(true);
+        setUnique(true);
 
     }
 

@@ -17,7 +17,7 @@ public class TYAtalanJackals extends Eintrag {
     public TYAtalanJackals() {
         name = "Atalan Jackals\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Atalan Jackals", 3, 11, getPts("Atalan Jackals") + getPts("Twin boltgun")));
 

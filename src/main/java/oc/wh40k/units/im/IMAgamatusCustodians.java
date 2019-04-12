@@ -24,7 +24,7 @@ public class IMAgamatusCustodians extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Agamatus Custodians", 3, 6, getPts("Agamatus Custodians"));
 

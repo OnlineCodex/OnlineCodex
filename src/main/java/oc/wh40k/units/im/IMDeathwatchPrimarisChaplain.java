@@ -24,7 +24,7 @@ public class IMDeathwatchPrimarisChaplain extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

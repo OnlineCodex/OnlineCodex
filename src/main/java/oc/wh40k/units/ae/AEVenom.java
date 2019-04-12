@@ -35,7 +35,7 @@ public class AEVenom extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -47,7 +47,7 @@ public class AEVenom extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Splinter cannon", getPts("Splinter cannon")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 

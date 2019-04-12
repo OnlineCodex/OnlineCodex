@@ -23,7 +23,7 @@ public class IMGreatCompanyAncient extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

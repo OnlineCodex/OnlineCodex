@@ -23,7 +23,7 @@ public class IMPrimarisWolfPriest extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -18,14 +18,14 @@ public class IMOgrynBodyguard extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Ripper gun", getPts("Ripper gun")));
         ogE.addElement(new OptionsGruppeEintrag("Grenadier Gauntlet", getPts("Grenadier Gauntlet")));
         ogE.addElement(new OptionsGruppeEintrag("Bullgryn maul", getPts("Bullgryn maul")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Huge knife", getPts("Huge knife")));
         ogE.addElement(new OptionsGruppeEintrag("Slabshield", getPts("Slabshield")));
         ogE.addElement(new OptionsGruppeEintrag("Brute shield", getPts("Brute shield")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         seperator();
 
@@ -33,7 +33,7 @@ public class IMOgrynBodyguard extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

@@ -24,7 +24,7 @@ public class AEShadowseer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

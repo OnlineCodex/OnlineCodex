@@ -25,13 +25,13 @@ public class DeathWatchKammer extends RuestkammerVater {
 
         if (type.equals("Vanguard Veteran")) {
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (DW)")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(0, true);
 
             seperator();
@@ -111,7 +111,7 @@ public class DeathWatchKammer extends RuestkammerVater {
 
         if (type.equals("Terminator Sergeant")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter(DW)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
@@ -121,13 +121,13 @@ public class DeathWatchKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Power fist & melta", getPts("Power fist (SM)") + getPts("Meltagun")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw (pair)")));
             ogE.addElement(new OptionsGruppeEintrag("Thunderhammer & Shield", getPts("Thunder hammer (others)") + getPts("Storm shield (others)")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
         }
@@ -162,8 +162,8 @@ public class DeathWatchKammer extends RuestkammerVater {
             else
                 o4.setMaxAnzahl(1);
 
-            o1.setAktiv(!thunderhammer.isSelected());
-            o2.setAktiv(!thunderhammer.isSelected());
+            o1.setActive(!thunderhammer.isSelected());
+            o2.setActive(!thunderhammer.isSelected());
             o3.setAktiv(!thunderhammer.isSelected());
             o4.setAktiv(!thunderhammer.isSelected());
         }
@@ -190,8 +190,8 @@ public class DeathWatchKammer extends RuestkammerVater {
         	o1.alwaysSelected();
         	o2.alwaysSelected();
 
-        	o1.setAktiv(!o5.isSelected());
-        	o2.setAktiv(!o5.isSelected());
+        	o1.setActive(!o5.isSelected());
+        	o2.setActive(!o5.isSelected());
         }
     }
 

@@ -18,7 +18,7 @@ public class IMStormtalonGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("2 Lascannons", getPts("Lascannon (SM)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Skyhammer missile launcher", getPts("Skyhammer missile launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
         complete();

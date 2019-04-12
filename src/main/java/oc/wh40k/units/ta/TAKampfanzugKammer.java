@@ -94,14 +94,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Broadside")) {
             ogE.addElement(new OptionsGruppeEintrag("Heavy rail rifle", getPts("Heavy rail rifle")));
             ogE.addElement(new OptionsGruppeEintrag("2 High-yield missile pods", getPts("High-yield missile pod") * 2));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o5.setSelected(0, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
             ogE.addElement(new OptionsGruppeEintrag("2 Plasma rifles", getPts("Plasma rifle") * 2));
-            add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o6 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o6.setSelected(0, true);
 
             seperator();
@@ -110,17 +110,17 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         } else if (type.equals("Stealth Shas'ui")) {
             ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
-            add(o5 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if (type.equals("Ghostkeel Shas'vre")) {
             ogE.addElement(new OptionsGruppeEintrag("Fusion collider", getPts("Fusion collider")));
             ogE.addElement(new OptionsGruppeEintrag("Cyclic ion raker", getPts("Cyclic ion raker")));
-            add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o5.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("2 Flamer", getPts("Flamer") * 2));
             ogE.addElement(new OptionsGruppeEintrag("2 Burst cannons", getPts("Burst cannon") * 2));
             ogE.addElement(new OptionsGruppeEintrag("2 Fusion blaster", getPts("Fusion blaster") * 2));
-            add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o6 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o6.setSelected(0, true);
         } else if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade")){
             ogE.addElement(new OptionsGruppeEintrag("Airbursting fragmentation projector", getPts("Airbursting fragmentation projector")));
@@ -178,14 +178,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade"))
         {
         	addRelics();
-        	add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        	add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 	        if (type.equals("Commander")) {
-	            o2.setMaxAnzahl(4);
+	            o2.setMaxAmount(4);
 	        }
 
 	        if (type.equals("Ghostkeel Shas'vre")) {
-	            o2.setMaxAnzahl(2);
+	            o2.setMaxAmount(2);
 	        }
         }
 
@@ -245,22 +245,22 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         if (type.equals("Commander") && !keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
-            o2.setMaxAnzahl(4);
+            o2.setMaxAmount(4);
             final int selected = o1.getAnzahl() + o2.getAnzahl();
             final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o2.setMaxAmount(o2.getAnzahl() + remaining);
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
         if (type.equals("Commander") && keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
-            o2.setMaxAnzahl(2);
+            o2.setMaxAmount(2);
             final int selected = o2.getAnzahl() + o1.getAnzahl();
             final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o2.setMaxAmount(o2.getAnzahl() + remaining);
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
@@ -269,7 +269,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             final int selected = o1.getAnzahl() + o2.getAnzahl();
             final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o2.setMaxAmount(o2.getAnzahl() + remaining);
 
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
@@ -279,7 +279,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             final int selected = o1.getAnzahl() + o2.getAnzahl();
             final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o2.setMaxAmount(o2.getAnzahl() + remaining);
 
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
@@ -289,14 +289,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             final int selected = o1.getAnzahl() + o2.getAnzahl();
             final int remaining = 3 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
-            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o2.setMaxAmount(o2.getAnzahl() + remaining);
 
             o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 1);
         }
 
         if (type.equals("Stealth Shas'ui")) {
-            o2.setMaxAnzahl(1);
+            o2.setMaxAmount(1);
         }
 
         if(o4 != null) {

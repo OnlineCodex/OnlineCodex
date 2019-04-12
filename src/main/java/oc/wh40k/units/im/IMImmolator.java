@@ -28,7 +28,7 @@ public class IMImmolator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Immolation flamer", getPts("Immolation flamer (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin multi-melta", getPts("Twin multi-melta (AMI)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

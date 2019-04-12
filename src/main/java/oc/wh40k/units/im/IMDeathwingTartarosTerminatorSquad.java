@@ -17,7 +17,7 @@ public class IMDeathwingTartarosTerminatorSquad extends Eintrag {
     public IMDeathwingTartarosTerminatorSquad() {
         name = "Tartaros Terminator Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Tartaros Terminators", 5, 10, getPts("Tartaros Terminator Squad")));
 

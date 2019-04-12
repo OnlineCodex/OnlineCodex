@@ -12,14 +12,14 @@ public class IMCaptainGeneralTrajannValoris extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Champion of the Imperium (AC)", true);
+        addWarlordTraits("Champion of the Imperium (AC)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

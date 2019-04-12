@@ -11,7 +11,7 @@ public class TAKX139TaunarSupremacyArmour extends Eintrag {
         name = "KX139 Ta'unar Supremacy Armour";
         grundkosten = 600;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 

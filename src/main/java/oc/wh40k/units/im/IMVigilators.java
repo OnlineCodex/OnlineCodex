@@ -15,7 +15,7 @@ public class IMVigilators extends Eintrag {
     public IMVigilators() {
         name = "Vigilators\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Vigilators", 5, 10, getPts("Vigilators"));
         add(squad);

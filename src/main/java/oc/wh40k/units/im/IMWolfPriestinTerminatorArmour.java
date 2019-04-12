@@ -24,7 +24,7 @@ public class IMWolfPriestinTerminatorArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

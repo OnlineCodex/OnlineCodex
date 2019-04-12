@@ -29,7 +29,7 @@ public class TAEthereal extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Honour blade", getPts("Honour blade")));
         ogE.addElement(new OptionsGruppeEintrag("Equalizers", "", getPts("Equalizers")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -48,7 +48,7 @@ public class TAEthereal extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         addToInformationVector("Ethereal", 1);
 

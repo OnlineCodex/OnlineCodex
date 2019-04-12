@@ -22,7 +22,7 @@ public class IMPaladinSquad extends Eintrag {
     public IMPaladinSquad() {
         name = "TerminatorSquad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Paladin", 3, 10, getPts("Paladin Squad"));
         add(squad);

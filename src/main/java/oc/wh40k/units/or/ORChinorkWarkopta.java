@@ -22,14 +22,14 @@ public class ORChinorkWarkopta extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Skorcha", getPts("Skorcha")));
         ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
         ogE.addElement(new OptionsGruppeEintrag("Kustom mega-blasta", getPts("Kustom mega-blasta")));
-        add(tech = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(tech = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Deffgunz", getPts("Deffgun") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Rattler kannons", getPts("Rattler kannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Rokkit launcha", getPts("Rokkit launcha")));
-        add(tech2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(tech2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

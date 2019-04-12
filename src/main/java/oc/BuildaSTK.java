@@ -1,11 +1,8 @@
 package oc;
 
-import java.awt.Color;
-import java.awt.Toolkit;
-import java.util.HashMap;
-
-import javax.swing.BorderFactory;
+import javax.swing.*;
 import javax.swing.border.Border;
+import java.awt.*;
 
 public interface BuildaSTK { // konstanten die überall im oC geraucht werden
 
@@ -18,8 +15,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int CHOOSER_Y = 9000;
     int CHOOSERGRUPPEN_X_ABSTAND = 420;
     int CHOOSERGRUPPEN_TEXTAREA_ZUSATZABSTAND = 80;
-    int KAMMER_HOEHE = 85;
-    int MAXIMAL_OPTIONS_WIDTH = 260;
     int BUILDAVATER_TEXTAREA_MAXROWS = 37; // ab wievielen Zeilenumbrüchen die verticale Scrollleiste eingeblendet wird
     int auswahlBreite = 400;
     int randAbstand = 10;
@@ -31,8 +26,6 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int DEFAULT_MAUSWHEELLSPEED = 40;
     int DEFAULT_PFEILTASTENSPEED = 50;
 
-    String JPG = ".jpg";
-
     String SAVETEXT_DETACHMENTTRENNER = "_8T";
     String SAVETEXT_DETACHMENTTYPTRENNER1 = "_9T";
     String SAVETEXT_DETACHMENTTYPTRENNER2 = "_10T";
@@ -41,59 +34,24 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     String SAVETEXT_CADIANS = "_14T";
     String SAVETEXT_RAUKAAN = "_15T";
     String SAVETEXT_SOT = "_16T";
-    String SAVETEXT_SUBDETACHMENTTRENNER = "_12T";
     String SAVETEXT_TRENNER1 = "_1T";
     String SAVETEXT_TRENNER1_5 = "_2T"; // Rüstkammercomponententrenner. Beim laden von Rüstkammern das hier übergeben
     String SAVETEXT_TRENNER1_6 = "_2U"; // Rüstkammercomponententrenner. Beim laden von Rüstkammern das hier übergeben
     String SAVETEXT_TRENNER2 = "_3T"; // Eintragcomponententrenner. Beim loaden für Einträge das hier übergeben
     String SAVETEXT_TRENNER3 = "_4T"; // trennt die chooser
     String SAVETEXT_TRENNER4 = "_5T"; // trennt Choosergruppen
-    String SAVETEXT_TRENNER5 = "_6T"; // trennt Zusatzinfos vom Rest
-    String SAVETEXT_TRENNER6 = "_7T"; // trennt Zusatzinfos vom Rest
     String SAVETEXT_UEBERSCHRIFTTRENNER1 = "_1H"; // trennt name des Eintrags vom Eintrag selbst
     String SAVETEXT_UEBERSCHRIFTTRENNER2 = "_2H"; // trennt name des Volkes von allem anderen!
     String SAVETEXT_SELECTEDTRENNER = "|"; // RuestkammerStarter
-    String SAVETEXT_PANELSWITCHERTRENNER = "_1P"; // OptionsPanelSwitcher
-    String SAVETEXT_CURRNETPANELTRENNER = "_2P"; // OptionsPanelSwitcher
 
     String PREFERENCES_SAVE_DIRECTORY = "saveDirectory";
     String PREFERENCES_LOAD_DIRECTORY = "loadDirectory";
     String PREFERENCES_SHOW_PICTURES = "showPictures";
-    String PREFERENCES_ENABLE_APOCALYPSE = "enableApocalpyse";
     String PREFERENCES_SCROLL_VERTICAL = "scrollVertical";
     String PREFERENCES_MOUSE_WHEEL_SPEED = "mouseWheelSpeed";
     String PREFERENCES_ARROW_KEYS_SPEED = "arrowKeysSpeed";
 
-    String ELEMENT_NAME_CATEGORY = "Category";
-    String ELEMENT_NAME_SONSTIGESGRUPPE = "CategoryNecro";
-    String ELEMENT_NAME_ONLINECODEX = "OnlineCodex";
-    String ELEMENT_NAME_COUNTER = "Counter";
-
     Border blackBorder = BorderFactory.createLineBorder(Color.black);
-
-    int[] kategorienMaxProzent = {
-            25,
-            25,
-            100,
-            50,
-            25,
-            0,
-            0,
-            0,
-            0
-    };
-
-    int[] kategorienMinProzent = {
-            0,
-            0,
-            25,
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-    };
 
     String[] gerSg = {
             "Additional Info",
@@ -147,22 +105,9 @@ public interface BuildaSTK { // konstanten die überall im oC geraucht werden
     int FORTIFICATION = 8;
     int LORD_OF_WAR = 9;
 
-    HashMap<String, String> volkMap = new HashMap<String, String>() {
-        /**
-		 * 
-		 */
-		private static final long serialVersionUID = 1L;
-
-		{
-            put("CU", "VOLKCultMechanicus");
-            put("IR", "VOLKImperialeRitter");
-            put("SK", "VOLKSkitarii");
-        }
-    };
-
-    public final String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
-    public final String MISSIONARY_CNT = "MISSIONARY";
-    public final String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
-    public final String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
+    String MINISTORUM_PRIEST_CNT = "MINISTORUM_PRIEST";
+    String MISSIONARY_CNT = "MISSIONARY";
+    String REPENTIA_SQUAD_CNT = "REPENTIA_SQUAD";
+    String ECCLESIARCHY_BATTLE_CONCLAVE_CNT = "ECCLESIARCHY_BATTLE_CONCLAVE";
 
 }

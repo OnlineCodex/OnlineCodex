@@ -19,7 +19,7 @@ public class CHBlightlordTerminators extends Eintrag {
     public CHBlightlordTerminators() {
         //name = "Thousand Sons\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Blightlord Terminators", 5, 10, getPts("Blightlord Terminators"));
         add(squad);
@@ -60,11 +60,11 @@ public class CHBlightlordTerminators extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(stave = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(stave = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         stave.setSelected(0, true);
         ogE.addElement(new OptionsGruppeEintrag("Balesword", getPts("Balesword")));
         ogE.addElement(new OptionsGruppeEintrag("Bubotic axe", getPts("Bubotic axe")));
-        add(sor = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(sor = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         sor.setSelected(0, true);
 
         complete();

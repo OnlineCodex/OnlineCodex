@@ -27,14 +27,14 @@ public class CHHelbrute extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Helbrute fist", getPts("Helbrute fist")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute hammer", getPts("Helbrute hammer")));
         ogE.addElement(new OptionsGruppeEintrag("Power scourge", getPts("Power scourge")));
-        add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(oe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Helbrute fist", getPts("Helbrute fist")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute hammer", getPts("Helbrute hammer")));
         ogE.addElement(new OptionsGruppeEintrag("Power scourge", getPts("Power scourge")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
-        add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(oe3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
@@ -47,7 +47,7 @@ public class CHHelbrute extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

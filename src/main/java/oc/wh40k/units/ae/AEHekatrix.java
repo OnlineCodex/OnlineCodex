@@ -29,7 +29,7 @@ public class AEHekatrix extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 
@@ -41,7 +41,7 @@ public class AEHekatrix extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

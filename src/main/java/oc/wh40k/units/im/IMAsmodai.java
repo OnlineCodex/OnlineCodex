@@ -11,14 +11,14 @@ public class IMAsmodai extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Fury of the Lion (DA)", true);
+        addWarlordTraits("Fury of the Lion (DA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }
 

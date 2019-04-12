@@ -45,6 +45,6 @@ public class CHTheChangeling extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

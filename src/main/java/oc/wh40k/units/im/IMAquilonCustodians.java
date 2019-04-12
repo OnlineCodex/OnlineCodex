@@ -24,7 +24,7 @@ public class IMAquilonCustodians extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
 
 

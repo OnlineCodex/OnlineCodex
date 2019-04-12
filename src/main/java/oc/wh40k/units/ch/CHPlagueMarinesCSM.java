@@ -18,7 +18,7 @@ public class CHPlagueMarinesCSM extends Eintrag {
 
     public CHPlagueMarinesCSM() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Plague Marines";
         grundkosten = 0;

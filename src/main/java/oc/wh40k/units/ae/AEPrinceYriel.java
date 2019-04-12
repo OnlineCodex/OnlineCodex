@@ -11,13 +11,13 @@ public class AEPrinceYriel extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Iyanden: Enduring Resolve", true);
+        addWarlordTraits("Iyanden: Enduring Resolve");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

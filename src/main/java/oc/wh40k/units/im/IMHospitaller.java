@@ -23,7 +23,7 @@ public class IMHospitaller extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

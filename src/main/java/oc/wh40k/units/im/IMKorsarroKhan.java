@@ -22,12 +22,12 @@ public class IMKorsarroKhan extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("White Scars: Deadly Hunter", true);
+        addWarlordTraits("White Scars: Deadly Hunter");
 
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

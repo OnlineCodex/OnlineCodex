@@ -31,7 +31,7 @@ public class TYGoliathRockgrinder extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy seismic cannon", getPts("Heavy seismic cannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 

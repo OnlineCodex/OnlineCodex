@@ -34,7 +34,7 @@ public class AECrimsonHunterExarch extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Starcannons", 2 * getPts("Starcannon")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

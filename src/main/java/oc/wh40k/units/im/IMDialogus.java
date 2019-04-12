@@ -23,7 +23,7 @@ public class IMDialogus extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

@@ -18,7 +18,7 @@ public class CHDeathshroudTerminators extends Eintrag {
     public CHDeathshroudTerminators() {
         //name = "Thousand Sons\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Deathshroud Terminators", 3, 6, getPts("Deathshroud Terminators"));
         add(squad);
@@ -40,7 +40,7 @@ public class CHDeathshroudTerminators extends Eintrag {
         add(stave = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Manreaper", getPts("Manreaper")));
         ogE.addElement(new OptionsGruppeEintrag("Plaguespurt gauntlet", getPts("Plaguespurt gauntlet")));
         ogE.addElement(new OptionsGruppeEintrag("2 Plaguespurt gauntlet", getPts("Plaguespurt gauntlet") * 2));
-        add(sor = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(sor = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         sor.setSelected(0, true);
 
         complete();

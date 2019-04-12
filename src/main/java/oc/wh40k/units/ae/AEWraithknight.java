@@ -35,7 +35,7 @@ public class AEWraithknight extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Sun cannon and scattershield", getPts("Sun cannon") + getPts("Scattershield")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         o2.setSelected(0, true);
 

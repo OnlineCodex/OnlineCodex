@@ -28,7 +28,7 @@ public class IMSanguinaryPriest extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

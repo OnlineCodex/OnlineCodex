@@ -23,7 +23,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon array", getPts("Butcher cannon array")));
         ogE.addElement(new OptionsGruppeEintrag("Soulburner ribaudkin", getPts("Soulburner ribaudkin")));
         ogE.addElement(new OptionsGruppeEintrag("Grav-flux bombard", getPts("Grav-flux bombard")));
-        add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(oe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hellforged siege claw", getPts("Hellforged siege claw (single)")));
@@ -31,7 +31,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon array", getPts("Butcher cannon array")));
         ogE.addElement(new OptionsGruppeEintrag("Soulburner ribaudkin", getPts("Soulburner ribaudkin")));
         ogE.addElement(new OptionsGruppeEintrag("Grav-flux bombard", getPts("Grav-flux bombard")));
-        add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(oe3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
@@ -41,7 +41,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Hellflamer", getPts("Hellflamer") * 2));
-        add(oe4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(oe4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -49,7 +49,7 @@ public class CHHellforgedLeviathanDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

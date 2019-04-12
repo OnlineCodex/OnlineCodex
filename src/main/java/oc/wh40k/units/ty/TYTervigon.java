@@ -21,7 +21,7 @@ public class TYTervigon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Massive Scything Talons", getPts("Massive Scything Talons (Tervigon)")));
         ogE.addElement(new OptionsGruppeEintrag("Massive Crushing Claws", getPts("Massive Crushing Claws")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -49,7 +49,7 @@ public class TYTervigon extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -61,25 +61,25 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Crozius arcanum", getPts("Crozius arcanum")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
             addRelics();
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
     	} else if(type.equals("Ravenwing Talonmaster")){
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(0, true);
 
             seperator();
@@ -90,7 +90,7 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesTerminatorCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesTerminatorMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
     	} else if (type.equals("Chaplain")) {
@@ -99,14 +99,14 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(2, true);
         } else if (type.equals("Librarian") || type.equals("Librarian on Bike")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("Bolt pistol", "Bolt pistol (SM)", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
@@ -115,24 +115,24 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         }else if (type.equals("Primaris Librarian")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Force sword", true);
         } else if (type.equals("Librarian in Terminator Armour")) {
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Characters)")));
             ogE.addAll(IMSpaceMarinesTerminatorCombiWeapons.createRK("Storm bolter", "Storm bolter (SM)", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
@@ -141,46 +141,46 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Force sword", getPts("Force sword")));
             ogE.addElement(new OptionsGruppeEintrag("Force axe", getPts("Force axe")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } if (type.equals("Master")) {
             ogE.addElement(new OptionsGruppeEintrag("MC boltgun", "Master-crafted boltgun", getPts("Master-crafted boltgun")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Characters)")));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         } else if (type.contains("Techmarine")) {
             ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (SM)")));
             ogE.addAll(IMSpaceMarinesPistols.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
 
             seperator();
 
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected(2, true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Servo-arm", getPts("Servo-arm")));
             ogE.addElement(new OptionsGruppeEintrag("Conversion beamer", getPts("conversion beamer")));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -188,14 +188,14 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
         } else if (type.equals("Apothecary")) {
         	ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o1.setSelected("Chainsword", true);
 
             seperator();
 
         	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             o2.setSelected("Bolt pistol", true);
         } else if (type.equals("Company Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt gun", getPts("Bolt gun (SM)")));
@@ -203,19 +203,19 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
             ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater));
             ogE.addAll(IMSpaceMarinesMeleeWeapons.createRK("", "", buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected(1, true);
         } else if (type.equals("Primaris Ancient")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt rifle", true);
         }
 
@@ -274,8 +274,8 @@ public class IMDarkAngelsRuestkammer extends RuestkammerVater {
     	if(type.equals("Master")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
-    		o1.setAktiv(!o3.isSelected());
-    		o2.setAktiv(!o3.isSelected());
+    		o1.setActive(!o3.isSelected());
+    		o2.setActive(!o3.isSelected());
     	}
 
         if (type.contains("Techmarine")) {

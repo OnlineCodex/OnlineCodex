@@ -10,7 +10,7 @@ public class CHRenegadeKnight extends Eintrag {
 
     public CHRenegadeKnight() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Renegade Knight";
         grundkosten = getPts("Renegade Knight");
@@ -18,7 +18,7 @@ public class CHRenegadeKnight extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Ironstorm missile pod", getPts("Ironstorm missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("Stormspear rocket pod", getPts("Stormspear rocket pod")));
         ogE.addElement(new OptionsGruppeEintrag("Twin Icarus autocannon", getPts("Twin Icarus autocannon")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -26,7 +26,7 @@ public class CHRenegadeKnight extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Gatling & Flamer", "Avenger gatling cannon and heavy flamer", getPts("Avenger gatling cannon") + getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Battle cannon & Stubber", "Rapid-fire battle cannon and heavy flamer", getPts("Rapid-fire battle cannon") + getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
-        add(thunder = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(thunder = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         thunder.setSelected(0, true);
 
         seperator();
@@ -35,13 +35,13 @@ public class CHRenegadeKnight extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Gatling & Flamer", "Avenger gatling cannon and heavy flamer", getPts("Avenger gatling cannon") + getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Battle cannon & Stubber", "Rapid-fire battle cannon and heavy flamer", getPts("Rapid-fire battle cannon") + getPts("Heavy flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
-        add(reaper = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(reaper = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         reaper.setSelected(0, true);
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy stubber", getPts("Heavy stubber")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
-        add(stubber = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(stubber = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         stubber.setSelected(0, true);
 
         power = 25;

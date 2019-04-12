@@ -20,7 +20,7 @@ public class IMReiverSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));
         ogE.addElement(new OptionsGruppeEintrag("Combat knifes", getPts("Combat knife")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -36,7 +36,7 @@ public class IMReiverSquad extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Bolt pistol", getPts("Bolt carbine") + getPts("Bolt pistol")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Combat knife", getPts("Bolt carbine") + getPts("Combat knife")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol & Combat knife", getPts("Bolt pistol") + getPts("Combat knife")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

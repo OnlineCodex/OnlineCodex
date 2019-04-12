@@ -13,7 +13,7 @@ public class CHPossessed extends Eintrag {
 
     public CHPossessed() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Possessed";
         grundkosten = 0;
@@ -27,7 +27,7 @@ public class CHPossessed extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Icon of Despair", getPts("Icon of Despair")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Flame", getPts("Icon of Flame")));
         ogE.addElement(new OptionsGruppeEintrag("Icon of Excess", getPts("Icon of Excess")));
-        add(icon = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(icon = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -35,7 +35,7 @@ public class CHPossessed extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(mark = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(mark = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -30,8 +30,8 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     protected Vector<String> desperateAllies = new Vector<>();
     protected Vector<String> comeTheApocalypse = new Vector<>();
     Hashtable<String, Integer> informationList = new Hashtable<>();  // anzahl der vorkommen des Strings
-    private Hashtable<String, int[]> minAuswahlen = new Hashtable<>();  // Mindestauswahlen pro kategorie
-    private Hashtable<String, int[]> maxAuswahlen = new Hashtable<>();  // Mindestauswahlen pro kategorie
+    private Hashtable<String, int[]> minAuswahlen = new Hashtable<>();  // Mindestauswahlen pro category
+    private Hashtable<String, int[]> maxAuswahlen = new Hashtable<>();  // Mindestauswahlen pro category
     protected String[] AdditionalInformation;
     protected String[] HQeinträge;
     protected String[] Eliteeinträge;
@@ -373,10 +373,10 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
     }
 
     @Override
-	public double getKosten() {
+	public double getCost() {
         double kosten = 0.0;
         for (int i = 0; i < myChooserGruppen.size(); ++i) {
-            kosten += myChooserGruppen.elementAt(i).getKosten();
+            kosten += myChooserGruppen.elementAt(i).getCost();
         }
         return kosten;
     }

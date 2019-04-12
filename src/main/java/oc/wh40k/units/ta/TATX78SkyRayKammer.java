@@ -21,7 +21,7 @@ public class TATX78SkyRayKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("2 MV1 Gun Drones", getPts("MV1 Gun Drone") * 2 + getPts("Pulse carbine") * 4));
         ogE.addElement(new OptionsGruppeEintrag("2 Burst cannons", getPts("Burst cannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
-        o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(o3);
 
         seperator();

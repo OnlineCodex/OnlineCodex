@@ -14,14 +14,14 @@ public class NECtanShardoftheDeceiver extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", false);
+        addWarlordTraits("");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

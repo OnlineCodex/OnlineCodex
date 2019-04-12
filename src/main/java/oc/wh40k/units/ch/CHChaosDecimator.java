@@ -16,7 +16,7 @@ public class CHChaosDecimator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("C-beam cannon", getPts("C-beam cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon", getPts("Butcher cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Decimator storm laser", getPts("Decimator storm laser")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -25,7 +25,7 @@ public class CHChaosDecimator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("C-beam cannon", getPts("C-beam cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Butcher cannon", getPts("Butcher cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Decimator storm laser", getPts("Decimator storm laser")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -33,7 +33,7 @@ public class CHChaosDecimator extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

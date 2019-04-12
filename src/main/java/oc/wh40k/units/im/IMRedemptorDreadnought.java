@@ -17,19 +17,19 @@ public class IMRedemptorDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy onslaught gatling cannon", getPts("Heavy onslaught gatling cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Macro plasma incinerator", getPts("Macro plasma incinerator")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer (SM)", getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Onslaught gatling cannon", getPts("Onslaught gatling cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Two fragstorm grenade launchers", getPts("Fragstorm grenade launcher") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Two storm bolters", getPts("Stormbolter (SM)") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

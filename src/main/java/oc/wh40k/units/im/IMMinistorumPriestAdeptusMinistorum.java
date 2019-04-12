@@ -16,7 +16,7 @@ public class IMMinistorumPriestAdeptusMinistorum extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (AMI)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
         seperator();
 
@@ -34,11 +34,11 @@ public class IMMinistorumPriestAdeptusMinistorum extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power axe (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AMI)")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

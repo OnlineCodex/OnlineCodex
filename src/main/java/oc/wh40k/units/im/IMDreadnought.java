@@ -30,7 +30,7 @@ public class IMDreadnought extends Eintrag {
             	ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
             }
         }
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -43,7 +43,7 @@ public class IMDreadnought extends Eintrag {
         if(spacewolves) {
         	ogE.addElement(new OptionsGruppeEintrag("Great wolf claw", getPts("great wolf claw")));
         }
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

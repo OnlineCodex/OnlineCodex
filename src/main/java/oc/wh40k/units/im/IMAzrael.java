@@ -11,13 +11,13 @@ public class IMAzrael extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Brilliant Strategist (DA)", true);
+        addWarlordTraits("Brilliant Strategist (DA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

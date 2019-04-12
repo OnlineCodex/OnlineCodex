@@ -15,7 +15,7 @@ public class ORWarbikers extends Eintrag {
 
     public ORWarbikers() {
 
-        kategorie = 4;
+        category = 4;
         grundkosten = 0;
         add(waaghbikaz = new AnzahlPanel(ID, randAbstand, cnt, "Warbikers", 3, 12, getPts("Warbikers")));
         add(ico = new oc.Picture("oc/wh40k/images/Waaghbike.gif"));

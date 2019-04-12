@@ -15,7 +15,7 @@ public class IMSWVenerableDreadnought extends Eintrag {
         seperator();
 
         ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -23,12 +23,12 @@ public class IMSWVenerableDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("DCW + Heavy flamer", "Dreadnought combat weapon + Heavy flamer", getPts("Dreadnought combat weapon (other models)") + getPts("Heavy flamer (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Axe & Shield", "Fenrisian great axe and blizzard shield", getPts("Fenrisian great axe") + getPts("Blizzard shield")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }
@@ -38,7 +38,7 @@ public class IMSWVenerableDreadnought extends Eintrag {
         o1.alwaysSelected();
         o2.alwaysSelected();
 
-        o1.setAktiv(!o3.isSelected());
-        o2.setAktiv(!o3.isSelected());
+        o1.setActive(!o3.isSelected());
+        o2.setActive(!o3.isSelected());
     }
 }

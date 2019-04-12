@@ -22,7 +22,7 @@ public class IMPrimarisPsyker extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

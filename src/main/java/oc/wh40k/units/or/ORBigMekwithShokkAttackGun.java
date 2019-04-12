@@ -9,7 +9,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
 	private final RuestkammerStarter waffen;
 
 	public ORBigMekwithShokkAttackGun() {
-        kategorie = 1;
+        category = 1;
         name = "Big Mek with Shokk attack gun";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs") + getPts("Shokk attack gun");
         power = 4;
@@ -30,7 +30,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -27,7 +27,7 @@ public class IMPallasGravAttack extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin Arachnus blaze cannon", getPts("Twin Arachnus blaze cannon")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

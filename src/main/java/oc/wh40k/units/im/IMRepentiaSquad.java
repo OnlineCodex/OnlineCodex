@@ -17,7 +17,7 @@ public class IMRepentiaSquad extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, REPENTIA_SQUAD);
         name = "Repentia Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentias", 3, 9, getPts("Repentia Squad") + getPts("Penitent eviscerator"));
         add(squad);
 

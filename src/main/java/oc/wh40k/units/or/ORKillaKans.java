@@ -13,7 +13,7 @@ public class ORKillaKans extends Eintrag {
 
     public ORKillaKans() {
 
-        kategorie = 5;
+        category = 5;
         grundkosten = 0;
         add(killabot = new AnzahlPanel(ID, randAbstand, cnt, "Killa Kan", "Killa Kans", 1, 6, getPts("Killa kans") + getPts("Kan klaw")));
 

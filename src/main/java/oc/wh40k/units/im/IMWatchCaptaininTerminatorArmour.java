@@ -26,7 +26,7 @@ public class IMWatchCaptaininTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

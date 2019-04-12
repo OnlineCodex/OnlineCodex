@@ -14,7 +14,7 @@ public class CHTzaangorEnlightened extends Eintrag {
 
     public CHTzaangorEnlightened() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Tzaangor Enlightened";
         grundkosten = 0;
@@ -26,7 +26,7 @@ public class CHTzaangorEnlightened extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Divining spears", getPts("Divining spear")));
         ogE.addElement(new OptionsGruppeEintrag("Chainswords/Autopistols", getPts("Chainsword") + getPts("Autopistol")));
         ogE.addElement(new OptionsGruppeEintrag("Fatecaster greatbows", getPts("Fatecaster greatbow")));
-        add(weapons = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(weapons = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

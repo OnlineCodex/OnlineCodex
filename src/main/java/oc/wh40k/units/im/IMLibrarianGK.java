@@ -39,7 +39,7 @@ public class IMLibrarianGK extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

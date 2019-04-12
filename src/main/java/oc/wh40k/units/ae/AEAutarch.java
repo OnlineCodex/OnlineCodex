@@ -23,7 +23,7 @@ public class AEAutarch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

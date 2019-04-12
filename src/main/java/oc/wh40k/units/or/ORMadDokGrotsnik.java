@@ -7,7 +7,7 @@ public class ORMadDokGrotsnik extends Eintrag {
 
     public ORMadDokGrotsnik() {
         name = "Mad Dok Grotsnik";
-        kategorie = 1;
+        category = 1;
         grundkosten = getPts("Mad Dok Grotsnik");
         power = 5;
 
@@ -15,7 +15,7 @@ public class ORMadDokGrotsnik extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Deathskull: Opportunist", true);
+        addWarlordTraits("Deathskull: Opportunist");
 
         complete();
     }
@@ -23,7 +23,7 @@ public class ORMadDokGrotsnik extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

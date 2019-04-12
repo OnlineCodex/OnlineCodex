@@ -23,7 +23,7 @@ public class IMPreacher extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         addToInformationVector(MINISTORUM_PRIEST_CNT, 1);
 

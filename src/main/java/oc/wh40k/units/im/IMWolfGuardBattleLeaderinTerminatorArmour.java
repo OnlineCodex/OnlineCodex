@@ -23,7 +23,7 @@ public class IMWolfGuardBattleLeaderinTerminatorArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

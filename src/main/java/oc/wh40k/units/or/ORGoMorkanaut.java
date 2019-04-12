@@ -12,9 +12,9 @@ public class ORGoMorkanaut extends Eintrag {
 
     public ORGoMorkanaut() {
 
-        kategorie = 5;
+        category = 5;
         //name = "GoMorkanaut";
-        überschriftSetzen = false;
+        applyTitle = false;
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/Gorkanaut.gif"));
@@ -23,7 +23,7 @@ public class ORGoMorkanaut extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Gorkanaut", 245));
         ogE.addElement(new OptionsGruppeEintrag("Morkanaut", 230));
-        add(typ = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(typ = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

@@ -111,7 +111,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast Pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Blaster (Index)", getPts("Blaster")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -120,7 +120,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (Drukhari)")));
             ogE.addElement(new OptionsGruppeEintrag("Venom blade", getPts("Venom blade")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
     	} else if(type.equals("Succubus")) {
@@ -129,7 +129,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
             ogE.addElement(new OptionsGruppeEintrag("Impaler", getPts("Impaler")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
 
@@ -138,7 +138,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Razorflails", getPts("Razorflails")));
             ogE.addElement(new OptionsGruppeEintrag("Shardnet and impaler", getPts("Shardnet and impaler")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
             seperator();
     	} else if(type.equals("Haemonculus")){
@@ -147,7 +147,7 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Liquifier gun", getPts("Liquifier gun")));
             ogE.addElement(new OptionsGruppeEintrag("Splinter pistol (Index)", getPts("Splinter pistol")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
 
@@ -159,14 +159,14 @@ public class AEDrukhariRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Scissorhand", getPts("Scissorhand")));
             ogE.addElement(new OptionsGruppeEintrag("Venom blade", getPts("Venom blade")));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
             seperator();
     	} else if(type.equals("Beastmaster")) {
             ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (Drukhari)")));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
     	}
 
         if(o1 != null) {

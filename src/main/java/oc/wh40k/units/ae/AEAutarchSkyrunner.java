@@ -26,7 +26,7 @@ public class AEAutarchSkyrunner extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

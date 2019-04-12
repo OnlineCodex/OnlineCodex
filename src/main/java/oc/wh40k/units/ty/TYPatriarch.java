@@ -39,7 +39,7 @@ public class TYPatriarch extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

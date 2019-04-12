@@ -20,13 +20,13 @@ public class IMEliminatorSquad extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt sniper rifles", getPts("Bolt sniper rifle")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Eliminator Sergeant", getPts("Suppressor Sergeant")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt sniper rifle", getPts("Bolt sniper rifle")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

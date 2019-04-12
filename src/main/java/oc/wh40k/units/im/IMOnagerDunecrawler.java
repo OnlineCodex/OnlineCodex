@@ -20,7 +20,7 @@ public class IMOnagerDunecrawler extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Laser + Cognis stubber", "Neutron laser + Cognis heavy stubber", getPts("Neutron laser") + getPts("Cognis heavy stubber")));
         ogE.addElement(new OptionsGruppeEintrag("Twin h. ph. blaster", "Twin heavy phosphor blaster", getPts("Twin heavy phosphor blaster")));
         ogE.addElement(new OptionsGruppeEintrag("Icarus array", getPts("Icarus array")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -30,7 +30,7 @@ public class IMOnagerDunecrawler extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Data-tether", "Broad spectrum data-tehter", getPts("Broad spectrum data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Smoke launchers", getPts("Smoke launcher")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         complete();
     }

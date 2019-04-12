@@ -201,7 +201,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
                 }
             }
 
-            add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(fkwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             if (!defaultFK.equals("no weapon")) {
                 fkwaffen.setSelected(0, true);
             }
@@ -262,7 +262,7 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
                 }
             }
 
-            add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(handwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             if (!defaultNK.equals("no weapon")) {
                 handwaffen.setSelected(0, true);
             }

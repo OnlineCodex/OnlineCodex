@@ -21,7 +21,7 @@ public class TAShasvreKammer extends RuestkammerVater {
         //Bewaffnung
         ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
-        add(o1 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

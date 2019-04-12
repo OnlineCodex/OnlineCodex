@@ -35,7 +35,7 @@ public class IMRavenwingHuntmaster extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Power lance", getPts("Power lance (SM)")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         o1.setSelected(0, true);
 

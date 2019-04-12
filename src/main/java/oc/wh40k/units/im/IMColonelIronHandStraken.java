@@ -11,7 +11,7 @@ public class IMColonelIronHandStraken extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Catachan: Lead From the Front", true);
+        addWarlordTraits("Catachan: Lead From the Front");
 
         complete();
     }
@@ -19,6 +19,6 @@ public class IMColonelIronHandStraken extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

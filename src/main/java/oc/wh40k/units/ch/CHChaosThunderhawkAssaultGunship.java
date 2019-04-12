@@ -18,7 +18,7 @@ public class CHChaosThunderhawkAssaultGunship extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Thunderhawk heavy cannon", getPts("Thunderhawk heavy cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Turbo-laser destruktor", getPts("Turbo-laser destruktor")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -30,14 +30,14 @@ public class CHChaosThunderhawkAssaultGunship extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", getPts("Lascannon") * 2));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hellstrike battery", getPts("Hellstrike battery") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Balefire missiles", getPts("Balefire missiles")));
         ogE.addElement(new OptionsGruppeEintrag("Thunderhawk cluster bombs", getPts("Thunderhawk cluster bombs")));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -45,7 +45,7 @@ public class CHChaosThunderhawkAssaultGunship extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

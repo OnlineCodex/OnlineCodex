@@ -25,7 +25,7 @@ public class IMWatchMaster extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

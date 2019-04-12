@@ -19,14 +19,14 @@ public class CHKhorneLordofSkulls extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Gorestorm cannon", getPts("Gorestorm cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Ichor cannon", getPts("Ichor cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Daemongore cannon", getPts("Daemongore cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Hades gatling cannon", getPts("Hades gatling cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Skullhurler", getPts("Skullhurler")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         complete();

@@ -11,13 +11,13 @@ public class IMSammaelonCorvex extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Master of Manoeuvre (DA)", true);
+        addWarlordTraits("Master of Manoeuvre (DA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

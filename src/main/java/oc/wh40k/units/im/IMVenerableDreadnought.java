@@ -29,7 +29,7 @@ public class IMVenerableDreadnought extends Eintrag {
         } else {
             ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
         }
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -42,7 +42,7 @@ public class IMVenerableDreadnought extends Eintrag {
         if(spacewolves) {
         	ogE.addElement(new OptionsGruppeEintrag("Great wolf claw", getPts("great wolf claw")));
         }
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         if(spacewolves) {
             seperator();
@@ -58,8 +58,8 @@ public class IMVenerableDreadnought extends Eintrag {
         o1.alwaysSelected();
         o2.alwaysSelected();
         if(spacewolves) {
-    		o1.setAktiv(!greatAxe.isSelected());
-    		o2.setAktiv(!greatAxe.isSelected());
+    		o1.setActive(!greatAxe.isSelected());
+    		o2.setActive(!greatAxe.isSelected());
         }
     }
 }

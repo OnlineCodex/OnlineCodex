@@ -26,7 +26,7 @@ public class IMTechmarine extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

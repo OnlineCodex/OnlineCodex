@@ -22,7 +22,7 @@ public class IMTechmarinewithJumpPack extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -15,7 +15,7 @@ public class IMCorvusBlackstar extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         seperator();
 
@@ -23,7 +23,7 @@ public class IMCorvusBlackstar extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Stormstrike missile launchers", getPts("Stormstrike missile launcher") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Blackstar rocket launcher", getPts("Blackstar rocket launcher") * 2));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         seperator();
 
@@ -33,7 +33,7 @@ public class IMCorvusBlackstar extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Infernum halo-launcher", getPts("Infernum halo-launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Auspex array", getPts("Auspex array")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE));
 
         complete();
 

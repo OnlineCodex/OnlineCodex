@@ -21,7 +21,7 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
         name = "Commander";
         grundkosten = getPts("Commander in XV8 Crisis Battlesuit");
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -42,7 +42,7 @@ public class TACommanderinXV8CrisisBattlesuit extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -30,7 +30,7 @@ public class TYAcolyteIconward extends Eintrag {
 
         addWeapons(TYGenestealerCultRuestkammer.class, true);
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

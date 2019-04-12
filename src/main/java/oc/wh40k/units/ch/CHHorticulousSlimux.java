@@ -21,7 +21,7 @@ public class CHHorticulousSlimux extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Nurgle: Acidic Ichor", true);
+        addWarlordTraits("Nurgle: Acidic Ichor");
 
         complete();
     }

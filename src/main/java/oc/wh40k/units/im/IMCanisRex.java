@@ -17,17 +17,17 @@ public class IMCanisRex extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Las-impulsor", getPts("Las-impulsor")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Freedom's Hand", getPts("Freedom's Hand")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser (QI)")));
-        add(fk2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(fk2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 

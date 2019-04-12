@@ -43,6 +43,6 @@ public class CHRotigus extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

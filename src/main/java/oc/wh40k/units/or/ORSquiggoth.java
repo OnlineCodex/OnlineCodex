@@ -13,7 +13,7 @@ public class ORSquiggoth extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
         ogE.addElement(new OptionsGruppeEintrag("Lobba", getPts("Lobba")));
         ogE.addElement(new OptionsGruppeEintrag("Zzap Gun", getPts("Zzap Gun")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

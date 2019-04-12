@@ -9,7 +9,7 @@ public class ORKaptinBadrukk extends Eintrag {
 
     public ORKaptinBadrukk() {
 
-        kategorie = 1;
+        category = 1;
         name = "Kaptin Badrukk";
         grundkosten = getPts("Kaptin Badrukk");
         power = 5;
@@ -23,7 +23,7 @@ public class ORKaptinBadrukk extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Freebooterz: Killa Reputation", true);
+        addWarlordTraits("Freebooterz: Killa Reputation");
 
         complete();
     }
@@ -31,6 +31,6 @@ public class ORKaptinBadrukk extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

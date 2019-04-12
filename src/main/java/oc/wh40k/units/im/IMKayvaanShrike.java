@@ -23,13 +23,13 @@ public class IMKayvaanShrike extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Raven Guard: Silent Stalker", true);
+        addWarlordTraits("Raven Guard: Silent Stalker");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

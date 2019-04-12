@@ -38,7 +38,7 @@ public class TAHazardKammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Positional relay", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stimulant injector", 25));
         ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", 20));
-        add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

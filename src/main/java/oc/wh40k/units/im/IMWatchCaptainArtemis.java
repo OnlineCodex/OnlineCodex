@@ -11,13 +11,13 @@ public class IMWatchCaptainArtemis extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Vigilance Incarnate (DW)", true);
+        addWarlordTraits("Vigilance Incarnate (DW)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

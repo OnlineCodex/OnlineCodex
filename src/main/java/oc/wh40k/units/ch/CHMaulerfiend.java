@@ -17,7 +17,7 @@ public class CHMaulerfiend extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Magma cutters", getPts("Magma cutter") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Lasher tendrils", getPts("Lasher tendrils")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
@@ -26,7 +26,7 @@ public class CHMaulerfiend extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

@@ -102,40 +102,40 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         	ogE.addAll(getPistols(buildaVater));
             ogE.addAll(getRangedWeapons(buildaVater));
             addRelics();
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
             ogE.addAll(getMeleeWeapons(buildaVater));
             addRelics();
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
         	ogE.addAll(getPistols(buildaVater));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             seperator();
 
         	ogE.addAll(getRangedWeapons(buildaVater));
             ogE.addAll(getMeleeWeapons(buildaVater));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Boltgun", true);
 
             seperator();
 
             ogE.addAll(getMeleeWeapons(buildaVater));
-            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         } else if(type.equals("Seraphim Superior")){
         	ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
         	ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("chainsword (AMI)")));
         	ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("power sword (AMI)")));
-            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o1.setSelected("Bolt pistol", true);
 
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
-            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt pistol", true);
         }
 
@@ -175,7 +175,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         		o2.deactivateOthers("Boltgun");
         		o2.setSelected("Boltgun", true);
         	} else {
-        		o2.setAktiv(true);
+        		o2.setActive(true);
         	}
         }
 

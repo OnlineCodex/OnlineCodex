@@ -27,7 +27,7 @@ public class IMImperialKnightWarlordtraits extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("(Taranis) Knight of Mars", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("(Krast) First Knight", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("(Vulker) Adamantium Knight", getPts("")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         this.eintragsCNT = 0;
 

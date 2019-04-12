@@ -19,7 +19,7 @@ public class TYHarpy extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 Stranglethorn cannons", getPts("Stranglethorn cannon") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy venom cannons", getPts("Heavy venom cannon") * 2));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
 

@@ -40,7 +40,7 @@ public class CHMalignantPlaguecaster extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

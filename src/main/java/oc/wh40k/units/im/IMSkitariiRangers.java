@@ -21,7 +21,7 @@ public class IMSkitariiRangers extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Enh. data-tehter", "Enhanced data-tehter", getPts("Enhanced data-tether")));
         ogE.addElement(new OptionsGruppeEintrag("Omnispex", getPts("Omnispex")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

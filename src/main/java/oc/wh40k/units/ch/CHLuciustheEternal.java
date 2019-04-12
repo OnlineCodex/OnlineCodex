@@ -12,13 +12,13 @@ public class CHLuciustheEternal extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Emperor's Children: Stimulated by Pain", true);
+        addWarlordTraits("Emperor's Children: Stimulated by Pain");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

@@ -9,7 +9,7 @@ public class ORBigMek extends Eintrag {
 	private final RuestkammerStarter waffen;
 
 	public ORBigMek() {
-        kategorie = 1;
+        category = 1;
         name = "Big Mek";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs");
         power = 5;
@@ -29,7 +29,7 @@ public class ORBigMek extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

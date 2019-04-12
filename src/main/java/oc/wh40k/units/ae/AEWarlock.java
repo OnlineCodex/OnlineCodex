@@ -37,7 +37,7 @@ public class AEWarlock extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

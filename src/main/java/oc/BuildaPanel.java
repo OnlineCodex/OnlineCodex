@@ -13,11 +13,9 @@ import javax.swing.JTextField;
 
 public abstract class BuildaPanel implements BuildaSTK {
 
-    public static JTextField budget = new JTextField();
-    public final JLabel kostenLabel = new JLabel();
-    public Vector<BuildaVater> myBuilderz = new Vector<BuildaVater>();
-
-    protected JPanel panel = new JPanel(null, false); // kein LayoutManager für ALLE Panels, aber doubleBuffered
+    static JTextField budget = new JTextField();
+    final JLabel kostenLabel = new JLabel();
+    protected JPanel panel = new JPanel(null, false);
 
     public BuildaPanel() {
         addRefreshListener(ONLINE_CODEX, this::refreshAction);
@@ -28,18 +26,12 @@ public abstract class BuildaPanel implements BuildaSTK {
         return this.panel;
     }
 
-    public int getHoehe() {
+    public int getHeight() {
         return panel.getSize().height;
     }
 
-    public String entferneNullNachkomma(double kosten) {
-        return Integer.toString((int) kosten);
-    }
-
-    public double getKosten() {
-        return myBuilderz.stream()
-                .mapToDouble(BuildaVater::getKosten)
-                .sum();
+    public double getCost() {
+        return 0;
     }
 
     public void refreshAction() {}

@@ -11,7 +11,7 @@ public class TAFiresightMarksman extends Eintrag {
         power = 1;
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
 

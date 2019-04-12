@@ -25,7 +25,7 @@ public class CHBloodmaster extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

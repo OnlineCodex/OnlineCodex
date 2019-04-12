@@ -37,7 +37,7 @@ public class AEFarseer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

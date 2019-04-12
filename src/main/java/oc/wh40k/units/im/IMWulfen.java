@@ -15,7 +15,7 @@ public class IMWulfen extends Eintrag {
 
     public IMWulfen() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Wulfen", 5, 10, getPts("Wulfen"));
         add(squad);

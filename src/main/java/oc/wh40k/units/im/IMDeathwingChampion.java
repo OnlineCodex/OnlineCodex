@@ -11,7 +11,7 @@ public class IMDeathwingChampion extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 
@@ -19,7 +19,7 @@ public class IMDeathwingChampion extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }
 

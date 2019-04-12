@@ -40,7 +40,7 @@ public class IMPrimarisAncient extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -23,7 +23,7 @@ public class AEDeathJester extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

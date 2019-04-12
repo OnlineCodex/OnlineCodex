@@ -12,7 +12,7 @@ public class OptionsButtonZaehler extends OptionsButton {
     public OptionsButtonZaehler(int ID, int lX, int lY, String verzierung, String name, int maxAnzahl, double preis) {
         this.name = name;
         this.maxAnzahl = maxAnzahl;
-        this.preis = preis;
+        this.cost = preis;
 
         produceButton();
         setVerzierung(verzierung);
@@ -23,7 +23,7 @@ public class OptionsButtonZaehler extends OptionsButton {
     public OptionsButtonZaehler(int ID, int lX, int lY, String verzierung, OptionsGruppeEintrag e, int maxAnzahl) {
         this.syncPreis = e.getSyncPreis();
         this.name = e.getName();
-        this.preis = e.getPreis();
+        this.cost = e.getPreis();
         this.maxAnzahl = maxAnzahl;
 
         produceButton();
@@ -33,8 +33,8 @@ public class OptionsButtonZaehler extends OptionsButton {
     }
 
     @Override
-	public double getKosten() {
-        if (!aktiv || preis == -88) {
+	public double getCost() {
+        if (!aktiv || cost == -88) {
             return 0;
         }
 
@@ -42,7 +42,7 @@ public class OptionsButtonZaehler extends OptionsButton {
             return syncPreis;
         }
 
-        return anzahl * preis;
+        return anzahl * cost;
     }
 
     public int getAnzahl() {
@@ -164,15 +164,12 @@ public class OptionsButtonZaehler extends OptionsButton {
         final StringBuilder abstandshalter = new StringBuilder("");
         String punkteString = "";
 
-//		if (preis == 0) {
-//			punkteString = "kostenlos";
-//		} else
-        if (preis == -88) {
+        if (cost == -88) {
             punkteString = "";
         } else if (jeweils) {
-            punkteString = "jeweils" + " " + entferneNullNachkomma(preis) + " " + "Pkt.";
+            punkteString = "jeweils" + " " + ((int) cost) + " " + "Pkt.";
         } else {
-            punkteString = entferneNullNachkomma(preis) + " " + "Pkt.";
+            punkteString = ((int) cost) + " " + "Pkt.";
         }
 
         int cnt = 0;

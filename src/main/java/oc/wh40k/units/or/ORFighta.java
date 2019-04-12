@@ -18,7 +18,7 @@ public class ORFighta extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Bomms", "two Bomms", 0));
         ogE.addElement(new OptionsGruppeEintrag("Rokkits", "two Rokkits", 0));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
 

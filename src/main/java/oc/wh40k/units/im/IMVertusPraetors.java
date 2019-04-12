@@ -27,7 +27,7 @@ public class IMVertusPraetors extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
 
 

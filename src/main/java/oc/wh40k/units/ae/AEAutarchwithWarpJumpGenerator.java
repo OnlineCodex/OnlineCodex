@@ -32,7 +32,7 @@ public class AEAutarchwithWarpJumpGenerator extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

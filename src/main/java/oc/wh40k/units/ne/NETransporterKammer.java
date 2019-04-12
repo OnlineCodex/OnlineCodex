@@ -32,7 +32,7 @@ public class NETransporterKammer extends RuestkammerVater {
         if (this.offerNight) {
             ogE.addElement(new OptionsGruppeEintrag("Night Scythe", 130));
         }
-        add(typ = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(typ = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         if (this.offerNight) {
             seperator();

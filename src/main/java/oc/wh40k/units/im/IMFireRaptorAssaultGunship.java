@@ -18,7 +18,7 @@ public class IMFireRaptorAssaultGunship extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Quad bolters", 0));
         ogE.addElement(new OptionsGruppeEintrag("TL autocannon", 0));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         complete();

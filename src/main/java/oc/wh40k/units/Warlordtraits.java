@@ -143,7 +143,7 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Slaanesh: Bewitching Aura", 0));
 	    }
         if(army.equals("CHAOS")) {
-        	add(warlordtraits2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
+        	add(warlordtraits2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1, false));
         }
         if(army.equals("CHAOS") || LEGIONS.contains(army)){
 	    	ogE.addElement(new OptionsGruppeEintrag("Eternal Vendetta", 0));
@@ -225,7 +225,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Companion (AC)", 0));
         }
         if(army.equals("IMPERIUM")) {
-        	add(warlordtraits3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
+        	add(warlordtraits3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1, false));
         }
         if(army.equals("IMPERIUM") || ADEPTUS_MECHANICUS.contains(army)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Monitor Malevolus (AdMech)", 0));
@@ -268,7 +268,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Nowhere to Hide (DW)", 0));
         }
         if(army.equals("IMPERIUM")) {
-        	add(warlordtraits2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
+        	add(warlordtraits2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1, false));
         }
         if(army.equals("IMPERIUM") || army.equals("Grey Knights")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Daemon-Slayer (GK)", 0));
@@ -398,7 +398,7 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Krast: First Knight", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Vulker: Adamantium Knight", 0));
     	}
-        add(warlordtraits = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
+        add(warlordtraits = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1, false));
 
         if(warlordtraits3 != null) {
         	warlordtraits2.getPanel().setLocation(

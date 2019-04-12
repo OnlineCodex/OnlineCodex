@@ -32,7 +32,7 @@ public class IMChaplain extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

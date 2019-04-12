@@ -11,7 +11,7 @@ public class IMSergeantHarker extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Catachan: Lead From the Front", true);
+        addWarlordTraits("Catachan: Lead From the Front");
 
         complete();
     }
@@ -19,6 +19,6 @@ public class IMSergeantHarker extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

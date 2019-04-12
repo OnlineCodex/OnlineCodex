@@ -25,7 +25,7 @@ public class CHDGChaosLordinTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

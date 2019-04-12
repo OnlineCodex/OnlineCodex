@@ -21,13 +21,13 @@ public class IMCelestine extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Beacon of Faith", true);
+        addWarlordTraits("Beacon of Faith");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

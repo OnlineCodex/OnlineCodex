@@ -16,7 +16,7 @@ public class TAAX39SunSharkBomber extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
         ogE.addElement(new OptionsGruppeEintrag("2 Missile pods", getPts("Missile pod") * 2));
-        o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE);
+        o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE);
         add(o2);
         o2.setSelected(0, true);
 

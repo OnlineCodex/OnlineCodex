@@ -19,7 +19,7 @@ public class NETriarchStalker extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Heat ray", getPts("Heat ray")));
         ogE.addElement(new OptionsGruppeEintrag("Particle shredder", getPts("Particle shredder")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy gauss cannno", getPts("Twin heavy gauss cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

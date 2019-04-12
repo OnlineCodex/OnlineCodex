@@ -24,7 +24,7 @@ public class IMPrimarisCaptain extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

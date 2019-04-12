@@ -33,7 +33,7 @@ public class AESyren extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Agoniser", getPts("Agoniser")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 
@@ -47,7 +47,7 @@ public class AESyren extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Blast pistol", getPts("Blast pistol")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o2.setSelected(0, true);
 

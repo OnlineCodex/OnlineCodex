@@ -23,7 +23,7 @@ public class IMCommissar extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

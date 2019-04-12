@@ -29,7 +29,7 @@ public class CHHeraldofSlaaneshonSeekerChariot extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Piercing claws", getPts("Piercing claws")));
         ogE.addElement(new OptionsGruppeEintrag("Lashes of torment", getPts("Lashes of torment")));
-        add(waffe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(waffe1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         waffe1.setSelected(0, true);
 
         seperator();

@@ -13,29 +13,23 @@ public class OptionsButtonUpgrade extends OptionsButton {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(OptionsButtonUpgrade.class);
 
-    boolean showKosten = true;
+    private boolean showCost;
     boolean unique = false;
     boolean relic = false;
     private boolean selected;
-    public OptionsButtonUpgrade(int ID, int lX, int lY, String verzierung, String name, boolean selected, double preis) {
-        this.name = name;
-        this.selected = selected;
-        this.preis = preis;
-        this.showKosten = true;
 
-        produceButton();
-        setVerzierung(verzierung);
-        panel.setLocation(lX, lY);
+    OptionsButtonUpgrade(int lX, int lY, String decoration, String name, boolean selected, double cost) {
+        this(lX, lY, decoration, name, selected, cost, false);
     }
 
-    public OptionsButtonUpgrade(int ID, int lX, int lY, String verzierung, String name, boolean selected, double preis, boolean showKosten) {
+    OptionsButtonUpgrade(int lX, int lY, String decoration, String name, boolean selected, double cost, boolean showCost) {
         this.name = name;
         this.selected = selected;
-        this.preis = preis;
-        this.showKosten = showKosten;
+        this.cost = cost;
+        this.showCost = showCost;
 
         produceButton();
-        setVerzierung(verzierung);
+        setVerzierung(decoration);
         panel.setLocation(lX, lY);
     }
 
@@ -48,38 +42,34 @@ public class OptionsButtonUpgrade extends OptionsButton {
         fontSetzen((selected ? 1 : 0));
     }
 
-    public boolean isShowKosten() {
-        return showKosten;
-    }
-
-    public void setShowKosten(boolean showKosten) {
-        this.showKosten = showKosten;
+    private boolean isShowCost() {
+        return showCost;
     }
 
     @Override
-	public double getKosten() {
-        if (!aktiv || preis == -88) {
+	public double getCost() {
+        if (!aktiv || cost == -88) {
             return 0;
         }
-        return (selected ? preis : 0);
+        return (selected ? cost : 0);
     }
 
-    public void switsch() {
+    void toggle() {
         LOGGER.info("switsch unique: " + unique);
         LOGGER.info("switsch relic: " + relic);
         if (unique || relic) {
-            switsch(this.name);
+            toggle(this.name);
         } else {
             if (aktiv) {
-                selected = !selected;  // umdrehen
+                selected = !selected;
                 fontSetzen((selected ? 1 : 0));
             }
         }
     }
 
-    public void switsch(String txt) {
+    void toggle(String txt) {
         if (aktiv) {
-            selected = !selected;  // umdrehen
+            selected = !selected;
             fontSetzen((selected ? 1 : 0));
 
             if (selected) {
@@ -125,24 +115,17 @@ public class OptionsButtonUpgrade extends OptionsButton {
         }
     }
 
-    public void switschCost(String txt) {
-        if (aktiv) {
-            selected = !selected;  // umdrehen
-            fontSetzen((selected ? 1 : 0));
-        }
-    }
-
     @Override
     public void labelSetzen() {
         final FontMetrics fm = button.getFontMetrics(button.getFont());
-        final StringBuilder abstandshalter = new StringBuilder("");
+        final StringBuilder abstandshalter = new StringBuilder();
         String punkteString = "";
 
-        if (isShowKosten()) {
+        if (isShowCost()) {
             if (jeweils) {
-                punkteString = BuildaHQ.translate("jeweils") + " " + entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.");
+                punkteString = BuildaHQ.translate("jeweils") + " " + ((int) cost) + " " + BuildaHQ.translate("Pkt.");
             } else {
-                punkteString = entferneNullNachkomma(preis) + " " + BuildaHQ.translate("Pkt.");
+                punkteString = ((int) cost) + " " + BuildaHQ.translate("Pkt.");
             }
 
             final int cnt = (buttonBreite - (fm.stringWidth((kurzerName != null ? kurzerName : name) + punkteString) + 30)) / fm.stringWidth(" .");
@@ -155,15 +138,15 @@ public class OptionsButtonUpgrade extends OptionsButton {
         button.setText((kurzerName != null ? kurzerName : name) + abstandshalter.toString() + punkteString);
     }
 
-    public boolean hasUniqueError() {
+    boolean hasUniqueError() {
     	return BuildaHQ.getCountFromInformationVectorGlobal(this.name) > 1;
     }
 
-    public boolean isUnique() {
+    boolean isUnique() {
         return unique;
     }
 
-    public void setUnique(boolean unique) {
+    void setUnique(boolean unique) {
         this.unique = unique;
     }
 

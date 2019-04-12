@@ -18,7 +18,7 @@ public class IMWolfGuardinTerminatorArmour extends Eintrag {
 
     public IMWolfGuardinTerminatorArmour() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Wolf Guard in Terminator Armour", 5, 10, getPts("Wolf Guard in Terminator Armour")));
 

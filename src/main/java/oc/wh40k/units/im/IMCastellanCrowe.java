@@ -25,14 +25,14 @@ public class IMCastellanCrowe extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Hammer of Righteousness (GK)", true);
+        addWarlordTraits("Hammer of Righteousness (GK)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),
                 (int) psychicPowers.getPanel().getLocation().getY() + psychicPowers.getPanel().getSize().height + 5

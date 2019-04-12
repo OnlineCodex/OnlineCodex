@@ -25,7 +25,7 @@ public class IMChapterChampion extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

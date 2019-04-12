@@ -20,7 +20,7 @@ public class IMScoutSquad extends Eintrag {
 
     public IMScoutSquad() {
         name = "Scout Squad\n";
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Scouts", 5, 10, getPts("Scout Squad")));
 
@@ -37,7 +37,7 @@ public class IMScoutSquad extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator(5);
 

@@ -24,7 +24,7 @@ public class IMRazorback extends Eintrag {
         	ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer (SM)")));
         	ogE.addElement(new OptionsGruppeEintrag("Las + twin plasma gun", getPts("lascannon (SM)") + getPts("Twin plasma gun")));
         }
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

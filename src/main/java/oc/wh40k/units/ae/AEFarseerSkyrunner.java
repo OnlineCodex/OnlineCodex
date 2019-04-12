@@ -41,7 +41,7 @@ public class AEFarseerSkyrunner extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

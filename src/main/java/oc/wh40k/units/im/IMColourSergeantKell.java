@@ -11,7 +11,7 @@ public class IMColourSergeantKell extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Cadian: Superior Tactical Training", true);
+        addWarlordTraits("Cadian: Superior Tactical Training");
 
         complete();
     }
@@ -19,6 +19,6 @@ public class IMColourSergeantKell extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

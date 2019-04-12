@@ -14,7 +14,7 @@ public class AELelithHesperax extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Penetrating blade", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("Impaler", getPts("")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -25,6 +25,6 @@ public class AELelithHesperax extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

@@ -38,7 +38,7 @@ public class IMRapierCarrier extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Quad launcher", getPts("Quad launcher")));    //Änderung FAQ IA Adeptus Astartes 1.0
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

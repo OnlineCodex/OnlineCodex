@@ -9,8 +9,6 @@ import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import org.w3c.dom.Element;
-
 public class NamePanel extends OptionsVater implements KeyListener {
 
     private final boolean legal = true;
@@ -57,7 +55,7 @@ public class NamePanel extends OptionsVater implements KeyListener {
     }
 
     @Override
-    public double getKosten() {
+    public double getCost() {
         try {
             return Integer.parseInt(tName.getText());
         } catch (final Exception e) {
@@ -110,11 +108,6 @@ public class NamePanel extends OptionsVater implements KeyListener {
     @Override
     public void load(String s) {
         tName.setText(s);
-    }
-
-    @Override
-    public String getLabel() {
-        return "";
     }
 
     @Override

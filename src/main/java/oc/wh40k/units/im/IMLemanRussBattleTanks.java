@@ -12,7 +12,7 @@ public class IMLemanRussBattleTanks extends Eintrag {
     public IMLemanRussBattleTanks() {
         name = "Leman Russ Battle Tanks";
         grundkosten = 0;
-        this.überschriftSetzen = true;
+        this.applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/IGLemanRussSquadron.jpg"));
 

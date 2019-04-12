@@ -15,7 +15,7 @@ public class IMWitchseekers extends Eintrag {
     public IMWitchseekers() {
         name = "Witchseekers\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Witchseekers", 5, 10, getPts("Witchseekers"));
         add(squad);

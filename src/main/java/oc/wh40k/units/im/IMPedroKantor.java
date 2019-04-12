@@ -21,13 +21,13 @@ public class IMPedroKantor extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Crimson Fists: Tenacious Opponent", true);
+        addWarlordTraits("Crimson Fists: Tenacious Opponent");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

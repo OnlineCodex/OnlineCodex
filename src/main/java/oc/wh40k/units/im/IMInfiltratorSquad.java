@@ -20,19 +20,19 @@ public class IMInfiltratorSquad extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbines", getPts("Bolt carbine")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         add(helixAdept = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Helix Adept", getPts("Infiltrator Helix Adept")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Bolt pistol", getPts("Bolt carbine") + getPts("Bolt pistol (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Infiltrator Sergeant", getPts("Infiltrator Sergeant")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt carbine & Bolt pistol", getPts("Bolt carbine") + getPts("Bolt pistol (SM)")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
     }
 
     @Override

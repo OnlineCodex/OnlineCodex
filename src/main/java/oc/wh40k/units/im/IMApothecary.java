@@ -28,7 +28,7 @@ public class IMApothecary extends Eintrag {
         	addWeapons(IMSpaceMarinesRuestkammer.class, true);
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

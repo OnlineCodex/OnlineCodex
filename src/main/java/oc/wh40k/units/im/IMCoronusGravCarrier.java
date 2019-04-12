@@ -15,13 +15,13 @@ public class IMCoronusGravCarrier extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin Arachnus las-blaze", getPts("Twin Arachnus las-blaze")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin Lastrum bolt cannon", getPts("Twin Lastrum bolt cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         complete();

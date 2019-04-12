@@ -6,7 +6,7 @@ public class ORSkraksSkullNobz extends Eintrag {
 
     public ORSkraksSkullNobz() {
 
-        kategorie = 2;
+        category = 2;
         name = "Skrak's Skull-Nobz";
         grundkosten = 190;
 
@@ -23,6 +23,6 @@ public class ORSkraksSkullNobz extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

@@ -80,7 +80,7 @@ public class CHChampionkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
         }
         if (ogE.size() > 0) {
-            add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(fkwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             if (!defaultFK.equals("no weapon")) {
                 fkwaffen.setSelected(0, true);
             }
@@ -117,7 +117,7 @@ public class CHChampionkammer extends RuestkammerVater {
             }
         }
         if (ogE.size() > 0) {
-            add(handwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            add(handwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
             if (!defaultNK.equals("no weapon")) {
                 handwaffen.setSelected(0, true);
             }

@@ -13,7 +13,7 @@ public class TAAunshi extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Vior'la: Academy Luminary", true);
+        addWarlordTraits("Vior'la: Academy Luminary");
 
         complete();
 
@@ -22,6 +22,6 @@ public class TAAunshi extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

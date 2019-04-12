@@ -11,13 +11,13 @@ public class IMBelial extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Huntsman (DA)", true);
+        addWarlordTraits("Huntsman (DA)");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

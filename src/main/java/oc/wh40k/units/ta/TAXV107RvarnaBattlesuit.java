@@ -13,7 +13,7 @@ public class TAXV107RvarnaBattlesuit extends Eintrag {
         name = "XV107 R'varna Battlesuit";
         grundkosten = 260;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
@@ -26,7 +26,7 @@ public class TAXV107RvarnaBattlesuit extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Positionssender", 5));
         ogE.addElement(new OptionsGruppeEintrag("Stimulanzinjektor", 35));
-        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 2));
         //Positional Relay, Stimulant injectors
 
         complete();

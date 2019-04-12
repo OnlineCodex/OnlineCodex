@@ -11,7 +11,7 @@ public class ORRuntherd extends Eintrag {
 	private final RuestkammerStarter waffen;
 
     public ORRuntherd() {
-        kategorie = 1;
+        category = 1;
         name = "Runtherd";
         grundkosten = getPts("Runtherd");
         power = 2;
@@ -23,13 +23,13 @@ public class ORRuntherd extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Grabba Stikk", getPts("Grabba Stikk")));
         ogE.addElement(new OptionsGruppeEintrag("Grot-prod", getPts("Grot-prod")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Grot lash", getPts("Grot lash")));
         ogE.addElement(new OptionsGruppeEintrag("Squig hound", getPts("Squig hound")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -43,7 +43,7 @@ public class ORRuntherd extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -17,7 +17,7 @@ public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
 
         addRefreshListener(EINTRAG, () -> {
             refreshen();
-            panel.setSize(getBreite(), getHöhe());
+            panel.setSize(getBreite(), getHeight());
         });
     }
 
@@ -54,7 +54,7 @@ public abstract class Sonstige extends OptionsCollection implements BuildaSTK {
     }
 
     public void complete() {
-        panel.setSize(getBreite(), getHöhe());
+        panel.setSize(getBreite(), getHeight());
         refreshen();
     }
 

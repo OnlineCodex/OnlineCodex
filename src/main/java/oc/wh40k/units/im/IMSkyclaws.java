@@ -15,7 +15,7 @@ public class IMSkyclaws extends Eintrag {
     public IMSkyclaws() {
         checkBuildaVater();
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Skyclaws", 5, 15, getPts("Skyclaws")));
 

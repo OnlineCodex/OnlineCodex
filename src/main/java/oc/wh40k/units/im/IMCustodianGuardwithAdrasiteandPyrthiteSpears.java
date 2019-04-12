@@ -24,7 +24,7 @@ public class IMCustodianGuardwithAdrasiteandPyrthiteSpears extends Eintrag {
 
         grundkosten = 0;
 
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Custodian Guards", 3, 5, getPts("Custodian Guard with Adrasite and Pyrthite Spears"));
 

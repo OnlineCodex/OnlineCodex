@@ -11,24 +11,19 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
 public abstract class OptionsCollection extends BuildaPanel {
 
-    protected Vector<OptionsVater> optionen = new Vector<OptionsVater>();
-    protected Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>(); // wird in den  extends Eintrag  Klassen verwendet
-    protected Vector<OptionsGruppeEintrag> ogEa = new Vector<OptionsGruppeEintrag>(); // wird in den  extends Eintrag  Klassen  bei Necromunda verwendet
+    Vector<OptionsVater> optionen = new Vector<>();
+    protected Vector<OptionsGruppeEintrag> ogE = new Vector<>(); // wird in den  extends Eintrag  Klassen verwendet
     protected Picture ico;
     protected double grundkosten = 0;
     protected String name = "";
     protected int cnt = randAbstand;
     protected int ID; // wichtig!
-    boolean überschriftSetzen = false;
     protected BuildaVater buildaVater;
 
 
-    public OptionsCollection() { // zum verschieben der Rüstkammerstarter. Wenn der Eintrag selber in refresh sowas macht, ist das gültig, weil es schließlich NACH dem hier passiert (siehe reihenfolge bei RefreshListener)
+    OptionsCollection() { // zum verschieben der Rüstkammerstarter. Wenn der Eintrag selber in refresh sowas macht, ist das gültig, weil es schließlich NACH dem hier passiert (siehe reihenfolge bei RefreshListener)
         addRefreshListener(OPTIONS_COLLECTION, this::aktualisiereKammerStarterLocation);
     }
 
@@ -60,10 +55,10 @@ public abstract class OptionsCollection extends BuildaPanel {
             ogE.clear();
         }
 
-        cnt += o.getHoehe();
+        cnt += o.getHeight();
     }
 
-    public void addAt(OptionsVater o, int i) {
+    protected void addAt(OptionsVater o, int i) {
         panel.add(o.getPanel(), i);
         optionen.add(i, o);
 
@@ -71,25 +66,23 @@ public abstract class OptionsCollection extends BuildaPanel {
             ogE.clear();
         }
 
-        cnt += o.getHoehe();
+        cnt += o.getHeight();
     }
 
     public void remove(OptionsVater o) {
         panel.remove(o.getPanel());
         optionen.remove(o);
-        cnt -= o.getHoehe();
+        cnt -= o.getHeight();
     }
 
-    public int getHöhe() {
+    public int getHeight() {
         int höhe = 0;
-
         for (int i = 0; i < optionen.size(); ++i) {
-            final int nächsteHöhe = (int) (optionen.elementAt(i).getPanel().getLocation().getY() + (optionen.elementAt(i).getHoehe()));
+            final int nächsteHöhe = (int) (optionen.elementAt(i).getPanel().getLocation().getY() + (optionen.elementAt(i).getHeight()));
             if (höhe < nächsteHöhe) {
                 höhe = nächsteHöhe;
             }
         }
-
         try {
             final int bildHöhe = (int) ico.getLocation().getY() + ico.getSize().height;
 
@@ -103,11 +96,11 @@ public abstract class OptionsCollection extends BuildaPanel {
     }
 
     @Override
-	public double getKosten() {
+	public double getCost() {
         double kosten = 0;
 
         for (int i = 0; i < optionen.size(); ++i) {
-            kosten += optionen.elementAt(i).getKosten();
+            kosten += optionen.elementAt(i).getCost();
         }
 
         return kosten + grundkosten;
@@ -117,7 +110,7 @@ public abstract class OptionsCollection extends BuildaPanel {
         final StringBuilder s = new StringBuilder();
 
         for (int i = 0; i < optionen.size(); ++i) {
-            s.append(optionen.elementAt(i).getSaveText() + trenner);
+            s.append(optionen.elementAt(i).getSaveText()).append(trenner);
         }
 
         return s.toString();
@@ -137,7 +130,7 @@ public abstract class OptionsCollection extends BuildaPanel {
         }
     }
 
-    public void aktualisiereKammerStarterLocation() {
+    protected void aktualisiereKammerStarterLocation() {
         boolean ersterStarter = true;
         for (int i = 0; i < optionen.size(); ++i) {
             if (optionen.elementAt(i) instanceof RuestkammerStarter) {
@@ -170,12 +163,12 @@ public abstract class OptionsCollection extends BuildaPanel {
 
     }
 
-    public void checkRuestkammerStarter(RuestkammerStarter rk) {
-        if (!(rk.getKammer().toString().indexOf("MagicItems") == -1) || !(rk.getKammer().toString().indexOf("Banner") == -1) || !(rk.getKammer().toString().indexOf("Gabe") == -1)
-                || !(rk.getKammer().toString().indexOf("GiftsOf") == -1) || !(rk.getKammer().toString().indexOf("Spites") == -1) || !(rk.getKammer().toString().indexOf("Assassin") == -1)) {
+    private void checkRuestkammerStarter(RuestkammerStarter rk) {
+        if (rk.getKammer().toString().contains("MagicItems") || rk.getKammer().toString().contains("Banner") || rk.getKammer().toString().contains("Gabe")
+                || rk.getKammer().toString().contains("GiftsOf") || rk.getKammer().toString().contains("Spites") || rk.getKammer().toString().contains("Assassin")) {
             String text = "";
             if (rk.getKammer().getText().length() > 2) {
-                text = BuildaHQ.translate(rk.getKammer().getText().substring(1, rk.getKammer().getText().length()));
+                text = BuildaHQ.translate(rk.getKammer().getText().substring(1));
             }
             text = text.replaceAll("\n- ", "-");
             final StringTokenizer tokenizer = new StringTokenizer(text, ",");

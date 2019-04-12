@@ -33,13 +33,13 @@ public class IMRoughRiders extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Rough Rider Sergeant", 0));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Laspistol", getPts("Laspistol")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AM)")));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+        add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
         o5.setSelected(0, true);
 
         seperator();
@@ -49,7 +49,7 @@ public class IMRoughRiders extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power axe", getPts("Power lance (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AM)")));
-        add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+        add(o3 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
         o3.setSelected(0, true);
 
         complete();

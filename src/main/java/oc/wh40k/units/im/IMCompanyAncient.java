@@ -27,7 +27,7 @@ public class IMCompanyAncient extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

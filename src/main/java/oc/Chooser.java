@@ -19,7 +19,6 @@ import javax.swing.ListCellRenderer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
 
 public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
@@ -59,7 +58,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     };
     private final int kategorie;
     private boolean useActionPerformed = true;
-    private Eintrag myEintrag = null;// = new LeererEintrag(0,0);
+    public Eintrag myEintrag = null;// = new LeererEintrag(0,0);
     private final HashMap<String, String> multipleArmyClasses = new HashMap<String, String>();
 
     public Chooser(BuildaVater bv, int lX, int lY, String reflectionKennung, Object[] alleEinträge, int kategorie, ActionListener cloneListener) {  // ACHTUNG: wenn mehr oder weniger als 2 Hauptsachen zum panel geaddet werden, muss aktuellenEintragLöschen geändert werden! weil dann der index falsch ist, an dem irgendwas ins panel geaddet ist.
@@ -117,9 +116,9 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     }
 
     @Override
-	public double getKosten() {
+	public double getCost() {
         try {
-            return myEintrag.getKosten();
+            return myEintrag.getCost();
         } catch (final Exception e) {
             return 0;
         }
@@ -141,7 +140,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
 
         if (myEintrag != null) {
             x = BuildaHQ.wasIstHoeher(x, myEintrag.getBreite());
-            y = myEintrag.getHöhe();
+            y = myEintrag.getHeight();
 
             x += myEintrag.getPanel().getLocation().getX();
             y += myEintrag.getPanel().getLocation().getY();
@@ -232,7 +231,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
                 }
 
                 myEintrag.getPanel().setLocation(0, 30);
-                myEintrag.setKategorie(kategorie);
+                myEintrag.setCategory(kategorie);
                 myEintrag.setBuildaVater(buildaVater);
                 panel.add(myEintrag.getPanel());
             } catch (final ClassNotFoundException e) {
@@ -247,7 +246,7 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
         cloneButton.setVisible(!(myEintrag instanceof LeererEintrag));
     }
 
-    String selectedEntry() {
+    public String selectedEntry() {
         return ((String) (myComboBox.getSelectedObjects()[0]));
     }
 
@@ -287,15 +286,6 @@ public class Chooser extends BuildaPanel implements ActionListener, BuildaSTK {
     public String getText() {
         try {
             return myEintrag.getText();
-        } catch (final Exception e) {
-            return "";
-        }
-    }
-
-    public String getSaveText(String trenner) {
-        //LOGGER.info("Chooser-getSaveText");
-        try {
-            return myEintrag.getSaveText(trenner);
         } catch (final Exception e) {
             return "";
         }

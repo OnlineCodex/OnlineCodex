@@ -23,7 +23,7 @@ public class IMPrimarisBattleLeader extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

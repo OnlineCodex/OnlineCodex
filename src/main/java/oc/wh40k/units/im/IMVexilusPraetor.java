@@ -18,7 +18,7 @@ public class IMVexilusPraetor extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Vexilla Defensor", getPts("Vexilla Defensor")));
         ogE.addElement(new OptionsGruppeEintrag("Vexilla Imperius", getPts("Vexilla Imperius")));
         ogE.addElement(new OptionsGruppeEintrag("Vexilla Magnifica", getPts("Vexilla Magnifica")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
         seperator();
@@ -26,7 +26,7 @@ public class IMVexilusPraetor extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Guardian Spear", getPts("Guardian spear (AC)")));
         ogE.addElement(new OptionsGruppeEintrag("Castellan Axe", getPts("Castellan axe")));
         ogE.addElement(new OptionsGruppeEintrag("Storm Shield & Misericordia", getPts("Storm shield (AC Characters)") + getPts("Misericordia")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 
         seperator();
@@ -35,7 +35,7 @@ public class IMVexilusPraetor extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

@@ -24,7 +24,7 @@ public class IMRetributorSquad extends Eintrag {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, RETRIBUTOR_SQUAD);
         name = "Retributor Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Retributor Squad", 5, 10, getPts("Retributor Squad"));
         add(squad);

@@ -41,7 +41,7 @@ public class AEWraithblades extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Ghostaxes and forceshields", getPts("Ghostaxe") + getPts("Forceshield")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 

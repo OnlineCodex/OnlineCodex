@@ -18,12 +18,12 @@ public class IMImagifier extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

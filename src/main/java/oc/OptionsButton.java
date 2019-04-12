@@ -13,7 +13,7 @@ public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
 
     protected String name;
     protected String kurzerName = null;
-    protected double preis;
+    protected double cost;
     protected boolean aktiv = true;
     protected boolean jeweils;
     protected boolean legal;
@@ -35,13 +35,13 @@ public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
         labelSetzen();
     }
 
-    public void setPreis(double i) {
-        this.preis = i;
+    public void setCost(double i) {
+        this.cost = i;
         labelSetzen();
     }
 
     public double getPreisAuchOhneSelected() {
-        return preis;
+        return cost;
     }
 
     public boolean getJeweils() {
@@ -146,7 +146,7 @@ public abstract class OptionsButton extends BuildaPanel implements BuildaSTK {
     }
 
     @Override
-	public int getHoehe() {
+	public int getHeight() {
         return panel.getSize().height;
     }
 

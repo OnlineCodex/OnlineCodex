@@ -24,7 +24,7 @@ public class IMTerminatorAncient extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

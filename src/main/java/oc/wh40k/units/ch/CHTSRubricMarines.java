@@ -19,7 +19,7 @@ public class CHTSRubricMarines extends Eintrag {
 
     public CHTSRubricMarines() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Rubric Marines";
         grundkosten = 0;

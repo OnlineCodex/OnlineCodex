@@ -23,13 +23,13 @@ public class IMTauroxPrime extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Taurox battle cannon", getPts("Taurox battle cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Taurox gatling cannon", getPts("Taurox gatling cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Taurox missile launcher", getPts("Taurox missile launcher")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 HEAVY_SUPPORT volley gun", getPts("Hot-shot volley gun") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Autocannons", getPts("Autocannon") * 2));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

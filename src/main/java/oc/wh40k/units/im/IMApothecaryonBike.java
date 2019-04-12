@@ -26,7 +26,7 @@ public class IMApothecaryonBike extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

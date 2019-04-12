@@ -7,7 +7,7 @@ public class ORWarbossGrahkrag extends Eintrag {
 
     public ORWarbossGrahkrag() {
 
-        kategorie = 1;
+        category = 1;
         name = "Warboss Grahkrag";
         grundkosten = 120;
 
@@ -31,6 +31,6 @@ public class ORWarbossGrahkrag extends Eintrag {
     //@OVERRIDE
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

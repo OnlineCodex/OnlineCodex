@@ -29,7 +29,7 @@ public class ORKustomBattleFortress extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Grabbin\' Klaw", 15));
         ogE.addElement(new OptionsGruppeEintrag("Wreckin\' Ball", 15));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

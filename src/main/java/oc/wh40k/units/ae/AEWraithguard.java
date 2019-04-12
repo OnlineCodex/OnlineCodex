@@ -41,7 +41,7 @@ public class AEWraithguard extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("D-scythes", getPts("D-scythe")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         o1.setSelected(0, true);
 

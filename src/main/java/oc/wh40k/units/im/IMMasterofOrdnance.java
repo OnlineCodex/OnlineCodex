@@ -24,7 +24,7 @@ public class IMMasterofOrdnance extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

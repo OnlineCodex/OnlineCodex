@@ -16,7 +16,7 @@ public class IMKnightErrant extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         setInformationVectorValue("Knight selected", getCountFromInformationVector("Knight selected") + 1);
 

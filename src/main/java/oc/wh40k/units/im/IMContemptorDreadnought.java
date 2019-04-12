@@ -18,7 +18,7 @@ public class IMContemptorDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", "Kheres patternassault cannon", getPts("Kheres patternassault cannon")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

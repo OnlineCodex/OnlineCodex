@@ -30,7 +30,7 @@ public class IMMasterinGravisArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

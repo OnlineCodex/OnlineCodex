@@ -10,7 +10,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
 
 	private final RuestkammerStarter waffen;
 	public ORBigMekinMegaArmour() {
-        kategorie = 1;
+        category = 1;
         name = "Big Mek in Mega Armour";
         grundkosten = getPts("Big Mek in Mega Armour");
         power = 6;
@@ -23,7 +23,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Tellyport blasta", getPts("Tellyport blasta")));
         ogE.addElement(new OptionsGruppeEintrag("Kustom Force field", getPts("Kustom Force field")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -38,7 +38,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

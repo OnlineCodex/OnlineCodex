@@ -15,7 +15,7 @@ public class TAKrootShaper extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Kroot rifle", getPts("Kroot rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Pulse rifle", getPts("Pulse rifle")));
         ogE.addElement(new OptionsGruppeEintrag("Pulse carbine", getPts("Pulse carbine")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
@@ -23,7 +23,7 @@ public class TAKrootShaper extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

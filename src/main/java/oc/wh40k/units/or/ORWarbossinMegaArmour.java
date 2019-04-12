@@ -26,7 +26,7 @@ public class ORWarbossinMegaArmour extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

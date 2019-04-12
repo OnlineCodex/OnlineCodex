@@ -22,7 +22,7 @@ public class ORBigMekStompa extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Mega-klaw", 0));
         ogE.addElement(new OptionsGruppeEintrag("Deff kannon", 50));
-        add(main = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(main = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

@@ -17,13 +17,13 @@ public class ORKillTank extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin big shoota", getPts("Twin big shoota")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Bursta kannon", getPts("Bursta kannon")));
         ogE.addElement(new OptionsGruppeEintrag("Giga shoota", getPts("Giga shoota")));
-        add(tech = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(tech = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

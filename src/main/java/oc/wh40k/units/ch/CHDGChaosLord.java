@@ -28,7 +28,7 @@ public class CHDGChaosLord extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

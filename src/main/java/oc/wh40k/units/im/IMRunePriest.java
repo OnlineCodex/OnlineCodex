@@ -47,7 +47,7 @@ public class IMRunePriest extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

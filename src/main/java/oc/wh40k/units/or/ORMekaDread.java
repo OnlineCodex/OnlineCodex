@@ -17,13 +17,13 @@ public class ORMekaDread extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Big zzappa", getPts("Big zzappa")));
         ogE.addElement(new OptionsGruppeEintrag("Shunta", getPts("Shunta")));
         ogE.addElement(new OptionsGruppeEintrag("Rattler kannon", getPts("Rattler kannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Kustom Force Field", getPts("Kustom Force Field")));
         ogE.addElement(new OptionsGruppeEintrag("Mega-Charga", getPts("Mega-Charga")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         complete();
     }

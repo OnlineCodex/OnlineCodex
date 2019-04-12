@@ -28,7 +28,7 @@ public class IMRavenwingDarkshroud extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

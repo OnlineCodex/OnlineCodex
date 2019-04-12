@@ -30,7 +30,7 @@ public class IMWatchCaptain extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

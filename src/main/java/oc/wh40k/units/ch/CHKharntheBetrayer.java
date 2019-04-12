@@ -12,7 +12,7 @@ public class CHKharntheBetrayer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("World Eaters: Slaughterborn", true);
+        addWarlordTraits("World Eaters: Slaughterborn");
 
         complete();
 
@@ -20,6 +20,6 @@ public class CHKharntheBetrayer extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

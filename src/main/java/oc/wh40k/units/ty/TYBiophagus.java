@@ -17,7 +17,7 @@ public class TYBiophagus extends Eintrag {
         grundkosten = getPts("Biophagus");
 
         ogE.addElement(new OptionsGruppeEintrag("Alchemicus familiar", getPts("Familiars")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         power = 2;
 

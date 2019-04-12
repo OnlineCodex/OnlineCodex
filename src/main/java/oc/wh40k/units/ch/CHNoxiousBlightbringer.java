@@ -25,7 +25,7 @@ public class CHNoxiousBlightbringer extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

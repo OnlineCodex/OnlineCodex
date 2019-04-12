@@ -13,7 +13,7 @@ public class ORFlakkTrakk extends Eintrag {
 
     public ORFlakkTrakk() {
         name = "Flakk Trakk";
-        kategorie = 5;
+        category = 5;
         grundkosten = 90;
 
         add(ico = new oc.Picture("oc/wh40k/images/BigTrakk.gif"));
@@ -44,7 +44,7 @@ public class ORFlakkTrakk extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Deff Rolla", 10));
         ogE.addElement(new OptionsGruppeEintrag("Wreckin\' Ball", 10));
         ogE.addElement(new OptionsGruppeEintrag("Grabbin\' Klaw", 10));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

@@ -25,7 +25,7 @@ public class IMMinistorumPriest extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

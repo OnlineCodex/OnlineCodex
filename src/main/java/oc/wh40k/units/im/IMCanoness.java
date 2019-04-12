@@ -26,7 +26,7 @@ public class IMCanoness extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

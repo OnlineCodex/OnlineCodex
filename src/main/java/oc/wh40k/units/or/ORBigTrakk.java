@@ -30,7 +30,7 @@ public class ORBigTrakk extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Big-zzappa", getPts("Big-zzappa")));
         ogE.addElement(new OptionsGruppeEintrag("Flakka-gunz", getPts("Flakka-gunz")));
         ogE.addElement(new OptionsGruppeEintrag("Supa-kannon", getPts("Supa-kannon")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 

@@ -10,7 +10,7 @@ public class ORKustomBoostaBlastas extends Eintrag {
 
     public ORKustomBoostaBlastas() {
 
-        kategorie = 4;
+        category = 4;
         grundkosten = 0;
 
         buggies = new AnzahlPanel(ID, randAbstand, cnt, "Kustom Boosta-Blasta", "Kustom Boosta-Blastas", 1, 3, getPts("Kustom Boosta-Blastas"));

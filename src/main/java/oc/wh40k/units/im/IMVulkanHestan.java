@@ -21,13 +21,13 @@ public class IMVulkanHestan extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Salamanders: Anvil of Strength", true);
+        addWarlordTraits("Salamanders: Anvil of Strength");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

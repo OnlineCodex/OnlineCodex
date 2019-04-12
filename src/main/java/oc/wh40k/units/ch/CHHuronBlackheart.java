@@ -26,14 +26,14 @@ public class CHHuronBlackheart extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Eternal Vendetta", true);
+        addWarlordTraits("Eternal Vendetta");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
 
         warlordTraits.getPanel().setLocation(
                 (int) warlordTraits.getPanel().getLocation().getX(),

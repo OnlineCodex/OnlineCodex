@@ -20,7 +20,7 @@ public class IMUriahJacobus extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Righteous Rage", true);
+        addWarlordTraits("Righteous Rage");
 
         addToInformationVector(MINISTORUM_PRIEST_CNT, 1);
         addToInformationVector(MISSIONARY_CNT, 1);
@@ -37,7 +37,7 @@ public class IMUriahJacobus extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
         if(getCountFromInformationVector(MISSIONARY_CNT) > 1) {
     		setFehlermeldung("Max 1 MISSIONARY");
     	} else {

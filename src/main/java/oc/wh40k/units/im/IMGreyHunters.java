@@ -18,7 +18,7 @@ public class IMGreyHunters extends Eintrag {
 
     public IMGreyHunters() {
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Grey Hunters", 5, 10, getPts("Grey Hunters"));
         add(squad);

@@ -23,7 +23,6 @@ import javax.swing.WindowConstants;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
 
 public class RuestkammerStarter extends OptionsVater {
 
@@ -282,7 +281,7 @@ public class RuestkammerStarter extends OptionsVater {
         final StringBuilder abstandshalter = new StringBuilder("");
 
         String punkteString = "";
-        punkteString = entferneNullNachkomma(myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.");
+        punkteString = ((int) myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.");
 
         final int cnt = (buttonBreite - (fm.stringWidth(name + punkteString) + 30)) / fm.stringWidth(" .");
 
@@ -336,10 +335,10 @@ public class RuestkammerStarter extends OptionsVater {
     }
 
     @Override
-    public double getKosten() {
+    public double getCost() {
         if (aktiv && selected) {
             try {
-                return myKammer.getKosten();
+                return myKammer.getCost();
             } catch (final Exception e) {
             }
         }
@@ -373,11 +372,6 @@ public class RuestkammerStarter extends OptionsVater {
         } else {
             panel.setSize(ruestkammerIconBreite + randAbstand + buttonBreite, buttonHoehe + 6);
         }
-    }
-
-    @Override
-    public String getLabel() {
-        return "";
     }
 
     private void uebernehmen() {
@@ -421,7 +415,7 @@ public class RuestkammerStarter extends OptionsVater {
         } else if (abwaehlbar) {
 
             if (!(myKammer.toString().indexOf("Abteilung") == -1)) {
-                if (myKammer.getKosten() > 0) {
+                if (myKammer.getCost() > 0) {
                     final JOptionPane op = new JOptionPane("Bitte die Anzahl der Modelle auf '0' setzen.", JOptionPane.WARNING_MESSAGE);
                     final JDialog dialog = op.createDialog("Hinweis");
                     dialog.setAlwaysOnTop(true); //<-- this line
@@ -516,7 +510,7 @@ public class RuestkammerStarter extends OptionsVater {
             final StringBuilder textPuffer = new StringBuilder();
             if (myKammer.grundkosten != 0 || ueberschriftTrotzNullKostenAusgeben) {
                 if (BuildaHQ.allePunktkosten && myKammer.grundkosten != 0) {
-                    textPuffer.append(BuildaHQ.formatierFett(name + punkteAbstandHalter + entferneNullNachkomma(myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.")));
+                    textPuffer.append(BuildaHQ.formatierFett(name + punkteAbstandHalter + ((int) myKammer.grundkosten) + " " + BuildaHQ.translate("Pkt.")));
                 } else {
                     textPuffer.append(BuildaHQ.formatierFett(name));
                 }
@@ -528,7 +522,7 @@ public class RuestkammerStarter extends OptionsVater {
             if (textPuffer.toString().length() == 0) return "";
 
             if (BuildaHQ.kurzerText) {
-                result = textPuffer.toString() + "  -> " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Pkt.");
+                result = textPuffer.toString() + "  -> " + ((int) getCost()) + " " + BuildaHQ.translate("Pkt.");
             } else {
                 result = textPuffer.toString();
             }
@@ -548,7 +542,7 @@ public class RuestkammerStarter extends OptionsVater {
 
     @Override
     public void load(String s) {
-        myKammer.load(s.substring(s.indexOf(SAVETEXT_SELECTEDTRENNER) + SAVETEXT_SELECTEDTRENNER.length(), s.length()), einrueckIndex > 0 ? SAVETEXT_TRENNER1_6 : SAVETEXT_TRENNER1_5);
+        myKammer.load(s.substring(s.indexOf(SAVETEXT_SELECTEDTRENNER) + SAVETEXT_SELECTEDTRENNER.length()), einrueckIndex > 0 ? SAVETEXT_TRENNER1_6 : SAVETEXT_TRENNER1_5);
         texte = myKammer.getText().replace(", ", "\n- ").trim();
         sizeSetzen();
         this.setSelected(s.substring(0, 1).equals("Y"), false);
@@ -560,7 +554,7 @@ public class RuestkammerStarter extends OptionsVater {
         myKammer.deleteYourself();
     }
 
-    public void textUebernehmen() {
+    void textUebernehmen() {
         texte = myKammer.getText().replace(", ", "\n- ").trim();
         sizeSetzen();
     }

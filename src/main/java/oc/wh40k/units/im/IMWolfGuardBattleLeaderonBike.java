@@ -23,7 +23,7 @@ public class IMWolfGuardBattleLeaderonBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

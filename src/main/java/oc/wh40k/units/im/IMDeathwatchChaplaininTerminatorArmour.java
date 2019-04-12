@@ -25,7 +25,7 @@ public class IMDeathwatchChaplaininTerminatorArmour extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
     }

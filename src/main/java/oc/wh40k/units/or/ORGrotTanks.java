@@ -18,7 +18,7 @@ public class ORGrotTanks extends Eintrag {
 
     public ORGrotTanks() {
 
-        kategorie = 2;
+        category = 2;
         grundkosten = 0;
         GrotTank = new AnzahlPanel(ID, randAbstand, cnt, "", "Grot Tanks (FW)", 4, 8, getPts("Grot Tanks"));
         add(GrotTank);

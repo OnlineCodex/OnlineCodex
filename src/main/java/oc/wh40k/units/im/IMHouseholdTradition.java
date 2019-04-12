@@ -22,7 +22,7 @@ public class IMHouseholdTradition extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("House Krast", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("House Vulker", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("Freeblades", getPts("")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         this.eintragsCNT = 0;
 

@@ -35,7 +35,7 @@ public class IMPrimarisRunePriest extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

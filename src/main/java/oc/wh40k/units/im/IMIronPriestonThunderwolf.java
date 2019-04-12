@@ -17,14 +17,14 @@ public class IMIronPriestonThunderwolf extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Boltgun"), getPts("Boltgun (SM)")));
         ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Bolt pistol"), getPts("Bolt pistol (SM)")));
         ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Helfrost pistol"), getPts("Helfrost pistol")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         o1.setSelected(0, true);
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Thunder hammer"), getPts("Thunder hammer (Characters)")));
         ogE.addElement(new OptionsGruppeEintrag(BuildaHQ.translate("Tempest hammer"), getPts("Tempest hammer")));
-        add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(o5 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         o5.setSelected(0, true);
 
         complete();

@@ -20,10 +20,10 @@ public class CHPoxRidersOfNurgle extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Instrument of Chaos", getPts("Instrument of Chaos")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         ogE.addElement(new OptionsGruppeEintrag("Daemonic Icon", getPts("Daemonic Icon")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

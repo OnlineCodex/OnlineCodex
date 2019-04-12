@@ -22,7 +22,7 @@ public class ORMekboyJunka extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Deff Rolla", 0));
         ogE.addElement(new OptionsGruppeEintrag("Wreckin\' Ball", 0));
         ogE.addElement(new OptionsGruppeEintrag("Grabbin\' Klaw", 0));
-        add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o4 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
@@ -47,7 +47,7 @@ public class ORMekboyJunka extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Force Field Generator", "Junka Force Field Generator", 75));
         ogE.addElement(new OptionsGruppeEintrag("Shokk Attack Gun", "Junka Shokk Attack Gun", 100));
         ogE.addElement(new OptionsGruppeEintrag("Boom Gun", 70));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
 

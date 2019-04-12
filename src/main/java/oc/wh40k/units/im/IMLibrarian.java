@@ -51,7 +51,7 @@ public class IMLibrarian extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

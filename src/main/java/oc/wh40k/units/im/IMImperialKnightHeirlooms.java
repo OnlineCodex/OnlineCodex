@@ -35,7 +35,7 @@ public class IMImperialKnightHeirlooms extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("(Taranis) Fury of Mars", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("(Krast) The Headsman's Mark", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("(Vulker) The Auric Mask", getPts("")));
-        add(fk1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 3));
+        add(fk1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 3));
 
         this.eintragsCNT = 0;
 

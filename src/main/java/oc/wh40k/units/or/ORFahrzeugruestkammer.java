@@ -20,7 +20,7 @@ public class ORFahrzeugruestkammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Grothälfaz", 10));
         ogE.addElement(new OptionsGruppeEintrag("Abrizzbirnä", 10));
         ogE.addElement(new OptionsGruppeEintrag("Entaplankä", 15));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 9));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 9));
 
         sizeSetzen();
     }

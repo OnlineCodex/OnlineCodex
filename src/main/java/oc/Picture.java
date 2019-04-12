@@ -5,8 +5,6 @@ import java.awt.Point;
 
 import javax.swing.JLabel;
 
-import org.w3c.dom.Element;
-
 public class Picture extends OptionsVater {
 
     JLabel iconLabel;
@@ -52,18 +50,13 @@ public class Picture extends OptionsVater {
     }
 
     @Override
-    public double getKosten() {
+    public double getCost() {
         return 0.0;
     }
 
     @Override
     public boolean isSelected() {
         return false;
-    }
-
-    @Override
-    public String getLabel() {
-        return "";
     }
 
     public void changeIcon(String path) {

@@ -6,8 +6,8 @@ import static oc.RefreshListener.Priority.CHOOSER_GRUPPE;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontMetrics;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Collections;
 import java.util.Vector;
 
 import javax.swing.JLabel;
@@ -15,36 +15,30 @@ import javax.swing.JPanel;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 public class ChooserGruppe extends BuildaPanel {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ChooserGruppe.class);
 
-    int kategorie;
-    String reflectionKennung;
-    String allyString = "";
-    Object[] statischeEinträge;
+    private int kategorie;
+    private String reflectionKennung;
+    public String allyString = "";
+    private Object[] statischeEinträge;
     Object[] alleEinträge;
-    JLabel Lueberschrift = new JLabel("");
-    JPanel chooserPanel = new JPanel(null, true);
-    Vector<Chooser> mC = new Vector<Chooser>();
+    private JLabel Lueberschrift = new JLabel("");
+    private JPanel chooserPanel = new JPanel(null, true);
+    public Vector<Chooser> mC = new Vector<>();
     int maxAnzahl = 0;
     int minAnzahl = 0;
-    BuildaVater buildaVater;
-    Vector<String> spezialEinträge = new Vector<String>(); // wenn 2 Waaghbosse, werden auch 2 mal "Garbgosse" hinzugefügt, und erst wenn beide waaghbosse abgewählt werden sind beide "Garbgosse" Stirngs aus dem Vector draussen.
-    ActionListener cloneListener = new ActionListener() {
-        @Override
-		public void actionPerformed(ActionEvent event) {
-            final Object source = event.getSource();
+    private BuildaVater buildaVater;
+    private Vector<String> spezialEinträge = new Vector<>(); // wenn 2 Waaghbosse, werden auch 2 mal "Garbgosse" hinzugefügt, und erst wenn beide waaghbosse abgewählt werden sind beide "Garbgosse" Stirngs aus dem Vector draussen.
+    private ActionListener cloneListener = event -> {
+        final Object source = event.getSource();
 
-            for (int i = 0; i < mC.size(); ++i) { // zum rausfinden von welchem chooser der Button stammt
-                if (mC.elementAt(i).getCloneButton() == source) {
-                    erstelleEintrag(mC.elementAt(i).getComboBox().getSelectedObjects()[0] + SAVETEXT_UEBERSCHRIFTTRENNER1 + mC.elementAt(i).getEintrag().getSaveText(SAVETEXT_TRENNER2), i);
-                    break;
-                }
+        for (int i = 0; i < mC.size(); ++i) { // zum rausfinden von welchem chooser der Button stammt
+            if (mC.elementAt(i).getCloneButton() == source) {
+                erstelleEintrag(mC.elementAt(i).getComboBox().getSelectedObjects()[0] + SAVETEXT_UEBERSCHRIFTTRENNER1 + mC.elementAt(i).getEintrag().getSaveText(SAVETEXT_TRENNER2), i);
+                break;
             }
         }
     };
@@ -69,7 +63,7 @@ public class ChooserGruppe extends BuildaPanel {
         final Chooser c = new Chooser(buildaVater, randAbstand, randAbstand, reflectionKennung, alleEinträge, kategorie, cloneListener);
         c.setStatischeEinträge(statischeEinträge);
         c.setSpezialEinträge(spezialEinträge);
-        adden(c);
+        add(c);
         überschriftLabelSetzen();
 
         addRefreshListener(CHOOSER_GRUPPE, () -> {
@@ -81,18 +75,11 @@ public class ChooserGruppe extends BuildaPanel {
         BuildaHQ.registerNewChooserGruppe(this, kategorie);
     }
 
-    public Vector<Chooser> getmC() {
-        //LOGGER.info("ChooserGruppe-getmC");
+    Vector<Chooser> getmC() {
         return mC;
     }
 
-    public void setmC(Vector<Chooser> mC) {
-        //LOGGER.info("ChooserGruppe-setmC");
-        this.mC = mC;
-    }
-
     public double getAnzahl(boolean includeMinIgnoreUnits, boolean includeMaxIgnoreUnits) {
-        //LOGGER.info("ChooserGruppe-getAnzahl");
         if (kategorie == 6) return mC.size() - 1;
 
         double anzahl = 0;
@@ -103,10 +90,10 @@ public class ChooserGruppe extends BuildaPanel {
 
             if (!includeMaxIgnoreUnits || !includeMinIgnoreUnits) { // special treatment required?
                 if (!includeMinIgnoreUnits) {
-                    anzahl += (entry.isCountToMinimum() ? entry.getEintragsCNT() : 0);
+                    anzahl += (entry.getEintragsCNT());
                 }
                 if (!includeMaxIgnoreUnits) {
-                    anzahl += (entry.isCountToMaximum() ? entry.getEintragsCNT() : 0);
+                    anzahl += (entry.getEintragsCNT());
                 }
             } else {
                 anzahl += entry.getEintragsCNT();
@@ -120,8 +107,7 @@ public class ChooserGruppe extends BuildaPanel {
         return getAnzahl(true, true);
     }
 
-    public int getKategorie() {
-//		LOGGER.info("ChooserGruppe-getKategorie");
+    int getKategorie() {
         return this.kategorie;
     }
 
@@ -161,11 +147,10 @@ public class ChooserGruppe extends BuildaPanel {
         aktualisiereComboBoxAuswahlen();
     }
 
-    public void refreshAllEntries() {
-        //LOGGER.info("ChooserGruppe-refreshAllEntries");
-        for (int i = 0; i < mC.size(); i++) {
-            if (mC.get(i).getEintrag() == null) continue;
-            mC.get(i).getEintrag().refreshen();
+    void refreshAllEntries() {
+        for (Chooser chooser : mC) {
+            if (chooser.getEintrag() == null) continue;
+            chooser.getEintrag().refreshen();
         }
     }
 
@@ -176,54 +161,10 @@ public class ChooserGruppe extends BuildaPanel {
         aktualisiereComboBoxAuswahlen();
     }
 
-    public void removeComboBoxAuswahl(String s) {
-        int remCount = 0;
-        for (int i = 0; i < statischeEinträge.length; i++) {
-            if (statischeEinträge[i].equals(s)) {
-                statischeEinträge[i] = "";
-                remCount++;
-            }
-        }
-        if (remCount > 0) {
-            final String temp[] = new String[statischeEinträge.length - remCount];
-            int addCnt = 1;
-            temp[0] = "";
-            for (int i = 1; i < statischeEinträge.length; i++) {
-                if (!statischeEinträge[i].equals("")) {
-                    temp[addCnt] = (String) statischeEinträge[i];
-                    addCnt++;
-                }
-            }
-            statischeEinträge = temp;
-            alleEinträge = temp;
-            aktualisiereComboBoxAuswahlen();
-        }
-    }
+    private void aktualisiereComboBoxAuswahlen() {
+        final Vector<Object> auswahlen = new Vector<>();
 
-    public void addComboBoxAuswahl(String s) {
-        for (int i = 0; i < statischeEinträge.length; i++) {
-            if (statischeEinträge[i].equals(s)) {
-                return;
-            }
-        }
-        final String temp[] = new String[statischeEinträge.length + 1];
-        for (int i = 0; i < statischeEinträge.length; i++) {
-            temp[i] = (String) statischeEinträge[i];
-        }
-        temp[statischeEinträge.length] = s;
-        statischeEinträge = temp;
-        alleEinträge = temp;
-        aktualisiereComboBoxAuswahlen();
-
-    }
-
-    public void aktualisiereComboBoxAuswahlen() {
-//		LOGGER.info("ChooserGruppe-aktualisiereComboBoxAuswahlen");
-        final Vector<Object> auswahlen = new Vector<Object>();
-
-        for (int i = 0; i < statischeEinträge.length; ++i) {
-            auswahlen.add(statischeEinträge[i]);
-        }
+        Collections.addAll(auswahlen, statischeEinträge);
 
         if (spezialEinträge.size() != 0) {
             for (int i = 0; i < spezialEinträge.size(); ++i) {
@@ -243,7 +184,7 @@ public class ChooserGruppe extends BuildaPanel {
         }
     }
 
-    public String kategorieText() {
+    String kategorieText() {
         //LOGGER.info("ChooserGruppe-kategorieText");
         if (getAnzahl() < 2) {
             if (BuildaHQ.getSprache() == Sprache.German) {
@@ -260,7 +201,7 @@ public class ChooserGruppe extends BuildaPanel {
         }
     }
 
-    public String getAnzahlText(boolean textErlaubt) {
+    String getAnzahlText(boolean textErlaubt) {
         //LOGGER.info("ChooserGruppe-getAnzahlText");
         double anzahl = getAnzahl();
 
@@ -292,11 +233,11 @@ public class ChooserGruppe extends BuildaPanel {
         }
     }
 
-    public void überschriftLabelSetzen() {
+    void überschriftLabelSetzen() {
         final FontMetrics fm = Lueberschrift.getFontMetrics(Lueberschrift.getFont());
         final StringBuilder abstandshalter = new StringBuilder();
 
-        final String punkteString = BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(getKosten()) + " " + BuildaHQ.translate("Punkte");
+        final String punkteString = BuildaHQ.translate("Insgesamt") + " " + ((int) getCost()) + " " + BuildaHQ.translate("Punkte");
         final String kategorieString = " " + getAnzahlText(true) + " " + kategorieText() + " (" + minAnzahl + "-" + maxAnzahl + ")";
 
         final int cnt = (Lueberschrift.getSize().width - (fm.stringWidth(kategorieString + punkteString) + 30)) / fm.stringWidth(" ");
@@ -316,52 +257,34 @@ public class ChooserGruppe extends BuildaPanel {
     }
 
     @Override
-    public double getKosten() {
-        return getKosten(true, true);
-    }
-
-    public double getKosten(boolean includeMinIgnoreUnits, boolean includeMaxIgnoreUnits) {
+    public double getCost() {
         double kosten = 0;
 
         for (int i = 0; i < mC.size(); ++i) {
             final Eintrag entry = mC.elementAt(i).getEintrag();
             if (entry == null) continue; // step over empty entries
-            if (!includeMaxIgnoreUnits || !includeMinIgnoreUnits) { // special treatment required?
-                if (!includeMinIgnoreUnits) {
-                    kosten += (entry.isCountToMinimum() ? entry.getKosten() : 0);
-                }
-                if (!includeMaxIgnoreUnits) {
-                    kosten += (entry.isCountToMaximum() ? entry.getKosten() : 0);
-                }
-            } else {
-                kosten += entry.getKosten();
-            }
+            kosten += entry.getCost();
         }
         return kosten;
     }
 
-    public void chooserLocationCheck() {
-        //LOGGER.info("ChooserGruppe-chooserLocationCheck");
+    private void chooserLocationCheck() {
         for (int i = 0; i < mC.size() - 1; ++i) {
             if (mC.elementAt(i).getComboBox().getSelectedObjects()[0].equals("")) {
-                //LOGGER.info("ChooserGruppe-chooserLocationCheck - if 1");
-                removen(i);
+                remove(i);
                 --i;
             }
         }
-        //LOGGER.info("ChooserGruppe-chooserLocationCheck - mC.size: "+mC.size());
         if (mC.size() == 0) {
-            //LOGGER.info("ChooserGruppe-chooserLocationCheck - if 2");
             final Chooser c = new Chooser(buildaVater, randAbstand, 109, reflectionKennung, alleEinträge, kategorie, cloneListener);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
-            adden(c);
+            add(c);
         } else if (!mC.lastElement().getComboBox().getSelectedObjects()[0].equals("")) {
-            //LOGGER.info("ChooserGruppe-chooserLocationCheck - if 2");
             final Chooser c = new Chooser(buildaVater, randAbstand, 109, reflectionKennung, alleEinträge, kategorie, cloneListener);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
-            adden(c);
+            add(c);
         }
 
         for (int i = 0; i < mC.size(); ++i) {
@@ -377,20 +300,17 @@ public class ChooserGruppe extends BuildaPanel {
         überschriftLabelSetzen();
     }
 
-    public void adden(Chooser c) {
-        //LOGGER.info("ChooserGruppe-adden Choser c");
+    public void add(Chooser c) {
         mC.addElement(c);
         chooserPanel.add(mC.lastElement().getPanel());
     }
 
-    public void adden(Chooser c, int index) {
-        //LOGGER.info("ChooserGruppe-adden Choser c int index");
+    public void add(Chooser c, int index) {
         mC.add(index, c);
         chooserPanel.add(mC.elementAt(index).getPanel(), index);
     }
 
-    public void removen(int i) {
-        //LOGGER.info("ChooserGruppe-removen");
+    public void remove(int i) {
         mC.remove(i);
         chooserPanel.remove(i);
     }
@@ -415,31 +335,14 @@ public class ChooserGruppe extends BuildaPanel {
                 leereGruppe = false;
             }
 
-            text.append(allyPrefix + nächsterText);
+            text.append(allyPrefix).append(nächsterText);
         }
 
         if (leereGruppe) return "";
         return text.toString();
     }
 
-    public String getSaveText() {
-        //LOGGER.info("ChooserGruppe-getSaveText");
-        final StringBuilder sammler = new StringBuilder();
-
-        for (int i = 0; i < mC.size(); ++i) {
-            if (!allyString.equals("") && mC.elementAt(i).selectedEntry().contains(allyString)) {
-
-            } else {
-                sammler.append(mC.elementAt(i).getComboBox().getSelectedObjects()[0] + SAVETEXT_UEBERSCHRIFTTRENNER1 + mC.elementAt(i).getSaveText(SAVETEXT_TRENNER2));
-                sammler.append(SAVETEXT_TRENNER3);
-            }
-        }
-
-        return sammler.toString();
-    }
-
     public void load(String saveText) {
-        //LOGGER.info("ChooserGruppe-load");
         final String[] splittet = saveText.split(SAVETEXT_TRENNER3);
 
         for (int i = 0; i < BuildaHQ.countStringsInString(saveText, SAVETEXT_TRENNER3); ++i) {
@@ -447,70 +350,30 @@ public class ChooserGruppe extends BuildaPanel {
         }
     }
 
-    public void erstelleEintrag(String saveText, int index) {
-        //LOGGER.info("ChooserGruppe-erstelleEintrag");
+    private void erstelleEintrag(String saveText, int index) {
         final String klassenname = saveText.substring(0, saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1));
 
         if (mC.size() <= index + 1 || !(mC.elementAt(index + 1).getEintrag() instanceof LeererEintrag)) { // an der Stelle index+1 wird ein neuer chooser geaddet
             final Chooser c = new Chooser(buildaVater, randAbstand, 109, reflectionKennung, alleEinträge, kategorie, cloneListener);
             c.setStatischeEinträge(statischeEinträge);
             c.setSpezialEinträge(spezialEinträge);
-            adden(c, index + 1);
+            add(c, index + 1);
         }
 
         final Chooser c = mC.elementAt(index + 1); // WICHTIG!!!!!!!!"!!  WENN MANS 2mal mit elementAt(index+1) geht NIX mehr!
         c.getComboBox().setSelectedItem(klassenname);
-        c.load(saveText.substring(saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1) + SAVETEXT_UEBERSCHRIFTTRENNER1.length(), saveText.length()), SAVETEXT_TRENNER2);
+        c.load(saveText.substring(saveText.indexOf(SAVETEXT_UEBERSCHRIFTTRENNER1) + SAVETEXT_UEBERSCHRIFTTRENNER1.length()), SAVETEXT_TRENNER2);
 
-        RefreshListener.fireRefresh();  // für die setAktiv() dinger bei Bossen, Sergeants usw.    wichtig!
-    }
-
-    public void addUnit(String s) {
-        mC.lastElement().selectEntry(s);
-    }
-
-    public void addUnitNotLocked(String s) {
-        mC.lastElement().selectEntryNotLocked(s);
-    }
-
-    public void addUnitSemiLocked(String s) {
-        mC.lastElement().aktualisierungIgnorieren = true;
-        mC.lastElement().selectEntryNotLocked(s);
-        mC.lastElement().removeEmptyEntry();
-    }
-
-    public void setUnitList(String[] units) {
-        mC.lastElement().aktualisierungIgnorieren = true;
-        mC.lastElement().changeEntries(units);
-    }
-
-    public void setReflectionKennung(String s) {
-        reflectionKennung = s;
-        for (int i = 0; i < mC.size(); i++) {
-            mC.get(i).setReflectionKennung("CU");
-        }
+        RefreshListener.fireRefresh();  // für die setActive() dinger bei Bossen, Sergeants usw.    wichtig!
     }
 
     public double getPower() {
-        return getPower(true, true);
-    }
-
-    public double getPower(boolean includeMinIgnoreUnits, boolean includeMaxIgnoreUnits) {
         double kosten = 0;
 
         for (int i = 0; i < mC.size(); ++i) {
             final Eintrag entry = mC.elementAt(i).getEintrag();
             if (entry == null) continue; // step over empty entries
-            if (!includeMaxIgnoreUnits || !includeMinIgnoreUnits) { // special treatment required?
-                if (!includeMinIgnoreUnits) {
-                    kosten += (entry.isCountToMinimum() ? entry.getPower() : 0);
-                }
-                if (!includeMaxIgnoreUnits) {
-                    kosten += (entry.isCountToMaximum() ? entry.getPower() : 0);
-                }
-            } else {
-                kosten += entry.getPower();
-            }
+            kosten += entry.getPower();
         }
         return kosten;
     }

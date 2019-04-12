@@ -17,7 +17,7 @@ public class IMCenturionDevastatorSquad extends Eintrag {
     public IMCenturionDevastatorSquad() {
         name = "Centurion Devastator Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Centurions", 3, 6, getPts("Centurion Devastator Squad"));
         add(squad);
 

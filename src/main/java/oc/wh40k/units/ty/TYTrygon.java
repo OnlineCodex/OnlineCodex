@@ -18,7 +18,7 @@ public class TYTrygon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Toxinspike", getPts("Toxinspike")));
         ogE.addElement(new OptionsGruppeEintrag("Prehensile Pincer", getPts("Prehensile Pincer tail")));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
         seperator();
 

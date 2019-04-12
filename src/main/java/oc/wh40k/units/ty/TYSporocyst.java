@@ -18,7 +18,7 @@ public class TYSporocyst extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("5 Deathspitters", getPts("Deathspitter") * 5));
         ogE.addElement(new OptionsGruppeEintrag("5 Barbed Stranglers", getPts("Barbed Strangler") * 5));
         ogE.addElement(new OptionsGruppeEintrag("5 Venom cannons", getPts("Venom cannon") * 5));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "option", ogE, 1));
 
         complete();
     }

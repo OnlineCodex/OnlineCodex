@@ -11,7 +11,7 @@ public class IMCommissarYarrick extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
 
         complete();
@@ -19,6 +19,6 @@ public class IMCommissarYarrick extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

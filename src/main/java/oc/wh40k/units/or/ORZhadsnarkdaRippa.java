@@ -7,18 +7,18 @@ public class ORZhadsnarkdaRippa extends Eintrag {
 
     public ORZhadsnarkdaRippa() {
 
-        kategorie = 1;
+        category = 1;
         name = "Zhadsnark da Rippa [FW]";
         grundkosten = getPts("Zhadsnark Da Rippa") + getPts("Da Pain Klaw") + getPts("Slugga") + getPts("Stikkbomm") + getPts("Big shoota") * 2;
         power = 7;
 
-        addWarlordTraits("Evil Sunz: Speed Freak", true);
+        addWarlordTraits("Evil Sunz: Speed Freak");
 
         complete();
     }
 
     @Override
 	public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

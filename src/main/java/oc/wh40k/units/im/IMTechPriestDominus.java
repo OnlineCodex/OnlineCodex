@@ -25,7 +25,7 @@ public class IMTechPriestDominus extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

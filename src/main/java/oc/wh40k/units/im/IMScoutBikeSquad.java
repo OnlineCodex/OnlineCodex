@@ -13,7 +13,7 @@ public class IMScoutBikeSquad extends Eintrag {
     public IMScoutBikeSquad() {
         name = "Scout Bike Squad\n";
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Scout Biker", 3, 10, getPts("Scout Bike Squad") +
                 getPts("bolt pistol (SM)") +

@@ -26,7 +26,7 @@ public class CHTyphus extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("Living Plague", true);
+        addWarlordTraits("Living Plague");
 
         complete();
 
@@ -34,6 +34,6 @@ public class CHTyphus extends Eintrag {
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 }

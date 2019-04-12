@@ -20,7 +20,7 @@ public class IMSwiftclaws extends Eintrag {
     public IMSwiftclaws() {
         checkBuildaVater();
         grundkosten = 0;
-        überschriftSetzen = true;
+        applyTitle = true;
 
         squad = new AnzahlPanel(ID, randAbstand, cnt, "Swiftclaws", 3, 15, getPts("Swiftclaws") + getPts("Twin boltgun"));
         add(squad);

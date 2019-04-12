@@ -28,7 +28,7 @@ public class IMMissionary extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         addToInformationVector(MINISTORUM_PRIEST_CNT, 1);
         addToInformationVector(MISSIONARY_CNT, 1);

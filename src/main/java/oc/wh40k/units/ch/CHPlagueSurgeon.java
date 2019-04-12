@@ -25,7 +25,7 @@ public class CHPlagueSurgeon extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", true);
+        addWarlordTraits("");
 
         complete();
 

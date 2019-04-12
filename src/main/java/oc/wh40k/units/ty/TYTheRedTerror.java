@@ -9,14 +9,14 @@ public class TYTheRedTerror extends Eintrag {
         grundkosten = getPts("The Red Terror");
         power = 3;
 
-		addWarlordTraits("Heightened Senses", true);
+		addWarlordTraits("Heightened Senses");
 
         complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        setUnique(true);
     }
 
 }

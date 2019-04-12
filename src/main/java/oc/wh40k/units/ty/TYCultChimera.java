@@ -37,13 +37,13 @@ public class TYCultChimera extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser")));
 
-        add(o1x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1x = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
 
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 
@@ -53,11 +53,11 @@ public class TYCultChimera extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
 
-        add(o2x = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2x = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy Flamer")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

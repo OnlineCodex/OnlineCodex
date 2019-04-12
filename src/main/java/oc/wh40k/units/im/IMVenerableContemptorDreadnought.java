@@ -36,7 +36,7 @@ public class IMVenerableContemptorDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", "Kheres pattern assault cannon", getPts("Kheres pattern assault cannon (AC)")));
 
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
 
 

@@ -11,7 +11,7 @@ public class CHChaosRhino extends Eintrag {
 	private final OptionsEinzelUpgrade combi;
 	public CHChaosRhino() {
 
-        kategorie = 1;
+        category = 1;
 
         name = "Chaos Rhino";
         grundkosten = getPts("Chaos Rhino");
@@ -28,7 +28,7 @@ public class CHChaosRhino extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", getPts("Combi-plasma")));
-        add(fkwaffen = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(fkwaffen = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
         fkwaffen.setSelected(0, true);
 
         seperator();
@@ -37,7 +37,7 @@ public class CHChaosRhino extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Mark of Nurgle", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Tzeentch", 0));
         ogE.addElement(new OptionsGruppeEintrag("Mark of Slaanesh", 0));
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         complete();
     }

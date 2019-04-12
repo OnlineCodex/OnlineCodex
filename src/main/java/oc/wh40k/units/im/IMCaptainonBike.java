@@ -23,7 +23,7 @@ public class IMCaptainonBike extends Eintrag {
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

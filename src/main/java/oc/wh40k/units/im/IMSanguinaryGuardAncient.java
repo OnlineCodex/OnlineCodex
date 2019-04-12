@@ -22,18 +22,18 @@ public class IMSanguinaryGuardAncient extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Angelus boltgun", getPts("angelus boltgun")));
         ogE.addElement(new OptionsGruppeEintrag("Inferno pistol", getPts("Inferno pistol (BA)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("plasma pistol (SM)")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o1 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Encarmine sword", getPts("encarmine sword")));
         ogE.addElement(new OptionsGruppeEintrag("Encarmine axe", getPts("encarmine axe")));
         ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("power fist (SM)")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        add(o2 = new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE));
 
         seperator();
 
-		addWarlordTraits("", true);
+		addWarlordTraits("");
 
         complete();
     }

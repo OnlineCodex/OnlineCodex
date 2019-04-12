@@ -13,7 +13,7 @@ public class TAXV95GhostkeelBattlesuits extends Eintrag {
 
     public TAXV95GhostkeelBattlesuits() {
         name = "XV95 Ghostkeel Battlesuits";
-        überschriftSetzen = true;
+        applyTitle = true;
         grundkosten = 0;
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));

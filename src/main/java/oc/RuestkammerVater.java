@@ -81,7 +81,7 @@ public abstract class RuestkammerVater extends OptionsCollection implements Buil
 		LOGGER.info("RuestkammerVater refresh");
 		refreshen();
 		uniqueError = false;
-		final Dimension size = new Dimension(getBreite(), getHöhe() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
+		final Dimension size = new Dimension(getBreite(), getHeight() + 85); // +55 hier weil der OK button noch mitgerechnet werden muss
 		if (!frame.getSize().equals(size)) {
 			panel.setSize(size);
 			frame.setSize(size);

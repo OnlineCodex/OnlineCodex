@@ -36,7 +36,7 @@ public class AEAcothyst extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Venom blade", getPts("Venom blade")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 
@@ -50,7 +50,7 @@ public class AEAcothyst extends RuestkammerVater {
 
         ogE.addElement(new OptionsGruppeEintrag("Stinger pistol", getPts("Stinger pistol")));
 
-        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        add(new OptionsUpgradeGruppe(randAbstand, cnt, "", ogE, 1));
 
 
 
