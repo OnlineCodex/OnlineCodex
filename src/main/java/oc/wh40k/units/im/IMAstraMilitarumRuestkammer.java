@@ -132,7 +132,7 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
 
             ogE = IMAstraMilitarumRangedWeapons.createRK("Laspistol", "Laspistol", buildaVater);
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        } else if (type == "Temperstor Prime") {
+        } else if (type == "Tempestor Prime") {
             ogE = IMAstraMilitarumMeleeWeapons.createRK("Chainsword", "Chainsword (AM)", buildaVater);
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -194,7 +194,7 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
             	o1.setMaxAnzahl(1);
             }
 
-        } else if (type == "Temperstor Prime") {
+        } else if (type == "Tempestor Prime") {
             o2.alwaysSelected();
         }
 

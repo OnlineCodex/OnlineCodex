@@ -18,7 +18,7 @@ public class CHChaosCultists extends Eintrag {
         //name = "Chaoskultisten\n";
         grundkosten = 0;
 
-        kultisten = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Cultists", 10, 40, getPts("Chaos Cultists"));
+        kultisten = new AnzahlPanel(ID, randAbstand, cnt, "Chaos Cultists", 10, 30, getPts("Chaos Cultists"));
         add(kultisten);
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosKultisten.gif"));
