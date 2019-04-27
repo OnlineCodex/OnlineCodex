@@ -10,7 +10,7 @@ import oc.RuestkammerStarter;
 public class CHChosen extends Eintrag {
 
 	private final AnzahlPanel squad;
-	private final OptionsZaehlerGruppe pistol, claws, boltgun, special;
+	private final OptionsZaehlerGruppe pistol, claws, boltgun, special, melee;
 	private final OptionsUpgradeGruppe heavy;
 	private final OptionsUpgradeGruppe icon;
 	private final RuestkammerStarter champion;
@@ -47,6 +47,10 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
+        add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
+
+        seperator();
+        
         ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
         ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
         ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("Lightning claw single")));
@@ -55,8 +59,9 @@ public class CHChosen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Power maul", getPts("Power maul")));
         ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword")));
         ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer")));
-        add(special = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
-
+        ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
+        add(melee = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "option", ogE, 4));
+        
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
@@ -114,6 +119,9 @@ public class CHChosen extends Eintrag {
         final int pistols = squad.getModelle() - 1 - claws.getAnzahl() - special.getAnzahl("Plasma pistol");
         pistol.setMaxAnzahl(pistols);
 
+        final int melees = squad.getModelle() - 1 - claws.getAnzahl();
+        melee.setMaxAnzahl(melees);
+        
         heavy.setAktiv((boltguns + ((heavy.isSelected()) ? 1 : 0)) > 0);
 
         special.setMaxAnzahl(4 - claws.getAnzahl());

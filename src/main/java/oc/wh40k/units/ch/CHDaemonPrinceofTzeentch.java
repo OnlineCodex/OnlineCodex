@@ -32,8 +32,10 @@ public class CHDaemonPrinceofTzeentch extends Eintrag {
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
+        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(true);
         ((PsychicPowers) psychicPowers.getKammer()).enableDarkHereticus();
         ((PsychicPowers) psychicPowers.getKammer()).enableChange();
+        ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);
