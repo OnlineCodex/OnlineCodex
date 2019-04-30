@@ -303,6 +303,11 @@ public class VOLKImperium extends BuildaVater {
     	return SM_CHAPTERS;
     }
 
+    public static final Set<String> SM_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Indomitus Crusaders", "Ultramarines Victrix Guard", "Imperial Fists Siegebreaker Cohort", "Crimson Fists Liberator Strike Force", "Black Templar Sword Brethren", "Ravenwing Attack Squadron", "Space Wolves Stalker Pack");
+    public static final Set<String> AME_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Cybernetica Cohort", "Servitor Maniple");
+    public static final Set<String> AM_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Emperor's Blade Assault Company", "Emperor's Wrath Artillery Company", "Emperor's Conclave Infantry Company", "Emperor's Fist Tank Company");
+    public static final Set<String> TE_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Tempest Drop Force");
+    
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
                 Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
@@ -406,6 +411,11 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Adeptus Astra Telepathica");
         formationen.add("Scholastica Psykana");
         formationen.add("Sisters of Silence");
+        
+        SM_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+        AME_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+        AM_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+        TE_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
 
         complete();
     }

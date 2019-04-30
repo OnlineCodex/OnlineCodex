@@ -25,6 +25,7 @@ public class VOLKTyraniden extends BuildaVater {
     private static final String[] Befestigungseinträge_GenestealerCult = new String[]{"", "Tectonic Fragdrill"};
     private static final String[] LOWeinträge_GenestealerCult = new String[]{""};
 
+    public static final Set<String> GSC_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Anointed Throng", "Deliverance Broodsurge");
 
     public VOLKTyraniden() {
         super("TY", loadPoints( "/oc/wh40k/indices/ty.yaml"));
@@ -74,6 +75,8 @@ public class VOLKTyraniden extends BuildaVater {
         formationen.addAll(CULTS);
         formationen.add("");
 
+        GSC_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+        
         complete();
     }
 
