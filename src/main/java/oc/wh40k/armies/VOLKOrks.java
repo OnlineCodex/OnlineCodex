@@ -1,11 +1,17 @@
 package oc.wh40k.armies;
 
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
+
 import oc.BuildaHQ;
 import oc.BuildaVater;
 import oc.ChooserGruppe;
 import oc.utils.ResourceUtils;
 
 public class VOLKOrks extends BuildaVater {
+
+    public static final Set<String> OR_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Stompa Mob", "Kult of Speed", "Dread Waaagh", "Blitz Brigade");
 
     public VOLKOrks() {
         super("OR", ResourceUtils.loadPoints("/oc/wh40k/indices/or.yaml"));
@@ -101,6 +107,8 @@ public class VOLKOrks extends BuildaVater {
         formationen.add("Bad Moonz");
         formationen.add("Freebooterz");
 
+        OR_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+        
         complete();
     }
 

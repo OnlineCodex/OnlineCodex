@@ -7,6 +7,7 @@ import static oc.KeyWord.DRUKHARI;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.KABAL;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
@@ -24,8 +25,11 @@ public class AEArchon extends Eintrag {
 
         seperator();
 
-        addWeapons(AEDrukhariRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AEDrukhariRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", KABAL);

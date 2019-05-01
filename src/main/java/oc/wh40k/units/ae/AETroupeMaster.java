@@ -6,6 +6,7 @@ import static oc.KeyWord.HARLEQUINS;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.TROUPE_MASTER;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class AETroupeMaster extends Eintrag {
@@ -19,8 +20,11 @@ public class AETroupeMaster extends Eintrag {
 
         seperator();
 
-        addWeapons(AEHarlequinsRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AEHarlequinsRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", true);

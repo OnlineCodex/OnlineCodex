@@ -26,7 +26,8 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade theAdamantineArm;
     private OptionsEinzelUpgrade theOmnissiahsHand;
     private OptionsEinzelUpgrade theEyeOfXILexum;
-
+    private OptionsEinzelUpgrade doctrinaForeasServoSkull;
+    
     static final Set<String> CHARACTERS = ImmutableSet.of("Lord of Contagion", "Malignant Plaguecaster", "Daemon Prince of Nurgle", "Daemon Prince of Nurgle with Wings",
             "Chaos Lord", "Chaos Lord in Terminator Armour", "Sorcerer", "Sorcerer in Terminator Armour", "", "Necrosius the Undying [FW]", "Noxious Blightbringer", "Foul Blightspawn", "Biologus Putrifier", "Plague Surgeon", "Tallyman");
 
@@ -51,6 +52,9 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
 
     		if(ogE.get(i).getName().equals("Omnissian axe")){
     			ogE.addElement(new OptionsGruppeEintrag("Pater Cog-Tooth", getPts("Omnissian axe")).setRelic(true));
+    			if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Servitor Maniple")) {
+    				ogE.addElement(new OptionsGruppeEintrag("The Genecog Corpus", getPts("Omnissian axe")).setRelic(true));
+    			}
     		}
     		if(ogE.get(i).getName().equals("Power fist")){
     			ogE.addElement(new OptionsGruppeEintrag("The Uncreator Gauntlet", getPts("Power fist (AME)")).setRelic(true));
@@ -88,6 +92,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
        	add(theAdamantineArm = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Adamantine Arm", 0).setRelic(true));
        	add(theOmnissiahsHand = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Omnissiah's Hand", 0).setRelic(true));
        	add(theEyeOfXILexum = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Eye of XI-Lexum", 0).setRelic(true));
+       	add(doctrinaForeasServoSkull = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Doctrina Foreas Servo-Skull", 0).setRelic(true));
 
        	offsetX += buttonBreite + 15;
        	seperator();
@@ -207,6 +212,7 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     	theAdamantineArm.setAktiv((chosenRelic == null || theSolarFlare.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Forge World Metalica"));
     	theOmnissiahsHand.setAktiv((chosenRelic == null || theSolarFlare.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Forge World Stygies VIII"));
     	theEyeOfXILexum.setAktiv((chosenRelic == null || theSolarFlare.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Forge World Agripinaa"));
+    	doctrinaForeasServoSkull.setAktiv((chosenRelic == null || doctrinaForeasServoSkull.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Cybernetica Cohort"));
     }
 
 }

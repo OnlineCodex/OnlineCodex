@@ -7,6 +7,7 @@ import static oc.KeyWord.HAEMONCULUS;
 import static oc.KeyWord.HAEMUNCULUS_COVEN;
 import static oc.KeyWord.INFANTRY;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 
@@ -30,8 +31,11 @@ public class AEHaemonculus extends Eintrag {
 
         seperator();
 
-        addWeapons(AEDrukhariRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AEDrukhariRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", HAEMUNCULUS_COVEN);

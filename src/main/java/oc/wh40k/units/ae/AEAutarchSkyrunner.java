@@ -9,6 +9,7 @@ import static oc.KeyWord.CHARACTER;
 import static oc.KeyWord.FLY;
 import static oc.KeyWord.INFANTRY;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class AEAutarchSkyrunner extends Eintrag {
@@ -22,8 +23,11 @@ public class AEAutarchSkyrunner extends Eintrag {
 
         seperator();
 
-        addWeapons(AECraftworldRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AECraftworldRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", true);

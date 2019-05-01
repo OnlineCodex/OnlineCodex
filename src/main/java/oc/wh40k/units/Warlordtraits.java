@@ -73,6 +73,9 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Iyanden: Enduring Resolve", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saim-Hann: Wild Rider Chieftain", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ulthwé: Fate Reader", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Windrider Host: Wild Rider", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Wraith Host: Revered by the Dead", 0));
         }
         if(army.equals("AELDARI") || DRUKHARI.contains(army)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Hatred Eternal", 0)); //Kabal
@@ -110,6 +113,14 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Dreaming Shadow: Warden of the Dead", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Soaring Spite: Skystrider", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Silent Shroud: The Final Joke", 0));
+        }
+        if(army.equals("Ynnari")) {
+	        ogE.addElement(new OptionsGruppeEintrag("Lord of Rebirth", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Warden of Souls", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Walker of many Paths", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Fear of the Grave", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Favoured of Ynnead", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Master of Death", 0));
         }
 
         //CHAOS
@@ -214,6 +225,12 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Tallarn: Swift Attacker", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Militarum Tempestus: Faithful Servant of the Throne", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Mordian: Iron Discipline", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Blade Assault Company: Mechanised Commander", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Wrath Artillery Company: Lord of Ordnance", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Conclave Infantry Company: Fiery Denouncer", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Emperor's Fist Tank Company: Unflinching Resolve", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Tempestus Drop Force", 0));
         }
 
         if(army.equals("IMPERIUM") || army.equals("Adeptus Custodes")) {
@@ -242,6 +259,9 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Agripinaa: Reinforced Exoskeleton (AdMech)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Stygies VIII: Xenarite Studies (AdMech)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ryza: First-hand Field Testing (AdMech)", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Cybernetica Cohort: Adept of the Legio Cybernetica", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Servitor Maniple: Master of Biosplicing", 0));
         }
         if(army.equals("IMPERIUM") || army.equals("Blood Angels")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Speed of the Primarch (BA)", 0));
@@ -294,6 +314,18 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Salamanders: Anvil of Strength", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Raven Guard: Silent Stalker", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Iron Hands: Merciless Logic", 0));
+	        
+	    	ogE.addElement(new OptionsGruppeEintrag("Indomitus Crusaders: Grey Shield", 0));
+	    	if(army.equals("Ultramarines"))
+	    		ogE.addElement(new OptionsGruppeEintrag("UM Victrix Guard: Warden of Ultramar", 0));
+	    	if(army.equals("Imperial Fists"))
+	    		ogE.addElement(new OptionsGruppeEintrag("IF Siegebreaker Cohort: Indomitable", 0));
+	    	if(army.equals("Crimson Fists"))
+	    		ogE.addElement(new OptionsGruppeEintrag("CF Liberator Strike Force: Expert Instructor", 0));
+	    	if(army.equals("Black Templars"))
+	    		ogE.addElement(new OptionsGruppeEintrag("BT Sword Brethren: Master Swordsman", 0));
+	    	if(army.equals("Raven Guard"))
+	    		ogE.addElement(new OptionsGruppeEintrag("RW Attack Squadron: Ligthning Fast Reactions", 0));
         }
         if(army.equals("IMPERIUM") || army.equals("Space Wolves")) {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Warrior Born (SW)", 0));
@@ -302,6 +334,8 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Beastslayer (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Hunter (SW)", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Saga of the Bear (SW)", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("SW Stalker Pack: Saga of the Savage", 0));
         }
         if(keywords.contains(ADEPTA_SORORITAS)) {
 	        ogE.addElement(new OptionsGruppeEintrag("Inspiring Orator", 0));
@@ -340,6 +374,10 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Freebooterz: Killa Reputation", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Goffs: Proper Killy", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Snakebites: Surly as a Squiggoth", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Stompa Mob: Gork's One", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Kult of Speed: Quick, Ladz!", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Dread Waaagh!: Dread Mek", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Blitz Brigade: Back-Seat Driver", 0));
     	} else if(TAU.contains(army)) { //TAU
 	    	ogE.addElement(new OptionsGruppeEintrag("Precision of the Hunter", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Through Unity, Devastation", 0));
@@ -381,6 +419,9 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Rusted Claw: Entropic Touch", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Pauper Pinces: Beloved Grandsire", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Twisted Helix: Bio-Alchemis", 0));
+	        
+	        ogE.addElement(new OptionsGruppeEintrag("Anointed Throng: Insidious Mindwyrm", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Deliveranmce Broodsurge", 0));
     	} else if(QUESTOR_IMPERIALIS.contains(army)) { //Imperial Knights
 	    	ogE.addElement(new OptionsGruppeEintrag("Cunning Commander", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Ion Bulwark", 0));
@@ -537,6 +578,12 @@ public class Warlordtraits extends RuestkammerVater {
         		warlordtraits3.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
         		warlordtraits3.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
         		warlordtraits3.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+        		
+        		warlordtraits.setAktiv("Emperor's Blade Assault Company: Mechanised Commander", specialDetachement.equals("Emperor's Blade Assault Company"));
+	    		warlordtraits.setAktiv("Emperor's Wrath Artillery Company: Lord of Ordnance", specialDetachement.equals("Emperor's Wrath Artillery Company"));
+	    		warlordtraits.setAktiv("Emperor's Conclave Infantry Company: Fiery Denouncer", specialDetachement.equals("Emperor's Conclave Infantry Company"));
+	    		warlordtraits.setAktiv("Emperor's Fist Tank Company: Unflinching Resolve", specialDetachement.equals("Emperor's Fist Tank Company"));
+	    		warlordtraits.setAktiv("Tempestus Drop Force: Grave-Chute Commando", specialDetachement.equals("Tempestus Drop Force"));
         	} else {
 	    		warlordtraits.setAktiv("Cadian: Superior Tactical Training", army.equals("Cadian"));
 	    		warlordtraits.setAktiv("Catachan: Lead From the Front", army.equals("Catachan"));
@@ -546,6 +593,11 @@ public class Warlordtraits extends RuestkammerVater {
 	    		warlordtraits.setAktiv("Tallarn: Swift Attacker", army.equals("Tallarn"));
 	    		warlordtraits.setAktiv("Militarum Tempestus: Faithful Servant of the Throne", army.equals("Militarum Tempestus"));
 	    		warlordtraits.setAktiv("Mordian: Iron Discipline", army.equals("Mordian"));
+	    		
+	    		warlordtraits.setAktiv("Emperor's Blade Assault Company: Mechanised Commander", specialDetachement.equals("Emperor's Blade Assault Company"));
+	    		warlordtraits.setAktiv("Emperor's Wrath Artillery Company: Lord of Ordnance", specialDetachement.equals("Emperor's Wrath Artillery Company"));
+	    		warlordtraits.setAktiv("Emperor's Conclave Infantry Company: Fiery Denouncer", specialDetachement.equals("Emperor's Conclave Infantry Company"));
+	    		warlordtraits.setAktiv("Emperor's Fist Tank Company: Unflinching Resolve", specialDetachement.equals("Emperor's Fist Tank Company"));
         	}
         } else if(ADEPTUS_MECHANICUS.contains(army)) {
         	if(warlordtraits2 != null) {
@@ -564,6 +616,9 @@ public class Warlordtraits extends RuestkammerVater {
         		warlordtraits.setAktiv("Agripinaa: Reinforced Exoskeleton (AdMech)", army.equals("Forge World Agripinaa"));
         		warlordtraits.setAktiv("Stygies VIII: Xenarite Studies (AdMech)", army.equals("Forge World Stygies VIII"));
         		warlordtraits.setAktiv("Ryza: First-hand Field Testing (AdMech)", army.equals("Forge World Ryza"));
+        		
+        		warlordtraits.setAktiv("Cybernetica Cohort: Adept of the Legio Cybernetica", specialDetachement.equals("Cybernetica Cohort"));
+        		warlordtraits.setAktiv("Servitor Maniple: Master of Biosplicing", specialDetachement.equals("Servitor Maniple"));
         	}
         } else if((army.equals("AELDARI") || DRUKHARI.contains(army)) &&
         		(KABAL.equals(exclusiveKeyword) || WYCH_CULT.equals(exclusiveKeyword) || HAEMUNCULUS_COVEN.equals(exclusiveKeyword))) {
@@ -593,6 +648,9 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Iyanden: Enduring Resolve", army.equals("Iyanden"));
     		warlordtraits.setAktiv("Saim-Hann: Wild Rider Chieftain", army.equals("Saim-Hann"));
     		warlordtraits.setAktiv("Ulthwé: Fate Reader", army.equals("Ulthwe"));
+    		
+    		warlordtraits.setAktiv("Windrider Host: Wild Rider", specialDetachement.equals("Windrider Host"));
+        	warlordtraits.setAktiv("Wraith Host: Revered by the Dead", specialDetachement.equals("Wraith Host"));
         } else if(HARLEQUINS.contains(army)) {
     		warlordtraits.setAktiv("Midnight Sorrow: Nemesis of the Damned", army.equals("Midnight Sorrow"));
     		warlordtraits.setAktiv("Veiled Path: Webway Walker", army.equals("Veiled Path"));
@@ -614,6 +672,11 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Freebooterz: Killa Reputation", army.equals("Freebooterz"));
     		warlordtraits.setAktiv("Goffs: Proper Killy", army.equals("Goff"));
     		warlordtraits.setAktiv("Snakebites: Surly as a Squiggoth", army.equals("Snakebites"));
+    		
+    		warlordtraits.setAktiv("Stompa Mob: Gork's One", specialDetachement.equals("Stompa Mob"));
+    		warlordtraits.setAktiv("Kult of Speed: Quick, Ladz!", specialDetachement.equals("Kult of Speed"));
+    		warlordtraits.setAktiv("Dread Waaagh!: Dread Mek", specialDetachement.equals("Dread Waaagh"));
+    		warlordtraits.setAktiv("Blitz Brigade: Back-Seat Driver", specialDetachement.equals("Blitz Brigade"));
         } else if(SM_CHAPTERS.contains(army)) {
         	warlordtraits.setAktiv("Ultramarines: Adept of the Codex", army.equals("Ultramarines"));
         	warlordtraits.setAktiv("White Scars: Deadly Hunter", army.equals("White Scars"));
@@ -623,6 +686,13 @@ public class Warlordtraits extends RuestkammerVater {
         	warlordtraits.setAktiv("Salamanders: Anvil of Strength", army.equals("Salamanders"));
         	warlordtraits.setAktiv("Raven Guard: Silent Stalker", army.equals("Raven Guard"));
         	warlordtraits.setAktiv("Iron Hands: Merciless Logic", army.equals("Iron Hands"));
+        	
+        	warlordtraits.setAktiv("Indomitus Crusaders: Grey Shield", specialDetachement.equals("Indomitus Crusaders"));
+        	warlordtraits.setAktiv("UM Victrix Guard: Warden of Ultramar", specialDetachement.equals("Ultramarines Victrix Guard"));
+        	warlordtraits.setAktiv("IF Siegebreaker Cohort: Indomitable", specialDetachement.equals("Imperial Fists Siegebreaker Cohort"));
+        	warlordtraits.setAktiv("CF Liberator Strike Force: Expert Instructor", specialDetachement.equals("Crimson Fists Liberator Strike Force"));
+        	warlordtraits.setAktiv("BT Sword Brethren: Master Swordsman", specialDetachement.equals("Black Templar Sword Brethren"));
+        	warlordtraits.setAktiv("RW Attack Squadron: Ligthning Fast Reactions", specialDetachement.equals("Ravenwing Attack Squadron"));
         } else if(TAU.contains(army)) { //TAU
         	warlordtraits.setAktiv("T'au: Strength of Belief", army.equals("T'au Sept"));
         	warlordtraits.setAktiv("Vior'la: Academy Luminary", army.equals("Vior'la Sept"));
@@ -638,6 +708,11 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Jormungandr: Insidious Threat", army.equals("Jormungandr"));
     		warlordtraits.setAktiv("Hydra: Endless Regeneration", army.equals("Hydra"));
     		warlordtraits.setAktiv("Kronos: Soul hunger", army.equals("Kronos"));
+        } else if(army.equals("Space Wolves")) {
+        	warlordtraits.setAktiv("SW Stalker Pack: Saga of the Savage", specialDetachement.equals("Space Wolves Stalker Pack"));
+        } else if(GENESTEALER.contains(army)) {
+        	warlordtraits.setAktiv("Anointed Throng: Insidious Mindwyrm", specialDetachement.equals("Anointed Throng"));
+        	warlordtraits.setAktiv("Deliveranmce Broodsurge", specialDetachement.equals("Deliverance Broodsurge"));
         }
         if(!mandatoryChoice.equals("")) {
         	warlordtraits.deselectAll();

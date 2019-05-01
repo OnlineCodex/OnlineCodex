@@ -8,6 +8,7 @@ import static oc.KeyWord.FLY;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.JUMP_PACK;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class AEAutarchwithSwoopingHawkWings extends Eintrag {
@@ -21,8 +22,11 @@ public class AEAutarchwithSwoopingHawkWings extends Eintrag {
 
         seperator();
 
-        addWeapons(AECraftworldRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AECraftworldRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", true);

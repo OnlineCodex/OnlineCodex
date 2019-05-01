@@ -12,7 +12,7 @@ public class ORWeirdboy extends Eintrag {
     public ORWeirdboy() {
 
         kategorie = 1;
-        name = "Wyrdboy";
+        name = "Weirdboy";
         grundkosten = getPts("Weirdboy") + getPts("Weirdboy staff");
         power = 3;
 
@@ -31,6 +31,7 @@ public class ORWeirdboy extends Eintrag {
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(false, false, false, false, false, false, true, true);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

@@ -3,6 +3,7 @@ package oc.wh40k.units.ae;
 
 
 import oc.AnzahlPanel;
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
@@ -59,7 +60,10 @@ public class AEWarlockConclave extends Eintrag {
 
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
 
-        ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfBattle();
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	((PsychicPowers) psychicPowers.getKammer()).enableRevenant();
+        else
+        	((PsychicPowers) psychicPowers.getKammer()).enableRunesOfBattle();
 
         psychicPowers.initKammer();
 

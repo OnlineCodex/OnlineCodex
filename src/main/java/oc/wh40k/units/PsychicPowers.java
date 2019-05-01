@@ -8,7 +8,7 @@ public class PsychicPowers extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
-	private OptionsUpgradeGruppe o21;
+	private OptionsUpgradeGruppe o21, o22;
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
 	private boolean contagion = false;
@@ -30,6 +30,7 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean obscuration = false;
     private boolean malefic = false;
     private boolean prayers = false;
+    private boolean revenant = false;
 
     private boolean khorne = false;
     private boolean nurgle = false;
@@ -261,7 +262,16 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Blissfull Devotion", 0));
             add(o21 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-
+        
+        if (revenant) {
+            ogE.addElement(new OptionsGruppeEintrag("Gaze of Ynnead", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Storm of Whispers", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Word of the Phoenix", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Unbind Souls", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Shield of Ynnead", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Ancestors Grace", 0));
+            add(o22 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
 
         sizeSetzen();
     }
@@ -366,6 +376,10 @@ public class PsychicPowers extends RuestkammerVater {
     public void enablePrayers() {
     	prayers = true;
     }
+    
+    public void enableRevenant() {
+    	revenant = true;
+    }
 
     @Override
     public void refreshen() {
@@ -459,6 +473,10 @@ public class PsychicPowers extends RuestkammerVater {
             o21.setAktiv("Mutating Invocation", tzeentch);
             o21.setAktiv("Feculent Beseechment", nurgle);
             o21.setAktiv("Blissfull Devotion", slaanesh);
+        }
+        
+        if(revenant) {
+        	o22.setMaxAnzahl(numPowers);
         }
     }
 

@@ -75,6 +75,18 @@ public class AECraftworldRuestkammer extends RuestkammerVater {
 	    			ogE.addElement(new OptionsGruppeEintrag("The Novalance of Saim-Hann", getPts("Laser lance")).setRelic(true));
 	    		}
     		}
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Windrider Host"))
+    		{
+	    		if(ogE.get(i).getName().equals("Witchblade")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Howling Skysword of Galaleth", getPts("Witchblade")).setRelic(true));
+	    		}
+    		}
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Wraith Host"))
+    		{
+	    		if(ogE.get(i).getName().equals("Witch staff")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Warp-Spawn Bane", getPts("Witch staff")).setRelic(true));
+	    		}
+    		}
     	}
     }
 

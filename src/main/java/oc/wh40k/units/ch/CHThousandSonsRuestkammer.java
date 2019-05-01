@@ -47,6 +47,9 @@ public class CHThousandSonsRuestkammer extends RuestkammerVater {
     		if(ogE.get(i).getName().equals("Power sword")){
     			ogE.addElement(new OptionsGruppeEintrag("Seer's Bane", getPts("Power sword")).setRelic(true));
     		}
+    		if(ogE.get(i).getName().equals("2 Power swords")){
+    			ogE.addElement(new OptionsGruppeEintrag("Seer's Bane & Power sword", getPts("Power sword")*2).setRelic(true));
+    		}
     		if(ogE.get(i).getName().equals("Inferno bolt pistol")){
     			ogE.addElement(new OptionsGruppeEintrag("Coruscator", getPts("Inferno bolt pistol")).setRelic(true));
     		}

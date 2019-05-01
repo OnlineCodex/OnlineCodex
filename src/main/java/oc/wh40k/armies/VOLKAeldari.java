@@ -17,6 +17,8 @@ public class VOLKAeldari extends BuildaVater {
 	private static final Set<String> DRUKHARI = ImmutableSet.of("Kabal of the Black Heart", "Kabal of the Flayed Skull", "Kabal of the Poisoned Tongue", "Kabal of the Obsidian Rose", "Cult of Strife", "Cult of the Cursed Blade", "Cult of the Red Grief", "The Prophets of Flesh", "The Dark Creed", "Coven of Twelve");
 	private static final Set<String> HARLEQUINS = ImmutableSet.of("Midnight Sorrow", "Veiled Path", "Frozen Stars", "Dreaming Shadow", "Soaring Spite", "Silent Shroud");
 
+    public static final Set<String> AE_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Windrider Host", "Wraith Host");
+
     public VOLKAeldari() {
         super("AE", ResourceUtils.loadPoints(
                 "/oc/wh40k/indices/ae.yaml",
@@ -77,6 +79,8 @@ public class VOLKAeldari extends BuildaVater {
         formationen.add("");
         formationen.add("Ynnari");
 
+        AE_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
+                
         complete();
     }
 

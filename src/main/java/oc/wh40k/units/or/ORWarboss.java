@@ -23,6 +23,7 @@ public class ORWarboss extends Eintrag {
         ((ORWaffenUndGeschenke) waffen.getKammer()).setWarboss(true);
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kombi-weapon with rokkit-launcha");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(true, false, false, false, false, false, true);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

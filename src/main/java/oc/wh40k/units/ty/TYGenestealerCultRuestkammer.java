@@ -25,7 +25,8 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade elixirOfThePrimeSpecimen;
     private OptionsEinzelUpgrade theCrouchling;
     private OptionsZaehlerGruppe familiars;
-
+    private OptionsEinzelUpgrade vialOfTheGrandsiresBlood;
+    
     Set<String> CHARACTERS = ImmutableSet.of("Patriarch", "Magus", "Primus", "Acolyte Iconward", "Abominant", "Jackal Alphus", "Clamavus", "Locus", "Sanctus", "Kelermorph", "Nexos", "Biophagus");
     Set<String> PSYKERS = ImmutableSet.of("Magus");
 
@@ -73,6 +74,11 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
 
 	    			ogE.addElement(new OptionsGruppeEintrag("The gift from beyond", points).setRelic(true));
 	    		}
+	    		if(ogE.get(i).getName().equals("Power sledgehammer")){
+	    			if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Anointed Throng")) {
+	    				ogE.addElement(new OptionsGruppeEintrag("Blessed Sledgehammer", getPts("Power sledgehammer")).setRelic(true));
+	    			}
+	    		}
 	    	}
 
     		if(bonesword){
@@ -110,7 +116,7 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
 	       	add(markOfTheClawedOmnissiah = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Mark of the clawed Omnissiah", 0).setRelic(true));
 	       	add(reliquaryOfSaintTenndarc = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Reliquary of Saint Tenndarc", 0).setRelic(true));
 	       	add(elixirOfThePrimeSpecimen = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Elixir of the Prime Specimen", 0).setRelic(true));
-
+	       	add(vialOfTheGrandsiresBlood = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Vial Of The Grandsire's Blood", 0).setRelic(true));
 	       	offsetX += buttonBreite + 15;
 	       	seperator();
         }
@@ -314,6 +320,7 @@ public class TYGenestealerCultRuestkammer extends RuestkammerVater {
 	    	markOfTheClawedOmnissiah.setAktiv((chosenRelic == null || markOfTheClawedOmnissiah.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Bladed Cog"));
 	    	reliquaryOfSaintTenndarc.setAktiv((chosenRelic == null || reliquaryOfSaintTenndarc.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Pauper Princes"));
 	    	elixirOfThePrimeSpecimen.setAktiv((chosenRelic == null || elixirOfThePrimeSpecimen.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("The Twisted Helix"));
+	    	vialOfTheGrandsiresBlood.setAktiv((chosenRelic == null || vialOfTheGrandsiresBlood.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Deliverance Broodsurge"));
         }
     }
 

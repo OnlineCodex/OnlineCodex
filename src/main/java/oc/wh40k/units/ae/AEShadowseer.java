@@ -7,6 +7,7 @@ import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.SHADOWSEER;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class AEShadowseer extends Eintrag {
@@ -20,8 +21,11 @@ public class AEShadowseer extends Eintrag {
 
         seperator();
 
-        addWeapons(AEHarlequinsRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AEHarlequinsRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", true);
