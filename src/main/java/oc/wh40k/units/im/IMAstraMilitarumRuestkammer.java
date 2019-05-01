@@ -25,7 +25,11 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade skullMaskOfAcheron;
     private OptionsEinzelUpgrade theTacticalAutoReliquaryOfTyberius;
     private OptionsEinzelUpgrade orderOrTheIronStarOfMordian;
-
+    private OptionsEinzelUpgrade theShieldOfMortwald;
+    private OptionsEinzelUpgrade agripinaaClassOrbitalTracker;
+    private OptionsEinzelUpgrade heirloomOfConquest;
+    private OptionsEinzelUpgrade cypraMundiNullEmitter;
+    
     public IMAstraMilitarumRuestkammer() {
         grundkosten = 0;
     }
@@ -72,6 +76,12 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
 	    			ogE.addElement(new OptionsGruppeEintrag("Claw of the Deser Tigers", getPts("Power sword (AM)")).setRelic(true));
 	    		}
     		}
+    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Fist Tank Company"))
+    		{
+	    		if(ogE.get(i).getName().equals("Battle cannon")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Hammer of Sunderance", getPts("Battle cannon")).setRelic(true));
+	    		}
+    		}
     	}
     }
 
@@ -88,7 +98,11 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
        	add(skullMaskOfAcheron = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Skull Mask Of Acheron", 0).setRelic(true));
        	add(theTacticalAutoReliquaryOfTyberius = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Tactical Auto-Reliquary Of Tyberius", 0).setRelic(true));
        	add(orderOrTheIronStarOfMordian = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Order Or The Iron Star Of Mordian", 0).setRelic(true));
-
+       	add(theShieldOfMortwald = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Shield Of Mortwald", 0).setRelic(true));
+       	add(agripinaaClassOrbitalTracker = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Agripinaa-Class Orbital Tracker", 0).setRelic(true));
+       	add(heirloomOfConquest = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Heirloom of Conquest", 0).setRelic(true));
+       	add(cypraMundiNullEmitter = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Cypra Mundi Null-Emitter", 0).setRelic(true));
+       	
        	offsetX += buttonBreite + 15;
        	seperator();
 
@@ -207,7 +221,10 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
         skullMaskOfAcheron.setAktiv((chosenRelic == null || skullMaskOfAcheron.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Armageddon"));
         theTacticalAutoReliquaryOfTyberius.setAktiv((chosenRelic == null || theTacticalAutoReliquaryOfTyberius.isSelected()) && keywords.contains(MILITARUM_TEMPESTUS));
         orderOrTheIronStarOfMordian.setAktiv((chosenRelic == null || orderOrTheIronStarOfMordian.isSelected()) && keywords.contains(INFANTRY) && BuildaHQ.aktBuildaVater.getFormationType().equals("Mordian"));
-
+        theShieldOfMortwald.setAktiv((chosenRelic == null || theShieldOfMortwald.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Blade Assault Company"));
+        agripinaaClassOrbitalTracker.setAktiv((chosenRelic == null || agripinaaClassOrbitalTracker.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Wrath Artillery Company"));
+        heirloomOfConquest.setAktiv((chosenRelic == null || heirloomOfConquest.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Conclave Infantry Company"));
+        cypraMundiNullEmitter.setAktiv((chosenRelic == null || cypraMundiNullEmitter.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Tempestus Drop Force"));
     }
 
 }

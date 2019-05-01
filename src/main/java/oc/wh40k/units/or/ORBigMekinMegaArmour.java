@@ -31,6 +31,7 @@ public class ORBigMekinMegaArmour extends Eintrag {
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom mega-blasta"); //TODO: Durch Killasäga oder Liste der Schießeisän
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawFK(true);
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(false, true, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

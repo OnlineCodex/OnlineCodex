@@ -17,6 +17,7 @@ public class ORBigMekonWarbike extends Eintrag {
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setKillsawNK(true);
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(true, false, true, true, true, true, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

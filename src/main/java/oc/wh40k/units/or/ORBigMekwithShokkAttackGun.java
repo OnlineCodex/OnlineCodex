@@ -10,7 +10,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
 
 	public ORBigMekwithShokkAttackGun() {
         kategorie = 1;
-        name = "Big Mek with Shokk attack gun";
+        name = "Big Mek with Shokk Attack Gun";
         grundkosten = getPts("Big Mek") + getPts("Stikkbombs") + getPts("Shokk attack gun");
         power = 4;
 
@@ -21,8 +21,9 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
         seperator();
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Shokk attack gun");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("no weapon");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(false, false, false, false, false, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

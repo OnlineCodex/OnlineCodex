@@ -35,7 +35,12 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     private OptionsEinzelUpgrade theAngelsWing;
     private OptionsEinzelUpgrade theVeritasVitae;
     private OptionsEinzelUpgrade standardofSacrifice;
-
+    private OptionsEinzelUpgrade reliquaryOfGathalamor;
+    private OptionsEinzelUpgrade standardOfTheUltimaFounding;
+    private OptionsEinzelUpgrade standardOfMacraggeInviolate;
+    private OptionsEinzelUpgrade theEyeOfHypnoth;
+    private OptionsEinzelUpgrade theHolyOrb;
+    
     Set<String> CHARACTERS = ImmutableSet.of("Captain", "Captain in Terminator Armour", "Captain in Cataphractii Armour",
             "Captain in Gravis Armour", "Captain in Phobos Armour", "Captain on Bike", "Librarian", "Librarian in Terminator Armour", "Librarian on Bike",
             "Techmarine", "Techmarine on Bike", "Chaplain", "Chaplain in Terminator Armour", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour", "Master in Gravis Armour",
@@ -76,15 +81,23 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 	        		ogE.addElement(new OptionsGruppeEintrag("Teeth of Terra", getPts("Chainsword (SM)")).setRelic(true));
 	    		} else if(ogE.get(i).getName().equals("Power axe")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Axe of Medusa", getPts("Power axe (SM)")).setRelic(true)); //Iron Hands
+	        		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Space Wolves Stalker Pack"))
+	        		{
+	        			ogE.addElement(new OptionsGruppeEintrag("Ironfang of Ammagrimgul", getPts("Power axe (SM)")).setRelic(true));
+	        		}
 	    		} else if(ogE.get(i).getName().equals("Power fist")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Fist of Vengeance", getPts("Power fist (SM)")).setRelic(true)); //Crimson Fists
 	    		} else if(ogE.get(i).getName().equals("Bolt pistol")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Spartean", getPts("Bolt pistol (SM)")).setRelic(true)); //Imperial Fists
+	        		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Crimson Fists Liebrator Strike Force"))
+	        		{
+	        			ogE.addElement(new OptionsGruppeEintrag("The Vengeful Arbiter", getPts("Bolt pistol (SM)")).setRelic(true));
+	        		}
 	    		} else if(ogE.get(i).getName().equals("Thunder hammer")){
 	        		ogE.addElement(new OptionsGruppeEintrag("The Hammer of Baal", getPts("Thunder Hammer (Characters)")).setRelic(true)); //Imperial Fists
 	    		} else if(ogE.get(i).getName().equals("Force Stave")){
 	        		ogE.addElement(new OptionsGruppeEintrag("Gallian's Staff", getPts("Force stave")).setRelic(true)); //Imperial Fists
-	    		}
+	    		} 
 	    	}
 
     		if(boltgun){
@@ -96,9 +109,21 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
     		if(powersword){
         		ogE.addElement(new OptionsGruppeEintrag("The Burning Blade", getPts("Power sword (SM)")).setRelic(true));
         		ogE.addElement(new OptionsGruppeEintrag("Archangel's Shard", getPts("Power sword (SM)")).setRelic(true));
+        		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Ultramarines Victrix Guard"))
+        		{
+        			ogE.addElement(new OptionsGruppeEintrag("Soldier's Blade", getPts("Power sword (SM)")).setRelic(true));
+        		}
+        		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Ravenwing Attack Squadron"))
+        		{
+        			ogE.addElement(new OptionsGruppeEintrag("Monster Slayer Of Caliban", getPts("Power sword (SM)")).setRelic(true));
+        		}
     		} else if(mcPowersword){
         		ogE.addElement(new OptionsGruppeEintrag("The Burning Blade", getPts("Master-crafted power sword")).setRelic(true));
         		ogE.addElement(new OptionsGruppeEintrag("Archangel's Shard", getPts("Master-crafted power sword")).setRelic(true));
+        		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Ultramarines Victrix Guard"))
+        		{
+        			ogE.addElement(new OptionsGruppeEintrag("Soldier's Blade", getPts("Power sword (SM)")).setRelic(true));
+        		}
     		}
     	}
     }
@@ -147,8 +172,19 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
 	       	if(type.contains("Ancient")){
 	       		add(standardofSacrifice = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Standard of Sacrifice", 0).setRelic(true));
+	       		add(standardOfMacraggeInviolate = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Standard Of Macragge Inviolate", 0).setRelic(true));
 	       	}
 
+	       	add(reliquaryOfGathalamor = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Reliquary Of Gathalamor", 0).setRelic(true));
+	       	
+	       	if(type.contains("Primaris Ancient")){
+	       		add(standardOfTheUltimaFounding = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Standard Of The Ultima Founding", 0).setRelic(true));
+	       	}
+	       	
+	       	add(theEyeOfHypnoth = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Eye of Hypnoth", 0).setRelic(true));
+	       	
+	       	add(theHolyOrb = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "The Holy Orb", 0).setRelic(true));
+	       	
 	       	offsetX += buttonBreite + 15;
 	       	oe1Offset = cnt;
 	       	seperator();
@@ -608,8 +644,18 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
 
 	       	if(type.contains("Ancient")){
 	       		standardofSacrifice.setAktiv((chosenRelic == null || standardofSacrifice.isSelected()) && ba);
+	       		standardOfMacraggeInviolate.setAktiv((chosenRelic == null || standardOfMacraggeInviolate.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Ultramarines Victrix Guard"));
 	       	}
-
+	       	
+	       	reliquaryOfGathalamor.setAktiv((chosenRelic == null || reliquaryOfGathalamor.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Indomitus Crusaders"));
+	       	
+	       	if(type.contains("Primaris Ancient")){
+	       		standardOfTheUltimaFounding.setAktiv((chosenRelic == null || standardOfTheUltimaFounding.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Indomitus Crusaders"));
+	       	}
+	       	
+	       	theEyeOfHypnoth.setAktiv((chosenRelic == null || theEyeOfHypnoth.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Imperial Fists Siegebreaker Cohort"));
+	       	theHolyOrb.setAktiv((chosenRelic == null || theHolyOrb.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Black Templars Sword Brethren"));
+	       	
         	if(o1 != null) {
         		//SM Relics
         		o1.setAktiv("The Axe of Medusa", (chosenRelic == null || o1.isSelected("The Axe of Medusa")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Iron Hands"));

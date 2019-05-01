@@ -9,6 +9,7 @@ import static oc.KeyWord.FARSEER_SKYRUNNER;
 import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.PSYKER;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -27,13 +28,19 @@ public class AEFarseerSkyrunner extends Eintrag {
 
         seperator();
 
-        addWeapons(AECraftworldRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AECraftworldRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
-        ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfFate();
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	((PsychicPowers) psychicPowers.getKammer()).enableRevenant();
+        else
+        	((PsychicPowers) psychicPowers.getKammer()).enableRunesOfFate();
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);

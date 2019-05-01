@@ -19,6 +19,7 @@ public class ORWarbossinMegaArmour extends Eintrag {
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("Kustom shoota");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Power klaw");
+        ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(false, true, false, false, true, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");
         add(waffen);

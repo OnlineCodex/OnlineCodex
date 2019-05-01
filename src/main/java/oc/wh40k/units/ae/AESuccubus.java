@@ -7,6 +7,7 @@ import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.SUCCUBUS;
 import static oc.KeyWord.WYCH_CULT;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 
 public class AESuccubus extends Eintrag {
@@ -20,8 +21,11 @@ public class AESuccubus extends Eintrag {
 
         seperator();
 
-        addWeapons(AEDrukhariRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AEDrukhariRuestkammer.class, true);
+        
         seperator();
 
         addWarlordTraits("", WYCH_CULT);

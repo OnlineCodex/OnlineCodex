@@ -16,7 +16,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
 	private boolean hoplite = false;
 	private boolean peltast = false;
 	private String type = "";
-
+    
     public IMAdeptusMechanicusRuestkammer() {
         grundkosten = 0;
     }
@@ -75,7 +75,7 @@ public class IMAdeptusMechanicusRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Transonic blades", getPts("Transonic blades")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
-
+        
         sizeSetzen();
     }
 

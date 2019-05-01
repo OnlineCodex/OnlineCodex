@@ -8,6 +8,7 @@ import static oc.KeyWord.INFANTRY;
 import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.SPIRITSEER;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
@@ -24,13 +25,19 @@ public class AESpiritseer extends Eintrag {
 
         seperator();
 
-        addWeapons(AECraftworldRuestkammer.class, true);
-
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	addWeapons(AEYnnariRuestkammer.class, true);
+        else
+        	addWeapons(AECraftworldRuestkammer.class, true);
+        
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
-        ((PsychicPowers) psychicPowers.getKammer()).enableRunesOfBattle();
+        if(BuildaHQ.aktBuildaVater.getFormationType().equals("Ynnari"))
+        	((PsychicPowers) psychicPowers.getKammer()).enableRevenant();
+        else
+        	((PsychicPowers) psychicPowers.getKammer()).enableRunesOfBattle();
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);

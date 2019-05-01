@@ -1,5 +1,9 @@
 package oc.wh40k.units.or;
 
+import java.util.Set;
+
+import com.google.common.collect.ImmutableSet;
+
 import oc.BuildaHQ;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -40,7 +44,13 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
     private OptionsEinzelUpgrade broggsBuzzbom;
     private OptionsEinzelUpgrade daBadskullBanner;
     private OptionsEinzelUpgrade gitstoppaShells;
-
+    private OptionsEinzelUpgrade tezdreksStompaPowerField;
+    private OptionsEinzelUpgrade skargrimsSnazztrike;
+    private OptionsEinzelUpgrade daBlitzShouta;
+    
+    static final Set<String> CHARACTERS = ImmutableSet.of("Warboss", "Deffkilla Wartrike", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun", "Weirdboy", "Warboss in Mega Armour", "Warboss on Warbike", "Big Mek", "Big Mek on Warbike");
+    static final Set<String> PSYKERS = ImmutableSet.of("Weirdboy");
+    
     //
     boolean bigChoppaNK = false;
     boolean powerKlawNK = false;
@@ -103,11 +113,14 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             bigmek = defaults[3];
             meleeForRange = defaults[4];
             meleeForSouped = defaults[5];
-            character = defaults[6];
-            psyker = defaults[7];
+            //character = defaults[6];
+            //psyker = defaults[7];
         } catch (final Exception e) {
         }
 
+        character = CHARACTERS.contains(name);
+        psyker = PSYKERS.contains(name);
+        
         if (character) {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Super Cyborg Body", 0).setRelic(true));
             add(daLuckyStikk = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Lucky Stikk", 0).setRelic(true));
@@ -116,6 +129,10 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             add(daFixxerUpperz = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Fixxer Upperz", 0).setRelic(true));
             add(broggsBuzzbom = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Broggs Buzzbom", 0).setRelic(true));
             add(daBadskullBanner = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Badskull Banner", 0).setRelic(true));
+            add(tezdreksStompaPowerField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Tezdrek's Stompa Power Field", 0).setRelic(true));
+            add(skargrimsSnazztrike = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Skargrim's Snazztrik", 0).setRelic(true));
+            add(daBlitzShouta = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Da Blitz Shouta", 0).setRelic(true));
+            
             if (psyker) {
                 add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Scorched Gitbonez", 0).setRelic(true));
             }
@@ -164,9 +181,8 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
             powerKlawFK = true;
             bigChoppaFK = true;
         }
-        if (bigmek) {
-            ogE.addElement(new OptionsGruppeEintrag("Kustom force field", getPts("Kustom force field")));
-            ogE.addElement(new OptionsGruppeEintrag("Shokk attack gun", getPts("Shokk attack gun")));
+        if (name.equals("Big Mek with Shokk Attack Gun")) {
+           	ogE.addElement(new OptionsGruppeEintrag("Da Souped-Up Shokka", getPts("Shokk attack gun")));
         }
         if (killsawFK) {
             ogE.addElement(new OptionsGruppeEintrag("Killsaw", getPts("Killsaw")));
@@ -307,42 +323,45 @@ public class ORWaffenUndGeschenke extends RuestkammerVater {
 
     @Override
     public void refreshen() {
-    	if(buildaVater == BuildaHQ.aktBuildaVater) {
-	        if (!defaultFK.equals("no weapon") && !fkwaffen.isSelected()) {
-	            fkwaffen.alwaysSelected();
-	        }
-	        if (!defaultNK.equals("no weapon") && !handwaffen.isSelected()) {
-	            handwaffen.alwaysSelected();
-	        }
+        if (!defaultFK.equals("no weapon") && !fkwaffen.isSelected()) {
+            fkwaffen.alwaysSelected();
+        }
+        if (!defaultNK.equals("no weapon") && !handwaffen.isSelected()) {
+            handwaffen.alwaysSelected();
+        }
 
-	        if (character) {
-	            daLuckyStikk.setAktiv((chosenRelic == null || daLuckyStikk.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Goff"));
-	            morgogsFinkinCap.setAktiv((chosenRelic == null || morgogsFinkinCap.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Blood Axe"));
-	            rezmekkasRedderArmour.setAktiv((chosenRelic == null || rezmekkasRedderArmour.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Evil Sunz"));
-	            daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskulls"));
-	            broggsBuzzbom.setAktiv((chosenRelic == null || broggsBuzzbom.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Snakebites"));
-	            daBadskullBanner.setAktiv((chosenRelic == null || daBadskullBanner.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Freebooterz"));
-	            if (fkwaffen != null) {
-	                fkwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || fkwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
-	            }
-	            if (handwaffen != null) {
-	                handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
-	            }
+        if (character) {
+            daLuckyStikk.setAktiv((chosenRelic == null || daLuckyStikk.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Goff"));
+            morgogsFinkinCap.setAktiv((chosenRelic == null || morgogsFinkinCap.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Blood Axe"));
+            rezmekkasRedderArmour.setAktiv((chosenRelic == null || rezmekkasRedderArmour.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Evil Sunz"));
+            daFixxerUpperz.setAktiv((chosenRelic == null || daFixxerUpperz.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Deathskulls"));
+            broggsBuzzbom.setAktiv((chosenRelic == null || broggsBuzzbom.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Snakebites"));
+            daBadskullBanner.setAktiv((chosenRelic == null || daBadskullBanner.isSelected()) && BuildaHQ.aktBuildaVater.getFormationType().equals("Freebooterz"));
+            tezdreksStompaPowerField.setAktiv((chosenRelic == null || tezdreksStompaPowerField.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Stompa Mob"));
+            skargrimsSnazztrike.setAktiv((chosenRelic == null || skargrimsSnazztrike.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Kult of Speed"));
+            daBlitzShouta.setAktiv((chosenRelic == null || daBlitzShouta.isSelected()) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Blitz Brigade"));
+            
+            if (fkwaffen != null) {
+                fkwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || fkwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+                fkwaffen.setAktiv("Da Souped-Up Shokka", (chosenRelic == null || fkwaffen.isSelected("Da Souped-Up Shokka")) && BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Dread Waaagh"));
+            }
+            if (handwaffen != null) {
+                handwaffen.setAktiv("Da Gobshot Thunderbuss", (chosenRelic == null || handwaffen.isSelected("Da Gobshot Thunderbuss")) && BuildaHQ.aktBuildaVater.getFormationType().equals("Bad Moonz"));
+            }
 
-	            final boolean nkGitstoppa = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
-	            final boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
+            final boolean nkGitstoppa = handwaffen != null && (handwaffen.isSelected("Kombi-weapon with rokkit-launcha") || handwaffen.isSelected("Kombi-weapon with skorcha") || handwaffen.isSelected("Kustom shoota"));
+            final boolean fkGitstoppa = fkwaffen != null && (fkwaffen.isSelected("Kombi-weapon with rokkit-launcha") || fkwaffen.isSelected("Kombi-weapon with skorcha") || fkwaffen.isSelected("Kustom shoota"));
 
-	            gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
-	        }
+            gitstoppaShells.setAktiv((chosenRelic == null || gitstoppaShells.isSelected()) && (nkGitstoppa || fkGitstoppa));
+        }
 
-	        if (boyboss) {
-	            bosseCC2.setMaxAnzahl(bosseFK.isSelected() || bosseCC.isSelected() ? 0 : 1);
-	            bosseCC.setMaxAnzahl(2 - bosseFK.getAnzahl() - bosseCC2.getAnzahl() * 2);
-	            bosseFK.setMaxAnzahl(bosseCC2.isSelected() || bosseCC.getAnzahl() == 2 ? 0 : 1);
-	        } else if (warbikerboss) {
-	            bosseCC2.setMaxAnzahl(bosseCC.isSelected() ? 0 : 1);
-	            bosseCC.setMaxAnzahl(bosseCC2.isSelected() ? 0 : 2);
-	        }
-	    }
+        if (boyboss) {
+            bosseCC2.setMaxAnzahl(bosseFK.isSelected() || bosseCC.isSelected() ? 0 : 1);
+            bosseCC.setMaxAnzahl(2 - bosseFK.getAnzahl() - bosseCC2.getAnzahl() * 2);
+            bosseFK.setMaxAnzahl(bosseCC2.isSelected() || bosseCC.getAnzahl() == 2 ? 0 : 1);
+        } else if (warbikerboss) {
+            bosseCC2.setMaxAnzahl(bosseCC.isSelected() ? 0 : 1);
+            bosseCC.setMaxAnzahl(bosseCC2.isSelected() ? 0 : 2);
+        }
     }
 }
