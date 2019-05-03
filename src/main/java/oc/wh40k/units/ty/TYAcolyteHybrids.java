@@ -97,7 +97,7 @@ public class TYAcolyteHybrids extends Eintrag {
 
         rkBoss.setAbwaehlbar(false);
 
-
+        rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
 
         complete();
 
