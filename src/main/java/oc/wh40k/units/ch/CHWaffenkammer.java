@@ -99,7 +99,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                 if (noise)
                     ogE.addElement(new OptionsGruppeEintrag("Sonic blaster", getPts("Sonic blaster")));
                 if(havoc) {
-                	ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
+                	ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun")));
                 	ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
                 	ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
                 }
@@ -174,7 +174,7 @@ public class CHWaffenkammer extends RuestkammerVater {
                         ogE.addElement(new OptionsGruppeEintrag("Plague sword", getPts("Plague sword")));
                     } else {
                     	ogE.addElement(new OptionsGruppeEintrag("Chainaxe", getPts("Chainaxe")));
-                        if (!terminator) {
+                        if (!terminator && !havoc) {
                             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword")));
                         } else
                             ogE.addElement(new OptionsGruppeEintrag("Chainfist", getPts("Chainfist")));

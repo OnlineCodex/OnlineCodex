@@ -28,9 +28,6 @@ public class CHHavocs extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
-        ogE.addElement(new OptionsGruppeEintrag("Flamer", getPts("Flamer")));
-        ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
-        ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         o2.setAnzahl(0, 4);
@@ -48,11 +45,11 @@ public class CHHavocs extends Eintrag {
         rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, CHWaffenkammer.class, "Aspiring Champion", 1);
         ((CHWaffenkammer) rkBoss.getKammer()).setChampion(true);
         ((CHWaffenkammer) rkBoss.getKammer()).setHavoc(true);
+        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultCloceCombat("Chainsword");
+        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultRanged("Flamer");
         rkBoss.initKammer(true, true, true, true);
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
         rkBoss.setGrundkosten(getPts("Aspiring Champion"));
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultCloceCombat("Chainsword");
-        ((CHWaffenkammer) rkBoss.getKammer()).setDefaultRanged("Flamer");
         add(rkBoss);
         rkBoss.setAbwaehlbar(false);
 
