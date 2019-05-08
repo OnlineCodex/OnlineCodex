@@ -182,7 +182,7 @@ public class Warlordtraits extends RuestkammerVater {
 	    	ogE.addElement(new OptionsGruppeEintrag("Cult of the Damned: Exultant Preacher", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Daemonkin Ritualists: Shepherd of the true Faith", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Soulforged Pack: Master of the Soulforges", 0));
-	    	ogE.addElement(new OptionsGruppeEintrag("Host Raptoral: The tip of the Claw", 0));
+	    	ogE.addElement(new OptionsGruppeEintrag("Host Raptorial: The tip of the Claw", 0));
 	    	ogE.addElement(new OptionsGruppeEintrag("Legion of Skulls: Bloodblessed", 0));
 
 	    	ogE.addElement(new OptionsGruppeEintrag("Red Corsairs: Reaver Lord", 0));
@@ -559,7 +559,7 @@ public class Warlordtraits extends RuestkammerVater {
     		warlordtraits.setAktiv("Cult of the Damned: Exultant Preacher", specialDetachement.equals("Cult of the Damned"));
     		warlordtraits.setAktiv("Daemonkin Ritualists: Shepherd of the true Faith", specialDetachement.equals("Daemonkin Ritualists"));
     		warlordtraits.setAktiv("Soulforged Pack: Master of the Soulforges", specialDetachement.equals("Soulforged Pack"));
-    		warlordtraits.setAktiv("Host Raptoral: The tip of the Claw", specialDetachement.equals("Host Raptoral"));
+    		warlordtraits.setAktiv("Host Raptorial: The tip of the Claw", specialDetachement.equals("Host Raptorial"));
     		warlordtraits.setAktiv("Legion of Skulls: Bloodblessed", specialDetachement.equals("Legion of Skulls"));
 
     		warlordtraits.setAktiv("Red Corsairs: Reaver Lord", army.equals("Red Corsairs"));

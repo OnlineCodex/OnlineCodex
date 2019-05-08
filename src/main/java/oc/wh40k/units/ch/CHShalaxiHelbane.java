@@ -14,30 +14,22 @@ import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
-public class CHKeeperofSecrets extends Eintrag {
+public class CHShalaxiHelbane extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 	private final RuestkammerStarter psychicPowers;
 
-    public CHKeeperofSecrets() {
+    public CHShalaxiHelbane() {
         super(CHAOS, SLAANESH, DAEMON, CHARACTER, MONSTER, PSYKER, KEEPER_OF_SECRETS);
 
-        name = "Keeper of Secrets";
-        grundkosten = 0;
-        power = 13;
+        name = "Shalaxi Helbane";
+        grundkosten = getPts("Shalaxi Helbane");
+        power = 14;
 
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Keeper of Secrets with living whip", getPts("Keeper of Secrets with living whip")));
-        ogE.addElement(new OptionsGruppeEintrag("Keeper of Secrets with ritual knife", getPts("Keeper of Secrets with ritual knife")));
-        ogE.addElement(new OptionsGruppeEintrag("Keeper of Secrets with shining aegis", getPts("Keeper of Secrets with shining aegis")));
-        ogE.addElement(new OptionsGruppeEintrag("Keeper of Secrets with sinistrous hand", getPts("Keeper of Secrets with sinistrous hand")));
+        ogE.addElement(new OptionsGruppeEintrag("Living whip", getPts("Living whip")));
+        ogE.addElement(new OptionsGruppeEintrag("Shining aegis", getPts("Shining aegis")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         
-        seperator();
-
-        addWeapons(CHWaffenkammerCD.class, false);
-
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
@@ -51,7 +43,7 @@ public class CHKeeperofSecrets extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", SLAANESH);
+        addWarlordTraits("Slaanesh: Quicksilver Duelist", SLAANESH);
 
         complete();
 
