@@ -152,7 +152,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigung_Daemons_Nurgle = new String[]{"", "Feculent Gnarlmaws"};
 
     //Slaanesh
-    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "The Masque of Slaanesh", "Herald of Slaanesh", "Infernal Enrapturess", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
+    private static final String[] HQ_Daemons_Slaanesh = new String[]{"", "Keeper of Secrets", "Shalaxi Helbane", "The Masque of Slaanesh", "Herald of Slaanesh", "Infernal Enrapturess", "Syll'Esske", "The Contorted Epitome", "Herald of Slaanesh on Steed [INDEX]", "Herald of Slaanesh on Seeker Chariot [INDEX]", "Herald of Slaanesh on Exalted Seeker Chariot [INDEX]"};
     private static final String[] Elite_Daemons_Slaanesh = new String[]{"", "Fiends of Slaanesh"};
     private static final String[] Standard_Daemons_Slaanesh = new String[]{"", "Daemonettes"};
     private static final String[] Sturm_Daemons_Slaanesh = new String[]{"", "Seekers", "Hellflayer"};
@@ -168,7 +168,7 @@ public class VOLKChaos extends BuildaVater {
 
     private static final Set<String> LEGIONS = ImmutableSet.of("Alpha Legion", "Black Legion", "Emperor's Children", "Iron Warriors", "Night Lords", "World Eaters", "Word Bearers", "", "Red Corsairs", "Crimons Slaughter", "The Purge", "The Scourged", "Brazen Beasts", "Flawless Host", "Renegade Chapters");
     private static final Set<String> CHAOS_GODS = ImmutableSet.of("Khorne", "Tzeentch", "Nurgle", "Slaanesh");
-    public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptoral", "Fallen Angels", "Legion of Skulls");
+    public static final Set<String> CHAOS_SPECIAL_DETACHEMENTS = ImmutableSet.of("", "Bringers of Despair", "Devastation Battery", "Cult of the Damned", "Daemonkin Ritualists", "Soulforged Pack", "Host Raptorial", "Fallen Angels", "Legion of Skulls");
 
     public static Set<String> getLegions() {
     	return LEGIONS;

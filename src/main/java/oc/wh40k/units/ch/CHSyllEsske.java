@@ -3,9 +3,8 @@ package oc.wh40k.units.ch;
 import static oc.KeyWord.CHAOS;
 import static oc.KeyWord.CHARACTER;
 import static oc.KeyWord.DAEMON;
-import static oc.KeyWord.DAEMONETTE;
-import static oc.KeyWord.HERALD_OF_SLAANESH;
-import static oc.KeyWord.INFANTRY;
+import static oc.KeyWord.KEEPER_OF_SECRETS;
+import static oc.KeyWord.MONSTER;
 import static oc.KeyWord.PSYKER;
 import static oc.KeyWord.SLAANESH;
 
@@ -13,24 +12,21 @@ import oc.Eintrag;
 import oc.RuestkammerStarter;
 import oc.wh40k.units.PsychicPowers;
 
-public class CHHeraldofSlaanesh extends Eintrag {
+public class CHSyllEsske extends Eintrag {
 
 	private final RuestkammerStarter psychicPowers;
 
-    public CHHeraldofSlaanesh() {
-        super(CHAOS, SLAANESH, DAEMON, CHARACTER, INFANTRY, PSYKER, DAEMONETTE, HERALD_OF_SLAANESH);
-        name = "Herald of Slaanesh";
-        grundkosten = getPts("Herald of Slaanesh");
-        power = 4;
+    public CHSyllEsske() {
+        super(CHAOS, SLAANESH, DAEMON, CHARACTER, MONSTER, PSYKER, KEEPER_OF_SECRETS);
 
-        seperator();
-
-        addWeapons(CHWaffenkammerCD.class, false);
+        name = "Syll'Esske";
+        grundkosten = getPts("Syll Esske");
+        power = 11;
 
         seperator();
 
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
-        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(1);
+        ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableSlaanesh();
         ((PsychicPowers) psychicPowers.getKammer()).setSlaanesh(true);
         psychicPowers.initKammer();
@@ -40,8 +36,9 @@ public class CHHeraldofSlaanesh extends Eintrag {
 
         seperator();
 
-        addWarlordTraits("", SLAANESH);
+        addWarlordTraits("Slaanesh: Bewitching Aura", SLAANESH);
 
         complete();
+
     }
 }

@@ -45,9 +45,13 @@
 "Pink Horrors": 7
 "Kairos Fateweaver": 285
 "Karanak": 70
-"Keeper of Secrets": 165
+"Keeper of Secrets with living whip": 240
+"Keeper of Secrets with ritual knife": 240
+"Keeper of Secrets with shining aegis": 250
+"Keeper of Secrets with sinistrous hand": 240
 "Lord of Change": 270
 "Lord of Change with baleful sword": 275
+"The Contoreted Epitome": 195
 "The Masque of Slaanesh": 65
 "Nurglings": 18
 "Plague Drones": 40
@@ -57,6 +61,7 @@
 "Screamers": 28
 "Seeker Chariot": 50
 "Seeker": 15
+"Shalaxi Helbane": 260
 "Skarbrand": 330
 "Skull Altar": 100
 "Skull Cannon": 90
@@ -65,6 +70,7 @@
 "Sloppity Bilepiper": 60
 "Spoilpox Scrivener": 95
 "Soul Grinder": 180
+"Syll Esske": 210
 "Wrath of Khorne Bloodthirster": 240
 
 "Daemon Prince of Chaos": 146
@@ -299,6 +305,7 @@
 "Lasher tendrils": 12
 "Lightning claw single": 8
 "Lightning claw pair": 12
+"Living whip": 0
 "Mace of contagion": 7
 "Malefic talons single": 0
 "Malefic talons pair": 10
@@ -314,6 +321,7 @@
 "Power maul": 4
 "Power scourge": 35
 "Power sword": 4
+"Shining aegis": 10
 "Soulflayer tendrils": 0
 "Steed of Slaanesh's lashing tongue": 4
 "Tzaangor blades": 0
