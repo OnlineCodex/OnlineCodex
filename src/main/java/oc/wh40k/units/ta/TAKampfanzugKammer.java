@@ -41,7 +41,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private OptionsEinzelUpgrade gravInhibitorField;
 
     public TAKampfanzugKammer() {
-        grundkosten = 25;
+        grundkosten = 0;
     }
 
     static final Set<String> CHARACTERS = ImmutableSet.of("");
