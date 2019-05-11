@@ -1,13 +1,6 @@
 package oc.wh40k.units.ch;
 
-import static oc.KeyWord.CHAOS;
-import static oc.KeyWord.CHARACTER;
-import static oc.KeyWord.DAEMON;
-import static oc.KeyWord.DAEMON_PRINCE;
-import static oc.KeyWord.HERETIC_ASTARTES;
-import static oc.KeyWord.MONSTER;
-import static oc.KeyWord.THOUSAND_SONS;
-import static oc.KeyWord.TZEENTCH;
+import static oc.KeyWord.*;
 
 import oc.Eintrag;
 import oc.RuestkammerStarter;
@@ -18,7 +11,7 @@ public class CHDaemonPrinceofTzeentch extends Eintrag {
 	private final RuestkammerStarter psychicPowers;
 
     public CHDaemonPrinceofTzeentch() {
-    	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, DAEMON, TZEENTCH, CHARACTER, MONSTER, DAEMON_PRINCE);
+    	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, DAEMON, TZEENTCH, CHARACTER, MONSTER, DAEMON_PRINCE, PSYKER);
 
         name = "Daemon Prince of Tzeentch";
         grundkosten = getPts("Daemon Prince of Nurgle") + getPts("Malefic talons");

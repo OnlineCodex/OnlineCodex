@@ -32,7 +32,7 @@ public class IMThunderwolfCavalry extends Eintrag {
         seperator();
 
         ogE.addAll(IMSpaceWolvesMeleeWeapons.createRK("", "", buildaVater));
-        ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (others)")));
+        ogE.addElement(new OptionsGruppeEintrag("Storm shield", getPts("Storm shield (Thunderwolf Cavalry)")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
         o2.setAnzahl(0, 3);
 
