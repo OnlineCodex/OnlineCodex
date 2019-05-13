@@ -14,6 +14,7 @@ public class IMPrimarisLieutenants extends Eintrag {
 
     public IMPrimarisLieutenants() {
 
+    	name = "Primaris Lieutenants";
         add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Primaris Lieutenant", "Primaris Lieutenants", 1, 2, getPts("Primaris Lieutenants") + getPts("Bolt pistol (SM)") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)")));
 
         seperator();
