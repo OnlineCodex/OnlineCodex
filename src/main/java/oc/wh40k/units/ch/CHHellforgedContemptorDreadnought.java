@@ -13,7 +13,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
 	private final OptionsUpgradeGruppe oe3;
 	public CHHellforgedContemptorDreadnought() {
         name = "Hellforged Contemptor Dreadnought";
-        grundkosten = getPts("Helbrute");
+        grundkosten = getPts("Hellforged Contemptor Dreadnought");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosDreadnought.gif"));
 

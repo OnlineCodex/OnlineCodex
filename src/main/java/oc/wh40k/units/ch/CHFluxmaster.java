@@ -34,6 +34,7 @@ public class CHFluxmaster extends Eintrag {
         psychicPowers = new RuestkammerStarter(ID, randAbstand, cnt, PsychicPowers.class, "Psychic Powers");
         ((PsychicPowers) psychicPowers.getKammer()).setNumberOfPowers(2);
         ((PsychicPowers) psychicPowers.getKammer()).enableTzeentch();
+        ((PsychicPowers) psychicPowers.getKammer()).setTzeentch(true);
         psychicPowers.initKammer();
         psychicPowers.setUeberschriftTrotzNullKostenAusgeben(true);
         add(psychicPowers);

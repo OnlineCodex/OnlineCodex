@@ -20,7 +20,7 @@ public class CHFiendsofSlaanesh extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Gore Hounds", getPts("Blissbringer")));
+        ogE.addElement(new OptionsGruppeEintrag("Blissgiver", getPts("Blissgiver")));
         add(blissbringer = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         complete();
