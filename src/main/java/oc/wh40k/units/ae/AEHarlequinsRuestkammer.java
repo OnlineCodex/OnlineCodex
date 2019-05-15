@@ -94,6 +94,10 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Neuro disruptor", getPts("Neuro disruptor")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+            
+            ogE.addElement(new OptionsGruppeEintrag("Miststave", getPts("Miststave")));
+            addRelics();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
     	} else if(type.equals("Troupe Master")) {
             ogE.addElement(new OptionsGruppeEintrag("Shuriken pistol", getPts("Shuriken pistol (Harlequins)")));
@@ -168,12 +172,12 @@ public class AEHarlequinsRuestkammer extends RuestkammerVater {
     public void refreshen() {
 
     	if(type.equals("Troupe Master") ||
-    			type.equals("Solitaire")){
+    			type.equals("Solitaire") ||
+    			type.equals("Shadowseer")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     	}
-    	if(type.equals("Shadowseer") ||
-    			type.equals("Death Jester")){
+    	if(type.equals("Death Jester")){
     		o1.alwaysSelected();
     	}
 
