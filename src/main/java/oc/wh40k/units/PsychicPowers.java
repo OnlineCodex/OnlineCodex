@@ -8,7 +8,7 @@ public class PsychicPowers extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
-	private OptionsUpgradeGruppe o21, o22;
+	private OptionsUpgradeGruppe o21, o22, o23;
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
 	private boolean contagion = false;
@@ -31,6 +31,7 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean malefic = false;
     private boolean prayers = false;
     private boolean revenant = false;
+    private boolean phantasmancy = false;
 
     private boolean khorne = false;
     private boolean nurgle = false;
@@ -272,6 +273,16 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Ancestors Grace", 0));
             add(o22 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
+        
+        if (phantasmancy) {
+            ogE.addElement(new OptionsGruppeEintrag("Fog of Dreams", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mirror of Minds", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Shards of Light", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Twilight Pathways", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Veil of Tears", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Webway Dance", 0));
+            add(o23 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
 
         sizeSetzen();
     }
@@ -379,6 +390,10 @@ public class PsychicPowers extends RuestkammerVater {
     
     public void enableRevenant() {
     	revenant = true;
+    }
+    
+    public void enablePhantasmancy() {
+    	phantasmancy = true;
     }
 
     @Override

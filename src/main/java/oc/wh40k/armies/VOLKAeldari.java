@@ -368,6 +368,8 @@ public class VOLKAeldari extends BuildaVater {
                     "", "Starweaver"});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{
                     "", "Webway Gate"});
+            myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
+                    ""});
         } else if (getFormationType().equals("Ynnari")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Yvraine", "The Visarch", "The Yncarne",
