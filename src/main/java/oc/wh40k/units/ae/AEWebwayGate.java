@@ -14,7 +14,7 @@ public class AEWebwayGate extends Eintrag {
 
         name = "Webway Gate";
 
-        grundkosten = getPts("Webway Gates");
+        grundkosten = getPts("Webway Gate");
 
         power = 6;
 

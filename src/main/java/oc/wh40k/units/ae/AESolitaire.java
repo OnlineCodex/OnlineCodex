@@ -10,28 +10,24 @@ import oc.Eintrag;
 
 public class AESolitaire extends Eintrag {
 
-    public AESolitaire() {
-    	super(AELDARI, CHARACTER, HARLEQUINS, INFANTRY, SOLITAIRE);
+	public AESolitaire() {
+		super(AELDARI, CHARACTER, HARLEQUINS, INFANTRY, SOLITAIRE);
 
-        name = "Solitaire";
-        grundkosten = getPts("Solitaire") ;
-        power = 6;
+		name = "Solitaire";
+		grundkosten = getPts("Solitaire");
+		power = 6;
 
-        seperator();
+		seperator();
 
-        addWeapons(AEHarlequinsRuestkammer.class, true);
+		addWeapons(AEHarlequinsRuestkammer.class, true);
 
-        seperator();
+		complete();
 
-        addWarlordTraits("", true);
+	}
 
-        complete();
-
-    }
-
-    @Override
-    public void refreshen() {
-        setUnikat(true);
-    }
+	@Override
+	public void refreshen() {
+		setUnikat(true);
+	}
 
 }
