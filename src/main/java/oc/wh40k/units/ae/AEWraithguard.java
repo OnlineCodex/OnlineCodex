@@ -73,6 +73,7 @@ public class AEWraithguard extends Eintrag {
 
         o1.setPreis("D-scythes", getPts("D-scythe") * squad.getModelle());
 
+        o1.alwaysSelected();
     }
 
 }
