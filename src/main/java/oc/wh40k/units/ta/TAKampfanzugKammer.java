@@ -23,6 +23,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     public boolean uniqueError = false;
     private OptionsZaehlerGruppe o1;
     private OptionsUpgradeGruppe o2;
+    private OptionsZaehlerGruppe o3;
     private OptionsZaehlerGruppe o4;
     public OptionsUpgradeGruppe o5, o6/*, o7*/;
     private boolean XV08 = false;
@@ -129,9 +130,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fusion blaster", getPts("Fusion blaster")));
             ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
             ogE.addElement(new OptionsGruppeEintrag("Plasma rifle", getPts("Plasma rifle")));
-            if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
-                ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
-            } else {
+            if (!keywords.contains(KeyWord.XV86_COLDSTAR)) {
                 ogE.addElement(new OptionsGruppeEintrag("Cyclic ion blaster", getPts("Cyclic ion blaster")));
             }
             addRelics();
@@ -140,7 +139,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
                 o1.setMaxAnzahl(4);
                 if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
                 	o1.setAnzahl(4, 1);
-                	o1.setAnzahl(6, 1);
                 } else {
                 	o1.setAnzahl(1, 1);
                 	o1.setAnzahl(4, 1);
@@ -148,7 +146,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             } else {
             	o1.setAnzahl(1, 1);
             }
-
+            
+            if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
+	            ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
+	            addRelics();
+	            add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            o3.setAnzahl(0, 1);
+            }
+            
             seperator();
         }
 
@@ -257,12 +262,13 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Commander") && keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
-            final int selected = o2.getAnzahl() + o1.getAnzahl();
+            final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl();
             final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
-            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
+            o3.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
         }
 
         if (type.equals("Crisis Shas'ui")) {
