@@ -39,7 +39,7 @@ public class TADX4TechnicalDrones extends Eintrag {
 
     public void refreshen() {
 
-        power = squad.getModelle();
+        power = squad.getModelle()+1;
 
     }
 

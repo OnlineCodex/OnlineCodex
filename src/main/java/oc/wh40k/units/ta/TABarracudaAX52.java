@@ -46,6 +46,8 @@ public class TABarracudaAX52 extends Eintrag {
     	o1.alwaysSelected();
     	o2.alwaysSelected();
     	o3.alwaysSelected();
+    	
+    	power = 12;
     }
 
 }

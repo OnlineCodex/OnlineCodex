@@ -2,24 +2,24 @@ package oc.wh40k.units.ta;
 
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
-import oc.OptionsEinzelZaehler;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
-import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
-import oc.wh40k.units.ae.AEAutarchWeaponsDouble;
 
-public class TATigerSharkAX10 extends Eintrag {
+//[APO 2]
+
+public class TATigerSharkFighterBomber extends Eintrag {
 	private final OptionsUpgradeGruppe o1, o2, o3;
-	private final OptionsZaehlerGruppe o4;
 
-    public TATigerSharkAX10() {
-        name = "Tiger Shark AX-1-0";
-        grundkosten = getPts("Tiger Shark AX-1-0");
+    public TATigerSharkFighterBomber() {
+        name = "Tiger Shark";
+        grundkosten = getPts("Tiger Shark Figther-Bomber");
 
         add(ico = new oc.Picture("oc/wh40k/images/TigerShark.jpg"));
 
-        ogE.addElement(new OptionsGruppeEintrag("2 rail cannons", getPts("Rail cannon")*2));
+        ogE.addElement(new OptionsGruppeEintrag("2 ion cannons", getPts("Ion cannon")*2));
+        ogE.addElement(new OptionsGruppeEintrag("2 heavy burst cannon", getPts("Heavy burst cannon")*2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Swiftstrike railguns", getPts("Swiftstrike railgun")*2));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         
         seperator();
@@ -34,8 +34,7 @@ public class TATigerSharkAX10 extends Eintrag {
         
         seperator();
         
-        ogE.addElement(new OptionsGruppeEintrag("Seeker missiles", getPts("Seeker missile")));
-        add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 6));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "2 Skyspear missile racks", getPts("Skyspear missile rack")*2));
 
         seperator();
 
@@ -49,7 +48,7 @@ public class TATigerSharkAX10 extends Eintrag {
         o2.alwaysSelected();
         o3.alwaysSelected();
         
-        power = 30;
+        power = 21;
     }
 
 }

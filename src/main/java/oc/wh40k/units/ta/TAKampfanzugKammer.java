@@ -25,13 +25,16 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private OptionsUpgradeGruppe o2;
     private OptionsZaehlerGruppe o3;
     private OptionsZaehlerGruppe o4;
+    private OptionsZaehlerGruppe o7;
     public OptionsUpgradeGruppe o5, o6/*, o7*/;
     private boolean XV08 = false;
     private boolean XV81 = false;
     private boolean XV84 = false;
     public boolean farsight = false;
     private boolean droneSelected = false;
-
+    private boolean o3wasSelected = false;
+    private boolean o7wasSelected = false;
+    
     private OptionsEinzelUpgrade puretideEngramNeurochip;
     private OptionsEinzelUpgrade onagerGauntlet;
     private OptionsEinzelUpgrade multiSensoryDiscouragementArray;
@@ -115,14 +118,24 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         } else if (type.equals("Ghostkeel Shas'vre")) {
             ogE.addElement(new OptionsGruppeEintrag("Fusion collider", getPts("Fusion collider")));
             ogE.addElement(new OptionsGruppeEintrag("Cyclic ion raker", getPts("Cyclic ion raker")));
+            addRelics();
             add(o5 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o5.setSelected(0, true);
 
             ogE.addElement(new OptionsGruppeEintrag("2 Flamer", getPts("Flamer") * 2));
             ogE.addElement(new OptionsGruppeEintrag("2 Burst cannons", getPts("Burst cannon") * 2));
             ogE.addElement(new OptionsGruppeEintrag("2 Fusion blaster", getPts("Fusion blaster") * 2));
+            addRelics();
             add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o6.setSelected(0, true);
+        } else if(type.equals("XV9 Hazard Battlesuit")) {
+            ogE.addElement(new OptionsGruppeEintrag("Double-barrelled burst cannon", getPts("Double-barrelled burst cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Phased ion gun", getPts("Phased ion gun")));
+            ogE.addElement(new OptionsGruppeEintrag("Fusion cascade", getPts("Fusion cascade")));
+            ogE.addElement(new OptionsGruppeEintrag("Pulse submunitions rifle", getPts("Pulse submunitions rifle")));
+            add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+            o1.setAnzahl(0, 2);
+            
         } else if(!type.equals("Ethereal") && !type.equals("Cadre Fireblade")){
             ogE.addElement(new OptionsGruppeEintrag("Airbursting fragmentation projector", getPts("Airbursting fragmentation projector")));
             ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
@@ -135,14 +148,18 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
             addRelics();
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+            
             if (type.equals("Commander")) {
                 o1.setMaxAnzahl(4);
                 if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
-                	o1.setAnzahl(4, 1);
+                } else if (keywords.contains(KeyWord.XV81_CRISIS) ||
+                		keywords.contains(KeyWord.XV84_CRISIS)) {
+                	o1.setMaxAnzahl(3);
                 } else {
                 	o1.setAnzahl(1, 1);
                 	o1.setAnzahl(4, 1);
                 }
+
             } else {
             	o1.setAnzahl(1, 1);
             }
@@ -151,7 +168,41 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 	            ogE.addElement(new OptionsGruppeEintrag("High-output burst cannon", getPts("High-output burst cannon")));
 	            addRelics();
 	            add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            
+                ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
+	            addRelics();
+	            add(o7 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            
 	            o3.setAnzahl(0, 1);
+	            o7.setAnzahl(0, 1);
+	            
+	            o3wasSelected = true;
+	            o7wasSelected = true;
+            }
+            
+            if (keywords.contains(KeyWord.XV81_CRISIS)) {
+                ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
+	            addRelics();
+	            add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            
+                ogE.addElement(new OptionsGruppeEintrag("Missile pod", getPts("Missile pod")));
+	            addRelics();
+	            add(o7 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            
+	            o3.setAnzahl(0, 1);
+	            o7.setAnzahl(0, 1);
+	            
+	            o3wasSelected = true;
+	            o7wasSelected = true;
+            }
+            
+            if (keywords.contains(KeyWord.XV84_CRISIS)) {
+                ogE.addElement(new OptionsGruppeEintrag("Burst cannon", getPts("Burst cannon")));
+	            addRelics();
+	            add(o3 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
+	            o3.setAnzahl(0, 1);
+	            
+	            o3wasSelected = true;
             }
             
             seperator();
@@ -262,15 +313,70 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         if (type.equals("Commander") && keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
-            final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl();
+            o3.setMaxAnzahl(1);
+            o4.setMaxAnzahl(1);
+                        
+            final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl() + o7.getAnzahl();
             final int remaining = 4 - selected;
             o1.setMaxAnzahl(o1.getAnzahl() + remaining);
             o2.setMaxAnzahl(o2.getAnzahl() + remaining);
-            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
-            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
-            o3.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 2);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);
+            o3.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);    
+            o7.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2); 
+            
+            if(o7wasSelected && !o7.isSelected()) {
+            	o3.setAnzahl(0, 0);
+            	o7wasSelected = false;
+            }
+            if(o3wasSelected && !o3.isSelected()) {
+            	o7.setAnzahl(0, 0);
+            	o3wasSelected = false;
+            }
+            
+            if(!o7wasSelected && o7.isSelected()) {
+            	o3.setAnzahl(0, 1);
+            	o7wasSelected = true;
+            }
+            if(!o3wasSelected && o3.isSelected()) {
+            	o7.setAnzahl(0, 1);
+            	o3wasSelected = true;
+            }
+        }
+        
+        if (type.equals("Commander") && keywords.contains(KeyWord.XV81_CRISIS)) {
+            o1.setAktiv(true);
+            o2.setMaxAnzahl(2);
+            o3.setMaxAnzahl(1);
+            o4.setMaxAnzahl(1);
+                        
+            final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl() + o7.getAnzahl();
+            final int remaining = 3 - selected;
+            o1.setMaxAnzahl(o1.getAnzahl() + remaining);
+            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);
+            o3.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2);    
+            o7.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() + o7.getAnzahl() >= 2); 
+            
+            o7.setAnzahl(0, 1);
         }
 
+        if (type.equals("Commander") && keywords.contains(KeyWord.XV84_CRISIS)) {
+            o1.setAktiv(true);
+            o2.setMaxAnzahl(2);
+            o3.setMaxAnzahl(1);
+            o4.setMaxAnzahl(1);
+                        
+            final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl();
+            final int remaining = 2 - selected;
+            o1.setMaxAnzahl(o1.getAnzahl() + remaining);
+            o2.setMaxAnzahl(o2.getAnzahl() + remaining);
+            o1.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 1);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 1);
+            o3.setLegal(o1.getAnzahl() + o2.getAnzahl() + o3.getAnzahl() >= 1);    
+        }
+        
         if (type.equals("Crisis Shas'ui")) {
             final int selected = o1.getAnzahl() + o2.getAnzahl();
             final int remaining = 3 - selected;
@@ -305,6 +411,14 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setMaxAnzahl(1);
         }
 
+        if (type.equals("XV9 Hazard Battlesuit")) {
+            o1.setMaxAnzahl(2);
+            o2.setMaxAnzahl(1);
+
+            o1.setLegal(o1.getAnzahl() == 2);
+            o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
+        }
+        
         if(o4 != null) {
         	droneSelected = o4.isSelected();
         }
