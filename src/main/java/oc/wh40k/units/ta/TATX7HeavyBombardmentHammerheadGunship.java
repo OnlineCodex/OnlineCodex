@@ -1,22 +1,22 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
+import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
-import oc.RuestkammerVater;
+import oc.RuestkammerStarter;
 
-public class TATX7HammerheadKammer extends RuestkammerVater {
+public class TATX7HeavyBombardmentHammerheadGunship extends Eintrag {
 
 	private OptionsUpgradeGruppe o2;
 	private OptionsUpgradeGruppe o3;
-	public TATX7HammerheadKammer() {
-        name = "Hammerhai-Gefechtspanzer";
-        grundkosten = 125;
-    }
-
-    @Override
-    public void initButtons(boolean... defaults) {
-        add(ico = new oc.Picture("oc/wh40k/images/Hammerhai.gif"));
+	
+    public TATX7HeavyBombardmentHammerheadGunship() {
+        name = "TX7 Hammerhead Gunships";
+        überschriftSetzen = true;
+        grundkosten = getPts("TX7 Heavy Bombardment Hammerhead Gunship");
 
         seperator();
 
@@ -38,18 +38,13 @@ public class TATX7HammerheadKammer extends RuestkammerVater {
         add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
-
-        sizeSetzen();
     }
 
     @Override
     public void refreshen() {
         if (!o2.isSelected()) o2.setSelected(0, true);
         if (!o3.isSelected()) o3.setSelected(0, true);
-    }
-
-    @Override
-    public void deleteYourself() {
-        super.deleteYourself();
+        
+        power = 10;
     }
 }

@@ -1,46 +1,58 @@
 package oc.wh40k.units.ta;
 
+import java.util.Vector;
+
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 //[IA Experimental]
 
 public class TAXV109YvahraBattlesuit extends Eintrag {
 
+	private final Vector<RuestkammerStarter> rk;
+	private final OptionsZaehlerGruppe o5;
+	
 	public TAXV109YvahraBattlesuit() {
         name = "XV109 Y'vahra Battlesuit";
-        grundkosten = 230;
-
         überschriftSetzen = true;
+        grundkosten = 0;
 
-        add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("Schild-Raketendrohnen", 25));
-        ogE.addElement(new OptionsGruppeEintrag("Schilddrohnen", 12));
-        add(new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
+        add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Drohnensteuerung", 8));
-        ogE.addElement(new OptionsGruppeEintrag("Frühwarnsystem", "Frühwarn-Reaktivsystem", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Gegenfeuersystem", "Gegenfeuer-Abwehrsystem", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Zielsystem", "Hochentwickeltes Zielsystem", 3));
-        ogE.addElement(new OptionsGruppeEintrag("Luftzielverfolger", 20));
-        ogE.addElement(new OptionsGruppeEintrag("Multiple Zielerfassung", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Positionssender", 5));
-        ogE.addElement(new OptionsGruppeEintrag("Stimulanzinjektor", 35));
-        add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
+        rk = new Vector<RuestkammerStarter>();
+        for (int i = 0; i < 1; i++) {
+            rk.add(new RuestkammerStarter(ID, randAbstand, cnt, TAXV109YvahraKammer.class, "XV109 Y'vahra Battlesuit"));
+            rk.lastElement().initKammer(false, false, false, false, false, false, true);
+            rk.lastElement().setGrundkosten(getPts("XV109 Y'vahra Battlesuit"));
+            add(rk.lastElement());
+            rk.lastElement().setAbwaehlbar(false);
+        }
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Shielded missile drone", getPts("Shielded missile drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV52 shield drone", getPts("MV52 shield drone")));
+        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         complete();
     }
 
-    //@OVERRIDE
     @Override
-	public void refreshen() {
+    public void refreshen() {
+        o5.getPanel().setLocation(
+                (int) o5.getPanel().getLocation().getX(),
+                (int) rk.get(0).getPanel().getLocation().getY() + rk.get(0).getPanel().getSize().height + 5
+        );
+
+        power = 20;
+        if (o5.isSelected()) {
+            power += 2;
+        }
     }
 
 }

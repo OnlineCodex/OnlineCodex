@@ -4,12 +4,13 @@ import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
 
-public class TAXV104RiptideKammer extends RuestkammerVater {
+public class TAXV109YvahraKammer extends RuestkammerVater {
 
-	private OptionsUpgradeGruppe o1, o2;
-    public TAXV104RiptideKammer() {
-        name = "XV104 Riptide Battlesuit";
-        grundkosten = getPts("XV104 Riptide Battlesuit");
+	private OptionsUpgradeGruppe o1, o2, o3;
+	
+    public TAXV109YvahraKammer() {
+        name = "XV190 Y'vahra Battlesuit";
+        grundkosten = getPts("XV190 Y'vahra Battlesuit");
     }
 
     @Override
@@ -17,18 +18,21 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Smart missile systems", getPts("Smart missile system") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Plasma rifles", getPts("Plasma rifle") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Fusion blaster", getPts("Fusion blaster") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("Phased plasma-flamer", getPts("Phased plasma-flamer")));
         add(o1 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
         o1.setSelected(0, true);
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Burst cannon", "Heavy burst cannon", getPts("Heavy burst cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Ion accelerator", getPts("Ion accelerator")));
+        ogE.addElement(new OptionsGruppeEintrag("Ionic discharge cannone", "Ionic discharge cannone", getPts("Ionic discharge cannone")));
         add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
         o2.setSelected(0, true);
+
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Flachette pod", "Flachette pod", getPts("Flachette pod")));
+        add(o3 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
+        o3.setSelected(0, true);
 
         seperator();
 
@@ -50,6 +54,7 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
 	public void refreshen() {
         o1.setLegal(o1.isSelected());
         o2.setLegal(o2.isSelected());
+        o3.setLegal(o3.isSelected());
     }
 
 }

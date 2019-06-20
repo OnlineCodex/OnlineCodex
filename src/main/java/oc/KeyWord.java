@@ -237,5 +237,7 @@ public enum  KeyWord {
     COMMANDER,
     XV85_ENFORCER,
     XV86_COLDSTAR,
+    XV81_CRISIS,
+    XV84_CRISIS,
     ETHEREAL
 }

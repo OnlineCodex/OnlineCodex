@@ -16,7 +16,7 @@ public class TAHeavyGunDroneSquadron extends Eintrag {
         name = "Heavy Gun-Drone Team";
         grundkosten = 0;
 
-        HeavyGunDroneTeam = new AnzahlPanel(ID, randAbstand, cnt, "Heavy Gun-Drones", 2, 6, 25);
+        HeavyGunDroneTeam = new AnzahlPanel(ID, randAbstand, cnt, "Heavy Gun-Drones", 2, 6, getPts("Heavy Gun Drone"));
         add(HeavyGunDroneTeam);
 
         add(ico = new oc.Picture("oc/wh40k/images/HeavyGunDroneTeam.jpg"));
@@ -24,9 +24,9 @@ public class TAHeavyGunDroneSquadron extends Eintrag {
 
         seperator();
 
-        o1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "TL Burst cannon", "Twin-linked burst cannon", 2, 0);
+        o1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "2 Burst cannons", 2, getPts("Burst cannon")*2);
         add(o1);
-        o2 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Burst cannon +ML", "Burst cannon and markerlight", 2, 0);
+        o2 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "Burst cannon + Markerlight", "Burst cannon and markerlight", 2, getPts("Burst cannon") + getPts("Markerlight") );
         add(o2);
 
         complete();
@@ -38,6 +38,8 @@ public class TAHeavyGunDroneSquadron extends Eintrag {
         o1.setMaxAnzahl(HeavyGunDroneTeam.getModelle() - o2.getAnzahl());
         o1.setAnzahl(o1.getMaxAnzahl());
         o2.setMaxAnzahl(HeavyGunDroneTeam.getModelle());
+        
+        power = HeavyGunDroneTeam.getModelle() + 2;
     }
 
 }
