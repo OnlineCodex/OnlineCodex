@@ -13,7 +13,7 @@ public class TACommanderinXV81CrisisBattlesuit extends Eintrag {
     public TACommanderinXV81CrisisBattlesuit() {
     	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV81_CRISIS, JET_PACK, COMMANDER);
 
-        name = "Commander";
+        name = "Commander in XV81 Crisis Battlesuit";
         grundkosten = getPts("Commander in XV81 Crisis Battlesuit");
         überschriftSetzen = true;
 

@@ -10,9 +10,9 @@ public class VOLKTauEmpire extends BuildaVater {
     //private static final Logger LOGGER = LoggerFactory.getLogger(VOLKTauEmpire.class);
 
     //T'au Empire Vanilla //////////////////////////////////////////////////////////////////////////////////////////////////////////
-    private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit"/*nicht komplett*/, "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit"/*nicht komplett*/, "Cadre Fireblade"};
+    private static final String[] HQeinträge_Tau = new String[]{"", "Commander in XV8 Crisis Battlesuit", "Commander in XV85 Enforcer Battlesuit"/*nicht komplett*/, "Commander in XV86 Coldstar Battlesuit", "Cadre Fireblade"};
     private static final String[] HQeinträge_Tau_Ethereal = new String[]{"Ethereal"};
-    private static final String[] Standardeinträge_Tau = new String[]{"", "Strike Team"/*nicht komplett*/, "Breacher Team"/*nicht komplett*/};
+    private static final String[] Standardeinträge_Tau = new String[]{"", "Strike Team", "Breacher Team"};
     private static final String[] Eliteeinträge_Tau = new String[]{"", "XV25 Stealth Battlesuits", "XV8 Crisis Battlesuits"/*ist noch alt*/, "XV8 Crisis Bodyguards"/*ist noch alt*/, "XV95 Ghostkeel Battlesuits", "XV104 Riptide Battlesuits", "Firesight Marksman"};
     private static final String[] Sturmeinträge_Tau = new String[]{"", "Pathfinder Team", "TX4 Piranhas", "Tactical Drones"};
     private static final String[] Unterstützungeinträge_Tau = new String[]{"", "MV71 Sniper Drones", "TX78 Sky Ray Gunships", "TX7 Hammerhead Gunships", "XV88 Broadside Battlesuits" /*Broadside-Drohnen sind noch falsch*/};

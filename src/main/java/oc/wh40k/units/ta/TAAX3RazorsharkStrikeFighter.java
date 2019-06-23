@@ -28,6 +28,7 @@ public class TAAX3RazorsharkStrikeFighter extends Eintrag {
     // @OVERRIDE
     @Override
 	public void refreshen() {
+    	o2.alwaysSelected();
         o2.setLegal(o2.isSelected());
         power = 8;
     }

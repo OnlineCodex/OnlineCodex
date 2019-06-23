@@ -26,6 +26,7 @@ public class TAAX39SunSharkBomber extends Eintrag {
     // @OVERRIDE
     @Override
 	public void refreshen() {
+    	o2.alwaysSelected();
         o2.setLegal(o2.isSelected());
         power = 9;
     }
