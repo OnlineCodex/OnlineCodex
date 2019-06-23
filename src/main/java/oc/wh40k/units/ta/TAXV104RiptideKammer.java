@@ -48,6 +48,9 @@ public class TAXV104RiptideKammer extends RuestkammerVater {
     //@OVERRIDE
     @Override
 	public void refreshen() {
+    	o1.alwaysSelected();
+    	o2.alwaysSelected();
+    	
         o1.setLegal(o1.isSelected());
         o2.setLegal(o2.isSelected());
     }

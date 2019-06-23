@@ -34,6 +34,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private boolean droneSelected = false;
     private boolean o3wasSelected = false;
     private boolean o7wasSelected = false;
+    private boolean commander = false;
     
     private OptionsEinzelUpgrade puretideEngramNeurochip;
     private OptionsEinzelUpgrade onagerGauntlet;
@@ -91,6 +92,13 @@ public class TAKampfanzugKammer extends RuestkammerVater {
        	add(dynamicMirrorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Dynamic Mirror Field", 0).setRelic(true));
        	add(gravInhibitorField = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grav-Inhibitor Field", 0).setRelic(true));
 
+       	commander = type.equals("Commander in XV8 Crisis Battlesuit") ||
+       			type.equals("Commander in XV85 Enforcer Battlesuit") ||
+       			type.equals("Commander in XV86 Coldstar Battlesuit") ||
+       			type.equals("Commander in XV84 Crisis Battlesuit") ||
+       			type.equals("Commander in XV81 Crisis Battlesuit") ||
+       			type.equals("Commander in XV8 Crisis Battlesuit");
+       	
        	offsetX += buttonBreite + 15;
        	seperator();
 
@@ -149,7 +157,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             addRelics();
             add(o1 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 1));
             
-            if (type.equals("Commander")) {
+            if (commander) {
                 o1.setMaxAnzahl(4);
                 if (keywords.contains(KeyWord.XV86_COLDSTAR)) {
                 } else if (keywords.contains(KeyWord.XV81_CRISIS) ||
@@ -236,7 +244,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
         	addRelics();
         	add(o2 = new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 1));
 
-	        if (type.equals("Commander")) {
+	        if (commander) {
 	            o2.setMaxAnzahl(4);
 	        }
 
@@ -251,7 +259,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         seperator();
 
-        if (type.equals("Commander")) {
+        if (commander) {
             ogE.clear();
             ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
             ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
@@ -299,7 +307,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
         }
 
-        if (type.equals("Commander") && !keywords.contains(KeyWord.XV86_COLDSTAR)) {
+        if (commander && !keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(4);
             final int selected = o1.getAnzahl() + o2.getAnzahl();
@@ -310,7 +318,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
 
-        if (type.equals("Commander") && keywords.contains(KeyWord.XV86_COLDSTAR)) {
+        if (commander && keywords.contains(KeyWord.XV86_COLDSTAR)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);
@@ -344,7 +352,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             }
         }
         
-        if (type.equals("Commander") && keywords.contains(KeyWord.XV81_CRISIS)) {
+        if (commander && keywords.contains(KeyWord.XV81_CRISIS)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);
@@ -362,7 +370,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o7.setAnzahl(0, 1);
         }
 
-        if (type.equals("Commander") && keywords.contains(KeyWord.XV84_CRISIS)) {
+        if (commander && keywords.contains(KeyWord.XV84_CRISIS)) {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);

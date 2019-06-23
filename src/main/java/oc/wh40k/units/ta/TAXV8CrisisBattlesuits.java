@@ -17,15 +17,6 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
         überschriftSetzen = true;
         grundkosten = 0;
 
-        ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
-        ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
-        ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
-        add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-
-        seperator();
-
-        ogE.addElement(new OptionsGruppeEintrag("XV8-02 Iridium battlesuite", getPts("XV8-02 Crisis Iridium battlesuite")));
-        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -42,6 +33,18 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
             add(rk.lastElement());
         }
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("XV8-02 Iridium battlesuite", getPts("XV8-02 Crisis Iridium battlesuite")));
+        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+        
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
+        add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 16));
+        
         complete();
     }
 
@@ -52,9 +55,19 @@ public class TAXV8CrisisBattlesuits extends Eintrag {
         for (int i = 0; i < 9; i++) {
             krisisNumber += (rk.get(i).isSelected() && rk.get(i).isAktiv() ? 1 : 0);
         }
-
+   
         o4.setMaxAnzahl(krisisNumber * 2);
-
+        
+        o5.getPanel().setLocation(
+                (int) o5.getPanel().getLocation().getX(),
+                (int) rk.lastElement().getPanel().getLocation().getY() + rk.lastElement().getPanel().getSize().height + 5
+        );
+        
+        o4.getPanel().setLocation(
+                (int) o4.getPanel().getLocation().getX(),
+                (int) o5.getPanel().getLocation().getY() + o5.getPanel().getSize().height + 5
+        );
+        
         if (!ob1.isSelected()) {
             ((TAKampfanzugKammer) ob1.getKammer()).clearEntries();
         }
