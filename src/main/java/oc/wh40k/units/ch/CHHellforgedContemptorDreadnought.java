@@ -19,7 +19,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw")));
+        ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Hellforged chainclaw", getPts("Hellforged chainclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
@@ -31,7 +31,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         add(oe1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw")));
+        ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Hellforged chainclaw", getPts("Hellforged chainclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
@@ -80,6 +80,14 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         } else {
             oe1.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (single)"));
             oe3.setPreis("Hellforged chainclaw", getPts("Hellforged chainclaw (single)"));
+        }
+        
+        if (oe1.isSelected("Hellforged deathclaw") && oe3.isSelected("Hellforged deathclaw")) {
+            oe1.setPreis("Hellforged deathclaw", getPts("Hellforged deathclaw (pair)") / 2);
+            oe3.setPreis("Hellforged deathclaw", getPts("Hellforged deathclaw (pair)") / 2);
+        } else {
+            oe1.setPreis("Hellforged deathclaw", getPts("Hellforged deathclaw (single)"));
+            oe3.setPreis("Hellforged deathclaw", getPts("Hellforged deathclaw (single)"));
         }
 
         power = 8;
