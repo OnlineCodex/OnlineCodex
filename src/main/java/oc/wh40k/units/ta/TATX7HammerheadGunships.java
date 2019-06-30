@@ -8,19 +8,16 @@ import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerStarter;
 
-public class TALongstrike extends Eintrag {
+public class TATX7HammerheadGunships extends Eintrag {
 
 	private OptionsUpgradeGruppe o2;
 	private OptionsUpgradeGruppe o3;
 	
-    public TALongstrike() {
-        name = "Longstrike";
+    public TATX7HammerheadGunships() {
+        name = "TX7 Hammerhead Gunship";
         überschriftSetzen = true;
-        grundkosten = getPts("Longstrike");
-        power = 10;
+        grundkosten = getPts("TX7 Fire Support Hammerhead Gunship");
 
-        add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
-        
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Railgun", getPts("Railgun")));
@@ -42,17 +39,13 @@ public class TALongstrike extends Eintrag {
         add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
-
-        addWarlordTraits("T'au: Strength of Belief", true);
-
-        complete();
     }
 
     @Override
     public void refreshen() {
-        setUnikat(true);
+        if (!o2.isSelected()) o2.setSelected(0, true);
+        if (!o3.isSelected()) o3.setSelected(0, true);
         
-        o2.alwaysSelected();
-        o3.alwaysSelected();
+        power = 10;
     }
 }
