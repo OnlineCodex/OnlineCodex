@@ -18,11 +18,6 @@ public class TAXV95GhostkeelBattlesuits extends Eintrag {
 
         add(ico = new oc.Picture("oc/wh40k/images/KrisisKampfanzugteam.gif"));
         
-        add(o5 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "MV5 Stealth Drones", "MV5 Stealth Drones", getPts("MV5 Stealth Drone") * 2));
-        o5.setSelected(true);
-
-        seperator();
-
 //        rk = new Vector<RuestkammerStarter>();
 //        for (int i = 0; i < 1; i++) {
 //            rk.add(createTroopChampion(TAKampfanzugKammer.class, true, "Ghostkeel Shas'vre", "Ghostkeel Shas'vre"));
@@ -37,6 +32,10 @@ public class TAXV95GhostkeelBattlesuits extends Eintrag {
         
         seperator();
 
+        add(o5 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "MV5 Stealth Drones", "MV5 Stealth Drones", getPts("MV5 Stealth Drone") * 2));
+        o5.setSelected(true);
+
+        seperator();
 
         complete();
     }
