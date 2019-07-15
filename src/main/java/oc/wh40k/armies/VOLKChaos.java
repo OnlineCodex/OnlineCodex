@@ -72,10 +72,10 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] HQeinträge_World_Eaters = new String[]{"", "Kharn the Betrayer", "Lord Discordant on Helstalker", "Chaos Lord", "Chaos Lord in Terminator Armour", "Exalted Champion",
             "Dark Apostle", "Daemon Prince of Chaos", "Daemon Prince of Chaos with Wings", "Warpsmith", "Master of Possession", "Master of Executions",
             "", "Chaos Lord on Bike [INDEX]", "Chaos Lord on Juggernaut of Khorne [INDEX]"};
-    private static final String[] Eliteeinträge_World_Eaters = new String[]{"", "Fallen", "Plague Marines", "Noise Marines", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators", "Dark Disciples"};
+    private static final String[] Eliteeinträge_World_Eaters = new String[]{"", "Fallen", "Plague Marines", "Noise Marines", "Rubric Marines", "Chaos Terminators", "Chosen", "Possessed", "Helbrute", "Mutilators", "Dark Disciples", "Greater Possessed"};
     private static final String[] Standardeinträge_World_Eaters = new String[]{"", "Khorne Berzerkers", "Chaos Space Marines", "Chaos Cultists"};
     private static final String[] Sturmeinträge_World_Eaters = new String[]{"", "Chaos Bikers", "Raptors", "Warp Talons", "Chaos Spawn"};
-    private static final String[] Unterstützungseinträge_World_Eaters = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler"};
+    private static final String[] Unterstützungseinträge_World_Eaters = new String[]{"", "Chaos Land Raider", "Chaos Predator", "Chaos Vindicator", "Obliterators", "Havocs", "Forgefiend", "Maulerfiend", "Defiler", "Venomcrawler"};
     private static final String[] Transporteinträge_World_Eaters = new String[]{"", "Chaos Rhino"};
     private static final String[] Fliegereinträge_World_Eaters = new String[]{"", "Heldrake"};
     private static final String[] LOWeinträge_World_Eaters = new String[]{"", "Khorne Lord of Skulls"};
