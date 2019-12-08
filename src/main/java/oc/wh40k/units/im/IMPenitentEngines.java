@@ -20,7 +20,7 @@ public class IMPenitentEngines extends Eintrag {
         name = "Penitent Engines";
         grundkosten = 0;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Penitent Engines", 1, 3, getPts("Penitent Engines") + getPts("Heavy flamer (AMI)") * 2);
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Penitent Engines", 1, 6, getPts("Penitent Engines") + getPts("Heavy flamer (AMI)") * 2);
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Penitent flails", getPts("")));

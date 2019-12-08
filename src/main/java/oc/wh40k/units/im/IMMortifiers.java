@@ -21,7 +21,7 @@ public class IMMortifiers extends Eintrag {
         name = "Mortifiers";
         grundkosten = 0;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Mortifiers", 1, 3, getPts("Mortifiers"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Mortifiers", 1, 6, getPts("Mortifiers"));
         add(squad);
 
         ogE.addElement(new OptionsGruppeEintrag("Penitent flails", getPts("")));
