@@ -20,11 +20,11 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     static public Vector<OptionsGruppeEintrag> getRangedWeapons(BuildaVater bv) {
         final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Boltgun", bv.getPts("Boltgun (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", bv.getPts("Bolt pistol (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Condemnor boltgun", bv.getPts("Condemnor boltgun (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", bv.getPts("Combi-flamer (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", bv.getPts("Combi-melta (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-plasma", bv.getPts("Combi-plasma (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Condemnor boltgun", bv.getPts("Condemnor boltgun (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Storm bolter", bv.getPts("Storm bolter (AMI)")));
         return ogE;
     }
 
@@ -39,6 +39,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     static public Vector<OptionsGruppeEintrag> getPistols(BuildaVater bv) {
         final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", bv.getPts("Bolt pistol (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Hand flamer", bv.getPts("Hand flamer (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", bv.getPts("Plasma pistol (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Inferno Pistol", bv.getPts("Inferno Pistol (AMI)")));
         return ogE;
@@ -137,6 +138,16 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt pistol", true);
+        } else if(type.equals("Zephyrim Superior")){
+        	ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("power sword (AMI)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Zephyrim-Fahne", getPts("Zephyrim-Fahne")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Bolt pistol", true);
+
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (AMI)")));
+            ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o2.setSelected("Bolt pistol", true);
         }
 
         if(oe1 != null) {
@@ -177,6 +188,11 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         	} else {
         		o2.setAktiv(true);
         	}
+        } else if (type.equals("Zephyrim Superior")) {
+            o1.alwaysSelected();
+            o2.alwaysSelected();
+            
+            o1.setAktiv(1, o2.isSelected("Bolt pistol"));
         }
 
         if(character){
