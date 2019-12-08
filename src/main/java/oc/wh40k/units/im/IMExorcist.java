@@ -14,7 +14,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMExorcist extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMExorcist() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, VEHICLE, EXORCIST);
@@ -25,8 +25,14 @@ public class IMExorcist extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Exorcist missile launcher", getPts("Exorcist missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Exorcist-Feuerbrunstraketen", getPts("Exorcist-Feuerbrunstraketen")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI)")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AMI)")));
@@ -38,5 +44,6 @@ public class IMExorcist extends Eintrag {
     @Override
     public void refreshen() {
         o1.alwaysSelected();
+        o2.alwaysSelected();
     }
 }

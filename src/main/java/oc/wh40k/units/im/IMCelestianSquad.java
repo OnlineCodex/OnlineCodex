@@ -49,7 +49,8 @@ public class IMCelestianSquad extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Simulacrum Imperialis", getPts("Simulacrum Imperialis (AMI)")));
-
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Incensor-Cherub", getPts("Incensor-Cherub")));
+        
         seperator();
 
         add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));

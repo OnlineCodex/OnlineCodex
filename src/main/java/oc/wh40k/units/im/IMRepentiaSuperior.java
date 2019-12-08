@@ -10,12 +10,12 @@ import static oc.KeyWord.ORDER;
 
 import oc.Eintrag;
 
-public class IMMistressOfRepentance extends Eintrag {
+public class IMRepentiaSuperior extends Eintrag {
 
-    public IMMistressOfRepentance() {
+    public IMRepentiaSuperior() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, CHARACTER, INFANTRY, MISTRESS_OF_REPENTANCE);
         name = "Mistress of Repentance";
-        grundkosten = getPts("Mistress of Repentance") + getPts("Neural whips");
+        grundkosten = getPts("Repentia Superior") + getPts("Neural whips");
         power = 2;
 
         seperator();

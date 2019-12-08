@@ -92,14 +92,15 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Befestigung_Questor_Imperialis = new String[]{"", "Sacristan Forgeshrine"};
 
     //Adepta Sororitas
-    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Celestine", "Uriah Jacobus", "Canoness", "Missionary"};
+    private static final String[] HQeinträge_Adepta_Sororitas = new String[]{"", "Canoness", "Celestine", "Triumph of Saint Katherine", "Junith Eruita", "Missionary"};
     private static final String[] Standardeinträge_Adepta_Sororitas = new String[]{"", "Battle Sisters Squad"};
-    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Arco-Flagellants", "Celestian Squad", "Crusaders", "Death Cult Assassins",
-    																				"Dialogus", "Geminae Superia", "Hospitaller", "Mistress Of Repentance",
-    																				"Preacher", "Repentia Squad", "Imagifier [INDEX]"};
-    private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Seraphim Squad", "Dominion Squad"};
-    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Retributor Squad", "Exorcist", "Penitent Engines"};
+    private static final String[] Eliteeinträge_Adepta_Sororitas = new String[]{"", "Preacher", "Geminae Superia", "Repentia Superior", "Sisters Repentia", "Celestian Squad", 
+    																				"Zephyrim Squad", "Dialogus", "Hospitaller", "Imagifier", "Crusaders", "Death Cult Assassins", "Arco-Flagellants" 
+    																				};
+    private static final String[] Sturmeinträge_Adepta_Sororitas = new String[]{"", "Dominion Squad", "Seraphim Squad"};
+    private static final String[] Unterstützungseinträge_Adepta_Sororitas = new String[]{"", "Exorcist", "Mortifiers", "Retributor Squad", "Penitent Engines"};
     private static final String[] Transporteinträge_Adepta_Sororitas = new String[]{"", "Sororitas Rhino", "Immolator"};
+    private static final String[] Befestigung_Adepta_Sororitas = new String[]{"", "Battle Sanctum"};
 
     //Adeptus Ministorum
     private static final String[] HQeinträge_Adeptus_Ministorum = uniteUnitList(new String[]{"", "Uriah Jacobus"}, HQeinträge_Adepta_Sororitas);
@@ -793,6 +794,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adepta_Sororitas);
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigung_Adepta_Sororitas);
         } else if (getFormationType().equals("Adeptus Ministorum")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);

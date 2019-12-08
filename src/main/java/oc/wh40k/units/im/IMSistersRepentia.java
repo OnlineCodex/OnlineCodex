@@ -10,15 +10,15 @@ import static oc.KeyWord.REPENTIA_SQUAD;
 import oc.AnzahlPanel;
 import oc.Eintrag;
 
-public class IMRepentiaSquad extends Eintrag {
+public class IMSistersRepentia extends Eintrag {
 	private final AnzahlPanel squad;
 
-    public IMRepentiaSquad() {
+    public IMSistersRepentia() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, INFANTRY, REPENTIA_SQUAD);
         name = "Repentia Squad\n";
         grundkosten = 0;
         überschriftSetzen = true;
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentias", 3, 9, getPts("Repentia Squad") + getPts("Penitent eviscerator"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "Repentias", 4, 9, getPts("Sisters Repentia") + getPts("Penitent eviscerator"));
         add(squad);
 
         addToInformationVector(REPENTIA_SQUAD_CNT, 1);

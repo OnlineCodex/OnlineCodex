@@ -15,7 +15,7 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMImmolator extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
+	private final OptionsUpgradeGruppe o1, o2;
 
     public IMImmolator() {
     	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, VEHICLE, TRANSPORT, IMMOLATOR);
@@ -32,14 +32,19 @@ public class IMImmolator extends Eintrag {
 
         seperator();
 
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI)")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+                
+        seperator();
+        
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AMI)")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AMI)")));
-
+        
         complete();
     }
 
     @Override
     public void refreshen() {
         o1.alwaysSelected();
+        o2.alwaysSelected();
     }
 }

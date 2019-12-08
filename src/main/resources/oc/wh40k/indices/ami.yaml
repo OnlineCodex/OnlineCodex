@@ -1,28 +1,35 @@
-"Arco-flagellants": 15
+"Arco-flagellants": 13
 "Battle Sisters Squad": 9
 "Canoness": 45
-"Celestian Squad": 11
+"Celestian Squad": 10
 "Crusaders": 9
-"Death Cult Assassins": 17
-"Dialogus": 30
+"Death Cult Assassins": 13
+"Dialogus": 35
 "Dominion Squad": 10
-"Exorcist": 125
-"Geminae Superia": 21
-"Hospitaller": 30
-"Imagifier": 40
-"Immolator": 68
+"Exorcist": 90
+"Geminae Superia": 16
+"Hospitaller": 35
+"Imagifier": 45
+"Immolator": 70
 "Ministorum Priest": 35
-"Missionary": 35
-"Mistress of Repentance": 35
-"Penitent Engines": 72
-"Repentia Squad": 15
-"Retributor Squad": 9
+"Missionary": 38
+"Repentia Superior": 35
+"Penitent Engines": 28
+"Sisters Repentia": 13
+"Retributor Squad": 10
 "Seraphim Squad": 11
-"Sororitas Rhino": 73
+"Sororitas Rhino": 65
 "Celestine": 160
-"Celestine - Geminae Superia": 21
+"Celestine - Geminae Superia": 16
 "Uriah Jacobus": 50
-"Preacher": 25
+"Preacher": 30
+"Junith Eruita": 110
+"Triumph of Saint Katherine": 185
+"Battle Sanctum": 50
+"Zephyrim Squad": 13
+"Mortifiers": 36
+"Anchorite": 42
+
 
 "Autogun (AMI)": 0
 "Bolt pistol (AMI)": 0
@@ -31,10 +38,9 @@
 "Combi-melta (AMI)": 15
 "Combi-plasma (AMI)": 11
 "Condemnor boltgun (AMI)": 1
-"Exorcist missile launcher": 0
 "Flamer (AMI)": 6
 "Frag grenade (AMI)": 0
-"Hand flamer (AMI)": 3
+"Hand flamer (AMI)": 1
 "Heavy bolter (AMI)": 10
 "Heavy flamer (AMI)": 14
 "Hunter-killer missile (AMI)": 6
@@ -50,15 +56,17 @@
 "Storm bolter (AMI)": 2
 "Twin heavy bolter (AMI)": 17
 "Twin multi-melta (AMI)": 40
+"Exorcist-Feuerbrunstraketen": 40
+"Exorcist missile launcher": 70
 
-"Simulacrum Imperialis (AMI)": 10
+"Simulacrum Imperialis (AMI)": 5
 
 "Arco-flails": 0
 "Chainsword (AMI)": 0
 "Chirurgeon's tools": 0
 "Death Cult power blades": 0
 "Dialogus staff": 0
-"Eviscerator (AMI)": 12
+"Eviscerator (AMI)": 0
 "Neural whips": 0
 "Penitent buzz-blades": 0
 "Penitent eviscerator": 0
@@ -66,6 +74,13 @@
 "Power maul (AMI)": 4
 "Power sword (AMI)": 4
 "Storm shield (AMI)": 0
+"Sacred blade": 9
+"Amtsstab": 5
+"Nullstab": 12
+"Armorium-Cherub": 5
+"Incensor-Cherub": 5
+"Schale des heiligen Feuers": 8
+"Zephyrim-Fahne": 5
 
 "Null-Maiden Rhino": 70
 "Prosecutors": 10
