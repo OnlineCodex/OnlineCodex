@@ -501,6 +501,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 		rk.getKammer().setType(type);
         rk.initKammer();
         rk.setAbwaehlbar(!mandatoryChoice);
+        rk.setUeberschriftTrotzNullKostenAusgeben(true);
 
         return rk;
 	}

@@ -178,7 +178,7 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] LordofWar_Ultramarines = new String[]{"", "Roboute Guilliman", "Terminus Ultra",};
 
     //Imperial Fists
-    private static final String[] HQeinträge_Imperial_Fists = new String[]{"", "Captain Lysander"};
+    private static final String[] HQeinträge_Imperial_Fists = new String[]{"", "Captain Lysander", "Tor Garadon"};
 
     //Crimson Fists
     private static final String[] HQeinträge_Crimson_Fists = new String[]{"", "Pedro Kantor"};
@@ -192,7 +192,7 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] HQeinträge_Raven_Guard = new String[]{"", "Kayvaan Shrike"};
 
     //Salamanders
-    private static final String[] HQeinträge_Salamanders = new String[]{"", "Vulkan He'stan"};
+    private static final String[] HQeinträge_Salamanders = new String[]{"", "Vulkan He'stan", "Adrax Agatone"};
 
     //White Scars
     private static final String[] HQeinträge_White_Scars = new String[]{"", "Kor'sarro Khan", "Kor'sarro Khan on Moondrakkan"};
@@ -212,6 +212,9 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Sturmeinträge_Blood_Angels = new String[]{"", "Assault Squad BA", "Inceptor Squad", "Scout Bike Squad", "Bike Squad",
             "Attack Bike Squad", "Land Speeders"};
 
+    //Iron Hands
+    private static final String[] HQeinträge_Iron_Hands = new String[]{"", "Iron Father Feirros"};
+    
     //Dark Angels
     private static final String[] HQeinträge_Dark_Angels = new String[]{"", "Azrael", "Belial", "Sammael on Corvex", "Sammael in Sableclaw", "Interrogator-Chaplain", "Ravenwing Talonmaster",
             "Interrogator-Chaplain in Terminator Armour", "Interrogator-Chaplain on Bike", "Asmodai", "Ezekiel"};
@@ -278,7 +281,7 @@ public class VOLKImperium extends BuildaVater {
     //Adeptus Astartes
     private static final String[] HQeinträge_AA_komplett = uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_Imperial_Fists,
             HQeinträge_Crimson_Fists, HQeinträge_Black_Templars, HQeinträge_Raven_Guard, HQeinträge_Salamanders,
-            HQeinträge_White_Scars, HQeinträge_Blood_Angels, HQeinträge_Dark_Angels, HQeinträge_Space_Wolves,
+            HQeinträge_White_Scars, HQeinträge_Blood_Angels, HQeinträge_Iron_Hands, HQeinträge_Dark_Angels, HQeinträge_Space_Wolves,
             HQeinträge_Deathwatch, HQeinträge_Grey_Knights, HQeinträge_IA_AA);
     private static final String[] Standardeinträge_AA_komplett = uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars,
             Standardeinträge_Space_Wolves, Standardeinträge_Deathwatch, Standardeinträge_Grey_Knights);
