@@ -104,7 +104,7 @@
 "Land Raider Crusader": 200
 "Land Raider Redeemer": 180
 "Predator": 85
-"Repulsor Executioner": 85
+"Repulsor Executioner": 215
 "Stalker": 75
 "Thunderfire Cannon": 55
 "Thunderfire Cannon - Techmarine Gunner": 26
@@ -140,6 +140,7 @@
 "Assault cannon": 22
 "Astartes grenade launcher": 6
 "Astartes shotgun": 0
+"Bellicatus missile array": 17
 "Bolt pistol (SM)": 0
 "Bolt rifle": 0
 "Bolt sniper rifle": 3
@@ -172,6 +173,7 @@
 "Heavy bolt pistol": 0
 "Heavy flamer (SM)": 14
 "Heavy onslaught gatling cannon": 30
+"Heavy laser destroyer": 40
 "Heavy plasma cannon": 16
 "Heavy plasma incinerator": 17
 "Hunter killer missile (SM)": 6
@@ -179,6 +181,7 @@
 "Icarus ironhail heavy stubber": 6
 "Icarus rocket pod": 6
 "Icarus stormcannon": 10
+"Incendium cannon": 15
 "Ironhail heavy stubber": 6
 "Ironhail skytalon array": 5
 "Kheres pattern assault cannon": 22

@@ -12,10 +12,10 @@ import oc.ChooserGruppe;
 public class VOLKChaos extends BuildaVater {
 
     private static final String[] HQeinträge_Chaos_Space_Marines_FW = new String[]{"", "Zhufor The Impaler [FW]", "Lord Arkos [FW]", "Chaos Hellwright [FW]", "Chaos Hellwright On Dark Abeyant [FW]"};
-    private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator [FW]", "Hellforged Contemptor Dreadnought [FW]", "Hellforged Predator [FW]"};
+    private static final String[] Eliteeinträge_Chaos_Space_Marines_FW = new String[]{"", "Chaos Decimator [FW]", "Hellforged Contemptor Dreadnought [FW]", "Hellforged Predator [FW]", "Hellforged Sicaran [FW]"};
     private static final String[] Standardeinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] Sturmeinträge_Chaos_Space_Marines_FW = new String[]{"", "Blood Slaughterer of Khorne [FW]", "Greater Blight Drone [FW]", "Hellforged Dreadclaw Drop Pod [FW]", "Hellforged Kharybdis Assault Claw [FW]"};
-    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus [FW]", "Hellforged Land Raider Achilles [FW]", "Hellforged Scorpius [FW]", "Hellforged Sicarian [FW]",
+    private static final String[] Unterstützungseinträge_Chaos_Space_Marines_FW = new String[]{"", "Hellforged Land Raider Proteus [FW]", "Hellforged Land Raider Achilles [FW]", "Hellforged Scorpius [FW]",
     		"Hellforged Sicarian Venator [FW]","Hellforged Deredeo Dreadnought [FW]","Hellforged Rapier Battery [FW]","Hellforged Leviathan Dreadnought [FW]","Spined Chaos Beast [FW]"};
     private static final String[] Transporteinträge_Chaos_Space_Marines_FW = new String[]{"Terrax-Pattern Termite Assault Drill"};
     private static final String[] Fliegereinträge_Chaos_Space_Marines_FW = new String[]{"","Chaos Hell Blade [FW]","Chaos Hell Talon [FW]","Chaos Storm Eagle Assault Gunship [FW]","Chaos Fire Raptor Assault Gunship [FW]","Chaos Xiphon Interceptor [FW]"};

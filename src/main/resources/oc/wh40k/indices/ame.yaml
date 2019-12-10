@@ -37,10 +37,13 @@
 
 "Arc pistol": 1
 "Arc rifle": 2
+"Belleros energy cannon": 20
 "Cognis flamer": 7
 "Cognis heavy stubber": 2
+"Disruptor missile launcher": 0
 "Eradication beamer": 30
 "Eradication ray": 10
+"Ferrumite cannon": 25
 "Flechette blaster": 0
 "Galvanic rifle": 0
 "Gamma pistol": 10
@@ -68,6 +71,7 @@
 "Transuranic arquebus": 12
 "Twin cognis autocannon": 20
 "Twin cognis lascannon": 40
+"Twin cognis heavy stubber": 4
 "Twin heavy phosphor blaster": 30
 "Volkite blaster": 8
 
