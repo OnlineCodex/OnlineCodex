@@ -5,7 +5,7 @@
 
     <groupId>de.onlinecodex</groupId>
     <artifactId>online-codex</artifactId>
-    <version>8.17.6</version>
+    <version>8.17.7</version>
     <packaging>jar</packaging>
 
     <url>http://www.onlinecodex.de</url>
