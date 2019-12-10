@@ -1,39 +1,39 @@
-"Allarus Custodians": 65
+"Allarus Custodians": 60
 "Agamatus Custodians": 80
 "Aquilon Custodians": 60
 "Custodian Guard": 40
 "Custodian Wardens": 43
-"Shield Captain": 100
-"Shield-Captain in Allarus Terminator Armour": 110
+"Shield Captain": 90
+"Shield-Captain in Allarus Terminator Armour": 100
 "Shield-Captain on Dawneagle Jetbike": 150
 "Venerable Contemptor Dreadnought": 90
 "Contemptor-Achillus": 130
 "Contemptor-Exemplar": 150
 "Contemptor-Galatus": 155
 "Caladius Grav-tank": 100
-"Coronus Grav-carrier": 285
+"Coronus Grav-carrier": 200
 "Custodian Guard with Adrasite and Pyrthite Spears": 40
-"Venerable Land Raider": 217
+"Venerable Land Raider": 205
 "Vertus Praetors": 80
 "Vexilus Praetor": 80
-"Vexilus Praetor in Allarus Terminator Armour": 100
-"Captain-General Trajann Valoris": 185
+"Vexilus Praetor in Allarus Terminator Armour": 90
+"Captain-General Trajann Valoris": 180
 "Telemon Heavy Dreadnought": 180
-"Orion Assault Dropship": 280
+"Orion Assault Dropship": 320
 "Pallas Grav-attack": 75
 "Sagittarum Custodians": 40
-"Venatari Custodians": 48
+"Venatari Custodians": 40
 
 "Balistus grenade launcher": 0
-"Castellan axe": 14
+"Castellan axe": 11
 "Combi-bolter (AC)": 2
-"Guardian spear (AC)": 12
+"Guardian spear (AC)": 9
 "Galatus shield": 0
 "Galatus warblade": 0
 "Hunter-killer missile (AC)": 6
 "Hurrican bolter (AC)": 10
-"Kheres pattern assault cannon (AC)": 25
-"Multi-melta (AC)": 27
+"Kheres pattern assault cannon (AC)": 23
+"Multi-melta (AC)": 22
 "Salvo launcher": 15
 "Sentinel blade": 7
 "Storm bolter (AC)": 2
@@ -41,11 +41,11 @@
 "Twin lascannon (AC)": 50
 "Achillus dreadspear": 0
 "Adrasite spear": 13
-"Adrastus bolt caliver": 15
+"Adrastus bolt caliver": 10
 "Adrathic devastator": 15
 "Arachnus heavy blaze cannon": 50
 "Arachnus storm cannon": 40
-"Dreadnought combat weapon (AC)": 40
+"Dreadnought combat weapon (AC)": 20
 "Dreadnought combat weapon pair (AC)": 50
 "Interceptor lance": 0
 "Iliastus accelerator culverin": 25
@@ -54,8 +54,8 @@
 "Kinetic destroyer": 10
 "Lastrum bolt cannon": 12
 "Lastrum storm bolter": 5
-"Pyrithite spear": 20
-"Misericordia": 4
+"Pyrithite spear": 16
+"Misericordia": 3
 "Twin Arachnus las-blaze": 60
 "Twin Arachnus blaze cannon": 25
 "Twin Arachnus heavy blaze cannon": 100
@@ -66,14 +66,14 @@
 "Twin plasma projector": 15
 "Plasma ejector": 30
 "Storm shield (AC Characters)": 10
-"Storm shield (AC)": 10
+"Storm shield (AC)": 5
 "Solerite power gauntlet": 13
 "Solerite power talon": 9
 "Spiculus bolt launcher": 12
 "Spiculus heavy bolt launcher": 14
 "Venatari lance": 14
 "Vexilla Defensor": 20
-"Vexilla Imperius": 50
+"Vexilla Imperius": 20
 "Vexilla Magnifica": 30
 "Dreadnought combat weapon (AC pair)": 50
 "Heavy flamer (AC)": 17

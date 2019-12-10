@@ -1,14 +1,14 @@
 "Barbed Hierodule": 420
-"Biovores": 50
+"Biovores": 40
 "Broodlord": 115
 "Carnifex": 67
 "Dimachaeron": 200
-"Exocrine": 170
-"Gargoyles": 6
+"Exocrine": 155
+"Gargoyles": 5
 "Genestealers": 10
 "Harpy": 105
 "Harridan": 740
-"Haruspex": 178
+"Haruspex": 150
 "Hierophantbio-titan": 2000
 "Hive Crone": 135
 "Hive Guard": 18
@@ -23,7 +23,7 @@
 "Mucolid Spore": 20
 "Neurotrophe": 90
 "Pyrovores": 25
-"Raveners": 23
+"Raveners": 18
 "Ripper Swarms": 11
 "Scythed Hierodule": 350
 "Sky-slasher Swarms": 11
@@ -32,15 +32,15 @@
 "Sporocyst": 79
 "Stonecrusher Carnifex": 80
 "Termagants": 4
-"Tervigon": 180
+"Tervigon": 162
 "Thornbacks": 70
-"Toxicrene": 140
+"Toxicrene": 125
 "Trygon": 108
 "Trygon Prime": 138
 "Tyranid Prime": 70
 "Tyranid Shrikes": 26
-"Tyranid Warriors": 20
-"Tyrannocyte": 75
+"Tyranid Warriors": 18
+"Tyrannocyte": 50
 "Tyrannofex": 151
 "Tyrant Guard": 35
 "Venomthropes": 30
@@ -49,7 +49,7 @@
 "Old One Eye": 200
 "The Red Terror": 50
 "The Swarmlord": 250
-"Acid spray": 25
+"Acid spray": 20
 "Barbed strangler": 10
 "Bio-acid spray": 0
 "Bio-cannon": 0
@@ -72,9 +72,9 @@
 "Fleshborer hive": 15
 "Grasping tongue": 0
 "Heavy venom cannon": 18
-"Impaler cannon": 30
+"Impaler cannon": 25
 "Massive toxic lashes (FK)": 0
-"Rupture cannon": 49
+"Rupture cannon": 35
 "Shockcannon": 21
 "Spike rifle": 0
 "Spinefists (Ravener)": 1
@@ -108,10 +108,10 @@
 "Massive scything talons (Tervigon)": 10
 "Massive scything talons (Maleceptor)": 10
 "Massive scything talons (single)": 22
-"Massive scything talons (two or more pairs)(Tervigon)": 60
-"Massive scything talons (two or more pairs)(Maleceptor)": 60
+"Massive scything talons (two or more pairs)(Tervigon)": 10
+"Massive scything talons (two or more pairs)(Maleceptor)": 10
 "Massive scything talons (pair)": 60
-"Massive scything talons (Trygon)": 40
+"Massive scything talons (Trygon)": 30
 "Massive toxic lashes (NK)": 0
 "Monstrous acid maw": 10
 "Monstrous boneswords": 20
@@ -162,8 +162,8 @@
 "Tusks": 8
 
 "Abominant": 105
-"Aberrants": 16
-"Achilles Ridgerunner": 50
+"Aberrants": 19
+"Achilles Ridgerunner": 35
 "Atalan Jackals": 10
 "Atalan Wolfquads": 15
 "Acolyte Hybrids": 7
@@ -172,16 +172,16 @@
 "Brood Brother Heavy Weapon Squad": 6
 "Acolyte Iconward": 53
 "Clamavus": 55
-"Cult Armoured Sentinels": 40
+"Cult Armoured Sentinels": 30
 "Cult Chimera": 60
-"Cult Leman Russ": 122
+"Cult Leman Russ": 107
 "Cult Scout Sentinels": 30
 "Familiars": 12
 "Goliath Rockgrinder": 78
 "Goliath Truck": 50
-"Hybrid Metamorphs": 9
+"Hybrid Metamorphs": 7
 "Jackal Alphus": 70
-"Kelermorph": 60
+"Kelermorph": 75
 "Locus": 40
 "Magus": 80
 "Nexos": 50
@@ -198,10 +198,10 @@
 "Drilldozer blade": 0
 "Familiar claws": 0
 "Force stave": 0
-"Heavy improvised weapon": 10
+"Heavy improvised weapon": 25
 "Heavy power hammer": 16
 "Heavy rock cutter": 12
-"Heavy rock drill": 17
+"Heavy rock drill": 15
 "Heavy rock saw": 10
 "Heavy bolter (AM)": 8
 "Hypermorph tail": 0
@@ -209,7 +209,7 @@
 "Injector goad": 0
 "Lash whip and bonesword (GSC)": 5
 "Lascannon (AM)": 20
-"Metamorph claw": 4
+"Metamorph claw": 2
 "Metamorph talon": 1
 "Metamorph whip": 0
 "Missile launcher (AM)": 15
@@ -233,8 +233,8 @@
 "Blasting charges": 0
 "Bolt pistol": 1
 "Cache of demolition charges": 10
-"Clearance incinerator": 30
-"Demolition charges": 5
+"Clearance incinerator": 20
+"Demolition charges": 10
 "Eradicator nova cannon": 15
 "Exterminator autocannon": 17
 "Flamer": 6
@@ -242,11 +242,11 @@
 "Hand flamer": 1
 "Heavy bolter": 8
 "Heavy flamer": 14
-"Heavy mining laser": 25
+"Heavy mining laser": 15
 "Heavy mortar": 8
-"Heavy seismic cannon": 20
+"Heavy seismic cannon": 15
 "Heavy stubber": 2
-"Hunter-killer missile": 9
+"Hunter-killer missile": 6
 "Jackal sniper rifle": 0
 "Lascannon": 20
 "Lasgun": 0
@@ -254,8 +254,8 @@
 "Laspistol": 0
 "Liberator autostub": 0
 "Mining laser": 12
-"Missile launcher": 15
-"Mortar": 7
+"Missile launcher": 10
+"Mortar": 9
 "Multi-laser": 5
 "Multi-melta": 15
 "Needle pistol": 0
@@ -266,8 +266,8 @@
 "Storm bolter": 2
 "Twin autocannon": 20
 "Vanquisher battle cannon": 15
-"Web pistol": 3
-"Webber": 5
+"Web pistol": 1
+"Webber": 1
 "Augur array": 5
 "Cult icon": 10
 "Cult vox caster": 5

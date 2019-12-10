@@ -118,7 +118,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 
             ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (AMI)")));
             ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AMI)")));
-            ogE.addElement(new OptionsGruppeEintrag("Sacred blade", getPts("Sacred blade")));
+            ogE.addElement(new OptionsGruppeEintrag("Blessed blade", getPts("Blessed blade")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

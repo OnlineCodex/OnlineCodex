@@ -1,8 +1,8 @@
-"Land Raider Helios": 252
-"Relic Land Raider Proteus": 264
-"Land Raider Achilles": 270
-"Land Raider Prometheus": 290
-"Deimos Pattern Relic Predator": 90
+"Land Raider Helios": 195
+"Relic Land Raider Proteus": 200
+"Land Raider Achilles": 200
+"Land Raider Prometheus": 170
+"Deimos Pattern Relic Predator": 85
 "Infernum Pattern Razorback": 70
 "Deimos Pattern Vindicator Laser Destroyer": 183
 "Relic Sicaran Battle Tank": 155
@@ -14,28 +14,28 @@
 "Relic Cerberus Heavy Tank Destroyer": 680
 "Relic Spartan Assault Tank": 320
 "Relic Mastodon Super-heavy Siege Transport": 934
-"Chaplain Venerable Dreadnought": 120
-"Siege Dreadnought": 80
-"Mortis Dreadnought": 75
-"Relic Contemptor Dreadnought": 135
-"Contemptor Mortis Dreadnought": 106
+"Chaplain Venerable Dreadnought": 105
+"Siege Dreadnought": 70
+"Mortis Dreadnought": 60
+"Relic Contemptor Dreadnought": 110
+"Contemptor Mortis Dreadnought": 88
 "Relic Leviathan Dreadnought": 175
-"Relic Deredeo Dreadnought": 135
-"Land Speeder Tempest": 95
-"Relic Javelin Attack Speeder": 110
+"Relic Deredeo Dreadnought": 120
+"Land Speeder Tempest": 45
+"Relic Javelin Attack Speeder": 58
 "Thunderhawk Gunship": 1330
 "Thunderhawk Transporter": 1000
 "Sokar Pattern Stormbird": 2000
 "Storm Eagle Assault Gunship": 210
 "Storm Eagle Assault Gunship - ROC Pattern": 253
-"Fire Raptor Gunship": 190
+"Fire Raptor Gunship": 280
 "Caestus Assault Ram": 250
-"Xiphon Interceptor": 110
-"Whirlwind Hyperios": 90
+"Xiphon Interceptor": 130
+"Whirlwind Hyperios": 70
 "Relic Whirlwind Scorpius": 175
 "Lucius Pattern Dreadnought Drop Pod": 80
-"Deathstorm Drop Pod": 160
-"Damocles Command Rhino": 120
+"Deathstorm Drop Pod": 120
+"Damocles Command Rhino": 100
 "Tarantula Sentry Gun": 20
 "Rapier Weapons Battery Carrier": 20
 "Space Marine Gunners": 10
@@ -43,31 +43,31 @@
 "Castellum Stronghold": 550
 "Inquisitor-Lord Hector Rex": 100
 "Inquisitor-Lord Solomon Lok": 65
-"Lord High Commander Carab Culln": 200
-"Magister Sevrin Loth": 140
-"Tyberos the Red Wake": 205
-"Chaplain Dreadnought Titus": 170
-"Lieutenant-commander Anton Narveaz": 115
-"Captain Tarnus Vale": 120
-"Lias Issodon": 195
-"Malakim Phoros": 205
+"Lord High Commander Carab Culln": 140
+"Magister Sevrin Loth": 130
+"Tyberos the Red Wake": 150
+"Chaplain Dreadnought Titus": 130
+"Lieutenant-commander Anton Narveaz": 90
+"Captain Tarnus Vale": 90
+"Lias Issodon": 150
+"Malakim Phoros": 115
 "Captain Mordacai Blaylock": 135
-"Captain Pellas Mir'san": 130
-"Bray'arth Ashmantle": 400
+"Captain Pellas Mir'san": 95
+"Bray'arth Ashmantle": 325
 "Harath Shen": 75
 "Chief Librarian Ahazra Redth": 115
-"High Chaplain Thulsa Kane": 190
-"Lord Asterion Moloc": 200
-"Captain Corien Sumatris": 145
-"Captain Silas Alberec": 115
-"Arch-centurion Carnac Commodus": 85
-"Knight-Captain Elam Courbray": 120
-"Lugft Huron": 215
-"Armenneus Valthex": 140
-"Chaplain Ivanus Enkomi": 95
-"Vaylund Cal": 167
+"High Chaplain Thulsa Kane": 155
+"Lord Asterion Moloc": 150
+"Captain Corien Sumatris": 90
+"Captain Silas Alberec": 90
+"Arch-centurion Carnac Commodus": 70
+"Knight-Captain Elam Courbray": 100
+"Lugft Huron": 145
+"Armenneus Valthex": 80
+"Chaplain Ivanus Enkomi": 80
+"Vaylund Cal": 110
 "Captain Zhrukhal Androcles": 110
-"Hecaton Aiakos": 220
+"Hecaton Aiakos": 170
 "Storm bolter (IA)": 2
 "Hunter-killer missile (IA)": 6
 "Twin heavy bolter": 17
@@ -77,7 +77,7 @@
 "Heavy flamer": 14
 "Multi-melta": 22
 "Meltagun": 14
-"Kheres assault cannon": 25
+"Kheres assault cannon": 22
 "Bolt pistol": 0
 "Frag grenade": 0
 "Krak grenade": 0
@@ -96,7 +96,7 @@
 "Burning Wrath": 0
 "Catechist": 0
 "C-beam cannon": 30
-"Cyclonic melta lance": 75
+"Cyclonic melta lance": 60
 "Deathstorm cannon array": 0
 "Deathstorm missile array": 0
 "Dreadfire heavy flamer": 0
@@ -117,15 +117,15 @@
 "Kane's plasma pistol": 0
 "Laser destroyer": 60
 "Laser volley cannon": 0
-"Magna-melta cannon": 70
+"Magna-melta cannon": 50
 "Malice": 0
 "Masterwork plasma cutter": 0
-"Missile launcher": 25
+"Missile launcher": 20
 "Neutron pulse cannon": 0
 "Phased conversion beamer": 0
-"Plasma blastgun": 21
+"Plasma blastgun": 11
 "Plasma charger": 0
-"Plasma destroyer": 52
+"Plasma destroyer": 40
 "Punisher rotary cannon": 0
 "Purgator": 0
 "Quad heavy bolter": 36
@@ -147,7 +147,7 @@
 "Twin hellstrike missile launcher": 48
 "Twin magna-melta": 120
 "Twin volcano cannon": 0
-"Vengeance launcher": 25
+"Vengeance launcher": 20
 "Xiphon missile battery": 30
 "Dreadnought combat weapon": 40
 "Power fist": 9
@@ -166,14 +166,14 @@
 "Hellslayer": 0
 "Hunger": 0
 "Indynabula array": 0
-"Dreadnought combat weapon (single)": 40
-"Dreadnought combat weapon (pair)": 50
-"Dreadnought chainfist (single)": 38
-"Dreadnought chainfist (pair)": 48
-"Leviathan siege claw (single)": 55
-"Leviathan siege claw (pair)": 65
-"Leviathan siege drill (single)": 65
-"Leviathan siege drill (pair)": 75
+"Dreadnought combat weapon (single)": 20
+"Dreadnought combat weapon (pair)": 30
+"Dreadnought chainfist (single)": 30
+"Dreadnought chainfist (pair)": 40
+"Leviathan siege claw (single)": 20
+"Leviathan siege claw (pair)": 30
+"Leviathan siege drill (single)": 30
+"Leviathan siege drill (pair)": 40
 "Medusan hammer": 0
 "Power sabre": 0
 "Raptorclaw": 0
