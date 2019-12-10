@@ -25,7 +25,7 @@ public class IMExorcist extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Exorcist missile launcher", getPts("Exorcist missile launcher")));
-        ogE.addElement(new OptionsGruppeEintrag("Exorcist-Feuerbrunstraketen", getPts("Exorcist-Feuerbrunstraketen")));
+        ogE.addElement(new OptionsGruppeEintrag("Exorcist conflagration rockets", getPts("Exorcist conflagration rockets")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -36,7 +36,6 @@ public class IMExorcist extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (AMI)")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (AMI)")));
 
         complete();
     }

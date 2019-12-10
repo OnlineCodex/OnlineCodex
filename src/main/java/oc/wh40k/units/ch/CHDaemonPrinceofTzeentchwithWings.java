@@ -14,7 +14,7 @@ public class CHDaemonPrinceofTzeentchwithWings extends Eintrag {
     	super(CHAOS, HERETIC_ASTARTES, THOUSAND_SONS, DAEMON, TZEENTCH, CHARACTER, MONSTER, DAEMON_PRINCE, PSYKER);
 
         name = "Daemon Prince of Tzeentch with Wings";
-        grundkosten = getPts("Daemon Prince of Nurgle with Wings");
+        grundkosten = getPts("Daemon Prince of Tzeentch with Wings");
         power = 10;
 
         seperator();

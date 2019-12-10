@@ -4,12 +4,12 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHHellforgedSicarian extends Eintrag {
+public class CHHellforgedSicaran extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
-	public CHHellforgedSicarian() {
-        name = "Hellforged Sicarian";
-        grundkosten = getPts("Hellforged Sicarian");
+	private final OptionsUpgradeGruppe o1, o2;
+	public CHHellforgedSicaran() {
+        name = "Hellforged Sicaran";
+        grundkosten = getPts("Hellforged Sicaran");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
@@ -20,6 +20,12 @@ public class CHHellforgedSicarian extends Eintrag {
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
+        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        o2.setSelected(0, true);
+        
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolter", getPts("Heavy bolter") * 2));
@@ -56,7 +62,7 @@ public class CHHellforgedSicarian extends Eintrag {
     @Override
     public void refreshen() {
         o1.alwaysSelected();
-
+        o2.alwaysSelected();
         power = 14;
     }
 

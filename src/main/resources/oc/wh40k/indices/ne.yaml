@@ -1,39 +1,40 @@
-"Annihilation Barge": 100
+"Annihilation Barge": 90
 "Canoptek Scarabs": 13
-"Canoptek Spyders": 65
-"Canoptek Wraiths": 48
-"Catacomb Command Barge": 124
+"Canoptek Spyders": 45
+"Canoptek Wraiths": 42
+"Catacomb Command Barge": 105
 "Cryptek": 70
-"Deathmarks": 17
-"Destroyer Lord": 110
+"Deathmarks": 14
+"Destroyer Lord": 95
 "Destroyers": 30
 "Doom Scythe": 150
 "Doomsday Ark": 160
-"Flayed Ones": 17
-"Ghost Ark": 145
-"Heavy Destroyers": 30
+"Flayed Ones": 13
+"Ghost Ark": 120
+"Heavy Destroyers": 17
 "Immortals": 8
-"Lord": 65
-"Lychguard": 19
-"Monolith": 320
-"Night Scythe": 135
-"Obelisk": 380
-"Overlord": 84
+"Lord": 55
+"Lychguard": 17
+"Monolith": 300
+"Night Scythe": 115
+"Obelisk": 350
+"Overlord": 70
 "Tesseract Vault": 566
 "Tomb Blades": 14
-"Transcendent C'tan": 200
+"Transcendent C'tan": 180
 "Triarch Praetorians": 16
 "Triarch Stalker": 85
 "Warriors": 11
-"Anrakyr the Traveller": 167
-"C'tan Shard of the Deceiver": 225
-"C'tan Shard of the Nightbringer": 180
-"Illuminor Szeras": 120
-"Imotekh the Stormlord": 160
-"Nemesor Zahndrekh": 150
-"Orikan the Diviner": 115
+"Anrakyr the Traveller": 140
+"C'tan Shard of the Deceiver": 180
+"C'tan Shard of the Nightbringer": 155
+"Illuminor Szeras": 110
+"Imotekh the Stormlord": 140
+"Nemesor Zahndrekh": 125
+"Orikan the Diviner": 100
 "Trazyn the Infinite": 90
-"Vargard Obyron": 125
+"Vargard Obyron": 115
+
 "Death ray": 0
 "Doomsday cannon": 0
 "Gauss blaster": 7
@@ -41,13 +42,13 @@
 "Gauss flayer": 0
 "Gauss flayer array": 0
 "Gauss flux arc": 0
-"Heat ray": 40
+"Heat ray": 30
 "Heavy gauss cannon": 20
 "Particle beamer": 10
-"Particle caster": 4
-"Particle shredder": 30
+"Particle caster": 2
+"Particle shredder": 25
 "Particle whip": 0
-"Rod of covenant": 10
+"Rod of covenant": 4
 "Staff of light": 10
 "Synaptic disintegrator": 0
 "Tesla cannon": 13
@@ -55,8 +56,9 @@
 "Tesla destructor": 0
 "Tesla sphere": 0
 "Transdimensional beamer": 14
-"Twin heavy gauss cannon": 40
+"Twin heavy gauss cannon": 30
 "Twin tesla destructor": 0
+
 "Automaton claws": 0
 "Crackling tendrils": 0
 "Feeder mandibles": 0
@@ -64,10 +66,12 @@
 "Hyperphase sword": 3
 "Massive forelimbs": 0
 "Vicious claws": 0
-"Voidblade": 6
-"Voidscythe": 20
+
+"Voidblade": 4
+"Voidscythe": 12
 "Warscythe": 9
-"Whip coils": 9
+"Whip coils": 4
+
 "Canoptek cloak": 5
 "Chronometron": 15
 "Dispersion shield": 6
@@ -75,6 +79,6 @@
 "Gloom prism": 5
 "Nebuloscope": 2
 "Phylactery": 10
-"Resurrection orb": 35
+"Resurrection orb": 18
 "Shadowloom": 5
 "Shieldvanes": 3

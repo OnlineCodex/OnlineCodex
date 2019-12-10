@@ -1,72 +1,80 @@
-"Corpuscarii Electro-Priests": 14
+"Corpuscarii Electro-Priests": 12
 "Cybernetica Datasmith": 22
-"Fulgurite Electro-Priests": 16
+"Fulgurite Electro-Priests": 14
 "Ironstrider Ballistarii": 40
 "Kastelan Robots": 65
 "Kataphron Breachers": 20
 "Kataphron Destroyers": 15
 "Onager Dunecrawler": 70
 "Servitors (AME)": 5
-"Sicarian Infiltrators": 12
-"Sicarian Ruststalkers": 10
+"Sicarian Infiltrators": 11
+"Sicarian Ruststalkers": 9
 "Skitarii Rangers": 7
 "Skitarii Vanguard": 8
+"Scorpius Dunerider": 65
+"Scorpius Disintegrator": 85
 "Sydonian Dragoons": 59
-"Tech-Priest Dominus": 80
+"Tech-Priest Dominus": 70
 "Tech-Priest Enginseer": 30
+"Tech-Priest Manipulus": 65
 "Belisarius Cawl": 190
 
 "Arc claw": 4
 "Arc maul": 5
-"Chordclaw": 3
+"Chordclaw": 0
 "Electroleech stave": 0
 "Electrostatic gauntlets": 0
 "Hydraulic claw": 5
-"Kastelan fist": 25
+"Kastelan fist": 20
 "Omnissian axe": 0
 "Power fist (AME)": 9
 "Power sword (AME)": 4
 "Servo-arm (AME)": 0
 "Taser goad": 4
 "Taser lance": 9
-"Transonic blades": 4
+"Transonic blades": 2
 "Transonic razor": 2
 
-"Arc pistol": 3
-"Arc rifle": 4
+"Arc pistol": 1
+"Arc rifle": 2
+"Belleros energy cannon": 20
 "Cognis flamer": 7
 "Cognis heavy stubber": 2
+"Disruptor missile launcher": 0
 "Eradication beamer": 30
 "Eradication ray": 10
-"Flechette blaster": 2
+"Ferrumite cannon": 25
+"Flechette blaster": 0
 "Galvanic rifle": 0
 "Gamma pistol": 10
 "Heavy arc rifle": 6
 "Heavy bolter (AME)": 10
-"Heavy grav-cannon": 30
+"Heavy grav-cannon": 24
 "Heavy phosphor blaster": 15
-"Icarus array": 40
+"Icarus array": 30
 "Incendine combustor": 15
 "Laspistol (AME)": 0
 "Macrostubber": 2
-"Multi-melta (AME)": 27
-"Neutron laser": 45
-"Phosphor blast pistol": 3
+"Multi-melta (AME)": 22
+"Neutron laser": 35
+"Phosphor blast pistol": 1
 "Phosphor blaster": 6
-"Phosphor serpenta": 4
+"Phosphor serpenta": 2
 "Plasma caliver": 11
 "Plasma cannon (AME)": 16
 "Plasma culverin": 27
 "Radium carbine": 0
 "Radium jezzail": 4
 "Radium pistol": 0
-"Stubcarbine": 2
-"Torsion cannon": 20
-"Transuranic arquebus": 15
+"Stubcarbine": 0
+"Torsion cannon": 15
+"Transuranic arquebus": 12
 "Twin cognis autocannon": 20
 "Twin cognis lascannon": 40
+"Twin cognis heavy stubber": 4
 "Twin heavy phosphor blaster": 30
 "Volkite blaster": 8
+
 "Broad spectrum data-tether": 0
 "Enhanced data-tether": 5
 "Omnispex": 7
@@ -76,5 +84,5 @@
 "Arc lance": 0
 "Mag-inverter shield": 0
 
-"Secutarii Peltasts": 9
+"Secutarii Peltasts": 8
 "Galvanic caster": 0

@@ -1,80 +1,81 @@
-"Be'lakor": 240
-"Beast of Nurgle": 34
-"Bloodcrushers": 47
+"Be'lakor": 200
+"Beast of Nurgle": 30
+"Bloodcrushers": 40
 "Bloodletters": 7
 "Bloodmaster": 56
-"Bloodthirster of Insensate Rage": 260
-"Bloodthirster of Unfettered Fury": 240
-"The Blue Scribes": 75
-"Burning Chariot": 110
-"Changecaster": 65
+"Bloodthirster of Insensate Rage": 230
+"Bloodthirster of Unfettered Fury": 210
+"The Blue Scribes": 86
+"Burning Chariot": 100
+"Changecaster": 78
 "The Changeling": 100
-"Furies": 8
+"Furies": 7
 "Daemonettes": 6
 "Epidemius": 100
-"Exalted Seeker Chariot": 80
-"Exalted Flamer": 70
-"Fateskimmer": 130
+"Exalted Seeker Chariot": 70
+"Exalted Flamer": 50
+"Fateskimmer": 150
 "Feculent Gnarlmaws": 85
-"Fiends of Slaanesh": 42
-"Flamers": 25
+"Fiends of Slaanesh": 37
+"Flamers": 20
 "Flesh Hounds": 15
 "Gore Hounds": 24
-"Fluxmaster": 85
-"Great Unclean one with Bilesword and bileblade": 275
-"Great Unclean one with Bilesword and plague fail": 285
-"Great Unclean one with Doomsday bell and bileblade": 295
-"Great Unclean one with Doomsday bell and plague fail": 305
+"Fluxmaster": 99
+"Great Unclean one with Bilesword and bileblade": 240
+"Great Unclean one with Bilesword and plague fail": 250
+"Great Unclean one with Doomsday bell and bileblade": 250
+"Great Unclean one with Doomsday bell and plague fail": 260
 "Great Unclean One": 248
 "Hellflayer": 70
 "Herald of Khorne": 56
 "Blood Throne": 105
 "Herald of Khorne on Juggernaut": 100
 "Herald of Nurgle": 70
-"Herald of Slaanesh": 60
-"Herald of Slaanesh on Exalted Seeker Chariot": 140
-"Herald of Slaanesh on Seeker Chariot": 116
+"Herald of Slaanesh": 50
+"Herald of Slaanesh on Exalted Seeker Chariot": 120
+"Herald of Slaanesh on Hellflayer": 100
+"Herald of Slaanesh on Seeker Chariot": 90
 "Herald of Slaanesh on Steed": 82
 "Herald of Tzeentch": 78
 "Herald of Tzeentch on Disc": 99
 "Herald of Tzeentch on Burning Chariot": 130
-"Horticulous Slimux": 165
-"Infernal Enrapturess": 80
+"Horticulous Slimux": 150
+"Infernal Enrapturess": 70
 "Blue Horrors": 5
 "Pairs of Brimstone Horrors": 3
 "Pink Horrors": 7
-"Kairos Fateweaver": 285
+"Kairos Fateweaver": 250
 "Karanak": 70
-"Keeper of Secrets with living whip": 240
-"Keeper of Secrets with ritual knife": 240
-"Keeper of Secrets with shining aegis": 250
-"Keeper of Secrets with sinistrous hand": 240
-"Lord of Change": 270
+"Keeper of Secrets with living whip": 210
+"Keeper of Secrets with ritual knife": 210
+"Keeper of Secrets with shining aegis": 220
+"Keeper of Secrets with sinistrous hand": 210
+"Lord of Change": 250
 "Lord of Change with baleful sword": 275
 "The Contorted Epitome": 195
-"The Masque of Slaanesh": 65
+"The Masque of Slaanesh": 78
 "Nurglings": 18
-"Plague Drones": 40
-"Plaguebearers": 7
+"Plague Drones": 36
+"Plaguebearers": 8
 "Poxbringer": 70
-"Rotigus": 285
-"Screamers": 28
+"Rotigus": 250
+"Screamers": 23
 "Seeker Chariot": 50
 "Seeker": 15
-"Shalaxi Helbane": 260
-"Skarbrand": 330
+"Shalaxi Helbane": 220
+"Skarbrand": 290
 "Skull Altar": 100
-"Skull Cannon": 90
+"Skull Cannon": 80
 "Skulltaker": 84
 "Skullmaster": 90
 "Sloppity Bilepiper": 60
 "Spoilpox Scrivener": 95
 "Soul Grinder": 180
 "Syll Esske": 210
-"Wrath of Khorne Bloodthirster": 240
+"Wrath of Khorne Bloodthirster": 210
 
 "Daemon Prince of Chaos": 146
-"Daemon Prince of Chaos with Wings": 170
+"Daemon Prince of Chaos with Wings": 155
 
 "Daemonic Axe": 10
 "Hellforged sword": 10
@@ -94,20 +95,21 @@
 "Titanic feet": 0
 
 "Armiger autocannon": 5
-"Avenger gatling cannon": 75
+"Avenger gatling cannon": 85
 "Conflagration cannon": 0
 "Ironstorm missile pod": 16
 "Plasma decimator": 40
-"Rapid fire battle cannon": 100
+"Rapid fire battle cannon": 90
 "Stormspear rocket pod": 45
-"Thermal cannon": 76
-"Shieldbreaker missile": 12
+"Thermal cannon": 55
+"Shieldbreaker missile": 15
 "Thermal spear": 0
 "Thundercoil harpoon": 0
 "Twin Icarus autocannon": 20
 "Twin meltagun": 0
 "Twin siegebreaker cannon": 35
 "Volcano lance": 70
+"War Dog autocannon": 5
 
 "Chaos Bastion": 160
 
@@ -117,8 +119,8 @@
 "Chaos Bastions": 160
 
 "Chaos Bikers": 21
-"Chaos Cultists": 5
-"Chaos Land Raider": 200
+"Chaos Cultists": 4
+"Chaos Land Raider": 180
 "Chaos Lord": 74
 "Chaos Lord in Terminator Armour": 95
 "Chaos Lord on Bike": 113
@@ -127,84 +129,84 @@
 "Chaos Lord on Palanquin of Nurgle": 99
 "Chaos Lord on Steed of Slaanesh": 94
 "Chaos Lord with Jump Pack": 93
-"Chaos Predator": 90
-"Chaos Rhino": 70
-"Chaos Space Marines": 13
-"Chaos Spawn": 25
-"Chaos Terminators": 26
+"Chaos Predator": 85
+"Chaos Rhino": 65
+"Chaos Space Marines": 11
+"Chaos Spawn": 20
+"Chaos Terminators": 23
 "Chaos Vindicator": 125
-"Chosen": 14
+"Chosen": 12
 "Daemon Prince": 146
-"Daemon Prince with Wings": 170
-"Dark Apostle": 100
+"Daemon Prince with Wings": 155
+"Dark Apostle": 72
 "Dark Disciples": 5
 "Defiler": 120
 "Exalted Champion": 70
 "Exalted Sorcerer": 112
 "Exalted Sorcerer on Disc of Tzeentch": 132
-"Fallen": 14
+"Fallen": 11
 "Foetid Bloat-drone": 99
-"Forgefiend": 100
-"Greater Possessed": 70
+"Forgefiend": 80
+"Greater Possessed": 60
 "Havocs": 14
 "Helbrute": 60
 "Heldrake": 120
-"Khorne Berzerkers": 16
-"Khorne Lord of Skulls": 380
+"Khorne Berzerkers": 15
+"Khorne Lord of Skulls": 315
 "Lord of Contagion": 95
 "Lord Discordant on Helstalker": 150
-"Master of Possession": 82
-"Master of Executions": 70
+"Master of Possession": 80
+"Master of Executions": 60
 "Malignant Plaguecaster": 110
-"Maulerfiend": 120
+"Maulerfiend": 110
 "Mutalith Vortex Beast": 125
 "Mutilators": 35
-"Noctilith Crown": 100
-"Noise Marines": 15
+"Noctilith Crown": 80
+"Noise Marines": 13
 "Noxious Blightbringer": 50
-"Obliterators": 115
+"Obliterators": 95
 "Plague Marines": 16
-"Possessed": 20
+"Possessed": 17
 "Poxwalkers": 6
 "Raptors": 15
 "Rubric Marines": 16
 "Aspiring Sorcerer": 0
-"Scarab Occult Terminators": 30
+"Scarab Occult Terminators": 26
 "Scarab Occult Sorcerer": 0
-"Sorcerer": 90
-"Sorcerer (TS)": 95
-"Sorcerer in Terminator Armour": 102
+"Sorcerer": 80
+"Sorcerer (TS)": 80
+"Sorcerer in Terminator Armour": 100
 "Sorcerer on Bike": 130
 "Sorcerer on Disc of Tzeentch": 125
 "Sorcerer on Palanquin of Nurgle": 123
 "Sorcerer on Steed of Slaanesh": 115
-"Sorcerer with Jump Pack": 112
-"Tzaangors": 7
+"Sorcerer with Jump Pack": 108
+"Tzaangors": 8
 "Tzaangor Shaman": 82
-"Tzaangor Enlightened": 15
+"Tzaangor Enlightened": 13
 "Twistbray": 0
-"Venom Crawler": 130
-"Warp Talons": 12
+"Venom Crawler": 115
+"Warp Talons": 9
 "Warpsmith": 35
 
-"Abaddon the Despoiler": 240
+"Abaddon the Despoiler": 210
 "Ahriman": 131
 "Ahriman on Disc of Tzeentch": 166
 "Cypher": 80
-"Fabius Bile": 90
+"Fabius Bile": 80
 "Huron Blackheart": 105
 "Kharn the Betrayer": 120
 "Lucius the Eternal": 85
 "Magnus the Red": 445
-"Typhus": 175
-"Haarken Worldclaimer": 115
+"Typhus": 155
+"Haarken Worldclaimer": 92
 
 "Autocannon": 10
 "Autogun": 0
 "Autopistol": 0
-"Baleflamer": 30
+"Baleflamer": 20
 "Battle cannon": 0
-"Blastmaster": 20
+"Blastmaster": 12
 "Blight launcher": 10
 "Bolt pistol": 0
 "Boltgun": 0
@@ -212,7 +214,7 @@
 "Combi-flamer": 8
 "Combi-melta": 15
 "Combi-plasma": 11
-"Daemongore cannon": 71
+"Daemongore cannon": 50
 "Demolisher cannon": 0
 "Doom siren": 8
 "Ecotplasma cannon": 20
@@ -221,21 +223,21 @@
 "Fleshmetal guns": 0
 "Gorestorm cannon": 74
 "Hades autocannon": 20
-"Hades gatling cannon": 184
+"Hades gatling cannon": 90
 "Havoc launcher": 6
 "Heavy bolter": 10
 "Heavy bolter bastion": 10
 "Heavy flamer": 14
 "Heavy stubber": 2
-"Heavy warpflamer": 23
+"Heavy warpflamer": 17
 "Helbrute plasma cannon": 16
 "Hellfyre missile rack": 15
 "Ichor cannon": 58
 "Inferno bolt pistol": 0
-"Inferno boltgun": 2
+"Inferno boltgun": 0
 "Inferno combi-bolter": 3
 "Lascannon": 25
-"Magma cutter": 16
+"Magma cutter": 6
 "Meltagun": 14
 "Missile launcher": 20
 "Multi-melta": 22
@@ -248,7 +250,7 @@
 "Reaper autocannon": 10
 "Reaper chaincannon": 20
 "Shotgun": 0
-"Skullhurler": 98
+"Skullhurler": 60
 "Sonic blaster": 4
 "Soulreaper cannon": 10
 "Twin heavy bolter": 17
@@ -256,7 +258,7 @@
 "Twin lascannon": 40
 "Warp bolter": 3
 "Warpflame pistol": 3
-"Warpflamer": 10
+"Warpflamer": 8
 
 "Blight grenade": 0
 "Frag grenade": 0
@@ -293,8 +295,8 @@
 "Force sword": 8
 "Great cleaver of Khorne": 0
 "Great plague cleaver": 15
-"Helbrute fist": 30
-"Helbrute fist pair": 40
+"Helbrute fist": 20
+"Helbrute fist pair": 30
 "Helbrute hammer": 30
 "Heldrake claws": 17
 "Hellforged sword CSM": 10
@@ -303,8 +305,8 @@
 "Improvised weapons": 0
 "Juggernaut's bladed horn": 10
 "Lasher tendrils": 12
-"Lightning claw single": 8
-"Lightning claw pair": 12
+"Lightning claw single": 6
+"Lightning claw pair": 10
 "Living whip": 0
 "Mace of contagion": 7
 "Malefic talons single": 0
@@ -319,13 +321,13 @@
 "Power axe": 5
 "Power fist": 9
 "Power maul": 4
-"Power scourge": 35
+"Power scourge": 25
 "Power sword": 4
 "Shining aegis": 10
 "Soulflayer tendrils": 0
 "Steed of Slaanesh's lashing tongue": 4
 "Tzaangor blades": 0
-"Thunder hammer (Character)": 21
+"Thunder hammer (Character)": 40
 "Thunder hammer": 16
 "Brayhorn": 10
 "Familiar": 9
@@ -334,12 +336,15 @@
 "Blightlord Terminators": 34
 "Daemon Prince of Nurgle": 146
 "Daemon Prince of Nurgle with Wings": 170
-"Deathshroud Terminators": 35
+"Deathshroud Terminators": 25
 "Foul Blightspawn": 77
-"Myphitic Blight-haulers": 75
-"Plague Surgeon": 59
+"Myphitic Blight-haulers": 60
+"Plague Surgeon": 54
 "Plagueburst Crawler": 100
 "Tallyman": 50
+
+"Daemon Prince of Tzeentch": 146
+"Daemon Prince of Tzeentch with Wings": 185
 
 "Bile spurt": 0
 "Entropy cannon": 15
@@ -362,7 +367,7 @@
 "Chaos Decimator": 90
 "Plague Hulk of Nurgle": 210
 "Kytan Ravager": 330
-"Greater Brass Scorpion of Khorne": 650
+"Greater Brass Scorpion of Khorne": 550
 "Slaughter blade": 0
 "Decimator siege claw": 30
 "Warpsword": 0
@@ -370,13 +375,13 @@
 "Scorpion cannon": 0
 "Soulshatter bombard": 0
 "Twin hellmaw blasters": 0
-"Kytan gatling cannon": 184
+"Kytan gatling cannon": 80
 "Rot cannon": 0
 "Rancid vomit": 0
 "Hellflamer": 17
 "Decimator storm laser": 25
 "Soulburner petard": 60
-"Butcher cannon": 30
+"Butcher cannon": 25
 "C-beam cannon": 30
 "Blightreaper cannon": 18
 "Bile maw": 18
@@ -385,13 +390,13 @@
 "Hellforged Contemptor Dreadnought": 88
 "Hellforged Deredeo Dreadnought": 120
 "Hellforged Leviathan Dreadnought": 175
-"Hellforged Sicarian": 150
+"Hellforged Sicaran": 150
 "Hellforged Sicarian Venator": 150
-"Hellforged Predator": 95
+"Hellforged Predator": 85
 "Hellforged Scorpius": 175
 "Hellforged Spartan Assault Tank": 300
-"Hellforged Land Raider Proteus": 225
-"Hellforged Land Raider Achilles": 230
+"Hellforged Land Raider Proteus": 200
+"Hellforged Land Raider Achilles": 200
 "Hellforged Typhon Heavy Siege Tank": 700
 "Hellforged Cerberus Heavy Destroyer": 650
 "Hellforged Fellblade": 740
@@ -406,21 +411,21 @@
 "Grav-flux bombard": 65
 "Quad lascannon": 80
 "Laser destroyer": 60
-"Ectoplasma blaster": 21
+"Ectoplasma blaster": 11
 "Soulburner": 30
 "Kheres assault cannon": 25
 "Twin multi-melta": 54
 "Soulburner bombard": 90
 "Plasma destroyer": 52
 "Infernal flamestorm cannon": 45
-"Magna-melta cannon": 70
+"Magna-melta cannon": 50
 "Scorpius multi-launcher": 40
 "Twin accelerator autocannon": 0
 "Malignatas beam laser": 0
 "Ectoplasma battery": 40
-"Dual malignatas saker": 50
+"Dual malignatas saker": 40
 "Greater havoc launcher": 21
-"Ectoplasma cannon": 26
+"Ectoplasma cannon": 20
 "Quad heavy bolter": 36
 "Thermal jets": 0
 "Melta cutters": 0
@@ -435,20 +440,20 @@
 "Infernal hunger": 0
 "Eternal hunger": 0
 "Blade struts": 0
-"Hellforged deathclaw (single)": 30
-"Hellforged deathclaw (pair)": 40
-"Hellforged chainclaw (single)": 38
-"Hellforged chainclaw (pair)": 48
-"Hellforged siege claw (single)": 30
-"Hellforged siege claw (pair)": 40
-"Hellforged siege drill (single)": 40
-"Hellforged siege drill (pair)": 50
+"Hellforged deathclaw (single)": 20
+"Hellforged deathclaw (pair)": 30
+"Hellforged chainclaw (single)": 30
+"Hellforged chainclaw (pair)": 40
+"Hellforged siege claw (single)": 20
+"Hellforged siege claw (pair)": 30
+"Hellforged siege drill (single)": 30
+"Hellforged siege drill (pair)": 40
 "Hellfire veil": 35
 
-"Chaos Hell Blade": 110
+"Chaos Hell Blade": 90
 "Chaos Hell Talon": 180
 "Chaos Storm Eagle Assault Gunship": 210
-"Chaos Fire Raptor Assault Gunship": 190
+"Chaos Fire Raptor Assault Gunship": 280
 "Chaos Thunderhawk Assault Gunship": 1330
 "Chaos Sokar Pattern Stormbird Gunship": 2000
 "Chaos Xiphon Interceptor": 110
@@ -468,17 +473,17 @@
 "Twin avenger bolt cannon": 0
 "Baletalon shatter charges": 0
 
-"Zhufor the Impaler": 130
-"Necrosius the Undying": 120
+"Zhufor the Impaler": 120
+"Necrosius the Undying": 135
 "Lord Arkos": 105
 "Chaos Hellwright": 90
 "Chaos Hellwright on Dark Abeyant": 100
-"Voidcutter": 15
-"Soulburner pistol": 20
-"Warpfire lance": 35
+"Voidcutter": 0
+"Soulburner pistol": 0
+"Warpfire lance": 30
 "Pox pistol": 0
 "Demnos bolter": 0
-"Infernal axe": 8
+"Infernal axe": 0
 "Black Blade of Venom": 0
 "Tainted force blade": 0
 "Claw of Demnos": 0

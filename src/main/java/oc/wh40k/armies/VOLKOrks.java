@@ -122,7 +122,7 @@ public class VOLKOrks extends BuildaVater {
         if (getFormationType().equals("ORK")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Ghazghkull Thraka", "Kaptin Badrukk", "Boss Zagstruk", "Boss Snikrot",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
@@ -156,10 +156,11 @@ public class VOLKOrks extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa",
                     "", "Kill Tank [FW]", "Kustom Stompa [FW]", "Gargantuan Squiggoth [FW]",});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         } else if (getFormationType().equals("Goff")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Kaptin Badrukk", "Ghazghkull Thraka", "Boss Zagstruk",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
@@ -181,10 +182,11 @@ public class VOLKOrks extends BuildaVater {
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         } else if (getFormationType().equals("Blood Axe")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Kaptin Badrukk", "Boss Snikrot",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
@@ -205,10 +207,11 @@ public class VOLKOrks extends BuildaVater {
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         } else if (getFormationType().equals("Deathskulls")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Kaptin Badrukk",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
@@ -230,10 +233,11 @@ public class VOLKOrks extends BuildaVater {
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         } else if (getFormationType().equals("Evil Sunz")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
                     "", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Kaptin Badrukk",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]",
@@ -255,10 +259,11 @@ public class VOLKOrks extends BuildaVater {
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         } else if (getFormationType().equals("Snakebites") || getFormationType().equals("Bad Moonz") || getFormationType().equals("Freebooterz")) {
             myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{
             		"", "Warboss", "Deffkilla Wartrike",
-                    "", "Big Mek in Mega Armour", "Big Mek with Shokk Attack Gun",
+                    "", "Big Mek in Mega Armour", "Big Mek with Kustom Force Field", "Big Mek with Shokk Attack Gun",
                     "", "Weirdboy",
                     "", "Kaptin Badrukk",
                     "", "Warboss in Mega Armour [Index]", "Warboss on Warbike [Index]", "Big Mek [Index]", "Big Mek on Warbike [Index]"});
@@ -279,6 +284,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
                     "", "Stompa"});
+            myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{"", "Mekboy Workshop"});
         }
 
         if (formation != null) {

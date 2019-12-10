@@ -5,43 +5,45 @@
 "Big Mek in Mega Armour": 77
 "Big Mek on Warbike": 81
 "Big Mek with Shokk Attack Gun": 55
+"Big Mek with Kustom Force Field": 55
 "Blitza-bommer": 108
 "Bomb Squig": 10
 "Bonebreaka": 140
-"Boomdakka Snazzwagons": 95
+"Boomdakka Snazzwagons": 75
 "Boyz": 7
-"Burna Boyz": 12
+"Burna Boyz": 10
 "Burna-bommer": 102
 "Dakkajet": 88
-"Deff Dreads": 55
+"Deff Dreads": 45
 "Deffkilla Wartrike": 120
-"Deffkoptas": 30
-"Flash Gitz": 30
+"Deffkoptas": 20
+"Flash Gitz": 24
 "Gorkanaut": 250
 "Gretchin": 3
 "Grot Gunners": 2
 "Grot Oiler": 4
 "Grot Orderly": 4
 "Gunwagon": 140
-"Killa Kans": 40
+"Killa Kans": 30
 "Kommandos": 8
-"Kustom Boosta Blastas": 100
+"Kustom Boosta Blastas": 80
 "Lootas": 17
 "Meganobz": 20
-"Megatrakk Scrapjets": 90
+"Megatrakk Scrapjets": 80
 "Mek": 22
+"Mekboy Workshop": 80
 "Mek Gunz": 15
 "Morkanaut": 220
 "Nob with Waaagh! Banner": 75
 "Nobz": 14
-"Nobz on Warbikes": 38
+"Nobz on Warbikes": 33
 "Painboy": 52
 "Painboy on Warbike": 90
-"Rukkatrukk Squigbuggies": 140
+"Rukkatrukk Squigbuggies": 100
 "Runtherd": 35
-"Shokkjump Dragstas": 108
+"Shokkjump Dragstas": 90
 "Skorchas": 37
-"Stompa": 850
+"Stompa": 800
 "Stormboyz": 9
 "Tankbustas": 5
 "Trukk": 59
@@ -96,13 +98,13 @@
 "Shoota": 0
 "Shotgun": 0
 "Skorcha": 17
-"Skorcha missile": 20
+"Skorcha missile": 5
 "Slugga": 0
-"Smasha gun": 16
+"Smasha gun": 18
 "Snazzgun": 0
 "Squig bomb": 0
 "Squig launcha": 0
-"Stikkbomb chukka": 4
+"Stikkbomb chukka": 5
 "Stikkbomb flinga": 4
 "Stikkbombs": 0
 "Stikksquigs": 0

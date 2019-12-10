@@ -60,6 +60,14 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
         ogE.addElement(new OptionsGruppeEintrag("Multi-melta", bv.getPts("Multi-melta (AMI)")));
         return ogE;
     }
+    
+    static public Vector<OptionsGruppeEintrag> getSupportItems(BuildaVater bv) {
+        final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
+        ogE.addElement(new OptionsGruppeEintrag("Amtsstab", bv.getPts("Amtsstab")));
+        ogE.addElement(new OptionsGruppeEintrag("Nullstab", bv.getPts("Nullstab")));
+        ogE.addElement(new OptionsGruppeEintrag("Schale des heiligen Feuers", bv.getPts("Schale des heiligen Feuers")));
+        return ogE;
+    }
 
     public IMAdeptaSororitasRuestkammer() {
         grundkosten = 0;
@@ -101,16 +109,24 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 
         if (type.equals("Canoness")) {
         	ogE.addAll(getPistols(buildaVater));
-            ogE.addAll(getRangedWeapons(buildaVater));
+        	ogE.addElement(new OptionsGruppeEintrag("Condemnor boltgun", getPts("Condemnor boltgun (AMI)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun (AMI)")));
             addRelics();
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-            o1.setSelected("Bolt pistol", true);
 
             seperator();
 
-            ogE.addAll(getMeleeWeapons(buildaVater));
+            ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (AMI)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (AMI)")));
+            ogE.addElement(new OptionsGruppeEintrag("Blessed blade", getPts("Blessed blade")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+
+            ogE.addAll(getSupportItems(buildaVater));
+            addRelics();
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o3.setSelected("Chainsword", true);
+            
         } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
         	ogE.addAll(getPistols(buildaVater));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
@@ -179,15 +195,16 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             o2.alwaysSelected();
         } else if (type.equals("Canoness")) {
             o1.alwaysSelected();
+            o2.alwaysSelected();
+            
+            o3.setAktiv("Amtsstab", o1.isSelected("Boltgun") && o2.isSelected("Power sword"));
+            o3.setSelected("Amtsstab", o1.isSelected("Boltgun") && o2.isSelected("Power sword"));
+            o3.setAktiv("Nullstab", o2.isSelected("Chainsword"));
+            o3.setAktiv("Schale des heiligen Feuers", o2.isSelected("Chainsword"));
+            
         } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
         	o1.alwaysSelected();
-
-        	if(o3.isSelected()){
-        		o2.deactivateOthers("Boltgun");
-        		o2.setSelected("Boltgun", true);
-        	} else {
-        		o2.setAktiv(true);
-        	}
+        	o2.alwaysSelected();
         } else if (type.equals("Zephyrim Superior")) {
             o1.alwaysSelected();
             o2.alwaysSelected();

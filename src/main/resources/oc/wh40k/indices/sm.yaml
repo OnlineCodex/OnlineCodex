@@ -1,53 +1,54 @@
 "Captain": 74
+"Captain with Jump Pack": 93
 "Captain in Cataphractii Armour": 95
-"Captain in Gravis Armour": 95
-"Captain in Phobos Armour": 110
+"Captain in Gravis Armour": 90
+"Captain in Phobos Armour": 90
 "Captain in Terminator Armour": 95
 "Captain on Bike": 88
-"Captain with Jump Pack": 93
 "Chaplain": 72
 "Chaplain in Terminator Armour": 90
 "Chaplain on Bike": 95
 "Chaplain with Jump Pack": 90
-"Land Raider Excelsior": 300
-"Librarian": 88
-"Librarian in Phobos Armour": 100
-"Librarian in Terminator Armour": 102
+"Land Raider Excelsior": 200
+"Librarian": 80
+"Librarian in Phobos Armour": 90
+"Librarian in Terminator Armour": 100
 "Librarian on Bike": 119
-"Librarian with Jump Pack": 112
+"Librarian with Jump Pack": 108
 "Lieutenants": 60
 "Lieutenants with Jump Pack": 78
-"Lieutenant in Phobos Armour": 80
+"Lieutenant in Phobos Armour": 75
 "Master": 74
 "Master in Terminator Armour": 95
 "Master in Cataphractii Armour": 95
 "Master in Gravis Armour": 90
 "Master with Jump Pack": 93
 "Primaris Chaplain": 77
-"Primaris Librarian": 93
-"Primaris Lieutenants": 70
+"Primaris Librarian": 90
+"Primaris Lieutenants": 65
 "Primaris Master": 87
-"Primaris Apothecary": 68
+"Primaris Apothecary": 60
 "Primaris Captain": 78
-"Rhino Primaris": 100
+"Rhino Primaris": 70
 "Techmarine": 45
 "Techmarine on Bike": 70
 "Crusader Squad": 13
 "Crusader Squad - Neophyte": 11
 "Intercessor Squad": 17
 "Scout Squad": 11
-"Tactical Squad": 13
+"Tactical Squad": 12
 "Drop Pod": 63
-"Land Speeder Storm": 70
+"Impulsor": 75
+"Land Speeder Storm": 55
 "Razorback": 70
-"Rhino": 70
-"Repulsor": 185
-"Apothecary": 55
+"Rhino": 65
+"Repulsor": 215
+"Apothecary": 50
 "Apothecary on Bike": 80
 "Cataphractii Terminator Squad": 26
-"Centurion Assault Squad": 73
+"Centurion Assault Squad": 30
 "Centurion assault launcher": 0
-"Chapter Ancient": 85
+"Chapter Ancient": 95
 "Chapter Champion": 60
 "Company Ancient": 63
 "Company Ancient on Bike": 88
@@ -58,16 +59,19 @@
 "Contemptor Dreadnought": 88
 "Damned Legionnaires": 25
 "Dreadnought": 60
+"Invictor Tactical Warsuit": 90
 "Eliminator Squad": 18
 "Honour Guard": 21
 "Imperial Space Marine": 60
 "Ironclad Dreadnought": 70
 "Ironclad assault launchers": 5
+"Shield dome": 18
+"Incursor Squad": 19
 "Infiltrator Squad": 22
 "Infiltrator Helix Adept": 32
 "Primaris Ancient": 69
 "Redemptor Dreadnought": 105
-"Reiver Squad": 18
+"Reiver Squad": 16
 "Servitors": 5
 "Sternguard Veteran Squad": 14
 "Suppressor Squad": 18
@@ -78,66 +82,72 @@
 "Vanguard Veteran Squad": 14
 "Vanguard Veteran Squad with Jump Packs": 17
 "Venerable Dreadnought": 80
-"Victrix Honour Guard": 26
+"Victrix Honour Guard": 35
 "Aggressor Squad": 21
-"Assault Squad": 13
+"Assault Squad": 12
 "Assault Squad with Jump Packs": 15
 "Attack Bike Squad": 25
 "Bike Squad": 21
-"Bike Squad - Attack Bike": 35
+"Bike Squad - Attack Bike": 25
 "Inceptor Squad": 25
-"Land Speeders": 50
+"Land Speeders": 45
 "Scout Bike Squad": 21
 "Stormhawk Interceptor": 85
 "Stormraven Gunship": 192
-"Stormtalon Gunship": 110
+"Stormtalon Gunship": 100
 "Centurion Devastator Squad": 40
 "Devastator Squad": 13
 "Devastator Squad - Armorium Cherub": 5
 "Hellblaster Squad": 18
-"Hunter": 80
-"Land Raider": 200
+"Hunter": 75
+"Land Raider": 180
 "Land Raider Crusader": 200
 "Land Raider Redeemer": 180
-"Predator": 90
+"Predator": 85
+"Repulsor Executioner": 215
 "Stalker": 75
-"Thunderfire Cannon": 28
-"Thunderfire Cannon - Techmarine Gunner": 36
+"Thunderfire Cannon": 55
+"Thunderfire Cannon - Techmarine Gunner": 26
 "Vindicator": 125
-"Whirlwind": 70
+"Whirlwind": 65
 "Astraeus Super-heavy Tank": 500
-"Captain Lysander": 120
+"Captain Lysander": 130
 "Captain Sicarius": 110
 "Cenobyte Servitors": 2
 "Chaplain Cassius": 85
 "Chaplain Grimaldus": 90
-"Chief Librarian Tigurius": 115
+"Chief Librarian Tigurius": 130
 "The Emperor's Champion": 75
 "High Marshal Helbrecht": 150
-"Kayvaan Shrike": 150
-"Kor'sarro Khan": 90
+"Kayvaan Shrike": 130
+"Kor'sarro Khan": 105
 "Kor'sarro Khan on Moondrakkan": 132
+"Khan on Bike": 100
+"Iron Father Feirros": 110
 "Marneus Calgar": 200
 "Marneus Calgar in Artificer Armour": 235
 "Marneus Calgar in Armour of Heraclus": 200
 "Pedro Kantor": 150
-"Roboute Guilliman": 400
+"Tor Garadon": 140
+"Roboute Guilliman": 350
 "Sergeant Chronus": 30
 "Sergeant Telion": 65
-"Vulkan He'stan": 135
+"Adrax Agatone": 140
+"Vulkan He'stan": 130
 "Terminus Ultra": 250
-"Accelerator autocannon": 15
-"Assault bolter": 10
+"Accelerator autocannon": 10
+"Assault bolter": 8
 "Assault cannon": 22
 "Astartes grenade launcher": 6
 "Astartes shotgun": 0
+"Bellicatus missile array": 17
 "Bolt pistol (SM)": 0
 "Bolt rifle": 0
 "Bolt sniper rifle": 3
 "Boltgun (SM)": 0
 "Auto boltstorm gauntlets": 12
 "Boltstorm gauntlet": 22
-"Centurion missile launcher": 25
+"Centurion missile launcher": 20
 "Cerberus launcher": 0
 "Combi-bolter": 2
 "Combi-flamer": 8
@@ -145,24 +155,25 @@
 "Combi-melta": 15
 "Combi-plasma": 11
 "Conversion beamer": 20
-"Cyclone missile launcher": 38
+"Cyclone missile launcher": 32
 "Deathwind launcher": 5
 "Demolisher cannon (SM)": 0
 "Disintegration combi gun": 0
 "Disintegration pistol": 0
 "Flamer (SM)": 6
-"Flamestorm cannon": 30
-"Flamestorm gauntlets": 15
+"Flamestorm cannon": 25
+"Flamestorm gauntlets": 14
 "Frag grenade (SM)": 0
 "Fragstorm grenade launcher": 4
 "Grav-pistol": 8
-"Grav-cannon and grav amp": 28
-"Grav-gun": 12
+"Grav-cannon and grav amp": 20
+"Grav-gun": 10
 "Grenade harness": 0
 "Heavy bolter (SM)": 10
 "Heavy bolt pistol": 0
 "Heavy flamer (SM)": 14
 "Heavy onslaught gatling cannon": 30
+"Heavy laser destroyer": 40
 "Heavy plasma cannon": 16
 "Heavy plasma incinerator": 17
 "Hunter killer missile (SM)": 6
@@ -170,14 +181,17 @@
 "Icarus ironhail heavy stubber": 6
 "Icarus rocket pod": 6
 "Icarus stormcannon": 10
+"Incendium cannon": 15
 "Ironhail heavy stubber": 6
-"Kheres pattern assault cannon": 25
+"Ironhail skytalon array": 5
+"Kheres pattern assault cannon": 22
 "Krak grenade (SM)": 0
 "Krakstorm grenade launcher": 4
 "Las-talon": 40
 "Lascannon (SM)": 25
 "Auto bolt rifle": 1
 "Macro plasma incinerator": 31
+"Marksman bolt carbine": 0
 "Master crafted auto bolt rifle": 4
 "Master crafted boltgun": 3
 "Master crafted stalker bolt rifle": 5
@@ -187,8 +201,10 @@
 "Meltagun (SM)": 14
 "Missile launcher (SM)": 20
 "Multi-melta (SM)": 22
+"Occulus bolt carbine": 0
 "Onslaught gatling cannon": 16
 "Orbital array": 50
+"Orbital comms array": 18
 "Plasma blaster": 17
 "Plasma cannon (SM)": 16
 "Plasma cutter": 5
@@ -200,24 +216,26 @@
 "Reaper autocannon": 10
 "Reductor pistol": 0
 "Shock grenades": 0
-"Skyhammer missile launcher": 24
+"Skyhammer missile launcher": 20
 "Skyspear missile launcher": 0
 "Sniper rifle (SM)": 2
 "Stalker bolt rifle": 0
 "Stormstrike missile launcher": 21
 "Special issue boltgun": 2
 "Storm bolter (SM)": 2
-"Thunderfire cannon - weapon": 30
+"Thunderfire cannon - weapon": 0
 "Twin assault cannon": 44
 "Twin autocannon": 30
 "Twin boltgun": 2
 "Twin heavy bolter (SM)": 17
 "Twin heavy flamer (SM)": 34
 "Twin heavy plasma cannon": 24
+"Twin Icarus ironhail heavy stubber": 10
+"Twin ironhail autocannon": 20
 "Twin lascannon": 40
 "Twin multi-melta": 40
 "Twin plasma gun": 20
-"Typhoon missile launcher": 38
+"Typhoon missile launcher": 32
 "Volkite charger": 3
 "Whirlwind castellan launcher": 15
 "Whirlwind vengeance launcher": 20
@@ -227,15 +245,16 @@
 "Champion's blade": 0
 "Combat knife": 0
 "Crozius Arcanum": 0
-"Dreadnought chainfist": 38
+"Dreadnought chainfist": 28
 "Dreadnought combat weapon (Ironclad)": 0
-"Dreadnought combat weapon (other models)": 30
+"Dreadnought combat weapon (other models)": 20
+"Invictor fist": 0
 "Eviscerator": 11
 "Force axe": 10
 "Force stave": 8
 "Force sword": 8
-"Lightning claw (single)": 8
-"Lightning claw (pair)": 12
+"Lightning claw (single)": 6
+"Lightning claw (pair)": 10
 "Master crafted power sword": 6
 "Power axe (SM)": 5
 "Power fist (SM)": 9
@@ -244,23 +263,25 @@
 "Power sword (SM)": 4
 "Redemptor fist": 0
 "Relic-blade": 9
-"Seismic hammer": 40
+"Seismic hammer": 30
 "Servo-arm": 0
 "Siege drills": 0
-"Thunder hammer (Characters)": 21
+"Thunder hammer (Characters)": 40
 "Thunder hammer (others)": 16
 "Camo cloak": 3
-"Combat shield": 4
+"Combat shield": 1
 "Storm shield (Characters)": 10
 "Storm shield (others)": 2
 "Teleport homer": 0
 "Absolver bolt pistol": 0
-"Assault plasma incinerator": 17
+"Assault plasma incinerator": 15
 "Bolt carbine": 0
 "Auto launchers": 0
-"Auxiliary grenade launcher": 0
+"Auxiliary grenade launcher": 1
 "Grapnel launcher": 2
 "Grav-chute": 2
+"Haywire mine": 10
+"Infiltrator comms array": 10
 "Carvus hammer": 0
 "Las-ripper": 30
 "Plasma eradicator": 25

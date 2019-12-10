@@ -1,58 +1,59 @@
 "Autarch": 65
 "Autarch Skyrunner": 95
-"Autarch with Swooping Hawk Wings": 85
+"Autarch with Swooping Hawk Wings": 80
 "Autarch with Warp Jump Generator": 73
 "Bonesinger": 70
-"Crimson Hunter": 120
-"Crimson Hunter Exarch": 135
-"Dark Reapers": 12
+"Crimson Hunter": 128
+"Crimson Hunter Exarch": 150
+"Dark Reapers": 9
 "Dire Avengers": 8
-"Falcon": 110
+"Falcon": 100
 "Farseer": 110
 "Farseer Skyrunner": 130
-"Fire Dragons": 10
-"Fire Prism": 155
+"Fire Dragons": 8
+"Fire Prism": 140
 "Guardian Defenders": 8
 "Guardian Defenders - Heavy Weapon Platform": 5
 "Hemlock Wraithfighter": 200
-"Howling Banshees": 9
+"Howling Banshees": 7
 "Night Spinner": 110
 "Rangers": 12
-"Shining Spears": 24
-"Spiritseer": 65
+"Shining Spears": 20
+"Spiritseer": 55
 "Storm Guardians": 6
-"Striking Scorpions": 10
+"Striking Scorpions": 8
 "Swooping Hawks": 6
 "Vaul's Wrath Support Battery": 25
-"Vypers": 40
-"War Walkers": 40
-"Warlock": 55
-"Warlock Conclave": 45
-"Warlock Skyrunner": 65
-"Warlock Skyrunner Conclave": 60
-"Warp Spiders": 10
+"Vypers": 35
+"War Walkers": 35
+"Warlock": 45
+"Warlock Conclave": 35
+"Warlock Skyrunner": 60
+"Warlock Skyrunner Conclave": 48
+"Warp Spiders": 9
 "Wave Serpent": 120
 "Windriders": 16
 "Wraithblades": 29
 "Wraithguard": 23
-"Wraithknight": 315
-"Wraithlord": 85
-"Asurmen": 175
+"Wraithknight": 285
+"Wraithlord": 80
+"Asurmen": 150
 "Avatar of Khaine": 220
 "Baharroth": 110
-"Eldrad Ulthran": 135
-"Fuegan": 140
-"Illic Nightspear": 80
+"Eldrad Ulthran": 145
+"Fuegan": 125
+"Illic Nightspear": 65
 "Jain Zar": 115
 "Karandras": 125
 "Maugan Ra": 140
 "Prince Yriel": 70
+
 "Aeldari missile launcher": 20
 "Avenger shuriken catapult": 3
 "Bright lance": 20
 "Chainsabres": 16
-"D-cannon": 45
-"D-scythe": 20
+"D-cannon": 35
+"D-scythe": 14
 "Death spinner": 6
 "Doomweaver": 0
 "Dragon's breath flamer": 14
@@ -86,20 +87,21 @@
 "Sunrifle": 11
 "Tempest launcher": 27
 "Triskele": 9
-"Twin Aeldari missile launcher": 40
+"Twin Aeldari missile launcher": 35
 "Twin bright lance": 40
 "Twin scatter laser": 12
 "Twin shuriken cannon": 17
 "Twin shuriken catapult": 2
 "Twin starcannon": 24
-"Vibro cannon": 15
-"Wraithcannon": 15
+"Vibro cannon": 10
+"Wraithcannon": 10
+
 "Aeldari blade": 0
-"Biting blade": 5
+"Biting blade": 2
 "Chainsword": 0
 "Diresword": 4
 "Executioner": 7
-"Ghostaxe": 10
+"Ghostaxe": 4
 "Ghostglaive": 10
 "Ghostsword": 6
 "Mirrorswords": 4
@@ -115,12 +117,13 @@
 "Witch staff": 0
 "Wraithbone fists": 0
 "Wraithguard fists": 0
+
 "Banshee mask": 0
 "Crystal targeting matrix": 5
-"Forceshield": 6
+"Forceshield": 2
 "Mandiblaster": 0
-"Scattershield": 30
-"Shimmershield": 10
+"Scattershield": 15
+"Shimmershield": 5
 "Spirit stones": 10
 "Star engines": 10
 "Vectored engines": 10
@@ -133,7 +136,7 @@
 "Troupe": 13
 "Troupe Master": 70
 "Voidweavers": 68
-"Webway Gate": 120
+"Webway Gate": 90
 
 "Fusion pistol (Harlequins)": 7
 "Hallucinogen grenade launcher": 0

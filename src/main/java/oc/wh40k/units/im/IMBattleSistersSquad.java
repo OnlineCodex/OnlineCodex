@@ -54,6 +54,7 @@ public class IMBattleSistersSquad extends Eintrag {
         seperator();
 
         add(createTroopChampion(IMAdeptaSororitasRuestkammer.class, true, "Upgrade zur Prioris", "Sister Superior"));
+        
 
         complete();
     }
