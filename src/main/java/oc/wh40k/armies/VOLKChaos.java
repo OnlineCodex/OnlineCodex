@@ -22,7 +22,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Befestigungseinträge_Chaos_Space_Marines_FW = new String[]{""};
     private static final String[] LOWeinträge_Chaos_Space_Marines_FW = new String[]{"","Kytan Ravager [FW]","Greater Brass Scorpion Of Khorne [FW]","Hellforged Spartan Assault Tank [FW]","Hellforged Cerberus Heavy Destroyer [FW]","Hellforged Typhon Heavy Siege Tank [FW]","Hellforged Fellblade [FW]",
             "Hellforged Falchion [FW]","Hellforged Mastodon [FW]","Chaos Thunderhawk Assault Gunship [FW]","Chaos Sokar Pattern Stormbird Gunship [FW]",
-            "Renegade Knight Acheron [FW]","Renegade Knight Lancer [FW]","Renegade Knight Castigator [FW]","Renegade Knight Atropos [FW]","Renegade Knight Magaera [FW]","Renegade Knight Porphyrion [FW]","Renegade Knight Styrix [FW]","","Chaos Warlord Battle Titan [FW]","Chaos Reaver Battle Titan [FW]", "Chaos Warhound Scout Titan [FW]"};
+            "Cerastus Knight Acheron [FW]","Cerastus Knight Lancer [FW]","Cerastus Knight Castigator [FW]","Cerasatus Knight Atropos [FW]","Questoris Knight Magaera [FW]","Acastus Knight Porphyrion [FW]","Questoris Knight Styrix [FW]","","Chaos Warlord Battle Titan [FW]","Chaos Reaver Battle Titan [FW]", "Chaos Warhound Scout Titan [FW]"};
 
     private static final String[] HQeinträge_Daemons_FW = new String[]{"","Uraka The Warfiend [FW]","Samus [FW]","Mamon Transfigured [FW]","Corbax Utterblight [FW]"};
     private static final String[] Sturmeinträge_Daemons_FW = new String[]{"","Plague Toads Of Nurgle [FW]","Pox Riders Of Nurgle [FW]"};
@@ -121,7 +121,7 @@ public class VOLKChaos extends BuildaVater {
     private static final String[] Unterstüzungseinträge_Questor_Traitoris = new String[]{""};
     private static final String[] Fliegereinträge_Questor_Traitoris = new String[]{""};
     private static final String[] Transporteinträge_Questor_Traitoris = new String[]{""};
-    private static final String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Renegade Knight", "Renegade Knight Dominus", "Renegade Armiger"};
+    private static final String[] LOWeinträge_Questor_Traitoris = new String[]{"", "Knight Desecrator", "Knight Despoiler", "Knight Rampager", "Knight Tyrant", "War Dogs", "War Dogs Moirax"};
 
     //CHAOSDAEMONS
     private static final String[] HQ_Daemons_No_God = new String[]{"", "Be'Lakor"};

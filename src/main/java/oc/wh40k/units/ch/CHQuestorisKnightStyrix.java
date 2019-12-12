@@ -4,13 +4,13 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHRenegadeKnightStyrix extends Eintrag {
+public class CHQuestorisKnightStyrix extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2, o3;
 
-    public CHRenegadeKnightStyrix() {
-        name = "Renegade Knight Styrix";
-        grundkosten = getPts("Renegade Knight Styrix");
+    public CHQuestorisKnightStyrix() {
+        name = "Questoris Knight Styrix";
+        grundkosten = getPts("Questoris Knight Styrix");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 

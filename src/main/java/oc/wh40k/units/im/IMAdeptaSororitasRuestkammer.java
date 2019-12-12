@@ -164,6 +164,14 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AMI)")));
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o2.setSelected("Bolt pistol", true);
+        } else if(type.equals("Imagifier")) {
+            ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected("Bolt pistol", true);
+
+            ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o2.setSelected("Boltgun", true);
         }
 
         if(oe1 != null) {
@@ -202,7 +210,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
             o3.setAktiv("Nullstab", o2.isSelected("Chainsword"));
             o3.setAktiv("Schale des heiligen Feuers", o2.isSelected("Chainsword"));
             
-        } else if(type.equals("Sister Superior") || type.equals("Retributor Superior")){
+        } else if(type.equals("Sister Superior") || type.equals("Retributor Superior") || type.equals("Imagifier")){
         	o1.alwaysSelected();
         	o2.alwaysSelected();
         } else if (type.equals("Zephyrim Superior")) {

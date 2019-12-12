@@ -66,7 +66,7 @@ public class VOLKImperium extends BuildaVater {
     //ADEPTUS MECHANICUS ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
     //CULT MECHANICUS
-    private static final String[] HQeinträge_Cult_Mechanicus = new String[]{"", "Belisarius Cawl", "Tech-Priest Dominus", "Tech-Priest Enginseer"};
+    private static final String[] HQeinträge_Cult_Mechanicus = new String[]{"", "Belisarius Cawl", "Tech-Priest Dominus", "Tech-Priest Enginseer", "Tech-Priest Manipulus", "Daedalosus"};
     private static final String[] Eliteeinträge_Cult_Mechanicus = new String[]{"", "Fulgurite Electro-Priests",
             "Corpuscarii Electro-Priests", "Cybernetica Datasmith"};
     private static final String[] Standardeinträge_Cult_Mechanicus = new String[]{"", "Kataphron Breachers", "Kataphron Destroyers"};

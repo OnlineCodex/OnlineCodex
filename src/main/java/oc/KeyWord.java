@@ -240,5 +240,6 @@ public enum  KeyWord {
     XV86_COLDSTAR,
     XV81_CRISIS,
     XV84_CRISIS,
-    ETHEREAL
+    ETHEREAL,
+    IMAGIFIER
 }

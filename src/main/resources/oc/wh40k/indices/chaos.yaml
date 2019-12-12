@@ -87,14 +87,17 @@
 "Rod of sorcery": 10
 "Staff of change": 5
 
-"Renegade Knight": 285
+"Knight Desecrator": 340
+"Knight Despoiler": 285
+"Knight Despoiler with 1 reaper chainsword and 1 thunderstrike gauntlet": 305
+"Knight Rampager": 320
 
 "Reaper chain-cleaver": 0
 "Reaper chainsword": 30
 "Thunderstrike gauntlet": 35
 "Titanic feet": 0
 
-"Armiger autocannon": 5
+"War dog autocannon": 5
 "Avenger gatling cannon": 85
 "Conflagration cannon": 0
 "Ironstorm missile pod": 16
@@ -525,15 +528,18 @@
 "Churning fangs and spines": 0
 "Blade of decay": 0
 
-"Renegade Armiger": 160
-"Renegade Knight Acheron": 358
-"Renegade Knight Lancer": 360
-"Renegade Knight Castigator": 350
-"Renegade Knight Atropos": 405
-"Renegade Knight Magaera": 380
-"Renegade Knight Porphyrion": 600
-"Renegade Knight Styrix": 340
-"Renegade Knight Dominus": 500
+"War Dogs": 145
+"Cerastus Knight-Acheron": 358
+"Cerastus Knight Lancer": 360
+"Cerastus Knight Castigator": 350
+"Cerasatus Knight Atropos": 405
+"Questoris Knight Magaera": 380
+"Acastus Knight Porphyrion": 600
+"Questoris Knight Styrix": 340
+"Knight Tyrant": 500
+
+
+
 "Helaton siege claw": 30
 "Tempest warblade": 30
 "Reaper chainfist": 40
