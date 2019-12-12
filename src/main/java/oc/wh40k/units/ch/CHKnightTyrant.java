@@ -4,16 +4,16 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHRenegadeKnightDominus extends Eintrag {
+public class CHKnightTyrant extends Eintrag {
 
 	private final OptionsUpgradeGruppe shieldbreaker, decimator, melta, siegebreaker, siegebreaker2;
 
-    public CHRenegadeKnightDominus() {
+    public CHKnightTyrant() {
 
         kategorie = 1;
 
-        name = "Renegade Knight Dominus";
-        grundkosten = getPts("Renegade Knight Dominus");
+        name = "Knight Tyrant";
+        grundkosten = getPts("Knight Tyrant");
 
         ogE.addElement(new OptionsGruppeEintrag("Decimator & Lance", "Plasma decimator and volcano lance", getPts("Plasma decimator") + getPts("Volcano lance")));
         ogE.addElement(new OptionsGruppeEintrag("Cannon & Harpoon", "Conflagration cannon and thundercoil harpoon", getPts("Conflagration cannon") + getPts("Thundercoil harpoon")));

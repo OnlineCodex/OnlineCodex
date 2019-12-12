@@ -4,30 +4,30 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHRenegadeKnightMagaera extends Eintrag {
+public class CHAcastusKnightPorphyrion extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2, o3;
 
-    public CHRenegadeKnightMagaera() {
-        name = "Renegade Knight Magaera";
-        grundkosten = getPts("Renegade Knight Magaera");
+    public CHAcastusKnightPorphyrion() {
+        name = "Renegade Knight Porphyrion";
+        grundkosten = getPts("Renegade Knight Porphyrion");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Lightning cannon", getPts("Lightning cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin magna lascannon", getPts("Twin magna lascannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Ectoplasma fusil", getPts("Ectoplasma fusil")));
+        ogE.addElement(new OptionsGruppeEintrag("2 Autocannon", getPts("Autocannon") * 2));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper chainswords")));
+        ogE.addElement(new OptionsGruppeEintrag("Ironstorm missile pod", getPts("Ironstorm missile pod")));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 
@@ -40,7 +40,7 @@ public class CHRenegadeKnightMagaera extends Eintrag {
         o2.alwaysSelected();
         o3.alwaysSelected();
 
-        power = 28;
+        power = 40;
     }
 
 }

@@ -154,6 +154,41 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
 
             seperator();
+    	} else if(type.equals("Tech-Priest Manipulus")) {
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Omnissian staff", getPts("Omnissian staff")));
+            addRelics();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Magnarail lance", getPts("Magnarail lance")));
+            ogE.addElement(new OptionsGruppeEintrag("Transonic cannon", getPts("Transonic cannon")));
+            addRelics();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Mechadendrites", getPts("Mechadendrites")));
+            addRelics();
+            add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
+            seperator();
+    	} else if(type.equals("Daedalosus")){
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Eradiction pistol", getPts("Eradiction pistol")));
+            addRelics();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
+            seperator();
+
+            ogE.addElement(new OptionsGruppeEintrag("Servo claw", getPts("Servo claw")));
+            addRelics();
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "option", ogE, 1));
+
+            seperator();
     	}
 
         if(o1 != null) {
@@ -193,11 +228,13 @@ public class IMTechPriestRuestkammer extends RuestkammerVater {
     public void refreshen() {
 
     	if(type.equals("Tech-Priest Dominus") ||
-    			type.equals("Tech-Priest Enginseer")){
+    			type.equals("Tech-Priest Enginseer") ||
+    			type.equals("Tech-Priest Manipulus")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     		o3.alwaysSelected();
-    	} else if(type.equals("Cybernetica Datasmith")){
+    	} else if(type.equals("Cybernetica Datasmith") ||
+    			type.equals("Daedalosus")){
     		o1.alwaysSelected();
     		o2.alwaysSelected();
     	}

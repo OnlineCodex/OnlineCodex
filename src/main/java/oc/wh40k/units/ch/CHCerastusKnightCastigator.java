@@ -4,27 +4,26 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHRenegadeKnightAtropos extends Eintrag {
+public class CHCerastusKnightCastigator extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1, o2;
 
-    public CHRenegadeKnightAtropos() {
-        name = "Renegade Knight Atropos";
-        grundkosten = getPts("Renegade Knight Atropos");
+    public CHCerastusKnightCastigator() {
+        name = "Cerastus Knight Castigator";
+        grundkosten = getPts("Cerastus Knight Castigator");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Atropos lascutter", getPts("Atropos lascutter")));
+        ogE.addElement(new OptionsGruppeEintrag("Castigator bolt cannon", getPts("Castigator bolt cannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Graviton singularity", getPts("Graviton singularity")));
+        ogE.addElement(new OptionsGruppeEintrag("Tempest warblade", getPts("Tempest warblade")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
 
         complete();
     }

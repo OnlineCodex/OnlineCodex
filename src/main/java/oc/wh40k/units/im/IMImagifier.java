@@ -1,14 +1,13 @@
 package oc.wh40k.units.im;
 
+import static oc.KeyWord.*;
+
 import oc.Eintrag;
-import oc.OptionsGruppeEintrag;
-import oc.OptionsUpgradeGruppe;
 
 public class IMImagifier extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1, o2;
-
     public IMImagifier() {
+    	super(IMPERIUM, ADEPTUS_MINISTORUM, ADEPTA_SORORITAS, ORDER, CHARACTER, INFANTRY, IMAGIFIER);
         name = "Imagifier";
         grundkosten = getPts("Imagifier");
         power = 2;
@@ -17,14 +16,12 @@ public class IMImagifier extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        addWeapons(IMAdeptaSororitasRuestkammer.class, true);
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Boltgun", getPts("Boltgun")));
-        add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-
+        addWarlordTraits("", true);
+        
         complete();
     }
 
@@ -32,11 +29,4 @@ public class IMImagifier extends Eintrag {
     public void deleteYourself() {
         super.deleteYourself();
     }
-
-    @Override
-    public void refreshen() {
-        o1.alwaysSelected();
-        o2.alwaysSelected();
-    }
-
 }

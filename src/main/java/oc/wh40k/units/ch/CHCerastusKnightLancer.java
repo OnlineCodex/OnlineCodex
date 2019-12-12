@@ -4,13 +4,13 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 
-public class CHRenegadeKnightLancer extends Eintrag {
+public class CHCerastusKnightLancer extends Eintrag {
 
 	private final OptionsUpgradeGruppe o1;
 
-    public CHRenegadeKnightLancer() {
-        name = "Renegade Knight Lancer";
-        grundkosten = getPts("Renegade Knight Lancer");
+    public CHCerastusKnightLancer() {
+        name = "Cerastus Knight Lancer";
+        grundkosten = getPts("Cerastus Knight Lancer");
 
         add(ico = new oc.Picture("oc/wh40k/images/ChaosPredator.gif"));
 

@@ -5,17 +5,17 @@ import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsZaehlerGruppe;
 
-public class CHRenegadeArmiger extends Eintrag {
+public class CHWarDogsMoirax extends Eintrag {
 	private final OptionsZaehlerGruppe fk1;
 	private final OptionsZaehlerGruppe fk2;
 	private final AnzahlPanel squad;
 
-    public CHRenegadeArmiger() {
-        name = "Renegade Armiger";
+    public CHWarDogsMoirax() {
+        name = "War Dogs Moirax";
         grundkosten = 0;
         power = 9;
 
-        squad = new AnzahlPanel(ID, randAbstand, cnt, "Renegade Armiger", 1, 3, getPts("Renegade Armiger"));
+        squad = new AnzahlPanel(ID, randAbstand, cnt, "War Dogs", 1, 3, getPts("War Dogs"));
         add(squad);
 
         seperator();
