@@ -35,6 +35,13 @@ public class CHKnightDespoiler extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
         add(stubber = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("Ironstorm missile pod", getPts("Ironstorm missile pod")));
+        ogE.addElement(new OptionsGruppeEintrag("Stormspear rocket pod", getPts("Stormspear rocket pod")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin icarus autocannon", getPts("Twin icarus autocannon")));
+        add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+
         power = 23;
 
         complete();
