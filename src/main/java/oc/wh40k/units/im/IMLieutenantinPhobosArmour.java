@@ -10,6 +10,7 @@ public class IMLieutenantinPhobosArmour extends Eintrag {
 
     public IMLieutenantinPhobosArmour() {
 
+    	name = "Lieutenant in Phobos Armour";
     	grundkosten = getPts("Lieutenant in Phobos Armour") + getPts("Grav-chute");
 
         //Special Weapons

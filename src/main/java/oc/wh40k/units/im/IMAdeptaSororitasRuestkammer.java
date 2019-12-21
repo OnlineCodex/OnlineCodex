@@ -78,8 +78,8 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 	    	for(int i = 0; i < ogE.size(); i++) {
 	    		if(ogE.get(i).getName().equals("Bolt pistol")){
 	        		ogE.addElement(new OptionsGruppeEintrag("Wrath of the Emperor", getPts("Bolt pistol (AMI)")).setRelic(true));
-	    		} else if(ogE.get(i).getName().equals("Power sword")){
-	        		ogE.addElement(new OptionsGruppeEintrag("Blade of Admonition", getPts("Power sword (AMI)")).setRelic(true));
+	    		} else if(ogE.get(i).getName().equals("Blessed blade")){
+	        		ogE.addElement(new OptionsGruppeEintrag("Blade of Admonition", getPts("Blessed blade")).setRelic(true));
 	    		}
 	    	}
     	}
