@@ -8,8 +8,12 @@ import static oc.KeyWord.TAU_EMPIRE;
 import static oc.KeyWord.XV86_COLDSTAR;
 
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsZaehlerGruppe;
 
 public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
+
+    private final OptionsZaehlerGruppe o5;
 
     public TACommanderinXV86ColdstarBattlesuit() {
     	super(TAU_EMPIRE, BATTLESUIT, CHARACTER, XV86_COLDSTAR, JET_PACK, COMMANDER);
@@ -20,6 +24,13 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
         überschriftSetzen = true;
 
         add(ico = new oc.Picture("oc/wh40k/images/Commander.gif"));
+
+        seperator();
+
+        ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
+        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
         seperator();
 
@@ -44,10 +55,10 @@ public class TACommanderinXV86ColdstarBattlesuit extends Eintrag {
             }
         }
 
-        if(((TAKampfanzugKammer) getWeapons()).dronesSelected()) {
-        	power = 9;
-        } else {
-        	power = 8;
+        power = 8;
+
+        if(o5.isSelected()) {
+        	power++;
         }
     }
 

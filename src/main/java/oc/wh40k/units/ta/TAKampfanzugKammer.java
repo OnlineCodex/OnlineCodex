@@ -24,7 +24,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
     private OptionsZaehlerGruppe o1;
     private OptionsUpgradeGruppe o2;
     private OptionsZaehlerGruppe o3;
-    private OptionsZaehlerGruppe o4;
     private OptionsZaehlerGruppe o7;
     public OptionsUpgradeGruppe o5, o6/*, o7*/;
     private boolean XV08 = false;
@@ -96,8 +95,7 @@ public class TAKampfanzugKammer extends RuestkammerVater {
        			type.equals("Commander in XV85 Enforcer Battlesuit") ||
        			type.equals("Commander in XV86 Coldstar Battlesuit") ||
        			type.equals("Commander in XV84 Crisis Battlesuit") ||
-       			type.equals("Commander in XV81 Crisis Battlesuit") ||
-       			type.equals("Commander in XV8 Crisis Battlesuit");
+       			type.equals("Commander in XV81 Crisis Battlesuit");
        	
        	offsetX += buttonBreite + 15;
        	seperator();
@@ -259,14 +257,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         seperator();
 
-        if (commander) {
-            ogE.clear();
-            ogE.addElement(new OptionsGruppeEintrag("MV1 Gun Drone", getPts("MV1 Gun Drone")));
-            ogE.addElement(new OptionsGruppeEintrag("MV4 Shield Drone", getPts("MV4 Shield Drone")));
-            ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
-            add(o4 = new OptionsZaehlerGruppe(0, randAbstand + 280, cnt, "", ogE, 2));
-        }
-
         if(o1 != null) {
         	o1.getPanel().setLocation(offsetX, 10);
 	       	offsetX += buttonBreite + 20;
@@ -277,10 +267,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 	       	offsetX += buttonBreite + 20;
         }
 
-        if(o4 != null) {
-        	o4.getPanel().setLocation(offsetX, 10);
-        	offsetX += buttonBreite + 20;
-        }
 
         if(o5 != null) {
         	o5.getPanel().setLocation(offsetX, 10);
@@ -322,7 +308,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);
-            o4.setMaxAnzahl(1);
                         
             final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl() + o7.getAnzahl();
             final int remaining = 4 - selected;
@@ -356,7 +341,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);
-            o4.setMaxAnzahl(1);
                         
             final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl() + o7.getAnzahl();
             final int remaining = 3 - selected;
@@ -374,7 +358,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o1.setAktiv(true);
             o2.setMaxAnzahl(2);
             o3.setMaxAnzahl(1);
-            o4.setMaxAnzahl(1);
                         
             final int selected = o2.getAnzahl() + o1.getAnzahl() + o3.getAnzahl();
             final int remaining = 2 - selected;
@@ -426,10 +409,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
             o1.setLegal(o1.getAnzahl() == 2);
             o2.setLegal(o1.getAnzahl() + o2.getAnzahl() >= 2);
         }
-        
-        if(o4 != null) {
-        	droneSelected = o4.isSelected();
-        }
 
         puretideEngramNeurochip.setAktiv((chosenRelic == null || puretideEngramNeurochip.isSelected()));
         onagerGauntlet.setAktiv(((chosenRelic == null || onagerGauntlet.isSelected()) && keywords.contains(BATTLESUIT) && keywords.contains(COMMANDER)));
@@ -468,10 +447,6 @@ public class TAKampfanzugKammer extends RuestkammerVater {
 
         if (o1 != null && o1.isSelected()) {
             o1.setMaxAnzahl(0);
-            entryCleared = true;
-        }
-        if (o4 != null && o4.isSelected()) {
-            o4.setMaxAnzahl(0);
             entryCleared = true;
         }
         if (o5 != null && o5.isSelected()) {
