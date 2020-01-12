@@ -493,6 +493,10 @@ public class PsychicPowers extends RuestkammerVater {
         if(revenant) {
         	o22.setMaxAnzahl(numPowers);
         }
+
+        if(phantasmancy){
+            o23.setMaxAnzahl(numPowers);
+        }
     }
 
     @Override
