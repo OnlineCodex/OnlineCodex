@@ -29,6 +29,7 @@ public enum  KeyWord {
     ARMAGEDDON,
     MILITARUM_TEMPESTUS,
     TAU_EMPIRE,
+    INQUISITION,
 
     //Keywords
     CHARACTER,
@@ -241,5 +242,8 @@ public enum  KeyWord {
     XV81_CRISIS,
     XV84_CRISIS,
     ETHEREAL,
-    IMAGIFIER
+    IMAGIFIER,
+    ORDO_MALLEUS,
+    ORDO_HERETICUS,
+    ORDO_XENOS
 }

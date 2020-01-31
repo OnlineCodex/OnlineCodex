@@ -16,6 +16,7 @@ import oc.KeyWord;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerVater;
+import static oc.KeyWord.*;
 
 public class Warlordtraits extends RuestkammerVater {
 	private OptionsUpgradeGruppe warlordtraits;
@@ -438,7 +439,15 @@ public class Warlordtraits extends RuestkammerVater {
 	        ogE.addElement(new OptionsGruppeEintrag("Taranis: Knight of Mars", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Krast: First Knight", 0));
 	        ogE.addElement(new OptionsGruppeEintrag("Vulker: Adamantium Knight", 0));
+    	} else if(keywords.contains(INQUISITION)) {
+	    	ogE.addElement(new OptionsGruppeEintrag("Radical", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Puritan", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Formidable Resolve", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ordo Hereticus: No Escape", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ordo Xenos: Esoteric Law", 0));
+	        ogE.addElement(new OptionsGruppeEintrag("Ordo Malleus: Psychic Mastery", 0));
     	}
+        
         add(warlordtraits = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1, false));
 
         if(warlordtraits3 != null) {
@@ -713,6 +722,10 @@ public class Warlordtraits extends RuestkammerVater {
         } else if(GENESTEALER.contains(army)) {
         	warlordtraits.setAktiv("Anointed Throng: Insidious Mindwyrm", specialDetachement.equals("Anointed Throng"));
         	warlordtraits.setAktiv("Deliveranmce Broodsurge", specialDetachement.equals("Deliverance Broodsurge"));
+        } else if(keywords.contains(INQUISITION)) {
+        	warlordtraits.setAktiv("Ordo Hereticus: No Escape", keywords.contains(ORDO_HERETICUS));
+        	warlordtraits.setAktiv("Ordo Xenos: Esoteric Law", keywords.contains(ORDO_XENOS));
+        	warlordtraits.setAktiv("Ordo Malleus: Psychic Mastery", keywords.contains(ORDO_MALLEUS));
         }
         if(!mandatoryChoice.equals("")) {
         	warlordtraits.deselectAll();
@@ -730,5 +743,9 @@ public class Warlordtraits extends RuestkammerVater {
 
     public void setExclusiveKeyword(KeyWord s) {
     	exclusiveKeyword = s;
+    }
+    
+    public String getSelectedTrait() {
+    	return warlordtraits.getCurrentName();
     }
 }

@@ -8,7 +8,7 @@ public class PsychicPowers extends RuestkammerVater {
 
 	private OptionsUpgradeGruppe o1, o2, o3, o4, o5, o6, o7, o8, o9, o10;
 	private OptionsUpgradeGruppe o11, o12, o13, o14, o15, o16, o17, o18, o19, o20;
-	private OptionsUpgradeGruppe o21, o22, o23;
+	private OptionsUpgradeGruppe o21, o22, o23, o24;
 	private int numPowers = 0;
 	private boolean darkHereticus = false;
 	private boolean contagion = false;
@@ -32,6 +32,10 @@ public class PsychicPowers extends RuestkammerVater {
     private boolean prayers = false;
     private boolean revenant = false;
     private boolean phantasmancy = false;
+    private boolean telethesiaDiscipline = false;
+    private boolean ordoXenos = false;
+    private boolean ordoHereticus = false;
+    private boolean ordoMalleus = false;
 
     private boolean khorne = false;
     private boolean nurgle = false;
@@ -284,6 +288,19 @@ public class PsychicPowers extends RuestkammerVater {
             add(o23 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
+        if (telethesiaDiscipline) {
+            ogE.addElement(new OptionsGruppeEintrag("Terrify", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Psychic Fortitude", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Dominate", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Mental Interrogation", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Psychic Pursuit", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Castigation", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Ordo Hereticus - Ascertainment", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Ordo Xenos only - Psychic Veil", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Ordo Malleus only- Power Through Knowledge", 0));
+            add(o24 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        }
+        
         sizeSetzen();
     }
 
@@ -371,7 +388,19 @@ public class PsychicPowers extends RuestkammerVater {
     public void setSlaanesh(boolean s) {
         slaanesh = s;
     }
+    
+    public void setXenos(boolean s) {
+        ordoXenos = s;
+    }
 
+    public void setHereticus(boolean s) {
+        ordoHereticus = s;
+    }
+    
+    public void setMalleus(boolean s) {
+        ordoMalleus = s;
+    }
+    
     public void enablePowerOfTheWaaagh() {
         powerOfTheWaaagh = true;
     }
@@ -394,6 +423,10 @@ public class PsychicPowers extends RuestkammerVater {
     
     public void enablePhantasmancy() {
     	phantasmancy = true;
+    }
+    
+    public void enableTelethesiaDiscipline() {
+    	telethesiaDiscipline = true;
     }
 
     @Override
@@ -497,6 +530,13 @@ public class PsychicPowers extends RuestkammerVater {
         if(phantasmancy){
             o23.setMaxAnzahl(numPowers);
         }
+        
+        if(telethesiaDiscipline) {
+        	o24.setMaxAnzahl(numPowers);
+        	o24.setAktiv("Ordo Hereticus - Ascertainment", ordoHereticus);
+        	o24.setAktiv("Ordo Xenos only - Psychic Veil", ordoXenos);
+        	o24.setAktiv("Ordo Malleus only- Power Through Knowledge", ordoMalleus);
+    	}
     }
 
     @Override
