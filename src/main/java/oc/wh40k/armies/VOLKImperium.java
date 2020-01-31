@@ -126,17 +126,9 @@ public class VOLKImperium extends BuildaVater {
     private static final String[] Eliteeinträge_Officio_Assassinorum = new String[]{"", "Vindicare Assassin", "Callidus Assassin", "Eversor Assassin", "Culexus Assassin"};
 
     //Inquisition
-    public String[] Eliteeinträge_Inquisition = new String[]{"", /*TODO:"Daemonhost",*/};
-
-    //<Ordo>
-    public String[] HQeinträge_Ordo = new String[]{"", /*TODO:"Inquisitor",*/};
-    public String[] Eliteeinträge_Ordo = new String[]{"", /*TODO:"Acolytes", /*TODO:"Jokaero Weaponsmith",*/};
-
-    //Ordo Hereticus
-    public String[] HQeinträge_Ordo_Hereticus = new String[]{"", /*TODO:"Inquisitor Greyfax", /*TODO:"Inquisitor Karamazov", */};
-
-    //Ordo Malleus
-    public String[] HQeinträge_Ordo_Malleus = new String[]{"", /*TODO:"Ordo Malleus Inquisitor", /*TODO:"Inquisitor Coteaz", */};
+    public String[] HQeinträge_Inquisition = new String[]{"", "Inquisitor", "Inquisitor Coteaz", "Inquisitor Eisenhorn", "Inquisitor Greyfax", "Inquisitor Karamazov", "Inquisitor Lord Hector Rex", "Inquisitor Lord Solomon Lok", "Ordo Malleus Inquisitor in Terminator Armour"};
+    public String[] Eliteeinträge_Inquisition = new String[]{"", "Acolytes", "Daemonhost", "Jokaero Weaponsmith"};
+    public String[] Unterstützungseinträge_Inquisition = new String[]{"", "Inquisition Land Raider Prometheus"};
 
     //Adeptus Custodes
     private static final String[] HQeinträge_Adeptus_Custodes = new String[]{"", "Captain-General Trajann Valoris", "Shield-Captain", "Shield-Captain in Allarus Terminator Armour", "Shield-Captain on Dawneagle Jetbike"};
@@ -315,7 +307,7 @@ public class VOLKImperium extends BuildaVater {
     
     public VOLKImperium() {
         super("IM", ResourceUtils.loadPoints(
-                Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa")
+                Stream.of("sm", "ba", "da", "sw", "dw", "gk", "am", "ame", "qi", "ami", "oa", "ac", "iaaa", "in")
                    .map(name -> String.format("/oc/wh40k/indices/%s.yaml", name))));
 
         AdditionalInformation = new String[]{""};
@@ -388,6 +380,8 @@ public class VOLKImperium extends BuildaVater {
         formationen.add("Star Phantoms");
         formationen.add("Tiger Claws");
         formationen.add("");
+        formationen.add("Inquisition");
+        formationen.add("");
         formationen.add("ASTRA MILITARUM");
         ASTRA_MILITARUM.forEach(regiment -> formationen.add(regiment));
         formationen.add("Officio Prefectus");
@@ -437,7 +431,8 @@ public class VOLKImperium extends BuildaVater {
                     HQeinträge_Adeptus_Mechanicus,
                     HQeinträge_Adeptus_Ministorum,
                     HQeinträge_Adeptus_Astra_Telepathica,
-                    HQeinträge_Adeptus_Custodes));
+                    HQeinträge_Adeptus_Custodes,
+                    HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AA_komplett,
                     Standardeinträge_AM_komplett,
                     Standardeinträge_Adeptus_Mechanicus,
@@ -449,7 +444,8 @@ public class VOLKImperium extends BuildaVater {
                     Eliteeinträge_Adeptus_Ministorum,
                     Eliteeinträge_Officio_Assassinorum,
                     Eliteeinträge_Adeptus_Astra_Telepathica,
-                    Eliteeinträge_Adeptus_Custodes));
+                    Eliteeinträge_Adeptus_Custodes,
+                    Eliteeinträge_Inquisition));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_AA_komplett,
                     Sturmeinträge_AM_komplett,
                     Sturmeinträge_Adeptus_Mechanicus,
@@ -459,7 +455,8 @@ public class VOLKImperium extends BuildaVater {
                     Unterstützungeinträge_AM_komplett,
                     Unterstützungseinträge_Adeptus_Mechanicus,
                     Unterstützungseinträge_Adeptus_Ministorum,
-                    Unterstützungseinträge_Adeptus_Custodes));
+                    Unterstützungseinträge_Adeptus_Custodes,
+                    Unterstützungseinträge_Inquisition));
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(uniteUnitList(Transporteinträge_AA_komplett,
                     Transporteinträge_AM_komplett,
                     Transporteinträge_Adeptus_Mechanicus,
@@ -474,7 +471,7 @@ public class VOLKImperium extends BuildaVater {
                     LordofWar_AM_komplett,
                     LordofWar_Questor_Imperialis));
         } else if (getFormationType().equals("Adeptus Astartes")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AA_komplett);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AA_komplett, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AA_komplett);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AA_komplett);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AA_komplett);
@@ -484,7 +481,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AA_komplett);
         } else if (getFormationType().equals("Ultramarines")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Ultramarines, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Ultramarines, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -494,7 +491,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_Ultramarines, LordofWar_IA_AA));
         } else if (getFormationType().equals("Imperial Fists")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Imperial_Fists, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Imperial_Fists, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -504,7 +501,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
         } else if (getFormationType().equals("Crimson Fists")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Crimson_Fists, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Crimson_Fists, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -514,7 +511,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
         } else if (getFormationType().equals("Black Templars")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Black_Templars, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Black_Templars, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_SM, Standardeinträge_Black_Templars));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_Black_Templars, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -524,7 +521,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
         } else if (getFormationType().equals("Raven Guard")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Raven_Guard, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Raven_Guard, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -534,7 +531,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
         } else if (getFormationType().equals("Salamanders")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Salamanders, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_Salamanders, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -544,7 +541,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(uniteUnitList(LordOfWar_SM, LordofWar_IA_AA));
         } else if (getFormationType().equals("White Scars")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_White_Scars, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_SM, HQeinträge_White_Scars, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_SM, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_SM, Sturmeinträge_IA_AA));
@@ -561,7 +558,7 @@ public class VOLKImperium extends BuildaVater {
                     new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
                             "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine with Jump Pack", "Techmarine on Bike", "Chaplain",
                             "Chaplain in Terminator Armour", "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
-                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Blood_Angels,
                     new String[]{"", "Servitors", "Sanguinary Novitiate",
@@ -586,7 +583,7 @@ public class VOLKImperium extends BuildaVater {
                     new String[]{"", "Captain", "Captain in Terminator Armour", "Captain in Gravis Armour", "Librarian",
                             "Primaris Librarian", "Librarian in Terminator Armour", "Librarian on Bike", "Techmarine", "Techmarine on Bike", "Chaplain",
                             "Chaplain on Bike", "Primaris Chaplain", "Master", "Master in Terminator Armour", "Master in Cataphractii Armour",
-                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+                            "Master in Gravis Armour", "Primaris Master", "Lieutenants", "Techmarine", "Primaris Lieutenants", "Rhino Primaris", "Land Raider Excelsior"}, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_SM);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Dark_Angels, new String[]{"", "Primaris Apothecary", "Apothecary", "Company Ancient", "Primaris Ancient",
                     "Company Champion", "Company Veterans", "Chapter Ancient", "Imperial Space Marine", "Dreadnought",
@@ -599,7 +596,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen_Dark_Angels);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Space Wolves")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Space_Wolves, new String[]{"", "Primaris Lieutenants[INDEX]", "Rhino Primaris[INDEX]", "Land Raider Excelsior"}, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_Space_Wolves, new String[]{"", "Intercessors"}));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Space_Wolves, new String[]{"", "Reivers", "Aggressors", "Servitors", "Great Company Ancient", "Primaris Ancient", "Great Company Champion",
         																										   	   "", "Dreadnought", "Venerable Dreadnought", "Contemptor Dreadnought", "Redemptor Dreadnought",
@@ -613,7 +610,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Deathwatch")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Deathwatch, HQeinträge_IA_AA));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Deathwatch, HQeinträge_IA_AA, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Deathwatch);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_Deathwatch, Eliteeinträge_IA_AA));
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(uniteUnitList(Sturmeinträge_Deathwatch, Sturmeinträge_IA_AA));
@@ -623,7 +620,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_IA_AA);
         } else if (getFormationType().equals("Grey Knights")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Grey_Knights);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Grey_Knights, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Grey_Knights);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Grey_Knights);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Grey_Knights);
@@ -633,7 +630,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("ASTRA MILITARUM")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_AM_komplett);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM_komplett, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_AM_komplett);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_AM_komplett);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_AM_komplett);
@@ -643,7 +640,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM_komplett);
         } else if (getFormationType().equals("Cadian")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Cadian, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Cadian, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
             Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Militarum_Tempestus));
@@ -654,7 +651,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Catachan")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus));
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Catachan, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Catachan, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
                     Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Militarum_Tempestus));
@@ -665,7 +662,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(LordofWar_AM);
         } else if (getFormationType().equals("Militarum Tempestus")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Militarum_Tempestus);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Militarum_Tempestus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Militarum_Tempestus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Militarum_Tempestus);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
@@ -674,7 +671,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (ASTRA_MILITARUM.contains(getFormationType())) {
-        	myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus));
+        	myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_AM, HQeinträge_Officio_Prefectus, HQeinträge_Scholastica_Psykana, HQeinträge_Militarum_Tempestus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(uniteUnitList(Standardeinträge_AM, Standardeinträge_Militarum_Tempestus));
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(uniteUnitList(Eliteeinträge_AM, Eliteeinträge_Officio_Prefectus, Eliteeinträge_Militarum_Auxilia, Eliteeinträge_Aeronautica_Imperialis,
                     Eliteeinträge_Scholastica_Psykana, Eliteeinträge_Astra_Militarum_Adeptus_Ministorum, Eliteeinträge_Militarum_Tempestus));
@@ -725,7 +722,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Adeptus Mechanicus") || FORGEWORLDS.contains(getFormationType())) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Mechanicus);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Adeptus_Mechanicus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Mechanicus);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Mechanicus);
@@ -735,7 +732,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Cult Mechanicus")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Cult_Mechanicus);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Cult_Mechanicus, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Cult_Mechanicus);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Cult_Mechanicus);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(new String[]{""});
@@ -745,7 +742,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
         } else if (getFormationType().equals("Skitarii")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(new String[]{""});
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Inquisition);
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Skitarii);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Skitarii);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Skitarii);
@@ -782,7 +779,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigungen);
         } else if (getFormationType().equals("Adeptus Custodes")) {
             clearCombo();
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Custodes);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Adeptus_Custodes, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Custodes);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Custodes);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Custodes);
@@ -790,7 +787,7 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Custodes);
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(Fliegereinträge_Adeptus_Custodes);
         } else if (getFormationType().equals("Adepta Sororitas") || AS_ORDERS.contains(getFormationType())) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adepta_Sororitas);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Adepta_Sororitas, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adepta_Sororitas);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adepta_Sororitas);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adepta_Sororitas);
@@ -800,12 +797,17 @@ public class VOLKImperium extends BuildaVater {
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{""});
             myChooserGruppen.get(FORTIFICATION).changeComboBoxAuswahlen(Befestigung_Adepta_Sororitas);
         } else if (getFormationType().equals("Adeptus Ministorum")) {
-            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Adeptus_Ministorum);
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(uniteUnitList(HQeinträge_Adeptus_Ministorum, HQeinträge_Inquisition));
             myChooserGruppen.get(TROOPS).changeComboBoxAuswahlen(Standardeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(FAST_ATTACK).changeComboBoxAuswahlen(Sturmeinträge_Adeptus_Ministorum);
             myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Adeptus_Ministorum);
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(Transporteinträge_Adeptus_Ministorum);
+        } else if (getFormationType().equals("Inquisition")) {
+            clearCombo();
+            myChooserGruppen.get(HQ).changeComboBoxAuswahlen(HQeinträge_Inquisition);
+            myChooserGruppen.get(ELITE).changeComboBoxAuswahlen(Eliteeinträge_Inquisition);
+            myChooserGruppen.get(HEAVY_SUPPORT).changeComboBoxAuswahlen(Unterstützungseinträge_Inquisition);
         }
 
         if (formation != null) {
