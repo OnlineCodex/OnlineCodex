@@ -13,7 +13,6 @@ import oc.OptionsUpgradeGruppe;
 
 public class IMTankCommander extends Eintrag {
 
-	private final OptionsUpgradeGruppe o1;
 	private final OptionsUpgradeGruppe o2;
 	private final OptionsEinzelUpgrade oe1;
 	private final OptionsEinzelUpgrade oe2;
@@ -24,16 +23,6 @@ public class IMTankCommander extends Eintrag {
         grundkosten = getPts("Tank Commander");
         name = "Tank Commander";
         power = 13;
-
-        ogE.addElement(new OptionsGruppeEintrag("Battle Cannon", getPts("Battle Cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Exterminator Autocannon", getPts("Exterminator Autocannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Vanquisher battle cannon", getPts("Vanquisher battle cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Eradicator nova cannon", getPts("Eradicator nova cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Executioner plasma cannon", getPts("Executioner plasma cannon")));
-        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
-        o1.setSelected(0, true);
 
         seperator();
 
@@ -76,8 +65,8 @@ public class IMTankCommander extends Eintrag {
 
     @Override
     public void refreshen() {
-        if (!o1.isSelected()) o1.setSelected(0, true);
-        if (!o2.isSelected()) o2.setSelected(0, true);
+
+    	o2.alwaysSelected();
 
         oe1.setAktiv(!oe2.isSelected());
         oe2.setAktiv(!oe1.isSelected());
