@@ -19,7 +19,7 @@ public class TAKrootShaper extends Eintrag {
 
         seperator();
 
-        addWeapons(TAKampfanzugKammer.class, true);
+        //addWeapons(TAKampfanzugKammer.class, true);
 
         seperator();
 
