@@ -73,13 +73,13 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
     		if(BuildaHQ.aktBuildaVater.getFormationType().equals("Tallarn"))
     		{
 	    		if(ogE.get(i).getName().equals("Power sword")){
-	    			ogE.addElement(new OptionsGruppeEintrag("Claw of the Deser Tigers", getPts("Power sword (AM)")).setRelic(true));
+	    			ogE.addElement(new OptionsGruppeEintrag("Claw of the Desert Tigers", getPts("Power sword (AM)")).setRelic(true));
 	    		}
     		}
-    		if(BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Fist Tank Company"))
+
     		{
-	    		if(ogE.get(i).getName().equals("Battle cannon")){
-	    			ogE.addElement(new OptionsGruppeEintrag("Hammer of Sunderance", getPts("Battle cannon")).setRelic(true));
+	    		if(ogE.get(i).getName().equals("Battle Cannon")){
+	    			ogE.addElement(new OptionsGruppeEintrag("Hammer of Sunderance", getPts("Battle Cannon")).setRelic(true));
 	    		}
     		}
     	}
@@ -171,6 +171,17 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (AM)")));
             addRelics();
             add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+        } else if(type == "Tank Commander") {
+            ogE.addElement(new OptionsGruppeEintrag("Battle Cannon", getPts("Battle Cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Exterminator Autocannon", getPts("Exterminator Autocannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Vanquisher battle cannon", getPts("Vanquisher battle cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Eradicator nova cannon", getPts("Eradicator nova cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Demolisher cannon", getPts("Demolisher cannon (AM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Punisher gatling cannon", getPts("Punisher gatling cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Executioner plasma cannon", getPts("Executioner plasma cannon")));
+            addRelics();
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            o1.setSelected(0, true);
         }
 
         if(o1 != null) {
@@ -210,6 +221,10 @@ public class IMAstraMilitarumRuestkammer extends RuestkammerVater {
 
         } else if (type == "Tempestor Prime") {
             o2.alwaysSelected();
+        } else if (type == "Tank Commander") {
+        	o1.alwaysSelected();
+   			o1.setAktiv("Hammer of Sunderance", BuildaHQ.aktBuildaVater.getSpecialDetachmentType().equals("Emperor's Fist Tank Company")); 
+
         }
 
         theLaurelsOfCommand.setAktiv((chosenRelic == null || theLaurelsOfCommand.isSelected()) && keywords.contains(OFFICER));
