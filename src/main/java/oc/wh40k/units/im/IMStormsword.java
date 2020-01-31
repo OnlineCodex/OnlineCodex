@@ -42,8 +42,6 @@ public class IMStormsword extends Eintrag {
 
     @Override
     public void refreshen() {
-        o3.alwaysSelected();
-
         o1.setMaxAnzahl(o3.getSelectedIndex() * 2 + 2);
         o1.setLegal(o1.getAnzahl() == o3.getSelectedIndex() * 2 + 2);
     }
