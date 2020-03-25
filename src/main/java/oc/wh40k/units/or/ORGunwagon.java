@@ -1,5 +1,6 @@
 package oc.wh40k.units.or;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
@@ -9,6 +10,9 @@ import oc.OptionsZaehlerGruppe;
 public class ORGunwagon extends Eintrag {
 
 	private final OptionsUpgradeGruppe fk;
+	private static OptionsEinzelUpgrade sht, ft, pincha;
+	boolean kustomJobSelected = false;
+	
 	public ORGunwagon() {
 
         name = "Gunwagon";
@@ -21,7 +25,10 @@ public class ORGunwagon extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Kannon", getPts("Kannon")));
         ogE.addElement(new OptionsGruppeEintrag("Killkannon", getPts("Killkannon")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Da Boomer", getPts("Killkannon")));
         ogE.addElement(new OptionsGruppeEintrag("Zzap gun", getPts("Zzap gun")));
+        ogE.addElement(new OptionsGruppeEintrag("Zzap gun", getPts("Zzap gun")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Zagzap", getPts("Zzap gun")));
         add(fk = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
@@ -37,11 +44,17 @@ public class ORGunwagon extends Eintrag {
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grabbin' klaw", getPts("Grabbin' klaw")));
+        add(pincha = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "KJ: Pincha", getPts("Grabbin' klaw")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Grot rigger", getPts("Grot rigger")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Lobba", getPts("Lobba")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Stikkbomb chukka", getPts("Stikkbomb chukka")));
 		add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Wreckin' ball", getPts("Wreckin' ball")));
 
+		seperator();
+		
+		add(sht = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "KJ: Squig-Hife Tyres", getPts("Squig-Hife Tyres")));
+		add(ft = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "KJ: Forktress", getPts("Squig-Hife Tyres")));
+		
         complete();
     }
 
@@ -49,5 +62,26 @@ public class ORGunwagon extends Eintrag {
     @Override
 	public void refreshen() {
         fk.alwaysSelected();
+    	if((sht.isSelected() || ft.isSelected() || pincha.isSelected() || fk.isSelected("KJ: Da Boomer") || fk.isSelected("KJ: Zagzap")) && !kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i+1);
+    		kustomJobSelected = true;
+    	} else if(!(sht.isSelected() || ft.isSelected() || pincha.isSelected() || fk.isSelected("KJ: Da Boomer") || fk.isSelected("KJ: Zagzap")) && kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
+    }
+    
+    //@OVERRIDE
+    @Override
+	public void deleteYourself() {
+        super.deleteYourself();
+
+        if(kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
     }
 }

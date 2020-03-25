@@ -1,12 +1,17 @@
 package oc.wh40k.units.or;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsEinzelUpgrade;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 
 public class ORMorkanaut extends Eintrag {
 
 	private final OptionsEinzelUpgrade o1, o2, o3, o4, o5;
-
+	private final OptionsUpgradeGruppe op;
+	boolean kustomJobSelected = false;
+	
     public ORMorkanaut() {
 
         kategorie = 5;
@@ -28,6 +33,14 @@ public class ORMorkanaut extends Eintrag {
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Kustom force field", getPts("Kustom force field")));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Orkymatic Pistons", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Sparkly Bitz", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: irty Gubbins", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Gog Klaw", getPts("")));
+        add(op = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+                
         complete();
 
     }
@@ -40,5 +53,27 @@ public class ORMorkanaut extends Eintrag {
         o3.setSelected(true);
         o4.setSelected(true);
         o5.setSelected(true);
+        
+    	if(op.isSelected() && !kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i+1);
+    		kustomJobSelected = true;
+    	} else if(!op.isSelected() && kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
+    }
+    
+    //@OVERRIDE
+    @Override
+	public void deleteYourself() {
+        super.deleteYourself();
+
+        if(kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
     }
 }

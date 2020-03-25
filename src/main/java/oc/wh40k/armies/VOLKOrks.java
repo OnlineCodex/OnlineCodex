@@ -106,6 +106,15 @@ public class VOLKOrks extends BuildaVater {
         formationen.add("Snakebites");
         formationen.add("Bad Moonz");
         formationen.add("Freebooterz");
+        formationen.add("");
+        formationen.add("Pyromaniacs - Arsonists");
+        formationen.add("Huntas - Sneaky Devils");
+        formationen.add("Boomboyz - Blow It Up!");
+        formationen.add("Flyboyz - Crucial Velocity");
+        formationen.add("Grot Mobs - Cheeky Zoggers");
+        formationen.add("Tin 'Eads - Krush'n'Krump!");
+        formationen.add("Feral Orks - Wildboyz");
+        formationen.add("Madboyz - Frantic");
 
         OR_SPECIAL_DETACHEMENTS.forEach(chapter -> specialDetachments.add(chapter));
         

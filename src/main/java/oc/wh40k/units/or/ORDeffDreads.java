@@ -1,6 +1,9 @@
 package oc.wh40k.units.or;
 
+import oc.BuildaHQ;
 import oc.Eintrag;
+import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.RuestkammerStarter;
 
 public class ORDeffDreads extends Eintrag {
@@ -8,7 +11,9 @@ public class ORDeffDreads extends Eintrag {
 	private final RuestkammerStarter d1;
 	private final RuestkammerStarter d2;
 	private final RuestkammerStarter d3;
-
+	boolean kustomJobSelected = false;
+	private final OptionsUpgradeGruppe op;
+	
     public ORDeffDreads() {
 
         kategorie = 3;
@@ -40,6 +45,13 @@ public class ORDeffDreads extends Eintrag {
         d3.setButtonText("Deff Dread 3");
         add(d3);
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Orkymatic Pistons", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Sparkly Bitz", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Dirty Gubbins", getPts("")));
+        add(op = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
         complete();
     }
 
@@ -50,6 +62,27 @@ public class ORDeffDreads extends Eintrag {
         if (selected == 1) power = 5;
         if (selected == 2) power = 10;
         if (selected == 3) power = 16;
+    	if(op.isSelected() && !kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i+1);
+    		kustomJobSelected = true;
+    	} else if(!op.isSelected() && kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
+    }
+    
+    //@OVERRIDE
+    @Override
+	public void deleteYourself() {
+        super.deleteYourself();
+
+        if(kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
     }
 }
 

@@ -193,6 +193,12 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
             cp -= 3;
         }
 
+		int kj = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+		System.out.println("KustomJobs " + kj);
+		if (kj < 0) kj = 0;
+		
+		cp -= kj;
+        
         text.append(BuildaHQ.formatierFettItalicUnderline(BuildaHQ.translate("Gesamtpunkte") + " "
 //				+ nameDerArtDerArmeeDekliniert + " : "
                 + BuildaHQ.translate("der Armee : ")
