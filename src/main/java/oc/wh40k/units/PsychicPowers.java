@@ -211,6 +211,13 @@ public class PsychicPowers extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Fists of Gork", 0));
             ogE.addElement(new OptionsGruppeEintrag("Da Krunch", 0));
             ogE.addElement(new OptionsGruppeEintrag("Roar of Mork", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Goffs - Bull Charge", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Deathskulls - Maniacal Seizure", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Bad Moons - Gleamin' Gear ", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Snakebites - Constriction", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Evil Sunz - Visions in the smoke", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Blood Axes - Clever Talk", 0));
+            ogE.addElement(new OptionsGruppeEintrag("Freebooterz - Jolly Ork's Glare", 0));
             add(o16 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 

@@ -1,8 +1,10 @@
 package oc.wh40k.units.or;
 
 import oc.AnzahlPanel;
+import oc.BuildaHQ;
 import oc.Eintrag;
 import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 
 public class ORKillaKans extends Eintrag {
@@ -10,7 +12,9 @@ public class ORKillaKans extends Eintrag {
 	private final AnzahlPanel killabot;
 	private final OptionsZaehlerGruppe killabotFK;
 	private final OptionsZaehlerGruppe killabotNK;
-
+	boolean kustomJobSelected = false;
+	private final OptionsUpgradeGruppe op;
+	
     public ORKillaKans() {
 
         kategorie = 5;
@@ -34,6 +38,13 @@ public class ORKillaKans extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Drilla", getPts("Drilla")));
         add(killabotNK = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Orkymatic Pistons", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Sparkly Bitz", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Dirty Gubbins", getPts("")));
+        add(op = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
+        
         complete();
     }
 
@@ -53,5 +64,27 @@ public class ORKillaKans extends Eintrag {
         } else {
             power = 2;
         }
+        
+    	if(op.isSelected() && !kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i+1);
+    		kustomJobSelected = true;
+    	} else if(!op.isSelected() && kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
+    }
+    
+    //@OVERRIDE
+    @Override
+	public void deleteYourself() {
+        super.deleteYourself();
+
+        if(kustomJobSelected) {
+    		int i = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+    		BuildaHQ.setInformationVectorValueGlobal("KustomJobs", i-1);
+    		kustomJobSelected = false;
+    	}
     }
 }

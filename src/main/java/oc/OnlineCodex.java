@@ -191,6 +191,12 @@ public class OnlineCodex extends BuildaPanel {
             default:
                 break;
         }
+        
+		int kj = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
+		System.out.println("KustomJobs " + kj);
+		if (kj < 0) kj = 0;
+		
+		cp -= kj;
 
         if (kosten != 0) {
             kostenLabel.setText(BuildaHQ.translate("Insgesamt") + " " + entferneNullNachkomma(kosten) + " " + BuildaHQ.translate("Pkt.") + " / " + entferneNullNachkomma(cp) + " CP");
@@ -533,6 +539,9 @@ public class OnlineCodex extends BuildaPanel {
         for (int i = 0; i < myBuilderz.size(); i++) {
             kostenD += myBuilderz.get(i).getCP();
         }
+        
+        System.out.println("kostenD " + kostenD);
+        
         return kostenD;
     }
 
