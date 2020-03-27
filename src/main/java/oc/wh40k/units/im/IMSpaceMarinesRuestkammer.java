@@ -534,6 +534,19 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
             o1.setSelected("Lightning claw", true);
+        } else if (type.equals("Intercessor Sergeant")) {
+            ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Melee weapon", 0));
+            add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+            
+            seperator();
+            
+            ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Others)")));
+            add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
 
         if(oe1 != null) {
@@ -572,7 +585,7 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
         		type.equals("Sanguinary Novitiate") || type.equals("Captain in Phobos Armour") || type.equals("Librarian in Phobos Armour")) {
             o1.alwaysSelected();
             o2.alwaysSelected();
-        } else if (type.equals("Chaplain") || type.equals("Librarian GK") || type.equals("Chaplain GK") || type.equals("Chapter Ancient") || type.equals("Terminator Ancient")) {
+        } else if (type.equals("Chaplain") || type.equals("Librarian GK") || type.equals("Chaplain GK") || type.equals("Chapter Ancient") || type.equals("Terminator Ancient") || type.equals("Intercessor Sergeant")) {
             o1.alwaysSelected();
         }
 

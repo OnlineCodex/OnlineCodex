@@ -9,7 +9,6 @@ public class IMThunderfireCannon extends Eintrag {
         grundkosten = getPts("Thunderfire Cannon") +
                 getPts("Thunderfire Cannon - Techmarine Gunner") +
                 getPts("Thunderfire cannon - weapon") +
-                getPts("Servo-arm") * 2 +
                 getPts("Plasma cutter") +
                 getPts("Flamer (SM)") +
                 getPts("Bolt pistol (SM)");
