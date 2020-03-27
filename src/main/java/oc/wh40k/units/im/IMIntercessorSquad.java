@@ -6,9 +6,10 @@ import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
+import oc.RuestkammerStarter;
 
 public class IMIntercessorSquad extends Eintrag {
-	private final OptionsEinzelUpgrade sergeant;
+	private final RuestkammerStarter rkBoss;
 	private final OptionsZaehlerGruppe grenade;
 	private final OptionsUpgradeGruppe o1;
     private final AnzahlPanel squad;
@@ -29,19 +30,25 @@ public class IMIntercessorSquad extends Eintrag {
         add(grenade = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
-
-        add(sergeant = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Intercessor Sergeant", getPts("Intercessor Sergeant")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Power sword", getPts("Power sword (SM)")));
+        
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Intercessor Sergeant", getKeywords());
+        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Intercessor Sergeant");
+        rkBoss.initKammer();
+        rkBoss.setGrundkosten(getPts("Intercessor Sergeant"));
+        rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);
+        add(rkBoss);
+        rkBoss.setAbwaehlbar(false);
+        
+        seperator();        
     }
 
     @Override
     public void refreshen() {
-        sergeant.setSelected(true);
         o1.setPreis(0, (squad.getModelle() * getPts("Bolt rifle")));
         o1.setPreis(1, (squad.getModelle() * getPts("Auto bolt rifle")));
         o1.setPreis(2, (squad.getModelle() * getPts("Stalker bolt rifle")));
         o1.alwaysSelected();
-        grenade.setMaxAnzahl((squad.getModelle() + (sergeant.isSelected() ? 1 : 0)) / 5);
+        grenade.setMaxAnzahl((squad.getModelle() + (rkBoss.isSelected() ? 1 : 0)) / 5);
 
         if (squad.getModelle() <= 5)
             power = 5;

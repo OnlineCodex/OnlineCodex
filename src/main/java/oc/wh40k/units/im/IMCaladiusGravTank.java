@@ -15,6 +15,7 @@ public class IMCaladiusGravTank extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Twin Iliastus accelerator cannon", getPts("Twin Iliastus accelerator cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin Arachnus heavy blaze cannon", getPts("Twin Arachnus heavy blaze cannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o1.setSelected(0, true);
 

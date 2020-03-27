@@ -10,7 +10,7 @@ import oc.RuestkammerStarter;
 public class TAXV8CrisisBodyguards extends Eintrag {
 
 	private final Vector<RuestkammerStarter> rk;
-	private OptionsZaehlerGruppe o4;
+	private OptionsZaehlerGruppe o4, o5;
 	public TAXV8CrisisBodyguards() {
         name = "XV8 Crisis Bodyguards";
         überschriftSetzen = true;
@@ -32,6 +32,11 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MV7 Marker Drone", getPts("MV7 Marker Drone")));
         add(o4 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
+        seperator();
+        
+        ogE.addElement(new OptionsGruppeEintrag("XV8-02 Iridium battlesuite", getPts("XV8-02 Crisis Iridium battlesuite")));
+        add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
+
         addToInformationVector("Bodyguards", 1);
 
         complete();
@@ -47,6 +52,11 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         o4.getPanel().setLocation(
                 (int) o4.getPanel().getLocation().getX(),
                 (int) rk.get(8).getPanel().getLocation().getY() + rk.get(8).getPanel().getSize().height + 5
+        );
+        
+        o5.getPanel().setLocation(
+                (int) o4.getPanel().getLocation().getX(),
+                (int) o4.getPanel().getLocation().getY() + o4.getPanel().getSize().height + 5
         );
 
         boolean error = false;
@@ -69,6 +79,8 @@ public class TAXV8CrisisBodyguards extends Eintrag {
         } else {
             setFehlermeldung("");
         }
+        
+        o5.setMaxAnzahl(krisisNumber/3);
     }
 
     @Override

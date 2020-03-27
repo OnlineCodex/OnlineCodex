@@ -22,7 +22,7 @@ public class TAXV107RvarnaBattlesuit extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Shielded missile drone", getPts("Shielded missile drone")));
+        ogE.addElement(new OptionsGruppeEintrag("MV84 Shielded Missile Drone", getPts("MV84 Shielded Missile Drone")));
         add(o2 = new OptionsZaehlerGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         seperator();
