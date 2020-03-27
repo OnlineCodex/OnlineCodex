@@ -37,7 +37,7 @@ public class ORMorkanaut extends Eintrag {
         
         ogE.addElement(new OptionsGruppeEintrag("KJ: Orkymatic Pistons", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("KJ: Sparkly Bitz", getPts("")));
-        ogE.addElement(new OptionsGruppeEintrag("KJ: irty Gubbins", getPts("")));
+        ogE.addElement(new OptionsGruppeEintrag("KJ: Dirty Gubbins", getPts("")));
         ogE.addElement(new OptionsGruppeEintrag("KJ: Gog Klaw", getPts("")));
         add(op = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
                 
