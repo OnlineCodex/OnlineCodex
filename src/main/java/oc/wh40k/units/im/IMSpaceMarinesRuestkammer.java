@@ -536,6 +536,8 @@ public class IMSpaceMarinesRuestkammer extends RuestkammerVater {
             o1.setSelected("Lightning claw", true);
         } else if (type.equals("Intercessor Sergeant")) {
             ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Auto bolt rifle", getPts("Auto bolt rifle")));
+            ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", getPts("Stalker bolt rifle")));
             ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Melee weapon", 0));
             add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
