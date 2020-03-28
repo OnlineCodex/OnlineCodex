@@ -2,7 +2,6 @@ package oc.wh40k.units.im;
 
 import oc.AnzahlPanel;
 import oc.Eintrag;
-import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
 import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
@@ -31,8 +30,8 @@ public class IMIntercessorSquad extends Eintrag {
 
         seperator();
         
-        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSpaceMarinesRuestkammer.class, "Intercessor Sergeant", getKeywords());
-        ((IMSpaceMarinesRuestkammer) rkBoss.getKammer()).setType("Intercessor Sergeant");
+        rkBoss = new RuestkammerStarter(ID, randAbstand, cnt, IMSergeant.class, "Intercessor Sergeant", getKeywords());
+        ((IMSergeant) rkBoss.getKammer()).type = "Intercessor Sergeant";
         rkBoss.initKammer();
         rkBoss.setGrundkosten(getPts("Intercessor Sergeant"));
         rkBoss.setUeberschriftTrotzNullKostenAusgeben(true);

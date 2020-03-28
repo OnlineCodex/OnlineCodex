@@ -2,6 +2,7 @@ package oc.wh40k.units.im;
 
 import oc.OptionsEinzelUpgrade;
 import oc.OptionsGruppeEintrag;
+import oc.OptionsUpgradeGruppe;
 import oc.OptionsZaehlerGruppe;
 import oc.RuestkammerVater;
 
@@ -10,6 +11,7 @@ public class IMSergeant extends RuestkammerVater {
     public OptionsZaehlerGruppe o3;
     private OptionsZaehlerGruppe o1;
     private OptionsZaehlerGruppe o2;
+    private OptionsUpgradeGruppe o4;
     public String type = "";
 
     public IMSergeant() {
@@ -75,6 +77,21 @@ public class IMSergeant extends RuestkammerVater {
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Combat shield", getPts("Combat shield")));
             add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Melta bombs", getPts("Melta bombs")));
 
+        } else if (type.equals("Intercessor Sergeant")) {
+                ogE.addElement(new OptionsGruppeEintrag("Bolt rifle", getPts("Bolt rifle")));
+                ogE.addElement(new OptionsGruppeEintrag("Auto bolt rifle", getPts("Auto bolt rifle")));
+                ogE.addElement(new OptionsGruppeEintrag("Stalker bolt rifle", getPts("Stalker bolt rifle")));
+                ogE.addElement(new OptionsGruppeEintrag("Hand flamer", getPts("Hand flamer (SM)")));
+                ogE.addElement(new OptionsGruppeEintrag("Melee weapon", 0));
+                add(o4 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
+                
+                seperator();
+                
+                ogE.addElement(new OptionsGruppeEintrag("Chainsword", getPts("Chainsword (SM)")));
+                ogE.addElement(new OptionsGruppeEintrag("Power sword", getPts("Power sword (SM)")));
+                ogE.addElement(new OptionsGruppeEintrag("Power fist", getPts("Power fist (SM)")));
+                ogE.addElement(new OptionsGruppeEintrag("Thunder hammer", getPts("Thunder hammer (Others)")));
+                add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         } else {
             ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
             ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
@@ -131,10 +148,8 @@ public class IMSergeant extends RuestkammerVater {
 
                 ogE.addElement(new OptionsGruppeEintrag("2 Lightning claws", getPts("Lightning claw (pair)")));
                 add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
-            }
-
+            }  
         }
-
         sizeSetzen();
     }
 
@@ -181,6 +196,8 @@ public class IMSergeant extends RuestkammerVater {
             o2.setLegal(legal);
             o1.setMaxAnzahl(o2.isSelected() ? 0 : 2);
             o2.setMaxAnzahl(o1.isSelected() ? 0 : 1);
+        } else if (type.equals("Intercessor Sergeant")) {
+        	o4.alwaysSelected();
         }
 
         if (type == "Damned Legionnaires") {
