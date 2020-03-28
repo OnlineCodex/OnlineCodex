@@ -193,7 +193,6 @@ public class OnlineCodex extends BuildaPanel {
         }
         
 		int kj = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
-		System.out.println("KustomJobs " + kj);
 		if (kj < 0) kj = 0;
 		
 		cp -= kj;
@@ -539,8 +538,6 @@ public class OnlineCodex extends BuildaPanel {
         for (int i = 0; i < myBuilderz.size(); i++) {
             kostenD += myBuilderz.get(i).getCP();
         }
-        
-        System.out.println("kostenD " + kostenD);
         
         return kostenD;
     }

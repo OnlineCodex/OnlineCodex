@@ -194,7 +194,6 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         }
 
 		int kj = BuildaHQ.getCountFromInformationVectorGlobal("KustomJobs");
-		System.out.println("KustomJobs " + kj);
 		if (kj < 0) kj = 0;
 		
 		cp -= kj;

@@ -186,7 +186,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
+                    "", "Trukk", "'Chinork' Warkopta [FW]"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
@@ -211,7 +211,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
+                    "", "Trukk", "'Chinork' Warkopta [FW]"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
@@ -237,7 +237,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
+                    "", "Trukk", "'Chinork' Warkopta [FW]"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
@@ -263,7 +263,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
+                    "", "Trukk", "'Chinork' Warkopta [FW]"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
@@ -288,7 +288,7 @@ public class VOLKOrks extends BuildaVater {
                     "", "Deff Dreads", "Killa Kans", "Gorkanaut", "Morkanaut", "Battlewagon", "Gunwagon", "Bonebreaka", "Big Gunz [Index]", "Mek Gunz", "Lootas", "Flash Gitz",
                     "", "Squiggoth [FW]", "Meka-Dread [FW]", "Lifta Wagon [FW]", "Big Trakk [FW]", "Battlewagon with Supa-Kannon [FW]"});
             myChooserGruppen.get(DEDICATED_TRANSPORT).changeComboBoxAuswahlen(new String[]{
-                    "", "Trukk"});
+                    "", "Trukk", "'Chinork' Warkopta [FW]"});
             myChooserGruppen.get(FLIER).changeComboBoxAuswahlen(new String[]{
                     "", "Dakkajet", "Burna-Bommer", "Blitza-Bommer", "Wazbom Blastajet"});
             myChooserGruppen.get(LORD_OF_WAR).changeComboBoxAuswahlen(new String[]{
