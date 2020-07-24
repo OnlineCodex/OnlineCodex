@@ -7,7 +7,7 @@ public class ORBurnaBommer extends Eintrag {
 
     public ORBurnaBommer() {
         name = "Burna-Bommer";
-        grundkosten = getPts("Burna-Bommer") + getPts("supa shoota") + getPts("Twin big shoota");
+        grundkosten = getPts("Burna-Bommer") + getPts("supa shoota")*2 + getPts("Twin big shoota");
         power = 7;
 
         add(ico = new oc.Picture("oc/wh40k/images/BrennaBomma.gif"));

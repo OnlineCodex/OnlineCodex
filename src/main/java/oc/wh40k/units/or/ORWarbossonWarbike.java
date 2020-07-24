@@ -21,7 +21,6 @@ public class ORWarbossonWarbike extends Eintrag {
 
         waffen = new RuestkammerStarter(ID, randAbstand, cnt, ORWaffenUndGeschenke.class, "");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultRanged("no weapon");
-        ((ORWaffenUndGeschenke) waffen.getKammer()).setDefaultCloceCombat("Big choppa");
         ((ORWaffenUndGeschenke) waffen.getKammer()).setName(name);
         waffen.initKammer(true, true, false, false, true, false, true, false);
         waffen.setButtonText("Waffen und Geschenke");

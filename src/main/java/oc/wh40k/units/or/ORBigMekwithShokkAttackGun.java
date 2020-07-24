@@ -11,7 +11,7 @@ public class ORBigMekwithShokkAttackGun extends Eintrag {
 	public ORBigMekwithShokkAttackGun() {
         kategorie = 1;
         name = "Big Mek with Shokk Attack Gun";
-        grundkosten = getPts("Big Mek") + getPts("Stikkbombs");
+        grundkosten = getPts("Big Mek with Shokk Attack Gun") + getPts("Stikkbombs");
         power = 4;
 
         add(ico = new oc.Picture("oc/wh40k/images/Bigmek.gif"));
