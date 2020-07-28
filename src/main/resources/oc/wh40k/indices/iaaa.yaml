@@ -44,8 +44,8 @@
 "Inquisitor-Lord Hector Rex": 100
 "Inquisitor-Lord Solomon Lok": 65
 "Lord High Commander Carab Culln": 140
-"Magister Sevrin Loth": 130
-"Tyberos the Red Wake": 150
+"Magister Sevrin Loth": 150
+"Tyberos the Red Wake": 175
 "Chaplain Dreadnought Titus": 130
 "Lieutenant-commander Anton Narveaz": 90
 "Captain Tarnus Vale": 90
@@ -53,42 +53,42 @@
 "Malakim Phoros": 115
 "Captain Mordacai Blaylock": 135
 "Captain Pellas Mir'san": 95
-"Bray'arth Ashmantle": 325
+"Bray'arth Ashmantle": 330
 "Harath Shen": 75
 "Chief Librarian Ahazra Redth": 115
 "High Chaplain Thulsa Kane": 155
-"Lord Asterion Moloc": 150
+"Lord Asterion Moloc": 165
 "Captain Corien Sumatris": 90
 "Captain Silas Alberec": 90
 "Arch-centurion Carnac Commodus": 70
 "Knight-Captain Elam Courbray": 100
-"Lugft Huron": 145
-"Armenneus Valthex": 80
-"Chaplain Ivanus Enkomi": 80
+"Lugft Huron": 170
+"Armenneus Valthex": 90
+"Chaplain Ivanus Enkomi": 100
 "Vaylund Cal": 110
 "Captain Zhrukhal Androcles": 110
-"Hecaton Aiakos": 170
-"Storm bolter (IA)": 2
-"Hunter-killer missile (IA)": 6
-"Twin heavy bolter": 17
-"Twin heavy flamer": 34
-"Lascannon (IA)": 25
-"Heavy bolter (IA)": 10
-"Heavy flamer": 14
-"Multi-melta": 22
-"Meltagun": 14
-"Kheres assault cannon": 22
+"Hecaton Aiakos": 175
+"Storm bolter (IA)": 3
+"Hunter-killer missile (IA)": 5
+"Twin heavy bolter": 30
+"Twin heavy flamer": 30
+"Lascannon (IA)": 20
+"Heavy bolter (IA)": 15
+"Heavy flamer": 15
+"Multi-melta": 25
+"Meltagun": 10
+"Kheres assault cannon": 25
 "Bolt pistol": 0
 "Frag grenade": 0
 "Krak grenade": 0
-"Castellum air defence missiles": 18
+"Castellum air defence missiles": 20
 "Castellum battle cannon": 55
 "Flamer": 6
 "Icarus quad lascannon": 80
 "Demolisher cannon": 0
 "Aiolos missile launcher": 30
 "Air defence missiles": 0
-"Anvillus autocannon battery": 50
+"Anvillus autocannon battery": 70
 "Arachnus heavy lascannon battery": 75
 "Artificer flamer": 0
 "Black Spear lasbeam": 0
@@ -101,7 +101,7 @@
 "Deathstorm missile array": 0
 "Dreadfire heavy flamer": 0
 "Dreadhammer siege cannon": 0
-"Dreadnought inferno cannon": 35
+"Dreadnought inferno cannon": 25
 "Fellblade accelerator cannon": 0
 "Firefury missile battery": 0
 "Grav-flux bombard": 65
@@ -109,7 +109,7 @@
 "Grenade discharger": 0
 "Heavy neutron pulse array": 0
 "Helios launcher": 0
-"Hellfire plasma carronade": 40
+"Hellfire plasma carronade": 50
 "Hellstrike battery": 60
 "Hyperios launcher": 30
 "Infernus cannon": 45
@@ -123,28 +123,28 @@
 "Missile launcher": 20
 "Neutron pulse cannon": 0
 "Phased conversion beamer": 0
-"Plasma blastgun": 11
+"Plasma blastgun": 10
 "Plasma charger": 0
 "Plasma destroyer": 40
 "Punisher rotary cannon": 0
 "Purgator": 0
-"Quad heavy bolter": 36
+"Quad heavy bolter": 60
 "Quad lascannon": 80
 "Quad launcher": 45
 "Relic storm bolter": 0
 "ROC missile launcher": 0
 "Scorpius multi-launcher": 40
 "Siege melta array": 0
-"Skyreaper battery": 42
+"Skyreaper battery": 45
 "Spectre pattern bolter": 0
 "Storm cannon array": 50
-"Tempest salvo launcher": 10
+"Tempest salvo launcher": 0
 "Thunderhawk heavy cannon": 0
 "Thundershock": 0
 "Turbo-laser destructor": 0
 "Twin accelerator autocannon": 0
 "Twin avenger bolt cannon": 0
-"Twin hellstrike missile launcher": 48
+"Twin hellstrike missile launcher": 50
 "Twin magna-melta": 120
 "Twin volcano cannon": 0
 "Vengeance launcher": 20
@@ -187,4 +187,4 @@
 "Magister?s Axe": 0
 "The Sword Excellus": 0
 "Voidshard power blade": 0
-"Atomantic pavaise": 35
+"Atomantic pavaise": 40
