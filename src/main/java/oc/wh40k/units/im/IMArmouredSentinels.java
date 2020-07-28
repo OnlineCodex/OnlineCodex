@@ -25,7 +25,7 @@ public class IMArmouredSentinels extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
         ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (AM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon (AM non-infantry)")));
         ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", getPts("Plasma cannon (AM)")));

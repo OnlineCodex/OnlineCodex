@@ -12,7 +12,7 @@ public class IMBaneblade extends Eintrag {
 	private final OptionsUpgradeGruppe o3;
 	public IMBaneblade() {
         name = "Baneblade";
-        grundkosten = getPts("Baneblade") + getPts("Autocannon") + getPts("Baneblade cannon") +
+        grundkosten = getPts("Baneblade") + getPts("Autocannon (AM non-infantry)") + getPts("Baneblade cannon") +
                 getPts("Demolisher Cannon (AM)") + getPts("Twin heavy bolter (AM)") + getPts("Adamantium tracks");
         power = 30;
 

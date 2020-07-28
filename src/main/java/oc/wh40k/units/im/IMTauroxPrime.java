@@ -28,7 +28,7 @@ public class IMTauroxPrime extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 HEAVY_SUPPORT volley gun", getPts("Hot-shot volley gun") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Autocannons", getPts("Autocannon") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Autocannons", getPts("Autocannon (AM non-infantry)") * 2));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

@@ -10,7 +10,7 @@ public class IMTaurox extends Eintrag {
 
     public IMTaurox() {
         name = "Taurox";
-        grundkosten = getPts("Taurox") + getPts("Autocannon") * 2;
+        grundkosten = getPts("Taurox") + getPts("Autocannon (AM non-infantry)") * 2;
         power = 4;
         add(ico = new oc.Picture("oc/wh40k/images/IGChimaere.jpg"));
 

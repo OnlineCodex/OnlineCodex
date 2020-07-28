@@ -12,7 +12,7 @@ public class IMHellhammer extends Eintrag {
 	private final OptionsUpgradeGruppe o3;
 	public IMHellhammer() {
         name = "Hellhammer";
-        grundkosten = getPts("Hellhammer") + getPts("Autocannon") + getPts("Hellhammer cannon") +
+        grundkosten = getPts("Hellhammer") + getPts("Autocannon (AM non-infantry)") + getPts("Hellhammer cannon") +
                 getPts("Demolisher Cannon (AM)") + getPts("Twin heavy bolter (AM)") + getPts("Lasgun") + getPts("Adamantium tracks");
         power = 31;
 
