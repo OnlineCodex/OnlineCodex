@@ -14,7 +14,7 @@ public class IMTechmarineonBike extends Eintrag {
     public IMTechmarineonBike() {
     	super(IMPERIUM, ADEPTUS_ASTARTES, CHAPTER, CHARACTER, BIKER, TECHMARINE);
         name = "Techmarine on Bike";
-        grundkosten = getPts("Techmarine on Bike") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Twin boltgun (SM)");
+        grundkosten = getPts("Techmarine on Bike") + getPts("Frag grenade (SM)") + getPts("Krak grenade (SM)") + getPts("Twin boltgun");
 
         seperator();
 

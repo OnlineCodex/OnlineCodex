@@ -17,10 +17,10 @@ public class IMLandSpeederStorm extends Eintrag {
         if(!BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves")) {
 	        seperator();
 
-	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
-	        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
-	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-	        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+	        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM other)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM other)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM other)")));
+	        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon (other)")));
 	        add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         }
         complete();

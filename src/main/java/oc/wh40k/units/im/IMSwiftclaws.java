@@ -40,8 +40,8 @@ public class IMSwiftclaws extends Eintrag {
 
         seperator();
 
-        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Swiftclaw Attack Bike (HB)", "Swiftclaw Attack Bike with heavy bolter", getPts("Swiftclaw Attack Bike") + getPts("Heavy Bolter (SM)") + getPts("Twin boltgun")));
-        add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Swiftclaw Attack Bike (MM)", "Swiftclaw Attack Bike with multi-melta", getPts("Swiftclaw Attack Bike") + getPts("Multi-melta (SM)") + getPts("Twin boltgun")));
+        add(oe2 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Swiftclaw Attack Bike (HB)", "Swiftclaw Attack Bike with heavy bolter", getPts("Swiftclaw Attack Bike") + getPts("Heavy Bolter (SM other)") + getPts("Twin boltgun")));
+        add(oe3 = new OptionsEinzelUpgrade(ID, randAbstand, cnt, "option", "Swiftclaw Attack Bike (MM)", "Swiftclaw Attack Bike with multi-melta", getPts("Swiftclaw Attack Bike") + getPts("Multi-melta (SM other)") + getPts("Twin boltgun")));
 
         seperator();
 

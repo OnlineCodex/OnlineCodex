@@ -30,9 +30,9 @@ public class IMCenturionDevastatorSquad extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("heavy bolter (SM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("Heavy Bolter (SM other)") * 2));
         add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        ogE.addElement(new OptionsGruppeEintrag("2 lascannons", getPts("Lascannon (SM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 lascannons", getPts("Lascannon (SM other)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Grav-cannon", "Grav-cannon and grav-amp", getPts("Grav-cannon and grav-amp")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 

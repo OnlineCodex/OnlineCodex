@@ -21,21 +21,21 @@ public class IMVenerableDreadnought extends Eintrag {
 
         seperator();
         if(spacewolves) {
-            ogE.addAll(IMSpaceWolvesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+            ogE.addAll(IMSpaceWolvesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon (other)", buildaVater));
         }else if (deathwatch) {
-            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon (other)")));
             ogE.addElement(new OptionsGruppeEintrag("Heavy plasma cannon", getPts("Heavy plasma cannon")));
             ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
         } else {
-            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon", buildaVater));
+            ogE.addAll(IMSpaceMarinesDreadnoughtHeavyWeapons.createRK("Assault cannon", "Assault cannon (other)", buildaVater));
         }
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("DCW + Storm bolter", "Dreadnought combat weapon + Storm bolter", getPts("Dreadnought combat weapon (other models)") + getPts("Storm bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("DCW + Heavy flamer", "Dreadnought combat weapon + Heavy flamer", getPts("Dreadnought combat weapon (other models)") + getPts("Heavy flamer (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("DCW + Heavy flamer", "Dreadnought combat weapon + Heavy flamer", getPts("Dreadnought combat weapon (other models)") + getPts("Heavy flamer (SM other)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM other)")));
         if (!deathwatch && !spacewolves) {
             ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
         }

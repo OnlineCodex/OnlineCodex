@@ -17,12 +17,12 @@ public class IMRazorback extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin Heavy Bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Twin assault cannon", getPts("Twin assault cannon")));
         if(!BuildaHQ.aktBuildaVater.getFormationType().equals("Space Wolves")) {
-        	ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin heavy flamer (SM)")));
-        	ogE.addElement(new OptionsGruppeEintrag("Las + twin plasma gun", getPts("lascannon (SM)") + getPts("Twin plasma gun")));
+        	ogE.addElement(new OptionsGruppeEintrag("Twin heavy flamer", getPts("Twin Heavy flamer (SM)")));
+        	ogE.addElement(new OptionsGruppeEintrag("Las + twin plasma gun", getPts("Lascannon (SM other)") + getPts("Twin plasma gun")));
         }
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

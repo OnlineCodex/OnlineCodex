@@ -16,7 +16,7 @@ public class IMNephilimJetfighter extends Eintrag {
 
         name = "Nephilim Jetfighter";
 
-        grundkosten = getPts("Nephilim Jetfighter") + getPts("Twin heavy bolter (SM)") + 2 * getPts("Blacksword missile launcher");
+        grundkosten = getPts("Nephilim Jetfighter") + getPts("Twin Heavy Bolter (SM)") + 2 * getPts("Blacksword missile launcher");
 
         power = 9;
 

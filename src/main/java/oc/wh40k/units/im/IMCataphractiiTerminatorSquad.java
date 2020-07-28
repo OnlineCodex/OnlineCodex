@@ -27,7 +27,7 @@ public class IMCataphractiiTerminatorSquad extends Eintrag {
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
         ogE.addElement(new OptionsGruppeEintrag("Lightning claw", getPts("Lightning claw (single)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM INFANTRY)")));
         add(o1y = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 
         seperator();

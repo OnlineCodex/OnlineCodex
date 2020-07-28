@@ -29,7 +29,7 @@ public class IMLibrarianDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", "Storm bolter", getPts("Storm bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", "Heavy flamer", getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", "Heavy flamer", getPts("Heavy flamer (SM other)")));
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

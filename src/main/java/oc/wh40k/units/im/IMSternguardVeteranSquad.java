@@ -31,7 +31,7 @@ public class IMSternguardVeteranSquad extends Eintrag {//Sternguard
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM INFANTRY)")));
         ogE.addAll(IMSpaceMarinesSpecialWeapons.createRK("", "", buildaVater));
         ogE.addAll(IMSpaceMarinesHeavyWeapons.createRK("", "", buildaVater));
 //		ogE.addAll(IMSpaceMarinesCombiWeapons.createRK("", "", buildaVater)); Ist zwar laut Eintrag möglich, aber unnötig, da es sowieso schon oben gewählt werden kann.

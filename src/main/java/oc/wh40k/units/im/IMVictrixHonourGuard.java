@@ -10,7 +10,7 @@ public class IMVictrixHonourGuard extends Eintrag {
                 getPts("Frag grenade (SM)") * 2 +
                 getPts("Krak grenade (SM)") * 2 +
                 getPts("Power sword (SM)") * 2 +
-                getPts("Storm shield (SM)") * 2;
+                getPts("Storm shield (others)") * 2;
         power = 2;
 
         complete();

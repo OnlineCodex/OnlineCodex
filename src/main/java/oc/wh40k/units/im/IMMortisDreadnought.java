@@ -36,7 +36,7 @@ public class IMMortisDreadnought extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("2 missile launcher", 2 * getPts("Missile launcher")));
 
-        ogE.addElement(new OptionsGruppeEintrag("2 assault cannon", 2 * getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("2 assault cannon", 2 * getPts("Assault cannon (other)")));
 
         ogE.addElement(new OptionsGruppeEintrag("2 multi-melta", 2 * getPts("Multi-melta")));
 

@@ -19,9 +19,9 @@ public class IMSwiftclawAttackBikes extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy Bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy Bolter (SM other)")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM other)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();

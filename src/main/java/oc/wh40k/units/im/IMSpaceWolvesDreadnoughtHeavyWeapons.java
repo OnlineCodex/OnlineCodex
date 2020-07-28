@@ -13,7 +13,7 @@ public class IMSpaceWolvesDreadnoughtHeavyWeapons extends RuestkammerElement {
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
         addElement("Heavy plasma cannon", "Heavy plasma cannon", defaultWeapon, ogE, bv);
         addElement("Helfrost cannon", "Helfrost cannon", defaultWeapon, ogE, bv);
-        addElement("Multi-melta", "Multi-melta (SM)", defaultWeapon, ogE, bv);
+        addElement("Multi-melta", "Multi-melta (SM other)", defaultWeapon, ogE, bv);
         addElement("Twin lascannon", "Twin lascannon", defaultWeapon, ogE, bv);
         return ogE;
     }

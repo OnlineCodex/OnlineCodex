@@ -7,14 +7,14 @@ public class IMTerminusUltra extends Eintrag {
 
     public IMTerminusUltra() {
         name = "Terminus Ultra";
-        grundkosten = getPts("Terminus Ultra") + getPts("Twin lascannon") * 3 + getPts("Lascannon (SM)") * 2;
+        grundkosten = getPts("Terminus Ultra") + getPts("Twin lascannon") * 3 + getPts("Lascannon (SM other)") * 2;
         power = 30;
 
         seperator();
 
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Hunter-killer missile", getPts("Hunter-killer missile (SM)")));
         add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Storm bolter", getPts("Storm bolter (SM)")));
-        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-melta", getPts("Multi-melta (SM)")));
+        add(new OptionsEinzelUpgrade(ID, randAbstand, cnt, "", "Multi-melta", getPts("Multi-melta (SM other)")));
 
         complete();
     }

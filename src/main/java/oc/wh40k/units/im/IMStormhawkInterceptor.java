@@ -10,11 +10,11 @@ public class IMStormhawkInterceptor extends Eintrag {
 
     public IMStormhawkInterceptor() {
         name = "Stormhawk Interceptor";
-        grundkosten = getPts("Stormhawk Interceptor") + getPts("Assault cannon") * 2;
+        grundkosten = getPts("Stormhawk Interceptor") + getPts("Assault cannon (other)") * 2;
         power = 10;
 
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolters", getPts("Heavy bolter (SM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolters", getPts("Heavy Bolter (SM other)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("Skyhammer missile launcher", getPts("Skyhammer missile launcher")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

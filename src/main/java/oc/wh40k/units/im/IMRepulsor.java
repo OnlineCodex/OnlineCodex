@@ -16,7 +16,7 @@ public class IMRepulsor extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin Heavy Bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

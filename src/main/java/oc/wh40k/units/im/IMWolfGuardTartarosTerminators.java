@@ -24,7 +24,7 @@ public class IMWolfGuardTartarosTerminators extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Combi-Bolter", getPts("Combi-Bolter")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("heavy flamer (SM INFANTRY)")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", getPts("reaper autocannon")));
         add(o3 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 0));
 

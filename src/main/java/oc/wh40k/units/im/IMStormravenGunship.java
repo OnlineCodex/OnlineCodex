@@ -21,7 +21,7 @@ public class IMStormravenGunship extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Twin Heavy bolter", getPts("Twin Heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Twin Heavy bolter", getPts("Twin Heavy Bolter (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin multi-melta", getPts("Twin multi-melta")));
         ogE.addElement(new OptionsGruppeEintrag("Typhoon missile launcher", getPts("Typhoon missile launcher")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

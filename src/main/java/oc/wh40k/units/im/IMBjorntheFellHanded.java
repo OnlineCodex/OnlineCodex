@@ -14,7 +14,7 @@ public class IMBjorntheFellHanded extends Eintrag {
 
         seperator();
         
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Heavy plasma cannon", getPts("Heavy plasma cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Helfrost cannon", getPts("Helfrost cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));

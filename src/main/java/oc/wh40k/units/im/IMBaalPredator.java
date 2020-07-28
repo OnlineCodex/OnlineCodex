@@ -21,8 +21,8 @@ public class IMBaalPredator extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("heavy bolter (SM)") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 heavy flamers", getPts("heavy flamer (SM)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 heavy bolters", getPts("Heavy Bolter (SM other)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 heavy flamers", getPts("Heavy flamer (SM other)") * 2));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         complete();

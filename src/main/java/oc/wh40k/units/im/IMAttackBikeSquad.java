@@ -18,8 +18,8 @@ public class IMAttackBikeSquad extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM other)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM other)")));
         add(o = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
 
         complete();

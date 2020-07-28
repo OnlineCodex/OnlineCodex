@@ -30,7 +30,7 @@ public class IMDevastatorSquad extends Eintrag {
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         ogE.addAll(IMSpaceMarinesHeavyWeapons.createRK("", "", buildaVater));
         if (buildaVater.getFormationType().equals("Blood Angels"))
-            ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM INFANTRY)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
 
         seperator();

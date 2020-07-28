@@ -21,7 +21,7 @@ public class IMRedemptorDreadnought extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer (SM)", getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer (SM other)", getPts("Heavy flamer (SM other)")));
         ogE.addElement(new OptionsGruppeEintrag("Onslaught gatling cannon", getPts("Onslaught gatling cannon")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

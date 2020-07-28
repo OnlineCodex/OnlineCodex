@@ -30,8 +30,8 @@ public class IMDamnedLegionnaires extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM)") - getPts("Boltgun (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)") - getPts("Boltgun (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy flamer (SM INFANTRY)") - getPts("Boltgun (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM INFANTRY)") - getPts("Boltgun (SM)")));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();

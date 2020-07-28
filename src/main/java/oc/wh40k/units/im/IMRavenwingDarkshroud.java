@@ -24,9 +24,9 @@ public class IMRavenwingDarkshroud extends Eintrag {
 
 
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy Bolter (SM other)")));
 
-        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon (other)")));
 
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

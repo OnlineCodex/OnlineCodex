@@ -22,7 +22,7 @@ public class IMLieutenants extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("MC boltgun", "Master-crafted boltgun", getPts("Master crafted boltgun")));
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", getPts("Bolt pistol (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Grav-pistol", getPts("Grav-pistol")));
-        ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol")));
+        ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", getPts("Plasma pistol (SM)")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-flamer", getPts("Combi-flamer")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-grav", getPts("Combi-grav")));
         ogE.addElement(new OptionsGruppeEintrag("Combi-melta", getPts("Combi-melta")));

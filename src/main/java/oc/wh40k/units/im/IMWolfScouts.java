@@ -46,8 +46,8 @@ public class IMWolfScouts extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM INFANTRY)")));
         ogE.addAll(IMSpaceWolvesSpecialWeapons.createRK("", "", buildaVater));
         add(wpn2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

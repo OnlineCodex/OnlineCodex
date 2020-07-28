@@ -36,11 +36,11 @@ public class IMTacticalSquad extends Eintrag {
 
         //Heavy Weapons
         if (buildaVater.getFormationType().equals("Blood Angels"))
-            ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Heavy Flamer", getPts("Heavy Flamer (SM INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (SM INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (SM INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (SM INFANTRY)")));
         ogE.addElement(new OptionsGruppeEintrag("Gravcannon and grav-amp", getPts("Gravcannon and grav-amp")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma cannon", getPts("Plasma cannon (SM)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));

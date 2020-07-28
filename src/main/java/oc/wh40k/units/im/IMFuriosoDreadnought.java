@@ -34,14 +34,14 @@ public class IMFuriosoDreadnought extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Storm bolter", getPts("Storm bolter (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM other)")));
         ogE.addElement(new OptionsGruppeEintrag("Frag cannon", getPts("Frag cannon")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun (SM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM other)")));
         ogE.addElement(new OptionsGruppeEintrag("Frag cannon", getPts("Frag cannon")));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

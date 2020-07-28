@@ -68,10 +68,10 @@ public class IMKillteamKammer extends RuestkammerVater {
 
             if(type.equals("Veteran")){
 	            ogE.addElement(new OptionsGruppeEintrag("Deathwatch frag cannon", getPts("Deathwatch frag cannon")));
-	            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM)")));
-	            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+	            ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (SM INFANTRY)")));
+	            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM INFANTRY)")));
 	            ogE.addElement(new OptionsGruppeEintrag("Infernus heavy bolter", getPts("Infernus heavy bolter")));
-	            ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM)")));
+	            ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (SM INFANTRY)")));
 	            add(o5 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
             }
 
@@ -108,8 +108,8 @@ public class IMKillteamKammer extends RuestkammerVater {
 
             seperator();
 
-            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon")));
-            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM)")));
+            ogE.addElement(new OptionsGruppeEintrag("Assault cannon", getPts("Assault cannon (INFANTRY)")));
+            ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (SM INFANTRY)")));
             ogE.addElement(new OptionsGruppeEintrag("Cyclone & Storm bolter", getPts("Cyclone missile launcher") + getPts("Storm bolter (DW)")));
             add(o6 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 

@@ -6,7 +6,7 @@ public class IMKnightWarden extends Eintrag {
 
     public IMKnightWarden() {
         name = "Knight Warden";
-        grundkosten = getPts("Knight Warden") + getPts("Titanic feet") + getPts("Heavy flamer (SM)");
+        grundkosten = getPts("Knight Warden") + getPts("Titanic feet") + getPts("Heavy flamer (SM other)");
         power = 23;
 
         seperator();
