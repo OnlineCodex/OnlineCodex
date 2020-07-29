@@ -27,8 +27,8 @@ public class IMBanehammer extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Lascannons", getPts("Lascannon (AM)") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("4 Lascannons", getPts("Lascannon (AM)") * 4));
+        ogE.addElement(new OptionsGruppeEintrag("2 Lascannons", getPts("Lascannon (AM other)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("4 Lascannons", getPts("Lascannon (AM other)") * 4));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator(5);

@@ -25,10 +25,10 @@ public class IMHellhounds extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AM other)")));
         add(o2x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy Flamer (AM)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AM other)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (AM other)")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

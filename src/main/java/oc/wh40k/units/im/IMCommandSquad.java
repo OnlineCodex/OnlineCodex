@@ -24,7 +24,7 @@ public class IMCommandSquad extends Eintrag {
         add(oe1 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Medi-pack", 1, getPts("Medi-pack")));
         add(oe2 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Regimental standard", 1, getPts("Regimental standard")));
         add(oe3 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Vox-caster", 1, getPts("Vox-caster")));
-        add(oe4 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Heavy Flamer", 1, getPts("Heavy Flamer (AM)")));
+        add(oe4 = new OptionsEinzelZaehler(0, randAbstand, cnt, "", "Heavy Flamer", 1, getPts("Heavy Flamer (AM INFANTRY)")));
 
         seperator();
 

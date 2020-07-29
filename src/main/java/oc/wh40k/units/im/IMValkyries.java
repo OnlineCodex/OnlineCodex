@@ -24,7 +24,7 @@ public class IMValkyries extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Multi-laser", getPts("Multi-laser")));
         add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
-        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM)")));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (AM other)")));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 3));
 
         seperator();
@@ -37,7 +37,7 @@ public class IMValkyries extends Eintrag {
 
         seperator();
 
-        add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "2 Heavy bolters", 1, getPts("Heavy bolter (AM)") * 2));
+        add(oe1 = new OptionsEinzelZaehler(ID, randAbstand, cnt, "", "2 Heavy bolters", 1, getPts("Heavy bolter (AM other)") * 2));
 
         complete();
     }

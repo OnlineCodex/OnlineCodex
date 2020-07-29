@@ -12,9 +12,9 @@ public class IMAstraMilitarumHeavyWeapons extends RuestkammerElement {
         addDefault(defaultWeapon, defaultWeaponCost, ogE, bv);
         addElement("Mortar", "Mortar", defaultWeapon, ogE, bv);
         addElement("Autocannon", "Autocannon (AM infantry)", defaultWeapon, ogE, bv);
-        addElement("Heavy bolter", "Heavy Bolter (AM)", defaultWeapon, ogE, bv);
-        addElement("Missile launcher", "Missile launcher (AM)", defaultWeapon, ogE, bv);
-        addElement("Lascannon", "Lascannon (AM)", defaultWeapon, ogE, bv);
+        addElement("Heavy bolter", "Heavy Bolter (AM INFANTRY)", defaultWeapon, ogE, bv);
+        addElement("Missile launcher", "Missile launcher (AM INFANTRY)", defaultWeapon, ogE, bv);
+        addElement("Lascannon", "Lascannon (AM INFANTRY)", defaultWeapon, ogE, bv);
         return ogE;
     }
 }
