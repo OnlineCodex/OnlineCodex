@@ -1,63 +1,66 @@
-"Arco-flagellants": 13
-"Battle Sisters Squad": 9
-"Canoness": 45
-"Celestian Squad": 10
-"Crusaders": 9
+"Arco-flagellants": 15
+"Battle Sisters Squad": 11
+"Canoness": 50
+"Celestian Squad": 12
+"Crusaders": 11
 "Death Cult Assassins": 13
-"Dialogus": 35
-"Dominion Squad": 10
-"Exorcist": 90
-"Geminae Superia": 16
-"Hospitaller": 35
+"Dialogus": 40
+"Dominion Squad": 12
+"Exorcist": 150
+"Geminae Superia": 18
+"Hospitaller": 40
 "Imagifier": 45
-"Immolator": 70
+"Immolator": 80
 "Ministorum Priest": 35
-"Missionary": 38
-"Repentia Superior": 35
-"Penitent Engines": 28
-"Sisters Repentia": 13
-"Retributor Squad": 10
-"Seraphim Squad": 11
-"Sororitas Rhino": 65
-"Celestine": 160
-"Celestine - Geminae Superia": 16
+"Missionary": 45
+"Repentia Superior": 40
+"Penitent Engines": 20
+"Sisters Repentia": 15
+"Retributor Squad": 12
+"Seraphim Squad": 15
+"Sororitas Rhino": 75
+"Celestine": 170
+"Celestine - Geminae Superia": 18
 "Uriah Jacobus": 50
-"Preacher": 30
-"Junith Eruita": 110
-"Triumph of Saint Katherine": 185
-"Battle Sanctum": 50
-"Zephyrim Squad": 13
-"Mortifiers": 36
-"Anchorite": 42
-
+"Preacher": 35
+"Junith Eruita": 115
+"Triumph of Saint Katherine": 195
+"Battle Sanctum": 55
+"Zephyrim Squad": 15
+"Mortifiers": 30
+"Anchorite": 35
 
 "Autogun (AMI)": 0
 "Bolt pistol (AMI)": 0
 "Boltgun (AMI)": 0
-"Combi-flamer (AMI)": 8
-"Combi-melta (AMI)": 15
-"Combi-plasma (AMI)": 11
-"Condemnor boltgun (AMI)": 1
-"Flamer (AMI)": 6
+"Combi-flamer (AMI)": 10
+"Combi-melta (AMI)": 10
+"Combi-plasma (AMI)": 10
+"Condemnor boltgun (AMI)": 5
+"Flamer (AMI)": 5
 "Frag grenade (AMI)": 0
-"Hand flamer (AMI)": 1
-"Heavy bolter (AMI)": 10
-"Heavy flamer (AMI)": 14
-"Hunter-killer missile (AMI)": 6
+"Hand flamer (AMI Seraphim)": 2
+"Hand flamer (AMI other)": 5
+"Heavy bolter (AMI INFANTRY)": 10
+"Heavy bolter (AMI other)": 15
+"Heavy flamer (AMI INFANTRY)": 10
+"Heavy flamer (AMI other)": 15
+"Hunter-killer missile (AMI)": 5
 "Immolation flamer (AMI)": 30
-"Inferno pistol (AMI)": 7
+"Inferno pistol (AMI)": 5
 "Krak grenade (AMI)": 0
 "Laspistol (AMI)": 0
-"Meltagun (AMI)": 14
-"Multi-melta (AMI)": 22
+"Meltagun (AMI)": 10
+"Multi-melta (AMI INFANTRY)": 20
+"Multi-melta (AMI other)": 25
 "Plasma gun (AMI)": 13
 "Plasma pistol (AMI)": 5
 "Shotgun (AMI)": 0
-"Storm bolter (AMI)": 2
-"Twin heavy bolter (AMI)": 17
-"Twin multi-melta (AMI)": 40
-"Exorcist conflagration rockets": 40
-"Exorcist missile launcher": 70
+"Storm bolter (AMI)": 3
+"Twin heavy bolter (AMI)": 30
+"Twin multi-melta (AMI)": 50
+"Exorcist conflagration rockets": 0
+"Exorcist missile launcher": 30
 
 "Simulacrum Imperialis (AMI)": 5
 
@@ -71,15 +74,15 @@
 "Penitent buzz-blades": 0
 "Penitent eviscerator": 0
 "Power axe (AMI)": 5
-"Power maul (AMI)": 4
-"Power sword (AMI)": 4
+"Power maul (AMI)": 5
+"Power sword (AMI)": 5
 "Storm shield (AMI)": 0
-"Blessed blade": 9
+"Blessed blade": 10
 "Amtsstab": 5
-"Nullstab": 12
+"Nullstab": 10
 "Armorium-Cherub": 5
 "Incensor-Cherub": 5
-"Schale des heiligen Feuers": 8
+"Schale des heiligen Feuers": 10
 "Zephyrim-Fahne": 5
 
 "Null-Maiden Rhino": 65

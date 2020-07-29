@@ -29,8 +29,8 @@ public class IMMortifiers extends Eintrag {
         add(flails = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
         flails.setAnzahl(0, 2);
         
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI other)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (AMI other)")));
         add(flamer = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
         flamer.setAnzahl(0, 2);
         

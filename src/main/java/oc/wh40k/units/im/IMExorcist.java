@@ -30,7 +30,7 @@ public class IMExorcist extends Eintrag {
 
         seperator();
         
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (AMI other)")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         
         seperator();

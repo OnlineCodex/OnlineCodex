@@ -39,7 +39,7 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
     static public Vector<OptionsGruppeEintrag> getPistols(BuildaVater bv) {
         final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
         ogE.addElement(new OptionsGruppeEintrag("Bolt pistol", bv.getPts("Bolt pistol (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Hand flamer", bv.getPts("Hand flamer (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Hand flamer", bv.getPts("Hand flamer (AMI other)")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma pistol", bv.getPts("Plasma pistol (AMI)")));
         ogE.addElement(new OptionsGruppeEintrag("Inferno Pistol", bv.getPts("Inferno Pistol (AMI)")));
         return ogE;
@@ -55,9 +55,9 @@ public class IMAdeptaSororitasRuestkammer extends RuestkammerVater {
 
     static public Vector<OptionsGruppeEintrag> getHeavyWeapons(BuildaVater bv) {
         final Vector<OptionsGruppeEintrag> ogE = new Vector<OptionsGruppeEintrag>();
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", bv.getPts("Heavy bolter (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", bv.getPts("Heavy flamer (AMI)")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", bv.getPts("Multi-melta (AMI)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", bv.getPts("Heavy bolter (AMI INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", bv.getPts("Heavy flamer (AMI INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", bv.getPts("Multi-melta (AMI INFANTRY)")));
         return ogE;
     }
     

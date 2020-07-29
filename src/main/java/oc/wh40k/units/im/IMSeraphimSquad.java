@@ -31,7 +31,7 @@ public class IMSeraphimSquad extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Hand flamers", getPts("Hand flamer (AMI)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Hand flamers", getPts("Hand flamer (AMI Seraphim)") * 2));
         ogE.addElement(new OptionsGruppeEintrag("2 Inferno pistols", getPts("Inferno pistol (AMI)") * 2));
         add(new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 2));
 
