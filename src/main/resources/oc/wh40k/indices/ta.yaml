@@ -1,112 +1,112 @@
-"Cadre Fireblade": 39
-"Commander in XV8 Crisis Battlesuit": 72
-"Commander in XV85 Enforcer Battlesuit": 76
-"Commander in XV86 Coldstar Battlesuit": 90
-"Ethereal": 45
-"Ethereal with Hover Drone": 50
-"Longstrike": 137
-"Breacher Team": 7
+"Cadre Fireblade": 45
+"Commander in XV8 Crisis Battlesuit": 85
+"Commander in XV85 Enforcer Battlesuit": 90
+"Commander in XV86 Coldstar Battlesuit": 110
+"Ethereal": 55
+"Ethereal with Hover Drone": 60
+"Longstrike": 185
+"Breacher Team": 9
 "DS8 Tactical Support Turret": 0
-"Kroot Carnivores": 4
-"Strike Team": 7
-"TY7 Devilfish": 70
-"XV8 Crisis Battlesuits": 24
-"XV8 Crisis Bodyguards": 27
-"Firesight Marksman": 21
-"XV95 Ghostkeel Battlesuit": 70
-"Krootox Riders": 25
-"Kroot Shaper": 20
-"XV104 Riptide Battlesuit": 185
-"XV25 Stealth Battlesuit": 14
-"Kroot Hounds": 4
-"Pathfinder Team": 5
-"TX4 Piranhas": 24
-"Vespid Stingwings": 11
-"MV62 Command-link Drone": 6
-"MV33 Grav-inhibitor Drone": 8
-"MV36 Guardian Drone": 8
+"Kroot Carnivores": 6
+"Strike Team": 9
+"TY7 Devilfish": 75
+"XV8 Crisis Battlesuits": 30
+"XV8 Crisis Bodyguards": 33
+"Firesight Marksman": 30
+"XV95 Ghostkeel Battlesuit": 110
+"Krootox Riders": 28
+"Kroot Shaper": 25
+"XV104 Riptide Battlesuit": 245
+"XV25 Stealth Battlesuit": 18
+"Kroot Hounds": 6
+"Pathfinder Team": 11
+"TX4 Piranhas": 35
+"Vespid Stingwings": 14
+"MV62 Command-link Drone": 10
+"MV33 Grav-inhibitor Drone": 10
+"MV36 Guardian Drone": 10
 "MV1 Gun Drone": 10
 "MV17 Interceptor Drone": 15
 "MV7 Marker Drone": 10
 "MV8 Missile Drone": 20
-"MV31 Pulse Accelerator Drone": 8
-"MB3 Recon Drone": 12
-"MV4 Shield Drone": 10
-"MV52 Shield Drone": 11
-"MV84 Shielded Missile Drone": 25
-"MV71 Sniper Drone": 16
-"MV5 Stealth Drone": 6
-"XV88 Broadside Battlesuit": 35
-"TX7 Hammerhead Gunship": 100
-"TX78 Sky Ray Gunship": 80
-"AX3 Razorshark Strike Fighter": 60
-"AX39 Sun Shark Bomber": 70
-"Tidewall Droneport": 70
-"Tidewall Gunring": 70
-"Tidewall Shieldline": 70
-"Tidewall Defence Platform": 70
-"KV128 Stormsurge": 160
-"Aun'Shi": 50
-"Aun'Va": 70
+"MV31 Pulse Accelerator Drone": 10
+"MB3 Recon Drone": 15
+"MV4 Shield Drone": 15
+"MV52 Shield Drone": 15
+"MV84 Shielded Missile Drone": 30
+"MV71 Sniper Drone": 20
+"MV5 Stealth Drone": 10
+"XV88 Broadside Battlesuit": 45
+"TX7 Hammerhead Gunship": 155
+"TX78 Sky Ray Gunship": 100
+"AX3 Razorshark Strike Fighter": 100
+"AX39 Sun Shark Bomber": 100
+"Tidewall Droneport": 75
+"Tidewall Gunring": 125
+"Tidewall Shieldline": 75
+"Tidewall Defence Platform": 75
+"KV128 Stormsurge": 280
+"Aun'Shi": 55
+"Aun'Va": 75
 "Ethereal Guard": 5
-"Commander Farsight": 110
-"Commander Shadowsun": 110
-"Darkstrider": 45
+"Commander Farsight": 130
+"Commander Shadowsun": 135
+"Darkstrider": 60
 "Dahyak Grekh": 20
 
-"Advanced targeting system (Ghostkeel Riptide and Stormsurge)": 18
-"Advanced targeting system (all other models)": 6
+"Advanced targeting system (Ghostkeel Riptide and Stormsurge)": 20
+"Advanced targeting system (all other models)": 5
 "Counterfire defence system": 10
 "XV8-02 Crisis Iridium battlesuite": 10
 "Drone controller": 5
 "Early warning override (Ghostkeel Riptide and Stormsurge)": 10
 "Early warning override (all other models)": 5
 "Homing beacon": 20
-"Multi-tracker": 10
+"Multi-tracker": 5
 "Shield generator (Stormsurge)": 30
-"Shield generator (all other models)": 8
-"Target lock (Ghostkeel Riptide and Stormsurge)": 12
-"Target lock (all other units)": 6
+"Shield generator (all other models)": 10
+"Target lock (Ghostkeel Riptide and Stormsurge)": 10
+"Target lock (all other units)": 5
 "Velocity tracker (Ghostkeel Riptide and Stormsurge)": 10
-"Velocity tracker (all other units)": 2
+"Velocity tracker (all other units)": 5
 "Airbursting fragmentation projector": 8
 "Burst cannon": 8
 "Cluster rocket system": 15
 "Cyclic ion blaster": 18
-"Cyclic ion raker": 20
-"Destroyer missile": 10
-"Flamer": 6
-"Fusion blaster": 14
-"Fusion collider": 25
-"Heavy burst cannon": 35
+"Cyclic ion raker": 0
+"Destroyer missile": 0
+"Flamer": 5
+"Fusion blaster": 15
+"Fusion collider": 5
+"Heavy burst cannon": 0
 "Heavy rail rifle": 25
-"High-output burst cannon": 16
+"High-output burst cannon": 15
 "High-yield missile pod": 25
-"Ion accelerator": 50
-"Ion cannon": 35
-"Ion rifle": 7
+"Ion accelerator": 15
+"Ion cannon": 5
+"Ion rifle": 5
 "Kroot gun": 0
 "Kroot rifle": 0
 "Longshot pulse rifle": 0
-"Markerlight": 3
+"Markerlight": 5
 "Missile pod": 15
 "Neutron blaster": 0
 "Photon grenades": 0
 "Plasma rifle": 8
-"Pulse blastcannon": 20
+"Pulse blastcannon": 0
 "Pulse blaster": 0
 "Pulse bomb": 0
 "Pulse carbine": 0
-"Pulse driver cannon": 30
-"Pulse pistol": 1
+"Pulse driver cannon": 10
+"Pulse pistol": 0
 "Pulse rifle": 0
-"Quad ion turret": 30
-"Rail rifle": 12
-"Railgun": 30
+"Quad ion turret": 0
+"Rail rifle": 10
+"Railgun": 0
 "Seeker missile": 5
 "Smart missile system": 15
-"Supremacy railgun": 50
-"Equalizers": 1
+"Supremacy railgun": 0
+"Equalizers": 0
 "Honour blade": 0
 "Kroot rifle (melee)": 0
 "Krootox fists": 0
