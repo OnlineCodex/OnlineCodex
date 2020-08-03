@@ -18,7 +18,7 @@ public class TAOrcaDropship extends Eintrag {
 
 
 
-        grundkosten = getPts("Orca Dropship") + 2 * getPts("Long-barrelled burst cannon") + getPts("Missile pod");
+        grundkosten = getPts("Orca Dropship") + 2 * getPts("Long-barrelled burst cannon (anderes Modell)") + getPts("Missile pod");
 
 
 

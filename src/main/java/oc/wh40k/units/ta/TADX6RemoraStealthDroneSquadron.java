@@ -23,7 +23,7 @@ public class TADX6RemoraStealthDroneSquadron extends Eintrag {
 
         seperator();
         
-        ogE.addElement(new OptionsGruppeEintrag("2 long-barrelled burst cannon", getPts("Long-barrelled burst cannon") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 long-barrelled burst cannon", getPts("Long-barrelled burst cannon (anderes Modell)") * 2));
         add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
         
         seperator();

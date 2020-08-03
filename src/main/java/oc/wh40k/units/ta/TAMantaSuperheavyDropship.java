@@ -20,7 +20,7 @@ public class TAMantaSuperheavyDropship extends Eintrag {
 
         grundkosten = getPts("Manta Super-heavy Dropship") + 2 * getPts("Heavy rail cannon") + 6 * getPts("Long-barrelled ion cannon") + 2 * getPts("Missile pod")
 
-                + 16 * getPts("Long-barrelled burst cannon") + 10 * getPts("Seeker missile");
+                + 16 * getPts("Long-barrelled burst cannon (anderes Modell)") + 10 * getPts("Seeker missile");
 
 
 

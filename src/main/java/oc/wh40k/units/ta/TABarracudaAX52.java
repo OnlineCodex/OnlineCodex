@@ -22,7 +22,7 @@ public class TABarracudaAX52 extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Two long-barrelled burst cannon", getPts("Long-barrelled burst cannon")*2));
+        ogE.addElement(new OptionsGruppeEintrag("Two long-barrelled burst cannon", getPts("Long-barrelled burst cannon (Barracuda)")*2));
         ogE.addElement(new OptionsGruppeEintrag("Two cyclic ion blasters", getPts("Cyclic ion blaster")*2));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);

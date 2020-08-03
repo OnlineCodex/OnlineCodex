@@ -36,14 +36,14 @@ public class TAXV109YvahraKammer extends RuestkammerVater {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Ghostkeel Riptide and Stormsurge)")));
-        ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system")));
+        ogE.addElement(new OptionsGruppeEintrag("Advanced targeting system", getPts("Advanced targeting system (Y'vahra und R'varna)")));
+        ogE.addElement(new OptionsGruppeEintrag("Counterfire defence system", getPts("Counterfire defence system (Y'vahra und R'varna)")));
         ogE.addElement(new OptionsGruppeEintrag("Drone controller", getPts("Drone controller")));
         ogE.addElement(new OptionsGruppeEintrag("Early warning override", getPts("Early warning override (Ghostkeel Riptide and Stormsurge)")));
         ogE.addElement(new OptionsGruppeEintrag("Multi-tracker", getPts("Multi-tracker")));
-        //ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (all other units)")));
-        ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Ghostkeel Riptide and Stormsurge)")));
-        ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Ghostkeel Riptide and Stormsurge)")));
+        ogE.addElement(new OptionsGruppeEintrag("Shield generator", getPts("Shield generator (Y'vahra und R'varna)")));
+        ogE.addElement(new OptionsGruppeEintrag("Target lock", getPts("Target lock (Y'vahra und R'varna)")));
+        ogE.addElement(new OptionsGruppeEintrag("Velocity tracker", getPts("Velocity tracker (Y'vahra und R'varna)")));
         add(new OptionsUpgradeGruppe(0, randAbstand, cnt, "", ogE, 2));
 
         sizeSetzen();

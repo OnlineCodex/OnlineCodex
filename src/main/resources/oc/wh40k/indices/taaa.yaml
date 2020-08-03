@@ -1,60 +1,59 @@
-"Shas'o R'myr": 120
-"Shas'o R'alai": 130
-"XV107 R'varna Battlesuit": 429
-"XV109 Y'vahra Battlesuit": 395
-"Commander in XV81 Crisis Battlesuit": 76
-"Commander in XV84 Crisis Battlesuit": 80
-"XV9 Hazard Support Team": 40
-"Piranha TX-42 Light Skimmer": 70
-"KX139 Ta'unar Supremacy Armour": 750
-"Tetra Scout Speeder": 46
-"TX7 Heavy Bombardment Hammerhead Gunship": 100
-"TX7 Fire Support Hammerhead Gunship": 100
-"Barracuda AX-5-2": 160
-"Tiger Shark Fighter-Bomber": 245
-"Tiger Shark AX-1-0": 255
-"Orca Dropship": 325
-"Manta Super-heavy Dropship": 2000
-"Blacklight Marker Drones": 7
-"Drone Sentry Turret": 20
-"DX4 Technical Drones": 16
-"DX-6 Remora Stealth Drone": 30
-"Heavy Gun Drone": 18
-"Remote Sensor Tower": 33
-"Double-barrelled burst cannon": 16
-"Double-barrelled plasma rifle": 0
-"Defensive charge": 0
-"Experimental pulse submunitions rifle": 0
-"Fletchette pod": 0
-"Fusion cascade": 35
-"Fusion eradicator": 83
-"Heavy rail cannon": 130
-"High intensity markerlight": 7
-"Ionic discharge cannon": 0
-"Long-barrelled burst cannon": 12
-"Long-barrelled ion cannon": 12
-"Miniaturised fletchette pod (shooting)": 0
-"Nexus meteor missile system": 147
-"Phased ion gun": 12
-"Phased plasma-flamer": 0
-"Pulse submunitions cannon": 0
-"Pulse submunitions rifle": 12
-"Pulse ordnance multi-driver": 121
-"Skyspear missile rack": 0
-"Swiftstrike railgun": 101
-"Tri-axis ion cannon": 107
-"Twin fusion cannon": 54
-"Twin heavy burst cannon": 70
-"Twin Tau plasma cannon": 60
-"Crushing feet": 0
-"Miniaturised fletchette pod (melee)": 0
-"Advanced targeting system": 8
-"Counterfire defence system (IAAA)": 5
-"Early warning override": 8
-"Multi-tracker (Y'vahra)": 10
-"Multi-tracker (all other units)": 2
-"Shield generator (Y'vahra)": 40
-"Shield generator (all other units)": 8
-"Stimulant injector": 5
-"Target lock (Y'vahra)": 12
-"Velocity tracker (Y'vahra)": 10
+Shas'o R'myr: 130
+Shas'o R'alai: 115
+XV107 R'varna Battlesuit: 430
+XV109 Y'vahra Battlesuit: 395
+Commander in XV81 Crisis Battlesuit: 76
+Commander in XV84 Crisis Battlesuit: 80
+XV9 Hazard Support Team: 70
+Piranha TX-42 Light Skimmer: 70
+KX139 Ta'unar Supremacy Armour: 750
+Tetra Scout Speeder: 46
+TX7 Heavy Bombardment Hammerhead Gunship: 100
+TX7 Fire Support Hammerhead Gunship: 100
+Barracuda AX-5-2: 200
+Tiger Shark Fighter-Bomber: 340
+Tiger Shark AX-1-0: 530
+Orca Dropship: 325
+Manta Super-heavy Dropship: 2000
+Blacklight Marker Drones: 10
+Drone Sentry Turret: 20
+DX4 Technical Drones: 20
+DX-6 Remora Stealth Drone: 60
+Heavy Gun Drone: 18
+Remote Sensor Tower: 33
+Double-barrelled burst cannon: 16
+Double-barrelled plasma rifle: 0
+Defensive charge: 0
+Experimental pulse submunitions rifle: 0
+Fletchette pod: 0
+Fusion cascade: 20
+Fusion eradicator: 0
+Heavy rail cannon: 0
+High intensity markerlight: 0
+Ionic discharge cannon: 0
+Long-barrelled burst cannon (Barracuda): 10
+Long-barrelled burst cannon (anderes Modell): 0
+Long-barrelled ion cannon: 0
+Miniaturised fletchette pod (shooting): 0
+Nexus meteor missile system: 30
+Phased ion gun: 0
+Phased plasma-flamer: 0
+Pulse submunitions cannon: 0
+Pulse submunitions rifle: 0
+Pulse ordnance multi-driver: 0
+Skyspear missile rack: 0
+Swiftstrike railgun: 5
+Tri-axis ion cannon: 25
+Twin fusion cannon: 54
+Twin heavy burst cannon: 70
+Twin Tau plasma cannon: 60
+Crushing feet: 0
+Miniaturised fletchette pod (melee): 0
+Advanced targeting system (Y'vahra und R'varna): 20
+Counterfire defence system (Y'vahra und R'varna): 10
+Counterfire defence system (FW): 5
+Early warning override: 10
+Multi-tracker: 5
+Shield generator (Y'vahra und R'varna): 40
+Target lock (Y'vahra und R'varna): 10
+Velocity tracker (Y'vahra und R'varna): 10
