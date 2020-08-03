@@ -27,7 +27,7 @@ public class NECatacombCommandBarge extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon (Fahrzeug)")));
         ogE.addElement(new OptionsGruppeEintrag("Tesla cannon", getPts("Tesla cannon")));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

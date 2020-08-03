@@ -20,9 +20,9 @@ public class NETombBlades extends Eintrag {
 
 		seperator();
 
-		ogE.addElement(new OptionsGruppeEintrag("2 Gauss blasters", getPts("Gauss blaster") * 2));
+		ogE.addElement(new OptionsGruppeEintrag("2 Gauss blasters", getPts("Gauss blaster (paar)")));
 		add(o1x = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
-		ogE.addElement(new OptionsGruppeEintrag("2 Tesla carabine", getPts("Tesla carabine") * 2));
+		ogE.addElement(new OptionsGruppeEintrag("2 Tesla carabine", getPts("Tesla carabine (Paar)")));
 		ogE.addElement(new OptionsGruppeEintrag("Particle beamer", getPts("Particle beamer")));
 		add(o1 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE));
 

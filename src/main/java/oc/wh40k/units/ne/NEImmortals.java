@@ -21,7 +21,7 @@ public class NEImmortals extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Gauss blaster", getPts("Gauss blaster")));
-        ogE.addElement(new OptionsGruppeEintrag("Tesla carabine", getPts("Gauss blaster")));
+        ogE.addElement(new OptionsGruppeEintrag("Tesla carabine", getPts("Tesla carabine")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();

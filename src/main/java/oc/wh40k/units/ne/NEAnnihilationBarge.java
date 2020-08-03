@@ -16,7 +16,7 @@ public class NEAnnihilationBarge extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon")));
+        ogE.addElement(new OptionsGruppeEintrag("Gauss cannon", getPts("Gauss cannon (Fahrzeug)")));
         ogE.addElement(new OptionsGruppeEintrag("Tesla cannon", getPts("Tesla cannon")));
         add(o1 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
