@@ -34,9 +34,9 @@ public class ResourceUtilsTest {
                         "/oc/wh40k/indices/oa.yaml"));
         assertEquals(
                 ImmutableMap.<String, Integer>builder()
-                    .put(sanitizeKey("The Visarch"), 80)
-                    .put(sanitizeKey("The Yncarne"), 280)
-                    .put(sanitizeKey("Yvraine"), 115)
+                    .put(sanitizeKey("The Visarch"), 85)
+                    .put(sanitizeKey("The Yncarne"), 290)
+                    .put(sanitizeKey("Yvraine"), 120)
                     .put(sanitizeKey("Callidus Assassin"), 100)
                     .put(sanitizeKey("Culexus Assassin"), 100)
                     .put(sanitizeKey("Eversor Assassin"), 100)

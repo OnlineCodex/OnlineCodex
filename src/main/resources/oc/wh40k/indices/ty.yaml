@@ -161,62 +161,59 @@
 "Toxin sacs (Tyranid Warrior)": 5
 "Tusks": 10
 
-"Abominant": 105
-"Aberrants": 19
-"Achilles Ridgerunner": 35
-"Atalan Jackals": 10
-"Atalan Wolfquads": 15
-"Acolyte Hybrids": 7
-"Biophagus": 35
-"Brood Brothers Infantry Squad": 4
+"Abominant": 110
+"Aberrants": 22
+"Achilles Ridgerunner": 40
+"Atalan Jackals": 14
+"Atalan Wolfquads": 20
+"Acolyte Hybrids": 8
+"Biophagus": 40
+"Brood Brothers Infantry Squad": 5
 "Brood Brother Heavy Weapon Squad": 6
-"Acolyte Iconward": 53
-"Clamavus": 55
+"Acolyte Iconward": 60
+"Clamavus": 60
 "Cult Armoured Sentinels": 30
-"Cult Chimera": 60
-"Cult Leman Russ": 107
+"Cult Chimera": 65
+"Cult Leman Russ": 130
 "Cult Scout Sentinels": 30
-"Familiars": 12
-"Goliath Rockgrinder": 78
+"Familiars": 15
+"Goliath Rockgrinder": 90
 "Goliath Truck": 50
-"Hybrid Metamorphs": 7
-"Jackal Alphus": 70
-"Kelermorph": 75
-"Locus": 40
-"Magus": 80
-"Nexos": 50
-"Neophyte Hybrids": 5
-"Patriarch": 125
-"Primus": 72
-"Purestrain Genestealers": 15
-"Sanctus": 55
-"Tectonic Fragdrill": 75
-
+"Hybrid Metamorphs": 11
+"Jackal Alphus": 75
+"Kelermorph": 80
+"Locus": 45
+"Magus": 85
+"Nexos": 55
+"Neophyte Hybrids": 6
+"Patriarch": 135
+"Primus": 80
+"Purestrain Genestealers": 17
+"Sanctus": 60
+"Tectonic Fragdrill": 80
 "Bonesword (GSC)": 3
 "Chainsword": 0
 "Cultist knife": 0
 "Drilldozer blade": 0
 "Familiar claws": 0
 "Force stave": 0
-"Heavy improvised weapon": 25
-"Heavy power hammer": 16
-"Heavy rock cutter": 12
+"Heavy improvised weapon": 30
+"Heavy power hammer": 15
+"Heavy rock cutter": 10
 "Heavy rock drill": 15
 "Heavy rock saw": 10
-"Heavy bolter (AM)": 8
 "Hypermorph tail": 0
 "Improvised weapon": 0
 "Injector goad": 0
 "Lash whip and bonesword (GSC)": 5
-"Lascannon (AM)": 20
-"Metamorph claw": 2
-"Metamorph talon": 1
+"Locus blades": 0
+"Metamorph claw": 3
+"Metamorph talon": 2
 "Metamorph whip": 0
-"Missile launcher (AM)": 15
 "Monstrous rending claws (GSC)": 0
 "Power axe": 5
-"Power hammer": 4
-"Power maul": 4
+"Power hammer": 5
+"Power maul": 5
 "Power pick": 9
 "Power sledgehammer": 0
 "Purestrain talons": 0
@@ -224,55 +221,58 @@
 "Sanctus bio-dagger": 0
 "Sentinel chainsaw": 2
 "Toxin injector claw": 0
-
-"Atalan incinerator": 14
-"Autocannon": 10
-"Autogun": 0
+"Atalan incinerator": 15
+"Autocannon (INFANTRY)": 10
+"Autocannon (other)": 10
+"Autogun": 5
 "Autopistol": 0
-"Battle cannon": 22
-"Blasting charges": 0
-"Bolt pistol": 1
+"Battle cannon": 20
+"Blasting charge": 0
+"Bolt pistol": 2
 "Cache of demolition charges": 10
-"Clearance incinerator": 20
-"Demolition charges": 10
+"Clearance incinerator": 30
+"Demolition charge": 10
 "Eradicator nova cannon": 15
-"Exterminator autocannon": 17
-"Flamer": 6
-"Grenade launcher": 3
-"Hand flamer": 1
-"Heavy bolter": 8
-"Heavy flamer": 14
+"Exterminator autocannon": 30
+"Flamer": 5
+"Grenade launcher": 5
+"Hand flamer": 2
+"Heavy bolter (INFANTRY)": 10
+"Heavy bolter (other)": 15
+"Heavy flamer": 15
 "Heavy mining laser": 15
-"Heavy mortar": 8
+"Heavy mortar": 10
 "Heavy seismic cannon": 15
-"Heavy stubber": 2
-"Hunter-killer missile": 6
+"Heavy stubber": 3
+"Hunter-killer missile": 5
 "Jackal sniper rifle": 0
-"Lascannon": 20
+"Lascannon (AM)": 15
+"Lascannon (other)": 20
 "Lasgun": 0
 "Lasgun array": 0
 "Laspistol": 0
 "Liberator autostub": 0
-"Mining laser": 12
-"Missile launcher": 10
-"Mortar": 9
+"Mining laser": 10
+"Missile launcher (AM)": 15
+"Missile launcher (other)": 20
+"Mortar": 10
 "Multi-laser": 5
-"Multi-melta": 15
+"Multi-melta": 25
 "Needle pistol": 0
-"Plasma cannon": 10
-"Seismic cannon": 12
+"Plasma cannon": 20
+"Seismic cannon": 10
 "Shotgun": 0
 "Silencer sniper rifle": 5
-"Storm bolter": 2
-"Twin autocannon": 20
+"Storm bolter": 3
+"Twin autocannon": 30
 "Vanquisher battle cannon": 15
-"Web pistol": 1
-"Webber": 1
+"Web pistol": 2
+"Webber": 5
 "Augur array": 5
 "Cult icon": 10
 "Cult vox caster": 5
 "Dozer blade": 5
 "Flare launcher": 5
 "Spotter": 5
-"Survey augur": 10
-"Track guards": 10
+"Survey augur": 5
+"Track guards": 5

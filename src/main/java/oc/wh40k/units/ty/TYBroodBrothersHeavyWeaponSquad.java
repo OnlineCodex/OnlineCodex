@@ -14,7 +14,7 @@ public class TYBroodBrothersHeavyWeaponSquad extends Eintrag {
     public TYBroodBrothersHeavyWeaponSquad() {
         grundkosten = 0;
 
-        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Heavy Weapons Squad", 3, 3, getPts("BroodBrothersHeavyWeaponSquad") + getPts("Frag grenade")));
+        add(squad = new AnzahlPanel(ID, randAbstand, cnt, "Heavy Weapons Squad", 3, 3, getPts("Brood Brother Heavy Weapon Squad") + getPts("Frag grenade")));
         power = 3;
         add(ico = new oc.Picture("oc/wh40k/images/IGHeavyWeaponsSquad.jpg"));
 
