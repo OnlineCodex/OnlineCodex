@@ -175,12 +175,45 @@ public class BuildaTextArea extends BuildaPanel implements ActionListener, ItemL
         boolean allyError = false;
 
         int kosten = 0;
-        int cp = 3;
+        int cp = 0;
         int power = 0;
+        int additionalCP = 0;
+        boolean supreme = false;
         for (int i = 0; i < myBuildaVaterVec.size(); i++) {
             kosten += myBuildaVaterVec.get(i).getKosten();
             cp += myBuildaVaterVec.get(i).getCP();
             power += myBuildaVaterVec.get(i).getPower();
+            
+            if(((String) myBuildaVaterVec.get(i).getKontingentTyp()).equals("Patrol Detachment")) {
+				if(additionalCP < 2) {
+	            	additionalCP = 2;
+				}
+			} else if(((String) myBuildaVaterVec.get(i).getKontingentTyp()).equals("Battalion Detachment")) {
+				if(additionalCP < 3) {
+	            	additionalCP = 3;
+				}
+			} else if(((String) myBuildaVaterVec.get(i).getKontingentTyp()).equals("Brigade Detachment")) {
+				if(additionalCP < 4) {
+	            	additionalCP = 4;
+				}
+			} else if(((String) myBuildaVaterVec.get(i).getKontingentTyp()).equals("Supreme Command Detachment") && myBuildaVaterVec.get(i).getCountFromInformationVector("Warlord") > 0) {
+				supreme = true;
+			}
+        }
+        
+        
+        if(supreme){
+        	cp += additionalCP;
+        }
+        
+        if(kosten <= 500){
+        	cp += 3;
+        } else if(kosten <= 1000){
+        	cp += 6;
+        } else if(kosten <= 2000){
+        	cp += 12;
+        } else if(kosten > 2000){
+        	cp += 18;
         }
 
         final int relics = BuildaHQ.getCountFromInformationVectorGlobal("Relic");

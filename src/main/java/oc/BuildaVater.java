@@ -228,13 +228,19 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 		}
 
 		additionalCP += getCountFromInformationVector("AdditionalCPAbaddon");
+		if(getCountFromInformationVector("Warlord")==1) {
+			
+			if (!((String) kontingentBox.getSelectedItem()).equals("")) {
+				if(((String) kontingentBox.getSelectedItem()).equals("Patrol Detachment")) {
+					additionalCP += 2;
+				} else if(((String) kontingentBox.getSelectedItem()).equals("Battalion Detachment")) {
+					additionalCP += 3;
+				} else if(((String) kontingentBox.getSelectedItem()).equals("Brigade Detachment")) {
+					additionalCP += 4;
+				}
+			}
+		}
 
-		// Handle questor imperialis cp for super heavy detachement FAQ
-		// Page 106 – Knight Lances ability Change the last sentence to read: ‘The
-		// Command Benefit of each Imperial Knights Super-heavy Detachment
-		// is changed to ‘None’ if it does not contain at least one Imperial Knights
-		// Titanic unit, and is changed to ‘+6 Command Points’ if it contains at
-		// least three Imperial Knights Titanic units.’
 		if (("Super-Heavy Detachment").equals(kontingentBox.getSelectedItem())) {
 			if (getCountFromInformationVector("Knight selected") >= 3) {
 				return 6;
@@ -280,19 +286,19 @@ public abstract class BuildaVater extends BuildaPanel implements ActionListener,
 			kontingente.add(0, "Patrol Detachment"); // +0CP
 			kontingente.add(0, "");
 
-			CP.put("Auxiliary Support Detachment", -1); // -1CP
-			CP.put("Fortification Network", 0); // +0CP
-			CP.put("Super-Heavy Auxiliary Detachment", 0); // +0CP
-			CP.put("Air Wing Detachment", 1); // +1CP
-			CP.put("Super-Heavy Detachment", 3); // +3CP
-			CP.put("Supreme Command Detachment", 1); // +1CP
-			CP.put("Outrider Detachment", 1); // +1CP
-			CP.put("Spearhead Detachment", 1); // +1CP
-			CP.put("Vanguard Detachment", 1); // +1CP
+			CP.put("Auxiliary Support Detachment", -2);
+			CP.put("Fortification Network", -1); //TODO: -0, wenn Warlord und alle Fortifications dieselbe Fraktion haben
+			CP.put("Super-Heavy Auxiliary Detachment", -3);
+			CP.put("Air Wing Detachment", 0); // ??? gibts das noch?
+			CP.put("Super-Heavy Detachment", -3); // 3 oder 6 (falls Titanic)
+			CP.put("Supreme Command Detachment", 0);
+			CP.put("Outrider Detachment", -3);
+			CP.put("Spearhead Detachment", -3);
+			CP.put("Vanguard Detachment", -3);
 			CP.put("Vanguard Detachment (Assassins)", 0); // +1CP
-			CP.put("Brigade Detachment", 12); // +12CP
-			CP.put("Battalion Detachment", 5); // +5CP
-			CP.put("Patrol Detachment", 0); // +0CP
+			CP.put("Brigade Detachment", -4);
+			CP.put("Battalion Detachment", -3);
+			CP.put("Patrol Detachment", -2);
 
 			kontingentBox = new JComboBox<String>(kontingente);
 			kontingentBox.setMaximumRowCount(25);

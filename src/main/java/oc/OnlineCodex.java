@@ -179,7 +179,17 @@ public class OnlineCodex extends BuildaPanel {
 
     private void refresh() {
         final double kosten = getKosten();
-        double cp = 3 + getCP();
+        double cp = 0 + getCP();
+        
+        if(kosten <= 500){
+        	cp += 3;
+        } else if(kosten <= 1000){
+        	cp += 6;
+        } else if(kosten <= 2000){
+        	cp += 12;
+        } else if(kosten > 2000){
+        	cp += 18;
+        }
 
         switch (BuildaHQ.getCountFromInformationVectorGlobal("Relic")) {
             case 2:
@@ -535,8 +545,30 @@ public class OnlineCodex extends BuildaPanel {
 
     public double getCP() {
         double kostenD = 0.0;
+        int additionalCP = 0;
+        boolean supreme = false;
         for (int i = 0; i < myBuilderz.size(); i++) {
             kostenD += myBuilderz.get(i).getCP();
+            
+            if(((String) myBuilderz.get(i).getKontingentTyp()).equals("Patrol Detachment")) {
+				if(additionalCP < 2) {
+	            	additionalCP = 2;
+				}
+			} else if(((String) myBuilderz.get(i).getKontingentTyp()).equals("Battalion Detachment")) {
+				if(additionalCP < 3) {
+	            	additionalCP = 3;
+				}
+			} else if(((String) myBuilderz.get(i).getKontingentTyp()).equals("Brigade Detachment")) {
+				if(additionalCP < 4) {
+	            	additionalCP = 4;
+				}
+			} else if(((String) myBuilderz.get(i).getKontingentTyp()).equals("Supreme Command Detachment") && myBuilderz.get(i).getCountFromInformationVector("Warlord") > 0) {
+				supreme = true;
+			}
+        }
+        
+        if(supreme){
+        	kostenD += additionalCP;
         }
         
         return kostenD;

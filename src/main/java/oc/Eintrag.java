@@ -101,12 +101,14 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 					if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == false){
 						((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = true;
 				    	BuildaHQ.addToInformationVectorGlobal("Warlord", 1);
+						addToInformationVector("Warlord", 1);
 				    	warlordChange = true;
 					}
 				} else if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlord && !optionen.elementAt(i).isSelected()) {
 					if(((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == true){
 						((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = false;
 						BuildaHQ.addToInformationVectorGlobal("Warlord", -1);
+						addToInformationVector("Warlord", -1);
 				    	warlordChange = true;
 					}
 				}
@@ -397,6 +399,7 @@ public abstract class Eintrag extends OptionsCollection implements BuildaSTK {
 				if(optionen.elementAt(i).isSelected() && ((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected == true) {
 					((RuestkammerStarter) optionen.elementAt(i)).getKammer().warlordSelected = false;
 					BuildaHQ.addToInformationVectorGlobal("Warlord", -1);
+					addToInformationVector("Warlord", -1);
 				}
 
 				BuildaHQ.addToInformationVectorGlobal(unikatName, -1);
