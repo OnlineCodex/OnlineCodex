@@ -24,10 +24,10 @@ public class CHHavocs extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy Bolter", getPts("Heavy Bolter (INFANTRY)")));
         ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (INFANTRY)")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper Chaincannon", getPts("Reaper Chaincannon")));
         add(o2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 4));
         o2.setAnzahl(0, 4);

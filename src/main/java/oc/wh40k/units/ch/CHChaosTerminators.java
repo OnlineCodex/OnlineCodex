@@ -53,7 +53,7 @@ public class CHChaosTerminators extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Lightning claws", getPts("Lightning claw pair")));
         add(claws = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, -88));
 
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (INFANTRY)")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", getPts("Reaper autocannon")));
         add(heavy = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

@@ -27,7 +27,7 @@ public class CHHellforgedMastodon extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 lascannon", getPts("Lascannon") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 lascannon", getPts("Lascannon (other)") * 2));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();

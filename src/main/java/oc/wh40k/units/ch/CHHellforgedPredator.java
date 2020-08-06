@@ -27,9 +27,9 @@ public class CHHellforgedPredator extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolter", getPts("Heavy bolter") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Lascannons", getPts("Lascannon") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy bolter", getPts("Heavy bolter (other)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Lascannons", getPts("Lascannon (other)") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Heavy flamers", getPts("Heavy flamer (other)") * 2));
         add(new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
 

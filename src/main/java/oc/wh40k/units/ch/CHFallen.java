@@ -60,9 +60,9 @@ public class CHFallen extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Meltagun", getPts("Meltagun")));
         ogE.addElement(new OptionsGruppeEintrag("Plasma gun", getPts("Plasma gun")));
         ogE.addElement(new OptionsGruppeEintrag("Autocannon", getPts("Autocannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter")));
-        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy bolter", getPts("Heavy bolter (INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Lascannon", getPts("Lascannon (INFANTRY)")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (INFANTRY)")));
         add(heavy = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

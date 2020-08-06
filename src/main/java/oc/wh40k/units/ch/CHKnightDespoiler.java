@@ -17,7 +17,7 @@ public class CHKnightDespoiler extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Reaper chainsword", getPts("Reaper chainsword")));
         ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon & HF", getPts("Avenger gatling cannon") + getPts("Heavy flamer")));
+        ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon & HF", getPts("Avenger gatling cannon") + getPts("Heavy flamer (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Rapid-fire battle cannon & HS", getPts("Rapid-fire battle cannon") + getPts("Heavy stubber")));
         add(laser = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
@@ -25,7 +25,7 @@ public class CHKnightDespoiler extends Eintrag {
 
         ogE.addElement(new OptionsGruppeEintrag("Thunderstrike gauntlet", getPts("Thunderstrike gauntlet")));
         ogE.addElement(new OptionsGruppeEintrag("Thermal cannon", getPts("Thermal cannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon & HF", getPts("Avenger gatling cannon") + getPts("Heavy flamer")));
+        ogE.addElement(new OptionsGruppeEintrag("Avenger gatling cannon & HF", getPts("Avenger gatling cannon") + getPts("Heavy flamer (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Rapid-fire battle cannon & HS", getPts("Rapid-fire battle cannon") + getPts("Heavy stubber")));
         add(thunder = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
 

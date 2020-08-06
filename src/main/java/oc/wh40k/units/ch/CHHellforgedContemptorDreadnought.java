@@ -22,7 +22,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Hellforged chainclaw", getPts("Hellforged chainclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma cannon", getPts("Ectoplasma cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", getPts("Kheres assault cannon")));
@@ -34,7 +34,7 @@ public class CHHellforgedContemptorDreadnought extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Hellforged deathclaw", getPts("Hellforged deathclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Hellforged chainclaw", getPts("Hellforged chainclaw (single)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin autocannon", getPts("Twin autocannon")));
         ogE.addElement(new OptionsGruppeEintrag("Ectoplasma cannon", getPts("Ectoplasma cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Kheres assault cannon", getPts("Kheres assault cannon")));

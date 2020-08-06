@@ -29,7 +29,7 @@ public class CHChaosThunderhawkAssaultGunship extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", getPts("Lascannon") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", getPts("Lascannon (other)") * 2));
         add(o3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
 
         seperator();

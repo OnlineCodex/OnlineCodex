@@ -13,7 +13,7 @@ public class CHMyphiticBlightHaulers extends Eintrag {
         grundkosten = 0;
         power = 2;
 
-        final int pts = getPts("Myphitic Blight-haulers") + getPts("Bile spurt") + getPts("Missile launcher") + getPts("Multi-melta") + getPts("Gnashing maw");
+        final int pts = getPts("Myphitic Blight-haulers") + getPts("Bile spurt") + getPts("Missile launcher (other)") + getPts("Multi-melta (other)") + getPts("Gnashing maw");
 
         add(Nurglings = new AnzahlPanel(ID, randAbstand, cnt, "Myphitic Blight-haulers", 1, 3, pts));
 

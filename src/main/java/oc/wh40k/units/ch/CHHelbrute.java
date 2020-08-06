@@ -18,12 +18,12 @@ public class CHHelbrute extends Eintrag {
 
         seperator();
 
-        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta")));
+        ogE.addElement(new OptionsGruppeEintrag("Multi-melta", getPts("Multi-melta (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Twin heavy bolter", getPts("Twin heavy bolter")));
         ogE.addElement(new OptionsGruppeEintrag("Twin lascannon", getPts("Twin lascannon")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute plasma cannon", getPts("Helbrute plasma cannon")));
         ogE.addElement(new OptionsGruppeEintrag("Reaper autocannon", getPts("Reaper autocannon")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (other)")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute fist", getPts("Helbrute fist")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute hammer", getPts("Helbrute hammer")));
         ogE.addElement(new OptionsGruppeEintrag("Power scourge", getPts("Power scourge")));
@@ -33,12 +33,12 @@ public class CHHelbrute extends Eintrag {
         ogE.addElement(new OptionsGruppeEintrag("Helbrute fist", getPts("Helbrute fist")));
         ogE.addElement(new OptionsGruppeEintrag("Helbrute hammer", getPts("Helbrute hammer")));
         ogE.addElement(new OptionsGruppeEintrag("Power scourge", getPts("Power scourge")));
-        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher")));
+        ogE.addElement(new OptionsGruppeEintrag("Missile launcher", getPts("Missile launcher (other)")));
         add(oe3 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE, 1));
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("Combi-bolter", getPts("Combi-bolter")));
-        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer")));
+        ogE.addElement(new OptionsGruppeEintrag("Heavy flamer", getPts("Heavy flamer (other)")));
         add(oe2 = new OptionsZaehlerGruppe(ID, randAbstand, cnt, "", ogE, 1));
 
         seperator();

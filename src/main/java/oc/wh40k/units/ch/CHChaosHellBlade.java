@@ -16,7 +16,7 @@ public class CHChaosHellBlade extends Eintrag {
         seperator();
 
         ogE.addElement(new OptionsGruppeEintrag("2 Helstorm cannon", getPts("Helstorm cannon") * 2));
-        ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", getPts("Lascannon") * 2));
+        ogE.addElement(new OptionsGruppeEintrag("2 Lascannon", getPts("Lascannon (other)") * 2));
         add(o2 = new OptionsUpgradeGruppe(ID, randAbstand, cnt, "", ogE));
         o2.setSelected(0, true);
 

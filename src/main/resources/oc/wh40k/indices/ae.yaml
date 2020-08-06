@@ -1,115 +1,113 @@
-"Autarch": 65
-"Autarch Skyrunner": 95
-"Autarch with Swooping Hawk Wings": 80
+"Autarch": 80
+"Autarch Skyrunner": 105
+"Autarch with Swooping Hawk Wings": 90
 "Autarch with Warp Jump Generator": 73
-"Bonesinger": 70
-"Crimson Hunter": 128
-"Crimson Hunter Exarch": 150
-"Dark Reapers": 9
-"Dire Avengers": 8
-"Falcon": 100
-"Farseer": 110
-"Farseer Skyrunner": 130
-"Fire Dragons": 8
-"Fire Prism": 140
-"Guardian Defenders": 8
-"Guardian Defenders - Heavy Weapon Platform": 5
-"Hemlock Wraithfighter": 200
-"Howling Banshees": 7
-"Night Spinner": 110
-"Rangers": 12
-"Shining Spears": 20
-"Spiritseer": 55
-"Storm Guardians": 6
-"Striking Scorpions": 8
-"Swooping Hawks": 6
-"Vaul's Wrath Support Battery": 25
-"Vypers": 35
-"War Walkers": 35
-"Warlock": 45
-"Warlock Conclave": 35
-"Warlock Skyrunner": 60
-"Warlock Skyrunner Conclave": 48
-"Warp Spiders": 9
-"Wave Serpent": 120
-"Windriders": 16
-"Wraithblades": 29
-"Wraithguard": 23
-"Wraithknight": 285
-"Wraithlord": 80
-"Asurmen": 150
-"Avatar of Khaine": 220
-"Baharroth": 110
-"Eldrad Ulthran": 145
-"Fuegan": 125
-"Illic Nightspear": 65
-"Jain Zar": 115
-"Karandras": 125
-"Maugan Ra": 140
-"Prince Yriel": 70
-
+"Bonesinger": 55
+"Crimson Hunter": 140
+"Crimson Hunter Exarch": 170
+"Dark Reapers": 35
+"Dire Avengers": 13
+"Falcon": 115
+"Farseer": 115
+"Farseer Skyrunner": 135
+"Fire Dragons": 23
+"Fire Prism": 170
+"Guardian Defenders": 10
+"Guardian Defenders - Heavy Weapon Platform": 12
+"Hemlock Wraithfighter": 230
+"Howling Banshees": 15
+"Night Spinner": 145
+"Rangers": 15
+"Shining Spears": 35
+"Spiritseer": 60
+"Storm Guardians": 9
+"Striking Scorpions": 13
+"Swooping Hawks": 16
+"Vaul's Wrath Support Battery": 30
+"Vypers": 40
+"War Walkers": 40
+"Warlock": 50
+"Warlock Conclave": 40
+"Warlock Skyrunner": 65
+"Warlock Skyrunner Conclave": 55
+"Warp Spiders": 18
+"Wave Serpent": 130
+"Windriders": 20
+"Wraithblades": 40
+"Wraithguard": 38
+"Wraithknight": 315
+"Wraithlord": 100
+"Asurmen": 160
+"Avatar of Khaine": 235
+"Baharroth": 120
+"Eldrad Ulthran": 155
+"Fuegan": 135
+"Illic Nightspear": 70
+"Jain Zar": 125
+"Karandras": 135
+"Maugan Ra": 150
+"Prince Yriel": 85
 "Aeldari missile launcher": 20
-"Avenger shuriken catapult": 3
+"Avenger shuriken catapult": 0
 "Bright lance": 20
 "Chainsabres": 16
-"D-cannon": 35
-"D-scythe": 14
-"Death spinner": 6
+"D-cannon": 40
+"D-scythe": 10
+"Death spinner": 0
 "Doomweaver": 0
-"Dragon's breath flamer": 14
-"Firepike": 17
-"Flamer": 6
-"Fusion gun": 14
-"Fusion pistol": 7
-"Hawk's talon": 10
+"Dragon's breath flamer": 10
+"Firepike": 15
+"Flamer": 5
+"Fusion gun": 10
+"Fusion pistol": 0
+"Hawk's talon": 5
 "Heavy D-scythe": 0
 "Heavy wraithcannon": 50
-"Lasblaster": 7
-"Laser lance": 8
+"Lasblaster": 0
+"Laser lance": 0
 "Melta bomb": 0
 "Prism cannon": 0
 "Pulse laser": 0
 "Ranger long rifle": 0
-"Reaper launcher": 22
-"Scatter laser": 7
-"Scorpion's claw": 9
-"Shadow weaver": 12
+"Reaper launcher": 0
+"Scatter laser": 10
+"Scorpion's claw": 12
+"Shadow weaver": 20
 "Shuriken cannon": 10
 "Shuriken catapult": 0
 "Shuriken pistol": 0
 "Singing spear": 5
 "Spinneret rifle": 12
-"Star lance": 10
-"Starcannon": 13
+"Star lance": 5
+"Starcannon": 15
 "Star glaive": 6
 "Sunburst grenade": 0
 "Suncannon": 60
 "Sunrifle": 11
-"Tempest launcher": 27
-"Triskele": 9
-"Twin Aeldari missile launcher": 35
+"Tempest launcher": 10
+"Triskele": 5
+"Twin Aeldari missile launcher": 40
 "Twin bright lance": 40
-"Twin scatter laser": 12
-"Twin shuriken cannon": 17
-"Twin shuriken catapult": 2
-"Twin starcannon": 24
-"Vibro cannon": 10
-"Wraithcannon": 10
-
+"Twin scatter laser": 20
+"Twin shuriken cannon": 20
+"Twin shuriken catapult": 0
+"Twin starcannon": 30
+"Vibro cannon": 15
+"Wraithcannon": 0
 "Aeldari blade": 0
-"Biting blade": 2
+"Biting blade": 5
 "Chainsword": 0
-"Diresword": 4
-"Executioner": 7
-"Ghostaxe": 4
+"Diresword": 0
+"Executioner": 5
+"Ghostaxe": 0
 "Ghostglaive": 10
-"Ghostsword": 6
-"Mirrorswords": 4
-"Paragon blade": 8
-"Power sword": 4
-"Power glaive": 4
-"Powerblades": 4
-"Scorpion chainsword": 1
+"Ghostsword": 10
+"Mirrorswords": 0
+"Paragon blade": 0
+"Power sword": 0
+"Power glaive": 0
+"Powerblades": 5
+"Scorpion chainsword": 0
 "Titanic feet": 0
 "Titanic ghostglaive": 30
 "Titanic wraithbone fists": 0
@@ -117,10 +115,9 @@
 "Witch staff": 0
 "Wraithbone fists": 0
 "Wraithguard fists": 0
-
 "Banshee mask": 0
 "Crystal targeting matrix": 5
-"Forceshield": 2
+"Forceshield": 0
 "Mandiblaster": 0
 "Scattershield": 15
 "Shimmershield": 5
@@ -128,35 +125,35 @@
 "Star engines": 10
 "Vectored engines": 10
 
-"Death Jester": 45
-"Shadowseer": 125
-"Skyweavers": 30
-"Solitaire": 84
-"Starweaver": 79
-"Troupe": 13
-"Troupe Master": 70
-"Voidweavers": 68
-"Webway Gate": 90
+"Death Jester": 50
+"Shadowseer": 115
+"Skyweavers": 35
+"Solitaire": 90
+"Starweaver": 60
+"Troupe": 14
+"Troupe Master": 65
+"Voidweavers": 65
+"Webway Gate": 95
 
-"Fusion pistol (Harlequins)": 7
+"Fusion pistol (Harlequins)": 5
 "Hallucinogen grenade launcher": 0
-"Haywire cannon": 15
-"Neuro disruptor": 10
-"Prismatic cannon": 20
+"Haywire cannon": 0
+"Neuro disruptor": 5
+"Prismatic cannon": 15
 "Prismatic grenades": 0
 "Shrieker cannon": 0
 "Shuriken cannon (Harlequins)": 10
 "Shuriken pistol (Harlequins)": 0
 "Star bolas": 0
 "Harlequin's blade": 0
-"Harlequin's caress": 7
-"Harlequin's embrace": 6
-"Harlequin's kiss": 7
+"Harlequin's caress": 6
+"Harlequin's embrace": 5
+"Harlequin's kiss": 6
 "Miststave": 0
 
-"Power sword (Harlequins)": 4
-"Zephyrglaive": 6
+"Power sword (Harlequins)": 5
+"Zephyrglaive": 5
 
-"The Visarch": 120
-"The Yncarne": 337
-"Yvraine": 132
+"The Visarch": 85
+"The Yncarne": 290
+"Yvraine": 120
